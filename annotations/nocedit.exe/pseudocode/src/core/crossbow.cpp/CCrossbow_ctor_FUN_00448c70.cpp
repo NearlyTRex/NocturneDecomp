@@ -9,16 +9,20 @@
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00448c70(CCrossbow *this_ptr)
 
 {
-  CFlame *pCVar1;
-  CWeapon *pCVar2;
-  CFlame *pCVar3;
+  CCrossbow *pCVar1;
+  CCrossbow *pCVar2;
+  CCrossbow_ptr_1404 pCVar3;
   
-  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0((CFlame *)(pCVar2[1].base.actor_name + 4));
-  pCVar3[-2].base.unk11 = (int)&g_CCrossbowVTable;
+  pCVar2 = (CCrossbow *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
+  pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0(&pCVar2->unk2);
+  ADJ(pCVar3).base.base.vtable._ub = &g_CCrossbowVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar3[-2].base.unk12,"crossbow.kfm");
-  pCVar3[-1].base.location.position.z = 0.0;
+            (&ADJ(pCVar3).base.model,"crossbow.kfm");
+  pCVar1 = ADJ(pCVar3);
+  (pCVar1->base).unk2[0xc] = '\0';
+  (pCVar1->base).unk2[0xd] = '\0';
+  (pCVar1->base).unk2[0xe] = '\0';
+  (pCVar1->base).unk2[0xf] = '\0';
   pCVar3[-0xffffffff00000001].unk4[0x10] = '\0';
   pCVar3[-0xffffffff00000001].unk4[0x11] = '\0';
   pCVar3[-0xffffffff00000001].unk4[0x12] = '\0';
@@ -30,30 +34,22 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00448c70(CCrossbow *thi
   pCVar3[-0xffffffff00000001].base.actor_name[1] = '\0';
   pCVar3[-0xffffffff00000001].base.actor_name[2] = '\0';
   pCVar3[-0xffffffff00000001].base.actor_name[3] = '\0';
-  pCVar1 = pCVar3 + -1;
-  (pCVar1->base).actor_name[4] = '\0';
-  (pCVar1->base).actor_name[5] = '\0';
-  (pCVar1->base).actor_name[6] = '\0';
-  (pCVar1->base).actor_name[7] = '\0';
-  pCVar1 = pCVar3 + -1;
-  (pCVar1->base).actor_name[8] = '\x01';
-  (pCVar1->base).actor_name[9] = '\0';
-  (pCVar1->base).actor_name[10] = '\0';
-  (pCVar1->base).actor_name[0xb] = '\0';
-  pCVar1 = pCVar3 + -1;
-  (pCVar1->base).actor_name[0xc] = '\0';
-  (pCVar1->base).actor_name[0xd] = '\0';
-  (pCVar1->base).actor_name[0xe] = '\0';
-  (pCVar1->base).actor_name[0xf] = '\0';
-  pCVar1 = pCVar3 + -1;
-  (pCVar1->base).actor_name[0x10] = '\0';
-  (pCVar1->base).actor_name[0x11] = '\0';
-  (pCVar1->base).actor_name[0x12] = 'H';
-  (pCVar1->base).actor_name[0x13] = 'B';
-  pCVar1 = pCVar3 + -1;
-  (pCVar1->base).actor_name[0x14] = '\0';
-  (pCVar1->base).actor_name[0x15] = '\0';
-  (pCVar1->base).actor_name[0x16] = '\0';
-  (pCVar1->base).actor_name[0x17] = '\0';
-  return (CCrossbow *)(pCVar3[-3].unk3 + 0xb8);
+  pCVar1 = ADJ(pCVar3);
+  (pCVar1->base).unk1[4] = '\0';
+  (pCVar1->base).unk1[5] = '\0';
+  (pCVar1->base).unk1[6] = '\0';
+  (pCVar1->base).unk1[7] = '\0';
+  pCVar1 = ADJ(pCVar3);
+  (pCVar1->base).unk1[8] = '\x01';
+  (pCVar1->base).unk1[9] = '\0';
+  (pCVar1->base).unk1[10] = '\0';
+  (pCVar1->base).unk1[0xb] = '\0';
+  pCVar1 = ADJ(pCVar3);
+  (pCVar1->base).unk1[0xc] = '\0';
+  (pCVar1->base).unk1[0xd] = '\0';
+  (pCVar1->base).unk1[0xe] = '\0';
+  (pCVar1->base).unk1[0xf] = '\0';
+  ADJ(pCVar3).base.bolt_velocity = 50.0;
+  ADJ(pCVar3).base.fire_cooldown = 0.0;
+  return ADJ(pCVar3);
 }

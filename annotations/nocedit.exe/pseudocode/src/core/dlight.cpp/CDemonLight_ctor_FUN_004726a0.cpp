@@ -2,16 +2,16 @@
 // Address: 004726a0
 // Address Range: [[004726a0, 00472754]]
 // Convention: __cdecl
-// Signature: CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr)
+// Signature: CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 
 #include "nocturne.h"
 
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr)
+CDemonLight * __cdecl
+core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
+          (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 
 {
   CDemonLight *pCVar1;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
   pCVar1 = (CDemonLight *)core_dcamera_cpp_CDemonCamera_ctor_FUN_0044c030(&this_ptr->base);
   (pCVar1->base).base.vtable = &g_CDemonLightVTable;
@@ -29,7 +29,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
   pCVar1->volumetric_intensity = 1.0;
   pCVar1->unk2 = 0;
   pCVar1->antialiasing_enabled = 1;
-  pCVar1->shadow_map_width = in_stack_00000008;
-  pCVar1->shadow_map_height = in_stack_0000000c;
+  pCVar1->shadow_map_width = shadow_map_width;
+  pCVar1->shadow_map_height = shadow_map_height;
   return pCVar1;
 }

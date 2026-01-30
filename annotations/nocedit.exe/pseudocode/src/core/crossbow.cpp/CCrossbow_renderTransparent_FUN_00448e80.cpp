@@ -9,7 +9,7 @@
 int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_00448e80(CCrossbow *this_ptr)
 
 {
-  if (*(int *)this_ptr->unk == 0) {
+  if (*(int *)this_ptr->unk1 == 0) {
     return 0;
   }
   core_flame_cpp_FUN_004ca110();

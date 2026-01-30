@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_FUN_005d86d0(void)
+; __cdecl double __cdecl shape_superopt_cpp_FUN_005d86d0(double *param_1,double *param_2)
 ;
+; Parameters:
+; double *         Stack[0x4]:4   param_1
+; double *         Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ;

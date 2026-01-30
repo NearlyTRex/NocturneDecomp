@@ -2,16 +2,34 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 15,
-        "line": 34,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 19,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CFilmReel_ptr_344' {aka 'CFilmReel*'} in assignment"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 35,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 20,
+        "line": 20,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CFilmReel_ptr_344' {aka 'CFilmReel*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 22,
+        "message": "cannot convert 'CFilmReel_ptr_344' {aka 'CFilmReel*'} to 'CKeyFramedModelInstance*'"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 33,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 34,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -24,43 +42,37 @@
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 12,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 6,
-        "line": 34,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 35,
+        "column": 15,
+        "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 88,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 5,
     "suspect_types": [
-      "negative_offset",
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -196,39 +208,39 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 14,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CFilmReelVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CFilmReelVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CFilmReel *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "ppcVar3 = &ADJ(this_ptr_00)->movieName;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar4 + 1) = cVar1;",
+      "text": "*(char *)((int)ppcVar3 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)piVar4 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 30,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CFilmReel *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

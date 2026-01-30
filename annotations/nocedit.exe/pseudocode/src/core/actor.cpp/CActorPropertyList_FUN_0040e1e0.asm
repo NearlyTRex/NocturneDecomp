@@ -9,7 +9,7 @@
 ; XREF[19]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 004113b3
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411bd7
-;   core_chain.cpp_FUN_00431120 at 00431143
+;   core_chain.cpp_CChain_FUN_00431120 at 00431143
 ;   core_curtain.cpp_FUN_0044b610 at 0044b64c
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 0048142f
 ;   core_dracbrid.cpp_FUN_00486c90 at 00486cef

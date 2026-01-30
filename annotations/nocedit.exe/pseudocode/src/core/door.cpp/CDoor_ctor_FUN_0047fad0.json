@@ -2,34 +2,64 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 23,
-        "message": "'PTR_core_door_cpp_FUN_0065cbf4' was not declared in this scope; did you mean 'core_door_cpp_FUN_0047fcf0'?"
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 20,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CDoor_ptr_344' {aka 'CDoor*'} in assignment"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 43,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 20,
+        "line": 22,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CDoor_ptr_344' {aka 'CDoor*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 24,
+        "message": "cannot convert 'CDoor_ptr_344' {aka 'CDoor*'} to 'CKeyFramedModelInstance*'"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 44,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 30,
+        "line": 28,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CDoor_ptr_344' {aka 'CDoor*'} (maybe you meant to use '->' ?)"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 67,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 55,
+        "line": 32,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CDoor_ptr_344' {aka 'CDoor*'} (maybe you meant to use '->' ?)"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 68,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 55,
+        "line": 33,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CDoor_ptr_344' {aka 'CDoor*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 79,
+        "message": "'struct CDoor' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 80,
+        "message": "'struct CDoor' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 81,
+        "message": "'struct CDoor' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 82,
+        "message": "'struct CDoor' has no member named 'animation_state'"
       }
     ],
     "success": false,
@@ -42,27 +72,9 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 12,
         "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 43,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 44,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -75,34 +87,21 @@
         "column": 12,
         "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 67,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 68,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 218,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 14,
-    "pseudocode_lines": 108,
-    "suspect_count": 10,
+    "pseudocode_lines": 78,
+    "suspect_count": 31,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 226
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -227,7 +226,7 @@
     },
     {
       "addr": "0065cbf4",
-      "name": "PTR_core_door.cpp_FUN_0065cbf4",
+      "name": "g_CDoorVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -291,74 +290,221 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_door_cpp_FUN_0065cbf4;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CDoorVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->door_type = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->door_side = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->door_state = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ADJ",
+      "text": "pCVar1 = &ADJ(this_ptr_00).base.location;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->door_swing = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
-      "match": "this_ptr_00[-1].",
-      "text": "if ((int *)(this_ptr_00[5].model_name + 0x58) != this_ptr_00[-1].part_visibility_flags + 0x11) {",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "if ((CLocation *)&ADJ(this_ptr_00)->orig_pos != pCVar1) {",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
-      "match": "this_ptr_00[-1].",
-      "text": "*(int *)(this_ptr_00[5].model_name + 0x58) = this_ptr_00[-1].part_visibility_flags[0x11];",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->orig_pos).x = (pCVar1->position).x;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 25,
-      "match": "this_ptr_00[-1].",
-      "text": "*(int *)(this_ptr_00[5].model_name + 0x5c) = this_ptr_00[-1].part_visibility_flags[0x12];",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->orig_pos).y = ADJ(this_ptr_00).base.location.position.y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->orig_pos).y = ADJ(this_ptr_00).base.location.position.y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
-      "match": "this_ptr_00[-1].",
-      "text": "*(int *)(this_ptr_00[5].model_name + 0x60) = this_ptr_00[-1].part_visibility_flags[0x13];",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->orig_pos).z = ADJ(this_ptr_00).base.location.position.z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->orig_pos).z = ADJ(this_ptr_00).base.location.position.z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "pcVar4 = ADJ(this_ptr_00)->unk1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ADJ",
+      "text": "pcVar4 = ADJ(this_ptr_00)->unk1 + 100;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk2[1000] = '\\0';",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 110,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CDoor *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "pcVar4 = ADJ(this_ptr_00)->unk2 + 0x4b0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk2[0x44c] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->key_mask = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->param = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->max_param = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->open_speed = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->close_speed = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->ground_type = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk1[200] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk1[300] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->one_shot = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->block_virtual_director_flag = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->plot_as_box_in_shadow = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->allowed_sides = 3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->allow_bullet_holes = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

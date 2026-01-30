@@ -11,7 +11,7 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 33,
         "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 172,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 49,
     "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 148
+    "total_lines": 145
   },
   "cross_references": [
     {
@@ -250,7 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -285,35 +285,35 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "*(uint *)this_ptr->unk = in_stack_00000008;",
+      "text": "this_ptr->unk1 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000018",
-      "text": "*(uint *)(this_ptr->unk + 0x3dc) = in_stack_00000018;",
+      "text": "*(uint *)(this_ptr->unk2 + 0x25c) = in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_0000000c",
-      "text": "((CBox *)(this_ptr->unk + 0x180),in_stack_0000000c,in_stack_00000010,&local_2c,local_14)",
+      "text": "((CBox *)this_ptr->unk2,in_stack_0000000c,in_stack_00000010,&local_2c,local_14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_00000010",
-      "text": "((CBox *)(this_ptr->unk + 0x180),in_stack_0000000c,in_stack_00000010,&local_2c,local_14)",
+      "text": "((CBox *)this_ptr->unk2,in_stack_0000000c,in_stack_00000010,&local_2c,local_14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 49,
       "match": "in_stack_00000014",
-      "text": "((CBox *)(this_ptr->unk + 0x180),in_stack_00000014,&local_20);",
+      "text": "core_box_cpp_CBox_setupVelocities_FUN_00420180((CBox *)this_ptr->unk2,in_stack_00000014,&local_20)",
       "type": "stack_param"
     },
     {

@@ -83,13 +83,13 @@ void __cdecl FUN_00486c90(void);
 // Address: 00486d00
 void __cdecl FUN_00486d00(void);
 
-// Original: core_dracbrid.cpp_ctor_FUN_00486d30
+// Original: core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30
 // Address: 00486d30
-SFreaky * __cdecl ctor(SFreaky *this_ptr);
+SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 
-// Original: core_dracbrid.cpp_dtor_FUN_00486d50
+// Original: core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50
 // Address: 00486d50
-SFreaky * __cdecl dtor(SFreaky *this_ptr);
+SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr);
 
 // Original: core_dracbrid.cpp_dtor_FUN_00486d70
 // Address: 00486d70

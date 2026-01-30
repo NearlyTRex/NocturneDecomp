@@ -11063,12 +11063,29 @@
         "start":"0042fb70"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_chain.cpp_StartOfClass_FUN_0042fb70()",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_StartOfClass_FUN_0042fb70",
+    "name":"core_chain.cpp_CChain_getActorType_FUN_0042fb70",
     "ret":"CDemonActorType*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CChain*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -11092,7 +11109,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_004308f0",
+    "name":"core_chain.cpp_CChain_FUN_004308f0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -11111,6 +11128,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CChain*"
         }
       ],
       "ret_storage":{
@@ -14864,6 +14899,38 @@
     "name":"core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70",
     "ret":"CCrossbow*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CCrossbow*",
+          "use":6
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CCrossbow_ptr_1404",
+          "use":20
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

@@ -1,0 +1,612 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 659,
+    "complexity_score": 386,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "pseudocode_lines": 286,
+    "suspect_count": 9,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "negative_offset"
+    ],
+    "total_lines": 945
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004300d0",
+    "address_range": [
+      [
+        "004300d0",
+        "004308ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_chain.cpp_CChain_process_FUN_004300d0",
+    "signature": "void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042fcc0",
+      "is_variadic": false,
+      "name": "core_chain.cpp_FUN_0042fcc0"
+    },
+    {
+      "addr": "0042fed0",
+      "is_variadic": false,
+      "name": "core_chain.cpp_FUN_0042fed0"
+    },
+    {
+      "addr": "005b3a70",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006177d2",
+      "name": "FLOAT_006177d2",
+      "type": "float",
+      "value": "-9900"
+    },
+    {
+      "addr": "006177da",
+      "name": "DOUBLE_006177da",
+      "type": "double",
+      "value": "0.03125"
+    },
+    {
+      "addr": "006177e2",
+      "name": "DOUBLE_006177e2",
+      "type": "double",
+      "value": "0.900000000000000"
+    },
+    {
+      "addr": "006177ea",
+      "name": "DOUBLE_006177ea",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.626297577854671,
+    "instruction_count": 578,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 29,
+      "BOOL_OR": 9,
+      "BRANCH": 8,
+      "CALL": 14,
+      "CALLIND": 1,
+      "CBRANCH": 28,
+      "COPY": 1168,
+      "FLOAT2FLOAT": 103,
+      "FLOAT_ADD": 14,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 24,
+      "FLOAT_NAN": 10,
+      "FLOAT_SQRT": 3,
+      "FLOAT_SUB": 11,
+      "INT2FLOAT": 5,
+      "INT_ADD": 346,
+      "INT_AND": 274,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 205,
+      "INT_LEFT": 28,
+      "INT_LESS": 18,
+      "INT_MULT": 21,
+      "INT_NOTEQUAL": 43,
+      "INT_OR": 45,
+      "INT_SBORROW": 32,
+      "INT_SCARRY": 49,
+      "INT_SEXT": 18,
+      "INT_SLESS": 107,
+      "INT_SUB": 89,
+      "INT_XOR": 11,
+      "INT_ZEXT": 20,
+      "LOAD": 184,
+      "POPCOUNT": 99,
+      "RETURN": 3,
+      "STORE": 165,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 3252
+  },
+  "stack_frame": {
+    "frame_size": 252,
+    "local_size": 244,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004300dc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 64,
+      "match": "pSVar6[-1].",
+      "text": "local_70 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 65,
+      "match": "pSVar6[-1].",
+      "text": "fStack_6c = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 66,
+      "match": "pSVar6[-1].",
+      "text": "fStack_68 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "SQRT",
+      "text": "fStack_e0 = SQRT(fStack_68 * fStack_68 + local_70 * local_70 + fStack_6c * fStack_6c) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 232,
+      "match": "pSVar6[-1].",
+      "text": "local_b8 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 233,
+      "match": "pSVar6[-1].",
+      "text": "local_b4 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 234,
+      "match": "pSVar6[-1].",
+      "text": "local_b0 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 235,
+      "match": "SQRT",
+      "text": "fStack_e4 = SQRT(local_b0 * local_b0 + local_b8 * local_b8 + local_b4 * local_b4) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 247,
+      "match": "SQRT",
+      "text": "SQRT(local_8c * local_8c + local_94 * local_94 + local_90 * local_90)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CChain",
+        "offset": 4,
+        "vtable_addr": "0065ba04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

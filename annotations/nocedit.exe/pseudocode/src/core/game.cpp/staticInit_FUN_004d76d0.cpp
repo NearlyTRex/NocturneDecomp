@@ -9,7 +9,7 @@
 void __cdecl core_game_cpp_staticInit_FUN_004d76d0(void)
 
 {
-  core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(&g_CDemonLightInstance);
+  core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(&g_CDemonLightInstance,0x100,0x100);
   _atexit(&g_GameDestructorNode1);
   core_game_cpp_CGame_ctor_FUN_004d7b40(&g_CGameInstance);
   _atexit(&g_GameDestructorNode2);

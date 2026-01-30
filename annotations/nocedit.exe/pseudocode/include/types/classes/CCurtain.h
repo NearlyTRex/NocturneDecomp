@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SCurtainVertex.h"
 
 // Structure: CCurtain
 // Ghidra size: 0x65b38 (416568 bytes)
@@ -22,14 +23,16 @@ typedef struct CCurtain {
     int simulate_me; // 0x1f8
     float patch_size; // 0x1fc
     int block_virtual_director_flag; // 0x200
-    char unk2[416016]; // 0x204
+    int unk2; // 0x204
+    SCurtainVertex unk3[1000]; // 0x208
+    char unk4[300012]; // 0x1c728
     float weight; // 0x65b14
     float dampen; // 0x65b18
     float spring; // 0x65b1c
     float friction; // 0x65b20
     float gravity; // 0x65b24
-    char unk3[4]; // 0x65b28
+    char unk5[4]; // 0x65b28
     int hit_floor; // 0x65b2c
-    char unk4[8]; // 0x65b30
+    char unk6[8]; // 0x65b30
 } CCurtain;
 

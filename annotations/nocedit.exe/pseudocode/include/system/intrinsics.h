@@ -316,3 +316,25 @@ static inline int* _cpuid_intrinsic(int leaf) {
 #ifndef UNLOCK
 #define UNLOCK(x) (void)(x)
 #endif
+
+// =============================================================================
+// ADJ - Offset Pointer Adjustment
+// =============================================================================
+// ADJ(ptr) is used by Ghidra to convert an offset pointer back to its base type.
+// An offset pointer is a pointer that points into the middle of a structure
+// (e.g., a pointer to a field at offset 0x158 within a larger struct).
+//
+// In Ghidra's decompiled output, offset pointer typedefs like CAmmo_ptr_158
+// represent "a pointer that is 0x158 bytes into a CAmmo struct".
+// ADJ(ptr) adjusts this back to point to the base of the containing struct.
+//
+// For compilation purposes, ADJ is defined as an identity macro since:
+// 1. The actual pointer arithmetic is handled by the typedef semantics
+// 2. We're primarily interested in code analysis, not execution
+// 3. A proper implementation would require knowing the offset at compile time
+//
+// Usage: ADJ(pCVar2)->field_name  where pCVar2 is an offset pointer type
+
+#ifndef ADJ
+#define ADJ(x) (x)
+#endif

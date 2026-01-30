@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 23,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 7,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 17
+    "total_lines": 16
   },
   "cross_references": [],
   "function": {
@@ -93,7 +93,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 10,
+      "line": 9,
       "match": "pCVar1[-1].",
       "text": "return (SBodyPartModel *)(pCVar1[-1].animation_state + 0x88);",
       "type": "negative_offset"

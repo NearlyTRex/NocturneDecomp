@@ -733,7 +733,7 @@ int __cdecl FUN_005d86a0(void);
 
 // Original: shape_superopt.cpp_FUN_005d86d0
 // Address: 005d86d0
-int __cdecl FUN_005d86d0(void);
+double __cdecl FUN_005d86d0(double *param_1,double *param_2);
 
 // Original: shape_superopt.cpp_FUN_005d8710
 // Address: 005d8710

@@ -2368,7 +2368,8 @@ def generate_types_aggregate(pseudocode_dir):
         return
 
     # Generate aggregates for each category
-    categories = ['structs', 'unions', 'funcdefs', 'classes']  # Order matters for dependencies
+    # Order matters for dependencies: base types first, then typedefs, then classes
+    categories = ['enums', 'structs', 'unions', 'typedefs', 'funcdefs', 'classes']
     category_counts = {}
 
     for category in categories:

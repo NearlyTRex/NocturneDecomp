@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 37,
-        "line": 23,
+        "line": 22,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 23,
+        "line": 22,
         "message": "invalid conversion from 'void*' to 'CKeyFramedModelInstance*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 24,
+        "line": 23,
         "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -31,66 +31,66 @@
       {
         "category": "other",
         "column": 28,
-        "line": 23,
+        "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 36,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 38,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 40,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 43,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 48,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 71,
+        "line": 70,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 86,
+        "line": 85,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 122,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 19,
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 91,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 219
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -315,14 +315,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "text": "((void *)((int)pvVar2 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 26,
       "match": "this_ptr_00[-1].",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;",
       "type": "negative_offset"

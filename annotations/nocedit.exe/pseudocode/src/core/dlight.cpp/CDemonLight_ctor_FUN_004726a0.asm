@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr)
+; __cdecl CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   shadow_map_width
+; int              Stack[0xc]:4   shadow_map_height
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_00422990 at 004229ad

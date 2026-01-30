@@ -10,15 +10,15 @@ CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWComp
 
 {
   int iVar1;
-  CCodec *pCVar2;
+  CLZWCompress *pCVar2;
   CLZWDictionary *pCVar3;
   int *piVar4;
   uint uVar5;
   int in_stack_00000008;
   int in_stack_0000000c;
   
-  pCVar2 = support_codec_cpp_CCodec_ctor_FUN_0043e9a0(&this_ptr->base);
-  pCVar3 = support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0((CLZWDictionary *)(pCVar2 + 1));
+  pCVar2 = (CLZWCompress *)support_codec_cpp_CCodec_ctor_FUN_0043e9a0(&this_ptr->base);
+  pCVar3 = support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(&pCVar2->dictionary);
   piVar4 = &pCVar3[-1].bit_state.accumulated_bits;
   pCVar3[1].dict_size = in_stack_00000008;
   pCVar3[1].num_bits = in_stack_0000000c;

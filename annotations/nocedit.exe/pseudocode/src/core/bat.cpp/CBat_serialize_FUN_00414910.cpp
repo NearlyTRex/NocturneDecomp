@@ -23,7 +23,7 @@ void __cdecl core_bat_cpp_CBat_serialize_FUN_00414910(CBat *this_ptr)
   }
   if (1 < g_CBatClassVersion) {
     core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
-              ((CKeyFramedModelInstance *)this_ptr->model_name,"modelName");
+              (&this_ptr->model,"modelName");
   }
   if (g_CBatClassVersion < 4) {
     return;

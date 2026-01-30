@@ -31,7 +31,7 @@ section .text
     ADD EAX,0x670                       ; 004229a7
     PUSH EAX                            ; 004229ac
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_004726a0 ; 004229ad
-        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)
+        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     SUB EAX,0x670                       ; 004229b2
     MOV dword ptr [EAX + 0x154],0x65b2a4 ; 004229b7 | g_CLightActorVTable
     LEA EDX,[EAX + 0x361c]              ; 004229c1

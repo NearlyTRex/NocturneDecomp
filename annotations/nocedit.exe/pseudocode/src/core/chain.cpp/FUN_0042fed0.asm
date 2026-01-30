@@ -28,7 +28,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_004300d0 at 004303e9
+;   core_chain.cpp_CChain_process_FUN_004300d0 at 004303e9
 ;
 ; Referenced Globals:
 ;   int INT_02d7a7b8

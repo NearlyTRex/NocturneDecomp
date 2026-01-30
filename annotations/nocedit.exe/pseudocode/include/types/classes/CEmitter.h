@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CEmitter
@@ -21,8 +22,7 @@ typedef struct CEmitter {
     int laser_r; // 0x23c
     int laser_g; // 0x240
     int laser_b; // 0x244
-    char* model_name; // 0x248
-    char unk3[376]; // 0x24c
+    CKeyFramedModelInstance model; // 0x248
     float rock_speed; // 0x3c4
     int periodic_flag; // 0x3c8
     float max_wait_time; // 0x3cc

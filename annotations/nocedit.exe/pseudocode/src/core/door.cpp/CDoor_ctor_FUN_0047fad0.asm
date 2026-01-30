@@ -23,7 +23,7 @@
 ;   undefined4 s_oor-locked.wav_006210c6
 ;   undefined4 s_or-locked.wav_006210c7
 ;   undefined4 s_r-locked.wav_006210c8
-;   CDemonActor_vtable PTR_core_door.cpp_FUN_0065cbf4
+;   CDemonActor_vtable g_CDoorVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
@@ -58,7 +58,7 @@ section .text
     PUSH 0x621096                       ; 0047fb03 | = "churchd01.kfm"
     LEA EAX,[EBX + 0x158]               ; 0047fb08
     PUSH EAX                            ; 0047fb0e
-    MOV dword ptr [EBX + 0x154],0x65cbf4 ; 0047fb0f | PTR_core_door.cpp_FUN_0065cbf4
+    MOV dword ptr [EBX + 0x154],0x65cbf4 ; 0047fb0f | g_CDoorVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0047fb19
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d8],0x0     ; 0047fb1e

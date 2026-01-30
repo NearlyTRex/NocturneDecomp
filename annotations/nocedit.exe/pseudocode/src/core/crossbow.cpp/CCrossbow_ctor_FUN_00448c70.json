@@ -2,10 +2,100 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 51,
+        "line": 17,
+        "message": "cannot convert 'CFlame*' to 'CCrossbow_ptr_1404' {aka 'CCrossbow*'} in assignment"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 18,
+        "message": "request for member 'base' in 'pCVar3', which is of pointer type 'CCrossbow_ptr_1404' {aka 'CCrossbow*'} (maybe you meant to use '->' ?)"
+      },
+      {
         "category": "other",
         "column": 27,
-        "line": 18,
-        "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
+        "line": 20,
+        "message": "request for member 'base' in 'pCVar3', which is of pointer type 'CCrossbow_ptr_1404' {aka 'CCrossbow*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "missing_member",
+        "column": 31,
+        "line": 26,
+        "message": "'struct CCrossbow' has no member named 'unk4'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 31,
+        "line": 27,
+        "message": "'struct CCrossbow' has no member named 'unk4'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 31,
+        "line": 28,
+        "message": "'struct CCrossbow' has no member named 'unk4'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 31,
+        "line": 29,
+        "message": "'struct CCrossbow' has no member named 'unk4'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 12,
+        "line": 30,
+        "message": "'struct CCrossbow' has no member named 'flame_size'"
+      },
+      {
+        "category": "missing_member",
+        "column": 12,
+        "line": 31,
+        "message": "'struct CCrossbow' has no member named 'flame_size'"
+      },
+      {
+        "category": "missing_member",
+        "column": 12,
+        "line": 32,
+        "message": "'struct CCrossbow' has no member named 'flame_size'"
+      },
+      {
+        "category": "missing_member",
+        "column": 36,
+        "line": 33,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'actor_name'"
+      },
+      {
+        "category": "missing_member",
+        "column": 36,
+        "line": 34,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'actor_name'"
+      },
+      {
+        "category": "missing_member",
+        "column": 36,
+        "line": 35,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'actor_name'"
+      },
+      {
+        "category": "missing_member",
+        "column": 36,
+        "line": 36,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'actor_name'"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 52,
+        "message": "request for member 'base' in 'pCVar3', which is of pointer type 'CCrossbow_ptr_1404' {aka 'CCrossbow*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 53,
+        "message": "request for member 'base' in 'pCVar3', which is of pointer type 'CCrossbow_ptr_1404' {aka 'CCrossbow*'} (maybe you meant to use '->' ?)"
       }
     ],
     "success": false,
@@ -15,27 +105,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 94,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 49,
-    "suspect_count": 4,
+    "pseudocode_lines": 45,
+    "suspect_count": 9,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 83
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -143,32 +227,67 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].base.unk11 = (int)&g_CCrossbowVTable;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar3).base.base.vtable._ub = &g_CCrossbowVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "pCVar3[-2].",
-      "text": "((CKeyFramedModelInstance *)&pCVar3[-2].base.unk12,\"crossbow.kfm\");",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar3).base.model,\"crossbow.kfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].base.location.position.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "pCVar1 = ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 51,
-      "match": "pCVar3[-3].",
-      "text": "return (CCrossbow *)(pCVar3[-3].unk3 + 0xb8);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "pCVar1 = ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "pCVar1 = ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ADJ",
+      "text": "pCVar1 = ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
+      "text": "ADJ(pCVar3).base.bolt_velocity = 50.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ADJ",
+      "text": "ADJ(pCVar3).base.fire_cooldown = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ADJ",
+      "text": "return ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

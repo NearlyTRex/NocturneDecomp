@@ -10,15 +10,14 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(CPickList *th
 
 {
   char cVar1;
-  CStrList *pCVar2;
+  CPickList *pCVar2;
   CEdScrollBar *pCVar3;
   CEdButton *pCVar4;
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&this_ptr->base);
-  pCVar3 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&pCVar2[0x1a].capacity)
-  ;
+  pCVar2 = (CPickList *)shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&this_ptr->base);
+  pCVar3 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&pCVar2->scrollbar);
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0((CEdButton *)&pCVar3[1].current_value);
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(pCVar4 + 1);
   *(CStrList_vtable **)(pCVar4[-4].button_text + 0xc0) = &g_CPickListVTable;

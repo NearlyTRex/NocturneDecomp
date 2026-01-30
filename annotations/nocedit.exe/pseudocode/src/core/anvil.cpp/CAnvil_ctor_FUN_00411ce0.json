@@ -2,16 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 15,
-        "line": 37,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 19,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CAnvil_ptr_344' {aka 'CAnvil*'} in assignment"
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 38,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 20,
+        "line": 21,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CAnvil_ptr_344' {aka 'CAnvil*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 23,
+        "message": "cannot convert 'CAnvil_ptr_344' {aka 'CAnvil*'} to 'CKeyFramedModelInstance*'"
       }
     ],
     "success": false,
@@ -25,42 +31,23 @@
       {
         "category": "other",
         "column": 12,
-        "line": 21,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 91,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "pseudocode_lines": 30,
+    "suspect_count": 7,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -196,39 +183,53 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 15,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAnvilVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CAnvilVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 26,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->drop_height = 25.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->triggered = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(CKeyFramedModelInstance *)((int)",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->drop_condition;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 33,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->yvel = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

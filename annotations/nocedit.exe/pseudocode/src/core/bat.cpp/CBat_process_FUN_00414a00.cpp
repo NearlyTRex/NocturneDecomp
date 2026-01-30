@@ -30,8 +30,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_t
   *(float *)(this_ptr->course_filename + 0x2c) =
        delta_time * *(float *)this_ptr->unk1 * this_ptr->speed +
        *(float *)(this_ptr->course_filename + 0x2c);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (*(float *)(this_ptr->course_filename + 0x2c) < (float)pCVar1->frame_count) {
     if (*(float *)(this_ptr->course_filename + 0x2c) < 0.0) {
       *(float *)(this_ptr->course_filename + 0x2c) = (float)(pCVar1->frame_count + -1);

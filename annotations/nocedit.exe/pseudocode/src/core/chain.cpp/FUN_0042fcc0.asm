@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_004300d0 at 004301d7
+;   core_chain.cpp_CChain_process_FUN_004300d0 at 004301d7
 ;
 ; Referenced Globals:
 ;   CVector3f g_ZeroVector

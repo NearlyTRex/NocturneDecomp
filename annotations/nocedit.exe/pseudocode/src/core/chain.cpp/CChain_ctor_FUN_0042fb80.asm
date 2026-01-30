@@ -22,7 +22,7 @@
 ;   undefined4 s_hain-move.wav_006177c1
 ;   undefined4 s_ain-move.wav_006177c2
 ;   undefined4 s_in-move.wav_006177c3
-;   CDemonActor_vtable PTR_core_chain.cpp_FUN_0042fd20_0065ba04
+;   CDemonActor_vtable g_CChainVTable
 ;   WatcomTypeInfo g_SChainVertexTypeInfo
 ;
 ; Called Functions:
@@ -48,7 +48,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 0042fb9c
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd74]          ; 0042fba1
-    MOV dword ptr [EDX + 0x154],0x65ba04 ; 0042fba7 | PTR_core_chain.cpp_FUN_0042fd20_0065ba04
+    MOV dword ptr [EDX + 0x154],0x65ba04 ; 0042fba7 | g_CChainVTable
     MOV dword ptr [EDX + 0x158],0xa     ; 0042fbb1
     MOV dword ptr [EDX + 0x15c],0x40a00000 ; 0042fbbb
     MOV dword ptr [EDX + 0x55c],0x3f800000 ; 0042fbc5

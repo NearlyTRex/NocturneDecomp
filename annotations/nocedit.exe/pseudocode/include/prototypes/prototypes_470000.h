@@ -67,7 +67,7 @@ float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x);
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540 (CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
 void __cdecl core_dlight_cpp_staticInit_FUN_00472680(void);
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr);
+CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint d2,uint d3);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_free_FUN_004728b0(CDemonLight *this_ptr);

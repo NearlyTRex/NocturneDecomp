@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/structs/SChainVertex.h"
 
 // Structure: CChain
 // Ghidra size: 0x578 (1400 bytes)
@@ -14,7 +15,7 @@ typedef struct CChain {
     int target_bone; // 0x168
     char unk2[284]; // 0x16c
     int ground_collide_flag; // 0x288
-    char unk3[720]; // 0x28c
+    SChainVertex unk3[20]; // 0x28c
     float weight; // 0x55c
     float friction; // 0x560
     float gravity; // 0x564

@@ -13,16 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 85,
+    "complexity_score": 25,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 25,
-    "suspect_count": 5,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 51
   },
   "cross_references": [
@@ -55,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0",
-    "signature": "CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr)"
+    "signature": "CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)"
   },
   "function_calls": [
     {
@@ -104,7 +101,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -128,10 +125,10 @@
     "pcode_op_count": 78
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -140,48 +137,22 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "shadow_map_width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "shadow_map_height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000008",
-      "text": "pCVar1->shadow_map_width = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000c",
-      "text": "pCVar1->shadow_map_height = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -5,19 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6507
-Successful: 4170 (64.1%)
-Failed: 2337
+Successful: 4169 (64.1%)
+Failed: 2338
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          11031
-  incompatible_types              1701
-  undeclared_identifier           1412
+  other                          11026
+  incompatible_types              1724
+  undeclared_identifier           1410
   syntax_error                     534
-  missing_member                    33
+  missing_member                    84
 
 ====================================================================================================
-CATEGORY: other (11031 errors)
+CATEGORY: other (11026 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -39,10 +39,10 @@ CATEGORY: other (11031 errors)
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 11001 more errors
+  ... and 10996 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1701 errors)
+CATEGORY: incompatible_types (1724 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -90,10 +90,10 @@ CATEGORY: incompatible_types (1701 errors)
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     Line 33: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
 
-  ... and 1671 more errors
+  ... and 1694 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1412 errors)
+CATEGORY: undeclared_identifier (1410 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -141,7 +141,7 @@ CATEGORY: undeclared_identifier (1412 errors)
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Line 22: 'crt_wsock32_c_htons' was not declared in this scope...
 
-  ... and 1382 more errors
+  ... and 1380 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (534 errors)
@@ -183,7 +183,7 @@ CATEGORY: syntax_error (534 errors)
   ... and 504 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (33 errors)
+CATEGORY: missing_member (84 errors)
 ====================================================================================================
 
   engine_dosio.c_reopenFileStream_FUN_00481b50
@@ -202,17 +202,17 @@ CATEGORY: missing_member (33 errors)
     Line 14: 'IDirectSoundBufferMetadata' {aka 'struct IDirectSoundBufferMetadata'} has no me...
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 38: 'WAVEFORMATEX' {aka 'struct tWAVEFORMATEX'} has no member named '_16_4_'...
-  core_course.cpp_FUN_00443bc0
-    Line 172: 'SRenderVertex' {aka 'struct SRenderVertex'} has no member named '_40_8_'...
+  core_drip.cpp_CDrip_ctor_FUN_0048e000
+    Line 30: 'struct CDrip' has no member named 'part_visibility_flags'...
 
-  ... and 3 more errors
+  ... and 54 more errors
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 3.31
-Average suspects in failed compilations: 14.83
+Average suspects in successfully compiled functions: 3.30
+Average suspects in failed compilations: 14.80
 
-Functions that compile but have suspect patterns: 1805
+Functions that compile but have suspect patterns: 1798
 (These may have runtime issues even though syntax is valid)

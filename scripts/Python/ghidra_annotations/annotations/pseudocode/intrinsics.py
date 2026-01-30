@@ -268,6 +268,9 @@ def get_all_intrinsic_names():
     # Sync intrinsics
     names.update(["LOCK", "UNLOCK"])
 
+    # Offset pointer intrinsics
+    names.add("ADJ")
+
     return names
 
 
@@ -528,6 +531,30 @@ def generate_intrinsics_header():
     lines.append("")
     lines.append("#ifndef UNLOCK")
     lines.append("#define UNLOCK(x) (void)(x)")
+    lines.append("#endif")
+    lines.append("")
+
+    # ADJ - Offset pointer adjustment
+    lines.append("// =============================================================================")
+    lines.append("// ADJ - Offset Pointer Adjustment")
+    lines.append("// =============================================================================")
+    lines.append("// ADJ(ptr) is used by Ghidra to convert an offset pointer back to its base type.")
+    lines.append("// An offset pointer is a pointer that points into the middle of a structure")
+    lines.append("// (e.g., a pointer to a field at offset 0x158 within a larger struct).")
+    lines.append("//")
+    lines.append("// In Ghidra's decompiled output, offset pointer typedefs like CAmmo_ptr_158")
+    lines.append("// represent \"a pointer that is 0x158 bytes into a CAmmo struct\".")
+    lines.append("// ADJ(ptr) adjusts this back to point to the base of the containing struct.")
+    lines.append("//")
+    lines.append("// For compilation purposes, ADJ is defined as an identity macro since:")
+    lines.append("// 1. The actual pointer arithmetic is handled by the typedef semantics")
+    lines.append("// 2. We're primarily interested in code analysis, not execution")
+    lines.append("// 3. A proper implementation would require knowing the offset at compile time")
+    lines.append("//")
+    lines.append("// Usage: ADJ(pCVar2)->field_name  where pCVar2 is an offset pointer type")
+    lines.append("")
+    lines.append("#ifndef ADJ")
+    lines.append("#define ADJ(x) (x)")
     lines.append("#endif")
     lines.append("")
 

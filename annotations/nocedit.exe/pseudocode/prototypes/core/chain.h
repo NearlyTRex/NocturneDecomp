@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 0042fb40
 CChain * __cdecl factoryFunc(void);
 
-// Original: core_chain.cpp_StartOfClass_FUN_0042fb70
+// Original: core_chain.cpp_CChain_getActorType_FUN_0042fb70
 // Address: 0042fb70
-CDemonActorType * __cdecl StartOfClass(void);
+CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_ctor_FUN_0042fb80
 // Address: 0042fb80
@@ -23,41 +23,41 @@ CChain * __cdecl CChain::ctor(CChain *this_ptr);
 // Address: 0042fcc0
 CVector3f * __cdecl FUN_0042fcc0(void);
 
-// Original: core_chain.cpp_FUN_0042fd20
+// Original: core_chain.cpp_CChain_setup_FUN_0042fd20
 // Address: 0042fd20
-void __cdecl FUN_0042fd20(void);
+void __cdecl CChain::setup(CChain *this_ptr);
 
 // Original: core_chain.cpp_FUN_0042fed0
 // Address: 0042fed0
 void __cdecl FUN_0042fed0(void);
 
-// Original: core_chain.cpp_FUN_004300d0
+// Original: core_chain.cpp_CChain_process_FUN_004300d0
 // Address: 004300d0
-void __cdecl FUN_004300d0(void);
+void __cdecl CChain::process(CChain *this_ptr,float delta_time);
 
-// Original: core_chain.cpp_FUN_004308f0
+// Original: core_chain.cpp_CChain_FUN_004308f0
 // Address: 004308f0
-int __cdecl FUN_004308f0(void);
+int __cdecl CChain(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_00430eb0
+// Original: core_chain.cpp_CChain_FUN_00430eb0
 // Address: 00430eb0
-CVector3f * __cdecl FUN_00430eb0(void);
+CBoundingBox3D * __cdecl CChain(CChain *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_chain.cpp_CChain_load_FUN_00430fe0
+// Original: core_chain.cpp_CChain_serialize_FUN_00430fe0
 // Address: 00430fe0
-void __cdecl CChain::load(void);
+void __cdecl CChain::serialize(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_00431110
+// Original: core_chain.cpp_CChain_hasCollision_FUN_00431110
 // Address: 00431110
-int __cdecl FUN_00431110(void);
+int __cdecl CChain::hasCollision(CChain *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_chain.cpp_FUN_00431120
+// Original: core_chain.cpp_CChain_FUN_00431120
 // Address: 00431120
-void __cdecl FUN_00431120(void);
+void __cdecl CChain(CChain *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250
+// Original: core_chain.cpp_CChain_writeDependencies_FUN_00431250
 // Address: 00431250
-void __cdecl CChain::addFilesToExtractList(void);
+void __cdecl CChain::writeDependencies(CChain *this_ptr,_FILE *file_handle);
 
 // Original: core_chain.cpp_FUN_00431330
 // Address: 00431330

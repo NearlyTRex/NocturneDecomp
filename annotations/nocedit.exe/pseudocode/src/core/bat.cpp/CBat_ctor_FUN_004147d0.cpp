@@ -10,14 +10,14 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_004147d0(CBat *this_ptr)
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
+  CBat *pCVar2;
   CCourse *pCVar3;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)&pCVar2[1].location);
+  pCVar2 = (CBat *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)(pCVar2->course_filename + 0x20));
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                           ((CKeyFramedModelInstance *)&pCVar3[1].frame_list);
   *(CDemonActor_vtable **)(this_ptr_00[-1].animation_state + 0x6c) = &g_CBatVTable;

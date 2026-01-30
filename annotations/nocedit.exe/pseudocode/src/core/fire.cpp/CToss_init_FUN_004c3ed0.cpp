@@ -9,9 +9,9 @@
 void __cdecl core_fire_cpp_CToss_init_FUN_004c3ed0(CToss *this_ptr)
 
 {
-  this_ptr->unk[0x3dc] = '\0';
-  this_ptr->unk[0x3dd] = '\0';
-  this_ptr->unk[0x3de] = '\0';
-  this_ptr->unk[0x3df] = '\0';
+  this_ptr->unk2[0x25c] = '\0';
+  this_ptr->unk2[0x25d] = '\0';
+  this_ptr->unk2[0x25e] = '\0';
+  this_ptr->unk2[0x25f] = '\0';
   return;
 }

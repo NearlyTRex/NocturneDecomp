@@ -14,12 +14,10 @@ void __cdecl core_anvil_cpp_CAnvil_FUN_00412090(CAnvil *this_ptr)
   int skip_raw_files;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base,in_stack_00000008);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   _fprintf(in_stack_00000008,"MODELS\\%s\n",pCVar1);
   skip_raw_files = 0;
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
             (pCVar1,in_stack_00000008,skip_raw_files);
   return;

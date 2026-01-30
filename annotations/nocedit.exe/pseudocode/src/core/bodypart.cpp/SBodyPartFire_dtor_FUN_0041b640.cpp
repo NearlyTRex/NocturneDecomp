@@ -11,6 +11,6 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyP
 {
   CDemonActor *pCVar1;
   
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(this_ptr->unk + 0xc),1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&(this_ptr->unk2).base,1);
   return (SBodyPartFire *)&pCVar1[-1].next_actor;
 }

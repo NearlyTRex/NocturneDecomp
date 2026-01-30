@@ -13,8 +13,7 @@ int * __cdecl core_anvil_cpp_CAnvil_FUN_00411fe0(CAnvil *this_ptr)
   CKeyFramedModel *pCVar2;
   float *in_stack_00000008;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;
   *in_stack_00000008 = pCVar1->x;
   in_stack_00000008[1] = pCVar1->y;

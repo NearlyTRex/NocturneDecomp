@@ -10,17 +10,16 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
 
 {
   char cVar1;
-  CEnemy *pCVar2;
-  void *pvVar3;
+  CBugs *pCVar2;
+  void *pvVar2;
   CKeyFramedModelInstance *this_ptr_00;
+  char *pcVar3;
   char *pcVar4;
-  char *pcVar5;
   
-  pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  pvVar3 = __arrinit
-                     (pCVar2[1].base.base.actor_name + 0x10,400,&g_SBugTypeInfo);
+  pCVar2 = (CBugs *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  pvVar2 = __arrinit(pCVar2->unk2,400,&g_SBugTypeInfo);
   this_ptr_00 = __arrinit
-                          ((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
+                          ((void *)((int)pvVar2 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
   this_ptr_00[-0xc3].part_visibility_flags[0] = (int)&g_CBugsVTable;
   this_ptr_00[-0xffffffff00000044].animation_state[8] = '\0';
   this_ptr_00[-0xffffffff00000044].animation_state[9] = '\0';
@@ -45,7 +44,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   this_ptr_00[5].model_name[0x4d] = '\0';
   this_ptr_00[5].model_name[0x4e] = '\0';
   this_ptr_00[5].model_name[0x4f] = '\0';
-  pcVar4 = "true";
+  pcVar3 = "true";
   this_ptr_00[5].model_name[0x50] = '\0';
   this_ptr_00[5].model_name[0x51] = '\0';
   this_ptr_00[5].model_name[0x52] = '\0';
@@ -54,45 +53,45 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   this_ptr_00[5].animation_state[0x25] = '\0';
   this_ptr_00[5].animation_state[0x26] = '\0';
   this_ptr_00[5].animation_state[0x27] = '\0';
-  pcVar5 = this_ptr_00[0x4f].model_name + 0x1c;
+  pcVar4 = this_ptr_00[0x4f].model_name + 0x1c;
   this_ptr_00[0x4f].model_name[0x14] = '\0';
   this_ptr_00[0x4f].model_name[0x15] = '\0';
   this_ptr_00[0x4f].model_name[0x16] = '\0';
   this_ptr_00[0x4f].model_name[0x17] = '\0';
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = "true";
-  pcVar5 = this_ptr_00[0x4f].animation_state + 0x1c;
+  pcVar3 = "true";
+  pcVar4 = this_ptr_00[0x4f].animation_state + 0x1c;
   this_ptr_00[0x4f].model_name[0x18] = '\0';
   this_ptr_00[0x4f].model_name[0x19] = '\0';
   this_ptr_00[0x4f].model_name[0x1a] = '\0';
   this_ptr_00[0x4f].model_name[0x1b] = '\0';
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = "false";
-  pcVar5 = this_ptr_00[0x4f].animation_state + 0x80;
+  pcVar3 = "false";
+  pcVar4 = this_ptr_00[0x4f].animation_state + 0x80;
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   this_ptr_00[-0xa5].part_visibility_flags[0] = 0x401f5c29;
   this_ptr_00[-0xa5].part_visibility_flags[1] = 0x40200000;

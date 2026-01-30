@@ -2,40 +2,28 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 58,
+        "line": 19,
+        "message": "cannot convert 'CDemonActorTransformState*' to 'CDemonActor_ptr_296' {aka 'CDemonActor*'} in assignment"
+      },
+      {
         "category": "other",
-        "column": 29,
-        "line": 20,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "column": 35,
+        "line": 65,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 41,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 42,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 64,
-        "message": "invalid cast from type 'int*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 73,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 24,
         "line": 74,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 75,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -49,55 +37,42 @@
       {
         "category": "other",
         "column": 12,
-        "line": 28,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 42,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 61,
+        "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 73,
+        "line": 74,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 74,
+        "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 522,
+    "complexity_score": 508,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 67,
-    "suspect_count": 44,
+    "pseudocode_lines": 68,
+    "suspect_count": 43,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast",
-      "suspect_float"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -615,311 +590,304 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "this_ptr_00 = ADJ(pCVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->vtable)._ub = &g_CDemonActorVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->next_actor = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
-      "match": "pCVar2[-10].",
-      "text": "pCVar2[-10].dirty_flags = 0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk15 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "pCVar2[-10].",
-      "text": "pCVar2[-10].orientation.z = (float)pCVar2[-10].dirty_flags;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "pCVar2[-10].",
-      "text": "pCVar2[-10].orientation.z = (float)pCVar2[-10].dirty_flags;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "pCVar2[-10].",
-      "text": "pCVar2[-10].orientation.y = pCVar2[-10].orientation.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "pCVar2[-10].",
-      "text": "pCVar2[-10].orientation.y = pCVar2[-10].orientation.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].position.x = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].orientation.x = 0.0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).area_id = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.x;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).heading = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.x;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
-      "match": "pCVar2[-9].",
-      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 26,
-      "match": "pCVar2[-7].",
-      "text": "pfVar4 = &pCVar2[-7].orientation.z;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
-      "match": "pCVar2[-7].",
-      "text": "pCVar2[-7].orientation.y = 1.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pCVar2)->create_event;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)pfVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->create_prob = 1.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)pfVar4 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 37,
-      "match": "pCVar2[-7].",
-      "text": "pCVar2[-7].orientation.x = 0.0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 38,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].position.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->was_created = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].orientation.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk2 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 40,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].orientation.y = pCVar2[-3].orientation.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 40,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].orientation.y = pCVar2[-3].orientation.z;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].orientation.x = pCVar2[-3].orientation.y;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].orientation.x = pCVar2[-3].orientation.y;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].position.y = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 43,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 43,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 44,
-      "match": "pCVar2[-3].",
-      "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 44,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].dirty_flags = 0x10000;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 46,
-      "match": "pCVar2[-1].",
-      "text": "pCVar2[-1].position.x = 9.18355e-41;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->scale).x = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 46,
-      "match": "9.18355e-41",
-      "text": "pCVar2[-1].position.x = 9.18355e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 47,
-      "match": "pCVar2[-1].",
-      "text": "pCVar2[-1].position.y = 9.18355e-41;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->scale).y = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 47,
-      "match": "9.18355e-41",
-      "text": "pCVar2[-1].position.y = 9.18355e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 48,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].position.z = 1.4013e-45;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->scale).z = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 48,
-      "match": "1.4013e-45",
-      "text": "pCVar2[-2].position.z = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 49,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].orientation.x = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk5 = 1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 50,
-      "match": "pCVar2[-1].",
-      "text": "pCVar2[-1].position.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->is_transparent = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 51,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].orientation.y = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk8 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].orientation.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk6 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 53,
-      "match": "pCVar2[-7].",
-      "text": "pCVar2[-7].position.x = 1.4013e-43;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk7 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 53,
-      "match": "1.4013e-43",
-      "text": "pCVar2[-7].position.x = 1.4013e-43;",
-      "type": "suspect_float"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->health = 100;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 56,
-      "match": "pCVar2[-1].",
-      "text": "pfVar4 = &pCVar2[-1].orientation.y;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->unk14 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 57,
-      "match": "pCVar2[-7].",
-      "text": "pCVar2[-7].position.y = (float)&g_ActorMagicNumber;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "piVar4 = &ADJ(pCVar2)->unk10;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)pfVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ADJ",
+      "text": "ADJ(pCVar2)->validation_magic = (int)&g_ActorMagicNumber;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 67,
-      "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)pfVar4 + 2);",
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar4 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)piVar4 + 2);",
       "type": "pointer_cast"
     }
   ],

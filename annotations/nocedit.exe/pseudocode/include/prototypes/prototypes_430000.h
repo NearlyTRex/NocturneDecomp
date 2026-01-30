@@ -3,6 +3,8 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CChain.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
@@ -19,6 +21,7 @@
 #include "types/structs/SChainVertex.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SRenderVertex.h"
@@ -27,13 +30,13 @@
 // FUNCTION PROTOTYPES - Range 0x430000
 // =============================================================================
 
-void __cdecl core_chain_cpp_FUN_004300d0(void);
-int __cdecl core_chain_cpp_FUN_004308f0(void);
-CVector3f * __cdecl core_chain_cpp_FUN_00430eb0(void);
-void __cdecl core_chain_cpp_CChain_load_FUN_00430fe0(void);
-int __cdecl core_chain_cpp_FUN_00431110(void);
-void __cdecl core_chain_cpp_FUN_00431120(void);
-void __cdecl core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250(void);
+void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float delta_time);
+int __cdecl core_chain_cpp_CChain_FUN_004308f0(CChain *this_ptr);
+CBoundingBox3D * __cdecl core_chain_cpp_CChain_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_chain_cpp_CChain_serialize_FUN_00430fe0(CChain *this_ptr);
+int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_chain_cpp_CChain_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_chain_cpp_CChain_writeDependencies_FUN_00431250(CChain *this_ptr,_FILE *file_handle);
 int __cdecl core_chain_cpp_FUN_00431330(void);
 int __cdecl core_chain_cpp_FUN_00431340(void);
 int __cdecl core_chain_cpp_FUN_00431350(void);

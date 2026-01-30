@@ -10,7 +10,9 @@ from ghidra.program.model.data import EnumDataType
 from ghidra.program.model.data import FunctionDefinitionDataType
 from ghidra.program.model.data import ParameterDefinitionImpl
 from ghidra.program.model.data import Pointer
+from ghidra.program.model.data import ComponentOffsetSettingsDefinition
 from ghidra.program.model.data import PointerDataType
+from ghidra.program.model.data import PointerTypedef
 from ghidra.program.model.data import Structure
 from ghidra.program.model.data import StructureDataType
 from ghidra.program.model.data import TypeDef
@@ -652,8 +654,20 @@ def import_data_types(currentProgram, path):
                 failed_typedefs.append(typedef_data)
                 continue
 
-            # Add or update typedef
-            typedef = TypedefDataType(category, typedef_data["name"], base_type)
+            # Check if this is an offset pointer typedef
+            component_offset = typedef_data.get("component_offset")
+            if component_offset is not None:
+                log_info("Creating offset pointer typedef %s with offset %d" % (dt_name, component_offset))
+                typedef = PointerTypedef(
+                    typedef_data["name"],  # name
+                    base_type,             # referenced data type
+                    -1,                    # pointer size (-1 for default)
+                    dtm,                   # data type manager
+                    component_offset       # component offset
+                )
+            else:
+                # Regular typedef
+                typedef = TypedefDataType(category, typedef_data["name"], base_type)
             add_or_update_data_type(currentProgram, typedef)
             log_info("Regular typedef import complete")
         else:
@@ -676,7 +690,19 @@ def import_data_types(currentProgram, path):
                 resolved_name = resolve_data_type_name(currentProgram, base_type)
                 if resolved_name.startswith("undefined") and typedef_data["base"] not in ["undefined", "undefined1"]:
                     continue
-                typedef = TypedefDataType(category, typedef_data["name"], base_type)
+                # Check if this is an offset pointer typedef
+                component_offset = typedef_data.get("component_offset")
+                if component_offset is not None:
+                    log_info("Creating offset pointer typedef %s with offset %d (retry)" % (dt_name, component_offset))
+                    typedef = PointerTypedef(
+                        typedef_data["name"],  # name
+                        base_type,             # referenced data type
+                        -1,                    # pointer size (-1 for default)
+                        dtm,                   # data type manager
+                        component_offset       # component offset
+                    )
+                else:
+                    typedef = TypedefDataType(category, typedef_data["name"], base_type)
                 add_or_update_data_type(currentProgram, typedef)
                 log_info("Typedef retry successful")
                 successfully_imported.append(typedef_data)
@@ -747,7 +773,19 @@ def import_data_types(currentProgram, path):
         category = CategoryPath(typedef_data.get("cat")) if typedef_data.get("cat") else CategoryPath("/")
         base_type = resolve_data_type_obj(currentProgram, typedef_data["base"])
         if base_type:
-            typedef = TypedefDataType(category, typedef_data["name"], base_type)
+            # Check if this is an offset pointer typedef
+            component_offset = typedef_data.get("component_offset")
+            if component_offset is not None:
+                log_info("Creating offset pointer typedef %s with offset %d (dependent)" % (dt_name, component_offset))
+                typedef = PointerTypedef(
+                    typedef_data["name"],  # name
+                    base_type,             # referenced data type
+                    -1,                    # pointer size (-1 for default)
+                    dtm,                   # data type manager
+                    component_offset       # component offset
+                )
+            else:
+                typedef = TypedefDataType(category, typedef_data["name"], base_type)
             add_or_update_data_type(currentProgram, typedef)
             log_info("Dependent typedef import complete")
         else:
@@ -988,6 +1026,17 @@ def export_data_types(currentProgram, path):
                 "base": dt_type_name,
                 "importable": is_importable
             }
+
+            # Check for offset pointer typedef (pointer with component offset)
+            try:
+                settings = dt.getDefaultSettings()
+                if settings and ComponentOffsetSettingsDefinition.DEF.hasValue(settings):
+                    component_offset = ComponentOffsetSettingsDefinition.DEF.getValue(settings)
+                    entry["component_offset"] = int(component_offset)
+                    log_info("Detected offset pointer typedef: %s with offset %d" % (dt_name, component_offset))
+            except Exception as e:
+                # Not an offset pointer or inspection failed
+                pass
 
             # Function pointer typedef
             is_func_ptr_typedef = is_function_pointer_typedef(currentProgram, dt)

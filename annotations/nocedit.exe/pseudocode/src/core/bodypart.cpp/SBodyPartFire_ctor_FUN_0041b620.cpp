@@ -11,6 +11,6 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_0041b620(SBodyP
 {
   CFlame *pCVar1;
   
-  pCVar1 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0((CFlame *)(this_ptr->unk + 0xc));
+  pCVar1 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0(&this_ptr->unk2);
   return (SBodyPartFire *)(pCVar1[-1].unk4 + 8);
 }

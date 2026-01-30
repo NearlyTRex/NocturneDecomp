@@ -12,8 +12,7 @@ void __cdecl core_bat_cpp_CBat_FUN_004148a0(CBat *this_ptr)
   float min_value;
   float fVar1;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->model_name);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_course_cpp_CCourse_load_FUN_00442580
             ((CCourse *)(this_ptr->course_filename + 0x20),this_ptr->course_filename);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);

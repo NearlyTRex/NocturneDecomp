@@ -31,10 +31,9 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
     }
     else {
       core_morph_cpp_FUN_0052b600();
-      core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                ((CKeyFramedModelInstance *)(this_ptr->unk1 + 8));
+      core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
       core_morph_cpp_FUN_0052b640();
-      core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk2);
+      core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk3);
     }
     if (DAT_02f43978 != 0) {
       iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);

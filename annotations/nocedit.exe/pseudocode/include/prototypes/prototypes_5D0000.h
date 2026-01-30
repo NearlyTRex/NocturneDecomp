@@ -160,7 +160,7 @@ void __cdecl shape_superopt_cpp_FUN_005d85f0(void);
 void __cdecl shape_superopt_cpp_FUN_005d8630(void);
 int __cdecl shape_superopt_cpp_FUN_005d8670(void);
 int __cdecl shape_superopt_cpp_FUN_005d86a0(void);
-int __cdecl shape_superopt_cpp_FUN_005d86d0(void);
+double __cdecl shape_superopt_cpp_FUN_005d86d0(double *param_1,double *param_2);
 void __cdecl shape_superopt_cpp_FUN_005d8710(void);
 CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr);
 CP3D * __cdecl shape_superopt_cpp_CP3D_dtor_FUN_005d87d0(CP3D *this_ptr);

@@ -9,12 +9,12 @@
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActor *this_ptr)
 
 {
-  CBoxActor *pCVar1;
+  CLightActor *pCVar1;
   CDemonLight *pCVar2;
   
-  pCVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(&this_ptr->base);
+  pCVar1 = (CLightActor *)core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(&this_ptr->base);
   pCVar2 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
-                     ((CDemonLight *)(pCVar1[1].base.actor_name + 4));
+                     ((CDemonLight *)(pCVar1->unk + 4),0x100,0x100);
   pCVar2[-1].saved_screen_buffer_rows[0x36f] = &g_CLightActorVTable;
   pCVar2->light_enabled_flag = 1;
   pCVar2[1].base.base.position.y = 0;

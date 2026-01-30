@@ -2,16 +2,46 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 15,
-        "line": 32,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 19,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CAmmoBox_ptr_344' {aka 'CAmmoBox*'} in assignment"
       },
       {
         "category": "other",
-        "column": 42,
-        "line": 33,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "column": 20,
+        "line": 20,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CAmmoBox_ptr_344' {aka 'CAmmoBox*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 22,
+        "message": "cannot convert 'CAmmoBox_ptr_344' {aka 'CAmmoBox*'} to 'CKeyFramedModelInstance*'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 40,
+        "message": "'struct CAmmoBox' has no member named 'part_visibility_flags'"
+      },
+      {
+        "category": "missing_member",
+        "column": 34,
+        "line": 41,
+        "message": "'struct CAmmoBox' has no member named 'part_visibility_flags'"
+      },
+      {
+        "category": "missing_member",
+        "column": 34,
+        "line": 42,
+        "message": "'struct CAmmoBox' has no member named 'part_visibility_flags'"
+      },
+      {
+        "category": "missing_member",
+        "column": 34,
+        "line": 43,
+        "message": "'struct CAmmoBox' has no member named 'part_visibility_flags'"
       }
     ],
     "success": false,
@@ -24,43 +54,25 @@
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 12,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 83,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
+    "pseudocode_lines": 35,
+    "suspect_count": 12,
     "suspect_types": [
-      "negative_offset",
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 85
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -196,32 +208,88 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 14,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoBoxVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoBoxVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->weapon_class_name;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->ammo_count = 0x14;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->ammo_type = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk1 = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->item = (char *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->has_collision = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->open_sound[0] = '\\0';",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 34,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 1) = '\\0';",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(CKeyFramedModelInstance *)((int)",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "line": 35,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 2) = '\\0';",
       "type": "pointer_cast"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 35,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CAmmoBox *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 3) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

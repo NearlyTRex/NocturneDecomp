@@ -15,7 +15,7 @@
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c57e
 ;   core_bride.cpp_FUN_00423a30 at 00423ca1
 ;   core_bride.cpp_FUN_00424830 at 004249f1
-;   core_chain.cpp_FUN_004300d0 at 004307e9
+;   core_chain.cpp_CChain_process_FUN_004300d0 at 004307e9
 ;   core_door.cpp_CDoor_FUN_00481210 at 0048121c
 ;   ... and 43 more
 ;

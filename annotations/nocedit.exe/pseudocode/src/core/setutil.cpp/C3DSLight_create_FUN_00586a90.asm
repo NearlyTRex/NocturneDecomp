@@ -157,7 +157,7 @@ section .text
     PUSH ECX                            ; 00586bcb
     PUSH EAX                            ; 00586bcc
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_004726a0 ; 00586bcd
-        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)
+        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     ADD ESP,0xc                         ; 00586bd2
     JMP 0x00586aba                      ; 00586bd5
         ;   XREF to: 00586aba (UNCONDITIONAL_JUMP)  ; LAB_00586aba

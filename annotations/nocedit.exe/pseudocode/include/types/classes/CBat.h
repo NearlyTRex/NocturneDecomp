@@ -3,13 +3,14 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CBat
 // Ghidra size: 0x388 (904 bytes)
 typedef struct CBat {
     CDemonActor base; // 0x0
     char course_filename[48]; // 0x158
-    char model_name[380]; // 0x188
+    CKeyFramedModelInstance model; // 0x188
     float param; // 0x304
     float course_speed; // 0x308
     float speed; // 0x30c

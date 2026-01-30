@@ -1513,10 +1513,6 @@
       "type":"struct"
     },
     {
-      "name":"CToss",
-      "type":"struct"
-    },
-    {
       "name":"CTrail",
       "type":"struct"
     },
@@ -1673,19 +1669,7 @@
       "type":"struct"
     },
     {
-      "name":"CAnvil",
-      "type":"struct"
-    },
-    {
       "name":"CBarrier",
-      "type":"struct"
-    },
-    {
-      "name":"CBat",
-      "type":"struct"
-    },
-    {
-      "name":"CBattery",
       "type":"struct"
     },
     {
@@ -1697,39 +1681,15 @@
       "type":"struct"
     },
     {
-      "name":"CChain",
-      "type":"struct"
-    },
-    {
-      "name":"CCrate",
-      "type":"struct"
-    },
-    {
       "name":"CCryptVessel",
       "type":"struct"
     },
     {
-      "name":"CCurtain",
-      "type":"struct"
+      "name":"CDemonActor_ptr_296",
+      "type":"typedef"
     },
     {
       "name":"CDemonMission",
-      "type":"struct"
-    },
-    {
-      "name":"CDrip",
-      "type":"struct"
-    },
-    {
-      "name":"CEmitter",
-      "type":"struct"
-    },
-    {
-      "name":"CFilmProjector",
-      "type":"struct"
-    },
-    {
-      "name":"CFilmReel",
       "type":"struct"
     },
     {
@@ -3293,11 +3253,11 @@
       "type":"struct"
     },
     {
-      "name":"SBodyPartFire",
-      "type":"struct"
+      "name":"SBitBuffer_ptr_8",
+      "type":"typedef"
     },
     {
-      "name":"SBodyPartModel",
+      "name":"SBodyPartFire",
       "type":"struct"
     },
     {
@@ -3350,6 +3310,10 @@
     },
     {
       "name":"SChainVertex",
+      "type":"struct"
+    },
+    {
+      "name":"CChain",
       "type":"struct"
     },
     {
@@ -3410,6 +3374,10 @@
     },
     {
       "name":"SCurtainVertex",
+      "type":"struct"
+    },
+    {
+      "name":"CCurtain",
       "type":"struct"
     },
     {
@@ -3657,16 +3625,96 @@
       "type":"struct"
     },
     {
+      "name":"CAmmoBox_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CAmmo_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CAnvil",
+      "type":"struct"
+    },
+    {
+      "name":"CAnvil_ptr_344",
+      "type":"typedef"
+    },
+    {
       "name":"CBackgroundActor",
       "type":"struct"
+    },
+    {
+      "name":"CBackgroundActor_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CBat",
+      "type":"struct"
+    },
+    {
+      "name":"CBat_ptr_392",
+      "type":"typedef"
+    },
+    {
+      "name":"CBattery",
+      "type":"struct"
+    },
+    {
+      "name":"CBattery_ptr_344",
+      "type":"typedef"
     },
     {
       "name":"CBoxActor",
       "type":"struct"
     },
     {
+      "name":"CCrate",
+      "type":"struct"
+    },
+    {
+      "name":"CCrate_ptr_344",
+      "type":"typedef"
+    },
+    {
       "name":"CDoor",
       "type":"struct"
+    },
+    {
+      "name":"CDoor_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CDrip",
+      "type":"struct"
+    },
+    {
+      "name":"CDrip_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CEmitter",
+      "type":"struct"
+    },
+    {
+      "name":"CEmitter_ptr_584",
+      "type":"typedef"
+    },
+    {
+      "name":"CFilmProjector",
+      "type":"struct"
+    },
+    {
+      "name":"CFilmProjector_ptr_500",
+      "type":"typedef"
+    },
+    {
+      "name":"CFilmReel",
+      "type":"struct"
+    },
+    {
+      "name":"CFilmReel_ptr_344",
+      "type":"typedef"
     },
     {
       "name":"CFlameCan",
@@ -3721,6 +3769,10 @@
       "type":"struct"
     },
     {
+      "name":"CToss",
+      "type":"struct"
+    },
+    {
       "name":"CTrap",
       "type":"struct"
     },
@@ -3739,6 +3791,10 @@
     {
       "name":"CCrossbow",
       "type":"struct"
+    },
+    {
+      "name":"CCrossbow_ptr_1404",
+      "type":"typedef"
     },
     {
       "name":"CDynamite",
@@ -3786,6 +3842,10 @@
     },
     {
       "name":"CTurret",
+      "type":"struct"
+    },
+    {
+      "name":"SBodyPartModel",
       "type":"struct"
     },
     {
@@ -20610,9 +20670,9 @@
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":100,
@@ -20826,9 +20886,9 @@
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":392,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -20969,16 +21029,16 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":380,
+          "len":4,
           "name":"unk",
-          "offset":348,
-          "type":"char[380]"
+          "offset":724,
+          "type":"int"
         },
         {
           "len":4,
@@ -21041,10 +21101,22 @@
           "type":"CEnemy"
         },
         {
-          "len":388,
+          "len":4,
           "name":"unk1",
           "offset":48820,
-          "type":"char[388]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":48824,
+          "type":"int"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":48828,
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -21060,7 +21132,7 @@
         },
         {
           "len":3216,
-          "name":"unk2",
+          "name":"unk3",
           "offset":49216,
           "type":"char[3216]"
         }
@@ -21842,7 +21914,7 @@
           "len":25600,
           "name":"unk2",
           "offset":48836,
-          "type":"char[25600]"
+          "type":"SBug[400]"
         },
         {
           "len":4,
@@ -22118,7 +22190,7 @@
           "len":720,
           "name":"unk3",
           "offset":652,
-          "type":"char[720]"
+          "type":"SChainVertex[20]"
         },
         {
           "len":4,
@@ -23105,16 +23177,22 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":384,
+          "len":4,
           "name":"unk1",
-          "offset":348,
-          "type":"char[384]"
+          "offset":724,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":728,
+          "type":"int"
         },
         {
           "len":4,
@@ -23124,7 +23202,7 @@
         },
         {
           "len":28,
-          "name":"unk2",
+          "name":"unk3",
           "offset":736,
           "type":"char[28]"
         }
@@ -23165,10 +23243,16 @@
           "type":"CWeapon"
         },
         {
-          "len":680,
-          "name":"unk",
+          "len":4,
+          "name":"unk1",
           "offset":1400,
-          "type":"char[680]"
+          "type":"char[4]"
+        },
+        {
+          "len":676,
+          "name":"unk2",
+          "offset":1404,
+          "type":"CFlame"
         }
       ],
       "importable":true,
@@ -23369,10 +23453,22 @@
           "type":"int"
         },
         {
-          "len":416016,
+          "len":4,
           "name":"unk2",
           "offset":516,
-          "type":"char[416016]"
+          "type":"int"
+        },
+        {
+          "len":116000,
+          "name":"unk3",
+          "offset":520,
+          "type":"SCurtainVertex[1000]"
+        },
+        {
+          "len":300012,
+          "name":"unk4",
+          "offset":116520,
+          "type":"char[300012]"
         },
         {
           "len":4,
@@ -23406,7 +23502,7 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"unk5",
           "offset":416552,
           "type":"char[4]"
         },
@@ -23418,7 +23514,7 @@
         },
         {
           "len":8,
-          "name":"unk4",
+          "name":"unk6",
           "offset":416560,
           "type":"char[8]"
         }
@@ -26306,9 +26402,9 @@
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -26899,16 +26995,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":584,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"unk3",
-          "offset":588,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -28123,10 +28213,16 @@
           "type":"CActorDestination"
         },
         {
-          "len":496,
-          "name":"unk",
+          "len":380,
+          "name":"model",
           "offset":500,
-          "type":"char[496]"
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":116,
+          "name":"unk",
+          "offset":880,
+          "type":"char[116]"
         }
       ],
       "importable":true,
@@ -28147,16 +28243,16 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"modelName",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":380,
+          "len":4,
           "name":"unk1",
-          "offset":348,
-          "type":"char[380]"
+          "offset":724,
+          "type":"int"
         },
         {
           "len":4,
@@ -37433,10 +37529,22 @@
       "desc":"",
       "fields":[
         {
-          "len":996,
-          "name":"unk",
+          "len":4,
+          "name":"unk1",
           "offset":0,
-          "type":"char[996]"
+          "type":"int"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":4,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":612,
+          "name":"unk2",
+          "offset":384,
+          "type":"char[612]"
         }
       ],
       "importable":true,
@@ -43604,10 +43712,16 @@
       "desc":"",
       "fields":[
         {
-          "len":688,
-          "name":"unk",
+          "len":12,
+          "name":"unk1",
           "offset":0,
-          "type":"char[688]"
+          "type":"char[12]"
+        },
+        {
+          "len":676,
+          "name":"unk2",
+          "offset":12,
+          "type":"CFlame"
         }
       ],
       "importable":true,
@@ -43622,10 +43736,22 @@
       "desc":"",
       "fields":[
         {
-          "len":468,
-          "name":"unk",
+          "len":24,
+          "name":"unk1",
           "offset":0,
-          "type":"char[468]"
+          "type":"char[24]"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":24,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":64,
+          "name":"unk2",
+          "offset":404,
+          "type":"char[64]"
         }
       ],
       "importable":true,
@@ -44258,14 +44384,26 @@
       "desc":"",
       "fields":[
         {
-          "len":17,
-          "name":"unk",
+          "len":236,
+          "name":"unk1",
           "offset":0,
-          "type":"char[17]"
+          "type":"char[236]"
+        },
+        {
+          "len":36,
+          "name":"unk2",
+          "offset":236,
+          "type":"CVector3f[3]"
+        },
+        {
+          "len":12,
+          "name":"unk3",
+          "offset":272,
+          "type":"char[12]"
         }
       ],
       "importable":true,
-      "len":17,
+      "len":284,
       "name":"SClothVertex",
       "pack":false,
       "type":"struct"
@@ -52895,6 +53033,118 @@
       "type":"typedef"
     },
     {
+      "base":"CAmmo*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CAmmo_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CAmmoBox*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CAmmoBox_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CAnvil*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CAnvil_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CBackgroundActor*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CBackgroundActor_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CBat*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":392,
+      "importable":true,
+      "name":"CBat_ptr_392",
+      "type":"typedef"
+    },
+    {
+      "base":"CBattery*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CBattery_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CCrate*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CCrate_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CCrossbow*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":1404,
+      "importable":true,
+      "name":"CCrossbow_ptr_1404",
+      "type":"typedef"
+    },
+    {
+      "base":"CDemonActor*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":296,
+      "importable":true,
+      "name":"CDemonActor_ptr_296",
+      "type":"typedef"
+    },
+    {
+      "base":"CDoor*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CDoor_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CDrip*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CDrip_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CEmitter*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":584,
+      "importable":true,
+      "name":"CEmitter_ptr_584",
+      "type":"typedef"
+    },
+    {
+      "base":"CFilmProjector*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":500,
+      "importable":true,
+      "name":"CFilmProjector_ptr_500",
+      "type":"typedef"
+    },
+    {
+      "base":"CFilmReel*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":344,
+      "importable":true,
+      "name":"CFilmReel_ptr_344",
+      "type":"typedef"
+    },
+    {
       "base":"char",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
@@ -53841,6 +54091,14 @@
       "cat":"/Nocturne/Typedef/System/wingdi.h",
       "importable":true,
       "name":"RGBQUAD",
+      "type":"typedef"
+    },
+    {
+      "base":"SBitBuffer*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":8,
+      "importable":true,
+      "name":"SBitBuffer_ptr_8",
       "type":"typedef"
     },
     {

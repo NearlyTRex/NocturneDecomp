@@ -10,34 +10,36 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_pt
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  CKeyFramedModelInstance *this_ptr_00;
+  CAmmoBox *pCVar2;
+  CAmmoBox_ptr_344 this_ptr_00;
+  char *pcVar2;
   char *pcVar3;
-  CKeyFramedModelInstance *pCVar4;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoBoxVTable;
+  pCVar2 = (CAmmoBox *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
+  ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoBoxVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"ammobag.kfm");
-  pcVar3 = "CGun";
-  pCVar4 = this_ptr_00 + 1;
+  pcVar2 = "CGun";
+  pcVar3 = ADJ(this_ptr_00)->weapon_class_name;
   do {
-    cVar1 = *pcVar3;
-    *(char *)pCVar4->part_visibility_flags = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;
-    pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);
   } while (cVar1 != '\0');
-  this_ptr_00[1].part_visibility_flags[0x10] = 0x14;
-  this_ptr_00[1].part_visibility_flags[0x11] = 0;
-  this_ptr_00[1].part_visibility_flags[0x12] = 0;
-  this_ptr_00[1].part_visibility_flags[0x13] = 0;
-  this_ptr_00[1].part_visibility_flags[0x14] = 0;
-  *(byte *)(this_ptr_00[1].part_visibility_flags + 0x15) = 0;
-  this_ptr_00[1].part_visibility_flags[0x1d] = 0;
-  return (CAmmoBox *)(this_ptr_00[-1].part_visibility_flags + 9);
+  ADJ(this_ptr_00)->ammo_count = 0x14;
+  ADJ(this_ptr_00)->ammo_type = 0;
+  ADJ(this_ptr_00)->unk1 = 0.0;
+  ADJ(this_ptr_00)->item = (char *)0x0;
+  ADJ(this_ptr_00)->has_collision = 0;
+  ADJ(this_ptr_00)->open_sound[0] = '\0';
+  *(char *)(this_ptr_00[1].part_visibility_flags + 0x1d) = '\0';
+  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 1) = '\0';
+  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 2) = '\0';
+  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 3) = '\0';
+  return ADJ(this_ptr_00);
 }

@@ -4014,6 +4014,23 @@
     "name":"core_bat.cpp_CBat_ctor_FUN_004147d0",
     "ret":"CBat*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBat*",
+          "use":8
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -11590,10 +11607,9 @@
         "start":"004300d0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_chain.cpp_FUN_004300d0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_004300d0",
+    "name":"core_chain.cpp_CChain_process_FUN_004300d0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -12365,6 +12381,40 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CChain*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
       ]
     }
   },
@@ -12377,10 +12427,9 @@
         "start":"00431250"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_chain.cpp_CChain_addFilesToExtractList(CChain* param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250",
+    "name":"core_chain.cpp_CChain_writeDependencies_FUN_00431250",
     "ret":"void",
     "vars":{
       "locals":[
@@ -12415,6 +12464,40 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CChain*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -13680,6 +13763,23 @@
     "name":"support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0",
     "ret":"CLZWCompress*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLZWCompress*",
+          "use":5
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -14289,6 +14389,38 @@
     "name":"core_crate.cpp_CCrate_ctor_FUN_004484d0",
     "ret":"CCrate*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CCrate*",
+          "use":6
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CCrate_ptr_344",
+          "use":20
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -25917,6 +26049,38 @@
     "name":"core_door.cpp_CDoor_ctor_FUN_0047fad0",
     "ret":"CDoor*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDoor*",
+          "use":8
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDoor_ptr_344",
+          "use":22
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -26841,7 +27005,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dracbrid.cpp_dtor_FUN_00486d50",
+    "name":"core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50",
     "ret":"SFreaky*",
     "vars":{
       "params":[
@@ -76823,7 +76987,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_superopt.cpp_FUN_005d86d0",
-    "ret":"int",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -76843,10 +77007,49 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"param_1",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"double*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"double*"
+        }
+      ],
       "ret_storage":{
-        "reg":"EAX",
-        "size":4,
+        "compound":true,
+        "size":8,
         "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
           {
             "addr":"register:00000000",
             "size":4

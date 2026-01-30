@@ -62,8 +62,8 @@ _SUSPECT_PATTERN_DEFS = [
     # local_XX - Unnamed local variables (need meaningful names)
     (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
-    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, etc.
-    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, ADJ(), etc.
+    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
     # CPUID intrinsics - Ghidra's representation of CPUID instruction
     (r'\bcpuid_\w+\b', 'cpuid_intrinsic', 'CPUID intrinsic (CPU detection)'),
     # builtin_* - Ghidra builtin functions

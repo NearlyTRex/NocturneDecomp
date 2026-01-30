@@ -23,7 +23,8 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
   pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
   this_ptr_00 = (CDemonLight *)0x0;
   if (pCVar2 != (CDemonLight *)0x0) {
-    this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(pCVar2);
+    this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
+                            (pCVar2,(this_ptr->size).x,(this_ptr->size).y);
   }
   if (this_ptr_00 == (CDemonLight *)0x0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";

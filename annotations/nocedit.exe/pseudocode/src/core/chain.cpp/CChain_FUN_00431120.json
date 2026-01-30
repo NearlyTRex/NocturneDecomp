@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 13,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 126
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00431120",
+    "address_range": [
+      [
+        "00431120",
+        "0043124d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_chain.cpp_CChain_FUN_00431120",
+    "signature": "void __cdecl core_chain_cpp_CChain_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
+    },
+    {
+      "addr": "0040e1e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1e0"
+    },
+    {
+      "addr": "0040e290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
+    },
+    {
+      "addr": "0040e2d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e2d0"
+    },
+    {
+      "addr": "0040e330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330"
+    },
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00617871",
+      "name": "s_Vertex_count_00617871",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061787e",
+      "name": "s_Chain_length_0061787e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061788b",
+      "name": "s_CCharacter_0061788b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617896",
+      "name": "s_Actor_to_chain_00617896",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178a5",
+      "name": "s_Bone_to_lock_on_006178a5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178b5",
+      "name": "s_Weight_006178b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178bc",
+      "name": "s_Dampen_006178bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178c3",
+      "name": "s_Friction_006178c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178cc",
+      "name": "s_Gravity_006178cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178d4",
+      "name": "s_Texture_006178d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178dc",
+      "name": "s_Pull_sound_006178dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178e7",
+      "name": "s_Move_sound_006178e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006178f2",
+      "name": "s_Collide_with_ground_006178f2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.789473684210526,
+    "instruction_count": 95,
+    "opcode_distribution": {
+      "CALL": 13,
+      "COPY": 69,
+      "INT_ADD": 30,
+      "INT_AND": 28,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 28,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 14,
+      "INT_SUB": 65,
+      "LOAD": 5,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 65
+    },
+    "pcode_op_count": 360
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CChain",
+        "offset": 212,
+        "vtable_addr": "0065ba04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

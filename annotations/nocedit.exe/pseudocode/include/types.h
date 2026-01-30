@@ -7,6 +7,7 @@
 
 #include "types/structs.h"
 #include "types/unions.h"
+#include "types/typedefs.h"
 #include "types/funcdefs.h"
 #include "types/classes.h"
 

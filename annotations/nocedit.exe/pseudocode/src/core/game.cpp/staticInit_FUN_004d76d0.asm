@@ -27,7 +27,7 @@ section .text
     PUSH 0x100                          ; 004d76d5
     PUSH 0x2d7eaf0                      ; 004d76da | g_CDemonLightInstance
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_004726a0 ; 004d76df
-        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)
+        ;   XREF to: 004726a0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     ADD ESP,0xc                         ; 004d76e4
     PUSH 0x67b5c0                       ; 004d76e7 | g_GameDestructorNode1
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004d76ec

@@ -9,13 +9,12 @@
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  CBoxActor *pCVar1;
   CKeyFramedModelInstance *pCVar2;
   CBox *pCVar3;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar1 + 1));
+  pCVar1 = (CBoxActor *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)(pCVar2[1].model_name + 0x48));
   pCVar3[-1].rotation_matrix.m[0].x = (float)&g_CBoxActorVTable;
   pCVar3[-1].is_valid = 0;

@@ -274,9 +274,9 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
 CCharacter * __cdecl core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fb00(CCharacter *this_ptr,char **actor_name);
 void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void);
 CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void);
-CDemonActorType * __cdecl core_chain_cpp_StartOfClass_FUN_0042fb70(void);
+CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042fb70(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042fb80(CChain *this_ptr);
 CVector3f * __cdecl core_chain_cpp_FUN_0042fcc0(void);
-void __cdecl core_chain_cpp_FUN_0042fd20(void);
+void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr);
 void __cdecl core_chain_cpp_FUN_0042fed0(void);
 
