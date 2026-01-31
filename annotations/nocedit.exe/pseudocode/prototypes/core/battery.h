@@ -11,61 +11,61 @@ void __cdecl staticInit(void);
 // Address: 00417e50
 CBattery * __cdecl factoryFunc(void);
 
-// Original: core_battery.cpp_FUN_00417e80
+// Original: core_battery.cpp_CBattery_getActorType_FUN_00417e80
 // Address: 00417e80
-CDemonActorType * __cdecl FUN_00417e80(void);
+CDemonActorType * __cdecl CBattery::getActorType(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_ctor_FUN_00417e90
 // Address: 00417e90
 CBattery * __cdecl CBattery::ctor(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00417ef0
+// Original: core_battery.cpp_CBattery_setup_FUN_00417ef0
 // Address: 00417ef0
-void __cdecl FUN_00417ef0(void);
+void __cdecl CBattery::setup(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00417f20
+// Original: core_battery.cpp_CBattery_canPickup_FUN_00417f20
 // Address: 00417f20
-int __cdecl FUN_00417f20(void);
+int __cdecl CBattery::canPickup(CBattery *this_ptr,CDemonActor *picker);
 
-// Original: core_battery.cpp_FUN_00417f40
+// Original: core_battery.cpp_CBattery_pickup_FUN_00417f40
 // Address: 00417f40
-void __cdecl FUN_00417f40(void);
+void __cdecl CBattery::pickup(CBattery *this_ptr,CDemonActor *carrier);
 
-// Original: core_battery.cpp_FUN_00417f50
+// Original: core_battery.cpp_CBattery_onDropped_FUN_00417f50
 // Address: 00417f50
-void __cdecl FUN_00417f50(void);
+void __cdecl CBattery::onDropped(CBattery *this_ptr,CVector3f *drop_position);
 
-// Original: core_battery.cpp_FUN_00417f60
+// Original: core_battery.cpp_CBattery_getCarrier_FUN_00417f60
 // Address: 00417f60
-int __cdecl FUN_00417f60(void);
+CDemonActor * __cdecl CBattery::getCarrier(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00417f70
+// Original: core_battery.cpp_CBattery_process_FUN_00417f70
 // Address: 00417f70
-void __cdecl FUN_00417f70(void);
+void __cdecl CBattery::process(CBattery *this_ptr,float delta_time);
 
-// Original: core_battery.cpp_FUN_00417f80
+// Original: core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
 // Address: 00417f80
-int __cdecl FUN_00417f80(void);
+int __cdecl CBattery::renderOpaque(CBattery *this_ptr);
 
-// Original: core_battery.cpp_CBattery_load_FUN_00418000
+// Original: core_battery.cpp_CBattery_serialize_FUN_00418000
 // Address: 00418000
-void __cdecl CBattery::load(void);
+void __cdecl CBattery::serialize(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00418050
+// Original: core_battery.cpp_CBattery_hasCollision_FUN_00418050
 // Address: 00418050
-int __cdecl FUN_00418050(void);
+int __cdecl CBattery::hasCollision(CBattery *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_battery.cpp_FUN_00418060
+// Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00418060
 // Address: 00418060
-float * __cdecl FUN_00418060(void);
+CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_battery.cpp_FUN_004180b0
+// Original: core_battery.cpp_CBattery_getPropertyList_FUN_004180b0
 // Address: 004180b0
-void __cdecl FUN_004180b0(void);
+void __cdecl CBattery::getPropertyList(CBattery *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_battery.cpp_FUN_00418110
+// Original: core_battery.cpp_CBattery_writeDependencies_FUN_00418110
 // Address: 00418110
-void __cdecl FUN_00418110(void);
+void __cdecl CBattery::writeDependencies(CBattery *this_ptr,_FILE *file_handle);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00418160
 // Address: 00418160

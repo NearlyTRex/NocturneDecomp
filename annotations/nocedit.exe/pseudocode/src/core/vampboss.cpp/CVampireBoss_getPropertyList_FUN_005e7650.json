@@ -1,0 +1,173 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 72
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005e7650",
+    "address_range": [
+      [
+        "005e7650",
+        "005e76f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_getPropertyList_FUN_005e7650",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650 (CVampireBoss *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350"
+    },
+    {
+      "addr": "0040e4d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0"
+    },
+    {
+      "addr": "004aa170",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656d4e",
+      "name": "s_Model_state_00656d4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d5a",
+      "name": "s_CWayPoint_00656d5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d64",
+      "name": "s_Waypoint_0_00656d64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d6f",
+      "name": "s_CWayPoint_00656d6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d79",
+      "name": "s_Waypoint_1_00656d79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d84",
+      "name": "s_CWayPoint_00656d84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d8e",
+      "name": "s_Waypoint_2_00656d8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656d99",
+      "name": "s_CWayPoint_00656d99",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656da3",
+      "name": "s_Waypoint_3_00656da3",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7547169811320753,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 41,
+      "INT_ADD": 16,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 37,
+      "LOAD": 5,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 37
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CVampireBoss",
+        "offset": 212,
+        "vtable_addr": "00664e94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

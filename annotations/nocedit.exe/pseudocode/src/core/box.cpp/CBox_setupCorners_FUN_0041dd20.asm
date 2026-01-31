@@ -16,7 +16,7 @@
 ;   core_boxactor.cpp_CBoxActor_FUN_004218d0 at 004219ca
 ;   core_fire.cpp_CStake_spawn_FUN_004bfe90 at 004c009e
 ;   core_fire.cpp_CToss_create_FUN_004c3ee0 at 004c3fab
-;   core_weapon.cpp_FUN_005ee740 at 005ee817
+;   core_weapon.cpp_CWeapon_FUN_005ee740 at 005ee817
 ;
 ; Referenced Globals:
 ;   double g_BoxHalfExtentMultiplier = 0.5

@@ -77,7 +77,7 @@ int __cdecl FUN_0058a1b0(void);
 
 // Original: core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
 // Address: 0058a260
-void __cdecl GetModelPtrOfFile(void);
+void __cdecl GetModelPtrOfFile(CDeformableModelInstance *param_1,_FILE *param_2);
 
 // Original: core_skeledit.cpp_FUN_0058a2b0
 // Address: 0058a2b0

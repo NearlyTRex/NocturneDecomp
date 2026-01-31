@@ -8,15 +8,15 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; XREF[14]:
-;   core_armour.cpp_CArmour_FUN_00412450 at 0041245a
-;   core_batcreat.cpp_CBatCreature_FUN_00416290 at 0041629a
-;   core_batman.cpp_CBatman_FUN_00417cb0 at 00417cc6
-;   core_biggs.cpp_FUN_00418c60 at 00418c6a
-;   core_boneguy.cpp_FUN_0041d970 at 0041d986
+;   core_armour.cpp_CArmour_hasCollision_FUN_00412450 at 0041245a
+;   core_batcreat.cpp_CBatCreature_hasCollision_FUN_00416290 at 0041629a
+;   core_batman.cpp_CBatman_hasCollision_FUN_00417cb0 at 00417cc6
+;   core_biggs.cpp_CBiggs_hasCollision_FUN_00418c60 at 00418c6a
+;   core_boneguy.cpp_CBoneGuy_hasCollision_FUN_0041d970 at 0041d986
 ;   core_dracbrid.cpp_FUN_00485bc0 at 00485bd6
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e5ad0 at 004e5ada
-;   core_hotdemon.cpp_FUN_004f79b0 at 004f79ba
-;   core_imp.cpp_FUN_004fb0f0 at 004fb0fa
+;   core_hotdemon.cpp_CHotDemon_hasCollision_FUN_004f79b0 at 004f79ba
+;   core_imp.cpp_CImp_hasCollision_FUN_004fb0f0 at 004fb0fa
 ;   core_mobster.cpp_FUN_005279d0 at 005279da
 ;   ... and 4 more
 ;

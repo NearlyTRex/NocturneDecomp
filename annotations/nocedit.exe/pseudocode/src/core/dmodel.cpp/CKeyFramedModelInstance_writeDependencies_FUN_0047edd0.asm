@@ -9,15 +9,15 @@
 ;
 ; XREF[21]:
 ;   core_ammo.cpp_CAmmo_writeDependencies_FUN_004113e0 at 004114d3
-;   core_ammobox.cpp_CAmmoBox_FUN_00411c00 at 00411c0f
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412ab0 at 00412abf
-;   core_bat.cpp_CBat_FUN_00414ec0 at 00414edc
+;   core_ammobox.cpp_CAmmoBox_writeDependencies_FUN_00411c00 at 00411c0f
+;   core_backgnd.cpp_CBackgroundActor_writeDependencies_FUN_00412ab0 at 00412abf
+;   core_bat.cpp_CBat_writeDependencies_FUN_00414ec0 at 00414edc
 ;   core_door.cpp_CDoor_writeDependencies_FUN_00481630 at 0048163f
 ;   core_drip.cpp_FUN_0048ea60 at 0048ea82
 ;   core_emitter.cpp_FUN_004a9390 at 004a93a9
 ;   core_frankgen.cpp_FUN_004d2560 at 004d25ba
 ;   core_grave.cpp_FUN_004eeb10 at 004eeb32
-;   core_health.cpp_FUN_004f20b0 at 004f20bf
+;   core_health.cpp_CHealthItem_writeDependencies_FUN_004f20b0 at 004f20bf
 ;   ... and 11 more
 ;
 ; Referenced Globals:

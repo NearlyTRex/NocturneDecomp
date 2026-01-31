@@ -55,9 +55,9 @@ int __cdecl FUN_005a3690(void);
 // Address: 005a37f0
 void __cdecl FUN_005a37f0(void);
 
-// Original: core_smiley.cpp_FUN_005a3810
+// Original: core_smiley.cpp_CSmiley_getPropertyList_FUN_005a3810
 // Address: 005a3810
-void __cdecl FUN_005a3810(void);
+void __cdecl CSmiley::getPropertyList(CSmiley *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_smiley.cpp_FUN_005a3850
 // Address: 005a3850

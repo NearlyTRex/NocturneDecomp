@@ -16,13 +16,13 @@ void __cdecl core_gabriela_cpp_CGabriella_load_FUN_004d6090(void)
   core_hero_cpp_CHero_serialize_FUN_004f2610(in_stack_00000004);
   if ((1 < g_CGabriellaClassVersion) && (g_CGabriellaClassVersion < 4)) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(in_stack_00000004->unk3 + 4),"objectToPickUp");
+              ((CDemonActor *)(in_stack_00000004->unk4 + 4),"objectToPickUp");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)in_stack_00000004->unk3,"doorToOpen");
+              ((CDemonActor *)in_stack_00000004->unk4,"doorToOpen");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(in_stack_00000004->unk3 + 0xc),"leverToPull");
+              ((CDemonActor *)(in_stack_00000004->unk4 + 0xc),"leverToPull");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(in_stack_00000004->unk3 + 0x10),"ladderToClimb");
+              ((CDemonActor *)(in_stack_00000004->unk4 + 0x10),"ladderToClimb");
   }
   if (g_CGabriellaClassVersion != 2) {
     return;

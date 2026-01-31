@@ -13,10 +13,10 @@
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00412fd9
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415518
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041691b
-;   core_biggs.cpp_CBiggs_FUN_00418700 at 0041878c
+;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 0041878c
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c3a1
-;   core_colonel.cpp_FUN_0043fa00 at 0043faa2
-;   core_cow.cpp_FUN_00444310 at 004443b8
+;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043faa2
+;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004443b8
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f1ff
 ;   core_dracbrid.cpp_FUN_00484410 at 0048467e
 ;   ... and 21 more

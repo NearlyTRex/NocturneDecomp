@@ -66,12 +66,12 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041724e
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c961
 ;   core_boneguy.cpp_FUN_0041cc40 at 0041cea8
-;   core_bride.cpp_FUN_00423a30 at 00423d6b
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423d6b
 ;   core_charactr.cpp_CCharacter_FUN_0042c5f0 at 0042c8c3
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cb92
 ;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e32c
 ;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042f2cc
-;   core_cow.cpp_FUN_00444310 at 004447bc
+;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004447bc
 ;   ... and 17 more
 ;
 ; Referenced Globals:

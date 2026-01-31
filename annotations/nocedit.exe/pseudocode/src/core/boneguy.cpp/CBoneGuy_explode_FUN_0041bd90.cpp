@@ -59,7 +59,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
   }
   *(int *)(this_ptr->base).base.carry_hands[0].unk1 = DAT_00822948;
   *(int *)(this_ptr->base).base.carry_hands[1].unk1 = DAT_0082294c;
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->unk1[0x18] = '\0';
   this_ptr->unk1[0x19] = '\0';
   this_ptr->unk1[0x1a] = '\0';

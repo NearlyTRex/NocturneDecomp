@@ -13,25 +13,25 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   CDemonActor_vtable *pCVar1;
   SMotion *pSVar2;
   float fVar3;
-  int in_stack_00000008;
+  SDamageInfo *in_stack_00000008;
   int force_immediate;
   
   if (((this_ptr->base).unk1 & 0x7fffffffU) != 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->unk2 != 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   (this_ptr->base).unk1 = (int)0.5f;
-  fVar3 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);
+  fVar3 = (float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = fVar3;
+  (this_ptr->base).base.hit_points = (int)fVar3;
   if (0.0 < fVar3) {
-    if (0.0 < *(float *)(in_stack_00000008 + 4)) {
-      if (*(int *)((this_ptr->base).unk3 + 0x10) == 0) {
+    if (0.0 < in_stack_00000008->damage_amount) {
+      if (*(int *)((this_ptr->base).unk4 + 0x10) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,8,1);
       }
@@ -43,7 +43,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
     }
   }
   else {
-    (this_ptr->base).base.hit_points = 0.0;
+    (this_ptr->base).base.hit_points = 0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if (pSVar2->state_index != 0xc) {
@@ -65,11 +65,12 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
       }
     }
   }
-  if (*(float *)(in_stack_00000008 + 4) <= 0.0) {
-    core_charactr_cpp_CCharacter_FUN_0042c3c0((CCharacter *)this_ptr);
+  if (in_stack_00000008->damage_amount <= 0.0) {
+    core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0
+              ((CCharacter *)this_ptr,in_stack_00000008);
     return;
   }
   core_game_cpp_CGame_FUN_004e0bd0(g_CGamePtr);
-  core_charactr_cpp_CCharacter_FUN_0042c3c0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);
   return;
 }

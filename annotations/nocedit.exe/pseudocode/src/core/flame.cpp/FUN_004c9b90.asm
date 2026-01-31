@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_bodypart.cpp_FUN_0041ae50 at 0041aebf
+;   core_bodypart.cpp_CBodyPart_FUN_0041ae50 at 0041aebf
 ;
 ; Referenced Globals:
 ;   SMRGLTextureBasic DAT_0067b100

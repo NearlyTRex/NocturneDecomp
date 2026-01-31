@@ -65,8 +65,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
+;   core_enemy.cpp_CEnemy_FUN_004a9880
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_enemy.cpp_FUN_004a9880
 ;   core_gore.cpp_FUN_004ede30
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   ... and 13 more
@@ -411,8 +411,8 @@ section .text
     ADD ESP,0xc                         ; 0048f00f
     PUSH EAX                            ; 0048f012
     PUSH EBX                            ; 0048f013
-    CALL core_enemy.cpp_FUN_004a9880    ; 0048f014
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0048f014
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 0048f019
     PUSH 0x41700000                     ; 0048f01c
     PUSH 0x41200000                     ; 0048f021
@@ -448,8 +448,8 @@ section .text
     ADD ESP,0xc                         ; 0048f077
     PUSH EAX                            ; 0048f07a
     PUSH EBX                            ; 0048f07b
-    CALL core_enemy.cpp_FUN_004a9880    ; 0048f07c
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0048f07c
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 0048f081
     JMP 0x0048ed7c                      ; 0048f084
         ;   XREF to: 0048ed7c (UNCONDITIONAL_JUMP)  ; caseD_7

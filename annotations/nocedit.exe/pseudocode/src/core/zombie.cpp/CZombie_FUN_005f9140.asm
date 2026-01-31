@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -227,8 +227,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbf84]    ; 005f937b
     PUSH EBX                            ; 005f9381
     MOV dword ptr [EBX + 0x24f4],EAX    ; 005f9382
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005f9388
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005f9388
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     MOV ECX,dword ptr [EBX + 0xbf40]    ; 005f938d
     ADD ESP,0x4                         ; 005f9393
     TEST ECX,ECX                        ; 005f9396

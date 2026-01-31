@@ -23,9 +23,9 @@ CDemonActorType * __cdecl CBat::getActorType(CBat *this_ptr);
 // Address: 004147d0
 CBat * __cdecl CBat::ctor(CBat *this_ptr);
 
-// Original: core_bat.cpp_CBat_FUN_004148a0
+// Original: core_bat.cpp_CBat_setup_FUN_004148a0
 // Address: 004148a0
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::setup(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_serialize_FUN_00414910
 // Address: 00414910
@@ -35,33 +35,33 @@ void __cdecl CBat::serialize(CBat *this_ptr);
 // Address: 00414a00
 void __cdecl CBat::process(CBat *this_ptr,float delta_time);
 
-// Original: core_bat.cpp_CBat_FUN_00414bf0
+// Original: core_bat.cpp_CBat_renderOpaque_FUN_00414bf0
 // Address: 00414bf0
-int __cdecl CBat(CBat *this_ptr);
+int __cdecl CBat::renderOpaque(CBat *this_ptr);
 
-// Original: core_bat.cpp_CBat_FUN_00414c60
+// Original: core_bat.cpp_CBat_getBoundingBox_FUN_00414c60
 // Address: 00414c60
-int * __cdecl CBat(CBat *this_ptr);
+CBoundingBox3D * __cdecl CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_bat.cpp_FUN_00414ce0
+// Original: core_bat.cpp_CBat_FUN_00414ce0
 // Address: 00414ce0
-void __cdecl FUN_00414ce0(void);
+void __cdecl CBat(CBat *this_ptr);
 
-// Original: core_bat.cpp_CBat_FUN_00414dc0
+// Original: core_bat.cpp_CBat_getPropertyList_FUN_00414dc0
 // Address: 00414dc0
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::getPropertyList(CBat *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_bat.cpp_CBat_FUN_00414ec0
+// Original: core_bat.cpp_CBat_writeDependencies_FUN_00414ec0
 // Address: 00414ec0
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::writeDependencies(CBat *this_ptr,_FILE *file_handle);
 
-// Original: core_bat.cpp_CBat_FUN_00414f00
+// Original: core_bat.cpp_CBat_processInEditor_FUN_00414f00
 // Address: 00414f00
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::processInEditor(CBat *this_ptr);
 
-// Original: core_bat.cpp_CBat_FUN_00414fb0
+// Original: core_bat.cpp_CBat_showEditorHelp_FUN_00414fb0
 // Address: 00414fb0
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::showEditorHelp(CBat *this_ptr,int *y_pos);
 
 // Original: core_bat.cpp_CBat_dtor_FUN_00414fe0
 // Address: 00414fe0

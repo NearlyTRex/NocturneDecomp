@@ -19,53 +19,53 @@ CDemonActorType * __cdecl CMelee::getActorType(CMelee *this_ptr);
 // Address: 0050e7d0
 CMelee * __cdecl CMelee::ctor(CMelee *this_ptr);
 
-// Original: core_melee.cpp_CMelee_load_FUN_0050e920
+// Original: core_melee.cpp_CMelee_serialize_FUN_0050e920
 // Address: 0050e920
-void __cdecl CMelee::load(void);
+void __cdecl CMelee::serialize(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_fire_FUN_0050ea40
 // Address: 0050ea40
-int __cdecl CMelee::fire(void);
+int __cdecl CMelee::fire(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050ea70
+// Original: core_melee.cpp_CMelee_FUN_0050ea70
 // Address: 0050ea70
-float __cdecl FUN_0050ea70(void);
+float __cdecl CMelee(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050eaa0
+// Original: core_melee.cpp_CMelee_FUN_0050eaa0
 // Address: 0050eaa0
-void __cdecl FUN_0050eaa0(void);
+void __cdecl CMelee(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050eab0
+// Original: core_melee.cpp_CMelee_canPickup_FUN_0050eab0
 // Address: 0050eab0
-int __cdecl FUN_0050eab0(void);
+int __cdecl CMelee::canPickup(CMelee *this_ptr,CDemonActor *picker);
 
-// Original: core_melee.cpp_FUN_0050eae0
+// Original: core_melee.cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0
 // Address: 0050eae0
-int __cdecl FUN_0050eae0(void);
+int __cdecl CMelee::getAllowedMeleeAttackTypes(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050eaf0
+// Original: core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0
 // Address: 0050eaf0
-void __cdecl FUN_0050eaf0(void);
+void __cdecl CMelee::fillAttackDamageInfo(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_melee.cpp_FUN_0050eb50
+// Original: core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50
 // Address: 0050eb50
-void __cdecl FUN_0050eb50(void);
+void __cdecl CMelee::playAttackHitEffects(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
-// Original: core_melee.cpp_FUN_0050ebe0
+// Original: core_melee.cpp_CMelee_FUN_0050ebe0
 // Address: 0050ebe0
-void __cdecl FUN_0050ebe0(void);
+void __cdecl CMelee(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050ec10
+// Original: core_melee.cpp_CMelee_process_FUN_0050ec10
 // Address: 0050ec10
-void __cdecl FUN_0050ec10(void);
+void __cdecl CMelee::process(CMelee *this_ptr,float delta_time);
 
-// Original: core_melee.cpp_FUN_0050ecd0
+// Original: core_melee.cpp_CMelee_setWeaponState_FUN_0050ecd0
 // Address: 0050ecd0
-void __cdecl FUN_0050ecd0(void);
+void __cdecl CMelee::setWeaponState(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_0050ecf0
+// Original: core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0
 // Address: 0050ecf0
-void __cdecl FUN_0050ecf0(void);
+void __cdecl CMelee::getPropertyList(CMelee *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_melee.cpp_CMelee_dtor_FUN_0050edf0
 // Address: 0050edf0

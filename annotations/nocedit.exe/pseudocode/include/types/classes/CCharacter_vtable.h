@@ -36,7 +36,7 @@ typedef struct CCharacter_vtable {
     void* cfunc19; // 0x48
     void* cfunc20; // 0x4c
     void* cfunc21; // 0x50
-    void* cfunc22; // 0x54
+    void* getCarryObjToBodyXForm; // 0x54
     void* cfunc23; // 0x58
     void* cfunc24; // 0x5c
     void* cfunc25; // 0x60

@@ -17,13 +17,13 @@
         "category": "other",
         "column": 46,
         "line": 72,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 49,
         "line": 94,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -387,7 +387,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
-      "text": "piVar5 = &in_stack_00000004[0x152].unk7;",
+      "text": "pfVar5 = &in_stack_00000004[0x152].unk7;",
       "type": "stack_param"
     },
     {
@@ -401,21 +401,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "*piVar5 = (int)ROUND((float)*piVar6 * 256.0f);",
+      "text": "*pfVar5 = (float)(int)ROUND((float)*piVar6 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ROUND",
-      "text": "((CVector3i *)(piVar5 + 1))->x = (int)ROUND((float)piVar6[1] * 256.0f);",
+      "text": "((CVector3i *)(pfVar5 + 1))->x = (int)ROUND((float)piVar6[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ROUND",
-      "text": "piVar5[2] = (int)ROUND((float)piVar6[2] * 256.0f);",
+      "text": "pfVar5[2] = (float)(int)ROUND((float)piVar6[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -436,7 +436,7 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000004",
-      "text": "&in_stack_00000004[0x152].unk7);",
+      "text": "(int *)&in_stack_00000004[0x152].unk7);",
       "type": "stack_param"
     },
     {
@@ -450,7 +450,7 @@
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000004",
-      "text": "primitive_array = (SMRGLHeaderPrimitive *)&in_stack_00000004[0x175].unk2;",
+      "text": "primitive_array = (SMRGLHeaderPrimitive *)&in_stack_00000004[0x175].standing_platform;",
       "type": "stack_param"
     },
     {

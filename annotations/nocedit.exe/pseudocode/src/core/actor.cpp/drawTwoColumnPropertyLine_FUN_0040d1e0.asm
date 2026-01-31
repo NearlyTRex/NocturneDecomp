@@ -10,7 +10,7 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 at 0040d1d0
-;   core_bat.cpp_CBat_FUN_00414fb0 at 00414fd5
+;   core_bat.cpp_CBat_showEditorHelp_FUN_00414fb0 at 00414fd5
 ;   core_frankgen.cpp_FUN_004d2740 at 004d2765
 ;   core_platfrm.cpp_FUN_0054f060 at 0054f073
 ;   core_teleport.cpp_CTeleportDest_FUN_005da970 at 005da995

@@ -48,7 +48,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   do {
     if (pSVar5->carry_actor != (CDemonActor *)0x0) {
       local_1c = pSVar5;
-      (*(((this_ptr->base).vtable._uc)->_uc).cfunc22)();
+      (*(((this_ptr->base).vtable._uc)->_uc).getCarryObjToBodyXForm)();
       pfVar6 = local_1c0;
       pCVar7 = &CStack_220;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {

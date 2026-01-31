@@ -11,7 +11,7 @@ core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920
           (CZombieDog *this_ptr,CActorPropertyList *property_list)
 
 {
-  core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base);
+  core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(property_list);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(property_list);
   return;

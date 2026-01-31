@@ -8,7 +8,7 @@
 ; uint *           Stack[0x8]:4   out_crc
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042dde0 at 0042dded
+;   core_charactr.cpp_CCharacter_calculateChecksum_FUN_0042dde0 at 0042dded
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613904

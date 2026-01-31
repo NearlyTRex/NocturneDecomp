@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x138]:1  local_138
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 004234f4
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 004234f4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Select_light_type_for_CL_006169b3
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_boxactor.cpp_CLightActor_FUN_00422d60
-;   core_boxactor.cpp_CLightActor_FUN_00423110
+;   core_boxactor.cpp_FUN_00423110
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH 0x1                            ; 004233c3
     LEA EAX,[ESP + 0x8]                 ; 004233c5
     PUSH EAX                            ; 004233c9
-    CALL core_boxactor.cpp_CLightActor_FUN_00423110 ; 004233ca
-        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; int core_boxactor.cpp_CLightActor_FUN_00423110(CLightActor * this_ptr)
+    CALL core_boxactor.cpp_FUN_00423110 ; 004233ca
+        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; int core_boxactor.cpp_FUN_00423110()
     ADD ESP,0xc                         ; 004233cf
     TEST EAX,EAX                        ; 004233d2
     JGE 0x004233e2                      ; 004233d4

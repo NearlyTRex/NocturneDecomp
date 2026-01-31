@@ -1,0 +1,138 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414fb0",
+    "address_range": [
+      [
+        "00414fb0",
+        "00414fde"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bat.cpp_CBat_showEditorHelp_FUN_00414fb0",
+    "signature": "void __cdecl core_bat_cpp_CBat_showEditorHelp_FUN_00414fb0(CBat *this_ptr,int *y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d150",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
+    },
+    {
+      "addr": "0040d1e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061542e",
+      "name": "s_Move_bat_along_course_0061542e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615445",
+      "name": "s_anon_00615445",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 7,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 8,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 68
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 220,
+        "vtable_addr": "0065a484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

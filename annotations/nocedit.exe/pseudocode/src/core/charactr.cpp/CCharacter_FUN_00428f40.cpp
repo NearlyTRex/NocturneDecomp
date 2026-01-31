@@ -62,7 +62,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
   bVar16 = 0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base,&local_a8,in_stack_00000008);
-  if ((this_ptr->base).unk2 != 0) {
+  if ((this_ptr->base).standing_platform != (CPlatform *)0x0) {
     (this_ptr->base).location.position.y =
          (this_ptr->base).unk3.y + (this_ptr->base).location.position.y;
     local_a8.x = local_a8.x + (this_ptr->base).unk3.x;
@@ -83,7 +83,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
   DAT_00823c50 = (CDemonActor *)0x0;
   if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&
       (in_stack_00000008->y <= 0.0)) &&
-     (((this_ptr->base).unk2 == 0 &&
+     (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == *(float *)(this_ptr->unk1 + 8))))) {
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
     this_ptr->unk1[0x24] = '\0';

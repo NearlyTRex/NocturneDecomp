@@ -12,6 +12,7 @@
 ;
 ; XREF[39]:
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 00412569
+;   core_armour.cpp_CEnemy_dtor_FUN_004125c0 at 00412629
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_00416320 at 00416389
 ;   core_batman.cpp_CBatman_dtor_FUN_00417d60 at 00417dc9
 ;   core_beast.cpp_CBeast_dtor_FUN_00418490 at 004184f9
@@ -20,7 +21,6 @@
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40 at 0041dab9
 ;   core_bride.cpp_CBride_dtor_FUN_00424b80 at 00424be9
 ;   core_bugs.cpp_CBugs_dtor_FUN_00427bd0 at 00427c49
-;   core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0 at 0042fa59
 ;   ... and 29 more
 ;
 ; Referenced Globals:

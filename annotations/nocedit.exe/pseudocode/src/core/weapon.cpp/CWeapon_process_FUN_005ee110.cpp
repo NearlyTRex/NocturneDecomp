@@ -47,7 +47,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
       (g_CGamePtr->auto_save_blocked != 0)) && (this_ptr->can_attach_light != 0)) {
     (*(((this_ptr->base).vtable._uc)->_uc).cfunc8)();
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
-      core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
       return;
     }
   }

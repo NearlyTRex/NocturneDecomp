@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[8]:
-;   core_bodypart.cpp_FUN_0041b1b0 at 0041b1dd
+;   core_bodypart.cpp_CBodyPart_FUN_0041b1b0 at 0041b1dd
 ;   core_charactr.cpp_CCharacter_FUN_0042b670 at 0042b749
 ;   core_charactr.cpp_CCharacter_FUN_0042b760 at 0042b7f3
 ;   core_charactr.cpp_CCharacter_FUN_0042b810 at 0042b890
 ;   core_gore.cpp_FUN_004edbb0 at 004edbe0
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f5093
-;   core_melee.cpp_FUN_0050ec10 at 0050ecb4
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5093
+;   core_melee.cpp_CMelee_process_FUN_0050ec10 at 0050ecb4
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e6ce
 ;
 ; Referenced Globals:

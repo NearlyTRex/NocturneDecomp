@@ -66,14 +66,14 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float delta_time);
 void __cdecl core_gabriela_cpp_FUN_004d4190(void);
-void __cdecl core_gabriela_cpp_FUN_004d4890(void);
+void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_FUN_004d4c90(void);
 int __cdecl core_gabriela_cpp_FUN_004d4ce0(void);
 float * __cdecl core_gabriela_cpp_FUN_004d4cf0(void);
 void __cdecl core_gabriela_cpp_FUN_004d4d80(void);
 void __cdecl core_gabriela_cpp_FUN_004d5550(void);
 int __cdecl core_gabriela_cpp_PickupSomething_FUN_004d5870(void);
-void __cdecl core_gabriela_cpp_FUN_004d5c10(void);
+void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c10(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_FUN_004d5c60(void);
 int __cdecl core_gabriela_cpp_FUN_004d5f70(void);
 void __cdecl core_gabriela_cpp_FUN_004d5fe0(void);

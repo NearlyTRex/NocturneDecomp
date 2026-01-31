@@ -15,14 +15,14 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[17]:
-;   core_bodypart.cpp_FUN_0041a630 at 0041a87b
+;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a87b
 ;   core_bugs.cpp_FUN_00425fe0 at 004260e0
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cec0
 ;   core_cloth.cpp_OrientBoneCheck_FUN_0043a110 at 0043a20a
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e27f
 ;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 at 004bf92f
-;   core_ladder.cpp_FUN_00502b80 at 00502bcb
-;   core_mimic.cpp_FUN_0051f930 at 0051faca
+;   core_ladder.cpp_CLadder_FUN_00502b80 at 00502bcb
+;   core_mimic.cpp_CMimic_FUN_0051f930 at 0051faca
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 at 0054e268
 ;   core_platfrm.cpp_FUN_0054cc30 at 0054ce41
 ;   ... and 7 more

@@ -35,6 +35,6 @@ void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr)
   core_morph_cpp_FUN_0052b430();
   core_morph_cpp_FUN_0052b430();
   core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->unk2 + 200));
-  core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base);
+  core_hero_cpp_CHero_setup_FUN_004f2540(&this_ptr->base);
   return;
 }

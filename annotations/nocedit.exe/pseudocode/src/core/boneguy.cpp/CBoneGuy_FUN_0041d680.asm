@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0 at 0041d50b
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0 at 0041d50b
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041bfe8
 ;
 ; Referenced Globals:

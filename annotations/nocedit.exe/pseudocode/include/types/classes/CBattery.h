@@ -10,7 +10,7 @@
 typedef struct CBattery {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk; // 0x2d4
+    struct CDemonActor* carrier; // 0x2d4
     float recharge_time; // 0x2d8
     float discharge_time; // 0x2dc
 } CBattery;

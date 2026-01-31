@@ -7,9 +7,9 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[20]:
-;   core_batcreat.cpp_FUN_00416030 at 00416197
-;   core_batman.cpp_FUN_004179a0 at 00417b07
-;   core_bride.cpp_FUN_00424830 at 004249a7
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 00416197
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417b07
+;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004249a7
 ;   core_dracbrid.cpp_FUN_00486070 at 004861c2
 ;   core_dynamite.cpp_CDynamite_process_FUN_0049cfb0 at 0049d10d
 ;   core_emitter.cpp_FUN_004a8070 at 004a8195

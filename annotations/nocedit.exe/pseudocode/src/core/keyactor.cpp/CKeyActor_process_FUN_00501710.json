@@ -1,0 +1,195 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00501710",
+    "address_range": [
+      [
+        "00501710",
+        "005017b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_keyactor.cpp_CKeyActor_process_FUN_00501710",
+    "signature": "void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471360",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360"
+    },
+    {
+      "addr": "00471310",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310"
+    },
+    {
+      "addr": "0056d110",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056d110"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630c3d",
+      "name": "DOUBLE_00630c3d",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00630c45",
+      "name": "DOUBLE_00630c45",
+      "type": "double",
+      "value": "8192"
+    },
+    {
+      "addr": "00630c4d",
+      "name": "DOUBLE_00630c4d",
+      "type": "double",
+      "value": "16384"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.84,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "CALL": 4,
+      "CALLOTHER": 1,
+      "COPY": 92,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 19,
+      "INT_AND": 92,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 26,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 17,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 442
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyActor *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin((float10)*(float *)this_ptr[1].base.actor_name);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "fVar1 = (float)(int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CKeyActor",
+        "offset": 4,
+        "vtable_addr": "006604b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

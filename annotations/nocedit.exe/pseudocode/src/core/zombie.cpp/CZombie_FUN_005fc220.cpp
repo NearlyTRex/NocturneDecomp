@@ -16,6 +16,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(void)
   CDemonActor_vtable *pCVar2;
   int iVar3;
   CDemonActor_union_vtable CVar4;
+  CBodyPart *this_ptr;
   CCharacter *in_stack_00000004;
   CDemonActor_union_vtable *in_stack_00000008;
   CDemonActor_union_vtable local_14;
@@ -76,7 +77,7 @@ switchD_005fc256_default:
     }
     iVar3 = core_actor_cpp_randomChance_FUN_0040cd10((float)local_14);
     if (iVar3 != 0) {
-      core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+      this_ptr = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       if (in_stack_00000008->_ub == in_stack_00000004[1].base.vtable._ub) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
@@ -94,7 +95,7 @@ switchD_005fc256_default:
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
       }
       core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-      core_bodypart_cpp_FUN_0041a050();
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
       if ((in_stack_00000004->model).part_visibility_flags
           [(int)in_stack_00000004[1].model.motion_controller.tween_progress] == 0) {
         in_stack_00000008[1]._ub = (CDemonActor_vtable *)0x461c3c00;

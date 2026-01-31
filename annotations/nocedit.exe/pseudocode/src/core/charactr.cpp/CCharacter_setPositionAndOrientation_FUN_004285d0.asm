@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005bfb10 at 005bfb47
+;   core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_005bfb10 at 005bfb47
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065b834 = 9999

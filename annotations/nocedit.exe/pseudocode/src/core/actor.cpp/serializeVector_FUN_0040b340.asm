@@ -14,7 +14,7 @@
 ; XREF[24]:
 ;   core_barrier.cpp_CBarrier_serialize_FUN_00414340 at 0041435a
 ;   core_batman.cpp_CBatman_serialize_FUN_00417580 at 00417630
-;   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 at 0041d407
+;   core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270 at 0041d407
 ;   core_boxactor.cpp_CBoxActor_serialize_FUN_00422060 at 004220c0
 ;   core_boxactor.cpp_CLightActor_serialize_FUN_00422c80 at 00422cbc
 ;   core_conveyor.cpp_FUN_00442020 at 0044204e

@@ -164,7 +164,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           [*(int *)(this_ptr->unk3 + 0xc)].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_140,pCVar9);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       local_2a8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
       local_2a8.wielder = (CDemonActor *)this_ptr;
@@ -176,7 +176,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           [*(int *)(this_ptr->unk3 + 8)].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_188,pCVar9);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       local_2a8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
       local_2a8.wielder = (CDemonActor *)this_ptr;
@@ -188,7 +188,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           [*(int *)(this_ptr->unk3 + 4)].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_a4,pCVar9);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
     }
     if (local_18 < 4) {
       if (local_18 == 0) goto LAB_005f0481;
@@ -204,7 +204,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                                 [*(int *)(this_ptr->unk3 + 4)].m);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&local_14c,pCVar9);
-            core_enemy_cpp_FUN_004a9880();
+            core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
           }
           iVar7 = *(int *)((this_ptr->base).unk2 + 4);
           if ((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(), iVar7 != 0)
@@ -217,7 +217,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
         goto LAB_005f04ff;
       }
 LAB_005f094d:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       iVar7 = *(int *)((this_ptr->base).unk2 + 4);
       if (iVar7 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -444,7 +444,7 @@ LAB_005f092a:
                             [*(int *)(this_ptr->unk3 + 8)].m);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_164,pCVar9);
-        core_enemy_cpp_FUN_004a9880();
+        core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
         iVar7 = *(int *)((this_ptr->base).unk2 + 4);
         if ((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(), iVar7 != 0))
         {
@@ -457,7 +457,7 @@ LAB_005f092a:
         if (local_18 < 8) goto LAB_005f0010;
         if (8 < local_18) {
           if (((local_18 == 0xd) && ((this_ptr->base).pool_me == 0)) &&
-             ((this_ptr->base).base.base.unk2 == 0)) {
+             ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
             pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                                (pCVar1,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -480,7 +480,7 @@ LAB_005f092a:
                               [*(int *)(this_ptr->unk3 + 0xc)].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_8c,pCVar9);
-          core_enemy_cpp_FUN_004a9880();
+          core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
           pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_68,&g_ZeroVector,
                               (CMatrix3x4f *)
@@ -488,7 +488,7 @@ LAB_005f092a:
                               [*(int *)(this_ptr->unk3 + 8)].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_5c,pCVar9);
-          core_enemy_cpp_FUN_004a9880();
+          core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
           pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_1a0,&g_ZeroVector,
                               (CMatrix3x4f *)
@@ -496,7 +496,7 @@ LAB_005f092a:
                               [*(int *)(this_ptr->unk3 + 4)].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_c8,pCVar9);
-          core_enemy_cpp_FUN_004a9880();
+          core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
         }
         iVar7 = *(int *)((this_ptr->base).unk2 + 4);
         if ((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(), iVar7 != 0))
@@ -518,7 +518,7 @@ LAB_005f04ff:
                               [*(int *)(this_ptr->unk3 + 0xc)].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_50,pCVar9);
-          core_enemy_cpp_FUN_004a9880();
+          core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
         }
         iVar7 = *(int *)((this_ptr->base).unk2 + 4);
         if ((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(), iVar7 != 0))
@@ -538,7 +538,7 @@ LAB_005f04ff:
 LAB_005f0481:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
       if (extraout_EAX == 0) {
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         iVar7 = *(int *)((this_ptr->base).unk2 + 4);
         if (iVar7 == 0) goto LAB_005f0010;
         if (*(int *)(this_ptr->unk4 + 0x10) != 0) {
@@ -648,7 +648,7 @@ LAB_005f0010:
                       (&(this_ptr->base).base.model.motion_controller);
   iVar7 = pSVar10->state_index;
   if (((((iVar7 != 0xd) && (iVar7 != 0)) && (iVar7 != 0xe)) && (iVar7 != 0x14)) ||
-     ((this_ptr->base).base.base.unk2 != 0)) {
+     ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
     iVar7 = *(int *)((this_ptr->base).unk2 + 4);
     if ((iVar7 != 0) &&
        (pCVar11 = (CWerewolf *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(), pCVar11 == this_ptr

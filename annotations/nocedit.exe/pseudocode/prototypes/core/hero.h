@@ -27,25 +27,25 @@ CHero * __cdecl CHero::ctor(CHero *this_ptr);
 // Address: 004f2470
 void __cdecl CHero::dtor(CHero *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 
-// Original: core_hero.cpp_CHero_FUN_004f2540
+// Original: core_hero.cpp_CHero_setup_FUN_004f2540
 // Address: 004f2540
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::setup(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580
 // Address: 004f2580
-int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *collision_info,CDemonActor *other_actor);
+int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 
-// Original: core_hero.cpp_CHero_FUN_004f25c0
+// Original: core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0
 // Address: 004f25c0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
 
 // Original: core_hero.cpp_CHero_serialize_FUN_004f2610
 // Address: 004f2610
 void __cdecl CHero::serialize(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2870
+// Original: core_hero.cpp_CHero_getPathMap_FUN_004f2870
 // Address: 004f2870
-int __cdecl CHero(CHero *this_ptr);
+CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f2880
 // Address: 004f2880
@@ -71,77 +71,77 @@ void __cdecl CHero(CHero *this_ptr);
 // Address: 004f2a30
 void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2af0
+// Original: core_hero.cpp_CHero_FUN_004f2af0
 // Address: 004f2af0
-int __cdecl FUN_004f2af0(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2c40
+// Original: core_hero.cpp_CHero_FUN_004f2c40
 // Address: 004f2c40
-int __cdecl FUN_004f2c40(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2d70
+// Original: core_hero.cpp_CHero_FUN_004f2d70
 // Address: 004f2d70
-int __cdecl FUN_004f2d70(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2ed0
+// Original: core_hero.cpp_CHero_FUN_004f2ed0
 // Address: 004f2ed0
-int __cdecl FUN_004f2ed0(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f2f50
+// Original: core_hero.cpp_CHero_FUN_004f2f50
 // Address: 004f2f50
-int __cdecl FUN_004f2f50(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f30f0
+// Original: core_hero.cpp_CHero_FUN_004f30f0
 // Address: 004f30f0
-int __cdecl FUN_004f30f0(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3120
+// Original: core_hero.cpp_CHero_FUN_004f3120
 // Address: 004f3120
-int __cdecl FUN_004f3120(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3350
+// Original: core_hero.cpp_CHero_FUN_004f3350
 // Address: 004f3350
-void __cdecl FUN_004f3350(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f33b0
+// Original: core_hero.cpp_CHero_FUN_004f33b0
 // Address: 004f33b0
-int __cdecl FUN_004f33b0(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3580
+// Original: core_hero.cpp_CHero_FUN_004f3580
 // Address: 004f3580
-void __cdecl FUN_004f3580(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f35b0
+// Original: core_hero.cpp_CHero_FUN_004f35b0
 // Address: 004f35b0
-int __cdecl FUN_004f35b0(void);
+int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_CallInventorySelectHealth_FUN_004f3760
+// Original: core_hero.cpp_CHero_FUN_004f3760
 // Address: 004f3760
-int __cdecl CallInventorySelectHealth(void);
+int __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_isActiveTarget_FUN_004f37d0
 // Address: 004f37d0
 int __cdecl CHero::isActiveTarget(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3890
+// Original: core_hero.cpp_CHero_FUN_004f3890
 // Address: 004f3890
-void __cdecl FUN_004f3890(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f38d0
+// Original: core_hero.cpp_CHero_FUN_004f38d0
 // Address: 004f38d0
-void __cdecl FUN_004f38d0(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3910
+// Original: core_hero.cpp_CHero_FUN_004f3910
 // Address: 004f3910
-void __cdecl FUN_004f3910(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3930
+// Original: core_hero.cpp_CHero_FUN_004f3930
 // Address: 004f3930
-void __cdecl FUN_004f3930(void);
+void __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3960
+// Original: core_hero.cpp_CHero_FUN_004f3960
 // Address: 004f3960
-float __cdecl FUN_004f3960(void);
+float __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f3af0
 // Address: 004f3af0
@@ -167,30 +167,30 @@ CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 // Address: 004f3c30
 CHeroPlaceholder * __cdecl CHeroPlaceholder::dtor(CHeroPlaceholder *this_ptr,uint d1,uint d2);
 
-// Original: core_hero.cpp_CHeroPlaceholder_FUN_004f3c90
+// Original: core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90
 // Address: 004f3c90
-int __cdecl CHeroPlaceholder(CHeroPlaceholder *this_ptr);
+int __cdecl CHeroPlaceholder::renderTransparent(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_CHeroPlaceholder_FUN_004f3d20
+// Original: core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20
 // Address: 004f3d20
-void __cdecl CHeroPlaceholder(CHeroPlaceholder *this_ptr);
+CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
 // Address: 004f3d80
-CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr);
+CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,int param_2);
 
 // Original: core_hero.cpp_CHeroPlaceholder_serialize_FUN_004f3ef0
 // Address: 004f3ef0
 void __cdecl CHeroPlaceholder::serialize(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3f20
+// Original: core_hero.cpp_CHero_getPropertyList_FUN_004f3f20
 // Address: 004f3f20
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::getPropertyList(CHero *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hero.cpp_CHeroPlaceholder_FUN_004f3f60
+// Original: core_hero.cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60
 // Address: 004f3f60
-void __cdecl CHeroPlaceholder(CHeroPlaceholder *this_ptr);
+void __cdecl CHeroPlaceholder::getPropertyList(CHeroPlaceholder *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hero.cpp_CHero_FUN_004f3fa0
+// Original: core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0
 // Address: 004f3fa0
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::writeDependencies(CHero *this_ptr,_FILE *file_handle);

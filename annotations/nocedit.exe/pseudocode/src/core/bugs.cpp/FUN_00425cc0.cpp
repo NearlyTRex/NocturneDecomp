@@ -43,7 +43,7 @@ void __cdecl core_bugs_cpp_FUN_00425cc0(void)
   float fStack_18;
   float *pfStack_14;
   
-  (*(((in_stack_00000004->base).vtable._ue)->_ue).field_4)();
+  (*(((in_stack_00000004->base).vtable._ue)->_ue).enemyfunc2)();
   if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z != 0.0) &&
      (iVar2 = *(int *)(in_stack_00000004[1].base.actor_name + 0x18), iVar2 != 0)) {
     fStack_74 = (in_stack_00000004->base).location.position.x - *(float *)(iVar2 + 0x20);

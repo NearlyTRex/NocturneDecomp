@@ -45,11 +45,11 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
     bVar1 = true;
   }
   if ((this_ptr->action_pending == 7) || (bVar1)) {
-    core_stranger_cpp_CStranger_FUN_005bb960();
-    core_stranger_cpp_CStranger_FUN_005bb960();
-    core_stranger_cpp_CStranger_FUN_005bb960();
+    core_stranger_cpp_CStranger_FUN_005bb960(this_ptr);
+    core_stranger_cpp_CStranger_FUN_005bb960(this_ptr);
+    core_stranger_cpp_CStranger_FUN_005bb960(this_ptr);
   }
-  core_stranger_cpp_CStranger_FUN_005bb960();
+  core_stranger_cpp_CStranger_FUN_005bb960(this_ptr);
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,delta_time_00);
   return;
 }

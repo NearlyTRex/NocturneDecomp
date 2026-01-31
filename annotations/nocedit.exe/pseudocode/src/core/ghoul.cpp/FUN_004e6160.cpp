@@ -75,7 +75,7 @@ void __cdecl core_ghoul_cpp_FUN_004e6160(void)
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_01,"head01",1);
   in_stack_00000004[1].base.base.orient_matrix.m[2].x = fVar2;
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   in_stack_00000004[1].base.base.health = 0;
   in_stack_00000004[1].base.base.validation_magic = 0;
   in_stack_00000004[1].base.base.unk1 = 0;

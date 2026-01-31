@@ -14,7 +14,7 @@ void __cdecl core_tbplayer_cpp_CDrummer_FUN_005da2f0(CDrummer *this_ptr)
   CSkeleton *this_ptr_00;
   int iVar3;
   
-  core_npc_cpp_CNPC_FUN_00544870(&this_ptr->base);
+  core_npc_cpp_CNPC_setup_FUN_00544870(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                           (&(this_ptr->base).base.model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 L Hand");

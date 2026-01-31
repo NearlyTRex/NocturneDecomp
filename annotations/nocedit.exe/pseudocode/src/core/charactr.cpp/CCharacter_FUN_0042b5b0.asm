@@ -7,10 +7,10 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_batcreat.cpp_FUN_00416030 at 004160ac
-;   core_batman.cpp_FUN_004179a0 at 00417a1c
-;   core_bride.cpp_FUN_00424830 at 00424899
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c453
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004160ac
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a1c
+;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 00424899
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c453
 ;   core_dracbrid.cpp_FUN_00486070 at 004860d4
 ;   core_emitter.cpp_FUN_004a8070 at 004a8526
 ;   core_fire.cpp_CGunFlame_FUN_004c4c00 at 004c4d2e

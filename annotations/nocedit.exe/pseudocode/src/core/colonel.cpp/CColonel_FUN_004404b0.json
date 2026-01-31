@@ -8,51 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 110,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "pseudocode_lines": 47,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 167
+    "total_lines": 169
   },
   "cross_references": [],
   "function": {
@@ -71,7 +41,7 @@
     {
       "addr": "0042c3c0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
     },
     {
       "addr": "004ee030",
@@ -191,42 +161,63 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "SDamageInfo *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
-      "text": "fVar1 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar1 = (float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 36,
       "match": "in_stack_00000008",
-      "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000008",
+      "text": "else if (0.0 < in_stack_00000008->damage_amount) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000008",
+      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

@@ -16,7 +16,7 @@ void __cdecl core_smiley_cpp_FUN_005a24d0(void)
   float fVar2;
   CEnemy *in_stack_00000004;
   
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   this_ptr = &(in_stack_00000004->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);

@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f77b
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f77b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nothing_006176bb

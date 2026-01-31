@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042f8a0
+;   core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d75e5
     PUSH EDX                            ; 004d75e9
     PUSH EBX                            ; 004d75ea
-    CALL core_charactr.cpp_CCharacter_FUN_0042f8a0 ; 004d75eb
-        ;   XREF to: 0042f8a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042f8a0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0 ; 004d75eb
+        ;   XREF to: 0042f8a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0(CCharacter * this_ptr, CDemonActor * deleted_actor)
     ADD ESP,0x8                         ; 004d75f0
     MOV ECX,dword ptr [EBX + 0x1fbf8]   ; 004d75f3
     CMP ECX,dword ptr [ESP + 0xc]       ; 004d75f9

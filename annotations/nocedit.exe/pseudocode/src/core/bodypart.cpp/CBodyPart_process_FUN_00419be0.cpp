@@ -38,11 +38,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
   }
   else {
     if ((*(int *)this_ptr->unk != 0) && (*(int *)(this_ptr->unk + 0xdc8) == 0)) {
-      core_bodypart_cpp_FUN_00419e10();
+      core_bodypart_cpp_CBodyPart_FUN_00419e10(this_ptr);
       return;
     }
     if ((*(int *)(this_ptr->unk + 0xdd0) != 0) || (*(int *)(this_ptr->unk + 0xdc8) != 0)) {
-      core_bodypart_cpp_FUN_0041b1b0();
+      core_bodypart_cpp_CBodyPart_FUN_0041b1b0(this_ptr);
     }
     if (*(int *)(this_ptr->unk + 0xdd0) == 0) {
       fVar4 = *(float *)(this_ptr->unk + 0xb64) - delta_time;
@@ -77,7 +77,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
                     (g_CDemonSetPtr,(SDamageInfo *)&local_18,&(this_ptr->base).location.position,
                      &local_54);
-          core_bodypart_cpp_FUN_00419e10();
+          core_bodypart_cpp_CBodyPart_FUN_00419e10(this_ptr);
           return;
         }
       }
@@ -92,7 +92,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
         this_ptr->unk[0xb67] = '\0';
       }
     }
-    core_bodypart_cpp_FUN_00419e10();
+    core_bodypart_cpp_CBodyPart_FUN_00419e10(this_ptr);
   }
   return;
 }

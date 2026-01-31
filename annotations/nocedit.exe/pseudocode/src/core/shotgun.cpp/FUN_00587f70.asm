@@ -24,7 +24,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
-;   core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090
+;   core_set.cpp_CDemonSet_FUN_0056d090
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
     XOR EBP,EBP                         ; 00588042
     PUSH EAX                            ; 00588044 | g_CDemonSetInstance
     MOV dword ptr [0x02d807c0],EBP      ; 00588045 | g_CDemonLightInstance.antialiasing_enabled
-    CALL core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090 ; 0058804b
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 0058804b
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 00588050
     POP ESI                             ; 00588053
     POP EDI                             ; 00588054

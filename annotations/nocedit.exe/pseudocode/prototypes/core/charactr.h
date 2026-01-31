@@ -15,9 +15,9 @@ SDamageInfo * __cdecl SDamageInfo::ctor(SDamageInfo *this_ptr);
 // Address: 00427e20
 CCharacter * __cdecl CCharacter::ctor(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_00428140
+// Original: core_charactr.cpp_CCharacter_setup_FUN_00428140
 // Address: 00428140
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::setup(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_serialize_FUN_004283a0
 // Address: 004283a0
@@ -195,9 +195,9 @@ int __cdecl CCharacter::checkCylinderCollisionWorld(CCharacter *this_ptr,CVector
 // Address: 0042c180
 int __cdecl CCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042c3c0
+// Original: core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 // Address: 0042c3c0
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042c580
 // Address: 0042c580
@@ -299,9 +299,9 @@ void __cdecl CCharacter::applyLookAt(CCharacter *this_ptr);
 // Address: 0042ddd0
 void __cdecl CCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042dde0
+// Original: core_charactr.cpp_CCharacter_calculateChecksum_FUN_0042dde0
 // Address: 0042dde0
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::calculateChecksum(CCharacter *this_ptr,uint *out_crc);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042de50
 // Address: 0042de50
@@ -327,9 +327,9 @@ int __cdecl CCharacter(CCharacter *this_ptr);
 // Address: 0042e370
 int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042e570
+// Original: core_charactr.cpp_CCharacter_FUN_0042e570
 // Address: 0042e570
-void __cdecl FUN_0042e570(CCharacter *this_ptr);
+void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
 // Address: 0042e5d0
@@ -341,7 +341,7 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042e840
 // Address: 0042e840
-float __cdecl CCharacter(void);
+float __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
 // Address: 0042e8c0
@@ -371,17 +371,17 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 // Address: 0042f3e0
 int __cdecl CCharacter(void);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042f730
+// Original: core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730
 // Address: 0042f730
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::getPropertyList(CCharacter *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800
+// Original: core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800
 // Address: 0042f800
-void __cdecl CCharacter::computePickupInLoop(CCharacter *this_ptr);
+void __cdecl CCharacter::processInEditor(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042f8a0
+// Original: core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0
 // Address: 0042f8a0
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::onActorDeleted(CCharacter *this_ptr,CDemonActor *deleted_actor);
 
 // Original: core_charactr.cpp_FUN_0042f8f0
 // Address: 0042f8f0
@@ -427,14 +427,14 @@ SPose * __cdecl SPose::ctor(SPose *this_ptr);
 // Address: 0042fad0
 SPose * __cdecl SPose::dtor(SPose *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
+// Original: core_charactr.cpp_FUN_0042fae0
 // Address: 0042fae0
-CCharacter * __cdecl CCharacter::setActorNameMaybe(CCharacter *this_ptr,char **actor_name);
+void * __cdecl FUN_0042fae0(void);
 
-// Original: core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
+// Original: core_charactr.cpp_FUN_0042faf0
 // Address: 0042faf0
-CCharacter * __cdecl CCharacter::setActorNameMaybe(CCharacter *this_ptr,char **actor_name);
+void * __cdecl FUN_0042faf0(void);
 
-// Original: core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
+// Original: core_charactr.cpp_FUN_0042fb00
 // Address: 0042fb00
-CCharacter * __cdecl CCharacter::setActorNameMaybe(CCharacter *this_ptr,char **actor_name);
+void * __cdecl FUN_0042fb00(void);

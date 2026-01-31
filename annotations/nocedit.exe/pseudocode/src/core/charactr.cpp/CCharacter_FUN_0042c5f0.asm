@@ -21,7 +21,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cd08
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f569a
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f569a
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e6b02
 ;
 ; Referenced Globals:

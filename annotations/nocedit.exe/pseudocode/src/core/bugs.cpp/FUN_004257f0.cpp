@@ -15,9 +15,9 @@ void __cdecl core_bugs_cpp_FUN_004257f0(void)
   int iVar2;
   int extraout_EBX;
   int iVar3;
-  uint *puVar4;
+  int *piVar4;
   float fVar5;
-  uint *puVar6;
+  int *piVar6;
   float fVar7;
   byte bVar8;
   double dVar9;
@@ -69,17 +69,17 @@ void __cdecl core_bugs_cpp_FUN_004257f0(void)
     local_2c = *(int *)((int)local_c + 0x199e8) - local_20;
     local_34 = local_28 + 0xb;
     local_30 = local_2c + 0xb;
-    puVar4 = (uint *)((int)local_c + 0x128b8);
-    puVar6 = &DAT_00822d08;
+    piVar4 = (int *)((int)local_c + 0x128b8);
+    piVar6 = &INT_00822d08;
     for (iVar2 = 0x90; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar8 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+      *piVar6 = *piVar4;
+      piVar4 = piVar4 + (uint)bVar8 * -2 + 1;
+      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar6 = *(byte *)puVar4;
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar8 * -2 + 1);
-      puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
+      *(char *)piVar6 = (char)*piVar4;
+      piVar4 = (int *)((int)piVar4 + (uint)bVar8 * -2 + 1);
+      piVar6 = (int *)((int)piVar6 + (uint)bVar8 * -2 + 1);
     }
     local_5c.y = *(float *)((int)local_c + 0x24);
     uVar10 = CONCAT44(local_5c.y,
@@ -107,7 +107,7 @@ void __cdecl core_bugs_cpp_FUN_004257f0(void)
           *(float *)((int)fVar7 + 0x128b8) = fVar1 - *(float *)((int)local_c + 0x24);
         }
         else {
-          *(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);
+          *(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar3);
         }
         fVar5 = (float)((int)fVar5 + 4);
         iVar3 = iVar3 + 4;

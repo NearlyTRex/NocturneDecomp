@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c55d
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c55d
 ;   core_ghoul.cpp_FUN_004e87e0 at 004e8a3a
 ;
 ; Referenced Globals:

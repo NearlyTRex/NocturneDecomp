@@ -12,7 +12,7 @@
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e76b
 ;   core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0 at 0058e551
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 at 005a061e
-;   core_stranger.cpp_CStranger_FUN_005bb4b0 at 005bb6ea
+;   core_stranger.cpp_CStranger_setup_FUN_005bb4b0 at 005bb6ea
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40

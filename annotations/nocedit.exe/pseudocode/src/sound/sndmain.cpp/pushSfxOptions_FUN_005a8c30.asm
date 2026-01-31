@@ -14,7 +14,7 @@
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c170a
 ;   core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 at 004d1f43
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e438a
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 00506613
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506613
 ;   ... and 22 more
 ;
 ; Referenced Globals:

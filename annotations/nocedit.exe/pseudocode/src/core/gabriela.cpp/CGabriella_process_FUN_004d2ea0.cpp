@@ -85,7 +85,7 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
   float local_38;
   float local_34;
   float local_30;
-  CDemonActor *local_2c;
+  CAmmoBox *local_2c;
   float local_28;
   CCharacter_full_vtable *local_24;
   float local_20;
@@ -113,11 +113,11 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_gabriela_cpp_FUN_004d4890();
-  bVar7 = 0.0 < (this_ptr->base).base.hit_points;
+  core_gabriela_cpp_CGabriella_FUN_004d4890(this_ptr);
+  bVar7 = 0.0 < (float)(this_ptr->base).base.hit_points;
   bVar19 = (this_ptr->base).base.grabbed_by == (CDemonActor *)0x0;
-  bVar20 = *(int *)((this_ptr->base).unk3 + 8) == 0;
-  bVar21 = *(int *)((this_ptr->base).unk3 + 0x10) == 0;
+  bVar20 = *(int *)((this_ptr->base).unk4 + 8) == 0;
+  bVar21 = *(int *)((this_ptr->base).unk4 + 0x10) == 0;
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                        (&(this_ptr->base).base.model.motion_controller,8);
@@ -180,13 +180,13 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
     }
   }
   local_20 = local_20 * delta_time;
-  iVar14 = *(int *)((this_ptr->base).unk3 + 0x10);
+  iVar14 = *(int *)((this_ptr->base).unk4 + 0x10);
   *(float *)((this_ptr->base).base.unk1 + 0x28) =
        *(float *)((this_ptr->base).base.unk1 + 0x28) * delta_time;
   if (iVar14 == 0) {
     pCVar17 = (this_ptr->base).base.grabbed_by;
     if (pCVar17 == (CDemonActor *)0x0) {
-      if (*(int *)((this_ptr->base).unk3 + 8) == 0) {
+      if (*(int *)((this_ptr->base).unk4 + 8) == 0) {
         iVar14 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
         pCVar2 = &(this_ptr->base).base.model;
         if (iVar14 != 0) {
@@ -221,14 +221,15 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
             if ((((uVar6 == 0) || (uVar6 < 2)) || (uVar6 < 3)) || (uVar6 == 3)) goto LAB_004d3af9;
           }
           else if (uVar6 < 0xf) {
-            local_2c = core_actor_cpp_castToClassHash_FUN_0040c790
-                                 (*(CDemonActor **)((this_ptr->base).unk3 + 4),
+            local_2c = (CAmmoBox *)
+                       core_actor_cpp_castToClassHash_FUN_0040c790
+                                 (*(CDemonActor **)((this_ptr->base).unk4 + 4),
                                   g_CAmmoBoxClassInfo.name_hash);
-            if (local_2c != (CDemonActor *)0x0) {
+            if (local_2c != (CAmmoBox *)0x0) {
               local_14 = (CCharacter_full_vtable *)
                          core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                    (&pCVar2->motion_controller);
-              core_ammobox_cpp_LogConsoleOpenPCTFile_FUN_00411690();
+              core_ammobox_cpp_CAmmoBox_FUN_00411690(local_2c);
             }
           }
           else if (uVar6 < 0x11) {
@@ -274,12 +275,12 @@ LAB_004d3af9:
       else {
         local_50 = iVar14;
         if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
-          (**(code **)(*(int *)(*(int *)((this_ptr->base).unk3 + 8) + 0x154) + 0x14))();
+          (**(code **)(*(int *)(*(int *)((this_ptr->base).unk4 + 8) + 0x154) + 0x14))();
           local_a0.x = (local_1b4 + local_1a8) * 0.5f;
           local_a0.y = (local_1b0 + local_1a4) * 0.5f;
           local_a0.z = (local_1ac + local_1a0) * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (*(CDemonActor **)((this_ptr->base).unk3 + 8),&local_148,&local_a0);
+                    (*(CDemonActor **)((this_ptr->base).unk4 + 8),&local_148,&local_a0);
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                     ((CDemonActor *)this_ptr,&local_b8,&local_148);
           pCVar15 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -311,7 +312,7 @@ LAB_004d3af9:
         if (local_50 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
-          core_hero_cpp_FUN_004f3350();
+          core_hero_cpp_CHero_FUN_004f3350(&this_ptr->base);
         }
       }
     }
@@ -367,13 +368,13 @@ LAB_004d3215:
   }
   else {
     pCVar15 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                        (*(CDemonActor **)((this_ptr->base).unk3 + 0x10),&local_130,
+                        (*(CDemonActor **)((this_ptr->base).unk4 + 0x10),&local_130,
                          (CVector3f *)(iVar14 + 0x2d4));
     if (pCVar15->y < (this_ptr->base).base.base.location.position.y) {
-      (this_ptr->base).unk3[0x10] = '\0';
-      (this_ptr->base).unk3[0x11] = '\0';
-      (this_ptr->base).unk3[0x12] = '\0';
-      (this_ptr->base).unk3[0x13] = '\0';
+      (this_ptr->base).unk4[0x10] = '\0';
+      (this_ptr->base).unk4[0x11] = '\0';
+      (this_ptr->base).unk4[0x12] = '\0';
+      (this_ptr->base).unk4[0x13] = '\0';
       local_f4.x = 0.0;
       local_f4.y = 0.5;
       local_f4.z = 4.0;
@@ -398,11 +399,12 @@ LAB_004d3215:
     }
   }
 LAB_004d321d:
-  if (*(int *)((this_ptr->base).unk3 + 0x10) == 0) {
+  if (*(int *)((this_ptr->base).unk4 + 0x10) == 0) {
     if (((bVar11 && (bVar10 && (bVar9 && (bVar8 && (bVar21 && (bVar20 && (bVar19 && bVar7))))))) ||
         (pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller),
-        pSVar18->state_index == 0xd)) || ((this_ptr->base).base.base.unk2 != 0)) {
+        pSVar18->state_index == 0xd)) ||
+       ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
       local_178 = *(float *)((this_ptr->base).base.unk1 + 0x10);
       local_174 = *(float *)((this_ptr->base).base.unk1 + 0x14);
       local_170 = *(float *)((this_ptr->base).base.unk1 + 0x18);
@@ -608,8 +610,8 @@ LAB_004d344b:
      ((*(int *)((this_ptr->base).unk2 + 0xc) != 0 && (*(int *)(this_ptr->unk + 0x18) == 0)))) {
     if (*(int *)this_ptr->unk == 0) {
       if ((*(float *)(this_ptr->unk + 8) <= 0.0) &&
-         (iVar14 = core_hero_cpp_FUN_004f2af0(), iVar14 == 0)) {
-        iVar14 = core_hero_cpp_FUN_004f2d70();
+         (iVar14 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base), iVar14 == 0)) {
+        iVar14 = core_hero_cpp_CHero_FUN_004f2d70(&this_ptr->base);
         switch(iVar14) {
         case 0:
         case 1:
@@ -620,17 +622,18 @@ LAB_004d344b:
                     (&(this_ptr->base).base.model.motion_controller,0x12,1);
           break;
         default:
-          core_hero_cpp_FUN_004f2ed0();
+          core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
         }
-        if ((iVar14 == 0) && (iVar14 = core_hero_cpp_FUN_004f2c40(), iVar14 == 0)) {
-          iVar14 = core_hero_cpp_FUN_004f3120();
+        if ((iVar14 == 0) &&
+           (iVar14 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar14 == 0)) {
+          iVar14 = core_hero_cpp_CHero_FUN_004f3120(&this_ptr->base);
           if (iVar14 == 0) {
-            iVar14 = core_hero_cpp_FUN_004f2f50();
+            iVar14 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
             if (iVar14 == 0) {
               core_gabriela_cpp_FUN_004d5c60();
             }
             else {
-              core_hero_cpp_FUN_004f30f0();
+              core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
             }
           }
           else {
@@ -655,7 +658,7 @@ LAB_004d344b:
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                        (&pCVar2->motion_controller,0xd);
   if ((float)local_14 <= 0.0) {
-    core_hero_cpp_FUN_004f3350();
+    core_hero_cpp_CHero_FUN_004f3350(&this_ptr->base);
   }
   else {
     local_14 = (CCharacter_full_vtable *)
@@ -664,7 +667,7 @@ LAB_004d344b:
     if ((1.0 < (float)local_14) &&
        (this_ptr_01 = (CBoxActor *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)((this_ptr->base).unk3 + 8),
+                                (*(CDemonActor **)((this_ptr->base).unk4 + 8),
                                  g_CBoxActorClassInfo.name_hash), this_ptr_01 != (CBoxActor *)0x0))
     {
       core_gabriela_cpp_FUN_004d4cf0();

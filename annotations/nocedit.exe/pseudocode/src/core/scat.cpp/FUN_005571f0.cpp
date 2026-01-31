@@ -148,7 +148,7 @@ void __cdecl core_scat_cpp_FUN_005571f0(void)
         }
         if (in_stack_00000004[1].base.location.position.x != 0.0) {
           in_stack_00000004[1].base.location.position.x = 0.0;
-          (*(((in_stack_00000004->base).vtable._ue)->_ue).field_4)();
+          (*(((in_stack_00000004->base).vtable._ue)->_ue).enemyfunc2)();
         }
       }
       break;

@@ -12,15 +12,15 @@
 ;
 ; XREF[22]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 004130dc
+;   core_charactr.cpp_CCharacter_FUN_0042e570 at 0042e584
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 at 0042d471
-;   core_charactr.cpp_FUN_0042e570 at 0042e584
-;   core_colonel.cpp_FUN_0043fa00 at 0043fc47
+;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fc47
 ;   core_gabriela.cpp_FUN_004d4d80 at 004d53a9
 ;   core_gabriela.cpp_FUN_004d6d40 at 004d6f2a
 ;   core_gabriela.cpp_FUN_004d6f80 at 004d703d
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e68e7
-;   core_haystack.cpp_FUN_004f0e40 at 004f1099
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f5ef0
+;   core_haystack.cpp_CHaystack_process_FUN_004f0e40 at 004f1099
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5ef0
 ;   ... and 12 more
 ;
 ; *****************************************************************************

@@ -9,8 +9,8 @@
 ; CVector3f *      Stack[0xc]:4   end_pos
 ;
 ; XREF[2]:
-;   core_enemy.cpp_FUN_004a9a50 at 004a9ae3
-;   core_mimic.cpp_FUN_0051fcc0 at 0051ffc2
+;   core_enemy.cpp_CEnemy_FUN_004a9a50 at 004a9ae3
+;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 0051ffc2
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

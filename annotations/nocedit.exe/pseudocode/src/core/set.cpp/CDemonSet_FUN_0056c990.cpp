@@ -14,13 +14,13 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   CHero *this_ptr_00;
   int iVar1;
   int iVar2;
-  CMatrix3x4f *matrix;
   CDemonLight *this_ptr_01;
   CSkeleton *this_ptr_02;
   int iVar3;
   CVector3f *input_local_point;
   int iVar4;
   CDemonSet *pCVar5;
+  CMatrix3x4f *matrix;
   CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;

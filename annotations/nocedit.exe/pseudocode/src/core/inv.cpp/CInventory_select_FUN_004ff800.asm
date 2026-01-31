@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_hero.cpp_CallInventorySelectHealth_FUN_004f3760 at 004f37b0
+;   core_hero.cpp_CHero_FUN_004f3760 at 004f37b0
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570 at 005015f4
 ;
 ; Referenced Globals:
@@ -38,7 +38,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
-;   core_health.cpp_FUN_004f1fd0
+;   core_health.cpp_CHealthItem_FUN_004f1fd0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004feb10
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10
@@ -255,8 +255,8 @@ section .text
     PUSH EDI                            ; 004ff9e1
     MOV EAX,dword ptr [ESP + 0x104]     ; 004ff9e2
     PUSH EAX                            ; 004ff9e9
-    CALL core_health.cpp_FUN_004f1fd0   ; 004ff9ea
-        ;   XREF to: 004f1fd0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_FUN_004f1fd0()
+    CALL core_health.cpp_CHealthItem_FUN_004f1fd0 ; 004ff9ea
+        ;   XREF to: 004f1fd0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_FUN_004f1fd0(CHealthItem * this_ptr)
     ADD ESP,0x8                         ; 004ff9ef
     TEST EAX,EAX                        ; 004ff9f2
     JG 0x004ff873                       ; 004ff9f4

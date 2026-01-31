@@ -15,7 +15,7 @@
 ;   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 at 0043c376
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140 at 004d6185
 ;   core_mimic.cpp_CMimic_FUN_005205f0 at 00520708
-;   core_mimic.cpp_FUN_005208b0 at 00520918
+;   core_mimic.cpp_CMimic_renderBackground_FUN_005208b0 at 00520918
 ;   core_svetlana.cpp_CSvetlana_FUN_005d9bc0 at 005d9d0a
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6e2e
 ;

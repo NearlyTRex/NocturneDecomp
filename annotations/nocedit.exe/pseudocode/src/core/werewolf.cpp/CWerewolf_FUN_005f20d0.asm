@@ -26,7 +26,7 @@
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e670
-;   core_enemy.cpp_CEnemy_FUN_004aa170
+;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005f20d7
     PUSH ESI                            ; 005f20db
     PUSH EBX                            ; 005f20dc
-    CALL core_enemy.cpp_CEnemy_FUN_004aa170 ; 005f20dd
-        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004aa170(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 ; 005f20dd
+        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005f20e2
     PUSH 0x0                            ; 005f20e5
     LEA EDI,[EBX + 0x158]               ; 005f20e7

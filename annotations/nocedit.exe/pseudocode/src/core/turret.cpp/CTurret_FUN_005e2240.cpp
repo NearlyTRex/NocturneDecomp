@@ -17,7 +17,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc));
-  core_weapon_cpp_CWeapon_FUN_005edff0(&this_ptr->base);
+  core_weapon_cpp_CWeapon_setup_FUN_005edff0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                           (&(this_ptr->base).model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890

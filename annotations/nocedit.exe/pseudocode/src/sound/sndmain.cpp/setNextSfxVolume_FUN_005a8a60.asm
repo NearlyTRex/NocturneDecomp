@@ -9,7 +9,7 @@
 ; XREF[8]:
 ;   core_charactr.cpp_CCharacter_FUN_0042a830 at 0042abb3
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c17a6
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 00506628
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506628
 ;   core_manpuz.cpp_FUN_0050a4f0 at 0050a5b5
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b3605
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b21f1

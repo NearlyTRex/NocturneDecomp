@@ -111,7 +111,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690
+;   core_ammobox.cpp_CAmmoBox_FUN_00411690
 ;   core_boxactor.cpp_CBoxActor_FUN_00422390
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
@@ -179,8 +179,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004d2f38
     MOV EDX,dword ptr [EAX + 0x4]       ; 004d2f3b
     MOV dword ptr [EAX],EDX             ; 004d2f3e
-    CALL core_gabriela.cpp_FUN_004d4890 ; 004d2f40
-        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d4890()
+    CALL core_gabriela.cpp_CGabriella_FUN_004d4890 ; 004d2f40
+        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d4890(CGabriella * this_ptr)
     FLD float ptr [EBX + 0x243c]        ; 004d2f45
     FLDZ                                ; 004d2f4b
     ADD ESP,0x8                         ; 004d2f4d
@@ -993,8 +993,8 @@ section .text
         ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004d3897
     PUSH EBX                            ; 004d389a
-    CALL core_hero.cpp_FUN_004f3350     ; 004d389b
-        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3350()
+    CALL core_hero.cpp_CHero_FUN_004f3350 ; 004d389b
+        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3350(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d38a0
     JMP 0x004d321d                      ; 004d38a3
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1302,8 +1302,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x76]      ; 004d3bfb
     MOV dword ptr [ESP],EAX             ; 004d3bfe
     PUSH EDI                            ; 004d3c01
-    CALL core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690 ; 004d3c02
-        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690()
+    CALL core_ammobox.cpp_CAmmoBox_FUN_00411690 ; 004d3c02
+        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_FUN_00411690(CAmmoBox * this_ptr)
     ADD ESP,0x8                         ; 004d3c07
     JMP 0x004d321d                      ; 004d3c0a
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1607,15 +1607,15 @@ section .text
     JC 0x004d34ce                       ; 004d3fc1
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d3fc7
-    CALL core_hero.cpp_FUN_004f2af0     ; 004d3fc8
-        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2af0()
+    CALL core_hero.cpp_CHero_FUN_004f2af0 ; 004d3fc8
+        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2af0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d3fcd
     TEST EAX,EAX                        ; 004d3fd0
     JNZ 0x004d34ce                      ; 004d3fd2
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d3fd8
-    CALL core_hero.cpp_FUN_004f2d70     ; 004d3fd9
-        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2d70()
+    CALL core_hero.cpp_CHero_FUN_004f2d70 ; 004d3fd9
+        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2d70(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d3fde
     MOV EDI,EAX                         ; 004d3fe1
     CMP EAX,0x3                         ; 004d3fe3
@@ -1635,37 +1635,37 @@ section .text
         ;   XREF to: 004d400d (UNCONDITIONAL_JUMP)  ; caseD_0
     PUSH EBX                            ; 004d4004
         ;   Label: default
-    CALL core_hero.cpp_FUN_004f2ed0     ; 004d4005
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
+    CALL core_hero.cpp_CHero_FUN_004f2ed0 ; 004d4005
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2ed0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d400a
     TEST EDI,EDI                        ; 004d400d
         ;   Label: caseD_1
     JNZ 0x004d34ce                      ; 004d400f
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4015
-    CALL core_hero.cpp_FUN_004f2c40     ; 004d4016
-        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2c40()
+    CALL core_hero.cpp_CHero_FUN_004f2c40 ; 004d4016
+        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2c40(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d401b
     TEST EAX,EAX                        ; 004d401e
     JNZ 0x004d34ce                      ; 004d4020
         ;   XREF to: 004d34ce (CONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4026
-    CALL core_hero.cpp_FUN_004f3120     ; 004d4027
-        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f3120()
+    CALL core_hero.cpp_CHero_FUN_004f3120 ; 004d4027
+        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f3120(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d402c
     TEST EAX,EAX                        ; 004d402f
     JNZ 0x004d404e                      ; 004d4031
         ;   XREF to: 004d404e (CONDITIONAL_JUMP)  ; LAB_004d404e
     PUSH EBX                            ; 004d4033
-    CALL core_hero.cpp_FUN_004f2f50     ; 004d4034
-        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2f50()
+    CALL core_hero.cpp_CHero_FUN_004f2f50 ; 004d4034
+        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2f50(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d4039
     TEST EAX,EAX                        ; 004d403c
     JZ 0x004d4066                       ; 004d403e
         ;   XREF to: 004d4066 (CONDITIONAL_JUMP)  ; LAB_004d4066
     PUSH EBX                            ; 004d4040
-    CALL core_hero.cpp_FUN_004f30f0     ; 004d4041
-        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f30f0()
+    CALL core_hero.cpp_CHero_FUN_004f30f0 ; 004d4041
+        ;   XREF to: 004f30f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f30f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d4046
     JMP 0x004d34ce                      ; 004d4049
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce
@@ -1688,8 +1688,8 @@ section .text
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4074
         ;   Label: LAB_004d4074
-    CALL core_hero.cpp_FUN_004f3350     ; 004d4075
-        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3350()
+    CALL core_hero.cpp_CHero_FUN_004f3350 ; 004d4075
+        ;   XREF to: 004f3350 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3350(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d407a
     JMP 0x004d35ec                      ; 004d407d
         ;   XREF to: 004d35ec (UNCONDITIONAL_JUMP)  ; LAB_004d35ec

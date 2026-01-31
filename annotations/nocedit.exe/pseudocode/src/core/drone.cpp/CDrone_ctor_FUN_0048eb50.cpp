@@ -35,7 +35,7 @@ CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr)
   (pCVar1->base).unk2[0x71] = '\0';
   (pCVar1->base).unk2[0x72] = '\0';
   (pCVar1->base).unk2[0x73] = '\0';
-  (pCVar4->base).base.hit_points = 75.0;
+  (pCVar4->base).base.hit_points = 0x42960000;
   *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
   *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
   return pCVar4;

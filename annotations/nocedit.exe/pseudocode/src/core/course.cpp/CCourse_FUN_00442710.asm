@@ -12,12 +12,12 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[9]:
-;   core_bat.cpp_FUN_00414ce0 at 00414d7f
+;   core_bat.cpp_CBat_FUN_00414ce0 at 00414d7f
 ;   core_course.cpp_FUN_00443bc0 at 00443c86
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e268
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430 at 004d24ae
-;   core_marquee.cpp_FUN_0050bc30 at 0050bca4
-;   core_marquee.cpp_FUN_0050c050 at 0050c102
+;   core_marquee.cpp_CMarquee_FUN_0050bc30 at 0050bca4
+;   core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050 at 0050c102
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 0052a036
 ;   core_platfrm.cpp_FUN_0054cab0 at 0054cbed
 ;   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 at 005e7f48

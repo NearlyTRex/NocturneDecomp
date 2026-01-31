@@ -65,9 +65,25 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
       Suspects: pointer_cast, pointer_cast, pointer_cast, param_count_too_few
 
+  core/anvil.cpp (1 remaining of 13)
+    - core_anvil.cpp_CAnvil_ctor_FUN_00411ce0
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+
+  core/hiram.cpp (1 remaining of 10)
+    - core_hiram.cpp_CHiram_dtor_FUN_004f4450
+      Suspects: unaffected_reg, negative_offset, unaffected_reg, negative_offset
+
   core/inivar.cpp (1 remaining of 2)
     - core_inivar.cpp_readIniData_FUN_004fbd90
       Suspects: unaffected_reg, unaffected_reg
+
+  core/beast.cpp (1 remaining of 14)
+    - core_beast.cpp_CBeast_dtor_FUN_00418490
+      Suspects: unaffected_reg, unaffected_reg, negative_offset
+
+  core/hpriest.cpp (1 remaining of 9)
+    - core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
+      Suspects: unaffected_reg, negative_offset, unaffected_reg, negative_offset
 
   core/slew.cpp (1 remaining of 4)
     - core_slew.cpp_CSlew_processInput_FUN_005a20b0
@@ -140,8 +156,8 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: unaffected_reg, builtin_function, unaffected_reg
 
   core/gun.cpp (2 remaining of 7)
-    - core_gun.cpp_FUN_004f0350
-      Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, stack_param, extra_output, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, stack_param, unknown_field
+    - core_gun.cpp_CGun_FUN_004f0350
+      Suspects: extra_output, unknown_field, unknown_field, unknown_field, extra_output, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, suspect_float, unknown_field, unknown_field
     - core_gun.cpp_CGun_dtor_FUN_004f0b50
       Suspects: unaffected_reg, unaffected_reg
 
@@ -156,6 +172,12 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - core_dskybox.cpp_renderSkyDome_FUN_004901f0
       Suspects: decompiler_intrinsic, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, stack_ref, pointer_cast, stack_ref, unknown_field, decompiler_intrinsic
+
+  core/battery.cpp (2 remaining of 17)
+    - core_battery.cpp_CBattery_ctor_FUN_00417e90
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+    - core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
+      Suspects: stack_ref
 
   shape/spotview.cpp (2 remaining of 6)
     - shape_spotview.cpp_CSpotView_FUN_005b9620
@@ -193,7 +215,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
     ... and 128 more
 
-  [pointer_cast] - 65 functions
+  [pointer_cast] - 67 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
@@ -204,9 +226,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
-    ... and 55 more
+    ... and 57 more
 
-  [stack_ref] - 41 functions
+  [stack_ref] - 48 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
@@ -217,9 +239,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
     shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 31 more
+    ... and 38 more
 
-  [decompiler_intrinsic] - 38 functions
+  [decompiler_intrinsic] - 39 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
     core_script.cpp_CScript_FUN_00559ac0                    (  8 lines)
@@ -230,7 +252,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
     wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
-    ... and 28 more
+    ... and 29 more
 
   [param_count_too_many] - 24 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
@@ -258,7 +280,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_course.cpp_CCourse_free_FUN_004426c0               ( 14 lines)
     ... and 12 more
 
-  [undefined_data] - 20 functions
+  [undefined_data] - 21 functions
     core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
     core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
     core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
@@ -269,10 +291,11 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_netgame.cpp_staticInit_FUN_0053f310                (  9 lines)
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
     core_script.cpp_CScript_FUN_00566bc0                    ( 13 lines)
-    ... and 10 more
+    ... and 11 more
 
-  [unresolved_funcptr] - 8 functions
+  [unresolved_funcptr] - 9 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)
+    core_hero.cpp_CHero_FUN_004f3580                        ( 12 lines)
     core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
     support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
@@ -287,6 +310,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
     shape_design.c_convertWorldToScreenCoordinates_FUN_0045 ( 42 lines)
     shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
+
+  [suspect_float] - 4 functions
+    core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
+    core_trigger.cpp_CTrigger_FUN_005df990                  ( 46 lines)
 
   [unknown_field] - 4 functions
     core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
@@ -304,9 +333,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mmx.c_detectCPUFeatures_FUN_00524f10               (  9 lines)
     core_mmx.c_getCPUInfo_FUN_0052500f                      ( 13 lines)
 
-  [suspect_float] - 2 functions
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
+  [warning_type_propagation] - 3 functions
+    core_mimic.cpp_CMimic_hasCollision_FUN_00520a00         ( 24 lines)
+    core_mimic.cpp_CMimic_beginMorph_FUN_00520a80           ( 40 lines)
+    core_hostage.cpp_CHostage_FUN_004f5ff0                  ( 46 lines)
 
   [format_string_mismatch] - 1 functions
     core_shovel.cpp_fire_FUN_00588c20                       (  7 lines)
@@ -321,7 +351,22 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
+  core/beast.cpp (92.9% complete)
+    1 functions remaining:
+      core_beast.cpp_CBeast_dtor_FUN_00418490 (33 lines)
+        Types: ['negative_offset', 'unaffected_reg']
+
+  core/anvil.cpp (92.3% complete)
+    1 functions remaining:
+      core_anvil.cpp_CAnvil_ctor_FUN_00411ce0 (30 lines)
+        Types: ['decompiler_intrinsic']
+
   engine/light.cpp (90.0% complete)
     1 functions remaining:
       engine_light.cpp_calculatePhongLighting_FUN_005055 (98 lines)
         Types: ['param_count_too_few', 'pointer_cast']
+
+  core/hiram.cpp (90.0% complete)
+    1 functions remaining:
+      core_hiram.cpp_CHiram_dtor_FUN_004f4450 (36 lines)
+        Types: ['negative_offset', 'unaffected_reg']

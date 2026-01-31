@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005e4064
     PUSH EBX                            ; 005e4067
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005e4068
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005e4068
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     MOV dword ptr [EBX + 0x243c],0x41200000 ; 005e406d
     ADD ESP,0x4                         ; 005e4077
     MOV dword ptr [EBX + 0xc0f0],0x0    ; 005e407a

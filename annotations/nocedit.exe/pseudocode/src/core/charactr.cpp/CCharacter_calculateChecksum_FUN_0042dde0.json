@@ -1,0 +1,154 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042dde0",
+    "address_range": [
+      [
+        "0042dde0",
+        "0042de4c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_0042dde0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharacter *this_ptr,uint *out_crc)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0"
+    },
+    {
+      "addr": "0040cf50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf50"
+    },
+    {
+      "addr": "0040cf90",
+      "is_variadic": false,
+      "name": "core_actor.cpp_crc32ProcessString_FUN_0040cf90"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.348837209302325,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 33,
+      "INT_ADD": 20,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "LOAD": 13,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 187
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "out_crc",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 192,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CBassPlayer",
+        "offset": 192,
+        "vtable_addr": "00663f14"
+      },
+      {
+        "class_name": "CBiggs",
+        "offset": 192,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "CBride",
+        "offset": 192,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 192,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 46
+  }
+}

@@ -13,10 +13,10 @@
 ;   core_baron.cpp_CBaronWeapon_FUN_00413e30 at 00413e73
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00413449
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413b0c
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004161b4
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415506
-;   core_batcreat.cpp_FUN_00416030 at 004161b4
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417b24
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416906
-;   core_batman.cpp_FUN_004179a0 at 00417b24
 ;   ... and 96 more
 ;
 ; *****************************************************************************

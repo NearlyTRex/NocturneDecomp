@@ -87,9 +87,9 @@ void __cdecl CVampireBoss::chooseDestWayPoint(void);
 // Address: 005e75f0
 int __cdecl CVampireBoss(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7650
+// Original: core_vampboss.cpp_CVampireBoss_getPropertyList_FUN_005e7650
 // Address: 005e7650
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::getPropertyList(CVampireBoss *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700
 // Address: 005e7700

@@ -34,13 +34,13 @@
       {
         "category": "other",
         "column": 8,
-        "line": 259,
+        "line": 260,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 272,
+        "line": 273,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -151,14 +151,8 @@
       {
         "category": "other",
         "column": 55,
-        "line": 272,
+        "line": 273,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 341,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -174,32 +168,38 @@
       },
       {
         "category": "other",
+        "column": 27,
+        "line": 344,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 46,
-        "line": 356,
+        "line": 357,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 406,
+        "line": 407,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 559,
+    "complexity_score": 560,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 34,
-    "pseudocode_lines": 444,
+    "pseudocode_lines": 445,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unresolved_funcptr"
     ],
-    "total_lines": 1459
+    "total_lines": 1460
   },
   "cross_references": [],
   "function": {
@@ -249,7 +249,7 @@
     {
       "addr": "004167f0",
       "is_variadic": false,
-      "name": "core_batman.cpp_FUN_004167f0"
+      "name": "core_batman.cpp_CBatman_FUN_004167f0"
     },
     {
       "addr": "0042dfc0",
@@ -297,14 +297,14 @@
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
+      "addr": "004a9880",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9880"
+    },
+    {
       "addr": "004a9fd0",
       "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_FUN_004a9fd0"
-    },
-    {
-      "addr": "004a9880",
-      "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_004a9880"
     },
     {
       "addr": "004adca0",
@@ -1158,7 +1158,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 320,
+      "line": 321,
       "match": "SQRT",
       "text": "if (SQRT(local_48 * local_48 + local_50 * local_50 + local_4c * local_4c) <",
       "type": "decompiler_intrinsic"

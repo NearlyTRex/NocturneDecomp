@@ -13,7 +13,7 @@
 ;   TerminatedCString s_moloch_h_dfm_00639d98
 ;
 ; Called Functions:
-;   core_hero.cpp_CHero_FUN_004f2540
+;   core_hero.cpp_CHero_setup_FUN_004f2540
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0052b680 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_getReady_FUN_0052b680(CMorph * this_ptr)
     ADD ESP,0x4                         ; 00528cf5
     PUSH EBX                            ; 00528cf8
-    CALL core_hero.cpp_CHero_FUN_004f2540 ; 00528cf9
-        ;   XREF to: 004f2540 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f2540(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setup_FUN_004f2540 ; 00528cf9
+        ;   XREF to: 004f2540 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004f2540(CHero * this_ptr)
     ADD ESP,0x4                         ; 00528cfe
     POP EDI                             ; 00528d01
     POP ESI                             ; 00528d02

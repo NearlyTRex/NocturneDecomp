@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005be520(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005be520(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1f58]:4  local_1f58
 ; undefined4       Stack[-0x1f54]:4  local_1f54
@@ -135,8 +137,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_stranger.cpp_CStranger_FUN_005bb4b0 at 005bb757
 ;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc34f
+;   core_stranger.cpp_CStranger_setup_FUN_005bb4b0 at 005bb757
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_draw_holsters2aimPistols_006537f0
@@ -160,7 +162,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-;   core_lever.cpp_FUN_00504dd0
+;   core_lever.cpp_CLever_FUN_00504dd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
@@ -241,7 +243,7 @@ section .text
     PUSH EAX                            ; 005be5cc
     PUSH EBX                            ; 005be5cd
     CALL core_stranger.cpp_CStranger_FUN_005bf720 ; 005be5ce
-        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bf720()
+        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bf720(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005be5d3
     XOR EAX,EAX                         ; 005be5d6
     PUSH 0x59ddb0                       ; 005be5d8
@@ -258,7 +260,7 @@ section .text
     PUSH EBX                            ; 005be602
         ;   Label: LAB_005be602
     CALL core_stranger.cpp_CStranger_FUN_005bfb60 ; 005be603
-        ;   XREF to: 005bfb60 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bfb60()
+        ;   XREF to: 005bfb60 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bfb60(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005be608
     LEA EDI,[EBX + 0x158]               ; 005be60b
     PUSH EDI                            ; 005be611
@@ -464,8 +466,8 @@ section .text
     LEA EAX,[ESP + 0x1ef8]              ; 005be8c6
     PUSH EAX                            ; 005be8cd
     PUSH EDI                            ; 005be8ce
-    CALL core_lever.cpp_FUN_00504dd0    ; 005be8cf
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_FUN_00504dd0()
+    CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005be8cf
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr)
     ADD ESP,0x8                         ; 005be8d4
     PUSH EAX                            ; 005be8d7
     LEA EAX,[ESP + 0x1eb4]              ; 005be8d8
@@ -967,8 +969,8 @@ section .text
     PUSH EAX                            ; 005bf00a
     MOV EAX,[0x03f6baa8]                ; 005bf00b | DAT_03f6baa8
     PUSH EAX                            ; 005bf010
-    CALL core_lever.cpp_FUN_00504dd0    ; 005bf011
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_FUN_00504dd0()
+    CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005bf011
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr)
     ADD ESP,0x8                         ; 005bf016
     PUSH EAX                            ; 005bf019
     LEA EAX,[ESP + 0x1e00]              ; 005bf01a

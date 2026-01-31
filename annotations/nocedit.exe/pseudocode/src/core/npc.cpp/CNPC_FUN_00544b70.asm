@@ -7,7 +7,7 @@
 ; CNPC *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120 at 004f6165
+;   core_hostage.cpp_CHostage_renderBackground_FUN_004f6120 at 004f6165
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390

@@ -61,7 +61,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_serialize_FUN_00419880(CBodyPart *this_
         pcVar6 = pcVar6 + 0x18;
       } while (iVar4 < *(int *)(this_ptr->unk + 0x34));
     }
-    core_bodypart_cpp_FUN_0041a050();
+    core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
   }
   else {
     iVar4 = 0;

@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_enemy.cpp_FUN_004a9f10
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -124,8 +124,8 @@ section .text
     PUSH EDI                            ; 005f1bc9
         ;   Label: LAB_005f1bc9
     PUSH ESI                            ; 005f1bca
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005f1bcb
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005f1bcb
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005f1bd0
     MOV ESP,EBP                         ; 005f1bd3
     POP EBP                             ; 005f1bd5
@@ -147,8 +147,8 @@ section .text
     ADD ESP,0xc                         ; 005f1bf3
     PUSH EDI                            ; 005f1bf6
     PUSH ESI                            ; 005f1bf7
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005f1bf8
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005f1bf8
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005f1bfd
     MOV ESP,EBP                         ; 005f1c00
     POP EBP                             ; 005f1c02
@@ -269,8 +269,8 @@ section .text
     MOV dword ptr [ESI + 0xbee0],EAX    ; 005f1d15
     PUSH EDI                            ; 005f1d1b
     PUSH ESI                            ; 005f1d1c
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005f1d1d
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005f1d1d
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005f1d22
     MOV ESP,EBP                         ; 005f1d25
     POP EBP                             ; 005f1d27

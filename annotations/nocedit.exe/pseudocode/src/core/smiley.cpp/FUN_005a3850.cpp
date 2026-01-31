@@ -16,6 +16,7 @@ void __cdecl core_smiley_cpp_FUN_005a3850(void)
   _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260();
+  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260
+            ((CDeformableModelInstance *)(in_stack_00000004 + 1),in_stack_00000008);
   return;
 }

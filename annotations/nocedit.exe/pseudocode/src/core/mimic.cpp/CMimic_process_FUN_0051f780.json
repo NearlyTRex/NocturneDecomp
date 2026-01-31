@@ -1,0 +1,237 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 65,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 10,
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 235
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051f780",
+    "address_range": [
+      [
+        "0051f780",
+        "0051f924"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_process_FUN_0051f780",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00429870",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
+    },
+    {
+      "addr": "0042d530",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d530"
+    },
+    {
+      "addr": "004adca0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0051f930",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_FUN_0051f930"
+    },
+    {
+      "addr": "0051fcc0",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_FUN_0051fcc0"
+    },
+    {
+      "addr": "00520500",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_FUN_00520500"
+    },
+    {
+      "addr": "00520ba0",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006386f9",
+      "name": "s_core_mimic_cpp_006386f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063870b",
+      "name": "s_CMimic_setup_can_t_use_m_0063870b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "00680a00",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "02f7c740"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c740",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.582677165354331,
+    "instruction_count": 127,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 18,
+      "COPY": 122,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 51,
+      "INT_AND": 63,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 27,
+      "INT_SUB": 43,
+      "INT_ZEXT": 4,
+      "LOAD": 32,
+      "POPCOUNT": 27,
+      "RETURN": 5,
+      "STORE": 38
+    },
+    "pcode_op_count": 582
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 4,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

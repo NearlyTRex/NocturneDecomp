@@ -21,7 +21,7 @@ void __cdecl core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
   core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)&in_stack_00000004[2].unk4,"moving");
   core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004[2].unk4.y,"param");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)&in_stack_00000004[2].unk5,"maxAngle");
+            ((float *)&in_stack_00000004[2].is_renderable,"maxAngle");
   if (1 < g_CPendulumClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
               ((char **)&in_stack_00000004[2].is_transparent,"swooshSound");
@@ -33,7 +33,7 @@ void __cdecl core_pendulum_cpp_CPendulum_load_FUN_0054a3b0(void)
               ((char **)&in_stack_00000004[2].previous_transform_state.dirty_flags,
                "creak2Sound");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[2].unk10,"swooshPhaseBias");
+              ((float *)in_stack_00000004[2].footstep_sound_code,"swooshPhaseBias");
   }
   if (3 < g_CPendulumClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0

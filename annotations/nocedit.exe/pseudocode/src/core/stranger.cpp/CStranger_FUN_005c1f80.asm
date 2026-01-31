@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_FUN_005bdd20 at 005bde10

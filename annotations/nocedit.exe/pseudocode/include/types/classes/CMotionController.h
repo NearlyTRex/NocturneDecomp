@@ -12,7 +12,7 @@ struct CMotionList;
 typedef struct CMotionController {
     struct CMotionList* motion_list_ptr; // 0x0
     int current_motion_index; // 0x4
-    float current_frame_number; // 0x8
+    int current_frame_number; // 0x8
     int tween_type; // 0xc
     float tween_speed; // 0x10
     float tween_progress; // 0x14

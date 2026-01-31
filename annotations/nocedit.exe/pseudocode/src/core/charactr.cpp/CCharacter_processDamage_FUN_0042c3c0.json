@@ -1,0 +1,294 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 202,
+    "complexity_score": 85,
+    "cross_reference_count": 10,
+    "function_call_count": 10,
+    "global_count": 6,
+    "pseudocode_lines": 70,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 272
+  },
+  "cross_references": [
+    {
+      "addr": "00413cd0",
+      "from_addr": "00413ce1",
+      "name": "core_baron.cpp_CBaron_processDamage_FUN_00413cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004404b0",
+      "from_addr": "004405a0",
+      "name": "core_colonel.cpp_CColonel_FUN_004404b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9f10",
+      "from_addr": "004a9f2d",
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6b30",
+      "from_addr": "004d6c88",
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d6b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1b70",
+      "from_addr": "004f1c00",
+      "name": "core_haystack.cpp_CHaystack_processDamage_FUN_004f1b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f95b0",
+      "from_addr": "004f9721",
+      "name": "core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544d30",
+      "from_addr": "00544e01",
+      "name": "core_npc.cpp_CNPC_processDamage_FUN_00544d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557ea0",
+      "from_addr": "00557fa2",
+      "name": "core_scat.cpp_FUN_00557ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c48b0",
+      "from_addr": "005c4afd",
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d9d30",
+      "from_addr": "005d9e80",
+      "name": "core_svetlana.cpp_FUN_005d9d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042c3c0",
+    "address_range": [
+      [
+        "0042c3c0",
+        "0042c579"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0 (CCharacter *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0042b190",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b190"
+    },
+    {
+      "addr": "0042b5b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b5b0"
+    },
+    {
+      "addr": "0042b8e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b8e0"
+    },
+    {
+      "addr": "0042b930",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b930"
+    },
+    {
+      "addr": "0042b9e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b9e0"
+    },
+    {
+      "addr": "0042d060",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d060"
+    },
+    {
+      "addr": "004e0bf0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004e0bf0"
+    },
+    {
+      "addr": "004edbb0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004edbb0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.664516129032258,
+    "instruction_count": 155,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 7,
+      "BRANCH": 6,
+      "CALL": 11,
+      "CBRANCH": 16,
+      "COPY": 300,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 8,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 52,
+      "INT_AND": 72,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 52,
+      "INT_LEFT": 16,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 26,
+      "INT_SUB": 56,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 30,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 48,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 878
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "local_1c.z = (float)(int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

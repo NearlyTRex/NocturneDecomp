@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_enemy.cpp_FUN_004a9f10
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00425645
     PUSH EDX                            ; 00425649
     MOV dword ptr [EAX + 0x4],0x0       ; 0042564a
-    CALL core_enemy.cpp_FUN_004a9f10    ; 00425651
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 00425651
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00425656
     RET                                 ; 00425659
 

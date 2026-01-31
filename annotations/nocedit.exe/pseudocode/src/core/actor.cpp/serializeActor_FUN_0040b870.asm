@@ -10,7 +10,7 @@
 ; XREF[35]:
 ;   core_ammobox.cpp_CAmmoBox_serialize_FUN_00411900 at 004119ae
 ;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 00419a19
-;   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 at 0041d420
+;   core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270 at 0041d420
 ;   core_boxactor.cpp_CBoxActor_serialize_FUN_00422060 at 00422152
 ;   core_chain.cpp_CChain_serialize_FUN_00430fe0 at 00431022
 ;   core_charactr.cpp_CCharacter_serialize_FUN_004283a0 at 00428482

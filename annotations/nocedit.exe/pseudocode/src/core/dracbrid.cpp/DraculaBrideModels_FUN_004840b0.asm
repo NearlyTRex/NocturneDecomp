@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0x8                         ; 00484142
     PUSH EBX                            ; 00484145
         ;   Label: LAB_00484145
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 00484146
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 00484146
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0048414b
     LEA EDI,[EBX + 0x158]               ; 0048414e
     PUSH EDI                            ; 00484154

@@ -7,6 +7,7 @@
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CBoneStructure.h"
 #include "types/classes/CDeformableModel.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonLight.h"
@@ -134,7 +135,7 @@ void __cdecl core_skeledit_cpp_FUN_00589fc0(void);
 void __cdecl core_skeledit_cpp_FUN_00589fe0(void);
 void __cdecl core_skeledit_cpp_FUN_0058a0f0(void);
 int __cdecl core_skeledit_cpp_FUN_0058a1b0(void);
-void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(void);
+void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(CDeformableModelInstance *param_1,_FILE *param_2);
 void __cdecl core_skeledit_cpp_FUN_0058a2b0(void);
 void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out);

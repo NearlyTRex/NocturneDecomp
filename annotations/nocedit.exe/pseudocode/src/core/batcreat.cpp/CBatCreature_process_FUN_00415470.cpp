@@ -88,7 +88,7 @@ core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float
   if (iVar9 == 0) {
     switch(iVar7) {
     case 0:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       iVar7 = *(int *)((this_ptr->base).unk2 + 4);
       if (iVar7 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -171,7 +171,7 @@ LAB_004158fb:
       }
       break;
     case 1:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       fVar3 = 3.5f;
       if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -280,10 +280,11 @@ LAB_004158fb:
                            [DAT_00822754].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_40,pCVar10);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       break;
     case 8:
-      if (((this_ptr->base).pool_me == 0) && ((this_ptr->base).base.base.unk2 == 0)) {
+      if (((this_ptr->base).pool_me == 0) &&
+         ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (this_ptr_00,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

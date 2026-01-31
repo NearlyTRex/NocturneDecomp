@@ -14,7 +14,7 @@ int __cdecl core_curtain_cpp_FUN_0044b060(void)
   CBoundingBox3D *pCVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  float *pfVar5;
   int *piVar6;
   SMRGLHeaderPrimitive *primitive_array;
   SMRGLPrimitiveQuad *primitive_array_00;
@@ -46,26 +46,26 @@ int __cdecl core_curtain_cpp_FUN_0044b060(void)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
   piVar6 = (int *)(in_stack_00000004[1].create_event + 0x38);
-  piVar5 = &in_stack_00000004[0x152].unk7;
+  pfVar5 = &in_stack_00000004[0x152].unk7;
   if (0 < *(int *)(in_stack_00000004[1].create_event + 0x34)) {
     do {
-      *piVar5 = (int)ROUND((float)*piVar6 * 256.0f);
-      ((CVector3i *)(piVar5 + 1))->x = (int)ROUND((float)piVar6[1] * 256.0f);
-      piVar5[2] = (int)ROUND((float)piVar6[2] * 256.0f);
+      *pfVar5 = (float)(int)ROUND((float)*piVar6 * 256.0f);
+      ((CVector3i *)(pfVar5 + 1))->x = (int)ROUND((float)piVar6[1] * 256.0f);
+      pfVar5[2] = (float)(int)ROUND((float)piVar6[2] * 256.0f);
       iVar4 = iVar4 + 1;
       piVar6 = piVar6 + 0x1d;
-      piVar5 = piVar5 + 3;
+      pfVar5 = pfVar5 + 3;
     } while (iVar4 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
             (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
-             &in_stack_00000004[0x152].unk7);
+             (int *)&in_stack_00000004[0x152].unk7);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   bVar1 = 0 < g_RelativeZ;
   if (in_stack_00000004[1].location.position.z == 0.0) {
     bVar1 = true;
 LAB_0044b1a4:
-    primitive_array = (SMRGLHeaderPrimitive *)&in_stack_00000004[0x175].unk2;
+    primitive_array = (SMRGLHeaderPrimitive *)&in_stack_00000004[0x175].standing_platform;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
                in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].unk6 * 2,

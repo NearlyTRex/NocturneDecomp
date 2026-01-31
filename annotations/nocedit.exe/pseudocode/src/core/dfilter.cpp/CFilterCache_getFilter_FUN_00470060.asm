@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   enable_init
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 0050658c
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050658c
 ;   core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0 at 00587033
 ;   core_setutil.cpp_C3DSLight_create_FUN_00586a90 at 00586b73
 ;

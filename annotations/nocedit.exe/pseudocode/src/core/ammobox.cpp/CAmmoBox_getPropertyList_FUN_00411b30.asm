@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *this_ptr)
+; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30 (CAmmoBox *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
+; CActorPropertyList * Stack[0x8]:4   property_list
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Model_file_kfm_00614c8d

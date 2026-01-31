@@ -7,14 +7,14 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[24]:
-;   core_armour.cpp_CArmour_SnagRelatedMultiple_FUN_00412470 at 00412494
-;   core_batcreat.cpp_CBatCreature_FUN_004162b0 at 004162d3
-;   core_batman.cpp_CBatman_FUN_00417cd0 at 00417cf4
-;   core_beast.cpp_FUN_00418420 at 00418443
-;   core_biggs.cpp_snag_FUN_00418c80 at 00418ca4
-;   core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990 at 0041d9b4
-;   core_bride.cpp_FUN_00424b10 at 00424b39
-;   core_cow.cpp_FUN_00444c50 at 00444c73
+;   core_armour.cpp_CArmour_getPropertyList_FUN_00412470 at 00412494
+;   core_batcreat.cpp_CBatCreature_getPropertyList_FUN_004162b0 at 004162d3
+;   core_batman.cpp_CBatman_getPropertyList_FUN_00417cd0 at 00417cf4
+;   core_beast.cpp_CBeast_getPropertyList_FUN_00418420 at 00418443
+;   core_biggs.cpp_CBiggs_getPropertyList_FUN_00418c80 at 00418ca4
+;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9b4
+;   core_bride.cpp_CBride_getPropertyList_FUN_00424b10 at 00424b39
+;   core_cow.cpp_CZombieCow_getPropertyList_FUN_00444c50 at 00444c73
 ;   core_dog.cpp_CZombieDog_getPropertyList_FUN_0047f920 at 0047f943
 ;   core_dracbrid.cpp_FUN_00486c90 at 00486cb4
 ;   ... and 14 more

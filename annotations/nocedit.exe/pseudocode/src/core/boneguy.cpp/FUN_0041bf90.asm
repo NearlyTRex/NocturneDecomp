@@ -95,8 +95,8 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_boneguy.cpp_CBoneGuy_FUN_0041d680
+;   core_boneguy.cpp_CBoneGuy_FUN_0041d8a0
 ;   core_boneguy.cpp_FUN_0041cc40
-;   core_boneguy.cpp_FUN_0041d8a0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
@@ -179,8 +179,8 @@ section .text
     JBE 0x0041c218                      ; 0041c04d
         ;   XREF to: 0041c218 (CONDITIONAL_JUMP)  ; LAB_0041c218
     PUSH EBX                            ; 0041c053
-    CALL core_boneguy.cpp_FUN_0041d8a0  ; 0041c054
-        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_FUN_0041d8a0()
+    CALL core_boneguy.cpp_CBoneGuy_FUN_0041d8a0 ; 0041c054
+        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_CBoneGuy_FUN_0041d8a0(CBoneGuy * this_ptr)
     ADD ESP,0x4                         ; 0041c059
     CMP dword ptr [EBX + 0xc4dc],0x2    ; 0041c05c
         ;   Label: LAB_0041c05c
@@ -738,8 +738,8 @@ section .text
     ADD ESP,0xc                         ; 0041c691
     PUSH EAX                            ; 0041c694
     PUSH EBX                            ; 0041c695
-    CALL core_enemy.cpp_FUN_004a9880    ; 0041c696
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0041c696
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 0041c69b
     JMP 0x0041c3f4                      ; 0041c69e
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -863,8 +863,8 @@ section .text
     PUSH EAX                            ; 0041c7fb
     PUSH EBX                            ; 0041c7fc
     MOV dword ptr [EBP + 0xffffff06],EBX ; 0041c7fd
-    CALL core_enemy.cpp_FUN_004a9930    ; 0041c803
-        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9930()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9930 ; 0041c803
+        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9930(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 0041c808
     JMP 0x0041c3f4                      ; 0041c80b
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4

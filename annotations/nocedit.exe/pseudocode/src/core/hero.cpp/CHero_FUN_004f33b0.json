@@ -1,0 +1,325 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 35,
+        "line": 35,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 74,
+        "line": 54,
+        "message": "'stack0xffffff80' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 177,
+    "complexity_score": 122,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "pseudocode_lines": 62,
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_ref"
+    ],
+    "total_lines": 239
+  },
+  "cross_references": [
+    {
+      "addr": "005c5b90",
+      "from_addr": "005c5e3d",
+      "name": "core_stranger.cpp_CStranger_FUN_005c5b90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f33b0",
+    "address_range": [
+      [
+        "004f33b0",
+        "004f3576"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_CHero_FUN_004f33b0",
+    "signature": "int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "0042d360",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d360"
+    },
+    {
+      "addr": "005e7830",
+      "is_variadic": false,
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ec76",
+      "name": "DOUBLE_0062ec76",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "0062ec7e",
+      "name": "DOUBLE_0062ec7e",
+      "type": "double",
+      "value": "1.04719755116667"
+    },
+    {
+      "addr": "0062ec86",
+      "name": "DOUBLE_0062ec86",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "DAT_032613d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c5e3d",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_FUN_005c5b90",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.7947019867549665,
+    "instruction_count": 151,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 9,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 12,
+      "COPY": 313,
+      "FLOAT2FLOAT": 24,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 10,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 67,
+      "INT_AND": 73,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 20,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 25,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 22,
+      "INT_SUB": 30,
+      "INT_XOR": 2,
+      "INT_ZEXT": 20,
+      "LOAD": 43,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 38
+    },
+    "pcode_op_count": 875
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f33b9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ABS",
+      "text": "if (((ABS((this_ptr_00->base).base.location.position.y -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "SQRT",
+      "text": "SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ABS",
+      "text": "if ((((ABS(local_14) <= (float)1.04719755116667) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xffffff80",
+      "text": "((CDemonActor *)this_ptr_00,(SInteractionInfo *)&stack0xffffff80),",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "SQRT",
+      "text": "SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5)))))) &&",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

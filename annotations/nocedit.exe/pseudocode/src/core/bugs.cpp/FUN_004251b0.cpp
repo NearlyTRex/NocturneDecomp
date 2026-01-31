@@ -26,7 +26,7 @@ int __cdecl core_bugs_cpp_FUN_004251b0(void)
   int iStack_c;
   char *pcStack_8;
   
-  if (in_stack_00000004[0x1a].unk10 == 0) {
+  if (*(int *)in_stack_00000004[0x1a].footstep_sound_code == 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
@@ -55,8 +55,9 @@ int __cdecl core_bugs_cpp_FUN_004251b0(void)
                       (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                       ((CKeyFramedModelInstance *)
-                       (pcStack_8 + (&in_stack_00000004[0x8d].unk15)[iVar1 * 0x10] * 0x17c),0.0,
-                       0x2e7);
+                       (pcStack_8 +
+                       *(int *)(in_stack_00000004[0x8d].footstep_sound_code + iVar1 * 0x40 + 0x34) *
+                       0x17c),0.0,0x2e7);
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
             position = (CVector3i *)&position[5].y;
             iVar1 = iVar1 + 1;

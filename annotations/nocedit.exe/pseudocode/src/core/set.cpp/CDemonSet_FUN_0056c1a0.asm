@@ -99,8 +99,8 @@ section .text
     PUSH EBX                            ; 0056c1d2
     MOV dword ptr [0x032776b4],ESI      ; 0056c1d3 | g_DynamicLightCount
     MOV dword ptr [0x032776c8],ESI      ; 0056c1d9 | g_CoronaGlobeCount
-    CALL core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090 ; 0056c1df
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 0056c1df
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0056c1e4
     PUSH EBX                            ; 0056c1e7
     CALL core_set.cpp_CDemonSet_FUN_0056be80 ; 0056c1e8

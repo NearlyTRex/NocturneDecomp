@@ -69,7 +69,7 @@ core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float d
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_24);
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               ((CMatrix3x3f *)(this_ptr->unk + 0x14),&local_24);
-    core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310

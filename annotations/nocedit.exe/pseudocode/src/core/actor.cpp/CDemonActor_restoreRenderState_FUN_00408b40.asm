@@ -11,11 +11,11 @@
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040dea8
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410eb2
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411856
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412860 at 004128b9
-;   core_backgnd.cpp_CBackgroundActor_FUN_004128d0 at 00412929
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860 at 004128b9
+;   core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0 at 00412929
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c88
 ;   core_barrier.cpp_CBarrier_FUN_00414240 at 0041429a
-;   core_bat.cpp_CBat_FUN_00414bf0 at 00414c22
+;   core_bat.cpp_CBat_renderOpaque_FUN_00414bf0 at 00414c22
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 00417498
 ;   ... and 61 more
 ;

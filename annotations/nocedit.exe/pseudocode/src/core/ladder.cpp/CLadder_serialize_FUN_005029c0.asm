@@ -19,7 +19,7 @@
 ;   core_actor.cpp_serializeInteger_FUN_0040b7f0
 ;   core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0
 ;   core_actor.cpp_serializeVector_FUN_0040b340
-;   core_ladder.cpp_FUN_00502b80
+;   core_ladder.cpp_CLadder_FUN_00502b80
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00502a07
     PUSH EBX                            ; 00502a0a
-    CALL core_ladder.cpp_FUN_00502b80   ; 00502a0b
-        ;   XREF to: 00502b80 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_FUN_00502b80()
+    CALL core_ladder.cpp_CLadder_FUN_00502b80 ; 00502a0b
+        ;   XREF to: 00502b80 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_CLadder_FUN_00502b80(CLadder * this_ptr)
     MOV EDX,dword ptr [0x0067cf48]      ; 00502a10 | g_CLadderClassVersion
     ADD ESP,0x4                         ; 00502a16
     CMP EDX,0x2                         ; 00502a19

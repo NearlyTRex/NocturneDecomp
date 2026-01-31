@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_bodypart.cpp_FUN_00419340
+;   core_bodypart.cpp_CBodyPart_FUN_00419340
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -80,8 +80,8 @@ section .text
     PUSH -0x1                           ; 00419537
         ;   Label: LAB_00419537
     PUSH EBP                            ; 00419539
-    CALL core_bodypart.cpp_FUN_00419340 ; 0041953a
-        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419340()
+    CALL core_bodypart.cpp_CBodyPart_FUN_00419340 ; 0041953a
+        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419340(CBodyPart * this_ptr)
     ADD ESP,0x8                         ; 0041953f
     MOV EDI,dword ptr [EBP + 0x28c]     ; 00419542
         ;   Label: LAB_00419542

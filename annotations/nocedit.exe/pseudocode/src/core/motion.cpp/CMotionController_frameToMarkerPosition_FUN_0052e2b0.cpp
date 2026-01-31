@@ -17,10 +17,10 @@ core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionCont
   float local_1c;
   
   pSVar3 = this_ptr->motion_list_ptr->motions + this_ptr->current_motion_index;
-  if (this_ptr->current_frame_number <= 0.0) {
+  if ((float)this_ptr->current_frame_number <= 0.0) {
     local_1c = 0.0;
   }
-  else if ((float)pSVar3->frame_count <= this_ptr->current_frame_number) {
+  else if ((float)pSVar3->frame_count <= (float)this_ptr->current_frame_number) {
     local_1c = (float)(pSVar3->marker_count + 1);
   }
   else {
@@ -29,9 +29,9 @@ core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionCont
     pSVar2 = pSVar3;
     if (0 < pSVar3->marker_count) {
       do {
-        if (this_ptr->current_frame_number < (float)pSVar2->markers[0]) {
+        if ((float)this_ptr->current_frame_number < (float)pSVar2->markers[0]) {
           return (float)iVar1 +
-                 (this_ptr->current_frame_number - (float)iVar4) /
+                 ((float)this_ptr->current_frame_number - (float)iVar4) /
                  (float)(pSVar2->markers[0] - iVar4);
         }
         iVar1 = iVar1 + 1;
@@ -40,7 +40,7 @@ core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionCont
       } while (iVar1 < pSVar3->marker_count);
     }
     local_1c = (float)pSVar3->marker_count +
-               (this_ptr->current_frame_number - (float)iVar4) /
+               ((float)this_ptr->current_frame_number - (float)iVar4) /
                (float)(pSVar3->frame_count - iVar4);
   }
   return local_1c;

@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_hero_hero.cpp_FUN_004f2220(uint param_1, uint param_2)
-    */
-
 int __cdecl core_hero_cpp_FUN_004f2220(void)
 
 {

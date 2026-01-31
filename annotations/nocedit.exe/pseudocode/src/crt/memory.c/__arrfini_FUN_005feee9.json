@@ -20,21 +20,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004126e0",
-      "from_addr": "004126ec",
-      "name": "core_backgnd.cpp_cleanupVector_FUN_004126e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00412700",
       "from_addr": "0041270c",
-      "name": "core_backgnd.cpp_freeFires_FUN_00412700",
+      "name": "core_armour.cpp_freeFires_FUN_00412700",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00412720",
       "from_addr": "0041272c",
-      "name": "core_backgnd.cpp_freeFlames_FUN_00412720",
+      "name": "core_armour.cpp_freeFlames_FUN_00412720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004126e0",
+      "from_addr": "004126ec",
+      "name": "core_armour.cpp_freeVectors_FUN_004126e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,7 +52,7 @@
     {
       "addr": "0041db30",
       "from_addr": "0041db3c",
-      "name": "core_boneguy.cpp_FUN_0041db30",
+      "name": "core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -580,7 +580,7 @@
       {
         "call_addr": "004126ec",
         "call_type": "direct",
-        "caller": "core_backgnd.cpp_cleanupVector_FUN_004126e0",
+        "caller": "core_armour.cpp_freeVectors_FUN_004126e0",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -589,7 +589,7 @@
       {
         "call_addr": "0041270c",
         "call_type": "direct",
-        "caller": "core_backgnd.cpp_freeFires_FUN_00412700",
+        "caller": "core_armour.cpp_freeFires_FUN_00412700",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -598,7 +598,7 @@
       {
         "call_addr": "0041272c",
         "call_type": "direct",
-        "caller": "core_backgnd.cpp_freeFlames_FUN_00412720",
+        "caller": "core_armour.cpp_freeFlames_FUN_00412720",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "reg_params": [],

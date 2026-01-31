@@ -70,7 +70,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   iVar9 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar9 == 0) {
     if (uVar3 == 0) {
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       iVar9 = *(int *)((this_ptr->base).unk2 + 4);
       if (iVar9 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -91,7 +91,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
       }
     }
     else if ((uVar3 < 2) || (uVar3 == 2)) {
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         pCVar15 = &(this_ptr->base).base.model;
@@ -195,7 +195,7 @@ LAB_005c6fd0:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&pCVar15->motion_controller);
-  fVar11 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+  fVar11 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             ((CMotionController *)(this_ptr->unk + 8),pSVar10->motion_name,fVar11);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000

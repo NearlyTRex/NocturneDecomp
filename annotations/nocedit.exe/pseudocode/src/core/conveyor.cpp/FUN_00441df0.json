@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 61,
-        "line": 31,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
-      },
-      {
         "category": "other",
         "column": 22,
         "line": 41,
@@ -21,31 +15,20 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 43,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 44,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 229,
+    "complexity_score": 244,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 69,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "stack_param",
+      "suspect_float",
       "unnamed_param"
     ],
     "total_lines": 187
@@ -243,7 +226,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
+      "text": "CPlatform *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -257,56 +240,63 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "(g_CEventListPtr,in_stack_00000004[5].create_event + 0x14);",
+      "text": "(g_CEventListPtr,in_stack_00000004[1].base.actor_name + 0x18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[5].vtable = (CDemonActor_union_vtable)0x1;",
+      "text": "in_stack_00000004[1].base.unk3.x = 1.4013e-45;",
       "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 24,
+      "match": "1.4013e-45",
+      "text": "in_stack_00000004[1].base.unk3.x = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "(g_CEventListPtr,(char *)&in_stack_00000004[5].unk4.y);",
+      "text": "(g_CEventListPtr,in_stack_00000004[1].base.create_event + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[5].vtable._ub != (CDemonActor_vtable *)0x0) {",
+      "text": "if (in_stack_00000004[1].base.unk3.x != 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "local_18 = (CVector3f *)(in_stack_00000004[5].create_event + 8);",
+      "text": "local_18 = (CVector3f *)(in_stack_00000004[1].base.actor_name + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
-      "text": "local_14 = in_stack_00000004 + 6;",
+      "text": "local_14 = &in_stack_00000004[1].base.unk3.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004 == (CDemonActor *)actor_ptr->unk2) {",
+      "text": "if (in_stack_00000004 == actor_ptr->standing_platform) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&local_30,local_18);",
+      "text": "(&in_stack_00000004->base,&local_30,local_18);",
       "type": "stack_param"
     },
     {
@@ -334,7 +324,7 @@
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[5].vtable._ub = (CDemonActor_vtable *)0x0;",
+      "text": "in_stack_00000004[1].base.unk3.x = 0.0;",
       "type": "stack_param"
     }
   ],

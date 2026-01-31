@@ -145,7 +145,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
     core_level_cpp_CLevelLoader_cleanup_FUN_00504720(g_CLevelLoaderPtr);
     shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x581);
-    *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
+    g_HeroActors[g_LocalHeroIndex]->unk3 = this_ptr->aim_mode;
     this_ptr->unk12 = 0;
     while( true ) {
       if ((this_ptr->is_paused != 0) || (iVar4 = 1, g_CheatSystemEnabled != 0)) {
@@ -284,7 +284,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               core_sound_cpp_CSound_init_FUN_005b2dd0(g_CSoundPtr);
             }
             in_stack_fffff798 = (char **)0x0;
-            *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
+            g_HeroActors[g_LocalHeroIndex]->unk3 = this_ptr->aim_mode;
             in_stack_fffff794 = (CHero *)&stack0xfffff790;
             in_stack_fffff790 = (CGame *)0x4db9b1;
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

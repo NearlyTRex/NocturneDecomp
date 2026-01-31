@@ -19,7 +19,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr)
     this_ptr->unk1[0x55] = '\0';
     this_ptr->unk1[0x56] = '\0';
     this_ptr->unk1[0x57] = '\0';
-    (*(pCVar1->_ue).field_4)();
+    (*(pCVar1->_ue).enemyfunc2)();
   }
   core_charactr_cpp_CCharacter_FUN_0042cfe0((CCharacter *)this_ptr);
   return;

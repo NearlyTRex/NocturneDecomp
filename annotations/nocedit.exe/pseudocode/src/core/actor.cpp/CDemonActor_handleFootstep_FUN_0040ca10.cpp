@@ -38,7 +38,7 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   }
   iVar4 = core_gore_cpp_CGore_FUN_004ee0f0(g_CGorePtr);
   if (iVar4 == 0) {
-    if (this_ptr->unk8 < 1) {
+    if (this_ptr->blood_effect_timer < 1) {
       if (surface_type == 3) {
         core_gore_cpp_CGore_FUN_004ee070(g_CGorePtr);
       }
@@ -46,19 +46,19 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
     }
   }
   else {
-    this_ptr->unk8 = 0xffff;
+    this_ptr->blood_effect_timer = 0xffff;
   }
   core_gore_cpp_CGore_FUN_004ee070(g_CGorePtr);
-  iVar4 = this_ptr->unk8 + -0x2000;
-  this_ptr->unk8 = iVar4;
+  iVar4 = this_ptr->blood_effect_timer + -0x2000;
+  this_ptr->blood_effect_timer = iVar4;
   if (iVar4 < 0) {
-    this_ptr->unk8 = 0;
+    this_ptr->blood_effect_timer = 0;
   }
 LAB_0040cb07:
   dVar6 = (double)volume;
   pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
   sprintf
-            (local_8c,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->unk10,pcVar5,dVar6);
+            (local_8c,"footstep-%s-!-%s-?.wav @ %f",this_ptr->footstep_sound_code,pcVar5,dVar6);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,local_8c,position);
   return extraout_EAX;
 }

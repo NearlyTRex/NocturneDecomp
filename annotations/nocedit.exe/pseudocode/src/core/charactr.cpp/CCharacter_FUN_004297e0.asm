@@ -9,10 +9,10 @@
 ; XREF[18]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041558d
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416992
-;   core_biggs.cpp_CBiggs_FUN_00418700 at 004187fa
+;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 004187fa
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c416
-;   core_bride.cpp_FUN_00423a30 at 004243ba
-;   core_cow.cpp_FUN_00444310 at 0044442d
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 004243ba
+;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044442d
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f274
 ;   core_drone.cpp_FUN_0048ec70 at 0048edf1
 ;   core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 at 004e4b4f

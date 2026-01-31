@@ -14,9 +14,9 @@
 ;   core_emitter.cpp_FUN_004a8db0 at 004a8fcf
 ;   core_filmreel.cpp_CFilmReel_FUN_004bee30 at 004bee5a
 ;   core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0 at 004e5b86
-;   core_hostage.cpp_FUN_004f69c0 at 004f6a08
-;   core_ladder.cpp_CLadder_FUN_00502ca0 at 00502cde
-;   core_lever.cpp_FUN_00505240 at 00505305
+;   core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0 at 004f6a08
+;   core_ladder.cpp_CLadder_getPropertyList_FUN_00502ca0 at 00502cde
+;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 00505305
 ;   ... and 10 more
 ;
 ; Referenced Globals:

@@ -8,13 +8,13 @@
 ;
 ; XREF[34]:
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411b90
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412a40 at 00412a78
-;   core_baron.cpp_CBaron_FUN_00414010 at 0041405b
+;   core_backgnd.cpp_CBackgroundActor_getPropertyList_FUN_00412a40 at 00412a78
+;   core_baron.cpp_CBaron_getPropertyList_FUN_00414010 at 0041405b
 ;   core_barrier.cpp_CBarrier_FUN_00414400 at 00414454
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004228a0
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 00423523
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423523
 ;   core_chain.cpp_CChain_FUN_00431120 at 00431243
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f7b5
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f7b5
 ;   core_conveyor.cpp_FUN_00442130 at 00442151
 ;   core_curtain.cpp_FUN_0044b610 at 0044b728
 ;   ... and 24 more

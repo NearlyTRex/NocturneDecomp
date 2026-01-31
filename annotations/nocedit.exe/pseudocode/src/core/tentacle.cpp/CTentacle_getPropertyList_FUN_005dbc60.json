@@ -1,0 +1,148 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005dbc60",
+    "address_range": [
+      [
+        "005dbc60",
+        "005dbcbc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60",
+    "signature": "void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60 (CTentacle *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350"
+    },
+    {
+      "addr": "0040e4a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4a0"
+    },
+    {
+      "addr": "0040e4d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0"
+    },
+    {
+      "addr": "004aa170",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654e99",
+      "name": "s_Model_00654e99",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654e9f",
+      "name": "s_State_00654e9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654ea5",
+      "name": "s_CGrave_00654ea5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654eac",
+      "name": "s_Grave_actor_00654eac",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9411764705882355,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 27,
+      "INT_ADD": 12,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 22,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 134
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTentacle *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTentacle",
+        "offset": 212,
+        "vtable_addr": "00664474"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

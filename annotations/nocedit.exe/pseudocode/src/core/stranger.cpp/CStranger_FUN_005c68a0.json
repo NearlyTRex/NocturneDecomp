@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 67,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
-    "suspect_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 55
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     {
       "addr": "0042f8a0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f8a0"
+      "name": "core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0"
     }
   ],
   "globals": [],
@@ -96,28 +96,35 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == *(int *)(this_ptr->unk1 + 0x28)) {",
+      "text": "core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0((CCharacter *)this_ptr,in_stack_00000008)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 9,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != *(int *)(this_ptr->unk1 + 0x48)) {",
+      "text": "if (in_stack_00000008 == *(CDemonActor **)(this_ptr->unk1 + 0x28)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "else if (in_stack_00000008 != *(int *)(this_ptr->unk1 + 0x48)) {",
+      "text": "if (in_stack_00000008 != *(CDemonActor **)(this_ptr->unk1 + 0x48)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "else if (in_stack_00000008 != *(CDemonActor **)(this_ptr->unk1 + 0x48)) {",
       "type": "stack_param"
     }
   ],

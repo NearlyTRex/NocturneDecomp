@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 10,
-        "line": 56,
+        "line": 58,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -19,47 +19,47 @@
       {
         "category": "other",
         "column": 25,
-        "line": 19,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 21,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 24,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 26,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 35,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 178,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 53,
-    "suspect_count": 12,
+    "pseudocode_lines": 55,
+    "suspect_count": 14,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 191
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -261,76 +261,90 @@
     {
       "description": "Unresolved stack parameter",
       "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
       "match": "in_stack_00000010",
       "text": "CDemonActor *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "if (g_HeroCount <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "if (g_HeroActors[in_stack_00000008] != (CHero *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "g_HeroActors[in_stack_00000008] = pCVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 38,
       "match": "in_stack_00000008",
-      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->unk)) {",
+      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->index)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr_00,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
       "match": "in_stack_00000010",
       "text": "(*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 45,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010,&(this_ptr_00->base).location.position,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 47,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base).location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 49,
       "match": "in_stack_00000010",
       "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 51,
       "match": "in_stack_00000010",
       "text": "(*(((in_stack_00000010->vtable)._uc)->_uc).cfunc23)();",
       "type": "stack_param"

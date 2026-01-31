@@ -141,7 +141,7 @@ void __cdecl core_spike_cpp_FUN_005b8950(void)
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                     (&this_ptr->base,(CVector3f *)auStack_94,&CStack_a0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_15c);
-          auStack_15c._4_4_ = in_stack_00000004[3].unk15;
+          auStack_15c._4_4_ = in_stack_00000004[3].prev_actor;
           auStack_15c._48_4_ = 0x67;
           if (auStack_15c + 0x1c != auStack_94) {
             auStack_15c._28_4_ = auStack_94._0_4_;

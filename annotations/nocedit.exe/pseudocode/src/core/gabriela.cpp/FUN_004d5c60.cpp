@@ -33,7 +33,7 @@ int __cdecl core_gabriela_cpp_FUN_004d5c60(void)
   
   iVar2 = 0;
   local_1c = 0;
-  in_stack_00000004[0x179].unk8 = 0;
+  in_stack_00000004[0x179].blood_effect_timer = 0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar2) {
       return 0;
@@ -76,7 +76,7 @@ int __cdecl core_gabriela_cpp_FUN_004d5c60(void)
                                  (&local_30,&local_90);
               local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
               if (ABS(local_18) <= (float)0.17453292519444399) {
-                in_stack_00000004[0x179].unk8 = (int)local_24;
+                in_stack_00000004[0x179].blood_effect_timer = (int)local_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           ((CMotionController *)(in_stack_00000004 + 1),0x16,1);
                 in_stack_00000004[0x8d].create_event[0x48] = '\0';

@@ -43,9 +43,9 @@ void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 // Address: 004d4190
 void __cdecl FUN_004d4190(void);
 
-// Original: core_gabriela.cpp_FUN_004d4890
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4890
 // Address: 004d4890
-void __cdecl FUN_004d4890(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004d4c90
 // Address: 004d4c90
@@ -71,9 +71,9 @@ void __cdecl FUN_004d5550(void);
 // Address: 004d5870
 int __cdecl PickupSomething(void);
 
-// Original: core_gabriela.cpp_FUN_004d5c10
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5c10
 // Address: 004d5c10
-void __cdecl FUN_004d5c10(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004d5c60
 // Address: 004d5c60

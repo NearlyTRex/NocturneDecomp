@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 at 004117aa
+;   core_ammobox.cpp_CAmmoBox_FUN_00411700 at 004117aa
 ;
 ; *****************************************************************************
 

@@ -1,0 +1,893 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 76,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 85,
+        "message": "void value not ignored as it ought to be"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 106,
+        "message": "void value not ignored as it ought to be"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 114,
+        "message": "cast from 'CBride*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 119,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 131,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 22,
+        "line": 131,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "syntax_error",
+        "column": 39,
+        "line": 138,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 154,
+        "message": "void value not ignored as it ought to be"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 168,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 28,
+        "line": 168,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 230,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 28,
+        "line": 230,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 308,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 18,
+        "line": 308,
+        "message": "expected primary-expression before ')' token"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 85,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 106,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 131,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 138,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 154,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 230,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 308,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 625,
+    "complexity_score": 465,
+    "cross_reference_count": 0,
+    "function_call_count": 21,
+    "global_count": 15,
+    "pseudocode_lines": 365,
+    "suspect_count": 9,
+    "suspect_types": [
+      "extra_output",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 990
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00423a30",
+    "address_range": [
+      [
+        "00423a30",
+        "00423ace"
+      ],
+      [
+        "00423b02",
+        "00423ce5"
+      ],
+      [
+        "00423d1a",
+        "00423e83"
+      ],
+      [
+        "0042404a",
+        "0042409a"
+      ],
+      [
+        "004242b3",
+        "00424559"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bride.cpp_CBride_process_FUN_00423a30",
+    "signature": "void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0042dfc0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
+    },
+    {
+      "addr": "00428f40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
+    },
+    {
+      "addr": "004297e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
+    },
+    {
+      "addr": "00429870",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
+    },
+    {
+      "addr": "0042b670",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b670"
+    },
+    {
+      "addr": "0042b760",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b760"
+    },
+    {
+      "addr": "0042b810",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b810"
+    },
+    {
+      "addr": "0042ec40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+    },
+    {
+      "addr": "004286e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0"
+    },
+    {
+      "addr": "004a9fd0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9fd0"
+    },
+    {
+      "addr": "004ede30",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004ede30"
+    },
+    {
+      "addr": "0052d610",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "0059fa20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20"
+    },
+    {
+      "addr": "0059e020",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00002424",
+      "name": "DAT_00002424",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616bc8",
+      "name": "s_ub_attack_wav_00616bc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616be4",
+      "name": "s_ub_attack_wav_00616be4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c15",
+      "name": "DOUBLE_00616c15",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "00616c2d",
+      "name": "DOUBLE_00616c2d",
+      "type": "double",
+      "value": "1.57079632675000"
+    },
+    {
+      "addr": "00616c35",
+      "name": "DOUBLE_00616c35",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "00616c3d",
+      "name": "DOUBLE_00616c3d",
+      "type": "double",
+      "value": "32"
+    },
+    {
+      "addr": "0065b40c",
+      "name": "FLOAT_0065b40c",
+      "type": "float",
+      "value": "2.5"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "00822cdc",
+      "name": "INT_00822cdc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822ce8",
+      "name": "INT_00822ce8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822cec",
+      "name": "INT_00822cec",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822cf0",
+      "name": "INT_00822cf0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822cf4",
+      "name": "INT_00822cf4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.3220675944334,
+    "instruction_count": 503,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 12,
+      "BRANCH": 14,
+      "CALL": 41,
+      "CALLIND": 10,
+      "CBRANCH": 38,
+      "COPY": 952,
+      "FLOAT2FLOAT": 60,
+      "FLOAT_ADD": 7,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 13,
+      "FLOAT_NAN": 12,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 6,
+      "INT_ADD": 198,
+      "INT_AND": 220,
+      "INT_CARRY": 50,
+      "INT_EQUAL": 168,
+      "INT_LEFT": 24,
+      "INT_LESS": 10,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 32,
+      "INT_OR": 30,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 50,
+      "INT_SLESS": 84,
+      "INT_SUB": 185,
+      "INT_XOR": 2,
+      "INT_ZEXT": 24,
+      "LOAD": 99,
+      "POPCOUNT": 84,
+      "RETURN": 1,
+      "STORE": 207
+    },
+    "pcode_op_count": 2677
+  },
+  "stack_frame": {
+    "frame_size": 512,
+    "local_size": 504,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1f4",
+        "offset": -500,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1f0",
+        "offset": -496,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c0",
+        "offset": -448,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1bc",
+        "offset": -444,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b8",
+        "offset": -440,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_184",
+        "offset": -388,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_17c",
+        "offset": -380,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 68,
+      "match": "extraout_EAX_00",
+      "text": "if (extraout_EAX_00 == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 115,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 124,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 131,
+      "match": "code *",
+      "text": "(iVar7 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) +",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 161,
+      "match": "code *",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x108))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 223,
+      "match": "code *",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x108))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 301,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBride",
+        "offset": 4,
+        "vtable_addr": "0065b424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

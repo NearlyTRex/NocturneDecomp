@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_hero.cpp_CHero_FUN_004f3fa0
+;   core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 00559144
     MOV ECX,dword ptr [ESP + 0x8]       ; 00559145
     PUSH ECX                            ; 00559149
-    CALL core_hero.cpp_CHero_FUN_004f3fa0 ; 0055914a
-        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3fa0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0 ; 0055914a
+        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0(CHero * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0055914f
     RET                                 ; 00559152
 

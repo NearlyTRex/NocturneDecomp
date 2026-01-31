@@ -8,7 +8,7 @@
 ;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 00448f5d
 ;   core_dynamite.cpp_FUN_0049ce70 at 0049ce76
 ;   core_elephant.cpp_FUN_004a7160 at 004a719d
-;   core_gun.cpp_FUN_004f0350 at 004f038d
+;   core_gun.cpp_CGun_FUN_004f0350 at 004f038d
 ;   core_shotgun.cpp_FUN_00588060 at 0058809a
 ;   core_tommygun.cpp_FUN_005ddb30 at 005ddba1
 ;

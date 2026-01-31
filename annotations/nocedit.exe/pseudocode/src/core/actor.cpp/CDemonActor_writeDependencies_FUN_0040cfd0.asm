@@ -8,16 +8,16 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[44]:
-;   core_anvil.cpp_CAnvil_FUN_00412090 at 0041209c
-;   core_armour.cpp_CArmour_FUN_004124d0 at 004124db
-;   core_bat.cpp_CBat_FUN_00414ec0 at 00414ecc
-;   core_batcreat.cpp_CBatCreature_FUN_004162f0 at 004162fb
-;   core_batman.cpp_CBatman_FUN_00417d30 at 00417d3b
-;   core_battery.cpp_FUN_00418110 at 0041811c
-;   core_beast.cpp_FUN_00418460 at 0041846b
-;   core_biggs.cpp_FUN_00418ce0 at 00418ceb
-;   core_boneguy.cpp_FUN_0041da10 at 0041da1b
-;   core_bride.cpp_FUN_00424b50 at 00424b5b
+;   core_anvil.cpp_CAnvil_writeDependencies_FUN_00412090 at 0041209c
+;   core_armour.cpp_CArmour_writeDependencies_FUN_004124d0 at 004124db
+;   core_bat.cpp_CBat_writeDependencies_FUN_00414ec0 at 00414ecc
+;   core_batcreat.cpp_CBatCreature_writeDependencies_FUN_004162f0 at 004162fb
+;   core_batman.cpp_CBatman_writeDependencies_FUN_00417d30 at 00417d3b
+;   core_battery.cpp_CBattery_writeDependencies_FUN_00418110 at 0041811c
+;   core_beast.cpp_CBeast_writeDependencies_FUN_00418460 at 0041846b
+;   core_biggs.cpp_CBiggs_writeDependencies_FUN_00418ce0 at 00418ceb
+;   core_boneguy.cpp_CBoneGuy_writeDependencies_FUN_0041da10 at 0041da1b
+;   core_bride.cpp_CBride_writeDependencies_FUN_00424b50 at 00424b5b
 ;   ... and 34 more
 ;
 ; *****************************************************************************

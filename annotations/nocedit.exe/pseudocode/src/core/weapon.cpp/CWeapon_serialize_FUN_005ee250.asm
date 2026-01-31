@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x104]:1  local_104
 ;
 ; XREF[2]:
-;   core_melee.cpp_CMelee_load_FUN_0050e920 at 0050e926
+;   core_melee.cpp_CMelee_serialize_FUN_0050e920 at 0050e926
 ;   core_turret.cpp_CTurret_serialize_FUN_005e2c40 at 005e2c46
 ;
 ; Referenced Globals:

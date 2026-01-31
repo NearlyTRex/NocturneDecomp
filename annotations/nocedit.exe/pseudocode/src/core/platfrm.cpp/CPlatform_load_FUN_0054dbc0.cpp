@@ -80,7 +80,7 @@ void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
   }
   if (5 < g_CPlatformClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              (&in_stack_00000004[3].unk7,"plotAsBoxInShadow");
+              ((int *)&in_stack_00000004[3].unk7,"plotAsBoxInShadow");
   }
   if (7 < g_CPlatformClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
@@ -100,7 +100,7 @@ void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
         do {
           core_actor_cpp_serializeActor_FUN_0040b870
                     ((CDemonActor *)&local_18,"attach actor");
-          pCVar1[3].unk8 = local_18;
+          pCVar1[3].blood_effect_timer = local_18;
           iVar2 = iVar2 + 1;
           pCVar1 = (CDemonActor *)&(pCVar1->orient).bank;
         } while (iVar2 < local_1c);
@@ -110,7 +110,7 @@ void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
       local_14 = 0;
       pCVar1 = in_stack_00000004;
       do {
-        if (pCVar1[3].unk8 != 0) {
+        if (pCVar1[3].blood_effect_timer != 0) {
           local_14 = local_14 + 1;
         }
         pCVar1 = (CDemonActor *)&(pCVar1->orient).bank;
@@ -119,9 +119,9 @@ void __cdecl core_platfrm_cpp_CPlatform_load_FUN_0054dbc0(void)
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_14,"attachCount");
       pCVar1 = in_stack_00000004;
       do {
-        if (pCVar1[3].unk8 != 0) {
+        if (pCVar1[3].blood_effect_timer != 0) {
           core_actor_cpp_serializeActor_FUN_0040b870
-                    ((CDemonActor *)(&in_stack_00000004[3].unk8 + iVar2 * 0xd),
+                    ((CDemonActor *)(in_stack_00000004[3].footstep_sound_code + iVar2 * 0x34 + -8),
                      "attach actor");
         }
         iVar2 = iVar2 + 1;

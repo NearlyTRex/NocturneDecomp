@@ -10,7 +10,7 @@
 ; XREF[5]:
 ;   core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 at 0040d1a1
 ;   core_barrier.cpp_CBarrier_FUN_00414610 at 00414662
-;   core_lever.cpp_FUN_00505390 at 005053c0
+;   core_lever.cpp_CLever_showEditorHelp_FUN_00505390 at 005053c0
 ;   core_stairs.cpp_FUN_005bab90 at 005babcc
 ;   core_trigger.cpp_CTrigger_FUN_005e1350 at 005e13c0
 ;

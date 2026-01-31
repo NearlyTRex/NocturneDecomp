@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)
+; __cdecl void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float fov,float falloff)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   position
 ; CVector3i *      Stack[0x8]:4   rotation
-; float            Stack[0xc]:4   param_3
-; float            Stack[0x10]:4   max_distance
+; float            Stack[0xc]:4   fov
+; float            Stack[0x10]:4   falloff
 ; Local Variables:
 ; undefined4       Stack[-0xc0]:4  local_c0
 ; undefined4       Stack[-0xbc]:4  local_bc
@@ -48,7 +48,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_litecone.cpp_FUN_00506c20 at 00506c96
+;   core_litecone.cpp_CLightCone_renderTransparent_FUN_00506c20 at 00506c96
 ;   core_vehicle.cpp_CVehicle_FUN_005e88c0 at 005e8ac7
 ;   core_zombie.cpp_CZombie_FUN_005fbe70 at 005fbf99
 ;

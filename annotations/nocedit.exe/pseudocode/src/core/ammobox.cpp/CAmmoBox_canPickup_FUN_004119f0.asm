@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr)
+; __cdecl int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   carrier
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_00614c69

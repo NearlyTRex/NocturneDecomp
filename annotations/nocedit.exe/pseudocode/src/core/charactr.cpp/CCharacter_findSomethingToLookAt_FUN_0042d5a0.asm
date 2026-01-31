@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f51bb
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f51bb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_006173ca

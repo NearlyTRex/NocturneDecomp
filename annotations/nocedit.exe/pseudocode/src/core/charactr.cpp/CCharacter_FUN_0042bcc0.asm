@@ -7,20 +7,20 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_batcreat.cpp_FUN_00415dd0 at 00415fe0
-;   core_batman.cpp_FUN_00417660 at 004177a1
+;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415fe0
+;   core_batman.cpp_CBatman_FUN_00417660 at 004177a1
 ;   core_charactr.cpp_CCharacter_FUN_0042b9e0 at 0042ba66
 ;   core_cow.cpp_FUN_004448c0 at 00444a22
 ;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e5661
 ;   core_ghoul.cpp_FUN_004e8520 at 004e8682
-;   core_imp.cpp_FUN_004fab60 at 004faca1
+;   core_imp.cpp_CImp_FUN_004fab60 at 004faca1
 ;   core_mobster.cpp_FUN_00527380 at 00527504
 ;   core_smiley.cpp_FUN_005a32a0 at 005a3421
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc382
 ;
 ; Called Functions:
-;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
-;   core_bodypart.cpp_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_charactr.cpp_CCharacter_FUN_0042bd30
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH ESI                            ; 0042bcf9
     LEA ESI,[EBX + 0x20]                ; 0042bcfa
     PUSH ESI                            ; 0042bcfd
-    CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0042bcfe
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+    CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 0042bcfe
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 0042bd03
     MOV EDI,dword ptr [ESP + 0x20]      ; 0042bd06
     PUSH EDI                            ; 0042bd0a
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042bd30(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 0042bd19
     PUSH ESI                            ; 0042bd1c
-    CALL core_bodypart.cpp_FUN_0041a050 ; 0042bd1d
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 0042bd1d
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0042bd22
     POP EDI                             ; 0042bd25
     POP EBP                             ; 0042bd26

@@ -1,0 +1,142 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502ca0",
+    "address_range": [
+      [
+        "00502ca0",
+        "00502cfd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ladder.cpp_CLadder_getPropertyList_FUN_00502ca0",
+    "signature": "void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0 (CLadder *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e300",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e300"
+    },
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350"
+    },
+    {
+      "addr": "0040e3b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630e60",
+      "name": "s_Model_00630e60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630e66",
+      "name": "s_Master_actor_00630e66",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630e73",
+      "name": "s_ground_type_00630e73",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 25,
+      "INT_ADD": 12,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 21,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLadder *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 212,
+        "vtable_addr": "006605f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

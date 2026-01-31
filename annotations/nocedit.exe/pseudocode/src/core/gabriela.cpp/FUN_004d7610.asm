@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_hero.cpp_CHero_FUN_004f3f20
+;   core_hero.cpp_CHero_getPropertyList_FUN_004f3f20
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 004d7614
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d7615
     PUSH ECX                            ; 004d7619
-    CALL core_hero.cpp_CHero_FUN_004f3f20 ; 004d761a
-        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3f20(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_getPropertyList_FUN_004f3f20 ; 004d761a
+        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_getPropertyList_FUN_004f3f20(CHero * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004d761f
     RET                                 ; 004d7622
 

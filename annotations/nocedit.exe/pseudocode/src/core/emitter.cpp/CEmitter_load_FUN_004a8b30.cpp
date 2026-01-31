@@ -40,7 +40,7 @@ void __cdecl core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
   }
   if (2 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[1].unk2,"maxEmitTime");
+              ((float *)&in_stack_00000004[1].standing_platform,"maxEmitTime");
     core_actor_cpp_serializeFloat_FUN_0040b770
               ((float *)&in_stack_00000004[3].orient_matrix,"emitPeriod");
   }
@@ -48,13 +48,13 @@ void __cdecl core_emitter_cpp_CEmitter_load_FUN_004a8b30(void)
     core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
               ((CKeyFramedModelInstance *)&in_stack_00000004[1].unk4.y,"modelName");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[2].unk8,"rockSpeed");
+              ((float *)&in_stack_00000004[2].blood_effect_timer,"rockSpeed");
   }
   if (4 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0(&in_stack_00000004[2].unk9,"periodicFlag")
     ;
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)&in_stack_00000004[2].unk10,"maxWaitTime");
+              ((float *)in_stack_00000004[2].footstep_sound_code,"maxWaitTime");
   }
   if (5 < g_CEmitterClassVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870

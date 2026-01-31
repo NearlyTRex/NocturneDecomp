@@ -6,6 +6,7 @@
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winsock.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonGlobe.h"
@@ -123,7 +124,7 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e50d0(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_CTVBat_FUN_005e50f0(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_FUN_005e5100(void);
 void __cdecl core_tvbat_cpp_FUN_005e5130(void);
-void __cdecl core_tvbat_cpp_CTVBat_FUN_005e51a0(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0 (CTVBat *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5400(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5440(CTVBat *this_ptr);
@@ -149,7 +150,7 @@ void __cdecl core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480(void);
 void __cdecl core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0(void);
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void);
 int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e75f0(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7650(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650 (CVampireBoss *this_ptr,CActorPropertyList *property_list);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700 (CVampireBoss *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11,uint d12,uint d13);
 void __cdecl core_vehicle_cpp_staticInit_FUN_005e7810(void);
 CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (CVector3f *out_euler_angles,CVector3f *in_direction_vector);
@@ -269,8 +270,8 @@ FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_005ede20(HMODULE hModule,
 void __cdecl core_weapon_cpp_staticInit_FUN_005ede40(void);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint d1,uint d2,uint d3);
-void __cdecl core_weapon_cpp_CWeapon_FUN_005edff0(CWeapon *this_ptr);
-int __cdecl core_weapon_cpp_CWeapon_FUN_005ee030(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_setup_FUN_005edff0(CWeapon *this_ptr);
+int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_005ee030(CWeapon *this_ptr);
 int * __cdecl core_weapon_cpp_CWeapon_FUN_005ee0c0(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_serialize_FUN_005ee250(CWeapon *this_ptr);
@@ -286,10 +287,10 @@ int * __cdecl core_weapon_cpp_CWeapon_FUN_005ee670(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_FUN_005ee6e0(void);
 int __cdecl core_weapon_cpp_CWeapon_FUN_005ee710(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_FUN_005ee730(CWeapon *this_ptr);
-void __cdecl core_weapon_cpp_FUN_005ee740(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_FUN_005ee740(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee860(CWeapon *this_ptr);
-void __cdecl core_weapon_cpp_CWeapon_FUN_005ee9f0(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0 (CWeapon *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005eea60(CWeapon *this_ptr);
 CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_005eea80(CDemonGlobe *this_ptr);
 CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_005eea90(CDemonGlobe *this_ptr);

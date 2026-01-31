@@ -12,6 +12,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMiss
   CDemonActor *actor_ptr;
   CHeroPlaceholder *this_ptr_00;
   int in_stack_00000008;
+  int in_stack_0000000c;
   CDemonActor *in_stack_00000010;
   CHero *pCVar1;
   
@@ -41,9 +42,10 @@ LAB_0052499a:
     this_ptr_00 = (CHeroPlaceholder *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
-    if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->unk)) {
+    if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->index)) {
       if (in_stack_00000010 == (CDemonActor *)0x0) {
-        pCVar1 = (CHero *)core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00);
+        pCVar1 = (CHero *)core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80
+                                    (this_ptr_00,in_stack_0000000c);
       }
       else {
         (*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)

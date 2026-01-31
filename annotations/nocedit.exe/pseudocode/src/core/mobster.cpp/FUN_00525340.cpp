@@ -94,14 +94,14 @@ void __cdecl core_mobster_cpp_FUN_00525340(void)
   *(int *)(in_stack_00000004->base).carry_hands[1].unk1 = INT_02f37ed0;
   *(uint *)((in_stack_00000004->base).carry_hands[1].unk1 + 4) =
        *(uint *)(in_stack_00000004[1].base.base.create_event + 0x40);
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   pCVar2 = &in_stack_00000004[1].base;
   (pCVar2->base).create_event[0x60] = '\0';
   (pCVar2->base).create_event[0x61] = '\0';
   (pCVar2->base).create_event[0x62] = '\0';
   (pCVar2->base).create_event[99] = '\0';
   fVar1 = in_stack_00000004[1].base.base.location.position.z;
-  in_stack_00000004[1].base.base.unk2 = 0;
+  in_stack_00000004[1].base.base.standing_platform = (CPlatform *)0x0;
   if (fVar1 != 0.0) {
     pCVar2 = &in_stack_00000004[1].base;
     (pCVar2->base).actor_name[4] = '\x01';

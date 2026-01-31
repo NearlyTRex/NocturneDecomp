@@ -10,15 +10,16 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
 
 {
   float fVar1;
+  CPlatform *pCVar2;
   CScript *this_ptr_00;
-  float fVar2;
-  int iVar3;
-  CCharacter *pCVar4;
+  float fVar3;
+  int iVar4;
+  CCharacter *pCVar5;
   float in_stack_00000008;
   
-  fVar2 = *(float *)(this_ptr->cloth_data + 0x340) - in_stack_00000008;
-  *(float *)(this_ptr->cloth_data + 0x340) = fVar2;
-  if (fVar2 < 0.0) {
+  fVar3 = *(float *)(this_ptr->cloth_data + 0x340) - in_stack_00000008;
+  *(float *)(this_ptr->cloth_data + 0x340) = fVar3;
+  if (fVar3 < 0.0) {
     this_ptr->cloth_data[0x340] = '\0';
     this_ptr->cloth_data[0x341] = '\0';
     this_ptr->cloth_data[0x342] = '\0';
@@ -26,17 +27,17 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   }
   core_charactr_cpp_CCharacter_FUN_0042a830(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d4d0(this_ptr);
-  fVar2 = *(float *)(this_ptr->cloth_data + 0x8d48) - in_stack_00000008;
-  *(float *)(this_ptr->cloth_data + 0x8d48) = fVar2;
-  if (fVar2 < 0.0) {
+  fVar3 = *(float *)(this_ptr->cloth_data + 0x8d48) - in_stack_00000008;
+  *(float *)(this_ptr->cloth_data + 0x8d48) = fVar3;
+  if (fVar3 < 0.0) {
     this_ptr->cloth_data[0x8d48] = '\0';
     this_ptr->cloth_data[0x8d49] = '\0';
     this_ptr->cloth_data[0x8d4a] = '\0';
     this_ptr->cloth_data[0x8d4b] = '\0';
   }
   if ((0.0 < *(float *)(this_ptr->unk2 + 0x78)) &&
-     (fVar2 = *(float *)(this_ptr->unk2 + 0x78) - in_stack_00000008,
-     *(float *)(this_ptr->unk2 + 0x78) = fVar2, this_ptr_00 = g_CScriptPtr, fVar2 < 0.0)) {
+     (fVar3 = *(float *)(this_ptr->unk2 + 0x78) - in_stack_00000008,
+     *(float *)(this_ptr->unk2 + 0x78) = fVar3, this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
     this_ptr->unk2[0x78] = '\0';
     this_ptr->unk2[0x79] = '\0';
     this_ptr->unk2[0x7a] = '\0';
@@ -48,24 +49,24 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   }
   if (*(int *)this_ptr->unk1 == 0) {
     if (*(float *)(this_ptr->unk1 + 8) == 9999.0f) {
-      iVar3 = 0;
-      pCVar4 = this_ptr;
+      iVar4 = 0;
+      pCVar5 = this_ptr;
       do {
-        if (pCVar4->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
+        if (pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
           core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(this_ptr);
         }
-        iVar3 = iVar3 + 1;
-        pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
-      } while (iVar3 < 2);
+        iVar4 = iVar4 + 1;
+        pCVar5 = (CCharacter *)&(pCVar5->base).orient_matrix.m[0].z;
+      } while (iVar4 < 2);
     }
-    fVar2 = (this_ptr->base).unk3.y;
+    fVar3 = (this_ptr->base).unk3.y;
     (this_ptr->base).unk3.y = 0.0;
     fVar1 = *(float *)(this_ptr->unk1 + 8);
-    (this_ptr->base).location.position.y = fVar2 + (this_ptr->base).location.position.y;
-    if ((fVar1 == 9999.0f) || ((this_ptr->base).unk2 != 0)) {
-      fVar2 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+    (this_ptr->base).location.position.y = fVar3 + (this_ptr->base).location.position.y;
+    if ((fVar1 == 9999.0f) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
+      fVar3 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                         (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),(CVector3f *)0x0);
-      *(float *)(this_ptr->unk1 + 8) = fVar2;
+      *(float *)(this_ptr->unk1 + 8) = fVar3;
     }
     *(uint *)(this_ptr->unk1 + 4) =
          (uint)((this_ptr->base).location.position.y <
@@ -76,20 +77,20 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     this_ptr->unk1[0x1b] = '\0';
     *(uint *)(this_ptr->unk1 + 0x14) = *(uint *)(this_ptr->unk1 + 0x18);
     *(uint *)(this_ptr->unk1 + 0x10) = *(uint *)(this_ptr->unk1 + 0x14);
-    iVar3 = (this_ptr->base).unk2;
+    pCVar2 = (this_ptr->base).standing_platform;
     this_ptr->unk1[0xc] = '\0';
     this_ptr->unk1[0xd] = '\0';
     this_ptr->unk1[0xe] = '\0';
     this_ptr->unk1[0xf] = '\0';
-    if (((iVar3 == 0) && (*(int *)this_ptr->unk2 == 0)) &&
-       (iVar3 = core_hero_cpp_FUN_004f22a0(), iVar3 == 0)) {
+    if (((pCVar2 == (CPlatform *)0x0) && (*(int *)this_ptr->unk2 == 0)) &&
+       (iVar4 = core_hero_cpp_FUN_004f22a0(), iVar4 == 0)) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
       return 0;
     }
-    iVar3 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  return iVar3;
+  return iVar4;
 }

@@ -544,7 +544,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
+        g_HeroActors[g_LocalHeroIndex]->unk3 = this_ptr->aim_mode;
       }
       pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
                                   ((SEncryptedMessage *)DAT_0062bc80);
@@ -579,7 +579,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        *(int *)(g_HeroActors[g_LocalHeroIndex]->unk2 + 0x13908) = this_ptr->aim_mode;
+        g_HeroActors[g_LocalHeroIndex]->unk3 = this_ptr->aim_mode;
       }
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar14 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270
@@ -754,7 +754,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           fVar22 = 5.0;
           pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode enabled");
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
-          (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
+          (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 0x42c80000;
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
@@ -1130,7 +1130,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iVar10 = g_LocalHeroIndex;
         this_ptr->unk2 = 1;
         this_ptr_00 = g_CSoundPtr;
-        (g_HeroActors[iVar10]->base).hit_points = 100.0;
+        (g_HeroActors[iVar10]->base).hit_points = 0x42c80000;
         core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -1889,7 +1889,7 @@ LAB_004df408:
       if (iStack_f8 == iStack_fc) {
         fVar22 = 5.0;
         g_InputHistory[1] = '\0';
-        (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
+        (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 0x42c80000;
         pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Health restored.");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar11,fVar22);
       }

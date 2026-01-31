@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 00423560
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423560
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_g_mm_006169d8

@@ -15,7 +15,7 @@ void __cdecl core_passngr_cpp_FUN_00546270(void)
   CNPC *in_stack_00000004;
   CActorPropertyList *in_stack_00000008;
   
-  core_npc_cpp_CNPC_FUN_00544e40(in_stack_00000004);
+  core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(in_stack_00000004,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);

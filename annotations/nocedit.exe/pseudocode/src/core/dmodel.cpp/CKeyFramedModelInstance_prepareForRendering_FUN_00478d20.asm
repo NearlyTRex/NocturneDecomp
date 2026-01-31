@@ -13,12 +13,12 @@
 ; XREF[52]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410ecd
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411892
-;   core_anvil.cpp_CAnvil_FUN_00411ec0 at 00411f2e
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412860 at 004128b0
-;   core_backgnd.cpp_CBackgroundActor_FUN_004128d0 at 00412920
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411f2e
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860 at 004128b0
+;   core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0 at 00412920
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413bc0
-;   core_bat.cpp_CBat_FUN_00414bf0 at 00414c41
-;   core_battery.cpp_FUN_00417f80 at 00417ff2
+;   core_bat.cpp_CBat_renderOpaque_FUN_00414bf0 at 00414c41
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417ff2
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 at 00419583
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421ea8
 ;   ... and 42 more

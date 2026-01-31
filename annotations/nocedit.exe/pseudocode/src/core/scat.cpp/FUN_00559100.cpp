@@ -13,7 +13,8 @@ void __cdecl core_scat_cpp_FUN_00559100(void)
 
 {
   CCharacter *in_stack_00000004;
+  CDemonActor *in_stack_00000008;
   
-  core_charactr_cpp_CCharacter_FUN_0042f8a0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0(in_stack_00000004,in_stack_00000008);
   return;
 }

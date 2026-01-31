@@ -186,7 +186,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005e8ac2
     PUSH EAX                            ; 005e8ac6
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 005e8ac7
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float param_3, float max_distance)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 005e8acc
     LEA EAX,[ESP + 0x54]                ; 005e8acf
     PUSH EAX                            ; 005e8ad3
@@ -216,7 +216,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005e8b12
     PUSH EAX                            ; 005e8b16
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 005e8b17
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float param_3, float max_distance)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 005e8b1c
     MOV EAX,dword ptr [ESP + 0x60]      ; 005e8b1f
     ADD ESP,0x68                        ; 005e8b23

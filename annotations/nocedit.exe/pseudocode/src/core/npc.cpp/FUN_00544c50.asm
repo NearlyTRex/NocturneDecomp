@@ -8,7 +8,7 @@
 ; undefined1       Stack[-0xd7]:1  local_d7
 ;
 ; XREF[1]:
-;   core_npc.cpp_CNPC_FUN_00544d30 at 00544de7
+;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544de7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_0063e3ac

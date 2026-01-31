@@ -13,7 +13,7 @@ core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
 {
   CDemonSet *pCVar1;
   float fVar2;
-  CDemonActor *pCVar3;
+  CPlatform *pCVar3;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x2b6);
@@ -22,9 +22,10 @@ core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
   core_setcolid_cpp_CDemonSet_FUN_00574220(g_CDemonSetPtr);
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (g_CDemonSetPtr,&(this_ptr->location).position,radius);
-  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pCVar3 = (CPlatform *)
+           core_actor_cpp_castToClassHash_FUN_0040c790
                      (g_CDemonSetPtr->collision_actor,g_CPlatformClassInfo.name_hash);
-  this_ptr->unk2 = (int)pCVar3;
+  this_ptr->standing_platform = pCVar3;
   pCVar1 = g_CDemonSetPtr;
   if (out_normal != (CVector3f *)0x0) {
     if (out_normal != &g_CDemonSetPtr->collision_normal) {

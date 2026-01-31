@@ -13,8 +13,8 @@
 ;   core_dynamite.cpp_CDynamite_process_FUN_0049cfb0 at 0049cfc2
 ;   core_elephant.cpp_CElephantGun_FUN_004a7070 at 004a7091
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0 at 004cb9c2
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 0050645e
-;   core_melee.cpp_FUN_0050ec10 at 0050ec1d
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050645e
+;   core_melee.cpp_CMelee_process_FUN_0050ec10 at 0050ec1d
 ;   core_shotgun.cpp_FUN_00587f70 at 00587f91
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de376
 ;
@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
-;   core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090
+;   core_set.cpp_CDemonSet_FUN_0056d090
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
     PUSH 0x2d7eaf0                      ; 005ee235 | g_CDemonLightInstance
     MOV EAX,[0x006810c8]                ; 005ee23a | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 005ee23f | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090 ; 005ee240
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 005ee240
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 005ee245
     POP ESI                             ; 005ee248
     POP EBX                             ; 005ee249

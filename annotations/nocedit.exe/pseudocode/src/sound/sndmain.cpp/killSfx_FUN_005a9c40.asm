@@ -7,11 +7,11 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[49]:
-;   core_batcreat.cpp_FUN_00416030 at 004161e1
-;   core_batman.cpp_FUN_004179a0 at 004179c5
-;   core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0 at 0041d4dc
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004161e1
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 004179c5
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0 at 0041d4dc
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c227
-;   core_bride.cpp_FUN_00424830 at 00424846
+;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 00424846
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004307da
 ;   core_charactr.cpp_CCharacter_FUN_00428e30 at 00428e5e
 ;   core_charactr.cpp_CCharacter_FUN_00429870 at 00429a84

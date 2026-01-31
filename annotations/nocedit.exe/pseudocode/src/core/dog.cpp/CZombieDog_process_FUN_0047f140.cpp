@@ -84,7 +84,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
       pCVar1 = &(this_ptr->base).base.model;
       if (extraout_EAX_00 == 0) {
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         iVar7 = *(int *)((this_ptr->base).unk2 + 4);
         if (iVar7 != 0) {
           local_74 = *(float *)(iVar7 + 0x20) - (this_ptr->base).base.base.location.position.x;
@@ -116,7 +116,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       break;
     case 1:
     case 2:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       iVar9 = *(int *)((this_ptr->base).unk2 + 4);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar9 == 0) {
@@ -182,7 +182,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
                            [*(int *)(this_ptr->unk + 0xc)].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_8c,pCVar12);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(this_ptr->unk + 0x10))
       ;
       if (extraout_EAX == 0) {
@@ -192,7 +192,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       }
       break;
     case 7:
-      if (((this_ptr->base).pool_me == 0) && ((this_ptr->base).base.base.unk2 == 0)) {
+      if (((this_ptr->base).pool_me == 0) &&
+         ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (&(this_ptr->base).base.model,&local_50,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

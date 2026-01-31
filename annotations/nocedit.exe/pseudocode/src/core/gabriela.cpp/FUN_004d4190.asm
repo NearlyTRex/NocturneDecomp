@@ -49,7 +49,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_hero.cpp_FUN_004f3960
+;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
@@ -130,8 +130,8 @@ section .text
         ;   Label: LAB_004d4263
     PUSH EAX                            ; 004d4267
     PUSH EBX                            ; 004d4268
-    CALL core_hero.cpp_FUN_004f3960     ; 004d4269
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_FUN_004f3960()
+    CALL core_hero.cpp_CHero_FUN_004f3960 ; 004d4269
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_CHero_FUN_004f3960(CHero * this_ptr)
     ADD ESP,0x8                         ; 004d426e
     MOV ESI,EAX                         ; 004d4271
     TEST ESI,ESI                        ; 004d4273

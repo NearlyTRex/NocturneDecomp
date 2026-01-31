@@ -1,17 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(void)
+; __cdecl void __cdecl core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(CDeformableModelInstance *param_1,_FILE *param_2)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   param_1
+; _FILE *          Stack[0x8]:4   param_2
 ;
 ; XREF[25]:
-;   core_armour.cpp_CArmour_FUN_004124d0 at 004124f2
-;   core_batcreat.cpp_CBatCreature_FUN_004162f0 at 00416312
-;   core_batman.cpp_CBatman_FUN_00417d30 at 00417d52
-;   core_beast.cpp_FUN_00418460 at 00418482
-;   core_biggs.cpp_FUN_00418ce0 at 00418d02
-;   core_boneguy.cpp_FUN_0041da10 at 0041da32
-;   core_bride.cpp_FUN_00424b50 at 00424b72
+;   core_armour.cpp_CArmour_writeDependencies_FUN_004124d0 at 004124f2
+;   core_batcreat.cpp_CBatCreature_writeDependencies_FUN_004162f0 at 00416312
+;   core_batman.cpp_CBatman_writeDependencies_FUN_00417d30 at 00417d52
+;   core_beast.cpp_CBeast_writeDependencies_FUN_00418460 at 00418482
+;   core_biggs.cpp_CBiggs_writeDependencies_FUN_00418ce0 at 00418d02
+;   core_boneguy.cpp_CBoneGuy_writeDependencies_FUN_0041da10 at 0041da32
+;   core_bride.cpp_CBride_writeDependencies_FUN_00424b50 at 00424b72
 ;   core_cow.cpp_FUN_00444ca0 at 00444cc2
 ;   core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970 at 0047f992
 ;   core_dracbrid.cpp_FUN_00486d00 at 00486d22

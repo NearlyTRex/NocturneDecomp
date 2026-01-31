@@ -29,7 +29,7 @@ void __cdecl core_drone_cpp_FUN_0048ebc0(void)
   *(int *)(in_stack_00000004[1].base.base.actor_name + 0xc) = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bipn09");
   *(int *)(in_stack_00000004[1].base.base.actor_name + 0x10) = iVar2;
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   pCVar1 = &in_stack_00000004[1].base;
   (pCVar1->base).actor_name[0x14] = '\0';
   (pCVar1->base).actor_name[0x15] = '\0';

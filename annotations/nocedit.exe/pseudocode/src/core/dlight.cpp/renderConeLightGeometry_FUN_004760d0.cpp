@@ -2,13 +2,13 @@
 // Address: 004760d0
 // Address Range: [[004760d0, 004765b8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)
+// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float fov,float falloff)
 
 #include "nocturne.h"
 
 void __cdecl
 core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-          (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)
+          (CVector3f *position,CVector3i *rotation,float fov,float falloff)
 
 {
   float fVar1;
@@ -48,7 +48,7 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
   float local_1c;
   int local_18;
   
-  local_c0.base.count = (int)param_3;
+  local_c0.base.count = (int)fov;
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar4 != 0) {
     return;
@@ -60,7 +60,7 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_LightTextures);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  local_30 = 1.0 / max_distance;
+  local_30 = 1.0 / falloff;
   iVar4 = 1;
   do {
     fVar6 = (float10)iVar4 * ((float10)18 / (float10)(float)local_c0.base.count) *
@@ -69,7 +69,7 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
     Var10 = fpatan(fVar6,(float10)1);
     fVar6 = (float10)fcos(Var10);
     iVar5 = 0;
-    local_1c = (float)(fVar6 * (float10)max_distance);
+    local_1c = (float)(fVar6 * (float10)falloff);
     do {
       pCVar3 = g_CDemonRendererPtr2;
       fVar6 = (float10)iVar5 * (float10)0.125f * (float10)3.1415926535000001 *
@@ -89,12 +89,11 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
       local_8c.y = (int)(local_1c * 0.0);
       local_90 = (float)local_8c.y * local_2c;
       local_8c.x = (int)((float)local_8c.y * local_28);
-      fVar1 = (max_distance - (float)local_8c.y) * local_30;
+      fVar1 = (falloff - (float)local_8c.y) * local_30;
       fVar2 = (float)1024;
       local_40 = (float)local_8c.y;
       local_18 = iVar5;
-      dVar12 = round((double)((max_distance - local_1c) * local_30 * fVar2))
-      ;
+      dVar12 = round((double)((falloff - local_1c) * local_30 * fVar2));
       local_38 = (int)ROUND(dVar12);
       dVar12 = round((double)(fVar1 * fVar2));
       local_40 = (float)(int)ROUND(dVar12);

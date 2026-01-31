@@ -217,14 +217,14 @@
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
-;   core_bodypart.cpp_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_bodypart.cpp_FUN_0041b510
 ;   core_bugs.cpp_FUN_00427b70
 ;   core_charactr.cpp_CCharacter_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_FUN_0042d390
 ;   core_charactr.cpp_CCharacter_FUN_0042ddd0
-;   core_enemy.cpp_FUN_004a9ef0
+;   core_enemy.cpp_CEnemy_FUN_004a9ef0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   ... and 62 more
@@ -3200,8 +3200,8 @@ section .text
     PUSH EAX                            ; 0055c8f2
     LEA EAX,[EDX + 0x20]                ; 0055c8f3
     PUSH EAX                            ; 0055c8f6
-    CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0055c8f7
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+    CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 0055c8f7
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 0055c8fc
     XOR EDI,EDI                         ; 0055c8ff
     MOV dword ptr [ESP + 0x3ebc],EAX    ; 0055c901
@@ -3226,8 +3226,8 @@ section .text
         ;   XREF to: 0055c908 (CONDITIONAL_JUMP)  ; LAB_0055c908
     MOV ECX,dword ptr [ESP + 0x3ebc]    ; 0055c936
     PUSH ECX                            ; 0055c93d
-    CALL core_bodypart.cpp_FUN_0041a050 ; 0055c93e
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 0055c93e
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0055c943
     JMP 0x0055a8bb                      ; 0055c946
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5448,8 +5448,8 @@ section .text
     PUSH ESI                            ; 0055e4e3
     MOV EDI,dword ptr [EAX*0x4 + 0x2db87c0] ; 0055e4e4 | g_HeroActors
     PUSH EDI                            ; 0055e4eb
-    CALL core_hero.cpp_FUN_004f3910     ; 0055e4ec
-        ;   XREF to: 004f3910 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3910()
+    CALL core_hero.cpp_CHero_FUN_004f3910 ; 0055e4ec
+        ;   XREF to: 004f3910 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3910(CHero * this_ptr)
     ADD ESP,0x8                         ; 0055e4f1
     JMP 0x0055a8bb                      ; 0055e4f4
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6194,8 +6194,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055edff
     PUSH ESI                            ; 0055ee00
-    CALL core_hero.cpp_FUN_004f3930     ; 0055ee01
-        ;   XREF to: 004f3930 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3930()
+    CALL core_hero.cpp_CHero_FUN_004f3930 ; 0055ee01
+        ;   XREF to: 004f3930 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3930(CHero * this_ptr)
     ADD ESP,0x8                         ; 0055ee06
     JMP 0x0055a8bb                      ; 0055ee09
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6672,8 +6672,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055f386
     PUSH ESI                            ; 0055f387
-    CALL core_enemy.cpp_FUN_004a9ef0    ; 0055f388
-        ;   XREF to: 004a9ef0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9ef0()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9ef0 ; 0055f388
+        ;   XREF to: 004a9ef0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9ef0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 0055f38d
     JMP 0x0055a8bb                      ; 0055f390
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

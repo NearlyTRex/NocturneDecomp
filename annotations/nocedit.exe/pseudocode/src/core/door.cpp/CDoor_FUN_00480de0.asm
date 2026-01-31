@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f4e84
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f4e84
 ;   core_zombie.cpp_CZombie_process_FUN_005f9470 at 005f9cda
 ;
 ; *****************************************************************************

@@ -15,7 +15,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-;   core_npc.cpp_CNPC_FUN_00544870
+;   core_npc.cpp_CNPC_setup_FUN_00544870
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 00545d32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00545d33
     PUSH EBX                            ; 00545d37
-    CALL core_npc.cpp_CNPC_FUN_00544870 ; 00545d38
-        ;   XREF to: 00544870 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_FUN_00544870(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_setup_FUN_00544870 ; 00545d38
+        ;   XREF to: 00544870 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_setup_FUN_00544870(CNPC * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1f810]   ; 00545d3d
     ADD ESP,0x4                         ; 00545d43
     TEST EDX,EDX                        ; 00545d46

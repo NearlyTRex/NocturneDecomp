@@ -12,8 +12,8 @@
 ; undefined1       Stack[-0xd7]:1  local_d7
 ;
 ; XREF[10]:
-;   core_anvil.cpp_CAnvil_FUN_00412090 at 004120cf
-;   core_battery.cpp_FUN_00418110 at 0041814f
+;   core_anvil.cpp_CAnvil_writeDependencies_FUN_00412090 at 004120cf
+;   core_battery.cpp_CBattery_writeDependencies_FUN_00418110 at 0041814f
 ;   core_boxactor.cpp_CBoxActor_writeDependencies_FUN_00422900 at 00422938
 ;   core_cloth.cpp_FUN_0043e0a0 at 0043e0c5
 ;   core_crate.cpp_FUN_00448b60 at 00448b9f

@@ -13,7 +13,7 @@
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_serialize_FUN_004283a0 at 004285a5
 ;   core_health.cpp_CHealthItem_serialize_FUN_004f1f20 at 004f1f90
-;   core_hostage.cpp_CHostage_load_FUN_004f6170 at 004f630a
+;   core_hostage.cpp_CHostage_serialize_FUN_004f6170 at 004f630a
 ;   core_keyactor.cpp_CKeyActor_serialize_FUN_00501880 at 005018dc
 ;   core_weapon.cpp_CWeapon_serialize_FUN_005ee250 at 005ee2de
 ;

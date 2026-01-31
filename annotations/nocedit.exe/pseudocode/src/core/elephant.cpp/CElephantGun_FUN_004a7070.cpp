@@ -30,7 +30,7 @@ void __cdecl core_elephant_cpp_CElephantGun_FUN_004a7070(CElephantGun *this_ptr,
     g_CDemonLightInstance.base.base.projection_scale = 112.0;
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,1.0);
     g_CDemonLightInstance.antialiasing_enabled = 0;
-    core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
   }
   this_ptr->unk[4] = '\0';
   this_ptr->unk[5] = '\0';

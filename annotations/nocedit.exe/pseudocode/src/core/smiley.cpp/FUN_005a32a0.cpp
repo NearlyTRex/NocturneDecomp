@@ -12,6 +12,7 @@
 void __cdecl core_smiley_cpp_FUN_005a32a0(void)
 
 {
+  CBodyPart *this_ptr;
   int iVar1;
   CCharacter *in_stack_00000004;
   int *in_stack_00000008;
@@ -68,7 +69,7 @@ switchD_005a3329_default:
         }
         iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
         if (iVar1 != 0) {
-          core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+          this_ptr = core_bodypart_cpp_createBodyPart_FUN_00418e10();
           core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
           if (*in_stack_00000008 == *(int *)(in_stack_00000004[1].base.create_event + 0x28)) {
             core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
@@ -84,7 +85,7 @@ switchD_005a3329_default:
             core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
           }
           core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-          core_bodypart_cpp_FUN_0041a050();
+          core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
           if ((in_stack_00000004->model).part_visibility_flags
               [*(int *)(in_stack_00000004[1].base.create_event + 0x50)] == 0) {
             in_stack_00000008[1] = 0x461c3c00;

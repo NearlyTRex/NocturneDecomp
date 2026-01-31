@@ -13,9 +13,9 @@
 ;
 ; XREF[77]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 at 00408b0f
-;   core_anvil.cpp_CAnvil_FUN_00411ec0 at 00411ee5
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411ee5
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413b87
-;   core_battery.cpp_FUN_00417f80 at 00417f94
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417f94
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421e5b
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421f28
 ;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cab0

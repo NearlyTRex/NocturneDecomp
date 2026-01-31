@@ -28,7 +28,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
   *(int *)(this_ptr->unk3 + 0xc) = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
   *(int *)(this_ptr->unk3 + 0x10) = iVar2;
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = this_ptr->light_up_eyes;
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   this_ptr->unk6 = (int)fVar3;

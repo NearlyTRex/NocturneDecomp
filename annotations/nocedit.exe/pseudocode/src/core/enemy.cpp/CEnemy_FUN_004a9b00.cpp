@@ -109,7 +109,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
         }
         if (iVar8 < 0) break;
         local_1c = (&DAT_02cf2bf4)[iVar8];
-        iVar7 = core_enemy_cpp_FUN_004a9a50(this_ptr);
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr);
         this_ptr_00 = g_CConsolePtr;
         if (iVar7 != 0) {
           *(int *)(this_ptr->unk2 + 4) = local_1c;

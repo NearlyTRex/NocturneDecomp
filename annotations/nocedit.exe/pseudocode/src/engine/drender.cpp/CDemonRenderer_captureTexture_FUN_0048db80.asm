@@ -9,7 +9,7 @@
 ;
 ; XREF[71]:
 ;   core_actor.cpp_CDemonActor_FUN_0040dec0 at 0040dfd4
-;   core_bodypart.cpp_FUN_00419340 at 00419464
+;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419464
 ;   core_chain.cpp_CChain_FUN_004308f0 at 00430979
 ;   core_charactr.cpp_CCharacter_FUN_00429b40 at 00429ba8
 ;   core_charactr.cpp_CCharacter_FUN_0042ad00 at 0042ad2b

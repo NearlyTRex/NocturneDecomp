@@ -2,13 +2,11 @@
 // Address: 0050ea40
 // Address Range: [[0050ea40, 0050ea68]]
 // Convention: __cdecl
-// Signature: int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
+// Signature: int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(CMelee *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_weapon_melee.cpp_CMelee_fire() */
-
-int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(void)
+int __cdecl core_melee_cpp_CMelee_fire_FUN_0050ea40(CMelee *this_ptr)
 
 {
   g_CurrentFilename = "..\\core\\melee.cpp";

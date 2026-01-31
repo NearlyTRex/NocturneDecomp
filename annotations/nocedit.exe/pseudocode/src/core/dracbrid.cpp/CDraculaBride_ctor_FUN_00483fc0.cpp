@@ -31,7 +31,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDracu
   (pCVar1->base).cloth_data[0x34a] = -0x80;
   (pCVar1->base).cloth_data[0x34b] = '?';
   pCVar4->unk[0x2c] = '\0';
-  (pCVar4->base).base.hit_points = 135.0;
+  (pCVar4->base).base.hit_points = 0x43070000;
   fVar2 = 50.0f;
   pCVar4->mistState = 0;
   fVar3 = 100.0f;

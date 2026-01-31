@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CColonel.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CConveyor.h"
@@ -99,12 +100,12 @@ CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_00444100(void);
 CDemonActorType * __cdecl core_cow_cpp_FUN_00444130(void);
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_FUN_004441b0(void);
-void __cdecl core_cow_cpp_FUN_00444310(void);
+void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,float delta_time);
 void __cdecl core_cow_cpp_CZombieCow_load_FUN_00444840(void);
 void __cdecl core_cow_cpp_FUN_004448c0(void);
 void __cdecl core_cow_cpp_FUN_00444b40(void);
 int __cdecl core_cow_cpp_FUN_00444c00(void);
-void __cdecl core_cow_cpp_FUN_00444c50(void);
+void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50 (CZombieCow *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_cow_cpp_FUN_00444c90(void);
 void __cdecl core_cow_cpp_FUN_00444ca0(void);
 CZombieCow * __cdecl core_cow_cpp_FUN_00444cd0 (CZombieCow *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

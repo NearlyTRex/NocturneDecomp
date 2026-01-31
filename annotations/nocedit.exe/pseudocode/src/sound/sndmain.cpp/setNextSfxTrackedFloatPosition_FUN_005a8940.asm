@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 at 004d1f52
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 0050661c
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050661c
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050acf7
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 at 0050adad
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b21cb

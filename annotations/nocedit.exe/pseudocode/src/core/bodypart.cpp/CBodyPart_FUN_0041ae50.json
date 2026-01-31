@@ -1,0 +1,233 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 44,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 62,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 99,
+    "complexity_score": 131,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 61,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param"
+    ],
+    "total_lines": 160
+  },
+  "cross_references": [
+    {
+      "addr": "0042bd30",
+      "from_addr": "0042bf1a",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041ae50",
+    "address_range": [
+      [
+        "0041ae50",
+        "0041af6e"
+      ],
+      [
+        "0041af82",
+        "0041af87"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_FUN_0041ae50",
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041ae50(CBodyPart *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004c9b90",
+      "is_variadic": false,
+      "name": "core_flame.cpp_FUN_004c9b90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615e60",
+      "name": "s_CHAR2_RAW_00615e60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615e61",
+      "name": "s_HAR2.RAW_00615e61",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615e62",
+      "name": "s_AR2.RAW_00615e62",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615e63",
+      "name": "s_R2.RAW_00615e63",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042bf1a",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_FUN_0042bd30",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.518072289156627,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 99,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 42,
+      "INT_AND": 37,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 37,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 30,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 375
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "if (input_local_point != in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "input_local_point->x = in_stack_00000008->x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "input_local_point->y = in_stack_00000008->y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "input_local_point->z = in_stack_00000008->z;",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

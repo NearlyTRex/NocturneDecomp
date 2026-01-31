@@ -19,45 +19,45 @@ CDemonActorType * __cdecl CKeyActor::getActorType(CKeyActor *this_ptr);
 // Address: 00501690
 CKeyActor * __cdecl CKeyActor::ctor(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_005016f0
+// Original: core_keyactor.cpp_CKeyActor_setup_FUN_005016f0
 // Address: 005016f0
-void __cdecl FUN_005016f0(void);
+void __cdecl CKeyActor::setup(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_00501710
+// Original: core_keyactor.cpp_CKeyActor_process_FUN_00501710
 // Address: 00501710
-void __cdecl FUN_00501710(void);
+void __cdecl CKeyActor::process(CKeyActor *this_ptr,float delta_time);
 
-// Original: core_keyactor.cpp_FUN_005017c0
+// Original: core_keyactor.cpp_CKeyActor_renderOpaque_FUN_005017c0
 // Address: 005017c0
-int __cdecl FUN_005017c0(void);
+int __cdecl CKeyActor::renderOpaque(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_00501830
+// Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_00501830
 // Address: 00501830
-float * __cdecl FUN_00501830(void);
+CBoundingBox3D * __cdecl CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_keyactor.cpp_CKeyActor_serialize_FUN_00501880
 // Address: 00501880
 void __cdecl CKeyActor::serialize(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_005018f0
+// Original: core_keyactor.cpp_CKeyActor_hasCollision_FUN_005018f0
 // Address: 005018f0
-int __cdecl FUN_005018f0(void);
+int __cdecl CKeyActor::hasCollision(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_keyactor.cpp_FUN_00501900
+// Original: core_keyactor.cpp_CKeyActor_canPickup_FUN_00501900
 // Address: 00501900
-int __cdecl FUN_00501900(void);
+int __cdecl CKeyActor::canPickup(CKeyActor *this_ptr,CDemonActor *picker);
 
-// Original: core_keyactor.cpp_FUN_00501920
+// Original: core_keyactor.cpp_CKeyActor_onPickup_FUN_00501920
 // Address: 00501920
-void __cdecl FUN_00501920(void);
+void __cdecl CKeyActor::onPickup(CKeyActor *this_ptr,CDemonActor *owner);
 
-// Original: core_keyactor.cpp_FUN_00501940
+// Original: core_keyactor.cpp_CKeyActor_getPropertyList_FUN_00501940
 // Address: 00501940
-void __cdecl FUN_00501940(void);
+void __cdecl CKeyActor::getPropertyList(CKeyActor *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_keyactor.cpp_FUN_00501990
+// Original: core_keyactor.cpp_CKeyActor_writeDependencies_FUN_00501990
 // Address: 00501990
-void __cdecl FUN_00501990(void);
+void __cdecl CKeyActor::writeDependencies(CKeyActor *this_ptr,_FILE *file_handle);
 
 // Original: core_keyactor.cpp_CKeyActor_dtor_FUN_005019b0
 // Address: 005019b0

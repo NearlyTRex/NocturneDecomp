@@ -32,13 +32,13 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a50c
 ;   core_charactr.cpp_CCharacter_FUN_0042b9e0 at 0042bc0a
 ;   core_charactr.cpp_CCharacter_FUN_0042c180 at 0042c2d5
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c4a5
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c4a5
 ;   core_dracbrid.cpp_FUN_004858f0 at 00485b03
-;   core_enemy.cpp_FUN_004a9880 at 004a9915
-;   core_enemy.cpp_FUN_004a9930 at 004a99b4
-;   core_gabriela.cpp_FUN_004d4890 at 004d4bc5
+;   core_enemy.cpp_CEnemy_FUN_004a9880 at 004a9915
+;   core_enemy.cpp_CEnemy_FUN_004a9930 at 004a99b4
+;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d4bc5
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e6d05
-;   core_imp.cpp_FUN_004f9c30 at 004f9ed8
+;   core_imp.cpp_CImp_process_FUN_004f9c30 at 004f9ed8
 ;   ... and 5 more
 ;
 ; Called Functions:

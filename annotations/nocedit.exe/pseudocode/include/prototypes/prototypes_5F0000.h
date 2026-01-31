@@ -15,6 +15,7 @@
 #include "system/wingdi.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -181,7 +182,7 @@ bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(void);
 int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(void);
 int __cdecl core_zombie_cpp_CZombie_FUN_005fc9e0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(void);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80 (CZombie *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50 (CZombie *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

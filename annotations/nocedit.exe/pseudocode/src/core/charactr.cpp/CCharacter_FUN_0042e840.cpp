@@ -2,28 +2,24 @@
 // Address: 0042e840
 // Address Range: [[0042e840, 0042e8b7]]
 // Convention: __cdecl
-// Signature: float __cdecl core_charactr_cpp_CCharacter_FUN_0042e840(void)
+// Signature: float __cdecl core_charactr_cpp_CCharacter_FUN_0042e840(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_character.cpp_CCharacter_FUN_0042e840(uint param_1, uint
-   param_2) */
-
-float __cdecl core_charactr_cpp_CCharacter_FUN_0042e840(void)
+float __cdecl core_charactr_cpp_CCharacter_FUN_0042e840(CCharacter *this_ptr)
 
 {
-  int in_stack_00000004;
   int in_stack_00000008;
-  uint local_18;
+  float local_18;
   
   local_18 = 0.0;
-  if (in_stack_00000008 ==
-      *(int *)(in_stack_00000004 + 0x2630 + *(int *)(in_stack_00000004 + 0x2a8c) * 0x38)) {
-    local_18 = *(float *)(in_stack_00000004 + 0x2a90);
+  if (in_stack_00000008 == *(int *)(this_ptr->unk3 + *(int *)(this_ptr->unk3 + 0x46c) * 0x38 + 0x10)
+     ) {
+    local_18 = *(float *)(this_ptr->unk3 + 0x470);
   }
-  if (in_stack_00000008 !=
-      *(int *)(in_stack_00000004 + 0x262c + *(int *)(in_stack_00000004 + 0x2a8c) * 0x38)) {
+  if (in_stack_00000008 != *(int *)(this_ptr->unk3 + *(int *)(this_ptr->unk3 + 0x46c) * 0x38 + 0xc))
+  {
     return local_18;
   }
-  return (1.0 - *(float *)(in_stack_00000004 + 0x2a90)) + local_18;
+  return (1.0 - *(float *)(this_ptr->unk3 + 0x470)) + local_18;
 }

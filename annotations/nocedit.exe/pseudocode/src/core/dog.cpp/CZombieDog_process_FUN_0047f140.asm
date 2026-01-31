@@ -70,8 +70,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
+;   core_enemy.cpp_CEnemy_FUN_004a9880
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_enemy.cpp_FUN_004a9880
 ;   core_gore.cpp_FUN_004ede30
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   ... and 8 more
@@ -368,8 +368,8 @@ section .text
     ADD ESP,0xc                         ; 0047f463
     PUSH EAX                            ; 0047f466
     PUSH EBX                            ; 0047f467
-    CALL core_enemy.cpp_FUN_004a9880    ; 0047f468
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0047f468
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 0047f46d
     MOV EDI,dword ptr [EBX + 0xbec4]    ; 0047f470
     PUSH EDI                            ; 0047f476

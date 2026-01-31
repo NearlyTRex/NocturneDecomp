@@ -220,7 +220,7 @@ LAB_00528f8e:
                        (&pCVar1->motion_controller);
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
               ((CMotionController *)this_ptr->unk1,pSVar7->motion_name,
-               (this_ptr->base).base.model.motion_controller.current_frame_number);
+               (float)(this_ptr->base).base.model.motion_controller.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               ((CDeformableModelInstance *)this_ptr->unk1);
     fVar10 = this_ptr->morph_timer + delta_time;

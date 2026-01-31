@@ -11,7 +11,7 @@
 ;
 ; XREF[7]:
 ;   core_elephant.cpp_CElephantGun_FUN_004a7070 at 004a7130
-;   core_lightgun.cpp_FUN_00505ac0 at 00505b61
+;   core_lightgun.cpp_CLightGun_FUN_00505ac0 at 00505b61
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056ca95
 ;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b00f
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 at 00586c56

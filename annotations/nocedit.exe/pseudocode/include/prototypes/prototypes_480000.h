@@ -337,7 +337,7 @@ void __cdecl core_drone_cpp_FUN_0048ec70(void);
 void __cdecl core_drone_cpp_CDrone_load_FUN_0048f2f0(void);
 void __cdecl core_drone_cpp_FUN_0048f360(void);
 int __cdecl core_drone_cpp_FUN_0048f4d0(void);
-void __cdecl core_drone_cpp_FUN_0048f520(void);
+void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520 (CDrone *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_drone_cpp_FUN_0048f560(void);
 void __cdecl core_drone_cpp_FUN_0048f570(void);
 CDrone * __cdecl core_drone_cpp_dtor_FUN_0048f5a0 (CDrone *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

@@ -16,7 +16,7 @@
 ;   core_emitter.cpp_FUN_004a8db0 at 004a8e64
 ;   core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0 at 004e5b68
 ;   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 at 004eb43b
-;   core_health.cpp_FUN_004f2040 at 004f207a
+;   core_health.cpp_CHealthItem_getPropertyList_FUN_004f2040 at 004f207a
 ;   ... and 9 more
 ;
 ; Called Functions:

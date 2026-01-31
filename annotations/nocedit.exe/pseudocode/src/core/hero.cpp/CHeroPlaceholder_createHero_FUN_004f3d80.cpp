@@ -2,22 +2,21 @@
 // Address: 004f3d80
 // Address Range: [[004f3d80, 004f3ee9]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr)
+// Signature: CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
 
 #include "nocturne.h"
 
 CDemonActor * __cdecl
-core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr)
+core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
 
 {
   COrientation *pCVar1;
   CDemonActor *pCVar2;
-  uint in_stack_00000008;
   char *class_name;
   uint class_name_hash;
   
   pCVar2 = (CDemonActor *)0x0;
-  switch(in_stack_00000008) {
+  switch(param_2) {
   case 0:
     class_name = "CGabriella";
     break;

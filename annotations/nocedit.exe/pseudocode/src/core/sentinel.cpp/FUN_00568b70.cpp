@@ -26,10 +26,12 @@ int __cdecl core_sentinel_cpp_FUN_00568b70(void)
   }
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_10,&g_ZeroVector,
-                      (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[INT_03114210 * 4].z);
+                      (CMatrix3x4f *)
+                      (in_stack_00000004[0xb].footstep_sound_code + INT_03114210 * 0x30 + -0xc));
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_34,&g_ZeroVector,
-                      (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[INT_03114214 * 4].z);
+                      (CMatrix3x4f *)
+                      (in_stack_00000004[0xb].footstep_sound_code + INT_03114214 * 0x30 + -0xc));
   local_1c.x = (pCVar2->x + pCVar1->x) * 0.5f;
   local_1c.y = (pCVar2->y + pCVar1->y) * 0.5f;
   local_1c.z = (pCVar2->z + pCVar1->z) * 0.5f + -0.5f;

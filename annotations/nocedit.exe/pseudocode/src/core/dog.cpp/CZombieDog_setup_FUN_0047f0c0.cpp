@@ -20,6 +20,6 @@ void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog *this_ptr)
   *(int *)(this_ptr->unk + 8) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
   *(int *)(this_ptr->unk + 0xc) = iVar1;
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   return;
 }

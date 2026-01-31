@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCourse.h"
@@ -28,6 +29,7 @@
 #include "types/structs/SBitAllocationTable.h"
 #include "types/structs/SCPUInfo.h"
 #include "types/structs/SClipPlane.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SHuffmanTable.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -46,27 +48,27 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-void __cdecl core_mimic_cpp_FUN_00520500(void);
+void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_00520870(CMimic *this_ptr);
-int __cdecl core_mimic_cpp_FUN_00520890(void);
-int __cdecl core_mimic_cpp_FUN_005208a0(void);
-void __cdecl core_mimic_cpp_FUN_005208b0(void);
-void __cdecl core_mimic_cpp_CMimic_load_FUN_00520930(void);
-int __cdecl core_mimic_cpp_FUN_00520a00(void);
-void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void);
-void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void);
-void __cdecl core_mimic_cpp_FUN_00520d10(void);
-void __cdecl core_mimic_cpp_FUN_00520da0(void);
-void __cdecl core_mimic_cpp_FUN_00520dd0(void);
+int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_00520890(CMimic *this_ptr);
+int __cdecl core_mimic_cpp_CMimic_isDamageable_FUN_005208a0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag);
+void __cdecl core_mimic_cpp_CMimic_serialize_FUN_00520930(CMimic *this_ptr);
+int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10 (CMimic *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_mimic_cpp_CMimic_writeDependencies_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle);
 void __cdecl core_mimic_cpp_FUN_00520e00(void);
 void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void);
 CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMinecar_setup_FUN_00520e90(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMinecar_process_FUN_00520eb0(CMineCar *this_ptr,float delta_time);
-CMineCar * __cdecl core_minecar_cpp_FUN_00520f20(CMineCar *this_ptr);
-CMineCar * __cdecl core_minecar_cpp_FUN_00520f40(CMineCar *this_ptr,uint d1,uint d2,uint d3);
+CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_00520f20(CMineCar *this_ptr);
+CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_00520f40(CMineCar *this_ptr,uint d1,uint d2,uint d3);
 void __cdecl core_mirror_cpp_staticInit_FUN_00520fb0(void);
 void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0 (SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_00521160 (SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b, CVector3f *out_intersection);

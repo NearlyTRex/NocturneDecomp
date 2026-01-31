@@ -2170,8 +2170,8 @@ section .text
     ADD ESP,0xc                         ; 004e7d50
     PUSH EAX                            ; 004e7d53
     PUSH EBX                            ; 004e7d54
-    CALL core_enemy.cpp_FUN_004a9880    ; 004e7d55
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 004e7d55
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 004e7d5a
     TEST EAX,EAX                        ; 004e7d5d
     JZ 0x004e70a3                       ; 004e7d5f
@@ -2290,8 +2290,8 @@ section .text
     ADD ESP,0xc                         ; 004e7ebe
     PUSH EAX                            ; 004e7ec1
     PUSH EBX                            ; 004e7ec2
-    CALL core_enemy.cpp_FUN_004a9880    ; 004e7ec3
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 004e7ec3
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 004e7ec8
     TEST EAX,EAX                        ; 004e7ecb
     JZ 0x004e70a3                       ; 004e7ecd

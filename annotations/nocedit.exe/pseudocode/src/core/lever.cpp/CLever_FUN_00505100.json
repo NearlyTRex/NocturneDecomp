@@ -1,0 +1,222 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 101,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 31,
+    "suspect_count": 6,
+    "suspect_types": [
+      "stack_param",
+      "suspect_float"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [
+    {
+      "addr": "00505240",
+      "from_addr": "00505270",
+      "name": "core_lever.cpp_CLever_getPropertyList_FUN_00505240",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00505100",
+    "address_range": [
+      [
+        "00505100",
+        "00505158"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lever.cpp_CLever_FUN_00505100",
+    "signature": "void __cdecl core_lever_cpp_CLever_FUN_00505100(CLever *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631158",
+      "name": "s_Ground_lever_00631158",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631159",
+      "name": "s_round_lever_00631159",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631165",
+      "name": "s_Wall_lever_00631165",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631166",
+      "name": "s_all_lever_00631166",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631167",
+      "name": "s_ll_lever_00631167",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631168",
+      "name": "s_l_lever_00631168",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631170",
+      "name": "s_Unknown_00631170",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631171",
+      "name": "s_nknown_00631171",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd3090",
+      "name": "g_CLeverClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7941176470588234,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 25,
+      "INT_ADD": 12,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 9,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLever *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 16,
+      "match": "1.4013e-45",
+      "text": "else if (fVar2 == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c[1] = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    }
+  ]
+}

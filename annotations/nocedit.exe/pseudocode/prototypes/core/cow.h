@@ -23,9 +23,9 @@ CZombieCow * __cdecl CZombieCow::ctor(CZombieCow *this_ptr);
 // Address: 004441b0
 void __cdecl FUN_004441b0(void);
 
-// Original: core_cow.cpp_FUN_00444310
+// Original: core_cow.cpp_CZombieCow_process_FUN_00444310
 // Address: 00444310
-void __cdecl FUN_00444310(void);
+void __cdecl CZombieCow::process(CZombieCow *this_ptr,float delta_time);
 
 // Original: core_cow.cpp_CZombieCow_load_FUN_00444840
 // Address: 00444840
@@ -43,9 +43,9 @@ void __cdecl FUN_00444b40(void);
 // Address: 00444c00
 int __cdecl FUN_00444c00(void);
 
-// Original: core_cow.cpp_FUN_00444c50
+// Original: core_cow.cpp_CZombieCow_getPropertyList_FUN_00444c50
 // Address: 00444c50
-void __cdecl FUN_00444c50(void);
+void __cdecl CZombieCow::getPropertyList(CZombieCow *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_cow.cpp_FUN_00444c90
 // Address: 00444c90

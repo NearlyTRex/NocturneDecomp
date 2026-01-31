@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:
-;   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 at 0041d3e7
+;   core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270 at 0041d3e7
 ;   core_platfrm.cpp_CPlatform_load_FUN_0054dbc0 at 0054dec7
 ;
 ; Referenced Globals:

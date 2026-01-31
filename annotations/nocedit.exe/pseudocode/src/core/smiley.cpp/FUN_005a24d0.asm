@@ -23,7 +23,7 @@
 ;   ... and 27 more
 ;
 ; Called Functions:
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -43,8 +43,8 @@ section .text
     MOV EBP,ESP                         ; 005a24d4
     MOV EBX,dword ptr [EBP + 0x14]      ; 005a24d6
     PUSH EBX                            ; 005a24d9
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005a24da
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005a24da
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a24df
     LEA EDI,[EBX + 0x158]               ; 005a24e2
     PUSH EDI                            ; 005a24e8

@@ -1,0 +1,193 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 19,
+        "message": "'stack0xffffffe0' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00413de0",
+      "from_addr": "00413de5",
+      "name": "core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00413de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee030",
+    "address_range": [
+      [
+        "005ee030",
+        "005ee0b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_renderOpaque_FUN_005ee030",
+    "signature": "int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_005ee030(CWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00478d20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00413de5",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00413de0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 36,
+      "INT_ADD": 20,
+      "INT_AND": 27,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 24,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 12,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 208
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffffe0",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "0065d314"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "0065d534"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "00660a64"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "00661174"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "00664674"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 11
+  }
+}

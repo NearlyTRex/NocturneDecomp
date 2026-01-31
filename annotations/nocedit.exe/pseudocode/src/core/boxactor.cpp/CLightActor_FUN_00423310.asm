@@ -7,7 +7,7 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 004234f9
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 004234f9
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004232f8 = 00423338

@@ -63,8 +63,8 @@ void __cdecl core_scat_cpp_FUN_00558720(void)
      (*(int *)(in_stack_00000004[0x8d].create_event + 0x38) != 2)) {
     local_13c._ub =
          (CDemonActor_vtable *)
-         ((float)in_stack_00000004[0x8d].unk2 * (float)3.1415926535000001 * (float)2 *
-          in_stack_00000008 + local_13c._ub);
+         ((float)in_stack_00000004[0x8d].standing_platform * (float)3.1415926535000001 *
+          (float)2 * in_stack_00000008 + local_13c._ub);
     local_1c = 0x3fc90fdb;
     if ((float)local_13c < -1.570796f) {
       local_13c._ub = (CDemonActor_vtable *)0xbfc90fdb;

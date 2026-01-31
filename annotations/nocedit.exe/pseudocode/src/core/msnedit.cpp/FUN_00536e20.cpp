@@ -46,7 +46,7 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
     engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar3,0x9b,iVar1,0,0xff);
     motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&this_ptr->motion_controller);
-    local_f8 = (this_ptr->motion_controller).current_frame_number;
+    local_f8 = (float)(this_ptr->motion_controller).current_frame_number;
     pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
                        (&this_ptr->motion_controller);
     sprintf(local_f4,"%s (%s)",motion_name,pcVar2);

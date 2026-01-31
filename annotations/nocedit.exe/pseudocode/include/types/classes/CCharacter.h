@@ -12,7 +12,7 @@ typedef struct CCharacter {
     CDemonActor base; // 0x0
     CDeformableModelInstance model; // 0x158
     char unk1[48]; // 0x240c
-    float hit_points; // 0x243c
+    int hit_points; // 0x243c
     float max_hit_points; // 0x2440
     int health_bar_mode; // 0x2444
     char descriptive_name[100]; // 0x2448

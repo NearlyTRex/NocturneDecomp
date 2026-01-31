@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -18,6 +19,7 @@
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 
 // =============================================================================
@@ -175,22 +177,22 @@ void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo *this_ptr,
 SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr);
-void __cdecl core_enemy_cpp_CEnemy_FUN_004a9650(CEnemy *this_ptr);
+void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004a9650(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_serialize_FUN_004a9660(CEnemy *this_ptr);
-int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr);
-int __cdecl core_enemy_cpp_FUN_004a9880(void);
-int __cdecl core_enemy_cpp_FUN_004a9930(void);
+int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a97c0(CEnemy *this_ptr,CVector3f *out_points_array);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004a9880(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004a9930(CEnemy *this_ptr);
 float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy *this_ptr);
-int __cdecl core_enemy_cpp_FUN_004a9a50(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr);
-void __cdecl core_enemy_cpp_FUN_004a9ef0(void);
-void __cdecl core_enemy_cpp_FUN_004a9f10(void);
+void __cdecl core_enemy_cpp_CEnemy_FUN_004a9ef0(CEnemy *this_ptr);
+void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fa0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa030(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr);
-int __cdecl core_enemy_cpp_FUN_004aa0f0(void);
-int __cdecl core_enemy_cpp_CEnemy_FUN_004aa170(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170 (CEnemy *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa250(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_004aa260(void);
 int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3);

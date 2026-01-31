@@ -1,0 +1,140 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00520a00",
+    "address_range": [
+      [
+        "00520a00",
+        "00520a79"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_hasCollision_FUN_00520a00",
+    "signature": "int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00638833",
+      "name": "DOUBLE_00638833",
+      "type": "double",
+      "value": "1.30000000000000"
+    },
+    {
+      "addr": "0063883b",
+      "name": "FLOAT_0063883b",
+      "type": "float",
+      "value": "0.5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.888888888888889,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 100,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 212
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 52,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

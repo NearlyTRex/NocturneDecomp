@@ -9,23 +9,23 @@
 void __cdecl core_mission_cpp_CDemonMission_FUN_00523b70(CDemonMission *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   CDemonActor *in_stack_00000008;
   
   if (in_stack_00000008 != (CDemonActor *)0x0) {
     if (in_stack_00000008->actor_name[0] == '\0') {
       core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(this_ptr);
     }
-    iVar1 = *(int *)this_ptr->unk4;
-    if (iVar1 != 0) {
+    pCVar1 = *(CDemonActor **)this_ptr->unk4;
+    if (pCVar1 != (CDemonActor *)0x0) {
       in_stack_00000008->next_actor = (CDemonActor *)0x0;
-      in_stack_00000008->unk15 = iVar1;
+      in_stack_00000008->prev_actor = pCVar1;
       *(CDemonActor **)(*(int *)this_ptr->unk4 + 0x14c) = in_stack_00000008;
       *(CDemonActor **)this_ptr->unk4 = in_stack_00000008;
       return;
     }
     in_stack_00000008->next_actor = (CDemonActor *)0x0;
-    in_stack_00000008->unk15 = 0;
+    in_stack_00000008->prev_actor = (CDemonActor *)0x0;
     this_ptr->first_actor = in_stack_00000008;
     *(CDemonActor **)this_ptr->unk4 = in_stack_00000008;
   }

@@ -94,7 +94,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   if (iVar7 == 0) {
     switch(iVar5) {
     case 0:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       if (iVar5 == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
@@ -159,7 +159,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       break;
     case 1:
     case 2:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       pCVar1 = &(in_stack_00000004->base).model;
       if (iVar5 == 0) {
@@ -272,10 +272,10 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                           INT_02d83208);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_bc,pCVar8);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
       break;
     case 5:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       if ((iVar5 != 0) &&
          (fVar9 = (float)in_stack_00000004[1].base.base.runtime_state - in_stack_00000008,

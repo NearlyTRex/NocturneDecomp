@@ -47,9 +47,9 @@ int __cdecl CSuccubus(CSuccubus *this_ptr);
 // Address: 005c7790
 void __cdecl CSuccubus(CSuccubus *this_ptr);
 
-// Original: core_succubus.cpp_CSuccubus_FUN_005c77b0
+// Original: core_succubus.cpp_CSuccubus_getPropertyList_FUN_005c77b0
 // Address: 005c77b0
-void __cdecl CSuccubus(CSuccubus *this_ptr);
+void __cdecl CSuccubus::getPropertyList(CSuccubus *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_succubus.cpp_CSuccubus_FUN_005c77f0
 // Address: 005c77f0

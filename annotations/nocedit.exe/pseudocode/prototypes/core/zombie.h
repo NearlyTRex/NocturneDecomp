@@ -111,9 +111,9 @@ int __cdecl CZombie(CZombie *this_ptr);
 // Address: 005fca10
 void __cdecl CZombie(void);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fca80
+// Original: core_zombie.cpp_CZombie_getPropertyList_FUN_005fca80
 // Address: 005fca80
-void __cdecl CZombie(CZombie *this_ptr);
+void __cdecl CZombie::getPropertyList(CZombie *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fcb70
 // Address: 005fcb70

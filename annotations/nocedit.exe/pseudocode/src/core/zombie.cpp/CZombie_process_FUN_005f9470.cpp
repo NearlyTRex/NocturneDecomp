@@ -474,7 +474,7 @@ LAB_005f9541:
         if (extraout_EAX != 0) {
           core_zombie_cpp_CZombie_FUN_005fca10();
         }
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         if ((*(int *)((this_ptr->base).unk2 + 4) == 0) && (local_38 != 0)) {
           iVar9 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
@@ -501,7 +501,7 @@ LAB_005f9541:
       }
       else if (uVar11 < 2) {
         iVar9 = *(int *)((this_ptr->base).unk2 + 4);
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         if (((*(int *)((this_ptr->base).unk2 + 4) == 0) && (local_38 != 0)) &&
            (iVar14 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
                                (&g_HeroActors[g_LocalHeroIndex]->base), iVar14 != 0)) {
@@ -697,7 +697,8 @@ LAB_005fac96:
       }
     }
     else if (uVar11 < 9) {
-      if (((this_ptr->base).pool_me == 0) && ((this_ptr->base).base.base.unk2 == 0)) {
+      if (((this_ptr->base).pool_me == 0) &&
+         ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (pCVar2,&local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -751,7 +752,7 @@ LAB_005fac96:
             }
           }
           else if (uVar11 == 0x14) {
-            (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+            (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
             iVar9 = *(int *)((this_ptr->base).unk2 + 4);
             if (((iVar9 != 0) &&
                 (fVar3 = (pCVar1->position).x - *(float *)(iVar9 + 0x20),
@@ -769,7 +770,7 @@ LAB_005fac96:
         iVar9 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
                           (&g_HeroActors[g_LocalHeroIndex]->base);
         if ((iVar9 == 0) &&
-           ((*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)(),
+           ((*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)(),
            *(int *)((this_ptr->base).unk2 + 4) != 0)) {
 LAB_005fa279:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -784,7 +785,7 @@ LAB_005fa279:
         this_ptr->unk2[0x61] = '\0';
         this_ptr->unk2[0x62] = '\0';
         this_ptr->unk2[99] = '\0';
-        (*(pCVar5->_ue).field_4)();
+        (*(pCVar5->_ue).enemyfunc2)();
         iVar9 = *(int *)((this_ptr->base).unk2 + 4);
         if (iVar9 != 0) {
           local_254 = (pCVar1->position).x - *(float *)(iVar9 + 0x20);

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab741
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f5bd9
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5bd9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00625a89

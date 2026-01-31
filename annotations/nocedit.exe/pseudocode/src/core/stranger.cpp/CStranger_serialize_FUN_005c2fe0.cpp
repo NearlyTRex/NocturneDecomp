@@ -12,13 +12,13 @@ void __cdecl core_stranger_cpp_CStranger_serialize_FUN_005c2fe0(CStranger *this_
   core_hero_cpp_CHero_serialize_FUN_004f2610(&this_ptr->base);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk3 + 4),"objectToPickUp");
+              ((CDemonActor *)((this_ptr->base).unk4 + 4),"objectToPickUp");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->base).unk3,"doorToOpen");
+              ((CDemonActor *)(this_ptr->base).unk4,"doorToOpen");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk3 + 0xc),"leverToPull");
+              ((CDemonActor *)((this_ptr->base).unk4 + 0xc),"leverToPull");
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk3 + 0x10),"ladderToClimb");
+              ((CDemonActor *)((this_ptr->base).unk4 + 0x10),"ladderToClimb");
   }
   if (g_CStrangerClassVersion == 2) {
     core_actor_cpp_serializeActor_FUN_0040b870

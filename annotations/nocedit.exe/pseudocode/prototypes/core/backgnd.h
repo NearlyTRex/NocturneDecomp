@@ -3,26 +3,6 @@
 // Function prototypes for core/backgnd.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_backgnd.cpp_SFire_dtor_FUN_00412680
-// Address: 00412680
-SFire * __cdecl SFire::dtor(SFire *this_ptr);
-
-// Original: core_backgnd.cpp_CFlame_dtor_FUN_00412690
-// Address: 00412690
-CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint d1,uint d2);
-
-// Original: core_backgnd.cpp_cleanupVector_FUN_004126e0
-// Address: 004126e0
-int __cdecl cleanupVector(CVector3f **objs);
-
-// Original: core_backgnd.cpp_freeFires_FUN_00412700
-// Address: 00412700
-int __cdecl freeFires(SFire **objs);
-
-// Original: core_backgnd.cpp_freeFlames_FUN_00412720
-// Address: 00412720
-int __cdecl freeFlames(CFlame **array);
-
 // Original: core_backgnd.cpp_staticInit_FUN_00412740
 // Address: 00412740
 void __cdecl staticInit(void);
@@ -47,37 +27,37 @@ int __cdecl CBackgroundActor::setup(CBackgroundActor *this_ptr);
 // Address: 00412850
 void __cdecl CBackgroundActor::process(CBackgroundActor *this_ptr,float delta_time);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_00412860
+// Original: core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860
 // Address: 00412860
-void __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+void __cdecl CBackgroundActor::renderBackground(CBackgroundActor *this_ptr,int layer_flag);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_004128d0
+// Original: core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0
 // Address: 004128d0
-int __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+int __cdecl CBackgroundActor::renderOpaque(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_00412940
+// Original: core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_00412940
 // Address: 00412940
-int * __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+CBoundingBox3D * __cdecl CBackgroundActor::getBoundingBox(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_backgnd.cpp_CBackgroundActor_serialize_FUN_00412990
 // Address: 00412990
 void __cdecl CBackgroundActor::serialize(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_004129f0
+// Original: core_backgnd.cpp_CBackgroundActor_hasCollision_FUN_004129f0
 // Address: 004129f0
-int __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+int __cdecl CBackgroundActor::hasCollision(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_00412a30
+// Original: core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_00412a30
 // Address: 00412a30
-int __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+int __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_00412a40
+// Original: core_backgnd.cpp_CBackgroundActor_getPropertyList_FUN_00412a40
 // Address: 00412a40
-void __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+void __cdecl CBackgroundActor::getPropertyList(CBackgroundActor *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_backgnd.cpp_CBackgroundActor_FUN_00412ab0
+// Original: core_backgnd.cpp_CBackgroundActor_writeDependencies_FUN_00412ab0
 // Address: 00412ab0
-void __cdecl CBackgroundActor(CBackgroundActor *this_ptr);
+void __cdecl CBackgroundActor::writeDependencies(CBackgroundActor *this_ptr,_FILE *file_handle);
 
 // Original: core_backgnd.cpp_CBackgroundActor_dtor_FUN_00412ad0
 // Address: 00412ad0

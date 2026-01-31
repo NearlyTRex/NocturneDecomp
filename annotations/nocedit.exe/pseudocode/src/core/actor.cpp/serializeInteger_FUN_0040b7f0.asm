@@ -16,7 +16,7 @@
 ;   core_baron.cpp_CBaron_serialize_FUN_00413a70 at 00413abf
 ;   core_barrier.cpp_CBarrier_serialize_FUN_00414340 at 0041438f
 ;   core_batman.cpp_CBatman_serialize_FUN_00417580 at 00417608
-;   core_biggs.cpp_CBiggs_load_FUN_00418ac0 at 00418b11
+;   core_biggs.cpp_CBiggs_serialize_FUN_00418ac0 at 00418b11
 ;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 004198a0
 ;   ... and 54 more
 ;

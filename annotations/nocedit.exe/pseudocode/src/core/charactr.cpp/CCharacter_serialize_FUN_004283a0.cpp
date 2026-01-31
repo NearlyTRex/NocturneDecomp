@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
   int local_14;
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->hit_points,"hitPoints");
+  core_actor_cpp_serializeFloat_FUN_0040b770((float *)&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
     if (g_ActorReadingMode == 1) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_1c,"numCarryHands");
@@ -76,6 +76,6 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
     core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->max_hit_points,"maxHitPoints");
     return;
   }
-  this_ptr->max_hit_points = this_ptr->hit_points;
+  this_ptr->max_hit_points = (float)this_ptr->hit_points;
   return;
 }

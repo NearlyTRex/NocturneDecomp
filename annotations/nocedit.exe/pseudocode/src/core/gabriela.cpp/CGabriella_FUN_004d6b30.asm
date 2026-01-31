@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_FUN_004e0bd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -98,8 +98,8 @@ section .text
         ;   XREF to: 004d6d12 (CONDITIONAL_JUMP)  ; LAB_004d6d12
     PUSH ESI                            ; 004d6c86
     PUSH EBX                            ; 004d6c87
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 004d6c88
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 004d6c88
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004d6c8d
     MOV ESP,EBP                         ; 004d6c90
     POP EBP                             ; 004d6c92
@@ -153,8 +153,8 @@ section .text
     ADD ESP,0x4                         ; 004d6d1d
     PUSH ESI                            ; 004d6d20
     PUSH EBX                            ; 004d6d21
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 004d6d22
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 004d6d22
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004d6d27
     MOV ESP,EBP                         ; 004d6d2a
     POP EBP                             ; 004d6d2c

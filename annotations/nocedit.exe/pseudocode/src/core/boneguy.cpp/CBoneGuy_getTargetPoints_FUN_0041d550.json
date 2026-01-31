@@ -1,0 +1,202 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 124,
+    "complexity_score": 85,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 50,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 174
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0041d550",
+    "address_range": [
+      [
+        "0041d550",
+        "0041d673"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_0041d550",
+    "signature": "int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550 (CBoneGuy *this_ptr,CVector3f *out_points_array)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00822944",
+      "name": "DAT_00822944",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00822958",
+      "name": "INT_00822958",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0082295c",
+      "name": "INT_0082295c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822968",
+      "name": "DAT_00822968",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0082296c",
+      "name": "DAT_0082296c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.669811320754717,
+    "instruction_count": 106,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 6,
+      "COPY": 91,
+      "INT_ADD": 53,
+      "INT_AND": 34,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 34,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 17,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "LOAD": 27,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 389
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_00822944",
+      "text": "(&(this_ptr->base).base.model,&local_30,DAT_00822944);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_00822968",
+      "text": "(&(this_ptr->base).base.model,&local_3c,DAT_00822968);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_0082296c",
+      "text": "(&(this_ptr->base).base.model,&local_48,DAT_0082296c);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoneGuy",
+        "offset": 76,
+        "vtable_addr": "0065af74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

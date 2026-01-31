@@ -1,0 +1,121 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 15,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 15,
+        "message": "expected primary-expression before ')' token"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 15,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 27,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "005bb960",
+      "from_addr": "005bce69",
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c48b0",
+      "from_addr": "005c48e4",
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f3580",
+    "address_range": [
+      [
+        "004f3580",
+        "004f35af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_FUN_004f3580",
+    "signature": "void __cdecl core_hero_cpp_CHero_FUN_004f3580(CHero *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 15,
+      "INT_ADD": 10,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 62
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk4 + 0x14) + 0x154) + 0x9c))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

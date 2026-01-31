@@ -53,7 +53,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
           local_3c = local_9c.m[1].x;
           local_38 = local_9c.m[2].y;
           local_34 = local_70;
-          core_bodypart_cpp_FUN_0041add0();
+          core_bodypart_cpp_CBodyPart_FUN_0041add0(in_stack_00000008);
         }
         pcVar1 = pcVar1 + 0x38;
         local_14 = local_14 + 1;
@@ -67,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
           core_xform_cpp_transformVector3x4_FUN_005f4dc0
                     (&local_30,(CVector3f *)(pcVar1 + 8),
                      (this_ptr->model).bone_transform.bone_world_matrices + *(int *)(pcVar1 + 4));
-          core_bodypart_cpp_FUN_0041ae50();
+          core_bodypart_cpp_CBodyPart_FUN_0041ae50(in_stack_00000008);
         }
         iVar2 = iVar2 + 1;
         pcVar1 = pcVar1 + 0x18;

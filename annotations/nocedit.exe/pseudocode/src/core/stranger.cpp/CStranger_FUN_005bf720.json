@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 21,
+        "line": 22,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 21,
+        "line": 22,
         "message": "'blend_callback' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 41,
+        "line": 45,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 42,
+        "line": 46,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 43,
+        "line": 47,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 44,
+        "line": 48,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -48,68 +48,45 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 31,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 34,
+        "column": 12,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 42,
+        "line": 46,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 43,
+        "line": 47,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 44,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 178,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "pseudocode_lines": 47,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_type_propagation"
     ],
-    "total_lines": 117
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -129,7 +106,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_FUN_005bf720",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(void)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -210,10 +187,10 @@
     "pcode_op_count": 371
   },
   "stack_frame": {
-    "frame_size": 6884,
+    "frame_size": 6888,
     "local_size": 6884,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -250,92 +227,71 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "SBoneTransformData *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 15,
       "match": "code *",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "(this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 0x1fc54) * (float)40,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "(&local_1c,(CVector3f *)(INT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 41,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 47,
       "match": "in_stack_00000008",
-      "text": "(this_ptr,in_stack_00000008);",
+      "text": "(this_ptr_00,in_stack_00000008);",
       "type": "stack_param"
     }
   ]

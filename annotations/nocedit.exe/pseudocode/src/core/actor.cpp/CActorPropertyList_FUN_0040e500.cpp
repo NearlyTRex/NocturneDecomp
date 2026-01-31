@@ -2,16 +2,15 @@
 // Address: 0040e500
 // Address Range: [[0040e500, 0040e591]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
+// Signature: void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
+void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList *this_ptr)
 
 {
   int iVar1;
   int iVar2;
-  CActorPropertyList *in_stack_00000004;
   int *in_stack_0000000c;
   int in_stack_00000010;
   char local_d8 [200];
@@ -30,7 +29,7 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
     do {
       sprintf(local_d8,"%s %d");
       iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                        (in_stack_00000004,0xe,local_d8,in_stack_0000000c,(void *)0x0);
+                        (this_ptr,0xe,local_d8,in_stack_0000000c,(void *)0x0);
       *(int *)(iVar1 + 0x5c) = iVar2;
       iVar2 = iVar2 + 1;
       *(uint *)(iVar1 + 0x58) = 1;

@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 20,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 20,
-        "message": "expected primary-expression before ')' token"
+        "category": "other",
+        "column": 4,
+        "line": 27,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -21,59 +15,19 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 16,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 118,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 9,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 39
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -93,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_FUN_005c1f80",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(void)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -116,8 +70,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -146,80 +100,20 @@
     "pcode_op_count": 94
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x1fc40) = 0x40800000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x24f8) == *(int *)(in_stack_00000004 + 0x1fc2c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x24f8) == *(int *)(in_stack_00000004 + 0x1fc2c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x1fc2c) = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "((CMotionController *)(in_stack_00000004 + 0x158),0,1);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

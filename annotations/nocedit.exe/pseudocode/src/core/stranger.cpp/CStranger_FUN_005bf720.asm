@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1ae0]:4  local_1ae0
 ; undefined1       Stack[-0x3c]:1  local_3c

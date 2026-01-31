@@ -51,7 +51,7 @@ void __cdecl core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(in_stack_00000004->base).model,pcVar5);
 LAB_00484145:
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   pCVar1 = &(in_stack_00000004->base).model;
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   INT_02c6d0a0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 Head");

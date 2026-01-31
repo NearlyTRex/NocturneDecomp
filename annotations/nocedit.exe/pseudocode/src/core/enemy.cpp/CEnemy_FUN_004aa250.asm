@@ -7,7 +7,7 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_boneguy.cpp_FUN_0041da00 at 0041da05
+;   core_boneguy.cpp_CBoneGuy_FUN_0041da00 at 0041da05
 ;   core_cow.cpp_FUN_00444c90 at 00444c95
 ;   core_dog.cpp_CZombieDog_FUN_0047f960 at 0047f965
 ;   core_drone.cpp_FUN_0048f560 at 0048f565

@@ -25,7 +25,7 @@ void __cdecl core_cow_cpp_FUN_004441b0(void)
   *(int *)(in_stack_00000004[1].base.base.actor_name + 8) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Head");
   *(int *)(in_stack_00000004[1].base.base.actor_name + 0xc) = iVar1;
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"head01",1);

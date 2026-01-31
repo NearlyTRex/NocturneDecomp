@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00481070 at 00481101
-;   core_hero.cpp_FUN_004f2ed0 at 004f2f31
+;   core_hero.cpp_CHero_FUN_004f2ed0 at 004f2f31
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c14cd8

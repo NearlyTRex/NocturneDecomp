@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10
-;   core_bodypart.cpp_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_charactr.cpp_CCharacter_FUN_0042bcc0
 ;   core_charactr.cpp_CCharacter_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_FUN_0042f300
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 005fc2e8
     LEA EAX,[EBX + 0x20]                ; 005fc2e9
     PUSH EAX                            ; 005fc2ec
-    CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 005fc2ed
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
+    CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 005fc2ed
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 005fc2f2
     MOV EDI,EAX                         ; 005fc2f5
     PUSH 0x0                            ; 005fc2f7
@@ -209,8 +209,8 @@ section .text
         ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042f300(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005fc3bb
     PUSH EBP                            ; 005fc3be
-    CALL core_bodypart.cpp_FUN_0041a050 ; 005fc3bf
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041a050()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 005fc3bf
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
     MOV EAX,dword ptr [EBX + 0xbf90]    ; 005fc3c4
     MOV EBP,dword ptr [EBX + EAX*0x4 + 0x2298] ; 005fc3ca
     ADD ESP,0x4                         ; 005fc3d1

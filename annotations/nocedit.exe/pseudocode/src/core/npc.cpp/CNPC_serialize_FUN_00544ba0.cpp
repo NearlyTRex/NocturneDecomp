@@ -13,7 +13,8 @@ void __cdecl core_npc_cpp_CNPC_serialize_FUN_00544ba0(CNPC *this_ptr)
   
   if (g_CNPCClassVersion < 2) {
     core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0((CDemonActor *)this_ptr);
-    core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base).hit_points,"hitPoints");
+    core_actor_cpp_serializeFloat_FUN_0040b770
+              ((float *)&(this_ptr->base).hit_points,"hitPoints");
     return;
   }
   core_charactr_cpp_CCharacter_serialize_FUN_004283a0(&this_ptr->base);

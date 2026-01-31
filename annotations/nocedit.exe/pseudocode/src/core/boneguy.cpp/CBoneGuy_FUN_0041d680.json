@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 25,
-        "line": 90,
+        "line": 89,
         "message": "cast from 'CBoneGuy*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 93,
+        "line": 92,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 94,
+        "line": 93,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -31,37 +31,37 @@
       {
         "category": "other",
         "column": 25,
-        "line": 47,
+        "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 49,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 90,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 93,
+        "line": 92,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 94,
+        "line": 93,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 101,
+        "line": 100,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -83,7 +83,7 @@
     {
       "addr": "0041d4d0",
       "from_addr": "0041d50b",
-      "name": "core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0",
+      "name": "core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -289,23 +289,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)local_1c + (uint)bVar11 * -8 + 49000);",
+      "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_48 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)",
-      "text": "*puVar9 = *(uint *)((int)&local_48 + (uint)bVar11 * -8 + 4);",
+      "text": "*puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

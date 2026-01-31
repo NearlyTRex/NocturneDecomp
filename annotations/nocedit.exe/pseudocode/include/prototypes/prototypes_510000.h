@@ -168,8 +168,8 @@ CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void);
 CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0051f1c0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint d1);
-void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void);
-void __cdecl core_mimic_cpp_CMimic_setup2_FUN_0051f780(void);
-void __cdecl core_mimic_cpp_FUN_0051f930(void);
-void __cdecl core_mimic_cpp_FUN_0051fcc0(void);
+void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float delta_time);
+void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr);
 

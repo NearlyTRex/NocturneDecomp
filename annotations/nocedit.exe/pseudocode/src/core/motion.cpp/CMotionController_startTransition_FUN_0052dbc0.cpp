@@ -18,8 +18,8 @@ core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0
   
   if (transition->to_frame_number == -1.0f) {
     iVar2 = (*this_ptr->vtable->findPatchToFrame)
-                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
-                       transition->to_motion_number);
+                      (this_ptr,this_ptr->current_motion_index,(float)this_ptr->current_frame_number
+                       ,transition->to_motion_number);
     unaff_ESI = (float)iVar2;
   }
   if (transition->tween_time <= 0.0) {

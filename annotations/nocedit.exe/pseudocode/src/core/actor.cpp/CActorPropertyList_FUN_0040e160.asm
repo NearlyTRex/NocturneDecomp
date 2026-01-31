@@ -7,11 +7,11 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[31]:
-;   core_anvil.cpp_CAnvil_FUN_00412030 at 0041207f
-;   core_bat.cpp_CBat_FUN_00414dc0 at 00414e22
-;   core_battery.cpp_FUN_004180b0 at 00418101
-;   core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990 at 0041d9da
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 00423582
+;   core_anvil.cpp_CAnvil_getPropertyList_FUN_00412030 at 0041207f
+;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414e22
+;   core_battery.cpp_CBattery_getPropertyList_FUN_004180b0 at 00418101
+;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9da
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423582
 ;   core_chain.cpp_CChain_FUN_00431120 at 004311a6
 ;   core_curtain.cpp_FUN_0044b610 at 0044b663
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481483

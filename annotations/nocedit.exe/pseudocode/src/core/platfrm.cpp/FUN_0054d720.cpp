@@ -51,7 +51,7 @@ int __cdecl core_platfrm_cpp_FUN_0054d720(void)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffac);
   iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar5);
   if (iVar4 != 0) {
-    if (in_stack_00000004[3].unk7 != 0) {
+    if (in_stack_00000004[3].unk7 != 0.0) {
       iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar6 != 0) {
         pCVar5 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)

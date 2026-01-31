@@ -1,0 +1,144 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00424a10",
+    "address_range": [
+      [
+        "00424a10",
+        "00424a9e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bride.cpp_CBride_getTargetPoints_FUN_00424a10",
+    "signature": "int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00424a10(CBride *this_ptr,CVector3f *out_points_array)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00822cdc",
+      "name": "INT_00822cdc",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822d00",
+      "name": "INT_00822d00",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.38,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 25,
+      "INT_AND": 29,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 219
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBride",
+        "offset": 76,
+        "vtable_addr": "0065b424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

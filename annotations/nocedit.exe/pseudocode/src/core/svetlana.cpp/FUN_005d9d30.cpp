@@ -17,24 +17,24 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
   SMotion *pSVar2;
   uint uVar3;
   CCharacter *in_stack_00000004;
-  int in_stack_00000008;
+  SDamageInfo *in_stack_00000008;
   int iVar4;
   
   if ((*(uint *)in_stack_00000004[1].base.actor_name & 0x7fffffff) != 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->unk2 != 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
-    *(uint *)(in_stack_00000008 + 4) = 0;
+    in_stack_00000008->damage_amount = 0.0;
   }
   *(float *)in_stack_00000004[1].base.actor_name = 3.0f;
-  fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+  fVar1 = (float)in_stack_00000004->hit_points - in_stack_00000008->damage_amount;
   this_ptr = &in_stack_00000004->model;
-  in_stack_00000004->hit_points = fVar1;
+  in_stack_00000004->hit_points = (int)fVar1;
   if (fVar1 <= 0.0) {
-    in_stack_00000004->hit_points = 0.0;
+    in_stack_00000004->hit_points = 0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if (pSVar2->state_index != 9) {
@@ -50,12 +50,13 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
         uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                           (&in_stack_00000004->base,"svet-die.wav");
         *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
-        core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
+        core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(in_stack_00000004,in_stack_00000008)
+        ;
         return;
       }
     }
   }
-  else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
+  else if (0.0 < in_stack_00000008->damage_amount) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
       iVar4 = 4;
     }
@@ -70,10 +71,10 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
       uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                         (&in_stack_00000004->base,"svet-hurt?.wav");
       *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
-      core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
+      core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(in_stack_00000004,in_stack_00000008);
       return;
     }
   }
-  core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(in_stack_00000004,in_stack_00000008);
   return;
 }

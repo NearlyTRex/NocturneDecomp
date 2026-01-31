@@ -371,7 +371,7 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList *
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e480(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void);
+void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList *this_ptr);
 int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e5a0(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList *this_ptr);

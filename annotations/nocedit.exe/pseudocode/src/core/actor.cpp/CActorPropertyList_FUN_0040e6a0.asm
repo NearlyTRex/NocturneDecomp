@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 0042288b
-;   core_melee.cpp_FUN_0050ecf0 at 0050ed11
+;   core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0 at 0050ed11
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0

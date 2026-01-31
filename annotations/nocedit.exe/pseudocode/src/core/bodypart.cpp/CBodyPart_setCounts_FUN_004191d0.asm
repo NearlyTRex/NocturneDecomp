@@ -7,11 +7,11 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a080
 ;   core_bodypart.cpp_CBodyPart_FUN_0041b070 at 0041b096
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00419130 at 0041914b
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419c7f
 ;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 00419aa7
-;   core_bodypart.cpp_FUN_0041a050 at 0041a080
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 at 0059c83e
 ;
 ; Referenced Globals:

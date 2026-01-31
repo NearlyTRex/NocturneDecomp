@@ -27,7 +27,7 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(this_ptr->unk + 8),model_name);
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
   this_ptr_00 = (CDeformableModelInstance *)(this_ptr->unk + 8);

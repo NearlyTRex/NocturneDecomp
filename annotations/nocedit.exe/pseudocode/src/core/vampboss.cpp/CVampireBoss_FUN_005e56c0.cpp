@@ -15,7 +15,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e56c0(CVampireBoss *this_ptr)
   CSkeleton *this_ptr_02;
   int iVar2;
   
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = (CDeformableModelInstance *)(this_ptr->unk1 + 8);

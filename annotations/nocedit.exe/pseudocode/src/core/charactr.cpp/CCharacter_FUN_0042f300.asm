@@ -7,12 +7,12 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_batcreat.cpp_FUN_00415dd0 at 00415fee
-;   core_batman.cpp_FUN_00417660 at 004177fb
-;   core_bride.cpp_FUN_00424600 at 00424725
+;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415fee
+;   core_batman.cpp_CBatman_FUN_00417660 at 004177fb
+;   core_bride.cpp_CBride_FUN_00424600 at 00424725
 ;   core_cow.cpp_FUN_004448c0 at 00444a43
 ;   core_ghoul.cpp_FUN_004e8520 at 004e86b6
-;   core_imp.cpp_FUN_004fab60 at 004facfb
+;   core_imp.cpp_CImp_FUN_004fab60 at 004facfb
 ;   core_mobster.cpp_FUN_00527380 at 00527586
 ;   core_smiley.cpp_FUN_005a32a0 at 005a3455
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc3b6

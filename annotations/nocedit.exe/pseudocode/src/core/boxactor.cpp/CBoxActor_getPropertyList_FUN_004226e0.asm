@@ -8,7 +8,7 @@
 ; CActorPropertyList * Stack[0x8]:4   property_list
 ;
 ; XREF[2]:
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 004234ec
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 004234ec
 ;   core_stone.cpp_FUN_005badd0 at 005baddb
 ;
 ; Referenced Globals:

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -23,13 +25,13 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
-;   core_hero.cpp_FUN_004f2af0
-;   core_hero.cpp_FUN_004f2c40
-;   core_hero.cpp_FUN_004f2d70
-;   core_hero.cpp_FUN_004f2ed0
-;   core_hero.cpp_FUN_004f2f50
-;   core_hero.cpp_FUN_004f3120
-;   core_hero.cpp_FUN_004f33b0
+;   core_hero.cpp_CHero_FUN_004f2af0
+;   core_hero.cpp_CHero_FUN_004f2c40
+;   core_hero.cpp_CHero_FUN_004f2d70
+;   core_hero.cpp_CHero_FUN_004f2ed0
+;   core_hero.cpp_CHero_FUN_004f2f50
+;   core_hero.cpp_CHero_FUN_004f3120
+;   core_hero.cpp_CHero_FUN_004f33b0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_stranger.cpp_CStranger_FUN_005c1680
@@ -64,7 +66,7 @@ section .text
     PUSH EBX                            ; 005c5bb3
         ;   Label: LAB_005c5bb3
     CALL core_stranger.cpp_CStranger_FUN_005c5e80 ; 005c5bb4
-        ;   XREF to: 005c5e80 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c5e80()
+        ;   XREF to: 005c5e80 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c5e80(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005c5bb9
     TEST EAX,EAX                        ; 005c5bbc
     JNZ 0x005c5bac                      ; 005c5bbe
@@ -93,8 +95,8 @@ section .text
     JBE 0x005c5c36                      ; 005c5bfc
         ;   XREF to: 005c5c36 (CONDITIONAL_JUMP)  ; LAB_005c5c36
     PUSH EBX                            ; 005c5bfe
-    CALL core_hero.cpp_FUN_004f2d70     ; 005c5bff
-        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2d70()
+    CALL core_hero.cpp_CHero_FUN_004f2d70 ; 005c5bff
+        ;   XREF to: 004f2d70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2d70(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5c04
     CMP EAX,0x5                         ; 005c5c07
     JA 0x005c5d16                       ; 005c5c0a
@@ -116,7 +118,7 @@ section .text
     PUSH EBX                            ; 005c5c36
         ;   Label: LAB_005c5c36
     CALL core_stranger.cpp_CStranger_FUN_005c2850 ; 005c5c37
-        ;   XREF to: 005c2850 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c2850()
+        ;   XREF to: 005c2850 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c2850(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005c5c3c
     TEST EAX,EAX                        ; 005c5c3f
     JZ 0x005c5d30                       ; 005c5c41
@@ -197,8 +199,8 @@ section .text
     RET                                 ; 005c5d15
     PUSH EBX                            ; 005c5d16
         ;   Label: default
-    CALL core_hero.cpp_FUN_004f2ed0     ; 005c5d17
-        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2ed0()
+    CALL core_hero.cpp_CHero_FUN_004f2ed0 ; 005c5d17
+        ;   XREF to: 004f2ed0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2ed0(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5d1c
     MOV dword ptr [EBX + 0xbe38],0x0    ; 005c5d1f
     ADD ESP,0x8                         ; 005c5d29
@@ -210,7 +212,7 @@ section .text
         ;   Label: LAB_005c5d30
     PUSH EBX                            ; 005c5d35
     CALL core_stranger.cpp_CStranger_FUN_005c1680 ; 005c5d36
-        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1680()
+        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1680(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c5d3b
     TEST EAX,EAX                        ; 005c5d3e
     JZ 0x005c5d53                       ; 005c5d40
@@ -223,15 +225,15 @@ section .text
     RET                                 ; 005c5d52
     PUSH EBX                            ; 005c5d53
         ;   Label: LAB_005c5d53
-    CALL core_hero.cpp_FUN_004f2af0     ; 005c5d54
-        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2af0()
+    CALL core_hero.cpp_CHero_FUN_004f2af0 ; 005c5d54
+        ;   XREF to: 004f2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2af0(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5d59
     TEST EAX,EAX                        ; 005c5d5c
     JNZ 0x005c5bac                      ; 005c5d5e
         ;   XREF to: 005c5bac (CONDITIONAL_JUMP)  ; LAB_005c5bac
     PUSH EBX                            ; 005c5d64
-    CALL core_hero.cpp_FUN_004f2c40     ; 005c5d65
-        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2c40()
+    CALL core_hero.cpp_CHero_FUN_004f2c40 ; 005c5d65
+        ;   XREF to: 004f2c40 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2c40(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5d6a
     TEST EAX,EAX                        ; 005c5d6d
     JZ 0x005c5d82                       ; 005c5d6f
@@ -244,8 +246,8 @@ section .text
     RET                                 ; 005c5d81
     PUSH EBX                            ; 005c5d82
         ;   Label: LAB_005c5d82
-    CALL core_hero.cpp_FUN_004f3120     ; 005c5d83
-        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f3120()
+    CALL core_hero.cpp_CHero_FUN_004f3120 ; 005c5d83
+        ;   XREF to: 004f3120 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f3120(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5d88
     LEA ESI,[EBX + 0x158]               ; 005c5d8b
     TEST EAX,EAX                        ; 005c5d91
@@ -278,7 +280,7 @@ section .text
         ;   Label: LAB_005c5dc4
     PUSH EBX                            ; 005c5dc5
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c5dc6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 005c5dcb
     FLD float ptr [ESP + 0xc]           ; 005c5dcf
     ADD ESP,0x8                         ; 005c5dd3
@@ -288,15 +290,15 @@ section .text
     JBE 0x005c5d9f                      ; 005c5ddf
         ;   XREF to: 005c5d9f (CONDITIONAL_JUMP)  ; LAB_005c5d9f
     PUSH EBX                            ; 005c5de1
-    CALL core_hero.cpp_FUN_004f2f50     ; 005c5de2
-        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2f50()
+    CALL core_hero.cpp_CHero_FUN_004f2f50 ; 005c5de2
+        ;   XREF to: 004f2f50 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f2f50(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5de7
     TEST EAX,EAX                        ; 005c5dea
     JNZ 0x005c5e08                      ; 005c5dec
         ;   XREF to: 005c5e08 (CONDITIONAL_JUMP)  ; LAB_005c5e08
     PUSH EBX                            ; 005c5dee
     CALL core_stranger.cpp_CStranger_FUN_005c1fe0 ; 005c5def
-        ;   XREF to: 005c1fe0 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1fe0()
+        ;   XREF to: 005c1fe0 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1fe0(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005c5df4
     TEST EAX,EAX                        ; 005c5df7
     JZ 0x005c5e22                       ; 005c5df9
@@ -323,7 +325,7 @@ section .text
     PUSH EBX                            ; 005c5e22
         ;   Label: LAB_005c5e22
     CALL core_stranger.cpp_CStranger_FUN_005c2400 ; 005c5e23
-        ;   XREF to: 005c2400 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c2400()
+        ;   XREF to: 005c2400 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c2400(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005c5e28
     TEST EAX,EAX                        ; 005c5e2b
     JZ 0x005c5e3c                       ; 005c5e2d
@@ -336,8 +338,8 @@ section .text
     RET                                 ; 005c5e3b
     PUSH EBX                            ; 005c5e3c
         ;   Label: LAB_005c5e3c
-    CALL core_hero.cpp_FUN_004f33b0     ; 005c5e3d
-        ;   XREF to: 004f33b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f33b0()
+    CALL core_hero.cpp_CHero_FUN_004f33b0 ; 005c5e3d
+        ;   XREF to: 004f33b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f33b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 005c5e42
     TEST EAX,EAX                        ; 005c5e45
     JZ 0x005c5e56                       ; 005c5e47
@@ -352,7 +354,7 @@ section .text
         ;   Label: LAB_005c5e56
     PUSH EBX                            ; 005c5e5b
     CALL core_stranger.cpp_CStranger_FUN_005c1680 ; 005c5e5c
-        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1680()
+        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_FUN_005c1680(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c5e61
     TEST EAX,EAX                        ; 005c5e64
     JZ 0x005c5d9f                       ; 005c5e66

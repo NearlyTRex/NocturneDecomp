@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   core_bodypart.cpp_FUN_00419340 at 00419360
+;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419360
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 at 0042111b
 ;   core_cloth.cpp_FUN_0043bae0 at 0043bb04
 ;   core_curtain.cpp_FUN_0044b060 at 0044b15f

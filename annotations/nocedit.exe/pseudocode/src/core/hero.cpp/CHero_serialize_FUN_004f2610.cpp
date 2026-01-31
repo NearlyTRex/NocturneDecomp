@@ -27,7 +27,8 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
       ;
       core_actor_cpp_serializeActor_FUN_0040b870
                 ((CDemonActor *)&(this_ptr->base).grabbed_by,"grabbedBy");
-      core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base).hit_points,"hitPoints");
+      core_actor_cpp_serializeFloat_FUN_0040b770
+                ((float *)&(this_ptr->base).hit_points,"hitPoints");
     }
   }
   else {
@@ -45,15 +46,15 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
     }
     if (6 < g_CHeroClassVersion) {
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(this_ptr->unk3 + 4),"objectToPickUp");
+                ((CDemonActor *)(this_ptr->unk4 + 4),"objectToPickUp");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)this_ptr->unk3,"doorToOpen");
+                ((CDemonActor *)this_ptr->unk4,"doorToOpen");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(this_ptr->unk3 + 0xc),"leverToPull");
+                ((CDemonActor *)(this_ptr->unk4 + 0xc),"leverToPull");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(this_ptr->unk3 + 0x10),"ladderToClimb");
+                ((CDemonActor *)(this_ptr->unk4 + 0x10),"ladderToClimb");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(this_ptr->unk3 + 8),"pushedObject");
+                ((CDemonActor *)(this_ptr->unk4 + 8),"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_c,"keys");

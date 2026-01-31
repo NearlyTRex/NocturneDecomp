@@ -44,10 +44,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   CDeformableModelInstance *local_14;
   
   bVar11 = 0;
-  if (((this_ptr->base).base.hit_points < (float)100) &&
-     (fVar12 = (this_ptr->base).base.hit_points + delta_time,
-     (this_ptr->base).base.hit_points = fVar12, (float)100 < fVar12)) {
-    (this_ptr->base).base.hit_points = 100.0;
+  if (((float)(this_ptr->base).base.hit_points < (float)100) &&
+     (fVar12 = (float)(this_ptr->base).base.hit_points + delta_time,
+     (this_ptr->base).base.hit_points = (int)fVar12, (float)100 < fVar12)) {
+    (this_ptr->base).base.hit_points = 0x42c80000;
   }
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if ((iVar4 == 0) || ((this_ptr->base).ai_task == 4)) {
@@ -117,18 +117,19 @@ switchD_005d8f77_caseD_9:
         if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
           bVar2 = true;
           if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
-            iVar8 = core_hero_cpp_FUN_004f2af0();
+            iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
             bVar2 = false;
             if (iVar8 != 0) goto LAB_005d9011;
-            local_24 = core_hero_cpp_FUN_004f2d70();
+            local_24 = core_hero_cpp_CHero_FUN_004f2d70(&this_ptr->base);
             if ((local_24 != 0) && (local_24 != 1)) {
-              core_hero_cpp_FUN_004f2ed0();
+              core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
             }
-            if ((local_24 != 0) || (iVar8 = core_hero_cpp_FUN_004f2c40(), iVar8 != 0))
+            if ((local_24 != 0) ||
+               (iVar8 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar8 != 0))
             goto LAB_005d9011;
-            iVar8 = core_hero_cpp_FUN_004f2f50();
+            iVar8 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
             if (iVar8 != 0) {
-              core_hero_cpp_FUN_004f30f0();
+              core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
               goto LAB_005d9011;
             }
           }

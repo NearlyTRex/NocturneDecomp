@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e350
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e460
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e640
-;   core_weapon.cpp_CWeapon_FUN_005ee9f0
+;   core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005e3ca6
     PUSH ESI                            ; 005e3caa
     PUSH EBX                            ; 005e3cab
-    CALL core_weapon.cpp_CWeapon_FUN_005ee9f0 ; 005e3cac
-        ;   XREF to: 005ee9f0 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_FUN_005ee9f0(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0 ; 005e3cac
+        ;   XREF to: 005ee9f0 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005e3cb1
     LEA EAX,[EBX + 0x700]               ; 005e3cb4
     PUSH EAX                            ; 005e3cba

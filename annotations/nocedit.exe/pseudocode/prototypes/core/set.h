@@ -79,9 +79,9 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 // Address: 0056cf00
 void __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090
+// Original: core_set.cpp_CDemonSet_FUN_0056d090
 // Address: 0056d090
-void __cdecl CDemonSet::SomethingDynamicLights(CDemonSet *this_ptr);
+void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_FUN_0056d110
 // Address: 0056d110

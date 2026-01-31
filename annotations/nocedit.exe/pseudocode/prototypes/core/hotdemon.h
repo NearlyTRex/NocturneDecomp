@@ -11,49 +11,49 @@ void __cdecl staticInit(void);
 // Address: 004f6c60
 CHotDemon * __cdecl factoryFunc(void);
 
-// Original: core_hotdemon.cpp_FUN_004f6c90
+// Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004f6c90
 // Address: 004f6c90
-CDemonActorType * __cdecl FUN_004f6c90(void);
+CDemonActorType * __cdecl CHotDemon::getActorType(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
 // Address: 004f6ca0
 CHotDemon * __cdecl CHotDemon::ctor(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004f6d00
+// Original: core_hotdemon.cpp_CHotDemon_setup_FUN_004f6d00
 // Address: 004f6d00
-void __cdecl FUN_004f6d00(void);
+void __cdecl CHotDemon::setup(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004f6f20
+// Original: core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
 // Address: 004f6f20
-void __cdecl FUN_004f6f20(void);
+void __cdecl CHotDemon::process(CHotDemon *this_ptr,float delta_time);
 
-// Original: core_hotdemon.cpp_FUN_004f7680
+// Original: core_hotdemon.cpp_CHotDemon_isDamageable_FUN_004f7680
 // Address: 004f7680
-int __cdecl FUN_004f7680(void);
+int __cdecl CHotDemon::isDamageable(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0
+// Original: core_hotdemon.cpp_CHotDemon_serialize_FUN_004f76c0
 // Address: 004f76c0
-void __cdecl CHotDemon::load(void);
+void __cdecl CHotDemon::serialize(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004f7720
+// Original: core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720
 // Address: 004f7720
-void __cdecl FUN_004f7720(void);
+void __cdecl CHotDemon::processDamage(CHotDemon *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hotdemon.cpp_FUN_004f78f0
+// Original: core_hotdemon.cpp_CHotDemon_getTargetPoints_FUN_004f78f0
 // Address: 004f78f0
-int __cdecl FUN_004f78f0(void);
+int __cdecl CHotDemon::getTargetPoints(CHotDemon *this_ptr,CVector3f *out_points_array);
 
-// Original: core_hotdemon.cpp_FUN_004f79b0
+// Original: core_hotdemon.cpp_CHotDemon_hasCollision_FUN_004f79b0
 // Address: 004f79b0
-void __cdecl FUN_004f79b0(void);
+void __cdecl CHotDemon::hasCollision(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_hotdemon.cpp_FUN_004f79d0
+// Original: core_hotdemon.cpp_CHotDemon_getPropertyList_FUN_004f79d0
 // Address: 004f79d0
-void __cdecl FUN_004f79d0(void);
+void __cdecl CHotDemon::getPropertyList(CHotDemon *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hotdemon.cpp_FUN_004f7a10
+// Original: core_hotdemon.cpp_CHotDemon_writeDependencies_FUN_004f7a10
 // Address: 004f7a10
-void __cdecl FUN_004f7a10(void);
+void __cdecl CHotDemon::writeDependencies(CHotDemon *this_ptr,_FILE *file_handle);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
 // Address: 004f7a40

@@ -227,6 +227,6 @@ CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void);
 CDemonActorType * __cdecl core_colonel_cpp_FUN_0043f7d0(void);
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_FUN_0043f850(void);
-void __cdecl core_colonel_cpp_FUN_0043fa00(void);
+void __cdecl core_colonel_cpp_CColonel_FUN_0043fa00(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_FUN_0043ff20(void);
 

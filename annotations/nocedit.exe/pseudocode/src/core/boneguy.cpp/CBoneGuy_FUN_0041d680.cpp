@@ -6,22 +6,20 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_boneguy.cpp_CBoneGuy_explode2(uint param_1) */
-
 void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
 
 {
   COrientation *pCVar1;
   int iVar2;
-  CBodyPart *pCVar3;
-  CVector3f *pCVar4;
-  CBoneGuy *pCVar5;
-  CLocation *pCVar6;
-  CVector3f *pCVar7;
+  CBodyPart *this_ptr_00;
+  CVector3f *pCVar3;
+  CBoneGuy *pCVar4;
+  CLocation *pCVar5;
+  CVector3f *pCVar6;
+  uint *puVar7;
   uint *puVar8;
   uint *puVar9;
-  uint *puVar10;
-  byte bVar11;
+  byte bVar10;
   float afStackY_1824 [1523];
   CQuaternion4f local_48;
   float local_38;
@@ -35,7 +33,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   int local_18;
   float local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   core_charactr_cpp_CCharacter_FUN_0042d060((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->param = 0.0;
@@ -53,7 +51,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
     local_20 = &this_ptr->box_list_pos;
     local_2c = &(this_ptr->base).base.base.orient;
     local_28 = &(this_ptr->base).base.base.location;
-    pCVar7 = &this_ptr->box_list_orient;
+    pCVar6 = &this_ptr->box_list_orient;
     local_1c = this_ptr;
     do {
       local_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
@@ -62,39 +60,40 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       local_14 = local_34;
       local_30 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
       local_14 = local_30;
-      pCVar3 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+      this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      pCVar3->unk[0xb6c] = '\x01';
-      pCVar3->unk[0xb6d] = '\0';
-      pCVar3->unk[0xb6e] = '\0';
-      pCVar3->unk[0xb6f] = '\0';
-      core_bodypart_cpp_FUN_0041a050();
-      *(CBodyPart **)local_1c->unk2 = pCVar3;
-      pCVar6 = &(pCVar3->base).location;
-      pCVar4 = local_20 + local_18 * 6;
-      if ((CLocation *)pCVar4 != pCVar6) {
-        pCVar4->x = (pCVar6->position).x;
-        pCVar4->y = (pCVar3->base).location.position.y;
-        pCVar4->z = (pCVar3->base).location.position.z;
+      this_ptr_00->unk[0xb6c] = '\x01';
+      this_ptr_00->unk[0xb6d] = '\0';
+      this_ptr_00->unk[0xb6e] = '\0';
+      this_ptr_00->unk[0xb6f] = '\0';
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
+      *(CBodyPart **)local_1c->unk2 = this_ptr_00;
+      pCVar5 = &(this_ptr_00->base).location;
+      pCVar3 = local_20 + local_18 * 6;
+      if ((CLocation *)pCVar3 != pCVar5) {
+        pCVar3->x = (pCVar5->position).x;
+        pCVar3->y = (this_ptr_00->base).location.position.y;
+        pCVar3->z = (this_ptr_00->base).location.position.z;
       }
-      pCVar1 = &(pCVar3->base).orient;
-      if ((COrientation *)pCVar7 != pCVar1) {
-        pCVar7->x = pCVar1->pitch;
-        pCVar7->y = (pCVar3->base).orient.bank;
-        pCVar7->z = (pCVar3->base).orient.heading;
+      pCVar1 = &(this_ptr_00->base).orient;
+      if ((COrientation *)pCVar6 != pCVar1) {
+        pCVar6->x = pCVar1->pitch;
+        pCVar6->y = (this_ptr_00->base).orient.bank;
+        pCVar6->z = (this_ptr_00->base).orient.heading;
       }
-      pCVar7 = pCVar7 + 6;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&(pCVar3->base).orient,&local_48);
-      pCVar5 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
+      pCVar6 = pCVar6 + 6;
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+                ((CVector3f *)&(this_ptr_00->base).orient,&local_48);
+      pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
-      puVar9 = (uint *)((int)local_1c + (uint)bVar11 * -8 + 49000);
+      puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);
       (local_1c->box_list_start_orient).w = local_48.w;
-      puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
-      puVar8 = (uint *)((int)&local_48 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-      *puVar9 = *(uint *)((int)&local_48 + (uint)bVar11 * -8 + 4);
-      *puVar10 = *puVar8;
-      puVar10[(uint)bVar11 * -2 + 1] = puVar8[(uint)bVar11 * -2 + 1];
-      local_1c = pCVar5;
+      puVar9 = puVar8 + (uint)bVar10 * -2 + 1;
+      puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar7;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar7[(uint)bVar10 * -2 + 1];
+      local_1c = pCVar4;
     } while (local_18 < local_24->num_parts);
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)

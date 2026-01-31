@@ -66,7 +66,7 @@ void __cdecl core_moloch_cpp_FUN_005293b0(void)
     in_stack_00000004->unk1[0xf] = '\0';
     if (SQRT(local_70.y * local_70.y + local_74 * local_74 + local_70.x * local_70.x) <=
         (float)6) {
-      iVar6 = (*(((g_HeroActors[iVar6]->base).base.vtable._ue)->_ue).field_8)();
+      iVar6 = (*(((g_HeroActors[iVar6]->base).base.vtable._ue)->_ue).enemyfunc3)();
       if ((iVar6 == 0) &&
          (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
         if (uVar8 < 2) {

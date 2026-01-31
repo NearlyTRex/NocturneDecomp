@@ -12,7 +12,7 @@
 ;   core_barrier.cpp_CBarrier_FUN_00414240 at 004142c5
 ;   core_conveyor.cpp_FUN_00441f60 at 00441ffe
 ;   core_dest.cpp_CDestActor_renderTransparent_FUN_0046fb70 at 0046fbed
-;   core_hero.cpp_CHeroPlaceholder_FUN_004f3c90 at 004f3d09
+;   core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90 at 004f3d09
 ;   core_trigger.cpp_CTrigger_FUN_005e00d0 at 005e060e
 ;
 ; Referenced Globals:

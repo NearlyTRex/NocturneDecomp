@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_cow.cpp_FUN_004448c0
-;   core_enemy.cpp_FUN_004a9f10
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
@@ -61,8 +61,8 @@ section .text
         ;   XREF to: 00444bce (CONDITIONAL_JUMP)  ; LAB_00444bce
     PUSH EDI                            ; 00444b9a
     PUSH EBX                            ; 00444b9b
-    CALL core_enemy.cpp_FUN_004a9f10    ; 00444b9c
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 00444b9c
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00444ba1
     POP EDI                             ; 00444ba4
     POP ESI                             ; 00444ba5
@@ -94,8 +94,8 @@ section .text
     MOV dword ptr [EBX + 0xbec4],EAX    ; 00444be0
     PUSH EDI                            ; 00444be6
     PUSH EBX                            ; 00444be7
-    CALL core_enemy.cpp_FUN_004a9f10    ; 00444be8
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 00444be8
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00444bed
     POP EDI                             ; 00444bf0
     POP ESI                             ; 00444bf1

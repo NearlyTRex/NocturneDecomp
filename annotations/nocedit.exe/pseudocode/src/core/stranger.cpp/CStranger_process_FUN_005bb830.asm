@@ -55,23 +55,23 @@ section .text
     PUSH dword ptr [ESP + 0x4]          ; 005bb86e
     PUSH EBX                            ; 005bb872
     CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb873
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960()
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005bb878
     PUSH dword ptr [ESP + 0x4]          ; 005bb87b
     PUSH EBX                            ; 005bb87f
     CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb880
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960()
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005bb885
     PUSH dword ptr [ESP + 0x4]          ; 005bb888
     PUSH EBX                            ; 005bb88c
     CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb88d
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960()
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005bb892
     PUSH dword ptr [ESP + 0x4]          ; 005bb895
     PUSH EBX                            ; 005bb899
         ;   Label: LAB_005bb899
     CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb89a
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960()
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005bb89f
     MOV ECX,dword ptr [0x0067b654]      ; 005bb8a2 | g_CGameInstance | g_CGamePtr
     PUSH dword ptr [ESP + 0x8]          ; 005bb8a8

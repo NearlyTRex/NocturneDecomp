@@ -39,9 +39,9 @@ int __cdecl CBoxActor::renderOpaque(CBoxActor *this_ptr);
 // Address: 00421ef0
 int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_CBoxActor_FUN_00421fe0
+// Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0
 // Address: 00421fe0
-CBoundingBox3D * __cdecl CBoxActor(CBoxActor *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_boxactor.cpp_CBoxActor_serialize_FUN_00422060
 // Address: 00422060
@@ -139,9 +139,9 @@ void __cdecl CLightActor(CLightActor *this_ptr);
 // Address: 0042307e
 char * __cdecl FUN_0042307e(int param_1);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423110
+// Original: core_boxactor.cpp_FUN_00423110
 // Address: 00423110
-int __cdecl CLightActor(CLightActor *this_ptr);
+int __cdecl FUN_00423110(void);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00423310
 // Address: 00423310
@@ -159,13 +159,13 @@ void __cdecl CLightActor(void);
 // Address: 00423440
 int __cdecl CLightActor(void);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_004234e0
+// Original: core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0
 // Address: 004234e0
-void __cdecl CLightActor(void);
+void __cdecl CLightActor::getPropertyList(CLightActor *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423590
+// Original: core_boxactor.cpp_CLightActor_initializeInEditor_FUN_00423590
 // Address: 00423590
-int __cdecl CLightActor(void);
+int __cdecl CLightActor::initializeInEditor(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_004235c0
 // Address: 004235c0

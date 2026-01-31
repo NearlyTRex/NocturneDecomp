@@ -12,12 +12,12 @@
 ;
 ; XREF[90]:
 ;   core_actor.cpp_freeVectors_FUN_00410500 at 0041050c
-;   core_backgnd.cpp_cleanupVector_FUN_004126e0 at 004126ec
-;   core_backgnd.cpp_freeFires_FUN_00412700 at 0041270c
-;   core_backgnd.cpp_freeFlames_FUN_00412720 at 0041272c
+;   core_armour.cpp_freeFires_FUN_00412700 at 0041270c
+;   core_armour.cpp_freeFlames_FUN_00412720 at 0041272c
+;   core_armour.cpp_freeVectors_FUN_004126e0 at 004126ec
 ;   core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0 at 0041b6bc
 ;   core_bodypart.cpp_freeBodyPartModels_FUN_0041b690 at 0041b69c
-;   core_boneguy.cpp_FUN_0041db30 at 0041db3c
+;   core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30 at 0041db3c
 ;   core_box.cpp_freeScrapes_FUN_00420220 at 0042022c
 ;   core_boxactor.cpp_freeFilters_FUN_004236e0 at 004236ec
 ;   core_bugs.cpp_FUN_00427cc0 at 00427ccf

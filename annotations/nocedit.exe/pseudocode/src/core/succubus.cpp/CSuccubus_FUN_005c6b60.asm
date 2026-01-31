@@ -31,7 +31,7 @@
 ;   core_cloth.cpp_CClothList_load_FUN_0043bfa0
 ;   core_cloth.cpp_FUN_0043c290
 ;   core_cloth.cpp_FUN_0043c2d0
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
 ;   core_morph.cpp_FUN_0052b580
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 005c6ba1
     PUSH EBX                            ; 005c6ba4
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005c6ba5
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005c6ba5
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005c6baa
     LEA EBP,[EBX + 0x158]               ; 005c6bad
     PUSH EBP                            ; 005c6bb3

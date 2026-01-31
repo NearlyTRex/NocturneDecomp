@@ -11,12 +11,12 @@
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 004130d4
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415665
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416a93
-;   core_beast.cpp_FUN_004182a0 at 0041830c
-;   core_biggs.cpp_CBiggs_FUN_00418700 at 004188df
+;   core_beast.cpp_CBeast_process_FUN_004182a0 at 0041830c
+;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 004188df
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c522
-;   core_bride.cpp_FUN_00423a30 at 00424478
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00424478
 ;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043d492
-;   core_colonel.cpp_FUN_0043fa00 at 0043fc2b
+;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fc2b
 ;   ... and 30 more
 ;
 ; Referenced Globals:

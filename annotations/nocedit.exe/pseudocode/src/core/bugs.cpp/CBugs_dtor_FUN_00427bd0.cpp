@@ -24,10 +24,10 @@ core_bugs_cpp_CBugs_dtor_FUN_00427bd0
     return this_ptr;
   }
   iVar1 = core_bugs_cpp_FUN_00427cc0((SBug **)this_ptr->unk2);
-  iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8af8));
-  iVar1 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
-  iVar1 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
-  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
+  iVar1 = core_armour_cpp_freeFlames_FUN_00412720((CFlame **)(iVar1 + -0x8af8));
+  iVar1 = core_armour_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
+  iVar1 = core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
+  core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
   iVar1 = core_cloth_cpp_FUN_0043bf80();
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,

@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_boneguy.cpp_CBoneGuy_load_FUN_0041d270 at 0041d361
+;   core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270 at 0041d361
 ;   core_ghoul.cpp_CGhoul_load_FUN_004e81c0 at 004e827f
 ;   core_hero.cpp_CHero_serialize_FUN_004f2610 at 004f2670
-;   core_hostage.cpp_CHostage_load_FUN_004f6170 at 004f61d6
+;   core_hostage.cpp_CHostage_serialize_FUN_004f6170 at 004f61d6
 ;   core_tentacle.cpp_CTentacle_serialize_FUN_005db880 at 005db8c8
 ;   core_zombie.cpp_CZombie_serialize_FUN_005fbfd0 at 005fc054
 ;

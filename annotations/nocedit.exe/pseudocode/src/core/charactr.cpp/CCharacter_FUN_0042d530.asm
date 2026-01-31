@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfe7
-;   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 at 0042f82e
-;   core_mimic.cpp_CMimic_setup2_FUN_0051f780 at 0051f8e4
+;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 at 0042f82e
+;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f8e4
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0

@@ -14,7 +14,7 @@
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e160
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e290
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e460
-;   core_npc.cpp_CNPC_FUN_00544e40
+;   core_npc.cpp_CNPC_getPropertyList_FUN_00544e40
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00546276
     PUSH ESI                            ; 0054627a
     PUSH EBX                            ; 0054627b
-    CALL core_npc.cpp_CNPC_FUN_00544e40 ; 0054627c
-        ;   XREF to: 00544e40 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_FUN_00544e40(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_getPropertyList_FUN_00544e40 ; 0054627c
+        ;   XREF to: 00544e40 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_getPropertyList_FUN_00544e40(CNPC * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 00546281
     PUSH 0x0                            ; 00546284
     PUSH 0x1f                           ; 00546286

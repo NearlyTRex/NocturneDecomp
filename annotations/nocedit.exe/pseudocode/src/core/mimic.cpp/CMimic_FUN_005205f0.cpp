@@ -33,7 +33,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                             ((CDemonActor *)this_ptr,&local_64);
     local_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (local_1c != 0) {
-      if (*(float *)(this_ptr->unk2 + 0xc58) < 0.0) {
+      if (*(float *)(this_ptr->unk4 + 0xc50) < 0.0) {
         local_18 = g_CDemonRendererPtr2->advanced_culling_enabled;
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10
                   (g_CDemonRendererPtr2,(uint)(local_18 == 0));
@@ -93,7 +93,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                   (g_CDemonRendererPtr2,local_18);
       }
       else {
-        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk2 + 0x2c));
+        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk4 + 0x24));
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

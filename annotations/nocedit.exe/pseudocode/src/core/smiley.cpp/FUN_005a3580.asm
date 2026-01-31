@@ -8,7 +8,7 @@
 ;   TerminatedCString s_smiley_die_wav_0064f37a
 ;
 ; Called Functions:
-;   core_enemy.cpp_FUN_004a9f10
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_smiley.cpp_FUN_005a32a0
@@ -94,8 +94,8 @@ section .text
     PUSH ESI                            ; 005a3640
         ;   Label: LAB_005a3640
     PUSH EBX                            ; 005a3641
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005a3642
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005a3642
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005a3647
     POP EDI                             ; 005a364a
     POP ESI                             ; 005a364b
@@ -120,8 +120,8 @@ section .text
     ADD ESP,0xc                         ; 005a3675
     PUSH ESI                            ; 005a3678
     PUSH EBX                            ; 005a3679
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005a367a
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005a367a
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005a367f
     POP EDI                             ; 005a3682
     POP ESI                             ; 005a3683

@@ -7,9 +7,9 @@
 // Address: 00418de0
 void __cdecl staticInit(void);
 
-// Original: core_bodypart.cpp_CreateBodyPart_FUN_00418e10
+// Original: core_bodypart.cpp_createBodyPart_FUN_00418e10
 // Address: 00418e10
-CBodyPart * __cdecl CreateBodyPart(void);
+CBodyPart * __cdecl createBodyPart(void);
 
 // Original: core_bodypart.cpp_factoryFunc_FUN_00418fd0
 // Address: 00418fd0
@@ -31,9 +31,9 @@ CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint d1,uint d2,uint d3,
 // Address: 004191d0
 void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00419340
+// Original: core_bodypart.cpp_CBodyPart_FUN_00419340
 // Address: 00419340
-void __cdecl FUN_00419340(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
 // Address: 004194b0
@@ -59,9 +59,9 @@ void __cdecl CBodyPart::serialize(CBodyPart *this_ptr);
 // Address: 00419be0
 void __cdecl CBodyPart::process(CBodyPart *this_ptr,float delta_time);
 
-// Original: core_bodypart.cpp_FUN_00419e10
+// Original: core_bodypart.cpp_CBodyPart_FUN_00419e10
 // Address: 00419e10
-void __cdecl FUN_00419e10(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50
 // Address: 00419f50
@@ -87,25 +87,25 @@ void __cdecl CBodyPart::onDropped(CBodyPart *this_ptr,CVector3f *drop_position);
 // Address: 0041a040
 CDemonActor * __cdecl CBodyPart::getCarrier(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041a050
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041a050
 // Address: 0041a050
-void __cdecl FUN_0041a050(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041a630
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041a630
 // Address: 0041a630
-void __cdecl FUN_0041a630(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041aa40
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041aa40
 // Address: 0041aa40
-void __cdecl FUN_0041aa40(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041add0
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041add0
 // Address: 0041add0
-void __cdecl FUN_0041add0(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041ae50
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041ae50
 // Address: 0041ae50
-void __cdecl FUN_0041ae50(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_FUN_0041af90
 // Address: 0041af90
@@ -115,9 +115,9 @@ int __cdecl CBodyPart(CBodyPart *this_ptr);
 // Address: 0041b070
 void __cdecl CBodyPart(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_0041b1b0
+// Original: core_bodypart.cpp_CBodyPart_FUN_0041b1b0
 // Address: 0041b1b0
-void __cdecl FUN_0041b1b0(void);
+void __cdecl CBodyPart(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0
 // Address: 0041b1f0

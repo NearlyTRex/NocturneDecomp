@@ -15,7 +15,7 @@ void __cdecl core_dracbrid_cpp_FUN_00486c90(void)
   CEnemy *in_stack_00000004;
   CActorPropertyList *in_stack_00000008;
   
-  core_enemy_cpp_CEnemy_FUN_004aa170(in_stack_00000004);
+  core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(in_stack_00000004,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_00000008);

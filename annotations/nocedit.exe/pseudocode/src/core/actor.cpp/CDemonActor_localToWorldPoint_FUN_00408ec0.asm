@@ -15,12 +15,12 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a28d
 ;   core_baron.cpp_CBaron_FUN_004136b0 at 00413984
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041327a
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 00416093
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041570d
-;   core_batcreat.cpp_FUN_00416030 at 00416093
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a03
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416e28
-;   core_batman.cpp_FUN_004179a0 at 00417a03
-;   core_bodypart.cpp_CBodyPart_FUN_0041b070 at 0041b14d
-;   core_bodypart.cpp_FUN_00419e10 at 00419e81
+;   core_bodypart.cpp_CBodyPart_FUN_00419e10 at 00419e81
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a3a8
 ;   ... and 136 more
 ;
 ; Called Functions:

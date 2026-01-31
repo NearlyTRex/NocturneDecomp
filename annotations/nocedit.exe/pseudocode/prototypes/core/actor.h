@@ -617,7 +617,7 @@ void __cdecl CActorPropertyList(CActorPropertyList *this_ptr);
 
 // Original: core_actor.cpp_CActorPropertyList_FUN_0040e500
 // Address: 0040e500
-void __cdecl CActorPropertyList(void);
+void __cdecl CActorPropertyList(CActorPropertyList *this_ptr);
 
 // Original: core_actor.cpp_CActorPropertyList_FUN_0040e5a0
 // Address: 0040e5a0

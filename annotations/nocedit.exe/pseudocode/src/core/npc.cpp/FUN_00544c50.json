@@ -12,47 +12,47 @@
       {
         "category": "other",
         "column": 24,
-        "line": 27,
+        "line": 25,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 27,
+        "line": 25,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 45,
+        "line": 43,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 45,
+        "line": 43,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 127,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 41,
     "suspect_count": 8,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 150
+    "total_lines": 149
   },
   "cross_references": [
     {
       "addr": "00544d30",
       "from_addr": "00544de7",
-      "name": "core_npc.cpp_CNPC_FUN_00544d30",
+      "name": "core_npc.cpp_CNPC_processDamage_FUN_00544d30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -179,56 +179,56 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CMotionController *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(in_stack_00000004,iVar3,1);",
       "type": "stack_param"

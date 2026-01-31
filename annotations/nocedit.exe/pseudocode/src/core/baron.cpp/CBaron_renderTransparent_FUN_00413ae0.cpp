@@ -29,7 +29,7 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   uVar2 = pSVar4->state_index;
-  local_44.min.x = (this_ptr->base).base.model.motion_controller.current_frame_number;
+  local_44.min.x = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
   local_1c = local_44.min.x;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);

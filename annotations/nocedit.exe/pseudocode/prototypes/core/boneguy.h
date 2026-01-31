@@ -19,9 +19,9 @@ CVector3f * __cdecl FUN_0041b770(void);
 // Address: 0041b820
 CBoneGuy * __cdecl factoryFunc(void);
 
-// Original: core_boneguy.cpp_FUN_0041b850
+// Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_0041b850
 // Address: 0041b850
-CDemonActorType * __cdecl FUN_0041b850(void);
+CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_0041b860
 // Address: 0041b860
@@ -59,45 +59,45 @@ void __cdecl FUN_0041d180(void);
 // Address: 0041d1b0
 int __cdecl FUN_0041d1b0(void);
 
-// Original: core_boneguy.cpp_CBoneGuy_load_FUN_0041d270
+// Original: core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270
 // Address: 0041d270
-void __cdecl CBoneGuy::load(void);
+void __cdecl CBoneGuy::serialize(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041d4c0
+// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d4c0
 // Address: 0041d4c0
-int __cdecl FUN_0041d4c0(void);
+int __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0
+// Original: core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0
 // Address: 0041d4d0
-void __cdecl ExplodeAndSoundSomething(void);
+void __cdecl CBoneGuy::processDamage(CBoneGuy *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_boneguy.cpp_FUN_0041d550
+// Original: core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_0041d550
 // Address: 0041d550
-int __cdecl FUN_0041d550(void);
+int __cdecl CBoneGuy::getTargetPoints(CBoneGuy *this_ptr,CVector3f *out_points_array);
 
 // Original: core_boneguy.cpp_CBoneGuy_FUN_0041d680
 // Address: 0041d680
 void __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041d8a0
+// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d8a0
 // Address: 0041d8a0
-void __cdecl FUN_0041d8a0(void);
+void __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041d970
+// Original: core_boneguy.cpp_CBoneGuy_hasCollision_FUN_0041d970
 // Address: 0041d970
-int __cdecl FUN_0041d970(void);
+int __cdecl CBoneGuy::hasCollision(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990
+// Original: core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990
 // Address: 0041d990
-void __cdecl SnagRelated::ModelStateDeath(void);
+void __cdecl CBoneGuy::getPropertyList(CBoneGuy *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_boneguy.cpp_FUN_0041da00
+// Original: core_boneguy.cpp_CBoneGuy_FUN_0041da00
 // Address: 0041da00
-void __cdecl FUN_0041da00(void);
+void __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041da10
+// Original: core_boneguy.cpp_CBoneGuy_writeDependencies_FUN_0041da10
 // Address: 0041da10
-void __cdecl FUN_0041da10(void);
+void __cdecl CBoneGuy::writeDependencies(CBoneGuy *this_ptr,_FILE *file_handle);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40
 // Address: 0041da40
@@ -111,6 +111,6 @@ SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
 // Address: 0041db20
 SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041db30
+// Original: core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30
 // Address: 0041db30
-int __cdecl FUN_0041db30(SBoneGuyBox **objs);
+int __cdecl freeBoneGuyBoxes(SBoneGuyBox **objs);

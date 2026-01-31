@@ -1185,7 +1185,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                             local_dc = (uint)pCVar9 ^ (uint)0x0FFFFFFF;
                           }
                           else {
-                            local_dc = (*(((pCVar9->base).base.vtable._ue)->_ue).field_8)();
+                            local_dc = (*(((pCVar9->base).base.vtable._ue)->_ue).enemyfunc3)();
                           }
                           *in_stack_0000000c = *in_stack_0000000c + local_1c;
                         }

@@ -37,7 +37,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570fc0(CDemonSet *this_ptr)
   if (0 < (int)this_ptr->actor_list_ptr) {
     do {
       actor_ptr = *(CDemonActor **)pCVar3->actor_list_data;
-      if ((actor_ptr->is_transparent != 0) || (actor_ptr->unk5 != 0)) {
+      if ((actor_ptr->is_transparent != 0) || (actor_ptr->is_renderable != 0)) {
         *(CDemonActor **)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x9c4c) * 4 + 0x9c50) =
              actor_ptr;
         *(int *)(this_ptr->unk4 + 0x9c4c) = *(int *)(this_ptr->unk4 + 0x9c4c) + 1;

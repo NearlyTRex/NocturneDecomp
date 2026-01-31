@@ -1,0 +1,123 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 12,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "0043fa00",
+      "from_addr": "0043fe15",
+      "name": "core_colonel.cpp_CColonel_FUN_0043fa00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2ea0",
+      "from_addr": "004d4041",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0e40",
+      "from_addr": "004f12a2",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004f0e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f80b0",
+      "from_addr": "004f8625",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004f80b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bdd20",
+      "from_addr": "005be2fb",
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d8ba0",
+      "from_addr": "005d90dd",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f30f0",
+    "address_range": [
+      [
+        "004f30f0",
+        "004f311c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_FUN_004f30f0",
+    "signature": "int __cdecl core_hero_cpp_CHero_FUN_004f30f0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00504c90",
+      "is_variadic": false,
+      "name": "core_lever.cpp_CLever_FUN_00504c90"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.133333333333334,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 62
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": []
+}

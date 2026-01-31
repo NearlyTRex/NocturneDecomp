@@ -9,14 +9,14 @@
 ; int              Stack[0xc]:4   error_if_not_found
 ;
 ; XREF[14]:
-;   core_batcreat.cpp_CBatCreature_FUN_00415150 at 00415361
-;   core_batman.cpp_CBatman_FUN_00416510 at 00416720
-;   core_bride.cpp_FUN_00423810 at 0042392e
+;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 00415361
+;   core_batman.cpp_CBatman_setup_FUN_00416510 at 00416720
+;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042392e
 ;   core_cow.cpp_FUN_004441b0 at 004442e0
 ;   core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0 at 0048421a
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e45e0 at 004e4782
 ;   core_ghoul.cpp_FUN_004e6160 at 004e6342
-;   core_imp.cpp_FUN_004f9910 at 004f9ab6
+;   core_imp.cpp_CImp_setup_FUN_004f9910 at 004f9ab6
 ;   core_mobster.cpp_FUN_00525340 at 005255a0
 ;   core_script.cpp_FUN_00559730 at 005597a7
 ;   ... and 4 more

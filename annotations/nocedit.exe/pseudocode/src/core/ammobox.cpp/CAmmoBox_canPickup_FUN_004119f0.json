@@ -11,7 +11,7 @@
       },
       {
         "category": "other",
-        "column": 69,
+        "column": 59,
         "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -19,15 +19,13 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 32
   },
   "cross_references": [],
@@ -41,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_ammobox.cpp_CAmmoBox_canPickup_FUN_004119f0",
-    "signature": "int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr)"
+    "signature": "int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr,CDemonActor *carrier)"
   },
   "function_calls": [
     {
@@ -62,8 +60,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.571428571428571,
@@ -91,10 +89,10 @@
     "pcode_op_count": 64
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -103,25 +101,17 @@
         "offset": 4,
         "size": 4,
         "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "carrier",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "CDemonActor *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

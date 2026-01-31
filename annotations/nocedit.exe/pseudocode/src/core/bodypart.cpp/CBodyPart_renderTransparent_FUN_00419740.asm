@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_bodypart.cpp_FUN_00419340
+;   core_bodypart.cpp_CBodyPart_FUN_00419340
 ;   core_flame.cpp_FUN_004ca110
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
@@ -58,8 +58,8 @@ section .text
     ADD ESP,0x8                         ; 004197a0
     PUSH 0x2e7                          ; 004197a3
     PUSH EDI                            ; 004197a8
-    CALL core_bodypart.cpp_FUN_00419340 ; 004197a9
-        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419340()
+    CALL core_bodypart.cpp_CBodyPart_FUN_00419340 ; 004197a9
+        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419340(CBodyPart * this_ptr)
     ADD ESP,0x8                         ; 004197ae
     PUSH EDI                            ; 004197b1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 004197b2

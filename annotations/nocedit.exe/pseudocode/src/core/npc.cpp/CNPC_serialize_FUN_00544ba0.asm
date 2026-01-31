@@ -7,9 +7,9 @@
 ; CNPC *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_hiram.cpp_CHiram_load_FUN_004f4690 at 004f4695
-;   core_hostage.cpp_CHostage_load_FUN_004f6170 at 004f6177
-;   core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0 at 004f7bd5
+;   core_hiram.cpp_CHiram_serialize_FUN_004f4690 at 004f4695
+;   core_hostage.cpp_CHostage_serialize_FUN_004f6170 at 004f6177
+;   core_hpriest.cpp_CHighPriestOfGardath_serialize_FUN_004f7bd0 at 004f7bd5
 ;   core_passngr.cpp_CPassenger_load_FUN_00546190 at 00546197
 ;
 ; Referenced Globals:

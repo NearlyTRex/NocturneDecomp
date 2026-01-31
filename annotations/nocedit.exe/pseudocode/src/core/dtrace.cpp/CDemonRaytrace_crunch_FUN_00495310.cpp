@@ -18,13 +18,12 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   int *piVar6;
   CDemonTriangle *vertex1;
   int iVar7;
-  char **ppcVar8;
-  float *pfVar9;
-  char **ppcVar10;
+  int *piVar8;
+  int *piVar9;
+  float10 fVar10;
   float10 fVar11;
-  float10 fVar12;
-  double dVar13;
-  uint uVar14;
+  double dVar12;
+  uint uVar13;
   int local_e8;
   int local_e4;
   int local_e0;
@@ -33,15 +32,15 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   int local_d4;
   int local_d0;
   int local_cc;
-  float local_c8;
-  float local_c4;
-  float local_c0;
-  float local_bc;
-  float local_b8;
+  int local_c8;
+  int local_c4;
+  int local_c0;
+  int local_bc;
+  int local_b8;
   CVector3f local_b4;
-  float local_a8;
-  float local_a4;
-  float local_a0;
+  int local_a8;
+  int local_a4;
+  int local_a0;
   CVector3f local_9c;
   float local_90;
   float local_8c;
@@ -53,20 +52,20 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   float local_74;
   float local_70;
   float *local_6c;
-  float local_68;
+  int local_68;
   int *local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
+  int local_60;
+  int local_5c;
+  int local_58;
   int *local_54;
   int *local_50;
   int *local_4c;
   int *local_48;
   int *local_44;
   int *local_40;
-  char **local_3c;
-  char **local_38;
-  float local_34;
+  int *local_3c;
+  int *local_38;
+  int local_34;
   int *local_30;
   int *local_2c;
   int *local_28;
@@ -74,35 +73,35 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   int local_20;
   CDemonCube *local_1c;
   int local_18;
-  char **local_14;
+  int *local_14;
   
-  fVar11 = (float10)1 / (float10)cube_size;
-  dVar13 = round
+  fVar10 = (float10)1 / (float10)cube_size;
+  dVar12 = round
                      ((double)(((float10)(this_ptr->bbox_max).x - (float10)(this_ptr->bbox_min).x) *
-                              fVar11));
-  local_14 = (char **)(int)ROUND(dVar13);
+                              fVar10));
+  local_14 = (int *)(int)ROUND(dVar12);
   fVar2 = (this_ptr->bbox_max).x;
   fVar3 = (this_ptr->bbox_min).x;
   (this_ptr->grid_coord).x = (int)local_14 + 1;
   iVar7 = (this_ptr->grid_coord).x;
-  dVar13 = round
+  dVar12 = round
                      ((double)(((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) *
-                              fVar11));
-  local_14 = (char **)(int)ROUND(dVar13);
+                              fVar10));
+  local_14 = (int *)(int)ROUND(dVar12);
   (this_ptr->grid_coord).y = (int)local_14 + 1;
-  fVar12 = ((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) /
+  fVar11 = ((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) /
            (float10)(this_ptr->grid_coord).y;
-  uVar14 = 0x495382;
-  dVar13 = round
+  uVar13 = 0x495382;
+  dVar12 = round
                      ((double)(((float10)(this_ptr->bbox_max).z - (float10)(this_ptr->bbox_min).z) *
-                              fVar11));
-  local_14 = (char **)(int)ROUND(dVar13);
+                              fVar10));
+  local_14 = (int *)(int)ROUND(dVar12);
   fVar4 = (this_ptr->bbox_max).z;
   fVar5 = (this_ptr->bbox_min).z;
   (this_ptr->grid_coord).z = (int)local_14 + 1;
   iVar1 = (this_ptr->grid_coord).z;
   (this_ptr->cell_size).x = (fVar2 - fVar3) / (float)iVar7;
-  (this_ptr->cell_size).y = (float)fVar12;
+  (this_ptr->cell_size).y = (float)fVar11;
   (this_ptr->cell_size).z = (fVar4 - fVar5) / (float)iVar1;
   local_90 = (this_ptr->cell_size).x / 8.0f;
   local_8c = (this_ptr->cell_size).y * 0.125f;
@@ -124,30 +123,30 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   if (local_44 == (int *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x2ee;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory",uVar14);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory",uVar13);
   }
   iVar7 = 0;
   if (0 < this_ptr->triangle_count) {
-    local_68 = 0.0;
+    local_68 = 0;
     piVar6 = local_44;
     do {
-      pfVar9 = (float *)((int)&(this_ptr->triangle_list->vertex1).x + (int)local_68);
-      local_a8 = *pfVar9;
-      local_a4 = pfVar9[1];
-      local_a0 = pfVar9[2];
-      local_6c = pfVar9 + 3;
+      piVar9 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);
+      local_a8 = *piVar9;
+      local_a4 = piVar9[1];
+      local_a0 = piVar9[2];
+      local_6c = (float *)(piVar9 + 3);
       local_84 = *local_6c;
-      local_80 = pfVar9[4];
-      local_7c = pfVar9[5];
-      local_78 = pfVar9[6];
-      local_74 = pfVar9[7];
-      local_70 = pfVar9[8];
+      local_80 = (float)piVar9[4];
+      local_7c = (float)piVar9[5];
+      local_78 = (float)piVar9[6];
+      local_74 = (float)piVar9[7];
+      local_70 = (float)piVar9[8];
       *piVar6 = iVar7;
-      piVar6[4] = (int)local_a8;
+      piVar6[4] = local_a8;
       piVar6[1] = piVar6[4];
-      piVar6[5] = (int)local_a4;
+      piVar6[5] = local_a4;
       piVar6[2] = piVar6[5];
-      piVar6[6] = (int)local_a0;
+      piVar6[6] = local_a0;
       piVar6[3] = piVar6[6];
       if (local_84 < (float)piVar6[1]) {
         piVar6[1] = (int)local_84;
@@ -187,49 +186,43 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
       }
       piVar6 = piVar6 + 7;
       iVar7 = iVar7 + 1;
-      local_68 = (float)((int)local_68 + 0x38);
+      local_68 = local_68 + 0x38;
     } while (iVar7 < this_ptr->triangle_count);
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,"Cube crunch");
-  local_3c = (char **)0x0;
+  local_3c = (int *)0x0;
   if (0 < (this_ptr->grid_coord).x) {
     do {
       local_14 = local_3c;
       local_9c.x = (float)(int)local_3c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
       local_b4.x = local_9c.x + (this_ptr->cell_size).x;
-      local_58 = (float)(this_ptr->triangle_count + -1);
-      local_5c = 0.0;
-      if (-1 < (int)local_58) {
+      local_58 = this_ptr->triangle_count + -1;
+      local_5c = 0;
+      if (-1 < local_58) {
         local_50 = local_44;
-        local_4c = local_44 + (int)local_58 * 7;
-        ppcVar10 = (char **)(local_44 + (int)local_58 * 7 + 1);
+        local_4c = local_44 + local_58 * 7;
+        piVar6 = local_44 + local_58 * 7 + 1;
         do {
-          piVar6 = local_50;
+          piVar9 = local_50;
           local_48 = local_50;
           if ((local_b4.x < (float)local_50[1]) || ((float)local_50[4] < local_9c.x)) {
             local_54 = local_4c;
-            ppcVar8 = (char **)(local_50 + 1);
+            piVar8 = local_50 + 1;
             iVar7 = *local_50;
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
-                      ((CCharacter *)&local_e8,ppcVar8);
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
-                      ((CCharacter *)&local_e4,(char **)(piVar6 + 2));
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
-                      ((CCharacter *)&local_e0,(char **)(piVar6 + 3));
-            local_14 = (char **)(local_48 + 4);
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
-                      ((CCharacter *)&local_dc,local_14);
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
-                      ((CCharacter *)&local_d8,local_14 + 1);
-            core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
-                      ((CCharacter *)&local_d4,local_14 + 2);
+            core_charactr_cpp_FUN_0042fb00();
+            core_charactr_cpp_FUN_0042faf0();
+            core_charactr_cpp_FUN_0042fae0();
+            local_14 = local_48 + 4;
+            core_charactr_cpp_FUN_0042fb00();
+            core_charactr_cpp_FUN_0042faf0();
+            core_charactr_cpp_FUN_0042fae0();
             local_64 = local_4c;
             *local_48 = *local_4c;
-            if (ppcVar8 != ppcVar10) {
-              *ppcVar8 = *ppcVar10;
-              piVar6[2] = (int)ppcVar10[1];
-              piVar6[3] = (int)ppcVar10[2];
+            if (piVar8 != piVar6) {
+              *piVar8 = *piVar6;
+              piVar9[2] = piVar6[1];
+              piVar9[3] = piVar6[2];
             }
             if (local_48 + 4 != local_4c + 4) {
               local_48[4] = local_4c[4];
@@ -247,55 +240,49 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
               local_54[5] = local_d8;
               local_54[6] = local_d4;
             }
-            ppcVar10 = ppcVar10 + -7;
+            piVar6 = piVar6 + -7;
             local_4c = local_4c + -7;
-            local_58 = (float)((int)local_58 + -1);
+            local_58 = local_58 + -1;
           }
           else {
-            local_5c = (float)((int)local_5c + 1);
+            local_5c = local_5c + 1;
             local_50 = local_50 + 7;
           }
-        } while ((int)local_5c <= (int)local_58);
+        } while (local_5c <= local_58);
       }
-      local_38 = (char **)0x0;
+      local_38 = (int *)0x0;
       if (0 < (this_ptr->grid_coord).y) {
-        local_60 = (float)((int)local_5c - 1);
+        local_60 = local_5c + -1;
         do {
           local_14 = local_38;
           local_18 = 0;
           local_9c.y = (float)(int)local_38 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
           local_b4.y = local_9c.y + (this_ptr->cell_size).y;
           local_34 = local_60;
-          if (-1 < (int)local_60) {
+          if (-1 < local_60) {
             local_28 = local_44;
-            local_2c = local_44 + (int)local_60 * 7;
-            ppcVar10 = (char **)(local_44 + (int)local_60 * 7 + 1);
+            local_2c = local_44 + local_60 * 7;
+            piVar6 = local_44 + local_60 * 7 + 1;
             do {
-              piVar6 = local_28;
+              piVar9 = local_28;
               local_24 = local_28;
               if ((local_b4.y < (float)local_28[2]) || ((float)local_28[5] < local_9c.y)) {
                 local_30 = local_2c;
-                ppcVar8 = (char **)(local_28 + 1);
+                piVar8 = local_28 + 1;
                 local_d0 = *local_28;
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
-                          ((CCharacter *)&local_cc,ppcVar8);
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
-                          ((CCharacter *)&local_c8,(char **)(piVar6 + 2));
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
-                          ((CCharacter *)&local_c4,(char **)(piVar6 + 3));
-                local_14 = (char **)(local_24 + 4);
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
-                          ((CCharacter *)&local_c0,local_14);
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
-                          ((CCharacter *)&local_bc,local_14 + 1);
-                core_charactr_cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
-                          ((CCharacter *)&local_b8,local_14 + 2);
+                core_charactr_cpp_FUN_0042fb00();
+                core_charactr_cpp_FUN_0042faf0();
+                core_charactr_cpp_FUN_0042fae0();
+                local_14 = local_24 + 4;
+                core_charactr_cpp_FUN_0042fb00();
+                core_charactr_cpp_FUN_0042faf0();
+                core_charactr_cpp_FUN_0042fae0();
                 local_40 = local_2c;
                 *local_24 = *local_2c;
-                if (ppcVar8 != ppcVar10) {
-                  *ppcVar8 = *ppcVar10;
-                  piVar6[2] = (int)ppcVar10[1];
-                  piVar6[3] = (int)ppcVar10[2];
+                if (piVar8 != piVar6) {
+                  *piVar8 = *piVar6;
+                  piVar9[2] = piVar6[1];
+                  piVar9[3] = piVar6[2];
                 }
                 if (local_24 + 4 != local_2c + 4) {
                   local_24[4] = local_2c[4];
@@ -305,23 +292,23 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
                 *local_30 = local_d0;
                 if (local_30 + 1 != &local_cc) {
                   local_30[1] = local_cc;
-                  local_30[2] = (int)local_c8;
-                  local_30[3] = (int)local_c4;
+                  local_30[2] = local_c8;
+                  local_30[3] = local_c4;
                 }
-                if ((float *)(local_30 + 4) != &local_c0) {
-                  local_30[4] = (int)local_c0;
-                  local_30[5] = (int)local_bc;
-                  local_30[6] = (int)local_b8;
+                if (local_30 + 4 != &local_c0) {
+                  local_30[4] = local_c0;
+                  local_30[5] = local_bc;
+                  local_30[6] = local_b8;
                 }
-                ppcVar10 = ppcVar10 + -7;
+                piVar6 = piVar6 + -7;
                 local_2c = local_2c + -7;
-                local_34 = (float)((int)local_34 + -1);
+                local_34 = local_34 + -1;
               }
               else {
                 local_18 = local_18 + 1;
                 local_28 = local_28 + 7;
               }
-            } while (local_18 <= (int)local_34);
+            } while (local_18 <= local_34);
           }
           local_20 = 0;
           if (0 < (this_ptr->grid_coord).z) {
@@ -330,7 +317,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
               local_b4.z = local_9c.z + (this_ptr->cell_size).z;
               iVar7 = (this_ptr->grid_coord).y;
               iVar1 = (this_ptr->grid_coord).z;
-              local_14 = (char **)((int)((int)local_3c * iVar7 + (int)local_38) * iVar1 + local_20);
+              local_14 = (int *)((int)((int)local_3c * iVar7 + (int)local_38) * iVar1 + local_20);
               shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                         (g_CEditorToolsPtr,(float)(int)local_14,
                          (float)((this_ptr->grid_coord).x * iVar7 * iVar1));
@@ -354,10 +341,10 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
               local_20 = local_20 + 1;
             } while (local_20 < (this_ptr->grid_coord).z);
           }
-          local_38 = (char **)((int)local_38 + 1);
+          local_38 = (int *)((int)local_38 + 1);
         } while ((int)local_38 < (this_ptr->grid_coord).y);
       }
-      local_3c = (char **)((int)local_3c + 1);
+      local_3c = (int *)((int)local_3c + 1);
     } while ((int)local_3c < (this_ptr->grid_coord).x);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

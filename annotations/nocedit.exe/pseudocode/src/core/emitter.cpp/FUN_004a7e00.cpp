@@ -17,7 +17,7 @@ void __cdecl core_emitter_cpp_FUN_004a7e00(void)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   iVar1 = *(int *)in_stack_00000004[1].actor_name;
-  in_stack_00000004[3].orient_matrix.m[0].y = (float)in_stack_00000004[1].unk2;
+  in_stack_00000004[3].orient_matrix.m[0].y = (float)in_stack_00000004[1].standing_platform;
   if (iVar1 == 4) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
               ((CKeyFramedModelInstance *)&in_stack_00000004[1].unk4.y);

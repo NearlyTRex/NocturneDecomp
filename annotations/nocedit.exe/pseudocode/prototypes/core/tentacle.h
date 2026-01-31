@@ -51,9 +51,9 @@ int __cdecl CTentacle(CTentacle *this_ptr);
 // Address: 005dbb70
 void __cdecl FUN_005dbb70(void);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005dbc60
+// Original: core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60
 // Address: 005dbc60
-void __cdecl CTentacle(CTentacle *this_ptr);
+void __cdecl CTentacle::getPropertyList(CTentacle *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_tentacle.cpp_CTentacle_FUN_005dbcc0
 // Address: 005dbcc0

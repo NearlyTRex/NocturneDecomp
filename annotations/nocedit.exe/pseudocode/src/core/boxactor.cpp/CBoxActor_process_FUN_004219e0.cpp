@@ -92,7 +92,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     if (&this_ptr_00->orient != (COrientation *)pfVar1) {
       (this_ptr_00->orient).pitch = *pfVar1;
       (this_ptr_00->orient).bank = this_ptr_00[2].unk4.z;
-      (this_ptr_00->orient).heading = (float)this_ptr_00[2].unk5;
+      (this_ptr_00->orient).heading = (float)this_ptr_00[2].is_renderable;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr_00);
     pCVar6 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)

@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CBatCreature::getActorType(CBatCreature *this_ptr);
 // Address: 004150f0
 CBatCreature * __cdecl CBatCreature::ctor(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_00415150
+// Original: core_batcreat.cpp_CBatCreature_setup_FUN_00415150
 // Address: 00415150
-void __cdecl CBatCreature(CBatCreature *this_ptr);
+void __cdecl CBatCreature::setup(CBatCreature *this_ptr);
 
 // Original: core_batcreat.cpp_CBatCreature_process_FUN_00415470
 // Address: 00415470
@@ -31,29 +31,29 @@ void __cdecl CBatCreature::process(CBatCreature *this_ptr,float delta_time);
 // Address: 00415d70
 void __cdecl CBatCreature::serialize(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_FUN_00415dd0
+// Original: core_batcreat.cpp_CBatCreature_FUN_00415dd0
 // Address: 00415dd0
-void __cdecl FUN_00415dd0(void);
+void __cdecl CBatCreature(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_FUN_00416030
+// Original: core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
 // Address: 00416030
-void __cdecl FUN_00416030(void);
+void __cdecl CBatCreature::processDamage(CBatCreature *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_00416240
+// Original: core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00416240
 // Address: 00416240
-int __cdecl CBatCreature(CBatCreature *this_ptr);
+int __cdecl CBatCreature::getTargetPoints(CBatCreature *this_ptr,CVector3f *out_points_array);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_00416290
+// Original: core_batcreat.cpp_CBatCreature_hasCollision_FUN_00416290
 // Address: 00416290
-void __cdecl CBatCreature(CBatCreature *this_ptr);
+void __cdecl CBatCreature::hasCollision(CBatCreature *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_004162b0
+// Original: core_batcreat.cpp_CBatCreature_getPropertyList_FUN_004162b0
 // Address: 004162b0
-void __cdecl CBatCreature(CBatCreature *this_ptr);
+void __cdecl CBatCreature::getPropertyList(CBatCreature *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_004162f0
+// Original: core_batcreat.cpp_CBatCreature_writeDependencies_FUN_004162f0
 // Address: 004162f0
-void __cdecl CBatCreature(CBatCreature *this_ptr);
+void __cdecl CBatCreature::writeDependencies(CBatCreature *this_ptr,_FILE *file_handle);
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_00416320
 // Address: 00416320

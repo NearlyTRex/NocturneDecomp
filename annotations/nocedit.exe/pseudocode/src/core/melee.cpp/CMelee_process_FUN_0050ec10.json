@@ -1,0 +1,174 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 39,
+        "line": 26,
+        "message": "'void*' is not a pointer-to-object type"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050ec10",
+    "address_range": [
+      [
+        "0050ec10",
+        "0050ecc2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_CMelee_process_FUN_0050ec10",
+    "signature": "void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "004edaa0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004edaa0"
+    },
+    {
+      "addr": "005ee110",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635ce5",
+      "name": "DOUBLE_00635ce5",
+      "type": "double",
+      "value": "1.15000000000000"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.4655172413793105,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 111,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 29,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 317
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "00661174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

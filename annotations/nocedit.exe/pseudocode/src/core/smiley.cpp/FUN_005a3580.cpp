@@ -12,43 +12,46 @@
 void __cdecl core_smiley_cpp_FUN_005a3580(void)
 
 {
-  CMotionController *this_ptr;
+  CDeformableModelInstance *this_ptr;
   int iVar1;
   float fVar2;
   SMotion *pSVar3;
-  int in_stack_00000004;
-  int in_stack_00000008;
+  CEnemy *in_stack_00000004;
+  SDamageInfo *in_stack_00000008;
   
-  if (*(int *)(in_stack_00000004 + 0xbefc) != 1) {
-    *(uint *)(in_stack_00000008 + 0x30) = 100;
-    *(uint *)(in_stack_00000008 + 4) = 0;
+  if (in_stack_00000004[1].base.base.orient_matrix.m[1].x != 1.4013e-45) {
+    in_stack_00000008->damage_type = 100;
+    in_stack_00000008->damage_amount = 0.0;
     return;
   }
-  iVar1 = *(int *)(in_stack_00000008 + 0x30);
+  iVar1 = in_stack_00000008->damage_type;
   if (iVar1 == 4) {
-    *(uint *)(in_stack_00000008 + 0x30) = 100;
+    in_stack_00000008->damage_type = 100;
   }
   else if ((iVar1 < 0xc) || (iVar1 == 0x6b)) goto LAB_005a35b4;
-  *(uint *)(in_stack_00000008 + 4) = 0;
+  in_stack_00000008->damage_amount = 0.0;
 LAB_005a35b4:
-  if (0.0 < *(float *)(in_stack_00000008 + 4)) {
+  if (0.0 < in_stack_00000008->damage_amount) {
     core_smiley_cpp_FUN_005a32a0();
   }
-  fVar2 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
-  this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
-  *(float *)(in_stack_00000004 + 0x243c) = fVar2;
+  fVar2 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  this_ptr = &(in_stack_00000004->base).model;
+  (in_stack_00000004->base).hit_points = (int)fVar2;
   if (fVar2 <= 0.0) {
-    *(uint *)(in_stack_00000004 + 0x243c) = 0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+    (in_stack_00000004->base).hit_points = 0;
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr->motion_controller);
     if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,7,1);
-      (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x13c))();
-      (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();
+      core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+                (&this_ptr->motion_controller,7,1);
+      (*(((in_stack_00000004->base).base.vtable._uc)->_uc).cfunc21)();
+      (*((in_stack_00000004->base).base.vtable._ub)->playSound)
+                ((CDemonActor *)in_stack_00000004,"smiley_die??.wav");
     }
-    core_enemy_cpp_FUN_004a9f10();
+    core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(in_stack_00000004,in_stack_00000008);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr,3,1);
-  core_enemy_cpp_FUN_004a9f10();
+  core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller,3,1);
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(in_stack_00000004,in_stack_00000008);
   return;
 }

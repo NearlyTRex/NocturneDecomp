@@ -23,9 +23,9 @@ CDemonActorType * __cdecl CNPC::getActorType(CNPC *this_ptr);
 // Address: 005447e0
 CNPC * __cdecl CNPC::ctor(CNPC *this_ptr);
 
-// Original: core_npc.cpp_CNPC_FUN_00544870
+// Original: core_npc.cpp_CNPC_setup_FUN_00544870
 // Address: 00544870
-void __cdecl CNPC(CNPC *this_ptr);
+void __cdecl CNPC::setup(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_process_FUN_005448b0
 // Address: 005448b0
@@ -43,9 +43,9 @@ void __cdecl CNPC::serialize(CNPC *this_ptr);
 // Address: 00544c50
 int __cdecl FUN_00544c50(void);
 
-// Original: core_npc.cpp_CNPC_FUN_00544d30
+// Original: core_npc.cpp_CNPC_processDamage_FUN_00544d30
 // Address: 00544d30
-void __cdecl CNPC(CNPC *this_ptr);
+void __cdecl CNPC::processDamage(CNPC *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_npc.cpp_FUN_00544e10
 // Address: 00544e10
@@ -55,6 +55,6 @@ int __cdecl FUN_00544e10(CNPC *this_ptr);
 // Address: 00544e30
 int __cdecl CNPC(CNPC *this_ptr);
 
-// Original: core_npc.cpp_CNPC_FUN_00544e40
+// Original: core_npc.cpp_CNPC_getPropertyList_FUN_00544e40
 // Address: 00544e40
-void __cdecl CNPC(CNPC *this_ptr);
+void __cdecl CNPC::getPropertyList(CNPC *this_ptr,CActorPropertyList *property_list);

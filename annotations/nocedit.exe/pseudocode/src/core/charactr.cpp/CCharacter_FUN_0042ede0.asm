@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[4]:
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f566f
-;   core_icepick.cpp_FUN_004f8c70 at 004f9302
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f566f
+;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f9302
 ;   core_moloch.cpp_FUN_005293b0 at 005296e5
 ;   core_svetlana.cpp_FUN_005d9260 at 005d974c
 ;

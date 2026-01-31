@@ -52,7 +52,7 @@ void __cdecl core_pendulum_cpp_FUN_00549b90(void)
   fVar4 = (float10)this_ptr[2].unk4.y - (float10)dVar8;
   this_ptr[2].unk4.y = (float)fVar4;
   fVar5 = (float10)fsin(fVar4 * (float10)2 * (float10)3.1415926535000001);
-  fVar1 = (float)this_ptr[2].unk5;
+  fVar1 = (float)this_ptr[2].is_renderable;
   fVar6 = (float10)(float)this_ptr[3].location.area_id + (float10)in_stack_00000008;
   fVar2 = this_ptr[3].location.position.z;
   fVar7 = (float10)-1;
@@ -102,7 +102,7 @@ void __cdecl core_pendulum_cpp_FUN_00549b90(void)
         (*((this_ptr->vtable)._ub)->playSound)(this_ptr,(char *)&this_ptr[2].unk11);
       }
     }
-    local_14 = (float)this_ptr[2].unk10 + (float)0.25;
+    local_14 = *(float *)this_ptr[2].footstep_sound_code + (float)0.25;
     local_54 = local_44;
     local_64 = this_ptr[2].unk4.y;
     if (local_44 < local_14 + (float)-0.5) {
@@ -156,7 +156,7 @@ void __cdecl core_pendulum_cpp_FUN_00549b90(void)
                   (this_ptr,(char *)&this_ptr[2].previous_transform_state.dirty_flags);
       }
     }
-    local_38.x = (float)this_ptr[2].unk10 + (float)0.75;
+    local_38.x = *(float *)this_ptr[2].footstep_sound_code + (float)0.75;
     local_50 = local_44;
     local_68 = this_ptr[2].unk4.y;
     if (local_44 < local_38.x + (float)-0.5) {

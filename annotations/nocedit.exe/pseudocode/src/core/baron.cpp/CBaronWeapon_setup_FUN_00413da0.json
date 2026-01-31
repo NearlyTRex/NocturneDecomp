@@ -1,0 +1,119 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 13,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00413da0",
+    "address_range": [
+      [
+        "00413da0",
+        "00413dba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaronWeapon_setup_FUN_00413da0",
+    "signature": "void __cdecl core_baron_cpp_CBaronWeapon_setup_FUN_00413da0(CBaronWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a1cf0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0"
+    },
+    {
+      "addr": "005edff0",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_setup_FUN_005edff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006150ab",
+      "name": "s_baron_dfm_006150ab",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 3,
+      "INT_ADD": 4,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 36
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaronWeapon *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 0,
+        "vtable_addr": "0065a1e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

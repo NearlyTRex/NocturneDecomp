@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFont.h"
@@ -20,6 +21,7 @@
 #include "types/classes/CPodFile.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SChatHistory.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SEncryptedMessage.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SNetPlayer.h"
@@ -95,15 +97,15 @@ void __cdecl core_npc_cpp_staticInit_FUN_00544770(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_005447d0(CNPC *this_ptr);
 CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr);
-void __cdecl core_npc_cpp_CNPC_FUN_00544870(CNPC *this_ptr);
+void __cdecl core_npc_cpp_CNPC_setup_FUN_00544870(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_time);
 void __cdecl core_npc_cpp_CNPC_FUN_00544b70(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_serialize_FUN_00544ba0(CNPC *this_ptr);
 int __cdecl core_npc_cpp_FUN_00544c50(void);
-void __cdecl core_npc_cpp_CNPC_FUN_00544d30(CNPC *this_ptr);
+void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00544d30(CNPC *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_npc_cpp_FUN_00544e10(CNPC *this_ptr);
 int __cdecl core_npc_cpp_CNPC_FUN_00544e30(CNPC *this_ptr);
-void __cdecl core_npc_cpp_CNPC_FUN_00544e40(CNPC *this_ptr);
+void __cdecl core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(CNPC *this_ptr,CActorPropertyList *property_list);
 CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00544eb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr);
 void __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0 (CFont *this_ptr,int param1,int param2,int param3,int param4,int param5);

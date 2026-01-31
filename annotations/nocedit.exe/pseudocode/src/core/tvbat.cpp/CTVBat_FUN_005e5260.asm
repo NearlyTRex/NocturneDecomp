@@ -14,7 +14,7 @@
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800
+;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800
 ;
 ; *****************************************************************************
 
@@ -168,8 +168,8 @@ section .text
     RET                                 ; 005e53e8
     PUSH EBX                            ; 005e53e9
         ;   Label: LAB_005e53e9
-    CALL core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 ; 005e53ea
-        ;   XREF to: 0042f800 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 ; 005e53ea
+        ;   XREF to: 0042f800 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005e53ef
     ADD ESP,0x8                         ; 005e53f2
     POP ESI                             ; 005e53f5

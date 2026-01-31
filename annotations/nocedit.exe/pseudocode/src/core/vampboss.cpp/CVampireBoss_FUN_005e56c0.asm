@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
 ;   core_cloth.cpp_FUN_00439710
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
 ;   core_morph.cpp_FUN_0052b580
@@ -44,8 +44,8 @@ section .text
     SUB ESP,0x10                        ; 005e56c4
     MOV EBX,dword ptr [ESP + 0x24]      ; 005e56c7
     PUSH EBX                            ; 005e56cb
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005e56cc
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005e56cc
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005e56d1
     LEA EDI,[EBX + 0x158]               ; 005e56d4
     PUSH EDI                            ; 005e56da

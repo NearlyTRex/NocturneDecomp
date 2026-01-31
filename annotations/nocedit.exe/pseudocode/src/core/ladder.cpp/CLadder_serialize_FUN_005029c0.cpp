@@ -14,7 +14,7 @@ void __cdecl core_ladder_cpp_CLadder_serialize_FUN_005029c0(CLadder *this_ptr)
   core_actor_cpp_serializeVector_FUN_0040b340(&this_ptr->ladder_size,"ladderSize");
   core_actor_cpp_serializeActor_FUN_0040b870
             ((CDemonActor *)this_ptr->master_actor,"masterActor");
-  core_ladder_cpp_FUN_00502b80();
+  core_ladder_cpp_CLadder_FUN_00502b80(this_ptr);
   if (g_CLadderClassVersion < 2) {
     return;
   }

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 0050647e
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050647e
 ;
 ; Referenced Globals:
 ;   undefined4 g_CBatteryClassInfo.name_hash

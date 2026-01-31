@@ -1,0 +1,137 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004180b0",
+    "address_range": [
+      [
+        "004180b0",
+        "0041810b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_battery.cpp_CBattery_getPropertyList_FUN_004180b0",
+    "signature": "void __cdecl core_battery_cpp_CBattery_getPropertyList_FUN_004180b0 (CBattery *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
+    },
+    {
+      "addr": "0040e3b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615a11",
+      "name": "s_Model_file_kfm_00615a11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a23",
+      "name": "s_Discharge_time_sec_00615a23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a38",
+      "name": "s_Charge_time_sec_00615a38",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9375,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 20,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 126
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBattery *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBattery",
+        "offset": 212,
+        "vtable_addr": "0065a934"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -9,12 +9,12 @@
 ; XREF[31]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 00411383
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411b53
-;   core_anvil.cpp_CAnvil_FUN_00412030 at 00412053
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412a40 at 00412a63
-;   core_bat.cpp_CBat_FUN_00414dc0 at 00414e40
-;   core_battery.cpp_FUN_004180b0 at 004180d3
+;   core_anvil.cpp_CAnvil_getPropertyList_FUN_00412030 at 00412053
+;   core_backgnd.cpp_CBackgroundActor_getPropertyList_FUN_00412a40 at 00412a63
+;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414e40
+;   core_battery.cpp_CBattery_getPropertyList_FUN_004180b0 at 004180d3
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422704
-;   core_bugs.cpp_CBugs_FUN_004277e0 at 00427869
+;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427869
 ;   core_crate.cpp_FUN_00448b20 at 00448b49
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481344
 ;   ... and 21 more

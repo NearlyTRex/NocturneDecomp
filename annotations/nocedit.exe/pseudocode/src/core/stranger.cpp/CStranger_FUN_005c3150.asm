@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_005c3189
     PUSH EBX                            ; 005c318b
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c318c
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [EBP + 0x7a],EAX      ; 005c3191
     ADD ESP,0x8                         ; 005c3194
     FLD float ptr [EBP + 0x7a]          ; 005c3197
@@ -164,7 +164,7 @@ section .text
     PUSH EAX                            ; 005c322a
     PUSH EBX                            ; 005c322b
     CALL core_stranger.cpp_CStranger_FUN_005c51c0 ; 005c322c
-        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0()
+        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c3231
     PUSH EAX                            ; 005c3234
     LEA EAX,[EBP + 0x12]                ; 005c3235
@@ -251,7 +251,7 @@ section .text
         ;   Label: LAB_005c332b
     PUSH EBX                            ; 005c332c
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c332d
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [EBP + 0x7a],EAX      ; 005c3332
     ADD ESP,0x8                         ; 005c3335
     FLD float ptr [EBP + 0x7a]          ; 005c3338
@@ -285,7 +285,7 @@ section .text
     PUSH 0x1                            ; 005c3394
     PUSH EBX                            ; 005c3396
     CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c3397
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0()
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c339c
     MOV EAX,dword ptr [EBX + 0x1fc2c]   ; 005c339f
     PUSH EAX                            ; 005c33a5
@@ -304,7 +304,7 @@ section .text
         ;   Label: LAB_005c33cc
     PUSH EBX                            ; 005c33ce
     CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c33cf
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0()
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c33d4
     CMP dword ptr [EBX + 0x1fb98],0x0   ; 005c33d7
         ;   Label: LAB_005c33d7

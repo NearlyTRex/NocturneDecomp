@@ -35,7 +35,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   uint in_stack_ffffb254;
   CMotionList *in_stack_ffffb258;
   float in_stack_ffffb25c;
-  float in_stack_ffffb260;
+  uint in_stack_ffffb260;
   float in_stack_ffffb264;
   int aiStack_2b84 [32];
   byte local_2b04 [8908];
@@ -431,7 +431,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                     ((CPickList *)auStack_838,0,in_stack_ffffb254,(uint)in_stack_ffffb258,
-                     (uint)in_stack_ffffb25c,(uint)in_stack_ffffb260,(uint)in_stack_ffffb264);
+                     (uint)in_stack_ffffb25c,in_stack_ffffb260,(uint)in_stack_ffffb264);
         }
         iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
         if (iVar15 != 0) {

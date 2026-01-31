@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_dest.cpp_FUN_0046f9b0 at 0046fa45
-;   core_hero.cpp_FUN_004f35b0 at 004f3650
+;   core_hero.cpp_CHero_FUN_004f35b0 at 004f3650
 ;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c29f7
 ;
 ; Called Functions:

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x6c]:4  local_6c
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004f25c0 at 004f25f5
+;   core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0 at 004f25f5
 ;
 ; Called Functions:
 ;   core_actor.cpp_rayCylinderIntersect_FUN_00408340

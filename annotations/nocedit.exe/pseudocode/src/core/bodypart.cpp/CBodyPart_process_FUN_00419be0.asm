@@ -28,9 +28,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_bodypart.cpp_CBodyPart_FUN_00419e10
+;   core_bodypart.cpp_CBodyPart_FUN_0041b1b0
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
-;   core_bodypart.cpp_FUN_00419e10
-;   core_bodypart.cpp_FUN_0041b1b0
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 00419ce3 (CONDITIONAL_JUMP)  ; LAB_00419ce3
     PUSH EBX                            ; 00419c22
         ;   Label: LAB_00419c22
-    CALL core_bodypart.cpp_FUN_0041b1b0 ; 00419c23
-        ;   XREF to: 0041b1b0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b1b0()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041b1b0 ; 00419c23
+        ;   XREF to: 0041b1b0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041b1b0(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00419c28
     PUSH EDI                            ; 00419c2b
         ;   Label: LAB_00419c2b
@@ -85,8 +85,8 @@ section .text
     PUSH dword ptr [ESP + 0x60]         ; 00419c5f
         ;   Label: LAB_00419c5f
     PUSH EBX                            ; 00419c63
-    CALL core_bodypart.cpp_FUN_00419e10 ; 00419c64
-        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419e10()
+    CALL core_bodypart.cpp_CBodyPart_FUN_00419e10 ; 00419c64
+        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419e10(CBodyPart * this_ptr)
     ADD ESP,0x8                         ; 00419c69
     POP EDI                             ; 00419c6c
     ADD ESP,0x4c                        ; 00419c6d
@@ -131,8 +131,8 @@ section .text
     PUSH dword ptr [ESP + 0x5c]         ; 00419cd0
         ;   Label: LAB_00419cd0
     PUSH EBX                            ; 00419cd4
-    CALL core_bodypart.cpp_FUN_00419e10 ; 00419cd5
-        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419e10()
+    CALL core_bodypart.cpp_CBodyPart_FUN_00419e10 ; 00419cd5
+        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419e10(CBodyPart * this_ptr)
     ADD ESP,0x8                         ; 00419cda
     ADD ESP,0x4c                        ; 00419cdd
     POP ESI                             ; 00419ce0

@@ -14,7 +14,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   int iVar2;
   int iVar3;
   CDemonActor *pCVar4;
-  float *pfVar5;
+  CPlatform **ppCVar5;
   SMRGLHeaderPrimitive *polygon_info;
   CDemonActor *in_stack_0000000c;
   int iStack_8;
@@ -42,10 +42,10 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   }
   iVar2 = 0;
   if (0 < (int)in_stack_0000000c[8].create_prob) {
-    pfVar5 = (float *)&in_stack_0000000c[2].unk2;
+    ppCVar5 = &in_stack_0000000c[2].standing_platform;
     iVar3 = 0;
     do {
-      iStack_8 = (int)ROUND(*pfVar5 * 256.0f);
+      iStack_8 = (int)ROUND((float)*ppCVar5 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -55,7 +55,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xffff;
       iVar2 = iVar2 + 1;
-      pfVar5 = pfVar5 + 3;
+      ppCVar5 = ppCVar5 + 3;
       iVar3 = iVar3 + 0x30;
     } while (iVar2 < (int)in_stack_0000000c[8].create_prob);
   }

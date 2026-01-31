@@ -87,7 +87,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004->unk1 + 0x1c);
   if (iVar7 != 0) {
-    (in_stack_00000004->base).base.hit_points = 0.0;
+    (in_stack_00000004->base).base.hit_points = 0;
     (in_stack_00000004->base).pool_me = 1;
     in_stack_00000004->param = 0.0;
     if (in_stack_00000004->blown_up == 0) {
@@ -98,13 +98,14 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)in_stack_00000004);
   if (iVar7 == 0) goto LAB_0041c220;
-  if ((in_stack_00000004->blown_up == 1) && (0.0 < (in_stack_00000004->base).base.hit_points)) {
+  if ((in_stack_00000004->blown_up == 1) && (0.0 < (float)(in_stack_00000004->base).base.hit_points)
+     ) {
     fVar16 = in_stack_00000004->param + in_stack_00000008;
     in_stack_00000004->param = fVar16;
     if (fVar16 <= in_stack_00000004->recombine_time) {
       return;
     }
-    core_boneguy_cpp_FUN_0041d8a0();
+    core_boneguy_cpp_CBoneGuy_FUN_0041d8a0(in_stack_00000004);
   }
   if (in_stack_00000004->blown_up == 2) {
     fVar16 = in_stack_00000008 / 2.0f + in_stack_00000004->param;
@@ -186,7 +187,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
     }
     in_stack_00000004->blown_up = 0;
     fVar16 = in_stack_00000004->recombine_time * (float)0.5;
-    (in_stack_00000004->base).base.hit_points = 100.0;
+    (in_stack_00000004->base).base.hit_points = 0x42c80000;
     in_stack_00000004->recombine_time = fVar16;
     if (fVar16 <= (float)2.5) {
       in_stack_00000004->recombine_time = 2.5;
@@ -231,7 +232,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
     case 0:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&in_stack_00000004->base);
       if (extraout_EAX == 0) {
-        (*(((in_stack_00000004->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((in_stack_00000004->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         if (*(int *)((in_stack_00000004->base).unk2 + 4) != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,1,1);
@@ -243,7 +244,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
       }
       break;
     case 1:
-      (*(((in_stack_00000004->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       if (*(int *)((in_stack_00000004->base).unk2 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&in_stack_00000004->base);
         if (extraout_EAX_00 == 0) {
@@ -310,11 +311,11 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
                            [DAT_00822944].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_e8,pCVar12);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&in_stack_00000004->base);
       break;
     case 5:
       if (((in_stack_00000004->base).pool_me == 0) &&
-         ((in_stack_00000004->base).base.base.unk2 == 0)) {
+         ((in_stack_00000004->base).base.base.standing_platform == (CPlatform *)0x0)) {
         (in_stack_00000004->base).pool_me = 1;
       }
       break;
@@ -356,7 +357,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
         }
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe44);
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-        core_enemy_cpp_FUN_004a9930();
+        core_enemy_cpp_CEnemy_FUN_004a9930(&in_stack_00000004->base);
       }
     }
   }

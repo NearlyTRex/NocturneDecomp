@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[5]:
-;   core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700 at 004117cc
+;   core_ammobox.cpp_CAmmoBox_FUN_00411700 at 004117cc
 ;   core_game.cpp_FUN_004dd930 at 004dd991
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe21a
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 at 004fe984

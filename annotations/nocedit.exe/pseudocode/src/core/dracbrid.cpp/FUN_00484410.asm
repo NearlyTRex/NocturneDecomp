@@ -963,8 +963,8 @@ section .text
     ADD ESP,0xc                         ; 00484dc3
     PUSH EAX                            ; 00484dc6
     PUSH EBX                            ; 00484dc7
-    CALL core_enemy.cpp_FUN_004a9880    ; 00484dc8
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484dc8
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00484dcd
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484dd0
     JMP 0x004846e0                      ; 00484dda
@@ -1010,8 +1010,8 @@ section .text
     ADD ESP,0xc                         ; 00484e5e
     PUSH EAX                            ; 00484e61
     PUSH EBX                            ; 00484e62
-    CALL core_enemy.cpp_FUN_004a9880    ; 00484e63
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484e63
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00484e68
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484e6b
     JMP 0x004846e0                      ; 00484e75
@@ -1058,8 +1058,8 @@ section .text
     ADD ESP,0xc                         ; 00484efb
     PUSH EAX                            ; 00484efe
     PUSH EBX                            ; 00484eff
-    CALL core_enemy.cpp_FUN_004a9880    ; 00484f00
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484f00
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00484f05
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484f08
     JMP 0x004846e0                      ; 00484f12
@@ -1106,8 +1106,8 @@ section .text
     ADD ESP,0xc                         ; 00484f9b
     PUSH EAX                            ; 00484f9e
     PUSH EBX                            ; 00484f9f
-    CALL core_enemy.cpp_FUN_004a9880    ; 00484fa0
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484fa0
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00484fa5
     JMP 0x004846e0                      ; 00484fa8
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1599,8 +1599,8 @@ section .text
     ADD ESP,0xc                         ; 00485529
     PUSH EAX                            ; 0048552c
     PUSH EBX                            ; 0048552d
-    CALL core_enemy.cpp_FUN_004a9880    ; 0048552e
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0048552e
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00485533
     JMP 0x004846e0                      ; 00485536
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default

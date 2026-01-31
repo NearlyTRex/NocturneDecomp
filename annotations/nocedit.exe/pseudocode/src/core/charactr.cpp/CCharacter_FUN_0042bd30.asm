@@ -21,15 +21,15 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[13]:
-;   core_batcreat.cpp_FUN_00415dd0 at 00415f74
-;   core_batman.cpp_FUN_00417660 at 00417781
-;   core_bride.cpp_FUN_00424600 at 004246f6
+;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415f74
+;   core_batman.cpp_CBatman_FUN_00417660 at 00417781
+;   core_bride.cpp_CBride_FUN_00424600 at 004246f6
 ;   core_charactr.cpp_CCharacter_FUN_0042bcc0 at 0042bd14
 ;   core_cow.cpp_FUN_004448c0 at 0044497a
 ;   core_dracbrid.cpp_FUN_00485b20 at 00485b73
 ;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e5641
 ;   core_ghoul.cpp_FUN_004e8520 at 004e8600
-;   core_imp.cpp_FUN_004fab60 at 004fac81
+;   core_imp.cpp_CImp_FUN_004fab60 at 004fac81
 ;   core_mobster.cpp_FUN_00527380 at 005274a0
 ;   ... and 3 more
 ;
@@ -37,8 +37,8 @@
 ;   undefined4 DAT_00823b10
 ;
 ; Called Functions:
-;   core_bodypart.cpp_FUN_0041add0
-;   core_bodypart.cpp_FUN_0041ae50
+;   core_bodypart.cpp_CBodyPart_FUN_0041add0
+;   core_bodypart.cpp_CBodyPart_FUN_0041ae50
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -202,8 +202,8 @@ section .text
     PUSH 0x823b10                       ; 0042bed5 | DAT_00823b10
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
-    CALL core_bodypart.cpp_FUN_0041add0 ; 0042bee1
-        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041add0()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041add0 ; 0042bee1
+        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041add0(CBodyPart * this_ptr)
     ADD ESP,0x10                        ; 0042bee6
     JMP 0x0042bdcb                      ; 0042bee9
         ;   XREF to: 0042bdcb (UNCONDITIONAL_JUMP)  ; LAB_0042bdcb
@@ -226,8 +226,8 @@ section .text
     PUSH EAX                            ; 0042bf12
     MOV ECX,dword ptr [EBP + 0x8a]      ; 0042bf13
     PUSH ECX                            ; 0042bf19
-    CALL core_bodypart.cpp_FUN_0041ae50 ; 0042bf1a
-        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041ae50()
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041ae50 ; 0042bf1a
+        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041ae50(CBodyPart * this_ptr)
     ADD ESP,0x8                         ; 0042bf1f
     JMP 0x0042be11                      ; 0042bf22
         ;   XREF to: 0042be11 (UNCONDITIONAL_JUMP)  ; LAB_0042be11

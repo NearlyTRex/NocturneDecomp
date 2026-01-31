@@ -17,9 +17,9 @@
 ;   core_bat.cpp_CBat_serialize_FUN_00414910 at 004149e0
 ;   core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70 at 00415d8b
 ;   core_batman.cpp_CBatman_serialize_FUN_00417580 at 0041759b
-;   core_battery.cpp_CBattery_load_FUN_00418000 at 00418042
-;   core_beast.cpp_CBeast_load_FUN_00418330 at 0041834b
-;   core_biggs.cpp_CBiggs_load_FUN_00418ac0 at 00418b25
+;   core_battery.cpp_CBattery_serialize_FUN_00418000 at 00418042
+;   core_beast.cpp_CBeast_serialize_FUN_00418330 at 0041834b
+;   core_biggs.cpp_CBiggs_serialize_FUN_00418ac0 at 00418b25
 ;   ... and 57 more
 ;
 ; Referenced Globals:

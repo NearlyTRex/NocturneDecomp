@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
   if (in_stack_00000008 == 0) {
     g_DynamicLightCount = in_stack_00000008;
     g_CoronaGlobeCount = in_stack_00000008;
-    core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(this_ptr);
+    core_set_cpp_CDemonSet_FUN_0056d090(this_ptr);
     core_set_cpp_CDemonSet_FUN_0056be80(this_ptr);
   }
   core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);

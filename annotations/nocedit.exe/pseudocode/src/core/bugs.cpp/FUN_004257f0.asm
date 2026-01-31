@@ -44,7 +44,7 @@
 ;   float FLOAT_00616de3 = 11
 ;   double DOUBLE_00616deb = 0.5
 ;   float FLOAT_0065b5c8 = 0.5
-;   undefined4 DAT_00822d08
+;   int INT_00822d08
 ;   undefined1 DAT_00822d0c
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
@@ -176,7 +176,7 @@ section .text
     MOV ECX,0x240                       ; 00425983
     MOV dword ptr [ESP + 0x68],EAX      ; 00425988
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0042598c
-    MOV EDI,0x822d08                    ; 00425990 | DAT_00822d08
+    MOV EDI,0x822d08                    ; 00425990 | INT_00822d08
     ADD EAX,0xb                         ; 00425995
     MOV EBX,dword ptr [ESP + 0x88]      ; 00425998
     MOV dword ptr [ESP + 0x60],EAX      ; 0042599f
@@ -185,13 +185,13 @@ section .text
     ADD EAX,0xb                         ; 004259ae
     ADD ESI,0x128b8                     ; 004259b1
     MOV dword ptr [ESP + 0x64],EAX      ; 004259b7
-    PUSH EDI                            ; 004259bb | DAT_00822d08
+    PUSH EDI                            ; 004259bb | INT_00822d08
     MOV EAX,ECX                         ; 004259bc
     SHR ECX,0x2                         ; 004259be
-    MOVSD.REP ES:EDI,ESI                ; 004259c1 | DAT_00822d08 | DAT_00822d0c
+    MOVSD.REP ES:EDI,ESI                ; 004259c1 | INT_00822d08 | DAT_00822d0c
     MOV CL,AL                           ; 004259c3
     AND CL,0x3                          ; 004259c5
-    MOVSB.REP ES:EDI,ESI                ; 004259c8 | DAT_00822d08 | DAT_00822d0c
+    MOVSB.REP ES:EDI,ESI                ; 004259c8 | INT_00822d08 | DAT_00822d0c
     POP EDI                             ; 004259ca
     MOV EAX,dword ptr [EBX + 0x20]      ; 004259cb
     ADD EBX,0x20                        ; 004259ce
@@ -263,7 +263,7 @@ section .text
     CMP EBX,dword ptr [ESP + 0x64]      ; 00425aba
     JG 0x00425b26                       ; 00425abe
         ;   XREF to: 00425b26 (CONDITIONAL_JUMP)  ; LAB_00425b26
-    MOV EAX,dword ptr [EBP + 0x822d08]  ; 00425ac0 | DAT_00822d08 | DAT_00822d0c
+    MOV EAX,dword ptr [EBP + 0x822d08]  ; 00425ac0 | INT_00822d08 | DAT_00822d0c
     MOV dword ptr [ESI + 0x128b8],EAX   ; 00425ac6
     ADD ESI,0x4                         ; 00425acc
         ;   Label: LAB_00425acc

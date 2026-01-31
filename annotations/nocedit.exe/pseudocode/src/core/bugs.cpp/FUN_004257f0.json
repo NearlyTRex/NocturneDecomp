@@ -15,15 +15,15 @@
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 24,
         "line": 81,
-        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 24,
         "line": 82,
-        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -47,7 +47,7 @@
         "category": "other",
         "column": 55,
         "line": 110,
-        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -248,18 +248,17 @@
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 564,
+    "complexity_score": 539,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 114,
-    "suspect_count": 42,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
-      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 371
@@ -340,8 +339,8 @@
     },
     {
       "addr": "00822d08",
-      "name": "DAT_00822d08",
-      "type": "undefined4",
+      "name": "INT_00822d08",
+      "type": "int",
       "value": null
     },
     {
@@ -769,29 +768,22 @@
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(uint *)((int)",
-      "text": "puVar4 = (uint *)((int)local_c + 0x128b8);",
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)local_c + 0x128b8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_00822d08",
-      "text": "puVar6 = &DAT_00822d08;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 74,
-      "match": "(uint *)((int)",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar8 * -2 + 1);",
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(uint *)((int)",
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
+      "match": "(int *)((int)",
+      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -875,22 +867,15 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);",
+      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);",
+      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar3);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_00822d08",
-      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

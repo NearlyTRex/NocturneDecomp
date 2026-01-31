@@ -1,0 +1,166 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f25c0",
+    "address_range": [
+      [
+        "004f25c0",
+        "004f2600"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0",
+    "signature": "int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0 (CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409150",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.12,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 13,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 103
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "line_start",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "line_end",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_intersection_point",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 168,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 168,
+        "vtable_addr": "00660034"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 168,
+        "vtable_addr": "00661944"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 168,
+        "vtable_addr": "0065bd54"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 168,
+        "vtable_addr": "00662464"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

@@ -79,7 +79,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[8]:
-;   core_bodypart.cpp_FUN_00419340 at 00419394
+;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419394
 ;   core_cloth.cpp_FUN_0043bae0 at 0043bee2
 ;   core_curtain.cpp_FUN_0044b060 at 0044b2aa
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 at 00477964

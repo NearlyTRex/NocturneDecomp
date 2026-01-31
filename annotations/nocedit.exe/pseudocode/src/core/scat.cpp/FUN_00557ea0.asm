@@ -15,7 +15,7 @@
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_gore.cpp_CGore_FUN_004ee030
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -69,8 +69,8 @@ section .text
         ;   XREF to: 00557faf (CONDITIONAL_JUMP)  ; LAB_00557faf
     PUSH EDI                            ; 00557f15
     PUSH EBX                            ; 00557f16
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00557f17
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 00557f17
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00557f1c
     POP EBP                             ; 00557f1f
     POP EDI                             ; 00557f20
@@ -127,8 +127,8 @@ section .text
     ADD ESP,0x8                         ; 00557f9d
     PUSH EDI                            ; 00557fa0
     PUSH EBX                            ; 00557fa1
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00557fa2
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 00557fa2
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00557fa7
     POP EBP                             ; 00557faa
     POP EDI                             ; 00557fab
@@ -157,8 +157,8 @@ section .text
     ADD ESP,0x8                         ; 00557fd8
     PUSH EDI                            ; 00557fdb
     PUSH EBX                            ; 00557fdc
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00557fdd
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 00557fdd
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00557fe2
     POP EBP                             ; 00557fe5
     POP EDI                             ; 00557fe6

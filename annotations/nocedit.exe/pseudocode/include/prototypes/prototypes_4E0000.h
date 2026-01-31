@@ -105,7 +105,7 @@ CVector3f * __cdecl core_ghoul_cpp_FUN_004e84a0(void);
 void __cdecl core_ghoul_cpp_FUN_004e8520(void);
 void __cdecl core_ghoul_cpp_FUN_004e87e0(void);
 int __cdecl core_ghoul_cpp_FUN_004e8bc0(void);
-void __cdecl core_ghoul_cpp_FUN_004e8dc0(void);
+void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0 (CGhoul *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_ghoul_cpp_FUN_004e8e40(void);
 void __cdecl core_ghoul_cpp_FUN_004e8ee0(void);
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e8f10 (CGhoul *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);

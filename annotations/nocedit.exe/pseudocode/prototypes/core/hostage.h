@@ -11,37 +11,37 @@ void __cdecl staticInit(void);
 // Address: 004f4800
 CHostage * __cdecl factoryFunc(void);
 
-// Original: core_hostage.cpp_FUN_004f4830
+// Original: core_hostage.cpp_CHostage_getActorType_FUN_004f4830
 // Address: 004f4830
-CDemonActorType * __cdecl FUN_004f4830(void);
+CDemonActorType * __cdecl CHostage::getActorType(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004f4840
 // Address: 004f4840
 CHostage * __cdecl CHostage::ctor(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970
+// Original: core_hostage.cpp_CHostage_setup_FUN_004f4970
 // Address: 004f4970
-void __cdecl NPCSFromZombieTown(void);
+void __cdecl CHostage::setup(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004f4b40
+// Original: core_hostage.cpp_CHostage_renderOpaque_FUN_004f4b40
 // Address: 004f4b40
-int __cdecl FUN_004f4b40(void);
+int __cdecl CHostage::renderOpaque(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0
+// Original: core_hostage.cpp_CHostage_process_FUN_004f4bd0
 // Address: 004f4bd0
-void __cdecl RelatedToRescuedTownsfolk(void);
+void __cdecl CHostage::process(CHostage *this_ptr,float delta_time);
 
-// Original: core_hostage.cpp_FUN_004f5ff0
+// Original: core_hostage.cpp_CHostage_FUN_004f5ff0
 // Address: 004f5ff0
-int __cdecl FUN_004f5ff0(void);
+int __cdecl CHostage(CHostage *this_ptr,float delta_time);
 
-// Original: core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120
+// Original: core_hostage.cpp_CHostage_renderBackground_FUN_004f6120
 // Address: 004f6120
-void __cdecl RelatedToScatDazzle(void);
+void __cdecl CHostage::renderBackground(CHostage *this_ptr,int layer_flag);
 
-// Original: core_hostage.cpp_CHostage_load_FUN_004f6170
+// Original: core_hostage.cpp_CHostage_serialize_FUN_004f6170
 // Address: 004f6170
-void __cdecl CHostage::load(void);
+void __cdecl CHostage::serialize(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_FUN_004f6390
 // Address: 004f6390
@@ -55,21 +55,21 @@ int __cdecl CHostage(CHostage *this_ptr);
 // Address: 004f63e0
 int __cdecl CHostage(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f6450
+// Original: core_hostage.cpp_CHostage_processDamage_FUN_004f6450
 // Address: 004f6450
-void __cdecl CHostage(CHostage *this_ptr);
+void __cdecl CHostage::processDamage(CHostage *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_hostage.cpp_CHostage_FUN_004f6550
 // Address: 004f6550
 void __cdecl CHostage(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004f69c0
+// Original: core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0
 // Address: 004f69c0
-void __cdecl FUN_004f69c0(void);
+void __cdecl CHostage::getPropertyList(CHostage *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hostage.cpp_FUN_004f6b30
+// Original: core_hostage.cpp_CHostage_writeDependencies_FUN_004f6b30
 // Address: 004f6b30
-void __cdecl FUN_004f6b30(void);
+void __cdecl CHostage::writeDependencies(CHostage *this_ptr,_FILE *file_handle);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004f6b60
 // Address: 004f6b60

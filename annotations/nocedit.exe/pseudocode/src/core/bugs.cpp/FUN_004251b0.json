@@ -20,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 242,
+    "complexity_score": 243,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 63,
     "suspect_count": 17,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 198
+    "total_lines": 199
   },
   "cross_references": [],
   "function": {
@@ -199,7 +199,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x1a].unk10 == 0) {",
+      "text": "if (*(int *)in_stack_00000004[0x1a].footstep_sound_code == 0) {",
       "type": "stack_param"
     },
     {
@@ -281,21 +281,21 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 52,
       "match": "in_stack_00000004",
-      "text": "(pcStack_8 + (&in_stack_00000004[0x8d].unk15)[iVar1 * 0x10] * 0x17c),0.0,",
+      "text": "*(int *)(in_stack_00000004[0x8d].footstep_sound_code + iVar1 * 0x40 + 0x34) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 58,
       "match": "in_stack_0000000c",
       "text": "} while (iVar1 < in_stack_0000000c[0x8d].unk14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_0000000c",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"

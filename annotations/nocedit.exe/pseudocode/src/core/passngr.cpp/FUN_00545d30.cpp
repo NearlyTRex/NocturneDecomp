@@ -20,7 +20,7 @@ void __cdecl core_passngr_cpp_FUN_00545d30(void)
   char *pcVar5;
   CNPC *in_stack_00000004;
   
-  core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);
+  core_npc_cpp_CNPC_setup_FUN_00544870(in_stack_00000004);
   if (in_stack_00000004[1].base.base.scale.x == 0) {
     pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
     pcVar5 = in_stack_00000004[1].base.base.create_event + 0xc;

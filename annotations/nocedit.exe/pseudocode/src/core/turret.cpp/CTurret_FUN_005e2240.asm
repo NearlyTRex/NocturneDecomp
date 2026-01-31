@@ -17,7 +17,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-;   core_weapon.cpp_CWeapon_FUN_005edff0
+;   core_weapon.cpp_CWeapon_setup_FUN_005edff0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
         ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005e2257
     PUSH EBP                            ; 005e225a
-    CALL core_weapon.cpp_CWeapon_FUN_005edff0 ; 005e225b
-        ;   XREF to: 005edff0 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_FUN_005edff0(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_setup_FUN_005edff0 ; 005e225b
+        ;   XREF to: 005edff0 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setup_FUN_005edff0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005e2260
     LEA EAX,[EBP + 0x158]               ; 005e2263
     PUSH EAX                            ; 005e2269

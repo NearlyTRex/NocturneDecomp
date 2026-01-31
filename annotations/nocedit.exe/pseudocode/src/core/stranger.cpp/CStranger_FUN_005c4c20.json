@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 68,
+        "line": 65,
         "message": "request for member '_36_4_' in 'auStack_e0', which is of non-class type 'byte [48]' {aka 'unsigned char [48]'}"
       }
     ],
@@ -19,27 +19,26 @@
       {
         "category": "other",
         "column": 8,
-        "line": 45,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 447,
+    "complexity_score": 279,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
-    "pseudocode_lines": 152,
-    "suspect_count": 27,
+    "pseudocode_lines": 149,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
-    "total_lines": 597
+    "total_lines": 594
   },
   "cross_references": [
     {
@@ -60,7 +59,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_FUN_005c4c20",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(void)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -198,7 +197,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -247,10 +246,10 @@
     "pcode_op_count": 2307
   },
   "stack_frame": {
-    "frame_size": 276,
+    "frame_size": 280,
     "local_size": 276,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -525,6 +524,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
       }
     ]
   },
@@ -547,196 +553,84 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "CCharacter *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004[2].cloth_data + 0x554c) == 0) ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x554c) + 0x2e0) != 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 35,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 39,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,&local_68,&(this_ptr->base).location.position);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 48,
       "match": "ABS",
       "text": "if (((ABS(local_68.x) <= (float)1.5) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 49,
       "match": "ABS",
       "text": "(ABS(local_68.y) <= (float)4)) &&",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "((((int)local_68.z < 0x40c00001 && (this_ptr != in_stack_00000004)) &&",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 58,
       "match": "._36_4_",
       "text": "(fStack_e4 = 1.0 - ((local_5c.z - (float)auStack_e0._36_4_) + (float)-1.5) *",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000004",
-      "text": "local_f4 = local_f8 - *(float *)(in_stack_00000004[2].cloth_data + 0x55ac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 79,
       "match": "in_stack_00000008",
       "text": "if ((0.0 < local_f4) && (in_stack_00000008 / 0.05f < local_f4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 80,
       "match": "in_stack_00000008",
       "text": "local_f4 = in_stack_00000008 / 0.05f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 84,
       "match": "in_stack_00000008",
       "text": "fVar1 = -in_stack_00000008 * (1.0 / 0.5f);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[2].cloth_data + 0x55ac) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[2].cloth_data + 0x55ac) + local_f4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000004",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&in_stack_00000004->base);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,&local_b0,&local_a4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->model,(CVector3f *)(auStack_e0 + 0x24),INT_03f6bad0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,&local_80,pCVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 133,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->model,&local_50,INT_03f6bad4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 135,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,&local_44,pCVar3);",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 0,
+      "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

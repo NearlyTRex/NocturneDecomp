@@ -17,7 +17,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   int iVar6;
   CMotionList *in_stack_ffffd7c0;
   uint in_stack_ffffd7c4;
-  float in_stack_ffffd7c8;
+  uint in_stack_ffffd7c8;
   uint in_stack_ffffd7cc;
   float in_stack_ffffd7d0;
   uint auStack_700 [93];
@@ -79,7 +79,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
     if ((bVar1) && (local_18 == local_58c.base.item_count + -1)) {
       iVar6 = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,(uint)in_stack_ffffd7c8,
+                (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
                  in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
       if (0 < iVar2) {
         iVar3 = 0;
@@ -92,22 +92,22 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
           iVar3 = iVar3 + 4;
         } while (iVar6 < iVar2);
       }
-      core_bodypart_cpp_FUN_0041a050();
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
       core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                 ((CDeformableModelInstance *)&stack0xffffd7c0,0,(uint)in_stack_ffffd7c0,
-                 in_stack_ffffd7c4,(uint)in_stack_ffffd7c8);
+                 in_stack_ffffd7c4,in_stack_ffffd7c8);
       return 1;
     }
     auStack_700[local_18] = (uint)(auStack_700[local_18] == 0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,(uint)in_stack_ffffd7c8,
+              (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
                in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,(uint)in_stack_ffffd7c8,
+            (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
              in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
   core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
             ((CDeformableModelInstance *)&stack0xffffd7c0,0,(uint)in_stack_ffffd7c0,
-             in_stack_ffffd7c4,(uint)in_stack_ffffd7c8);
+             in_stack_ffffd7c4,in_stack_ffffd7c8);
   return 0;
 }

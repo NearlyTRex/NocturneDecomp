@@ -32,7 +32,7 @@ void __cdecl core_bugs_cpp_FUN_00424e50(void)
   (in_stack_00000004->base).base.orient.heading = 0.0;
   (in_stack_00000004->base).base.orient.bank = (in_stack_00000004->base).base.orient.heading;
   (in_stack_00000004->base).base.orient.pitch = (in_stack_00000004->base).base.orient.bank;
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(in_stack_00000004);
   pCVar3 = in_stack_00000004 + 1;
   (pCVar3->base).cloth_data[0x3978] = '\x04';
   (pCVar3->base).cloth_data[0x3979] = '\0';

@@ -10,14 +10,14 @@
 ; XREF[46]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 0041136c
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411b3c
-;   core_anvil.cpp_CAnvil_FUN_00412030 at 0041203c
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412a40 at 00412a4c
+;   core_anvil.cpp_CAnvil_getPropertyList_FUN_00412030 at 0041203c
+;   core_backgnd.cpp_CBackgroundActor_getPropertyList_FUN_00412a40 at 00412a4c
 ;   core_barrier.cpp_CBarrier_FUN_00414400 at 0041440c
-;   core_bat.cpp_CBat_FUN_00414dc0 at 00414dcf
-;   core_battery.cpp_FUN_004180b0 at 004180bc
+;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414dcf
+;   core_battery.cpp_CBattery_getPropertyList_FUN_004180b0 at 004180bc
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004226ed
 ;   core_chain.cpp_CChain_FUN_00431120 at 0043112c
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f73c
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f73c
 ;   ... and 36 more
 ;
 ; Referenced Globals:

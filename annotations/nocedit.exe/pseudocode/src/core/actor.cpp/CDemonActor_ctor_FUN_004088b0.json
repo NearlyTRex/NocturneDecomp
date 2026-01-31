@@ -1,7 +1,38 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 20,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'unk15'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 40,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'unk2'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 54,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'unk5'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 56,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'unk8'; did you mean 'unk1'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 30,
+        "line": 65,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'unk10'; did you mean 'unk1'?"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -13,17 +44,16 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 508,
+    "complexity_score": 482,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 68,
-    "suspect_count": 43,
+    "pseudocode_lines": 67,
+    "suspect_count": 41,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 167
+    "total_lines": 166
   },
   "cross_references": [
     {
@@ -542,42 +572,49 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 12,
       "match": "ADJ",
       "text": "this_ptr_00 = ADJ(pCVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 13,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->vtable)._ub = &g_CDemonActorVTable;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 15,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->next_actor = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 16,
       "match": "ADJ",
-      "text": "ADJ(pCVar2)->unk15 = 0;",
+      "text": "ADJ(pCVar2)->prev_actor = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 17,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->location).position.z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 18,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;",
       "type": "decompiler_intrinsic"
@@ -586,12 +623,12 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;",
+      "text": "(ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 19,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;",
       "type": "decompiler_intrinsic"
@@ -599,27 +636,27 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "ADJ",
-      "text": "(ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->location).area_id = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->orient).heading = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
       "type": "decompiler_intrinsic"
@@ -628,61 +665,61 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 26,
       "match": "ADJ",
       "text": "pcVar3 = ADJ(pCVar2)->create_event;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 27,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->create_prob = 1.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 37,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->was_created = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 38,
       "match": "ADJ",
-      "text": "ADJ(pCVar2)->unk2 = 0;",
+      "text": "ADJ(pCVar2)->standing_platform = (CPlatform *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 39,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk3).z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
       "type": "decompiler_intrinsic"
@@ -691,12 +728,12 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 41,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
       "type": "decompiler_intrinsic"
@@ -704,20 +741,20 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
-      "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk4).z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 43,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
       "type": "decompiler_intrinsic"
@@ -726,12 +763,12 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 44,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
       "type": "decompiler_intrinsic"
@@ -739,107 +776,86 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
-      "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->scale).x = 0x10000;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 46,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->scale).y = 0x10000;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 47,
       "match": "ADJ",
       "text": "(ADJ(pCVar2)->scale).z = 0x10000;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 48,
       "match": "ADJ",
-      "text": "ADJ(pCVar2)->unk5 = 1;",
+      "text": "ADJ(pCVar2)->is_renderable = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 49,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->is_transparent = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 50,
       "match": "ADJ",
-      "text": "ADJ(pCVar2)->unk8 = 0;",
+      "text": "ADJ(pCVar2)->blood_effect_timer = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 51,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->unk6 = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 52,
       "match": "ADJ",
-      "text": "ADJ(pCVar2)->unk7 = 0;",
+      "text": "ADJ(pCVar2)->unk7 = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 53,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->health = 100;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 55,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->unk14 = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "ADJ",
-      "text": "piVar4 = &ADJ(pCVar2)->unk10;",
+      "text": "pcVar3 = ADJ(pCVar2)->footstep_sound_code;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 57,
       "match": "ADJ",
       "text": "ADJ(pCVar2)->validation_magic = (uintptr_t)&g_ActorMagicNumber;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)piVar4 + 2);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

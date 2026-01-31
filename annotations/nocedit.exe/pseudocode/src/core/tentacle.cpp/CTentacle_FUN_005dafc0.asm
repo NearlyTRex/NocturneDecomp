@@ -17,7 +17,7 @@
 ;   undefined4 DAT_03f6cd14
 ;
 ; Called Functions:
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
@@ -36,8 +36,8 @@ section .text
     ADD ESP,0x4                         ; 005dafd1
     MOV EDX,dword ptr [ESP + 0x8]       ; 005dafd4
     PUSH EDX                            ; 005dafd8
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 005dafd9
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 005dafd9
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005dafde
     PUSH EBX                            ; 005dafe1
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005dafe2

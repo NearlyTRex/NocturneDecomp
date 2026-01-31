@@ -2,16 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 82,
-        "message": "'code' was not declared in this scope"
+        "category": "other",
+        "column": 45,
+        "line": 67,
+        "message": "cast from 'CPlatform*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 82,
-        "message": "expected primary-expression before ')' token"
+        "category": "undeclared_identifier",
+        "column": 79,
+        "line": 84,
+        "message": "'stack0xffffffe8' was not declared in this scope"
       }
     ],
     "success": false,
@@ -24,73 +24,25 @@
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 72,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 74,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 75,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 77,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 78,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 79,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 80,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 82,
+        "column": 12,
+        "line": 69,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 193,
-    "complexity_score": 936,
+    "complexity_score": 962,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 76,
-    "suspect_count": 85,
+    "pseudocode_lines": 82,
+    "suspect_count": 87,
     "suspect_types": [
       "stack_param",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 269
+    "total_lines": 275
   },
   "cross_references": [],
   "function": {
@@ -176,7 +128,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
@@ -395,376 +347,390 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "if (((((in_stack_00000004[2].orient.pitch != (in_stack_00000004->location).position.x) ||",
+      "text": "if (((((in_stack_00000004[2].orient.pitch == (in_stack_00000004->location).position.x) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "if (((((in_stack_00000004[2].orient.pitch != (in_stack_00000004->location).position.x) ||",
+      "text": "if (((((in_stack_00000004[2].orient.pitch == (in_stack_00000004->location).position.x) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient.bank != (in_stack_00000004->location).position.y)) ||",
+      "text": "(in_stack_00000004[2].orient.bank == (in_stack_00000004->location).position.y)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient.bank != (in_stack_00000004->location).position.y)) ||",
+      "text": "(in_stack_00000004[2].orient.bank == (in_stack_00000004->location).position.y)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient.heading != (in_stack_00000004->location).position.z)) ||",
+      "text": "(in_stack_00000004[2].orient.heading == (in_stack_00000004->location).position.z)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient.heading != (in_stack_00000004->location).position.z)) ||",
+      "text": "(in_stack_00000004[2].orient.heading == (in_stack_00000004->location).position.z)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[2].orient_matrix.m[0].x != (in_stack_00000004->orient).pitch ||",
+      "text": "((in_stack_00000004[2].orient_matrix.m[0].x == (in_stack_00000004->orient).pitch &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[2].orient_matrix.m[0].x != (in_stack_00000004->orient).pitch ||",
+      "text": "((in_stack_00000004[2].orient_matrix.m[0].x == (in_stack_00000004->orient).pitch &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient_matrix.m[0].y != (in_stack_00000004->orient).bank)))) ||",
+      "text": "(in_stack_00000004[2].orient_matrix.m[0].y == (in_stack_00000004->orient).bank)))) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient_matrix.m[0].y != (in_stack_00000004->orient).bank)))) ||",
+      "text": "(in_stack_00000004[2].orient_matrix.m[0].y == (in_stack_00000004->orient).bank)))) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient_matrix.m[0].z != (in_stack_00000004->orient).heading)) {",
+      "text": "(in_stack_00000004[2].orient_matrix.m[0].z == (in_stack_00000004->orient).heading)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004[2].orient_matrix.m[0].z != (in_stack_00000004->orient).heading)) {",
+      "text": "(in_stack_00000004[2].orient_matrix.m[0].z == (in_stack_00000004->orient).heading)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "local_c = in_stack_00000004[2].orient_matrix.m[1].x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,in_stack_00000004[2].location.position.z,(CVector3f *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,in_stack_00000004[2].location.position.z,(CVector3f *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "if ((CLocation *)&in_stack_00000004[2].orient != &in_stack_00000004->location) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "if ((CLocation *)&in_stack_00000004[2].orient != &in_stack_00000004->location) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.pitch = (in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.pitch = (in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.bank = (in_stack_00000004->location).position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.bank = (in_stack_00000004->location).position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.heading = (in_stack_00000004->location).position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient.heading = (in_stack_00000004->location).position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "if ((COrientation *)&in_stack_00000004[2].orient_matrix != &in_stack_00000004->orient) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "if ((COrientation *)&in_stack_00000004[2].orient_matrix != &in_stack_00000004->orient) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient_matrix.m[0].x = (in_stack_00000004->orient).pitch;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient_matrix.m[0].x = (in_stack_00000004->orient).pitch;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].orient_matrix.m[0].y = (in_stack_00000004->orient).bank;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].orient_matrix.m[0].y = (in_stack_00000004->orient).bank;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].orient_matrix.m[0].z = (in_stack_00000004->orient).heading;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].orient_matrix.m[0].z = (in_stack_00000004->orient).heading;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].orient_matrix.m[0].y = (in_stack_00000004->orient).bank;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].orient_matrix.m[0].y = (in_stack_00000004->orient).bank;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].orient_matrix.m[0].z = (in_stack_00000004->orient).heading;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].orient_matrix.m[0].z = (in_stack_00000004->orient).heading;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].orient_matrix.m[1].x = unaff_retaddr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[2].location.area_id == 0) && (in_stack_00000004->unk2 != 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[2].location.area_id == 0) && (in_stack_00000004->unk2 != 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].location.area_id = in_stack_00000004->unk2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].location.area_id = in_stack_00000004->unk2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
-      "text": "iVar1 = in_stack_00000004[2].location.area_id;",
+      "text": "if ((in_stack_00000004[2].location.area_id == 0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->standing_platform != (CPlatform *)0x0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y = unaff_retaddr;",
+      "text": "in_stack_00000004[2].location.area_id = (int)in_stack_00000004->standing_platform;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);",
+      "text": "in_stack_00000004[2].location.area_id = (int)in_stack_00000004->standing_platform;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = (CPlatform *)in_stack_00000004[2].location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004->unk2 = iVar1;",
+      "text": "in_stack_00000004->standing_platform = pCVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.x = *(float *)(iVar1 + 0x20);",
+      "text": "(in_stack_00000004->location).position.x = (pCVar1->base).location.position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y = *(float *)(iVar1 + 0x24);",
+      "text": "(in_stack_00000004->location).position.y = (pCVar1->base).location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.z = *(float *)(iVar1 + 0x28);",
+      "text": "(in_stack_00000004->location).position.z = (pCVar1->base).location.position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).area_id = *(int *)(iVar1 + 0x2c);",
+      "text": "(in_stack_00000004->location).area_id = (pCVar1->base).location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_00000004",
-      "text": "iVar1 = in_stack_00000004->unk2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000004",
-      "text": "if (&in_stack_00000004->orient != (COrientation *)(iVar1 + 0x30)) {",
+      "text": "pCVar1 = in_stack_00000004->standing_platform;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->orient).pitch = *(float *)(iVar1 + 0x30);",
+      "text": "if (&in_stack_00000004->orient != pCVar2) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->orient).bank = *(float *)(iVar1 + 0x34);",
+      "text": "(in_stack_00000004->orient).pitch = pCVar2->pitch;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 73,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->orient).heading = *(float *)(iVar1 + 0x38);",
+      "text": "(in_stack_00000004->orient).bank = (pCVar1->base).orient.bank;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
-      "text": "(**(code **)(*(int *)(in_stack_00000004->unk2 + 0x154) + 0x14))();",
+      "text": "(in_stack_00000004->orient).heading = (pCVar1->base).orient.heading;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(in_stack_00000004->unk2 + 0x154) + 0x14))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y =",
+      "text": "(*((in_stack_00000004->standing_platform->base).vtable._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 77,
       "match": "in_stack_00000004",
-      "text": "(fStack_8 - fStack_14) + (in_stack_00000004->location).position.y;",
+      "text": "(&in_stack_00000004->standing_platform->base,(CBoundingBox3D *)&stack0xffffffe8);",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 77,
+      "match": "&stack0xffffffe8",
+      "text": "(&in_stack_00000004->standing_platform->base,(CBoundingBox3D *)&stack0xffffffe8);",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 78,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->location).position.y =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "(unaff_retaddr - local_c) + (in_stack_00000004->location).position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->location).position.y = unaff_retaddr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);",
       "type": "stack_param"

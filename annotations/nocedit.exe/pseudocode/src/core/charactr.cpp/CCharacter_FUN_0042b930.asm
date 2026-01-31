@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c421
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c421
 ;
 ; Referenced Globals:
 ;   float FLOAT_00617156 = 0.5

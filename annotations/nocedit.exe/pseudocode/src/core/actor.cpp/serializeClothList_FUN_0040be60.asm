@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_serialize_FUN_004283a0 at 004284aa
-;   core_hostage.cpp_CHostage_load_FUN_004f6170 at 004f6222
+;   core_hostage.cpp_CHostage_serialize_FUN_004f6170 at 004f6222
 ;   core_mobster.cpp_CMobster_load_FUN_00527230 at 005272a0
 ;   core_zombie.cpp_CZombie_serialize_FUN_005fbfd0 at 005fc0d1
 ;

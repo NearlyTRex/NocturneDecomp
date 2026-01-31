@@ -1,0 +1,322 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 121,
+    "complexity_score": 82,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 9,
+    "pseudocode_lines": 47,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 168
+  },
+  "cross_references": [
+    {
+      "addr": "0043fa00",
+      "from_addr": "0043fde7",
+      "name": "core_colonel.cpp_CColonel_FUN_0043fa00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2ea0",
+      "from_addr": "004d4016",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0e40",
+      "from_addr": "004f1274",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004f0e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f80b0",
+      "from_addr": "004f85f7",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004f80b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c5b90",
+      "from_addr": "005c5d65",
+      "name": "core_stranger.cpp_CStranger_FUN_005c5b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d8ba0",
+      "from_addr": "005d90af",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f2c40",
+    "address_range": [
+      [
+        "004f2c40",
+        "004f2d66"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_CHero_FUN_004f2c40",
+    "signature": "int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "004aabe0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_FUN_004aabe0"
+    },
+    {
+      "addr": "005e7830",
+      "is_variadic": false,
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ec0e",
+      "name": "DOUBLE_0062ec0e",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "0062ec16",
+      "name": "DOUBLE_0062ec16",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "0062ec1e",
+      "name": "DOUBLE_0062ec1e",
+      "type": "double",
+      "value": "0.349065850388889"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.damage_listener_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.damage_listeners",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263318",
+      "name": "DAT_03263318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.619047619047619,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 6,
+      "COPY": 197,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 48,
+      "INT_AND": 52,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 12,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 18,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "INT_ZEXT": 12,
+      "LOAD": 29,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 590
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f2c49",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ABS",
+      "text": "if (ABS((pCVar1->base).base.location.position.y - (this_ptr->base).base.location.position.y)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "SQRT",
+      "text": "if (SQRT(local_20.z * local_20.z + local_20.x * local_20.x) <= (float)5) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ABS",
+      "text": "if (ABS(pCVar2->y) <= (float)0.34906585038888899) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

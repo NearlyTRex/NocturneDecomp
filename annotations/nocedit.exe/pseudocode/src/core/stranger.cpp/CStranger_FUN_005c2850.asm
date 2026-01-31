@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(void)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
 ; undefined8       Stack[-0x100]:8  local_100
@@ -101,7 +103,7 @@ section .text
     PUSH EDX                            ; 005c2886
     PUSH EBX                            ; 005c2887
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c2888
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [ESP + 0xe0],EAX      ; 005c288d
     FLD float ptr [ESP + 0xe0]          ; 005c2894
     ADD ESP,0x8                         ; 005c289b

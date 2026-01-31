@@ -9,7 +9,7 @@
 ; XREF[6]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a6aa
 ;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 004494c2
-;   core_gun.cpp_FUN_004f0350 at 004f0a34
+;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a34
 ;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bbd5
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de24d
 ;   core_turret.cpp_FUN_005e3750 at 005e3bdf

@@ -12,45 +12,47 @@
 void __cdecl core_ghoul_cpp_FUN_004e8520(void)
 
 {
-  int iVar1;
-  float fVar2;
+  CPlatform *pCVar1;
+  int iVar2;
+  float fVar3;
+  CBodyPart *this_ptr;
   CCharacter *in_stack_00000004;
   float *in_stack_00000008;
   float local_14;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
-    iVar1 = rand();
-    switch(iVar1 % 6) {
+    iVar2 = rand();
+    switch(iVar2 % 6) {
     case 0:
-      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x44);
+      fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x44);
       break;
     case 1:
-      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x48);
+      fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x48);
       break;
     case 2:
-      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x4c);
+      fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x4c);
       break;
     case 3:
-      fVar2 = *(float *)(in_stack_00000004[1].base.create_event + 0x50);
+      fVar3 = *(float *)(in_stack_00000004[1].base.create_event + 0x50);
       break;
     case 4:
-      fVar2 = in_stack_00000004[1].base.unk3.y;
+      fVar3 = in_stack_00000004[1].base.unk3.y;
       break;
     case 5:
-      fVar2 = in_stack_00000004[1].base.unk3.x;
+      fVar3 = in_stack_00000004[1].base.unk3.x;
       break;
     default:
       goto switchD_004e8556_default;
     }
-    *in_stack_00000008 = fVar2;
+    *in_stack_00000008 = fVar3;
   }
 switchD_004e8556_default:
-  fVar2 = *in_stack_00000008;
-  if (((((fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x44)) ||
-        (fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x48))) ||
-       (fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x4c))) ||
-      ((fVar2 == *(float *)(in_stack_00000004[1].base.create_event + 0x50) ||
-       (fVar2 == in_stack_00000004[1].base.unk3.x)))) || (fVar2 == in_stack_00000004[1].base.unk3.y)
+  fVar3 = *in_stack_00000008;
+  if (((((fVar3 == *(float *)(in_stack_00000004[1].base.create_event + 0x44)) ||
+        (fVar3 == *(float *)(in_stack_00000004[1].base.create_event + 0x48))) ||
+       (fVar3 == *(float *)(in_stack_00000004[1].base.create_event + 0x4c))) ||
+      ((fVar3 == *(float *)(in_stack_00000004[1].base.create_event + 0x50) ||
+       (fVar3 == in_stack_00000004[1].base.unk3.x)))) || (fVar3 == in_stack_00000004[1].base.unk3.y)
      ) {
     local_14 = in_stack_00000008[0xb];
     if (in_stack_00000004[1].base.unk3.y == *in_stack_00000008) {
@@ -65,9 +67,9 @@ switchD_004e8556_default:
     if (g_CGamePtr->blood_flag == 0) {
       local_14 = 0.0;
     }
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
-    if (iVar1 != 0) {
-      core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
+    if (iVar2 != 0) {
+      this_ptr = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       if (*in_stack_00000008 == *(float *)(in_stack_00000004[1].base.create_event + 0x44)) {
         core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
@@ -83,7 +85,7 @@ switchD_004e8556_default:
         core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
       }
       core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
-      core_bodypart_cpp_FUN_0041a050();
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
       if ((in_stack_00000004->model).part_visibility_flags[(int)in_stack_00000004[1].base.unk3.y] ==
           0) {
         in_stack_00000008[1] = 9999.0;
@@ -91,13 +93,13 @@ switchD_004e8556_default:
       in_stack_00000008[2] = in_stack_00000008[2] * (float)7;
     }
   }
-  fVar2 = *in_stack_00000008;
-  if (fVar2 == in_stack_00000004[1].base.unk3.y) {
+  pCVar1 = (CPlatform *)*in_stack_00000008;
+  if (pCVar1 == (CPlatform *)in_stack_00000004[1].base.unk3.y) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)2.5;
     return;
   }
-  if ((fVar2 != (float)in_stack_00000004[1].base.unk2) &&
-     (fVar2 != in_stack_00000004[1].base.unk3.x)) {
+  if ((pCVar1 != in_stack_00000004[1].base.standing_platform) &&
+     (pCVar1 != (CPlatform *)in_stack_00000004[1].base.unk3.x)) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)0.5;
     return;
   }

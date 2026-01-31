@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 at 00520b39
-;   core_mimic.cpp_CMimic_setup2_FUN_0051f780 at 0051f845
+;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f845
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_006388b4

@@ -58,7 +58,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
     local_44.z = (this_ptr->base).location.position.z - (pCVar3->location).position.z;
     pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
     local_24 = pCVar4->y;
-    iVar2 = (*(((pCVar3->vtable)._ue)->_ue).field_8)();
+    iVar2 = (*(((pCVar3->vtable)._ue)->_ue).enemyfunc3)();
     pCVar3 = local_2c;
     if ((iVar2 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {
       uStack_28 = (uint)(local_a4.x < 0.0);

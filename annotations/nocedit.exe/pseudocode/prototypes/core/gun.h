@@ -19,13 +19,13 @@ CDemonActorType * __cdecl CGun::getActorType(CGun *this_ptr);
 // Address: 004f02f0
 CGun * __cdecl CGun::ctor(CGun *this_ptr);
 
-// Original: core_gun.cpp_FUN_004f0350
+// Original: core_gun.cpp_CGun_FUN_004f0350
 // Address: 004f0350
-int __cdecl FUN_004f0350(void);
+int __cdecl CGun(CGun *this_ptr);
 
-// Original: core_gun.cpp_FUN_004f0b20
+// Original: core_gun.cpp_CGun_FUN_004f0b20
 // Address: 004f0b20
-float __cdecl FUN_004f0b20(void);
+float __cdecl CGun(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_dtor_FUN_004f0b50
 // Address: 004f0b50

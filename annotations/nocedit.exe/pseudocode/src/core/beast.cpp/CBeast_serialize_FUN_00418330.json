@@ -1,0 +1,153 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 75,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00418330",
+    "address_range": [
+      [
+        "00418330",
+        "00418377"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_beast.cpp_CBeast_serialize_FUN_00418330",
+    "signature": "void __cdecl core_beast_cpp_CBeast_serialize_FUN_00418330(CBeast *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b970",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b9f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "004a9660",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615a78",
+      "name": "s_speed_00615a78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a7e",
+      "name": "s_modelName_00615a7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a88",
+      "name": "s_motion_state_00615a88",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.043478260869565,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 13,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBeast *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBeast",
+        "offset": 232,
+        "vtable_addr": "0065aa64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

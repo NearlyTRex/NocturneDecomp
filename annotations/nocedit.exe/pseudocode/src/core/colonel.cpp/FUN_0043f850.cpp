@@ -13,7 +13,7 @@ void __cdecl core_colonel_cpp_FUN_0043f850(void)
   CSkeleton *this_ptr;
   CHero *in_stack_00000004;
   
-  core_hero_cpp_CHero_FUN_004f2540(in_stack_00000004);
+  core_hero_cpp_CHero_setup_FUN_004f2540(in_stack_00000004);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (&(in_stack_00000004->base).model);
   INT_0083b124 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,"Bip01 head");

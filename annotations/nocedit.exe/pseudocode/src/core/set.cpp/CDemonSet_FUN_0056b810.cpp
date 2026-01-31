@@ -94,7 +94,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           pCVar6 = this_ptr;
           do {
             pCVar5 = *(CDemonActor **)pCVar6->actor_list_data;
-            if (pCVar5->unk7 == 0) {
+            if (pCVar5->unk7 == 0.0) {
               iVar8 = pCVar5->health;
               if (iVar8 == local_24) {
                 local_68 = (CDemonActor *)(pCVar5->orient).pitch;

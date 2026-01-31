@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
@@ -30,10 +32,10 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_FUN_004e0bd0
 ;   core_gore.cpp_CGore_FUN_004ee030
-;   core_hero.cpp_FUN_004f3580
+;   core_hero.cpp_CHero_FUN_004f3580
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -67,8 +69,8 @@ section .text
     MOV dword ptr [ESI + 0x4],ECX       ; 005c48e0
     PUSH EBX                            ; 005c48e3
         ;   Label: LAB_005c48e3
-    CALL core_hero.cpp_FUN_004f3580     ; 005c48e4
-        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f3580()
+    CALL core_hero.cpp_CHero_FUN_004f3580 ; 005c48e4
+        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3580(CHero * this_ptr)
     FLD float ptr [EBX + 0xbe24]        ; 005c48e9
     FLDZ                                ; 005c48ef
     ADD ESP,0x4                         ; 005c48f1
@@ -243,8 +245,8 @@ section .text
     PUSH ESI                            ; 005c4afb
         ;   Label: LAB_005c4afb
     PUSH EBX                            ; 005c4afc
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 005c4afd
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 ; 005c4afd
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005c4b02
     MOV ESP,EBP                         ; 005c4b05
     POP EBP                             ; 005c4b07

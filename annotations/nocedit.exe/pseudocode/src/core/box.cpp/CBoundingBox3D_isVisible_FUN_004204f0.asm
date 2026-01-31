@@ -26,14 +26,14 @@
 ; XREF[79]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410ea3
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411847
-;   core_anvil.cpp_CAnvil_FUN_00411ec0 at 00411f15
-;   core_backgnd.cpp_CBackgroundActor_FUN_00412860 at 00412899
-;   core_backgnd.cpp_CBackgroundActor_FUN_004128d0 at 00412907
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411f15
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860 at 00412899
+;   core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0 at 00412907
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413bf3
 ;   core_barrier.cpp_CBarrier_FUN_00414240 at 0041428d
-;   core_bat.cpp_CBat_FUN_00414bf0 at 00414c13
+;   core_bat.cpp_CBat_renderOpaque_FUN_00414bf0 at 00414c13
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 00417433
-;   core_battery.cpp_FUN_00417f80 at 00417fc2
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417fc2
 ;   ... and 69 more
 ;
 ; Referenced Globals:

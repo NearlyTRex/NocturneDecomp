@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005bfb60(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005bfb60(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10c]:4  local_10c
 ; undefined8       Stack[-0x108]:8  local_108
@@ -399,7 +401,7 @@ section .text
         ;   Label: LAB_005bffba
     PUSH EBX                            ; 005bffbc
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005bffbd
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [ESP + 0xf8],EAX      ; 005bffc2
     FLD float ptr [ESP + 0xf8]          ; 005bffc9
     FLD1                                ; 005bffd0
@@ -440,12 +442,12 @@ section .text
         ;   Label: LAB_005c0038
     PUSH EBX                            ; 005c003a
     CALL core_stranger.cpp_CStranger_FUN_005c02b0 ; 005c003b
-        ;   XREF to: 005c02b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c02b0()
+        ;   XREF to: 005c02b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c02b0(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c0040
     PUSH 0x1                            ; 005c0043
     PUSH EBX                            ; 005c0045
     CALL core_stranger.cpp_CStranger_FUN_005c02b0 ; 005c0046
-        ;   XREF to: 005c02b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c02b0()
+        ;   XREF to: 005c02b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c02b0(CStranger * this_ptr)
     MOV EAX,[0x03f6bb04]                ; 005c004b | INT_03f6bb04
     MOV ESI,dword ptr [0x03f6bae4]      ; 005c0050 | INT_03f6bae4
     SHL EAX,0x4                         ; 005c0056
@@ -476,7 +478,7 @@ section .text
         ;   Label: LAB_005c00a3
     PUSH EBX                            ; 005c00a5
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c00a6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [ESP + 0xf8],EAX      ; 005c00ab
     FLD float ptr [ESP + 0xf8]          ; 005c00b2
     FLD1                                ; 005c00b9

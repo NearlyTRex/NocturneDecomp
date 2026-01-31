@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 004813ee
-;   core_lever.cpp_FUN_00505240 at 00505333
+;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 00505333
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_0061446b

@@ -1,0 +1,149 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 19,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "00413ff0",
+      "from_addr": "00413ffa",
+      "name": "core_baron.cpp_CBaron_onActorDeleted_FUN_00413ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004405f0",
+      "from_addr": "004405fa",
+      "name": "core_colonel.cpp_FUN_004405f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d75e0",
+      "from_addr": "004d75eb",
+      "name": "core_gabriela.cpp_FUN_004d75e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1cb0",
+      "from_addr": "004f1cba",
+      "name": "core_haystack.cpp_CHaystack_onActorDeleted_FUN_004f1cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9780",
+      "from_addr": "004f978a",
+      "name": "core_icepick.cpp_CIcePick_onActorDeleted_FUN_004f9780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520da0",
+      "from_addr": "00520dbc",
+      "name": "core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559100",
+      "from_addr": "0055910a",
+      "name": "core_scat.cpp_FUN_00559100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c68a0",
+      "from_addr": "005c68ac",
+      "name": "core_stranger.cpp_CStranger_FUN_005c68a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d9ef0",
+      "from_addr": "005d9efa",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9ef0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042f8a0",
+    "address_range": [
+      [
+        "0042f8a0",
+        "0042f8e1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0 (CCharacter *this_ptr,CDemonActor *deleted_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d000",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.52,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 20,
+      "INT_ADD": 14,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

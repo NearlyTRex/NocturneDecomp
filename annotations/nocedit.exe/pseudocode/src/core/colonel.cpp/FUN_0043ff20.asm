@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_colonel.cpp_FUN_0043fa00 at 0043fa7b
+;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fa7b
 ;
 ; Referenced Globals:
 ;   float FLOAT_00618cf1 = 20
@@ -53,7 +53,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_hero.cpp_FUN_004f3960
+;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 ;   core_path.cpp_FUN_00548500
@@ -125,8 +125,8 @@ section .text
         ;   Label: LAB_0043ffdd
     PUSH EAX                            ; 0043ffe1
     PUSH EBX                            ; 0043ffe2
-    CALL core_hero.cpp_FUN_004f3960     ; 0043ffe3
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_FUN_004f3960()
+    CALL core_hero.cpp_CHero_FUN_004f3960 ; 0043ffe3
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_CHero_FUN_004f3960(CHero * this_ptr)
     MOV EDX,EAX                         ; 0043ffe8
     ADD ESP,0x8                         ; 0043ffea
     TEST EAX,EAX                        ; 0043ffed

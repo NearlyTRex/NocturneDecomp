@@ -5,6 +5,7 @@
 #include "system/dsound.h"
 #include "system/stdio.h"
 #include "system/windef.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBodyPart.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModel.h"
@@ -100,7 +101,7 @@ void __cdecl core_smiley_cpp_FUN_005a32a0(void);
 void __cdecl core_smiley_cpp_FUN_005a3580(void);
 int __cdecl core_smiley_cpp_FUN_005a3690(void);
 void __cdecl core_smiley_cpp_FUN_005a37f0(void);
-void __cdecl core_smiley_cpp_FUN_005a3810(void);
+void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810 (CSmiley *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_smiley_cpp_FUN_005a3850(void);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880 (CSmiley *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 void __cdecl sound_sndmain_cpp_staticInit_FUN_005a3940(void);

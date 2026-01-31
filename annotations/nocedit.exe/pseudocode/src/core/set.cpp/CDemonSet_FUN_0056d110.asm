@@ -11,7 +11,7 @@
 ;   core_emitter.cpp_FUN_004a8070 at 004a81f9
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0be1
 ;   core_fire.cpp_FUN_004c1940 at 004c1983
-;   core_keyactor.cpp_FUN_00501710 at 005017a6
+;   core_keyactor.cpp_CKeyActor_process_FUN_00501710 at 005017a6
 ;   core_weapon.cpp_CWeapon_FUN_005ee4a0 at 005ee621
 ;
 ; Referenced Globals:

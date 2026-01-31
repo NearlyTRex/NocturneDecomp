@@ -9,7 +9,7 @@
 ; XREF[76]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f64a
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b345
-;   core_boxactor.cpp_CLightActor_FUN_00423110 at 00423138
+;   core_boxactor.cpp_FUN_00423110 at 00423138
 ;   core_charactr.cpp_CCharacter_FUN_0042f3e0 at 0042f449
 ;   core_cloth.cpp_FUN_0043c430 at 0043c45e
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004795c9

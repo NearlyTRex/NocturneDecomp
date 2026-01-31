@@ -9,11 +9,11 @@
 ; XREF[11]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 004113cb
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411bef
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 00423504
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f78b
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423504
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f78b
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481387
 ;   core_drip.cpp_FUN_0048e930 at 0048e954
-;   core_lever.cpp_FUN_00505240 at 00505293
+;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 00505293
 ;   core_pendulum.cpp_FUN_0054a5f0 at 0054a6ee
 ;   core_platfrm.cpp_FUN_0054e7d0 at 0054e8cc
 ;   core_simbox.cpp_CSimBox_FUN_00589310 at 00589362

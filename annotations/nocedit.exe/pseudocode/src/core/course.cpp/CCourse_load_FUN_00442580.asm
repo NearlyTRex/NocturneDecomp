@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_bat.cpp_CBat_FUN_004148a0 at 004148c5
+;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148c5
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 004431b5
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e252
 ;   core_frankgen.cpp_FUN_004d17b0 at 004d19c0

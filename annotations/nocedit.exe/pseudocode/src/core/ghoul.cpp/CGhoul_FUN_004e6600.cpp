@@ -329,7 +329,7 @@ switchD_004e6f9a_caseD_e:
         if (uVar6 == 0) {
           core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
           if (extraout_EAX_00 != 0) goto LAB_004e7576;
-          (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+          (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
           if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->base).model.motion_controller,1,1);
@@ -352,12 +352,12 @@ switchD_004e6f9a_caseD_e:
           local_178 = *(float *)(uVar6 + 0x28) - (in_stack_00000004->base).base.location.position.z;
           if (SQRT(local_178 * local_178 + local_180 * local_180 + local_17c * local_17c) <
               (float)4) {
-            fVar16 = (in_stack_00000004->base).hit_points + in_stack_00000008;
+            fVar16 = (float)(in_stack_00000004->base).hit_points + in_stack_00000008;
             in_stack_00000004[1].base.base.unk1 =
                  (int)((float)in_stack_00000004[1].base.base.unk1 - in_stack_00000008);
-            (in_stack_00000004->base).hit_points = fVar16;
+            (in_stack_00000004->base).hit_points = (int)fVar16;
             if ((float)100 < fVar16) {
-              (in_stack_00000004->base).hit_points = 100.0;
+              (in_stack_00000004->base).hit_points = 0x42c80000;
             }
             if ((float)in_stack_00000004[1].base.base.unk1 < 0.0) {
               in_stack_00000004[1].base.base.unk1 = 0;
@@ -399,7 +399,7 @@ switchD_004e6f9a_caseD_e:
                            (&g_HeroActors[g_LocalHeroIndex]->base);
         pCVar10 = g_CGamePtr;
         if (iVar13 == 0) {
-          (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+          (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
           iVar13 = *(int *)(in_stack_00000004->unk2 + 4);
           if (iVar13 == 0) {
             core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -414,8 +414,8 @@ switchD_004e6f9a_caseD_e:
             local_1f0 = *(float *)(iVar13 + 0x28) -
                         (in_stack_00000004->base).base.location.position.z;
             local_1f4 = 0.0;
-            if ((((in_stack_00000004->base).hit_points < (float)25) && (cVar21 != '\0')
-                ) && (in_stack_00000004[1].base.base.validation_magic == 0)) {
+            if ((((float)(in_stack_00000004->base).hit_points < (float)25) &&
+                (cVar21 != '\0')) && (in_stack_00000004[1].base.base.validation_magic == 0)) {
               core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0();
             }
             local_30 = &(in_stack_00000004->base).model.motion_controller;
@@ -598,7 +598,7 @@ LAB_004e7576:
                                    bone_world_matrices + INT_02d83304);
               core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                         ((CDemonActor *)in_stack_00000004,&local_1bc,pCVar15);
-              iVar13 = core_enemy_cpp_FUN_004a9880();
+              iVar13 = core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
               if (iVar13 != 0) {
                 (*((in_stack_00000004->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)in_stack_00000004,"gh-hits?.wav");
@@ -615,7 +615,7 @@ LAB_004e7576:
     case 10:
       if (((in_stack_00000004->pool_me == 0) &&
           ((int)in_stack_00000004[1].base.base.location.position.y < 1)) &&
-         ((in_stack_00000004->base).base.unk2 == 0)) {
+         ((in_stack_00000004->base).base.standing_platform == (CPlatform *)0x0)) {
         pCVar15 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (pCVar1,&local_12c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -649,7 +649,7 @@ LAB_004e7576:
           ;
           *(int *)(in_stack_00000004[1].base.base.actor_name + 0x14) = iVar13;
           if (iVar13 < 0) {
-            (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+            (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
             iVar13 = *(int *)(in_stack_00000004->unk2 + 4);
             if (iVar13 != 0) {
               local_120 = (in_stack_00000004->base).base.location.position.x -
@@ -724,7 +724,7 @@ LAB_004e7243:
               local_14 = (float)((int)in_stack_00000004[1].base.base.location.position.y + 1);
               local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                                    (10.0,(float)(int)local_14 * (float)10);
-              (in_stack_00000004->base).hit_points = local_14;
+              (in_stack_00000004->base).hit_points = (int)local_14;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(in_stack_00000004->base).model.motion_controller,0x10,1);
             }
@@ -791,7 +791,7 @@ LAB_004e7d9a:
                                  + INT_02d83300);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)in_stack_00000004,&local_21c,pCVar15);
-            iVar13 = core_enemy_cpp_FUN_004a9880();
+            iVar13 = core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
             if (iVar13 != 0) {
               (*((in_stack_00000004->base).base.vtable._ub)->playSound)
                         ((CDemonActor *)in_stack_00000004,"gh-hits?.wav");
@@ -811,7 +811,7 @@ LAB_004e7d9a:
         dVar24 = round((double)(local_14 * (float)65536));
         *(int *)(in_stack_00000004[1].base.base.actor_name + 0xc) = (int)ROUND(dVar24);
       }
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base).model.motion_controller,0,1);

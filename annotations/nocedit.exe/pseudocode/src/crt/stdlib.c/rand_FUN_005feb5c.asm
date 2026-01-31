@@ -10,10 +10,10 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70 at 0040cca5
 ;   core_actor.cpp_randomChance_FUN_0040cd10 at 0040cd4d
 ;   core_baron.cpp_CBaron_FUN_004136b0 at 004138a9
-;   core_batcreat.cpp_FUN_00415dd0 at 00415df0
-;   core_batman.cpp_FUN_00417660 at 00417680
+;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415df0
+;   core_batman.cpp_CBatman_FUN_00417660 at 00417680
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b2a
-;   core_bride.cpp_FUN_00424600 at 00424623
+;   core_bride.cpp_CBride_FUN_00424600 at 00424623
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042afca
 ;   ... and 31 more
 ;

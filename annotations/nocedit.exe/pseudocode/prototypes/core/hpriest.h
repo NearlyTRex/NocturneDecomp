@@ -11,29 +11,29 @@ void __cdecl staticInit(void);
 // Address: 004f7b30
 CHighPriestOfGardath * __cdecl factoryFunc(void);
 
-// Original: core_hpriest.cpp_FUN_004f7b60
+// Original: core_hpriest.cpp_CHighPriestOfGardath_getActorType_FUN_004f7b60
 // Address: 004f7b60
-CDemonActorType * __cdecl FUN_004f7b60(void);
+CDemonActorType * __cdecl CHighPriestOfGardath::getActorType(CHighPriestOfGardath *this_ptr);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70
 // Address: 004f7b70
 CHighPriestOfGardath * __cdecl CHighPriestOfGardath::ctor(CHighPriestOfGardath *this_ptr);
 
-// Original: core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0
+// Original: core_hpriest.cpp_CHighPriestOfGardath_serialize_FUN_004f7bd0
 // Address: 004f7bd0
-void __cdecl CHighPriestOfGardath::load(void);
+void __cdecl CHighPriestOfGardath::serialize(CHighPriestOfGardath *this_ptr);
 
-// Original: core_hpriest.cpp_FUN_004f7c00
+// Original: core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00
 // Address: 004f7c00
-void __cdecl FUN_004f7c00(void);
+void __cdecl CHighPriestOfGardath::process(CHighPriestOfGardath *this_ptr,float delta_time);
 
-// Original: core_hpriest.cpp_FUN_004f7c50
+// Original: core_hpriest.cpp_CHighPriestOfGardath_processDamage_FUN_004f7c50
 // Address: 004f7c50
-void __cdecl FUN_004f7c50(void);
+void __cdecl CHighPriestOfGardath::processDamage(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hpriest.cpp_CHighPriestOfGardath_FUN_004f7c70
+// Original: core_hpriest.cpp_CHighPriestOfGardath_getPropertyList_FUN_004f7c70
 // Address: 004f7c70
-void __cdecl CHighPriestOfGardath(void);
+void __cdecl CHighPriestOfGardath::getPropertyList(CHighPriestOfGardath *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
 // Address: 004f7cb0

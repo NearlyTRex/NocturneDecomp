@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x58]:4  local_58
 ;
 ; XREF[1]:
-;   core_hpriest.cpp_FUN_004f7c00 at 004f7c0a
+;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00 at 004f7c0a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_0063e31f

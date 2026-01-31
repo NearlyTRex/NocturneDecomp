@@ -88,7 +88,7 @@ void __cdecl core_drone_cpp_FUN_0048ec70(void)
     case 0:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
       if (extraout_EAX == 0) {
-        (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+        (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
         if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,1,1);
@@ -100,7 +100,7 @@ void __cdecl core_drone_cpp_FUN_0048ec70(void)
       }
       break;
     case 1:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       fVar2 = 3.0f;
       if (*(int *)(in_stack_00000004->unk2 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -154,7 +154,7 @@ void __cdecl core_drone_cpp_FUN_0048ec70(void)
                            *(int *)(in_stack_00000004[1].base.base.actor_name + 0xc));
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_58,pCVar11);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
       local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
       local_14 = local_dc.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -163,10 +163,11 @@ void __cdecl core_drone_cpp_FUN_0048ec70(void)
                            *(int *)(in_stack_00000004[1].base.base.actor_name + 0x10));
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_34,pCVar11);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
       break;
     case 8:
-      if ((in_stack_00000004->pool_me == 0) && ((in_stack_00000004->base).base.unk2 == 0)) {
+      if ((in_stack_00000004->pool_me == 0) &&
+         ((in_stack_00000004->base).base.standing_platform == (CPlatform *)0x0)) {
         pCVar11 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (this_ptr,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

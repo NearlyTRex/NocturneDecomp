@@ -23,7 +23,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr)
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr->base).base.model,model_name);
-  core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base);
+  core_hero_cpp_CHero_setup_FUN_004f2540(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_03f6cb90 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0

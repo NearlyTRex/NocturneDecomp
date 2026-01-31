@@ -986,7 +986,7 @@ joined_r0x0055f6da:
                                             local_11c = local_11c + 1;
                                             if (DAT_0310ec9c == 0) {
                                               local_ec = 
-                                                  core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
+                                                  core_bodypart_cpp_createBodyPart_FUN_00418e10();
                                               iVar16 = 0;
                                               iVar6 = 0;
                                               do {
@@ -997,7 +997,7 @@ joined_r0x0055f6da:
                                                 iVar6 = iVar6 + 1;
                                                 iVar16 = iVar16 + 4;
                                               } while (iVar6 < 0x1e);
-                                              core_bodypart_cpp_FUN_0041a050();
+                                              core_bodypart_cpp_CBodyPart_FUN_0041a050(local_ec);
                                             }
                                           }
                                           else {
@@ -1588,7 +1588,7 @@ LAB_0055a97f:
                                                   local_11c = local_11c + 1;
                                                   if (DAT_0310ec9c == 0) {
                                                     (*(((local_c4->base).base.vtable._ue)->_ue).
-                                                      field_4)();
+                                                      enemyfunc2)();
                                                   }
                                                   }
                                                   else {
@@ -2188,7 +2188,8 @@ joined_r0x0055c026:
                                                     return -1;
                                                   }
                                                   if (DAT_0310ec9c == 0) {
-                                                    core_hero_cpp_FUN_004f3910();
+                                                    core_hero_cpp_CHero_FUN_004f3910
+                                                              (g_HeroActors[g_LocalHeroIndex]);
                                                   }
                                                   }
                                                   else {
@@ -2497,7 +2498,8 @@ LAB_0055e656:
                                                   goto joined_r0x0055c026;
                                                   if (DAT_0310ec9c == 0) {
                                                     (pCVar11->base).hit_points =
-                                                         (pCVar11->base).max_hit_points * local_6c;
+                                                         (int)((pCVar11->base).max_hit_points *
+                                                              local_6c);
                                                   }
                                                   }
                                                   else {
@@ -2594,7 +2596,7 @@ LAB_0055e656:
                                                     return -1;
                                                   }
                                                   if (DAT_0310ec9c == 0) {
-                                                    core_hero_cpp_FUN_004f3930();
+                                                    core_hero_cpp_CHero_FUN_004f3930(pCVar11);
                                                   }
                                                   }
                                                   else {
@@ -2840,11 +2842,11 @@ LAB_0055f0a8:
                                                                       (local_1204,"disable"
                                                                       );
                                                     if ((iVar6 != 0) &&
-                                                       (pCVar11 = 
+                                                       (pCVar12 = 
                                                   core_script_cpp_GetDemonActor_FUN_005594e0
                                                             (local_1204,
                                                              g_CCharacterClassInfo.name_hash,
-                                                             0x823c14), pCVar11 == (CHero *)0x0))
+                                                             0x823c14), pCVar12 == (CHero *)0x0))
                                                   goto joined_r0x0055c026;
                                                   }
                                                   if (*local_11c != ')') {
@@ -2855,7 +2857,8 @@ LAB_0055f0a8:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (DAT_0310ec9c == 0) {
-                                                    core_enemy_cpp_FUN_004a9ef0();
+                                                    core_enemy_cpp_CEnemy_FUN_004a9ef0
+                                                              ((CEnemy *)pCVar11);
                                                   }
                                                   }
                                                   else {

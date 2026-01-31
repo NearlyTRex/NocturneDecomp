@@ -13,7 +13,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
             (this_ptr,(this_ptr->motion_controller).current_motion_index,
-             (this_ptr->motion_controller).current_frame_number,-1);
+             (float)(this_ptr->motion_controller).current_frame_number,-1);
   if ((this_ptr->motion_controller).tween_progress <= (float)0.001) {
     return;
   }

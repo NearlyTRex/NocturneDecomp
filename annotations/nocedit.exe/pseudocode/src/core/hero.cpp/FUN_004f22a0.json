@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 24,
-        "line": 26,
+        "line": 23,
         "message": "cast from 'CHero**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,57 +19,56 @@
       {
         "category": "other",
         "column": 16,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 25,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
         "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 28,
+        "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 29,
+        "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 30,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 30,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 30,
+        "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 184,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 29,
-    "suspect_count": 13,
+    "pseudocode_lines": 27,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 102
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -223,85 +222,78 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "float *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 16,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_HeroActors + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_0000000c",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ABS",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "if (fVar2 * fVar2 + fVar3 * fVar3 < in_stack_00000008 * in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "if (fVar2 * fVar2 + fVar3 * fVar3 < in_stack_00000008 * in_stack_00000008) {",
       "type": "stack_param"

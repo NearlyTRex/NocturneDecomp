@@ -12,23 +12,21 @@
       {
         "category": "other",
         "column": 38,
-        "line": 18,
+        "line": 15,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 38,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 13,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 32
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
   },
   "cross_references": [],
   "function": {
@@ -41,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_FUN_005c67c0",
-    "signature": "int __cdecl core_stranger_cpp_CStranger_FUN_005c67c0(void)"
+    "signature": "int __cdecl core_stranger_cpp_CStranger_FUN_005c67c0(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -79,8 +77,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.428571428571429,
@@ -105,29 +103,22 @@
     "pcode_op_count": 62
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "CCharacter *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042c580(in_stack_00000004);",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

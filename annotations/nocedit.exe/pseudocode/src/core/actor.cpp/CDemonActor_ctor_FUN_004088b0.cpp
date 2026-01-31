@@ -14,14 +14,13 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   CDemonActor_ptr_296 pCVar2;
   char *pcVar2;
   char *pcVar3;
-  int *piVar4;
   
   pCVar2 = core_actor_cpp_initTransformCache_FUN_00408870(&this_ptr->previous_transform_state);
   this_ptr_00 = ADJ(pCVar2);
   (ADJ(pCVar2)->vtable)._ub = &g_CDemonActorVTable;
   this_ptr_00->actor_name[0] = '\0';
   ADJ(pCVar2)->next_actor = (CDemonActor *)0x0;
-  ADJ(pCVar2)->unk15 = 0;
+  ADJ(pCVar2)->prev_actor = (CDemonActor *)0x0;
   (ADJ(pCVar2)->location).position.z = 0.0;
   (ADJ(pCVar2)->location).position.y = (ADJ(pCVar2)->location).position.z;
   (ADJ(pCVar2)->location).position.x = (ADJ(pCVar2)->location).position.y;
@@ -43,7 +42,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   ADJ(pCVar2)->was_created = 0;
-  ADJ(pCVar2)->unk2 = 0;
+  ADJ(pCVar2)->standing_platform = (CPlatform *)0x0;
   (ADJ(pCVar2)->unk3).z = 0.0;
   (ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;
   (ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;
@@ -53,26 +52,26 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   (ADJ(pCVar2)->scale).x = 0x10000;
   (ADJ(pCVar2)->scale).y = 0x10000;
   (ADJ(pCVar2)->scale).z = 0x10000;
-  ADJ(pCVar2)->unk5 = 1;
+  ADJ(pCVar2)->is_renderable = 1;
   ADJ(pCVar2)->is_transparent = 0;
-  ADJ(pCVar2)->unk8 = 0;
+  ADJ(pCVar2)->blood_effect_timer = 0;
   ADJ(pCVar2)->unk6 = 0;
-  ADJ(pCVar2)->unk7 = 0;
+  ADJ(pCVar2)->unk7 = 0.0;
   ADJ(pCVar2)->health = 100;
-  pcVar3 = "str";
+  pcVar2 = "str";
   ADJ(pCVar2)->unk14 = 0;
-  piVar4 = &ADJ(pCVar2)->unk10;
+  pcVar3 = ADJ(pCVar2)->footstep_sound_code;
   ADJ(pCVar2)->validation_magic = (uintptr_t)&g_ActorMagicNumber;
   do {
-    cVar1 = *pcVar3;
-    *(char *)piVar4 = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return this_ptr_00;
     }
-    cVar1 = pcVar3[1];
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)piVar4 + 1) = cVar1;
-    piVar4 = (int *)((int)piVar4 + 2);
   } while (cVar1 != '\0');
   return this_ptr_00;
 }

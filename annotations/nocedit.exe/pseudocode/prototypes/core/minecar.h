@@ -23,10 +23,10 @@ void __cdecl CMinecar::setup(CMineCar *this_ptr);
 // Address: 00520eb0
 void __cdecl CMinecar::process(CMineCar *this_ptr,float delta_time);
 
-// Original: core_minecar.cpp_FUN_00520f20
+// Original: core_minecar.cpp_CMineCar_ctor_FUN_00520f20
 // Address: 00520f20
-CMineCar * __cdecl FUN_00520f20(CMineCar *this_ptr);
+CMineCar * __cdecl CMineCar::ctor(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_FUN_00520f40
+// Original: core_minecar.cpp_CMineCar_dtor_FUN_00520f40
 // Address: 00520f40
-CMineCar * __cdecl FUN_00520f40(CMineCar *this_ptr,uint d1,uint d2,uint d3);
+CMineCar * __cdecl CMineCar::dtor(CMineCar *this_ptr,uint d1,uint d2,uint d3);

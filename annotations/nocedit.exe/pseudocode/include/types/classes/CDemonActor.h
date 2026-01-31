@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CPlatform;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdint.h"
@@ -25,24 +28,24 @@ typedef struct CDemonActor {
     int was_created; // 0x70
     float create_prob; // 0x74
     char create_event[100]; // 0x78
-    int unk2; // 0xdc
+    struct CPlatform* standing_platform; // 0xdc
     CVector3f unk3; // 0xe0
     CVector3f unk4; // 0xec
-    int unk5; // 0xf8
+    int is_renderable; // 0xf8
     int is_transparent; // 0xfc
     int unk6; // 0x100
-    int unk7; // 0x104
+    float unk7; // 0x104
     CVector3i scale; // 0x108
-    int unk8; // 0x114
+    int blood_effect_timer; // 0x114
     int unk9; // 0x118
-    int unk10; // 0x11c
+    char footstep_sound_code[4]; // 0x11c
     int unk11; // 0x120
     int unk12; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
     int unk13; // 0x144
     int unk14; // 0x148
     struct CDemonActor* next_actor; // 0x14c
-    int unk15; // 0x150
+    struct CDemonActor* prev_actor; // 0x150
     CDemonActor_union_vtable vtable; // 0x154
 } CDemonActor;
 

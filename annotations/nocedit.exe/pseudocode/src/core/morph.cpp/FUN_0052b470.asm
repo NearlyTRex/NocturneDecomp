@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_biggs.cpp_FUN_00418680 at 004186cf
+;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 004186cf
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_free_FUN_0052a510

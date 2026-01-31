@@ -2,6 +2,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3d.h"
 #include "types/classes/CObj.h"
@@ -17,42 +19,42 @@
 // FUNCTION PROTOTYPES - Range 0x5C0000
 // =============================================================================
 
-void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(void);
-float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(void);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr);
+float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_serialize_FUN_005c2fe0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c3710(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_FUN_005c3750(void);
 CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(void);
-void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(void);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5170(CStranger *this_ptr);
-CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(void);
-int __cdecl core_stranger_cpp_FUN_005c6650(void);
-void __cdecl core_stranger_cpp_FUN_005c6660(void);
+CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c6650(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c6660(CStranger *this_ptr,int unk);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(void);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c67c0(void);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005c67c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6850(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c68a0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c68f0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6910(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0 (CStranger *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_stranger_cpp_CStranger_writeDependencies_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
 void __cdecl core_stranger_cpp_FUN_005c6930(void);
 int __cdecl core_stranger_cpp_FUN_005c6950(void);
 int __cdecl core_stranger_cpp_FUN_005c695e(void);
@@ -70,7 +72,7 @@ void __cdecl core_succubus_cpp_CSuccubus_serialize_FUN_005c7710(CSuccubus *this_
 void __cdecl core_succubus_cpp_FUN_005c7760(void);
 int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7780(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c7790(CSuccubus *this_ptr);
-void __cdecl core_succubus_cpp_CSuccubus_FUN_005c77b0(CSuccubus *this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0 (CSuccubus *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c77f0(CSuccubus *this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820 (CSuccubus *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11);
 void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...);

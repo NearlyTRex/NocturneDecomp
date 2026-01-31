@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 48,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     {
       "addr": "004f3fa0",
       "is_variadic": false,
-      "name": "core_hero.cpp_CHero_FUN_004f3fa0"
+      "name": "core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0"
     }
   ],
   "globals": [],
@@ -98,9 +98,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "_FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
       "match": "in_stack_00000004",
-      "text": "core_hero_cpp_CHero_FUN_004f3fa0(in_stack_00000004);",
+      "text": "core_hero_cpp_CHero_writeDependencies_FUN_004f3fa0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_hero_cpp_CHero_writeDependencies_FUN_004f3fa0(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

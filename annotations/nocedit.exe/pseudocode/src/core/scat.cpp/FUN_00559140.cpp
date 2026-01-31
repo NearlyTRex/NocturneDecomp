@@ -13,7 +13,8 @@ void __cdecl core_scat_cpp_FUN_00559140(void)
 
 {
   CHero *in_stack_00000004;
+  _FILE *in_stack_00000008;
   
-  core_hero_cpp_CHero_FUN_004f3fa0(in_stack_00000004);
+  core_hero_cpp_CHero_writeDependencies_FUN_004f3fa0(in_stack_00000004,in_stack_00000008);
   return;
 }

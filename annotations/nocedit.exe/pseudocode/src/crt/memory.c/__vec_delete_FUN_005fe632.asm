@@ -14,10 +14,10 @@
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_00411c20 at 00411c4c
 ;   core_anvil.cpp_CAnvil_dtor_FUN_004120e0 at 0041210c
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 00412597
+;   core_armour.cpp_CEnemy_dtor_FUN_004125c0 at 00412657
+;   core_armour.cpp_CFlame_dtor_FUN_00412690 at 004126bc
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_00412ad0 at 00412afc
-;   core_backgnd.cpp_CFlame_dtor_FUN_00412690 at 004126bc
 ;   core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0 at 004140dc
-;   core_baron.cpp_CBaron_dtor_FUN_00414100 at 0041412c
 ;   ... and 132 more
 ;
 ; Called Functions:

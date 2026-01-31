@@ -12,12 +12,12 @@
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_00411c20 at 00411c2f
 ;   core_anvil.cpp_CAnvil_dtor_FUN_004120e0 at 004120ef
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 0041257a
+;   core_armour.cpp_CEnemy_dtor_FUN_004125c0 at 0041263a
+;   core_armour.cpp_CFlame_dtor_FUN_00412690 at 0041269f
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_00412ad0 at 00412adf
-;   core_backgnd.cpp_CFlame_dtor_FUN_00412690 at 0041269f
 ;   core_barrier.cpp_CBarrier_dtor_FUN_00414670 at 0041467f
 ;   core_bat.cpp_CBat_dtor_FUN_00414fe0 at 00415006
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_00416320 at 0041639a
-;   core_batman.cpp_CBatman_dtor_FUN_00417d60 at 00417dda
 ;   ... and 82 more
 ;
 ; Referenced Globals:

@@ -1,0 +1,394 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 216,
+    "complexity_score": 284,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 9,
+    "pseudocode_lines": 74,
+    "suspect_count": 20,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param"
+    ],
+    "total_lines": 290
+  },
+  "cross_references": [
+    {
+      "addr": "00424830",
+      "from_addr": "004248a3",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_00424830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00424600",
+    "address_range": [
+      [
+        "00424600",
+        "004247ff"
+      ],
+      [
+        "00424814",
+        "0042482a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bride.cpp_CBride_FUN_00424600",
+    "signature": "void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30"
+    },
+    {
+      "addr": "0042f300",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f300"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004245e8",
+      "name": "switchdataD_004245e8",
+      "type": "void*",
+      "value": "00424640"
+    },
+    {
+      "addr": "00616c69",
+      "name": "s_limb_wav_00616c69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c75",
+      "name": "DOUBLE_00616c75",
+      "type": "double",
+      "value": "0.333000000000000"
+    },
+    {
+      "addr": "00616c7d",
+      "name": "DOUBLE_00616c7d",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "00616c85",
+      "name": "DOUBLE_00616c85",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.unk4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004248a3",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_processDamage_FUN_00424830",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.987654320987654,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "BRANCHIND": 1,
+      "CALL": 8,
+      "CBRANCH": 18,
+      "COPY": 266,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 59,
+      "INT_AND": 74,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 5,
+      "INT_LESS": 15,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 7,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 27,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 51,
+      "INT_ZEXT": 6,
+      "LOAD": 52,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 45,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 808
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00424609",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "local_20 = (float)in_stack_00000008[0xb];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk + 0x28) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000008",
+      "text": "if (*in_stack_00000008 == *(int *)(this_ptr->unk + 8)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk + 0x10) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = 0x461c3c00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

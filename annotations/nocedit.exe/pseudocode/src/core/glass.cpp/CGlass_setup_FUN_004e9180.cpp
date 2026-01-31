@@ -203,9 +203,9 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     this_ptr->break_event[0] = '\0';
   }
   cVar1 = this_ptr->break_event[0];
-  (this_ptr->base).unk7 = 0;
+  (this_ptr->base).unk7 = 0.0;
   if (cVar1 == '\0') {
-    (this_ptr->base).unk7 = 1;
+    (this_ptr->base).unk7 = 1.4013e-45;
   }
   this_ptr->unk4 = 0;
   if (this_ptr->background_flag != 0) {

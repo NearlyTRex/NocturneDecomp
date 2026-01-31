@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042f8a0
+;   core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005c68a6
     PUSH ESI                            ; 005c68aa
     PUSH EBX                            ; 005c68ab
-    CALL core_charactr.cpp_CCharacter_FUN_0042f8a0 ; 005c68ac
-        ;   XREF to: 0042f8a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042f8a0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0 ; 005c68ac
+        ;   XREF to: 0042f8a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0(CCharacter * this_ptr, CDemonActor * deleted_actor)
     MOV EDX,dword ptr [EBX + 0x1fc00]   ; 005c68b1
     ADD ESP,0x8                         ; 005c68b7
     CMP ESI,EDX                         ; 005c68ba

@@ -28,7 +28,7 @@ int __cdecl core_scat_cpp_FUN_00557df0(void)
         case 8:
         }
       }
-      fVar3 = core_charactr_cpp_CCharacter_FUN_0042e840();
+      fVar3 = core_charactr_cpp_CCharacter_FUN_0042e840(in_stack_00000004);
       if ((float)0.94999999999999996 < fVar3) {
         (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x154) + 0x104))
                   ();

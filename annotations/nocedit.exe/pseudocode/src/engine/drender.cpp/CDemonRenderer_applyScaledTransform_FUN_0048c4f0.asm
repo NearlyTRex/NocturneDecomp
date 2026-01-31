@@ -14,9 +14,9 @@
 ;
 ; XREF[62]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 at 00408b28
-;   core_anvil.cpp_CAnvil_FUN_00411ec0 at 00411efa
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411efa
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413baf
-;   core_battery.cpp_FUN_00417f80 at 00417fa9
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417fa9
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 at 00419576
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421e70
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421f3d

@@ -13,18 +13,18 @@ void __cdecl core_tvbat_cpp_FUN_005e5130(void)
 
 {
   float fVar1;
-  int in_stack_00000004;
-  int in_stack_00000008;
+  CEnemy *in_stack_00000004;
+  SDamageInfo *in_stack_00000008;
   
-  fVar1 = *(float *)(in_stack_00000004 + 0x243c) - *(float *)(in_stack_00000008 + 4);
-  *(float *)(in_stack_00000004 + 0x243c) = fVar1;
+  fVar1 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  (in_stack_00000004->base).hit_points = (int)fVar1;
   if (0.0 < fVar1) {
-    core_enemy_cpp_FUN_004a9f10();
+    core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(in_stack_00000004,in_stack_00000008);
     return;
   }
-  *(uint *)(in_stack_00000004 + 0x243c) = 0;
+  (in_stack_00000004->base).hit_points = 0;
   core_gore_cpp_FUN_004edbb0();
-  *(uint *)(in_stack_00000004 + 0xc078) = 1;
-  core_enemy_cpp_FUN_004a9f10();
+  in_stack_00000004[1].base.model.transformed_vertices[1].z = 1.4013e-45;
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(in_stack_00000004,in_stack_00000008);
   return;
 }

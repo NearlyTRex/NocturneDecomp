@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   model_filename
 ;
 ; XREF[2]:
-;   core_baron.cpp_CBaronWeapon_FUN_00413da0 at 00413db2
+;   core_baron.cpp_CBaronWeapon_setup_FUN_00413da0 at 00413db2
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450 at 005a045a
 ;
 ; Referenced Globals:

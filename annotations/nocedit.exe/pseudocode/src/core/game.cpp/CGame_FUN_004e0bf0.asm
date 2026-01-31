@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_FUN_00429870 at 0042994a
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c4ea
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c4ea
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e6b6d
 ;
 ; Called Functions:

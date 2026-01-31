@@ -12,7 +12,7 @@ core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0
 
 {
   CDemonActor *pCVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   
   if (actor_ptr == (CDemonActor *)0x0) {
     return;
@@ -29,8 +29,8 @@ core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0
     if (pCVar1 == actor_ptr) break;
     pCVar1 = pCVar1->next_actor;
   }
-  iVar2 = actor_ptr->unk15;
-  if (iVar2 == 0) {
+  pCVar1 = actor_ptr->prev_actor;
+  if (pCVar1 == (CDemonActor *)0x0) {
     pCVar1 = actor_ptr->next_actor;
     if (pCVar1 == (CDemonActor *)0x0) {
       this_ptr->first_actor = (CDemonActor *)0x0;
@@ -41,21 +41,21 @@ core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0
     }
     else {
       this_ptr->first_actor = pCVar1;
-      pCVar1->unk15 = 0;
+      pCVar1->prev_actor = (CDemonActor *)0x0;
     }
   }
   else {
-    pCVar1 = actor_ptr->next_actor;
-    if (pCVar1 == (CDemonActor *)0x0) {
-      *(int *)this_ptr->unk4 = iVar2;
-      *(uint *)(iVar2 + 0x14c) = 0;
+    pCVar2 = actor_ptr->next_actor;
+    if (pCVar2 == (CDemonActor *)0x0) {
+      *(CDemonActor **)this_ptr->unk4 = pCVar1;
+      pCVar1->next_actor = (CDemonActor *)0x0;
     }
     else {
-      *(CDemonActor **)(iVar2 + 0x14c) = pCVar1;
-      pCVar1->unk15 = actor_ptr->unk15;
+      pCVar1->next_actor = pCVar2;
+      pCVar2->prev_actor = actor_ptr->prev_actor;
     }
   }
   actor_ptr->next_actor = (CDemonActor *)0x0;
-  actor_ptr->unk15 = 0;
+  actor_ptr->prev_actor = (CDemonActor *)0x0;
   return;
 }

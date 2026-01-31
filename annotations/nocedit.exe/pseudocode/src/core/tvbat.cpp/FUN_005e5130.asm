@@ -9,7 +9,7 @@
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
-;   core_enemy.cpp_FUN_004a9f10
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_gore.cpp_FUN_004edbb0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e5151
     PUSH ECX                            ; 005e5155
     PUSH EBX                            ; 005e5156
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005e5157
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005e5157
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005e515c
     POP EBX                             ; 005e515f
     RET                                 ; 005e5160
@@ -53,8 +53,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e518e
     PUSH ECX                            ; 005e5192
     PUSH EBX                            ; 005e5193
-    CALL core_enemy.cpp_FUN_004a9f10    ; 005e5194
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a9f10()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 ; 005e5194
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005e5199
     POP EBX                             ; 005e519c
     RET                                 ; 005e519d

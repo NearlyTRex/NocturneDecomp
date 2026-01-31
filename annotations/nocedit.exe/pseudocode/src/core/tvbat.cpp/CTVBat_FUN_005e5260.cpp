@@ -27,10 +27,10 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr)
     }
   }
   this_ptr_00 = g_CKeysPtr;
-  (this_ptr->base).base.hit_points = 10.0;
+  (this_ptr->base).base.hit_points = 0x41200000;
   iVar2 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,0x1d);
   if (iVar2 == 0) {
-    core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800((CCharacter *)this_ptr);
     return;
   }
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);

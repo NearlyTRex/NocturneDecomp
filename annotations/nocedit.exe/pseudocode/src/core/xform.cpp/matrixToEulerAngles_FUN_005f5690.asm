@@ -31,7 +31,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[26]:
-;   core_bodypart.cpp_FUN_0041a630 at 0041a9eb
+;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a9eb
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c34
 ;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a4b6
 ;   core_charactr.cpp_CCharacter_FUN_0042bd30 at 0042beb6
@@ -40,7 +40,7 @@
 ;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 at 004bf99b
 ;   core_gabriela.cpp_CGabriella_FUN_004d7120 at 004d743f
 ;   core_gabriela.cpp_FUN_004d5550 at 004d5790
-;   core_ladder.cpp_FUN_00502a70 at 00502b43
+;   core_ladder.cpp_CLadder_FUN_00502a70 at 00502b43
 ;   ... and 16 more
 ;
 ; Referenced Globals:

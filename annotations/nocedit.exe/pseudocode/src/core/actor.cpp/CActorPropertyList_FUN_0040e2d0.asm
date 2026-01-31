@@ -8,15 +8,15 @@
 ;
 ; XREF[16]:
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411ba5
-;   core_bat.cpp_CBat_FUN_00414dc0 at 00414e83
+;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414e83
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422766
 ;   core_chain.cpp_CChain_FUN_00431120 at 0043122e
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481403
 ;   core_drip.cpp_FUN_0048e930 at 0048e9e9
 ;   core_emitter.cpp_FUN_004a8db0 at 004a8f6e
 ;   core_grave.cpp_FUN_004ee9e0 at 004eea60
-;   core_hostage.cpp_FUN_004f69c0 at 004f6b23
-;   core_lever.cpp_FUN_00505240 at 005052d2
+;   core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0 at 004f6b23
+;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 005052d2
 ;   ... and 6 more
 ;
 ; Called Functions:

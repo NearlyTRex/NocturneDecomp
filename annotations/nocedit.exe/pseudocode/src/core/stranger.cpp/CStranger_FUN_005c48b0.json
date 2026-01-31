@@ -4,14 +4,20 @@
       {
         "category": "other",
         "column": 6,
-        "line": 65,
+        "line": 57,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 101,
+        "line": 93,
         "message": "void value not ignored as it ought to be"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 106,
+        "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
@@ -21,14 +27,8 @@
       },
       {
         "category": "other",
-        "column": 6,
-        "line": 122,
-        "message": "'void*' is not a pointer-to-object type"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 144,
+        "line": 133,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -42,127 +42,48 @@
       },
       {
         "category": "other",
-        "column": 6,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
+        "column": 76,
         "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 42,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 68,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 65,
-        "line": 55,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 59,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 74,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 99,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 101,
+        "column": 54,
+        "line": 93,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 125,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 126,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 131,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 144,
+        "column": 48,
+        "line": 133,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 148,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 852,
+    "complexity_score": 287,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 16,
-    "pseudocode_lines": 142,
-    "suspect_count": 70,
+    "pseudocode_lines": 132,
+    "suspect_count": 15,
     "suspect_types": [
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 441
+    "total_lines": 431
   },
   "cross_references": [],
   "function": {
@@ -180,7 +101,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_FUN_005c48b0",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(void)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -206,7 +127,7 @@
     {
       "addr": "0042c3c0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
     },
     {
       "addr": "004e0bd0",
@@ -221,7 +142,7 @@
     {
       "addr": "004f3580",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004f3580"
+      "name": "core_hero.cpp_CHero_FUN_004f3580"
     },
     {
       "addr": "00501570",
@@ -356,8 +277,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.491379310344827,
@@ -398,10 +319,10 @@
     "pcode_op_count": 1274
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -417,498 +338,120 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "uint param_2) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "CCharacter *in_stack_00000004;",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "SDamageInfo *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < (float)(this_ptr->base).unk1) && (0xb < in_stack_00000008->damage_type)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "if ((0.0 < *(float *)in_stack_00000004[1].base.actor_name) &&",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
-      "text": "(0xb < *(int *)(in_stack_00000008 + 0x30))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "*(float *)in_stack_00000004[1].base.actor_name = 2.0f;",
+      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008->wielder,\"CBugs\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
-      "text": "(*(CDemonActor **)(in_stack_00000008 + 0x38),\"CBugs\");",
+      "text": "(int)((float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base.actor_name[0] = -0x66;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base.actor_name[1] = -0x67;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base.actor_name[2] = '\\x19';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base.actor_name[3] = '>';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
       "match": "in_stack_00000008",
-      "text": "in_stack_00000004->hit_points = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "if (((pCVar2->auto_use_health != 0) && (0xb < in_stack_00000008->damage_type)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 59,
       "match": "in_stack_00000008",
-      "text": "if (((pCVar2->auto_use_health != 0) && (0xb < *(int *)(in_stack_00000008 + 0x30))) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->hit_points <= 0.0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->hit_points = 0.0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "((CInventory *)(in_stack_00000004[2].cloth_data + 0x5058));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "(g_CConsolePtr,\"hit points: %3.2f\\n\",(double)in_stack_00000004->hit_points);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = &in_stack_00000004->model;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004->hit_points <= 0.0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "pCVar1 = (in_stack_00000004->base).vtable._uc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->hit_points = 0.0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004[2].cloth_data + 0x5548) == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000008",
-      "text": "if (*(int *)(in_stack_00000008 + 0x30) == 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x54cc] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x54cd] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x54ce] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x54cf] = '\\0';",
+      "text": "if (in_stack_00000008->damage_type == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 84,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x5548] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x5549] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554a] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554b] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000004",
-      "text": "(&(in_stack_00000004->model).motion_controller,desired_state_index,iVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000004",
-      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5788));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
       "match": "in_stack_00000008",
-      "text": "if (*(int *)(in_stack_00000008 + 0x30) != 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000004",
-      "text": "uVar5 = (*((in_stack_00000004->base).vtable._ub)->playSound)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,\"stranger_die??.wav\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[2].cloth_data + 0x5788) = uVar5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000004",
-      "text": "core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 100,
-      "match": "in_stack_00000004",
-      "text": "if (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c) ==",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->carry_hands[0].carry_actor) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554c] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554d] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554e] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554f] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000004",
-      "text": "(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004->carry_hands[1].carry_actor ==",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000004",
-      "text": "*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c)) {",
+      "text": "if (in_stack_00000008->damage_type != 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 110,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554c] = '\\0';",
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008->damage_amount <= 0.0) goto LAB_005c4ae0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 111,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554d] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554e] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].cloth_data[0x554f] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 115,
-      "match": "in_stack_00000004",
-      "text": "(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc21)();",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
       "match": "in_stack_00000008",
-      "text": "if (*(float *)(in_stack_00000008 + 4) <= 0.0) goto LAB_005c4ae0;",
+      "text": "if (((in_stack_00000008->damage_type != 0x69) && (*(int *)((this_ptr->base).unk4 + 0x10) == 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 114,
       "match": "in_stack_00000008",
-      "text": "if (((*(int *)(in_stack_00000008 + 0x30) != 0x69) &&",
+      "text": "(in_stack_00000008->attacker,g_CTommyGunClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_00000004",
-      "text": "((*(int *)(in_stack_00000004[2].cloth_data + 0x5548) == 0 &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004[2].cloth_data + 0x5558) == 0)))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 124,
+      "line": 130,
       "match": "in_stack_00000008",
-      "text": "(*(CDemonActor **)(in_stack_00000008 + 0x34),g_CTommyGunClassInfo.name_hash);",
+      "text": "if (0.0 < in_stack_00000008->damage_amount) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_00000004",
-      "text": "(*(uint *)(in_stack_00000004[2].cloth_data + 0x5788));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000004",
-      "text": "uVar5 = (*((in_stack_00000004->base).vtable._ub)->playSound)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base,\"stranger_hit??.wav\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[2].cloth_data + 0x5788) = uVar5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 133,
       "match": "in_stack_00000008",
-      "text": "if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 144,
-      "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
+      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

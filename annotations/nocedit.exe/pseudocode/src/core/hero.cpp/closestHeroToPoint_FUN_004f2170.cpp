@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_hero_hero.cpp_closestHeroToPoint(uint param_1) */
-
 int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
 
 {

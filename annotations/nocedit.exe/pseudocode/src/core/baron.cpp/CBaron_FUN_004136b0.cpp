@@ -27,7 +27,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   CVector3f CStack_20;
   float local_14;
   
-  this_ptr_00 = (CCharacter *)core_hero_cpp_FUN_004f3960();
+  this_ptr_00 = (CCharacter *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
   if (this_ptr_00 == (CCharacter *)0x0) {
     return;
   }

@@ -16,7 +16,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   float fVar5;
   int iVar6;
   char *pcVar7;
-  int *piVar8;
+  char *pcVar8;
   
   pCVar4 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
   (pCVar4->base).base.vtable._ub = &g_CEnemyVTable;
@@ -61,18 +61,18 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   pcVar7 = "ene";
   (pCVar4->base).base.scale.y = iVar6 + 0x10000;
   iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
-  piVar8 = &(pCVar4->base).base.unk10;
+  pcVar8 = (pCVar4->base).base.footstep_sound_code;
   (pCVar4->base).base.scale.z = iVar6 + 0x10000;
   do {
     cVar2 = *pcVar7;
-    *(char *)piVar8 = cVar2;
+    *pcVar8 = cVar2;
     if (cVar2 == '\0') {
       return pCVar4;
     }
     cVar2 = pcVar7[1];
     pcVar7 = pcVar7 + 2;
-    *(char *)((int)piVar8 + 1) = cVar2;
-    piVar8 = (int *)((int)piVar8 + 2);
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
   } while (cVar2 != '\0');
   return pCVar4;
 }

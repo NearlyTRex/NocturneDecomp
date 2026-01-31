@@ -32,7 +32,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005c5190
     MOV EDI,EBX                         ; 005c5194
     CALL core_stranger.cpp_CStranger_FUN_005c07b0 ; 005c5196
-        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; float * core_stranger.cpp_CStranger_FUN_005c07b0()
+        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; float * core_stranger.cpp_CStranger_FUN_005c07b0(CStranger * this_ptr)
     MOV ECX,0xc                         ; 005c519b
     LEA ESI,[ESP + 0xc]                 ; 005c51a0
     ADD ESP,0xc                         ; 005c51a4

@@ -59,9 +59,9 @@ void __cdecl FUN_004e87e0(void);
 // Address: 004e8bc0
 int __cdecl FUN_004e8bc0(void);
 
-// Original: core_ghoul.cpp_FUN_004e8dc0
+// Original: core_ghoul.cpp_CGhoul_getPropertyList_FUN_004e8dc0
 // Address: 004e8dc0
-void __cdecl FUN_004e8dc0(void);
+void __cdecl CGhoul::getPropertyList(CGhoul *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_ghoul.cpp_FUN_004e8e40
 // Address: 004e8e40

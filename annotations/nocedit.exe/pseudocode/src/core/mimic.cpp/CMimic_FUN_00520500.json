@@ -1,0 +1,201 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 24,
+        "line": 39,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 53,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 6,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [
+    {
+      "addr": "0051f780",
+      "from_addr": "0051f8db",
+      "name": "core_mimic.cpp_CMimic_process_FUN_0051f780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00520500",
+    "address_range": [
+      [
+        "00520500",
+        "005205e8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_FUN_00520500",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00439710",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_00439710"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052ddb0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006387b3",
+      "name": "s_s_attacking_hero_006387b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02d7b8d0",
+      "name": "g_CGabriellaClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.352112676056338,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 78,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 32,
+      "INT_AND": 53,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 17,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 380
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

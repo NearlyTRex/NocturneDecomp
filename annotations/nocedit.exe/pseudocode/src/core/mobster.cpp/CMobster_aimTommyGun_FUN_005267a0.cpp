@@ -47,7 +47,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   }
   else {
     if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
-      iVar2 = core_enemy_cpp_FUN_004a9a50(in_stack_00000004);
+      iVar2 = core_enemy_cpp_CEnemy_FUN_004a9a50(in_stack_00000004);
       if ((iVar2 == 0) && (in_stack_00000004[1].base.base.orient.bank == 0.0)) {
         pCVar1 = &in_stack_00000004[1].base;
         (pCVar1->base).create_event[0x60] = '\0';

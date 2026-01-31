@@ -8,13 +8,13 @@
 ;
 ; XREF[34]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d2e5
-;   core_anvil.cpp_CAnvil_FUN_00412030 at 00412068
-;   core_armour.cpp_CArmour_SnagRelatedMultiple_FUN_00412470 at 004124b8
-;   core_baron.cpp_CBaron_FUN_00414010 at 00414046
-;   core_batman.cpp_CBatman_FUN_00417cd0 at 00417d18
-;   core_biggs.cpp_snag_FUN_00418c80 at 00418cc8
-;   core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990 at 0041d9ef
-;   core_bugs.cpp_CBugs_FUN_004277e0 at 00427886
+;   core_anvil.cpp_CAnvil_getPropertyList_FUN_00412030 at 00412068
+;   core_armour.cpp_CArmour_getPropertyList_FUN_00412470 at 004124b8
+;   core_baron.cpp_CBaron_getPropertyList_FUN_00414010 at 00414046
+;   core_batman.cpp_CBatman_getPropertyList_FUN_00417cd0 at 00417d18
+;   core_biggs.cpp_CBiggs_getPropertyList_FUN_00418c80 at 00418cc8
+;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9ef
+;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427886
 ;   core_conveyor.cpp_FUN_00442130 at 00442166
 ;   core_curtain.cpp_FUN_0044b610 at 0044b767
 ;   ... and 24 more

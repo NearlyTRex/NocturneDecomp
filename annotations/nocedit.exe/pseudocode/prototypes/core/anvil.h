@@ -19,37 +19,37 @@ CDemonActorType * __cdecl CAnvil::getActorType(CAnvil *this_ptr);
 // Address: 00411ce0
 CAnvil * __cdecl CAnvil::ctor(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00411d70
+// Original: core_anvil.cpp_CAnvil_setup_FUN_00411d70
 // Address: 00411d70
-void __cdecl CAnvil(CAnvil *this_ptr);
+void __cdecl CAnvil::setup(CAnvil *this_ptr);
 
 // Original: core_anvil.cpp_CAnvil_process_FUN_00411d90
 // Address: 00411d90
 void __cdecl CAnvil::process(CAnvil *this_ptr,float delta_time);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00411ec0
+// Original: core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0
 // Address: 00411ec0
-int __cdecl CAnvil(CAnvil *this_ptr);
+int __cdecl CAnvil::renderOpaque(CAnvil *this_ptr);
 
 // Original: core_anvil.cpp_CAnvil_serialize_FUN_00411f50
 // Address: 00411f50
 void __cdecl CAnvil::serialize(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00411fd0
+// Original: core_anvil.cpp_CAnvil_hasCollision_FUN_00411fd0
 // Address: 00411fd0
-int __cdecl CAnvil(CAnvil *this_ptr);
+int __cdecl CAnvil::hasCollision(CAnvil *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00411fe0
+// Original: core_anvil.cpp_CAnvil_getBoundingBox_FUN_00411fe0
 // Address: 00411fe0
-int * __cdecl CAnvil(CAnvil *this_ptr);
+CBoundingBox3D * __cdecl CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00412030
+// Original: core_anvil.cpp_CAnvil_getPropertyList_FUN_00412030
 // Address: 00412030
-void __cdecl CAnvil(CAnvil *this_ptr);
+void __cdecl CAnvil::getPropertyList(CAnvil *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_anvil.cpp_CAnvil_FUN_00412090
+// Original: core_anvil.cpp_CAnvil_writeDependencies_FUN_00412090
 // Address: 00412090
-void __cdecl CAnvil(CAnvil *this_ptr);
+void __cdecl CAnvil::writeDependencies(CAnvil *this_ptr,_FILE *file_handle);
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_004120e0
 // Address: 004120e0

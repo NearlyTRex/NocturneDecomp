@@ -91,7 +91,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   *(uint *)(this_ptr->base).base.carry_hands[1].unk1 = *(uint *)(this_ptr->unk2 + 0xc);
   *(uint *)((this_ptr->base).base.carry_hands[1].unk1 + 4) =
        *(uint *)(this_ptr->unk2 + 0x3c);
-  core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base);
+  core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = (uint)(this_ptr->is_miner_zombie != 0);
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   *(float *)(this_ptr->unk2 + 0x5c) = fVar3;

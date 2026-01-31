@@ -44,7 +44,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   }
   iVar4 = (*(((this_ptr->base).base.vtable._uc)->_uc).isDamageable)(&this_ptr->base);
   if ((((1 < iVar4) && ((this_ptr->base).base.was_created == 1)) && (this_ptr->pool_me == 0)) &&
-     ((this_ptr->base).base.unk2 == 0)) {
+     ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                    (pCVar1,&CStack_44,0);

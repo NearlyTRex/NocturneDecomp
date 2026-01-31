@@ -25,9 +25,9 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c8313
 ;   core_gabriela.cpp_FUN_004d4190 at 004d4651
 ;   core_gabriela.cpp_FUN_004d6260 at 004d64c4
-;   core_gun.cpp_FUN_004f0350 at 004f050e
-;   core_lightgun.cpp_FUN_00505b70 at 00505c07
-;   core_lightgun.cpp_FUN_00505c70 at 0050606b
+;   core_gun.cpp_CGun_FUN_004f0350 at 004f050e
+;   core_lightgun.cpp_CLightGun_FUN_00505b70 at 00505c07
+;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 0050606b
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e7d1
 ;   core_scat.cpp_FUN_00558cf0 at 00558f54
 ;   ... and 5 more

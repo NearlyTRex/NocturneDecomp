@@ -1,0 +1,223 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 31,
+        "message": "cast from 'CBoneGuy*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 34,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 35,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 35,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 38,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 41,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 53,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 80,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 45,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [
+    {
+      "addr": "0041bf90",
+      "from_addr": "0041c054",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041d8a0",
+    "address_range": [
+      [
+        "0041d8a0",
+        "0041d96d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_FUN_0041d8a0",
+    "signature": "void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d8a0(CBoneGuy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f7b20",
+      "is_variadic": false,
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616358",
+      "name": "s_boneguy_comeback_wav_00616358",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.82258064516129,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 62,
+      "INT_ADD": 46,
+      "INT_AND": 27,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 26,
+      "INT_LESS": 3,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 13,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 24,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 299
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)pCVar2 + (uint)bVar7 * -8 + 0xbf58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)&local_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)",
+      "text": "*puVar5 = *(uint *)((int)&local_24 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

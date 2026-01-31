@@ -95,7 +95,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_batman.cpp_FUN_004167f0
+;   core_batman.cpp_CBatman_FUN_004167f0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
@@ -584,8 +584,8 @@ section .text
     MOV dword ptr [EBX + 0xbf5c],0x0    ; 00416daf
     PUSH EBX                            ; 00416db9
     MOV dword ptr [EBX + 0xbf58],0x0    ; 00416dba
-    CALL core_batman.cpp_FUN_004167f0   ; 00416dc4
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_FUN_004167f0()
+    CALL core_batman.cpp_CBatman_FUN_004167f0 ; 00416dc4
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_004167f0(CBatman * this_ptr)
     ADD ESP,0x4                         ; 00416dc9
     JMP 0x00416970                      ; 00416dcc
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
@@ -760,8 +760,8 @@ section .text
     ADD ESP,0xc                         ; 00416fb1
     PUSH EAX                            ; 00416fb4
     PUSH EBX                            ; 00416fb5
-    CALL core_enemy.cpp_FUN_004a9880    ; 00416fb6
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9880()
+    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00416fb6
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
     ADD ESP,0x10                        ; 00416fbb
     JMP 0x00416970                      ; 00416fbe
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
@@ -855,8 +855,8 @@ section .text
     ADD ESP,0xc                         ; 004170a9
     PUSH EBX                            ; 004170ac
         ;   Label: LAB_004170ac
-    CALL core_batman.cpp_FUN_004167f0   ; 004170ad
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_FUN_004167f0()
+    CALL core_batman.cpp_CBatman_FUN_004167f0 ; 004170ad
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_004167f0(CBatman * this_ptr)
     ADD ESP,0x4                         ; 004170b2
     JMP 0x00416970                      ; 004170b5
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default

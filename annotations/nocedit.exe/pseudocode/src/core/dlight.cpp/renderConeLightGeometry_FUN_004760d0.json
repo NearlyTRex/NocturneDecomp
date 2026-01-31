@@ -13,25 +13,24 @@
   },
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 571,
+    "complexity_score": 545,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 11,
-    "pseudocode_lines": 161,
-    "suspect_count": 39,
+    "pseudocode_lines": 160,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float",
-      "unknown_type",
-      "unnamed_param"
+      "unknown_type"
     ],
-    "total_lines": 502
+    "total_lines": 501
   },
   "cross_references": [
     {
       "addr": "00506c20",
       "from_addr": "00506c96",
-      "name": "core_litecone.cpp_FUN_00506c20",
+      "name": "core_litecone.cpp_CLightCone_renderTransparent_FUN_00506c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,7 +57,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dlight.cpp_renderConeLightGeometry_FUN_004760d0",
-    "signature": "void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float param_3,float max_distance)"
+    "signature": "void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float fov,float falloff)"
   },
   "function_calls": [
     {
@@ -490,14 +489,14 @@
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "fov",
         "offset": 12,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
-        "name": "max_distance",
+        "name": "falloff",
         "offset": 16,
         "size": 4,
         "type": "float"
@@ -523,25 +522,11 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "text": "(CVector3f *position,CVector3i *rotation,float param_3,float max_distance)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/unresolved type",
       "line": 16,
       "match": "unkbyte10",
       "text": "unkbyte10 Var10;",
       "type": "unknown_type"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "text": "local_c0.base.count = (int)param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -587,210 +572,210 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 90,
       "match": "ROUND",
       "text": "local_38 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 92,
       "match": "ROUND",
       "text": "local_40 = (float)(int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 93,
       "match": "ROUND",
       "text": "local_8c.z = (int)ROUND(local_90 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 94,
       "match": "ROUND",
       "text": "local_80.x = (int)ROUND((float)local_8c.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
       "text": "local_80.y = (int)ROUND((float)local_8c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 101,
       "match": "ROUND",
       "text": "local_80.x = (int)ROUND(local_98 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 102,
       "match": "ROUND",
       "text": "local_80.y = (int)ROUND(local_94 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 103,
       "match": "ROUND",
       "text": "local_80.z = (int)ROUND(fStack_48 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 109,
       "match": "ROUND",
       "text": "local_74.x = (int)ROUND(local_98 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 110,
       "match": "ROUND",
       "text": "local_74.y = (int)ROUND(local_94 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 111,
       "match": "ROUND",
       "text": "local_74.z = (int)ROUND(local_24 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 117,
       "match": "ROUND",
       "text": "local_68[0].x = (int)ROUND(local_98 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 118,
       "match": "ROUND",
       "text": "local_68[0].y = (int)ROUND(local_94 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 119,
       "match": "ROUND",
       "text": "local_68[0].z = (int)ROUND(local_24 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 125,
+      "line": 124,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr->fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 127,
+      "line": 126,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr->light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 128,
+      "line": 127,
       "match": "2.2775203e-38",
       "text": "pCVar3->vertex_buffer_ptr->u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 129,
+      "line": 128,
       "match": "2.2775203e-38",
       "text": "pCVar3->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 131,
+      "line": 130,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 133,
+      "line": 132,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 134,
+      "line": 133,
       "match": "7.34684e-40",
       "text": "pCVar3->vertex_buffer_ptr[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 135,
+      "line": 134,
       "match": "2.2775203e-38",
       "text": "pCVar3->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 137,
+      "line": 136,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 139,
+      "line": 138,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 140,
+      "line": 139,
       "match": "7.34684e-40",
       "text": "pCVar3->vertex_buffer_ptr[2].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 141,
+      "line": 140,
       "match": "7.34684e-40",
       "text": "pCVar3->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 143,
+      "line": 142,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[3].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 144,
       "match": "9.18341e-41",
       "text": "pCVar3->vertex_buffer_ptr[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 146,
+      "line": 145,
       "match": "2.2775203e-38",
       "text": "pCVar3->vertex_buffer_ptr[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 147,
+      "line": 146,
       "match": "7.34684e-40",
       "text": "pCVar3->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"

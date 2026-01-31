@@ -39,9 +39,9 @@ void __cdecl FUN_0048f360(void);
 // Address: 0048f4d0
 int __cdecl FUN_0048f4d0(void);
 
-// Original: core_drone.cpp_FUN_0048f520
+// Original: core_drone.cpp_CDrone_getPropertyList_FUN_0048f520
 // Address: 0048f520
-void __cdecl FUN_0048f520(void);
+void __cdecl CDrone::getPropertyList(CDrone *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_drone.cpp_FUN_0048f560
 // Address: 0048f560

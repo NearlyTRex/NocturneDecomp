@@ -9,7 +9,7 @@
 ;
 ; XREF[17]:
 ;   core_barrier.cpp_CBarrier_FUN_00414610 at 0041461c
-;   core_bat.cpp_CBat_FUN_00414fb0 at 00414fbb
+;   core_bat.cpp_CBat_showEditorHelp_FUN_00414fb0 at 00414fbb
 ;   core_curtain.cpp_FUN_0044b8d0 at 0044b8dd
 ;   core_emitter.cpp_FUN_004a9350 at 004a935d
 ;   core_flame.cpp_FUN_004cb0a0 at 004cb0ad
@@ -17,7 +17,7 @@
 ;   core_frankgen.cpp_FUN_004d2740 at 004d274b
 ;   core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600 at 004eb60d
 ;   core_grave.cpp_FUN_004eead0 at 004eeadd
-;   core_ladder.cpp_CLadder_FUN_00502e50 at 00502e5d
+;   core_ladder.cpp_CLadder_showEditorHelp_FUN_00502e50 at 00502e5d
 ;   ... and 7 more
 ;
 ; Referenced Globals:

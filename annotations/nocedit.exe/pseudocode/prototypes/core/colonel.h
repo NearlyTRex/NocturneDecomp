@@ -23,9 +23,9 @@ CColonel * __cdecl CColonel::ctor(CColonel *this_ptr);
 // Address: 0043f850
 void __cdecl FUN_0043f850(void);
 
-// Original: core_colonel.cpp_FUN_0043fa00
+// Original: core_colonel.cpp_CColonel_FUN_0043fa00
 // Address: 0043fa00
-void __cdecl FUN_0043fa00(void);
+void __cdecl CColonel(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_FUN_0043ff20
 // Address: 0043ff20

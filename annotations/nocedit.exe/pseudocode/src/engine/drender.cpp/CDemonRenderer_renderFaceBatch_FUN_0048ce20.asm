@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_00419340 at 004193fd
+;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 004193fd
 ;   core_set.cpp_FUN_00570700 at 00570742
 ;
 ; Called Functions:

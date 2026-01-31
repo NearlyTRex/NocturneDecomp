@@ -1,0 +1,521 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 54,
+        "line": 30,
+        "message": "invalid conversion from 'void*' to 'CBodyPart*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 36,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 38,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 70,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 71,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 72,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 120,
+    "complexity_score": 389,
+    "cross_reference_count": 14,
+    "function_call_count": 7,
+    "global_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 31,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param"
+    ],
+    "total_lines": 189
+  },
+  "cross_references": [
+    {
+      "addr": "00415dd0",
+      "from_addr": "00415f25",
+      "name": "core_batcreat.cpp_CBatCreature_FUN_00415dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00417660",
+      "from_addr": "00417732",
+      "name": "core_batman.cpp_CBatman_FUN_00417660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424600",
+      "from_addr": "004246c2",
+      "name": "core_bride.cpp_CBride_FUN_00424600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042bcc0",
+      "from_addr": "0042bcfe",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004448c0",
+      "from_addr": "00444969",
+      "name": "core_cow.cpp_FUN_004448c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485b20",
+      "from_addr": "00485b5d",
+      "name": "core_dracbrid.cpp_FUN_00485b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e5530",
+      "from_addr": "004e55f2",
+      "name": "core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8520",
+      "from_addr": "004e85ed",
+      "name": "core_ghoul.cpp_FUN_004e8520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fab60",
+      "from_addr": "004fac32",
+      "name": "core_imp.cpp_CImp_FUN_004fab60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527380",
+      "from_addr": "0052748b",
+      "name": "core_mobster.cpp_FUN_00527380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a810",
+      "from_addr": "0055c8f7",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0fe0",
+      "from_addr": "005a0ffe",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a32a0",
+      "from_addr": "005a338c",
+      "name": "core_smiley.cpp_FUN_005a32a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fc220",
+      "from_addr": "005fc2ed",
+      "name": "core_zombie.cpp_CZombie_FUN_005fc220",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00418e10",
+    "address_range": [
+      [
+        "00418e10",
+        "00418f34"
+      ],
+      [
+        "00418fa2",
+        "00418fca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10",
+    "signature": "CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "00419010",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_ctor_FUN_00419010"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
+    },
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615b7c",
+      "name": "s_core_bodypart_cpp_00615b7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615b91",
+      "name": "s_core_bodypart_cpp_00615b91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615ba6",
+      "name": "s_Can_t_create_body_part_00615ba6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5416666666666665,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 6,
+      "COPY": 80,
+      "INT_ADD": 44,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 26,
+      "LOAD": 24,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 39
+    },
+    "pcode_op_count": 340
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "float *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "uint *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000014",
+      "text": "uint in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000001c",
+      "text": "uint in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "(this_ptr_00->base).location.position.x = *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "(this_ptr_00->base).location.position.y = in_stack_00000004[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "(this_ptr_00->base).location.position.z = in_stack_00000004[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000008",
+      "text": "if (pCVar1 != (COrientation *)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "pCVar1->pitch = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00->base).orient.bank = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00->base).orient.heading = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c == (uint *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "fcos",
+      "text": "fVar4 = (float10)fcos((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "fcos",
+      "text": "fVar5 = (float10)fcos((float10)fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "fsin",
+      "text": "fVar7 = (float10)fsin((float10)fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_0000000c",
+      "text": "else if (this_ptr_00->unk + 0x128 != (char *)in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr_00->unk + 0x128) = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr_00->unk + 300) = in_stack_0000000c[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr_00->unk + 0x130) = in_stack_0000000c[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000010",
+      "text": "if (in_stack_00000010 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr_00->base).scale.x = *(int *)(in_stack_00000010 + 0x108);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr_00->base).scale.y = *(int *)(in_stack_00000010 + 0x10c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr_00->base).scale.z = *(int *)(in_stack_00000010 + 0x110);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(this_ptr_00->unk + 0xb58) = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000018",
+      "text": "(this_ptr_00->base).is_transparent = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000018",
+      "text": "*(int *)(this_ptr_00->unk + 0xb5c) = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_0000001c",
+      "text": "*(uint *)(this_ptr_00->unk + 0xb60) = in_stack_0000001c;",
+      "type": "stack_param"
+    }
+  ]
+}

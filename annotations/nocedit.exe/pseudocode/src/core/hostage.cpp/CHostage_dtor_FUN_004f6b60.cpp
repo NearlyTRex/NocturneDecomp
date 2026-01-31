@@ -26,11 +26,11 @@ core_hostage_cpp_CHostage_dtor_FUN_004f6b60
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base).model_name);
-  iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
+  iVar2 = core_armour_cpp_freeFlames_FUN_00412720
                     ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));
-  iVar2 = core_backgnd_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));
-  iVar2 = core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0x20c));
-  core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
+  iVar2 = core_armour_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));
+  iVar2 = core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar2 + -0x20c));
+  core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
   iVar2 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,

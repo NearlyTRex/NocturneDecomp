@@ -11,49 +11,49 @@ void __cdecl staticInit(void);
 // Address: 004181e0
 CBeast * __cdecl factoryFunc(void);
 
-// Original: core_beast.cpp_FUN_00418210
+// Original: core_beast.cpp_CBeast_getActorType_FUN_00418210
 // Address: 00418210
-CDemonActorType * __cdecl FUN_00418210(void);
+CDemonActorType * __cdecl CBeast::getActorType(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_ctor_FUN_00418220
 // Address: 00418220
 CBeast * __cdecl CBeast::ctor(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_00418280
+// Original: core_beast.cpp_CBeast_setup_FUN_00418280
 // Address: 00418280
-void __cdecl FUN_00418280(void);
+void __cdecl CBeast::setup(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_004182a0
+// Original: core_beast.cpp_CBeast_process_FUN_004182a0
 // Address: 004182a0
-void __cdecl FUN_004182a0(void);
+void __cdecl CBeast::process(CBeast *this_ptr,float delta_time);
 
-// Original: core_beast.cpp_CBeast_load_FUN_00418330
+// Original: core_beast.cpp_CBeast_serialize_FUN_00418330
 // Address: 00418330
-void __cdecl CBeast::load(void);
+void __cdecl CBeast::serialize(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_00418380
+// Original: core_beast.cpp_CBeast_processDamage_FUN_00418380
 // Address: 00418380
-void __cdecl FUN_00418380(void);
+void __cdecl CBeast::processDamage(CBeast *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_beast.cpp_FUN_004183a0
+// Original: core_beast.cpp_CBeast_isDamageable_FUN_004183a0
 // Address: 004183a0
-int __cdecl FUN_004183a0(void);
+int __cdecl CBeast::isDamageable(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_004183b0
+// Original: core_beast.cpp_CBeast_getTargetPoints_FUN_004183b0
 // Address: 004183b0
-int __cdecl FUN_004183b0(void);
+int __cdecl CBeast::getTargetPoints(CBeast *this_ptr,CVector3f *out_points_array);
 
-// Original: core_beast.cpp_FUN_00418400
+// Original: core_beast.cpp_CBeast_hasCollision_FUN_00418400
 // Address: 00418400
-int __cdecl FUN_00418400(void);
+int __cdecl CBeast::hasCollision(CBeast *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_beast.cpp_FUN_00418420
+// Original: core_beast.cpp_CBeast_getPropertyList_FUN_00418420
 // Address: 00418420
-void __cdecl FUN_00418420(void);
+void __cdecl CBeast::getPropertyList(CBeast *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_beast.cpp_FUN_00418460
+// Original: core_beast.cpp_CBeast_writeDependencies_FUN_00418460
 // Address: 00418460
-void __cdecl FUN_00418460(void);
+void __cdecl CBeast::writeDependencies(CBeast *this_ptr,_FILE *file_handle);
 
 // Original: core_beast.cpp_CBeast_dtor_FUN_00418490
 // Address: 00418490

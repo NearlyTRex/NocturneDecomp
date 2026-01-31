@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408dd9
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c8745
-;   core_lightgun.cpp_FUN_00505b70 at 00505b86
-;   core_lightgun.cpp_FUN_00505c70 at 00505f85
+;   core_lightgun.cpp_CLightGun_FUN_00505b70 at 00505b86
+;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00505f85
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_006462fe

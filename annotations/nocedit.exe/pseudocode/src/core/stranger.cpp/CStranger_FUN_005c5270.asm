@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(void)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
 ; undefined1       Stack[-0x54]:1  local_54
@@ -49,7 +51,7 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 ;   core_dynamite.cpp_FUN_0049cf20
 ;   core_dynamite.cpp_FUN_0049cf70
-;   core_hero.cpp_FUN_004f38d0
+;   core_hero.cpp_CHero_FUN_004f38d0
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004ffab0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
 ;   core_mission.cpp_CDemonMission_FUN_00523b70
@@ -220,8 +222,8 @@ section .text
         ;   XREF to: 005c543c (CONDITIONAL_JUMP)  ; LAB_005c543c
     PUSH EAX                            ; 005c5428
     PUSH EBX                            ; 005c5429
-    CALL core_hero.cpp_FUN_004f38d0     ; 005c542a
-        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004f38d0()
+    CALL core_hero.cpp_CHero_FUN_004f38d0 ; 005c542a
+        ;   XREF to: 004f38d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f38d0(CHero * this_ptr)
     ADD ESP,0x8                         ; 005c542f
     MOV dword ptr [EBX + 0x1fc38],0x0   ; 005c5432
     MOV EDX,dword ptr [EBX + 0x1fbb4]   ; 005c543c
@@ -378,7 +380,7 @@ section .text
     PUSH ESI                            ; 005c55d5
     PUSH EBX                            ; 005c55d6
     CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c55d7
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840()
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
     MOV dword ptr [ESP + 0x50],EAX      ; 005c55dc
     FLD float ptr [ESP + 0x50]          ; 005c55e0
     ADD ESP,0x8                         ; 005c55e4
@@ -638,7 +640,7 @@ section .text
     PUSH EAX                            ; 005c5859
     PUSH EBX                            ; 005c585a
     CALL core_stranger.cpp_CStranger_FUN_005c51c0 ; 005c585b
-        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0()
+        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0(CStranger * this_ptr)
     ADD ESP,0x8                         ; 005c5860
     MOV ECX,dword ptr [0x02ceed20]      ; 005c5863 | g_CDynamiteClassInfo.name_hash
     PUSH ECX                            ; 005c5869

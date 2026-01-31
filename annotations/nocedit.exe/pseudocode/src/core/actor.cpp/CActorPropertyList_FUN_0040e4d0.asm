@@ -7,16 +7,16 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[25]:
-;   core_armour.cpp_CArmour_SnagRelatedMultiple_FUN_00412470 at 004124a3
-;   core_batcreat.cpp_CBatCreature_FUN_004162b0 at 004162e2
-;   core_batman.cpp_CBatman_FUN_00417cd0 at 00417d03
-;   core_beast.cpp_FUN_00418420 at 00418452
-;   core_biggs.cpp_snag_FUN_00418c80 at 00418cb3
-;   core_boneguy.cpp_SnagRelated_ModelStateDeath_FUN_0041d990 at 0041d9c3
-;   core_cow.cpp_FUN_00444c50 at 00444c82
+;   core_armour.cpp_CArmour_getPropertyList_FUN_00412470 at 004124a3
+;   core_batcreat.cpp_CBatCreature_getPropertyList_FUN_004162b0 at 004162e2
+;   core_batman.cpp_CBatman_getPropertyList_FUN_00417cd0 at 00417d03
+;   core_beast.cpp_CBeast_getPropertyList_FUN_00418420 at 00418452
+;   core_biggs.cpp_CBiggs_getPropertyList_FUN_00418c80 at 00418cb3
+;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9c3
+;   core_cow.cpp_CZombieCow_getPropertyList_FUN_00444c50 at 00444c82
 ;   core_dog.cpp_CZombieDog_getPropertyList_FUN_0047f920 at 0047f952
 ;   core_dracbrid.cpp_FUN_00486c90 at 00486cd8
-;   core_drone.cpp_FUN_0048f520 at 0048f552
+;   core_drone.cpp_CDrone_getPropertyList_FUN_0048f520 at 0048f552
 ;   ... and 15 more
 ;
 ; Called Functions:

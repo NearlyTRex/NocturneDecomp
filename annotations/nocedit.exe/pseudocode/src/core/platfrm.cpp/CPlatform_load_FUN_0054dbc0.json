@@ -137,7 +137,7 @@
       },
       {
         "category": "other",
-        "column": 43,
+        "column": 50,
         "line": 83,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -778,7 +778,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[3].unk7,\"plotAsBoxInShadow\");",
+      "text": "((int *)&in_stack_00000004[3].unk7,\"plotAsBoxInShadow\");",
       "type": "stack_param"
     },
     {
@@ -827,7 +827,7 @@
       "description": "Unresolved stack parameter",
       "line": 117,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)(&in_stack_00000004[3].unk8 + iVar2 * 0xd),",
+      "text": "((CDemonActor *)(in_stack_00000004[3].footstep_sound_code + iVar2 * 0x34 + -8),",
       "type": "stack_param"
     },
     {

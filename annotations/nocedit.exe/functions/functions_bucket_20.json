@@ -3517,7 +3517,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_backgnd.cpp_freeFlames_FUN_00412720",
+    "name":"core_armour.cpp_freeFlames_FUN_00412720",
     "ret":"int",
     "vars":{
       "params":[
@@ -3669,7 +3669,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaronWeapon_FUN_00413da0",
+    "name":"core_baron.cpp_CBaronWeapon_setup_FUN_00413da0",
     "ret":"void",
     "vars":{
       "params":[
@@ -3737,7 +3737,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaron_FUN_004140a0",
+    "name":"core_baron.cpp_CBaron_hasCollision_FUN_004140a0",
     "ret":"int",
     "vars":{
       "params":[
@@ -3756,6 +3756,22 @@
             ]
           },
           "type":"CBaron*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
         }
       ],
       "ret_storage":{
@@ -3825,7 +3841,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bat.cpp_CBat_FUN_004148a0",
+    "name":"core_bat.cpp_CBat_setup_FUN_004148a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -4047,10 +4063,9 @@
         "start":"004179a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_batman.cpp_FUN_004179a0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_batman.cpp_FUN_004179a0",
+    "name":"core_batman.cpp_CBatman_processDamage_FUN_004179a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -4102,6 +4117,40 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBatman*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
+        }
       ]
     }
   },
@@ -4130,9 +4179,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_battery.cpp_FUN_00417f20",
+    "name":"core_battery.cpp_CBattery_canPickup_FUN_00417f20",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBattery*"
+        },
+        {
+          "name":"picker",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -4198,10 +4281,9 @@
         "start":"004182a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_beast.cpp_FUN_004182a0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_beast.cpp_FUN_004182a0",
+    "name":"core_beast.cpp_CBeast_process_FUN_004182a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -4221,6 +4303,40 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBeast*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
       ]
     }
   },
@@ -4233,12 +4349,29 @@
         "start":"004183a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_beast.cpp_FUN_004183a0()",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_beast.cpp_FUN_004183a0",
+    "name":"core_beast.cpp_CBeast_isDamageable_FUN_004183a0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBeast*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -4260,11 +4393,46 @@
         "start":"00418420"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_beast.cpp_FUN_00418420(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_beast.cpp_FUN_00418420",
-    "ret":"void"
+    "name":"core_beast.cpp_CBeast_getPropertyList_FUN_00418420",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBeast*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"00419fa0",
@@ -4405,10 +4573,9 @@
         "start":"0041d8a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_boneguy.cpp_FUN_0041d8a0(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_boneguy.cpp_FUN_0041d8a0",
+    "name":"core_boneguy.cpp_CBoneGuy_FUN_0041d8a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -4443,6 +4610,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoneGuy*"
         }
       ]
     }
@@ -5022,10 +5207,9 @@
         "start":"00424aa0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_bride.cpp_FUN_00424aa0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bride.cpp_FUN_00424aa0",
+    "name":"core_bride.cpp_CBride_FUN_00424aa0",
     "ret":"CVector3f*",
     "vars":{
       "locals":[
@@ -5108,6 +5292,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBride*"
         }
       ],
       "ret_storage":{
@@ -7128,7 +7330,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042f8a0",
+    "name":"core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0",
     "ret":"void",
     "vars":{
       "params":[
@@ -7147,6 +7349,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"deleted_actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -24684,11 +24902,46 @@
         "start":"0048f520"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_drone.cpp_FUN_0048f520(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_drone.cpp_FUN_0048f520",
-    "ret":"void"
+    "name":"core_drone.cpp_CDrone_getPropertyList_FUN_0048f520",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrone*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"0048f5a0",
@@ -40873,10 +41126,9 @@
         "start":"004f0b20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_weapon_gun.cpp_FUN_004f0b20()",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gun.cpp_FUN_004f0b20",
+    "name":"core_gun.cpp_CGun_FUN_004f0b20",
     "ret":"float",
     "vars":{
       "locals":[
@@ -40911,6 +41163,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGun*"
         }
       ],
       "ret_storage":{
@@ -40948,11 +41218,30 @@
         "start":"004f1ca0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_haystack.cpp_FUN_004f1ca0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_haystack.cpp_FUN_004f1ca0",
-    "ret":"void"
+    "name":"core_haystack.cpp_CHaystack_FUN_004f1ca0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHaystack*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f1f20",
@@ -40985,6 +41274,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*"
+        }
       ]
     }
   },
@@ -40997,12 +41304,45 @@
         "start":"004f1fa0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_health.cpp_FUN_004f1fa0()",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_health.cpp_FUN_004f1fa0",
+    "name":"core_health.cpp_CHealthItem_hasCollision_FUN_004f1fa0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -41024,11 +41364,46 @@
         "start":"004f2020"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_health.cpp_FUN_004f2020(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_health.cpp_FUN_004f2020",
-    "ret":"void"
+    "name":"core_health.cpp_CHealthItem_onPickup_FUN_004f2020",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*"
+        },
+        {
+          "name":"owner",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f2120",
@@ -41053,7 +41428,6 @@
         "start":"004f2220"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_hero.cpp_FUN_004f2220(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_FUN_004f2220",
@@ -41080,7 +41454,6 @@
         "start":"004f22a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_hero.cpp_FUN_004f22a0(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_FUN_004f22a0",
@@ -41217,10 +41590,9 @@
         "start":"004f3120"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_hero.cpp_FUN_004f3120(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_FUN_004f3120",
+    "name":"core_hero.cpp_CHero_FUN_004f3120",
     "ret":"int",
     "vars":{
       "locals":[
@@ -41239,6 +41611,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*"
         }
       ],
       "ret_storage":{
@@ -41298,8 +41688,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHeroPlaceholder_FUN_004f3d20",
-    "ret":"void",
+    "name":"core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20",
+    "ret":"CBoundingBox3D*",
     "vars":{
       "params":[
         {
@@ -41317,8 +41707,34 @@
             ]
           },
           "type":"CHeroPlaceholder*"
+        },
+        {
+          "name":"out_box",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoundingBox3D*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -41332,7 +41748,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3f20",
+    "name":"core_hero.cpp_CHero_getPropertyList_FUN_004f3f20",
     "ret":"void",
     "vars":{
       "params":[
@@ -41351,6 +41767,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
         }
       ]
     }
@@ -41366,7 +41798,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3fa0",
+    "name":"core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0",
     "ret":"void",
     "vars":{
       "params":[
@@ -41385,6 +41817,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -41398,11 +41846,46 @@
         "start":"004f46a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_npc_hiram.cpp_FUN_004f46a0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hiram.cpp_FUN_004f46a0",
-    "ret":"void"
+    "name":"core_hiram.cpp_CHiram_getPropertyList_FUN_004f46a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHiram*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f6120",
@@ -41413,11 +41896,46 @@
         "start":"004f6120"
       }
     ],
-    "cmt":"Signature: undefined1 actors_npc_hostage.cpp_RelatedToScatDazzle(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120",
-    "ret":"void"
+    "name":"core_hostage.cpp_CHostage_renderBackground_FUN_004f6120",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHostage*"
+        },
+        {
+          "name":"layer_flag",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"004f6ca0",
@@ -41472,10 +41990,9 @@
         "start":"004f6f20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_hotdemon.cpp_FUN_004f6f20(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hotdemon.cpp_FUN_004f6f20",
+    "name":"core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -42135,6 +42652,40 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
       ]
     }
   },
@@ -42147,10 +42698,9 @@
         "start":"004f7720"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_hotdemon.cpp_FUN_004f7720(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hotdemon.cpp_FUN_004f7720",
+    "name":"core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720",
     "ret":"void",
     "vars":{
       "locals":[
@@ -42170,6 +42720,40 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
+        }
       ]
     }
   },
@@ -42182,10 +42766,9 @@
         "start":"004f8b20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_icepick.cpp_FUN_004f8b20(CIcePick* param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_FUN_004f8b20",
+    "name":"core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -42413,6 +42996,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CIcePick*"
+        }
       ]
     }
   },
@@ -42425,11 +43026,30 @@
         "start":"004f93a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_icepick.cpp_FUN_004f93a0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_FUN_004f93a0",
-    "ret":"void"
+    "name":"core_icepick.cpp_CIcePick_FUN_004f93a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CIcePick*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f95a0",
@@ -42440,11 +43060,30 @@
         "start":"004f95a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_icepick.cpp_FUN_004f95a0(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_FUN_004f95a0",
-    "ret":"void"
+    "name":"core_icepick.cpp_CIcePick_renderOpaque_FUN_004f95a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CIcePick*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f97a0",
@@ -42455,11 +43094,46 @@
         "start":"004f97a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_icepick.cpp_FUN_004f97a0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_FUN_004f97a0",
-    "ret":"void"
+    "name":"core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CIcePick*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"004f98a0",
@@ -42514,10 +43188,9 @@
         "start":"004fa920"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_imp.cpp_FUN_004fa920(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_imp.cpp_FUN_004fa920",
+    "name":"core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920",
     "ret":"void",
     "vars":{
       "locals":[
@@ -42840,6 +43513,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CImp*"
         }
       ]
     }
@@ -43521,11 +44212,46 @@
         "start":"00501920"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_keyactor.cpp_FUN_00501920(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_keyactor.cpp_FUN_00501920",
-    "ret":"void"
+    "name":"core_keyactor.cpp_CKeyActor_onPickup_FUN_00501920",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyActor*"
+        },
+        {
+          "name":"owner",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ]
+    }
   },
   {
     "addr":"00502320",
@@ -43724,7 +44450,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ladder.cpp_CLadder_FUN_00502ca0",
+    "name":"core_ladder.cpp_CLadder_getPropertyList_FUN_00502ca0",
     "ret":"void",
     "vars":{
       "params":[
@@ -43743,6 +44469,22 @@
             ]
           },
           "type":"CLadder*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
         }
       ]
     }
@@ -43770,10 +44512,9 @@
         "start":"00503020"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_larva.cpp_FUN_00503020(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_larva.cpp_FUN_00503020",
+    "name":"core_larva.cpp_CLarva_setup_FUN_00503020",
     "ret":"void",
     "vars":{
       "locals":[
@@ -43793,6 +44534,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva*"
+        }
       ]
     }
   },
@@ -43805,10 +44564,9 @@
         "start":"00503a20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_larva.cpp_FUN_00503a20(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_larva.cpp_FUN_00503a20",
+    "name":"core_larva.cpp_CLarva_processDamage_FUN_00503a20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -43908,6 +44666,40 @@
           },
           "type":"undefined8"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
+        }
       ]
     }
   },
@@ -43954,11 +44746,30 @@
         "start":"005048a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_lever.cpp_FUN_005048a0(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_FUN_005048a0",
-    "ret":"void"
+    "name":"core_lever.cpp_CLever_setup_FUN_005048a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLever*"
+        }
+      ]
+    }
   },
   {
     "addr":"00504920",
@@ -43969,11 +44780,46 @@
         "start":"00504920"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_lever.cpp_FUN_00504920(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_FUN_00504920",
-    "ret":"void"
+    "name":"core_lever.cpp_CLever_process_FUN_00504920",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLever*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
+    }
   },
   {
     "addr":"00504b20",
@@ -43984,11 +44830,30 @@
         "start":"00504b20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_lever.cpp_FUN_00504b20(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_FUN_00504b20",
-    "ret":"void"
+    "name":"core_lever.cpp_CLever_FUN_00504b20",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLever*"
+        }
+      ]
+    }
   },
   {
     "addr":"005051a0",
@@ -43999,11 +44864,30 @@
         "start":"005051a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_lever.cpp_FUN_005051a0(undefined4 param_1, undefined1 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_FUN_005051a0",
-    "ret":"void"
+    "name":"core_lever.cpp_CLever_FUN_005051a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLever*"
+        }
+      ]
+    }
   },
   {
     "addr":"00505a20",
@@ -44016,9 +44900,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lightgun.cpp_FUN_00505a20",
+    "name":"core_lightgun.cpp_CLightGun_FUN_00505a20",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightGun*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -44056,7 +44958,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_litecone.cpp_FUN_00506c20",
+    "name":"core_litecone.cpp_CLightCone_renderTransparent_FUN_00506c20",
     "ret":"int",
     "vars":{
       "locals":[
@@ -44075,6 +44977,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightCone*"
         }
       ],
       "ret_storage":{
@@ -44098,11 +45018,46 @@
         "start":"00506da0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_litecone.cpp_FUN_00506da0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_litecone.cpp_FUN_00506da0",
-    "ret":"void"
+    "name":"core_litecone.cpp_CLightCone_getPropertyList_FUN_00506da0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightCone*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"005073a0",
@@ -44879,10 +45834,9 @@
         "start":"0050bda0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_marquee.cpp_FUN_0050bda0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_marquee.cpp_FUN_0050bda0",
+    "name":"core_marquee.cpp_CMarquee_process_FUN_0050bda0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -44933,6 +45887,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMarquee*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -45190,11 +46178,30 @@
         "start":"0050e920"
       }
     ],
-    "cmt":"Signature: undefined1 actors_weapon_melee.cpp_CMelee_load(CMelee* pMelee)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_melee.cpp_CMelee_load_FUN_0050e920",
-    "ret":"void"
+    "name":"core_melee.cpp_CMelee_serialize_FUN_0050e920",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*"
+        }
+      ]
+    }
   },
   {
     "addr":"0050eaa0",
@@ -45205,11 +46212,30 @@
         "start":"0050eaa0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_weapon_melee.cpp_FUN_0050eaa0()",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_melee.cpp_FUN_0050eaa0",
-    "ret":"void"
+    "name":"core_melee.cpp_CMelee_FUN_0050eaa0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*"
+        }
+      ]
+    }
   },
   {
     "addr":"0050eea0",
@@ -47420,9 +48446,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_FUN_005208a0",
+    "name":"core_mimic.cpp_CMimic_isDamageable_FUN_005208a0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -47444,7 +48488,6 @@
         "start":"00520ba0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_mimic.cpp_CMimic_processMorph(CMimic* param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_mimic.cpp_CMimic_processMorph_FUN_00520ba0",
@@ -47467,6 +48510,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic*"
+        }
       ]
     }
   },
@@ -47479,11 +48540,46 @@
         "start":"00520da0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_mimic.cpp_FUN_00520da0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_FUN_00520da0",
-    "ret":"void"
+    "name":"core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic*"
+        },
+        {
+          "name":"deleted_actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ]
+    }
   },
   {
     "addr":"00520e20",
@@ -47510,7 +48606,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_minecar.cpp_FUN_00520f20",
+    "name":"core_minecar.cpp_CMineCar_ctor_FUN_00520f20",
     "ret":"CMineCar*",
     "vars":{
       "params":[
@@ -75537,6 +76633,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*"
+        }
       ]
     }
   },
@@ -75635,6 +76749,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*"
+        }
       ]
     }
   },
@@ -75647,7 +76779,6 @@
         "start":"005c4c20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c4c20(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_stranger.cpp_CStranger_FUN_005c4c20",
@@ -76278,6 +77409,24 @@
           },
           "type":"undefined8"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*"
+        }
       ]
     }
   },
@@ -76290,11 +77439,30 @@
         "start":"005c6220"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_stranger.cpp_CStranger_FUN_005c6220(int* param_1)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_stranger.cpp_CStranger_FUN_005c6220",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*"
+        }
+      ]
+    }
   },
   {
     "addr":"005c66a0",
@@ -84018,7 +85186,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_tvbat.cpp_CTVBat_FUN_005e51a0",
+    "name":"core_tvbat.cpp_CTVBat_getPropertyList_FUN_005e51a0",
     "ret":"void",
     "vars":{
       "params":[
@@ -84037,6 +85205,22 @@
             ]
           },
           "type":"CTVBat*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
         }
       ]
     }

@@ -10,13 +10,13 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_pt
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
+  CMarquee *pCVar2;
   CCourse *pCVar3;
   char *pcVar4;
   int *piVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)&pCVar2[1].orient_matrix.m[1].y);
+  pCVar2 = (CMarquee *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)pCVar2->unk3);
   pcVar4 = "menu1.pth";
   pCVar3[-7].frame_list = (CCourseFrameList *)&g_CMarqueeVTable;
   piVar5 = &pCVar3[-7].loop;

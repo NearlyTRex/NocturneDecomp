@@ -11,7 +11,7 @@
 ;
 ; XREF[17]:
 ;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413f92
-;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10 at 00418eca
+;   core_bodypart.cpp_createBodyPart_FUN_00418e10 at 00418eca
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004e0344
 ;   core_game.cpp_FUN_004dd930 at 004dd96d
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870 at 004dd88d

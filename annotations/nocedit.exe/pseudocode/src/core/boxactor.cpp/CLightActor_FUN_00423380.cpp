@@ -18,7 +18,7 @@ int __cdecl core_boxactor_cpp_CLightActor_FUN_00423380(void)
              core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000004,g_CLightActorClassInfo.name_hash);
   sprintf(local_138,"Select light type for CLightActor %s",in_stack_00000004);
-  iVar1 = core_boxactor_cpp_CLightActor_FUN_00423110((CLightActor *)local_138);
+  iVar1 = core_boxactor_cpp_FUN_00423110();
   if (iVar1 < 0) {
     return 0;
   }

@@ -1,0 +1,159 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "004f30f0",
+      "from_addr": "004f3104",
+      "name": "core_hero.cpp_CHero_FUN_004f30f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505210",
+      "from_addr": "00505225",
+      "name": "core_lever.cpp_CLever_FUN_00505210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504c90",
+    "address_range": [
+      [
+        "00504c90",
+        "00504ced"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_lever.cpp_CLever_FUN_00504c90",
+    "signature": "void __cdecl core_lever_cpp_CLever_FUN_00504c90(CLever *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006310b8",
+      "name": "DOUBLE_006310b8",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004f3104",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_FUN_004f30f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00505225",
+        "call_type": "direct",
+        "caller": "core_lever.cpp_CLever_FUN_00505210",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.735294117647059,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 1,
+      "COPY": 87,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 15,
+      "INT_AND": 14,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 4,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 195
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLever *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00504c98",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

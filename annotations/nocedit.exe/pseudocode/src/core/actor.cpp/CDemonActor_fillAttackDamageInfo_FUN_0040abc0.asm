@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210 at 0041b229
-;   core_melee.cpp_FUN_0050eaf0 at 0050eb09
+;   core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0 at 0050eb09
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613ab0

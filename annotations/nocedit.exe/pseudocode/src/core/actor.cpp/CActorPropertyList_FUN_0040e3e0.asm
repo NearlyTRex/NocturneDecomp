@@ -7,7 +7,7 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bat.cpp_CBat_FUN_00414dc0 at 00414df0
+;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414df0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0

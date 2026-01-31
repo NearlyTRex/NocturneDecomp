@@ -3758,8 +3758,8 @@ section .text
     FLD double ptr [EBP + -0x6e]        ; 004acdde
     FSTP float ptr [ESP]                ; 004acde1
     PUSH EBX                            ; 004acde4
-    CALL core_lever.cpp_FUN_00504b20    ; 004acde5
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_FUN_00504b20()
+    CALL core_lever.cpp_CLever_FUN_00504b20 ; 004acde5
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_FUN_00504b20(CLever * this_ptr)
     ADD ESP,0x8                         ; 004acdea
     JMP 0x004aaf1d                      ; 004acded
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d

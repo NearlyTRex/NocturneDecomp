@@ -14,14 +14,14 @@
 ; XREF[36]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004156ff
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416e1a
-;   core_bride.cpp_FUN_00423a30 at 00423bed
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423bed
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40 at 0042eca1
 ;   core_charactr.cpp_CCharacter_FUN_0042f3e0 at 0042f66f
-;   core_cow.cpp_FUN_00444310 at 0044464a
+;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044464a
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f4d0
 ;   core_dracbrid.cpp_FUN_00484410 at 00484fd7
 ;   core_drone.cpp_FUN_0048ec70 at 0048f0aa
-;   core_gabriela.cpp_FUN_004d4890 at 004d48dd
+;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d48dd
 ;   ... and 26 more
 ;
 ; Called Functions:

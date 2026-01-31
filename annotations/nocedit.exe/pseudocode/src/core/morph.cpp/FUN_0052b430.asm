@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[8]:
-;   core_biggs.cpp_FUN_00418680 at 004186b8
+;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 004186b8
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f653
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 00529330
 ;   core_moloch.cpp_CMoloch_setup_FUN_00528c70 at 00528ce7

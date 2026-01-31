@@ -38,7 +38,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042c3c0 at 0042c521
+;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c521
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

@@ -9,7 +9,7 @@
 ;
 ; XREF[10]:
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421bb2
-;   core_cow.cpp_FUN_00444310 at 004446da
+;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004446da
 ;   core_cow.cpp_FUN_00444b40 at 00444b8e
 ;   core_dog.cpp_CZombieDog_FUN_0047f820 at 0047f863
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f47d

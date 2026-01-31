@@ -2,32 +2,33 @@
 // Address: 005c1f00
 // Address Range: [[005c1f00, 005c1f78]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(void)
+// Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c1f00(CStranger* param_1) */
-
-void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(void)
+void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  int in_stack_00000004;
+  CAmmoBox *this_ptr_00;
   
-  if (*(int *)(in_stack_00000004 + 0x1fba0) != 0) {
-    if (*(int *)(in_stack_00000004 + 0x1fc38) != 4) {
+  if (*(int *)((this_ptr->base).unk4 + 4) != 0) {
+    if (this_ptr->action_pending != 4) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
-                 *(int *)(in_stack_00000004 + 0x1fc38),0xd52);
+                (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",this_ptr->action_pending,
+                 0xd52);
     }
-    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (*(CDemonActor **)(in_stack_00000004 + 0x1fba0),g_CAmmoBoxClassInfo.name_hash
-                       );
-    if (pCVar1 != (CDemonActor *)0x0) {
-      core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700();
+    this_ptr_00 = (CAmmoBox *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (*(CDemonActor **)((this_ptr->base).unk4 + 4),
+                             g_CAmmoBoxClassInfo.name_hash);
+    if (this_ptr_00 != (CAmmoBox *)0x0) {
+      core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00);
     }
-    *(uint *)(in_stack_00000004 + 0x1fc38) = 1;
-    *(uint *)(in_stack_00000004 + 0x1fba0) = 0;
+    this_ptr->action_pending = 1;
+    (this_ptr->base).unk4[4] = '\0';
+    (this_ptr->base).unk4[5] = '\0';
+    (this_ptr->base).unk4[6] = '\0';
+    (this_ptr->base).unk4[7] = '\0';
   }
   return;
 }

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004f2d70 at 004f2e80
+;   core_hero.cpp_CHero_FUN_004f2d70 at 004f2e80
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00481058 = 00481126

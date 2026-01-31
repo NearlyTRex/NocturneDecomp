@@ -63,9 +63,9 @@ int __cdecl FUN_005e5100(void);
 // Address: 005e5130
 void __cdecl FUN_005e5130(void);
 
-// Original: core_tvbat.cpp_CTVBat_FUN_005e51a0
+// Original: core_tvbat.cpp_CTVBat_getPropertyList_FUN_005e51a0
 // Address: 005e51a0
-void __cdecl CTVBat(CTVBat *this_ptr);
+void __cdecl CTVBat::getPropertyList(CTVBat *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_tvbat.cpp_CTVBat_FUN_005e5260
 // Address: 005e5260

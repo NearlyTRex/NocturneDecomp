@@ -7,8 +7,8 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004f3120 at 004f3130
-;   core_hero.cpp_FUN_004f33b0 at 004f33c0
+;   core_hero.cpp_CHero_FUN_004f3120 at 004f3130
+;   core_hero.cpp_CHero_FUN_004f33b0 at 004f33c0
 ;
 ; *****************************************************************************
 

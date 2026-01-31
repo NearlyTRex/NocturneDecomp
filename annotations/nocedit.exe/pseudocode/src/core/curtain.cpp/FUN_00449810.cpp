@@ -19,7 +19,7 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
   int iVar6;
   int iVar7;
   float *pfVar8;
-  int *piVar9;
+  CPlatform **ppCVar9;
   int iVar10;
   int iVar11;
   int iVar12;
@@ -28,7 +28,7 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
   CVector3f *pCVar15;
   int iVar16;
   float fVar17;
-  int *piVar18;
+  uint *puVar18;
   byte bVar19;
   float10 fVar20;
   float10 fVar21;
@@ -182,7 +182,7 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
       pfVar8 = pfVar8 + 0x1d;
     } while (iVar10 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
-  piVar9 = &in_stack_00000004[0x175].unk2;
+  ppCVar9 = &in_stack_00000004[0x175].standing_platform;
   pCVar15 = in_stack_00000004[0x318].orient_matrix.m + 2;
   local_30 = 0;
   if (0 < in_stack_00000004[0x152].unk6) {
@@ -190,12 +190,12 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
       local_20 = 0;
       if (0 < in_stack_00000004[0x152].is_transparent) {
         do {
-          piVar9[5] = 0;
-          ((CVector3f *)(piVar9 + 1))->x = 4.2039e-45;
-          fVar17 = (float)piVar9[5];
-          ((CVector3f *)(piVar9 + 4))->x = fVar17;
-          piVar9[3] = (int)fVar17;
-          piVar9[2] = (int)fVar17;
+          ppCVar9[5] = (CPlatform *)0x0;
+          ((CVector3f *)(ppCVar9 + 1))->x = 4.2039e-45;
+          fVar17 = (float)ppCVar9[5];
+          ((CVector3f *)(ppCVar9 + 4))->x = fVar17;
+          ppCVar9[3] = (CPlatform *)fVar17;
+          ppCVar9[2] = (CPlatform *)fVar17;
           pCVar15->y = 4.2039e-45;
           *(uint *)((int)(pCVar15 + 1) + 8) = 0;
           fVar17 = *(float *)((int)(pCVar15 + 1) + 8);
@@ -204,39 +204,44 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
           pCVar15->z = fVar17;
           iVar11 = (in_stack_00000004[0x152].is_transparent + 1) * local_30;
           fVar17 = (float)(local_20 + iVar11);
-          piVar9[6] = (int)fVar17;
-          piVar9[7] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
-          piVar9[8] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
-          piVar9[9] = (int)fVar17 + 1;
-          piVar9[10] = *(int *)((int)&in_stack_00000004[1].previous_transform_state +
-                               (int)fVar17 * 0x74 + 0x14);
-          ((CVector3i *)(piVar9 + 0xb))->x =
-               *(int *)((int)&in_stack_00000004[1].previous_transform_state +
-                       (int)fVar17 * 0x74 + 0x18);
+          ppCVar9[6] = (CPlatform *)fVar17;
+          ppCVar9[7] = (CPlatform *)
+                       *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
+          ppCVar9[8] = (CPlatform *)
+                       *(int *)(in_stack_00000004[1].footstep_sound_code +
+                               (int)fVar17 * 0x74 + -0x50);
+          ppCVar9[9] = (CPlatform *)((int)fVar17 + 1);
+          ppCVar9[10] = (CPlatform *)
+                        *(float *)(in_stack_00000004[1].footstep_sound_code +
+                                  (int)fVar17 * 0x74 + 0x20);
+          ((CVector3i *)(ppCVar9 + 0xb))->x =
+               *(int *)(in_stack_00000004[1].footstep_sound_code + (int)fVar17 * 0x74 + 0x24);
           iVar10 = in_stack_00000004[0x152].is_transparent;
-          piVar9[0xc] = (int)fVar17 + 1 + iVar10 + 1;
+          ppCVar9[0xc] = (CPlatform *)((int)fVar17 + 1 + iVar10 + 1);
           iVar10 = local_20 * 0x74 + iVar11 * 0x74 + iVar10 * 0x74 + 0xe8;
-          piVar9[0xd] = *(int *)((int)&in_stack_00000004[2].orient_matrix + iVar10 + -0xcc);
-          piVar9[0xe] = *(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 0x1c);
-          *(int *)(pCVar15 + 2) = piVar9[0xc];
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 0xd];
-          piVar18[(uint)bVar19 * -2 + 1] = (piVar9 + (uint)bVar19 * -2 + 0xd)[(uint)bVar19 * -2 + 1]
+          ppCVar9[0xd] = (CPlatform *)
+                         *(int *)((int)&in_stack_00000004[2].orient_matrix + iVar10 + -0xcc);
+          ppCVar9[0xe] = (CPlatform *)*(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 0x1c);
+          *(CPlatform **)(pCVar15 + 2) = ppCVar9[0xc];
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 0xd];
+          puVar18[(uint)bVar19 * -2 + 1] =
+               (ppCVar9 + (uint)bVar19 * -2 + 0xd)[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 0x28);
+          *(CPlatform **)(pCVar15 + 3) = ppCVar9[9];
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 10];
+          puVar18[(uint)bVar19 * -2 + 1] = (ppCVar9 + (uint)bVar19 * -2 + 10)[(uint)bVar19 * -2 + 1]
           ;
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 0x28);
-          *(int *)(pCVar15 + 3) = piVar9[9];
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 10];
-          piVar18[(uint)bVar19 * -2 + 1] = (piVar9 + (uint)bVar19 * -2 + 10)[(uint)bVar19 * -2 + 1];
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 0x34);
-          *(int *)(pCVar15 + 4) = piVar9[6];
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 7];
-          piVar18[(uint)bVar19 * -2 + 1] = (piVar9 + (uint)bVar19 * -2 + 7)[(uint)bVar19 * -2 + 1];
-          (((CDemonActorTransformState *)(piVar9 + 0x13))->position).x = 4.2039e-45;
-          piVar9[0x17] = 0;
-          fVar17 = (float)piVar9[0x17];
-          ((CVector3f *)(piVar9 + 0x16))->x = fVar17;
-          piVar9[0x15] = (int)fVar17;
-          piVar9[0x14] = (int)fVar17;
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 0x34);
+          *(CPlatform **)(pCVar15 + 4) = ppCVar9[6];
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 7];
+          puVar18[(uint)bVar19 * -2 + 1] = (ppCVar9 + (uint)bVar19 * -2 + 7)[(uint)bVar19 * -2 + 1];
+          (((CDemonActorTransformState *)(ppCVar9 + 0x13))->position).x = 4.2039e-45;
+          ppCVar9[0x17] = (CPlatform *)0x0;
+          fVar17 = (float)ppCVar9[0x17];
+          ((CVector3f *)(ppCVar9 + 0x16))->x = fVar17;
+          ppCVar9[0x15] = (CPlatform *)fVar17;
+          ppCVar9[0x14] = (CPlatform *)fVar17;
           *(uint *)((int)(pCVar15 + 6) + 4) = 3;
           *(uint *)((int)(pCVar15 + 7) + 8) = 0;
           uVar3 = *(uint *)((int)(pCVar15 + 7) + 8);
@@ -245,38 +250,46 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
           *(uint *)((int)(pCVar15 + 6) + 8) = uVar3;
           iVar6 = (in_stack_00000004[0x152].is_transparent + 1) * local_30;
           fVar17 = (float)(iVar6 + local_20);
-          piVar9[0x18] = (int)fVar17;
-          piVar9[0x19] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
-          piVar9[0x1a] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
+          ppCVar9[0x18] = (CPlatform *)fVar17;
+          ppCVar9[0x19] =
+               (CPlatform *)*(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
+          ppCVar9[0x1a] =
+               (CPlatform *)
+               *(int *)(in_stack_00000004[1].footstep_sound_code + (int)fVar17 * 0x74 + -0x50);
           iVar10 = in_stack_00000004[0x152].is_transparent;
           iVar7 = (int)fVar17 + iVar10 + 2;
-          piVar9[0x1b] = iVar7;
+          ppCVar9[0x1b] = (CPlatform *)iVar7;
           iVar11 = iVar6 * 0x74 + local_20 * 0x74 + iVar10 * 0x74 + 0xe8;
-          piVar9[0x1c] = (int)*(CDemonActor **)
-                               ((int)&in_stack_00000004[2].orient_matrix + iVar11 + -0xcc);
-          piVar9[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar11 + -0x104);
-          ((CDemonActor_union_vtable *)(piVar9 + 0x1e))->_ub = (CDemonActor_vtable *)(iVar7 + -1);
+          ppCVar9[0x1c] =
+               (CPlatform *)
+               *(CDemonActor **)((int)&in_stack_00000004[2].orient_matrix + iVar11 + -0xcc);
+          ppCVar9[0x1d] =
+               (CPlatform *)*(CDemonActor **)(in_stack_00000004[2].create_event + iVar11 + -0x104);
+          ((CDemonActor_union_vtable *)(ppCVar9 + 0x1e))->_ub = (CDemonActor_vtable *)(iVar7 + -1);
           iVar10 = iVar6 * 0x74 + local_20 * 0x74 + iVar10 * 0x74;
-          piVar9[0x1f] = *(uint *)
-                          ((int)&in_stack_00000004[1].previous_transform_state + iVar10 + 0x14);
-          piVar9[0x20] = *(uint *)
-                          ((int)&in_stack_00000004[1].previous_transform_state + iVar10 + 0x18);
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 100);
-          *(CDemonActor_union_vtable *)(pCVar15 + 8) = *(CDemonActor_union_vtable *)(piVar9 + 0x1e);
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 0x1f];
-          piVar18[(uint)bVar19 * -2 + 1] =
-               (piVar9 + (uint)bVar19 * -2 + 0x1f)[(uint)bVar19 * -2 + 1];
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 0x70);
-          *(int *)(pCVar15 + 9) = piVar9[0x1b];
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 0x1c];
-          piVar18[(uint)bVar19 * -2 + 1] =
-               (piVar9 + (uint)bVar19 * -2 + 0x1c)[(uint)bVar19 * -2 + 1];
-          piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 0x7c);
-          *(int *)(pCVar15 + 10) = piVar9[0x18];
-          *piVar18 = piVar9[(uint)bVar19 * -2 + 0x19];
-          piVar18[(uint)bVar19 * -2 + 1] =
-               (piVar9 + (uint)bVar19 * -2 + 0x19)[(uint)bVar19 * -2 + 1];
-          piVar9 = piVar9 + 0x24;
+          ppCVar9[0x1f] =
+               (CPlatform *)
+               *(uint *)(in_stack_00000004[1].footstep_sound_code + iVar10 + 0x20);
+          ppCVar9[0x20] =
+               (CPlatform *)
+               *(uint *)(in_stack_00000004[1].footstep_sound_code + iVar10 + 0x24);
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 100);
+          *(CDemonActor_union_vtable *)(pCVar15 + 8) = *(CDemonActor_union_vtable *)(ppCVar9 + 0x1e)
+          ;
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 0x1f];
+          puVar18[(uint)bVar19 * -2 + 1] =
+               (ppCVar9 + (uint)bVar19 * -2 + 0x1f)[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 0x70);
+          *(CPlatform **)(pCVar15 + 9) = ppCVar9[0x1b];
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 0x1c];
+          puVar18[(uint)bVar19 * -2 + 1] =
+               (ppCVar9 + (uint)bVar19 * -2 + 0x1c)[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 0x7c);
+          *(CPlatform **)(pCVar15 + 10) = ppCVar9[0x18];
+          *puVar18 = ppCVar9[(uint)bVar19 * -2 + 0x19];
+          puVar18[(uint)bVar19 * -2 + 1] =
+               (ppCVar9 + (uint)bVar19 * -2 + 0x19)[(uint)bVar19 * -2 + 1];
+          ppCVar9 = ppCVar9 + 0x24;
           pCVar15 = pCVar15 + 0xc;
           local_20 = local_20 + 1;
         } while (local_20 < in_stack_00000004[0x152].is_transparent);

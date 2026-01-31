@@ -107,9 +107,9 @@ void __cdecl FUN_00427400(void);
 // Address: 004276c0
 void __cdecl FUN_004276c0(void);
 
-// Original: core_bugs.cpp_CBugs_FUN_004277e0
+// Original: core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0
 // Address: 004277e0
-void __cdecl CBugs(void);
+void __cdecl CBugs::getPropertyList(CBugs *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_bugs.cpp_FUN_004278d0
 // Address: 004278d0

@@ -14,7 +14,7 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0 at 004d28b5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050785c
 ;   core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0 at 0050c4d5
-;   core_minecar.cpp_FUN_00520f40 at 00520f55
+;   core_minecar.cpp_CMineCar_dtor_FUN_00520f40 at 00520f55
 ;   core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20 at 005e8d35
 ;
 ; Called Functions:

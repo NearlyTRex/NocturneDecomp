@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[36]:
-;   core_batcreat.cpp_FUN_00416030 at 004160e4
-;   core_batman.cpp_FUN_004179a0 at 00417a54
-;   core_biggs.cpp_FUN_00418b50 at 00418b7d
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004160e4
+;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a54
+;   core_biggs.cpp_CBiggs_processDamage_FUN_00418b50 at 00418b7d
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0 at 0041bcae
 ;   core_boneguy.cpp_FUN_0041cc40 at 0041d11b
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422ac3

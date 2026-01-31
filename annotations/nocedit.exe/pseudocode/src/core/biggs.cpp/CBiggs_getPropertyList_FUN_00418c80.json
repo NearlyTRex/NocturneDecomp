@@ -1,0 +1,142 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00418c80",
+    "address_range": [
+      [
+        "00418c80",
+        "00418cd3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_biggs.cpp_CBiggs_getPropertyList_FUN_00418c80",
+    "signature": "void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80 (CBiggs *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e460",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460"
+    },
+    {
+      "addr": "0040e4a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4a0"
+    },
+    {
+      "addr": "0040e4d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0"
+    },
+    {
+      "addr": "004aa170",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615b55",
+      "name": "s_Model_00615b55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615b5b",
+      "name": "s_State_00615b5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615b61",
+      "name": "s_Morph_cond_00615b61",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.032258064516129,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 19,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 125
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBiggs *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBiggs",
+        "offset": 212,
+        "vtable_addr": "0065ac24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

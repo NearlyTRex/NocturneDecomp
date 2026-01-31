@@ -1,0 +1,98 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00418050",
+    "address_range": [
+      [
+        "00418050",
+        "00418052"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_battery.cpp_CBattery_hasCollision_FUN_00418050",
+    "signature": "int __cdecl core_battery_cpp_CBattery_hasCollision_FUN_00418050 (CBattery *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 1,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 12
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBattery *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBattery",
+        "offset": 52,
+        "vtable_addr": "0065a934"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

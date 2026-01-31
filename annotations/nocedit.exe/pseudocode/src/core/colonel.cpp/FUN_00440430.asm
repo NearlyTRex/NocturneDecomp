@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_colonel.cpp_FUN_0043fa00 at 0043fa64
+;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fa64
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40

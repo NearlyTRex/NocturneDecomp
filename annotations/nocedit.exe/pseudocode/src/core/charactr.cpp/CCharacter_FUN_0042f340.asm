@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f780
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f780
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_006176ae

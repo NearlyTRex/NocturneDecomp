@@ -138,7 +138,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   float local_e0;
   CVector3i local_dc;
   CVector3i local_d0;
-  float *local_c4;
+  int *local_c4;
   CDeformableModel *local_c0;
   CSkeleton *local_bc;
   uint local_b8;
@@ -279,14 +279,14 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
       if (iVar6 == 0) {
         iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
         if (iVar6 != 0) {
-          (in_stack_00000004->motion_controller).current_frame_number = 0.0;
+          (in_stack_00000004->motion_controller).current_frame_number = 0;
         }
         iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
         if (iVar6 != 0) {
           pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&in_stack_00000004->motion_controller);
           local_18 = (float)(pSVar8->frame_count + -1);
-          (in_stack_00000004->motion_controller).current_frame_number = (float)(int)local_18;
+          (in_stack_00000004->motion_controller).current_frame_number = (int)(float)(int)local_18;
         }
       }
       else {
@@ -325,7 +325,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
       pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&in_stack_00000004->motion_controller);
       fVar21 = (float)pSVar8->frame_start;
-      local_80 = (in_stack_00000004->motion_controller).current_frame_number;
+      local_80 = (float)(in_stack_00000004->motion_controller).current_frame_number;
       pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&in_stack_00000004->motion_controller);
       pCVar14 = in_stack_00000004;
@@ -334,8 +334,8 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
         pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&in_stack_00000004->motion_controller);
         fVar24 = local_90 * pSVar8->fps * local_8c +
-                 (pCVar14->motion_controller).current_frame_number;
-        (pCVar14->motion_controller).current_frame_number = fVar24;
+                 (float)(pCVar14->motion_controller).current_frame_number;
+        (pCVar14->motion_controller).current_frame_number = (int)fVar24;
         if (local_7c < fVar24) {
           do {
             local_18 = fVar21;
@@ -345,31 +345,33 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
             pCVar14 = in_stack_00000004;
             if (local_b8 == 0) {
               (in_stack_00000004->motion_controller).current_frame_number =
-                   (in_stack_00000004->motion_controller).current_frame_number - local_7c;
+                   (int)((float)(in_stack_00000004->motion_controller).current_frame_number -
+                        local_7c);
             }
             else {
               pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                  (&in_stack_00000004->motion_controller);
-              (pCVar14->motion_controller).current_frame_number = pSVar8->exit_forward_to_frame;
+              (pCVar14->motion_controller).current_frame_number = (int)pSVar8->exit_forward_to_frame
+              ;
             }
             local_80 = 0.0;
-          } while (local_7c < (in_stack_00000004->motion_controller).current_frame_number);
+          } while (local_7c < (float)(in_stack_00000004->motion_controller).current_frame_number);
         }
         local_18 = fVar21;
         (*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)
                   (&in_stack_00000004->motion_controller,(float)(int)fVar21 + local_80,
-                   (float)(int)fVar21 + (in_stack_00000004->motion_controller).current_frame_number,
-                   1.0);
+                   (float)(int)fVar21 +
+                   (float)(in_stack_00000004->motion_controller).current_frame_number,1.0);
         pCVar14 = in_stack_00000004;
       }
       else {
         iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
         if (iVar6 != 0) {
           (in_stack_00000004->motion_controller).current_frame_number =
-               (in_stack_00000004->motion_controller).current_frame_number + local_8c;
+               (int)((float)(in_stack_00000004->motion_controller).current_frame_number + local_8c);
           local_78 = local_7c;
-          if ((in_stack_00000004->motion_controller).current_frame_number < local_7c) {
-            local_78 = (in_stack_00000004->motion_controller).current_frame_number;
+          if ((float)(in_stack_00000004->motion_controller).current_frame_number < local_7c) {
+            local_78 = (float)(in_stack_00000004->motion_controller).current_frame_number;
           }
           local_18 = fVar21;
           (*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)
@@ -380,22 +382,22 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
         pCVar14 = in_stack_00000004;
         if (iVar6 != 0) {
           (in_stack_00000004->motion_controller).current_frame_number =
-               (in_stack_00000004->motion_controller).current_frame_number - local_8c;
+               (int)((float)(in_stack_00000004->motion_controller).current_frame_number - local_8c);
           local_74 = 0.0;
-          if (0.0 < (in_stack_00000004->motion_controller).current_frame_number) {
-            local_74 = (in_stack_00000004->motion_controller).current_frame_number;
+          if (0.0 < (float)(in_stack_00000004->motion_controller).current_frame_number) {
+            local_74 = (float)(in_stack_00000004->motion_controller).current_frame_number;
           }
           local_70 = (float)(int)fVar21;
           local_18 = fVar21;
           (*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)
                     (&in_stack_00000004->motion_controller,local_70 + local_74,local_70 + local_80,
                      1.0);
-          if ((in_stack_00000004->motion_controller).current_frame_number < 0.0) {
+          if ((float)(in_stack_00000004->motion_controller).current_frame_number < 0.0) {
             local_18 = local_70 + local_7c;
             (*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)
                       (&in_stack_00000004->motion_controller,
-                       local_18 + (in_stack_00000004->motion_controller).current_frame_number,
-                       local_18,1.0);
+                       local_18 + (float)(in_stack_00000004->motion_controller).current_frame_number
+                       ,local_18,1.0);
           }
           local_178 = -local_6c->x;
           local_174 = -local_6c->y;
@@ -409,22 +411,23 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
         }
       }
       while (pCVar12 = in_stack_00000004,
-            (in_stack_00000004->motion_controller).current_frame_number < 0.0) {
+            (float)(in_stack_00000004->motion_controller).current_frame_number < 0.0) {
         pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&pCVar14->motion_controller);
         (pCVar14->motion_controller).current_frame_number =
-             (float)pSVar8->frame_count + (pCVar14->motion_controller).current_frame_number;
+             (int)((float)pSVar8->frame_count +
+                  (float)(pCVar14->motion_controller).current_frame_number);
       }
       pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&in_stack_00000004->motion_controller);
-      if ((float)pSVar8->frame_count <= (pCVar12->motion_controller).current_frame_number) {
+      if ((float)pSVar8->frame_count <= (float)(pCVar12->motion_controller).current_frame_number) {
         if (local_b8 == 0) {
-          (pCVar12->motion_controller).current_frame_number = 0.0;
+          (pCVar12->motion_controller).current_frame_number = 0;
         }
         else {
           pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&pCVar12->motion_controller);
-          (pCVar12->motion_controller).current_frame_number = pSVar8->exit_forward_to_frame;
+          (pCVar12->motion_controller).current_frame_number = (int)pSVar8->exit_forward_to_frame;
         }
       }
       if (local_48 != 0) {
@@ -863,7 +866,7 @@ LAB_005975b4:
       pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&in_stack_00000004->motion_controller);
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,"Enter frame number",local_c4,1,0.0,
+                (g_CEditorToolsPtr,"Enter frame number",(float *)local_c4,1,0.0,
                  (float)pSVar8->frame_count,(int)fVar21);
     }
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);

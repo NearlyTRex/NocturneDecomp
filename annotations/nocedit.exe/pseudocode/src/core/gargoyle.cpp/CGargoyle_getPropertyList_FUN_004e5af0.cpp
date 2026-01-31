@@ -15,7 +15,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(void)
   CEnemy *in_stack_00000004;
   CActorPropertyList *in_stack_00000008;
   
-  core_enemy_cpp_CEnemy_FUN_004aa170(in_stack_00000004);
+  core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(in_stack_00000004,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e1e0(in_stack_00000008);

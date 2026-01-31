@@ -172,7 +172,7 @@ LAB_00568089:
     }
     switch(local_1c) {
     case 0:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       iVar7 = *(int *)(in_stack_00000004->unk2 + 4);
       if (iVar7 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -201,14 +201,14 @@ LAB_00568089:
       }
       break;
     case 1:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base).model.motion_controller,0,1);
       }
       break;
     case 2:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       fVar3 = 4.0f;
       pCVar1 = &(in_stack_00000004->base).model;
       if (*(int *)(in_stack_00000004->unk2 + 4) != 0) {
@@ -286,7 +286,7 @@ LAB_0056878f:
                 (&(in_stack_00000004->base).model.motion_controller,2,1);
       break;
     case 3:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       pCVar1 = &(in_stack_00000004->base).model;
       if (*(int *)(in_stack_00000004->unk2 + 4) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -349,7 +349,7 @@ LAB_0056878f:
                            INT_03114214);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_a4,pCVar10);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
       local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
       local_14 = local_1a0.damage_amount;
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -358,10 +358,11 @@ LAB_0056878f:
                            INT_0311420c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_8c,pCVar10);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(in_stack_00000004);
       break;
     case 9:
-      if ((in_stack_00000004->pool_me == 0) && ((in_stack_00000004->base).base.unk2 == 0)) {
+      if ((in_stack_00000004->pool_me == 0) &&
+         ((in_stack_00000004->base).base.standing_platform == (CPlatform *)0x0)) {
         pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (&(in_stack_00000004->base).model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -380,7 +381,7 @@ LAB_0056878f:
       break;
     case 0xe:
     case 0xf:
-      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).field_4)();
+      (*(((in_stack_00000004->base).base.vtable._ue)->_ue).enemyfunc2)();
       iVar7 = *(int *)(in_stack_00000004->unk2 + 4);
       if (iVar7 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

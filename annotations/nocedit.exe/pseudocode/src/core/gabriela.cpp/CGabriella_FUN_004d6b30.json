@@ -11,36 +11,6 @@
       },
       {
         "category": "other",
-        "column": 6,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 64,
         "line": 41,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
@@ -50,27 +20,21 @@
         "column": 66,
         "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 68,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 140,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 65,
-    "suspect_count": 7,
+    "pseudocode_lines": 66,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 199
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -103,7 +67,7 @@
     {
       "addr": "0042c3c0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
     },
     {
       "addr": "004e0bd0",
@@ -237,49 +201,63 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "SDamageInfo *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "text": "in_stack_00000008->damage_amount = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
-      "text": "fVar3 = (this_ptr->base).base.hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar3 = (float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
-      "text": "if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
+      "text": "if (0.0 < in_stack_00000008->damage_amount) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000008",
-      "text": "if (*(float *)(in_stack_00000008 + 4) <= 0.0) {",
+      "text": "if (in_stack_00000008->damage_amount <= 0.0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000008",
+      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

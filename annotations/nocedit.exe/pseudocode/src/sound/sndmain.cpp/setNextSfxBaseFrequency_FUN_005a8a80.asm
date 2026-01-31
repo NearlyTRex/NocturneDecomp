@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   base_frequency
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 at 00506634
+;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506634
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b21fc
 ;   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 at 005ad474
 ;

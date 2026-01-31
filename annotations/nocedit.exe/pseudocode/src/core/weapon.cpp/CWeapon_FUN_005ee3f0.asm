@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-;   core_weapon.cpp_FUN_005ee740
+;   core_weapon.cpp_CWeapon_FUN_005ee740
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005ee3f9
     PUSH EBX                            ; 005ee3fd
     MOV dword ptr [EBX + 0x304],0x0     ; 005ee3fe
-    CALL core_weapon.cpp_FUN_005ee740   ; 005ee408
-        ;   XREF to: 005ee740 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_FUN_005ee740(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_FUN_005ee740 ; 005ee408
+        ;   XREF to: 005ee740 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_FUN_005ee740(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005ee40d
     TEST ESI,ESI                        ; 005ee410
     JNZ 0x005ee436                      ; 005ee412

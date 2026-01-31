@@ -7,9 +7,9 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a53f
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0 at 00419fe3
 ;   core_bodypart.cpp_CBodyPart_processInEditor_FUN_0041b260 at 0041b272
-;   core_bodypart.cpp_FUN_0041a050 at 0041a53f
 ;
 ; Referenced Globals:
 ;   float FLOAT_00615e9c = 0.5

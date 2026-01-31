@@ -28,7 +28,7 @@
 ;   core_bugs.cpp_FUN_004272f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     MOV dword ptr [EAX + 0x34],EDX      ; 00424e6a
     MOV EDX,dword ptr [EAX + 0x34]      ; 00424e6d
     MOV dword ptr [EAX + 0x30],EDX      ; 00424e70
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 00424e73
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 00424e73
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00424e78
     MOV EAX,dword ptr [EBP + 0x14]      ; 00424e7b
     MOV dword ptr [EAX + 0x122c4],0x4   ; 00424e7e

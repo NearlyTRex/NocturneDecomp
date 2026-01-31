@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_CLightActor_FUN_004234e0 at 0042355b
+;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 0042355b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_FOV_mm_for_CLightA_006169de

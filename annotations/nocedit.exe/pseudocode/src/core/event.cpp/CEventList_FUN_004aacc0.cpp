@@ -1460,7 +1460,8 @@ LAB_004aaf38:
                                                     uStack_f8 = 0x3ff00000;
                                                   }
                                                   local_fc = 0;
-                                                  core_lever_cpp_FUN_00504b20();
+                                                  core_lever_cpp_CLever_FUN_00504b20
+                                                            ((CLever *)pCVar12);
                                                 }
                                               }
                                               else {

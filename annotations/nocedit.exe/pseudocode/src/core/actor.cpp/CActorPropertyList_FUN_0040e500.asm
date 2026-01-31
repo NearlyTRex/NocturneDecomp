@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(void)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList *this_ptr)
 ;
+; Parameters:
+; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0xd8]:1  local_d8
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042f730 at 0042f753
+;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f753
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_00614465

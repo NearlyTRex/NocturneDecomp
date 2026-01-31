@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cce5
 ;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e1cb
-;   core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 at 004f5644
+;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5644
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

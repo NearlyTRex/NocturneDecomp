@@ -22,7 +22,7 @@ void __cdecl core_bugs_cpp_FUN_004278d0(void)
   fVar2 = (pCVar1->position).x;
   fVar3 = (in_stack_00000004->base).location.position.y;
   fVar4 = (in_stack_00000004->base).location.position.z;
-  core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(in_stack_00000004);
+  core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(in_stack_00000004);
   (in_stack_00000004->base).orient.heading = 0.0;
   (in_stack_00000004->base).orient.bank = (in_stack_00000004->base).orient.heading;
   (in_stack_00000004->base).orient.pitch = (in_stack_00000004->base).orient.bank;

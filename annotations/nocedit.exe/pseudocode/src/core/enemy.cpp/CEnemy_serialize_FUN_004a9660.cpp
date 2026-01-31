@@ -15,7 +15,8 @@ void __cdecl core_enemy_cpp_CEnemy_serialize_FUN_004a9660(CEnemy *this_ptr)
       core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->speed,"speed");
     }
     if (2 < g_CEnemyClassVersion) {
-      core_actor_cpp_serializeFloat_FUN_0040b770(&(this_ptr->base).hit_points,"hitPoints");
+      core_actor_cpp_serializeFloat_FUN_0040b770
+                ((float *)&(this_ptr->base).hit_points,"hitPoints");
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->pool_me,"poolMe");
       return;
     }

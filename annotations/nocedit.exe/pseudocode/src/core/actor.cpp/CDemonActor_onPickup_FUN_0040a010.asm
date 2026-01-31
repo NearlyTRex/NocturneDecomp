@@ -9,8 +9,8 @@
 ;
 ; XREF[4]:
 ;   core_boxactor.cpp_CBoxActor_onPickup_FUN_00422570 at 0042257a
-;   core_health.cpp_FUN_004f2020 at 004f202a
-;   core_keyactor.cpp_FUN_00501920 at 0050192a
+;   core_health.cpp_CHealthItem_onPickup_FUN_004f2020 at 004f202a
+;   core_keyactor.cpp_CKeyActor_onPickup_FUN_00501920 at 0050192a
 ;   core_weapon.cpp_CWeapon_FUN_005ee650 at 005ee65a
 ;
 ; Referenced Globals:

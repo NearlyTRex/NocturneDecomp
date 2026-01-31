@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBassPlayer.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
@@ -234,7 +235,7 @@ int __cdecl core_tentacle_cpp_FUN_005db900(void);
 int __cdecl core_tentacle_cpp_FUN_005db9d0(void);
 int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_FUN_005dbb70(void);
-void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbc60(CTentacle *this_ptr);
+void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60 (CTentacle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbcc0(CTentacle *this_ptr);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_005dbcf0 (CTentacle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 void __cdecl core_texlist_cpp_staticInit_FUN_005dbdb0(void);

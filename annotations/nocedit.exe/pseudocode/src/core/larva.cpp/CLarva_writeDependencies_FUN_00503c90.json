@@ -1,0 +1,113 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00503c90",
+    "address_range": [
+      [
+        "00503c90",
+        "00503cbb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_larva.cpp_CLarva_writeDependencies_FUN_00503c90",
+    "signature": "void __cdecl core_larva_cpp_CLarva_writeDependencies_FUN_00503c90(CLarva *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0"
+    },
+    {
+      "addr": "0058a260",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 11,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 67
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLarva *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLarva",
+        "offset": 224,
+        "vtable_addr": "00660734"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

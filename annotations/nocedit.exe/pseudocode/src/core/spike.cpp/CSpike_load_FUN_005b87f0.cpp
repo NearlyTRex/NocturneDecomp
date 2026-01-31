@@ -43,7 +43,7 @@ void __cdecl core_spike_cpp_CSpike_load_FUN_005b87f0(void)
   core_actor_cpp_serializeFloat_FUN_0040b770
             ((float *)&in_stack_00000004[3].next_actor,"period");
   core_actor_cpp_serializeFloat_FUN_0040b770
-            ((float *)&in_stack_00000004[3].unk15,"damageStrength");
+            ((float *)&in_stack_00000004[3].prev_actor,"damageStrength");
   core_actor_cpp_serializeFloat_FUN_0040b770((float *)&in_stack_00000004[3].vtable,"param")
   ;
   return;

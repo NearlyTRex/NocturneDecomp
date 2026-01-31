@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
+; __cdecl void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_0063856d
@@ -27,7 +29,7 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
 ;   core_cloth.cpp_FUN_00439710
-;   core_enemy.cpp_CEnemy_FUN_004a9650
+;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
@@ -199,8 +201,8 @@ section .text
     ADD ESP,0xc                         ; 0051f59c
     PUSH EBX                            ; 0051f59f
     MOV [0x02f333c4],EAX                ; 0051f5a0 | INT_02f333c4
-    CALL core_enemy.cpp_CEnemy_FUN_004a9650 ; 0051f5a5
-        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9650(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setup_FUN_004a9650 ; 0051f5a5
+        ;   XREF to: 004a9650 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004a9650(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0051f5aa
     PUSH 0x6386af                       ; 0051f5ad | = "strcoat.cth"
     LEA ESI,[EBX + 0xbf84]              ; 0051f5b2

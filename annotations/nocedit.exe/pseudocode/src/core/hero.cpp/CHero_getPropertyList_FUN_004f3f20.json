@@ -1,0 +1,257 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 7,
+    "cross_reference_count": 9,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "00414010",
+      "from_addr": "0041401c",
+      "name": "core_baron.cpp_CBaron_getPropertyList_FUN_00414010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00440610",
+      "from_addr": "0044061a",
+      "name": "core_colonel.cpp_FUN_00440610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7610",
+      "from_addr": "004d761a",
+      "name": "core_gabriela.cpp_FUN_004d7610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1cd0",
+      "from_addr": "004f1cda",
+      "name": "core_haystack.cpp_CHaystack_getPropertyList_FUN_004f1cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f97a0",
+      "from_addr": "004f97aa",
+      "name": "core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529950",
+      "from_addr": "0052995c",
+      "name": "core_moloch.cpp_FUN_00529950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559120",
+      "from_addr": "0055912a",
+      "name": "core_scat.cpp_FUN_00559120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c68f0",
+      "from_addr": "005c68fa",
+      "name": "core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d9f10",
+      "from_addr": "005d9f1a",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f3f20",
+    "address_range": [
+      [
+        "004f3f20",
+        "004f3f50"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_getPropertyList_FUN_004f3f20",
+    "signature": "void __cdecl core_hero_cpp_CHero_getPropertyList_FUN_004f3f20(CHero *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e4d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0"
+    },
+    {
+      "addr": "0042f730",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062edb8",
+      "name": "s_State_0062edb8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004f97aa",
+        "call_type": "direct",
+        "caller": "core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055912a",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_FUN_00559120",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0044061a",
+        "call_type": "direct",
+        "caller": "core_colonel.cpp_FUN_00440610",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d761a",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004d7610",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f1cda",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_getPropertyList_FUN_004f1cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005c68fa",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005d9f1a",
+        "call_type": "direct",
+        "caller": "core_svetlana.cpp_CSvetlana_FUN_005d9f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041401c",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaron_getPropertyList_FUN_00414010",
+        "estimated_params": 4,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0052995c",
+        "call_type": "direct",
+        "caller": "core_moloch.cpp_FUN_00529950",
+        "estimated_params": 4,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.117647058823529,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 8,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 70
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 212,
+        "vtable_addr": "0065f6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

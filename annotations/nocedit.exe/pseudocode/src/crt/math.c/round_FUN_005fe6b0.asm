@@ -18,8 +18,8 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a4e1
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70 at 0040cccd
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413b50
-;   core_bat.cpp_CBat_FUN_00414c60 at 00414c77
-;   core_bodypart.cpp_FUN_0041a050 at 0041a50d
+;   core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 at 00414c77
+;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a50d
 ;   ... and 226 more
 ;
 ; *****************************************************************************

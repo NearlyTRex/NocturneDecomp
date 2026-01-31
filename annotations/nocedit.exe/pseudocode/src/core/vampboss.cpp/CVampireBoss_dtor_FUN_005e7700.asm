@@ -24,9 +24,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_backgnd.cpp_cleanupVector_FUN_004126e0
-;   core_backgnd.cpp_freeFires_FUN_00412700
-;   core_backgnd.cpp_freeFlames_FUN_00412720
+;   core_armour.cpp_freeFires_FUN_00412700
+;   core_armour.cpp_freeFlames_FUN_00412720
+;   core_armour.cpp_freeVectors_FUN_004126e0
 ;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
 ;   core_cloth.cpp_FUN_0043bf80
 ;   core_morph.cpp_CMorphModel_FUN_0052b330
@@ -78,26 +78,26 @@ section .text
     PUSH 0x0                            ; 005e7761
     SUB EAX,0x8af0                      ; 005e7763
     PUSH EAX                            ; 005e7768
-    CALL core_backgnd.cpp_freeFlames_FUN_00412720 ; 005e7769
-        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; int core_backgnd.cpp_freeFlames_FUN_00412720(CFlame * * array)
+    CALL core_armour.cpp_freeFlames_FUN_00412720 ; 005e7769
+        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeFlames_FUN_00412720(CFlame * * array)
     ADD ESP,0x8                         ; 005e776e
     PUSH 0x0                            ; 005e7771
     SUB EAX,0x4b0                       ; 005e7773
     PUSH EAX                            ; 005e7778
-    CALL core_backgnd.cpp_freeFires_FUN_00412700 ; 005e7779
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; int core_backgnd.cpp_freeFires_FUN_00412700(SFire * * objs)
+    CALL core_armour.cpp_freeFires_FUN_00412700 ; 005e7779
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeFires_FUN_00412700(SFire * * objs)
     ADD ESP,0x8                         ; 005e777e
     PUSH 0x0                            ; 005e7781
     SUB EAX,0x20c                       ; 005e7783
     PUSH EAX                            ; 005e7788
-    CALL core_backgnd.cpp_cleanupVector_FUN_004126e0 ; 005e7789
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_backgnd.cpp_cleanupVector_FUN_004126e0(CVector3f * * objs)
+    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 005e7789
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * * objs)
     ADD ESP,0x8                         ; 005e778e
     PUSH 0x0                            ; 005e7791
     SUB EAX,0xb4                        ; 005e7793
     PUSH EAX                            ; 005e7798
-    CALL core_backgnd.cpp_cleanupVector_FUN_004126e0 ; 005e7799
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_backgnd.cpp_cleanupVector_FUN_004126e0(CVector3f * * objs)
+    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 005e7799
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * * objs)
     ADD ESP,0x8                         ; 005e779e
     PUSH 0x0                            ; 005e77a1
     SUB EAX,0x1c8                       ; 005e77a3

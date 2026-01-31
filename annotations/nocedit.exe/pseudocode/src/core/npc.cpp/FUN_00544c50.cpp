@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_npc_npc.cpp_FUN_00544c50(uint param_1, uint param_2) */
-
 int __cdecl core_npc_cpp_FUN_00544c50(void)
 
 {

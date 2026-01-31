@@ -1,0 +1,381 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 44,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 60,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 107,
+    "cross_reference_count": 0,
+    "function_call_count": 18,
+    "global_count": 18,
+    "pseudocode_lines": 67,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "unaffected_reg"
+    ],
+    "total_lines": 236
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00506450",
+    "address_range": [
+      [
+        "00506450",
+        "00506663"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lightgun.cpp_CLightGun_process_FUN_00506450",
+    "signature": "void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00470060",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060"
+    },
+    {
+      "addr": "00474770",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770"
+    },
+    {
+      "addr": "004ffda0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0"
+    },
+    {
+      "addr": "00505ac0",
+      "is_variadic": false,
+      "name": "core_lightgun.cpp_CLightGun_FUN_00505ac0"
+    },
+    {
+      "addr": "0056d090",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056d090"
+    },
+    {
+      "addr": "005ee110",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
+    },
+    {
+      "addr": "005eeeb0",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    },
+    {
+      "addr": "005a8cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80"
+    },
+    {
+      "addr": "005a8940",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+    },
+    {
+      "addr": "005a8a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60"
+    },
+    {
+      "addr": "005a9b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40"
+    },
+    {
+      "addr": "005a9ae0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0"
+    },
+    {
+      "addr": "005a8e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006314fa",
+      "name": "s_cre_charge_wav_006314fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631509",
+      "name": "s_lgunmask_raw_00631509",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631516",
+      "name": "DOUBLE_00631516",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "00660a40",
+      "name": "FLOAT_00660a40",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "00660a48",
+      "name": "FLOAT_00660a48",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "00660a4c",
+      "name": "FLOAT_00660a4c",
+      "type": "float",
+      "value": "2.5"
+    },
+    {
+      "addr": "00660a50",
+      "name": "FLOAT_00660a50",
+      "type": "float",
+      "value": "1"
+    },
+    {
+      "addr": "00660a54",
+      "name": "FLOAT_00660a54",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "0066efcc",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "020a4c08"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "006848fc",
+      "name": "g_CWeatherPtr",
+      "type": "CWeather*",
+      "value": "03f95dc0"
+    },
+    {
+      "addr": "020a4c08",
+      "name": "g_CFilterCacheInstance",
+      "type": "CFilterCache",
+      "value": null
+    },
+    {
+      "addr": "02d7eaf0",
+      "name": "g_CDemonLightInstance",
+      "type": "CDemonLight",
+      "value": null
+    },
+    {
+      "addr": "02d807c0",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03f95dc0",
+      "name": "g_CWeatherInstance",
+      "type": "CWeather",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.845588235294118,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 18,
+      "CBRANCH": 4,
+      "COPY": 200,
+      "FLOAT2FLOAT": 18,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 56,
+      "INT_AND": 51,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 44,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 22,
+      "INT_SUB": 52,
+      "INT_ZEXT": 4,
+      "LOAD": 27,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 60,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 659
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "(this_ptr->base).ammo_count = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_ESI",
+      "text": "(g_CFilterCachePtr,\"lgunmask.raw\",(char *)0x0,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "00660a64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

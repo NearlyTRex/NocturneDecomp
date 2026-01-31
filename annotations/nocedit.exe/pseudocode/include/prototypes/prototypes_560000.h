@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CCmdParm.h"
 #include "types/classes/CCmdParse.h"
@@ -102,7 +103,7 @@ void __cdecl core_sentinel_cpp_CSentinel_load_FUN_00568c70(void);
 void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void);
 int __cdecl core_sentinel_cpp_FUN_00568dd0(void);
 void __cdecl core_sentinel_cpp_FUN_00568ef0(void);
-void __cdecl core_sentinel_cpp_FUN_00568f10(void);
+void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10 (CSentinel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_sentinel_cpp_FUN_00568f50(void);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00568f80 (CSentinel *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 void __cdecl core_set_cpp_staticInit_FUN_00569040(void);
@@ -124,7 +125,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056cd60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_FUN_0056d090(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056d110(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056d140(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr);

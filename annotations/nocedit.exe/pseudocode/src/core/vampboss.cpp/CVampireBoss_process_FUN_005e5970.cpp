@@ -106,9 +106,9 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               ((CDeformableModelInstance *)(this_ptr->unk1 + 8));
     core_cloth_cpp_FUN_0043ab80();
-    if ((this_ptr->base).base.hit_points < (float)25) {
+    if ((float)(this_ptr->base).base.hit_points < (float)25) {
       iVar10 = *(int *)(this_ptr->unk3 + 0x10);
-      (this_ptr->base).base.hit_points = 24.999;
+      (this_ptr->base).base.hit_points = 0x41c7fdf4;
       if ((iVar10 != 2) && (iVar10 != 3)) {
         core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510();
         this_ptr->unk3[0x10] = '\x02';
@@ -265,7 +265,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     local_38 = (CLocation *)
                core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          ((float)local_38 - (this_ptr->base).base.base.orient.pitch);
-    fVar4 = (this_ptr->base).base.hit_points;
+    fVar4 = (float)(this_ptr->base).base.hit_points;
     local_58 = -0.3926991;
     local_24 = 0.3926991;
     (this_ptr->base).base.base.orient.pitch =
@@ -491,8 +491,8 @@ LAB_005e648e:
       switch(*(uint *)(this_ptr->unk3 + 0x28)) {
       default:
         fVar4 = ((this_ptr->base).base.max_hit_points * delta_time) / 120.0f +
-                (this_ptr->base).base.hit_points;
-        (this_ptr->base).base.hit_points = fVar4;
+                (float)(this_ptr->base).base.hit_points;
+        (this_ptr->base).base.hit_points = (int)fVar4;
         if ((float)50 < fVar4) goto LAB_005e6560;
         iVar15 = core_hero_cpp_FUN_004f2220();
         if (iVar15 == 0) {

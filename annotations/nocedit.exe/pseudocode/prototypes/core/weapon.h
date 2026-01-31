@@ -15,13 +15,13 @@ CWeapon * __cdecl CWeapon::ctor(CWeapon *this_ptr);
 // Address: 005edf80
 CWeapon * __cdecl CWeapon::dtor(CWeapon *this_ptr,uint d1,uint d2,uint d3);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005edff0
+// Original: core_weapon.cpp_CWeapon_setup_FUN_005edff0
 // Address: 005edff0
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::setup(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee030
+// Original: core_weapon.cpp_CWeapon_renderOpaque_FUN_005ee030
 // Address: 005ee030
-int __cdecl CWeapon(CWeapon *this_ptr);
+int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee0c0
 // Address: 005ee0c0
@@ -83,9 +83,9 @@ int __cdecl CWeapon(CWeapon *this_ptr);
 // Address: 005ee730
 int __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_005ee740
+// Original: core_weapon.cpp_CWeapon_FUN_005ee740
 // Address: 005ee740
-void __cdecl FUN_005ee740(CWeapon *this_ptr);
+void __cdecl CWeapon(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee830
 // Address: 005ee830
@@ -95,9 +95,9 @@ void __cdecl CWeapon(CWeapon *this_ptr);
 // Address: 005ee860
 void __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee9f0
+// Original: core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0
 // Address: 005ee9f0
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::getPropertyList(CWeapon *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005eea60
 // Address: 005eea60

@@ -103,7 +103,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   if (iVar12 == 0) {
     switch(iVar10) {
     case 0:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         if (extraout_EAX != 0) {
@@ -158,12 +158,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                       (&(this_ptr->base).base.model.motion_controller,3,1);
           }
         }
-        core_batman_cpp_FUN_004167f0();
+        core_batman_cpp_CBatman_FUN_004167f0(this_ptr);
       }
       break;
     case 1:
     case 2:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       fVar5 = 3.5f;
       pCVar3 = &(this_ptr->base).base.model;
       if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
@@ -243,10 +243,11 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                            [INT_008227c0].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_f8,pCVar13);
-      core_enemy_cpp_FUN_004a9880();
+      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       break;
     case 8:
-      if (((this_ptr->base).pool_me == 0) && ((this_ptr->base).base.base.unk2 == 0)) {
+      if (((this_ptr->base).pool_me == 0) &&
+         ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
         pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                             (pCVar3,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -256,7 +257,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       }
       break;
     case 9:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       if ((*(int *)((this_ptr->base).unk2 + 4) != 0) ||
          (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                              (g_CEventListPtr,this_ptr->unk1 + 8), iVar10 != 0)) {
@@ -378,7 +379,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         if (fVar5 < 0.0) {
           this_ptr->vanish_timer = 0.0;
           this_ptr->mist_state = 0;
-          core_batman_cpp_FUN_004167f0();
+          core_batman_cpp_CBatman_FUN_004167f0(this_ptr);
         }
       }
     }

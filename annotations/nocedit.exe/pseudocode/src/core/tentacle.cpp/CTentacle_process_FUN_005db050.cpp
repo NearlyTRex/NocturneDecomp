@@ -204,7 +204,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       fVar1 = *(float *)(this_ptr->unk + 0xc) + delta_time;
       *(float *)(this_ptr->unk + 0xc) = fVar1;
       if (fVar1 < (float)25) {
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).field_4)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
         iVar3 = *(int *)((this_ptr->base).unk2 + 4);
         if (iVar3 != 0) {
           CStack_88.x = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_20->x)->x;

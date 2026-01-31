@@ -42,7 +42,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c8ea0
 ;   core_fire.cpp_CFireEffect_FUN_004c8f50
 ;   core_fire.cpp_CFireEffect_FUN_004c8fd0
-;   core_hero.cpp_FUN_004f3960
+;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;   crt_memory.c___arrinit_FUN_005fe667
@@ -64,8 +64,8 @@ section .text
     LEA EAX,[ESP + 0x134]               ; 004136c2
     PUSH EAX                            ; 004136c9
     PUSH EBX                            ; 004136ca
-    CALL core_hero.cpp_FUN_004f3960     ; 004136cb
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_FUN_004f3960()
+    CALL core_hero.cpp_CHero_FUN_004f3960 ; 004136cb
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_CHero_FUN_004f3960(CHero * this_ptr)
     ADD ESP,0x8                         ; 004136d0
     MOV ESI,EAX                         ; 004136d3
     TEST EAX,EAX                        ; 004136d5

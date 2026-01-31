@@ -56,12 +56,12 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 131,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 31,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param",
       "unresolved_funcptr"
@@ -208,6 +208,13 @@
       "line": 18,
       "match": "in_stack_00000004",
       "text": "switch(*(uint *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "fVar3 = core_charactr_cpp_CCharacter_FUN_0042e840(in_stack_00000004);",
       "type": "stack_param"
     },
     {

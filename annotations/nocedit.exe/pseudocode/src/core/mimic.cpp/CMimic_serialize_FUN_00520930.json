@@ -1,0 +1,237 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 75,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 32,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 38,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 9,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 106
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00520930",
+    "address_range": [
+      [
+        "00520930",
+        "005209fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_serialize_FUN_00520930",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_serialize_FUN_00520930(CMimic *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870"
+    },
+    {
+      "addr": "0040b970",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b9f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    },
+    {
+      "addr": "004a9660",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006387c6",
+      "name": "s_speed_006387c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006387cc",
+      "name": "s_modelName_006387cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006387d6",
+      "name": "s_attackCondition_006387d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006387e6",
+      "name": "s_attackMode_006387e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006387f1",
+      "name": "s_mirrorPlaneActor_006387f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638802",
+      "name": "s_motion_state_00638802",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063880f",
+      "name": "s_morphActorType_0063880f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063881e",
+      "name": "s_mirrorCondition_0063881e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d510",
+      "name": "g_CMimicClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.245901639344262,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 42,
+      "INT_ADD": 26,
+      "INT_AND": 26,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 3,
+      "STORE": 28
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 232,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

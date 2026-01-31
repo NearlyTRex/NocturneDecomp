@@ -1,34 +1,47 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 16,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CHealthItem_ptr_344' {aka 'CHealthItem*'} in assignment"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 17,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CHealthItem_ptr_344' {aka 'CHealthItem*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 19,
+        "message": "cannot convert 'CHealthItem_ptr_344' {aka 'CHealthItem*'} to 'CKeyFramedModelInstance*'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 39,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 39
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -136,18 +149,32 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CHealthItemVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CHealthItemVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CHealthItem *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->use_count = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->hp_restored = 50.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

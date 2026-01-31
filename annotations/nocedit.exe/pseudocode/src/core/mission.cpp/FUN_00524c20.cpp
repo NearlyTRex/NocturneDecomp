@@ -49,7 +49,7 @@ void __cdecl core_mission_cpp_FUN_00524c20(void)
           if (this_ptr != (CHeroPlaceholder *)0x0) {
             pCVar4 = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(this_ptr);
           }
-          pCVar4->unk = 0;
+          pCVar4->index = 0;
           (pCVar4->base).location.position.x = *(float *)(pcVar3 + 0x20);
           (pCVar4->base).location.position.y = *(float *)(pcVar3 + 0x24);
           (pCVar4->base).location.position.z = *(float *)(pcVar3 + 0x28);

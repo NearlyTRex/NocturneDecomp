@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x158                       ; 00486d1c
     PUSH EAX                            ; 00486d21
     CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 00486d22
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260(CDeformableModelInstance * param_1, _FILE * param_2)
     ADD ESP,0x8                         ; 00486d27
     POP EBX                             ; 00486d2a
     RET                                 ; 00486d2b

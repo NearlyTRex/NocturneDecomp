@@ -7,8 +7,8 @@
 ; int *            Stack[0x4]:4   param_1
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004f2d70 at 004f2e63
-;   core_hero.cpp_FUN_004f2f50 at 004f30c3
+;   core_hero.cpp_CHero_FUN_004f2d70 at 004f2e63
+;   core_hero.cpp_CHero_FUN_004f2f50 at 004f30c3
 ;
 ; Referenced Globals:
 ;   CEventList* g_CEventListPtr = 02d05310

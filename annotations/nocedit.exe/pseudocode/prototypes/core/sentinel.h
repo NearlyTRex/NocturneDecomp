@@ -47,9 +47,9 @@ int __cdecl FUN_00568dd0(void);
 // Address: 00568ef0
 void __cdecl FUN_00568ef0(void);
 
-// Original: core_sentinel.cpp_FUN_00568f10
+// Original: core_sentinel.cpp_CSentinel_getPropertyList_FUN_00568f10
 // Address: 00568f10
-void __cdecl FUN_00568f10(void);
+void __cdecl CSentinel::getPropertyList(CSentinel *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_sentinel.cpp_FUN_00568f50
 // Address: 00568f50

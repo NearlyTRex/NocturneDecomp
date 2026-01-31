@@ -7,10 +7,10 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_bugs.cpp_CBugs_FUN_004277e0 at 00427811
+;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427811
 ;   core_flies.cpp_FUN_004ccaa0 at 004ccad0
-;   core_ghoul.cpp_FUN_004e8dc0 at 004e8e11
-;   core_hero.cpp_CHeroPlaceholder_FUN_004f3f60 at 004f3f8d
+;   core_ghoul.cpp_CGhoul_getPropertyList_FUN_004e8dc0 at 004e8e11
+;   core_hero.cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60 at 004f3f8d
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0
