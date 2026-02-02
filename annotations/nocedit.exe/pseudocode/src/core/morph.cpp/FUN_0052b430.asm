@@ -10,7 +10,7 @@
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 00529330
 ;   core_moloch.cpp_CMoloch_setup_FUN_00528c70 at 00528ce7
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c481
-;   core_passngr.cpp_FUN_00545d30 at 00545da1
+;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545da1
 ;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6dc9
 ;   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 at 005e5827
 ;

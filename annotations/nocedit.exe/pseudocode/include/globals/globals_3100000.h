@@ -15,17 +15,27 @@
 extern CDemonActorType g_CScatClassInfo;
 
 // CEdScrollBar
-extern CEdScrollBar CEdScrollBar_0310fcd8;
-extern CEdScrollBar CEdScrollBar_0310fd0c;
+extern CEdScrollBar g_ScriptEditorVScrollBar;
+extern CEdScrollBar g_ScriptEditorHScrollBar;
 
 // CPickList
-extern CPickList DAT_0310f4b0;
+extern CPickList g_ScriptPickList;
 
 // CScript
 extern CScript g_CScriptInstance;
 
+// char[100]
+extern char g_ScriptTempBuffer[100];
+
+// char[2048]
+extern char g_ScriptLineBuffer[2048];
+extern char g_ScriptErrorBuffer[2048];
+
+// char[4096]
+extern char g_ScriptFormatBuffer[4096];
+
 // float
-extern float FLOAT_0310f4a0;
+extern float g_ScriptTimeScale;
 
 // int
 extern int g_QuantizeCurrentLineNumber;
@@ -48,21 +58,15 @@ extern int INT_03106198;
 extern int INT_0310619c;
 extern int INT_031061a0;
 extern int INT_031061e0;
+extern int g_ScriptEventsEnabled;
+extern int g_ScriptInputFlag;
+extern int g_ScriptLoopWarningShown;
+extern int g_ActorLookedUpByVariable;
 extern int INT_0310fd40;
+extern int g_CurrentEditingColumn;
+extern int g_CurrentEditingLine;
 
 // undefined1
-extern undefined1 DAT_031091e8;
-extern undefined1 DAT_031091e9;
-extern undefined1 DAT_031091ea;
-extern undefined1 DAT_031091eb;
-extern undefined1 DAT_0310a9e8;
-extern undefined1 DAT_0310a9e9;
-extern undefined1 DAT_0310a9ea;
-extern undefined1 DAT_0310a9eb;
-extern undefined1 DAT_0310eca0;
-extern undefined1 DAT_0310eca1;
-extern undefined1 DAT_0310eca2;
-extern undefined1 DAT_0310eca3;
 extern undefined1 DAT_0310fd58;
 extern undefined1 DAT_0310fdc0;
 extern undefined1 DAT_0310fdc1;
@@ -70,12 +74,6 @@ extern undefined1 DAT_0310fdc2;
 extern undefined1 DAT_0310fdc3;
 
 // undefined4
-extern undefined4 DAT_0310ec9c;
-extern undefined4 DAT_0310f4a4;
-extern undefined4 DAT_0310f4a8;
-extern undefined4 DAT_0310f4ac;
-extern undefined4 DAT_0310fd44;
-extern undefined4 DAT_0310fd48;
 extern undefined4 DAT_0310fd4c;
 extern undefined4 DAT_0310fd50;
 

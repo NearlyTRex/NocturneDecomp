@@ -347,7 +347,7 @@ LAB_004848f9:
       }
     }
     else {
-      if (((float)(in_stack_00000004->base).hit_points < 20.0f) ||
+      if (((in_stack_00000004->base).hit_points < 20.0f) ||
          (*(float *)(in_stack_00000004[1].base.base.create_event + 0x28) < 0.0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base).model.motion_controller,0,1);

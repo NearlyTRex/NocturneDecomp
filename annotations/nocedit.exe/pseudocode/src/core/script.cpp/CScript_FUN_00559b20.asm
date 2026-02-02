@@ -68,11 +68,11 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 00559b44
     FLD float ptr [ESP + 0x20]          ; 00559b48
     FDIV float ptr [0x00641794]         ; 00559b4c | FLOAT_00641794
-    FSUBR float ptr [0x0310f4a0]        ; 00559b52 | FLOAT_0310f4a0
+    FSUBR float ptr [0x0310f4a0]        ; 00559b52 | g_ScriptTimeScale
     ADD ESP,0x4                         ; 00559b58
         ;   Label: LAB_00559b58
-    FSTP float ptr [0x0310f4a0]         ; 00559b5b | FLOAT_0310f4a0
-    FLD float ptr [0x0310f4a0]          ; 00559b61 | FLOAT_0310f4a0
+    FSTP float ptr [0x0310f4a0]         ; 00559b5b | g_ScriptTimeScale
+    FLD float ptr [0x0310f4a0]          ; 00559b61 | g_ScriptTimeScale
     FLDZ                                ; 00559b67
     FCOMPP                              ; 00559b69
     FNSTSW AX                           ; 00559b6b
@@ -80,8 +80,8 @@ section .text
     JBE 0x00559b78                      ; 00559b6e
         ;   XREF to: 00559b78 (CONDITIONAL_JUMP)  ; LAB_00559b78
     XOR ECX,ECX                         ; 00559b70
-    MOV dword ptr [0x0310f4a0],ECX      ; 00559b72 | FLOAT_0310f4a0
-    FLD float ptr [0x0310f4a0]          ; 00559b78 | FLOAT_0310f4a0
+    MOV dword ptr [0x0310f4a0],ECX      ; 00559b72 | g_ScriptTimeScale
+    FLD float ptr [0x0310f4a0]          ; 00559b78 | g_ScriptTimeScale
         ;   Label: LAB_00559b78
     FLD1                                ; 00559b7e
     FCOMPP                              ; 00559b80
@@ -89,7 +89,7 @@ section .text
     SAHF                                ; 00559b84
     JNC 0x00559b91                      ; 00559b85
         ;   XREF to: 00559b91 (CONDITIONAL_JUMP)  ; LAB_00559b91
-    MOV dword ptr [0x0310f4a0],0x3f800000 ; 00559b87 | FLOAT_0310f4a0
+    MOV dword ptr [0x0310f4a0],0x3f800000 ; 00559b87 | g_ScriptTimeScale
     MOV EAX,[0x00679394]                ; 00559b91 | g_WindowWidth
         ;   Label: LAB_00559b91
     MOV EBX,dword ptr [0x00679398]      ; 00559b96 | g_WindowHeight
@@ -264,7 +264,7 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 00559d4d
     FLD float ptr [ESP + 0x20]          ; 00559d51
     FDIV float ptr [0x00641794]         ; 00559d55 | FLOAT_00641794
-    FADD float ptr [0x0310f4a0]         ; 00559d5b | FLOAT_0310f4a0
+    FADD float ptr [0x0310f4a0]         ; 00559d5b | g_ScriptTimeScale
     JMP 0x00559b58                      ; 00559d61
         ;   XREF to: 00559b58 (UNCONDITIONAL_JUMP)  ; LAB_00559b58
     MOV EBP,dword ptr [0x020a572c]      ; 00559d66 | g_MicroFont

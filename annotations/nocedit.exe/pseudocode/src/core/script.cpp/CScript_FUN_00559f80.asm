@@ -233,7 +233,7 @@ section .text
     CALL core_script.cpp_CScript_FUN_0055a4b0 ; 0055a146
         ;   XREF to: 0055a4b0 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_CScript_FUN_0055a4b0(CScript * this_ptr, int * param_2)
     ADD ESP,0x8                         ; 0055a14b
-    PUSH 0x310f4b0                      ; 0055a14e | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 0055a14e | g_ScriptPickList
     MOV ESI,EAX                         ; 0055a153
     MOV EBX,EAX                         ; 0055a155
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 0055a157
@@ -362,8 +362,8 @@ section .text
     ADD ESP,0xc                         ; 0055a2ab
     LEA EAX,[EBP + 0x38]                ; 0055a2ae
     PUSH EAX                            ; 0055a2b1
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 0055a2b2
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 0055a2b2
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0055a2b7
     INC EAX                             ; 0055a2ba
     PUSH EAX                            ; 0055a2bb

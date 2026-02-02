@@ -15,7 +15,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0 at 0054c4ee
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
@@ -43,8 +43,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 0054c4a1
     PUSH EDI                            ; 0054c4a5
     PUSH EBX                            ; 0054c4a6
-    CALL cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40 ; 0054c4a7
-        ;   XREF to: 0054bb40 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40(CPackedBitmapSet * bitmap_set, char * pbg_filename, char * palette_filename, int param3, ...)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40 ; 0054c4a7
+        ;   XREF to: 0054bb40 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40(CPackedBitmap * this_ptr, char * pbg_filename, char * palette_filename, int param3, ...)
     ADD ESP,0x18                        ; 0054c4ac
     PUSH EDI                            ; 0054c4af
     PUSH EBX                            ; 0054c4b0

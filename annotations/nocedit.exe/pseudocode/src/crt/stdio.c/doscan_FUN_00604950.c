@@ -26,7 +26,7 @@ int __cdecl doscan(scanf_state_t *state,char **format_ptr,va_list_t *args)
     format_ptr_00 = (char **)((int)format_ptr + 1);
     uVar3 = (uint)*(byte *)format_ptr;
     if (uVar3 == 0) goto LAB_00604c00;
-    if ((g_CharacterClassificationTable[(byte)(*(byte *)format_ptr + 1)] & 2U) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(*(byte *)format_ptr + 1)] & 2) != 0) {
       format_ptr = format_ptr_00;
       iVar2 = skip_whitespace(state);
       chars_consumed = chars_consumed + iVar2;

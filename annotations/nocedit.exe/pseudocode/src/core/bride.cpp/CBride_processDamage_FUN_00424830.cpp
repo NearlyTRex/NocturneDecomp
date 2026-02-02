@@ -42,13 +42,12 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
   }
   core_bride_cpp_CBride_FUN_00424600(this_ptr);
   iVar2 = *(int *)(this_ptr->unk + 0x28);
-  (this_ptr->base).base.hit_points =
-       (int)((float)(this_ptr->base).base.hit_points - damage_info->damage_amount);
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   if ((this_ptr->base).base.model.part_visibility_flags[iVar2] == 0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
-  if (0.0 < (float)(this_ptr->base).base.hit_points) {
+  if (0.0 < (this_ptr->base).base.hit_points) {
     iVar4 = 1;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -58,7 +57,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
     sound_name = "ub-hurt?.wav";
   }
   else {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00424955;

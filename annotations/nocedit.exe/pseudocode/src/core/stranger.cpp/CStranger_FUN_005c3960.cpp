@@ -108,8 +108,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
       local_2c = -0.5235988;
     }
   }
-  fVar8 = *(float *)((this_ptr->base).unk2 + 0x28) * (float)3.1415926535000001 * (float)2
-          * in_stack_0000000c + *pfStack_20;
+  fVar8 = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 * (float)2 *
+          in_stack_0000000c + *pfStack_20;
   pfStack_20[1] = 0.0;
   *pfStack_20 = fVar8;
   if (fVar8 < -1.047198f) {

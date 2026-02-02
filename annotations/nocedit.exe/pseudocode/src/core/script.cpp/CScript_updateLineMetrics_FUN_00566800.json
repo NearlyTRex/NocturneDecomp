@@ -1,0 +1,150 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 40,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 112
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "00565a4d",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566180",
+      "from_addr": "005661d4",
+      "name": "core_script.cpp_CScript_FUN_00566180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566660",
+      "from_addr": "005667ef",
+      "name": "core_script.cpp_CScript_FUN_00566660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005662a0",
+      "from_addr": "005662e3",
+      "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566800",
+    "address_range": [
+      [
+        "00566800",
+        "0056687c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_updateLineMetrics_FUN_00566800",
+    "signature": "void __cdecl core_script_cpp_CScript_updateLineMetrics_FUN_00566800(CScript *this_ptr,int line_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
+      "value": null
+    },
+    {
+      "addr": "0310fd10",
+      "name": "g_ScriptEditorHScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd48",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.964912280701754,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 48,
+      "INT_ADD": 21,
+      "INT_AND": 41,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 41,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 19,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 283
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "line_number",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

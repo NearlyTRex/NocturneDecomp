@@ -27,11 +27,11 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc4f0(void)
   (*(((in_stack_00000004->base).base.vtable._uc)->_uc).cfunc9)();
   pCVar1 = in_stack_00000004[1].base.base.standing_platform;
   (in_stack_00000004->base).hit_points =
-       (int)((float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount);
+       (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   if ((in_stack_00000004->base).model.part_visibility_flags[(int)pCVar1] == 0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
   }
-  fVar4 = (float)(in_stack_00000004->base).hit_points;
+  fVar4 = (in_stack_00000004->base).hit_points;
   this_ptr = &(in_stack_00000004->base).model;
   in_stack_00000004->unk2[0] = -0x66;
   in_stack_00000004->unk2[1] = -0x67;
@@ -61,7 +61,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc4f0(void)
     }
   }
   else {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {

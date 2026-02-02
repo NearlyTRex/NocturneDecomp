@@ -20,7 +20,7 @@
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004f1b70 at 004f1c00
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0 at 004f9721
 ;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544e01
-;   core_scat.cpp_FUN_00557ea0 at 00557fa2
+;   core_scat.cpp_CScat_processDamage_FUN_00557ea0 at 00557fa2
 ;   core_stranger.cpp_CStranger_FUN_005c48b0 at 005c4afd
 ;   core_svetlana.cpp_FUN_005d9d30 at 005d9e80
 ;

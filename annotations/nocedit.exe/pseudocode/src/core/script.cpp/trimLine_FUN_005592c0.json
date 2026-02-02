@@ -1,0 +1,149 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 41,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "0055a370",
+      "from_addr": "0055a3b8",
+      "name": "core_script.cpp_CScript_FUN_0055a370",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005592c0",
+    "address_range": [
+      [
+        "005592c0",
+        "00559352"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_trimLine_FUN_005592c0",
+    "signature": "void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fedd0",
+      "is_variadic": false,
+      "name": "crt_string.c_strstr_FUN_005fedd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064151b",
+      "name": "s_anon_0064151b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055a3b8",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_0055a370",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.703125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 11,
+      "COPY": 44,
+      "INT_ADD": 20,
+      "INT_AND": 50,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 46,
+      "INT_LESS": 9,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 23,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 15,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 301
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_line",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

@@ -35,9 +35,9 @@ void __cdecl FUN_0043ff20(void);
 // Address: 00440430
 ushort __cdecl FUN_00440430(void);
 
-// Original: core_colonel.cpp_CColonel_serialize_FUN_00440490
+// Original: core_colonel.cpp_CColonel_archive_FUN_00440490
 // Address: 00440490
-void __cdecl CColonel::serialize(CColonel *this_ptr);
+void __cdecl CColonel::archive(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_FUN_004404a0
 // Address: 004404a0

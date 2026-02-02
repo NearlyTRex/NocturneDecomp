@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)
+; __cdecl void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063d245

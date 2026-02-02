@@ -3,15 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 27,
-        "line": 29,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 34,
-        "line": 29,
-        "message": "expected primary-expression before ')' token"
+        "column": 53,
+        "line": 30,
+        "message": "'stack0xffffff94' was not declared in this scope; did you mean 'in_stack_ffffff9c'?"
       }
     ],
     "success": false,
@@ -21,36 +15,24 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 189,
+    "complexity_score": 188,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "undefined_data",
-      "unresolved_funcptr"
+      "stack_ref",
+      "undefined_data"
     ],
-    "total_lines": 65
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -133,63 +115,70 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff94",
-      "text": "CVector3i *in_stack_ffffff94;",
+      "line": 11,
+      "match": "in_stack_ffffff9c",
+      "text": "CVector3i *in_stack_ffffff9c;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
-      "text": "pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focus_actor + 0x154) + 0x14))();",
-      "type": "unresolved_funcptr"
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff94",
+      "text": "(this_ptr,(CBoundingBox3D *)&stack0xffffff94);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "CStack_4c.x = (int)ROUND(CStack_40.x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
-      "text": "CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);",
+      "text": "CStack_4c.y = (int)ROUND(CStack_40.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
-      "text": "CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "text": "CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);",
+      "text": "CStack_4c.z = (int)ROUND(CStack_40.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_ffffff94",
-      "text": "(&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);",
+      "line": 34,
+      "match": "in_stack_ffffff9c",
+      "text": "(&g_CDemonCameraInstance,&CStack_4c,in_stack_ffffff9c);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_02d831f4",
-      "text": "DAT_02d831f4 = (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -",
+      "text": "DAT_02d831f4 = (int)((iStack_28 + (iStack_28 >> 0x1f) * -0x10000) -",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_02d831f8",
-      "text": "DAT_02d831f8 = (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -",
+      "text": "DAT_02d831f8 = (int)((aiStack_24[0] + (aiStack_24[0] >> 0x1f) * -0x10000) -",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
+      "match": "DAT_02d831f4",
+      "text": "DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
       "match": "DAT_02d831f4",
       "text": "DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;",
       "type": "undefined_data"
@@ -197,20 +186,13 @@
     {
       "description": "Undefined global data reference",
       "line": 46,
-      "match": "DAT_02d831f4",
-      "text": "DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
       "match": "DAT_02d831f8",
       "text": "DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_02d831f8",
       "text": "DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;",
       "type": "undefined_data"

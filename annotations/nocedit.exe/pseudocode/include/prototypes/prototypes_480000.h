@@ -5,6 +5,7 @@
 #include "system/fstream.h"
 #include "system/stdio.h"
 #include "system/winbase.h"
+#include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -48,7 +49,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_004809e0(CDoor *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor *this_ptr,CBoundingBox3D *out_box);
-void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_door_cpp_CDoor_getGroundType_FUN_00480dd0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_FUN_00480de0(CDoor *this_ptr);
@@ -58,8 +59,8 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00481020(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr);
-void __cdecl core_door_cpp_FUN_00481250(void);
-int __cdecl core_door_cpp_FUN_004812b0(void);
+void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250 (CDoor *this_ptr,CActorPropertyList *property,char *output_buffer);
+int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property);
 void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_writeDependencies_FUN_00481630(CDoor *this_ptr,_FILE *file_handle);
@@ -322,9 +323,9 @@ void __cdecl core_drip_cpp_FUN_0048e6b0(void);
 int __cdecl core_drip_cpp_FUN_0048e6c0(void);
 float * __cdecl core_drip_cpp_FUN_0048e740(void);
 int __cdecl core_drip_cpp_FUN_0048e820(void);
-void __cdecl core_drip_cpp_FUN_0048e830(void);
-int __cdecl core_drip_cpp_FUN_0048e8d0(void);
-void __cdecl core_drip_cpp_FUN_0048e930(void);
+void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (CDrip *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property);
+void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_drip_cpp_FUN_0048ea30(void);
 void __cdecl core_drip_cpp_FUN_0048ea60(void);
 CDrip * __cdecl core_drip_cpp_dtor_FUN_0048ea90(CDrip *this_ptr,uint d1,uint d2);

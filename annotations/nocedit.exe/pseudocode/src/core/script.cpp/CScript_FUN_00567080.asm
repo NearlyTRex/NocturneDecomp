@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_label_006441c0
 ;   TerminatedCString s_anon_006441c9
-;   void* PTR_s_label_006441c0_00680e28 = 006441c0
-;   void* PTR_s_anon_006441c9_00680e2c = 006441c9
-;   char[256] g_CharacterClassificationTable
+;   char*[141] g_CommandTemplates
+;   undefined4 PTR_s_anon_006441c9_00680e2c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_004b0f90
@@ -44,14 +44,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x237c]    ; 00567089
     MOV EBP,dword ptr [ESP + 0x2380]    ; 00567090
     XOR EBX,EBX                         ; 00567097
-    MOV EDX,dword ptr [EBX + 0x680e28]  ; 00567099 | = ":<label>" | s_anon_006441c9 | PTR_s_label_006441c0_00680e28
+    MOV EDX,dword ptr [EBX + 0x680e28]  ; 00567099 | = ":<label>" | s_anon_006441c9 | g_CommandTemplates
         ;   Label: LAB_00567099
     PUSH EDX                            ; 0056709f | = ":<label>" | s_anon_006441c9
     PUSH ESI                            ; 005670a0
     LEA EAX,[ESP + 0x8]                 ; 005670a1
     PUSH EAX                            ; 005670a5
     CALL core_script.cpp_CCmdParse_parse_FUN_00561fd0 ; 005670a6
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, int param_2, char * param_3)
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, char * input_text, char * template_text)
     ADD ESP,0xc                         ; 005670ab
     CMP EAX,0x3                         ; 005670ae
     JZ 0x005670d3                       ; 005670b1

@@ -25,7 +25,7 @@
 ;   TerminatedCString s_No_actors_relevent_to_th_0063c607
 ;   TerminatedCString s_Actors_relevent_to_s_0063c63c
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:

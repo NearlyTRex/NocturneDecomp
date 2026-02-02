@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonPod.h"
+#include "types/classes/CProceduralTexture.h"
 #include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
@@ -11,6 +12,9 @@
 
 // CDemonPod
 extern CDemonPod g_CDemonPodInstance;
+
+// CProceduralTexture
+extern CProceduralTexture g_CProceduralTextureInstance;
 
 // SSoftwareEdge[16]
 extern SSoftwareEdge g_SoftwareEdgeBuffer[16];

@@ -200,14 +200,14 @@
 ;   undefined4 s_no_error_message_provided)_00641c3f
 ;   undefined4 s_o_error_message_provided)_00641c40
 ;   undefined4 s_error_message_provided)_00641c41
-;   undefined1 DAT_00641c5a
+;   char s_EmptyChar_00641c5a = \x00
 ;   TerminatedCString s_Invalid_label_s_on_line_00641c5b
 ;   TerminatedCString s_core_script_cpp_00641c76
 ;   TerminatedCString s_Internal_script_error_ch_00641c89
 ;   TerminatedCString s_Duplicate_label_s_on_lin_00641cbd
-;   undefined1 DAT_00641ce3
+;   char s_EmptyChar_00641ce3 = \x00
 ;   TerminatedCString s_syntaxCheckOn_00641ce4
-;   undefined1 DAT_00641cf2
+;   char s_EmptyChar_00641cf2 = \x00
 ;   TerminatedCString s_syntaxCheckOff_00641cf3
 ;   ... and 326 more
 ;
@@ -260,11 +260,11 @@ section .text
     ADD ESP,0x4                         ; 0055a84e
     MOV ESI,0x641c3e                    ; 0055a851 | = "(no error message provided)"
         ;   Label: LAB_0055a851
-    MOV EDI,0x310eca0                   ; 0055a856 | DAT_0310eca0
-    PUSH EDI                            ; 0055a85b | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055a856 | g_ScriptErrorBuffer
+    PUSH EDI                            ; 0055a85b | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055a85c | = "(no error message provided)" | s_o_error_message_provided)_00641c40
         ;   Label: LAB_0055a85c
-    MOV byte ptr [EDI],AL               ; 0055a85e | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055a85e | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055a860
     JZ 0x0055a874                       ; 0055a862
         ;   XREF to: 0055a874 (CONDITIONAL_JUMP)  ; LAB_0055a874
@@ -292,14 +292,14 @@ section .text
     CMP AH,0x7b                         ; 0055a8ab
     JNZ 0x0055a916                      ; 0055a8ae
         ;   XREF to: 0055a916 (CONDITIONAL_JUMP)  ; LAB_0055a916
-    MOV dword ptr [ESP + 0x3e8c],0x641c5a ; 0055a8b0 | DAT_00641c5a
+    MOV dword ptr [ESP + 0x3e8c],0x641c5a ; 0055a8b0 | s_EmptyChar_00641c5a
         ;   Label: LAB_0055a8b0
-    CMP dword ptr [0x0310ec9c],0x2      ; 0055a8bb | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x2      ; 0055a8bb | g_ScriptEventsEnabled
         ;   Label: LAB_0055a8bb
     JZ 0x0055a8d4                       ; 0055a8c2
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     MOV EAX,dword ptr [ESP + 0x3e8c]    ; 0055a8c4
-    CMP byte ptr [EAX],0x0              ; 0055a8cb | DAT_00641c5a | DAT_00641ce3 | DAT_00642527
+    CMP byte ptr [EAX],0x0              ; 0055a8cb | s_EmptyChar_00641c5a | s_EmptyChar_00641ce3 | s_EmptyChar_00642527
     JNZ 0x0055fe73                      ; 0055a8ce
         ;   XREF to: 0055fe73 (CONDITIONAL_JUMP)  ; LAB_0055fe73
     MOV EAX,dword ptr [ESP + 0x3e94]    ; 0055a8d4
@@ -308,7 +308,7 @@ section .text
     JNZ 0x0055fed4                      ; 0055a8de
         ;   XREF to: 0055fed4 (CONDITIONAL_JUMP)  ; LAB_0055fed4
     MOV dword ptr [EBX + 0x50],0xbf800000 ; 0055a8e4
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055a8eb | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055a8eb | g_ScriptEventsEnabled
     MOV dword ptr [EBX + 0x4c],0xbf800000 ; 0055a8f1
     TEST ECX,ECX                        ; 0055a8f8
     JNZ 0x0055a908                      ; 0055a8fa
@@ -334,9 +334,9 @@ section .text
         ;   XREF to: 0055aa2f (CONDITIONAL_JUMP)  ; LAB_0055aa2f
     INC ESI                             ; 0055a924
     PUSH ESI                            ; 0055a925
-    CALL core_script.cpp_FUN_005593d0   ; 0055a926
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055a92b | DAT_0310ec9c
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055a926
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055a92b | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055a931
     MOV EDX,EAX                         ; 0055a934
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055a936
@@ -368,7 +368,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3e90]    ; 0055a972
     PUSH EDI                            ; 0055a979
     PUSH 0x641c5b                       ; 0055a97a | = "Invalid label \"%s\" on line"
-    PUSH 0x310eca0                      ; 0055a97f | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055a97f | g_ScriptErrorBuffer
         ;   Label: LAB_0055a97f
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055a984
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
@@ -392,8 +392,8 @@ section .text
         ;   Label: LAB_0055a9ac
     PUSH EAX                            ; 0055a9b3
     PUSH EBX                            ; 0055a9b4
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055a9b5
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055a9b5
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055a9ba
     MOV ESI,EAX                         ; 0055a9bd
     TEST EAX,EAX                        ; 0055a9bf
@@ -403,7 +403,7 @@ section .text
         ;   Label: LAB_0055a9c3
     JNZ 0x0055aa01                      ; 0055a9ca
         ;   XREF to: 0055aa01 (CONDITIONAL_JUMP)  ; LAB_0055aa01
-    MOV dword ptr [ESP + 0x3e8c],0x641ce3 ; 0055a9cc | DAT_00641ce3
+    MOV dword ptr [ESP + 0x3e8c],0x641ce3 ; 0055a9cc | s_EmptyChar_00641ce3
         ;   Label: LAB_0055a9cc
     JMP 0x0055a8bb                      ; 0055a9d7
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -427,7 +427,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x3e94]    ; 0055aa10
     PUSH EBX                            ; 0055aa17
     PUSH 0x641cbd                       ; 0055aa18 | = "Duplicate label %s on lines %d and %d"
-    PUSH 0x310eca0                      ; 0055aa1d | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055aa1d | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055aa22
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0055aa27
@@ -465,7 +465,7 @@ section .text
     TEST byte ptr [EAX + 0x6849c4],0xe0 ; 0055aa78 | g_CharacterClassificationTable
     JZ 0x0055bb3e                       ; 0055aa7f
         ;   XREF to: 0055bb3e (CONDITIONAL_JUMP)  ; LAB_0055bb3e
-    CMP dword ptr [0x0310ec9c],0x2      ; 0055aa85 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x2      ; 0055aa85 | g_ScriptEventsEnabled
         ;   Label: LAB_0055aa85
     JZ 0x0055a8bb                       ; 0055aa8c
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2043,25 +2043,25 @@ section .text
     PUSH 0x64311b                       ; 0055bb11 | = "Unknown command on line %d: %s"
     JMP 0x0055a97f                      ; 0055bb16
         ;   XREF to: 0055a97f (UNCONDITIONAL_JUMP)  ; LAB_0055a97f
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb1b | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb1b | g_ScriptEventsEnabled
         ;   Label: LAB_0055bb1b
     JZ 0x0055bb2e                       ; 0055bb22
         ;   XREF to: 0055bb2e (CONDITIONAL_JUMP)  ; LAB_0055bb2e
-    MOV dword ptr [0x0310ec9c],0x1      ; 0055bb24 | DAT_0310ec9c
-    MOV dword ptr [ESP + 0x3e8c],0x641cf2 ; 0055bb2e | DAT_00641cf2
+    MOV dword ptr [0x0310ec9c],0x1      ; 0055bb24 | g_ScriptEventsEnabled
+    MOV dword ptr [ESP + 0x3e8c],0x641cf2 ; 0055bb2e | s_EmptyChar_00641cf2
         ;   Label: LAB_0055bb2e
     JMP 0x0055a8bb                      ; 0055bb39
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb3e | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb3e | g_ScriptEventsEnabled
         ;   Label: LAB_0055bb3e
     JZ 0x0055bb51                       ; 0055bb45
         ;   XREF to: 0055bb51 (CONDITIONAL_JUMP)  ; LAB_0055bb51
-    MOV dword ptr [0x0310ec9c],0x2      ; 0055bb47 | DAT_0310ec9c
-    MOV dword ptr [ESP + 0x3e8c],0x641d02 ; 0055bb51 | DAT_00641d02
+    MOV dword ptr [0x0310ec9c],0x2      ; 0055bb47 | g_ScriptEventsEnabled
+    MOV dword ptr [ESP + 0x3e8c],0x641d02 ; 0055bb51 | s_EmptyChar_00641d02
         ;   Label: LAB_0055bb51
     JMP 0x0055a8bb                      ; 0055bb5c
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb61 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055bb61 | g_ScriptEventsEnabled
         ;   Label: LAB_0055bb61
     JNZ 0x0055bb89                      ; 0055bb68
         ;   XREF to: 0055bb89 (CONDITIONAL_JUMP)  ; LAB_0055bb89
@@ -2071,7 +2071,7 @@ section .text
     CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0055bb71
         ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
     ADD ESP,0x8                         ; 0055bb76
-    MOV dword ptr [ESP + 0x3e8c],0x641e5e ; 0055bb79 | DAT_00641e5e
+    MOV dword ptr [ESP + 0x3e8c],0x641e5e ; 0055bb79 | s_EmptyChar_00641e5e
         ;   Label: LAB_0055bb79
     JMP 0x0055a8bb                      ; 0055bb84
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2085,13 +2085,13 @@ section .text
     TEST EAX,EAX                        ; 0055bb99
     JZ 0x0055bb79                       ; 0055bb9b
         ;   XREF to: 0055bb79 (CONDITIONAL_JUMP)  ; LAB_0055bb79
-    MOV EDI,0x310eca0                   ; 0055bb9d | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055bb9d | g_ScriptErrorBuffer
         ;   Label: LAB_0055bb9d
     MOV ESI,EAX                         ; 0055bba2
-    PUSH EDI                            ; 0055bba4 | DAT_0310eca0
+    PUSH EDI                            ; 0055bba4 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055bba5
         ;   Label: LAB_0055bba5
-    MOV byte ptr [EDI],AL               ; 0055bba7 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055bba7 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055bba9
     JZ 0x0055bbbd                       ; 0055bbab
         ;   XREF to: 0055bbbd (CONDITIONAL_JUMP)  ; LAB_0055bbbd
@@ -2109,8 +2109,8 @@ section .text
     ADD ESI,0x12                        ; 0055bbc3
         ;   Label: LAB_0055bbc3
     PUSH ESI                            ; 0055bbc6
-    CALL core_script.cpp_FUN_005593d0   ; 0055bbc7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bbc7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bbcc
     LEA EDX,[ESP + 0x3ec0]              ; 0055bbcf
     PUSH EDX                            ; 0055bbd6
@@ -2131,7 +2131,7 @@ section .text
     JGE 0x0055bc2b                      ; 0055bc12
         ;   XREF to: 0055bc2b (CONDITIONAL_JUMP)  ; LAB_0055bc2b
     PUSH 0x641e85                       ; 0055bc14 | = "Error parsing addItemToInventory comm..."
-    PUSH 0x310eca0                      ; 0055bc19 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055bc19 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055bc1e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055bc23
@@ -2143,27 +2143,27 @@ section .text
     ADD EDX,EDI                         ; 0055bc39
     PUSH EAX                            ; 0055bc3b
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055bc3c
-    CALL core_script.cpp_FUN_00559360   ; 0055bc43
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055bc43
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055bc48
     LEA EAX,[ESP + 0x17c4]              ; 0055bc4b
     PUSH EAX                            ; 0055bc52
-    CALL core_script.cpp_FUN_00559360   ; 0055bc53
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055bc53
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055bc58
     PUSH 0x2db87d4                      ; 0055bc5b | g_CHeroClassInfo
     MOV ECX,dword ptr [0x02db880c]      ; 0055bc60 | g_CHeroClassInfo.name_hash
     PUSH ECX                            ; 0055bc66
     LEA EAX,[ESP + 0x30cc]              ; 0055bc67
     PUSH EAX                            ; 0055bc6e
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055bc6f
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055bc6f
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055bc74
     ADD ESP,0xc                         ; 0055bc76
     TEST EAX,EAX                        ; 0055bc79
     JNZ 0x0055bc8f                      ; 0055bc7b
         ;   XREF to: 0055bc8f (CONDITIONAL_JUMP)  ; LAB_0055bc8f
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055bc7d | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055bc7d | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055bc84
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055bc8a
@@ -2174,18 +2174,18 @@ section .text
     PUSH EDI                            ; 0055bc9a
     LEA EAX,[ESP + 0x17cc]              ; 0055bc9b
     PUSH EAX                            ; 0055bca2
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055bca3
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055bca3
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055bca8
     TEST EAX,EAX                        ; 0055bcab
     JNZ 0x0055bcc1                      ; 0055bcad
         ;   XREF to: 0055bcc1 (CONDITIONAL_JUMP)  ; LAB_0055bcc1
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055bcaf | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055bcaf | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055bcb6
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055bcbc
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    MOV EDX,dword ptr [0x0310ec9c]      ; 0055bcc1 | DAT_0310ec9c
+    MOV EDX,dword ptr [0x0310ec9c]      ; 0055bcc1 | g_ScriptEventsEnabled
         ;   Label: LAB_0055bcc1
     TEST EDX,EDX                        ; 0055bcc7
     JNZ 0x0055a8bb                      ; 0055bcc9
@@ -2202,8 +2202,8 @@ section .text
     ADD ESI,0xe                         ; 0055bce5
         ;   Label: LAB_0055bce5
     PUSH ESI                            ; 0055bce8
-    CALL core_script.cpp_FUN_005593d0   ; 0055bce9
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bce9
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bcee
     LEA EDX,[ESP + 0x3ec8]              ; 0055bcf1
     PUSH EDX                            ; 0055bcf8
@@ -2226,7 +2226,7 @@ section .text
     JGE 0x0055bd55                      ; 0055bd3c
         ;   XREF to: 0055bd55 (CONDITIONAL_JUMP)  ; LAB_0055bd55
     PUSH 0x641eda                       ; 0055bd3e | = "Error parsing addLightFilter command ..."
-    PUSH 0x310eca0                      ; 0055bd43 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055bd43 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055bd48
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055bd4d
@@ -2244,8 +2244,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 0055bd76 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 0055bd7c | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x3e9c],EDX    ; 0055bd7d
-    CALL core_set.cpp_CDemonSet_FUN_00570f10 ; 0055bd84
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570f10(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 0055bd84
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
     ADD ESP,0x10                        ; 0055bd89
     CMP dword ptr [ESP + 0x3e90],0x0    ; 0055bd8c
     JNZ 0x0055bdb5                      ; 0055bd94
@@ -2253,7 +2253,7 @@ section .text
     LEA EAX,[ESP + 0x39d4]              ; 0055bd96
     PUSH EAX                            ; 0055bd9d
     PUSH 0x641f05                       ; 0055bd9e | = "Light \"%s\" does not exist"
-    PUSH 0x310eca0                      ; 0055bda3 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055bda3 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055bda8
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055bdad
@@ -2269,7 +2269,7 @@ section .text
     TEST EAX,EAX                        ; 0055bdca
     JLE 0x0055be01                      ; 0055bdcc
         ;   XREF to: 0055be01 (CONDITIONAL_JUMP)  ; LAB_0055be01
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055bdce | DAT_0310ec9c
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055bdce | g_ScriptEventsEnabled
     TEST EDI,EDI                        ; 0055bdd4
     JNZ 0x0055a8bb                      ; 0055bdd6
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2288,7 +2288,7 @@ section .text
         ;   Label: LAB_0055be01
     PUSH EAX                            ; 0055be08
     PUSH 0x641f23                       ; 0055be09 | = "Can't open filter \"%s\""
-    PUSH 0x310eca0                      ; 0055be0e | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055be0e | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055be13
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055be18
@@ -2297,21 +2297,21 @@ section .text
     ADD ESI,0x10                        ; 0055be20
         ;   Label: LAB_0055be20
     PUSH ESI                            ; 0055be23
-    CALL core_script.cpp_FUN_005593d0   ; 0055be24
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055be24
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055be29
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055be2c
     LEA EAX,[ESP + 0x3650]              ; 0055be33
     PUSH EAX                            ; 0055be3a
     LEA EAX,[ESP + 0x3e90]              ; 0055be3b
     PUSH EAX                            ; 0055be42
-    CALL core_script.cpp_FUN_005594a0   ; 0055be43
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055be43
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055be48
     TEST EAX,EAX                        ; 0055be4b
     JNZ 0x0055bb9d                      ; 0055be4d
         ;   XREF to: 0055bb9d (CONDITIONAL_JUMP)  ; LAB_0055bb9d
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055be53 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055be53 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055be5a
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3650]              ; 0055be60
@@ -2328,21 +2328,21 @@ section .text
     ADD ESI,0x11                        ; 0055be88
         ;   Label: LAB_0055be88
     PUSH ESI                            ; 0055be8b
-    CALL core_script.cpp_FUN_005593d0   ; 0055be8c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055be8c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055be91
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055be94
     LEA EAX,[ESP + 0x33f8]              ; 0055be9b
     PUSH EAX                            ; 0055bea2
     LEA EAX,[ESP + 0x3e90]              ; 0055bea3
     PUSH EAX                            ; 0055beaa
-    CALL core_script.cpp_FUN_005594a0   ; 0055beab
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055beab
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055beb0
     TEST EAX,EAX                        ; 0055beb3
     JNZ 0x0055bb9d                      ; 0055beb5
         ;   XREF to: 0055bb9d (CONDITIONAL_JUMP)  ; LAB_0055bb9d
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055bebb | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055bebb | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055bec2
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x33f8]              ; 0055bec8
@@ -2357,28 +2357,28 @@ section .text
     SETZ AL                             ; 0055bee3
     MOV DL,AL                           ; 0055bee6
     MOV EAX,[0x0067b654]                ; 0055bee8 | g_CGamePtr
-    MOV dword ptr [0x0310f4a4],EDX      ; 0055beed | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],EDX      ; 0055beed | g_ScriptInputFlag
     MOV dword ptr [EAX + 0x238],EDX     ; 0055bef3 | DAT_02d81cd4
     JMP 0x0055a8bb                      ; 0055bef9
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0xf                         ; 0055befe
         ;   Label: LAB_0055befe
     PUSH ESI                            ; 0055bf01
-    CALL core_script.cpp_FUN_005593d0   ; 0055bf02
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bf02
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bf07
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055bf0a
     LEA EAX,[ESP + 0x3524]              ; 0055bf11
     PUSH EAX                            ; 0055bf18
     LEA EAX,[ESP + 0x3e90]              ; 0055bf19
     PUSH EAX                            ; 0055bf20
-    CALL core_script.cpp_FUN_005594a0   ; 0055bf21
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055bf21
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055bf26
     TEST EAX,EAX                        ; 0055bf29
     JNZ 0x0055bb9d                      ; 0055bf2b
         ;   XREF to: 0055bb9d (CONDITIONAL_JUMP)  ; LAB_0055bb9d
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055bf31 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055bf31 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055bf38
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3524]              ; 0055bf3e
@@ -2395,8 +2395,8 @@ section .text
     ADD ESI,0x15                        ; 0055bf66
         ;   Label: LAB_0055bf66
     PUSH ESI                            ; 0055bf69
-    CALL core_script.cpp_FUN_005593d0   ; 0055bf6a
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bf6a
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bf6f
     LEA EDX,[ESP + 0x3e9c]              ; 0055bf72
     PUSH EDX                            ; 0055bf79
@@ -2417,7 +2417,7 @@ section .text
     JGE 0x0055bfce                      ; 0055bfb5
         ;   XREF to: 0055bfce (CONDITIONAL_JUMP)  ; LAB_0055bfce
     PUSH 0x641f94                       ; 0055bfb7 | = "Error parsing attachActorToPlatform c..."
-    PUSH 0x310eca0                      ; 0055bfbc | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055bfbc | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055bfc1
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055bfc6
@@ -2429,27 +2429,27 @@ section .text
     ADD EDI,ESI                         ; 0055bfdc
     PUSH EAX                            ; 0055bfde
     MOV dword ptr [ESP + 0x3e90],EDI    ; 0055bfdf
-    CALL core_script.cpp_FUN_00559360   ; 0055bfe6
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055bfe6
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055bfeb
     LEA EAX,[ESP + 0x250c]              ; 0055bfee
     PUSH EAX                            ; 0055bff5
-    CALL core_script.cpp_FUN_00559360   ; 0055bff6
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055bff6
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055bffb
     PUSH 0x30d5054                      ; 0055bffe | g_CPlatformClassInfo
     MOV EAX,[0x030d508c]                ; 0055c003 | g_CPlatformClassInfo.name_hash
     PUSH EAX                            ; 0055c008
     LEA EAX,[ESP + 0x2514]              ; 0055c009
     PUSH EAX                            ; 0055c010
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055c011
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055c011
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055c016
     ADD ESP,0xc                         ; 0055c018
     TEST EAX,EAX                        ; 0055c01b
     JNZ 0x0055c031                      ; 0055c01d
         ;   XREF to: 0055c031 (CONDITIONAL_JUMP)  ; LAB_0055c031
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055c01f | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055c01f | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055c026
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055c02c
@@ -2460,36 +2460,36 @@ section .text
     PUSH EDX                            ; 0055c03c
     LEA EAX,[ESP + 0x26a4]              ; 0055c03d
     PUSH EAX                            ; 0055c044
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055c045
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055c045
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055c04a
     TEST EAX,EAX                        ; 0055c04d
     JNZ 0x0055c063                      ; 0055c04f
         ;   XREF to: 0055c063 (CONDITIONAL_JUMP)  ; LAB_0055c063
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055c051 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055c051 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055c058
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055c05e
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055c063 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055c063 | g_ScriptEventsEnabled
         ;   Label: LAB_0055c063
     JNZ 0x0055a8bb                      ; 0055c06a
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055c070
     PUSH ESI                            ; 0055c071
     CALL core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 ; 0055c072
-        ;   XREF to: 0054e1e0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0()
+        ;   XREF to: 0054e1e0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform * this_ptr)
     ADD ESP,0x8                         ; 0055c077
     JMP 0x0055a8bb                      ; 0055c07a
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0xb                         ; 0055c07f
         ;   Label: LAB_0055c07f
     PUSH ESI                            ; 0055c082
-    CALL core_script.cpp_FUN_005593d0   ; 0055c083
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c083
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c088
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c08b
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055c092 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055c092 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055c099
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EDX,dword ptr [0x0067b654]      ; 0055c09f | g_CGamePtr
@@ -2502,10 +2502,10 @@ section .text
     ADD ESI,0xc                         ; 0055c0b3
         ;   Label: LAB_0055c0b3
     PUSH ESI                            ; 0055c0b6
-    CALL core_script.cpp_FUN_005593d0   ; 0055c0b7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c0b7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c0bc
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c0bf | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c0bf | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c0c5
     TEST ECX,ECX                        ; 0055c0cc
     JNZ 0x0055a8bb                      ; 0055c0ce
@@ -2520,10 +2520,10 @@ section .text
     ADD ESI,0xa                         ; 0055c0e8
         ;   Label: LAB_0055c0e8
     PUSH ESI                            ; 0055c0eb
-    CALL core_script.cpp_FUN_005593d0   ; 0055c0ec
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c0ec
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c0f1
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055c0f4 | DAT_0310ec9c
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055c0f4 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c0fa
     TEST EDI,EDI                        ; 0055c101
     JNZ 0x0055a8bb                      ; 0055c103
@@ -2550,10 +2550,10 @@ section .text
     ADD ESI,0x10                        ; 0055c14e
         ;   Label: LAB_0055c14e
     PUSH ESI                            ; 0055c151
-    CALL core_script.cpp_FUN_005593d0   ; 0055c152
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c152
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c157
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c15a | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c15a | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c160
     TEST ECX,ECX                        ; 0055c167
     JNZ 0x0055a8bb                      ; 0055c169
@@ -2568,8 +2568,8 @@ section .text
     ADD ESI,0xc                         ; 0055c183
         ;   Label: LAB_0055c183
     PUSH ESI                            ; 0055c186
-    CALL core_script.cpp_FUN_005593d0   ; 0055c187
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c187
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c18c
     PUSH 0xc8                           ; 0055c18f
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c194
@@ -2577,18 +2577,18 @@ section .text
     PUSH EAX                            ; 0055c1a2
     LEA EAX,[ESP + 0x3e94]              ; 0055c1a3
     PUSH EAX                            ; 0055c1aa
-    CALL core_script.cpp_FUN_005593f0   ; 0055c1ab
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055c1ab
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055c1b0
     TEST EAX,EAX                        ; 0055c1b3
     JZ 0x0055c1dd                       ; 0055c1b5
         ;   XREF to: 0055c1dd (CONDITIONAL_JUMP)  ; LAB_0055c1dd
-    MOV EDI,0x310eca0                   ; 0055c1b7 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055c1b7 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055c1bc
-    PUSH EDI                            ; 0055c1be | DAT_0310eca0
+    PUSH EDI                            ; 0055c1be | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c1bf
         ;   Label: LAB_0055c1bf
-    MOV byte ptr [EDI],AL               ; 0055c1c1 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c1c1 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055c1c3
     JZ 0x0055c1d7                       ; 0055c1c5
         ;   XREF to: 0055c1d7 (CONDITIONAL_JUMP)  ; LAB_0055c1d7
@@ -2613,7 +2613,7 @@ section .text
     TEST EAX,EAX                        ; 0055c1f2
     JNZ 0x0055c250                      ; 0055c1f4
         ;   XREF to: 0055c250 (CONDITIONAL_JUMP)  ; LAB_0055c250
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055c1f6 | DAT_0310ec9c
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055c1f6 | g_ScriptEventsEnabled
     TEST ESI,ESI                        ; 0055c1fc
     JNZ 0x0055a8bb                      ; 0055c1fe
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2654,18 +2654,18 @@ section .text
     PUSH EDI                            ; 0055c25b
     LEA EAX,[ESP + 0x1c7c]              ; 0055c25c
     PUSH EAX                            ; 0055c263
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055c264
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055c264
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055c269
     TEST EAX,EAX                        ; 0055c26c
     JNZ 0x0055c282                      ; 0055c26e
         ;   XREF to: 0055c282 (CONDITIONAL_JUMP)  ; LAB_0055c282
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055c270 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055c270 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055c277
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055c27d
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055c282 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055c282 | g_ScriptEventsEnabled
         ;   Label: LAB_0055c282
     JNZ 0x0055a8bb                      ; 0055c289
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2681,8 +2681,8 @@ section .text
     ADD ESI,0xe                         ; 0055c2aa
         ;   Label: LAB_0055c2aa
     PUSH ESI                            ; 0055c2ad
-    CALL core_script.cpp_FUN_005593d0   ; 0055c2ae
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c2ae
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c2b3
     PUSH 0xc8                           ; 0055c2b6
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c2bb
@@ -2690,18 +2690,18 @@ section .text
     PUSH EAX                            ; 0055c2c9
     LEA EAX,[ESP + 0x3e94]              ; 0055c2ca
     PUSH EAX                            ; 0055c2d1
-    CALL core_script.cpp_FUN_005593f0   ; 0055c2d2
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055c2d2
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055c2d7
     TEST EAX,EAX                        ; 0055c2da
     JZ 0x0055c304                       ; 0055c2dc
         ;   XREF to: 0055c304 (CONDITIONAL_JUMP)  ; LAB_0055c304
-    MOV EDI,0x310eca0                   ; 0055c2de | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055c2de | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055c2e3
-    PUSH EDI                            ; 0055c2e5 | DAT_0310eca0
+    PUSH EDI                            ; 0055c2e5 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c2e6
         ;   Label: LAB_0055c2e6
-    MOV byte ptr [EDI],AL               ; 0055c2e8 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c2e8 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055c2ea
     JZ 0x0055c2fe                       ; 0055c2ec
         ;   XREF to: 0055c2fe (CONDITIONAL_JUMP)  ; LAB_0055c2fe
@@ -2719,9 +2719,9 @@ section .text
     LEA EAX,[ESP + 0x1184]              ; 0055c304
         ;   Label: LAB_0055c304
     PUSH EAX                            ; 0055c30b
-    CALL core_script.cpp_FUN_00559360   ; 0055c30c
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055c311 | DAT_0310ec9c
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055c30c
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055c311 | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055c317
     TEST EDI,EDI                        ; 0055c31a
     JNZ 0x0055a8bb                      ; 0055c31c
@@ -2740,8 +2740,8 @@ section .text
     ADD ESI,0x12                        ; 0055c34a
         ;   Label: LAB_0055c34a
     PUSH ESI                            ; 0055c34d
-    CALL core_script.cpp_FUN_005593d0   ; 0055c34e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c34e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c353
     PUSH 0x12c                          ; 0055c356
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c35b
@@ -2749,19 +2749,19 @@ section .text
     PUSH EAX                            ; 0055c369
     LEA EAX,[ESP + 0x3e94]              ; 0055c36a
     PUSH EAX                            ; 0055c371
-    CALL core_script.cpp_FUN_005593f0   ; 0055c372
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055c372
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055c377
     TEST EAX,EAX                        ; 0055c37a
     JZ 0x0055c3a4                       ; 0055c37c
         ;   XREF to: 0055c3a4 (CONDITIONAL_JUMP)  ; LAB_0055c3a4
-    MOV EDI,0x310eca0                   ; 0055c37e | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055c37e | g_ScriptErrorBuffer
         ;   Label: LAB_0055c37e
     MOV ESI,EAX                         ; 0055c383
-    PUSH EDI                            ; 0055c385 | DAT_0310eca0
+    PUSH EDI                            ; 0055c385 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c386
         ;   Label: LAB_0055c386
-    MOV byte ptr [EDI],AL               ; 0055c388 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c388 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055c38a
     JZ 0x0055c39e                       ; 0055c38c
         ;   XREF to: 0055c39e (CONDITIONAL_JUMP)  ; LAB_0055c39e
@@ -2779,13 +2779,13 @@ section .text
     LEA EAX,[ESP + 0x824]               ; 0055c3a4
         ;   Label: LAB_0055c3a4
     PUSH EAX                            ; 0055c3ab
-    CALL core_script.cpp_FUN_00559220   ; 0055c3ac
-        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559220(char * param_1)
+    CALL core_script.cpp_validateActorVariableName_FUN_00559220 ; 0055c3ac
+        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_validateActorVariableName_FUN_00559220(char * variable_name)
     ADD ESP,0x4                         ; 0055c3b1
     TEST EAX,EAX                        ; 0055c3b4
     JZ 0x0055a98c                       ; 0055c3b6
         ;   XREF to: 0055a98c (CONDITIONAL_JUMP)  ; LAB_0055a98c
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c3bc | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055c3bc | g_ScriptEventsEnabled
     TEST ECX,ECX                        ; 0055c3c2
     JNZ 0x0055a8bb                      ; 0055c3c4
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2802,8 +2802,8 @@ section .text
     ADD ESI,0x5                         ; 0055c3e7
         ;   Label: LAB_0055c3e7
     PUSH ESI                            ; 0055c3ea
-    CALL core_script.cpp_FUN_005593d0   ; 0055c3eb
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c3eb
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c3f0
     LEA EDX,[ESP + 0x3ea0]              ; 0055c3f3
     PUSH EDX                            ; 0055c3fa
@@ -2822,8 +2822,8 @@ section .text
         ;   XREF to: 0055c506 (CONDITIONAL_JUMP)  ; LAB_0055c506
     LEA EAX,[ESP + 0x3394]              ; 0055c432
     PUSH EAX                            ; 0055c439
-    CALL core_script.cpp_FUN_00559360   ; 0055c43a
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055c43a
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055c43f
     MOV EAX,dword ptr [ESP + 0x3ea0]    ; 0055c442
     MOV EDX,dword ptr [ESP + 0x3e8c]    ; 0055c449
@@ -2832,8 +2832,8 @@ section .text
     PUSH EAX                            ; 0055c459
     PUSH EBX                            ; 0055c45a
     MOV dword ptr [ESP + 0x3e94],EDX    ; 0055c45b
-    CALL core_script.cpp_CScript_FUN_005606e0 ; 0055c462
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005606e0(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 0055c462
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055c467
     TEST EAX,EAX                        ; 0055c46a
     JL 0x0055c51d                       ; 0055c46c
@@ -2871,7 +2871,7 @@ section .text
     SAHF                                ; 0055c4c1
     JA 0x0055c56e                       ; 0055c4c2
         ;   XREF to: 0055c56e (CONDITIONAL_JUMP)  ; LAB_0055c56e
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055c4c8 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055c4c8 | g_ScriptEventsEnabled
         ;   Label: LAB_0055c4c8
     JNZ 0x0055a8bb                      ; 0055c4cf
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2889,14 +2889,14 @@ section .text
     MOV ECX,dword ptr [EBX + 0x4]       ; 0055c4f4
     PUSH ECX                            ; 0055c4f7
     PUSH EBX                            ; 0055c4f8
-    CALL core_script.cpp_CScript_FUN_00560140 ; 0055c4f9
-        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00560140(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_setSpeaker_FUN_00560140 ; 0055c4f9
+        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_00560140(CScript * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0055c4fe
     JMP 0x0055a8bb                      ; 0055c501
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642063                       ; 0055c506 | = "Error parsing dbSay arguments"
         ;   Label: LAB_0055c506
-    PUSH 0x310eca0                      ; 0055c50b | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055c50b | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055c510
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055c515
@@ -2917,7 +2917,7 @@ section .text
     ADD ESP,0xc                         ; 0055c551
     LEA EAX,[ESP + 0x1d3c]              ; 0055c554
     PUSH EAX                            ; 0055c55b
-    PUSH 0x310f4b0                      ; 0055c55c | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 0055c55c | g_ScriptPickList
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0055c561
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0055c566
@@ -2931,8 +2931,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3ecc]    ; 0055c57e
     PUSH EDI                            ; 0055c585
     PUSH EBX                            ; 0055c586
-    CALL core_script.cpp_CScript_FUN_0055ff00 ; 0055c587
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+    CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055c587
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055c58c
     FLDZ                                ; 0055c593
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055c595
@@ -2948,8 +2948,8 @@ section .text
     ADD ESI,0xa                         ; 0055c5b3
         ;   Label: LAB_0055c5b3
     PUSH ESI                            ; 0055c5b6
-    CALL core_script.cpp_FUN_005593d0   ; 0055c5b7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c5b7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c5bc
     LEA EDX,[ESP + 0x3eac]              ; 0055c5bf
     PUSH EDX                            ; 0055c5c6
@@ -2968,8 +2968,8 @@ section .text
         ;   XREF to: 0055c6c9 (CONDITIONAL_JUMP)  ; LAB_0055c6c9
     LEA EAX,[ESP + 0x3dbc]              ; 0055c5fe
     PUSH EAX                            ; 0055c605
-    CALL core_script.cpp_FUN_00559360   ; 0055c606
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055c606
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055c60b
     MOV EAX,dword ptr [ESP + 0x3eac]    ; 0055c60e
     MOV EDX,dword ptr [ESP + 0x3e8c]    ; 0055c615
@@ -2978,8 +2978,8 @@ section .text
     PUSH EAX                            ; 0055c625
     PUSH EBX                            ; 0055c626
     MOV dword ptr [ESP + 0x3e94],EDX    ; 0055c627
-    CALL core_script.cpp_CScript_FUN_005606e0 ; 0055c62e
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005606e0(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 0055c62e
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055c633
     TEST EAX,EAX                        ; 0055c636
     JL 0x0055c6e0                       ; 0055c638
@@ -3017,8 +3017,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3eb8]    ; 0055c694
     PUSH EDI                            ; 0055c69b | = "$"
     PUSH EBX                            ; 0055c69c
-    CALL core_script.cpp_CScript_FUN_0055ff00 ; 0055c69d
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+    CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055c69d
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055c6a2
     FLDZ                                ; 0055c6a9
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055c6ab
@@ -3033,7 +3033,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x6420b4                       ; 0055c6c9 | = "Error parsing dbSay arguments"
         ;   Label: LAB_0055c6c9
-    PUSH 0x310eca0                      ; 0055c6ce | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055c6ce | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055c6d3
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055c6d8
@@ -3054,7 +3054,7 @@ section .text
     ADD ESP,0xc                         ; 0055c714
     LEA EAX,[ESP + 0x1954]              ; 0055c717
     PUSH EAX                            ; 0055c71e
-    PUSH 0x310f4b0                      ; 0055c71f | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 0055c71f | g_ScriptPickList
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0055c724
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0055c729
@@ -3063,8 +3063,8 @@ section .text
     ADD ESI,0x5                         ; 0055c731
         ;   Label: LAB_0055c731
     PUSH ESI                            ; 0055c734
-    CALL core_script.cpp_FUN_005593d0   ; 0055c735
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c735
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c73a
     PUSH 0x12c                          ; 0055c73d
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c742
@@ -3072,13 +3072,13 @@ section .text
     PUSH EAX                            ; 0055c750
     LEA EAX,[ESP + 0x3e94]              ; 0055c751
     PUSH EAX                            ; 0055c758
-    CALL core_script.cpp_FUN_005593f0   ; 0055c759
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055c759
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055c75e
     TEST EAX,EAX                        ; 0055c761
     JNZ 0x0055c37e                      ; 0055c763
         ;   XREF to: 0055c37e (CONDITIONAL_JUMP)  ; LAB_0055c37e
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055c769 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055c769 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055c770
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x950]               ; 0055c776
@@ -3096,8 +3096,8 @@ section .text
     ADD ESI,0x9                         ; 0055c79f
         ;   Label: LAB_0055c79f
     PUSH ESI                            ; 0055c7a2
-    CALL core_script.cpp_FUN_005593d0   ; 0055c7a3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c7a3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c7a8
     LEA EDX,[ESP + 0x3f48]              ; 0055c7ab
     PUSH EDX                            ; 0055c7b2
@@ -3118,7 +3118,7 @@ section .text
     JGE 0x0055c807                      ; 0055c7ee
         ;   XREF to: 0055c807 (CONDITIONAL_JUMP)  ; LAB_0055c807
     PUSH 0x642135                       ; 0055c7f0 | = "Error parsing dismember command parms"
-    PUSH 0x310eca0                      ; 0055c7f5 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055c7f5 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055c7fa
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055c7ff
@@ -3130,27 +3130,27 @@ section .text
     ADD EDX,EDI                         ; 0055c815
     PUSH EAX                            ; 0055c817
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055c818
-    CALL core_script.cpp_FUN_00559360   ; 0055c81f
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055c81f
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055c824
     LEA EAX,[ESP + 0x2764]              ; 0055c827
     PUSH EAX                            ; 0055c82e
-    CALL core_script.cpp_FUN_00559360   ; 0055c82f
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055c82f
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055c834
     PUSH 0x823c14                       ; 0055c837 | g_CCharacterClassInfo
     MOV ECX,dword ptr [0x00823c4c]      ; 0055c83c | g_CCharacterClassInfo.name_hash
     PUSH ECX                            ; 0055c842
     LEA EAX,[ESP + 0xe6c]               ; 0055c843
     PUSH EAX                            ; 0055c84a
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055c84b
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055c84b
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055c850
     MOV dword ptr [ESP + 0x3eb8],EAX    ; 0055c853
     TEST EAX,EAX                        ; 0055c85a
     JNZ 0x0055c870                      ; 0055c85c
         ;   XREF to: 0055c870 (CONDITIONAL_JUMP)  ; LAB_0055c870
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055c85e | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055c85e | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055c865
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055c86b
@@ -3161,8 +3161,8 @@ section .text
     LEA EDX,[ESP + 0x2768]              ; 0055c878
     PUSH EDX                            ; 0055c87f
     PUSH EAX                            ; 0055c880
-    CALL core_script.cpp_FUN_00559730   ; 0055c881
-        ;   XREF to: 00559730 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559730(int param_1, char * param_2, int * param_3)
+    CALL core_script.cpp_parseBodyPartMask_FUN_00559730 ; 0055c881
+        ;   XREF to: 00559730 (UNCONDITIONAL_CALL)  ; int core_script.cpp_parseBodyPartMask_FUN_00559730(CCharacter * character, char * part_names, int * part_mask)
     ADD ESP,0xc                         ; 0055c886
     TEST EAX,EAX                        ; 0055c889
     JZ 0x0055a98c                       ; 0055c88b
@@ -3184,7 +3184,7 @@ section .text
     JNZ 0x0055caa1                      ; 0055c8bf
         ;   XREF to: 0055caa1 (CONDITIONAL_JUMP)  ; LAB_0055caa1
     LEA ECX,[EDX + 0x1]                 ; 0055c8c5
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055c8c8 | DAT_0310ec9c
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055c8c8 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],ECX    ; 0055c8ce
     TEST ESI,ESI                        ; 0055c8d5
     JNZ 0x0055a8bb                      ; 0055c8d7
@@ -3281,7 +3281,7 @@ section .text
         ;   XREF to: 0055c8b5 (UNCONDITIONAL_JUMP)  ; LAB_0055c8b5
     PUSH 0x64216e                       ; 0055ca8a | = "Error parsing dismember command parms"
         ;   Label: LAB_0055ca8a
-    PUSH 0x310eca0                      ; 0055ca8f | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ca8f | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ca94
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ca99
@@ -3290,7 +3290,7 @@ section .text
     PUSH EDX                            ; 0055caa1
         ;   Label: LAB_0055caa1
     PUSH 0x642194                       ; 0055caa2 | = "Error parsing dismember command parms..."
-    PUSH 0x310eca0                      ; 0055caa7 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055caa7 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055caac
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055cab1
@@ -3299,8 +3299,8 @@ section .text
     ADD ESI,0x7                         ; 0055cab9
         ;   Label: LAB_0055cab9
     PUSH ESI                            ; 0055cabc
-    CALL core_script.cpp_FUN_005593d0   ; 0055cabd
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cabd
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cac2
     PUSH 0x400                          ; 0055cac5
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055caca
@@ -3308,15 +3308,15 @@ section .text
     PUSH EAX                            ; 0055cad4
     LEA EAX,[ESP + 0x3e94]              ; 0055cad5
     PUSH EAX                            ; 0055cadc
-    CALL core_script.cpp_FUN_005593f0   ; 0055cadd
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055cadd
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055cae2
     TEST EAX,EAX                        ; 0055cae5
     JZ 0x0055a8bb                       ; 0055cae7
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055caed
     PUSH 0x6421cc                       ; 0055caee | = "Error parsing message text on display..."
-    PUSH 0x310eca0                      ; 0055caf3 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055caf3 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055caf8
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055cafd
@@ -3325,16 +3325,16 @@ section .text
     ADD ESI,0x4                         ; 0055cb05
         ;   Label: LAB_0055cb05
     PUSH ESI                            ; 0055cb08
-    CALL core_script.cpp_FUN_005593d0   ; 0055cb09
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cb09
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cb0e
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cb11
     PUSH 0x1                            ; 0055cb18
     MOV EDI,dword ptr [EBX + 0x48]      ; 0055cb1a
     PUSH EDI                            ; 0055cb1d
     PUSH EBX                            ; 0055cb1e
-    CALL core_script.cpp_CScript_FUN_005601c0 ; 0055cb1f
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 0055cb1f
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0055cb24
     TEST EAX,EAX                        ; 0055cb27
     JL 0x0055cb33                       ; 0055cb29
@@ -3346,7 +3346,7 @@ section .text
         ;   Label: LAB_0055cb33
     PUSH EAX                            ; 0055cb3a
     PUSH 0x642205                       ; 0055cb3b | = "Can't skip next command after else st..."
-    PUSH 0x310eca0                      ; 0055cb40 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055cb40 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055cb45
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055cb4a
@@ -3355,8 +3355,8 @@ section .text
     ADD ESI,0xc                         ; 0055cb52
         ;   Label: LAB_0055cb52
     PUSH ESI                            ; 0055cb55
-    CALL core_script.cpp_FUN_005593d0   ; 0055cb56
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cb56
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055cb5b
     ADD ESP,0x4                         ; 0055cb60
     MOV dword ptr [ESP + 0x3f5c],EDX    ; 0055cb63
@@ -3377,7 +3377,7 @@ section .text
     JGE 0x0055cbba                      ; 0055cba1
         ;   XREF to: 0055cbba (CONDITIONAL_JUMP)  ; LAB_0055cbba
     PUSH 0x64225b                       ; 0055cba3 | = "Error parsing enableCamera parms"
-    PUSH 0x310eca0                      ; 0055cba8 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055cba8 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055cbad
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055cbb2
@@ -3389,13 +3389,13 @@ section .text
     ADD ESI,ECX                         ; 0055cbc8
     PUSH EAX                            ; 0055cbca
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055cbcb
-    CALL core_script.cpp_FUN_00559360   ; 0055cbd2
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055cbd2
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055cbd7
     LEA EAX,[ESP + 0x124c]              ; 0055cbda
     PUSH EAX                            ; 0055cbe1
-    CALL core_script.cpp_FUN_00559360   ; 0055cbe2
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055cbe2
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055cbe7
     LEA EAX,[ESP + 0xf2c]               ; 0055cbea
     PUSH EAX                            ; 0055cbf1
@@ -3408,7 +3408,7 @@ section .text
     TEST EAX,EAX                        ; 0055cc03
     JL 0x0055cc55                       ; 0055cc05
         ;   XREF to: 0055cc55 (CONDITIONAL_JUMP)  ; LAB_0055cc55
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055cc07 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055cc07 | g_ScriptEventsEnabled
     JZ 0x0055cc74                       ; 0055cc0e
         ;   XREF to: 0055cc74 (CONDITIONAL_JUMP)  ; LAB_0055cc74
     LEA EAX,[ESP + 0x124c]              ; 0055cc10
@@ -3421,12 +3421,12 @@ section .text
     TEST EAX,EAX                        ; 0055cc27
     JZ 0x0055a8bb                       ; 0055cc29
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    MOV EDI,0x310eca0                   ; 0055cc2f | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055cc2f | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055cc34
-    PUSH EDI                            ; 0055cc36 | DAT_0310eca0
+    PUSH EDI                            ; 0055cc36 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055cc37
         ;   Label: LAB_0055cc37
-    MOV byte ptr [EDI],AL               ; 0055cc39 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055cc39 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055cc3b
     JZ 0x0055cc4f                       ; 0055cc3d
         ;   XREF to: 0055cc4f (CONDITIONAL_JUMP)  ; LAB_0055cc4f
@@ -3445,7 +3445,7 @@ section .text
         ;   Label: LAB_0055cc55
     PUSH EAX                            ; 0055cc5c
     PUSH 0x64227c                       ; 0055cc5d | = "Camera \"%s\" does not exist."
-    PUSH 0x310eca0                      ; 0055cc62 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055cc62 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055cc67
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055cc6c
@@ -3471,8 +3471,8 @@ section .text
     ADD ESI,0x11                        ; 0055cca1
         ;   Label: LAB_0055cca1
     PUSH ESI                            ; 0055cca4
-    CALL core_script.cpp_FUN_005593d0   ; 0055cca5
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cca5
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ccaa
     LEA EDX,[ESP + 0x3f60]              ; 0055ccad
     PUSH EDX                            ; 0055ccb4
@@ -3493,7 +3493,7 @@ section .text
     JGE 0x0055cd09                      ; 0055ccf0
         ;   XREF to: 0055cd09 (CONDITIONAL_JUMP)  ; LAB_0055cd09
     PUSH 0x6422b9                       ; 0055ccf2 | = "Error parsing enableCameraGroup parms"
-    PUSH 0x310eca0                      ; 0055ccf7 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ccf7 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ccfc
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055cd01
@@ -3505,9 +3505,9 @@ section .text
     LEA EAX,[ESP + 0x21ec]              ; 0055cd12
     PUSH EAX                            ; 0055cd19
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055cd1a
-    CALL core_script.cpp_FUN_00559360   ; 0055cd21
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055cd26 | DAT_0310ec9c
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055cd21
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055cd26 | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055cd2c
     TEST ECX,ECX                        ; 0055cd2f
     JZ 0x0055cd78                       ; 0055cd31
@@ -3522,13 +3522,13 @@ section .text
     TEST EAX,EAX                        ; 0055cd4a
     JZ 0x0055a8bb                       ; 0055cd4c
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    MOV EDI,0x310eca0                   ; 0055cd52 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055cd52 | g_ScriptErrorBuffer
         ;   Label: LAB_0055cd52
     MOV ESI,EAX                         ; 0055cd57
-    PUSH EDI                            ; 0055cd59 | DAT_0310eca0
+    PUSH EDI                            ; 0055cd59 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055cd5a
         ;   Label: LAB_0055cd5a
-    MOV byte ptr [EDI],AL               ; 0055cd5c | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055cd5c | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055cd5e
     JZ 0x0055cd72                       ; 0055cd60
         ;   XREF to: 0055cd72 (CONDITIONAL_JUMP)  ; LAB_0055cd72
@@ -3564,8 +3564,8 @@ section .text
     ADD ESI,0xf                         ; 0055cdab
         ;   Label: LAB_0055cdab
     PUSH ESI                            ; 0055cdae
-    CALL core_script.cpp_FUN_005593d0   ; 0055cdaf
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cdaf
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cdb4
     LEA EDX,[ESP + 0x3ecc]              ; 0055cdb7
     PUSH EDX                            ; 0055cdbe
@@ -3586,7 +3586,7 @@ section .text
     JGE 0x0055ce13                      ; 0055cdfa
         ;   XREF to: 0055ce13 (CONDITIONAL_JUMP)  ; LAB_0055ce13
     PUSH 0x642300                       ; 0055cdfc | = "Error parsing enableHealthBar parms"
-    PUSH 0x310eca0                      ; 0055ce01 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ce01 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ce06
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ce0b
@@ -3598,27 +3598,27 @@ section .text
     ADD EDI,ESI                         ; 0055ce21
     PUSH EAX                            ; 0055ce23
     MOV dword ptr [ESP + 0x3e90],EDI    ; 0055ce24
-    CALL core_script.cpp_FUN_00559360   ; 0055ce2b
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ce2b
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055ce30
     LEA EAX,[ESP + 0x205c]              ; 0055ce33
     PUSH EAX                            ; 0055ce3a
-    CALL core_script.cpp_FUN_00559360   ; 0055ce3b
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ce3b
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055ce40
     PUSH 0x823c14                       ; 0055ce43 | g_CCharacterClassInfo
     MOV EAX,[0x00823c4c]                ; 0055ce48 | g_CCharacterClassInfo.name_hash
     PUSH EAX                            ; 0055ce4d
     LEA EAX,[ESP + 0xcdc]               ; 0055ce4e
     PUSH EAX                            ; 0055ce55
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055ce56
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055ce56
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055ce5b
     MOV ESI,EAX                         ; 0055ce5e
     TEST EAX,EAX                        ; 0055ce60
     JNZ 0x0055ce76                      ; 0055ce62
         ;   XREF to: 0055ce76 (CONDITIONAL_JUMP)  ; LAB_0055ce76
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055ce64 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055ce64 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055ce6b
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055ce71
@@ -3633,7 +3633,7 @@ section .text
     TEST EAX,EAX                        ; 0055ce8b
     JNZ 0x0055cea7                      ; 0055ce8d
         ;   XREF to: 0055cea7 (CONDITIONAL_JUMP)  ; LAB_0055cea7
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055ce8f | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055ce8f | g_ScriptEventsEnabled
         ;   Label: LAB_0055ce8f
     JNZ 0x0055a8bb                      ; 0055ce96
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -3670,7 +3670,7 @@ section .text
         ;   Label: LAB_0055cee7
     PUSH EAX                            ; 0055ceee
     PUSH 0x642336                       ; 0055ceef | = "Invalid health bar mode '%s'"
-    PUSH 0x310eca0                      ; 0055cef4 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055cef4 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055cef9
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055cefe
@@ -3679,10 +3679,10 @@ section .text
     ADD ESI,0x3                         ; 0055cf06
         ;   Label: LAB_0055cf06
     PUSH ESI                            ; 0055cf09
-    CALL core_script.cpp_FUN_005593d0   ; 0055cf0a
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cf0a
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cf0f
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055cf12 | DAT_0310ec9c
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055cf12 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cf18
     TEST ESI,ESI                        ; 0055cf1f
     JNZ 0x0055a8bb                      ; 0055cf21
@@ -3694,11 +3694,11 @@ section .text
     ADD ESI,0x6                         ; 0055cf39
         ;   Label: LAB_0055cf39
     PUSH ESI                            ; 0055cf3c
-    CALL core_script.cpp_FUN_005593d0   ; 0055cf3d
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cf3d
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cf42
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cf45
-    MOV EAX,[0x0310ec9c]                ; 0055cf4c | DAT_0310ec9c
+    MOV EAX,[0x0310ec9c]                ; 0055cf4c | g_ScriptEventsEnabled
     TEST EAX,EAX                        ; 0055cf51
     JNZ 0x0055a8bb                      ; 0055cf53
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -3736,11 +3736,11 @@ section .text
     ADD ESI,0x7                         ; 0055cfbe
         ;   Label: LAB_0055cfbe
     PUSH ESI                            ; 0055cfc1
-    CALL core_script.cpp_FUN_005593d0   ; 0055cfc2
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cfc2
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cfc7
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cfca
-    MOV EAX,[0x0310ec9c]                ; 0055cfd1 | DAT_0310ec9c
+    MOV EAX,[0x0310ec9c]                ; 0055cfd1 | g_ScriptEventsEnabled
     TEST EAX,EAX                        ; 0055cfd6
     JNZ 0x0055a8bb                      ; 0055cfd8
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -3775,8 +3775,8 @@ section .text
     ADD ESI,0x7                         ; 0055d033
         ;   Label: LAB_0055d033
     PUSH ESI                            ; 0055d036
-    CALL core_script.cpp_FUN_005593d0   ; 0055d037
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d037
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d03c
     LEA EDX,[ESP + 0x3ed0]              ; 0055d03f
     PUSH EDX                            ; 0055d046
@@ -3797,7 +3797,7 @@ section .text
     JGE 0x0055d09b                      ; 0055d082
         ;   XREF to: 0055d09b (CONDITIONAL_JUMP)  ; LAB_0055d09b
     PUSH 0x64237f                       ; 0055d084 | = "Error parsing gesture command parms"
-    PUSH 0x310eca0                      ; 0055d089 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d089 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d08e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d093
@@ -3809,32 +3809,32 @@ section .text
     LEA EAX,[ESP + 0x1bac]              ; 0055d0a4
     PUSH EAX                            ; 0055d0ab
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055d0ac
-    CALL core_script.cpp_FUN_00559360   ; 0055d0b3
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d0b3
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d0b8
     LEA EAX,[ESP + 0x25d4]              ; 0055d0bb
     PUSH EAX                            ; 0055d0c2
-    CALL core_script.cpp_FUN_00559360   ; 0055d0c3
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d0c3
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d0c8
     PUSH 0x823c14                       ; 0055d0cb | g_CCharacterClassInfo
     MOV ECX,dword ptr [0x00823c4c]      ; 0055d0d0 | g_CCharacterClassInfo.name_hash
     PUSH ECX                            ; 0055d0d6
     LEA EAX,[ESP + 0x1bb4]              ; 0055d0d7
     PUSH EAX                            ; 0055d0de
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055d0df
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055d0df
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055d0e4
     MOV ESI,EAX                         ; 0055d0e7
     TEST EAX,EAX                        ; 0055d0e9
     JNZ 0x0055d0ff                      ; 0055d0eb
         ;   XREF to: 0055d0ff (CONDITIONAL_JUMP)  ; LAB_0055d0ff
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055d0ed | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055d0ed | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055d0f4
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055d0fa
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d0ff | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d0ff | g_ScriptEventsEnabled
         ;   Label: LAB_0055d0ff
     JZ 0x0055d172                       ; 0055d106
         ;   XREF to: 0055d172 (CONDITIONAL_JUMP)  ; LAB_0055d172
@@ -3868,7 +3868,7 @@ section .text
     LEA EAX,[ESP + 0x25dc]              ; 0055d153
     PUSH EAX                            ; 0055d15a
     PUSH 0x6423a3                       ; 0055d15b | = "Gesture name %s is not valid for acto..."
-    PUSH 0x310eca0                      ; 0055d160 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d160 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d165
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0055d16a
@@ -3886,8 +3886,8 @@ section .text
     ADD ESI,0x9                         ; 0055d185
         ;   Label: LAB_0055d185
     PUSH ESI                            ; 0055d188
-    CALL core_script.cpp_FUN_005593d0   ; 0055d189
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d189
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055d18e
     ADD ESP,0x4                         ; 0055d193
     MOV dword ptr [ESP + 0x3ed4],EDX    ; 0055d196
@@ -3908,7 +3908,7 @@ section .text
     JGE 0x0055d1ed                      ; 0055d1d4
         ;   XREF to: 0055d1ed (CONDITIONAL_JUMP)  ; LAB_0055d1ed
     PUSH 0x6423f4                       ; 0055d1d6 | = "Error parsing getIniInt command parms"
-    PUSH 0x310eca0                      ; 0055d1db | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d1db | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d1e0
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d1e5
@@ -3920,14 +3920,14 @@ section .text
     ADD ESI,ECX                         ; 0055d1fb
     PUSH EAX                            ; 0055d1fd
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055d1fe
-    CALL core_script.cpp_FUN_00559360   ; 0055d205
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d205
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d20a
     LEA EAX,[ESP + 0x2124]              ; 0055d20d
     PUSH EAX                            ; 0055d214
-    CALL core_script.cpp_FUN_00559360   ; 0055d215
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055d21a | DAT_0310ec9c
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d215
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055d21a | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055d220
     TEST EDI,EDI                        ; 0055d223
     JNZ 0x0055a8bb                      ; 0055d225
@@ -3970,8 +3970,8 @@ section .text
     ADD ESI,0xf                         ; 0055d2a6
         ;   Label: LAB_0055d2a6
     PUSH ESI                            ; 0055d2a9
-    CALL core_script.cpp_FUN_005593d0   ; 0055d2aa
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d2aa
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d2af
     LEA EDX,[ESP + 0x3edc]              ; 0055d2b2
     PUSH EDX                            ; 0055d2b9
@@ -3992,7 +3992,7 @@ section .text
     JGE 0x0055d30e                      ; 0055d2f5
         ;   XREF to: 0055d30e (CONDITIONAL_JUMP)  ; LAB_0055d30e
     PUSH 0x642454                       ; 0055d2f7 | = "Error parsing getTriggerActor command..."
-    PUSH 0x310eca0                      ; 0055d2fc | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d2fc | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d301
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d306
@@ -4004,18 +4004,18 @@ section .text
     ADD EDX,EDI                         ; 0055d31c
     PUSH EAX                            ; 0055d31e
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055d31f
-    CALL core_script.cpp_FUN_00559360   ; 0055d326
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d326
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d32b
     LEA EAX,[ESP + 0x2444]              ; 0055d32e
     PUSH EAX                            ; 0055d335
-    CALL core_script.cpp_FUN_00559360   ; 0055d336
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d336
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d33b
     LEA EAX,[ESP + 0x2f34]              ; 0055d33e
     PUSH EAX                            ; 0055d345
-    CALL core_script.cpp_FUN_00559220   ; 0055d346
-        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559220(char * param_1)
+    CALL core_script.cpp_validateActorVariableName_FUN_00559220 ; 0055d346
+        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_validateActorVariableName_FUN_00559220(char * variable_name)
     ADD ESP,0x4                         ; 0055d34b
     TEST EAX,EAX                        ; 0055d34e
     JZ 0x0055a98c                       ; 0055d350
@@ -4025,18 +4025,18 @@ section .text
     PUSH ECX                            ; 0055d361
     LEA EAX,[ESP + 0x244c]              ; 0055d362
     PUSH EAX                            ; 0055d369
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055d36a
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055d36a
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055d36f
     TEST EAX,EAX                        ; 0055d372
     JNZ 0x0055d388                      ; 0055d374
         ;   XREF to: 0055d388 (CONDITIONAL_JUMP)  ; LAB_0055d388
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055d376 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055d376 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055d37d
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055d383
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d388 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d388 | g_ScriptEventsEnabled
         ;   Label: LAB_0055d388
     JNZ 0x0055a8bb                      ; 0055d38f
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -4054,22 +4054,22 @@ section .text
     ADD ESI,0x5                         ; 0055d3b7
         ;   Label: LAB_0055d3b7
     PUSH ESI                            ; 0055d3ba
-    CALL core_script.cpp_FUN_005593d0   ; 0055d3bb
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d3bb
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d3c0
     PUSH EAX                            ; 0055d3c3
     PUSH EBX                            ; 0055d3c4
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055d3c5
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055d3cc
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055d3cc
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055d3d1
     TEST EAX,EAX                        ; 0055d3d4
     JL 0x0055d3f1                       ; 0055d3d6
         ;   XREF to: 0055d3f1 (CONDITIONAL_JUMP)  ; LAB_0055d3f1
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d3d8 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d3d8 | g_ScriptEventsEnabled
     JZ 0x0055d40b                       ; 0055d3df
         ;   XREF to: 0055d40b (CONDITIONAL_JUMP)  ; LAB_0055d40b
-    MOV dword ptr [ESP + 0x3e8c],0x6424ec ; 0055d3e1 | DAT_006424ec
+    MOV dword ptr [ESP + 0x3e8c],0x6424ec ; 0055d3e1 | s_EmptyChar_006424ec
     JMP 0x0055a8bb                      ; 0055d3ec
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ECX,dword ptr [ESP + 0x3e84]    ; 0055d3f1
@@ -4093,14 +4093,14 @@ section .text
     MOV dword ptr [EBX + 0x48],EAX      ; 0055d42f
     INC EDI                             ; 0055d432
     MOV dword ptr [EBX + 0x45c],EDI     ; 0055d433
-    MOV dword ptr [ESP + 0x3e8c],0x6424ec ; 0055d439 | DAT_006424ec
+    MOV dword ptr [ESP + 0x3e8c],0x6424ec ; 0055d439 | s_EmptyChar_006424ec
     JMP 0x0055a8bb                      ; 0055d444
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EAX,dword ptr [ESP + 0x3e84]    ; 0055d449
         ;   Label: LAB_0055d449
     PUSH EAX                            ; 0055d450
     PUSH 0x6424bc                       ; 0055d451 | = "Call stack overflow detected on scrip..."
-    PUSH 0x310eca0                      ; 0055d456 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d456 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d45b
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055d460
@@ -4109,22 +4109,22 @@ section .text
     ADD ESI,0x4                         ; 0055d468
         ;   Label: LAB_0055d468
     PUSH ESI                            ; 0055d46b
-    CALL core_script.cpp_FUN_005593d0   ; 0055d46c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d46c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d471
     PUSH EAX                            ; 0055d474
     PUSH EBX                            ; 0055d475
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055d476
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055d47d
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055d47d
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055d482
     TEST EAX,EAX                        ; 0055d485
     JL 0x0055d4a2                       ; 0055d487
         ;   XREF to: 0055d4a2 (CONDITIONAL_JUMP)  ; LAB_0055d4a2
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d489 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d489 | g_ScriptEventsEnabled
     JZ 0x0055d4bc                       ; 0055d490
         ;   XREF to: 0055d4bc (CONDITIONAL_JUMP)  ; LAB_0055d4bc
-    MOV dword ptr [ESP + 0x3e8c],0x642527 ; 0055d492 | DAT_00642527
+    MOV dword ptr [ESP + 0x3e8c],0x642527 ; 0055d492 | s_EmptyChar_00642527
     JMP 0x0055a8bb                      ; 0055d49d
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EAX,dword ptr [ESP + 0x3e84]    ; 0055d4a2
@@ -4137,14 +4137,14 @@ section .text
         ;   XREF to: 0055a97f (UNCONDITIONAL_JUMP)  ; LAB_0055a97f
     MOV dword ptr [EBX + 0x48],EAX      ; 0055d4bc
         ;   Label: LAB_0055d4bc
-    MOV dword ptr [ESP + 0x3e8c],0x642527 ; 0055d4bf | DAT_00642527
+    MOV dword ptr [ESP + 0x3e8c],0x642527 ; 0055d4bf | s_EmptyChar_00642527
     JMP 0x0055a8bb                      ; 0055d4ca
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0x4                         ; 0055d4cf
         ;   Label: LAB_0055d4cf
     PUSH ESI                            ; 0055d4d2
-    CALL core_script.cpp_FUN_005593d0   ; 0055d4d3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d4d3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d4d8
     PUSH 0x12c                          ; 0055d4db
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055d4e0
@@ -4152,13 +4152,13 @@ section .text
     PUSH EAX                            ; 0055d4ee
     LEA EAX,[ESP + 0x3e94]              ; 0055d4ef
     PUSH EAX                            ; 0055d4f6
-    CALL core_script.cpp_FUN_005593f0   ; 0055d4f7
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055d4f7
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055d4fc
     TEST EAX,EAX                        ; 0055d4ff
     JNZ 0x0055cd52                      ; 0055d501
         ;   XREF to: 0055cd52 (CONDITIONAL_JUMP)  ; LAB_0055cd52
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d507 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d507 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055d50e
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0xba8]               ; 0055d514
@@ -4179,8 +4179,8 @@ section .text
     ADD ESI,0xd                         ; 0055d54c
         ;   Label: LAB_0055d54c
     PUSH ESI                            ; 0055d54f
-    CALL core_script.cpp_FUN_005593d0   ; 0055d550
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d550
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055d555
     ADD ESP,0x4                         ; 0055d55a
     MOV dword ptr [ESP + 0x3ee0],EDX    ; 0055d55d
@@ -4199,7 +4199,7 @@ section .text
     JGE 0x0055d5ac                      ; 0055d593
         ;   XREF to: 0055d5ac (CONDITIONAL_JUMP)  ; LAB_0055d5ac
     PUSH 0x642575                       ; 0055d595 | = "Error parsing holsterWeapon command p..."
-    PUSH 0x310eca0                      ; 0055d59a | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d59a | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d59f
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d5a4
@@ -4211,22 +4211,22 @@ section .text
     ADD ESI,ECX                         ; 0055d5ba
     PUSH EAX                            ; 0055d5bc
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055d5bd
-    CALL core_script.cpp_FUN_00559360   ; 0055d5c4
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055d5c4
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055d5c9
     PUSH 0x2db87d4                      ; 0055d5cc | g_CHeroClassInfo
     MOV EDI,dword ptr [0x02db880c]      ; 0055d5d1 | g_CHeroClassInfo.name_hash
     PUSH EDI                            ; 0055d5d7
     LEA EAX,[ESP + 0x2a8c]              ; 0055d5d8
     PUSH EAX                            ; 0055d5df
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055d5e0
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055d5e0
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055d5e5
     MOV dword ptr [ESP + 0x3ee4],EAX    ; 0055d5e8
     TEST EAX,EAX                        ; 0055d5ef
     JNZ 0x0055d605                      ; 0055d5f1
         ;   XREF to: 0055d605 (CONDITIONAL_JUMP)  ; LAB_0055d605
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055d5f3 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055d5f3 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055d5fa
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055d600
@@ -4243,7 +4243,7 @@ section .text
     JNZ 0x0055d767                      ; 0055d626
         ;   XREF to: 0055d767 (CONDITIONAL_JUMP)  ; LAB_0055d767
     LEA ECX,[EAX + 0x1]                 ; 0055d62c
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055d62f | DAT_0310ec9c
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055d62f | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],ECX    ; 0055d635
     TEST ESI,ESI                        ; 0055d63c
     JNZ 0x0055a8bb                      ; 0055d63e
@@ -4289,7 +4289,7 @@ section .text
     XOR DL,DL                           ; 0055d6bf
     MOV EAX,dword ptr [ESP + 0x3ee0]    ; 0055d6c1
     MOV ESI,dword ptr [ESP + 0x3e8c]    ; 0055d6c8
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055d6cf | DAT_0310ec9c
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055d6cf | g_ScriptEventsEnabled
     ADD ESI,EAX                         ; 0055d6d5
     MOV byte ptr [ESP + EAX*0x1 + 0x2ffc],DL ; 0055d6d7
     MOV dword ptr [ESP + 0x3e8c],ESI    ; 0055d6de
@@ -4306,13 +4306,13 @@ section .text
     TEST EAX,EAX                        ; 0055d700
     JZ 0x0055d61c                       ; 0055d702
         ;   XREF to: 0055d61c (CONDITIONAL_JUMP)  ; LAB_0055d61c
-    MOV EDI,0x310eca0                   ; 0055d708 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055d708 | g_ScriptErrorBuffer
         ;   Label: LAB_0055d708
     MOV ESI,EAX                         ; 0055d70d
-    PUSH EDI                            ; 0055d70f | DAT_0310eca0
+    PUSH EDI                            ; 0055d70f | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055d710
         ;   Label: LAB_0055d710
-    MOV byte ptr [EDI],AL               ; 0055d712 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055d712 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055d714
     JZ 0x0055d728                       ; 0055d716
         ;   XREF to: 0055d728 (CONDITIONAL_JUMP)  ; LAB_0055d728
@@ -4329,7 +4329,7 @@ section .text
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
     PUSH 0x64259f                       ; 0055d72e | = "Error parsing holsterWeapon command p..."
         ;   Label: LAB_0055d72e
-    PUSH 0x310eca0                      ; 0055d733 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d733 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d738
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d73d
@@ -4348,7 +4348,7 @@ section .text
         ;   XREF to: 0055d61c (UNCONDITIONAL_JUMP)  ; LAB_0055d61c
     PUSH 0x6425c9                       ; 0055d767 | = "Missing closing ')' in holsterWeapon ..."
         ;   Label: LAB_0055d767
-    PUSH 0x310eca0                      ; 0055d76c | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d76c | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d771
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d776
@@ -4357,8 +4357,8 @@ section .text
     ADD ESI,0x4                         ; 0055d77e
         ;   Label: LAB_0055d77e
     PUSH ESI                            ; 0055d781
-    CALL core_script.cpp_FUN_005593d0   ; 0055d782
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d782
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d787
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055d78a
     XOR ESI,ESI                         ; 0055d791
@@ -4370,21 +4370,21 @@ section .text
     ADD ESI,0x2                         ; 0055d7a9
         ;   Label: LAB_0055d7a9
     PUSH ESI                            ; 0055d7ac
-    CALL core_script.cpp_FUN_005593d0   ; 0055d7ad
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d7ad
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d7b2
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055d7b5
     LEA EAX,[ESP + 0x3b64]              ; 0055d7bc
     PUSH EAX                            ; 0055d7c3
     LEA EAX,[ESP + 0x3e90]              ; 0055d7c4
     PUSH EAX                            ; 0055d7cb
-    CALL core_script.cpp_FUN_005594a0   ; 0055d7cc
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055d7cc
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055d7d1
     TEST EAX,EAX                        ; 0055d7d4
     JNZ 0x0055d708                      ; 0055d7d6
         ;   XREF to: 0055d708 (CONDITIONAL_JUMP)  ; LAB_0055d708
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d7dc | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d7dc | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055d7e3
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3b64]              ; 0055d7e9
@@ -4401,8 +4401,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x48]      ; 0055d808
     PUSH EDX                            ; 0055d80b
     PUSH EBX                            ; 0055d80c
-    CALL core_script.cpp_CScript_FUN_005601c0 ; 0055d80d
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 0055d80d
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
     MOV ESI,EAX                         ; 0055d812
     ADD ESP,0xc                         ; 0055d814
     MOV EDI,EAX                         ; 0055d817
@@ -4429,7 +4429,7 @@ section .text
         ;   Label: LAB_0055d843
     PUSH EBX                            ; 0055d84a
     PUSH 0x6425fe                       ; 0055d84b | = "Can't skip next command after if stat..."
-    PUSH 0x310eca0                      ; 0055d850 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d850 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d855
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055d85a
@@ -4438,8 +4438,8 @@ section .text
     ADD ESI,0xb                         ; 0055d862
         ;   Label: LAB_0055d862
     PUSH ESI                            ; 0055d865
-    CALL core_script.cpp_FUN_005593d0   ; 0055d866
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d866
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d86b
     LEA EDX,[ESP + 0x3eec]              ; 0055d86e
     PUSH EDX                            ; 0055d875
@@ -4457,7 +4457,7 @@ section .text
         ;   XREF to: 0055d8e2 (CONDITIONAL_JUMP)  ; LAB_0055d8e2
     MOV EDX,dword ptr [ESP + 0x3e8c]    ; 0055d8a3
     ADD EDX,EDI                         ; 0055d8aa
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055d8ac | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055d8ac | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EDX    ; 0055d8b2
     TEST ECX,ECX                        ; 0055d8b9
     JNZ 0x0055a8bb                      ; 0055d8bb
@@ -4470,7 +4470,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x64264c                       ; 0055d8e2 | = "Error parsing finishedAct command"
         ;   Label: LAB_0055d8e2
-    PUSH 0x310eca0                      ; 0055d8e7 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055d8e7 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055d8ec
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055d8f1
@@ -4479,8 +4479,8 @@ section .text
     ADD ESI,0x9                         ; 0055d8f9
         ;   Label: LAB_0055d8f9
     PUSH ESI                            ; 0055d8fc
-    CALL core_script.cpp_FUN_005593d0   ; 0055d8fd
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d8fd
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d902
     PUSH 0x64                           ; 0055d905
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055d907
@@ -4488,8 +4488,8 @@ section .text
     PUSH EAX                            ; 0055d915
     LEA EAX,[ESP + 0x3e94]              ; 0055d916
     PUSH EAX                            ; 0055d91d
-    CALL core_script.cpp_FUN_005593f0   ; 0055d91e
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055d91e
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055d923
     TEST EAX,EAX                        ; 0055d926
     JNZ 0x0055d708                      ; 0055d928
@@ -4527,7 +4527,7 @@ section .text
     JNZ 0x0055da75                      ; 0055d983
         ;   XREF to: 0055da75 (CONDITIONAL_JUMP)  ; LAB_0055da75
     MOV ESI,0x2                         ; 0055d989
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055d98e | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055d98e | g_ScriptEventsEnabled
         ;   Label: LAB_0055d98e
     JNZ 0x0055a8bb                      ; 0055d995
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -4547,7 +4547,7 @@ section .text
     MOV dword ptr [EBX + 0x458],0xffffffff ; 0055d9da
     MOV EDI,0x1                         ; 0055d9e4
     MOV EDX,dword ptr [EAX + 0x240]     ; 0055d9e9 | g_CGameInstance.block_auto_save
-    MOV dword ptr [0x0310f4a4],EDI      ; 0055d9ef | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],EDI      ; 0055d9ef | g_ScriptInputFlag
     TEST EDX,EDX                        ; 0055d9f5
     JZ 0x0055a8bb                       ; 0055d9f7
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -4595,7 +4595,7 @@ section .text
     LEA EAX,[ESP + 0x345c]              ; 0055da7d
     PUSH EAX                            ; 0055da84
     PUSH 0x64268a                       ; 0055da85 | = "Invalid letterBox mode: %s"
-    PUSH 0x310eca0                      ; 0055da8a | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055da8a | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055da8f
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055da94
@@ -4604,21 +4604,21 @@ section .text
     ADD ESI,0xe                         ; 0055da9c
         ;   Label: LAB_0055da9c
     PUSH ESI                            ; 0055da9f
-    CALL core_script.cpp_FUN_005593d0   ; 0055daa0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055daa0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055daa5
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055daa8
     LEA EAX,[ESP + 0x3a38]              ; 0055daaf
     PUSH EAX                            ; 0055dab6
     LEA EAX,[ESP + 0x3e90]              ; 0055dab7
     PUSH EAX                            ; 0055dabe
-    CALL core_script.cpp_FUN_005594a0   ; 0055dabf
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055dabf
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055dac4
     TEST EAX,EAX                        ; 0055dac7
     JNZ 0x0055d708                      ; 0055dac9
         ;   XREF to: 0055d708 (CONDITIONAL_JUMP)  ; LAB_0055d708
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055dacf | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055dacf | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055dad6
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3a38]              ; 0055dadc
@@ -4634,8 +4634,8 @@ section .text
     ADD ESI,0x6                         ; 0055dafb
         ;   Label: LAB_0055dafb
     PUSH ESI                            ; 0055dafe
-    CALL core_script.cpp_FUN_005593d0   ; 0055daff
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055daff
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055db04
     ADD ESP,0x4                         ; 0055db09
     MOV dword ptr [ESP + 0x3ef0],EDX    ; 0055db0c
@@ -4654,7 +4654,7 @@ section .text
     JGE 0x0055db5b                      ; 0055db42
         ;   XREF to: 0055db5b (CONDITIONAL_JUMP)  ; LAB_0055db5b
     PUSH 0x6426c5                       ; 0055db44 | = "Error parsing lookAt command parms"
-    PUSH 0x310eca0                      ; 0055db49 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055db49 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055db4e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055db53
@@ -4666,22 +4666,22 @@ section .text
     ADD ESI,ECX                         ; 0055db69
     PUSH EAX                            ; 0055db6b
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055db6c
-    CALL core_script.cpp_FUN_00559360   ; 0055db73
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055db73
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055db78
     PUSH 0x823c14                       ; 0055db7b | g_CCharacterClassInfo
     MOV EDI,dword ptr [0x00823c4c]      ; 0055db80 | g_CCharacterClassInfo.name_hash
     PUSH EDI                            ; 0055db86
     LEA EAX,[ESP + 0x2c1c]              ; 0055db87
     PUSH EAX                            ; 0055db8e
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055db8f
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055db8f
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055db94
     MOV ESI,EAX                         ; 0055db97
     TEST EAX,EAX                        ; 0055db99
     JNZ 0x0055dbaf                      ; 0055db9b
         ;   XREF to: 0055dbaf (CONDITIONAL_JUMP)  ; LAB_0055dbaf
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055db9d | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055db9d | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055dba4
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055dbaa
@@ -4699,7 +4699,7 @@ section .text
     JNZ 0x0055dc95                      ; 0055dbc9
         ;   XREF to: 0055dc95 (CONDITIONAL_JUMP)  ; LAB_0055dc95
     INC EDX                             ; 0055dbcf
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055dbd0 | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055dbd0 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EDX    ; 0055dbd6
     TEST ECX,ECX                        ; 0055dbdd
     JNZ 0x0055a8bb                      ; 0055dbdf
@@ -4727,7 +4727,7 @@ section .text
     JGE 0x0055dc40                      ; 0055dc27
         ;   XREF to: 0055dc40 (CONDITIONAL_JUMP)  ; LAB_0055dc40
     PUSH 0x6426f2                       ; 0055dc29 | = "Error parsing lookAt command parms"
-    PUSH 0x310eca0                      ; 0055dc2e | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055dc2e | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055dc33
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055dc38
@@ -4739,28 +4739,28 @@ section .text
     ADD EDI,ECX                         ; 0055dc4e
     PUSH EAX                            ; 0055dc50
     MOV dword ptr [ESP + 0x3e90],EDI    ; 0055dc51
-    CALL core_script.cpp_FUN_00559360   ; 0055dc58
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055dc58
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055dc5d
     PUSH 0x821ff8                       ; 0055dc60 | g_CDemonActorClassInfo
     MOV EAX,[0x00822030]                ; 0055dc65 | g_CDemonActorClassInfo.name_hash
     PUSH EAX                            ; 0055dc6a
     LEA EAX,[ESP + 0xffc]               ; 0055dc6b
     PUSH EAX                            ; 0055dc72
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055dc73
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055dc73
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055dc78
     TEST EAX,EAX                        ; 0055dc7b
     JNZ 0x0055dbbf                      ; 0055dc7d
         ;   XREF to: 0055dbbf (CONDITIONAL_JUMP)  ; LAB_0055dbbf
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055dc83 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055dc83 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055dc8a
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055dc90
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
     PUSH 0x642715                       ; 0055dc95 | = "Missing closing ')' in lookAt command"
         ;   Label: LAB_0055dc95
-    PUSH 0x310eca0                      ; 0055dc9a | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055dc9a | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055dc9f
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055dca4
@@ -4769,8 +4769,8 @@ section .text
     ADD ESI,0xc                         ; 0055dcac
         ;   Label: LAB_0055dcac
     PUSH ESI                            ; 0055dcaf
-    CALL core_script.cpp_FUN_005593d0   ; 0055dcb0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055dcb0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055dcb5
     ADD ESP,0x4                         ; 0055dcba
     MOV dword ptr [ESP + 0x3ef4],EDX    ; 0055dcbd
@@ -4793,7 +4793,7 @@ section .text
     JGE 0x0055dd16                      ; 0055dcfd
         ;   XREF to: 0055dd16 (CONDITIONAL_JUMP)  ; LAB_0055dd16
     PUSH 0x64275c                       ; 0055dcff | = "Error parsing movePlatform command parms"
-    PUSH 0x310eca0                      ; 0055dd04 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055dd04 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055dd09
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055dd0e
@@ -4805,22 +4805,22 @@ section .text
     ADD ESI,ECX                         ; 0055dd24
     PUSH EAX                            ; 0055dd26
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055dd27
-    CALL core_script.cpp_FUN_00559360   ; 0055dd2e
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055dd2e
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055dd33
     PUSH 0x30d5054                      ; 0055dd36 | g_CPlatformClassInfo
     MOV EDI,dword ptr [0x030d508c]      ; 0055dd3b | g_CPlatformClassInfo.name_hash
     PUSH EDI                            ; 0055dd41
     LEA EAX,[ESP + 0x1574]              ; 0055dd42
     PUSH EAX                            ; 0055dd49
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055dd4a
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055dd4a
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV EDX,EAX                         ; 0055dd4f
     ADD ESP,0xc                         ; 0055dd51
     TEST EAX,EAX                        ; 0055dd54
     JNZ 0x0055dd6a                      ; 0055dd56
         ;   XREF to: 0055dd6a (CONDITIONAL_JUMP)  ; LAB_0055dd6a
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055dd58 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055dd58 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055dd5f
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055dd65
@@ -4850,20 +4850,20 @@ section .text
     SAHF                                ; 0055dd99
     JNC 0x0055ddd6                      ; 0055dd9a
         ;   XREF to: 0055ddd6 (CONDITIONAL_JUMP)  ; LAB_0055ddd6
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055dd9c | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055dd9c | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055dda3
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH dword ptr [ESP + 0x34]         ; 0055dda9
     PUSH dword ptr [ESP + 0x34]         ; 0055ddad
     PUSH EDX                            ; 0055ddb1
-    CALL core_platfrm.cpp_FUN_0054d690  ; 0055ddb2
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054d690()
+    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0055ddb2
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
     ADD ESP,0xc                         ; 0055ddb7
     JMP 0x0055a8bb                      ; 0055ddba
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642785                       ; 0055ddbf | = "Paramater must be in range 0.0 .. 1.0"
         ;   Label: LAB_0055ddbf
-    PUSH 0x310eca0                      ; 0055ddc4 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ddc4 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ddc9
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ddce
@@ -4880,8 +4880,8 @@ section .text
     ADD ESI,0x8                         ; 0055ddea
         ;   Label: LAB_0055ddea
     PUSH ESI                            ; 0055dded
-    CALL core_script.cpp_FUN_005593d0   ; 0055ddee
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ddee
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ddf3
     LEA EDX,[ESP + 0x3ef8]              ; 0055ddf6
     PUSH EDX                            ; 0055ddfd
@@ -4902,7 +4902,7 @@ section .text
     JGE 0x0055de52                      ; 0055de39
         ;   XREF to: 0055de52 (CONDITIONAL_JUMP)  ; LAB_0055de52
     PUSH 0x6427de                       ; 0055de3b | = "Error parsing openDoor command parms"
-    PUSH 0x310eca0                      ; 0055de40 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055de40 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055de45
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055de4a
@@ -4914,27 +4914,27 @@ section .text
     LEA EAX,[ESP + 0x10bc]              ; 0055de5b
     PUSH EAX                            ; 0055de62
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055de63
-    CALL core_script.cpp_FUN_00559360   ; 0055de6a
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055de6a
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055de6f
     LEA EAX,[ESP + 0x16fc]              ; 0055de72
     PUSH EAX                            ; 0055de79
-    CALL core_script.cpp_FUN_00559360   ; 0055de7a
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055de7a
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055de7f
     PUSH 0x2c14cdc                      ; 0055de82 | g_CDoorClassInfo
     MOV ECX,dword ptr [0x02c14d14]      ; 0055de87 | g_CDoorClassInfo.name_hash
     PUSH ECX                            ; 0055de8d
     LEA EAX,[ESP + 0x10c4]              ; 0055de8e
     PUSH EAX                            ; 0055de95
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055de96
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055de96
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055de9b
     ADD ESP,0xc                         ; 0055de9d
     TEST EAX,EAX                        ; 0055dea0
     JNZ 0x0055deb6                      ; 0055dea2
         ;   XREF to: 0055deb6 (CONDITIONAL_JUMP)  ; LAB_0055deb6
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055dea4 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055dea4 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055deab
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055deb1
@@ -4945,19 +4945,19 @@ section .text
     PUSH EDI                            ; 0055dec1
     LEA EAX,[ESP + 0x1704]              ; 0055dec2
     PUSH EAX                            ; 0055dec9
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055deca
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055deca
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV EDX,EAX                         ; 0055decf
     ADD ESP,0xc                         ; 0055ded1
     TEST EAX,EAX                        ; 0055ded4
     JNZ 0x0055deea                      ; 0055ded6
         ;   XREF to: 0055deea (CONDITIONAL_JUMP)  ; LAB_0055deea
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055ded8 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055ded8 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055dedf
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055dee5
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    MOV EAX,[0x0310ec9c]                ; 0055deea | DAT_0310ec9c
+    MOV EAX,[0x0310ec9c]                ; 0055deea | g_ScriptEventsEnabled
         ;   Label: LAB_0055deea
     TEST EAX,EAX                        ; 0055deef
     JNZ 0x0055a8bb                      ; 0055def1
@@ -4992,8 +4992,8 @@ section .text
     ADD ESI,0xb                         ; 0055df4f
         ;   Label: LAB_0055df4f
     PUSH ESI                            ; 0055df52
-    CALL core_script.cpp_FUN_005593d0   ; 0055df53
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055df53
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055df58
     ADD ESP,0x4                         ; 0055df5d
     MOV dword ptr [ESP + 0x3f00],EDX    ; 0055df60
@@ -5014,7 +5014,7 @@ section .text
     JGE 0x0055dfb7                      ; 0055df9e
         ;   XREF to: 0055dfb7 (CONDITIONAL_JUMP)  ; LAB_0055dfb7
     PUSH 0x642821                       ; 0055dfa0 | = "Error parsing pressButton() command p..."
-    PUSH 0x310eca0                      ; 0055dfa5 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055dfa5 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055dfaa
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055dfaf
@@ -5026,26 +5026,26 @@ section .text
     ADD ESI,ECX                         ; 0055dfc5
     PUSH EAX                            ; 0055dfc7
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055dfc8
-    CALL core_script.cpp_FUN_00559360   ; 0055dfcf
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055dfcf
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055dfd4
     LEA EAX,[ESP + 0x3a9c]              ; 0055dfd7
     PUSH EAX                            ; 0055dfde
-    CALL core_script.cpp_FUN_00559360   ; 0055dfdf
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055dfdf
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055dfe4
     PUSH 0x2db87d4                      ; 0055dfe7 | g_CHeroClassInfo
     MOV EDI,dword ptr [0x02db880c]      ; 0055dfec | g_CHeroClassInfo.name_hash
     PUSH EDI                            ; 0055dff2
     LEA EAX,[ESP + 0x3b08]              ; 0055dff3
     PUSH EAX                            ; 0055dffa
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055dffb
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055dffb
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055e000
     TEST EAX,EAX                        ; 0055e003
     JNZ 0x0055e019                      ; 0055e005
         ;   XREF to: 0055e019 (CONDITIONAL_JUMP)  ; LAB_0055e019
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055e007 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055e007 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055e00e
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055e014
@@ -5055,17 +5055,17 @@ section .text
     PUSH EDX                            ; 0055e020
     ADD EAX,0xbe2c                      ; 0055e021
     PUSH EAX                            ; 0055e026
-    CALL core_script.cpp_FUN_00559660   ; 0055e027
-        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559660(int param_1, char * param_2)
+    CALL core_script.cpp_getActionKeyOffset_FUN_00559660 ; 0055e027
+        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings * action_bindings, char * action_name)
     ADD ESP,0x8                         ; 0055e02c
     MOV ESI,EAX                         ; 0055e02f
     TEST EAX,EAX                        ; 0055e031
     JZ 0x0055e06d                       ; 0055e033
         ;   XREF to: 0055e06d (CONDITIONAL_JUMP)  ; LAB_0055e06d
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e035 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e035 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055e03c
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [0x0310f4a4],0x0      ; 0055e042 | DAT_0310f4a4
+    CMP dword ptr [0x0310f4a4],0x0      ; 0055e042 | g_ScriptInputFlag
     JZ 0x0055e062                       ; 0055e049
         ;   XREF to: 0055e062 (CONDITIONAL_JUMP)  ; LAB_0055e062
     MOV ECX,dword ptr [0x0067b654]      ; 0055e04b | g_CGamePtr
@@ -5074,7 +5074,7 @@ section .text
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70 ; 0055e054
         ;   XREF to: 004dce70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame * this_ptr)
     ADD ESP,0x4                         ; 0055e059
-    MOV dword ptr [0x0310f4a4],EDI      ; 0055e05c | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],EDI      ; 0055e05c | g_ScriptInputFlag
     MOV dword ptr [ESI],0x1             ; 0055e062
         ;   Label: LAB_0055e062
     JMP 0x0055a8bb                      ; 0055e068
@@ -5083,7 +5083,7 @@ section .text
         ;   Label: LAB_0055e06d
     PUSH EAX                            ; 0055e074
     PUSH 0x64284b                       ; 0055e075 | = "Invalid button name: %s"
-    PUSH 0x310eca0                      ; 0055e07a | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e07a | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e07f
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055e084
@@ -5092,8 +5092,8 @@ section .text
     ADD ESI,0x5                         ; 0055e08c
         ;   Label: LAB_0055e08c
     PUSH ESI                            ; 0055e08f
-    CALL core_script.cpp_FUN_005593d0   ; 0055e090
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e090
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e095
     PUSH 0x64                           ; 0055e098
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055e09a
@@ -5101,13 +5101,13 @@ section .text
     PUSH EAX                            ; 0055e0a8
     LEA EAX,[ESP + 0x3e94]              ; 0055e0a9
     PUSH EAX                            ; 0055e0b0
-    CALL core_script.cpp_FUN_005593f0   ; 0055e0b1
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055e0b1
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055e0b6
     TEST EAX,EAX                        ; 0055e0b9
     JNZ 0x0055e10b                      ; 0055e0bb
         ;   XREF to: 0055e10b (CONDITIONAL_JUMP)  ; LAB_0055e10b
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e0bd | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e0bd | g_ScriptEventsEnabled
     JZ 0x0055e123                       ; 0055e0c4
         ;   XREF to: 0055e123 (CONDITIONAL_JUMP)  ; LAB_0055e123
     LEA EAX,[ESP + 0x3588]              ; 0055e0c6
@@ -5120,12 +5120,12 @@ section .text
     TEST EAX,EAX                        ; 0055e0dd
     JZ 0x0055a8bb                       ; 0055e0df
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    MOV EDI,0x310eca0                   ; 0055e0e5 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055e0e5 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055e0ea
-    PUSH EDI                            ; 0055e0ec | DAT_0310eca0
+    PUSH EDI                            ; 0055e0ec | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055e0ed
         ;   Label: LAB_0055e0ed
-    MOV byte ptr [EDI],AL               ; 0055e0ef | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055e0ef | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055e0f1
     JZ 0x0055e105                       ; 0055e0f3
         ;   XREF to: 0055e105 (CONDITIONAL_JUMP)  ; LAB_0055e105
@@ -5143,7 +5143,7 @@ section .text
     PUSH EAX                            ; 0055e10b
         ;   Label: LAB_0055e10b
     PUSH 0x642869                       ; 0055e10c | = "Error parsing event expression on rai..."
-    PUSH 0x310eca0                      ; 0055e111 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e111 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e116
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055e11b
@@ -5162,8 +5162,8 @@ section .text
     ADD ESI,0xd                         ; 0055e13f
         ;   Label: LAB_0055e13f
     PUSH ESI                            ; 0055e142
-    CALL core_script.cpp_FUN_005593d0   ; 0055e143
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e143
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e148
     LEA EDX,[ESP + 0x3f08]              ; 0055e14b
     PUSH EDX                            ; 0055e152
@@ -5184,7 +5184,7 @@ section .text
     JGE 0x0055e1a7                      ; 0055e18e
         ;   XREF to: 0055e1a7 (CONDITIONAL_JUMP)  ; LAB_0055e1a7
     PUSH 0x6428bf                       ; 0055e190 | = "Error parsing releaseButton() command..."
-    PUSH 0x310eca0                      ; 0055e195 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e195 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e19a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e19f
@@ -5196,26 +5196,26 @@ section .text
     LEA EAX,[ESP + 0x38a8]              ; 0055e1b0
     PUSH EAX                            ; 0055e1b7
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055e1b8
-    CALL core_script.cpp_FUN_00559360   ; 0055e1bf
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e1bf
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e1c4
     LEA EAX,[ESP + 0x36b4]              ; 0055e1c7
     PUSH EAX                            ; 0055e1ce
-    CALL core_script.cpp_FUN_00559360   ; 0055e1cf
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e1cf
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e1d4
     PUSH 0x2db87d4                      ; 0055e1d7 | g_CHeroClassInfo
     MOV ECX,dword ptr [0x02db880c]      ; 0055e1dc | g_CHeroClassInfo.name_hash
     PUSH ECX                            ; 0055e1e2
     LEA EAX,[ESP + 0x38b0]              ; 0055e1e3
     PUSH EAX                            ; 0055e1ea
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055e1eb
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055e1eb
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055e1f0
     TEST EAX,EAX                        ; 0055e1f3
     JNZ 0x0055e209                      ; 0055e1f5
         ;   XREF to: 0055e209 (CONDITIONAL_JUMP)  ; LAB_0055e209
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055e1f7 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055e1f7 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055e1fe
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055e204
@@ -5225,18 +5225,18 @@ section .text
     PUSH EDX                            ; 0055e210
     ADD EAX,0xbe2c                      ; 0055e211
     PUSH EAX                            ; 0055e216
-    CALL core_script.cpp_FUN_00559660   ; 0055e217
-        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559660(int param_1, char * param_2)
+    CALL core_script.cpp_getActionKeyOffset_FUN_00559660 ; 0055e217
+        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings * action_bindings, char * action_name)
     ADD ESP,0x8                         ; 0055e21c
     MOV ESI,EAX                         ; 0055e21f
     TEST EAX,EAX                        ; 0055e221
     JZ 0x0055e25c                       ; 0055e223
         ;   XREF to: 0055e25c (CONDITIONAL_JUMP)  ; LAB_0055e25c
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055e225 | DAT_0310ec9c
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055e225 | g_ScriptEventsEnabled
     TEST EDI,EDI                        ; 0055e22b
     JNZ 0x0055a8bb                      ; 0055e22d
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [0x0310f4a4],0x0      ; 0055e233 | DAT_0310f4a4
+    CMP dword ptr [0x0310f4a4],0x0      ; 0055e233 | g_ScriptInputFlag
     JZ 0x0055e251                       ; 0055e23a
         ;   XREF to: 0055e251 (CONDITIONAL_JUMP)  ; LAB_0055e251
     MOV EDX,dword ptr [0x0067b654]      ; 0055e23c | g_CGamePtr
@@ -5244,7 +5244,7 @@ section .text
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70 ; 0055e243
         ;   XREF to: 004dce70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame * this_ptr)
     ADD ESP,0x4                         ; 0055e248
-    MOV dword ptr [0x0310f4a4],EDI      ; 0055e24b | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],EDI      ; 0055e24b | g_ScriptInputFlag
     MOV dword ptr [ESI],0x0             ; 0055e251
         ;   Label: LAB_0055e251
     JMP 0x0055a8bb                      ; 0055e257
@@ -5253,7 +5253,7 @@ section .text
         ;   Label: LAB_0055e25c
     PUSH EAX                            ; 0055e263
     PUSH 0x6428eb                       ; 0055e264 | = "Invalid button name: %s"
-    PUSH 0x310eca0                      ; 0055e269 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e269 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e26e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055e273
@@ -5262,8 +5262,8 @@ section .text
     ADD ESI,0x1b                        ; 0055e27b
         ;   Label: LAB_0055e27b
     PUSH ESI                            ; 0055e27e
-    CALL core_script.cpp_FUN_005593d0   ; 0055e27f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e27f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e284
     LEA EDX,[ESP + 0x3f0c]              ; 0055e287
     PUSH EDX                            ; 0055e28e
@@ -5282,7 +5282,7 @@ section .text
     JGE 0x0055e2db                      ; 0055e2c2
         ;   XREF to: 0055e2db (CONDITIONAL_JUMP)  ; LAB_0055e2db
     PUSH 0x64292b                       ; 0055e2c4 | = "Error parsing removeAllItemsFromInven..."
-    PUSH 0x310eca0                      ; 0055e2c9 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e2c9 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e2ce
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e2d3
@@ -5294,26 +5294,26 @@ section .text
     LEA EAX,[ESP + 0x188c]              ; 0055e2e4
     PUSH EAX                            ; 0055e2eb
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055e2ec
-    CALL core_script.cpp_FUN_00559360   ; 0055e2f3
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e2f3
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e2f8
     PUSH 0x2db87d4                      ; 0055e2fb | g_CHeroClassInfo
     MOV ECX,dword ptr [0x02db880c]      ; 0055e300 | g_CHeroClassInfo.name_hash
     PUSH ECX                            ; 0055e306
     LEA EAX,[ESP + 0x1894]              ; 0055e307
     PUSH EAX                            ; 0055e30e
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055e30f
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055e30f
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055e314
     TEST EAX,EAX                        ; 0055e317
     JNZ 0x0055e32d                      ; 0055e319
         ;   XREF to: 0055e32d (CONDITIONAL_JUMP)  ; LAB_0055e32d
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055e31b | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055e31b | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055e322
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055e328
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e32d | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e32d | g_ScriptEventsEnabled
         ;   Label: LAB_0055e32d
     JNZ 0x0055a8bb                      ; 0055e334
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5327,8 +5327,8 @@ section .text
     ADD ESI,0x17                        ; 0055e34d
         ;   Label: LAB_0055e34d
     PUSH ESI                            ; 0055e350
-    CALL core_script.cpp_FUN_005593d0   ; 0055e351
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e351
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055e356
     ADD ESP,0x4                         ; 0055e35b
     MOV dword ptr [ESP + 0x3f10],EDX    ; 0055e35e
@@ -5349,7 +5349,7 @@ section .text
     JGE 0x0055e3b5                      ; 0055e39c
         ;   XREF to: 0055e3b5 (CONDITIONAL_JUMP)  ; LAB_0055e3b5
     PUSH 0x64298e                       ; 0055e39e | = "Error parsing removeItemFromInventory..."
-    PUSH 0x310eca0                      ; 0055e3a3 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e3a3 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e3a8
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e3ad
@@ -5361,32 +5361,32 @@ section .text
     ADD ESI,ECX                         ; 0055e3c3
     PUSH EAX                            ; 0055e3c5
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055e3c6
-    CALL core_script.cpp_FUN_00559360   ; 0055e3cd
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e3cd
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e3d2
     LEA EAX,[ESP + 0x1f94]              ; 0055e3d5
     PUSH EAX                            ; 0055e3dc
-    CALL core_script.cpp_FUN_00559360   ; 0055e3dd
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e3dd
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e3e2
     PUSH 0x2db87d4                      ; 0055e3e5 | g_CHeroClassInfo
     MOV EDI,dword ptr [0x02db880c]      ; 0055e3ea | g_CHeroClassInfo.name_hash
     PUSH EDI                            ; 0055e3f0
     LEA EAX,[ESP + 0x1ed4]              ; 0055e3f1
     PUSH EAX                            ; 0055e3f8
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055e3f9
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055e3f9
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055e3fe
     ADD ESP,0xc                         ; 0055e400
     TEST EAX,EAX                        ; 0055e403
     JNZ 0x0055e419                      ; 0055e405
         ;   XREF to: 0055e419 (CONDITIONAL_JUMP)  ; LAB_0055e419
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055e407 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055e407 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055e40e
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055e414
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e419 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e419 | g_ScriptEventsEnabled
         ;   Label: LAB_0055e419
     JNZ 0x0055a8bb                      ; 0055e420
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5414,8 +5414,8 @@ section .text
     ADD ESI,0xa                         ; 0055e467
         ;   Label: LAB_0055e467
     PUSH ESI                            ; 0055e46a
-    CALL core_script.cpp_FUN_005593d0   ; 0055e46b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e46b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e470
     LEA EDX,[ESP + 0x3f18]              ; 0055e473
     PUSH EDX                            ; 0055e47a
@@ -5440,7 +5440,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0055e4c5 | g_CNetGameInstance
     JNZ 0x0055e510                      ; 0055e4c8
         ;   XREF to: 0055e510 (CONDITIONAL_JUMP)  ; LAB_0055e510
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e4ca | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e4ca | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055e4d1
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ESI,dword ptr [ESP + 0x3f14]    ; 0055e4d7
@@ -5455,7 +5455,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x6429d6                       ; 0055e4f9 | = "Error parsing removeKeys() command parms"
         ;   Label: LAB_0055e4f9
-    PUSH 0x310eca0                      ; 0055e4fe | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e4fe | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e503
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e508
@@ -5463,7 +5463,7 @@ section .text
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
     PUSH 0x6429ff                       ; 0055e510 | = "Can't use removeKeys command in multi..."
         ;   Label: LAB_0055e510
-    PUSH 0x310eca0                      ; 0055e515 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e515 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e51a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e51f
@@ -5472,11 +5472,11 @@ section .text
     ADD ESI,0x6                         ; 0055e527
         ;   Label: LAB_0055e527
     PUSH ESI                            ; 0055e52a
-    CALL core_script.cpp_FUN_005593d0   ; 0055e52b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e52b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e530
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055e533
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e53a | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e53a | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055e541
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EDX,dword ptr [EBX + 0x45c]     ; 0055e547
@@ -5494,7 +5494,7 @@ section .text
         ;   Label: LAB_0055e56c
     PUSH EBX                            ; 0055e573
     PUSH 0x642a33                       ; 0055e574 | = "Return without gosub detected on scri..."
-    PUSH 0x310eca0                      ; 0055e579 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e579 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e57e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055e583
@@ -5503,8 +5503,8 @@ section .text
     ADD ESI,0xb                         ; 0055e58b
         ;   Label: LAB_0055e58b
     PUSH ESI                            ; 0055e58e
-    CALL core_script.cpp_FUN_005593d0   ; 0055e58f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e58f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e594
     LEA EDX,[ESP + 0x3f1c]              ; 0055e597
     PUSH EDX                            ; 0055e59e
@@ -5522,7 +5522,7 @@ section .text
         ;   XREF to: 0055e60b (CONDITIONAL_JUMP)  ; LAB_0055e60b
     MOV EDX,dword ptr [ESP + 0x3e8c]    ; 0055e5cc
     ADD EDX,EDI                         ; 0055e5d3
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055e5d5 | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055e5d5 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EDX    ; 0055e5db
     TEST ECX,ECX                        ; 0055e5e2
     JNZ 0x0055a8bb                      ; 0055e5e4
@@ -5535,7 +5535,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642a77                       ; 0055e60b | = "Error parsing rollCredits command"
         ;   Label: LAB_0055e60b
-    PUSH 0x310eca0                      ; 0055e610 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e610 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e615
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e61a
@@ -5544,8 +5544,8 @@ section .text
     ADD ESI,0x3                         ; 0055e622
         ;   Label: LAB_0055e622
     PUSH ESI                            ; 0055e625
-    CALL core_script.cpp_FUN_005593d0   ; 0055e626
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e626
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e62b
     PUSH 0x1f4                          ; 0055e62e
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055e633
@@ -5553,19 +5553,19 @@ section .text
     PUSH EAX                            ; 0055e641
     LEA EAX,[ESP + 0x3e94]              ; 0055e642
     PUSH EAX                            ; 0055e649
-    CALL core_script.cpp_FUN_005593f0   ; 0055e64a
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055e64a
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055e64f
     TEST EAX,EAX                        ; 0055e652
     JZ 0x0055e67c                       ; 0055e654
         ;   XREF to: 0055e67c (CONDITIONAL_JUMP)  ; LAB_0055e67c
-    MOV EDI,0x310eca0                   ; 0055e656 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055e656 | g_ScriptErrorBuffer
         ;   Label: LAB_0055e656
     MOV ESI,EAX                         ; 0055e65b
-    PUSH EDI                            ; 0055e65d | DAT_0310eca0
+    PUSH EDI                            ; 0055e65d | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055e65e
         ;   Label: LAB_0055e65e
-    MOV byte ptr [EDI],AL               ; 0055e660 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055e660 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055e662
     JZ 0x0055e676                       ; 0055e664
         ;   XREF to: 0055e676 (CONDITIONAL_JUMP)  ; LAB_0055e676
@@ -5599,7 +5599,7 @@ section .text
     JGE 0x0055e6d6                      ; 0055e6bd
         ;   XREF to: 0055e6d6 (CONDITIONAL_JUMP)  ; LAB_0055e6d6
     PUSH 0x642aae                       ; 0055e6bf | = "Error parsing speaker and wav arguments"
-    PUSH 0x310eca0                      ; 0055e6c4 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e6c4 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e6c9
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e6ce
@@ -5608,13 +5608,13 @@ section .text
     LEA EAX,[ESP + 0x1a1c]              ; 0055e6d6
         ;   Label: LAB_0055e6d6
     PUSH EAX                            ; 0055e6dd
-    CALL core_script.cpp_FUN_00559360   ; 0055e6de
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e6de
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e6e3
     LEA EAX,[ESP + 0x2b4c]              ; 0055e6e6
     PUSH EAX                            ; 0055e6ed
-    CALL core_script.cpp_FUN_00559360   ; 0055e6ee
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e6ee
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     FLD float ptr [EBX + 0x50]          ; 0055e6f3
     FLDZ                                ; 0055e6f6
     ADD ESP,0x4                         ; 0055e6f8
@@ -5623,7 +5623,7 @@ section .text
     SAHF                                ; 0055e6ff
     JA 0x0055e740                       ; 0055e700
         ;   XREF to: 0055e740 (CONDITIONAL_JUMP)  ; LAB_0055e740
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055e702 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055e702 | g_ScriptEventsEnabled
         ;   Label: LAB_0055e702
     JNZ 0x0055a8bb                      ; 0055e709
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5641,8 +5641,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4]       ; 0055e72e
     PUSH EDI                            ; 0055e731
     PUSH EBX                            ; 0055e732
-    CALL core_script.cpp_CScript_FUN_00560140 ; 0055e733
-        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00560140(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_setSpeaker_FUN_00560140 ; 0055e733
+        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_00560140(CScript * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0055e738
     JMP 0x0055a8bb                      ; 0055e73b
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5650,8 +5650,8 @@ section .text
         ;   Label: LAB_0055e740
     ADD EAX,dword ptr [ESP + 0x3f20]    ; 0055e747
     PUSH EAX                            ; 0055e74e
-    CALL core_script.cpp_FUN_005593d0   ; 0055e74f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e74f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e754
     PUSH EAX                            ; 0055e757
     LEA EAX,[ESP + 0x2b50]              ; 0055e758
@@ -5659,8 +5659,8 @@ section .text
     LEA EAX,[ESP + 0x1a24]              ; 0055e760
     PUSH EAX                            ; 0055e767
     PUSH EBX                            ; 0055e768
-    CALL core_script.cpp_CScript_FUN_0055ff00 ; 0055e769
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+    CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055e769
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055e76e
     FLDZ                                ; 0055e775
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055e777
@@ -5676,8 +5676,8 @@ section .text
     ADD ESI,0xc                         ; 0055e795
         ;   Label: LAB_0055e795
     PUSH ESI                            ; 0055e798
-    CALL core_script.cpp_FUN_005593d0   ; 0055e799
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e799
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055e79e
     ADD ESP,0x4                         ; 0055e7a3
     MOV dword ptr [ESP + 0x3f24],EDX    ; 0055e7a6
@@ -5697,7 +5697,7 @@ section .text
     JGE 0x0055e7fb                      ; 0055e7e2
         ;   XREF to: 0055e7fb (CONDITIONAL_JUMP)  ; LAB_0055e7fb
     PUSH 0x642af5                       ; 0055e7e4 | = "Error parsing selectWeapon parameters."
-    PUSH 0x310eca0                      ; 0055e7e9 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e7e9 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e7ee
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e7f3
@@ -5706,13 +5706,13 @@ section .text
     LEA EAX,[ESP + 0x34c0]              ; 0055e7fb
         ;   Label: LAB_0055e7fb
     PUSH EAX                            ; 0055e802
-    CALL core_script.cpp_FUN_00559360   ; 0055e803
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e803
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e808
     LEA EAX,[ESP + 0x390c]              ; 0055e80b
     PUSH EAX                            ; 0055e812
-    CALL core_script.cpp_FUN_00559360   ; 0055e813
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e813
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e818
     MOV EDI,dword ptr [0x02db880c]      ; 0055e81b | g_CHeroClassInfo.name_hash
     PUSH 0x2db87d4                      ; 0055e821 | g_CHeroClassInfo
@@ -5723,18 +5723,18 @@ section .text
     LEA EAX,[ESP + 0x34c8]              ; 0055e837
     PUSH EAX                            ; 0055e83e
     MOV dword ptr [ESP + 0x3e98],ESI    ; 0055e83f
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055e846
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055e846
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055e84b
     TEST EAX,EAX                        ; 0055e84e
     JNZ 0x0055e864                      ; 0055e850
         ;   XREF to: 0055e864 (CONDITIONAL_JUMP)  ; LAB_0055e864
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055e852 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055e852 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055e859
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055e85f
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    MOV EDX,dword ptr [0x0310ec9c]      ; 0055e864 | DAT_0310ec9c
+    MOV EDX,dword ptr [0x0310ec9c]      ; 0055e864 | g_ScriptEventsEnabled
         ;   Label: LAB_0055e864
     TEST EDX,EDX                        ; 0055e86a
     JNZ 0x0055a8bb                      ; 0055e86c
@@ -5807,8 +5807,8 @@ section .text
     ADD ESI,0x10                        ; 0055e92f
         ;   Label: LAB_0055e92f
     PUSH ESI                            ; 0055e932
-    CALL core_script.cpp_FUN_005593d0   ; 0055e933
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e933
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e938
     LEA EDX,[ESP + 0x3f30]              ; 0055e93b
     PUSH EDX                            ; 0055e942
@@ -5829,7 +5829,7 @@ section .text
     JGE 0x0055e997                      ; 0055e97e
         ;   XREF to: 0055e997 (CONDITIONAL_JUMP)  ; LAB_0055e997
     PUSH 0x642b98                       ; 0055e980 | = "Error parsing setActorVariable comman..."
-    PUSH 0x310eca0                      ; 0055e985 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055e985 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055e98a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055e98f
@@ -5841,18 +5841,18 @@ section .text
     LEA EAX,[ESP + 0x2cdc]              ; 0055e9a0
     PUSH EAX                            ; 0055e9a7
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055e9a8
-    CALL core_script.cpp_FUN_00559360   ; 0055e9af
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e9af
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e9b4
     LEA EAX,[ESP + 0x1ae4]              ; 0055e9b7
     PUSH EAX                            ; 0055e9be
-    CALL core_script.cpp_FUN_00559360   ; 0055e9bf
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055e9bf
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055e9c4
     LEA EAX,[ESP + 0x2cdc]              ; 0055e9c7
     PUSH EAX                            ; 0055e9ce
-    CALL core_script.cpp_FUN_00559220   ; 0055e9cf
-        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00559220(char * param_1)
+    CALL core_script.cpp_validateActorVariableName_FUN_00559220 ; 0055e9cf
+        ;   XREF to: 00559220 (UNCONDITIONAL_CALL)  ; int core_script.cpp_validateActorVariableName_FUN_00559220(char * variable_name)
     ADD ESP,0x4                         ; 0055e9d4
     TEST EAX,EAX                        ; 0055e9d7
     JZ 0x0055a98c                       ; 0055e9d9
@@ -5862,9 +5862,9 @@ section .text
     PUSH ECX                            ; 0055e9ea
     LEA EAX,[ESP + 0x1aec]              ; 0055e9eb
     PUSH EAX                            ; 0055e9f2
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055e9f3
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
-    MOV ESI,dword ptr [0x0310ec9c]      ; 0055e9f8 | DAT_0310ec9c
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055e9f3
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
+    MOV ESI,dword ptr [0x0310ec9c]      ; 0055e9f8 | g_ScriptEventsEnabled
     ADD ESP,0xc                         ; 0055e9fe
     TEST ESI,ESI                        ; 0055ea01
     JZ 0x0055ea1f                       ; 0055ea03
@@ -5872,7 +5872,7 @@ section .text
     TEST EAX,EAX                        ; 0055ea05
     JNZ 0x0055a8bb                      ; 0055ea07
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055ea0d | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055ea0d | g_ActorLookedUpByVariable
     JNZ 0x0055a8bb                      ; 0055ea14
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     JMP 0x0055a98c                      ; 0055ea1a
@@ -5891,8 +5891,8 @@ section .text
     ADD ESI,0xf                         ; 0055ea3c
         ;   Label: LAB_0055ea3c
     PUSH ESI                            ; 0055ea3f
-    CALL core_script.cpp_FUN_005593d0   ; 0055ea40
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ea40
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ea45
     PUSH 0x64                           ; 0055ea48
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055ea4a
@@ -5900,13 +5900,13 @@ section .text
     PUSH EAX                            ; 0055ea58
     LEA EAX,[ESP + 0x3e94]              ; 0055ea59
     PUSH EAX                            ; 0055ea60
-    CALL core_script.cpp_FUN_005593f0   ; 0055ea61
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055ea61
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055ea66
     TEST EAX,EAX                        ; 0055ea69
     JNZ 0x0055e656                      ; 0055ea6b
         ;   XREF to: 0055e656 (CONDITIONAL_JUMP)  ; LAB_0055e656
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055ea71 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055ea71 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055ea78
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x377c]              ; 0055ea7e
@@ -5921,8 +5921,8 @@ section .text
     ADD ESI,0xe                         ; 0055ea9a
         ;   Label: LAB_0055ea9a
     PUSH ESI                            ; 0055ea9d
-    CALL core_script.cpp_FUN_005593d0   ; 0055ea9e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ea9e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055eaa3
     LEA EDX,[ESP + 0x3f38]              ; 0055eaa6
     PUSH EDX                            ; 0055eaad
@@ -5943,7 +5943,7 @@ section .text
     JGE 0x0055eb02                      ; 0055eae9
         ;   XREF to: 0055eb02 (CONDITIONAL_JUMP)  ; LAB_0055eb02
     PUSH 0x642bf2                       ; 0055eaeb | = "Error parsing setCameragroup parms"
-    PUSH 0x310eca0                      ; 0055eaf0 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055eaf0 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055eaf5
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055eafa
@@ -5955,8 +5955,8 @@ section .text
     ADD EDX,EDI                         ; 0055eb10
     PUSH EAX                            ; 0055eb12
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055eb13
-    CALL core_script.cpp_FUN_00559360   ; 0055eb1a
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055eb1a
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055eb1f
     LEA EAX,[ESP + 0x14a4]              ; 0055eb22
     PUSH EAX                            ; 0055eb29
@@ -5968,7 +5968,7 @@ section .text
     TEST EAX,EAX                        ; 0055eb39
     JL 0x0055eb6a                       ; 0055eb3b
         ;   XREF to: 0055eb6a (CONDITIONAL_JUMP)  ; LAB_0055eb6a
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055eb3d | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055eb3d | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055eb44
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     IMUL EAX,EAX,0x1a4                  ; 0055eb4a
@@ -5982,7 +5982,7 @@ section .text
         ;   Label: LAB_0055eb6a
     PUSH EAX                            ; 0055eb71
     PUSH 0x642c15                       ; 0055eb72 | = "Camera \"%s\" does not exist."
-    PUSH 0x310eca0                      ; 0055eb77 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055eb77 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055eb7c
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055eb81
@@ -5991,8 +5991,8 @@ section .text
     ADD ESI,0x12                        ; 0055eb89
         ;   Label: LAB_0055eb89
     PUSH ESI                            ; 0055eb8c
-    CALL core_script.cpp_FUN_005593d0   ; 0055eb8d
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055eb8d
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055eb92
     LEA EDX,[ESP + 0x3f40]              ; 0055eb95
     PUSH EDX                            ; 0055eb9c
@@ -6013,7 +6013,7 @@ section .text
     JGE 0x0055ebf1                      ; 0055ebd8
         ;   XREF to: 0055ebf1 (CONDITIONAL_JUMP)  ; LAB_0055ebf1
     PUSH 0x642c52                       ; 0055ebda | = "Error parsing setCharacterHealth parms"
-    PUSH 0x310eca0                      ; 0055ebdf | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ebdf | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ebe4
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ebe9
@@ -6025,26 +6025,26 @@ section .text
     LEA EAX,[ESP + 0xd9c]               ; 0055ebfa
     PUSH EAX                            ; 0055ec01
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055ec02
-    CALL core_script.cpp_FUN_00559360   ; 0055ec09
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ec09
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055ec0e
     PUSH 0x823c14                       ; 0055ec11 | g_CCharacterClassInfo
     MOV ECX,dword ptr [0x00823c4c]      ; 0055ec16 | g_CCharacterClassInfo.name_hash
     PUSH ECX                            ; 0055ec1c
     LEA EAX,[ESP + 0xda4]               ; 0055ec1d
     PUSH EAX                            ; 0055ec24
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055ec25
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055ec25
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055ec2a
     TEST EAX,EAX                        ; 0055ec2d
     JNZ 0x0055ec43                      ; 0055ec2f
         ;   XREF to: 0055ec43 (CONDITIONAL_JUMP)  ; LAB_0055ec43
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055ec31 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055ec31 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055ec38
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055ec3e
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055ec43 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055ec43 | g_ScriptEventsEnabled
         ;   Label: LAB_0055ec43
     JNZ 0x0055a8bb                      ; 0055ec4a
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6056,8 +6056,8 @@ section .text
     ADD ESI,0xd                         ; 0055ec68
         ;   Label: LAB_0055ec68
     PUSH ESI                            ; 0055ec6b
-    CALL core_script.cpp_FUN_005593d0   ; 0055ec6c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ec6c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ec71
     PUSH 0x64                           ; 0055ec74
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055ec76
@@ -6065,18 +6065,18 @@ section .text
     PUSH EAX                            ; 0055ec84
     LEA EAX,[ESP + 0x3e94]              ; 0055ec85
     PUSH EAX                            ; 0055ec8c
-    CALL core_script.cpp_FUN_005593f0   ; 0055ec8d
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055ec8d
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055ec92
     TEST EAX,EAX                        ; 0055ec95
     JZ 0x0055ecbf                       ; 0055ec97
         ;   XREF to: 0055ecbf (CONDITIONAL_JUMP)  ; LAB_0055ecbf
-    MOV EDI,0x310eca0                   ; 0055ec99 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055ec99 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055ec9e
-    PUSH EDI                            ; 0055eca0 | DAT_0310eca0
+    PUSH EDI                            ; 0055eca0 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055eca1
         ;   Label: LAB_0055eca1
-    MOV byte ptr [EDI],AL               ; 0055eca3 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055eca3 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055eca5
     JZ 0x0055ecb9                       ; 0055eca7
         ;   XREF to: 0055ecb9 (CONDITIONAL_JUMP)  ; LAB_0055ecb9
@@ -6097,13 +6097,13 @@ section .text
     PUSH EAX                            ; 0055ecc9
     LEA EAX,[ESP + 0x35f4]              ; 0055ecca
     PUSH EAX                            ; 0055ecd1
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055ecd2
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055ecd2
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055ecd7
     TEST EAX,EAX                        ; 0055ecda
     JNZ 0x0055ecf0                      ; 0055ecdc
         ;   XREF to: 0055ecf0 (CONDITIONAL_JUMP)  ; LAB_0055ecf0
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055ecde | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055ecde | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055ece5
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055eceb
@@ -6119,8 +6119,8 @@ section .text
     ADD ESI,0xb                         ; 0055ed08
         ;   Label: LAB_0055ed08
     PUSH ESI                            ; 0055ed0b
-    CALL core_script.cpp_FUN_005593d0   ; 0055ed0c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ed0c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ed11
     LEA EDX,[ESP + 0x3f44]              ; 0055ed14
     PUSH EDX                            ; 0055ed1b
@@ -6140,7 +6140,7 @@ section .text
     JGE 0x0055ed6e                      ; 0055ed55
         ;   XREF to: 0055ed6e (CONDITIONAL_JUMP)  ; LAB_0055ed6e
     PUSH 0x642ca5                       ; 0055ed57 | = "Error parsing setHeroTask parameters."
-    PUSH 0x310eca0                      ; 0055ed5c | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ed5c | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ed61
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ed66
@@ -6149,13 +6149,13 @@ section .text
     LEA EAX,[ESP + 0x3970]              ; 0055ed6e
         ;   Label: LAB_0055ed6e
     PUSH EAX                            ; 0055ed75
-    CALL core_script.cpp_FUN_00559360   ; 0055ed76
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ed76
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055ed7b
     LEA EAX,[ESP + 0x3cf4]              ; 0055ed7e
     PUSH EAX                            ; 0055ed85
-    CALL core_script.cpp_FUN_00559360   ; 0055ed86
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ed86
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055ed8b
     MOV ECX,dword ptr [0x02db880c]      ; 0055ed8e | g_CHeroClassInfo.name_hash
     PUSH 0x2db87d4                      ; 0055ed94 | g_CHeroClassInfo
@@ -6166,14 +6166,14 @@ section .text
     LEA EAX,[ESP + 0x3978]              ; 0055edaa
     PUSH EAX                            ; 0055edb1
     MOV dword ptr [ESP + 0x3e98],EDX    ; 0055edb2
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055edb9
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055edb9
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055edbe
     MOV ESI,EAX                         ; 0055edc1
     TEST EAX,EAX                        ; 0055edc3
     JNZ 0x0055edd9                      ; 0055edc5
         ;   XREF to: 0055edd9 (CONDITIONAL_JUMP)  ; LAB_0055edd9
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055edc7 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055edc7 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055edce
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055edd4
@@ -6188,7 +6188,7 @@ section .text
     TEST EAX,EAX                        ; 0055edee
     JNZ 0x0055ee0e                      ; 0055edf0
         ;   XREF to: 0055ee0e (CONDITIONAL_JUMP)  ; LAB_0055ee0e
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055edf2 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055edf2 | g_ScriptEventsEnabled
         ;   Label: LAB_0055edf2
     JNZ 0x0055a8bb                      ; 0055edf9
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6255,7 +6255,7 @@ section .text
         ;   Label: LAB_0055ee91
     PUSH EAX                            ; 0055ee98
     PUSH 0x642ceb                       ; 0055ee99 | = "Invalid Task: %s"
-    PUSH 0x310eca0                      ; 0055ee9e | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ee9e | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055eea3
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055eea8
@@ -6264,8 +6264,8 @@ section .text
     ADD ESI,0x9                         ; 0055eeb0
         ;   Label: LAB_0055eeb0
     PUSH ESI                            ; 0055eeb3
-    CALL core_script.cpp_FUN_005593d0   ; 0055eeb4
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055eeb4
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055eeb9
     ADD ESP,0x4                         ; 0055eebe
     MOV dword ptr [ESP + 0x3f50],EDX    ; 0055eec1
@@ -6286,7 +6286,7 @@ section .text
     JGE 0x0055ef18                      ; 0055eeff
         ;   XREF to: 0055ef18 (CONDITIONAL_JUMP)  ; LAB_0055ef18
     PUSH 0x642d15                       ; 0055ef01 | = "Error parsing setIniInt command parms"
-    PUSH 0x310eca0                      ; 0055ef06 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055ef06 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055ef0b
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055ef10
@@ -6298,9 +6298,9 @@ section .text
     ADD ESI,ECX                         ; 0055ef26
     PUSH EAX                            ; 0055ef28
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055ef29
-    CALL core_script.cpp_FUN_00559360   ; 0055ef30
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
-    MOV EDI,dword ptr [0x0310ec9c]      ; 0055ef35 | DAT_0310ec9c
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055ef30
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
+    MOV EDI,dword ptr [0x0310ec9c]      ; 0055ef35 | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055ef3b
     TEST EDI,EDI                        ; 0055ef3e
     JNZ 0x0055a8bb                      ; 0055ef40
@@ -6326,8 +6326,8 @@ section .text
     ADD ESI,0x12                        ; 0055ef7f
         ;   Label: LAB_0055ef7f
     PUSH ESI                            ; 0055ef82
-    CALL core_script.cpp_FUN_005593d0   ; 0055ef83
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ef83
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055ef88
     ADD ESP,0x4                         ; 0055ef8d
     MOV dword ptr [ESP + 0x3f54],EDX    ; 0055ef90
@@ -6354,7 +6354,7 @@ section .text
         ;   XREF to: 0055f022 (CONDITIONAL_JUMP)  ; LAB_0055f022
     LEA EDI,[ESI + 0x1]                 ; 0055efe2
     MOV dword ptr [ESP + 0x3e8c],EDI    ; 0055efe5
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055efec | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055efec | g_ScriptEventsEnabled
         ;   Label: LAB_0055efec
     JNZ 0x0055a8bb                      ; 0055eff3
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6364,7 +6364,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642d6f                       ; 0055f00b | = "Error parsing setSayTimeOverride para..."
         ;   Label: LAB_0055f00b
-    PUSH 0x310eca0                      ; 0055f010 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f010 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f015
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f01a
@@ -6390,7 +6390,7 @@ section .text
         ;   XREF to: 0055efec (UNCONDITIONAL_JUMP)  ; LAB_0055efec
     PUSH 0x642da3                       ; 0055f060 | = "Error parsing setSayTimeOverride para..."
         ;   Label: LAB_0055f060
-    PUSH 0x310eca0                      ; 0055f065 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f065 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f06a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f06f
@@ -6399,8 +6399,8 @@ section .text
     ADD ESI,0xc                         ; 0055f077
         ;   Label: LAB_0055f077
     PUSH ESI                            ; 0055f07a
-    CALL core_script.cpp_FUN_005593d0   ; 0055f07b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f07b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f080
     PUSH 0x64                           ; 0055f083
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f085
@@ -6408,19 +6408,19 @@ section .text
     PUSH EAX                            ; 0055f093
     LEA EAX,[ESP + 0x3e94]              ; 0055f094
     PUSH EAX                            ; 0055f09b
-    CALL core_script.cpp_FUN_005593f0   ; 0055f09c
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f09c
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f0a1
     TEST EAX,EAX                        ; 0055f0a4
     JZ 0x0055f0ce                       ; 0055f0a6
         ;   XREF to: 0055f0ce (CONDITIONAL_JUMP)  ; LAB_0055f0ce
-    MOV EDI,0x310eca0                   ; 0055f0a8 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f0a8 | g_ScriptErrorBuffer
         ;   Label: LAB_0055f0a8
     MOV ESI,EAX                         ; 0055f0ad
-    PUSH EDI                            ; 0055f0af | DAT_0310eca0
+    PUSH EDI                            ; 0055f0af | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f0b0
         ;   Label: LAB_0055f0b0
-    MOV byte ptr [EDI],AL               ; 0055f0b2 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f0b2 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f0b4
     JZ 0x0055f0c8                       ; 0055f0b6
         ;   XREF to: 0055f0c8 (CONDITIONAL_JUMP)  ; LAB_0055f0c8
@@ -6439,13 +6439,13 @@ section .text
         ;   Label: LAB_0055f0ce
     PUSH EAX                            ; 0055f0d5
     PUSH EBX                            ; 0055f0d6
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055f0d7
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055f0d7
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055f0dc
     TEST EAX,EAX                        ; 0055f0df
     JL 0x0055f0fb                       ; 0055f0e1
         ;   XREF to: 0055f0fb (CONDITIONAL_JUMP)  ; LAB_0055f0fb
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055f0e3 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055f0e3 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055f0ea
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV dword ptr [EBX + 0x458],EAX     ; 0055f0f0
@@ -6455,7 +6455,7 @@ section .text
         ;   Label: LAB_0055f0fb
     PUSH EAX                            ; 0055f102
     PUSH 0x642ddd                       ; 0055f103 | = "Undefined label '%s'"
-    PUSH 0x310eca0                      ; 0055f108 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f108 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f10d
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055f112
@@ -6464,8 +6464,8 @@ section .text
     ADD ESI,0xa                         ; 0055f11a
         ;   Label: LAB_0055f11a
     PUSH ESI                            ; 0055f11d
-    CALL core_script.cpp_FUN_005593d0   ; 0055f11e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f11e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f123
     PUSH 0x64                           ; 0055f126
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f128
@@ -6473,8 +6473,8 @@ section .text
     PUSH EAX                            ; 0055f136
     LEA EAX,[ESP + 0x3e94]              ; 0055f137
     PUSH EAX                            ; 0055f13e
-    CALL core_script.cpp_FUN_005593f0   ; 0055f13f
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f13f
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f144
     TEST EAX,EAX                        ; 0055f147
     JNZ 0x0055f0a8                      ; 0055f149
@@ -6504,14 +6504,14 @@ section .text
     PUSH ECX                            ; 0055f195
     LEA EAX,[ESP + 0x3bd0]              ; 0055f196
     PUSH EAX                            ; 0055f19d
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055f19e
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055f19e
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055f1a3
     MOV dword ptr [EBX + 0x4],EAX       ; 0055f1a6
     TEST EAX,EAX                        ; 0055f1a9
     JNZ 0x0055f15c                      ; 0055f1ab
         ;   XREF to: 0055f15c (CONDITIONAL_JUMP)  ; LAB_0055f15c
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055f1ad | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055f1ad | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055f1b4
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055f1ba
@@ -6519,8 +6519,8 @@ section .text
     ADD ESI,0xd                         ; 0055f1bf
         ;   Label: LAB_0055f1bf
     PUSH ESI                            ; 0055f1c2
-    CALL core_script.cpp_FUN_005593d0   ; 0055f1c3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f1c3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f1c8
     PUSH 0x64                           ; 0055f1cb
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f1cd
@@ -6528,18 +6528,18 @@ section .text
     PUSH EAX                            ; 0055f1db
     LEA EAX,[ESP + 0x3e94]              ; 0055f1dc
     PUSH EAX                            ; 0055f1e3
-    CALL core_script.cpp_FUN_005593f0   ; 0055f1e4
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f1e4
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f1e9
     TEST EAX,EAX                        ; 0055f1ec
     JZ 0x0055f216                       ; 0055f1ee
         ;   XREF to: 0055f216 (CONDITIONAL_JUMP)  ; LAB_0055f216
-    MOV EDI,0x310eca0                   ; 0055f1f0 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f1f0 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055f1f5
-    PUSH EDI                            ; 0055f1f7 | DAT_0310eca0
+    PUSH EDI                            ; 0055f1f7 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f1f8
         ;   Label: LAB_0055f1f8
-    MOV byte ptr [EDI],AL               ; 0055f1fa | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f1fa | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f1fc
     JZ 0x0055f210                       ; 0055f1fe
         ;   XREF to: 0055f210 (CONDITIONAL_JUMP)  ; LAB_0055f210
@@ -6579,7 +6579,7 @@ section .text
     SAHF                                ; 0055f258
     JA 0x0055f27d                       ; 0055f259
         ;   XREF to: 0055f27d (CONDITIONAL_JUMP)  ; LAB_0055f27d
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055f25b | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055f25b | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055f262
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EDX,dword ptr [0x0067b654]      ; 0055f268 | g_CGamePtr
@@ -6591,7 +6591,7 @@ section .text
         ;   Label: LAB_0055f27d
     PUSH EAX                            ; 0055f284
     PUSH 0x642e0e                       ; 0055f285 | = "Invalid time factor %s"
-    PUSH 0x310eca0                      ; 0055f28a | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f28a | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f28f
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055f294
@@ -6600,8 +6600,8 @@ section .text
     ADD ESI,0x9                         ; 0055f29c
         ;   Label: LAB_0055f29c
     PUSH ESI                            ; 0055f29f
-    CALL core_script.cpp_FUN_005593d0   ; 0055f2a0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f2a0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f2a5
     LEA EDX,[ESP + 0x3f64]              ; 0055f2a8
     PUSH EDX                            ; 0055f2af
@@ -6620,7 +6620,7 @@ section .text
     JGE 0x0055f2fc                      ; 0055f2e3
         ;   XREF to: 0055f2fc (CONDITIONAL_JUMP)  ; LAB_0055f2fc
     PUSH 0x642e39                       ; 0055f2e5 | = "Error parsing setVictim command parms"
-    PUSH 0x310eca0                      ; 0055f2ea | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f2ea | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f2ef
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f2f4
@@ -6632,22 +6632,22 @@ section .text
     LEA EAX,[ESP + 0x22b4]              ; 0055f305
     PUSH EAX                            ; 0055f30c
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055f30d
-    CALL core_script.cpp_FUN_00559360   ; 0055f314
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f314
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f319
     PUSH 0x2cf2bb8                      ; 0055f31c | g_CEnemyClassInfo
     MOV ECX,dword ptr [0x02cf2bf0]      ; 0055f321 | g_CEnemyClassInfo.name_hash
     PUSH ECX                            ; 0055f327
     LEA EAX,[ESP + 0x22bc]              ; 0055f328
     PUSH EAX                            ; 0055f32f
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055f330
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055f330
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055f335
     MOV ESI,EAX                         ; 0055f338
     TEST EAX,EAX                        ; 0055f33a
     JNZ 0x0055f350                      ; 0055f33c
         ;   XREF to: 0055f350 (CONDITIONAL_JUMP)  ; LAB_0055f350
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055f33e | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055f33e | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055f345
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055f34b
@@ -6665,7 +6665,7 @@ section .text
     JNZ 0x0055f456                      ; 0055f36a
         ;   XREF to: 0055f456 (CONDITIONAL_JUMP)  ; LAB_0055f456
     INC EDX                             ; 0055f370
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055f371 | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055f371 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EDX    ; 0055f377
     TEST ECX,ECX                        ; 0055f37e
     JNZ 0x0055a8bb                      ; 0055f380
@@ -6693,7 +6693,7 @@ section .text
     JGE 0x0055f3dd                      ; 0055f3c4
         ;   XREF to: 0055f3dd (CONDITIONAL_JUMP)  ; LAB_0055f3dd
     PUSH 0x642e69                       ; 0055f3c6 | = "Error parsing setVictim command parms"
-    PUSH 0x310eca0                      ; 0055f3cb | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f3cb | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f3d0
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f3d5
@@ -6705,8 +6705,8 @@ section .text
     ADD ECX,EDX                         ; 0055f3eb
     PUSH EAX                            ; 0055f3ed
     MOV dword ptr [ESP + 0x3e90],ECX    ; 0055f3ee
-    CALL core_script.cpp_FUN_00559360   ; 0055f3f5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f3f5
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f3fa
     PUSH 0x642e8f                       ; 0055f3fd | = "disable"
     LEA EAX,[ESP + 0x2da8]              ; 0055f402
@@ -6726,20 +6726,20 @@ section .text
     PUSH EDI                            ; 0055f42b
     LEA EAX,[ESP + 0x2dac]              ; 0055f42c
     PUSH EAX                            ; 0055f433
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055f434
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055f434
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055f439
     TEST EAX,EAX                        ; 0055f43c
     JNZ 0x0055f360                      ; 0055f43e
         ;   XREF to: 0055f360 (CONDITIONAL_JUMP)  ; LAB_0055f360
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055f444 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055f444 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055f44b
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055f451
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
     PUSH 0x642e97                       ; 0055f456 | = "Missing closing ')' in setVictim command"
         ;   Label: LAB_0055f456
-    PUSH 0x310eca0                      ; 0055f45b | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f45b | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f460
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f465
@@ -6748,8 +6748,8 @@ section .text
     ADD ESI,0xa                         ; 0055f46d
         ;   Label: LAB_0055f46d
     PUSH ESI                            ; 0055f470
-    CALL core_script.cpp_FUN_005593d0   ; 0055f471
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f471
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f476
     LEA EDX,[ESP + 0x3f68]              ; 0055f479
     PUSH EDX                            ; 0055f480
@@ -6770,7 +6770,7 @@ section .text
     JGE 0x0055f4d5                      ; 0055f4bc
         ;   XREF to: 0055f4d5 (CONDITIONAL_JUMP)  ; LAB_0055f4d5
     PUSH 0x642edc                       ; 0055f4be | = "Error snaping turnToFace command parms"
-    PUSH 0x310eca0                      ; 0055f4c3 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f4c3 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f4c8
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f4cd
@@ -6782,27 +6782,27 @@ section .text
     LEA EAX,[ESP + 0x1314]              ; 0055f4de
     PUSH EAX                            ; 0055f4e5
     MOV dword ptr [ESP + 0x3e90],EDX    ; 0055f4e6
-    CALL core_script.cpp_FUN_00559360   ; 0055f4ed
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f4ed
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f4f2
     LEA EAX,[ESP + 0x237c]              ; 0055f4f5
     PUSH EAX                            ; 0055f4fc
-    CALL core_script.cpp_FUN_00559360   ; 0055f4fd
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f4fd
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f502
     PUSH 0x821ff8                       ; 0055f505 | g_CDemonActorClassInfo
     MOV ECX,dword ptr [0x00822030]      ; 0055f50a | g_CDemonActorClassInfo.name_hash
     PUSH ECX                            ; 0055f510
     LEA EAX,[ESP + 0x131c]              ; 0055f511
     PUSH EAX                            ; 0055f518
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055f519
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055f519
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055f51e
     ADD ESP,0xc                         ; 0055f520
     TEST EAX,EAX                        ; 0055f523
     JNZ 0x0055f539                      ; 0055f525
         ;   XREF to: 0055f539 (CONDITIONAL_JUMP)  ; LAB_0055f539
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055f527 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055f527 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055f52e
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055f534
@@ -6813,18 +6813,18 @@ section .text
     PUSH EDI                            ; 0055f544
     LEA EAX,[ESP + 0x2384]              ; 0055f545
     PUSH EAX                            ; 0055f54c
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055f54d
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055f54d
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055f552
     TEST EAX,EAX                        ; 0055f555
     JNZ 0x0055f56b                      ; 0055f557
         ;   XREF to: 0055f56b (CONDITIONAL_JUMP)  ; LAB_0055f56b
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055f559 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055f559 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055f560
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055f566
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055f56b | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055f56b | g_ScriptEventsEnabled
         ;   Label: LAB_0055f56b
     JNZ 0x0055a8bb                      ; 0055f572
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6855,8 +6855,8 @@ section .text
     ADD ESI,0x8                         ; 0055f5bc
         ;   Label: LAB_0055f5bc
     PUSH ESI                            ; 0055f5bf
-    CALL core_script.cpp_FUN_005593d0   ; 0055f5c0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f5c0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f5c5
     PUSH 0x1f4                          ; 0055f5c8
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f5cd
@@ -6864,18 +6864,18 @@ section .text
     PUSH EAX                            ; 0055f5db
     LEA EAX,[ESP + 0x3e94]              ; 0055f5dc
     PUSH EAX                            ; 0055f5e3
-    CALL core_script.cpp_FUN_005593f0   ; 0055f5e4
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f5e4
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f5e9
     TEST EAX,EAX                        ; 0055f5ec
     JZ 0x0055f616                       ; 0055f5ee
         ;   XREF to: 0055f616 (CONDITIONAL_JUMP)  ; LAB_0055f616
-    MOV EDI,0x310eca0                   ; 0055f5f0 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f5f0 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055f5f5
-    PUSH EDI                            ; 0055f5f7 | DAT_0310eca0
+    PUSH EDI                            ; 0055f5f7 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f5f8
         ;   Label: LAB_0055f5f8
-    MOV byte ptr [EDI],AL               ; 0055f5fa | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f5fa | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f5fc
     JZ 0x0055f610                       ; 0055f5fe
         ;   XREF to: 0055f610 (CONDITIONAL_JUMP)  ; LAB_0055f610
@@ -6909,7 +6909,7 @@ section .text
     JGE 0x0055f670                      ; 0055f657
         ;   XREF to: 0055f670 (CONDITIONAL_JUMP)  ; LAB_0055f670
     PUSH 0x642f1d                       ; 0055f659 | = "Error parsing speaker and wav arguments"
-    PUSH 0x310eca0                      ; 0055f65e | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f65e | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f663
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f668
@@ -6918,19 +6918,19 @@ section .text
     LEA EAX,[ESP + 0x29bc]              ; 0055f670
         ;   Label: LAB_0055f670
     PUSH EAX                            ; 0055f677
-    CALL core_script.cpp_FUN_00559360   ; 0055f678
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f678
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f67d
     LEA EAX,[ESP + 0x1e04]              ; 0055f680
     PUSH EAX                            ; 0055f687
-    CALL core_script.cpp_FUN_00559360   ; 0055f688
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f688
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f68d
     LEA EAX,[ESP + 0x630]               ; 0055f690
     ADD EAX,dword ptr [ESP + 0x3f6c]    ; 0055f697
     PUSH EAX                            ; 0055f69e
-    CALL core_script.cpp_FUN_005593d0   ; 0055f69f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f69f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f6a4
     PUSH EAX                            ; 0055f6a7
     LEA EAX,[ESP + 0x1e08]              ; 0055f6a8
@@ -6938,8 +6938,8 @@ section .text
     LEA EAX,[ESP + 0x29c4]              ; 0055f6b0
     PUSH EAX                            ; 0055f6b7
     PUSH EBX                            ; 0055f6b8
-    CALL core_script.cpp_CScript_FUN_0055ff00 ; 0055f6b9
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+    CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055f6b9
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055f6be
     FLDZ                                ; 0055f6c5
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055f6c7
@@ -6955,8 +6955,8 @@ section .text
     ADD ESI,0xc                         ; 0055f6e5
         ;   Label: LAB_0055f6e5
     PUSH ESI                            ; 0055f6e8
-    CALL core_script.cpp_FUN_005593d0   ; 0055f6e9
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f6e9
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f6ee
     PUSH 0xc8                           ; 0055f6f1
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f6f6
@@ -6964,18 +6964,18 @@ section .text
     PUSH EAX                            ; 0055f704
     LEA EAX,[ESP + 0x3e94]              ; 0055f705
     PUSH EAX                            ; 0055f70c
-    CALL core_script.cpp_FUN_005593f0   ; 0055f70d
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f70d
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f712
     TEST EAX,EAX                        ; 0055f715
     JZ 0x0055f73f                       ; 0055f717
         ;   XREF to: 0055f73f (CONDITIONAL_JUMP)  ; LAB_0055f73f
-    MOV EDI,0x310eca0                   ; 0055f719 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f719 | g_ScriptErrorBuffer
     MOV ESI,EAX                         ; 0055f71e
-    PUSH EDI                            ; 0055f720 | DAT_0310eca0
+    PUSH EDI                            ; 0055f720 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f721
         ;   Label: LAB_0055f721
-    MOV byte ptr [EDI],AL               ; 0055f723 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f723 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f725
     JZ 0x0055f739                       ; 0055f727
         ;   XREF to: 0055f739 (CONDITIONAL_JUMP)  ; LAB_0055f739
@@ -7056,11 +7056,11 @@ section .text
     JGE 0x0055f803                      ; 0055f7d8
         ;   XREF to: 0055f803 (CONDITIONAL_JUMP)  ; LAB_0055f803
     MOV ESI,0x642f5d                    ; 0055f7da | = "Error parsing out camera name"
-    MOV EDI,0x310eca0                   ; 0055f7df | DAT_0310eca0
-    PUSH EDI                            ; 0055f7e4 | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f7df | g_ScriptErrorBuffer
+    PUSH EDI                            ; 0055f7e4 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f7e5 | = "Error parsing out camera name" | s_ror_parsing_out_camera_name_00642f5f
         ;   Label: LAB_0055f7e5
-    MOV byte ptr [EDI],AL               ; 0055f7e7 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f7e7 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f7e9
     JZ 0x0055f7fd                       ; 0055f7eb
         ;   XREF to: 0055f7fd (CONDITIONAL_JUMP)  ; LAB_0055f7fd
@@ -7078,8 +7078,8 @@ section .text
     LEA EAX,[ESP + 0x37e0]              ; 0055f803
         ;   Label: LAB_0055f803
     PUSH EAX                            ; 0055f80a
-    CALL core_script.cpp_FUN_00559360   ; 0055f80b
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055f80b
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055f810
     LEA EAX,[ESP + 0x37e0]              ; 0055f813
     PUSH EAX                            ; 0055f81a
@@ -7098,7 +7098,7 @@ section .text
     TEST EDX,EDX                        ; 0055f840
     JNZ 0x0055f888                      ; 0055f842
         ;   XREF to: 0055f888 (CONDITIONAL_JUMP)  ; LAB_0055f888
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055f844 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055f844 | g_ScriptEventsEnabled
         ;   Label: LAB_0055f844
     JNZ 0x0055a8bb                      ; 0055f84b
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -7115,7 +7115,7 @@ section .text
         ;   Label: LAB_0055f869
     PUSH EAX                            ; 0055f870
     PUSH 0x642f7b                       ; 0055f871 | = "Camera \"%s\" doesn't exist."
-    PUSH 0x310eca0                      ; 0055f876 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f876 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f87b
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055f880
@@ -7148,7 +7148,7 @@ section .text
         ;   XREF to: 0055f844 (CONDITIONAL_JUMP)  ; LAB_0055f844
     PUSH 0x642f99                       ; 0055f8d1 | = "Invalid hold time value"
         ;   Label: LAB_0055f8d1
-    PUSH 0x310eca0                      ; 0055f8d6 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f8d6 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f8db
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f8e0
@@ -7157,8 +7157,8 @@ section .text
     ADD ESI,0xc                         ; 0055f8e8
         ;   Label: LAB_0055f8e8
     PUSH ESI                            ; 0055f8eb
-    CALL core_script.cpp_FUN_005593d0   ; 0055f8ec
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f8ec
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f8f1
     PUSH 0x12c                          ; 0055f8f4
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f8f9
@@ -7166,19 +7166,19 @@ section .text
     PUSH EAX                            ; 0055f907
     LEA EAX,[ESP + 0x3e94]              ; 0055f908
     PUSH EAX                            ; 0055f90f
-    CALL core_script.cpp_FUN_005593f0   ; 0055f910
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_005593f0(int * param_1, char * param_2, int param_3)
+    CALL core_script.cpp_parseArgument_FUN_005593f0 ; 0055f910
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseArgument_FUN_005593f0(char * * cursor, char * out_buffer, int max_length)
     ADD ESP,0xc                         ; 0055f915
     TEST EAX,EAX                        ; 0055f918
     JZ 0x0055f942                       ; 0055f91a
         ;   XREF to: 0055f942 (CONDITIONAL_JUMP)  ; LAB_0055f942
-    MOV EDI,0x310eca0                   ; 0055f91c | DAT_0310eca0
+    MOV EDI,0x310eca0                   ; 0055f91c | g_ScriptErrorBuffer
         ;   Label: LAB_0055f91c
     MOV ESI,EAX                         ; 0055f921
-    PUSH EDI                            ; 0055f923 | DAT_0310eca0
+    PUSH EDI                            ; 0055f923 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f924
         ;   Label: LAB_0055f924
-    MOV byte ptr [EDI],AL               ; 0055f926 | DAT_0310eca0 | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f926 | g_ScriptErrorBuffer | DAT_0310eca2
     CMP AL,0x0                          ; 0055f928
     JZ 0x0055f93c                       ; 0055f92a
         ;   XREF to: 0055f93c (CONDITIONAL_JUMP)  ; LAB_0055f93c
@@ -7210,14 +7210,14 @@ section .text
     CMP ECX,0x2                         ; 0055f97a
     JL 0x0055f9e9                       ; 0055f97d
         ;   XREF to: 0055f9e9 (CONDITIONAL_JUMP)  ; LAB_0055f9e9
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055f97f | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055f97f | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055f986
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0xa7c]               ; 0055f98c
     ADD EAX,ECX                         ; 0055f993
     PUSH EAX                            ; 0055f995
-    CALL core_script.cpp_FUN_005593d0   ; 0055f996
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f996
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f99b
     LEA EDI,[EBX + 0x54]                ; 0055f99e
     MOV ESI,EAX                         ; 0055f9a1
@@ -7253,7 +7253,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642fc4                       ; 0055f9e9 | = "Error parsing time value"
         ;   Label: LAB_0055f9e9
-    PUSH 0x310eca0                      ; 0055f9ee | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055f9ee | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055f9f3
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055f9f8
@@ -7262,8 +7262,8 @@ section .text
     ADD ESI,0xa                         ; 0055fa00
         ;   Label: LAB_0055fa00
     PUSH ESI                            ; 0055fa03
-    CALL core_script.cpp_FUN_005593d0   ; 0055fa04
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fa04
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055fa09
     ADD ESP,0x4                         ; 0055fa0e
     MOV dword ptr [ESP + 0x3f7c],EDX    ; 0055fa11
@@ -7284,7 +7284,7 @@ section .text
     JGE 0x0055fa68                      ; 0055fa4f
         ;   XREF to: 0055fa68 (CONDITIONAL_JUMP)  ; LAB_0055fa68
     PUSH 0x642ff9                       ; 0055fa51 | = "Error parsing turnToFace command parms"
-    PUSH 0x310eca0                      ; 0055fa56 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fa56 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fa5b
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fa60
@@ -7296,27 +7296,27 @@ section .text
     ADD ESI,ECX                         ; 0055fa76
     PUSH EAX                            ; 0055fa78
     MOV dword ptr [ESP + 0x3e90],ESI    ; 0055fa79
-    CALL core_script.cpp_FUN_00559360   ; 0055fa80
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055fa80
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055fa85
     LEA EAX,[ESP + 0x28f4]              ; 0055fa88
     PUSH EAX                            ; 0055fa8f
-    CALL core_script.cpp_FUN_00559360   ; 0055fa90
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055fa90
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055fa95
     PUSH 0x823c14                       ; 0055fa98 | g_CCharacterClassInfo
     MOV EDI,dword ptr [0x00823c4c]      ; 0055fa9d | g_CCharacterClassInfo.name_hash
     PUSH EDI                            ; 0055faa3
     LEA EAX,[ESP + 0x163c]              ; 0055faa4
     PUSH EAX                            ; 0055faab
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055faac
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055faac
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055fab1
     ADD ESP,0xc                         ; 0055fab3
     TEST EAX,EAX                        ; 0055fab6
     JNZ 0x0055facc                      ; 0055fab8
         ;   XREF to: 0055facc (CONDITIONAL_JUMP)  ; LAB_0055facc
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055faba | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055faba | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055fac1
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055fac7
@@ -7327,18 +7327,18 @@ section .text
     PUSH EAX                            ; 0055fad6
     LEA EAX,[ESP + 0x28fc]              ; 0055fad7
     PUSH EAX                            ; 0055fade
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055fadf
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055fadf
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055fae4
     TEST EAX,EAX                        ; 0055fae7
     JNZ 0x0055fafd                      ; 0055fae9
         ;   XREF to: 0055fafd (CONDITIONAL_JUMP)  ; LAB_0055fafd
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055faeb | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055faeb | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055faf2
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055faf8
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055fafd | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055fafd | g_ScriptEventsEnabled
         ;   Label: LAB_0055fafd
     JNZ 0x0055a8bb                      ; 0055fb04
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -7352,8 +7352,8 @@ section .text
     ADD ESI,0x4                         ; 0055fb20
         ;   Label: LAB_0055fb20
     PUSH ESI                            ; 0055fb23
-    CALL core_script.cpp_FUN_005593d0   ; 0055fb24
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fb24
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fb29
     LEA EDX,[ESP + 0x3f80]              ; 0055fb2c
     PUSH EDX                            ; 0055fb33
@@ -7373,7 +7373,7 @@ section .text
         ;   XREF to: 0055fba7 (CONDITIONAL_JUMP)  ; LAB_0055fba7
     MOV EDX,dword ptr [ESP + 0x3e8c]    ; 0055fb69
     ADD EDX,EAX                         ; 0055fb70
-    MOV ECX,dword ptr [0x0310ec9c]      ; 0055fb72 | DAT_0310ec9c
+    MOV ECX,dword ptr [0x0310ec9c]      ; 0055fb72 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EDX    ; 0055fb78
     TEST ECX,ECX                        ; 0055fb7f
     JNZ 0x0055a8bb                      ; 0055fb81
@@ -7390,7 +7390,7 @@ section .text
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x64302c                       ; 0055fba7 | = "Error parsing time value on wait stat..."
         ;   Label: LAB_0055fba7
-    PUSH 0x310eca0                      ; 0055fbac | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fbac | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fbb1
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fbb6
@@ -7399,21 +7399,21 @@ section .text
     ADD ESI,0x7                         ; 0055fbbe
         ;   Label: LAB_0055fbbe
     PUSH ESI                            ; 0055fbc1
-    CALL core_script.cpp_FUN_005593d0   ; 0055fbc2
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fbc2
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fbc7
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055fbca
     LEA EAX,[ESP + 0x3c2c]              ; 0055fbd1
     PUSH EAX                            ; 0055fbd8
     LEA EAX,[ESP + 0x3e90]              ; 0055fbd9
     PUSH EAX                            ; 0055fbe0
-    CALL core_script.cpp_FUN_005594a0   ; 0055fbe1
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005594a0(int param_1, int param_2)
+    CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055fbe1
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055fbe6
     TEST EAX,EAX                        ; 0055fbe9
     JNZ 0x0055f91c                      ; 0055fbeb
         ;   XREF to: 0055f91c (CONDITIONAL_JUMP)  ; LAB_0055f91c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055fbf1 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055fbf1 | g_ScriptEventsEnabled
     JNZ 0x0055a8bb                      ; 0055fbf8
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3c2c]              ; 0055fbfe
@@ -7432,8 +7432,8 @@ section .text
     ADD ESI,0x6                         ; 0055fc28
         ;   Label: LAB_0055fc28
     PUSH ESI                            ; 0055fc2b
-    CALL core_script.cpp_FUN_005593d0   ; 0055fc2c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005593d0(char * param_1)
+    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fc2c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fc31
     LEA EDX,[ESP + 0x3e88]              ; 0055fc34
     PUSH EDX                            ; 0055fc3b
@@ -7454,7 +7454,7 @@ section .text
     JGE 0x0055fc90                      ; 0055fc77
         ;   XREF to: 0055fc90 (CONDITIONAL_JUMP)  ; LAB_0055fc90
     PUSH 0x643078                       ; 0055fc79 | = "Error parsing walkTo command parms"
-    PUSH 0x310eca0                      ; 0055fc7e | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fc7e | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fc83
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fc88
@@ -7466,13 +7466,13 @@ section .text
     ADD EDI,ESI                         ; 0055fc9e
     PUSH EAX                            ; 0055fca0
     MOV dword ptr [ESP + 0x3e90],EDI    ; 0055fca1
-    CALL core_script.cpp_FUN_00559360   ; 0055fca8
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055fca8
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055fcad
     LEA EAX,[ESP + 0x282c]              ; 0055fcb0
     PUSH EAX                            ; 0055fcb7
-    CALL core_script.cpp_FUN_00559360   ; 0055fcb8
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 0055fcb8
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 0055fcbd
     XOR EAX,EAX                         ; 0055fcc0
     MOV dword ptr [ESP + 0x3f88],EAX    ; 0055fcc2
@@ -7509,7 +7509,7 @@ section .text
     JZ 0x0055fdce                       ; 0055fd3a
         ;   XREF to: 0055fdce (CONDITIONAL_JUMP)  ; LAB_0055fdce
     PUSH 0x6430ef                       ; 0055fd40 | = "Missing closing parenthesis on walkTo..."
-    PUSH 0x310eca0                      ; 0055fd45 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fd45 | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fd4a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fd4f
@@ -7517,7 +7517,7 @@ section .text
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
     PUSH 0x6430a2                       ; 0055fd57 | = "Error parsing walkTo command parms"
         ;   Label: LAB_0055fd57
-    PUSH 0x310eca0                      ; 0055fd5c | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fd5c | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fd61
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fd66
@@ -7545,7 +7545,7 @@ section .text
         ;   XREF to: 0055fd30 (UNCONDITIONAL_JUMP)  ; LAB_0055fd30
     PUSH 0x6430cc                       ; 0055fdb7 | = "Error parsing walkTo command parms"
         ;   Label: LAB_0055fdb7
-    PUSH 0x310eca0                      ; 0055fdbc | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fdbc | g_ScriptErrorBuffer
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fdc1
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0055fdc6
@@ -7560,14 +7560,14 @@ section .text
     INC EDX                             ; 0055fde7
     PUSH EAX                            ; 0055fde8
     MOV dword ptr [ESP + 0x3e98],EDX    ; 0055fde9
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055fdf0
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055fdf0
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     MOV ESI,EAX                         ; 0055fdf5
     ADD ESP,0xc                         ; 0055fdf7
     TEST EAX,EAX                        ; 0055fdfa
     JNZ 0x0055fe10                      ; 0055fdfc
         ;   XREF to: 0055fe10 (CONDITIONAL_JUMP)  ; LAB_0055fe10
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055fdfe | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055fdfe | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055fe05
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055fe0b
@@ -7578,18 +7578,18 @@ section .text
     PUSH ECX                            ; 0055fe1b
     LEA EAX,[ESP + 0x2834]              ; 0055fe1c
     PUSH EAX                            ; 0055fe23
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0055fe24
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0055fe24
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0055fe29
     TEST EAX,EAX                        ; 0055fe2c
     JNZ 0x0055fe42                      ; 0055fe2e
         ;   XREF to: 0055fe42 (CONDITIONAL_JUMP)  ; LAB_0055fe42
-    CMP dword ptr [0x0310f4ac],0x0      ; 0055fe30 | DAT_0310f4ac
+    CMP dword ptr [0x0310f4ac],0x0      ; 0055fe30 | g_ActorLookedUpByVariable
     JNZ 0x0055a8d4                      ; 0055fe37
         ;   XREF to: 0055a8d4 (CONDITIONAL_JUMP)  ; LAB_0055a8d4
     JMP 0x0055a98c                      ; 0055fe3d
         ;   XREF to: 0055a98c (UNCONDITIONAL_JUMP)  ; LAB_0055a98c
-    CMP dword ptr [0x0310ec9c],0x0      ; 0055fe42 | DAT_0310ec9c
+    CMP dword ptr [0x0310ec9c],0x0      ; 0055fe42 | g_ScriptEventsEnabled
         ;   Label: LAB_0055fe42
     JNZ 0x0055a8bb                      ; 0055fe49
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -7605,9 +7605,9 @@ section .text
     MOV EBX,dword ptr [ESP + 0x3e84]    ; 0055fe73
         ;   Label: LAB_0055fe73
     PUSH EBX                            ; 0055fe7a
-    PUSH EAX                            ; 0055fe7b | DAT_00641c5a
+    PUSH EAX                            ; 0055fe7b | s_EmptyChar_00641c5a
     PUSH 0x64313a                       ; 0055fe7c | = "Extra characters \"%s\" on line %d"
-    PUSH 0x310eca0                      ; 0055fe81 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fe81 | g_ScriptErrorBuffer
     MOV EDI,0xffffffff                  ; 0055fe86
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055fe8b
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
@@ -7622,7 +7622,7 @@ section .text
     RET                                 ; 0055fea7
     PUSH 0x64315b                       ; 0055fea8 | = "Overrun past the end of the script."
         ;   Label: LAB_0055fea8
-    PUSH 0x310eca0                      ; 0055fead | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055fead | g_ScriptErrorBuffer
     MOV EDI,0xffffffff                  ; 0055feb2
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055feb7
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)

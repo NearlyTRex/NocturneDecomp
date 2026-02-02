@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_00541390 at 00541c6b
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541c6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dac5
@@ -135,7 +135,7 @@ section .text
     PUSH EAX                            ; 00541f6a
     PUSH ESI                            ; 00541f6b
     CALL core_netgame.cpp_CNetGame_FUN_00542370 ; 00541f6c
-        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00542370()
+        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00542370(CNetGame * this_ptr)
     MOV EDI,dword ptr [0x02f7c8b8]      ; 00541f71 | g_CurrentGameTime
     ADD ESP,0x14                        ; 00541f77
     POP EBP                             ; 00541f7a

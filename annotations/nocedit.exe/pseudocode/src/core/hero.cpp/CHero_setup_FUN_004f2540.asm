@@ -13,7 +13,7 @@
 ;   core_haystack.cpp_CHaystack_setup_FUN_004f0c80 at 004f0c87
 ;   core_icepick.cpp_CIcePick_setup_FUN_004f7e80 at 004f7e87
 ;   core_moloch.cpp_CMoloch_setup_FUN_00528c70 at 00528cf9
-;   core_scat.cpp_FUN_00556f90 at 00556f97
+;   core_scat.cpp_CScat_setup_FUN_00556f90 at 00556f97
 ;   core_stranger.cpp_CStranger_setup_FUN_005bb4b0 at 005bb4bb
 ;   core_svetlana.cpp_CSvetlana_FUN_005d88e0 at 005d8911
 ;

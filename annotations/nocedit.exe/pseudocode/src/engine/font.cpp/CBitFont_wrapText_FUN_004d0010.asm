@@ -28,7 +28,7 @@
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 at 004a0ab5
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   char[256] g_TempTextBuffer
 ;
 ; Called Functions:

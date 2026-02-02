@@ -31,7 +31,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_InputKeyMask = 0x7f
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_FontCharacterHeight

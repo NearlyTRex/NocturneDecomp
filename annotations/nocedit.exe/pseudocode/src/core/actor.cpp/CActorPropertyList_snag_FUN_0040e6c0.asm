@@ -1,26 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,int property_type,char *property_name,void *data_ptr, void *callback_or_extra)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,void *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   property_type
+; EActorPropertyType Stack[0x8]:4   property_type
 ; char *           Stack[0xc]:4   property_name
 ; void *           Stack[0x10]:4   data_ptr
-; void *           Stack[0x14]:4   callback_or_extra
+; void *           Stack[0x14]:4   callback
 ;
 ; XREF[21]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160 at 0040e178
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1a0 at 0040e1b8
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0 at 0040e1f8
-;   core_actor.cpp_CActorPropertyList_FUN_0040e220 at 0040e238
-;   core_actor.cpp_CActorPropertyList_FUN_0040e260 at 0040e278
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290 at 0040e2a8
-;   core_actor.cpp_CActorPropertyList_FUN_0040e2d0 at 0040e2e4
-;   core_actor.cpp_CActorPropertyList_FUN_0040e300 at 0040e314
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330 at 0040e344
-;   core_actor.cpp_CActorPropertyList_FUN_0040e350 at 0040e36d
+;   core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 at 0040e680
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 at 0040e344
+;   core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480 at 0040e494
+;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 at 0040e36d
+;   core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500 at 0040e569
+;   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 at 0040e654
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 at 0040e474
+;   core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 at 0040e3f6
+;   core_actor.cpp_CActorPropertyList_addFlags_FUN_0040e6a0 at 0040e6b4
+;   core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 at 0040e1b8
 ;   ... and 11 more
 ;
 ; Referenced Globals:

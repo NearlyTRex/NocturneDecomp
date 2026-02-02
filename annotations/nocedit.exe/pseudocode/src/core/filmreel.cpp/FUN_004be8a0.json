@@ -17,7 +17,7 @@
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 64,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -51,19 +51,19 @@
   },
   "function_calls": [
     {
-      "addr": "0040c1c0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
-    },
-    {
       "addr": "0040b8f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
     },
     {
       "addr": "0040b5c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
     }
   ],
   "globals": [
@@ -136,7 +136,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -150,7 +150,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[2].location.position.z,\"movieName\");",
+      "text": "((char *)&in_stack_00000004[2].location.position.z,\"movieName\");",
       "type": "stack_param"
     }
   ],

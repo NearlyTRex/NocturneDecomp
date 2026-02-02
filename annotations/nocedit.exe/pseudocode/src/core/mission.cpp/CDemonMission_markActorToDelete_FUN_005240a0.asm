@@ -13,7 +13,7 @@
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f45e2
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe741
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 at 00520c64
-;   core_passngr.cpp_FUN_00545ef0 at 00546031
+;   core_passngr.cpp_CPassenger_process_FUN_00545ef0 at 00546031
 ;   core_werewolf.cpp_CWerewolf_process_FUN_005efde0 at 005eff28
 ;
 ; Referenced Globals:

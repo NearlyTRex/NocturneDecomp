@@ -39,9 +39,9 @@ void __cdecl CVehicle::process(CVehicle *this_ptr,float delta_time);
 // Address: 005e86d0
 int * __cdecl CVehicle(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_CVehicle_serialize_FUN_005e8720
+// Original: core_vehicle.cpp_CVehicle_archive_FUN_005e8720
 // Address: 005e8720
-void __cdecl CVehicle::serialize(CVehicle *this_ptr);
+void __cdecl CVehicle::archive(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_FUN_005e88b0
 // Address: 005e88b0

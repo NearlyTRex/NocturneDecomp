@@ -51,9 +51,9 @@ int __cdecl CBodyPart::renderTransparent(CBodyPart *this_ptr);
 // Address: 00419810
 void __cdecl CBodyPart::setup(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_CBodyPart_serialize_FUN_00419880
+// Original: core_bodypart.cpp_CBodyPart_archive_FUN_00419880
 // Address: 00419880
-void __cdecl CBodyPart::serialize(CBodyPart *this_ptr);
+void __cdecl CBodyPart::archive(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_process_FUN_00419be0
 // Address: 00419be0

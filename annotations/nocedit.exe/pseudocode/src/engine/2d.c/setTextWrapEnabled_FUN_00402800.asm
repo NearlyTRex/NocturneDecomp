@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 00489353
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e86f
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e86f
 ;   engine_2d.c_disableTextWrap_FUN_00402820 at 00402822
 ;   engine_2d.c_enableTextWrap_FUN_00402810 at 00402812
 ;

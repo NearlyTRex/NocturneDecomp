@@ -26,7 +26,7 @@ void __cdecl core_lever_cpp_CLever_FUN_00504b20(CLever *this_ptr)
     }
     if (((0.0 < in_stack_00000008) && (this_ptr->param <= 0.0)) ||
        (((int)in_stack_00000008 < 0x3f800000 && (1.0 <= this_ptr->param)))) {
-      (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,(char *)&this_ptr->sound);
+      (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->sound);
     }
     this_ptr->param = in_stack_00000010;
     if ((CLever *)this_ptr->linked_lever != (CLever *)0x0) {

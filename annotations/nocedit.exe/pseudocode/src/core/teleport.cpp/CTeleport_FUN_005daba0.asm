@@ -11,7 +11,7 @@
 ;   TerminatedCString s_Destination_00654cf9
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e350
+;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH 0x654cf9                       ; 005dabc6 | = "Destination"
     MOV EBX,dword ptr [ESP + 0x20]      ; 005dabcb
     PUSH EBX                            ; 005dabcf
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005dabd0
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005dabd0
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005dabd5
     POP EBX                             ; 005dabd8
     RET                                 ; 005dabd9

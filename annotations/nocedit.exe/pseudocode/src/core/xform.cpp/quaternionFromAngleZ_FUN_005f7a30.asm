@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_FUN_004d4d80 at 004d522f
-;   core_scat.cpp_FUN_005584a0 at 00558585
+;   core_scat.cpp_CScat_FUN_005584a0 at 00558585
 ;   core_stranger.cpp_CStranger_FUN_005c02b0 at 005c0311
 ;
 ; Referenced Globals:

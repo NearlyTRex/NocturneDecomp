@@ -42,7 +42,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     this_ptr->unk2[0x79] = '\0';
     this_ptr->unk2[0x7a] = '\0';
     this_ptr->unk2[0x7b] = '\0';
-    core_script_cpp_CScript_FUN_00560140(this_ptr_00,(int)this_ptr);
+    core_script_cpp_CScript_setSpeaker_FUN_00560140(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == 2) {
     core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);

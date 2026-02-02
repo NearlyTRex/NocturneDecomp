@@ -13,8 +13,8 @@
 ;   TerminatedCString s_Charge_time_sec_00615a38
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -36,24 +36,24 @@ section .text
     PUSH EAX                            ; 004180cc
     PUSH 0x615a11                       ; 004180cd | = "Model file (.kfm)"
     PUSH ESI                            ; 004180d2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004180d3
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 004180d3
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 004180d8
     PUSH 0x0                            ; 004180db
     LEA EAX,[EBX + 0x2dc]               ; 004180dd
     PUSH EAX                            ; 004180e3
     PUSH 0x615a23                       ; 004180e4 | = "Discharge time (sec)"
     PUSH ESI                            ; 004180e9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 004180ea
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004180ea
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004180ef
     PUSH 0x0                            ; 004180f2
     ADD EBX,0x2d8                       ; 004180f4
     PUSH EBX                            ; 004180fa
     PUSH 0x615a38                       ; 004180fb | = "Charge time (sec)"
     PUSH ESI                            ; 00418100
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00418101
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00418101
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00418106
     POP ESI                             ; 00418109
     POP EBX                             ; 0041810a

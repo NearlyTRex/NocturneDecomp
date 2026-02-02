@@ -17,7 +17,7 @@
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e5ad0 at 004e5ada
 ;   core_hotdemon.cpp_CHotDemon_hasCollision_FUN_004f79b0 at 004f79ba
 ;   core_imp.cpp_CImp_hasCollision_FUN_004fb0f0 at 004fb0fa
-;   core_mobster.cpp_FUN_005279d0 at 005279da
+;   core_mobster.cpp_CMobster_hasCollision_FUN_005279d0 at 005279da
 ;   ... and 4 more
 ;
 ; *****************************************************************************

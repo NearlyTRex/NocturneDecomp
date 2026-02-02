@@ -8,10 +8,10 @@
 ;
 ; XREF[9]:
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c355
-;   core_charactr.cpp_CCharacter_FUN_0042f3e0 at 0042f6cf
+;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f6cf
 ;   core_hero.cpp_CHero_FUN_004f3890 at 004f38ae
 ;   core_icepick.cpp_CIcePick_FUN_004f93a0 at 004f945c
-;   core_mobster.cpp_FUN_00525840 at 00525afe
+;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525afe
 ;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c5481
 ;   core_vampboss.cpp_FUN_005e7030 at 005e720f
 ;   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 at 005e857c

@@ -14,13 +14,13 @@ void __cdecl core_crate_cpp_CCrate_load_FUN_00448910(void)
 {
   CDemonActor *in_stack_00000004;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
-  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
+  core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),"modelName");
   if (g_CCrateClassVersion < 2) {
     return;
   }
-  core_actor_cpp_serializeActor_FUN_0040b870
+  core_actor_cpp_archiveActor_FUN_0040b870
             ((CDemonActor *)&in_stack_00000004[2].location.area_id,"lastPlatform");
   return;
 }

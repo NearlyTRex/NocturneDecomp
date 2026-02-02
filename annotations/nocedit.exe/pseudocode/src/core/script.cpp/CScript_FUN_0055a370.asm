@@ -25,17 +25,17 @@
 ;   TerminatedCString s_Out_of_memory_loading_sc_00641a4d
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined1 DAT_031091e8
-;   undefined1 DAT_031091e9
-;   undefined1 DAT_031091ea
-;   undefined1 DAT_031091eb
+;   char[2048] g_ScriptLineBuffer
+;   undefined4 DAT_031091e9
+;   undefined4 DAT_031091ea
+;   undefined4 DAT_031091eb
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_script.cpp_CScript_FUN_005598f0
-;   core_script.cpp_FUN_005592c0
+;   core_script.cpp_trimLine_FUN_005592c0
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 ;
@@ -60,8 +60,8 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 0055a38c
         ;   Label: LAB_0055a38c
     PUSH EDX                            ; 0055a38f
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 0055a390
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 0055a390
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0055a395
     CMP EBP,EAX                         ; 0055a398
     JL 0x0055a3a4                       ; 0055a39a
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 0055a3a1
     POP EBX                             ; 0055a3a2
     RET                                 ; 0055a3a3
-    PUSH 0x31091e8                      ; 0055a3a4 | DAT_031091e8
+    PUSH 0x31091e8                      ; 0055a3a4 | g_ScriptLineBuffer
         ;   Label: LAB_0055a3a4
     PUSH EBP                            ; 0055a3a9
     MOV ECX,dword ptr [ESP + 0x8]       ; 0055a3aa
@@ -81,9 +81,9 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0055a3b4
     PUSH EAX                            ; 0055a3b7
-    CALL core_script.cpp_FUN_005592c0   ; 0055a3b8
-        ;   XREF to: 005592c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005592c0(char * param_1, char * param_2)
-    MOV AH,byte ptr [0x031091e8]        ; 0055a3bd | DAT_031091e8
+    CALL core_script.cpp_trimLine_FUN_005592c0 ; 0055a3b8
+        ;   XREF to: 005592c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimLine_FUN_005592c0(char * input_line, char * output_buffer)
+    MOV AH,byte ptr [0x031091e8]        ; 0055a3bd | g_ScriptLineBuffer
     ADD ESP,0x8                         ; 0055a3c3
     TEST AH,AH                          ; 0055a3c6
     JZ 0x0055a4a8                       ; 0055a3c8
@@ -118,12 +118,12 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 0055a421
     MOV ECX,dword ptr [EBX + 0x34]      ; 0055a424
     PUSH 0x641a27                       ; 0055a427 | = "..\\core\\script.cpp"
-    MOV EDI,0x31091e8                   ; 0055a42c | DAT_031091e8
+    MOV EDI,0x31091e8                   ; 0055a42c | g_ScriptLineBuffer
     MOV dword ptr [ECX + EAX*0x8],ESI   ; 0055a431
     SUB ECX,ECX                         ; 0055a434
     DEC ECX                             ; 0055a436
     XOR EAX,EAX                         ; 0055a437
-    SCASB.REPNE ES:EDI                  ; 0055a439 | DAT_031091e8 | DAT_031091e9
+    SCASB.REPNE ES:EDI                  ; 0055a439 | g_ScriptLineBuffer | DAT_031091e9
     NOT ECX                             ; 0055a43b
     DEC ECX                             ; 0055a43d
     INC ECX                             ; 0055a43e
@@ -150,10 +150,10 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 0055a47c
         ;   Label: LAB_0055a47c
     MOV ECX,dword ptr [EBX + 0x34]      ; 0055a47f
-    MOV ESI,0x31091e8                   ; 0055a482 | DAT_031091e8
+    MOV ESI,0x31091e8                   ; 0055a482 | g_ScriptLineBuffer
     MOV EDI,dword ptr [ECX + EAX*0x8 + 0x4] ; 0055a487
     PUSH EDI                            ; 0055a48b
-    MOV AL,byte ptr [ESI]               ; 0055a48c | DAT_031091e8 | DAT_031091ea
+    MOV AL,byte ptr [ESI]               ; 0055a48c | g_ScriptLineBuffer | DAT_031091ea
         ;   Label: LAB_0055a48c
     MOV byte ptr [EDI],AL               ; 0055a48e
     CMP AL,0x0                          ; 0055a490

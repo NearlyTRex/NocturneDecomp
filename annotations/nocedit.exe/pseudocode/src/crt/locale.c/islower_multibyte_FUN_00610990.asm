@@ -10,7 +10,7 @@
 ;   crt_locale.c_fullwidth_toupper_FUN_0060ffb0 at 0060ffb6
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_locale.c_ismultibyte_FUN_00610a20

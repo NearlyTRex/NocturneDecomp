@@ -33,8 +33,8 @@
 ; XREF[16]:
 ;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415ff7
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417804
+;   core_bodypart.cpp_CBodyPart_archive_FUN_00419880 at 00419bb1
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b4b6
-;   core_bodypart.cpp_CBodyPart_serialize_FUN_00419880 at 00419bb1
 ;   core_bride.cpp_CBride_FUN_00424600 at 00424732
 ;   core_charactr.cpp_CCharacter_FUN_0042bcc0 at 0042bd1d
 ;   core_cow.cpp_FUN_004448c0 at 00444a4c

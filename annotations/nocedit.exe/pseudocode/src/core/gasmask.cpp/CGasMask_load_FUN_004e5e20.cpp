@@ -13,8 +13,8 @@ void __cdecl core_gasmask_cpp_CGasMask_load_FUN_004e5e20(void)
 {
   CDemonActor *in_stack_00000004;
   
-  core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
-  core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
+  core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),"modelName");
   return;
 }

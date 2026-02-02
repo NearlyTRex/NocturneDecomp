@@ -252,6 +252,7 @@
 #include "types/classes/CPolyIntersectResult.h"
 #include "types/classes/CPoly_vtable.h"
 #include "types/classes/CPopcorn.h"
+#include "types/classes/CProceduralTexture.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CQuaternion4i.h"
 #include "types/classes/CRainDrop.h"

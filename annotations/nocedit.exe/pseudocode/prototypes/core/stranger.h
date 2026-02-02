@@ -147,9 +147,9 @@ int __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c2850
 int __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_serialize_FUN_005c2fe0
+// Original: core_stranger.cpp_CStranger_archive_FUN_005c2fe0
 // Address: 005c2fe0
-void __cdecl CStranger::serialize(CStranger *this_ptr);
+void __cdecl CStranger::archive(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c3150
 // Address: 005c3150

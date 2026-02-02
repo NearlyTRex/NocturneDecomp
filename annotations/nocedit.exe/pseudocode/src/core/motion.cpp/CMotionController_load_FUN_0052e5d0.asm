@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeMotionState_FUN_0040b9f0 at 0040ba29
+;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba29
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0063ab2f

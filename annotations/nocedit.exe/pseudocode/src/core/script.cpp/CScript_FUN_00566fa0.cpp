@@ -16,18 +16,18 @@ void __cdecl core_script_cpp_CScript_FUN_00566fa0(CScript *this_ptr,CStrList *pa
   
   core_script_cpp_CScript_FUN_0055a370(this_ptr);
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr->unk4 + 0x18)) {
+  if (0 < this_ptr->parsed_line_count) {
     iVar3 = 0;
     do {
       iVar1 = sscanf
-                        (*(char **)(iVar3 + 4 + *(int *)(this_ptr->unk4 + 0x1c)),": %s",
+                        (*(char **)((int)&this_ptr->parsed_lines->text + iVar3),": %s",
                          acStack_d8);
       if (iVar1 == 1) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(param_2,acStack_d8);
       }
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 8;
-    } while (iVar2 < *(int *)(this_ptr->unk4 + 0x18));
+    } while (iVar2 < this_ptr->parsed_line_count);
   }
   return;
 }

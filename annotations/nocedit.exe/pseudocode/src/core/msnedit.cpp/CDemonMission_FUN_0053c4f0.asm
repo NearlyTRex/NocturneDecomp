@@ -28,9 +28,9 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e770
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850
-;   core_actor.cpp_CActorPropertyList_FUN_0040e9c0
+;   core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770
+;   core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850
 ;   core_actor.cpp_FUN_0040e150
 ;   core_msnedit.cpp_FUN_00536e20
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -105,8 +105,8 @@ section .text
     PUSH EDI                            ; 0053c596
     PUSH 0x141                          ; 0053c597
     PUSH 0x2f7a024                      ; 0053c59c | DAT_02f7a024
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e770 ; 0053c5a1
-        ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e770(CActorPropertyList * this_ptr, int param_2, int param_3, int param_4)
+    CALL core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 ; 0053c5a1
+        ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList * this_ptr, int x, int y, int width)
     ADD ESP,0x10                        ; 0053c5a6
     LEA EAX,[EBX + 0x1]                 ; 0053c5a9
     PUSH 0xee                           ; 0053c5ac
@@ -138,8 +138,8 @@ section .text
     PUSH 0x141                          ; 0053c602
     PUSH 0x2f7a024                      ; 0053c607 | DAT_02f7a024
     MOV EBP,0xef                        ; 0053c60c
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e770 ; 0053c611
-        ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e770(CActorPropertyList * this_ptr, int param_2, int param_3, int param_4)
+    CALL core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 ; 0053c611
+        ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList * this_ptr, int x, int y, int width)
     MOV EAX,[0x02cf2b00]                ; 0053c616 | g_ActiveButton
     ADD ESP,0x10                        ; 0053c61b
     TEST EAX,EAX                        ; 0053c61e
@@ -162,16 +162,16 @@ section .text
     PUSH EBX                            ; 0053c642
     PUSH EDX                            ; 0053c643
     PUSH 0x2f7a024                      ; 0053c644 | DAT_02f7a024
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e9c0 ; 0053c649
-        ;   XREF to: 0040e9c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e9c0()
+    CALL core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0 ; 0053c649
+        ;   XREF to: 0040e9c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0053c64e
     MOV [0x02f7c528],EAX                ; 0053c651 | DAT_02f7c528
     MOV EBX,dword ptr [0x02f7c528]      ; 0053c656 | DAT_02f7c528
         ;   Label: LAB_0053c656
     PUSH EBX                            ; 0053c65c
     PUSH 0x2f7a024                      ; 0053c65d | DAT_02f7a024
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e850 ; 0053c662
-        ;   XREF to: 0040e850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e850()
+    CALL core_actor.cpp_CActorPropertyList_render_FUN_0040e850 ; 0053c662
+        ;   XREF to: 0040e850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_render_FUN_0040e850(CActorPropertyList * this_ptr, int selected_index)
     ADD ESP,0x8                         ; 0053c667
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 0053c66a
         ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)

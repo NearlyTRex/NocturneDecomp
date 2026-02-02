@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_FUN_004aa400 at 004aa41f
-;   core_script.cpp_GetDemonActor_FUN_005594e0 at 00559552
+;   core_script.cpp_getActor_FUN_005594e0 at 00559552
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

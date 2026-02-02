@@ -111,9 +111,9 @@ void __cdecl CMansionPuzzleCircle::shiftPanelLeft(CMansionPuzzleCircle *this_ptr
 // Address: 0050ad40
 void __cdecl CMansionPuzzleCircle::shiftPanelRight(CMansionPuzzleCircle *this_ptr);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_serialize_FUN_0050adf0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0
 // Address: 0050adf0
-void __cdecl CMansionPuzzleCircle::serialize(CMansionPuzzleCircle *this_ptr);
+void __cdecl CMansionPuzzleCircle::archive(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0
 // Address: 0050aee0

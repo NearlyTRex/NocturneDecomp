@@ -30,7 +30,7 @@
 ;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e5641
 ;   core_ghoul.cpp_FUN_004e8520 at 004e8600
 ;   core_imp.cpp_CImp_FUN_004fab60 at 004fac81
-;   core_mobster.cpp_FUN_00527380 at 005274a0
+;   core_mobster.cpp_CMobster_FUN_00527380 at 005274a0
 ;   ... and 3 more
 ;
 ; Referenced Globals:

@@ -8,22 +8,34 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 91,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 11,
-    "suspect_count": 7,
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 41
+    "total_lines": 46
   },
   "cross_references": [],
   "function": {
@@ -40,14 +52,14 @@
   },
   "function_calls": [
     {
-      "addr": "0040e290",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
-    },
-    {
       "addr": "0040e3b0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0"
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040e290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290"
     },
     {
       "addr": "0040d290",
@@ -142,16 +154,30 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Model file (.kfm)\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(CKeyFramedModelInstance *)(in_stack_00000004 + 1),0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Movie name\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(char *)&in_stack_00000004[2].location.position.z,0x1f,",
       "type": "stack_param"
     }
   ],

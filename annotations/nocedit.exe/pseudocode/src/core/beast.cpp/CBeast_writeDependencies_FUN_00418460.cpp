@@ -11,6 +11,7 @@ core_beast_cpp_CBeast_writeDependencies_FUN_00418460(CBeast *this_ptr,_FILE *fil
 
 {
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0((CDemonActor *)this_ptr,file_handle);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(&(this_ptr->base).base.model,file_handle);
+  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+            (&(this_ptr->base).base.model,file_handle);
   return;
 }

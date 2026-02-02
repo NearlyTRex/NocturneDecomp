@@ -11,7 +11,7 @@
 ; char *           Stack[0x14]:4   description
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeActor_FUN_0040b870 at 0040b8e2
+;   core_actor.cpp_archiveActor_FUN_0040b870 at 0040b8e2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_08x_0063905e

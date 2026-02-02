@@ -43,9 +43,9 @@ int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 // Address: 00421fe0
 CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_boxactor.cpp_CBoxActor_serialize_FUN_00422060
+// Original: core_boxactor.cpp_CBoxActor_archive_FUN_00422060
 // Address: 00422060
-void __cdecl CBoxActor::serialize(CBoxActor *this_ptr);
+void __cdecl CBoxActor::archive(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_00422330
 // Address: 00422330
@@ -127,9 +127,9 @@ void __cdecl CLightActor::setup(CLightActor *this_ptr);
 // Address: 00422a50
 void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 
-// Original: core_boxactor.cpp_CLightActor_serialize_FUN_00422c80
+// Original: core_boxactor.cpp_CLightActor_archive_FUN_00422c80
 // Address: 00422c80
-void __cdecl CLightActor::serialize(CLightActor *this_ptr);
+void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_FUN_00422d60
 // Address: 00422d60
@@ -143,21 +143,21 @@ char * __cdecl FUN_0042307e(int param_1);
 // Address: 00423110
 int __cdecl FUN_00423110(void);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423310
+// Original: core_boxactor.cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310
 // Address: 00423310
-void __cdecl CLightActor(CLightActor *this_ptr);
+void __cdecl CLightActor::propertyDisplayTypeCallback(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423380
+// Original: core_boxactor.cpp_CLightActor_propertyActionTypeCallback_FUN_00423380
 // Address: 00423380
-int __cdecl CLightActor(void);
+int __cdecl CLightActor::propertyActionTypeCallback(CLightActor *this_ptr,CActorProperty *property);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423400
+// Original: core_boxactor.cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400
 // Address: 00423400
-void __cdecl CLightActor(void);
+void __cdecl CLightActor::propertyDisplayFOVCallback(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00423440
+// Original: core_boxactor.cpp_CLightActor_propertyActionFOVCallback_FUN_00423440
 // Address: 00423440
-int __cdecl CLightActor(void);
+int __cdecl CLightActor::propertyActionFOVCallback(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 
 // Original: core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0
 // Address: 004234e0

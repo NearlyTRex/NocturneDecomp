@@ -39,9 +39,9 @@ int __cdecl CHostage(CHostage *this_ptr,float delta_time);
 // Address: 004f6120
 void __cdecl CHostage::renderBackground(CHostage *this_ptr,int layer_flag);
 
-// Original: core_hostage.cpp_CHostage_serialize_FUN_004f6170
+// Original: core_hostage.cpp_CHostage_archive_FUN_004f6170
 // Address: 004f6170
-void __cdecl CHostage::serialize(CHostage *this_ptr);
+void __cdecl CHostage::archive(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_FUN_004f6390
 // Address: 004f6390

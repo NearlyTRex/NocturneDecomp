@@ -16,7 +16,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cf3b
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005384d9
 ;   core_msnedit.cpp_FUN_00537230 at 005372a9
-;   core_netgame.cpp_FUN_00541390 at 005419ac
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 005419ac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_006389c5

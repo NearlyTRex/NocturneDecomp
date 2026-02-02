@@ -51,9 +51,9 @@ void __cdecl CTrap::process(CTrap *this_ptr,float delta_time);
 // Address: 005de920
 int __cdecl CTrap(CTrap *this_ptr);
 
-// Original: core_trap.cpp_CTrap_serialize_FUN_005de9c0
+// Original: core_trap.cpp_CTrap_archive_FUN_005de9c0
 // Address: 005de9c0
-void __cdecl CTrap::serialize(CTrap *this_ptr);
+void __cdecl CTrap::archive(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_FUN_005dea00
 // Address: 005dea00

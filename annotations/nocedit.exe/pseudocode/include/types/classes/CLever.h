@@ -3,23 +3,20 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/ELeverType.h"
 
 // Structure: CLever
 // Ghidra size: 0x814 (2068 bytes)
 typedef struct CLever {
     CDemonActor base; // 0x0
-    char* model_name; // 0x158
-    char unk1[116]; // 0x15c
-    char model_name_alt; // 0x1d0
-    char unk2[263]; // 0x1d1
-    int lever_type; // 0x2d8
+    CKeyFramedModelInstance model; // 0x158
+    int unk1; // 0x2d4
+    ELeverType lever_type; // 0x2d8
     float param; // 0x2dc
-    char* on_event; // 0x2e0
-    char unk3[96]; // 0x2e4
-    char* off_event; // 0x344
-    char unk4[96]; // 0x348
-    char* sound; // 0x3a8
-    char unk5[96]; // 0x3ac
+    char on_event[100]; // 0x2e0
+    char off_event[100]; // 0x344
+    char sound[100]; // 0x3a8
     int momentary_flag; // 0x40c
     int linked_lever; // 0x410
     undefined4 end_vertex_index; // 0x414

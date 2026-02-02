@@ -34,7 +34,7 @@ engine_font_cpp_CBitFont_wrapText_FUN_004d0010
   if (0 < max_lines) {
     local_24 = dest_buffer;
     do {
-      for (; ((g_CharacterClassificationTable[(byte)(*source_text + 1)] & 2U) != 0 &&
+      for (; ((g_CharacterClassificationTable[(byte)(*source_text + 1)] & 2) != 0 &&
              (*source_text != '\n')); source_text = source_text + 1) {
       }
       if (*source_text == '\0') {
@@ -47,7 +47,7 @@ engine_font_cpp_CBitFont_wrapText_FUN_004d0010
       while( true ) {
         cVar1 = *pcVar7;
         if ((cVar1 == '\n') || (cVar1 == '\0')) goto LAB_004d00c8;
-        if ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2U) != 0) {
+        if ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0) {
           local_14 = uVar6;
         }
         bVar2 = false;
@@ -71,7 +71,7 @@ LAB_004d00c8:
       if (0 < (int)uVar6) {
         pcVar7 = source_text + uVar6;
         do {
-          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2) == 0) break;
           uVar5 = uVar5 - 1;
           pcVar7 = pcVar7 + -1;
         } while (0 < (int)uVar5);

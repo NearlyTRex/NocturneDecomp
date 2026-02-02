@@ -3,27 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 23,
-        "line": 47,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 22,
-        "line": 48,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 64,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 65,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+        "line": 71,
+        "message": "cast from 'CNetGame*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -37,64 +19,45 @@
       {
         "category": "other",
         "column": 25,
-        "line": 30,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 32,
+        "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 35,
+        "line": 34,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 37,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 65,
+        "column": 13,
+        "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 286,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "pseudocode_lines": 86,
-    "suspect_count": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
     "total_lines": 267
   },
@@ -102,7 +65,7 @@
     {
       "addr": "00541390",
       "from_addr": "00541916",
-      "name": "core_netgame.cpp_FUN_00541390",
+      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -116,7 +79,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *this_ptr,int player_index)"
   },
   "function_calls": [
     {
@@ -240,10 +203,10 @@
     "pcode_op_count": 737
   },
   "stack_frame": {
-    "frame_size": 204,
+    "frame_size": 212,
     "local_size": 204,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -322,142 +285,30 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "if ((*in_stack_00000004 != 1) || (in_stack_00000004[1] != 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "if ((*in_stack_00000004 != 1) || (in_stack_00000004[1] != 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (in_stack_00000004[7] <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000008 < 0) || (in_stack_00000004[7] <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (in_stack_00000004[7] <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "local_6b = in_stack_00000004[7];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "piVar5 = in_stack_00000004 + 0x46;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)piVar5 + 1);",
+      "line": 64,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[7]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "piVar6 = in_stack_00000004 + 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "piVar5 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)piVar6 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(int *)((int)",
-      "text": "piVar6 = (int *)((int)piVar6 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar3 < in_stack_00000004[7]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[in_stack_00000008 * 0x1e + 0x16] = g_CurrentGameTime;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000004[in_stack_00000008 * 0x1e + 0x16] = g_CurrentGameTime;",
-      "type": "stack_param"
     }
   ]
 }

@@ -101,7 +101,7 @@ LAB_0050740e:
           }
         }
         else {
-          core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880();
+          core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(g_CProceduralTexturePtr);
         }
       }
       else if (uVar2 < 0x38) {

@@ -44,10 +44,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   CDeformableModelInstance *local_14;
   
   bVar11 = 0;
-  if (((float)(this_ptr->base).base.hit_points < (float)100) &&
-     (fVar12 = (float)(this_ptr->base).base.hit_points + delta_time,
-     (this_ptr->base).base.hit_points = (int)fVar12, (float)100 < fVar12)) {
-    (this_ptr->base).base.hit_points = 0x42c80000;
+  if (((this_ptr->base).base.hit_points < (float)100) &&
+     (fVar12 = (this_ptr->base).base.hit_points + delta_time,
+     (this_ptr->base).base.hit_points = fVar12, (float)100 < fVar12)) {
+    (this_ptr->base).base.hit_points = 100.0;
   }
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if ((iVar4 == 0) || ((this_ptr->base).ai_task == 4)) {
@@ -57,7 +57,7 @@ switchD_005d8f77_caseD_9:
   core_charactr_cpp_CCharacter_FUN_0042ea40((CCharacter *)this_ptr);
   fVar12 = (float)(this_ptr->base).unk1 - delta_time;
   fVar3 = (float)12.566370614;
-  (this_ptr->base).unk1 = (int)fVar12;
+  (this_ptr->base).unk1 = (uint)fVar12;
   *(float *)((this_ptr->base).base.unk1 + 0x2c) = delta_time * fVar3;
   if (fVar12 < 0.0) {
     (this_ptr->base).unk1 = 0;
@@ -88,23 +88,20 @@ switchD_005d8f77_caseD_9:
         if (*(int *)this_ptr->unk != 0) {
           iVar4 = 10;
         }
-        if (*(int *)(this_ptr->base).unk2 != 0) {
-          if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+        if ((this_ptr->base).action_bindings.walk_key != 0) {
+          if ((this_ptr->base).action_bindings.run_key == 0) {
             iVar4 = 1;
           }
           else {
             iVar4 = 2;
           }
         }
-        if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+        if ((this_ptr->base).action_bindings.backup_key != 0) {
           iVar4 = 3;
         }
-        if (*(int *)((this_ptr->base).unk2 + 0x18) != 0) {
+        if ((this_ptr->base).action_bindings.draw_key != 0) {
           iVar4 = *(int *)this_ptr->unk;
-          (this_ptr->base).unk2[0x18] = '\0';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 0;
           uVar7 = (uint)(iVar4 == 0);
           *(uint *)this_ptr->unk = uVar7;
           if (uVar7 == 0) {
@@ -114,7 +111,7 @@ switchD_005d8f77_caseD_9:
             iVar4 = 10;
           }
         }
-        if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+        if ((this_ptr->base).action_bindings.fire_key != 0) {
           bVar2 = true;
           if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
             iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -138,10 +135,7 @@ LAB_005d9011:
             if (!bVar2) goto LAB_005d9032;
           }
           iVar4 = *(int *)(this_ptr->unk + 4);
-          (this_ptr->base).unk2[0xc] = '\0';
-          (this_ptr->base).unk2[0xd] = '\0';
-          (this_ptr->base).unk2[0xe] = '\0';
-          (this_ptr->base).unk2[0xf] = '\0';
+          (this_ptr->base).action_bindings.fire_key = 0;
           if (iVar4 == 0) {
             iVar4 = 0xf;
           }
@@ -151,8 +145,7 @@ LAB_005d9011:
         }
 LAB_005d9032:
         *(float *)((this_ptr->base).base.unk1 + 0xc) =
-             *(float *)((this_ptr->base).unk2 + 0x24) *
-             *(float *)((this_ptr->base).base.unk1 + 0x2c);
+             *(float *)((this_ptr->base).unk2 + 4) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
         if (iVar4 != pSVar5->state_index) goto LAB_005d8cdd;
@@ -270,7 +263,7 @@ LAB_005d8e14:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_005d8e14;
-    if (*(int *)((this_ptr->base).unk2 + 0xc) == 0) goto LAB_005d8e27;
+    if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_005d8e27;
     iVar4 = 0x10;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

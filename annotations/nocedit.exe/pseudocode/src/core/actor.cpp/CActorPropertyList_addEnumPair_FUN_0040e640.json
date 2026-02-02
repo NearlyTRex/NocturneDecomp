@@ -1,0 +1,234 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 47,
+        "line": 18,
+        "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 62,
+    "cross_reference_count": 15,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "unnamed_param"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "004226e0",
+      "from_addr": "00422797",
+      "name": "core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f730",
+      "from_addr": "0042f7ea",
+      "name": "core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481320",
+      "from_addr": "00481360",
+      "name": "core_door.cpp_CDoor_getPropertyList_FUN_00481320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8db0",
+      "from_addr": "004a8f8a",
+      "name": "core_emitter.cpp_FUN_004a8db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cae70",
+      "from_addr": "004cae98",
+      "name": "core_flame.cpp_FUN_004cae70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505240",
+      "from_addr": "0050534f",
+      "name": "core_lever.cpp_CLever_getPropertyList_FUN_00505240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b3e0",
+      "from_addr": "0050b434",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c3e0",
+      "from_addr": "0050c438",
+      "name": "core_marquee.cpp_CMarquee_getPropertyList_FUN_0050c3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ecf0",
+      "from_addr": "0050eda3",
+      "name": "core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8e90",
+      "from_addr": "005b8eeb",
+      "name": "core_spike.cpp_FUN_005b8e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e0f70",
+      "from_addr": "005e0fc3",
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e3ca0",
+      "from_addr": "005e3cc8",
+      "name": "core_turret.cpp_CTurret_FUN_005e3ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e9c00",
+      "from_addr": "005e9cf8",
+      "name": "core_vessel.cpp_CCryptVessel_FUN_005e9c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005eb940",
+      "from_addr": "005eba2f",
+      "name": "core_wateract.cpp_CWaterActor_FUN_005eb940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ee9f0",
+      "from_addr": "005eea2f",
+      "name": "core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e640",
+    "address_range": [
+      [
+        "0040e640",
+        "0040e66b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640",
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640 (CActorPropertyList *this_ptr,void *pairs,int num_pairs,int *data_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e6c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.411764705882353,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 15,
+      "INT_ADD": 10,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 58
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      },
+      {
+        "is_param": true,
+        "name": "pairs",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "num_pairs",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "data_ptr",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "void *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "(this_ptr,PROP_ENUM_PAIR,pairs,in_stack_00000014,(void *)0x0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param1",
+      "text": "(pCVar1->param1).v_int = num_pairs;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param2",
+      "text": "(pCVar1->param2).v_ptr = data_ptr;",
+      "type": "unnamed_param"
+    }
+  ]
+}

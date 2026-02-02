@@ -1,0 +1,129 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 124,
+    "complexity_score": 57,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 57,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 181
+  },
+  "cross_references": [
+    {
+      "addr": "00561fd0",
+      "from_addr": "0056230e",
+      "name": "core_script.cpp_CCmdParse_parse_FUN_00561fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00561cb0",
+    "address_range": [
+      [
+        "00561cb0",
+        "00561da0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CCmdParm_parseValue_FUN_00561cb0",
+    "signature": "int __cdecl core_script_cpp_CCmdParm_parseValue_FUN_00561cb0 (CCmdParm *this_ptr,char *input_text,int *cursor,int end_position)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.838383838383838,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CBRANCH": 15,
+      "COPY": 79,
+      "INT_ADD": 39,
+      "INT_AND": 71,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 68,
+      "INT_LESS": 11,
+      "INT_MULT": 11,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 33,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 37,
+      "POPCOUNT": 33,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 479
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCmdParm *"
+      },
+      {
+        "is_param": true,
+        "name": "input_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cursor",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "end_position",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

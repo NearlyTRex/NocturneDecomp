@@ -13,10 +13,8 @@ CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr)
   CVector3f *in_stack_00000008;
   CKeyFramedModelInstance *this_ptr_00;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-            ((CKeyFramedModelInstance *)&this_ptr->model_name);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model_name);
+  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   this_ptr_00 = (CKeyFramedModelInstance *)0x504e18;
   round((double)((float)(pCVar1->frame_count + -1) * this_ptr->param));
   core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);

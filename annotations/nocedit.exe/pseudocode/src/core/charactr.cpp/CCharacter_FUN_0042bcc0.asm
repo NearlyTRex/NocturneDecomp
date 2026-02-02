@@ -14,7 +14,7 @@
 ;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e5661
 ;   core_ghoul.cpp_FUN_004e8520 at 004e8682
 ;   core_imp.cpp_CImp_FUN_004fab60 at 004faca1
-;   core_mobster.cpp_FUN_00527380 at 00527504
+;   core_mobster.cpp_CMobster_FUN_00527380 at 00527504
 ;   core_smiley.cpp_FUN_005a32a0 at 005a3421
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc382
 ;

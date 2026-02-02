@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *this_ptr,int player_index)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
 ; Local Variables:
 ; undefined4       Stack[-0xc8]:4  local_c8
 ; undefined1       Stack[-0xc4]:1  local_c4
@@ -17,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_00541390 at 00541916
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541916
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dcac
@@ -182,7 +185,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd4]      ; 00542f6b
     PUSH ESI                            ; 00542f72
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00542f73
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
     ADD ESP,0xc                         ; 00542f78
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00542f7b
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()

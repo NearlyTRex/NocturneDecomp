@@ -2,16 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 51,
+        "category": "undeclared_identifier",
+        "column": 53,
         "line": 25,
-        "message": "request for member '_0_4_' in 'CStack_2508.CActorPropertyList::properties[0].CActorProperty::name', which is of non-class type 'char [80]'"
+        "message": "'stack0xffffdaf8' was not declared in this scope"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 35,
-        "message": "request for member '_0_4_' in 'CStack_2508.CActorPropertyList::properties[0].CActorProperty::name', which is of non-class type 'char [80]'"
+        "column": 25,
+        "line": 30,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 31,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 32,
+        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -25,30 +37,49 @@
       {
         "category": "other",
         "column": 24,
-        "line": 20,
+        "line": 21,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 21,
+        "line": 22,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 100,
+    "complexity_score": 106,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 6,
     "suspect_types": [
-      "unknown_field",
+      "pointer_cast",
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 100
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -159,38 +190,38 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_2",
       "text": "if (this_ptr_00 != (CDemonActor *)param_2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "text": "(*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Direct stack address reference",
       "line": 18,
-      "match": "._0_4_",
-      "text": "if (0 < (int)CStack_2508.properties[0].name._0_4_) {",
-      "type": "unknown_field"
+      "match": "&stack0xffffdaf8",
+      "text": "(this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)",
+      "text": "if ((*(int *)((int)aiStack_24f8 + iVar1) == 5) &&",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_2",
-      "text": "(piVar1 = *(int **)(CStack_2508.properties[0].unknown + iVar2 + 4), param_2 == *piVar1)",
+      "text": "(param_2 == **(int **)((int)auStack_2490 + iVar1))) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "text": "} while (iVar3 < (int)CStack_2508.properties[0].name._0_4_);",
-      "type": "unknown_field"
     }
   ]
 }

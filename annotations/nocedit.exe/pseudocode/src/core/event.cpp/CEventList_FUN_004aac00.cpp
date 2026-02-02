@@ -17,7 +17,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004aac00(CEventList *this_ptr)
   char local_6c [100];
   
   do {
-    while ((g_CharacterClassificationTable[(byte)(*in_stack_00000008 + 1)] & 2U) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*in_stack_00000008 + 1)] & 2) != 0) {
       in_stack_00000008 = in_stack_00000008 + 1;
     }
     cVar1 = *in_stack_00000008;
@@ -34,7 +34,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004aac00(CEventList *this_ptr)
       pcVar4 = pcVar4 + 1;
     }
     while ((in_stack_00000008 = pcVar4 + 1, local_6c < pcVar2 &&
-           ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2U) != 0))) {
+           ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
       pcVar2 = pcVar2 + -1;
     }
     if (local_6c < pcVar2) {

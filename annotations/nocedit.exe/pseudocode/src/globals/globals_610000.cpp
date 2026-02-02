@@ -553,9 +553,6 @@ timeEndPeriod* g_timeEndPeriodFunc = (timeEndPeriod*)0x00211874; // DAT_00211874
 // timeGetTime*
 timeGetTime* g_timeGetTimeFunc = (timeGetTime*)0x00211884; // DAT_00211884
 
-// undefined1
-undefined1 DAT_00614464 = 0;
-
 // waveInAddBuffer*
 waveInAddBuffer* g_waveInAddBufferFunc = (waveInAddBuffer*)0x00211892; // DAT_00211892
 

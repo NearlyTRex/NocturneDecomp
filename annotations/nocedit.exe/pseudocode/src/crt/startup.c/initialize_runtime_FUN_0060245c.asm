@@ -19,7 +19,7 @@
 ;   GetModuleFileNameA* g_GetModuleFileNameAFunc = 00211f42
 ;   GetVersion* g_GetVersionFunc = 00211fca
 ;   char[36] g_EmptyStringBuffer
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   char* g_ExeFileNameA = 00000000
 ;   char* g_DllFileNameA = 00000000

@@ -1,26 +1,81 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 26,
+        "message": "cannot convert 'void (*)(CAmmoBox*, CActorProperty*, char*)' to 'void (**)(CDemonActor*, CActorProperty*, char*)'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 25,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 33,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 16,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 8,
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 28,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 93
+    "total_lines": 105
   },
   "cross_references": [],
   "function": {
@@ -37,39 +92,39 @@
   },
   "function_calls": [
     {
-      "addr": "0040e1e0",
+      "addr": "0040e670",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1e0"
-    },
-    {
-      "addr": "0040e290",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
-    },
-    {
-      "addr": "0040e2d0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e2d0"
+      "name": "core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670"
     },
     {
       "addr": "0040e330",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330"
+      "name": "core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330"
     },
     {
       "addr": "0040e350",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350"
+      "name": "core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350"
+    },
+    {
+      "addr": "0040e1e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0"
     },
     {
       "addr": "0040e3b0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0"
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
     },
     {
-      "addr": "0040e670",
+      "addr": "0040e2d0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e670"
+      "name": "core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0"
+    },
+    {
+      "addr": "0040e290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290"
     },
     {
       "addr": "0040d290",

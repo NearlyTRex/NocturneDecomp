@@ -1,0 +1,262 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 37,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 8,
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 125
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "0056516f",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ae0",
+      "from_addr": "00565c5a",
+      "name": "core_script.cpp_CScript_FUN_00565ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565d00",
+      "from_addr": "00565e1a",
+      "name": "core_script.cpp_CScript_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "0056605e",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566080",
+      "from_addr": "0056614d",
+      "name": "core_script.cpp_CScript_FUN_00566080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005677a0",
+      "from_addr": "005679ee",
+      "name": "core_script.cpp_CScript_FUN_005677a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564820",
+      "from_addr": "005648d1",
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005669a0",
+    "address_range": [
+      [
+        "005669a0",
+        "00566a81"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0",
+    "signature": "void __cdecl core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566910",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateCursorBounds_FUN_00566910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0310fcd8",
+      "name": "g_ScriptEditorVScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fcdc",
+      "name": "g_ScriptEditorVScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fce0",
+      "name": "g_ScriptEditorVScrollBar.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd0c",
+      "name": "g_ScriptEditorHScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fd10",
+      "name": "g_ScriptEditorHScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd14",
+      "name": "g_ScriptEditorHScrollBar.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd44",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fd48",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0056614d",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00566080",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005679ee",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_005677a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056516f",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565130",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005648d1",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_editorAction_FUN_00564820",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00565a17",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565130",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00565c5a",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00565e1a",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565d00",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056605e",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565f70",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9393939393939394,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 8,
+      "COPY": 56,
+      "INT_ADD": 14,
+      "INT_AND": 34,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 37,
+      "INT_LESS": 12,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 17,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 260
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": []
+}

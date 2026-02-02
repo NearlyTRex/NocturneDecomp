@@ -102,7 +102,7 @@ LAB_0049ddda:
     if (iVar3 == 8) {
       shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0((CInputString *)&stack0xfffffce0);
     }
-    else if ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8U) != 0) {
+    else if ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) {
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580((CInputString *)&stack0xfffffce0)
       ;
       shape_edittool_cpp_CInputString_insertChar_FUN_0049d480

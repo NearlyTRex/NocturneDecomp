@@ -2873,6 +2873,7 @@ const TerminatedCString s_core_dmodel_cpp_0061ffc6 = "..\\core\\dmodel.cpp";
 const TerminatedCString s_core_dmodel_cpp_0061ffd9 = "..\\core\\dmodel.cpp";
 
 // char constants
+const char s_EmptyChar_00614464 = '\0';
 const char s_EmptyChar_0061aa4e = '\0';
 const char s_EmptyChar_0061aaa3 = '\0';
 const char s_EmptyChar_0061ab51 = '\0';

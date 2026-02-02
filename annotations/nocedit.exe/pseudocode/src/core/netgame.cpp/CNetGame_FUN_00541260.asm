@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_netgame_cpp_CNetGame_FUN_00541260(void)
+; __cdecl int __cdecl core_netgame_cpp_CNetGame_FUN_00541260(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 005406bc

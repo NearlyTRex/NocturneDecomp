@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_serialize_FUN_004f2610 at 004f2840
+;   core_hero.cpp_CHero_archive_FUN_004f2610 at 004f2840
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0063094a

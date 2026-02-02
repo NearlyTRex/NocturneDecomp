@@ -15,7 +15,7 @@
 ;   core_gabriela.cpp_FUN_004d6260 at 004d6495
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f04cb
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00505e1c
-;   core_scat.cpp_FUN_00558cf0 at 00558f25
+;   core_scat.cpp_CScat_FUN_00558cf0 at 00558f25
 ;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c31e5
 ;   core_stranger.cpp_CStranger_FUN_005c3960 at 005c40a0
 ;   ... and 2 more

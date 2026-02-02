@@ -9,6 +9,7 @@
 void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00544d30(CNPC *this_ptr,SDamageInfo *damage_info)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   CDemonActor_vtable *pCVar1;
   float fVar2;
   CDemonActorType *pCVar3;
@@ -16,22 +17,23 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00544d30(CNPC *this_ptr,SDamage
   
   pCVar3 = (*((this_ptr->base).base.vtable._ub)->getActorType)((CDemonActor *)this_ptr);
   if (pCVar3 == &g_CNPCClassInfo) {
-    fVar2 = (float)(this_ptr->base).hit_points - damage_info->damage_amount;
-    (this_ptr->base).hit_points = (int)fVar2;
+    fVar2 = (this_ptr->base).hit_points - damage_info->damage_amount;
+    this_ptr_00 = &(this_ptr->base).model;
+    (this_ptr->base).hit_points = fVar2;
     if (fVar2 <= 0.0) {
       pCVar1 = (this_ptr->base).base.vtable._ub;
-      (this_ptr->base).hit_points = 0;
+      (this_ptr->base).hit_points = 0.0;
       (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       core_charactr_cpp_CCharacter_FUN_0042d060(&this_ptr->base);
-      core_npc_cpp_FUN_00544c50();
+      core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
     }
     else if ((0.0 < damage_info->damage_amount) &&
             ((this_ptr->base).grabbed_by == (CDemonActor *)0x0)) {
-      iVar4 = core_npc_cpp_FUN_00544c50();
+      iVar4 = core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
       if (iVar4 == 0) {
-        iVar4 = core_npc_cpp_FUN_00544c50();
+        iVar4 = core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
         if (iVar4 == 0) {
-          core_npc_cpp_FUN_00544c50();
+          core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
           core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(&this_ptr->base,damage_info);
           return;
         }

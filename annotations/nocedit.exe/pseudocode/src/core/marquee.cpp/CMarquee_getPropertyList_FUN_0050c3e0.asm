@@ -15,10 +15,10 @@
 ;   void* PTR_s_Ring_0067d13c = 006359fc
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290
-;   core_actor.cpp_CActorPropertyList_FUN_0040e640
+;   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -41,16 +41,16 @@ section .text
     PUSH EAX                            ; 0050c3fe
     PUSH 0x6359e7                       ; 0050c3ff | = "courseName"
     PUSH ESI                            ; 0050c404
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0050c405
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 0050c405
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 0050c40a
     PUSH 0x0                            ; 0050c40d
     LEA EAX,[EBX + 0x178]               ; 0050c40f
     PUSH EAX                            ; 0050c415
     PUSH 0x6359f2                       ; 0050c416 | = "totalTime"
     PUSH ESI                            ; 0050c41b
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0050c41c
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0050c41c
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050c421
     LEA EAX,[EBX + 0x1a0]               ; 0050c424
     PUSH EAX                            ; 0050c42a
@@ -58,8 +58,8 @@ section .text
     PUSH 0x2                            ; 0050c430
     PUSH 0x635a09                       ; 0050c432 | = "Display type"
     PUSH ESI                            ; 0050c437
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 0050c438
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0050c438
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
     MOV EDX,dword ptr [EBX + 0x1a0]     ; 0050c43d
     ADD ESP,0x14                        ; 0050c443
     TEST EDX,EDX                        ; 0050c446
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 0050c460
     PUSH 0x635a16                       ; 0050c461 | = "phase"
     PUSH ESI                            ; 0050c466
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 0050c467
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 0050c467
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050c46c
     PUSH EBX                            ; 0050c46f
     MOV EAX,dword ptr [EBX + 0x154]     ; 0050c470

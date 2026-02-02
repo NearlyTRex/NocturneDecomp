@@ -12,7 +12,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeSimBox_FUN_0040bd70 at 0040be2c
+;   core_actor.cpp_archiveSimBox_FUN_0040bd70 at 0040be2c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sboxVersion_0061656d

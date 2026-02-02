@@ -21,7 +21,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->shadow_flag = 1;
   this_ptr->quimby_flag = 0;
   this_ptr->game_control = 0;
-  core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0();
+  core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(this_ptr);
   this_ptr->unk1[0] = '\0';
   this_ptr->unk2 = 0;
   this_ptr->unk3 = 0;

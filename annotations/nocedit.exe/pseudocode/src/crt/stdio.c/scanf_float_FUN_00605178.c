@@ -39,7 +39,7 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
   local_24 = 0.0;
   while( true ) {
     character = scanf_getc_wrapper(state);
-    if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2) == 0) break;
     local_24 = (float)((int)local_24 + 1);
   }
   if ((state->flags & 2) != 0) goto LAB_006053ad;
@@ -54,12 +54,12 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
       character = scanf_getc_with_width(state);
       if (character == -1) goto LAB_006053ad;
     }
-    if (((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0) ||
+    if (((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) != 0) ||
        (character == 0x2e)) {
       local_1c._0_2_ = 0;
       local_1c._2_2_ = 0;
       local_28 = 0;
-      if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0) {
+      if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) != 0) {
         local_28 = 1;
         do {
           *pcVar8 = (char)character;
@@ -70,7 +70,7 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
           iVar9 = iVar9 + 1;
           character = scanf_getc_with_width(state);
           if (character == -1) goto LAB_006053ad;
-        } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0);
+        } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) != 0);
       }
       pcVar6 = pcVar8;
       iVar10 = iVar9;
@@ -80,11 +80,11 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
         character = scanf_getc_with_width(state);
         if (character == -1) goto LAB_006053ad;
         if ((local_28 == 0) &&
-           ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) == 0))
+           ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) == 0))
         goto LAB_006053a3;
         iVar9 = iVar9 + 1;
         do {
-          if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) == 0) break;
           iVar9 = iVar9 + 1;
           *pcVar8 = (char)character;
           pcVar8 = pcVar8 + 1;
@@ -125,7 +125,7 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
           character = scanf_getc_with_width(state);
           if (character == -1) goto LAB_006053ad;
         }
-        if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) == 0) {
+        if ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) == 0) {
           iVar9 = 0;
         }
         else {
@@ -135,7 +135,7 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
             pcVar8 = pcVar8 + 1;
             character = scanf_getc_with_width(state);
             if (character == -1) goto LAB_006053ad;
-          } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20U) != 0);
+          } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) != 0);
         }
       }
     }

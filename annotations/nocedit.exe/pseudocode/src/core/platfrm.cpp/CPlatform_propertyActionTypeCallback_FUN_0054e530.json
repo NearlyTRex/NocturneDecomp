@@ -1,0 +1,535 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 24,
+        "line": 31,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 64,
+        "line": 34,
+        "message": "'stack0xfffffabc' was not declared in this scope; did you mean 'in_stack_fffffabc'?"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 52,
+        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 52,
+        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 57,
+        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 57,
+        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 62,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 65,
+        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 65,
+        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 28,
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CPlatform*' [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 41,
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CPlatform*' [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 61,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 61,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 165,
+    "complexity_score": 347,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 12,
+    "pseudocode_lines": 57,
+    "suspect_count": 28,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 222
+  },
+  "cross_references": [
+    {
+      "addr": "0054e7d0",
+      "from_addr": "0054e8bc",
+      "name": "core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0054e530",
+    "address_range": [
+      [
+        "0054e530",
+        "0054e6f2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530",
+    "signature": "int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530 (CPlatform *this_ptr,CActorProperty *property)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "004426c0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_free_FUN_004426c0"
+    },
+    {
+      "addr": "004427a0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_FUN_004427a0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0049f270",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f9e9",
+      "name": "s_Choose_a_different_cours_0063f9e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa08",
+      "name": "s_Don_t_use_a_course_file_0063fa08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa20",
+      "name": "s_Oops_Forget_I_ever_click_0063fa20",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa46",
+      "name": "s_Change_course_setting_fo_0063fa46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa6c",
+      "name": "s_pth_0063fa6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa72",
+      "name": "s_data_0063fa72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa77",
+      "name": "s_Select_a_course_for_plat_0063fa77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa97",
+      "name": "s_pth_0063fa97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063fa9d",
+      "name": "s_data_0063fa9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "030d508c",
+      "name": "g_CPlatformClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.823943661971831,
+    "instruction_count": 142,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 16,
+      "CBRANCH": 3,
+      "COPY": 113,
+      "INT_ADD": 57,
+      "INT_AND": 52,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 50,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 25,
+      "INT_SUB": 67,
+      "INT_XOR": 1,
+      "LOAD": 18,
+      "POPCOUNT": 25,
+      "RETURN": 4,
+      "STORE": 66
+    },
+    "pcode_op_count": 543
+  },
+  "stack_frame": {
+    "frame_size": 1360,
+    "local_size": 1352,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_544",
+        "offset": -1348,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_19c",
+        "offset": -412,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "property",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorProperty *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_fffffabc",
+      "text": "uint in_stack_fffffabc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_fffffac0",
+      "text": "uint in_stack_fffffac0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_fffffac4",
+      "text": "char **in_stack_fffffac4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffac8",
+      "text": "CStrList_vtable *in_stack_fffffac8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_fffffacc",
+      "text": "uint in_stack_fffffacc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffabc",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffabc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xfffffabc",
+      "text": "((CStrList *)&stack0xfffffabc,\"Choose a different course file\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xfffffabc",
+      "text": "((CStrList *)&stack0xfffffabc,\"Don't use a course file\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xfffffabc",
+      "text": "((CStrList *)&stack0xfffffabc,\"Oops.  Forget I ever clicked there...\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0xfffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,local_19c,-1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_fffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_fffffac0",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xfffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_fffffac4",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_fffffac8",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_fffffacc",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_fffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_fffffac0",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0xfffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_fffffac4",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_fffffac8",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_fffffacc",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_fffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_fffffac0",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xfffffabc",
+      "text": "((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_fffffac4",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_fffffac8",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_fffffacc",
+      "text": "(uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);",
+      "type": "stack_param"
+    }
+  ]
+}

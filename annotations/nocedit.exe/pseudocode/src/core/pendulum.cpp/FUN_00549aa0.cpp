@@ -2,11 +2,11 @@
 // Address: 00549aa0
 // Address Range: [[00549aa0, 00549b82]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_pendulum_cpp_FUN_00549aa0(void)
+// Signature: int __cdecl core_pendulum_cpp_FUN_00549aa0(void)
 
 #include "nocturne.h"
 
-bool __cdecl core_pendulum_cpp_FUN_00549aa0(void)
+int __cdecl core_pendulum_cpp_FUN_00549aa0(void)
 
 {
   float in_stack_00000004;
@@ -32,7 +32,7 @@ bool __cdecl core_pendulum_cpp_FUN_00549aa0(void)
     if (in_stack_00000008 + 1.0 < in_stack_0000000c) {
       in_stack_0000000c = in_stack_0000000c + -1.0f;
     }
-    return in_stack_00000004 < in_stack_0000000c;
+    return (uint)(in_stack_00000004 < in_stack_0000000c);
   }
-  return false;
+  return 0;
 }

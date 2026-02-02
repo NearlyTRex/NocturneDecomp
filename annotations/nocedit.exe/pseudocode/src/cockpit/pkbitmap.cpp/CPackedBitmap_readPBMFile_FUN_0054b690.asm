@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 at 0054b8d5
-;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0 at 0054bad1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0 at 0054bad1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0063f11b

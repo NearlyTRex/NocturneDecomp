@@ -30,6 +30,6 @@ void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacte
   }
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
-  this_ptr->max_hit_points = (float)this_ptr->hit_points;
+  this_ptr->max_hit_points = this_ptr->hit_points;
   return;
 }

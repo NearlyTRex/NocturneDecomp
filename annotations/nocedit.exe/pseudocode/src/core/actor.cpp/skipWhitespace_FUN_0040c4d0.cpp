@@ -9,7 +9,7 @@
 void __cdecl core_actor_cpp_skipWhitespace_FUN_0040c4d0(char **parse_pos)
 
 {
-  while ((g_CharacterClassificationTable[(byte)(**parse_pos + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(**parse_pos + 1)] & 2) != 0) {
     *parse_pos = *parse_pos + 1;
   }
   return;

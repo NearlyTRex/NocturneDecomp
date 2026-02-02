@@ -2,22 +2,19 @@
 // Address: 00542cf0
 // Address Range: [[00542cf0, 00542dcb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(void)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_gameSettingsChanged(CNetGame* param_1) */
-
-void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(void)
+void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame *this_ptr)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
-  int *in_stack_00000004;
+  CNetGame *pCVar4;
   
-  if (*in_stack_00000004 != 1) {
+  if (this_ptr->connection_type != 1) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x88c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::gameSettingsChanged - should only call this in server mode");
@@ -33,19 +30,19 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(void)
     iVar2 = 0x20000;
   }
   iVar3 = 0;
-  piVar4 = in_stack_00000004;
+  pCVar4 = this_ptr;
   g_LastPingTime = iVar1;
-  if (0 < in_stack_00000004[7]) {
+  if (0 < this_ptr->player_count) {
     do {
-      if (iVar3 == in_stack_00000004[0x45]) {
-        piVar4[0x15] = DAT_02f7c8c4;
+      if (iVar3 == this_ptr->local_player_index) {
+        pCVar4->players[0].player_id = DAT_02f7c8c4;
       }
       else {
-        piVar4[0x16] = (g_CurrentGameTime + iVar2) - 0x1e0000;
+        *(uint *)pCVar4->players[0].unk1 = (g_CurrentGameTime + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      piVar4 = piVar4 + 0x1e;
-    } while (iVar3 < in_stack_00000004[7]);
+      pCVar4 = (CNetGame *)(pCVar4->players[0].unk1 + 0x20);
+    } while (iVar3 < this_ptr->player_count);
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar2;
   return;

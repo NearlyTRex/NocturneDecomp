@@ -20,10 +20,10 @@ void __cdecl core_script_cpp_CScript_FUN_00566080(CScript *this_ptr)
   piVar2 = core_script_cpp_CScript_FUN_0055a4b0(this_ptr,&iStack_10);
   if (piVar2 != (int *)0x0) {
     core_script_cpp_FUN_005644e0();
-    DAT_0310fd48 = iStack_10;
-    DAT_0310fd44 = 0;
-    core_script_cpp_CScript_FUN_00566910(this_ptr);
-    core_script_cpp_CScript_FUN_005669a0(this_ptr);
+    g_CurrentEditingLine = iStack_10;
+    g_CurrentEditingColumn = 0;
+    core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
+    core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
     pcVar4 = &DAT_0310fdc0;
     do {
       iVar3 = *piVar2;
@@ -38,7 +38,7 @@ void __cdecl core_script_cpp_CScript_FUN_00566080(CScript *this_ptr)
     } while (cVar1 != '\0');
     return;
   }
-  iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)&DAT_0310f4b0);
+  iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&g_ScriptPickList.base);
   if (iVar3 < 1) {
     pcVar4 = "Syntax check OK.";
     pcVar5 = &DAT_0310fdc0;
@@ -55,10 +55,10 @@ void __cdecl core_script_cpp_CScript_FUN_00566080(CScript *this_ptr)
     } while (cVar1 != '\0');
     return;
   }
-  iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)&DAT_0310f4b0);
+  iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&g_ScriptPickList.base);
   sprintf(&DAT_0310fdc0,"%d sound files missing.",iVar3);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-            (&DAT_0310f4b0,"The following sound files are missing.",-1,0);
-  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
+            (&g_ScriptPickList,"The following sound files are missing.",-1,0);
+  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
   return;
 }

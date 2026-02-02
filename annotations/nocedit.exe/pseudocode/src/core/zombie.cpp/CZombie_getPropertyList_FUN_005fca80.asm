@@ -18,11 +18,11 @@
 ;   TerminatedCString s_Always_fast_00658a9b
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e350
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -48,14 +48,14 @@ section .text
     PUSH EDI                            ; 005fca9d
     PUSH 0x658a4f                       ; 005fca9e | = "Model"
     PUSH ESI                            ; 005fcaa3
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 005fcaa4
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 005fcaa4
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 005fcaa9
     PUSH EDI                            ; 005fcaac
     PUSH 0x658a55                       ; 005fcaad | = "State"
     PUSH ESI                            ; 005fcab2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 005fcab3
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 005fcab3
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 005fcab8
     PUSH EDI                            ; 005fcabb
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005fcabc
@@ -69,8 +69,8 @@ section .text
     PUSH EAX                            ; 005fcad2
     PUSH 0x658a5b                       ; 005fcad3 | = "RiseFromGraveCondition"
     PUSH ESI                            ; 005fcad8
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 005fcad9
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 005fcad9
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 005fcade
     PUSH 0x0                            ; 005fcae1
     PUSH 0x658a72                       ; 005fcae3 | = "CGrave"
@@ -79,16 +79,16 @@ section .text
     PUSH EAX                            ; 005fcaf0
     PUSH 0x658a79                       ; 005fcaf1 | = "Grave actor"
     PUSH ESI                            ; 005fcaf6
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005fcaf7
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005fcaf7
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005fcafc
     LEA EAX,[EBX + 0xbf40]              ; 005fcaff
         ;   Label: LAB_005fcaff
     PUSH EAX                            ; 005fcb05
     PUSH 0x658a85                       ; 005fcb06 | = "IsMinerZombie"
     PUSH ESI                            ; 005fcb0b
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 005fcb0c
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 005fcb0c
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 005fcb11
     PUSH 0x0                            ; 005fcb14
     PUSH 0x658a93                       ; 005fcb16 | = "CHASE_2"
@@ -113,8 +113,8 @@ section .text
     PUSH EBX                            ; 005fcb42
     PUSH 0x658a9b                       ; 005fcb43 | = "Always fast"
     PUSH ESI                            ; 005fcb48
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 005fcb49
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 005fcb49
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 005fcb4e
     POP EDI                             ; 005fcb51
     POP ESI                             ; 005fcb52

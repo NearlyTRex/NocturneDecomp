@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
-;   core_platfrm.cpp_FUN_0054cc30
+;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00520eb1
     PUSH dword ptr [ESP + 0xc]          ; 00520eb5
     PUSH EBX                            ; 00520eb9
-    CALL core_platfrm.cpp_FUN_0054cc30  ; 00520eba
-        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054cc30()
+    CALL core_platfrm.cpp_CPlatform_process_FUN_0054cc30 ; 00520eba
+        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_process_FUN_0054cc30(CPlatform * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 00520ebf
     ADD ESP,0x8                         ; 00520ec5
     CMP EDX,0x3                         ; 00520ec8

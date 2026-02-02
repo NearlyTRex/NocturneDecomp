@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SChatHistoryTypeInfo
-;   WatcomStaticDestructorNode DAT_006809f0
+;   WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode
 ;   CNetGame g_CNetGameInstance
 ;   SChatHistory[400] g_ChatHistory
 ;   int g_NetworkPacketSize
@@ -26,7 +26,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0 ; 0053f315
         ;   XREF to: 0053f6d0 (UNCONDITIONAL_CALL)  ; CNetGame * core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0053f31a
-    PUSH 0x6809f0                       ; 0053f31d | DAT_006809f0
+    PUSH 0x6809f0                       ; 0053f31d | g_CNetGameInstanceDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0053f322
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0053f327

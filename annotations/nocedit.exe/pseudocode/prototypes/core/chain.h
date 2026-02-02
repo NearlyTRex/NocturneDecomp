@@ -43,9 +43,9 @@ int __cdecl CChain(CChain *this_ptr);
 // Address: 00430eb0
 CBoundingBox3D * __cdecl CChain(CChain *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_chain.cpp_CChain_serialize_FUN_00430fe0
+// Original: core_chain.cpp_CChain_archive_FUN_00430fe0
 // Address: 00430fe0
-void __cdecl CChain::serialize(CChain *this_ptr);
+void __cdecl CChain::archive(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_hasCollision_FUN_00431110
 // Address: 00431110

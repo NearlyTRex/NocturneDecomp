@@ -5,14 +5,16 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CPathMap.h"
+#include "types/structs/SActionKeyBindings.h"
 
 // Structure: CHero
 // Ghidra size: 0x1fbd4 (130004 bytes)
 typedef struct CHero {
     CCharacter base; // 0x0
-    int unk1; // 0xbe24
+    uint unk1; // 0xbe24
     int control_type; // 0xbe28
-    char unk2[44]; // 0xbe2c
+    SActionKeyBindings action_bindings; // 0xbe2c
+    char unk2[12]; // 0xbe4c
     CPathMap path_map; // 0xbe58
     int unk3; // 0x1f734
     CInventory inventory; // 0x1f738

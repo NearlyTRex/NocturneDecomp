@@ -47,17 +47,17 @@ float * __cdecl FUN_0048e740(void);
 // Address: 0048e820
 int __cdecl FUN_0048e820(void);
 
-// Original: core_drip.cpp_FUN_0048e830
+// Original: core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
 // Address: 0048e830
-void __cdecl FUN_0048e830(void);
+void __cdecl CDrip::propertyDisplayCallback(CDrip *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_drip.cpp_FUN_0048e8d0
+// Original: core_drip.cpp_CDrip_propertyActionCallback_FUN_0048e8d0
 // Address: 0048e8d0
-int __cdecl FUN_0048e8d0(void);
+int __cdecl CDrip::propertyActionCallback(CDrip *this_ptr,CActorProperty *property);
 
-// Original: core_drip.cpp_FUN_0048e930
+// Original: core_drip.cpp_CDrip_getPropertyList_FUN_0048e930
 // Address: 0048e930
-void __cdecl FUN_0048e930(void);
+void __cdecl CDrip::getPropertyList(CDrip *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_drip.cpp_FUN_0048ea30
 // Address: 0048ea30

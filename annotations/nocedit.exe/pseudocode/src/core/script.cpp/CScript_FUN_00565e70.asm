@@ -22,7 +22,7 @@
 ;   undefined4 s_ot_enough_context_to_show_usage._00643ebc
 ;   undefined4 s_t_enough_context_to_show_usage._(_00643ebd
 ;   undefined4 s_enough_context_to_show_usage._(T_00643ebe
-;   void* PTR_s_label_006441c0_00680e28 = 006441c0
+;   char*[141] g_CommandTemplates
 ;   undefined1 DAT_0310fdc0
 ;   undefined1 DAT_0310fdc1
 ;   undefined1 DAT_0310fdc2
@@ -30,11 +30,11 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
-;   core_script.cpp_CScript_FUN_00566a90
-;   core_script.cpp_FUN_00561c70
-;   core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0
+;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
+;   core_script.cpp_FUN_005643d0
+;   core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     LEA ESI,[EBX + 0x38]                ; 00565e95
         ;   Label: LAB_00565e95
     PUSH ESI                            ; 00565e98
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00565e99
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 00565e99
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00565e9e
     CMP EDI,EAX                         ; 00565ea1
     JGE 0x00565e8b                      ; 00565ea3
@@ -69,8 +69,8 @@ section .text
     PUSH EDX                            ; 00565eac
     PUSH EDI                            ; 00565ead
     PUSH EBX                            ; 00565eae
-    CALL core_script.cpp_CScript_FUN_00566a90 ; 00565eaf
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00565eaf
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_editorX2Index_FUN_00566a90(CScript * this_ptr, int line_number, int visual_column)
     ADD ESP,0xc                         ; 00565eb4
     MOV EBX,EAX                         ; 00565eb7
     MOV EAX,ESP                         ; 00565eb9
@@ -90,8 +90,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00565ee4
     PUSH EAX                            ; 00565ee7
-    CALL core_script.cpp_FUN_00561c70   ; 00565ee8
-        ;   XREF to: 00561c70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00561c70(int param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70 ; 00565ee8
+        ;   XREF to: 00561c70 (UNCONDITIONAL_CALL)  ; int core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70(char * input_text, char * cmd_name_out, char * prefix_out, char * suffix_out, ...)
     ADD ESP,0x1c                        ; 00565eed
     TEST EAX,EAX                        ; 00565ef0
     JLE 0x00565f0f                      ; 00565ef2
@@ -100,8 +100,8 @@ section .text
         ;   Label: LAB_00565ef4
     PUSH ECX                            ; 00565ef7
     PUSH 0x310fdc0                      ; 00565ef8 | DAT_0310fdc0
-    CALL core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0 ; 00565efd
-        ;   XREF to: 005643d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0()
+    CALL core_script.cpp_FUN_005643d0   ; 00565efd
+        ;   XREF to: 005643d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005643d0()
     ADD ESP,0x8                         ; 00565f02
     ADD ESP,0x2a2c                      ; 00565f05
     POP EDI                             ; 00565f0b
@@ -110,7 +110,7 @@ section .text
     RET                                 ; 00565f0e
     PUSH 0x78                           ; 00565f0f
         ;   Label: LAB_00565f0f
-    PUSH 0x680e28                       ; 00565f11 | PTR_s_label_006441c0_00680e28
+    PUSH 0x680e28                       ; 00565f11 | g_CommandTemplates
     PUSH EBX                            ; 00565f16
     PUSH EDI                            ; 00565f17
     PUSH ESI                            ; 00565f18
@@ -121,7 +121,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00565f22
     PUSH EAX                            ; 00565f26
     CALL core_script.cpp_CCmdParse_bestParse_FUN_00561db0 ; 00565f27
-        ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse * this_ptr, int param_2, int param_3, int * param_4, ...)
+        ;   XREF to: 00561db0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse * this_ptr, char * input_text, int cursor_position, char * * templates, ...)
     ADD ESP,0x14                        ; 00565f2c
     TEST EAX,EAX                        ; 00565f2f
     JG 0x00565ef4                       ; 00565f31

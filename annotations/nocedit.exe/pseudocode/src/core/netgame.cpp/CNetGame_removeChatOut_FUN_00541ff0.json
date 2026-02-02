@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 51,
+        "line": 48,
         "message": "invalid conversion from 'undefined4*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 95,
+        "line": 91,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 96,
+        "line": 92,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 105,
+        "line": 101,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -36,69 +36,49 @@
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 64,
+        "column": 26,
+        "line": 91,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 72,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 95,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 96,
+        "line": 92,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 105,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 109,
+        "line": 101,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 118,
+        "line": 114,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 120,
+        "line": 116,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 319,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
-    "pseudocode_lines": 119,
-    "suspect_count": 18,
+    "pseudocode_lines": 116,
+    "suspect_count": 12,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 391
+    "total_lines": 388
   },
   "cross_references": [
     {
@@ -119,7 +99,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -314,8 +294,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -362,10 +342,10 @@
     "pcode_op_count": 1252
   },
   "stack_frame": {
-    "frame_size": 348,
+    "frame_size": 352,
     "local_size": 348,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -500,6 +480,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
       }
     ]
   },
@@ -522,134 +509,88 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 39,
       "match": "DAT_02f98ad0",
       "text": "if (0 < DAT_02f98ad0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "local_40 = in_stack_00000004 + 0x20;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 41,
       "match": "DAT_02f98ad4",
       "text": "local_3c = &DAT_02f98ad4;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "(local_28 = 0, 0 < *(int *)(in_stack_00000004 + 0x1c))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "text": "local_24 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 84,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)piVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 85,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 94,
       "match": "(int *)((int)",
       "text": "local_20 = (int *)((int)local_20 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000004",
-      "text": "} while (local_28 < *(int *)(in_stack_00000004 + 0x1c));",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 106,
       "match": "DAT_02f98ad0",
       "text": "if ((local_38 < 0) || (DAT_02f98ad0 <= local_38)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 111,
       "match": "DAT_02f98ad0",
       "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 111,
       "match": "DAT_02f98ad0",
       "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 113,
       "match": "DAT_02f98ad4",
       "text": "(&DAT_02f98ad4 + iVar2 * 0x45,&DAT_02f98ad4 + (iVar2 + 1) * 0x45,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 113,
       "match": "DAT_02f98ad4",
       "text": "(&DAT_02f98ad4 + iVar2 * 0x45,&DAT_02f98ad4 + (iVar2 + 1) * 0x45,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 114,
       "match": "DAT_02f98ad0",
       "text": "(DAT_02f98ad0 - iVar2) * 0x114);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 116,
       "match": "DAT_02f98ad0",
       "text": "} while (local_38 < DAT_02f98ad0);",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

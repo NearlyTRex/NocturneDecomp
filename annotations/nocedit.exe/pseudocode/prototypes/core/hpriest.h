@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CHighPriestOfGardath::getActorType(CHighPriestOfGardat
 // Address: 004f7b70
 CHighPriestOfGardath * __cdecl CHighPriestOfGardath::ctor(CHighPriestOfGardath *this_ptr);
 
-// Original: core_hpriest.cpp_CHighPriestOfGardath_serialize_FUN_004f7bd0
+// Original: core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004f7bd0
 // Address: 004f7bd0
-void __cdecl CHighPriestOfGardath::serialize(CHighPriestOfGardath *this_ptr);
+void __cdecl CHighPriestOfGardath::archive(CHighPriestOfGardath *this_ptr);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00
 // Address: 004f7c00

@@ -22,7 +22,8 @@ void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,
   
   bVar7 = 0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_20);
-  core_script_cpp_CScript_FUN_00567310(this_ptr,param_2,(CBitFont *)&local_20,(int *)0x0);
+  core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310
+            (this_ptr,(char *)param_2,&local_20,(int *)0x0);
   index = 0;
   piVar6 = (int *)&stack0xfffffecc;
   for (iVar3 = 0x45; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -31,7 +32,7 @@ void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,
     piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
   do {
-    iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)&local_20);
+    iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_20);
     if (iVar3 <= index) {
       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_20,0,in_stack_fffffecc);
       return;

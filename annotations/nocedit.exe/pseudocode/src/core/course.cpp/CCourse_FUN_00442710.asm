@@ -19,7 +19,7 @@
 ;   core_marquee.cpp_CMarquee_FUN_0050bc30 at 0050bca4
 ;   core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050 at 0050c102
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 0052a036
-;   core_platfrm.cpp_FUN_0054cab0 at 0054cbed
+;   core_platfrm.cpp_CPlatform_FUN_0054cab0 at 0054cbed
 ;   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 at 005e7f48
 ;
 ; Called Functions:

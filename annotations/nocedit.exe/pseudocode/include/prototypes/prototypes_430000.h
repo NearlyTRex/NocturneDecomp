@@ -33,7 +33,7 @@
 void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float delta_time);
 int __cdecl core_chain_cpp_CChain_FUN_004308f0(CChain *this_ptr);
 CBoundingBox3D * __cdecl core_chain_cpp_CChain_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box);
-void __cdecl core_chain_cpp_CChain_serialize_FUN_00430fe0(CChain *this_ptr);
+void __cdecl core_chain_cpp_CChain_archive_FUN_00430fe0(CChain *this_ptr);
 int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_chain_cpp_CChain_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_chain_cpp_CChain_writeDependencies_FUN_00431250(CChain *this_ptr,_FILE *file_handle);

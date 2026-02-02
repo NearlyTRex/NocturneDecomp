@@ -216,14 +216,14 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "fVar2 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;",
+      "text": "fVar2 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
-      "text": "fVar2 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;",
+      "text": "fVar2 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;",
       "type": "stack_param"
     },
     {
@@ -237,14 +237,14 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).hit_points = (int)fVar2;",
+      "text": "(in_stack_00000004->base).hit_points = fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).hit_points = 0;",
+      "text": "(in_stack_00000004->base).hit_points = 0.0;",
       "type": "stack_param"
     },
     {

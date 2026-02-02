@@ -11,25 +11,25 @@
       },
       {
         "category": "other",
-        "column": 59,
+        "column": 57,
         "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 51,
         "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 70,
+        "column": 68,
         "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 52,
         "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -58,7 +58,7 @@
     {
       "addr": "004bede0",
       "from_addr": "004bede6",
-      "name": "core_filmreel.cpp_serialize_FUN_004bede0",
+      "name": "core_filmreel.cpp_CFilmReel_archive_FUN_004bede0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,24 +76,24 @@
   },
   "function_calls": [
     {
-      "addr": "0040c1c0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
-    },
-    {
       "addr": "0040b870",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeActor_FUN_0040b870"
+      "name": "core_actor.cpp_archiveActor_FUN_0040b870"
     },
     {
       "addr": "0040b7f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
     },
     {
       "addr": "0040b5c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
     }
   ],
   "globals": [
@@ -140,7 +140,7 @@
       {
         "call_addr": "004bede6",
         "call_type": "direct",
-        "caller": "core_filmreel.cpp_serialize_FUN_004bede0",
+        "caller": "core_filmreel.cpp_CFilmReel_archive_FUN_004bede0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -204,7 +204,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -239,21 +239,21 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].orient,\"whatEvent\");",
+      "text": "((char *)&in_stack_00000004[1].orient,\"whatEvent\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_serializeActor_FUN_0040b870(in_stack_00000004 + 1,\"destActor\");",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b870(in_stack_00000004 + 1,\"destActor\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].actor_name + 4),\"destClass\");",
+      "text": "(in_stack_00000004[1].actor_name + 4,\"destClass\");",
       "type": "stack_param"
     },
     {

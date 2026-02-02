@@ -73,7 +73,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   else {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",0x503);
   }
-  core_netgame_cpp_CNetGame_FUN_0053f830();
+  core_netgame_cpp_CNetGame_FUN_0053f830(g_CNetGamePtr);
   support_newmsg_cpp_doNothing_FUN_00544500();
   core_mission_cpp_CDemonMission_checkMemory_FUN_00522d20(g_CDemonMissionPtr);
   core_sound_cpp_CSound_dtor_FUN_005aaeb0();

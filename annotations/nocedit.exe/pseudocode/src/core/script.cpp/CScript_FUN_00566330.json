@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 20,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 76,
-        "line": 31,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -26,14 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 155,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 25,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 72
@@ -67,7 +53,7 @@
     {
       "addr": "00566230",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566230"
+      "name": "core_script.cpp_CScript_loadLineToBuffer_FUN_00566230"
     },
     {
       "addr": "004a2bc0",
@@ -78,14 +64,14 @@
   "globals": [
     {
       "addr": "031101c0",
-      "name": "DAT_031101c0",
-      "type": "undefined1",
+      "name": "g_CurrentLineBuffer",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "031101c1",
       "name": "DAT_031101c1",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -168,15 +154,8 @@
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_3",
-      "text": "core_script_cpp_CScript_FUN_00566230(this_ptr,param_3);",
+      "text": "core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,param_3);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_031101c0",
-      "text": "pcVar3 = &DAT_031101c0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -196,36 +175,22 @@
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_3",
-      "text": "((CStrList *)(this_ptr->unk4 + 0x20),param_3 + 1,&DAT_031101c0 + param_2);",
+      "text": "(&this_ptr->script_text,param_3 + 1,g_CurrentLineBuffer + param_2 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_2",
-      "text": "((CStrList *)(this_ptr->unk4 + 0x20),param_3 + 1,&DAT_031101c0 + param_2);",
+      "text": "(&this_ptr->script_text,param_3 + 1,g_CurrentLineBuffer + param_2 + 1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_031101c0",
-      "text": "((CStrList *)(this_ptr->unk4 + 0x20),param_3 + 1,&DAT_031101c0 + param_2);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_2",
-      "text": "(&DAT_031101c0)[param_2] = 0;",
+      "text": "g_CurrentLineBuffer[param_2 + 1] = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_031101c0",
-      "text": "(&DAT_031101c0)[param_2] = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

@@ -28,13 +28,13 @@ void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&(this_ptr->base).base.model);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
             ((CDeformableModelInstance *)this_ptr->unk1);
-  this_ptr->unk2[0xcf0] = '\0';
-  this_ptr->unk2[0xcf1] = '\0';
-  this_ptr->unk2[0xcf2] = '\0';
-  this_ptr->unk2[0xcf3] = '\0';
+  this_ptr->unk2[0xc28] = '\0';
+  this_ptr->unk2[0xc29] = '\0';
+  this_ptr->unk2[0xc2a] = '\0';
+  this_ptr->unk2[0xc2b] = '\0';
   core_morph_cpp_FUN_0052b430();
   core_morph_cpp_FUN_0052b430();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->unk2 + 200));
+  core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)this_ptr->unk2);
   core_hero_cpp_CHero_setup_FUN_004f2540(&this_ptr->base);
   return;
 }

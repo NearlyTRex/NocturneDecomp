@@ -28,11 +28,11 @@ void __cdecl core_game_cpp_FUN_004e2fc0(void)
     return;
   }
   support_trisock_cpp_parseIPAddress_FUN_005e1700(&local_10,local_74);
-  iVar1 = core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900();
+  iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(g_CNetGamePtr);
   if (iVar1 != 0) {
     g_CurrentSaveFile = '\0';
     while( true ) {
-      iVar1 = core_netgame_cpp_FUN_00541390();
+      iVar1 = core_netgame_cpp_CNetGame_FUN_00541390(g_CNetGamePtr);
       if (iVar1 == 0) break;
       core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     }

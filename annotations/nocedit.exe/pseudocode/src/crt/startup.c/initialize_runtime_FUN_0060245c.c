@@ -61,11 +61,11 @@ initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
       }
     }
     else {
-      for (; ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2U) == 0 &&
+      for (; ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2) == 0 &&
              (*(char *)g_WinMainCmdShow != '\0')); g_WinMainCmdShow = g_WinMainCmdShow + 1) {
       }
     }
-    while ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2U) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2) != 0) {
       g_WinMainCmdShow = g_WinMainCmdShow + 1;
     }
     str_00 = (*g_GetCommandLineWFunc)();
@@ -87,11 +87,11 @@ initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
         }
       }
       else {
-        for (; ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2U) == 0 &&
+        for (; ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2) == 0 &&
                (*(WCHAR *)pcVar5 != L'\0')); pcVar5 = (char *)((int)pcVar5 + 2)) {
         }
       }
-      while ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2) != 0) {
         pcVar5 = (char *)((int)pcVar5 + 2);
       }
     }

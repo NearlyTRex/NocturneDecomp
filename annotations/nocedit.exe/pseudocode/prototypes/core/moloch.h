@@ -31,34 +31,34 @@ void __cdecl CMoloch::setup(CMoloch *this_ptr);
 // Address: 00528d20
 void __cdecl CMoloch::process(CMoloch *this_ptr,float delta_time);
 
-// Original: core_moloch.cpp_FUN_005293b0
+// Original: core_moloch.cpp_CMoloch_FUN_005293b0
 // Address: 005293b0
-void __cdecl FUN_005293b0(void);
+void __cdecl CMoloch(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750
 // Address: 00529750
 int __cdecl CMoloch::renderOpaque(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_CMoloch_load_FUN_00529880
+// Original: core_moloch.cpp_CMoloch_archive_FUN_00529880
 // Address: 00529880
-void __cdecl CMoloch::load(void);
+void __cdecl CMoloch::archive(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900
+// Original: core_moloch.cpp_CMoloch_FUN_00529900
 // Address: 00529900
-void __cdecl PlaySoundAbtMolochMorphing(void);
+void __cdecl CMoloch(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_00529950
+// Original: core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950
 // Address: 00529950
-void __cdecl FUN_00529950(void);
+void __cdecl CMoloch::getPropertyList(CMoloch *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_moloch.cpp_FUN_005299b0
+// Original: core_moloch.cpp_CMoloch_writeDependencies_FUN_005299b0
 // Address: 005299b0
-void __cdecl FUN_005299b0(void);
+void __cdecl CMoloch::writeDependencies(CMoloch *this_ptr,_FILE *file_handle);
 
-// Original: core_moloch.cpp_FUN_005299d0
+// Original: core_moloch.cpp_CMoloch_FUN_005299d0
 // Address: 005299d0
-void __cdecl FUN_005299d0(void);
+void __cdecl CMoloch(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_005299e0
+// Original: core_moloch.cpp_CMoloch_FUN_005299e0
 // Address: 005299e0
-int __cdecl FUN_005299e0(void);
+int __cdecl CMoloch(CMoloch *this_ptr);

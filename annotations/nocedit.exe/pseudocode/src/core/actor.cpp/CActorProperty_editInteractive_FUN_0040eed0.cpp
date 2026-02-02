@@ -86,14 +86,12 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   pcVar6 = this_ptr->name;
   sprintf(local_2a0,"Enter %s for %s",pcVar6,actor);
   switch(this_ptr->type) {
-  case 0:
+  case PROP_INT:
     local_2c = *(int *)this_ptr->data_ptr;
     while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                              (g_CEditorToolsPtr,local_2a0,&local_2c,this_ptr->min_or_index,
-                               (int)this_ptr->min_ptr_or_choice,this_ptr->max_or_param,1),
-          iVar12 != 0) {
-      if ((this_ptr->validator_or_callback == (void *)0x0) ||
-         (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 != 0)) {
+                              (g_CEditorToolsPtr,local_2a0,&local_2c,(this_ptr->param1).v_int,
+                               (this_ptr->param2).v_int,(this_ptr->param3).v_int,1), iVar12 != 0) {
+      if ((this_ptr->callback == (void *)0x0) || (iVar12 = (*this_ptr->callback)(), iVar12 != 0)) {
         *(int *)this_ptr->data_ptr = local_2c;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
@@ -102,14 +100,13 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       }
     }
     break;
-  case 1:
+  case PROP_FLOAT:
     local_30 = *(float *)this_ptr->data_ptr;
     while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                              (g_CEditorToolsPtr,local_2a0,&local_30,this_ptr->min_or_index,
-                               (float)this_ptr->min_ptr_or_choice,(float)this_ptr->max_or_param,1),
-          iVar12 != 0) {
-      if ((this_ptr->validator_or_callback == (void *)0x0) ||
-         (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 != 0)) {
+                              (g_CEditorToolsPtr,local_2a0,&local_30,(this_ptr->param1).v_int,
+                               (this_ptr->param2).v_float,(this_ptr->param3).v_float,1), iVar12 != 0
+          ) {
+      if ((this_ptr->callback == (void *)0x0) || (iVar12 = (*this_ptr->callback)(), iVar12 != 0)) {
         *(float *)this_ptr->data_ptr = local_30;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
@@ -118,7 +115,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       }
     }
     break;
-  case 2:
+  case PROP_VECTOR:
     pfVar2 = this_ptr->data_ptr;
     local_48.x = *pfVar2;
     local_48.y = pfVar2[1];
@@ -129,11 +126,11 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (iVar12 == 0) {
         return 0;
       }
-      if (this_ptr->validator_or_callback == (void *)0x0) break;
+      if (this_ptr->callback == (void *)0x0) break;
       local_3c = local_48.x;
       local_38 = local_48.y;
       local_34 = local_48.z;
-      iVar12 = (*this_ptr->validator_or_callback)();
+      iVar12 = (*this_ptr->callback)();
     } while (iVar12 == 0);
     pCVar3 = this_ptr->data_ptr;
     if (pCVar3 != &local_48) {
@@ -145,7 +142,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
-  case 3:
+  case PROP_STRING:
     pcVar6 = local_aac;
     pcVar11 = this_ptr->data_ptr;
     do {
@@ -159,12 +156,12 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     } while (cVar1 != '\0');
     do {
       iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                         (g_CEditorToolsPtr,local_2a0,local_aac,this_ptr->max_or_param,1);
+                         (g_CEditorToolsPtr,local_2a0,local_aac,(this_ptr->param3).v_int,1);
       if (iVar12 == 0) {
         return 0;
       }
-    } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    } while ((this_ptr->callback != (void *)0x0) && (iVar12 = (*this_ptr->callback)(), iVar12 == 0))
+    ;
     pcVar6 = local_aac;
     pcVar11 = this_ptr->data_ptr;
     do {
@@ -180,14 +177,14 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
-  case 4:
+  case PROP_BOOL:
     *(uint *)this_ptr->data_ptr = (uint)(*(int *)this_ptr->data_ptr == 0);
     return 1;
-  case 5:
+  case PROP_CHOICE:
     local_28 = *(int *)this_ptr->data_ptr;
     iVar12 = core_msnedit_cpp_CDemonMission_FUN_0053cad0
-                       (g_CDemonMissionPtr,(int)actor,local_2a0,&local_28,this_ptr->min_or_index,
-                        (int)(this_ptr->unknown + 0x18),(int)this_ptr->validator_or_callback,1);
+                       (g_CDemonMissionPtr,(int)actor,local_2a0,&local_28,(this_ptr->param1).v_int,
+                        (int)this_ptr->string2,(int)this_ptr->callback,1);
     if (iVar12 != 0) {
       *(int *)this_ptr->data_ptr = local_28;
       if (this_ptr->auto_update_flag == 0) {
@@ -197,7 +194,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       return 1;
     }
     break;
-  case 6:
+  case PROP_MODEL_KFM:
     sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x78);
     pcVar6 = local_854;
@@ -215,7 +212,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               ((CStrList *)&stack0xffffc814,"models","*.kfm");
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xffffc814);
-    if (this_ptr->min_or_index != 0) {
+    if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffc814,"(none)");
     }
     do {
@@ -227,7 +224,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                    (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {
+      if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   ((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -237,8 +234,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       else {
         local_854[0] = '\0';
       }
-    } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    } while ((this_ptr->callback != (void *)0x0) && (iVar12 = (*this_ptr->callback)(), iVar12 == 0))
+    ;
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr->data_ptr,local_854);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
@@ -247,7 +244,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,
                (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
-  case 7:
+  case PROP_MODEL_DFM:
     sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor,(int)this_ptr->data_ptr + 0x2260)
     ;
@@ -266,7 +263,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_2cf4.base,"models","*.dfm");
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_2cf4.base);
-    if (this_ptr->min_or_index != 0) {
+    if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2cf4.base,"(none)");
     }
     do {
@@ -278,7 +275,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                    (uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(local_2cf4.base.item_count + -1))) {
+      if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_2cf4.base.item_count + -1)))
+      {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_2cf4.base,(int)local_12ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -288,8 +286,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       else {
         local_548[0] = '\0';
       }
-    } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    } while ((this_ptr->callback != (void *)0x0) && (iVar12 = (*this_ptr->callback)(), iVar12 == 0))
+    ;
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr->data_ptr,local_548);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
@@ -298,10 +296,10 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               (&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
-  case 8:
+  case PROP_SOUND:
     core_sound_cpp_editSoundName_FUN_005b3de0(this_ptr->data_ptr,local_2a0);
     return extraout_EAX;
-  case 9:
+  case PROP_GROUND_TYPE:
     iVar12 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_3444);
     do {
@@ -325,7 +323,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CPickList *)local_3444,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c
                ,(uint)in_stack_ffffc820,in_stack_ffffc824);
     return 0;
-  case 10:
+  case PROP_FILE:
     pbVar13 = local_750;
     pbVar10 = this_ptr->data_ptr;
     do {
@@ -339,9 +337,9 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     } while (bVar20 != 0);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_309c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
-              (&local_309c.base,this_ptr->unknown + 4,this_ptr->unknown + 0x18);
+              (&local_309c.base,this_ptr->string1,this_ptr->string2);
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_309c.base);
-    if (this_ptr->min_or_index != 0) {
+    if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_309c.base,"(none)");
     }
     do {
@@ -353,7 +351,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                    (uint)in_stack_ffffc820,in_stack_ffffc824);
         return 0;
       }
-      if ((this_ptr->min_or_index == 0) || (pcVar6 != (char *)(local_309c.base.item_count + -1))) {
+      if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_309c.base.item_count + -1)))
+      {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_309c.base,(int)local_cac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -365,8 +364,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
         local_750[0] = (byte)((uint)pcVar6 >> 8) ^
                        (byte)((uint)(local_309c.base.item_count + -1) >> 8);
       }
-    } while ((this_ptr->validator_or_callback != (void *)0x0) &&
-            (iVar12 = (*this_ptr->validator_or_callback)(), iVar12 == 0));
+    } while ((this_ptr->callback != (void *)0x0) && (iVar12 = (*this_ptr->callback)(), iVar12 == 0))
+    ;
     pbVar13 = local_750;
     pbVar10 = this_ptr->data_ptr;
     do {
@@ -385,7 +384,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               (&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 1;
-  case 0xb:
+  case PROP_EVENT:
     pcVar6 = local_ac;
     pcVar11 = this_ptr->data_ptr;
     do {
@@ -422,7 +421,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
-  case 0xc:
+  case PROP_BUTTON:
     pcVar6 = local_110;
     pcVar11 = this_ptr->data_ptr;
     do {
@@ -459,7 +458,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
-  case 0xd:
+  case PROP_MOTION:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_21fc);
     local_18 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr->data_ptr);
     iVar12 = 0;
@@ -498,15 +497,15 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CPickList *)local_21fc,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c
                ,(uint)in_stack_ffffc820,in_stack_ffffc824);
     return 0;
-  case 0xe:
+  case PROP_CLOTH:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_294c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               ((CStrList *)local_294c,"models","*.cth");
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_294c);
-    if (this_ptr->min_or_index < *(int *)this_ptr->data_ptr) {
+    if ((this_ptr->param1).v_int < *(int *)this_ptr->data_ptr) {
       sprintf
                 (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar6,actor,
-                 (int *)((int)this_ptr->data_ptr + (this_ptr->min_or_index * 10 + 1) * 4));
+                 (int *)((int)this_ptr->data_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)local_294c,"(remove cloth)");
     }
     else {
@@ -526,13 +525,13 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CStrList *)local_294c,(int)local_14ac,pcVar6,1);
     makepath(local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
     pCVar15 = this_ptr->data_ptr;
-    if (this_ptr->min_or_index < pCVar15->unk) {
+    if ((this_ptr->param1).v_int < pCVar15->unk) {
       if (pcVar6 == (char *)(local_294c._0_4_ + -1)) {
         core_cloth_cpp_CClothList_remove_FUN_0043c170(pCVar15);
       }
       else {
         pcVar6 = local_64c;
-        pCVar15 = pCVar15 + this_ptr->min_or_index * 10 + 1;
+        pCVar15 = pCVar15 + (this_ptr->param1).v_int * 10 + 1;
         do {
           cVar1 = *pcVar6;
           *(char *)&pCVar15->unk = cVar1;
@@ -552,24 +551,24 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
               ((CPickList *)(local_294c + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
     return 1;
-  case 0xf:
+  case PROP_ENUM_PAIR:
     iVar12 = -1;
     iVar19 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1e54);
-    if (0 < this_ptr->min_or_index) {
+    if (0 < (this_ptr->param1).v_int) {
       iVar18 = 0;
       do {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_1e54.base,*(char **)(iVar18 + (int)this_ptr->min_ptr_or_choice));
-        if (*(int *)this_ptr->data_ptr == *(int *)((int)this_ptr->min_ptr_or_choice + iVar18 + 4)) {
+                  (&local_1e54.base,*(char **)(iVar18 + (int)(this_ptr->param2).v_ptr));
+        if (*(int *)this_ptr->data_ptr == *(int *)((this_ptr->param2).v_int + 4 + iVar18)) {
           iVar12 = iVar19;
         }
         iVar19 = iVar19 + 1;
         iVar18 = iVar18 + 8;
-      } while (iVar19 < this_ptr->min_or_index);
+      } while (iVar19 < (this_ptr->param1).v_int);
     }
-    if ((this_ptr->min_or_index == 2) && (-1 < iVar12)) {
-      pvVar9 = this_ptr->min_ptr_or_choice;
+    if (((this_ptr->param1).v_int == 2) && (-1 < iVar12)) {
+      pvVar9 = (this_ptr->param2).v_ptr;
       iVar12 = (1 - iVar12) * 8;
     }
     else {
@@ -577,7 +576,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                          (&local_1e54,local_2a0,iVar12,0);
       if (iVar12 < 0) goto LAB_00410163;
       iVar12 = iVar12 << 3;
-      pvVar9 = this_ptr->min_ptr_or_choice;
+      pvVar9 = (this_ptr->param2).v_ptr;
     }
     *(uint *)this_ptr->data_ptr = *(uint *)((int)pvVar9 + iVar12 + 4);
 LAB_00410163:
@@ -585,9 +584,9 @@ LAB_00410163:
               (&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824);
     return 0;
-  case 0x10:
+  case PROP_RULE:
     piVar4 = this_ptr->data_ptr;
-    iVar12 = this_ptr->min_or_index;
+    iVar12 = (this_ptr->param1).v_int;
     if (iVar12 < *piVar4) {
       sprintf
                 (local_444,"%s => %s",piVar4 + iVar12 * 0x19 + 1,piVar4 + iVar12 * 0x19 + 0x7e);
@@ -610,7 +609,7 @@ LAB_0040fdd3:
                        (g_CEditorToolsPtr,local_2a0,local_444,0xdc,1);
     if (iVar12 != 0) {
       if (local_444[0] == '\0') {
-        if (this_ptr->min_or_index < this_ptr->data_ptr->list_size) {
+        if ((this_ptr->param1).v_int < this_ptr->data_ptr->list_size) {
           core_event_cpp_CRuleList_remove_FUN_004b17c0(this_ptr->data_ptr);
         }
         return 1;
@@ -645,14 +644,14 @@ LAB_0040fdd3:
         if (0 < (int)SVar8) {
           pcVar11 = acStack_1d9 + ~uVar7;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2U) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2) == 0) break;
             SVar8 = SVar8 - 1;
             pcVar11 = pcVar11 + -1;
           } while (0 < (int)SVar8);
         }
         (acStack_1d9 + 1)[SVar8] = '\0';
         local_14 = acStack_1d9 + 2;
-        while ((g_CharacterClassificationTable[(byte)(acStack_1d9[1] + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(acStack_1d9[1] + 1)] & 2) != 0) {
           memmove(acStack_1d9 + 1,local_14,SVar8);
           SVar8 = SVar8 - 1;
         }
@@ -679,13 +678,13 @@ LAB_0040fdd3:
         if (0 < (int)SVar8) {
           pcVar6 = local_175 + ~uVar7;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2U) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2) == 0) break;
             SVar8 = SVar8 - 1;
             pcVar6 = pcVar6 + -1;
           } while (0 < (int)SVar8);
         }
         (local_175 + 1)[SVar8] = '\0';
-        while ((g_CharacterClassificationTable[(byte)(local_175[1] + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(local_175[1] + 1)] & 2) != 0) {
           memmove(local_175 + 1,local_175 + 2,SVar8);
           SVar8 = SVar8 - 1;
         }
@@ -694,11 +693,11 @@ LAB_0040fdd3:
           pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
           if (pcVar6 == (char *)0x0) {
             pCVar17 = this_ptr->data_ptr;
-            if (pCVar17->list_size <= this_ptr->min_or_index) {
+            if (pCVar17->list_size <= (this_ptr->param1).v_int) {
               core_event_cpp_CRuleList_insert_FUN_004b1680(pCVar17);
               return 1;
             }
-            pCVar17 = pCVar17 + this_ptr->min_or_index * 0x19 + 1;
+            pCVar17 = pCVar17 + (this_ptr->param1).v_int * 0x19 + 1;
             pcVar6 = acStack_1d9 + 1;
             goto LAB_00410083;
           }
@@ -711,8 +710,8 @@ LAB_0040fdd3:
       goto LAB_0040fdd3;
     }
     break;
-  case 0x11:
-    iVar12 = (*this_ptr->validator_or_callback)();
+  case PROP_ACTION:
+    iVar12 = (*this_ptr->callback)();
     if (iVar12 != 0) {
       if (this_ptr->auto_update_flag == 0) {
         return 1;
@@ -721,7 +720,7 @@ LAB_0040fdd3:
       return 1;
     }
     break;
-  case 0x12:
+  case PROP_FLAGS:
     iVar12 = 0;
     while( true ) {
       iVar19 = 0;
@@ -769,7 +768,7 @@ LAB_00410083:
     if (cVar1 == '\0') break;
   }
   pcVar6 = local_175 + 1;
-  pcVar11 = (char *)((int)this_ptr->data_ptr + this_ptr->min_or_index * 100 + 0x1f8);
+  pcVar11 = (char *)((int)this_ptr->data_ptr + (this_ptr->param1).v_int * 100 + 0x1f8);
   do {
     cVar1 = *pcVar6;
     *pcVar11 = cVar1;

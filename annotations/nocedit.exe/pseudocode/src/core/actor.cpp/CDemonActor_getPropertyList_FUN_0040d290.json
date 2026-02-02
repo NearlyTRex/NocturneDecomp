@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 24,
-        "line": 16,
-        "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 19,
+        "message": "cannot convert 'void (*)(CDemonActor*)' to 'int (**)(CDemonActor*, int)'"
       }
     ],
     "success": false,
@@ -15,19 +15,49 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 32,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 19,
+    "complexity_score": 28,
     "cross_reference_count": 46,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 28,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 89
+    "total_lines": 98
   },
   "cross_references": [
     {
@@ -57,7 +87,7 @@
     {
       "addr": "00414400",
       "from_addr": "0041440c",
-      "name": "core_barrier.cpp_CBarrier_FUN_00414400",
+      "name": "core_barrier.cpp_CBarrier_getPropertyList_FUN_00414400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,7 +153,7 @@
     {
       "addr": "0048e930",
       "from_addr": "0048e93c",
-      "name": "core_drip.cpp_FUN_0048e930",
+      "name": "core_drip.cpp_CDrip_getPropertyList_FUN_0048e930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -231,13 +261,13 @@
     {
       "addr": "0054a5f0",
       "from_addr": "0054a5fc",
-      "name": "core_pendulum.cpp_FUN_0054a5f0",
+      "name": "core_pendulum.cpp_CPendulum_getPropertyList_FUN_0054a5f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054e7d0",
       "from_addr": "0054e7dc",
-      "name": "core_platfrm.cpp_FUN_0054e7d0",
+      "name": "core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -321,24 +351,24 @@
   },
   "function_calls": [
     {
-      "addr": "0040e1a0",
+      "addr": "0040e460",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0"
+      "name": "core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460"
     },
     {
-      "addr": "0040e260",
+      "addr": "0040e1a0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e260"
+      "name": "core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0"
     },
     {
       "addr": "0040e290",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
+      "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290"
     },
     {
-      "addr": "0040e460",
+      "addr": "0040e260",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460"
+      "name": "core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260"
     },
     {
       "addr": "005fe7f0",
@@ -453,7 +483,7 @@
       {
         "call_addr": "0041440c",
         "call_type": "direct",
-        "caller": "core_barrier.cpp_CBarrier_FUN_00414400",
+        "caller": "core_barrier.cpp_CBarrier_getPropertyList_FUN_00414400",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "reg_params": [],

@@ -12,7 +12,10 @@ core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e3b0(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e1e0(property_list);
+  core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+            (property_list,"Model file (.kfm)",&this_ptr->model,0);
+  core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
+            (property_list,"Key mask",&this_ptr->key_mask,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   return;
 }

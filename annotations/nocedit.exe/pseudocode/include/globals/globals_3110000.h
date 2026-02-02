@@ -15,7 +15,14 @@ extern CDemonActorType g_CSentinelClassInfo;
 // CDemonSet
 extern CDemonSet g_CDemonSetInstance;
 
+// char[16385]
+extern char g_CurrentLineBuffer[16385];
+
 // int
+extern int g_SelectionStartColumn;
+extern int g_SelectionStartLine;
+extern int g_SelectionEndColumn;
+extern int g_SelectionEndLine;
 extern int INT_031141d0;
 extern int INT_031141d4;
 extern int INT_031141d8;
@@ -37,16 +44,7 @@ extern int INT_03114230;
 extern int INT_03114234;
 extern int INT_03114238;
 
-// undefined1
-extern undefined1 DAT_031101c0;
-extern undefined1 DAT_031101c1;
-extern undefined1 DAT_031101c4;
-
 // undefined4
-extern undefined4 DAT_031141c0;
-extern undefined4 DAT_031141c4;
-extern undefined4 DAT_031141c8;
-extern undefined4 DAT_031141cc;
 extern undefined4 DAT_031141e8;
 extern undefined4 DAT_031141ec;
 extern undefined4 DAT_031141f0;

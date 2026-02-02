@@ -21,7 +21,7 @@
       },
       {
         "category": "other",
-        "column": 55,
+        "column": 57,
         "line": 64,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
@@ -54,32 +54,14 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 18,
         "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 57,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 6,
         "line": 61,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -92,12 +74,12 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 344,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
     "pseudocode_lines": 59,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
@@ -109,7 +91,7 @@
     {
       "addr": "00541390",
       "from_addr": "00541c6b",
-      "name": "core_netgame.cpp_FUN_00541390",
+      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -288,7 +270,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
+      "text": "CNetGame *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -400,7 +382,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x1c)) {",
+      "text": "if (0 < in_stack_00000004->player_count) {",
       "type": "stack_param"
     },
     {
@@ -414,7 +396,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
-      "text": "} while (iVar4 < *(int *)(in_stack_00000004 + 0x1c));",
+      "text": "} while (iVar4 < in_stack_00000004->player_count);",
       "type": "stack_param"
     },
     {
@@ -449,7 +431,7 @@
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000004",
-      "text": "*(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;",
+      "text": "*(byte *)(in_stack_00000004->local_player_index + 8 + (int)puVar7) = 1;",
       "type": "stack_param"
     },
     {
@@ -472,6 +454,13 @@
       "match": "DAT_02f98ae8",
       "text": "strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "core_netgame_cpp_CNetGame_FUN_00542370(in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

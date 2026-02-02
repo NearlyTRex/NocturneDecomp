@@ -74,13 +74,13 @@ LAB_004bdb2c:
           if (0 < (int)SVar5) {
             pcVar3 = local_798 + (~uVar4 - 1);
             do {
-              if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2U) == 0) break;
+              if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
               SVar5 = SVar5 - 1;
               pcVar3 = pcVar3 + -1;
             } while (0 < (int)SVar5);
           }
           local_798[SVar5] = '\0';
-          while ((g_CharacterClassificationTable[(byte)(local_798[0] + 1)] & 2U) != 0) {
+          while ((g_CharacterClassificationTable[(byte)(local_798[0] + 1)] & 2) != 0) {
             memmove(local_798,local_798 + 1,SVar5);
             SVar5 = SVar5 - 1;
           }
@@ -122,13 +122,13 @@ LAB_004bdb2c:
         if (0 < (int)SVar5) {
           pcVar3 = local_2a5 + ~uVar4;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2U) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
             SVar5 = SVar5 - 1;
             pcVar3 = pcVar3 + -1;
           } while (0 < (int)SVar5);
         }
         (local_2a5 + 1)[SVar5] = '\0';
-        while ((g_CharacterClassificationTable[(byte)(local_2a5[1] + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(local_2a5[1] + 1)] & 2) != 0) {
           memmove(local_2a5 + 1,local_2a5 + 2,SVar5);
           SVar5 = SVar5 - 1;
         }
@@ -144,13 +144,13 @@ LAB_004bdb2c:
         if (0 < (int)SVar5) {
           pcVar3 = local_3a5 + ~uVar4;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2U) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
             SVar5 = SVar5 - 1;
             pcVar3 = pcVar3 + -1;
           } while (0 < (int)SVar5);
         }
         (local_3a5 + 1)[SVar5] = '\0';
-        while ((g_CharacterClassificationTable[(byte)(local_3a5[1] + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(local_3a5[1] + 1)] & 2) != 0) {
           memmove(local_3a5 + 1,local_3a5 + 2,SVar5);
           SVar5 = SVar5 - 1;
         }

@@ -10,10 +10,10 @@
 ; XREF[151]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408e35
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a7c2
-;   core_ammo.cpp_FUN_00411200 at 00411212
-;   core_ammo.cpp_FUN_004112b0 at 004112bc
-;   core_ammobox.cpp_FUN_00411a30 at 00411a42
-;   core_ammobox.cpp_FUN_00411ab0 at 00411abc
+;   core_ammo.cpp_CAmmo_propertyActionCallback_FUN_004112b0 at 004112bc
+;   core_ammo.cpp_CAmmo_propertyDisplayCallback_FUN_00411200 at 00411212
+;   core_ammobox.cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0 at 00411abc
+;   core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 at 00411a42
 ;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413f5f
 ;   core_baron.cpp_CBaron_FUN_004135e0 at 00413667
 ;   core_baron.cpp_FUN_00413470 at 004134a1

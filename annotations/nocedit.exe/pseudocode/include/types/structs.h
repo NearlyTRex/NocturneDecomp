@@ -5,6 +5,7 @@
 // =============================================================================
 // Auto-generated aggregate of all structs type definitions.
 
+#include "types/structs/SActionKeyBindings.h"
 #include "types/structs/SAlphaEntry.h"
 #include "types/structs/SAnimatedTexture.h"
 #include "types/structs/SAudioFormatDescriptor.h"
@@ -28,6 +29,7 @@
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
+#include "types/structs/SCmdTemplateEntry.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SColorBox.h"
@@ -39,6 +41,7 @@
 #include "types/structs/SCramWorkingEntry.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SDialogEntry.h"
 #include "types/structs/SDirectSoundDeviceInfo.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SEdgeData.h"
@@ -114,6 +117,7 @@
 #include "types/structs/SPaletteEntry.h"
 #include "types/structs/SPanel.h"
 #include "types/structs/SPart.h"
+#include "types/structs/SPlatformAttachment.h"
 #include "types/structs/SPlayer.h"
 #include "types/structs/SPlayerControl.h"
 #include "types/structs/SPoint2i.h"
@@ -135,6 +139,7 @@
 #include "types/structs/SScalefactorBandRange.h"
 #include "types/structs/SScrape.h"
 #include "types/structs/SScreenCoord.h"
+#include "types/structs/SScriptLine.h"
 #include "types/structs/SShapeEditorPolygon.h"
 #include "types/structs/SSocketContext.h"
 #include "types/structs/SSoftwareEdge.h"

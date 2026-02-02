@@ -1,19 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *param_2,int *param_3)
+; __cdecl int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0 (CCmdParm *this_ptr,char *template_text,int *parse_cursor)
 ;
 ; Parameters:
 ; CCmdParm *       Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; int *            Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   template_text
+; int *            Stack[0xc]:4   parse_cursor
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 00562293
-;   core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0 at 0056443c
+;   core_script.cpp_FUN_005643d0 at 0056443c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SCmdParm_setTemplateText_00643649

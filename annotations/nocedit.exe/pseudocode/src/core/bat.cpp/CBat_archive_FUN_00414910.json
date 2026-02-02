@@ -1,0 +1,232 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 13,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 32,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 34,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 10,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414910",
+    "address_range": [
+      [
+        "00414910",
+        "004149fd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bat.cpp_CBat_archive_FUN_00414910",
+    "signature": "void __cdecl core_bat_cpp_CBat_archive_FUN_00414910(CBat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006152ef",
+      "name": "s_courseFilename_006152ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006152fe",
+      "name": "s_param_006152fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615304",
+      "name": "s_speed_00615304",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061530a",
+      "name": "s_flapSpeedMult_0061530a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615318",
+      "name": "s_courseSpeed_00615318",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615324",
+      "name": "s_modelName_00615324",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061532e",
+      "name": "s_periodicSoundTimerMin_0061532e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615344",
+      "name": "s_periodicSoundTimerMax_00615344",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061535e",
+      "name": "DOUBLE_0061535e",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "0066e4b4",
+      "name": "g_CBatClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.453125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 3,
+      "COPY": 55,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 25,
+      "INT_AND": 28,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 14,
+      "INT_SUB": 33,
+      "LOAD": 6,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 285
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 232,
+        "vtable_addr": "0065a484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

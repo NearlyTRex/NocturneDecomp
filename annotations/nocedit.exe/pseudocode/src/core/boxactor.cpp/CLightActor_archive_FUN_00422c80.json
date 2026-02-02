@@ -1,0 +1,225 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 32,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00422c80",
+    "address_range": [
+      [
+        "00422c80",
+        "00422d59"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CLightActor_archive_FUN_00422c80",
+    "signature": "void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_00422c80(CLightActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b3e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveOrientation_FUN_0040b3e0"
+    },
+    {
+      "addr": "0040b340",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b340"
+    },
+    {
+      "addr": "00422060",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_archive_FUN_00422060"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616908",
+      "name": "s_lightType_00616908",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616912",
+      "name": "s_bLightPos_00616912",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061691c",
+      "name": "s_lightOrient_0061691c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616928",
+      "name": "s_lightFov_00616928",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616931",
+      "name": "s_lightFov_00616931",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061693a",
+      "name": "s_light_status_0061693a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616947",
+      "name": "s_light_falloff_00616947",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.492307692307692,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CBRANCH": 3,
+      "COPY": 61,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 30,
+      "INT_AND": 32,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 30,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 15,
+      "INT_SUB": 27,
+      "LOAD": 11,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 292
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLightActor",
+        "offset": 232,
+        "vtable_addr": "0065b2a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

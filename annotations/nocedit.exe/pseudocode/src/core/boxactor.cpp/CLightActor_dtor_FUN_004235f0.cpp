@@ -22,7 +22,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActo
     return this_ptr;
   }
   pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_00472760
-                     ((CDemonLight *)(this_ptr->unk + 4),0,unaff_EBX,unaff_retaddr);
+                     ((CDemonLight *)this_ptr->unk,0,unaff_EBX,unaff_retaddr);
   pCVar2 = core_box_cpp_CBox_dtor_FUN_0041dd00
                      ((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3ff));
   ptr = (CLightActor *)

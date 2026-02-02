@@ -51,7 +51,7 @@
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5f18
 ;   core_icepick.cpp_CIcePick_FUN_004f8810 at 004f8890
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 005269f2
-;   core_scat.cpp_FUN_005582c0 at 0055845b
+;   core_scat.cpp_CScat_FUN_005582c0 at 0055845b
 ;   ... and 4 more
 ;
 ; Referenced Globals:

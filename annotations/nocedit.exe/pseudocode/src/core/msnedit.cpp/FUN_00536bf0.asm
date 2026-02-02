@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_none_0063b6e0
 ;   TerminatedCString s_true_0063b6e5
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_stricmp_FUN_005fe7f0

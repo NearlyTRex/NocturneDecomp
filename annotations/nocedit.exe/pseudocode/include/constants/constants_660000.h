@@ -267,7 +267,7 @@ const undefined4 DAT_0066e314 = 0x00000002;
 const undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants
-const void* DAT_006618F4 = (void*)core_mobster_cpp_FUN_00527360;
+const void* DAT_006618F4 = (void*)core_mobster_cpp_CMobster_FUN_00527360;
 const void* DAT_006630E4 = (void*)core_smiley_cpp_FUN_005a3280;
 const void* DAT_00665B78 = (void*)0x00665B90; // DAT_00665b90
 const void* DAT_00665B80 = (void*)0x00665B98; // DAT_00665b98

@@ -49,7 +49,7 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
   float local_18;
   
   local_1c = 0.25;
-  memset(in_stack_00000004->unk2,0,0x2c);
+  memset(&in_stack_00000004->action_bindings,0,0x2c);
   if (in_stack_00000004->ai_task != 0) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
     local_84 = (in_stack_00000004->base).base.location.position.x -
@@ -71,18 +71,15 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_c0.y - (in_stack_00000004->base).base.orient.bank);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar6;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar6;
         if (fVar6 < -local_1c) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = -local_1c;
+          *(float *)(in_stack_00000004->unk2 + 4) = -local_1c;
         }
-        if (local_1c < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_1c;
+        if (local_1c < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(float *)(in_stack_00000004->unk2 + 4) = local_1c;
         }
         iVar5 = g_LocalHeroIndex;
-        in_stack_00000004->unk2[0] = '\x01';
-        in_stack_00000004->unk2[1] = '\0';
-        in_stack_00000004->unk2[2] = '\0';
-        in_stack_00000004->unk2[3] = '\0';
+        (in_stack_00000004->action_bindings).walk_key = 1;
         pCVar1 = g_HeroActors[iVar5];
         if (&local_9c != local_b4) {
           local_9c = (in_stack_00000004->base).base.location.position.x -
@@ -94,10 +91,7 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
         }
         if ((float)10 <
             SQRT(local_98.y * local_98.y + local_9c * local_9c + local_98.x * local_98.x)) {
-          in_stack_00000004->unk2[8] = '\x01';
-          in_stack_00000004->unk2[9] = '\0';
-          in_stack_00000004->unk2[10] = '\0';
-          in_stack_00000004->unk2[0xb] = '\0';
+          (in_stack_00000004->action_bindings).run_key = 1;
           return;
         }
       }
@@ -113,10 +107,7 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(in_stack_00000004->base).model.motion_controller);
           if (pSVar2->state_index == 0) {
-            in_stack_00000004->unk2[0x18] = '\x01';
-            in_stack_00000004->unk2[0x19] = '\0';
-            in_stack_00000004->unk2[0x1a] = '\0';
-            in_stack_00000004->unk2[0x1b] = '\0';
+            (in_stack_00000004->action_bindings).draw_key = 1;
             return;
           }
         }
@@ -126,10 +117,7 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(in_stack_00000004->base).model.motion_controller);
           if (pSVar2->state_index == 0) {
-            in_stack_00000004->unk2[0x18] = '\x01';
-            in_stack_00000004->unk2[0x19] = '\0';
-            in_stack_00000004->unk2[0x1a] = '\0';
-            in_stack_00000004->unk2[0x1b] = '\0';
+            (in_stack_00000004->action_bindings).draw_key = 1;
           }
         }
         local_6c._0_4_ =
@@ -146,15 +134,15 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
                              (pCVar3->y - (in_stack_00000004->base).base.orient.bank);
         fVar6 = local_18 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar6;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar6;
         if (fVar6 < local_24) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_24;
+          *(float *)(in_stack_00000004->unk2 + 4) = local_24;
         }
-        if (local_1c < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_1c;
+        if (local_1c < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(float *)(in_stack_00000004->unk2 + 4) = local_1c;
         }
-        if (((float)-0.050000000000000003 < *(float *)(in_stack_00000004->unk2 + 0x24)) &&
-           ((double)*(float *)(in_stack_00000004->unk2 + 0x24) < 0.050000000000000003)) {
+        if (((float)-0.050000000000000003 < *(float *)(in_stack_00000004->unk2 + 4)) &&
+           ((double)*(float *)(in_stack_00000004->unk2 + 4) < 0.050000000000000003)) {
           pCVar4 = (*((in_stack_00000004->base).base.vtable._ub)->getBoundingBox)
                              ((CDemonActor *)in_stack_00000004,
                               (CBoundingBox3D *)(auStack_10c + 0x10));
@@ -214,10 +202,7 @@ void __cdecl core_gabriela_cpp_FUN_004d4190(void)
                     (this_ptr,(CVector3f *)(local_6c + 4),&CStack_38);
           core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
           if (this_ptr_00 == g_CDemonSetPtr->collision_actor) {
-            in_stack_00000004->unk2[0xc] = '\x01';
-            in_stack_00000004->unk2[0xd] = '\0';
-            in_stack_00000004->unk2[0xe] = '\0';
-            in_stack_00000004->unk2[0xf] = '\0';
+            (in_stack_00000004->action_bindings).fire_key = 1;
             return;
           }
         }

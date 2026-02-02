@@ -11,7 +11,7 @@
 ;   core_hiram.cpp_CHiram_getPropertyList_FUN_004f46a0 at 004f46ab
 ;   core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0 at 004f69cc
 ;   core_hpriest.cpp_CHighPriestOfGardath_getPropertyList_FUN_004f7c70 at 004f7c7b
-;   core_passngr.cpp_FUN_00546270 at 0054627c
+;   core_passngr.cpp_CPassenger_getPropertyList_FUN_00546270 at 0054627c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Model_0063e3cd
@@ -20,10 +20,10 @@
 ;   TerminatedCString s_Hit_points_0063e3e2
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730
 ;
 ; *****************************************************************************
@@ -46,29 +46,29 @@ section .text
     PUSH EDI                            ; 00544e5d
     PUSH 0x63e3cd                       ; 00544e5e | = "Model"
     PUSH EBX                            ; 00544e63
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 00544e64
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 00544e64
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00544e69
     PUSH EDI                            ; 00544e6c
     PUSH 0x63e3d3                       ; 00544e6d | = "State"
     PUSH EBX                            ; 00544e72
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 00544e73
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 00544e73
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 00544e78
     LEA EDI,[ESI + 0x1f700]             ; 00544e7b
     PUSH EDI                            ; 00544e81
     PUSH 0x63e3d9                       ; 00544e82 | = "Shoot me"
     PUSH EBX                            ; 00544e87
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00544e88
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 00544e88
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 00544e8d
     PUSH 0x0                            ; 00544e90
     ADD ESI,0x243c                      ; 00544e92
     PUSH ESI                            ; 00544e98
     PUSH 0x63e3e2                       ; 00544e99 | = "Hit points"
     PUSH EBX                            ; 00544e9e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00544e9f
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00544e9f
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00544ea4
     POP EDI                             ; 00544ea7
     POP ESI                             ; 00544ea8

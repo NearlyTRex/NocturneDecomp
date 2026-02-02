@@ -136,7 +136,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004a6be0(CEdCheck *
 void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_004a6d20(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20 (char *pattern,char *target_string,int case_sensitive);
-int __cdecl shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont *font_ptr);
+int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_004a6ee0(CBitFont *font_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(CBitFont *font_ptr);
 int __cdecl shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(CBitFont *font_ptr);
@@ -178,7 +178,7 @@ SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *t
 void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004a9650(CEnemy *this_ptr);
-void __cdecl core_enemy_cpp_CEnemy_serialize_FUN_004a9660(CEnemy *this_ptr);
+void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a9660(CEnemy *this_ptr);
 int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a97c0(CEnemy *this_ptr,CVector3f *out_points_array);
 int __cdecl core_enemy_cpp_CEnemy_FUN_004a9880(CEnemy *this_ptr);
 int __cdecl core_enemy_cpp_CEnemy_FUN_004a9930(CEnemy *this_ptr);

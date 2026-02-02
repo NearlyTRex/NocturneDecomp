@@ -59,9 +59,9 @@ int __cdecl FUN_005e98b0(CCryptVessel *this_ptr);
 // Address: 005e9a00
 void __cdecl CCryptVessel(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_CCryptVessel_serialize_FUN_005e9a80
+// Original: core_vessel.cpp_CCryptVessel_archive_FUN_005e9a80
 // Address: 005e9a80
-void __cdecl CCryptVessel::serialize(CCryptVessel *this_ptr);
+void __cdecl CCryptVessel::archive(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_FUN_005e9b90
 // Address: 005e9b90

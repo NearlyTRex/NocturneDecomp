@@ -12,30 +12,29 @@
       {
         "category": "other",
         "column": 25,
-        "line": 15,
+        "line": 13,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 17,
+        "line": 15,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 144,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 14,
-    "suspect_count": 12,
+    "pseudocode_lines": 13,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -48,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_removeChatOut_FUN_0053f4b0",
-    "signature": "void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(void)"
+    "signature": "void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index)"
   },
   "function_calls": [
     {
@@ -104,8 +103,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 10.215686274509803,
@@ -137,45 +136,39 @@
     "pcode_op_count": 521
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Undefined global data reference",
       "line": 5,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 < 0) || (DAT_02f98ad0 <= in_stack_00000004)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004 < 0) || (DAT_02f98ad0 <= in_stack_00000004)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
       "match": "DAT_02f98ad0",
-      "text": "if ((in_stack_00000004 < 0) || (DAT_02f98ad0 <= in_stack_00000004)) {",
+      "text": "if ((index < 0) || (DAT_02f98ad0 <= index)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 10,
+      "match": "DAT_02f98ad0",
+      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
       "match": "DAT_02f98ad0",
       "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
       "type": "undefined_data"
@@ -183,50 +176,22 @@
     {
       "description": "Undefined global data reference",
       "line": 12,
-      "match": "DAT_02f98ad0",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_02f98ad4 + in_stack_00000004 * 0x45,&DAT_02f98ad4 + (in_stack_00000004 + 1) * 0x45",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "(&DAT_02f98ad4 + in_stack_00000004 * 0x45,&DAT_02f98ad4 + (in_stack_00000004 + 1) * 0x45",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
       "match": "DAT_02f98ad4",
-      "text": "(&DAT_02f98ad4 + in_stack_00000004 * 0x45,&DAT_02f98ad4 + (in_stack_00000004 + 1) * 0x45",
+      "text": "(&DAT_02f98ad4 + index * 0x45,&DAT_02f98ad4 + (index + 1) * 0x45,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_02f98ad4",
-      "text": "(&DAT_02f98ad4 + in_stack_00000004 * 0x45,&DAT_02f98ad4 + (in_stack_00000004 + 1) * 0x45",
+      "text": "(&DAT_02f98ad4 + index * 0x45,&DAT_02f98ad4 + (index + 1) * 0x45,",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": ",(DAT_02f98ad0 - in_stack_00000004) * 0x114);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_02f98ad0",
-      "text": ",(DAT_02f98ad0 - in_stack_00000004) * 0x114);",
+      "text": "(DAT_02f98ad0 - index) * 0x114);",
       "type": "undefined_data"
     }
   ]

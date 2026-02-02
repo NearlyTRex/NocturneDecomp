@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_FUN_00589500(void)
   char *in_stack_00000004;
   
   __STK(4);
-  while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {
     in_stack_00000004 = in_stack_00000004 + 1;
   }
   return;

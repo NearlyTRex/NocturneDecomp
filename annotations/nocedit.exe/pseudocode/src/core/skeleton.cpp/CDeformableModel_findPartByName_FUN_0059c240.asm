@@ -17,8 +17,8 @@
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e45e0 at 004e4782
 ;   core_ghoul.cpp_FUN_004e6160 at 004e6342
 ;   core_imp.cpp_CImp_setup_FUN_004f9910 at 004f9ab6
-;   core_mobster.cpp_FUN_00525340 at 005255a0
-;   core_script.cpp_FUN_00559730 at 005597a7
+;   core_mobster.cpp_CMobster_setup_FUN_00525340 at 005255a0
+;   core_script.cpp_parseBodyPartMask_FUN_00559730 at 005597a7
 ;   ... and 4 more
 ;
 ; Referenced Globals:

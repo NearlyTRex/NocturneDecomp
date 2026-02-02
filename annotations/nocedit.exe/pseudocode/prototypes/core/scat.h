@@ -19,85 +19,85 @@ CDemonActorType * __cdecl CScat::getActorType(CScat *this_ptr);
 // Address: 00556ed0
 CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00556f90
+// Original: core_scat.cpp_CScat_setup_FUN_00556f90
 // Address: 00556f90
-void __cdecl FUN_00556f90(void);
+void __cdecl CScat::setup(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00557150
+// Original: core_scat.cpp_CScat_FUN_00557150
 // Address: 00557150
-void __cdecl FUN_00557150(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_005571f0
+// Original: core_scat.cpp_CScat_process_FUN_005571f0
 // Address: 005571f0
-void __cdecl FUN_005571f0(void);
+void __cdecl CScat::process(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_005578e0
+// Original: core_scat.cpp_CScat_FUN_005578e0
 // Address: 005578e0
-void __cdecl FUN_005578e0(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00557d20
+// Original: core_scat.cpp_CScat_FUN_00557d20
 // Address: 00557d20
-void __cdecl FUN_00557d20(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_CSCat_load_FUN_00557db0
+// Original: core_scat.cpp_CSCat_archive_FUN_00557db0
 // Address: 00557db0
-void __cdecl CSCat::load(void);
+void __cdecl CSCat::archive(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00557df0
+// Original: core_scat.cpp_CScat_renderOpaque_FUN_00557df0
 // Address: 00557df0
-int __cdecl FUN_00557df0(void);
+int __cdecl CScat::renderOpaque(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00557ea0
+// Original: core_scat.cpp_CScat_processDamage_FUN_00557ea0
 // Address: 00557ea0
-void __cdecl FUN_00557ea0(void);
+void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_scat.cpp_FUN_00557ff0
+// Original: core_scat.cpp_CScat_FUN_00557ff0
 // Address: 00557ff0
-int __cdecl FUN_00557ff0(void);
+int __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558000
+// Original: core_scat.cpp_CScat_FUN_00558000
 // Address: 00558000
-void __cdecl FUN_00558000(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558010
+// Original: core_scat.cpp_CScat_FUN_00558010
 // Address: 00558010
-int __cdecl FUN_00558010(void);
+int __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558060
+// Original: core_scat.cpp_CScat_FUN_00558060
 // Address: 00558060
-void __cdecl FUN_00558060(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_005582c0
+// Original: core_scat.cpp_CScat_FUN_005582c0
 // Address: 005582c0
-void __cdecl FUN_005582c0(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_005584a0
+// Original: core_scat.cpp_CScat_FUN_005584a0
 // Address: 005584a0
-void __cdecl FUN_005584a0(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558720
+// Original: core_scat.cpp_CScat_FUN_00558720
 // Address: 00558720
-void __cdecl FUN_00558720(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558cf0
+// Original: core_scat.cpp_CScat_FUN_00558cf0
 // Address: 00558cf0
-int __cdecl FUN_00558cf0(void);
+int __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00558fd0
+// Original: core_scat.cpp_CScat_FUN_00558fd0
 // Address: 00558fd0
-void __cdecl FUN_00558fd0(void);
+void __cdecl CScat(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00559100
+// Original: core_scat.cpp_CScat_onActorDeleted_FUN_00559100
 // Address: 00559100
-void __cdecl FUN_00559100(void);
+void __cdecl CScat::onActorDeleted(CScat *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_scat.cpp_FUN_00559120
+// Original: core_scat.cpp_CScat_getPropertyList_FUN_00559120
 // Address: 00559120
-void __cdecl FUN_00559120(void);
+void __cdecl CScat::getPropertyList(CScat *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_scat.cpp_FUN_00559140
+// Original: core_scat.cpp_CScat_writeDependencies_FUN_00559140
 // Address: 00559140
-void __cdecl FUN_00559140(void);
+void __cdecl CScat::writeDependencies(CScat *this_ptr,_FILE *file_handle);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_00559160
 // Address: 00559160

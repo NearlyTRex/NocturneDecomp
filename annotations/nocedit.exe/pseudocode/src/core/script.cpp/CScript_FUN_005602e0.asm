@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02d81cc4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined1 DAT_0310eca0
+;   char[2048] g_ScriptErrorBuffer
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 00560310 (UNCONDITIONAL_JUMP)  ; LAB_00560310
     MOV EAX,dword ptr [EBX + 0x34]      ; 00560380
         ;   Label: LAB_00560380
-    PUSH 0x310eca0                      ; 00560383 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 00560383 | g_ScriptErrorBuffer
     MOV EDX,dword ptr [EAX + EDI*0x8 + 0x4] ; 00560388
     PUSH EDX                            ; 0056038c
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 0056038d

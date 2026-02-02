@@ -519,7 +519,7 @@ LAB_00592a67:
                   pcVar11 = local_20a2;
                   do {
                     pcVar11 = pcVar11 + 1;
-                  } while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0);
+                  } while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0);
                   iVar13 = sscanf(pcVar11,"%f");
                   if (iVar13 != 1) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -547,7 +547,7 @@ LAB_00592a67:
                     do {
                       local_b8._20_4_ = local_b8._20_4_ + 1;
                     } while ((g_CharacterClassificationTable[(byte)(*(char *)local_b8._20_4_ + 1)] &
-                             2U) != 0);
+                             2) != 0);
                     local_a0 = -NAN;
                     sscanf
                               ((char *)local_b8._20_4_,"%s %s%n",local_468,local_28c);
@@ -603,7 +603,7 @@ LAB_00592a67:
                       goto LAB_005927ee;
                     }
                     pcVar11 = (char *)(local_b8._20_4_ + (int)local_a0);
-                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                       pcVar11 = pcVar11 + 1;
                     }
                     local_a0 = -NAN;
@@ -632,7 +632,7 @@ LAB_00592a67:
                       goto LAB_005927ee;
                     }
                     pcVar11 = pcVar11 + (int)local_a0;
-                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                       pcVar11 = pcVar11 + 1;
                     }
                     if (*pcVar11 == '[') {
@@ -660,7 +660,7 @@ LAB_00592a67:
                       local_2c = local_98;
                       dest->to_frame_number = (float)(int)local_98;
                       pcVar11 = pcVar11 + (int)local_a0;
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                         pcVar11 = pcVar11 + 1;
                       }
                     }
@@ -697,7 +697,7 @@ LAB_00592a67:
                           goto LAB_005927ee;
                         }
                         pcVar11 = pcVar11 + (int)local_a0;
-                        while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                        while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                           pcVar11 = pcVar11 + 1;
                         }
                       }
@@ -706,14 +706,14 @@ LAB_00592a67:
                     if (iVar13 == 0) {
                       pcVar11 = pcVar11 + 9;
                       dest->set_new_state_as_desired = 1;
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                         pcVar11 = pcVar11 + 1;
                       }
                     }
                     else {
                       dest->set_new_state_as_desired = 0;
                     }
-                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                       pcVar11 = pcVar11 + 1;
                     }
                     if (*pcVar11 != '\0') {
@@ -731,7 +731,7 @@ LAB_00592a67:
                     iVar13 = strnicmp(local_20a4,"->",2);
                     if (iVar13 == 0) {
                       pcVar11 = local_20a2;
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                      while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                         pcVar11 = pcVar11 + 1;
                       }
                       iVar13 = strnicmp(pcVar11,"(loop)",6);
@@ -739,7 +739,7 @@ LAB_00592a67:
                       if (iVar13 == 0) {
                         local_ec->exit_forward_to_frame = 0.0;
                         local_ec->exit_forward_to_motion = local_38;
-                        while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0) {
+                        while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                           pcVar18 = pcVar18 + 1;
                         }
                       }
@@ -749,7 +749,7 @@ LAB_00592a67:
                           local_ec->exit_forward_to_motion = local_38;
                           local_2c = (float)(local_ec->frame_count + -1);
                           local_ec->exit_forward_to_frame = (float)(int)local_2c;
-                          while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0) {
+                          while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                             pcVar18 = pcVar18 + 1;
                           }
                         }
@@ -780,7 +780,7 @@ LAB_00592a67:
                             goto LAB_005927ee;
                           }
                           pcVar18 = pcVar11 + local_64;
-                          while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0) {
+                          while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                             pcVar18 = pcVar18 + 1;
                           }
                           if (*pcVar18 == '[') {
@@ -808,7 +808,7 @@ LAB_00592a67:
                             local_2c = local_90;
                             local_ec->exit_forward_to_frame = (float)(int)local_90;
                             pcVar18 = pcVar18 + local_64;
-                            while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0)
+                            while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0)
                             {
                               pcVar18 = pcVar18 + 1;
                             }
@@ -828,8 +828,8 @@ LAB_00592a67:
                             if (iVar13 != 0) {
                               local_ec->exit_forward_cmd = iVar13;
                               pcVar18 = pcVar18 + local_64;
-                              while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) !=
-                                     0) {
+                              while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0
+                                    ) {
                                 pcVar18 = pcVar18 + 1;
                               }
                               if (local_ec->exit_forward_cmd == 2) {
@@ -877,7 +877,7 @@ LAB_00592a67:
                                     goto LAB_005927ee;
                                   }
                                   pcVar18 = pcVar18 + local_64;
-                                  while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U)
+                                  while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2)
                                          != 0) {
                                     pcVar18 = pcVar18 + 1;
                                   }
@@ -909,8 +909,8 @@ LAB_00592a67:
                             if (iVar13 == 0) {
                               local_ec->exit_forward_set_new_state = 1;
                               pcVar18 = pcVar18 + 9;
-                              while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) !=
-                                     0) {
+                              while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0
+                                    ) {
                                 pcVar18 = pcVar18 + 1;
                               }
                             }
@@ -920,7 +920,7 @@ LAB_00592a67:
                           }
                         }
                       }
-                      while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0) {
+                      while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                         pcVar18 = pcVar18 + 1;
                       }
                       if (*pcVar18 != '\0') {
@@ -937,7 +937,7 @@ LAB_00592a67:
                       iVar13 = strnicmp(local_20a4,"signal",6);
                       if (iVar13 == 0) {
                         pcVar11 = local_20a2 + 4;
-                        while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+                        while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                           pcVar11 = pcVar11 + 1;
                         }
                         if (0xe < local_ec->signal_count) {
@@ -999,8 +999,8 @@ LAB_00592a67:
                                                (local_20a4,"cancel",6);
                             if (iVar13 == 0) {
                               pbVar5 = (byte *)(local_20a2 + 4);
-                              while ((g_CharacterClassificationTable[(byte)(*pbVar5 + 1)] & 2U) != 0
-                                    ) {
+                              while ((g_CharacterClassificationTable[(byte)(*pbVar5 + 1)] & 2) != 0)
+                              {
                                 pbVar5 = pbVar5 + 1;
                               }
                               local_e0 = 0;
@@ -1047,8 +1047,8 @@ LAB_005949a6:
                                                  (local_20a4,"bias",4);
                               if (iVar13 == 0) {
                                 pcVar11 = local_20a2 + 2;
-                                while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U)
-                                       != 0) {
+                                while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) !=
+                                       0) {
                                   pcVar11 = pcVar11 + 1;
                                 }
                                 local_80 = -1;
@@ -1129,7 +1129,7 @@ LAB_005949a6:
                                     goto LAB_005927ee;
                                   }
                                   pcVar11 = local_20a2 + 5;
-                                  while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U)
+                                  while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2)
                                          != 0) {
                                     pcVar11 = pcVar11 + 1;
                                   }
@@ -1187,8 +1187,8 @@ LAB_005949a6:
                                     local_ec->markers[local_ec->marker_count] = local_78;
                                     local_ec->marker_count = local_ec->marker_count + 1;
                                     pcVar11 = pcVar11 + local_7c;
-                                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] &
-                                           2U) != 0) {
+                                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2
+                                           ) != 0) {
                                       pcVar11 = pcVar11 + 1;
                                     }
                                     cVar1 = *pcVar11;
@@ -1199,8 +1199,8 @@ LAB_005949a6:
                                                      (local_20a4,"displace",8);
                                   if (iVar13 == 0) {
                                     pcVar11 = local_20a2 + 6;
-                                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] &
-                                           2U) != 0) {
+                                    while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2
+                                           ) != 0) {
                                       pcVar11 = pcVar11 + 1;
                                     }
                                     iVar13 = sscanf
@@ -1228,8 +1228,8 @@ LAB_00594f2a:
                                       do {
                                         str = pbVar5;
                                         pbVar5 = str + 1;
-                                      } while ((g_CharacterClassificationTable[(byte)(*str + 1)] &
-                                               2U) != 0);
+                                      } while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2
+                                               ) != 0);
                                       if (*str != 0) {
                                         local_74 = toupper((uint)*str);
                                         if (0x58 < local_74) {
@@ -1363,7 +1363,7 @@ LAB_0059518b:
                                         }
                                         pcVar11 = local_20a2 + 4;
                                         while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)]
-                                               & 2U) != 0) {
+                                               & 2) != 0) {
                                           pcVar11 = pcVar11 + 1;
                                         }
                                         iVar13 = sscanf
@@ -1847,13 +1847,13 @@ LAB_00595eb8:
           if (0 < (int)n) {
             pcVar11 = acStack_851 + ~uVar6;
             do {
-              if ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2U) == 0) break;
+              if ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2) == 0) break;
               n = n - 1;
               pcVar11 = pcVar11 + -1;
             } while (0 < (int)n);
           }
           (acStack_851 + 1)[n] = '\0';
-          while ((g_CharacterClassificationTable[(byte)(acStack_851[1] + 1)] & 2U) != 0) {
+          while ((g_CharacterClassificationTable[(byte)(acStack_851[1] + 1)] & 2) != 0) {
             memmove(acStack_851 + 1,acStack_851 + 2,n);
             n = n - 1;
           }
@@ -1886,7 +1886,7 @@ LAB_00595eb8:
           pcVar11 = &DAT_0365caf8 + iVar13 * 0x104;
           if (iVar3 == 0) {
             pcVar18 = local_21ca + 2;
-            while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2U) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
               pcVar18 = pcVar18 + 1;
             }
             iVar13 = sscanf(pcVar18,"\"%[^\"]\"");
@@ -1924,7 +1924,7 @@ LAB_00595eb8:
             iVar13 = strnicmp(local_21d0,"frames",6);
             if (iVar13 == 0) {
               pcVar11 = local_21ca;
-              while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2U) != 0) {
+              while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                 pcVar11 = pcVar11 + 1;
               }
               local_f4 = -1;

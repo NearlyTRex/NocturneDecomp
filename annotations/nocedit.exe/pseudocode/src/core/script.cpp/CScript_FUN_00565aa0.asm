@@ -12,8 +12,8 @@
 ;   core_script.cpp_CScript_FUN_00565130 at 0056590f
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00566a90
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
+;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   Label: LAB_00565aab
     ADD EAX,0x38                        ; 00565aaf
     PUSH EAX                            ; 00565ab2
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00565ab3
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 00565ab3
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00565ab8
     CMP EBX,EAX                         ; 00565abb
     JGE 0x00565aa9                      ; 00565abd
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 00565ac4
     MOV ECX,dword ptr [ESP + 0x10]      ; 00565ac5
     PUSH ECX                            ; 00565ac9
-    CALL core_script.cpp_CScript_FUN_00566a90 ; 00565aca
-        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566a90(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_editorX2Index_FUN_00566a90 ; 00565aca
+        ;   XREF to: 00566a90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_editorX2Index_FUN_00566a90(CScript * this_ptr, int line_number, int visual_column)
     ADD ESP,0xc                         ; 00565acf
     POP EBX                             ; 00565ad2
     RET                                 ; 00565ad3

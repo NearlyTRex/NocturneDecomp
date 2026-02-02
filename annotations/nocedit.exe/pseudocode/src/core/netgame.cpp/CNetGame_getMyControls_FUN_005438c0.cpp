@@ -17,5 +17,5 @@ void ** __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *t
     }
     return (void **)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x14);
   }
-  return (void **)g_HeroActors[g_LocalHeroIndex]->unk2;
+  return (void **)&g_HeroActors[g_LocalHeroIndex]->action_bindings;
 }

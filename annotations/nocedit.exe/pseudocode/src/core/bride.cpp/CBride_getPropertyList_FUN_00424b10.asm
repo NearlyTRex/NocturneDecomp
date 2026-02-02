@@ -11,7 +11,7 @@
 ;   TerminatedCString s_Model_00616cbd
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH 0x616cbd                       ; 00424b2f | = "Model"
     MOV EBX,dword ptr [ESP + 0x18]      ; 00424b34
     PUSH EBX                            ; 00424b38
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 00424b39
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 00424b39
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00424b3e
     POP EBX                             ; 00424b41
     RET                                 ; 00424b42

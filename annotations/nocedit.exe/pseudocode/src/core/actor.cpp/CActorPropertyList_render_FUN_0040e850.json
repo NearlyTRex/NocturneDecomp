@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 49,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 122,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 1,
+    "pseudocode_lines": 50,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 172
+  },
+  "cross_references": [
+    {
+      "addr": "0053c4f0",
+      "from_addr": "0053c662",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e850",
+    "address_range": [
+      [
+        "0040e850",
+        "0040e9b9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorPropertyList_render_FUN_0040e850",
+    "signature": "void __cdecl core_actor_cpp_CActorPropertyList_render_FUN_0040e850 (CActorPropertyList *this_ptr,int selected_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ea50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorProperty_FUN_0040ea50"
+    },
+    {
+      "addr": "0040ee30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ee30"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00403200",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200"
+    },
+    {
+      "addr": "004027f0",
+      "is_variadic": false,
+      "name": "engine_2d.c_getTextWrapEnabled_FUN_004027f0"
+    },
+    {
+      "addr": "00402800",
+      "is_variadic": false,
+      "name": "engine_2d.c_setTextWrapEnabled_FUN_00402800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006144bf",
+      "name": "s_anon_006144bf",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053c662",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c4f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 4,
+      "COPY": 74,
+      "INT_ADD": 51,
+      "INT_AND": 52,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 50,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 25,
+      "INT_SUB": 39,
+      "INT_XOR": 1,
+      "LOAD": 24,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 442
+  },
+  "stack_frame": {
+    "frame_size": 248,
+    "local_size": 240,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      },
+      {
+        "is_param": true,
+        "name": "selected_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX",
+      "text": "local_20 = this_ptr->name_column_x - extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
+}

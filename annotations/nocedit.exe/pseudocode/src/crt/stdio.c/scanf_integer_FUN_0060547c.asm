@@ -24,7 +24,7 @@
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604b21
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_math.c_multiply64_FUN_0060b2b8

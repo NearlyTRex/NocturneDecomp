@@ -11,6 +11,6 @@ core_lever_cpp_CLever_writeDependencies_FUN_00505370(CLever *this_ptr,_FILE *fil
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-            ((CKeyFramedModelInstance *)&this_ptr->model_name,file_handle);
+            (&this_ptr->model,file_handle);
   return;
 }

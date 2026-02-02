@@ -10,7 +10,14 @@ CDemonActorType g_CSentinelClassInfo = {};
 // CDemonSet
 CDemonSet g_CDemonSetInstance = {};
 
+// char[16385]
+char g_CurrentLineBuffer[16385] = {};
+
 // int
+int g_SelectionStartColumn = {};
+int g_SelectionStartLine = {};
+int g_SelectionEndColumn = {};
+int g_SelectionEndLine = {};
 int INT_031141d0 = {};
 int INT_031141d4 = {};
 int INT_031141d8 = {};
@@ -32,16 +39,7 @@ int INT_03114230 = {};
 int INT_03114234 = {};
 int INT_03114238 = {};
 
-// undefined1
-undefined1 DAT_031101c0 = {};
-undefined1 DAT_031101c1 = {};
-undefined1 DAT_031101c4 = {};
-
 // undefined4
-undefined4 DAT_031141c0 = {};
-undefined4 DAT_031141c4 = {};
-undefined4 DAT_031141c8 = {};
-undefined4 DAT_031141cc = {};
 undefined4 DAT_031141e8 = {};
 undefined4 DAT_031141ec = {};
 undefined4 DAT_031141f0 = {};

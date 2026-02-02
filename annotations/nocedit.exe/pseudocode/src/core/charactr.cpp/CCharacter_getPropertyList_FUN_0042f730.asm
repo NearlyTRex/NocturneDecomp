@@ -22,12 +22,12 @@
 ;   void* PTR_s_None_0066e758 = 00617769
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e480
-;   core_actor.cpp_CActorPropertyList_FUN_0040e500
-;   core_actor.cpp_CActorPropertyList_FUN_0040e640
-;   core_actor.cpp_CActorPropertyList_FUN_0040e670
+;   core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480
+;   core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500
+;   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
+;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 0042f74c
     PUSH 0x61772e                       ; 0042f74d | = "cloth"
     PUSH ESI                            ; 0042f752
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e500 ; 0042f753
-        ;   XREF to: 0040e500 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500 ; 0042f753
+        ;   XREF to: 0040e500 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList * this_ptr, char * property_name, CClothList * data_ptr, int max_count)
     ADD ESP,0x10                        ; 0042f758
     MOV EAX,EBX                         ; 0042f75b
     MOV ECX,dword ptr [EBX + 0x24ac]    ; 0042f75d
@@ -72,23 +72,23 @@ section .text
     PUSH 0x42f340                       ; 0042f780
     PUSH 0x617734                       ; 0042f785 | = "Items Carried"
     PUSH ESI                            ; 0042f78a
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e670 ; 0042f78b
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 0042f78b
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 0042f790
     LEA EAX,[EBX + 0x2534]              ; 0042f793
         ;   Label: LAB_0042f793
     PUSH EAX                            ; 0042f799
     PUSH 0x617742                       ; 0042f79a | = "talkToMeEvent"
     PUSH ESI                            ; 0042f79f
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e480 ; 0042f7a0
-        ;   XREF to: 0040e480 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e480(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480 ; 0042f7a0
+        ;   XREF to: 0040e480 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 0042f7a5
     LEA EAX,[EBX + 0x2614]              ; 0042f7a8
     PUSH EAX                            ; 0042f7ae
     PUSH 0x617750                       ; 0042f7af | = "Etheral"
     PUSH ESI                            ; 0042f7b4
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 0042f7b5
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 0042f7b5
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 0042f7ba
     PUSH 0x0                            ; 0042f7bd
     PUSH 0x64                           ; 0042f7bf
@@ -96,8 +96,8 @@ section .text
     PUSH EAX                            ; 0042f7c7
     PUSH 0x617758                       ; 0042f7c8 | = "Descriptive name"
     PUSH ESI                            ; 0042f7cd
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0042f7ce
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 0042f7ce
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 0042f7d3
     ADD EBX,0x2444                      ; 0042f7d6
     PUSH EBX                            ; 0042f7dc
@@ -105,8 +105,8 @@ section .text
     PUSH 0x3                            ; 0042f7e2
     PUSH 0x61777f                       ; 0042f7e4 | = "Health bar"
     PUSH ESI                            ; 0042f7e9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 0042f7ea
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0042f7ea
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
     ADD ESP,0x14                        ; 0042f7ef
     POP ESI                             ; 0042f7f2
     POP EBX                             ; 0042f7f3

@@ -93,7 +93,7 @@ int __cdecl CGame::runGameSession(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0
 // Address: 004dbbc0
-void __cdecl CGame::restoreDefaultControls(void);
+void __cdecl CGame::restoreDefaultControls(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_playerControls_FUN_004dbd80
 // Address: 004dbd80

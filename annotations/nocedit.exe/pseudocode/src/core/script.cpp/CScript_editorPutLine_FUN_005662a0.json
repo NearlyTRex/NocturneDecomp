@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 27,
-        "message": "'DAT_00643fd5' was not declared in this scope; did you mean 'DAT_00643f94'?"
-      },
-      {
         "category": "incompatible_types",
-        "column": 85,
-        "line": 29,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "column": 62,
+        "line": 27,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       }
     ],
     "success": false,
@@ -38,17 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 112,
+    "complexity_score": 23,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 22,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
-    ],
-    "total_lines": 84
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -98,7 +89,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0",
-    "signature": "void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int param_2)"
+    "signature": "void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int line_number)"
   },
   "function_calls": [
     {
@@ -109,7 +100,7 @@
     {
       "addr": "00566800",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566800"
+      "name": "core_script.cpp_CScript_updateLineMetrics_FUN_00566800"
     },
     {
       "addr": "004a2b80",
@@ -117,14 +108,14 @@
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
       "addr": "004a3120",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
   "globals": [
@@ -142,9 +133,9 @@
     },
     {
       "addr": "00643fd5",
-      "name": "DAT_00643fd5",
-      "type": "undefined4",
-      "value": null
+      "name": "s_EmpyChar_00643fd5",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "02f0ca48",
@@ -160,8 +151,8 @@
     },
     {
       "addr": "031101c0",
-      "name": "DAT_031101c0",
-      "type": "undefined1",
+      "name": "g_CurrentLineBuffer",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -206,69 +197,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "line_number",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "text": "if (-1 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "text": "if (param_2 < iVar1 + 10) goto LAB_005662c2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "text": "if (param_2 < iVar1) break;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_00643fd5",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)font_ptr,&DAT_00643fd5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "text": "shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120((CStrList *)font_ptr,param_2,&DAT_031101c0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_031101c0",
-      "text": "shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120((CStrList *)font_ptr,param_2,&DAT_031101c0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "text": "core_script_cpp_CScript_FUN_00566800(this_ptr,param_2);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -16,7 +16,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   SDamageInfo *in_stack_00000008;
   int force_immediate;
   
-  if (((this_ptr->base).unk1 & 0x7fffffffU) != 0) {
+  if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->unk2 != 0) {
@@ -25,10 +25,10 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   if (g_CGamePtr->allow_damage_flag == 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = (int)0.5f;
-  fVar3 = (float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
+  (this_ptr->base).unk1 = (uint)0.5f;
+  fVar3 = (this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar3;
+  (this_ptr->base).base.hit_points = fVar3;
   if (0.0 < fVar3) {
     if (0.0 < in_stack_00000008->damage_amount) {
       if (*(int *)((this_ptr->base).unk4 + 0x10) == 0) {
@@ -43,7 +43,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
     }
   }
   else {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if (pSVar2->state_index != 0xc) {

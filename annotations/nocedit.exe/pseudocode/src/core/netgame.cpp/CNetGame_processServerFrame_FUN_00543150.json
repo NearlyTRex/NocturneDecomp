@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 22,
-        "line": 90,
+        "line": 88,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 93,
+        "line": 91,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 108,
+        "line": 106,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 110,
+        "line": 108,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 31,
-        "line": 124,
+        "line": 122,
         "message": "invalid conversion from 'undefined4*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 173,
+        "line": 171,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,108 +49,108 @@
       {
         "category": "other",
         "column": 27,
+        "line": 53,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
         "line": 55,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 57,
+        "column": 27,
+        "line": 58,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 27,
+        "column": 52,
         "line": 60,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 62,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 14,
-        "line": 90,
+        "line": 88,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 93,
+        "line": 91,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 108,
+        "line": 106,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 110,
+        "line": 108,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 120,
+        "line": 118,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 122,
+        "line": 120,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 160,
+        "line": 158,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 162,
+        "line": 160,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 173,
+        "line": 171,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 181,
+        "line": 179,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 183,
+        "line": 181,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 269,
+    "complexity_score": 268,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
-    "pseudocode_lines": 199,
+    "pseudocode_lines": 198,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 612
+    "total_lines": 611
   },
   "cross_references": [
     {
@@ -580,42 +580,42 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 79,
       "match": "DAT_02f9c128",
       "text": "puVar9 = &DAT_02f9c128;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < local_18) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 84,
       "match": "(void *)((int)",
       "text": "((void *)((int)&g_SimFrameHistory + iVar3),puVar9,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 99,
       "match": "(int *)((int)",
       "text": "if (iVar2 == *(int *)((int)&g_SimFrameHistory + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 101,
       "match": "(int *)((int)",
       "text": "dest = (int *)((int)&g_SimFrameHistory + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 164,
       "match": "(int *)((int)",
       "text": "if (local_20 == *(int *)((int)&g_SimFrameHistory + iVar4)) goto LAB_005434de;",
       "type": "pointer_cast"

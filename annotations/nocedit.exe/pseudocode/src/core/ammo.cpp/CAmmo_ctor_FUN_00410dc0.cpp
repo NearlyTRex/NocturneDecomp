@@ -32,6 +32,6 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(CAmmo *this_ptr)
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   ADJ(this_ptr_00)->ammo_count = 0x14;
-  ADJ(this_ptr_00)->ammo_type = 0;
+  ADJ(this_ptr_00)->ammo_type = AMMO_TYPE_GENERIC;
   return ADJ(this_ptr_00);
 }

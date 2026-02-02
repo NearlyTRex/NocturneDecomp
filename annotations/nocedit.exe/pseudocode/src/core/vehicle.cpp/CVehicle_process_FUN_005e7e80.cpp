@@ -219,7 +219,7 @@ joined_r0x005e8664:
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr_02->base).base.model,model_name);
-  *(CVehicle **)(this_ptr_02->unk2 + 4) = this_ptr;
+  this_ptr_02->vehicle = &this_ptr->base;
   if (local_14 == 0) {
     this_ptr_02->side_of_car = 0;
     *(CMobster **)(this_ptr->unk3 + 0x3c) = this_ptr_02;

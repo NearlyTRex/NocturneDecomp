@@ -81,7 +81,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
          *(float *)((this_ptr->base).base.unk1 + 0x2c) * (float)0.33333333333333298;
   }
   fVar10 = (float)(this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = (int)fVar10;
+  (this_ptr->base).unk1 = (uint)fVar10;
   if (fVar10 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -105,30 +105,27 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     case 2:
     case 3:
       iVar3 = 0;
-      if (*(int *)(this_ptr->base).unk2 != 0) {
-        if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+      if ((this_ptr->base).action_bindings.walk_key != 0) {
+        if ((this_ptr->base).action_bindings.run_key == 0) {
           iVar3 = 1;
         }
         else {
           iVar3 = 3;
         }
       }
-      if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+      if ((this_ptr->base).action_bindings.backup_key != 0) {
         iVar3 = 2;
       }
-      if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+      if ((this_ptr->base).action_bindings.fire_key != 0) {
         this_ptr->unk[0xdc] = '\x01';
         this_ptr->unk[0xdd] = '\0';
         this_ptr->unk[0xde] = '\0';
         this_ptr->unk[0xdf] = '\0';
         iVar3 = 4;
-        (this_ptr->base).unk2[0xc] = '\0';
-        (this_ptr->base).unk2[0xd] = '\0';
-        (this_ptr->base).unk2[0xe] = '\0';
-        (this_ptr->base).unk2[0xf] = '\0';
+        (this_ptr->base).action_bindings.fire_key = 0;
       }
       *(float *)((this_ptr->base).base.unk1 + 0xc) =
-           *(float *)((this_ptr->base).unk2 + 0x24) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
+           *(float *)((this_ptr->base).unk2 + 4) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (iVar3 == pSVar5->state_index) break;

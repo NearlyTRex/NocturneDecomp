@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005fe5e0

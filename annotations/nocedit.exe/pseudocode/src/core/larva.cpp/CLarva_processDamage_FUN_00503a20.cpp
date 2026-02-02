@@ -19,8 +19,8 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
   char local_e8 [100];
   char local_84 [116];
   
-  fVar1 = (float)(this_ptr->base).base.hit_points - damage_info->damage_amount;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x10));
     iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0xc));
@@ -47,7 +47,7 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
   }
   else {
     this_ptr_00 = &(this_ptr->base).base.model;
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index != 5) && (pSVar2->state_index != 4)) {

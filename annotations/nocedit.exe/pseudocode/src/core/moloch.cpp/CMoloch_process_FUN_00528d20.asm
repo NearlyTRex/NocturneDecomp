@@ -54,8 +54,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_moloch.cpp_FUN_005293b0
-;   core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900
+;   core_moloch.cpp_CMoloch_FUN_005293b0
+;   core_moloch.cpp_CMoloch_FUN_00529900
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -325,8 +325,8 @@ section .text
     JZ 0x00528d3b                       ; 00528ff5
         ;   XREF to: 00528d3b (CONDITIONAL_JUMP)  ; LAB_00528d3b
     PUSH EBX                            ; 00528ffb
-    CALL core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900 ; 00528ffc
-        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()
+    CALL core_moloch.cpp_CMoloch_FUN_00529900 ; 00528ffc
+        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_CMoloch_FUN_00529900(CMoloch * this_ptr)
     ADD ESP,0x4                         ; 00529001
     MOV ESP,EBP                         ; 00529004
     POP EBP                             ; 00529006
@@ -373,8 +373,8 @@ section .text
         ;   XREF to: 00529063 (CONDITIONAL_JUMP)  ; LAB_00529063
     PUSH dword ptr [EBP + 0x18]         ; 00529057
     PUSH EBX                            ; 0052905a
-    CALL core_moloch.cpp_FUN_005293b0   ; 0052905b
-        ;   XREF to: 005293b0 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_FUN_005293b0()
+    CALL core_moloch.cpp_CMoloch_FUN_005293b0 ; 0052905b
+        ;   XREF to: 005293b0 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_CMoloch_FUN_005293b0(CMoloch * this_ptr)
     ADD ESP,0x8                         ; 00529060
     LEA EAX,[EBX + 0x158]               ; 00529063
         ;   Label: LAB_00529063
@@ -433,8 +433,8 @@ section .text
         ;   XREF to: 00528e32 (UNCONDITIONAL_JUMP)  ; LAB_00528e32
     PUSH EBX                            ; 00529103
         ;   Label: LAB_00529103
-    CALL core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900 ; 00529104
-        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()
+    CALL core_moloch.cpp_CMoloch_FUN_00529900 ; 00529104
+        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_CMoloch_FUN_00529900(CMoloch * this_ptr)
     ADD ESP,0x4                         ; 00529109
     JMP 0x005290c4                      ; 0052910c
         ;   XREF to: 005290c4 (UNCONDITIONAL_JUMP)  ; LAB_005290c4
@@ -638,8 +638,8 @@ section .text
     JZ 0x00528d3b                       ; 0052938c
         ;   XREF to: 00528d3b (CONDITIONAL_JUMP)  ; LAB_00528d3b
     PUSH EBX                            ; 00529392
-    CALL core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900 ; 00529393
-        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()
+    CALL core_moloch.cpp_CMoloch_FUN_00529900 ; 00529393
+        ;   XREF to: 00529900 (UNCONDITIONAL_CALL)  ; void core_moloch.cpp_CMoloch_FUN_00529900(CMoloch * this_ptr)
     ADD ESP,0x4                         ; 00529398
     MOV ESP,EBP                         ; 0052939b
     POP EBP                             ; 0052939d

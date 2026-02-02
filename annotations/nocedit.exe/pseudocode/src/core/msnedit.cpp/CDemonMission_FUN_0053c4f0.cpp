@@ -32,7 +32,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr
     iStack_10 = 0x141;
     engine_matrix_c_pushViewport_FUN_0050e320(0x141,0,g_WindowWidth + -0x14c,0xf0);
     iVar2 = iVar1 + -0xc;
-    core_actor_cpp_CActorPropertyList_FUN_0040e770
+    core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770
               ((CActorPropertyList *)&DAT_02f7a024,0x141,0,iVar2);
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               (&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);
@@ -40,13 +40,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr
     DAT_02f797e4.current_value = INT_02f7c510;
     DAT_02f797e4.scroll_increment = INT_02f7c510 / INT_02f7a028;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&DAT_02f797e4);
-    core_actor_cpp_CActorPropertyList_FUN_0040e770
+    core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770
               ((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);
     if ((((g_ActiveButton == (CEdButton *)0x0) && (0x140 < g_MouseX)) && (g_MouseX <= iVar2)) &&
        ((-1 < g_MouseY && (g_MouseY < 0xf0)))) {
-      DAT_02f7c528 = core_actor_cpp_CActorPropertyList_FUN_0040e9c0();
+      DAT_02f7c528 = core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0
+                               ((CActorPropertyList *)&DAT_02f7a024,g_MouseX,g_MouseY);
     }
-    core_actor_cpp_CActorPropertyList_FUN_0040e850();
+    core_actor_cpp_CActorPropertyList_render_FUN_0040e850
+              ((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);
     engine_matrix_c_popViewport_FUN_0050e480(unaff_EDI);
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&DAT_02f797e4);
     iVar2 = iStack_10 + -1;

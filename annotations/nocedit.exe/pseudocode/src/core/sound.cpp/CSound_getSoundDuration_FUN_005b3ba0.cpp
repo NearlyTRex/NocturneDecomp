@@ -19,7 +19,7 @@ float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *this_p
   pcVar3 = &stack0xfffffea0;
   cVar1 = *sound_name;
   while ((((cVar1 != '\0' && (cVar1 = *sound_name, cVar1 != '@')) && (cVar1 != '*')) &&
-         ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2U) == 0))) {
+         ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) == 0))) {
     cVar1 = *sound_name;
     sound_name = sound_name + 1;
     *pcVar3 = cVar1;

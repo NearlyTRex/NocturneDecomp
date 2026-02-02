@@ -12,7 +12,7 @@
 ;   core_actor.cpp_matchesClassName_FUN_0040c740 at 0040c74a
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchClassTerm_FUN_0040c4f0

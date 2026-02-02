@@ -15,9 +15,9 @@ void __cdecl core_script_cpp_CScript_FUN_00566330(CScript *this_ptr,int param_2,
   byte bVar4;
   
   bVar4 = 0;
-  core_script_cpp_CScript_FUN_00566230(this_ptr,param_3);
+  core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,param_3);
   uVar2 = 0xffffffff;
-  pcVar3 = &DAT_031101c0;
+  pcVar3 = g_CurrentLineBuffer + 1;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
@@ -28,8 +28,8 @@ void __cdecl core_script_cpp_CScript_FUN_00566330(CScript *this_ptr,int param_2,
     param_2 = ~uVar2 - 1;
   }
   shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
-            ((CStrList *)(this_ptr->unk4 + 0x20),param_3 + 1,&DAT_031101c0 + param_2);
-  (&DAT_031101c0)[param_2] = 0;
+            (&this_ptr->script_text,param_3 + 1,g_CurrentLineBuffer + param_2 + 1);
+  g_CurrentLineBuffer[param_2 + 1] = '\0';
   core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,param_3);
   return;
 }

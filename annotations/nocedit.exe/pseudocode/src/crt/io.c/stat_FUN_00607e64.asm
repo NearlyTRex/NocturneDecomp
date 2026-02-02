@@ -31,7 +31,7 @@
 ;   FindClose* g_FindCloseFunc = 00211d78
 ;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
 ;   TerminatedCString s_anon_0065906c
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30

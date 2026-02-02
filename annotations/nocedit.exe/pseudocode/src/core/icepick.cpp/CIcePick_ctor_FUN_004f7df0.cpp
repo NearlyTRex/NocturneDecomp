@@ -41,6 +41,6 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_pt
   pCVar1->unk[0x25] = '\0';
   pCVar1->unk[0x26] = '\0';
   pCVar1->unk[0x27] = '\0';
-  (pCVar1->base).base.hit_points = 0x43960000;
+  (pCVar1->base).base.hit_points = 300.0;
   return pCVar1;
 }

@@ -175,7 +175,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
   core_charactr_cpp_CCharacter_FUN_0042ea40((CCharacter *)this_ptr);
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,in_stack_00000008);
   fVar18 = (float)(this_ptr->base).unk1 - in_stack_00000008;
-  (this_ptr->base).unk1 = (int)fVar18;
+  (this_ptr->base).unk1 = (uint)fVar18;
   if (fVar18 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -239,7 +239,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
        (fVar18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(pCStack_50,0x28)
        , 0.0 < fVar18)) ||
       (fVar18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(pCStack_50,0x29),
-      0.0 < fVar18)) || ((float)(this_ptr->base).base.hit_points <= 0.0)) {
+      0.0 < fVar18)) || ((this_ptr->base).base.hit_points <= 0.0)) {
     bVar13 = false;
     iStack_24 = 0;
     local_1c = 0;
@@ -353,9 +353,9 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                                         (&(this_ptr->base).base.model.motion_controller);
                     iStack_58 = pSVar19->state_index;
                     iStack_18 = 0;
-                    if (*(int *)(this_ptr->base).unk2 == 0) {
-                      if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
-                        fVar18 = *(float *)((this_ptr->base).unk2 + 0x20);
+                    if ((this_ptr->base).action_bindings.walk_key == 0) {
+                      if ((this_ptr->base).action_bindings.backup_key == 0) {
+                        fVar18 = *(float *)(this_ptr->base).unk2;
                         if ((float)-0.01 <= fVar18) {
                           if (0.01 < (double)fVar18) {
                             iStack_18 = 5;
@@ -369,7 +369,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                         iStack_18 = 2;
                       }
                     }
-                    else if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+                    else if ((this_ptr->base).action_bindings.run_key == 0) {
                       iStack_18 = 1;
                     }
                     else {
@@ -386,10 +386,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                     fVar21 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                        (this_ptr_00,2);
                     fVar21 = fVar21 * 1.5f;
-                    fVar18 = *(float *)((this_ptr->base).unk2 + 0x20);
-                    fVar12 = *(float *)((this_ptr->base).unk2 + 0x24) *
+                    fVar18 = *(float *)(this_ptr->base).unk2;
+                    fVar12 = *(float *)((this_ptr->base).unk2 + 4) *
                              *(float *)((this_ptr->base).base.unk1 + 0x2c);
-                    iVar20 = *(int *)((this_ptr->base).unk2 + 0x1c);
+                    iVar20 = (this_ptr->base).action_bindings.jump_key;
                     *(float *)((this_ptr->base).base.unk1 + 0xc) = fVar12;
                     fVar4 = *(float *)((this_ptr->base).base.unk1 + 0xc);
                     fVar5 = *(float *)((this_ptr->base).base.unk1 + 0xc);
@@ -438,7 +438,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                 (&(this_ptr->base).base.model.motion_controller,iStack_18,1);
                     }
-                    if (*(int *)((this_ptr->base).unk2 + 0x10) != 0) {
+                    if ((this_ptr->base).action_bindings.use_item_key != 0) {
                       core_hero_cpp_CHero_FUN_004f3760(&this_ptr->base);
                       iStack_60 = 0;
                       break;
@@ -498,7 +498,7 @@ LAB_005bd19f:
           }
           else {
             pCStack_78 = pCVar9;
-            if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+            if ((this_ptr->base).action_bindings.fire_key != 0) {
               (**(code **)(*(int *)(*(int *)((this_ptr->base).unk4 + 8) + 0x154) + 0x14))();
               fStack_1b8 = fStack_248 + fStack_23c;
               fStack_1b4 = fStack_244 + fStack_238;
@@ -587,12 +587,9 @@ LAB_005bd19f:
               if (fVar18 + fStack_84 <= 0.0) {
                 (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc7)();
               }
-              else if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+              else if ((this_ptr->base).action_bindings.fire_key != 0) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(pCStack_30,0x23,1);
-                (this_ptr->base).unk2[0xc] = '\0';
-                (this_ptr->base).unk2[0xd] = '\0';
-                (this_ptr->base).unk2[0xe] = '\0';
-                (this_ptr->base).unk2[0xf] = '\0';
+                (this_ptr->base).action_bindings.fire_key = 0;
               }
             }
             goto switchD_005bd22e_caseD_6;
@@ -611,7 +608,7 @@ LAB_005bd19f:
           fStack_1d0 = *(float *)(iVar20 + 0x30);
           fStack_1cc = *(float *)(iVar20 + 0x34);
           uStack_1c8 = *(uint *)(iVar20 + 0x38);
-          fStack_2c = *(float *)((this_ptr->base).unk2 + 0x24) * (float)3.1415926535000001 *
+          fStack_2c = *(float *)((this_ptr->base).unk2 + 4) * (float)3.1415926535000001 *
                       (float)0.5 * in_stack_00000008;
           if (fStack_2c < fStack_26c) {
             fStack_2c = fStack_26c;
@@ -620,7 +617,7 @@ LAB_005bd19f:
             fStack_2c = fStack_270;
           }
           fStack_1cc = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_1cc + fStack_2c);
-          fStack_28 = *(float *)((this_ptr->base).unk2 + 0x28) * (float)3.1415926535000001 *
+          fStack_28 = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 *
                       (float)0.5 * in_stack_00000008;
           if (fStack_28 < local_268.min.y) {
             fStack_28 = local_268.min.y;
@@ -999,7 +996,7 @@ LAB_005bd5e6:
           pCVar11 = (this_ptr->base).base.base.vtable._uc;
           (this_ptr->base).unk1 = 0;
           (*(pCVar11->_uc).processDamage)((CCharacter *)this_ptr,&SStack_2bc);
-          if (((float)(this_ptr->base).base.hit_points <= 0.0) || (fStack_6c != 0.0)) {
+          if (((this_ptr->base).base.hit_points <= 0.0) || (fStack_6c != 0.0)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0x12,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -1073,7 +1070,7 @@ LAB_005bc1a6:
   *(uint *)(this_ptr->unk2 + 0x3c) = *(uint *)(this_ptr->unk2 + 0x40);
   pCVar15 = g_CGamePtr;
   if (local_1c != 0) {
-    if (*(int *)((this_ptr->base).unk2 + 0x18) != 0) {
+    if ((this_ptr->base).action_bindings.draw_key != 0) {
       if (this_ptr->guns_drawn == 0) {
         this_ptr->guns_drawn = 1;
       }
@@ -1086,7 +1083,7 @@ LAB_005bc1a6:
         }
       }
     }
-    if (((*(int *)((this_ptr->base).unk2 + 0x14) != 0) &&
+    if ((((this_ptr->base).action_bindings.light_key != 0) &&
         (pCVar10 = (this_ptr->base).inventory.selected_weapon, pCVar10 != (CWeapon *)0x0)) &&
        (pCVar10->can_attach_light != 0)) {
       uVar22 = (uint)(g_CGamePtr->auto_save_blocked == 0);

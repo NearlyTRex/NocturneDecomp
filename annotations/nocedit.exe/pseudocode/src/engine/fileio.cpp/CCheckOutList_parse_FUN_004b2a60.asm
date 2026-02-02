@@ -30,7 +30,7 @@
 ;   TerminatedCString s_Multiple_checkout_detect_00626335
 ;   TerminatedCString s_Out_of_memory_reading_ch_006263b3
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:

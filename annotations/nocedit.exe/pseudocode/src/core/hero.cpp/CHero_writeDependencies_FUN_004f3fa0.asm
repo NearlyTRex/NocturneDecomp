@@ -13,8 +13,8 @@
 ;   core_gabriela.cpp_FUN_004d7630 at 004d763a
 ;   core_haystack.cpp_CHaystack_writeDependencies_FUN_004f1cf0 at 004f1cfa
 ;   core_icepick.cpp_CIcePick_writeDependencies_FUN_004f97c0 at 004f97ca
-;   core_moloch.cpp_FUN_005299b0 at 005299ba
-;   core_scat.cpp_FUN_00559140 at 0055914a
+;   core_moloch.cpp_CMoloch_writeDependencies_FUN_005299b0 at 005299ba
+;   core_scat.cpp_CScat_writeDependencies_FUN_00559140 at 0055914a
 ;   core_stranger.cpp_CStranger_writeDependencies_FUN_005c6910 at 005c691a
 ;   core_svetlana.cpp_CSvetlana_FUN_005d9f30 at 005d9f3a
 ;

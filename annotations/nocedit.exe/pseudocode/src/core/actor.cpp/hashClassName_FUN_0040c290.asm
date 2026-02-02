@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   class_name
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30

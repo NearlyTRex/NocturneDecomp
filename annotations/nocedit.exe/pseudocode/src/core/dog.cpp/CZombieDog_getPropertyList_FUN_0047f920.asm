@@ -12,8 +12,8 @@
 ;   TerminatedCString s_State_00621073
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -35,14 +35,14 @@ section .text
     PUSH EBX                            ; 0047f93c
     PUSH 0x62106d                       ; 0047f93d | = "Model"
     PUSH ESI                            ; 0047f942
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 0047f943
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 0047f943
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 0047f948
     PUSH EBX                            ; 0047f94b
     PUSH 0x621073                       ; 0047f94c | = "State"
     PUSH ESI                            ; 0047f951
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 0047f952
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 0047f952
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 0047f957
     POP ESI                             ; 0047f95a
     POP EBX                             ; 0047f95b

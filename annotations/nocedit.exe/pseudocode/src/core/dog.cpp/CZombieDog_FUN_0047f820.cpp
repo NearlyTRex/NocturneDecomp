@@ -18,11 +18,11 @@ void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr)
   SDamageInfo *in_stack_00000010;
   int desired_state_index;
   
-  fVar1 = (float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_0047f855;

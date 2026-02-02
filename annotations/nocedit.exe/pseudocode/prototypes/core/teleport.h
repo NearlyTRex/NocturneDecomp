@@ -63,9 +63,9 @@ void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 // Address: 005daad0
 void __cdecl CTeleport(CTeleport *this_ptr);
 
-// Original: core_teleport.cpp_CTeleport_serialize_FUN_005dab30
+// Original: core_teleport.cpp_CTeleport_archive_FUN_005dab30
 // Address: 005dab30
-void __cdecl CTeleport::serialize(CTeleport *this_ptr);
+void __cdecl CTeleport::archive(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_FUN_005dab70
 // Address: 005dab70

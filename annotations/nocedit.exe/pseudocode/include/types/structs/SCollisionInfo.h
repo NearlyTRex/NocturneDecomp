@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModelInstance;
+
 // Dependencies
 #include "system/basetypes.h"
 
@@ -15,6 +18,6 @@ typedef struct SCollisionInfo {
     float cylinder_top_y; // 0x18
     float cylinder_radius; // 0x1c
     void* result_ptr; // 0x20
-    void* unk5; // 0x24
+    struct CKeyFramedModelInstance* model; // 0x24
 } SCollisionInfo;
 

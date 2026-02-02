@@ -132,9 +132,10 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
               iVar3 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010
                                 ((CBoundingBox3D *)local_f8,other);
               if (iVar3 != 0) {
-                if ((this_ptr->unk12 == 0) && (SStack_150.unk5 != (CKeyFramedModelInstance *)0x0)) {
+                if ((this_ptr->unk12 == 0) && (SStack_150.model != (CKeyFramedModelInstance *)0x0))
+                {
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                          (SStack_150.unk5);
+                                          (SStack_150.model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                     g_CurrentFilename = "..\\core\\setcolid.cpp";
                     g_CurrentLineNumber = 0xcb;

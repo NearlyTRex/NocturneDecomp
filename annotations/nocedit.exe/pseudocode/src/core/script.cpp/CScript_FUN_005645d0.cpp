@@ -22,22 +22,24 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
             (INT_031141d0,INT_031141d4,INT_031141d8 + -1,INT_031141dc + -1,0);
   g_ActiveRenderColor = 7;
   engine_2d_c_drawHLine_FUN_00402ee0(INT_031141d0,INT_031141d4,INT_031141d8 + -1);
-  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&CEdScrollBar_0310fd0c);
-  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&CEdScrollBar_0310fcd8);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_ScriptEditorHScrollBar);
+  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_ScriptEditorVScrollBar);
   engine_matrix_c_pushViewport_FUN_0050e320
             (INT_031141e0,INT_031141e4,(DAT_031141e8 - INT_031141e0) + -1,
              (DAT_031141ec - INT_031141e4) + -1);
-  for (iVar1 = CEdScrollBar_0310fcd8.scroll_position;
-      iVar1 <= CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value;
+  for (iVar1 = g_ScriptEditorVScrollBar.scroll_position;
+      iVar1 <= g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value;
       iVar1 = iVar1 + 1) {
     core_script_cpp_CScript_FUN_005664d0(this_ptr,iVar1);
   }
   if ((INT_0310fd40._1_1_ & 0x40) == 0) {
     g_ActiveRenderColor = 0xff;
-    iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208 + INT_031141e4;
-    x1 = INT_03114204 * (DAT_0310fd44 - CEdScrollBar_0310fd0c.scroll_position) + INT_031141e0;
+    iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208 +
+            INT_031141e4;
+    x1 = INT_03114204 * (g_CurrentEditingColumn - g_ScriptEditorHScrollBar.scroll_position) +
+         INT_031141e0;
     y = iVar1 + DAT_03114208 + -1;
-    if (DAT_0068105c == 0) {
+    if (g_AutoIndentEnabled == 0) {
       engine_2d_c_drawHLine_FUN_00402ee0(x1,y,INT_03114204 + x1 + -1);
     }
     else {
@@ -46,7 +48,8 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
   }
   engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
   sprintf
-            (&stack0xfffffdfc,"Ln %d, Col %d",DAT_0310fd48 + 1,DAT_0310fd44 + 1);
+            (&stack0xfffffdfc,"Ln %d, Col %d",g_CurrentEditingLine + 1,
+             g_CurrentEditingColumn + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
             (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0

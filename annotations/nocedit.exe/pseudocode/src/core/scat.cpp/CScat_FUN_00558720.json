@@ -1,0 +1,484 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 51,
+        "line": 80,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 106,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 22,
+        "line": 106,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "syntax_error",
+        "column": 34,
+        "line": 108,
+        "message": "expected primary-expression before ')' token"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 106,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 108,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 415,
+    "complexity_score": 327,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 12,
+    "pseudocode_lines": 172,
+    "suspect_count": 14,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 587
+  },
+  "cross_references": [
+    {
+      "addr": "005571f0",
+      "from_addr": "00557516",
+      "name": "core_scat.cpp_CScat_process_FUN_005571f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558720",
+    "address_range": [
+      [
+        "00558720",
+        "00558ce0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_scat.cpp_CScat_FUN_00558720",
+    "signature": "void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "00558cf0",
+      "is_variadic": false,
+      "name": "core_scat.cpp_CScat_FUN_00558cf0"
+    },
+    {
+      "addr": "0059fa20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20"
+    },
+    {
+      "addr": "005e7830",
+      "is_variadic": false,
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+    },
+    {
+      "addr": "005fe667",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064144c",
+      "name": "DOUBLE_0064144c",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00641454",
+      "name": "DOUBLE_00641454",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "0064145c",
+      "name": "FLOAT_0064145c",
+      "type": "float",
+      "value": "-1.570796"
+    },
+    {
+      "addr": "00641460",
+      "name": "FLOAT_00641460",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00641464",
+      "name": "DOUBLE_00641464",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "0064146c",
+      "name": "DOUBLE_0064146c",
+      "type": "double",
+      "value": "0.0200000000000000"
+    },
+    {
+      "addr": "006598c0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03106174",
+      "name": "INT_03106174",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "DAT_032613d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.837209302325581,
+    "instruction_count": 344,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 15,
+      "BRANCH": 7,
+      "CALL": 11,
+      "CALLIND": 2,
+      "CBRANCH": 26,
+      "COPY": 804,
+      "FLOAT2FLOAT": 76,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 20,
+      "FLOAT_NEG": 2,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 1,
+      "INT_ADD": 186,
+      "INT_AND": 138,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 81,
+      "INT_LEFT": 40,
+      "INT_LESS": 16,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 51,
+      "INT_OR": 50,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 40,
+      "INT_SUB": 55,
+      "INT_XOR": 1,
+      "INT_ZEXT": 40,
+      "LOAD": 105,
+      "POPCOUNT": 40,
+      "RETURN": 3,
+      "STORE": 98
+    },
+    "pcode_op_count": 2008
+  },
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 328,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScat *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0055872c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000000c",
+      "text": "if ((in_stack_0000000c == 0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000008",
+      "text": "(float)2 * in_stack_00000008 + local_13c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_0000000c",
+      "text": "if ((*(int *)this_ptr->unk == 0) || (in_stack_0000000c != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_0000000c",
+      "text": "local_28 = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_0000000c",
+      "text": "for (local_20 = in_stack_0000000c; local_20 < (int)g_CDemonSetPtr->actor_list_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 99,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x24) + 0x154) + 0x4c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 101,
+      "match": "code *",
+      "text": "pfVar6 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x24) + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_00000008",
+      "text": "local_30 = in_stack_00000008 * (float)3.1415926535000001 * (float)1.5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 159,
+      "match": "in_stack_0000000c",
+      "text": "if ((*(int *)(this_ptr->unk + 0x24) != 0) && (in_stack_0000000c == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 162,
+      "match": "ABS",
+      "text": "if (((float)0.02 <= ABS(local_18)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 165,
+      "match": "ABS",
+      "text": "(float)0.02 <= ABS(fVar7))) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

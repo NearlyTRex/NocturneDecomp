@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e770 at 0040e79f
+;   core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 at 0040e79f
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorProperty_FUN_0040ea50

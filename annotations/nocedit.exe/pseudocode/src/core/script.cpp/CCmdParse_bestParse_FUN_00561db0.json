@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 70,
-        "message": "'stack0xfffffb9c' was not declared in this scope; did you mean 'in_stack_fffffb9c'?"
-      },
-      {
         "category": "other",
         "column": 26,
-        "line": 73,
+        "line": 74,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -21,9 +15,15 @@
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 50,
         "line": 84,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 84,
+        "message": "request for member '_0_4_' in 'local_464.CPickList::unk1', which is of non-class type 'char [44]'"
       },
       {
         "category": "other",
@@ -33,9 +33,15 @@
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 48,
         "line": 89,
         "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 91,
+        "line": 89,
+        "message": "request for member '_0_4_' in 'local_464.CPickList::unk1', which is of non-class type 'char [44]'"
       }
     ],
     "success": false,
@@ -48,58 +54,44 @@
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 33,
-        "line": 47,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 49,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 73,
+        "line": 74,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 76,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 91,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "column": 35,
+        "line": 80,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 459,
+    "complexity_score": 138,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 5,
-    "pseudocode_lines": 84,
-    "suspect_count": 35,
+    "pseudocode_lines": 83,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unnamed_param"
+      "unknown_field"
     ],
-    "total_lines": 275
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -123,7 +115,7 @@
     {
       "addr": "00561690",
       "from_addr": "005616cd",
-      "name": "core_script.cpp_FUN_00561690",
+      "name": "core_script.cpp_parseCommandWithTemplates_FUN_00561690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -137,7 +129,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0",
-    "signature": "int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)"
+    "signature": "int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates, int template_count)"
   },
   "function_calls": [
     {
@@ -148,7 +140,7 @@
     {
       "addr": "00562620",
       "is_variadic": false,
-      "name": "core_script.cpp_CCmdParse_FUN_00562620"
+      "name": "core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620"
     },
     {
       "addr": "00561fd0",
@@ -232,7 +224,7 @@
       {
         "call_addr": "005616cd",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00561690",
+        "caller": "core_script.cpp_parseCommandWithTemplates_FUN_00561690",
         "estimated_params": 9,
         "instructions_analyzed": 17,
         "reg_params": [],
@@ -294,8 +286,8 @@
         "is_param": false,
         "name": "local_464",
         "offset": -1124,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
@@ -334,28 +326,28 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "input_text",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "cursor_position",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "templates",
         "offset": 16,
         "size": 4,
-        "type": "int *"
+        "type": "char * *"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "template_count",
         "offset": 20,
         "size": 4,
         "type": "int"
@@ -364,242 +356,25 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "text": "(CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "text": "(CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "text": "(CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "text": "(CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffb9c",
-      "text": "uint in_stack_fffffb9c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_fffffba0",
-      "text": "uint in_stack_fffffba0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_fffffba4",
-      "text": "char **in_stack_fffffba4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffba8",
-      "text": "CStrList_vtable *in_stack_fffffba8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffbac",
-      "text": "uint in_stack_fffffbac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_4",
-      "text": "piVar4 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_5",
-      "text": "if (0 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "text": "iVar2 = core_script_cpp_CCmdParse_parse_FUN_00561fd0(this_ptr,param_2,(char *)*piVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_3",
-      "text": "local_1c = core_script_cpp_CCmdParse_FUN_00562620(this_ptr,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "text": "} while (iVar5 < param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xfffffb9c",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb9c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 67,
       "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)aiStack_bc + iVar5);",
+      "text": "piVar1 = (int *)((int)aiStack_bc + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xfffffb9c",
-      "text": "((CStrList *)&stack0xfffffb9c,(char *)param_4[*piVar4]);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_4",
-      "text": "((CStrList *)&stack0xfffffb9c,(char *)param_4[*piVar4]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xfffffb9c",
-      "text": "((CPickList *)&stack0xfffffb9c,\"Choose command form\",-1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_fffffb9c",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_fffffba0",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xfffffb9c",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 77,
-      "match": "in_stack_fffffba4",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
+      "match": "._0_4_",
+      "text": "(uint)local_464.base.data_array,(uint)local_464.base.vtable,local_464.unk1._0_4_);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_fffffba8",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_fffffbac",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_fffffb9c",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_fffffba0",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 81,
-      "match": "&stack0xfffffb9c",
-      "text": "((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 82,
-      "match": "in_stack_fffffba4",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_fffffba8",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_fffffbac",
-      "text": "(uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "text": "core_script_cpp_CCmdParse_parse_FUN_00561fd0(this_ptr,param_2,(char *)param_4[aiStack_bc[iVar5]]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_4",
-      "text": "core_script_cpp_CCmdParse_parse_FUN_00561fd0(this_ptr,param_2,(char *)param_4[aiStack_bc[iVar5]]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_3",
-      "text": "iVar3 = core_script_cpp_CCmdParse_FUN_00562620(this_ptr,param_3);",
-      "type": "unnamed_param"
+      "match": "._0_4_",
+      "text": "(uint)local_464.base.data_array,(uint)local_464.base.vtable,local_464.unk1._0_4_);",
+      "type": "unknown_field"
     },
     {
       "call_site_count": 4,

@@ -194,9 +194,9 @@ LAB_0049fea7:
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0(&local_158);
       }
-      else if (((((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8U) != 0) &&
+      else if (((((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) &&
                 (iVar3 != 0x5c)) && (iVar3 != 0x3a)) &&
-              ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 2U) == 0)) {
+              ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 2) == 0)) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(&local_158);
         shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(&local_158,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0049d460(&local_158);

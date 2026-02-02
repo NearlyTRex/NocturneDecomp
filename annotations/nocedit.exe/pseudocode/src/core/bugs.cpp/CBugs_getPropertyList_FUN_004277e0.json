@@ -11,31 +11,78 @@
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 21,
+        "column": 48,
+        "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 37,
         "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 41,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 45,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 78,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "pseudocode_lines": 37,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
       "stack_param"
     ],
-    "total_lines": 119
+    "total_lines": 128
   },
   "cross_references": [],
   "function": {
@@ -52,19 +99,19 @@
   },
   "function_calls": [
     {
+      "addr": "0040e460",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460"
+    },
+    {
       "addr": "0040e220",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e220"
+      "name": "core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220"
     },
     {
       "addr": "0040e3b0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0"
-    },
-    {
-      "addr": "0040e460",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460"
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
     },
     {
       "addr": "004aa170",
@@ -174,31 +221,52 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0x58) = 1;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000000c",
-      "text": "iVar2 = *(int *)(in_stack_0000000c + 0x122c4) + 1;",
+      "text": "(property_list,\"bugCount\",(int *)(in_stack_0000000c + 0xbec0),0,400,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "iVar3 = *(int *)(in_stack_0000000c + 0x122c4) + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "data_ptr = (CKeyFramedModelInstance *)(in_stack_0000000c + 0x122c8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_0000000c",
+      "text": "(property_list,\"allowChaseEvent\",(char *)(in_stack_0000000c + 0x198a0));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_0000000c",
+      "text": "(property_list,\"allowSwarmvent\",(char *)(in_stack_0000000c + 0x19904));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_0000000c",
+      "text": "(property_list,\"animateEvent\",(char *)(in_stack_0000000c + 0x19968));",
       "type": "stack_param"
     }
   ],

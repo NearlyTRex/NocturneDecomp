@@ -16,7 +16,7 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
   uint *puVar5;
   uint *puVar6;
   uint *puVar7;
-  int in_stack_00000004;
+  CNetGame *in_stack_00000004;
   char *in_stack_00000008;
   int in_stack_0000000c;
   
@@ -47,23 +47,23 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
     iVar4 = 0;
     puVar5 = puVar7;
     puVar6 = puVar7;
-    if (0 < *(int *)(in_stack_00000004 + 0x1c)) {
+    if (0 < in_stack_00000004->player_count) {
       do {
         *(byte *)(puVar6 + 2) = 0;
         puVar5[3] = g_CurrentGameTime - 0x3c0000;
         iVar4 = iVar4 + 1;
         puVar5 = puVar5 + 1;
         puVar6 = (uint *)((int)puVar6 + 1);
-      } while (iVar4 < *(int *)(in_stack_00000004 + 0x1c));
+      } while (iVar4 < in_stack_00000004->player_count);
     }
   }
   else {
     *(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;
     *(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;
   }
-  *(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;
+  *(byte *)(in_stack_00000004->local_player_index + 8 + (int)puVar7) = 1;
   memset(&DAT_02f98ae8 + iVar1,0,0x100);
   strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
-  core_netgame_cpp_CNetGame_FUN_00542370();
+  core_netgame_cpp_CNetGame_FUN_00542370(in_stack_00000004);
   return;
 }

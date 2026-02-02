@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x154]:4  local_154
@@ -312,7 +314,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054232f
     PUSH EAX                            ; 00542332
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00542333
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230(CNetGame * this_ptr)
     MOV EAX,[0x02f7c8b8]                ; 00542338 | g_CurrentGameTime
     ADD ESP,0xc                         ; 0054233d
     MOV dword ptr [EBX + 0xc],EAX       ; 00542340 | DAT_02f98ae0 | DAT_02f98ae4

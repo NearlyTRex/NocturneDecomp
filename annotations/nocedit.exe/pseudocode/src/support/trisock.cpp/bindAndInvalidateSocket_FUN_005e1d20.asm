@@ -8,7 +8,7 @@
 ;
 ; XREF[5]:
 ;   core_netgame.cpp_CNetGame_FUN_0053f830 at 0053f849
-;   core_netgame.cpp_initializeNetwork_FUN_0053fbc0 at 0053fbe2
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0 at 0053fbe2
 ;   support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 at 005e1af6
 ;   support_trisock.cpp_createSocket_FUN_005e1b10 at 005e1b16
 ;   support_trisock.cpp_createUDPSocket_FUN_005e1b40 at 005e1b46

@@ -178,7 +178,7 @@ CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0047f040(CZom
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,float delta_time);
-void __cdecl core_dog_cpp_CZombieDog_serialize_FUN_0047f7b0(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_archive_FUN_0047f7b0(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_FUN_0047f820(CZombieDog *this_ptr);
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0 (CZombieDog *this_ptr,CVector3f *out_points_array);
 void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920 (CZombieDog *this_ptr,CActorPropertyList *property_list);

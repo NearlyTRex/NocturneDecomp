@@ -72,7 +72,7 @@ LAB_0042c429:
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);
   }
-  if (0.0 < (float)this_ptr->hit_points) {
+  if (0.0 < this_ptr->hit_points) {
     return;
   }
   core_charactr_cpp_CCharacter_FUN_0042d060(this_ptr);

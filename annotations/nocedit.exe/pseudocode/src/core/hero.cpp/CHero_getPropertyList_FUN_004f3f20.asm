@@ -13,8 +13,8 @@
 ;   core_gabriela.cpp_FUN_004d7610 at 004d761a
 ;   core_haystack.cpp_CHaystack_getPropertyList_FUN_004f1cd0 at 004f1cda
 ;   core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0 at 004f97aa
-;   core_moloch.cpp_FUN_00529950 at 0052995c
-;   core_scat.cpp_FUN_00559120 at 0055912a
+;   core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950 at 0052995c
+;   core_scat.cpp_CScat_getPropertyList_FUN_00559120 at 0055912a
 ;   core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0 at 005c68fa
 ;   core_svetlana.cpp_CSvetlana_FUN_005d9f10 at 005d9f1a
 ;
@@ -22,7 +22,7 @@
 ;   TerminatedCString s_State_0062edb8
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     PUSH 0x62edb8                       ; 004f3f3d | = "State"
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f3f42
     PUSH EBX                            ; 004f3f46
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004f3f47
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 004f3f47
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 004f3f4c
     POP EBX                             ; 004f3f4f
     RET                                 ; 004f3f50

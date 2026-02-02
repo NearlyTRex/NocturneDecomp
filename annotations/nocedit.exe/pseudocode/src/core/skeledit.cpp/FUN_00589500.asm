@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

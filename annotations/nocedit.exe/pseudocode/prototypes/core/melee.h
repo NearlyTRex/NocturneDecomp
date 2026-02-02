@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CMelee::getActorType(CMelee *this_ptr);
 // Address: 0050e7d0
 CMelee * __cdecl CMelee::ctor(CMelee *this_ptr);
 
-// Original: core_melee.cpp_CMelee_serialize_FUN_0050e920
+// Original: core_melee.cpp_CMelee_archive_FUN_0050e920
 // Address: 0050e920
-void __cdecl CMelee::serialize(CMelee *this_ptr);
+void __cdecl CMelee::archive(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_fire_FUN_0050ea40
 // Address: 0050ea40

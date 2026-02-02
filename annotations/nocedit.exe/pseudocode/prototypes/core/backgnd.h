@@ -39,9 +39,9 @@ int __cdecl CBackgroundActor::renderOpaque(CBackgroundActor *this_ptr);
 // Address: 00412940
 CBoundingBox3D * __cdecl CBackgroundActor::getBoundingBox(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_backgnd.cpp_CBackgroundActor_serialize_FUN_00412990
+// Original: core_backgnd.cpp_CBackgroundActor_archive_FUN_00412990
 // Address: 00412990
-void __cdecl CBackgroundActor::serialize(CBackgroundActor *this_ptr);
+void __cdecl CBackgroundActor::archive(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_hasCollision_FUN_004129f0
 // Address: 004129f0

@@ -46,7 +46,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570e20(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570e60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ea0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ec0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570f10(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570fa0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570fc0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00571130(CDemonSet *this_ptr);

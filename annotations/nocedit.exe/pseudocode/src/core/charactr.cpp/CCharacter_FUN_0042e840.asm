@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[11]:
-;   core_scat.cpp_FUN_00557df0 at 00557e4d
+;   core_scat.cpp_CScat_renderOpaque_FUN_00557df0 at 00557e4d
 ;   core_stranger.cpp_CStranger_FUN_005bfb60 at 005bffbd
 ;   core_stranger.cpp_CStranger_FUN_005c07b0 at 005c11a5
 ;   core_stranger.cpp_CStranger_FUN_005c1680 at 005c16b6

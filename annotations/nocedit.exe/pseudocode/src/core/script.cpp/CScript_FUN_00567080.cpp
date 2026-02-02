@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_CScript_FUN_00567080(CScript *this_ptr,char *param_
   byte *pbVar4;
   byte *pbVar5;
   byte bVar6;
-  CCmdParse local_2374 [2122];
+  CCmdParse local_2374;
   byte local_24c [300];
   byte local_120 [256];
   uint local_20;
@@ -24,15 +24,14 @@ void __cdecl core_script_cpp_CScript_FUN_00567080(CScript *this_ptr,char *param_
   iVar3 = 0;
   do {
     iVar2 = core_script_cpp_CCmdParse_parse_FUN_00561fd0
-                      (local_2374,(int)param_2,
-                       *(char **)((int)&PTR_s_label_006441c0_00680e28 + iVar3));
+                      (&local_2374,param_2,*(char **)((int)g_CommandTemplates + iVar3));
     if (iVar2 == 3) {
-      core_script_cpp_FUN_00564090((int)local_2374,param_3);
+      core_script_cpp_FUN_00564090((int)&local_2374,param_3);
       return;
     }
     iVar3 = iVar3 + 4;
   } while (iVar3 < 0x1e0);
-  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {
     param_2 = (char *)((byte *)param_2 + 1);
   }
   pbVar4 = local_24c;
@@ -43,7 +42,7 @@ void __cdecl core_script_cpp_CScript_FUN_00567080(CScript *this_ptr,char *param_
     pbVar4 = pbVar4 + 1;
   }
   *pbVar4 = 0;
-  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {
     param_2 = (char *)((byte *)param_2 + 1);
   }
   if ((*param_2 != 0) || (local_24c[0] == 0)) {

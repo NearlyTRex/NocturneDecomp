@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_0060b133 at 0060b135
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 

@@ -35,7 +35,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042d4d0
 ;   core_game.cpp_CGame_FUN_004e0bf0
 ;   core_hero.cpp_FUN_004f22a0
-;   core_script.cpp_CScript_FUN_00560140
+;   core_script.cpp_CScript_setSpeaker_FUN_00560140
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     MOV EDX,dword ptr [0x00680d50]      ; 00429903 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 00429909 | g_CScriptInstance
     MOV dword ptr [ESI + 0x2618],0x0    ; 0042990a
-    CALL core_script.cpp_CScript_FUN_00560140 ; 00429914
-        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00560140(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_setSpeaker_FUN_00560140 ; 00429914
+        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_00560140(CScript * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00429919
     CMP dword ptr [ESI + 0x2444],0x2    ; 0042991c
         ;   Label: LAB_0042991c

@@ -71,9 +71,9 @@ int __cdecl CZombie(CZombie *this_ptr);
 // Address: 005fbe70
 int __cdecl CZombie(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_serialize_FUN_005fbfd0
+// Original: core_zombie.cpp_CZombie_archive_FUN_005fbfd0
 // Address: 005fbfd0
-void __cdecl CZombie::serialize(CZombie *this_ptr);
+void __cdecl CZombie::archive(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc120
 // Address: 005fc120

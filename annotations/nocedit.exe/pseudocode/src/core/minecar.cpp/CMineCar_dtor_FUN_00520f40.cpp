@@ -19,7 +19,7 @@ core_minecar_cpp_CMineCar_dtor_FUN_00520f40(CMineCar *this_ptr,uint d1,uint d2,u
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)((this_ptr->base).unk1 + 0x20));
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0(&(this_ptr->base).course);
   ptr = (CMineCar *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
   if ((d1 & 2) == 0) {

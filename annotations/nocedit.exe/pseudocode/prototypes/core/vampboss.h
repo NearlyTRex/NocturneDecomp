@@ -43,9 +43,9 @@ void __cdecl FUN_005e6ca0(void);
 // Address: 005e6da0
 int __cdecl CVampireBoss::renderOpaque(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_serialize_FUN_005e6f50
+// Original: core_vampboss.cpp_CVampireBoss_archive_FUN_005e6f50
 // Address: 005e6f50
-void __cdecl CVampireBoss::serialize(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::archive(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_FUN_005e7030
 // Address: 005e7030

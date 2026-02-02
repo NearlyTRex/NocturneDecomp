@@ -27,9 +27,9 @@ void __cdecl CLarva::setup(CLarva *this_ptr);
 // Address: 00503080
 void __cdecl CLarva::process(CLarva *this_ptr,float delta_time);
 
-// Original: core_larva.cpp_CLarva_serialize_FUN_00503960
+// Original: core_larva.cpp_CLarva_archive_FUN_00503960
 // Address: 00503960
-void __cdecl CLarva::serialize(CLarva *this_ptr);
+void __cdecl CLarva::archive(CLarva *this_ptr);
 
 // Original: core_larva.cpp_FUN_005039d0
 // Address: 005039d0

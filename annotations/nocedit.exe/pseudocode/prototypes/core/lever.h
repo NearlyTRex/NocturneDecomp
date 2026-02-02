@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D 
 // Address: 00504dd0
 CVector3f * __cdecl CLever(CLever *this_ptr);
 
-// Original: core_lever.cpp_CLever_serialize_FUN_00504e80
+// Original: core_lever.cpp_CLever_archive_FUN_00504e80
 // Address: 00504e80
-void __cdecl CLever::serialize(CLever *this_ptr);
+void __cdecl CLever::archive(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_hasCollision_FUN_00505060
 // Address: 00505060
@@ -59,21 +59,21 @@ int __cdecl CLever::hasCollision(CLever *this_ptr,SCollisionInfo *collision_info
 // Address: 00505080
 int __cdecl CLever(CLever *this_ptr);
 
-// Original: core_lever.cpp_CLever_FUN_00505100
+// Original: core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100
 // Address: 00505100
-void __cdecl CLever(CLever *this_ptr);
+void __cdecl CLever::propertyDisplayTypeCallback(CLever *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_lever.cpp_CLever_FUN_00505160
+// Original: core_lever.cpp_CLever_propertyActionTypeCallback_FUN_00505160
 // Address: 00505160
-int __cdecl CLever(CLever *this_ptr);
+int __cdecl CLever::propertyActionTypeCallback(CLever *this_ptr,CActorProperty *property);
 
-// Original: core_lever.cpp_CLever_FUN_005051a0
+// Original: core_lever.cpp_CLever_propertyDisplayStateFunc_FUN_005051a0
 // Address: 005051a0
-void __cdecl CLever(CLever *this_ptr);
+void __cdecl CLever::propertyDisplayStateFunc(CLever *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_lever.cpp_CLever_FUN_00505210
+// Original: core_lever.cpp_CLever_propertyActionStateCallback_FUN_00505210
 // Address: 00505210
-int __cdecl CLever(CLever *this_ptr);
+int __cdecl CLever::propertyActionStateCallback(CLever *this_ptr,CActorProperty *property);
 
 // Original: core_lever.cpp_CLever_getPropertyList_FUN_00505240
 // Address: 00505240

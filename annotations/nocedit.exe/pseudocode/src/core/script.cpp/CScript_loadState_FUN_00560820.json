@@ -248,7 +248,7 @@
     },
     {
       "addr": "0310f4a0",
-      "name": "FLOAT_0310f4a0",
+      "name": "g_ScriptTimeScale",
       "type": "float",
       "value": null
     }
@@ -432,7 +432,7 @@
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_2",
-      "text": "_fscanf(param_2,\"%g\\n\",&FLOAT_0310f4a0);",
+      "text": "_fscanf(param_2,\"%g\\n\",&g_ScriptTimeScale);",
       "type": "unnamed_param"
     },
     {
@@ -460,14 +460,14 @@
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_2",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\",&this_ptr->current_message);",
+      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\",this_ptr->current_message);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_2",
-      "text": "_fscanf(param_2,\"\\\"\\n\",&this_ptr->current_message);",
+      "text": "_fscanf(param_2,\"\\\"\\n\",this_ptr->current_message);",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +509,7 @@
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_2",
-      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,&this_ptr->who_is_speaking);",
+      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->who_is_speaking);",
       "type": "unnamed_param"
     },
     {
@@ -523,7 +523,7 @@
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_2",
-      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,&this_ptr->focus_actor);",
+      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->focus_actor);",
       "type": "unnamed_param"
     },
     {
@@ -565,7 +565,7 @@
       "description": "Unnamed function parameter",
       "line": 60,
       "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",pcVar2);",
+      "text": "_fscanf(param_2,\"%d\\n\",piVar2);",
       "type": "unnamed_param"
     },
     {

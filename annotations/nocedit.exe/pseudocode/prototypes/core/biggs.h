@@ -31,9 +31,9 @@ void __cdecl CBiggs::process(CBiggs *this_ptr,float delta_time);
 // Address: 004189b0
 int __cdecl CBiggs::renderOpaque(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_CBiggs_serialize_FUN_00418ac0
+// Original: core_biggs.cpp_CBiggs_archive_FUN_00418ac0
 // Address: 00418ac0
-void __cdecl CBiggs::serialize(CBiggs *this_ptr);
+void __cdecl CBiggs::archive(CBiggs *this_ptr);
 
 // Original: core_biggs.cpp_CBiggs_processDamage_FUN_00418b50
 // Address: 00418b50

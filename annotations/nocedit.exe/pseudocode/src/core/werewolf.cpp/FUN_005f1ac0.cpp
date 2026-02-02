@@ -38,11 +38,11 @@ void __cdecl core_werewolf_cpp_FUN_005f1ac0(void)
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar3 < 5);
   }
-  fVar1 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  fVar1 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   this_ptr = &(in_stack_00000004->base).model;
-  (in_stack_00000004->base).hit_points = (int)fVar1;
+  (in_stack_00000004->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar2->state_index != 0xd) && (pSVar2->state_index != 0xc)) {

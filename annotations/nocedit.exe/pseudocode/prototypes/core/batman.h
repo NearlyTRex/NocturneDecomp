@@ -35,9 +35,9 @@ void __cdecl CBatman::process(CBatman *this_ptr,float delta_time);
 // Address: 004173b0
 int __cdecl CBatman::renderOpaque(CBatman *this_ptr);
 
-// Original: core_batman.cpp_CBatman_serialize_FUN_00417580
+// Original: core_batman.cpp_CBatman_archive_FUN_00417580
 // Address: 00417580
-void __cdecl CBatman::serialize(CBatman *this_ptr);
+void __cdecl CBatman::archive(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_FUN_00417660
 // Address: 00417660

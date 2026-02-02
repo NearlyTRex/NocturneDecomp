@@ -1321,7 +1321,7 @@ section .text
     MOV ESI,dword ptr [0x0067b654]      ; 00514799 | g_CGamePtr
     PUSH ESI                            ; 0051479f | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 005147a0
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame * this_ptr)
     ADD ESP,0x4                         ; 005147a5
     PUSH 0x0                            ; 005147a8
     LEA EAX,[ESP + 0xc]                 ; 005147aa
@@ -2095,7 +2095,7 @@ section .text
     MOV EBP,dword ptr [0x0067b654]      ; 00514f19 | g_CGamePtr
     PUSH EBP                            ; 00514f1f | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 00514f20
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame * this_ptr)
     ADD ESP,0x4                         ; 00514f25
     PUSH 0x6372cc                       ; 00514f28 | = "One or more keys not valid.  Restorin..."
     MOV EAX,[0x00678a60]                ; 00514f2d | g_CEditorToolsInstance | g_CEditorToolsPtr

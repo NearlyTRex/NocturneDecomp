@@ -2,18 +2,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitmap.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CColorQuantizer.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CPod.h"
 #include "types/classes/CPodDependencyRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
+#include "types/classes/CProceduralTexture.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
+#include "types/structs/SActionKeyBindings.h"
 #include "types/structs/SColorBox.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SFoundFileInfo.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
@@ -75,10 +81,10 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_00553410(int scanline,SSoftwareEdge *target_edge);
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00553470(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex_indices,int vertex_count);
-void __cdecl core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void);
-float __cdecl core_procedur_cpp_FUN_00554620(void);
-void __cdecl core_procedur_cpp_FUN_00554670(void);
-void __cdecl core_procedur_cpp_ProceduralTextureMenuPrompt_FUN_00554880(void);
+void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralTexture *this_ptr);
+float __cdecl core_procedur_cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620 (CProceduralTexture *this_ptr,float wave_radius,float frame_index);
+void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670 (CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset);
+void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr);
 CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(CColorQuantizer *this_ptr);
 CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr);
 int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50 (CColorQuantizer *this_ptr,CBitmap *bitmap);
@@ -116,37 +122,37 @@ void __cdecl core_scat_cpp_staticInit_FUN_00556e00(void);
 CScat * __cdecl core_scat_cpp_factoryFunc_FUN_00556e90(void);
 CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_00556ec0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr);
-void __cdecl core_scat_cpp_FUN_00556f90(void);
-void __cdecl core_scat_cpp_FUN_00557150(void);
-void __cdecl core_scat_cpp_FUN_005571f0(void);
-void __cdecl core_scat_cpp_FUN_005578e0(void);
-void __cdecl core_scat_cpp_FUN_00557d20(void);
-void __cdecl core_scat_cpp_CSCat_load_FUN_00557db0(void);
-int __cdecl core_scat_cpp_FUN_00557df0(void);
-void __cdecl core_scat_cpp_FUN_00557ea0(void);
-int __cdecl core_scat_cpp_FUN_00557ff0(void);
-void __cdecl core_scat_cpp_FUN_00558000(void);
-int __cdecl core_scat_cpp_FUN_00558010(void);
-void __cdecl core_scat_cpp_FUN_00558060(void);
-void __cdecl core_scat_cpp_FUN_005582c0(void);
-void __cdecl core_scat_cpp_FUN_005584a0(void);
-void __cdecl core_scat_cpp_FUN_00558720(void);
-int __cdecl core_scat_cpp_FUN_00558cf0(void);
-void __cdecl core_scat_cpp_FUN_00558fd0(void);
-void __cdecl core_scat_cpp_FUN_00559100(void);
-void __cdecl core_scat_cpp_FUN_00559120(void);
-void __cdecl core_scat_cpp_FUN_00559140(void);
+void __cdecl core_scat_cpp_CScat_setup_FUN_00556f90(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00557150(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delta_time);
+void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00557d20(CScat *this_ptr);
+void __cdecl core_scat_cpp_CSCat_archive_FUN_00557db0(CScat *this_ptr);
+int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_scat_cpp_CScat_FUN_00557ff0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00558000(CScat *this_ptr);
+int __cdecl core_scat_cpp_CScat_FUN_00558010(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_005582c0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr);
+int __cdecl core_scat_cpp_CScat_FUN_00558cf0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_onActorDeleted_FUN_00559100(CScat *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_scat_cpp_CScat_getPropertyList_FUN_00559120(CScat *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_scat_cpp_CScat_writeDependencies_FUN_00559140(CScat *this_ptr,_FILE *file_handle);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint d1,uint d2);
 void __cdecl core_script_cpp_staticInit_FUN_005591b0(void);
-int __cdecl core_script_cpp_FUN_00559220(char *param_1);
-void __cdecl core_script_cpp_FUN_005592c0(char *param_1,char *param_2);
-void __cdecl core_script_cpp_FUN_00559360(char *param_1);
-void __cdecl core_script_cpp_FUN_005593d0(char *param_1);
-char * __cdecl core_script_cpp_FUN_005593f0(int *param_1,char *param_2,int param_3);
-void __cdecl core_script_cpp_FUN_005594a0(int param_1,int param_2);
-CHero * __cdecl core_script_cpp_GetDemonActor_FUN_005594e0(char *param_1,uint param_2,int param_3);
-int __cdecl core_script_cpp_FUN_00559660(int param_1,char *param_2);
-int __cdecl core_script_cpp_FUN_00559730(int param_1,char *param_2,int *param_3);
+int __cdecl core_script_cpp_validateActorVariableName_FUN_00559220(char *variable_name);
+void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output_buffer);
+void __cdecl core_script_cpp_trimString_FUN_00559360(char *str);
+char * __cdecl core_script_cpp_skipWhitespaceFUN_005593d0(char *str);
+char * __cdecl core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int max_length);
+void __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer);
+CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0 (char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
+int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660 (SActionKeyBindings *action_bindings,char *action_name);
+int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005597f0(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_FUN_00559870(CScript *this_ptr);
@@ -161,5 +167,5 @@ int * __cdecl core_script_cpp_CScript_FUN_0055a4b0(CScript *this_ptr,int *param_
 void __cdecl core_script_cpp_CScript_FUN_0055a540(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_FUN_0055a6c0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2);
-float __cdecl core_script_cpp_CScript_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4);
+float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00 (CScript *this_ptr,int param_2,char *param_3,char *param_4);
 

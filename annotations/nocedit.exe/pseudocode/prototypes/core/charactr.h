@@ -19,9 +19,9 @@ CCharacter * __cdecl CCharacter::ctor(CCharacter *this_ptr);
 // Address: 00428140
 void __cdecl CCharacter::setup(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_serialize_FUN_004283a0
+// Original: core_charactr.cpp_CCharacter_archive_FUN_004283a0
 // Address: 004283a0
-void __cdecl CCharacter::serialize(CCharacter *this_ptr);
+void __cdecl CCharacter::archive(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
 // Address: 004285d0
@@ -363,13 +363,13 @@ int __cdecl CCharacter(CCharacter *this_ptr);
 // Address: 0042f300
 void __cdecl CCharacter(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042f340
+// Original: core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
 // Address: 0042f340
-void __cdecl CCharacter(CCharacter *this_ptr);
+void __cdecl CCharacter::propertyDisplayCallback(CCharacter *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042f3e0
+// Original: core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
 // Address: 0042f3e0
-int __cdecl CCharacter(void);
+int __cdecl CCharacter::propertyActionCallback(CCharacter *this_ptr,CActorProperty *property);
 
 // Original: core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730
 // Address: 0042f730

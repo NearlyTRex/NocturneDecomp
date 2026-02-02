@@ -10,7 +10,7 @@
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f91a
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004acd94
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055cc1f
-;   core_script.cpp_FUN_005594a0 at 005594d0
+;   core_script.cpp_parseConditionExpr_FUN_005594a0 at 005594d0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d0a45c

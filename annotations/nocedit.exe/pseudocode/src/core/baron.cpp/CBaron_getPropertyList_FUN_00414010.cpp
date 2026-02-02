@@ -12,8 +12,11 @@ core_baron_cpp_CBaron_getPropertyList_FUN_00414010
 
 {
   core_hero_cpp_CHero_getPropertyList_FUN_004f3f20(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e330(property_list);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"Summon condition",this_ptr->unk);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"Go away condition",this_ptr->unk + 100);
+  core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
+            (property_list,"Summoned",(int *)(this_ptr->unk + 0xf8));
   return;
 }

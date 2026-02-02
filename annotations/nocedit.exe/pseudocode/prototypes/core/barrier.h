@@ -31,9 +31,9 @@ int __cdecl CBarrier(CBarrier *this_ptr);
 // Address: 004142e0
 void __cdecl CBarrier(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_serialize_FUN_00414340
+// Original: core_barrier.cpp_CBarrier_archive_FUN_00414340
 // Address: 00414340
-void __cdecl CBarrier::serialize(CBarrier *this_ptr);
+void __cdecl CBarrier::archive(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_FUN_004143a0
 // Address: 004143a0
@@ -43,9 +43,9 @@ int __cdecl CBarrier(CBarrier *this_ptr);
 // Address: 004143e0
 void __cdecl CBarrier(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_00414400
+// Original: core_barrier.cpp_CBarrier_getPropertyList_FUN_00414400
 // Address: 00414400
-void __cdecl CBarrier(CBarrier *this_ptr);
+void __cdecl CBarrier::getPropertyList(CBarrier *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_barrier.cpp_CBarrier_FUN_00414460
 // Address: 00414460

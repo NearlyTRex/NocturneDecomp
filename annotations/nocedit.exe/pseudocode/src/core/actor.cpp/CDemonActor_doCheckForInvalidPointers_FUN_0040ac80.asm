@@ -39,7 +39,7 @@
 ;   TerminatedCString s_core_actor_cpp_00613c1e
 ;   TerminatedCString s_Dangling_corrupt_actor_p_00613c30
 ;   float g_MaxValidPosition = 99999
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   int g_ActorMagicNumber
 ;   char[50] g_ActorDebugBuffer
 ;   undefined4 CHAR_ARRAY_00821fc4

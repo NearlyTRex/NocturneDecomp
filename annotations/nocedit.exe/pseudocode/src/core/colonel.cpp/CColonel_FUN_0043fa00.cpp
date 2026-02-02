@@ -50,7 +50,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043fa00(CColonel *this_ptr)
     return;
   }
   fVar12 = (float)(this_ptr->base).unk1 - in_stack_00000008;
-  (this_ptr->base).unk1 = (int)fVar12;
+  (this_ptr->base).unk1 = (uint)fVar12;
   if (fVar12 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -79,27 +79,24 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043fa00(CColonel *this_ptr)
     case 3:
       if (*(int *)((this_ptr->base).base.unk1 + 4) != 0) {
         iVar6 = 0;
-        if (*(int *)(this_ptr->base).unk2 != 0) {
-          if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+        if ((this_ptr->base).action_bindings.walk_key != 0) {
+          if ((this_ptr->base).action_bindings.run_key == 0) {
             iVar6 = 1;
           }
           else {
             iVar6 = 2;
           }
         }
-        if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+        if ((this_ptr->base).action_bindings.backup_key != 0) {
           iVar6 = 3;
         }
-        if (*(int *)((this_ptr->base).unk2 + 0x18) != 0) {
+        if ((this_ptr->base).action_bindings.draw_key != 0) {
           iVar8 = *(int *)this_ptr->unk;
-          (this_ptr->base).unk2[0x18] = '\0';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 0;
           iVar6 = 0;
           *(uint *)this_ptr->unk = (uint)(iVar8 == 0);
         }
-        if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+        if ((this_ptr->base).action_bindings.fire_key != 0) {
           bVar4 = true;
           if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
             iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -122,15 +119,11 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043fa00(CColonel *this_ptr)
 LAB_0043fd60:
             if (!bVar4) goto LAB_0043fd6e;
           }
-          (this_ptr->base).unk2[0xc] = '\0';
-          (this_ptr->base).unk2[0xd] = '\0';
-          (this_ptr->base).unk2[0xe] = '\0';
-          (this_ptr->base).unk2[0xf] = '\0';
+          (this_ptr->base).action_bindings.fire_key = 0;
         }
 LAB_0043fd6e:
         *(float *)((this_ptr->base).base.unk1 + 0xc) =
-             *(float *)((this_ptr->base).unk2 + 0x24) *
-             *(float *)((this_ptr->base).base.unk1 + 0x2c);
+             *(float *)((this_ptr->base).unk2 + 4) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
         pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
         if (iVar6 != pSVar9->state_index) goto LAB_0043fad3;
@@ -236,7 +229,7 @@ LAB_0043fc01:
     }
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_0043fc01;
-      if (*(int *)((this_ptr->base).unk2 + 0xc) == 0) goto LAB_0043fc14;
+      if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_0043fc14;
       iVar6 = 9;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

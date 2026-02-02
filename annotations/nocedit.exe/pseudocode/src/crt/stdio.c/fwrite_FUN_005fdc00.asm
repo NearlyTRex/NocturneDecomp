@@ -10,14 +10,14 @@
 ; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[23]:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBGHeader_FUN_0054b930 at 0054b967
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 at 0054b64a
-;   cockpit_pkbitmap.cpp_FUN_0054b930 at 0054b967
 ;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 at 004552ab
 ;   core_dcube.cpp_CDemonCube_save_FUN_00457430 at 00457445
 ;   core_dpart.cpp_CDemonPart_write_FUN_00482330 at 00482363
 ;   core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50 at 00494f66
 ;   core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0 at 0049a600
-;   core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0 at 005544cd
+;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 at 005544cd
 ;   core_setdir.cpp_CZThumb_write_FUN_00574b20 at 00574b37
 ;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 at 00577007
 ;   ... and 13 more

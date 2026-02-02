@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910 at 0054b91b
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910 at 0054b91b
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0 at 0054c44c
 ;
 ; Referenced Globals:

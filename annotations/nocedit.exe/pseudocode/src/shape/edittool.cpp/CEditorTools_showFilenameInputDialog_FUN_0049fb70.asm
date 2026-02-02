@@ -45,7 +45,7 @@
 ;   undefined4 DAT_006231b2
 ;   int g_InputKeyMask = 0x7f
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CBitFont* g_EditorFont
 ;   int g_FontCharacterHeight
 ;   ... and 8 more

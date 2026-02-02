@@ -12,8 +12,8 @@
 ;   TerminatedCString s_State_006195bc
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -35,14 +35,14 @@ section .text
     PUSH EBX                            ; 00444c6c
     PUSH 0x6195b6                       ; 00444c6d | = "Model"
     PUSH ESI                            ; 00444c72
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 00444c73
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 00444c73
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00444c78
     PUSH EBX                            ; 00444c7b
     PUSH 0x6195bc                       ; 00444c7c | = "State"
     PUSH ESI                            ; 00444c81
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 00444c82
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 00444c82
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 00444c87
     POP ESI                             ; 00444c8a
     POP EBX                             ; 00444c8b

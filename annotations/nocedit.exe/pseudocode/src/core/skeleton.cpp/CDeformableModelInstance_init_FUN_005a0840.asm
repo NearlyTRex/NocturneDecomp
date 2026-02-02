@@ -9,7 +9,7 @@
 ;
 ; XREF[61]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f544
-;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970 at 0040b9a1
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b970 at 0040b9a1
 ;   core_armour.cpp_CArmour_ctor_FUN_004121a0 at 004121cd
 ;   core_baron.cpp_CBaron_ctor_FUN_00412bc0 at 00412be4
 ;   core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0 at 00415112

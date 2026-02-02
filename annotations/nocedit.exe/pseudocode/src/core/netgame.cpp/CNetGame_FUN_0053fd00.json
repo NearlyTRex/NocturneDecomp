@@ -12,43 +12,42 @@
       {
         "category": "other",
         "column": 36,
-        "line": 28,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 65,
+        "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 99,
+        "line": 96,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 136,
+        "line": 133,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 249,
+    "complexity_score": 232,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 16,
-    "pseudocode_lines": 184,
-    "suspect_count": 5,
+    "pseudocode_lines": 182,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 640
+    "total_lines": 638
   },
   "cross_references": [
     {
@@ -82,27 +81,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00541390",
+      "from_addr": "005416dc",
+      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005406a0",
       "from_addr": "00540f43",
       "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00541390",
-      "from_addr": "005416dc",
-      "name": "core_netgame.cpp_FUN_00541390",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053f860",
       "from_addr": "0053f880",
-      "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f900",
       "from_addr": "0053f912",
-      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -396,36 +395,29 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 176,
       "match": "DAT_02f98ad0",
       "text": "DAT_02f98ad0 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 179,
       "match": "DAT_02f7c8c4",
       "text": "DAT_02f7c8c4 = 0;",
       "type": "undefined_data"

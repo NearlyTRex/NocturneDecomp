@@ -20,6 +20,7 @@ struct _FILE;
 // Dependencies
 #include "system/basetypes.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
+#include "types/funcdefs/CDemonActor_archive.h"
 #include "types/funcdefs/CDemonActor_calculateChecksum.h"
 #include "types/funcdefs/CDemonActor_canPickup.h"
 #include "types/funcdefs/CDemonActor_customGetFloorHeight.h"
@@ -65,7 +66,6 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_renderOpaque.h"
 #include "types/funcdefs/CDemonActor_renderTargetPoints.h"
 #include "types/funcdefs/CDemonActor_renderTransparent.h"
-#include "types/funcdefs/CDemonActor_serialize.h"
 #include "types/funcdefs/CDemonActor_setPositionAndOrientation.h"
 #include "types/funcdefs/CDemonActor_setup.h"
 #include "types/funcdefs/CDemonActor_shouldIgnoreForTargeting.h"
@@ -140,6 +140,6 @@ typedef struct CDemonActor_vtable {
     CDemonActor_showEditorHelp* showEditorHelp; // 0xdc
     CDemonActor_writeDependencies* writeDependencies; // 0xe0
     CDemonActor_dtor* dtor; // 0xe4
-    CDemonActor_serialize* serialize; // 0xe8
+    CDemonActor_archive* archive; // 0xe8
 } CDemonActor_vtable;
 

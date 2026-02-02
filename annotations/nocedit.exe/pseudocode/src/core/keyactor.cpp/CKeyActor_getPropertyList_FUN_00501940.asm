@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Key_mask_00630c8f
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -35,16 +35,16 @@ section .text
     PUSH EAX                            ; 0050195c
     PUSH 0x630c7d                       ; 0050195d | = "Model file (.kfm)"
     PUSH ESI                            ; 00501962
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00501963
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 00501963
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00501968
     PUSH 0x0                            ; 0050196b
     LEA EAX,[EBX + 0x2d4]               ; 0050196d
     PUSH EAX                            ; 00501973
     PUSH 0x630c8f                       ; 00501974 | = "Key mask"
     PUSH ESI                            ; 00501979
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 0050197a
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 0050197a
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050197f
     POP ESI                             ; 00501982
     POP EBX                             ; 00501983

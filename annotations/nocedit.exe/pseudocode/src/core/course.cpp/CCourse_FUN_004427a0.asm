@@ -31,7 +31,7 @@
 ;
 ; XREF[2]:
 ;   core_course.cpp_CCourse_FUN_00442710 at 00442739
-;   core_platfrm.cpp_FUN_0054e530 at 0054e616
+;   core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530 at 0054e616
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00618fab = 0.00100000000000000

@@ -27,9 +27,9 @@ CTVBat * __cdecl CTVBat::ctor(CTVBat *this_ptr);
 // Address: 005e4050
 void __cdecl CTVBat(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_CTVBat_serialize_FUN_005e40c0
+// Original: core_tvbat.cpp_CTVBat_archive_FUN_005e40c0
 // Address: 005e40c0
-void __cdecl CTVBat::serialize(CTVBat *this_ptr);
+void __cdecl CTVBat::archive(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_process_FUN_005e4210
 // Address: 005e4210

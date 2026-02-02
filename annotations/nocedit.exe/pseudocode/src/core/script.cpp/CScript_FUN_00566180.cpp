@@ -9,26 +9,26 @@
 void __cdecl core_script_cpp_CScript_FUN_00566180(CScript *this_ptr,char *param_2)
 
 {
-  CBitFont *font_ptr;
+  CStrList *this_ptr_00;
   int iVar1;
   _FILE *file_ptr;
   int iVar2;
   char *pcVar3;
   
-  font_ptr = (CBitFont *)(this_ptr->unk4 + 0x20);
-  iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(font_ptr);
+  this_ptr_00 = &this_ptr->script_text;
+  iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(this_ptr_00);
   if (iVar1 < 1) {
     return;
   }
   file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",param_2,"wt");
   if (file_ptr != (_FILE *)0x0) {
     iVar1 = 0;
-    CEdScrollBar_0310fd0c.current_value = 0;
+    g_ScriptEditorHScrollBar.current_value = 0;
     while( true ) {
-      iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(font_ptr);
+      iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(this_ptr_00);
       if (iVar2 <= iVar1) break;
-      core_script_cpp_CScript_FUN_00566800(this_ptr,iVar1);
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)font_ptr,iVar1);
+      core_script_cpp_CScript_updateLineMetrics_FUN_00566800(this_ptr,iVar1);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr_00,iVar1);
       iVar1 = iVar1 + 1;
       _fprintf(file_ptr,"%s\n",pcVar3);
     }

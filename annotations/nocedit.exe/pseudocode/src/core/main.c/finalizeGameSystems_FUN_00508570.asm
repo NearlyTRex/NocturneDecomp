@@ -262,7 +262,7 @@ section .text
         ;   Label: LAB_005087aa
     PUSH EBX                            ; 005087b0 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_FUN_0053f830 ; 005087b1
-        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f830()
+        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f830(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 005087b6
     MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | PTR_g_SpecialBitmapsInstance_00680b80
     PUSH ESI                            ; 005087bf | g_CMouseInstance

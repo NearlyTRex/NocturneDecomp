@@ -15,9 +15,9 @@ CEnemy * __cdecl CEnemy::ctor(CEnemy *this_ptr);
 // Address: 004a9650
 void __cdecl CEnemy::setup(CEnemy *this_ptr);
 
-// Original: core_enemy.cpp_CEnemy_serialize_FUN_004a9660
+// Original: core_enemy.cpp_CEnemy_archive_FUN_004a9660
 // Address: 004a9660
-void __cdecl CEnemy::serialize(CEnemy *this_ptr);
+void __cdecl CEnemy::archive(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoints_FUN_004a97c0
 // Address: 004a97c0

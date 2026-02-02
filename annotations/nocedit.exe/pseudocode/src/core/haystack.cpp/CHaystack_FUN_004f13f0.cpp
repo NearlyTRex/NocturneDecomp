@@ -43,7 +43,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
   local_1c = 0.25;
   local_20 = 0.7853982;
   pCVar7 = g_HeroActors[g_LocalHeroIndex];
-  memset((this_ptr->base).unk2,0,0x2c);
+  memset(&(this_ptr->base).action_bindings,0,0x2c);
   if ((this_ptr->base).ai_task != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
     local_48._0_4_ =
@@ -60,10 +60,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       pCVar2 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar2 == (CHero *)0x0) || ((float)20 <= 9999.9)) {
         if (*(int *)this_ptr->unk != 0) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
       }
       else {
@@ -103,28 +100,19 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
                           (local_80.y - (this_ptr->base).base.base.orient.bank);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
         local_20 = -local_18;
-        *(float *)((this_ptr->base).unk2 + 0x24) = fVar6;
+        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
         if (fVar6 < local_20) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = local_20;
+          *(float *)((this_ptr->base).unk2 + 4) = local_20;
         }
-        if (local_18 < *(float *)((this_ptr->base).unk2 + 0x24)) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = local_18;
+        if (local_18 < *(float *)((this_ptr->base).unk2 + 4)) {
+          *(float *)((this_ptr->base).unk2 + 4) = local_18;
         }
         if (((float)10 <= local_8c) || (bVar1)) {
-          (this_ptr->base).unk2[8] = '\x01';
-          (this_ptr->base).unk2[9] = '\0';
-          (this_ptr->base).unk2[10] = '\0';
-          (this_ptr->base).unk2[0xb] = '\0';
-          (this_ptr->base).unk2[0] = '\x01';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).action_bindings.run_key = 1;
+          (this_ptr->base).action_bindings.walk_key = 1;
         }
         else {
-          (this_ptr->base).unk2[0] = '\x01';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).action_bindings.walk_key = 1;
         }
       }
     }
@@ -132,19 +120,13 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar1) {
         if (*(int *)this_ptr->unk == 0) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
         else {
           pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_00->motion_controller);
           if ((pSVar4->state_index != 2) && (pSVar4->state_index != 1)) {
-            (this_ptr->base).unk2[0xc] = '\x01';
-            (this_ptr->base).unk2[0xd] = '\0';
-            (this_ptr->base).unk2[0xe] = '\0';
-            (this_ptr->base).unk2[0xf] = '\0';
+            (this_ptr->base).action_bindings.fire_key = 1;
           }
         }
       }
@@ -152,10 +134,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
         if ((pSVar4->state_index == 10) && (*(int *)this_ptr->unk != 0)) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
       }
       if (bVar1) {
@@ -165,20 +144,20 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
                              (pCVar3->y - (this_ptr->base).base.base.orient.bank);
         fVar6 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
-        *(float *)((this_ptr->base).unk2 + 0x24) = fVar6;
+        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
         if (fVar6 < local_28) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = local_28;
+          *(float *)((this_ptr->base).unk2 + 4) = local_28;
         }
-        if (local_1c < *(float *)((this_ptr->base).unk2 + 0x24)) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = local_1c;
+        if (local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
+          *(float *)((this_ptr->base).unk2 + 4) = local_1c;
         }
-        fVar6 = *(float *)((this_ptr->base).unk2 + 0x24);
+        fVar6 = *(float *)((this_ptr->base).unk2 + 4);
         if ((((float)-0.25 < fVar6) && ((double)fVar6 < 0.25)) &&
-           (*(int *)((this_ptr->base).unk2 + 0xc) != 0)) {
-          (this_ptr->base).unk2[0x24] = '\0';
-          (this_ptr->base).unk2[0x25] = '\0';
-          (this_ptr->base).unk2[0x26] = '\0';
-          (this_ptr->base).unk2[0x27] = '\0';
+           ((this_ptr->base).action_bindings.fire_key != 0)) {
+          (this_ptr->base).unk2[4] = '\0';
+          (this_ptr->base).unk2[5] = '\0';
+          (this_ptr->base).unk2[6] = '\0';
+          (this_ptr->base).unk2[7] = '\0';
         }
       }
     }

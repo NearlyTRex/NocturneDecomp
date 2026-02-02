@@ -26,7 +26,7 @@
 ;   TerminatedCString s_core_setedit_cpp_00646911
 ;   TerminatedCString s_Imported_texture_ground__00646925
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

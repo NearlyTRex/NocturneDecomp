@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 004d7b94
     MOV dword ptr [EBX + 0xbc],0x0      ; 004d7b95
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 004d7b9f
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame * this_ptr)
     MOV byte ptr [EBX + 0xd0],0x0       ; 004d7ba4
     MOV dword ptr [EBX + 0x1d0],0x0     ; 004d7bab
     MOV dword ptr [EBX + 0x1d4],0x0     ; 004d7bb5

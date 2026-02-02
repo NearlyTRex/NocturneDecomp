@@ -12,6 +12,9 @@
 void __cdecl core_conveyor_cpp_FUN_004422f0(void)
 
 {
-  core_platfrm_cpp_FUN_0054f2a0();
+  CPlatform *in_stack_00000004;
+  _FILE *in_stack_00000008;
+  
+  core_platfrm_cpp_CPlatform_writeDependencies_FUN_0054f2a0(in_stack_00000004,in_stack_00000008);
   return;
 }

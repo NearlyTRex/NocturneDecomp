@@ -17,7 +17,7 @@
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 at 0052d9d5
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0 at 0052ddd1
 ;   core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0 at 0052dc51
-;   core_passngr.cpp_FUN_00545d30 at 00545edb
+;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545edb
 ;
 ; Referenced Globals:
 ;   float g_MotionControllerTargetFrameEnd2 = -1

@@ -15,7 +15,7 @@ core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharacter *this_ptr
   
   core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(&this_ptr->base,out_crc);
   string_00 = (this_ptr->model).model_name;
-  core_actor_cpp_crc32ProcessInt_FUN_0040cf50(out_crc,this_ptr->hit_points);
+  core_actor_cpp_crc32ProcessInt_FUN_0040cf50(out_crc,(int)this_ptr->hit_points);
   if (*string_00 == '\0') {
     return;
   }

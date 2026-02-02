@@ -11,8 +11,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitm
 {
   this_ptr->bitmap_count = 0;
   this_ptr->bitmap_array = (CPackedBitmap *)0x0;
-  this_ptr->extension = 0;
-  this_ptr->base_path = 0;
+  this_ptr->width = 0;
+  this_ptr->height = 0;
   memset(this_ptr->filename,0,0x14);
   return;
 }

@@ -17,7 +17,7 @@
 ;   core_hero.cpp_CHero_FUN_004f38d0 at 004f38fc
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f4ec8
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 at 004fe9c1
-;   core_scat.cpp_FUN_00557150 at 0055719a
+;   core_scat.cpp_CScat_FUN_00557150 at 0055719a
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bcd8
 ;
 ; Referenced Globals:

@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_enemy.cpp_CEnemy_FUN_004a9fa0 at 004a9fc1
-;   core_npc.cpp_CNPC_FUN_00544b70 at 00544b91
+;   core_npc.cpp_CNPC_renderBackground_FUN_00544b70 at 00544b91
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40

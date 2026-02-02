@@ -17,7 +17,7 @@
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 53,
         "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -29,7 +29,7 @@
       },
       {
         "category": "other",
-        "column": 68,
+        "column": 66,
         "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -107,7 +107,7 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 60,
         "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -154,29 +154,29 @@
   },
   "function_calls": [
     {
-      "addr": "0040c1c0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
-    },
-    {
       "addr": "0040b770",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
     },
     {
       "addr": "0040b7f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
     },
     {
       "addr": "0040b5c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
     },
     {
       "addr": "0040b340",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeVector_FUN_0040b340"
+      "name": "core_actor.cpp_archiveVector_FUN_0040b340"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
     }
   ],
   "globals": [
@@ -376,7 +376,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -390,7 +390,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[1].actor_name + 0x14),\"curtainTexture\");",
+      "text": "(in_stack_00000004[1].actor_name + 0x14,\"curtainTexture\");",
       "type": "stack_param"
     },
     {
@@ -516,7 +516,7 @@
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[1].orient_matrix,\"letGoEvent\");",
+      "text": "((char *)&in_stack_00000004[1].orient_matrix,\"letGoEvent\");",
       "type": "stack_param"
     },
     {

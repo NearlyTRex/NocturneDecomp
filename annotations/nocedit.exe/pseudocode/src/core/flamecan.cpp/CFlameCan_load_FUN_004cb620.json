@@ -29,7 +29,7 @@
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 61,
         "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -63,29 +63,29 @@
   },
   "function_calls": [
     {
-      "addr": "0040c1c0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
-    },
-    {
       "addr": "0040b770",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
     },
     {
       "addr": "0040b7f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
     },
     {
       "addr": "0040b8f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
     },
     {
       "addr": "0040b5c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
     }
   ],
   "globals": [
@@ -161,7 +161,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -189,7 +189,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[2].location.area_id,\"onFireCondition\");",
+      "text": "((char *)&in_stack_00000004[2].location.area_id,\"onFireCondition\");",
       "type": "stack_param"
     }
   ],

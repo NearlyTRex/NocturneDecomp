@@ -32,12 +32,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
           (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12), iVar4 != 0)) &&
          (iVar4 = 1 - this_ptr->is_game_active, this_ptr->is_game_active = iVar4, iVar4 != 0)) {
         core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-                  (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focus_actor,1);
-        pCVar2 = g_CScriptPtr;
-        pCVar2->unk3[0] = '\0';
-        pCVar2->unk3[1] = '\0';
-        pCVar2->unk3[2] = '\0';
-        pCVar2->unk3[3] = '\0';
+                  (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+        g_CScriptPtr->unk2 = 0;
       }
       if ((this_ptr->is_game_active == 0) &&
          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e), iVar4 != 0)) {
@@ -180,42 +176,28 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
     }
     if (this_ptr->is_paused == 0) {
-      if ((*(int *)g_CScriptPtr->unk4 != 2) &&
+      if ((g_CScriptPtr->script_state != 2) &&
          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f),
          pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
         this_ptr->screen_clear_enabled = 1;
         core_set_cpp_CDemonSet_FUN_0056b7e0(pCVar3,0,0,0xf0);
         pCVar2 = g_CScriptPtr;
         this_ptr->subtitle_system_enabled = 1;
-        if (*(int *)pCVar2->unk4 == 1) {
-          pCVar2->unk4[0] = '\0';
-          pCVar2->unk4[1] = '\0';
-          pCVar2->unk4[2] = '\0';
-          pCVar2->unk4[3] = '\0';
+        if (pCVar2->script_state == 1) {
+          pCVar2->script_state = 0;
         }
         else {
-          pCVar2->unk4[0] = '\x01';
-          pCVar2->unk4[1] = '\0';
-          pCVar2->unk4[2] = '\0';
-          pCVar2->unk4[3] = '\0';
+          pCVar2->script_state = 1;
         }
       }
       if (this_ptr->subtitle_system_enabled != 0) {
-        if ((*(int *)g_CScriptPtr->unk4 == 2) &&
+        if ((g_CScriptPtr->script_state == 2) &&
            (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x44), iVar4 != 0)) {
-          pCVar2 = g_CScriptPtr;
-          pCVar2->unk4[0] = '\x01';
-          pCVar2->unk4[1] = '\0';
-          pCVar2->unk4[2] = '\0';
-          pCVar2->unk4[3] = '\0';
+          g_CScriptPtr->script_state = 1;
         }
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f);
         if (iVar4 != 0) {
-          pCVar2 = g_CScriptPtr;
-          pCVar2->unk4[0] = '\0';
-          pCVar2->unk4[1] = '\0';
-          pCVar2->unk4[2] = '\0';
-          pCVar2->unk4[3] = '\0';
+          g_CScriptPtr->script_state = 0;
         }
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x43);
         if (iVar4 != 0) {

@@ -43,9 +43,9 @@ void __cdecl FUN_005f1230(void);
 // Address: 005f1820
 int __cdecl CWerewolf(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_CWerewolf_serialize_FUN_005f1980
+// Original: core_werewolf.cpp_CWerewolf_archive_FUN_005f1980
 // Address: 005f1980
-void __cdecl CWerewolf::serialize(CWerewolf *this_ptr);
+void __cdecl CWerewolf::archive(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_FUN_005f1ac0
 // Address: 005f1ac0

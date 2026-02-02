@@ -18,7 +18,7 @@ core_actor_cpp_matchClassExpression_FUN_0040c610(CDemonActorType *type_ptr,char 
   iVar4 = 0;
   while( true ) {
     while( true ) {
-      while ((g_CharacterClassificationTable[(byte)(**parse_pos + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(**parse_pos + 1)] & 2) != 0) {
         *parse_pos = *parse_pos + 1;
       }
       pcVar2 = *parse_pos;

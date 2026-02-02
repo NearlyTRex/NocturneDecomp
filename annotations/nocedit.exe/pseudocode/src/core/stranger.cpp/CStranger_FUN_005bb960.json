@@ -40,19 +40,19 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 605,
+        "line": 602,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 605,
+        "line": 602,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "syntax_error",
         "column": 31,
-        "line": 632,
+        "line": 629,
         "message": "expected primary-expression before ')' token"
       },
       {
@@ -64,7 +64,7 @@
       {
         "category": "other",
         "column": 5,
-        "line": 1028,
+        "line": 1025,
         "message": "lvalue required as left operand of assignment"
       }
     ],
@@ -169,92 +169,98 @@
       {
         "category": "other",
         "column": 23,
-        "line": 605,
+        "line": 602,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 611,
+        "line": 608,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 612,
+        "line": 609,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 613,
+        "line": 610,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 632,
+        "line": 629,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 640,
+        "line": 637,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 690,
+        "line": 687,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 745,
+        "line": 742,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 984,
+        "line": 981,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 1006,
+        "line": 1003,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1061,
+        "line": 1058,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1085,
+        "line": 1082,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1098,
+        "line": 1095,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 1156,
+        "line": 1153,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 1201,
+        "line": 1198,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 1207,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -264,25 +270,19 @@
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 1213,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 45,
-        "line": 1225,
+        "line": 1222,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 1780,
+    "complexity_score": 1777,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
-    "pseudocode_lines": 1220,
+    "pseudocode_lines": 1217,
     "suspect_count": 54,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -290,7 +290,7 @@
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 3966
+    "total_lines": 3963
   },
   "cross_references": [
     {
@@ -1176,259 +1176,259 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 598,
+      "line": 595,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar20 + 0x154) + 0x90))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 608,
+      "line": 605,
       "match": "in_stack_00000008",
       "text": "(float)0.5 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 617,
+      "line": 614,
       "match": "in_stack_00000008",
       "text": "(float)0.5 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 625,
+      "line": 622,
       "match": "code *",
       "text": "iVar20 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk4 + 0x14) + 0x154) + 0x98))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 635,
+      "line": 632,
       "match": "in_stack_fffffd10",
       "text": "in_stack_fffffd10 = (double)fVar18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 637,
+      "line": 634,
       "match": "in_stack_fffffd10",
       "text": "if (in_stack_fffffd10 <= 0.01) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 695,
+      "line": 692,
       "match": "in_stack_00000008",
       "text": "if (*(float *)(this_ptr->unk2 + 0x228) <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 703,
+      "line": 700,
       "match": "in_stack_00000008",
       "text": "fStack_2c0 = in_stack_00000008 / *(float *)(this_ptr->unk2 + 0x228);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 705,
+      "line": 702,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk2 + 0x228) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 751,
+      "line": 748,
       "match": "in_stack_00000008",
       "text": "if (*(float *)(this_ptr->unk2 + 0x228) <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 759,
+      "line": 756,
       "match": "in_stack_00000008",
       "text": "fStack_2d8 = in_stack_00000008 / *(float *)(this_ptr->unk2 + 0x228);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 760,
+      "line": 757,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk2 + 0x228) = *(float *)(this_ptr->unk2 + 0x228) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 815,
+      "line": 812,
       "match": "in_stack_00000008",
       "text": "fStack_44 = 18.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 843,
+      "line": 840,
       "match": "in_stack_00000008",
       "text": "fVar18 = fVar18 - in_stack_00000008 * fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 856,
+      "line": 853,
       "match": "in_stack_00000008",
       "text": "fStack_210 = *(float *)(this_ptr->unk2 + 0x58) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 863,
+      "line": 860,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk2 + 0x58) - fVar4 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 865,
+      "line": 862,
       "match": "in_stack_00000008",
       "text": "*(float *)((this_ptr->base).base.unk1 + 0x20) = fVar18 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 887,
+      "line": 884,
       "match": "in_stack_00000008",
       "text": "fStack_210 = 10.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 891,
+      "line": 888,
       "match": "in_stack_00000008",
       "text": "fVar18 = fVar18 - in_stack_00000008 * fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 907,
+      "line": 904,
       "match": "in_stack_00000008",
       "text": "fStack_210 = *(float *)(this_ptr->unk2 + 0x58) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 914,
+      "line": 911,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk2 + 0x58) - fVar4 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 916,
+      "line": 913,
       "match": "in_stack_00000008",
       "text": "*(float *)((this_ptr->base).base.unk1 + 0x20) = fVar18 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 930,
+      "line": 927,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 942,
+      "line": 939,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 946,
+      "line": 943,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 955,
+      "line": 952,
       "match": "in_stack_00000008",
       "text": "fStack_158 = *(float *)((this_ptr->base).base.unk1 + 0x1c) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 956,
+      "line": 953,
       "match": "in_stack_00000008",
       "text": "fStack_154 = *(float *)((this_ptr->base).base.unk1 + 0x20) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 957,
+      "line": 954,
       "match": "in_stack_00000008",
       "text": "fStack_150 = in_stack_00000008 * *(float *)((this_ptr->base).base.unk1 + 0x24);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1004,
+      "line": 1001,
       "match": "in_stack_fffffd10",
       "text": "in_stack_fffffd10 = 2.12199579936439e-314;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1007,
+      "line": 1004,
       "match": "in_stack_fffffd10",
       "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1007,
+      "line": 1004,
       "match": "SUB84",
       "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1008,
+      "line": 1005,
       "match": "in_stack_fffffd10",
       "text": "(int)((ulonglong)in_stack_fffffd10 >> 0x20));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1023,
+      "line": 1020,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk2 + 0x54) = *(float *)(this_ptr->unk2 + 0x54) + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1105,
+      "line": 1102,
       "match": "in_stack_00000008",
       "text": "fVar18 = *(float *)this_ptr->unk1 - in_stack_00000008 / 1.2f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1115,
+      "line": 1112,
       "match": "in_stack_00000008",
       "text": "fVar18 = in_stack_00000008 / 1.1f + *(float *)this_ptr->unk1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1124,
+      "line": 1121,
       "match": "in_stack_00000008",
       "text": "fVar18 = *(float *)(this_ptr->unk1 + 0x20) - in_stack_00000008 / 0.2f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1136,
+      "line": 1133,
       "match": "in_stack_00000008",
       "text": "fVar18 = *(float *)(this_ptr->unk1 + 0x40) - in_stack_00000008 / 0.2f;",
       "type": "stack_param"

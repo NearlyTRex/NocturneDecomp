@@ -18,11 +18,11 @@
 void __cdecl core_script_cpp_FUN_005644e0(void)
 
 {
-  DAT_031141c4 = 0xffffffff;
+  g_SelectionStartLine = -1;
   DAT_0310fd4c = 0xffffffff;
   DAT_0310fd50 = 0xffffffff;
-  DAT_031141c0 = 0xffffffff;
-  DAT_031141cc = 0xffffffff;
-  DAT_031141c8 = 0xffffffff;
+  g_SelectionStartColumn = -1;
+  g_SelectionEndLine = -1;
+  g_SelectionEndColumn = -1;
   return;
 }

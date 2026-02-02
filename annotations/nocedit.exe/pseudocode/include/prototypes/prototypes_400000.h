@@ -18,10 +18,15 @@
 #include "types/classes/COrientation.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CQuaternion4f.h"
+#include "types/classes/CRuleList.h"
 #include "types/classes/CSimBox.h"
 #include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/EActorPropertyType.h"
+#include "types/funcdefs/CDemonActor_CActorPropertyActionFunc.h"
+#include "types/funcdefs/CDemonActor_CActorPropertyDisplayFunc.h"
+#include "types/funcdefs/CDemonActor_CActorPropertyValidatorFunc.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
 #include "types/structs/SAnimatedTexture.h"
 #include "types/structs/SClipPlane.h"
@@ -290,24 +295,24 @@ int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
 void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,_FILE *file_handle);
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle);
 void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210 (char *property_description,char *property_type);
-void __cdecl core_actor_cpp_serializeDescription_FUN_0040b290(char *property_description,char *property_name);
-void __cdecl core_actor_cpp_serializeVector_FUN_0040b340(CVector3f *vector_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type);
-void __cdecl core_actor_cpp_serializeString_FUN_0040b5c0(char **string_buffer,char *property_type);
-void __cdecl core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(char **string_buffer,char *localization_key);
-void __cdecl core_actor_cpp_serializeFloat_FUN_0040b770(float *float_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0 (CKeyFramedModelInstance *model_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970 (CDeformableModelInstance *model_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeMotionState_FUN_0040b9f0 (CMotionController *motion_controller,char *property_name);
-void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *property_name);
-void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,char *property_name);
-void __cdecl core_actor_cpp_serializeClothList_FUN_0040be60(CClothList *cloth_list,char *property_name);
-void __cdecl core_actor_cpp_serializeRules_FUN_0040c000(void *rules,char *property_name);
-void __cdecl core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor *this_ptr);
+void __cdecl core_actor_cpp_archiveDescription_FUN_0040b290(char *property_description,char *property_name);
+void __cdecl core_actor_cpp_archiveVector_FUN_0040b340(CVector3f *vector_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveLocation_FUN_0040b480(CLocation *location_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type);
+void __cdecl core_actor_cpp_archiveString_FUN_0040b5c0(char *string_buffer,char *property_type);
+void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040b6e0(char *string_buffer,char *localization_key);
+void __cdecl core_actor_cpp_archiveFloat_FUN_0040b770(float *float_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveInteger_FUN_0040b7f0(int *int_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor *actor_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0 (CKeyFramedModelInstance *model_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970 (CDeformableModelInstance *model_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0 (CMotionController *motion_controller,char *property_name);
+void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(void *part,char *property_name);
+void __cdecl core_actor_cpp_archiveSimBox_FUN_0040bd70(CSimBox *simbox_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveClothList_FUN_0040be60(CClothList *cloth_list,char *property_name);
+void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(void *rules,char *property_name);
+void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_ptr);
 uint __cdecl core_actor_cpp_updateClassNameHash_FUN_0040c260(uint current_hash,int character);
 uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name);
 CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0 (CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func, int *max_version,int version,CDemonActorType *parent_class_info);
@@ -347,7 +352,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 void __cdecl core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int *y_pos);
 void __cdecl core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (int *y_position,char *left_text,char *right_text);
 void __cdecl core_actor_cpp_drawTextLine_FUN_0040d240(int *y_position,char *text);
-void __cdecl core_actor_cpp_FUN_0040d270(void);
+void __cdecl core_actor_cpp_CDemonActor_FUN_0040d270(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290 (CDemonActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset);
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color);
@@ -355,31 +360,31 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
 void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_FUN_0040e130(void);
 void __cdecl core_actor_cpp_FUN_0040e150(void);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e220(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e2d0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e300(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList *this_ptr);
-int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList *this_ptr);
-int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e3e0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e480(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e500(CActorPropertyList *this_ptr);
-int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e5a0(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList *this_ptr);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e6a0(CActorPropertyList *this_ptr);
-int __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,int property_type,char *property_name,void *data_ptr, void *callback_or_extra);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e770 (CActorPropertyList *this_ptr,int param_2,int param_3,int param_4);
-void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e850(void);
-int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e9c0(void);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160 (CActorPropertyList *this_ptr,char *property_name,float *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 (CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260 (CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,int default_index, char *choices,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 (CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr, int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path, char *extension,int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 (CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr, int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0 (CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500 (CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 (CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640 (CActorPropertyList *this_ptr,void *pairs,int num_pairs,int *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670 (CActorPropertyList *this_ptr,char *property_name, CDemonActor_CActorPropertyDisplayFunc *display_callback, CDemonActor_CActorPropertyActionFunc *action_callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFlags_FUN_0040e6a0 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,void *callback);
+void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770 (CActorPropertyList *this_ptr,int x,int y,int width);
+void __cdecl core_actor_cpp_CActorPropertyList_render_FUN_0040e850 (CActorPropertyList *this_ptr,int selected_index);
+int __cdecl core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList *this_ptr,int x,int y);
 void __cdecl core_actor_cpp_CActorProperty_FUN_0040ea50(void);
 void __cdecl core_actor_cpp_FUN_0040ee30(void);
 void __cdecl core_actor_cpp_FUN_0040ee50(void);

@@ -10,21 +10,17 @@
 typedef struct CPendulum {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int start_event; // 0x2d4
-    char unk1[96]; // 0x2d8
-    int stop_event; // 0x338
-    char unk2[96]; // 0x33c
+    char start_event[100]; // 0x2d4
+    char stop_event[100]; // 0x338
     int moving; // 0x39c
     float param; // 0x3a0
     char unk3[4]; // 0x3a4
     float max_angle; // 0x3a8
-    char* swoosh_sound; // 0x3ac
-    char unk4[28]; // 0x3b0
+    char swoosh_sound[32]; // 0x3ac
     float swoosh_phase_bias; // 0x3cc
-    char* creak_1_sound; // 0x3d0
-    char unk5[28]; // 0x3d4
-    char* creak_2_sound; // 0x3f0
-    char unk6[52]; // 0x3f4
+    char creak_1_sound[32]; // 0x3d0
+    char creak_2_sound[32]; // 0x3f0
+    char unk2[24]; // 0x410
     int kill_hero; // 0x428
     int kill_enemy; // 0x42c
     float decay; // 0x430

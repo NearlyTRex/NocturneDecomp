@@ -22,11 +22,11 @@ void __cdecl core_cow_cpp_FUN_00444b40(void)
   int desired_state_index;
   
   core_cow_cpp_FUN_004448c0();
-  fVar1 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  fVar1 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   this_ptr = &(in_stack_00000004->base).model;
-  (in_stack_00000004->base).hit_points = (int)fVar1;
+  (in_stack_00000004->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar2->state_index == 5) || (pSVar2->state_index == 4)) goto LAB_00444b80;

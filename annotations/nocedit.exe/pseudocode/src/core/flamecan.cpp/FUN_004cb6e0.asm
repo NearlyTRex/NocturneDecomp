@@ -11,10 +11,10 @@
 ;   TerminatedCString s_Event_to_catch_on_fire_0062a349
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -36,30 +36,30 @@ section .text
     PUSH EAX                            ; 004cb6fc
     PUSH 0x62a31f                       ; 004cb6fd | = "Model file (.kfm)"
     PUSH ESI                            ; 004cb702
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004cb703
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 004cb703
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 004cb708
     PUSH 0x0                            ; 004cb70b
     LEA EAX,[EBX + 0x2d8]               ; 004cb70d
     PUSH EAX                            ; 004cb713
     PUSH 0x62a331                       ; 004cb714 | = "Time to explode"
     PUSH ESI                            ; 004cb719
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 004cb71a
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004cb71a
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004cb71f
     LEA EAX,[EBX + 0x2d4]               ; 004cb722
     PUSH EAX                            ; 004cb728
     PUSH 0x62a341                       ; 004cb729 | = "On fire"
     PUSH ESI                            ; 004cb72e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 004cb72f
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 004cb72f
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 004cb734
     ADD EBX,0x2dc                       ; 004cb737
     PUSH EBX                            ; 004cb73d
     PUSH 0x62a349                       ; 004cb73e | = "Event to catch on fire"
     PUSH ESI                            ; 004cb743
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004cb744
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 004cb744
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004cb749
     POP ESI                             ; 004cb74c
     POP EBX                             ; 004cb74d

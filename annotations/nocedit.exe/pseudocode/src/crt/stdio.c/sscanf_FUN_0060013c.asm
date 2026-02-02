@@ -17,8 +17,8 @@
 ;   core_event.cpp_FUN_004aa530 at 004aa56d
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdbe7
 ;   core_mission.cpp_CDemonMission_FUN_00524660 at 005246e4
-;   core_script.cpp_CScript_FUN_0055ff00 at 0055ff79
 ;   core_script.cpp_CScript_FUN_00566fa0 at 00566fdc
+;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff79
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bc00
 ;   ... and 37 more
 ;

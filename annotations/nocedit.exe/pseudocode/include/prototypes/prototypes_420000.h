@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBox.h"
@@ -62,7 +63,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
 int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_00421e00(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_00421ef0(CBoxActor *this_ptr);
 CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00421fe0(CBoxActor *this_ptr,CBoundingBox3D *out_box);
-void __cdecl core_boxactor_cpp_CBoxActor_serialize_FUN_00422060(CBoxActor *this_ptr);
+void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_00422330(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340 (CBoxActor *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr);
@@ -83,14 +84,14 @@ CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_0042298
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_00422a20(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time);
-void __cdecl core_boxactor_cpp_CLightActor_serialize_FUN_00422c80(CLightActor *this_ptr);
+void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_00422c80(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr);
 char * __cdecl core_boxactor_cpp_FUN_0042307e(int param_1);
 int __cdecl core_boxactor_cpp_FUN_00423110(void);
-void __cdecl core_boxactor_cpp_CLightActor_FUN_00423310(CLightActor *this_ptr);
-int __cdecl core_boxactor_cpp_CLightActor_FUN_00423380(void);
-void __cdecl core_boxactor_cpp_CLightActor_FUN_00423400(void);
-int __cdecl core_boxactor_cpp_CLightActor_FUN_00423440(void);
+void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_boxactor_cpp_CLightActor_propertyActionTypeCallback_FUN_00423380 (CLightActor *this_ptr,CActorProperty *property);
+void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_boxactor_cpp_CLightActor_propertyActionFOVCallback_FUN_00423440 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 void __cdecl core_boxactor_cpp_CLightActor_getPropertyList_FUN_004234e0 (CLightActor *this_ptr,CActorPropertyList *property_list);
 int __cdecl core_boxactor_cpp_CLightActor_initializeInEditor_FUN_00423590(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_FUN_004235c0(CLightActor *this_ptr);
@@ -104,7 +105,7 @@ CDemonActorType * __cdecl core_bride_cpp_CBride_getActorType_FUN_00423790(CBride
 CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr);
 void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr);
 void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float delta_time);
-void __cdecl core_bride_cpp_CBride_serialize_FUN_00424560(CBride *this_ptr);
+void __cdecl core_bride_cpp_CBride_archive_FUN_00424560(CBride *this_ptr);
 void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr);
 void __cdecl core_bride_cpp_FUN_00424800(void);
 void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *damage_info);
@@ -167,7 +168,7 @@ void __cdecl core_charactr_cpp_staticInit_FUN_00427d80(void);
 SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo *this_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *this_ptr);
+void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0 (CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 float __cdecl core_charactr_cpp_FUN_00428620(void);
 float __cdecl core_charactr_cpp_FUN_00428670(void);
@@ -253,8 +254,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042f300(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_FUN_0042f340(CCharacter *this_ptr);
-int __cdecl core_charactr_cpp_CCharacter_FUN_0042f3e0(void);
+void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340 (CCharacter *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 (CCharacter *this_ptr,CActorProperty *property);
 void __cdecl core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730 (CCharacter *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0 (CCharacter *this_ptr,CDemonActor *deleted_actor);

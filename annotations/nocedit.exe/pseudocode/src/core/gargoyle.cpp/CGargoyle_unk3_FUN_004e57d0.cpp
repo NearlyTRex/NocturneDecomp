@@ -32,8 +32,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
                      (&this_ptr->motion_controller);
   if (pSVar1->state_index != 5) {
     core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530();
-    fVar2 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
-    (in_stack_00000004->base).hit_points = (int)fVar2;
+    fVar2 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+    (in_stack_00000004->base).hit_points = fVar2;
     if (0.0 < fVar2) {
       iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                         ((uint)in_stack_00000004[1].base.base.orient_matrix.m[1].x);
@@ -48,7 +48,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
     else {
       sound_sndmain_cpp_killSfx_FUN_005a9c40
                 ((uint)in_stack_00000004[1].base.base.orient_matrix.m[1].x);
-      (in_stack_00000004->base).hit_points = 0;
+      (in_stack_00000004->base).hit_points = 0.0;
       pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr->motion_controller);
       if (pSVar1->state_index != 8) {

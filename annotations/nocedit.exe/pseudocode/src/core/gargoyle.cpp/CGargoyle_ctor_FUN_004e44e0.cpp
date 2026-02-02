@@ -33,7 +33,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle *thi
   (pCVar1->base).unk2[0x71] = '\0';
   (pCVar1->base).unk2[0x72] = '\0';
   (pCVar1->base).unk2[0x73] = '\0';
-  (pCVar4->base).base.hit_points = 0x41f00000;
+  (pCVar4->base).base.hit_points = 30.0;
   (pCVar4->base).base.base.scale.x = 0xffff;
   (pCVar4->base).base.base.scale.y = 0xffff;
   (pCVar4->base).base.base.scale.z = 0xffff;

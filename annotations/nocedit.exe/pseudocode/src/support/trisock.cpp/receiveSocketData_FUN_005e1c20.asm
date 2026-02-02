@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_FUN_00540550 at 0054058e
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0 at 0054061d
-;   core_netgame.cpp_FUN_00540550 at 0054058e
 ;
 ; Called Functions:
 ;   crt_wsock32.c_recv

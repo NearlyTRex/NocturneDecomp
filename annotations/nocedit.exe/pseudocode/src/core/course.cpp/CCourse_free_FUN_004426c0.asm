@@ -11,7 +11,7 @@
 ;   core_course.cpp_CCourse_dtor_FUN_004424e0 at 004424e6
 ;   core_course.cpp_CCourse_load_FUN_00442580 at 00442590
 ;   core_moon.cpp_CMoon_free_FUN_00529ce0 at 00529cf5
-;   core_platfrm.cpp_FUN_0054e530 at 0054e61f
+;   core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530 at 0054e61f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_course_cpp_00618f98

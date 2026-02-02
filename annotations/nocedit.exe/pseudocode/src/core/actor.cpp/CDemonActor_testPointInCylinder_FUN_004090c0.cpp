@@ -25,7 +25,7 @@ core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0
       ((collision_info->position).y <= (float)local_30.result_ptr + in_stack_00000014)) &&
      (fVar1 = (collision_info->position).z, fVar2 = (collision_info->position).x,
      fVar2 * fVar2 + fVar1 * fVar1 <=
-     ((float)local_30.unk5 + in_stack_00000014) * ((float)local_30.unk5 + in_stack_00000014))) {
+     ((float)local_30.model + in_stack_00000014) * ((float)local_30.model + in_stack_00000014))) {
     return 1;
   }
   return 0;

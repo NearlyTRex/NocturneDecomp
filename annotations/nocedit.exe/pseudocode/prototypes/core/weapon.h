@@ -31,9 +31,9 @@ int * __cdecl CWeapon(CWeapon *this_ptr);
 // Address: 005ee110
 void __cdecl CWeapon::process(CWeapon *this_ptr,float delta_time);
 
-// Original: core_weapon.cpp_CWeapon_serialize_FUN_005ee250
+// Original: core_weapon.cpp_CWeapon_archive_FUN_005ee250
 // Address: 005ee250
-void __cdecl CWeapon::serialize(CWeapon *this_ptr);
+void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee330
 // Address: 005ee330

@@ -22,7 +22,7 @@
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd82b
 ;   core_mission.cpp_CDemonMission_FUN_005235b0 at 005235cf
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d190 at 0053d1dd
-;   core_script.cpp_FUN_00562920 at 00563546
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00563546
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005988df
 ;   ... and 13 more
 ;

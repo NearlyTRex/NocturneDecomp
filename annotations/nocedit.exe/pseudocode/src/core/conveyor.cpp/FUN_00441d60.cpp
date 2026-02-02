@@ -11,44 +11,48 @@
 void __cdecl core_conveyor_cpp_FUN_00441d60(void)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  CLocation *pCVar1;
+  CVector3f *pCVar2;
   uint *puVar3;
   uint *puVar4;
-  byte bVar5;
-  int in_stack_00000004;
+  uint *puVar5;
+  uint *puVar6;
+  byte bVar7;
+  CPlatform *in_stack_00000004;
   float afStackY_17f8 [1526];
   CQuaternion4f local_1c;
   
-  bVar5 = 0;
-  puVar1 = (uint *)(in_stack_00000004 + 0x328);
-  if (puVar1 != (uint *)(in_stack_00000004 + 0x20)) {
-    *puVar1 = *(uint *)(in_stack_00000004 + 0x20);
-    *(uint *)(in_stack_00000004 + 0x32c) = *(uint *)(in_stack_00000004 + 0x24);
-    *(uint *)(in_stack_00000004 + 0x330) = *(uint *)(in_stack_00000004 + 0x28);
+  bVar7 = 0;
+  pCVar2 = &in_stack_00000004->end_pos;
+  pCVar1 = &(in_stack_00000004->base).location;
+  if ((CLocation *)pCVar2 != pCVar1) {
+    pCVar2->x = (pCVar1->position).x;
+    (in_stack_00000004->end_pos).y = (in_stack_00000004->base).location.position.y;
+    (in_stack_00000004->end_pos).z = (in_stack_00000004->base).location.position.z;
   }
-  if ((uint *)(in_stack_00000004 + 0x31c) != puVar1) {
-    *(uint *)(in_stack_00000004 + 0x31c) = *puVar1;
-    *(uint *)(in_stack_00000004 + 800) = *(uint *)(in_stack_00000004 + 0x32c);
-    *(uint *)(in_stack_00000004 + 0x324) = *(uint *)(in_stack_00000004 + 0x330);
+  if (&in_stack_00000004->start_pos != pCVar2) {
+    (in_stack_00000004->start_pos).x = pCVar2->x;
+    (in_stack_00000004->start_pos).y = (in_stack_00000004->end_pos).y;
+    (in_stack_00000004->start_pos).z = (in_stack_00000004->end_pos).z;
   }
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(in_stack_00000004 + 0x30),&local_1c);
-  puVar2 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
-  *(float *)(in_stack_00000004 + 0x344) = local_1c.w;
-  puVar3 = puVar2 + (uint)bVar5 * -2 + 1;
-  puVar1 = (uint *)((int)&local_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  *puVar2 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);
-  *puVar3 = *puVar1;
-  puVar3[(uint)bVar5 * -2 + 1] = puVar1[(uint)bVar5 * -2 + 1];
-  puVar3 = (uint *)(in_stack_00000004 + 0x338 + (uint)bVar5 * -8);
-  puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
-  *(uint *)(in_stack_00000004 + 0x334) = *(uint *)(in_stack_00000004 + 0x344);
-  puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-  puVar2 = puVar1 + (uint)bVar5 * -2 + 1;
-  *puVar3 = *puVar1;
-  *puVar4 = *puVar2;
-  puVar4[(uint)bVar5 * -2 + 1] = puVar2[(uint)bVar5 * -2 + 1];
-  core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20();
-  *(uint *)(in_stack_00000004 + 0xfc) = 1;
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+            ((CVector3f *)&(in_stack_00000004->base).orient,&local_1c);
+  puVar4 = (uint *)((int)in_stack_00000004 + (uint)bVar7 * -8 + 0x348);
+  (in_stack_00000004->end_orient).w = local_1c.w;
+  puVar5 = puVar4 + (uint)bVar7 * -2 + 1;
+  puVar3 = (uint *)((int)&local_1c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  *puVar4 = *(uint *)((int)&local_1c + (uint)bVar7 * -8 + 4);
+  *puVar5 = *puVar3;
+  puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
+  puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar7 * -8 + 0x338);
+  puVar3 = (uint *)((int)in_stack_00000004 + (uint)bVar7 * -8 + 0x348);
+  (in_stack_00000004->orig_orient).w = (in_stack_00000004->end_orient).w;
+  puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
+  puVar4 = puVar3 + (uint)bVar7 * -2 + 1;
+  *puVar5 = *puVar3;
+  *puVar6 = *puVar4;
+  puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
+  core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(in_stack_00000004);
+  (in_stack_00000004->base).is_transparent = 1;
   return;
 }

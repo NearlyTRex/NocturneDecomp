@@ -1,24 +1,39 @@
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+struct SDialogEntry;
+struct SScriptLine;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CStrList.h"
 
 // Structure: CScript
 // Ghidra size: 0x480 (1152 bytes)
 typedef struct CScript {
-    char unk1[4]; // 0x0
-    int who_is_speaking; // 0x4
-    char unk2[4]; // 0x8
-    int focus_actor; // 0xc
-    char unk3[4]; // 0x10
+    int script_pause_flag; // 0x0
+    struct CDemonActor* who_is_speaking; // 0x4
+    int unk1; // 0x8
+    struct CDemonActor* focus_actor; // 0xc
+    int unk2; // 0x10
     int focus_actor_locked; // 0x14
-    char unk4[48]; // 0x18
+    int script_state; // 0x18
+    int dialog_entry_count; // 0x1c
+    struct SDialogEntry* dialog_entries; // 0x20
+    uint current_sfx_handle; // 0x24
+    int unk3; // 0x28
+    void* unk4; // 0x2c
+    int parsed_line_count; // 0x30
+    struct SScriptLine* parsed_lines; // 0x34
+    CStrList script_text; // 0x38
     int next_cmd; // 0x48
     float cmd_timer; // 0x4c
     float dialog_wav_time; // 0x50
-    char current_message; // 0x54
-    char unk5[1031]; // 0x55
+    char current_message[1025]; // 0x54
+    char msg_state_flags[3]; // 0x455
+    int saved_cmd_index; // 0x458
     int call_stack_count; // 0x45c
-    char unk6[32]; // 0x460
+    int call_stack[8]; // 0x460
 } CScript;
 

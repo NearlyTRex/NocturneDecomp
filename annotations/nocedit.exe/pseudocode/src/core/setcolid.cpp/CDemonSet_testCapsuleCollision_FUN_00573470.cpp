@@ -22,7 +22,7 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
   float fVar5;
   float fVar6;
   float fVar7;
-  void *pvVar8;
+  CKeyFramedModelInstance *pCVar8;
   uint bounding_box_type;
   CBoundingBox3D *pCVar9;
   int iVar10;
@@ -47,8 +47,8 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
   float local_e4;
   float local_e0;
   float fStack_d4;
-  void *local_d0;
-  void *local_cc;
+  CKeyFramedModelInstance *local_d0;
+  CKeyFramedModelInstance *local_cc;
   CKeyFramedModelInstance *pCStack_c4;
   CBoundingBox3D CStack_c0;
   CBoundingBox3D CStack_a8;
@@ -101,9 +101,10 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
       local_18 = this_ptr;
       do {
         actor = *(CDemonActor **)(local_18->unk4 + 0x7d0c);
-        pvVar8 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,actor);
-        if ((pvVar8 == (void *)0x0) &&
-           (local_d0 = pvVar8, local_cc = pvVar8,
+        pCVar8 = (CKeyFramedModelInstance *)
+                 core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,actor);
+        if ((pCVar8 == (CKeyFramedModelInstance *)0x0) &&
+           (local_d0 = pCVar8, local_cc = pCVar8,
            bounding_box_type =
                 (*((actor->vtable)._ub)->hasCollision)(actor,(SCollisionInfo *)local_f0),
            bounding_box_type != 0)) {
@@ -131,7 +132,8 @@ LAB_00573d6f:
               }
               else if (bounding_box_type < 3) {
                 fStack_d4 = fStack_d4 + (actor->location).position.y;
-                local_d0 = (void *)((float)local_d0 + (actor->location).position.y);
+                local_d0 = (CKeyFramedModelInstance *)
+                           ((float)local_d0 + (actor->location).position.y);
                 fVar1 = (actor->location).position.x;
                 fVar2 = (actor->location).position.z;
                 if ((fStack_d4 < fStack_120) && (fStack_11c < (float)local_d0)) {

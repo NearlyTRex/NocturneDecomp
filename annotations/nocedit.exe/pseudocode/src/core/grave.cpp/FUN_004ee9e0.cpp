@@ -16,10 +16,19 @@ void __cdecl core_grave_cpp_FUN_004ee9e0(void)
   CActorPropertyList *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e2d0(in_stack_00000008);
+  core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+            (in_stack_00000008,"Grave model (.KFM)",
+             (CKeyFramedModelInstance *)(in_stack_00000004 + 1),0);
+  core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
+            (in_stack_00000008,"Animation FPS",&in_stack_00000004[2].location.position.z,
+             0.0,200.0,(CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
+            (in_stack_00000008,"Hide on first frame",
+             (int *)&in_stack_00000004[2].orient.bank);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (in_stack_00000008,"Start condition",
+             (char *)&in_stack_00000004[2].orient.heading);
+  core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
+            (in_stack_00000008,"Start sound",in_stack_00000004[2].create_event + 0x24);
   return;
 }

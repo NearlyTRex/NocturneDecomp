@@ -9,8 +9,8 @@
 ;   TerminatedCString s_Movie_name_00629b11
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH EAX                            ; 004be97c
     PUSH 0x629aff                       ; 004be97d | = "Model file (.kfm)"
     PUSH ESI                            ; 004be982
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004be983
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 004be983
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 004be988
     PUSH 0x0                            ; 004be98b
     PUSH 0x1f                           ; 004be98d
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004be995
     PUSH 0x629b11                       ; 004be996 | = "Movie name"
     PUSH ESI                            ; 004be99b
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 004be99c
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 004be99c
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 004be9a1
     POP ESI                             ; 004be9a4
     POP EBX                             ; 004be9a5

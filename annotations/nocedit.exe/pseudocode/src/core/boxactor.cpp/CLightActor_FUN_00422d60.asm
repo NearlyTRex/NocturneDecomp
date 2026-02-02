@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_boxactor.cpp_CLightActor_FUN_00423380 at 004233e9
+;   core_boxactor.cpp_CLightActor_propertyActionTypeCallback_FUN_00423380 at 004233e9
 ;   core_boxactor.cpp_CLightActor_setup_FUN_00422a20 at 00422a26
 ;
 ; Referenced Globals:

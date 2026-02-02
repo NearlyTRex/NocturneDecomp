@@ -17,10 +17,10 @@ uint __cdecl core_script_cpp_CScript_FUN_00560d80(CScript *this_ptr)
   
   local_14 = 0;
   iVar4 = 0;
-  if (0 < *(int *)(this_ptr->unk4 + 0x18)) {
+  if (0 < this_ptr->parsed_line_count) {
     iVar3 = 0;
     do {
-      pbVar2 = *(byte **)(iVar3 + 4 + *(int *)(this_ptr->unk4 + 0x1c));
+      pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);
       bVar1 = *pbVar2;
       while (bVar1 != 0) {
         bVar1 = *pbVar2;
@@ -30,7 +30,7 @@ uint __cdecl core_script_cpp_CScript_FUN_00560d80(CScript *this_ptr)
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 8;
-    } while (iVar4 < *(int *)(this_ptr->unk4 + 0x18));
+    } while (iVar4 < this_ptr->parsed_line_count);
   }
   return local_14;
 }

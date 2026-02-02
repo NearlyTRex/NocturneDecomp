@@ -87,7 +87,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004->unk1 + 0x1c);
   if (iVar7 != 0) {
-    (in_stack_00000004->base).base.hit_points = 0;
+    (in_stack_00000004->base).base.hit_points = 0.0;
     (in_stack_00000004->base).pool_me = 1;
     in_stack_00000004->param = 0.0;
     if (in_stack_00000004->blown_up == 0) {
@@ -98,8 +98,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)in_stack_00000004);
   if (iVar7 == 0) goto LAB_0041c220;
-  if ((in_stack_00000004->blown_up == 1) && (0.0 < (float)(in_stack_00000004->base).base.hit_points)
-     ) {
+  if ((in_stack_00000004->blown_up == 1) && (0.0 < (in_stack_00000004->base).base.hit_points)) {
     fVar16 = in_stack_00000004->param + in_stack_00000008;
     in_stack_00000004->param = fVar16;
     if (fVar16 <= in_stack_00000004->recombine_time) {
@@ -187,7 +186,7 @@ void __cdecl core_boneguy_cpp_FUN_0041bf90(void)
     }
     in_stack_00000004->blown_up = 0;
     fVar16 = in_stack_00000004->recombine_time * (float)0.5;
-    (in_stack_00000004->base).base.hit_points = 0x42c80000;
+    (in_stack_00000004->base).base.hit_points = 100.0;
     in_stack_00000004->recombine_time = fVar16;
     if (fVar16 <= (float)2.5) {
       in_stack_00000004->recombine_time = 2.5;

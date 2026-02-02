@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 68,
-        "line": 36,
+        "line": 37,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -18,78 +18,64 @@
       },
       {
         "category": "other",
-        "column": 59,
+        "column": 74,
         "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 23,
+        "column": 35,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 25,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 27,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 38,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 42,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 43,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 41,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 49,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 51,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 108,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
-    "pseudocode_lines": 53,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 180
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -125,7 +111,7 @@
     {
       "addr": "00560160",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00560160"
+      "name": "core_script.cpp_CScript_findLabelIndex_FUN_00560160"
     },
     {
       "addr": "0055a810",
@@ -208,20 +194,20 @@
     },
     {
       "addr": "0310ec9c",
-      "name": "DAT_0310ec9c",
-      "type": "undefined4",
+      "name": "g_ScriptEventsEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310eca0",
-      "name": "DAT_0310eca0",
-      "type": "undefined1",
+      "name": "g_ScriptErrorBuffer",
+      "type": "char[2048]",
       "value": null
     },
     {
       "addr": "0310f4a4",
-      "name": "DAT_0310f4a4",
-      "type": "undefined4",
+      "name": "g_ScriptInputFlag",
+      "type": "int",
       "value": null
     }
   ],
@@ -301,41 +287,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0310ec9c",
-      "text": "DAT_0310ec9c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_0310f4a4",
-      "text": "DAT_0310f4a4 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0310eca0",
-      "text": "*(uint *)(*(int *)(this_ptr->unk4 + 0x1c) + 4 + iVar1 * 8),&DAT_0310eca0)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_0310f4a4",
-      "text": "if (DAT_0310f4a4 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0310f4a4",
-      "text": "DAT_0310f4a4 = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

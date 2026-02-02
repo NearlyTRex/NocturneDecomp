@@ -23,9 +23,9 @@ CTrash * __cdecl CTrash::ctor(CTrash *this_ptr);
 // Address: 005debc0
 void __cdecl CTrash(CTrash *this_ptr);
 
-// Original: core_trash.cpp_CTrash_serialize_FUN_005dec80
+// Original: core_trash.cpp_CTrash_archive_FUN_005dec80
 // Address: 005dec80
-void __cdecl CTrash::serialize(CTrash *this_ptr);
+void __cdecl CTrash::archive(CTrash *this_ptr);
 
 // Original: core_trash.cpp_FUN_005decc0
 // Address: 005decc0

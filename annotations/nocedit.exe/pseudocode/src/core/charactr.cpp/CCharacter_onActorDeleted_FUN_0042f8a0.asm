@@ -14,7 +14,7 @@
 ;   core_haystack.cpp_CHaystack_onActorDeleted_FUN_004f1cb0 at 004f1cba
 ;   core_icepick.cpp_CIcePick_onActorDeleted_FUN_004f9780 at 004f978a
 ;   core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0 at 00520dbc
-;   core_scat.cpp_FUN_00559100 at 0055910a
+;   core_scat.cpp_CScat_onActorDeleted_FUN_00559100 at 0055910a
 ;   core_stranger.cpp_CStranger_FUN_005c68a0 at 005c68ac
 ;   core_svetlana.cpp_CSvetlana_FUN_005d9ef0 at 005d9efa
 ;

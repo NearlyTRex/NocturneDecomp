@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 49,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 8,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "unaffected_reg"
     ],
-    "total_lines": 25
+    "total_lines": 24
   },
   "cross_references": [],
   "function": {
@@ -106,14 +106,14 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_EBX",
-      "text": "((CStrList *)(this_ptr->unk4 + 0x20),0,unaff_EBX);",
+      "text": "pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&this_ptr->script_text,0,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 11,
+      "line": 10,
       "match": "pCVar1[-4].",
       "text": "return (CScript *)&pCVar1[-4].data_array;",
       "type": "negative_offset"

@@ -2,14 +2,11 @@
 // Address: 00543800
 // Address Range: [[00543800, 005438b7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_applySimFrameHistory(CNetGame* param_1,
-   uint param_2) */
-
-void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
+void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr)
 
 {
   int *piVar1;
@@ -19,19 +16,18 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
   int *piVar5;
   int *piVar6;
   byte bVar7;
-  int in_stack_00000004;
   int *in_stack_00000008;
   
   bVar7 = 0;
-  if (*(int *)(in_stack_00000004 + 0x114) < 0) {
+  if (this_ptr->local_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x9cd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
-  *(int *)(in_stack_00000004 + 0x16c) = in_stack_00000008[1];
+  *(int *)(this_ptr->unk + 0x54) = in_stack_00000008[1];
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,(float)in_stack_00000008[2]);
   iVar3 = 0;
-  if (0 < *(int *)(in_stack_00000004 + 0x1c)) {
+  if (0 < this_ptr->player_count) {
     iVar4 = 0;
     piVar1 = in_stack_00000008;
     do {
@@ -46,9 +42,8 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(void)
       }
       iVar3 = iVar3 + 1;
       piVar1 = piVar1 + 0xb;
-    } while (iVar3 < *(int *)(in_stack_00000004 + 0x1c));
+    } while (iVar3 < this_ptr->player_count);
   }
-  *(int *)(*(int *)(in_stack_00000004 + 0x114) * 0x78 + 0x68 + in_stack_00000004) =
-       *in_stack_00000008 + 1;
+  *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) = *in_stack_00000008 + 1;
   return;
 }

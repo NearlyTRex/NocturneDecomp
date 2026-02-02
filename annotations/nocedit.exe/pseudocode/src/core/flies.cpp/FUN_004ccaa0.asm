@@ -8,7 +8,7 @@
 ;   TerminatedCString s_flyCount_0062a472
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e220
+;   core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     PUSH 0x62a472                       ; 004ccac6 | = "flyCount"
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ccacb
     PUSH EBX                            ; 004ccacf
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e220 ; 004ccad0
-        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e220(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220 ; 004ccad0
+        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, int min_value, ...)
     ADD ESP,0x18                        ; 004ccad5
     MOV dword ptr [EAX + 0x58],0x1      ; 004ccad8
     POP EBX                             ; 004ccadf

@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 41,
+        "category": "other",
+        "column": 35,
         "line": 22,
-        "message": "'PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008' was not declared in this scope; did you mean 's_cmp_counterUsed_relOp_co_0064546c'?"
+        "message": "cast from 'const char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -24,7 +24,19 @@
       },
       {
         "category": "other",
-        "column": 48,
+        "column": 36,
+        "line": 21,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 22,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 49,
         "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -91,14 +103,14 @@
     {
       "addr": "00681008",
       "name": "PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008",
-      "type": "void*",
-      "value": "0064546c"
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0068100c",
       "name": "PTR_s_exists_actor_00645495_0068100c",
-      "type": "void*",
-      "value": "00645495"
+      "type": "undefined4",
+      "value": null
     }
   ],
   "pcode_summary": {
@@ -183,14 +195,14 @@
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_2",
-      "text": "(local_2134,param_2,",
+      "text": "(&local_2134,(char *)param_2,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_3",
-      "text": "core_script_cpp_FUN_00564090((int)local_2134,(int *)param_3);",
+      "text": "core_script_cpp_FUN_00564090((int)&local_2134,(int *)param_3);",
       "type": "unnamed_param"
     }
   ]

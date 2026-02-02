@@ -67,9 +67,9 @@ int __cdecl CMimic::isDamageable(CMimic *this_ptr);
 // Address: 005208b0
 void __cdecl CMimic::renderBackground(CMimic *this_ptr,int layer_flag);
 
-// Original: core_mimic.cpp_CMimic_serialize_FUN_00520930
+// Original: core_mimic.cpp_CMimic_archive_FUN_00520930
 // Address: 00520930
-void __cdecl CMimic::serialize(CMimic *this_ptr);
+void __cdecl CMimic::archive(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_hasCollision_FUN_00520a00
 // Address: 00520a00

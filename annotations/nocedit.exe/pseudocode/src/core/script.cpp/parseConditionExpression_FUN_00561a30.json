@@ -1,0 +1,248 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 36,
+        "line": 115,
+        "message": "invalid conversion from 'const char**' to 'char**' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 266,
+    "complexity_score": 160,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 3,
+    "pseudocode_lines": 160,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 426
+  },
+  "cross_references": [
+    {
+      "addr": "00561690",
+      "from_addr": "005619c1",
+      "name": "core_script.cpp_parseCommandWithTemplates_FUN_00561690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00561a30",
+    "address_range": [
+      [
+        "00561a30",
+        "00561c69"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_parseConditionExpression_FUN_00561a30",
+    "signature": "int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "00567310",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310"
+    },
+    {
+      "addr": "00561690",
+      "is_variadic": false,
+      "name": "core_script.cpp_parseCommandWithTemplates_FUN_00561690"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "004a2a20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20"
+    },
+    {
+      "addr": "004a2a40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00680d50",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "0310f858"
+    },
+    {
+      "addr": "00681008",
+      "name": "PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310f858",
+      "name": "g_CScriptInstance",
+      "type": "CScript",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005619c1",
+        "call_type": "direct",
+        "caller": "core_script.cpp_parseCommandWithTemplates_FUN_00561690",
+        "estimated_params": 7,
+        "instructions_analyzed": 28,
+        "reg_params": [],
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "estimated_params": 7
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0394736842105265,
+    "instruction_count": 228,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 10,
+      "CBRANCH": 26,
+      "COPY": 180,
+      "INT_ADD": 99,
+      "INT_AND": 153,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 137,
+      "INT_LESS": 24,
+      "INT_MULT": 15,
+      "INT_NEGATE": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 32,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 65,
+      "INT_SUB": 102,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 67,
+      "POPCOUNT": 63,
+      "RETURN": 2,
+      "STORE": 68
+    },
+    "pcode_op_count": 1149
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 16,
+        "type": "CStrList"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cmd_name_out",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "prefix_out",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "suffix_out",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cursor_position",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "parm_out",
+        "offset": 24,
+        "size": 4,
+        "type": "CCmdParm *"
+      },
+      {
+        "is_param": true,
+        "name": "parse_out",
+        "offset": 28,
+        "size": 4,
+        "type": "CCmdParse *"
+      }
+    ]
+  },
+  "suspects": []
+}

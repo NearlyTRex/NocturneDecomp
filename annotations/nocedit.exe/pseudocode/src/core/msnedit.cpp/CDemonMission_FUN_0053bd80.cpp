@@ -89,7 +89,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053bd80
   iVar8 = ~uVar9 - 1;
   while ((iVar4 = iVar8, 0 < iVar8 &&
          (iVar4 = iVar8 + -1,
-         (g_CharacterClassificationTable[(byte)((&stack0xffffff5b)[iVar8] + 1)] & 0x20U) != 0))) {
+         (g_CharacterClassificationTable[(byte)((&stack0xffffff5b)[iVar8] + 1)] & 0x20) != 0))) {
     (&stack0xffffff5b)[iVar8] = 0;
     iVar8 = iVar4;
   }

@@ -31,9 +31,9 @@ void __cdecl CSuccubus::process(CSuccubus *this_ptr,float delta_time);
 // Address: 005c7590
 int __cdecl CSuccubus::renderOpaque(CSuccubus *this_ptr);
 
-// Original: core_succubus.cpp_CSuccubus_serialize_FUN_005c7710
+// Original: core_succubus.cpp_CSuccubus_archive_FUN_005c7710
 // Address: 005c7710
-void __cdecl CSuccubus::serialize(CSuccubus *this_ptr);
+void __cdecl CSuccubus::archive(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_FUN_005c7760
 // Address: 005c7760

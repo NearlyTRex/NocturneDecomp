@@ -39,9 +39,9 @@ void __cdecl CHaystack(CHaystack *this_ptr);
 // Address: 004f1ab0
 void __cdecl CHaystack(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_CHaystack_serialize_FUN_004f1b50
+// Original: core_haystack.cpp_CHaystack_archive_FUN_004f1b50
 // Address: 004f1b50
-void __cdecl CHaystack::serialize(CHaystack *this_ptr);
+void __cdecl CHaystack::archive(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_renderOpaque_FUN_004f1b60
 // Address: 004f1b60

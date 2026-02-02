@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Called Functions:
-;   core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20
+;   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00441dbf
     MOVSD ES:EDI,ESI                    ; 00441dc0
     MOVSD ES:EDI,ESI                    ; 00441dc1
-    CALL core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20 ; 00441dc2
-        ;   XREF to: 0054ca20 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20()
+    CALL core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 ; 00441dc2
+        ;   XREF to: 0054ca20 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_setup_FUN_0054ca20(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 00441dc7
     MOV dword ptr [EBX + 0xfc],0x1      ; 00441dca
     ADD ESP,0x10                        ; 00441dd4

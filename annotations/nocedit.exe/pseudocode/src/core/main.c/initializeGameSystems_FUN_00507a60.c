@@ -515,7 +515,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
               ((CDemonFilter *)*puVar1,fVar4 * fVar3 + (float)0.25,0);
   } while (iVar11 < 4);
   support_newmsg_cpp_CMouse_load_FUN_00544420(PTR_g_SpecialBitmapsInstance_00680b80);
-  core_netgame_cpp_CNetGame_FUN_0053f780();
+  core_netgame_cpp_CNetGame_FUN_0053f780(g_CNetGamePtr);
   wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x49b);

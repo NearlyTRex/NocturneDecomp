@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [EAX + 0x228],EDX     ; 0055a5a2 | DAT_02d81cc4
     LEA EAX,[ESP + 0x4]                 ; 0055a5a8
     PUSH EAX                            ; 0055a5ac
-    MOV dword ptr [0x0310f4a0],EDX      ; 0055a5ad | FLOAT_0310f4a0
+    MOV dword ptr [0x0310f4a0],EDX      ; 0055a5ad | g_ScriptTimeScale
     MOV dword ptr [EBX + 0x454],0xbf800000 ; 0055a5b3
     PUSH EDX                            ; 0055a5bd
     MOV dword ptr [EBX + 0x458],0xffffffff ; 0055a5be
@@ -74,7 +74,7 @@ section .text
     ADD EAX,0x14d0f0                    ; 0055a5ce
     MOV dword ptr [EBX + 0x45c],EDX     ; 0055a5d3
     PUSH EAX                            ; 0055a5d9 | DAT_03261368
-    MOV dword ptr [0x0310f4a8],EDX      ; 0055a5da | DAT_0310f4a8
+    MOV dword ptr [0x0310f4a8],EDX      ; 0055a5da | g_ScriptLoopWarningShown
     MOV dword ptr [EBX + 0x14],EDX      ; 0055a5e0
     CALL crt_string.c_splitpath_FUN_005ff178 ; 0055a5e3
         ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)

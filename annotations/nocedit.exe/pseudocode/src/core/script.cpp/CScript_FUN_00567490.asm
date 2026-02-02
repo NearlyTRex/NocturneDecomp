@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cmp_counterUsed_relOp_co_0064546c
 ;   TerminatedCString s_exists_actor_00645495
-;   void* PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008 = 0064546c
-;   void* PTR_s_exists_actor_00645495_0068100c = 00645495
+;   undefined4 PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008
+;   undefined4 PTR_s_exists_actor_00645495_0068100c
 ;
 ; Called Functions:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
@@ -42,7 +42,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005674ac
     PUSH EAX                            ; 005674b0
     CALL core_script.cpp_CCmdParse_parse_FUN_00561fd0 ; 005674b1
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, int param_2, char * param_3)
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, char * input_text, char * template_text)
     ADD ESP,0xc                         ; 005674b6
     CMP EAX,0x3                         ; 005674b9
     JNZ 0x005674cd                      ; 005674bc

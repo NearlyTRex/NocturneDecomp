@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
+; __cdecl int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540888
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 at 00542abf
-;   core_netgame.cpp_initializeNetworkToHost_FUN_0053f860 at 0053f8bf
-;   core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 at 0053f951
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860 at 0053f8bf
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053f951
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063d947

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e770 at 0040e78d
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e8bb
+;   core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 at 0040e78d
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e8bb
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_004018a0

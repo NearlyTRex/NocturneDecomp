@@ -2,15 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 36,
-        "message": "'PTR_s_label_006441c0_00680e28' was not declared in this scope"
+        "category": "other",
+        "column": 51,
+        "line": 32,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 40,
+        "column": 39,
+        "line": 33,
+        "message": "cast from 'const char**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 41,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -24,37 +30,37 @@
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 35,
+        "column": 41,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 40,
+        "column": 29,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 43,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 87,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 45,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -107,15 +113,15 @@
     },
     {
       "addr": "00680e28",
-      "name": "PTR_s_label_006441c0_00680e28",
-      "type": "void*",
-      "value": "006441c0"
+      "name": "g_CommandTemplates",
+      "type": "char*[141]",
+      "value": null
     },
     {
       "addr": "00680e2c",
       "name": "PTR_s_anon_006441c9_00680e2c",
-      "type": "void*",
-      "value": "006441c9"
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -252,14 +258,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)aiStack_1f4c + iVar3) == 0xd) {",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->parsed_lines->line_number + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_2",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(param_2,local_14c);",
       "type": "unnamed_param"

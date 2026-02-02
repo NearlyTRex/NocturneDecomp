@@ -37,25 +37,25 @@
       {
         "category": "other",
         "column": 38,
-        "line": 60,
+        "line": 62,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 280,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 55,
-    "suspect_count": 21,
+    "pseudocode_lines": 57,
+    "suspect_count": 24,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 254
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -81,17 +81,17 @@
     {
       "addr": "0040e770",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e770"
-    },
-    {
-      "addr": "0040e850",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e850"
+      "name": "core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770"
     },
     {
       "addr": "0040e9c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e9c0"
+      "name": "core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0"
+    },
+    {
+      "addr": "0040e850",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_render_FUN_0040e850"
     },
     {
       "addr": "0040e150",
@@ -469,26 +469,47 @@
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_02f7c528",
-      "text": "DAT_02f7c528 = core_actor_cpp_CActorPropertyList_FUN_0040e9c0();",
+      "text": "DAT_02f7c528 = core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_02f7a024",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,g_MouseX,g_MouseY);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_02f7a024",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_02f7c528",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 45,
       "match": "unaff_EDI",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 57,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(&DAT_02f797e4);",
       "type": "undefined_data"

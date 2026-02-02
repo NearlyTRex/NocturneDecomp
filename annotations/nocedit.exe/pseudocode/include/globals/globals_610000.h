@@ -564,9 +564,6 @@ extern timeEndPeriod* g_timeEndPeriodFunc;
 // timeGetTime*
 extern timeGetTime* g_timeGetTimeFunc;
 
-// undefined1
-extern undefined1 DAT_00614464;
-
 // waveInAddBuffer*
 extern waveInAddBuffer* g_waveInAddBufferFunc;
 

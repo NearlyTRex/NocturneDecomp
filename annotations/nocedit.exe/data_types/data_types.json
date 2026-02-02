@@ -193,12 +193,8 @@
       "type":"struct"
     },
     {
-      "name":"CActorProperty",
-      "type":"struct"
-    },
-    {
-      "name":"CActorPropertyList",
-      "type":"struct"
+      "name":"CActorPropertyParam",
+      "type":"union"
     },
     {
       "name":"CAlphaBitmap",
@@ -301,14 +297,6 @@
       "type":"struct"
     },
     {
-      "name":"CCmdParm",
-      "type":"struct"
-    },
-    {
-      "name":"CCmdParse",
-      "type":"struct"
-    },
-    {
       "name":"CCodec_dtor",
       "type":"function_definition"
     },
@@ -381,6 +369,18 @@
       "type":"function_definition"
     },
     {
+      "name":"CDemonActor_CActorPropertyActionFunc",
+      "type":"function_definition"
+    },
+    {
+      "name":"CDemonActor_CActorPropertyDisplayFunc",
+      "type":"function_definition"
+    },
+    {
+      "name":"CDemonActor_CActorPropertyValidatorFunc",
+      "type":"function_definition"
+    },
+    {
       "name":"CDemonActor_FactoryFunc",
       "type":"function_definition"
     },
@@ -390,6 +390,10 @@
     },
     {
       "name":"CDemonActor_allowBulletHoles",
+      "type":"function_definition"
+    },
+    {
+      "name":"CDemonActor_archive",
       "type":"function_definition"
     },
     {
@@ -574,10 +578,6 @@
     },
     {
       "name":"CDemonActor_renderTransparent",
-      "type":"function_definition"
-    },
-    {
-      "name":"CDemonActor_serialize",
       "type":"function_definition"
     },
     {
@@ -1365,6 +1365,10 @@
       "type":"struct"
     },
     {
+      "name":"CProceduralTexture",
+      "type":"struct"
+    },
+    {
       "name":"CQuaternion4f",
       "type":"struct"
     },
@@ -1386,10 +1390,6 @@
     },
     {
       "name":"CSampleInfo",
-      "type":"struct"
-    },
-    {
-      "name":"CScript",
       "type":"struct"
     },
     {
@@ -1901,6 +1901,54 @@
       "type":"function_definition"
     },
     {
+      "name":"EActorPropertyType",
+      "type":"enum"
+    },
+    {
+      "name":"CActorProperty",
+      "type":"struct"
+    },
+    {
+      "name":"CActorPropertyList",
+      "type":"struct"
+    },
+    {
+      "name":"EAmmoBoxType",
+      "type":"enum"
+    },
+    {
+      "name":"EAmmoType",
+      "type":"enum"
+    },
+    {
+      "name":"ECmdParmType",
+      "type":"enum"
+    },
+    {
+      "name":"CCmdParm",
+      "type":"struct"
+    },
+    {
+      "name":"CCmdParse",
+      "type":"struct"
+    },
+    {
+      "name":"EDripType",
+      "type":"enum"
+    },
+    {
+      "name":"EEditorActionType",
+      "type":"enum"
+    },
+    {
+      "name":"ELeverType",
+      "type":"enum"
+    },
+    {
+      "name":"ELightActorType",
+      "type":"enum"
+    },
+    {
       "name":"ENTER_CRITICAL_SECTION_BY_INDEX_FUNC",
       "type":"function_definition"
     },
@@ -1911,6 +1959,14 @@
     {
       "name":"ENTER_THREAD_CRITICAL_SECTION_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"EPlatformStateType",
+      "type":"enum"
+    },
+    {
+      "name":"EPlatformType",
+      "type":"enum"
     },
     {
       "name":"EXCEPTION_CLEANUP_FUNC",
@@ -3185,6 +3241,10 @@
       "type":"struct"
     },
     {
+      "name":"SActionKeyBindings",
+      "type":"struct"
+    },
+    {
       "name":"SAlphaEntry",
       "type":"struct"
     },
@@ -3305,7 +3365,7 @@
       "type":"struct"
     },
     {
-      "name":"SCollisionInfo",
+      "name":"SCmdTemplateEntry",
       "type":"struct"
     },
     {
@@ -3342,6 +3402,10 @@
     },
     {
       "name":"CCurtain",
+      "type":"struct"
+    },
+    {
+      "name":"SDialogEntry",
       "type":"struct"
     },
     {
@@ -3669,6 +3733,10 @@
       "type":"struct"
     },
     {
+      "name":"SCollisionInfo",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPrimitiveTriangle",
       "type":"struct"
     },
@@ -3945,6 +4013,10 @@
       "type":"struct"
     },
     {
+      "name":"SScriptLine",
+      "type":"struct"
+    },
+    {
       "name":"SShapeEditorPolygon",
       "type":"struct"
     },
@@ -4130,10 +4202,6 @@
     },
     {
       "name":"CLarva",
-      "type":"struct"
-    },
-    {
-      "name":"CMobster",
       "type":"struct"
     },
     {
@@ -5773,16 +5841,20 @@
       "type":"struct"
     },
     {
+      "name":"CMobster",
+      "type":"struct"
+    },
+    {
       "name":"CPendulum",
       "type":"struct"
     },
     {
-      "name":"CPlatform",
+      "name":"CScript",
       "type":"struct"
     },
     {
-      "name":"CMineCar",
-      "type":"struct"
+      "name":"CScript_ptr_56",
+      "type":"typedef"
     },
     {
       "name":"CSimBox",
@@ -5925,6 +5997,18 @@
       "type":"struct"
     },
     {
+      "name":"SPlatformAttachment",
+      "type":"struct"
+    },
+    {
+      "name":"CPlatform",
+      "type":"struct"
+    },
+    {
+      "name":"CMineCar",
+      "type":"struct"
+    },
+    {
       "name":"SRaytraceState",
       "type":"struct"
     },
@@ -6047,6 +6131,494 @@
         {
           "name":"BASIC_RESERVED",
           "val":128
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EActorPropertyType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"PROP_INT",
+          "val":0
+        },
+        {
+          "name":"PROP_FLOAT",
+          "val":1
+        },
+        {
+          "name":"PROP_VECTOR",
+          "val":2
+        },
+        {
+          "name":"PROP_STRING",
+          "val":3
+        },
+        {
+          "name":"PROP_BOOL",
+          "val":4
+        },
+        {
+          "name":"PROP_CHOICE",
+          "val":5
+        },
+        {
+          "name":"PROP_MODEL_KFM",
+          "val":6
+        },
+        {
+          "name":"PROP_MODEL_DFM",
+          "val":7
+        },
+        {
+          "name":"PROP_SOUND",
+          "val":8
+        },
+        {
+          "name":"PROP_GROUND_TYPE",
+          "val":9
+        },
+        {
+          "name":"PROP_FILE",
+          "val":10
+        },
+        {
+          "name":"PROP_EVENT",
+          "val":11
+        },
+        {
+          "name":"PROP_BUTTON",
+          "val":12
+        },
+        {
+          "name":"PROP_MOTION",
+          "val":13
+        },
+        {
+          "name":"PROP_CLOTH",
+          "val":14
+        },
+        {
+          "name":"PROP_ENUM_PAIR",
+          "val":15
+        },
+        {
+          "name":"PROP_RULE",
+          "val":16
+        },
+        {
+          "name":"PROP_ACTION",
+          "val":17
+        },
+        {
+          "name":"PROP_FLAGS",
+          "val":18
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EAmmoBoxType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"AMMOBOX_TYPE_GENERIC",
+          "val":0
+        },
+        {
+          "name":"AMMOBOX_TYPE_HOLY",
+          "val":1
+        },
+        {
+          "name":"AMMOBOX_TYPE_WOOD",
+          "val":2
+        },
+        {
+          "name":"AMMOBOX_TYPE_SILVER",
+          "val":3
+        },
+        {
+          "name":"AMMOBOX_TYPE_GOLD",
+          "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EAmmoType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"AMMO_TYPE_GENERIC",
+          "val":0
+        },
+        {
+          "name":"AMMO_TYPE_HOLY",
+          "val":1
+        },
+        {
+          "name":"AMMO_TYPE_WOOD",
+          "val":2
+        },
+        {
+          "name":"AMMO_TYPE_SILVER",
+          "val":3
+        },
+        {
+          "name":"AMMO_TYPE_GOLD",
+          "val":4
+        },
+        {
+          "name":"AMMO_TYPE_FLAMING",
+          "val":5
+        },
+        {
+          "name":"AMMO_TYPE_BLANKS",
+          "val":6
+        },
+        {
+          "name":"AMMO_TYPE_LITHIUM",
+          "val":7
+        },
+        {
+          "name":"AMMO_TYPE_MERCURY",
+          "val":8
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ECmdParmType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"PARM_TYPE_INT",
+          "val":0
+        },
+        {
+          "name":"PARM_TYPE_FLOAT",
+          "val":1
+        },
+        {
+          "name":"PARM_TYPE_TEXT",
+          "val":2
+        },
+        {
+          "name":"PARM_TYPE_ACTOR",
+          "val":3
+        },
+        {
+          "name":"PARM_TYPE_CONDITION",
+          "val":4
+        },
+        {
+          "name":"PARM_TYPE_LABEL",
+          "val":5
+        },
+        {
+          "name":"PARM_TYPE_CAMERA",
+          "val":6
+        },
+        {
+          "name":"PARM_TYPE_ACTOR_VARIABLE",
+          "val":7
+        },
+        {
+          "name":"PARM_TYPE_CONTROL_BUTTON",
+          "val":8
+        },
+        {
+          "name":"PARM_TYPE_DAMAGE_TYPE",
+          "val":9
+        },
+        {
+          "name":"PARM_TYPE_DEATH_TYPE",
+          "val":10
+        },
+        {
+          "name":"PARM_TYPE_SFX_SET",
+          "val":11
+        },
+        {
+          "name":"PARM_TYPE_SFX_USED",
+          "val":12
+        },
+        {
+          "name":"PARM_TYPE_WAV",
+          "val":13
+        },
+        {
+          "name":"PARM_TYPE_WEATHER",
+          "val":14
+        },
+        {
+          "name":"PARM_TYPE_COUNTER_SET",
+          "val":15
+        },
+        {
+          "name":"PARM_TYPE_COUNTER_USED",
+          "val":16
+        },
+        {
+          "name":"PARM_TYPE_LETTER_BOX_MODE",
+          "val":17
+        },
+        {
+          "name":"PARM_TYPE_FILENAME",
+          "val":18
+        },
+        {
+          "name":"PARM_TYPE_SPOT_LIGHT",
+          "val":19
+        },
+        {
+          "name":"PARM_TYPE_EVENT_COMMAND",
+          "val":20
+        },
+        {
+          "name":"PARM_TYPE_PERSISTENT_EVENT_NAME",
+          "val":21
+        },
+        {
+          "name":"PARM_TYPE_GAME_FLAG_NAME",
+          "val":22
+        },
+        {
+          "name":"PARM_TYPE_MOTION_NAME",
+          "val":23
+        },
+        {
+          "name":"PARM_TYPE_MOTION_STATE",
+          "val":24
+        },
+        {
+          "name":"PARM_TYPE_DB_TAG",
+          "val":25
+        },
+        {
+          "name":"PARM_TYPE_HERO_TASK",
+          "val":26
+        },
+        {
+          "name":"PARM_TYPE_ACTOR_CLASS",
+          "val":27
+        },
+        {
+          "name":"PARM_TYPE_TIMER",
+          "val":28
+        },
+        {
+          "name":"PARM_TYPE_REL_OP",
+          "val":29
+        },
+        {
+          "name":"PARM_TYPE_BODY_PART_LIST",
+          "val":30
+        },
+        {
+          "name":"PARM_TYPE_INI_VARIABLE",
+          "val":31
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDripType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DRIP_TYPE_WATER",
+          "val":0
+        },
+        {
+          "name":"DRIP_TYPE_LAVA",
+          "val":1
+        },
+        {
+          "name":"DRIP_TYPE_STALAG",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EEditorActionType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"ACTION_TYPE_CURSOR_LEFT",
+          "val":0
+        },
+        {
+          "name":"ACTION_TYPE_CURSOR_RIGHT",
+          "val":1
+        },
+        {
+          "name":"ACTION_TYPE_CURSOR_UP",
+          "val":2
+        },
+        {
+          "name":"ACTION_TYPE_CURSOR_DOWN",
+          "val":3
+        },
+        {
+          "name":"ACTION_TYPE_PAGE_UP",
+          "val":4
+        },
+        {
+          "name":"ACTION_TYPE_PAGE_DOWN",
+          "val":5
+        },
+        {
+          "name":"ACTION_TYPE_HOME",
+          "val":6
+        },
+        {
+          "name":"ACTION_TYPE_END",
+          "val":7
+        },
+        {
+          "name":"ACTION_TYPE_CTRL_HOME",
+          "val":8
+        },
+        {
+          "name":"ACTION_TYPE_CTRL_END",
+          "val":9
+        },
+        {
+          "name":"ACTION_TYPE_UNKNOWN1",
+          "val":10
+        },
+        {
+          "name":"ACTION_TYPE_UNKNOWN2",
+          "val":11
+        },
+        {
+          "name":"ACTION_TYPE_SELECT_WORD",
+          "val":12
+        },
+        {
+          "name":"ACTION_TYPE_COPY",
+          "val":13
+        },
+        {
+          "name":"ACTION_TYPE_PASTE",
+          "val":14
+        },
+        {
+          "name":"ACTION_TYPE_CUT",
+          "val":15
+        },
+        {
+          "name":"ACTION_TYPE_BACKSPACE",
+          "val":16
+        },
+        {
+          "name":"ACTION_TYPE_DELETE",
+          "val":17
+        },
+        {
+          "name":"ACTION_TYPE_ENTER",
+          "val":18
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ELeverType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"LEVER_TYPE_GROUND",
+          "val":0
+        },
+        {
+          "name":"LEVER_TYPE_WALL",
+          "val":1
+        },
+        {
+          "name":"LEVER_TYPE_UNKNOWN",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ELightActorType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"LIGHT_TYPE_CUSTOM",
+          "val":0
+        },
+        {
+          "name":"LIGHT_TYPE_FLASHLIGHT",
+          "val":1
+        },
+        {
+          "name":"LIGHT_TYPE_LANTERN",
+          "val":2
+        },
+        {
+          "name":"LIGHT_TYPE_GLOBE",
+          "val":3
+        },
+        {
+          "name":"LIGHT_TYPE_UNKNOWN",
+          "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EPlatformStateType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"PLATFORM_STATE_TYPE_AT_START",
+          "val":0
+        },
+        {
+          "name":"PLATFORM_STATE_TYPE_AT_END",
+          "val":1
+        },
+        {
+          "name":"PLATFORM_STATE_TYPE_WTF",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EPlatformType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"PLATFORM_TYPE_DISABLED",
+          "val":0
+        },
+        {
+          "name":"PLATFORM_TYPE_START",
+          "val":1
+        },
+        {
+          "name":"PLATFORM_TYPE_END",
+          "val":2
+        },
+        {
+          "name":"PLATFORM_TYPE_BOTH",
+          "val":3
         }
       ]
     },
@@ -7416,6 +7988,78 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CDemonActor_archive",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CDemonActor_CActorPropertyActionFunc",
+      "parameters":[
+        {
+          "name":"actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"property",
+          "type":"CActorProperty*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CDemonActor_CActorPropertyDisplayFunc",
+      "parameters":[
+        {
+          "name":"actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"property",
+          "type":"CActorProperty*"
+        },
+        {
+          "name":"output_buffer",
+          "type":"char*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CDemonActor_CActorPropertyValidatorFunc",
+      "parameters":[
+        {
+          "name":"actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"new_value",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CDemonActor_calculateChecksum",
       "parameters":[
         {
@@ -8279,20 +8923,6 @@
         }
       ],
       "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CDemonActor_serialize",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CDemonActor*"
-        }
-      ],
-      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -20426,7 +21056,7 @@
           "len":4,
           "name":"type",
           "offset":0,
-          "type":"int"
+          "type":"EActorPropertyType"
         },
         {
           "len":80,
@@ -20447,22 +21077,25 @@
           "type":"int"
         },
         {
+          "comment":"has_bounds, allow_none, index, count",
           "len":4,
-          "name":"min_or_index",
+          "name":"param1",
           "offset":92,
-          "type":"int"
+          "type":"CActorPropertyParam"
         },
         {
+          "comment":"min, pairs_ptr",
           "len":4,
-          "name":"min_ptr_or_choice",
+          "name":"param2",
           "offset":96,
-          "type":"void*"
+          "type":"CActorPropertyParam"
         },
         {
+          "comment":"max, max_length",
           "len":4,
-          "name":"max_or_param",
+          "name":"param3",
           "offset":100,
-          "type":"int"
+          "type":"CActorPropertyParam"
         },
         {
           "len":4,
@@ -20471,14 +21104,29 @@
           "type":"void*"
         },
         {
-          "len":124,
-          "name":"unknown",
+          "comment":"default, step",
+          "len":4,
+          "name":"param4",
           "offset":108,
-          "type":"char[124]"
+          "type":"CActorPropertyParam"
+        },
+        {
+          "comment":"search_path",
+          "len":20,
+          "name":"string1",
+          "offset":112,
+          "type":"char[20]"
+        },
+        {
+          "comment":"choices, extension",
+          "len":100,
+          "name":"string2",
+          "offset":132,
+          "type":"char[100]"
         },
         {
           "len":4,
-          "name":"validator_or_callback",
+          "name":"callback",
           "offset":232,
           "type":"void*"
         }
@@ -20496,13 +21144,13 @@
       "fields":[
         {
           "len":4,
-          "name":"unk",
+          "name":"owner",
           "offset":0,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"property_count",
+          "name":"count",
           "offset":4,
           "type":"int"
         },
@@ -20511,10 +21159,52 @@
           "name":"properties",
           "offset":8,
           "type":"CActorProperty[40]"
+        },
+        {
+          "len":4,
+          "name":"total_width",
+          "offset":9448,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"total_height",
+          "offset":9452,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"name_column_x",
+          "offset":9456,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"value_column_x",
+          "offset":9460,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"left_x",
+          "offset":9464,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"right_x",
+          "offset":9468,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"top_y",
+          "offset":9472,
+          "type":"int"
         }
       ],
       "importable":true,
-      "len":9448,
+      "len":9476,
       "name":"CActorPropertyList",
       "pack":false,
       "type":"struct"
@@ -20594,7 +21284,7 @@
           "len":4,
           "name":"ammo_type",
           "offset":792,
-          "type":"int"
+          "type":"EAmmoType"
         }
       ],
       "importable":true,
@@ -20636,7 +21326,7 @@
           "len":4,
           "name":"ammo_type",
           "offset":792,
-          "type":"int"
+          "type":"EAmmoBoxType"
         },
         {
           "len":4,
@@ -22268,7 +22958,7 @@
           "len":4,
           "name":"hit_points",
           "offset":9276,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -22667,14 +23357,44 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"unk",
+          "len":100,
+          "name":"prefix_text",
           "offset":0,
-          "type":"int"
+          "type":"char[100]"
+        },
+        {
+          "len":400,
+          "name":"parsed_value",
+          "offset":100,
+          "type":"char[400]"
+        },
+        {
+          "len":100,
+          "name":"template_name",
+          "offset":500,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"param_type",
+          "offset":600,
+          "type":"ECmdParmType"
+        },
+        {
+          "len":100,
+          "name":"modifier_string",
+          "offset":604,
+          "type":"char[100]"
+        },
+        {
+          "len":104,
+          "name":"default_value",
+          "offset":704,
+          "type":"char[104]"
         }
       ],
       "importable":true,
-      "len":4,
+      "len":808,
       "name":"CCmdParm",
       "pack":false,
       "type":"struct"
@@ -22686,13 +23406,43 @@
       "fields":[
         {
           "len":4,
-          "name":"unk",
+          "name":"template_text",
           "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":100,
+          "name":"cmd_name",
+          "offset":4,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"argument_text",
+          "offset":104,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"param_count",
+          "offset":204,
           "type":"int"
+        },
+        {
+          "len":8080,
+          "name":"params",
+          "offset":208,
+          "type":"CCmdParm[10]"
+        },
+        {
+          "len":200,
+          "name":"remaining_text",
+          "offset":8288,
+          "type":"char[200]"
         }
       ],
       "importable":true,
-      "len":4,
+      "len":8488,
       "name":"CCmdParse",
       "pack":false,
       "type":"struct"
@@ -24342,9 +25092,9 @@
         },
         {
           "len":4,
-          "name":"serialize",
+          "name":"archive",
           "offset":232,
-          "type":"CDemonActor_serialize*"
+          "type":"CDemonActor_archive*"
         }
       ],
       "importable":true,
@@ -26422,7 +27172,7 @@
           "len":4,
           "name":"type",
           "offset":724,
-          "type":"int"
+          "type":"EDripType"
         },
         {
           "len":4,
@@ -30094,7 +30844,7 @@
           "len":4,
           "name":"unk1",
           "offset":48676,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
@@ -30103,10 +30853,16 @@
           "type":"int"
         },
         {
-          "len":44,
-          "name":"unk2",
+          "len":32,
+          "name":"action_bindings",
           "offset":48684,
-          "type":"char[44]"
+          "type":"SActionKeyBindings"
+        },
+        {
+          "len":12,
+          "name":"unk2",
+          "offset":48716,
+          "type":"char[12]"
         },
         {
           "len":80092,
@@ -31133,34 +31889,22 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":116,
+          "len":4,
           "name":"unk1",
-          "offset":348,
-          "type":"char[116]"
-        },
-        {
-          "len":1,
-          "name":"model_name_alt",
-          "offset":464,
-          "type":"char"
-        },
-        {
-          "len":263,
-          "name":"unk2",
-          "offset":465,
-          "type":"char[263]"
+          "offset":724,
+          "type":"int"
         },
         {
           "len":4,
           "name":"lever_type",
           "offset":728,
-          "type":"int"
+          "type":"ELeverType"
         },
         {
           "len":4,
@@ -31169,40 +31913,22 @@
           "type":"float"
         },
         {
-          "len":4,
+          "len":100,
           "name":"on_event",
           "offset":736,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk3",
-          "offset":740,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"off_event",
           "offset":836,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk4",
-          "offset":840,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"sound",
           "offset":936,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk5",
-          "offset":940,
-          "type":"char[96]"
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -31277,10 +32003,16 @@
           "type":"CBoxActor"
         },
         {
-          "len":12300,
-          "name":"unk",
+          "len":4,
+          "name":"light_actor_type",
           "offset":1644,
-          "type":"char[12300]"
+          "type":"ELightActorType"
+        },
+        {
+          "len":12296,
+          "name":"unk",
+          "offset":1648,
+          "type":"undefined1[12296]"
         }
       ],
       "importable":true,
@@ -32585,10 +33317,16 @@
           "type":"int"
         },
         {
-          "len":8,
-          "name":"unk2",
+          "len":4,
+          "name":"our_post",
           "offset":48860,
-          "type":"char[8]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"vehicle",
+          "offset":48864,
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -32603,10 +33341,16 @@
           "type":"int"
         },
         {
-          "len":168,
-          "name":"unk3",
+          "len":100,
+          "name":"hold_pos_condition",
           "offset":48876,
-          "type":"char[168]"
+          "type":"char[100]"
+        },
+        {
+          "len":68,
+          "name":"unk2",
+          "offset":48976,
+          "type":"char[68]"
         }
       ],
       "importable":true,
@@ -32651,10 +33395,22 @@
           "type":"float"
         },
         {
-          "len":3332,
-          "name":"unk2",
+          "len":100,
+          "name":"human_to_demon_condition",
           "offset":138900,
-          "type":"char[3332]"
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"demon_to_human_condition",
+          "offset":139000,
+          "type":"char[100]"
+        },
+        {
+          "len":3132,
+          "name":"unk2",
+          "offset":139100,
+          "type":"char[3132]"
         }
       ],
       "importable":true,
@@ -33161,16 +33917,10 @@
           "type":"CCharacter"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":80092,
+          "name":"path_map",
           "offset":48676,
-          "type":"char*"
-        },
-        {
-          "len":80088,
-          "name":"unk",
-          "offset":48680,
-          "type":"char[80088]"
+          "type":"CPathMap"
         },
         {
           "len":4,
@@ -33906,13 +34656,13 @@
         },
         {
           "len":4,
-          "name":"extension",
+          "name":"width",
           "offset":28,
           "type":"int"
         },
         {
           "len":4,
-          "name":"base_path",
+          "name":"height",
           "offset":32,
           "type":"int"
         },
@@ -34091,10 +34841,34 @@
           "type":"CNPC"
         },
         {
-          "len":3384,
-          "name":"unk",
+          "len":100,
+          "name":"transform_event",
           "offset":128776,
-          "type":"char[3384]"
+          "type":"char[100]"
+        },
+        {
+          "len":32,
+          "name":"wolf_model_name",
+          "offset":128876,
+          "type":"char[32]"
+        },
+        {
+          "len":32,
+          "name":"name_of_wolf",
+          "offset":128908,
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"transform_wav",
+          "offset":128940,
+          "type":"char*"
+        },
+        {
+          "len":3216,
+          "name":"unk",
+          "offset":128944,
+          "type":"char[3216]"
         },
         {
           "len":4,
@@ -34253,28 +35027,16 @@
           "type":"CKeyFramedModelInstance"
         },
         {
-          "len":4,
+          "len":100,
           "name":"start_event",
           "offset":724,
-          "type":"int"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk1",
-          "offset":728,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"stop_event",
           "offset":824,
-          "type":"int"
-        },
-        {
-          "len":96,
-          "name":"unk2",
-          "offset":828,
-          "type":"char[96]"
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -34301,16 +35063,10 @@
           "type":"float"
         },
         {
-          "len":4,
+          "len":32,
           "name":"swoosh_sound",
           "offset":940,
-          "type":"char*"
-        },
-        {
-          "len":28,
-          "name":"unk4",
-          "offset":944,
-          "type":"char[28]"
+          "type":"char[32]"
         },
         {
           "len":4,
@@ -34319,28 +35075,22 @@
           "type":"float"
         },
         {
-          "len":4,
+          "len":32,
           "name":"creak_1_sound",
           "offset":976,
-          "type":"char*"
+          "type":"char[32]"
         },
         {
-          "len":28,
-          "name":"unk5",
-          "offset":980,
-          "type":"char[28]"
-        },
-        {
-          "len":4,
+          "len":32,
           "name":"creak_2_sound",
           "offset":1008,
-          "type":"char*"
+          "type":"char[32]"
         },
         {
-          "len":52,
-          "name":"unk6",
-          "offset":1012,
-          "type":"char[52]"
+          "len":24,
+          "name":"unk2",
+          "offset":1040,
+          "type":"char[24]"
         },
         {
           "len":4,
@@ -34592,7 +35342,7 @@
           "len":4,
           "name":"state",
           "offset":724,
-          "type":"int"
+          "type":"EPlatformStateType"
         },
         {
           "len":4,
@@ -34631,10 +35381,16 @@
           "type":"float"
         },
         {
-          "len":44,
-          "name":"unk1",
+          "len":32,
+          "name":"course_filename",
           "offset":752,
-          "type":"char[44]"
+          "type":"char[32]"
+        },
+        {
+          "len":12,
+          "name":"course",
+          "offset":784,
+          "type":"CCourse"
         },
         {
           "len":12,
@@ -34661,10 +35417,46 @@
           "type":"CQuaternion4f"
         },
         {
-          "len":364,
-          "name":"unk2",
+          "len":100,
+          "name":"to_start_event",
           "offset":852,
-          "type":"char[364]"
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"to_end_event",
+          "offset":952,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"stop_event",
+          "offset":1052,
+          "type":"char[100]"
+        },
+        {
+          "len":20,
+          "name":"start_sound",
+          "offset":1152,
+          "type":"char[20]"
+        },
+        {
+          "len":20,
+          "name":"stop_sound",
+          "offset":1172,
+          "type":"char[20]"
+        },
+        {
+          "len":20,
+          "name":"active_sound",
+          "offset":1192,
+          "type":"char[20]"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":1212,
+          "type":"uint"
         },
         {
           "len":4,
@@ -34686,7 +35478,7 @@
         },
         {
           "len":64,
-          "name":"unk3",
+          "name":"camera_while_moving",
           "offset":1228,
           "type":"char[64]"
         },
@@ -34715,10 +35507,22 @@
           "type":"int"
         },
         {
-          "len":528,
-          "name":"unk4",
+          "len":520,
+          "name":"attach_actors",
           "offset":1308,
-          "type":"char[528]"
+          "type":"SPlatformAttachment[10]"
+        },
+        {
+          "len":4,
+          "name":"platform_type",
+          "offset":1828,
+          "type":"EPlatformType"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":1832,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -35508,6 +36312,54 @@
       "fields":[
         {
           "len":4,
+          "name":"unk1",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":65536,
+          "name":"texture",
+          "offset":8,
+          "type":"uchar[65536]"
+        },
+        {
+          "len":512,
+          "name":"wave_x",
+          "offset":65544,
+          "type":"float[128]"
+        },
+        {
+          "len":512,
+          "name":"wave_y",
+          "offset":66056,
+          "type":"float[128]"
+        },
+        {
+          "len":512,
+          "name":"wave_radius",
+          "offset":66568,
+          "type":"float[128]"
+        }
+      ],
+      "importable":true,
+      "len":67080,
+      "name":"CProceduralTexture",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"w",
           "offset":0,
           "type":"float"
@@ -35766,33 +36618,33 @@
       "fields":[
         {
           "len":4,
-          "name":"unk1",
+          "name":"script_pause_flag",
           "offset":0,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
           "name":"who_is_speaking",
           "offset":4,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"unk1",
           "offset":8,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
           "name":"focus_actor",
           "offset":12,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"unk2",
           "offset":16,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
@@ -35801,10 +36653,58 @@
           "type":"int"
         },
         {
-          "len":48,
-          "name":"unk4",
+          "len":4,
+          "name":"script_state",
           "offset":24,
-          "type":"char[48]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dialog_entry_count",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dialog_entries",
+          "offset":32,
+          "type":"SDialogEntry*"
+        },
+        {
+          "len":4,
+          "name":"current_sfx_handle",
+          "offset":36,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk4",
+          "offset":44,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"parsed_line_count",
+          "offset":48,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"parsed_lines",
+          "offset":52,
+          "type":"SScriptLine*"
+        },
+        {
+          "len":16,
+          "name":"script_text",
+          "offset":56,
+          "type":"CStrList"
         },
         {
           "len":4,
@@ -35825,16 +36725,22 @@
           "type":"float"
         },
         {
-          "len":1,
+          "len":1025,
           "name":"current_message",
           "offset":84,
-          "type":"char"
+          "type":"char[1025]"
         },
         {
-          "len":1031,
-          "name":"unk5",
-          "offset":85,
-          "type":"char[1031]"
+          "len":3,
+          "name":"msg_state_flags",
+          "offset":1109,
+          "type":"char[3]"
+        },
+        {
+          "len":4,
+          "name":"saved_cmd_index",
+          "offset":1112,
+          "type":"int"
         },
         {
           "len":4,
@@ -35844,9 +36750,9 @@
         },
         {
           "len":32,
-          "name":"unk6",
+          "name":"call_stack",
           "offset":1120,
-          "type":"char[32]"
+          "type":"int[8]"
         }
       ],
       "importable":true,
@@ -43557,6 +44463,66 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"walk_key",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"backup_key",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"run_key",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"fire_key",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"use_item_key",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"light_key",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"draw_key",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"jump_key",
+          "offset":28,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SActionKeyBindings",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/Game",
       "desc":"",
@@ -44499,6 +45465,42 @@
       "fields":[
         {
           "len":4,
+          "name":"field_0",
+          "offset":0,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"field_4",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_8",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"field_12",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SCmdTemplateEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"ray_type",
           "offset":0,
           "type":"int"
@@ -44553,9 +45555,9 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"model",
           "offset":36,
-          "type":"void*"
+          "type":"CKeyFramedModelInstance*"
         }
       ],
       "importable":true,
@@ -45203,6 +46205,24 @@
       "importable":true,
       "len":60,
       "name":"SDamageInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":550,
+          "name":"data",
+          "offset":0,
+          "type":"char[550]"
+        }
+      ],
+      "importable":true,
+      "len":550,
+      "name":"SDialogEntry",
       "pack":false,
       "type":"struct"
     },
@@ -48332,6 +49352,30 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"actor",
+          "offset":0,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":48,
+          "name":"matrix",
+          "offset":4,
+          "type":"CMatrix3x4f"
+        }
+      ],
+      "importable":true,
+      "len":52,
+      "name":"SPlatformAttachment",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":40,
           "name":"unk",
           "offset":0,
@@ -49061,6 +50105,30 @@
       "importable":true,
       "len":8,
       "name":"SScreenCoord",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"line_number",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"text",
+          "offset":4,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SScriptLine",
       "pack":false,
       "type":"struct"
     },
@@ -53272,6 +54340,14 @@
       "type":"typedef"
     },
     {
+      "base":"CScript*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":56,
+      "importable":true,
+      "name":"CScript_ptr_56",
+      "type":"typedef"
+    },
+    {
       "base":"float",
       "cat":"/Nocturne/Typedef/System/d3d.h",
       "importable":true,
@@ -54483,6 +55559,36 @@
       "len":16,
       "name":"_union_961",
       "pack":true,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"v_int",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"v_float",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"v_ptr",
+          "offset":0,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CActorPropertyParam",
+      "pack":false,
       "type":"union"
     },
     {

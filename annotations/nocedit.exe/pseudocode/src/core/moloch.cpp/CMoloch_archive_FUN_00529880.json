@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00529880",
+    "address_range": [
+      [
+        "00529880",
+        "005298f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moloch.cpp_CMoloch_archive_FUN_00529880",
+    "signature": "void __cdecl core_moloch_cpp_CMoloch_archive_FUN_00529880(CMoloch *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "004f2610",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_archive_FUN_004f2610"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639e6d",
+      "name": "s_humanToDemonCond_00639e6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639e7e",
+      "name": "s_demonToHumanCond_00639e7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639e8f",
+      "name": "s_inHumanForm_00639e8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639e9b",
+      "name": "s_morphing_00639e9b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ea4",
+      "name": "s_morphTimer_00639ea4",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.21875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 19,
+      "INT_ADD": 14,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 135
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMoloch *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMoloch",
+        "offset": 232,
+        "vtable_addr": "00661944"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

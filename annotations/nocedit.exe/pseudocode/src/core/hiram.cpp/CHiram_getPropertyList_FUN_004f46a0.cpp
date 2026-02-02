@@ -12,6 +12,7 @@ core_hiram_cpp_CHiram_getPropertyList_FUN_004f46a0
 
 {
   core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"deathEvent",this_ptr->unk);
   return;
 }

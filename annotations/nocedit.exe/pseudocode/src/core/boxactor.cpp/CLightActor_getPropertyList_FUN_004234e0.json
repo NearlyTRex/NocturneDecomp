@@ -1,26 +1,75 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 17,
+        "message": "cannot convert 'void (*)(CLightActor*, CActorProperty*, char*)' to 'void (**)(CDemonActor*, CActorProperty*, char*)'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 28,
+        "message": "cannot convert 'void (*)(CLightActor*, CActorProperty*, char*)' to 'void (**)(CDemonActor*, CActorProperty*, char*)'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 31,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 15,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 28,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 81
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -37,24 +86,24 @@
   },
   "function_calls": [
     {
-      "addr": "0040e160",
+      "addr": "0040e670",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
-    },
-    {
-      "addr": "0040e260",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e260"
+      "name": "core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670"
     },
     {
       "addr": "0040e330",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330"
+      "name": "core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330"
     },
     {
-      "addr": "0040e670",
+      "addr": "0040e160",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e670"
+      "name": "core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160"
+    },
+    {
+      "addr": "0040e260",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260"
     },
     {
       "addr": "004226e0",

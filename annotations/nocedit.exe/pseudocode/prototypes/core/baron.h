@@ -51,9 +51,9 @@ void __cdecl CBaron(CBaron *this_ptr);
 // Address: 00413a00
 void __cdecl CBaron(CBaron *this_ptr,float param_2);
 
-// Original: core_baron.cpp_CBaron_serialize_FUN_00413a70
+// Original: core_baron.cpp_CBaron_archive_FUN_00413a70
 // Address: 00413a70
-void __cdecl CBaron::serialize(CBaron *this_ptr);
+void __cdecl CBaron::archive(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_renderOpaque_FUN_00413ad0
 // Address: 00413ad0

@@ -9,11 +9,11 @@
 int __cdecl core_boxactor_cpp_CLightActor_initializeInEditor_FUN_00423590(CLightActor *this_ptr)
 
 {
-  int iVar1;
+  ELightActorType EVar1;
   
-  iVar1 = core_boxactor_cpp_FUN_00423110();
-  if (-1 < iVar1) {
-    *(int *)this_ptr->unk = iVar1;
+  EVar1 = core_boxactor_cpp_FUN_00423110();
+  if (-1 < (int)EVar1) {
+    this_ptr->light_actor_type = EVar1;
     return 1;
   }
   return 0;

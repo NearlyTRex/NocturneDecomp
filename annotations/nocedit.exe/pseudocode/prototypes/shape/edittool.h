@@ -591,9 +591,9 @@ int __cdecl CEdCheck::handleInput(CEdCheck *this_ptr);
 // Address: 004a6e20
 int __cdecl wildcardStringMatch(char *pattern,char *target_string,int case_sensitive);
 
-// Original: shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
+// Original: shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 // Address: 004a6ed0
-int __cdecl getFontBitmapCount(CBitFont *font_ptr);
+int __cdecl CStrList::getItemCount(CStrList *this_ptr);
 
 // Original: shape_edittool.cpp_getFontMaxCharHeight_FUN_004a6ee0
 // Address: 004a6ee0

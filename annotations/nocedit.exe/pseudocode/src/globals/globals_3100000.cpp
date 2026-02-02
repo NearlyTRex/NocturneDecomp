@@ -8,17 +8,27 @@
 CDemonActorType g_CScatClassInfo = {};
 
 // CEdScrollBar
-CEdScrollBar CEdScrollBar_0310fcd8 = {};
-CEdScrollBar CEdScrollBar_0310fd0c = {};
+CEdScrollBar g_ScriptEditorVScrollBar = {};
+CEdScrollBar g_ScriptEditorHScrollBar = {};
 
 // CPickList
-CPickList DAT_0310f4b0 = {};
+CPickList g_ScriptPickList = {};
 
 // CScript
 CScript g_CScriptInstance = {};
 
+// char[100]
+char g_ScriptTempBuffer[100] = {};
+
+// char[2048]
+char g_ScriptLineBuffer[2048] = {};
+char g_ScriptErrorBuffer[2048] = {};
+
+// char[4096]
+char g_ScriptFormatBuffer[4096] = {};
+
 // float
-float FLOAT_0310f4a0 = {};
+float g_ScriptTimeScale = {};
 
 // int
 int g_QuantizeCurrentLineNumber = {};
@@ -41,21 +51,15 @@ int INT_03106198 = {};
 int INT_0310619c = {};
 int INT_031061a0 = {};
 int INT_031061e0 = {};
+int g_ScriptEventsEnabled = {};
+int g_ScriptInputFlag = {};
+int g_ScriptLoopWarningShown = {};
+int g_ActorLookedUpByVariable = {};
 int INT_0310fd40 = {};
+int g_CurrentEditingColumn = {};
+int g_CurrentEditingLine = {};
 
 // undefined1
-undefined1 DAT_031091e8 = {};
-undefined1 DAT_031091e9 = {};
-undefined1 DAT_031091ea = {};
-undefined1 DAT_031091eb = {};
-undefined1 DAT_0310a9e8 = {};
-undefined1 DAT_0310a9e9 = {};
-undefined1 DAT_0310a9ea = {};
-undefined1 DAT_0310a9eb = {};
-undefined1 DAT_0310eca0 = {};
-undefined1 DAT_0310eca1 = {};
-undefined1 DAT_0310eca2 = {};
-undefined1 DAT_0310eca3 = {};
 undefined1 DAT_0310fd58 = {};
 undefined1 DAT_0310fdc0 = {};
 undefined1 DAT_0310fdc1 = {};
@@ -63,12 +67,6 @@ undefined1 DAT_0310fdc2 = {};
 undefined1 DAT_0310fdc3 = {};
 
 // undefined4
-undefined4 DAT_0310ec9c = {};
-undefined4 DAT_0310f4a4 = {};
-undefined4 DAT_0310f4a8 = {};
-undefined4 DAT_0310f4ac = {};
-undefined4 DAT_0310fd44 = {};
-undefined4 DAT_0310fd48 = {};
 undefined4 DAT_0310fd4c = {};
 undefined4 DAT_0310fd50 = {};
 

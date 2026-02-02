@@ -7,7 +7,7 @@
 ; char * *         Stack[0x4]:4   parse_pos
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 

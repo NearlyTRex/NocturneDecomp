@@ -12,7 +12,7 @@ int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FI
   uint extraout_EAX;
   uint uVar1;
   int extraout_EAX_00;
-  char *pcVar2;
+  int *piVar2;
   int iVar3;
   char local_118 [256];
   int local_18;
@@ -36,21 +36,21 @@ int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FI
     _fscanf(param_2,"%d\n",&g_CGamePtr->allow_enemy_attack_flag);
   }
   _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%g\n",&FLOAT_0310f4a0);
+  _fscanf(param_2,"%g\n",&g_ScriptTimeScale);
   _fgets(local_118,0xff,param_2);
   _fscanf(param_2,"%d\n",&this_ptr->next_cmd);
   _fgets(local_118,0xff,param_2);
-  this_ptr->current_message = '\0';
-  _fscanf(param_2,"\"%[^\"]",&this_ptr->current_message);
-  _fscanf(param_2,"\"\n",&this_ptr->current_message);
+  this_ptr->current_message[0] = '\0';
+  _fscanf(param_2,"\"%[^\"]",this_ptr->current_message);
+  _fscanf(param_2,"\"\n",this_ptr->current_message);
   _fgets(local_118,0xff,param_2);
   _fscanf(param_2,"%g\n",&this_ptr->cmd_timer);
   _fgets(local_118,0xff,param_2);
   _fscanf(param_2,"%g\n",&this_ptr->dialog_wav_time);
   _fgets(local_118,0xff,param_2);
-  core_script_cpp_GetReferencedActor_FUN_00560760(param_2,&this_ptr->who_is_speaking);
+  core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->who_is_speaking);
   _fgets(local_118,0xff,param_2);
-  core_script_cpp_GetReferencedActor_FUN_00560760(param_2,&this_ptr->focus_actor);
+  core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->focus_actor);
   uVar1 = extraout_EAX;
   if (4 < local_18) {
     _fgets(local_118,0xff,param_2);
@@ -61,12 +61,12 @@ int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FI
     iVar3 = 0;
     uVar1 = _fscanf(param_2,"%d\n",&this_ptr->call_stack_count);
     if (0 < this_ptr->call_stack_count) {
-      pcVar2 = this_ptr->unk6;
+      piVar2 = this_ptr->call_stack;
       do {
         iVar3 = iVar3 + 1;
-        _fscanf(param_2,"%d\n",pcVar2);
+        _fscanf(param_2,"%d\n",piVar2);
         uVar1 = this_ptr->call_stack_count;
-        pcVar2 = pcVar2 + 4;
+        piVar2 = piVar2 + 1;
       } while (iVar3 < (int)uVar1);
     }
   }

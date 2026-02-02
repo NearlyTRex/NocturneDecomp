@@ -12,8 +12,8 @@
 ;   TerminatedCString s_State_0062fa9c
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -35,14 +35,14 @@ section .text
     PUSH EBX                            ; 004fb12c
     PUSH 0x62fa96                       ; 004fb12d | = "Model"
     PUSH ESI                            ; 004fb132
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 004fb133
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 004fb133
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 004fb138
     PUSH EBX                            ; 004fb13b
     PUSH 0x62fa9c                       ; 004fb13c | = "State"
     PUSH ESI                            ; 004fb141
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004fb142
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 004fb142
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 004fb147
     POP ESI                             ; 004fb14a
     POP EBX                             ; 004fb14b

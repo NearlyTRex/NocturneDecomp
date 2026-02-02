@@ -12,7 +12,7 @@
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
-;   core_platfrm.cpp_FUN_0054ea00
+;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
 ;
 ; *****************************************************************************
 
@@ -122,8 +122,8 @@ section .text
     RET                                 ; 004422d9
     PUSH EBX                            ; 004422da
         ;   Label: LAB_004422da
-    CALL core_platfrm.cpp_FUN_0054ea00  ; 004422db
-        ;   XREF to: 0054ea00 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054ea00()
+    CALL core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 ; 004422db
+        ;   XREF to: 0054ea00 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 004422e0
     ADD ESP,0x8                         ; 004422e3
     POP EBX                             ; 004422e6

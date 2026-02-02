@@ -12,7 +12,7 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
 
 {
   CDemonActor *pCVar1;
-  void *pvVar2;
+  CKeyFramedModelInstance *pCVar2;
   int iVar3;
   float fVar4;
   CVector3f *unaff_EBP;
@@ -83,10 +83,11 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
       local_20 = this_ptr;
       do {
         pCVar1 = *(CDemonActor **)(local_20->unk4 + 0x7d0c);
-        pvVar2 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
-        if (pvVar2 == (void *)0x0) {
-          local_c4.cylinder_top_y = (float)pvVar2;
-          local_c4.cylinder_radius = (float)pvVar2;
+        pCVar2 = (CKeyFramedModelInstance *)
+                 core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
+        if (pCVar2 == (CKeyFramedModelInstance *)0x0) {
+          local_c4.cylinder_top_y = (float)pCVar2;
+          local_c4.cylinder_radius = (float)pCVar2;
           iVar3 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34)
           ;
           if (iVar3 != 0) {

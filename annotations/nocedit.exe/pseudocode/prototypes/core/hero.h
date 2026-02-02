@@ -39,9 +39,9 @@ int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *c
 // Address: 004f25c0
 int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
 
-// Original: core_hero.cpp_CHero_serialize_FUN_004f2610
+// Original: core_hero.cpp_CHero_archive_FUN_004f2610
 // Address: 004f2610
-void __cdecl CHero::serialize(CHero *this_ptr);
+void __cdecl CHero::archive(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_getPathMap_FUN_004f2870
 // Address: 004f2870
@@ -179,9 +179,9 @@ CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this
 // Address: 004f3d80
 CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,int param_2);
 
-// Original: core_hero.cpp_CHeroPlaceholder_serialize_FUN_004f3ef0
+// Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004f3ef0
 // Address: 004f3ef0
-void __cdecl CHeroPlaceholder::serialize(CHeroPlaceholder *this_ptr);
+void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHero_getPropertyList_FUN_004f3f20
 // Address: 004f3f20

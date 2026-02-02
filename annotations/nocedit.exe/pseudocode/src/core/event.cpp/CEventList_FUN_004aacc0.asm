@@ -466,8 +466,8 @@ section .text
     PUSH EAX                            ; 004aaf00
     MOV EDI,dword ptr [0x006810c8]      ; 004aaf01 | g_CDemonSetPtr
     PUSH EDI                            ; 004aaf07 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570f10 ; 004aaf08
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570f10(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 004aaf08
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBP + -0x5a]     ; 004aaf0d
     ADD ESP,0x10                        ; 004aaf10
     TEST EAX,EAX                        ; 004aaf13
@@ -3458,8 +3458,8 @@ section .text
     ADD EDI,ESI                         ; 004acb11
     PUSH EAX                            ; 004acb13 | g_CDemonSetInstance
     MOV dword ptr [EBP + -0x5e],EDI     ; 004acb14
-    CALL core_set.cpp_CDemonSet_FUN_00570f10 ; 004acb17
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570f10(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 004acb17
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
     MOV EDX,dword ptr [EBP + 0x3e]      ; 004acb1c
     ADD ESP,0x10                        ; 004acb1f
     TEST EDX,EDX                        ; 004acb22

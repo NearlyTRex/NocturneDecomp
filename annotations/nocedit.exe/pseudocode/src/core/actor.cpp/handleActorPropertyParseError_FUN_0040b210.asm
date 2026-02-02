@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   property_type
 ;
 ; XREF[13]:
-;   core_actor.cpp_serializeClothList_FUN_0040be60 at 0040bf44
-;   core_actor.cpp_serializeDescription_FUN_0040b290 at 0040b2d0
-;   core_actor.cpp_serializeFloat_FUN_0040b770 at 0040b7b9
-;   core_actor.cpp_serializeInteger_FUN_0040b7f0 at 0040b83a
-;   core_actor.cpp_serializeLocation_FUN_0040b480 at 0040b4d6
-;   core_actor.cpp_serializeMotionState_FUN_0040b9f0 at 0040ba65
-;   core_actor.cpp_serializeOrientation_FUN_0040b3e0 at 0040b431
-;   core_actor.cpp_serializePartStatus_FUN_0040bae0 at 0040bb6d
-;   core_actor.cpp_serializeQuaternion_FUN_0040b520 at 0040b575
-;   core_actor.cpp_serializeRules_FUN_0040c000 at 0040c0e0
+;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040bf44
+;   core_actor.cpp_archiveDescription_FUN_0040b290 at 0040b2d0
+;   core_actor.cpp_archiveFloat_FUN_0040b770 at 0040b7b9
+;   core_actor.cpp_archiveInteger_FUN_0040b7f0 at 0040b83a
+;   core_actor.cpp_archiveLocation_FUN_0040b480 at 0040b4d6
+;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba65
+;   core_actor.cpp_archiveOrientation_FUN_0040b3e0 at 0040b431
+;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb6d
+;   core_actor.cpp_archiveQuaternion_FUN_0040b520 at 0040b575
+;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c0e0
 ;   ... and 3 more
 ;
 ; Referenced Globals:

@@ -13,6 +13,7 @@ void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbcc0(CTentacle *this_ptr)
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0
             ((CDemonActor *)this_ptr,in_stack_00000008);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(&(this_ptr->base).base.model,in_stack_00000008);
+  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+            (&(this_ptr->base).base.model,in_stack_00000008);
   return;
 }

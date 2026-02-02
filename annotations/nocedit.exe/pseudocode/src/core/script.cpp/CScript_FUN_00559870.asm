@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_006416d4
 ;   TerminatedCString s_core_script_cpp_006416e7
-;   CPickList DAT_0310f4b0
+;   CPickList g_ScriptPickList
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_FUN_005598f0
@@ -49,7 +49,7 @@ section .text
     TEST ESI,ESI                        ; 0055989c
     JNZ 0x005598d3                      ; 0055989e
         ;   XREF to: 005598d3 (CONDITIONAL_JUMP)  ; LAB_005598d3
-    PUSH 0x310f4b0                      ; 005598a0 | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 005598a0 | g_ScriptPickList
         ;   Label: LAB_005598a0
     MOV dword ptr [EBX + 0x28],0x0      ; 005598a5
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 005598ac

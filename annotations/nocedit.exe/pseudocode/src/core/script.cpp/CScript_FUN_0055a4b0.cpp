@@ -13,22 +13,22 @@ int * __cdecl core_script_cpp_CScript_FUN_0055a4b0(CScript *this_ptr,int *param_
   int iVar2;
   uint local_10;
   
-  DAT_0310ec9c = 1;
+  g_ScriptEventsEnabled = 1;
   core_script_cpp_CScript_FUN_0055a540(this_ptr);
-  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);
-  if (this_ptr->next_cmd < *(int *)(this_ptr->unk4 + 0x18)) {
+  shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
+  if (this_ptr->next_cmd < this_ptr->parsed_line_count) {
     do {
       iVar2 = this_ptr->next_cmd;
       local_10 = 0x3e800000;
       iVar1 = core_script_cpp_CScript_step_FUN_0055a810(this_ptr,(int)&local_10);
       if (iVar1 < 0) {
-        *param_2 = *(int *)(*(int *)(this_ptr->unk4 + 0x1c) + iVar2 * 8) + -1;
-        return (int *)&DAT_0310eca0;
+        *param_2 = this_ptr->parsed_lines[iVar2].line_number + -1;
+        return (int *)g_ScriptErrorBuffer;
       }
       iVar2 = iVar2 + 1;
       this_ptr->next_cmd = iVar2;
-    } while (iVar2 < *(int *)(this_ptr->unk4 + 0x18));
+    } while (iVar2 < this_ptr->parsed_line_count);
   }
-  DAT_0310ec9c = 0;
+  g_ScriptEventsEnabled = 0;
   return (int *)0x0;
 }

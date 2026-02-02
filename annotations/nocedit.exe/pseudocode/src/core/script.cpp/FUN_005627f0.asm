@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_FUN_00562860 at 0056286a
-;   core_script.cpp_FUN_00562920 at 00563d6d
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00563d6d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00643b8f
@@ -19,7 +19,7 @@
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;
 ; Called Functions:
-;   core_script.cpp_GetDemonActor_FUN_005594e0
+;   core_script.cpp_getActor_FUN_005594e0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH ESI                            ; 00562849
     ADD EAX,0x64                        ; 0056284a
     PUSH EAX                            ; 0056284d
-    CALL core_script.cpp_GetDemonActor_FUN_005594e0 ; 0056284e
-        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CHero * core_script.cpp_GetDemonActor_FUN_005594e0(char * param_1, uint param_2, int param_3)
+    CALL core_script.cpp_getActor_FUN_005594e0 ; 0056284e
+        ;   XREF to: 005594e0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005594e0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 00562853
     POP ESI                             ; 00562856
     ADD ESP,0x4                         ; 00562857

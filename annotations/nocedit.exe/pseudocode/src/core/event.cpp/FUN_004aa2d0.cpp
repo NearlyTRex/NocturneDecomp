@@ -9,7 +9,7 @@
 void __cdecl core_event_cpp_FUN_004aa2d0(char *param_1)
 
 {
-  while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2) != 0) {
     param_1 = param_1 + 1;
   }
   return;

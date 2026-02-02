@@ -1,0 +1,231 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 38,
+        "message": "'f2xm1' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 39,
+        "message": "'fscale' was not declared in this scope; did you mean 'scalb'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 146,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 12,
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 207
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0054a180",
+    "address_range": [
+      [
+        "0054a180",
+        "0054a2e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_pendulum.cpp_CPendulum_process_FUN_0054a180",
+    "signature": "void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "004adca0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "005495c0",
+      "is_variadic": false,
+      "name": "core_pendulum.cpp_CPendulum_FUN_005495c0"
+    },
+    {
+      "addr": "00549b90",
+      "is_variadic": false,
+      "name": "core_pendulum.cpp_CPendulum_FUN_00549b90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ed01",
+      "name": "DOUBLE_0063ed01",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "0063ed09",
+      "name": "DOUBLE_0063ed09",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "02db880c",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.damage_listener_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.damage_listeners",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263318",
+      "name": "DAT_03263318",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326331c",
+      "name": "DAT_0326331c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7727272727272725,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 4,
+      "CALL": 7,
+      "CALLOTHER": 2,
+      "CBRANCH": 12,
+      "COPY": 138,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 41,
+      "INT_AND": 59,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 49,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 24,
+      "INT_SUB": 34,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 525
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPendulum *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPendulum",
+        "offset": 4,
+        "vtable_addr": "00662154"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

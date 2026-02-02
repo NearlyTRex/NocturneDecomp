@@ -23,14 +23,14 @@
 ;   TerminatedCString s_false_00644051
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00567310
 ;   core_script.cpp_CScript_FUN_00567490
 ;   core_script.cpp_CScript_FUN_00567510
+;   core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH EDX                            ; 005671d9
     PUSH EBP                            ; 005671da
     LEA EDI,[ESP + 0x10]                ; 005671db
-    CALL core_script.cpp_CScript_FUN_00567310 ; 005671df
-        ;   XREF to: 00567310 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00567310(CScript * this_ptr, int param_2, CBitFont * param_3, int * param_4)
+    CALL core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310 ; 005671df
+        ;   XREF to: 00567310 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript * this_ptr, char * input_text, CStrList * tokens_out, int * cursor_pos)
     MOV ECX,0x45                        ; 005671e4
     ADD ESP,0x10                        ; 005671e9
     XOR EBX,EBX                         ; 005671ec
@@ -65,8 +65,8 @@ section .text
     LEA EAX,[ESP + 0x114]               ; 005671f0
         ;   Label: LAB_005671f0
     PUSH EAX                            ; 005671f7
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005671f8
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005671f8
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005671fd
     CMP EBX,EAX                         ; 00567200
     JL 0x00567221                       ; 00567202

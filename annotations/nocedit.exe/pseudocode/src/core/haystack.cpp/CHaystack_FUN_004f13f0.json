@@ -46,49 +46,49 @@
       {
         "category": "other",
         "column": 16,
-        "line": 81,
+        "line": 78,
         "message": "request for member '_0_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 82,
+        "line": 79,
         "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 86,
+        "line": 83,
         "message": "request for member '_0_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 86,
+        "line": 83,
         "message": "request for member '_0_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 87,
+        "line": 84,
         "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 87,
+        "line": 84,
         "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 192,
+        "line": 171,
         "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 199,
+        "line": 178,
         "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       }
     ],
@@ -104,11 +104,11 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 476,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 211,
+    "pseudocode_lines": 190,
     "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -117,7 +117,7 @@
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 650
+    "total_lines": 629
   },
   "cross_references": [
     {
@@ -612,98 +612,98 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 71,
       "match": "._0_4_",
       "text": "local_48._0_4_ = local_80.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 72,
       "match": "._4_4_",
       "text": "local_48._4_4_ = local_74;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "SQRT",
       "text": "local_18 = SQRT(local_40 * local_40 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 76,
       "match": "._0_4_",
       "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 76,
       "match": "._0_4_",
       "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 77,
       "match": "._4_4_",
       "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 77,
       "match": "._4_4_",
       "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 89,
+      "line": 86,
       "match": "extraout_EAX",
       "text": "this_ptr_01 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 164,
       "match": "._4_4_",
       "text": "local_48._4_4_ = local_68;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 171,
       "match": "._4_4_",
       "text": "local_48._4_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
+      "line": 184,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_88) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 206,
+      "line": 185,
       "match": "in_stack_00000008",
       "text": "local_88 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 187,
       "match": "in_stack_00000008",
       "text": "if (local_88 < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 188,
       "match": "in_stack_00000008",
       "text": "local_88 = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

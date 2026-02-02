@@ -552,6 +552,7 @@ const TerminatedCString s_Missing_closing_parenthe_006430ef = "Missing closing p
 const TerminatedCString s_Unknown_command_on_line_0064311b = "Unknown command on line %d: %s";
 const TerminatedCString s_Extra_characters_s_on_li_0064313a = "Extra characters \"%s\" on line %d";
 const TerminatedCString s_Overrun_past_the_end_of_0064315b = "Overrun past the end of the script.";
+const TerminatedCString s_f_006431a0 = "%f";
 const TerminatedCString s_core_script_cpp_006431b8 = "..\\core\\script.cpp";
 const TerminatedCString s_CScript_processTimer_inv_006431cb = "CScript::processTimer - invalidTimeToWait";
 const TerminatedCString s_if_006431f5 = "if";
@@ -754,6 +755,7 @@ const TerminatedCString s_Yes_00643cf5 = "Yes";
 const TerminatedCString s_No_00643cf9 = "No";
 const TerminatedCString s_s_s_00643cfc = "%s\t%s";
 const TerminatedCString s_Done_00643d02 = "Done";
+const TerminatedCString s_anon_00643d08 = " ";
 const TerminatedCString s_WARNING_chooseParm_unkno_00643d0a = "WARNING! chooseParm - unknown parm type %d (code needs to be updated)";
 const TerminatedCString s_Template_bug_can_t_show_00643d50 = "Template bug, can't show usage";
 const TerminatedCString s_s_00643d6f = "<%s>";
@@ -2950,6 +2952,18 @@ const TerminatedCString s_SfxSample_pollStream_err_0064fff7 = "SfxSample::pollSt
 
 // char constants
 const char s_EmptyString_0064015e = '\0';
+const char s_EmptyChar_00641c5a = '\0';
+const char s_EmptyChar_00641ce3 = '\0';
+const char s_EmptyChar_00641cf2 = '\0';
+const char s_EmptyChar_00641d02 = '\0';
+const char s_EmptyChar_00641e5e = '\0';
+const char s_EmptyChar_006424ec = '\0';
+const char s_EmptyChar_00642527 = '\0';
+const char s_EmptyChar_00643d07 = '\0';
+const char s_EmptyChar_00643de8 = '\0';
+const char s_EmptyChar_00643e07 = '\0';
+const char s_EmptyChar_00643e08 = '\0';
+const char s_EmpyChar_00643fd5 = '\0';
 
 // double constants
 const double DOUBLE_006409e8 = 256;
@@ -3197,7 +3211,4 @@ const string s_Bip01_L_Clavicle_00641256 = "Bip01 L Clavicle";
 const string s_Bip01_R_UpperArm_00641289 = "Bip01 R UpperArm";
 const string s_removeAllItemsFromInventory_00642903 = "removeAllItemsFromInventory";
 const string s_Total_displacement_for_animation_0064d42e = "Total displacement for animation %s on X-axis is %g";
-
-// undefined1 constants
-const undefined1 DAT_00643d08 = 0x20;
 

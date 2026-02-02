@@ -88,7 +88,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
           if (70.0f < fVar1) {
             *(float *)(this_ptr->unk1 + 0xc) = 70.0f;
           }
-          if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+          if ((this_ptr->base).action_bindings.fire_key != 0) {
             return;
           }
           goto switchD_005c56f5_caseD_8;

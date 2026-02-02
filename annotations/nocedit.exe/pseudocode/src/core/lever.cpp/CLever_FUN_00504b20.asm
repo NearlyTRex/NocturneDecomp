@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004acde5
-;   core_lever.cpp_CLever_FUN_005051a0 at 00505200
 ;   core_lever.cpp_CLever_process_FUN_00504920 at 00504a71
+;   core_lever.cpp_CLever_propertyDisplayStateFunc_FUN_005051a0 at 00505200
 ;
 ; Referenced Globals:
 ;   CEventList* g_CEventListPtr = 02d05310

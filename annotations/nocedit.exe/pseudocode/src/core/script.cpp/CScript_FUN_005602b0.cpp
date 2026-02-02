@@ -9,7 +9,7 @@
 void __cdecl core_script_cpp_CScript_FUN_005602b0(CScript *this_ptr)
 
 {
-  core_script_cpp_CScript_FUN_00560140(this_ptr,this_ptr->who_is_speaking);
+  core_script_cpp_CScript_setSpeaker_FUN_00560140(this_ptr,this_ptr->who_is_speaking);
   this_ptr->cmd_timer = 0.0;
   this_ptr->dialog_wav_time = 0.0;
   return;

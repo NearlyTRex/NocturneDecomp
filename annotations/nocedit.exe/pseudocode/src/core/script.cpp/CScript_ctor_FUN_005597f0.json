@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 57,
+        "line": 14,
+        "message": "cannot convert 'CStrList*' to 'CScript_ptr_56' {aka 'CScript*'} in assignment"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -20,7 +27,7 @@
     "pseudocode_lines": 13,
     "suspect_count": 8,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 29
   },
@@ -109,60 +116,60 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "pCVar1[-1].",
-      "text": "pCVar1[-1].data_array = (char **)0x0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->parsed_line_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 9,
-      "match": "pCVar1[-1].",
-      "text": "pCVar1[-1].vtable = (CStrList_vtable *)0x0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->parsed_lines = (SScriptLine *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 10,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1[-2].capacity = 0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->dialog_entry_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1[-2].data_array = (char **)0x0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->dialog_entries = (SDialogEntry *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1[-2].vtable = (CStrList_vtable *)0x0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->current_sfx_handle = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "pCVar1[-1].",
-      "text": "pCVar1[-1].item_count = 0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->unk3 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "pCVar1[-1].",
-      "text": "pCVar1[-1].capacity = 0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar1)->unk4 = (void *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "pCVar1[-4].",
-      "text": "return (CScript *)&pCVar1[-4].data_array;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "return ADJ(pCVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

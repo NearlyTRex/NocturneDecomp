@@ -31,9 +31,9 @@ void __cdecl CHotDemon::process(CHotDemon *this_ptr,float delta_time);
 // Address: 004f7680
 int __cdecl CHotDemon::isDamageable(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_CHotDemon_serialize_FUN_004f76c0
+// Original: core_hotdemon.cpp_CHotDemon_archive_FUN_004f76c0
 // Address: 004f76c0
-void __cdecl CHotDemon::serialize(CHotDemon *this_ptr);
+void __cdecl CHotDemon::archive(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720
 // Address: 004f7720

@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 23,
-        "line": 48,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 49,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -25,55 +12,41 @@
       {
         "category": "other",
         "column": 25,
-        "line": 26,
+        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 28,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 49,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 222,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 47,
-    "suspect_count": 16,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 170
+    "total_lines": 168
   },
   "cross_references": [
+    {
+      "addr": "00541390",
+      "from_addr": "00541406",
+      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00542470",
       "from_addr": "005429e5",
       "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00541390",
-      "from_addr": "00541406",
-      "name": "core_netgame.cpp_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -188,10 +161,10 @@
     "pcode_op_count": 781
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 68,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -249,121 +222,23 @@
         "offset": -23,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "if ((*in_stack_00000004 != 2) || (in_stack_00000004[1] != 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "if ((*in_stack_00000004 != 2) || (in_stack_00000004[1] != 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "local_1f = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x19];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "local_1f = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x19];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "local_1b = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xd];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "local_1b = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xd];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "local_17 = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xe];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "local_17 = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xe];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "piVar4 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "piVar4 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)piVar4 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)piVar4 + 2);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 45,
       "match": "DAT_00680a04",
       "text": "DAT_00680a04 = 1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x18] = g_CurrentGameTime;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x18] = g_CurrentGameTime;",
-      "type": "stack_param"
     }
   ]
 }

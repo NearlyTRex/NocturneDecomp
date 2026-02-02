@@ -21,9 +21,9 @@ void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
   SDamageInfo *in_stack_00000008;
   char *sound_name;
   
-  fVar1 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  fVar1 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   this_ptr = &(in_stack_00000004->base).model;
-  (in_stack_00000004->base).hit_points = (int)fVar1;
+  (in_stack_00000004->base).hit_points = fVar1;
   if (0.0 < fVar1) {
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar4 == 0) {
@@ -44,7 +44,7 @@ void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void)
     sound_name = "sentinel-hurt?.wav";
   }
   else {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar2->state_index == 8) || (pSVar2->state_index == 9)) goto LAB_00568d4d;

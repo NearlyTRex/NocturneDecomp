@@ -10,7 +10,7 @@
 ;   TerminatedCString s_Model_file_kfm_00655554
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     PUSH 0x655554                       ; 005dea6f | = "Model file (.kfm)"
     MOV EBX,dword ptr [ESP + 0x18]      ; 005dea74
     PUSH EBX                            ; 005dea78
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 005dea79
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 005dea79
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 005dea7e
     POP EBX                             ; 005dea81
     RET                                 ; 005dea82

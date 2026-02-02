@@ -43,9 +43,9 @@ int __cdecl CWaterActor(CWaterActor *this_ptr);
 // Address: 005eb4b0
 void __cdecl CWaterActor(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_CWaterActor_serialize_FUN_005eb510
+// Original: core_wateract.cpp_CWaterActor_archive_FUN_005eb510
 // Address: 005eb510
-void __cdecl CWaterActor::serialize(CWaterActor *this_ptr);
+void __cdecl CWaterActor::archive(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_FUN_005eb710
 // Address: 005eb710

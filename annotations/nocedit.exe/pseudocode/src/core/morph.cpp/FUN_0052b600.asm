@@ -8,7 +8,7 @@
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418a24
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 at 00520ccd
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 005297ea
-;   core_passngr.cpp_FUN_005460c0 at 00546165
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_005460c0 at 00546165
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c76a0
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6f0e
 ;

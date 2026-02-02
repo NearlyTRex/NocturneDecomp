@@ -18,7 +18,7 @@ char * __cdecl core_event_cpp_FUN_004aa6c0(int *param_1,char *param_2,int param_
   int iVar6;
   
   pcVar3 = (char *)*param_1;
-  while ((g_CharacterClassificationTable[(byte)(*pcVar3 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar3 + 1)] & 2) != 0) {
     pcVar3 = pcVar3 + 1;
   }
   *param_1 = (int)pcVar3;
@@ -66,18 +66,18 @@ code_r0x004aa759:
   if (0 < (int)n) {
     pcVar3 = param_2 + n;
     do {
-      if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2U) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar3 = pcVar3 + -1;
     } while (0 < (int)n);
   }
   param_2[n] = '\0';
-  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {
     memmove(param_2,param_2 + 1,n);
     n = n - 1;
   }
   pcVar3 = (char *)*param_1;
-  while ((g_CharacterClassificationTable[(byte)(*pcVar3 + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar3 + 1)] & 2) != 0) {
     pcVar3 = pcVar3 + 1;
   }
   *param_1 = (int)pcVar3;

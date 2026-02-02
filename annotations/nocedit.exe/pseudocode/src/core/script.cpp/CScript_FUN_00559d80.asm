@@ -34,8 +34,8 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
 ;
 ; *****************************************************************************
 
@@ -121,8 +121,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x90]      ; 00559e63
         ;   Label: LAB_00559e63
     PUSH EDI                            ; 00559e6a
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00559e6b
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 00559e6b
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00559e70
     CMP EBX,EAX                         ; 00559e73
     JGE 0x00559f07                      ; 00559e75

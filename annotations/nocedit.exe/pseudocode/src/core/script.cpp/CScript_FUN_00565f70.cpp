@@ -12,20 +12,21 @@ void __cdecl core_script_cpp_CScript_FUN_00565f70(CScript *this_ptr,char *param_
   char cVar1;
   int iVar2;
   char *pcVar3;
-  uint uVar4;
-  void **ppvVar5;
-  int iVar6;
+  uint buffer_index;
+  char **templates;
+  int template_count;
   
-  if (-1 < DAT_0310fd48) {
-    iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(this_ptr->unk4 + 0x20));
-    if (DAT_0310fd48 < iVar2) {
-      iVar2 = core_script_cpp_CScript_FUN_00566a90(this_ptr,DAT_0310fd48,DAT_0310fd44);
-      iVar6 = 0x78;
-      ppvVar5 = &PTR_s_label_006441c0_00680e28;
+  if (-1 < g_CurrentEditingLine) {
+    iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
+    if (g_CurrentEditingLine < iVar2) {
+      iVar2 = core_script_cpp_CScript_editorX2Index_FUN_00566a90
+                        (this_ptr,g_CurrentEditingLine,g_CurrentEditingColumn);
+      template_count = 0x78;
+      templates = g_CommandTemplates;
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                         ((CStrList *)(this_ptr->unk4 + 0x20),DAT_0310fd48);
+                         (&this_ptr->script_text,g_CurrentEditingLine);
       iVar2 = core_script_cpp_CCmdParse_bestParse_FUN_00561db0
-                        ((CCmdParse *)&DAT_0310cb74,(int)pcVar3,iVar2,(int *)ppvVar5,iVar6);
+                        ((CCmdParse *)&DAT_0310cb74,pcVar3,iVar2,templates,template_count);
       if (iVar2 < 0) {
         core_script_cpp_CScript_FUN_00566390(this_ptr,param_2,1);
         return;
@@ -40,13 +41,16 @@ void __cdecl core_script_cpp_CScript_FUN_00565f70(CScript *this_ptr,char *param_
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      core_script_cpp_FUN_005624f0(0x310cb74,&DAT_031101c0);
-      core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,DAT_0310fd48);
-      uVar4 = core_script_cpp_FUN_00562760(0x310cb74,iVar2);
-      DAT_0310fd44 = core_script_cpp_CScript_FUN_00566b30(this_ptr,DAT_0310fd48,uVar4);
+      core_script_cpp_CCmdParse_toString_FUN_005624f0
+                ((CCmdParse *)&DAT_0310cb74,g_CurrentLineBuffer + 1);
+      core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,g_CurrentEditingLine);
+      buffer_index = core_script_cpp_FUN_00562760(0x310cb74,iVar2);
+      g_CurrentEditingColumn =
+           core_script_cpp_CScript_editorIndex2X_FUN_00566b30
+                     (this_ptr,g_CurrentEditingLine,buffer_index);
       core_script_cpp_FUN_005644e0();
-      core_script_cpp_CScript_FUN_00566910(this_ptr);
-      core_script_cpp_CScript_FUN_005669a0(this_ptr);
+      core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
+      core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
       return;
     }
   }

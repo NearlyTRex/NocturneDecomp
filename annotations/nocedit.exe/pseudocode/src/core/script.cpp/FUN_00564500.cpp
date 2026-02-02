@@ -10,22 +10,23 @@ void __cdecl core_script_cpp_FUN_00564500(void)
 
 {
   if ((DAT_0310fd4c < 0) || (DAT_0310fd50 < 0)) {
-    DAT_031141cc = -1;
-    DAT_031141c8 = -1;
-    DAT_031141c0 = -1;
-    DAT_031141c4 = -1;
+    g_SelectionEndLine = -1;
+    g_SelectionEndColumn = -1;
+    g_SelectionStartColumn = -1;
+    g_SelectionStartLine = -1;
   }
   else {
-    DAT_031141cc = DAT_0310fd48;
-    DAT_031141c8 = DAT_0310fd44;
-    DAT_031141c0 = DAT_0310fd4c;
-    DAT_031141c4 = DAT_0310fd50;
-    if (((DAT_0310fd48 <= DAT_0310fd50) &&
-        (DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,
-        DAT_031141c4 = DAT_0310fd48, DAT_0310fd50 <= DAT_0310fd48)) &&
-       (DAT_031141c4 = DAT_0310fd50, DAT_0310fd4c < DAT_0310fd44)) {
-      DAT_031141c8 = DAT_0310fd44;
-      DAT_031141c0 = DAT_0310fd4c;
+    g_SelectionEndLine = g_CurrentEditingLine;
+    g_SelectionEndColumn = g_CurrentEditingColumn;
+    g_SelectionStartColumn = DAT_0310fd4c;
+    g_SelectionStartLine = DAT_0310fd50;
+    if (((g_CurrentEditingLine <= DAT_0310fd50) &&
+        (g_SelectionEndLine = DAT_0310fd50, g_SelectionEndColumn = DAT_0310fd4c,
+        g_SelectionStartColumn = g_CurrentEditingColumn, g_SelectionStartLine = g_CurrentEditingLine
+        , DAT_0310fd50 <= g_CurrentEditingLine)) &&
+       (g_SelectionStartLine = DAT_0310fd50, DAT_0310fd4c < g_CurrentEditingColumn)) {
+      g_SelectionEndColumn = g_CurrentEditingColumn;
+      g_SelectionStartColumn = DAT_0310fd4c;
     }
   }
   return;

@@ -116,7 +116,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004dade0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(CGame *this_ptr);
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(void);
+void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void);
 void __cdecl core_game_cpp_CallToJoystickStuff_FUN_004dc230(CGame *this_ptr,int unk1,SPlayerControl *unk);

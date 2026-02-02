@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0049d660(CIn
   while( true ) {
     character = *pcVar1;
     if (character == '\0') break;
-    if ((g_CharacterClassificationTable[(byte)(character + 1)] & 8U) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(character + 1)] & 8) != 0) {
       if (character == '\t') {
         character = ' ';
       }

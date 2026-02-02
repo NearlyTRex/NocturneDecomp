@@ -13,7 +13,7 @@
 ;   core_mimic.cpp_CMimic_FUN_005205f0 at 0052065e
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 00529805
 ;   core_morph.cpp_FUN_0052ca90 at 0052cb34
-;   core_passngr.cpp_FUN_005460c0 at 00546174
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_005460c0 at 00546174
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c76f2
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6f3d
 ;

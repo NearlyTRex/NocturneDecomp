@@ -202,7 +202,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 246 more
 
-  [param_count_too_few] - 138 functions
+  [param_count_too_few] - 140 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -213,9 +213,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     support_newmsg.cpp_freeSkullBitmaps_FUN_00544750        (  5 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
-    ... and 128 more
+    ... and 130 more
 
-  [pointer_cast] - 67 functions
+  [pointer_cast] - 66 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
@@ -226,9 +226,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
-    ... and 57 more
+    ... and 56 more
 
-  [stack_ref] - 48 functions
+  [stack_ref] - 49 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
@@ -239,9 +239,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
     shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 38 more
+    ... and 39 more
 
-  [decompiler_intrinsic] - 39 functions
+  [decompiler_intrinsic] - 40 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
     core_script.cpp_CScript_FUN_00559ac0                    (  8 lines)
@@ -252,9 +252,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
     wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
-    ... and 29 more
+    ... and 30 more
 
-  [param_count_too_many] - 24 functions
+  [param_count_too_many] - 27 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
     core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0 (  8 lines)
@@ -265,7 +265,20 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00 (  9 lines)
     core_game.cpp_CallToJoystickStuff_FUN_004dc230          (  9 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
-    ... and 14 more
+    ... and 17 more
+
+  [undefined_data] - 22 functions
+    core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
+    core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
+    core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
+    core_event.cpp_CEventList_FUN_004aabe0                  (  6 lines)
+    core_drip.cpp_staticInit_FUN_0048df80                   (  8 lines)
+    core_sound.cpp_staticInit_FUN_005b1760                  (  8 lines)
+    core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
+    sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
+    core_script.cpp_CScript_FUN_00566bc0                    ( 13 lines)
+    core_boxactor.cpp_staticInit_FUN_00421650               ( 13 lines)
+    ... and 12 more
 
   [negative_offset] - 22 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
@@ -280,19 +293,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_course.cpp_CCourse_free_FUN_004426c0               ( 14 lines)
     ... and 12 more
 
-  [undefined_data] - 21 functions
-    core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
-    core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
-    core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
-    core_event.cpp_CEventList_FUN_004aabe0                  (  6 lines)
-    core_drip.cpp_staticInit_FUN_0048df80                   (  8 lines)
-    core_sound.cpp_staticInit_FUN_005b1760                  (  8 lines)
-    core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
-    core_netgame.cpp_staticInit_FUN_0053f310                (  9 lines)
-    sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
-    core_script.cpp_CScript_FUN_00566bc0                    ( 13 lines)
-    ... and 11 more
-
   [unresolved_funcptr] - 9 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)
     core_hero.cpp_CHero_FUN_004f3580                        ( 12 lines)
@@ -304,12 +304,28 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_charactr.cpp_CCharacter_FUN_0042b110               ( 23 lines)
     core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
 
+  [unnamed_param] - 7 functions
+    core_actor.cpp_CActorPropertyList_addGroundType_FUN_004 ( 10 lines)
+    core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 ( 10 lines)
+    core_actor.cpp_CActorPropertyList_addVector_FUN_0040e26 ( 11 lines)
+    core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e ( 12 lines)
+    core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e ( 12 lines)
+    core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e35 ( 26 lines)
+    core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0  ( 34 lines)
+
   [warning_unreachable] - 5 functions
-    core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554 ( 20 lines)
+    core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554 ( 21 lines)
     engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
     shape_design.c_convertWorldToScreenCoordinates_FUN_0045 ( 42 lines)
     shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
+
+  [warning_type_propagation] - 5 functions
+    core_mimic.cpp_CMimic_hasCollision_FUN_00520a00         ( 24 lines)
+    core_mobster.cpp_CMobster_FUN_00525650                  ( 39 lines)
+    core_mimic.cpp_CMimic_beginMorph_FUN_00520a80           ( 40 lines)
+    core_mobster.cpp_CMobster_FUN_00525720                  ( 42 lines)
+    core_hostage.cpp_CHostage_FUN_004f5ff0                  ( 46 lines)
 
   [suspect_float] - 4 functions
     core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
@@ -333,16 +349,8 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mmx.c_detectCPUFeatures_FUN_00524f10               (  9 lines)
     core_mmx.c_getCPUInfo_FUN_0052500f                      ( 13 lines)
 
-  [warning_type_propagation] - 3 functions
-    core_mimic.cpp_CMimic_hasCollision_FUN_00520a00         ( 24 lines)
-    core_mimic.cpp_CMimic_beginMorph_FUN_00520a80           ( 40 lines)
-    core_hostage.cpp_CHostage_FUN_004f5ff0                  ( 46 lines)
-
   [format_string_mismatch] - 1 functions
     core_shovel.cpp_fire_FUN_00588c20                       (  7 lines)
-
-  [unnamed_param] - 1 functions
-    core_conveyor.cpp_FUN_004422f0                          (  7 lines)
 
   [mmx_assembly] - 1 functions
     core_dstrender.cpp_saveMMXRegisters_FUN_004906b0        ( 20 lines)

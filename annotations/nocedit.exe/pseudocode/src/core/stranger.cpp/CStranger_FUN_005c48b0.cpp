@@ -32,28 +32,27 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
     in_stack_00000008->damage_amount = 0.0;
     return;
   }
-  (this_ptr->base).unk1 = (int)2.0f;
+  (this_ptr->base).unk1 = (uint)2.0f;
   iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008->wielder,"CBugs");
   if (iVar3 != 0) {
     (this_ptr->base).unk1 = 0x3e19999a;
   }
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points =
-       (int)((float)(this_ptr->base).base.hit_points - in_stack_00000008->damage_amount);
+       (this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
   this_ptr_01 = g_CConsolePtr;
   if (((pCVar2->auto_use_health != 0) && (0xb < in_stack_00000008->damage_type)) &&
-     ((float)(this_ptr->base).base.hit_points <= 0.0)) {
-    (this_ptr->base).base.hit_points = 0;
+     ((this_ptr->base).base.hit_points <= 0.0)) {
+    (this_ptr->base).base.hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_01,"Using auto health\n");
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570(&(this_ptr->base).inventory);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"hit points: %3.2f\n",
-               (double)(float)(this_ptr->base).base.hit_points);
+              (g_CConsolePtr,"hit points: %3.2f\n",(double)(this_ptr->base).base.hit_points);
   }
   this_ptr_00 = &(this_ptr->base).base.model;
-  if ((float)(this_ptr->base).base.hit_points <= 0.0) {
+  if ((this_ptr->base).base.hit_points <= 0.0) {
     pCVar1 = (this_ptr->base).base.base.vtable._uc;
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     (*(pCVar1->_uc).cfunc7)();
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);

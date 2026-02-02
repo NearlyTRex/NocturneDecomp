@@ -57,7 +57,7 @@ void __cdecl CGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0
 // Address: 004e5af0
-void __cdecl CGargoyle::getPropertyList(void);
+void __cdecl CGargoyle::getPropertyList(CGargoyle *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_gargoyle.cpp_FUN_004e5ba0
 // Address: 004e5ba0

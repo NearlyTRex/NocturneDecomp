@@ -55,7 +55,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         g_CurrentLineNumber = 0x5c9;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
       }
-      if ((float)98 < (float)(g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
+      if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have used : ");

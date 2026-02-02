@@ -15,7 +15,7 @@
 ;   TerminatedCString s_core_skeledit_cpp_00649cda
 ;   TerminatedCString s_Unexpected_end_of_file_00649cef
 ;   TerminatedCString s_anon_00649d07
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

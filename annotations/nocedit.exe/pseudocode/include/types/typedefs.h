@@ -20,5 +20,6 @@
 #include "types/typedefs/CFilmProjector_ptr_500.h"
 #include "types/typedefs/CFilmReel_ptr_344.h"
 #include "types/typedefs/CHealthItem_ptr_344.h"
+#include "types/typedefs/CScript_ptr_56.h"
 #include "types/typedefs/SBitBuffer_ptr_8.h"
 

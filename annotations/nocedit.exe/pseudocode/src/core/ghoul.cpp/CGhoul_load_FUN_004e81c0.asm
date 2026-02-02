@@ -17,12 +17,12 @@
 ;   int g_CGhoulClassVersion = 0x7
 ;
 ; Called Functions:
-;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970
-;   core_actor.cpp_serializeFloat_FUN_0040b770
-;   core_actor.cpp_serializeInteger_FUN_0040b7f0
-;   core_actor.cpp_serializeMotionState_FUN_0040b9f0
-;   core_actor.cpp_serializePartStatus_FUN_0040bae0
-;   core_enemy.cpp_CEnemy_serialize_FUN_004a9660
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b970
+;   core_actor.cpp_archiveFloat_FUN_0040b770
+;   core_actor.cpp_archiveInteger_FUN_0040b7f0
+;   core_actor.cpp_archiveMotionState_FUN_0040b9f0
+;   core_actor.cpp_archivePartStatus_FUN_0040bae0
+;   core_enemy.cpp_CEnemy_archive_FUN_004a9660
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   Label: core_ghoul.cpp_CGhoul_load_FUN_004e81c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004e81c1
     PUSH EBX                            ; 004e81c5
-    CALL core_enemy.cpp_CEnemy_serialize_FUN_004a9660 ; 004e81c6
-        ;   XREF to: 004a9660 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_serialize_FUN_004a9660(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_archive_FUN_004a9660 ; 004e81c6
+        ;   XREF to: 004a9660 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004a9660(CEnemy * this_ptr)
     MOV EDX,dword ptr [0x0067b92c]      ; 004e81cb | g_CGhoulClassVersion
     ADD ESP,0x4                         ; 004e81d1
     CMP EDX,0x4                         ; 004e81d4
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_004e81dd
     LEA EAX,[EBX + 0x158]               ; 004e81e2
     PUSH EAX                            ; 004e81e8
-    CALL core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970 ; 004e81e9
-        ;   XREF to: 0040b970 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b970 ; 004e81e9
+        ;   XREF to: 0040b970 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
     MOV ECX,dword ptr [0x0067b92c]      ; 004e81ee | g_CGhoulClassVersion
     ADD ESP,0x8                         ; 004e81f4
     CMP ECX,0x2                         ; 004e81f7
@@ -56,8 +56,8 @@ section .text
     PUSH 0x62de0a                       ; 004e8201 | = "guardDistance"
     LEA EAX,[EBX + 0xbe34]              ; 004e8206
     PUSH EAX                            ; 004e820c
-    CALL core_actor.cpp_serializeFloat_FUN_0040b770 ; 004e820d
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
+    CALL core_actor.cpp_archiveFloat_FUN_0040b770 ; 004e820d
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b770(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e8212
     CMP dword ptr [0x0067b92c],0x3      ; 004e8215 | g_CGhoulClassVersion
         ;   Label: LAB_004e8215
@@ -66,8 +66,8 @@ section .text
     PUSH 0x62de18                       ; 004e821e | = "livesLeft"
     LEA EAX,[EBX + 0xbed8]              ; 004e8223
     PUSH EAX                            ; 004e8229
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004e822a
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004e822a
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e822f
     CMP dword ptr [0x0067b92c],0x5      ; 004e8232 | g_CGhoulClassVersion
         ;   Label: LAB_004e8232
@@ -76,8 +76,8 @@ section .text
     PUSH 0x62de22                       ; 004e823b | = "motion state"
     LEA EAX,[EBX + 0x158]               ; 004e8240
     PUSH EAX                            ; 004e8246
-    CALL core_actor.cpp_serializeMotionState_FUN_0040b9f0 ; 004e8247
-        ;   XREF to: 0040b9f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b9f0 ; 004e8247
+        ;   XREF to: 0040b9f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004e824c
     CMP dword ptr [0x0067b92c],0x6      ; 004e824f | g_CGhoulClassVersion
         ;   Label: LAB_004e824f
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_004e825a
     LEA EAX,[EBX + 0xbe24]              ; 004e825f
     PUSH EAX                            ; 004e8265
-    CALL core_actor.cpp_serializeFloat_FUN_0040b770 ; 004e8266
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
+    CALL core_actor.cpp_archiveFloat_FUN_0040b770 ; 004e8266
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b770(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e826b
     JMP 0x004e81dd                      ; 004e826e
         ;   XREF to: 004e81dd (UNCONDITIONAL_JUMP)  ; LAB_004e81dd
@@ -98,26 +98,26 @@ section .text
         ;   Label: LAB_004e8273
     LEA EAX,[EBX + 0x158]               ; 004e8278
     PUSH EAX                            ; 004e827e
-    CALL core_actor.cpp_serializePartStatus_FUN_0040bae0 ; 004e827f
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializePartStatus_FUN_0040bae0(void * part, char * property_name)
+    CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 004e827f
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
     ADD ESP,0x8                         ; 004e8284
     PUSH 0x62de3a                       ; 004e8287 | = "spasmCount"
     LEA EAX,[EBX + 0xbedc]              ; 004e828c
     PUSH EAX                            ; 004e8292
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004e8293
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004e8293
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e8298
     PUSH 0x62de45                       ; 004e829b | = "livesLeft"
     LEA EAX,[EBX + 0xbed8]              ; 004e82a0
     PUSH EAX                            ; 004e82a6
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004e82a7
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004e82a7
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e82ac
     PUSH 0x62de4f                       ; 004e82af | = "ariseTimer"
     ADD EBX,0xbec8                      ; 004e82b4
     PUSH EBX                            ; 004e82ba
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004e82bb
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004e82bb
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e82c0
     POP EBX                             ; 004e82c3
     RET                                 ; 004e82c4

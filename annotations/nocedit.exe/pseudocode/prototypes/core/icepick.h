@@ -59,9 +59,9 @@ void __cdecl CIcePick(CIcePick *this_ptr);
 // Address: 004f9490
 void __cdecl CIcePick(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_CIcePick_serialize_FUN_004f9590
+// Original: core_icepick.cpp_CIcePick_archive_FUN_004f9590
 // Address: 004f9590
-void __cdecl CIcePick::serialize(CIcePick *this_ptr);
+void __cdecl CIcePick::archive(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_renderOpaque_FUN_004f95a0
 // Address: 004f95a0

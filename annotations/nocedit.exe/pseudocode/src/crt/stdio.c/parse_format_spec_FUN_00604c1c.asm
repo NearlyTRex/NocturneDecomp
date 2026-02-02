@@ -11,7 +11,7 @@
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604be0
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 

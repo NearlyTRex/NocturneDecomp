@@ -11,6 +11,7 @@ core_biggs_cpp_CBiggs_writeDependencies_FUN_00418ce0(CBiggs *this_ptr,_FILE *fil
 
 {
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0((CDemonActor *)this_ptr,file_handle);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(&(this_ptr->base).base.model,file_handle);
+  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+            (&(this_ptr->base).base.model,file_handle);
   return;
 }

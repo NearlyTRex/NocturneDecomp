@@ -13,7 +13,7 @@ core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580
 {
   int iVar1;
   
-  if ((g_CGamePtr->unk2 == 0) && ((this_ptr->unk1 & 0x7fffffffU) == 0)) {
+  if ((g_CGamePtr->unk2 == 0) && ((this_ptr->unk1 & 0x7fffffff) == 0)) {
     iVar1 = core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0
                       ((CDemonActor *)this_ptr,collision_info,tolerance);
     return iVar1;

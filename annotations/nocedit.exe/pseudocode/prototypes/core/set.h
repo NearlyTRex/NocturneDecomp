@@ -259,9 +259,9 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 // Address: 00570ec0
 void __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_00570f10
+// Original: core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10
 // Address: 00570f10
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_FUN_00570fa0
 // Address: 00570fa0

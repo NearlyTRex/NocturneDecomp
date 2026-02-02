@@ -42,7 +42,7 @@ engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *ou
     if (max_width < iVar2) {
       do {
         cVar1 = *output_buffer;
-        if (((cVar1 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2U) != 0)) ||
+        if (((cVar1 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0)) ||
            (cVar1 == '\n')) {
           uVar4 = (int)output_buffer - (int)pcVar5;
           pcVar6 = pcVar5;

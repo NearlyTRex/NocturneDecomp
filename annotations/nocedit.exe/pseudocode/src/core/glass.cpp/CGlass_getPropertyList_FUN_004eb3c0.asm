@@ -17,10 +17,10 @@
 ;   TerminatedCString s_Broken_texture_0062e17e
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -43,44 +43,44 @@ section .text
     PUSH EAX                            ; 004eb3de
     PUSH 0x62e121                       ; 004eb3df | = "Texture"
     PUSH ESI                            ; 004eb3e4
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 004eb3e5
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 004eb3e5
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 004eb3ea
     LEA EAX,[EBX + 0x184]               ; 004eb3ed
     PUSH EAX                            ; 004eb3f3
     PUSH 0x62e129                       ; 004eb3f4 | = "Cause shatter condition"
     PUSH ESI                            ; 004eb3f9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004eb3fa
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 004eb3fa
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004eb3ff
     LEA EAX,[EBX + 0x30c]               ; 004eb402
     PUSH EAX                            ; 004eb408
     PUSH 0x62e141                       ; 004eb409 | = "Allow shatter condition"
     PUSH ESI                            ; 004eb40e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004eb40f
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 004eb40f
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004eb414
     LEA EAX,[EBX + 0x1e8]               ; 004eb417
     PUSH EAX                            ; 004eb41d
     PUSH 0x62e159                       ; 004eb41e | = "Am I a mirror"
     PUSH ESI                            ; 004eb423
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 004eb424
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 004eb424
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 004eb429
     PUSH 0x0                            ; 004eb42c
     LEA EAX,[EBX + 0x17c]               ; 004eb42e
     PUSH EAX                            ; 004eb434
     PUSH 0x62e167                       ; 004eb435 | = "Opacity"
     PUSH ESI                            ; 004eb43a
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004eb43b
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 004eb43b
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004eb440
     LEA EAX,[EBX + 0x370]               ; 004eb443
     PUSH EAX                            ; 004eb449
     PUSH 0x62e16f                       ; 004eb44a | = "backgroundFlag"
     PUSH ESI                            ; 004eb44f
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 004eb450
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 004eb450
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     MOV EDX,dword ptr [EBX + 0x370]     ; 004eb455
     ADD ESP,0xc                         ; 004eb45b
     TEST EDX,EDX                        ; 004eb45e
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 004eb46f
     PUSH 0x62e17e                       ; 004eb470 | = "Broken texture"
     PUSH ESI                            ; 004eb475
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 004eb476
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 004eb476
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 004eb47b
     POP ESI                             ; 004eb47e
     POP EBX                             ; 004eb47f

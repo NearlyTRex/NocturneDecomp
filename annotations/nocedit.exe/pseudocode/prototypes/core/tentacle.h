@@ -31,9 +31,9 @@ void __cdecl CTentacle::process(CTentacle *this_ptr,float delta_time);
 // Address: 005db840
 int __cdecl CTentacle(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_CTentacle_serialize_FUN_005db880
+// Original: core_tentacle.cpp_CTentacle_archive_FUN_005db880
 // Address: 005db880
-void __cdecl CTentacle::serialize(CTentacle *this_ptr);
+void __cdecl CTentacle::archive(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_FUN_005db900
 // Address: 005db900

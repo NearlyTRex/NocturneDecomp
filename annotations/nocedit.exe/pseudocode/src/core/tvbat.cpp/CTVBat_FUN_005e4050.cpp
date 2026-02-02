@@ -15,7 +15,7 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e4050(CTVBat *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc));
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
-  (this_ptr->base).base.hit_points = 0x41200000;
+  (this_ptr->base).base.hit_points = 10.0;
   this_ptr->unk6[8] = '\0';
   this_ptr->unk6[9] = '\0';
   this_ptr->unk6[10] = '\0';

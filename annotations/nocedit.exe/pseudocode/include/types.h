@@ -5,6 +5,7 @@
 // =============================================================================
 // This header includes all game types (classes, structs, unions, funcdefs).
 
+#include "types/enums.h"
 #include "types/structs.h"
 #include "types/unions.h"
 #include "types/typedefs.h"

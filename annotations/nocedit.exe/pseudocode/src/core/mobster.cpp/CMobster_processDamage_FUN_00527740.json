@@ -1,0 +1,210 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 8,
+        "line": 37,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 41,
+        "message": "void value not ignored as it ought to be"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 68,
+        "message": "void value not ignored as it ought to be"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 68,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 155,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 3,
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 221
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00527740",
+    "address_range": [
+      [
+        "00527740",
+        "005278c5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mobster.cpp_CMobster_processDamage_FUN_00527740",
+    "signature": "void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "004a9f10",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10"
+    },
+    {
+      "addr": "00527380",
+      "is_variadic": false,
+      "name": "core_mobster.cpp_CMobster_FUN_00527380"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006399d6",
+      "name": "s_mobster_die_wav_006399d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006399e8",
+      "name": "s_mobster_hit_wav_006399e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f873dc",
+      "name": "g_CTommyGunClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.690476190476191,
+    "instruction_count": 126,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "CALL": 13,
+      "CALLIND": 3,
+      "CBRANCH": 9,
+      "COPY": 133,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 61,
+      "INT_AND": 58,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 48,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 24,
+      "INT_SUB": 52,
+      "INT_ZEXT": 4,
+      "LOAD": 36,
+      "POPCOUNT": 24,
+      "RETURN": 3,
+      "STORE": 55
+    },
+    "pcode_op_count": 591
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMobster",
+        "offset": 284,
+        "vtable_addr": "00661794"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

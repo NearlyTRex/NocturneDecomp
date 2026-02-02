@@ -48,11 +48,11 @@ void __cdecl core_dracbrid_cpp_FUN_00486070(void)
     core_charactr_cpp_CCharacter_FUN_0042b5b0(&in_stack_00000004->base);
   }
   core_dracbrid_cpp_ShotThruHeart_FUN_00486020();
-  fVar1 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  fVar1 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   this_ptr = &(in_stack_00000004->base).model;
-  (in_stack_00000004->base).hit_points = (int)fVar1;
+  (in_stack_00000004->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     iVar4 = pSVar3->state_index;

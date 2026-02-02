@@ -115,11 +115,11 @@ LAB_005ad285:
       pcVar8 = (char *)0x0;
 joined_r0x005ad2dc:
       while ((local_45c < pcVar8 &&
-             ((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2U) != 0))) {
+             ((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {
         pcVar8 = pcVar8 + -1;
       }
       *pcVar8 = '\0';
-      while ((g_CharacterClassificationTable[(byte)(local_45c[0] + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(local_45c[0] + 1)] & 2) != 0) {
         uVar7 = 0xffffffff;
         pcVar6 = local_45c;
         do {

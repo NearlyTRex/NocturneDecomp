@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 46,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
     ],
@@ -41,7 +41,7 @@
     {
       "addr": "00544b70",
       "is_variadic": false,
-      "name": "core_npc.cpp_CNPC_FUN_00544b70"
+      "name": "core_npc.cpp_CNPC_renderBackground_FUN_00544b70"
     },
     {
       "addr": "005fe7f0",
@@ -124,6 +124,13 @@
       "line": 13,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "text": "core_npc_cpp_CNPC_renderBackground_FUN_00544b70(&this_ptr->base,in_stack_0000000c);",
       "type": "stack_param"
     }
   ],

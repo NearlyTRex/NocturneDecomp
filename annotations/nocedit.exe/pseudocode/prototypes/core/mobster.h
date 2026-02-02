@@ -27,81 +27,81 @@ CDemonActorType * __cdecl CMobster::getActorType(CMobster *this_ptr);
 // Address: 00525200
 CMobster * __cdecl CMobster::ctor(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00525340
+// Original: core_mobster.cpp_CMobster_setup_FUN_00525340
 // Address: 00525340
-void __cdecl FUN_00525340(void);
+void __cdecl CMobster::setup(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00525650
+// Original: core_mobster.cpp_CMobster_FUN_00525650
 // Address: 00525650
-void __cdecl FUN_00525650(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00525720
+// Original: core_mobster.cpp_CMobster_FUN_00525720
 // Address: 00525720
-void __cdecl FUN_00525720(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00525840
+// Original: core_mobster.cpp_CMobster_process_FUN_00525840
 // Address: 00525840
-void __cdecl FUN_00525840(void);
+void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
 // Address: 005267a0
-void __cdecl CMobster::aimTommyGun(void);
+void __cdecl CMobster::aimTommyGun(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_FUN_00526b00
 // Address: 00526b00
 void __cdecl FUN_00526b00(void);
 
-// Original: core_mobster.cpp_FUN_00526b20
+// Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
 // Address: 00526b20
-void __cdecl FUN_00526b20(void);
+void __cdecl CMobster::getCarryObjToBodyXForm(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00526d90
+// Original: core_mobster.cpp_CMobster_FUN_00526d90
 // Address: 00526d90
-int __cdecl FUN_00526d90(void);
+int __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_005271c0
+// Original: core_mobster.cpp_CMobster_FUN_005271c0
 // Address: 005271c0
-void __cdecl FUN_005271c0(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_load_FUN_00527230
+// Original: core_mobster.cpp_CMobster_archive_FUN_00527230
 // Address: 00527230
-void __cdecl CMobster::load(void);
+void __cdecl CMobster::archive(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00527360
+// Original: core_mobster.cpp_CMobster_FUN_00527360
 // Address: 00527360
-int __cdecl FUN_00527360(void);
+int __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00527380
+// Original: core_mobster.cpp_CMobster_FUN_00527380
 // Address: 00527380
-void __cdecl FUN_00527380(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00527740
+// Original: core_mobster.cpp_CMobster_processDamage_FUN_00527740
 // Address: 00527740
-void __cdecl FUN_00527740(void);
+void __cdecl CMobster::processDamage(CMobster *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_mobster.cpp_FUN_005278d0
+// Original: core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0
 // Address: 005278d0
-int __cdecl FUN_005278d0(void);
+int __cdecl CMobster::getTargetPoints(CMobster *this_ptr,CVector3f *out_points_array);
 
-// Original: core_mobster.cpp_FUN_005279d0
+// Original: core_mobster.cpp_CMobster_hasCollision_FUN_005279d0
 // Address: 005279d0
-void __cdecl FUN_005279d0(void);
+void __cdecl CMobster::hasCollision(CMobster *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_mobster.cpp_FUN_005279f0
+// Original: core_mobster.cpp_CMobster_FUN_005279f0
 // Address: 005279f0
-void __cdecl FUN_005279f0(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00527b70
+// Original: core_mobster.cpp_CMobster_getPropertyList_FUN_00527b70
 // Address: 00527b70
-void __cdecl FUN_00527b70(void);
+void __cdecl CMobster::getPropertyList(CMobster *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_mobster.cpp_FUN_00527c30
+// Original: core_mobster.cpp_CMobster_FUN_00527c30
 // Address: 00527c30
-void __cdecl FUN_00527c30(void);
+void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_00527c40
+// Original: core_mobster.cpp_CMobster_writeDependencies_FUN_00527c40
 // Address: 00527c40
-void __cdecl FUN_00527c40(void);
+void __cdecl CMobster::writeDependencies(CMobster *this_ptr,_FILE *file_handle);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_00527c70
 // Address: 00527c70

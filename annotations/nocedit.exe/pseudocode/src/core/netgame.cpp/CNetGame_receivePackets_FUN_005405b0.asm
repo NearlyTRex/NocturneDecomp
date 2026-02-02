@@ -10,11 +10,11 @@
 ;
 ; XREF[6]:
 ;   core_netgame.cpp_CNetGame_FUN_0053fd00 at 0053ff6a
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 0054183e
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053fac0
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 005435f2
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 00543221
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 at 00540372
-;   core_netgame.cpp_FUN_00541390 at 0054183e
-;   core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 at 0053fac0
 ;
 ; Referenced Globals:
 ;   int g_LastPingTime
@@ -103,7 +103,7 @@ section .text
     PUSH ESI                            ; 00540644
         ;   Label: LAB_00540644
     CALL core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 ; 00540645
-        ;   XREF to: 00541ff0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0()
+        ;   XREF to: 00541ff0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0054064a
     ADD ESP,0x8                         ; 0054064d
     POP ESI                             ; 00540650

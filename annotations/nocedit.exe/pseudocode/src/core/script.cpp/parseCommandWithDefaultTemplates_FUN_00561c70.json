@@ -1,0 +1,192 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 32,
+        "line": 19,
+        "message": "invalid conversion from 'const char**' to 'char**' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 26,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "00565ae0",
+      "from_addr": "00565b56",
+      "name": "core_script.cpp_CScript_FUN_00565ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565e70",
+      "from_addr": "00565ee8",
+      "name": "core_script.cpp_CScript_FUN_00565e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00561c70",
+    "address_range": [
+      [
+        "00561c70",
+        "00561caa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70",
+    "signature": "int __cdecl core_script_cpp_parseCommandWithDefaultTemplates_FUN_00561c70 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "00561690",
+      "is_variadic": false,
+      "name": "core_script.cpp_parseCommandWithTemplates_FUN_00561690"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00680e28",
+      "name": "g_CommandTemplates",
+      "type": "char*[141]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00565ee8",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565e70",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00565b56",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00565ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3703703703703702,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 28,
+      "INT_ADD": 13,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 14,
+      "LOAD": 12,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 91
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cmd_name_out",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "prefix_out",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "suffix_out",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cursor_position",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "parm_out",
+        "offset": 24,
+        "size": 4,
+        "type": "CCmdParm *"
+      },
+      {
+        "is_param": true,
+        "name": "parse_out",
+        "offset": 28,
+        "size": 4,
+        "type": "CCmdParse *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 2,
+      "declared_params": 7,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:7 vs estimated:1",
+      "param_delta": -6,
+      "text": "Function declares 7 params but call sites push 1 (6 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

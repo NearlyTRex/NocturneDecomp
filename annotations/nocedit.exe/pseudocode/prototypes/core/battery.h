@@ -47,9 +47,9 @@ void __cdecl CBattery::process(CBattery *this_ptr,float delta_time);
 // Address: 00417f80
 int __cdecl CBattery::renderOpaque(CBattery *this_ptr);
 
-// Original: core_battery.cpp_CBattery_serialize_FUN_00418000
+// Original: core_battery.cpp_CBattery_archive_FUN_00418000
 // Address: 00418000
-void __cdecl CBattery::serialize(CBattery *this_ptr);
+void __cdecl CBattery::archive(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_hasCollision_FUN_00418050
 // Address: 00418050

@@ -14,7 +14,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ec80(CDemonMission *this_ptr
   int iVar2;
   CDemonActor *in_stack_ffffd550;
   char *in_stack_ffffd554;
-  uint in_stack_ffffd558;
+  EActorPropertyType in_stack_ffffd558;
   uint in_stack_ffffd55c;
   uint in_stack_ffffd560;
   byte local_5ac [944];

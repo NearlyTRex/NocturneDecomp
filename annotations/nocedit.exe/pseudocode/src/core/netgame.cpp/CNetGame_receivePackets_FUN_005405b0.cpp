@@ -37,6 +37,6 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
     core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
               (this_ptr,&local_10,(char *)&g_NetworkPacketSize);
   }
-  core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0();
+  core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(this_ptr);
   return;
 }

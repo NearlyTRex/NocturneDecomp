@@ -23,12 +23,12 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e2d0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
-;   core_actor.cpp_CActorPropertyList_FUN_0040e640
+;   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH EAX                            ; 005b8eac
     PUSH 0x652ecc                       ; 005b8ead | = "Model file (.kfm)"
     PUSH ESI                            ; 005b8eb2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 005b8eb3
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 005b8eb3
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 005b8eb8
     LEA EAX,[EBX + 0x2d4]               ; 005b8ebb
     PUSH EAX                            ; 005b8ec1
@@ -59,8 +59,8 @@ section .text
     PUSH 0x3                            ; 005b8ec7
     PUSH 0x652ef7                       ; 005b8ec9 | = "Type"
     PUSH ESI                            ; 005b8ece
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 005b8ecf
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 005b8ecf
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
     ADD ESP,0x14                        ; 005b8ed4
     LEA EAX,[EBX + 0x2d8]               ; 005b8ed7
     PUSH EAX                            ; 005b8edd
@@ -68,24 +68,24 @@ section .text
     PUSH 0x4                            ; 005b8ee3
     PUSH 0x652f24                       ; 005b8ee5 | = "State"
     PUSH ESI                            ; 005b8eea
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 005b8eeb
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 005b8eeb
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
     ADD ESP,0x14                        ; 005b8ef0
     PUSH 0x0                            ; 005b8ef3
     LEA EAX,[EBX + 0x2dc]               ; 005b8ef5
     PUSH EAX                            ; 005b8efb
     PUSH 0x652f2a                       ; 005b8efc | = "Are we active"
     PUSH ESI                            ; 005b8f01
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 005b8f02
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 005b8f02
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8f07
     PUSH 0x0                            ; 005b8f0a
     LEA EAX,[EBX + 0x2ec]               ; 005b8f0c
     PUSH EAX                            ; 005b8f12
     PUSH 0x652f38                       ; 005b8f13 | = "Extend distance"
     PUSH ESI                            ; 005b8f18
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8f19
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8f19
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 005b8f1e
     ADD ESP,0x10                        ; 005b8f24
     CMP EDX,0x2                         ; 005b8f27
@@ -95,70 +95,70 @@ section .text
     PUSH EAX                            ; 005b8f36
     PUSH 0x652f48                       ; 005b8f37 | = "Start cond"
     PUSH ESI                            ; 005b8f3c
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 005b8f3d
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 005b8f3d
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 005b8f42
     LEA EAX,[EBX + 0x354]               ; 005b8f45
     PUSH EAX                            ; 005b8f4b
     PUSH 0x652f53                       ; 005b8f4c | = "Stop cond"
     PUSH ESI                            ; 005b8f51
         ;   Label: LAB_005b8f51
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 005b8f52
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 005b8f52
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 005b8f57
     PUSH 0x0                            ; 005b8f5a
     LEA EAX,[EBX + 0x480]               ; 005b8f5c
     PUSH EAX                            ; 005b8f62
     PUSH 0x652f76                       ; 005b8f63 | = "Extend time"
     PUSH ESI                            ; 005b8f68
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8f69
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8f69
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8f6e
     PUSH 0x0                            ; 005b8f71
     LEA EAX,[EBX + 0x484]               ; 005b8f73
     PUSH EAX                            ; 005b8f79
     PUSH 0x652f82                       ; 005b8f7a | = "Retract time"
     PUSH ESI                            ; 005b8f7f
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8f80
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8f80
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8f85
     LEA EAX,[EBX + 0x48c]               ; 005b8f88
     PUSH EAX                            ; 005b8f8e
     PUSH 0x652f8f                       ; 005b8f8f | = "Extend sound"
     PUSH ESI                            ; 005b8f94
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e2d0 ; 005b8f95
-        ;   XREF to: 0040e2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e2d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 ; 005b8f95
+        ;   XREF to: 0040e2d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList * this_ptr, char * property_name, void * data_ptr)
     ADD ESP,0xc                         ; 005b8f9a
     LEA EAX,[EBX + 0x4f0]               ; 005b8f9d
     PUSH EAX                            ; 005b8fa3
     PUSH 0x652f9c                       ; 005b8fa4 | = "Retract sound"
     PUSH ESI                            ; 005b8fa9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e2d0 ; 005b8faa
-        ;   XREF to: 0040e2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e2d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 ; 005b8faa
+        ;   XREF to: 0040e2d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList * this_ptr, char * property_name, void * data_ptr)
     ADD ESP,0xc                         ; 005b8faf
     PUSH 0x0                            ; 005b8fb2
     LEA EAX,[EBX + 0x554]               ; 005b8fb4
     PUSH EAX                            ; 005b8fba
     PUSH 0x652faa                       ; 005b8fbb | = "Period"
     PUSH ESI                            ; 005b8fc0
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8fc1
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8fc1
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8fc6
     PUSH 0x0                            ; 005b8fc9
     LEA EAX,[EBX + 0x55c]               ; 005b8fcb
     PUSH EAX                            ; 005b8fd1
     PUSH 0x652fb1                       ; 005b8fd2 | = "Param"
     PUSH ESI                            ; 005b8fd7
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8fd8
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8fd8
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8fdd
     PUSH 0x0                            ; 005b8fe0
     ADD EBX,0x558                       ; 005b8fe2
     PUSH EBX                            ; 005b8fe8
     PUSH 0x652fb7                       ; 005b8fe9 | = "DamageStrength"
     PUSH ESI                            ; 005b8fee
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005b8fef
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005b8fef
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005b8ff4
     POP ESI                             ; 005b8ff7
     POP EBX                             ; 005b8ff8
@@ -168,8 +168,8 @@ section .text
     PUSH EAX                            ; 005b9000
     PUSH 0x652f5d                       ; 005b9001 | = "Extend cond"
     PUSH ESI                            ; 005b9006
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 005b9007
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 005b9007
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 005b900c
     LEA EAX,[EBX + 0x41c]               ; 005b900f
     PUSH EAX                            ; 005b9015

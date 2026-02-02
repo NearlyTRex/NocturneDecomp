@@ -18,7 +18,7 @@
 ;   crt_stdlib.c_strtoul_FUN_0060ede0 at 0060edf2
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_006855d8
 ;
 ; Called Functions:

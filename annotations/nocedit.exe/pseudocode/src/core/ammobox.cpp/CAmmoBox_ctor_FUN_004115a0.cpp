@@ -32,7 +32,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_pt
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   ADJ(this_ptr_00)->ammo_count = 0x14;
-  ADJ(this_ptr_00)->ammo_type = 0;
+  ADJ(this_ptr_00)->ammo_type = AMMOBOX_TYPE_GENERIC;
   ADJ(this_ptr_00)->unk1 = 0.0;
   ADJ(this_ptr_00)->item = (char *)0x0;
   ADJ(this_ptr_00)->has_collision = 0;

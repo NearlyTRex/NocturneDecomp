@@ -14,11 +14,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[5]:
-;   core_charactr.cpp_CCharacter_FUN_0042f3e0 at 0042f717
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dff4
 ;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 at 0042f825
+;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f717
 ;   core_gabriela.cpp_FUN_004d5550 at 004d556c
-;   core_mobster.cpp_FUN_00525840 at 00525889
+;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525889
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

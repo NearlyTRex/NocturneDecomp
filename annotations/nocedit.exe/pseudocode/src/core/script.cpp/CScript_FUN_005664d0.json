@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 54,
+        "line": 55,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
       }
     ],
@@ -20,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 178,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 59,
     "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 226
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -69,32 +69,32 @@
       "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0"
     },
     {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
       "addr": "004a2f70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
   "globals": [
     {
       "addr": "006849c4",
       "name": "g_CharacterClassificationTable",
-      "type": "char[256]",
+      "type": "uchar[257]",
       "value": null
     },
     {
       "addr": "0310fcd8",
-      "name": "CEdScrollBar_0310fcd8",
+      "name": "g_ScriptEditorVScrollBar",
       "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fd0c",
-      "name": "CEdScrollBar_0310fd0c",
+      "name": "g_ScriptEditorHScrollBar",
       "type": "CEdScrollBar",
       "value": null
     },
@@ -267,14 +267,14 @@
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_2",
-      "text": "(iVar2 = INT_031141e4 + (param_2 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208,",
+      "text": "(iVar2 = INT_031141e4 + (param_2 - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208,",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_03114208",
-      "text": "(iVar2 = INT_031141e4 + (param_2 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208,",
+      "text": "(iVar2 = INT_031141e4 + (param_2 - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208,",
       "type": "undefined_data"
     },
     {
@@ -288,33 +288,33 @@
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param_2",
-      "text": "((CStrList *)(this_ptr->unk4 + 0x20),param_2);",
+      "text": "(&this_ptr->script_text,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_03114208",
       "text": "INT_031141e0 + -1,iVar2 + DAT_03114208 + -1,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_031141e8",
       "text": "if (x_pos < DAT_031141e8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_03114200",
       "text": "(DAT_03114200,character_code,x_pos,iVar2,color_mode,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_031141e8",
       "text": "if (DAT_031141e8 <= x_pos) {",
       "type": "undefined_data"

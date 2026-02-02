@@ -8,7 +8,7 @@
 ; uchar *          Stack[0x8]:4   ip_bytes
 ;
 ; XREF[2]:
-;   core_netgame.cpp_FUN_00541390 at 00541704
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541704
 ;   support_trisock.cpp_formatSocketAddress_FUN_005e1a30 at 005e1a3c
 ;
 ; Referenced Globals:

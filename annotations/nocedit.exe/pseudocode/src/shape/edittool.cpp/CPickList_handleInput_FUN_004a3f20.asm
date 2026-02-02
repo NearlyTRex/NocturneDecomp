@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:

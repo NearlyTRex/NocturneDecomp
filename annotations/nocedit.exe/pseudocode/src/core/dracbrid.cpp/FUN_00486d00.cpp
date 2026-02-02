@@ -16,7 +16,7 @@ void __cdecl core_dracbrid_cpp_FUN_00486d00(void)
   _FILE *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260
+  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
             ((CDeformableModelInstance *)(in_stack_00000004 + 1),in_stack_00000008);
   return;
 }

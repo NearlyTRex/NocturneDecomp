@@ -71,13 +71,13 @@ code_r0x0040fffe:
       if (0 < (int)SVar6) {
         puVar3 = &stack0x00003613 + ~uVar5;
         do {
-          if ((g_CharacterClassificationTable[(byte)(puVar3[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(puVar3[-1] + 1)] & 2) == 0) break;
           SVar6 = SVar6 - 1;
           puVar3 = puVar3 + -1;
         } while (0 < (int)SVar6);
       }
       (&stack0x00003614)[SVar6] = 0;
-      while ((g_CharacterClassificationTable[(byte)(in_stack_00003614 + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(in_stack_00003614 + 1)] & 2) != 0) {
         memmove(&stack0x00003614,&stack0x00003615,SVar6);
         SVar6 = SVar6 - 1;
       }
@@ -104,13 +104,13 @@ code_r0x0040fffe:
       if (0 < (int)SVar6) {
         puVar3 = &stack0x00003677 + ~uVar5;
         do {
-          if ((g_CharacterClassificationTable[(byte)(puVar3[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(puVar3[-1] + 1)] & 2) == 0) break;
           SVar6 = SVar6 - 1;
           puVar3 = puVar3 + -1;
         } while (0 < (int)SVar6);
       }
       (&stack0x00003678)[SVar6] = 0;
-      while ((g_CharacterClassificationTable[(byte)(in_stack_00003678 + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(in_stack_00003678 + 1)] & 2) != 0) {
         memmove(&stack0x00003678,&stack0x00003679,SVar6);
         SVar6 = SVar6 - 1;
       }

@@ -48,7 +48,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
   local_1c = (CPathMap *)0x3e800000;
   local_24 = 0.7853982;
   pCVar9 = g_HeroActors[g_LocalHeroIndex];
-  memset(in_stack_00000004->unk2,0,0x2c);
+  memset(&in_stack_00000004->action_bindings,0,0x2c);
   if (in_stack_00000004->ai_task != 0) {
     pCVar5 = g_HeroActors[g_LocalHeroIndex];
     local_6c.x = (in_stack_00000004->base).base.location.position.x -
@@ -72,10 +72,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
       pCVar5 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(in_stack_00000004);
       if ((pCVar5 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (*(int *)in_stack_00000004[1].base.base.actor_name != 0) {
-          in_stack_00000004->unk2[0x18] = '\x01';
-          in_stack_00000004->unk2[0x19] = '\0';
-          in_stack_00000004->unk2[0x1a] = '\0';
-          in_stack_00000004->unk2[0x1b] = '\0';
+          (in_stack_00000004->action_bindings).draw_key = 1;
         }
       }
       else {
@@ -116,20 +113,11 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(&in_stack_00000004->base), uVar8 != 0)
            ) {
           if (uVar8 < 2) {
-            in_stack_00000004->unk2[0] = '\x01';
-            in_stack_00000004->unk2[1] = '\0';
-            in_stack_00000004->unk2[2] = '\0';
-            in_stack_00000004->unk2[3] = '\0';
+            (in_stack_00000004->action_bindings).walk_key = 1;
           }
           else if (uVar8 == 2) {
-            in_stack_00000004->unk2[8] = '\x01';
-            in_stack_00000004->unk2[9] = '\0';
-            in_stack_00000004->unk2[10] = '\0';
-            in_stack_00000004->unk2[0xb] = '\0';
-            in_stack_00000004->unk2[0] = '\x01';
-            in_stack_00000004->unk2[1] = '\0';
-            in_stack_00000004->unk2[2] = '\0';
-            in_stack_00000004->unk2[3] = '\0';
+            (in_stack_00000004->action_bindings).run_key = 1;
+            (in_stack_00000004->action_bindings).walk_key = 1;
           }
         }
       }
@@ -145,28 +133,19 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
                               (CStack_48.y - (in_stack_00000004->base).base.orient.bank);
         fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -(float)local_1c;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar3;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar3;
         if (fVar3 < fStack_38) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = fStack_38;
+          *(float *)(in_stack_00000004->unk2 + 4) = fStack_38;
         }
-        if ((float)local_1c < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(CPathMap **)(in_stack_00000004->unk2 + 0x24) = local_1c;
+        if ((float)local_1c < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(CPathMap **)(in_stack_00000004->unk2 + 4) = local_1c;
         }
         if (((float)10 <= fVar1) || (bVar2)) {
-          in_stack_00000004->unk2[8] = '\x01';
-          in_stack_00000004->unk2[9] = '\0';
-          in_stack_00000004->unk2[10] = '\0';
-          in_stack_00000004->unk2[0xb] = '\0';
-          in_stack_00000004->unk2[0] = '\x01';
-          in_stack_00000004->unk2[1] = '\0';
-          in_stack_00000004->unk2[2] = '\0';
-          in_stack_00000004->unk2[3] = '\0';
+          (in_stack_00000004->action_bindings).run_key = 1;
+          (in_stack_00000004->action_bindings).walk_key = 1;
         }
         else {
-          in_stack_00000004->unk2[0] = '\x01';
-          in_stack_00000004->unk2[1] = '\0';
-          in_stack_00000004->unk2[2] = '\0';
-          in_stack_00000004->unk2[3] = '\0';
+          (in_stack_00000004->action_bindings).walk_key = 1;
         }
       }
     }
@@ -174,19 +153,13 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
       this_ptr = &(in_stack_00000004->base).model;
       if (bVar2) {
         if (*(int *)in_stack_00000004[1].base.base.actor_name == 0) {
-          in_stack_00000004->unk2[0x18] = '\x01';
-          in_stack_00000004->unk2[0x19] = '\0';
-          in_stack_00000004->unk2[0x1a] = '\0';
-          in_stack_00000004->unk2[0x1b] = '\0';
+          (in_stack_00000004->action_bindings).draw_key = 1;
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr->motion_controller);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
-            in_stack_00000004->unk2[0xc] = '\x01';
-            in_stack_00000004->unk2[0xd] = '\0';
-            in_stack_00000004->unk2[0xe] = '\0';
-            in_stack_00000004->unk2[0xf] = '\0';
+            (in_stack_00000004->action_bindings).fire_key = 1;
           }
         }
         (in_stack_00000004->base).cloth_data[0x32c] = '\0';
@@ -199,30 +172,18 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
                            (&this_ptr->motion_controller);
         if ((pSVar7->state_index == 10) && (*(int *)in_stack_00000004[1].base.base.actor_name != 0))
         {
-          in_stack_00000004->unk2[0x18] = '\x01';
-          in_stack_00000004->unk2[0x19] = '\0';
-          in_stack_00000004->unk2[0x1a] = '\0';
-          in_stack_00000004->unk2[0x1b] = '\0';
+          (in_stack_00000004->action_bindings).draw_key = 1;
         }
         iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).enemyfunc3)();
         if ((iVar4 == 0) &&
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(&in_stack_00000004->base), uVar8 != 0)
            ) {
           if (uVar8 < 2) {
-            in_stack_00000004->unk2[0] = '\x01';
-            in_stack_00000004->unk2[1] = '\0';
-            in_stack_00000004->unk2[2] = '\0';
-            in_stack_00000004->unk2[3] = '\0';
+            (in_stack_00000004->action_bindings).walk_key = 1;
           }
           else if (uVar8 == 2) {
-            in_stack_00000004->unk2[8] = '\x01';
-            in_stack_00000004->unk2[9] = '\0';
-            in_stack_00000004->unk2[10] = '\0';
-            in_stack_00000004->unk2[0xb] = '\0';
-            in_stack_00000004->unk2[0] = '\x01';
-            in_stack_00000004->unk2[1] = '\0';
-            in_stack_00000004->unk2[2] = '\0';
-            in_stack_00000004->unk2[3] = '\0';
+            (in_stack_00000004->action_bindings).run_key = 1;
+            (in_stack_00000004->action_bindings).walk_key = 1;
           }
         }
       }
@@ -233,20 +194,20 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
                               (pCVar6->y - (in_stack_00000004->base).base.orient.bank);
         fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -(float)local_1c;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar1;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar1;
         if (fVar1 < fStack_34) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = fStack_34;
+          *(float *)(in_stack_00000004->unk2 + 4) = fStack_34;
         }
-        if ((float)local_1c < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(CPathMap **)(in_stack_00000004->unk2 + 0x24) = local_1c;
+        if ((float)local_1c < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(CPathMap **)(in_stack_00000004->unk2 + 4) = local_1c;
         }
-        if ((((float)-0.25 < *(float *)(in_stack_00000004->unk2 + 0x24)) &&
-            ((double)*(float *)(in_stack_00000004->unk2 + 0x24) < 0.25)) &&
-           (*(int *)(in_stack_00000004->unk2 + 0xc) != 0)) {
-          in_stack_00000004->unk2[0x24] = '\0';
-          in_stack_00000004->unk2[0x25] = '\0';
-          in_stack_00000004->unk2[0x26] = '\0';
-          in_stack_00000004->unk2[0x27] = '\0';
+        if ((((float)-0.25 < *(float *)(in_stack_00000004->unk2 + 4)) &&
+            ((double)*(float *)(in_stack_00000004->unk2 + 4) < 0.25)) &&
+           ((in_stack_00000004->action_bindings).fire_key != 0)) {
+          in_stack_00000004->unk2[4] = '\0';
+          in_stack_00000004->unk2[5] = '\0';
+          in_stack_00000004->unk2[6] = '\0';
+          in_stack_00000004->unk2[7] = '\0';
         }
       }
     }
@@ -257,7 +218,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
         (in_stack_00000004->base).unk1[0xd] = '\0';
         (in_stack_00000004->base).unk1[0xe] = '\0';
         (in_stack_00000004->base).unk1[0xf] = '\0';
-        *(float *)(in_stack_00000004->unk2 + 0x24) = -(float)local_1c;
+        *(float *)(in_stack_00000004->unk2 + 4) = -(float)local_1c;
       }
     }
     else {
@@ -265,7 +226,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
       (in_stack_00000004->base).unk1[0xd] = '\0';
       (in_stack_00000004->base).unk1[0xe] = '\0';
       (in_stack_00000004->base).unk1[0xf] = '\0';
-      *(CPathMap **)(in_stack_00000004->unk2 + 0x24) = local_1c;
+      *(CPathMap **)(in_stack_00000004->unk2 + 4) = local_1c;
     }
     CStack_60.x = (pCVar9->base).base.location.position.x -
                   (in_stack_00000004->base).base.location.position.x;

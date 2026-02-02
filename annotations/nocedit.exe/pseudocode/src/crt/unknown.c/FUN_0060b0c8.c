@@ -15,7 +15,7 @@ char * crt_unknown_c_FUN_0060b0c8(void)
   
   if ((in_stack_00000008 < 0x14) &&
      (pcVar1 = in_stack_00000004,
-     (g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 0x20U) != 0)) {
+     (g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 0x20) != 0)) {
     for (; *pcVar1 != '\0'; pcVar1 = pcVar1 + 1) {
       in_stack_00000008 = in_stack_00000008 + -1;
     }

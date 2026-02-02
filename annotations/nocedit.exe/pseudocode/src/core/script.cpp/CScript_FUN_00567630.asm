@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00562920 at 00563d00
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00563d00
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740

@@ -13,7 +13,7 @@
 ;   core_cow.cpp_FUN_004448c0 at 00444a43
 ;   core_ghoul.cpp_FUN_004e8520 at 004e86b6
 ;   core_imp.cpp_CImp_FUN_004fab60 at 004facfb
-;   core_mobster.cpp_FUN_00527380 at 00527586
+;   core_mobster.cpp_CMobster_FUN_00527380 at 00527586
 ;   core_smiley.cpp_FUN_005a32a0 at 005a3455
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc3b6
 ;

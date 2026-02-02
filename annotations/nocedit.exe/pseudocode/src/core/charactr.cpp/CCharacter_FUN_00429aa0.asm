@@ -14,7 +14,7 @@
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 at 0042a324
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485cda
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 0052986a
-;   core_passngr.cpp_FUN_005460c0 at 00546120
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_005460c0 at 00546120
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c76fd
 ;
 ; Referenced Globals:

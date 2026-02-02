@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeMotionState_FUN_0040b9f0 at 0040baac
+;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040baac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0063ab84

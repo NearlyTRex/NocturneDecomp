@@ -62,14 +62,14 @@ void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
   }
   fVar10 = in_stack_00000004[1].base.base.orient_matrix.m[2].x;
   (in_stack_00000004->base).hit_points =
-       (int)((float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount);
+       (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   if ((in_stack_00000004->base).model.part_visibility_flags[(int)fVar10] == 0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
   }
   this_ptr = &(in_stack_00000004->base).model;
-  if ((float)(in_stack_00000004->base).hit_points <= 0.0) {
+  if ((in_stack_00000004->base).hit_points <= 0.0) {
     iVar11 = in_stack_00000004->unk3;
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     if (iVar11 != 0) {
       core_charactr_cpp_CCharacter_FUN_0042b8e0(&in_stack_00000004->base);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(in_stack_00000004,in_stack_00000008);

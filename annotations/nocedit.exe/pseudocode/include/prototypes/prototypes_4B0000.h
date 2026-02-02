@@ -175,7 +175,7 @@ void __cdecl core_filmreel_cpp_FUN_004beb00(void);
 void __cdecl core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void);
 void __cdecl core_filmreel_cpp_FUN_004becd0(void);
 int __cdecl core_filmreel_cpp_FUN_004bed00(void);
-void __cdecl core_filmreel_cpp_serialize_FUN_004bede0(void);
+void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004bede0(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_FUN_004bee30(void);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel *this_ptr,uint d1,uint d2);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint d1,uint d2);

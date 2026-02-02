@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeActor_FUN_0040b870 at 0040b896
+;   core_actor.cpp_archiveActor_FUN_0040b870 at 0040b896
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_unknown_00638f9b
@@ -25,7 +25,7 @@
 ;   TerminatedCString s_x_0063905b
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_none_0067d690
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

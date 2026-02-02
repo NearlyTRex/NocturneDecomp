@@ -19,106 +19,106 @@ CDemonActorType * __cdecl CPlatform::getActorType(CPlatform *this_ptr);
 // Address: 0054c850
 CPlatform * __cdecl CPlatform::ctor(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20
+// Original: core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
 // Address: 0054ca20
-void __cdecl CPlatform::LoadCourseSomething(void);
+void __cdecl CPlatform::setup(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054cab0
+// Original: core_platfrm.cpp_CPlatform_FUN_0054cab0
 // Address: 0054cab0
-void __cdecl FUN_0054cab0(void);
+void __cdecl CPlatform(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054cc30
+// Original: core_platfrm.cpp_CPlatform_process_FUN_0054cc30
 // Address: 0054cc30
-void __cdecl FUN_0054cc30(void);
+void __cdecl CPlatform::process(CPlatform *this_ptr,float delta_time);
 
-// Original: core_platfrm.cpp_FUN_0054d690
+// Original: core_platfrm.cpp_CPlatform_FUN_0054d690
 // Address: 0054d690
-void __cdecl FUN_0054d690(void);
+void __cdecl CPlatform(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054d720
+// Original: core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720
 // Address: 0054d720
-int __cdecl FUN_0054d720(void);
+int __cdecl CPlatform::renderOpaque(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054d9b0
+// Original: core_platfrm.cpp_CPlatform_renderBackground_FUN_0054d9b0
 // Address: 0054d9b0
-void __cdecl FUN_0054d9b0(void);
+void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
-// Original: core_platfrm.cpp_FUN_0054db70
+// Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_0054db70
 // Address: 0054db70
-float * __cdecl FUN_0054db70(void);
+CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_platfrm.cpp_CPlatform_load_FUN_0054dbc0
+// Original: core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
 // Address: 0054dbc0
-void __cdecl CPlatform::load(void);
+void __cdecl CPlatform::archive(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054df80
+// Original: core_platfrm.cpp_CPlatform_FUN_0054df80
 // Address: 0054df80
-int __cdecl FUN_0054df80(void);
+int __cdecl CPlatform(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e180
+// Original: core_platfrm.cpp_CPlatform_hasCollision_FUN_0054e180
 // Address: 0054e180
-int __cdecl FUN_0054e180(void);
+int __cdecl CPlatform::hasCollision(CPlatform *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_platfrm.cpp_FUN_0054e1a0
+// Original: core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_0054e1a0
 // Address: 0054e1a0
-int __cdecl FUN_0054e1a0(void);
+int __cdecl CPlatform::allowBulletHoles(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e1c0
+// Original: core_platfrm.cpp_CPlatform_getGroundType_FUN_0054e1c0
 // Address: 0054e1c0
-int __cdecl FUN_0054e1c0(void);
+int __cdecl CPlatform::getGroundType(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e1d0
+// Original: core_platfrm.cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0
 // Address: 0054e1d0
-int __cdecl FUN_0054e1d0(void);
+int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
 // Address: 0054e1e0
-void __cdecl CPlatform::attachActor(void);
+void __cdecl CPlatform::attachActor(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e2e0
+// Original: core_platfrm.cpp_CPlatform_FUN_0054e2e0
 // Address: 0054e2e0
-void __cdecl FUN_0054e2e0(void);
+void __cdecl CPlatform(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e320
+// Original: core_platfrm.cpp_CPlatform_FUN_0054e320
 // Address: 0054e320
-void __cdecl FUN_0054e320(void);
+void __cdecl CPlatform(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e400
+// Original: core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400
 // Address: 0054e400
-void __cdecl FUN_0054e400(void);
+void __cdecl CPlatform::propertyDisplaySlewCallback(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_platfrm.cpp_FUN_0054e480
+// Original: core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480
 // Address: 0054e480
-int __cdecl FUN_0054e480(void);
+int __cdecl CPlatform::propertyActionSlewCallback(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e4e0
+// Original: core_platfrm.cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0
 // Address: 0054e4e0
-void __cdecl FUN_0054e4e0(void);
+void __cdecl CPlatform::propertyDisplayTypeCallback(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_platfrm.cpp_FUN_0054e530
+// Original: core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
 // Address: 0054e530
-int __cdecl FUN_0054e530(void);
+int __cdecl CPlatform::propertyActionTypeCallback(CPlatform *this_ptr,CActorProperty *property);
 
-// Original: core_platfrm.cpp_FUN_0054e700
+// Original: core_platfrm.cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700
 // Address: 0054e700
-void __cdecl FUN_0054e700(void);
+void __cdecl CPlatform::propertyDisplayStateCallback(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_platfrm.cpp_FUN_0054e760
+// Original: core_platfrm.cpp_CPlatform_propertyActionStateCallback_FUN_0054e760
 // Address: 0054e760
-int __cdecl FUN_0054e760(void);
+int __cdecl CPlatform::propertyActionStateCallback(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054e7d0
+// Original: core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0
 // Address: 0054e7d0
-void __cdecl FUN_0054e7d0(void);
+void __cdecl CPlatform::getPropertyList(CPlatform *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_platfrm.cpp_FUN_0054ea00
+// Original: core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
 // Address: 0054ea00
-void __cdecl FUN_0054ea00(void);
+void __cdecl CPlatform::processInEditor(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054f060
+// Original: core_platfrm.cpp_CPlatform_showEditorHelp_FUN_0054f060
 // Address: 0054f060
-void __cdecl FUN_0054f060(void);
+void __cdecl CPlatform::showEditorHelp(CPlatform *this_ptr,int *y_pos);
 
-// Original: core_platfrm.cpp_FUN_0054f2a0
+// Original: core_platfrm.cpp_CPlatform_writeDependencies_FUN_0054f2a0
 // Address: 0054f2a0
-void __cdecl FUN_0054f2a0(void);
+void __cdecl CPlatform::writeDependencies(CPlatform *this_ptr,_FILE *file_handle);

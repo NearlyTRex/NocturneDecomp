@@ -20,6 +20,9 @@ CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 // CNetGame*
 CNetGame* g_CNetGamePtr = (CNetGame*)&g_CNetGameInstance;
 
+// CProceduralTexture*
+CProceduralTexture* g_CProceduralTexturePtr = (CProceduralTexture*)&g_CProceduralTextureInstance;
+
 // CScript*
 CScript* g_CScriptPtr = (CScript*)&g_CScriptInstance;
 
@@ -3488,7 +3491,7 @@ WatcomStaticDestructorNode DAT_0068064c = {
     .registration_type = 0x00000001,
     .object_instance = (void *)0x02F797E4
 };
-WatcomStaticDestructorNode DAT_006809f0 = {
+WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00661c70,
     .registration_type = 0x00000001,
@@ -3516,7 +3519,7 @@ WatcomStaticDestructorNode DAT_00680d10 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006625f0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x0310F4B0
+    .object_instance = (void *)&g_ScriptPickList
 };
 WatcomStaticDestructorNode DAT_00680d20 = {
     .next = nullptr,
@@ -3528,13 +3531,13 @@ WatcomStaticDestructorNode DAT_00680d30 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662608,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CEdScrollBar_0310fcd8
+    .object_instance = (void *)&g_ScriptEditorVScrollBar
 };
 WatcomStaticDestructorNode DAT_00680d40 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662614,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CEdScrollBar_0310fd0c
+    .object_instance = (void *)&g_ScriptEditorHScrollBar
 };
 WatcomStaticDestructorNode g_CDemonSetDestructorNode = {
     .next = nullptr,
@@ -3715,6 +3718,7 @@ int g_CPendulumClassVersion = 0x8;
 int g_CPlatformClassVersion = 0xb;
 int g_MaxViewportScanline = 0x4b0;
 int g_CScatClassVersion = 0x1;
+int g_AutoIndentEnabled = 0x1;
 int g_CSentinelClassVersion = 0x2;
 int g_RenderMirrorsFlag = 0x1;
 int g_CShotgunClassVersion = 0x1;
@@ -3875,7 +3879,6 @@ undefined4 DAT_00680bd8 = 0xFFFFFFFF;
 undefined4 DAT_00680bdc = 0;
 undefined4 DAT_00680d60 = 0;
 undefined4 DAT_00680d64 = 0;
-undefined4 DAT_0068105c = 0x00000001;
 undefined4 DAT_0068125c = 0;
 undefined4 DAT_00681260 = 0;
 undefined4 DAT_00681a00 = 0;

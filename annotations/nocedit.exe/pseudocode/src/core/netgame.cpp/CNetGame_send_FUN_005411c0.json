@@ -11,43 +11,40 @@
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 19,
+        "line": 13,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 21,
+        "line": 15,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 84,
+    "complexity_score": 10,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 14,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_param",
-      "unnamed_param"
-    ],
-    "total_lines": 58
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [
     {
       "addr": "005406a0",
       "from_addr": "00540cc0",
       "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f900",
+      "from_addr": "0053faac",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,12 +82,6 @@
       "from_addr": "00541e0b",
       "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053f900",
-      "from_addr": "0053faac",
-      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -103,7 +94,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_send_FUN_005411c0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index)"
   },
   "function_calls": [
     {
@@ -174,55 +165,27 @@
     "pcode_op_count": 176
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

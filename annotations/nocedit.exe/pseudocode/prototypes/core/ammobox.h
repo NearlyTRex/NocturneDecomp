@@ -43,9 +43,9 @@ int __cdecl CAmmoBox::renderOpaque(CAmmoBox *this_ptr);
 // Address: 004118b0
 CBoundingBox3D * __cdecl CAmmoBox::getBoundingBox(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_ammobox.cpp_CAmmoBox_serialize_FUN_00411900
+// Original: core_ammobox.cpp_CAmmoBox_archive_FUN_00411900
 // Address: 00411900
-void __cdecl CAmmoBox::serialize(CAmmoBox *this_ptr);
+void __cdecl CAmmoBox::archive(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_CAmmoBox_hasCollision_FUN_004119d0
 // Address: 004119d0
@@ -55,13 +55,13 @@ int __cdecl CAmmoBox::hasCollision(CAmmoBox *this_ptr,SCollisionInfo *collision_
 // Address: 004119f0
 int __cdecl CAmmoBox::canPickup(CAmmoBox *this_ptr,CDemonActor *carrier);
 
-// Original: core_ammobox.cpp_FUN_00411a30
+// Original: core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30
 // Address: 00411a30
-void __cdecl FUN_00411a30(void);
+void __cdecl CAmmoBox::propertyDisplayCallback(CAmmoBox *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_ammobox.cpp_FUN_00411ab0
+// Original: core_ammobox.cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0
 // Address: 00411ab0
-int __cdecl FUN_00411ab0(void);
+int __cdecl CAmmoBox::propertyActionFunc(CAmmoBox *this_ptr,CActorProperty *property);
 
 // Original: core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30
 // Address: 00411b30

@@ -86,7 +86,7 @@ core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
   pCVar6 = this_ptr;
   while (cVar4 != '\0') {
     if ((0x1c < (uint)char_index) ||
-       ((g_CharacterClassificationTable[(byte)(pCVar6->actor_name[0] + 1)] & 8U) == 0)) {
+       ((g_CharacterClassificationTable[(byte)(pCVar6->actor_name[0] + 1)] & 8) == 0)) {
       dVar12 = (double)(this_ptr->location).position.z;
       dVar11 = (double)(this_ptr->location).position.y;
       dVar10 = (double)(this_ptr->location).position.x;

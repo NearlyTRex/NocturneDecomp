@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_FUN_004f30f0 at 004f3104
-;   core_lever.cpp_CLever_FUN_00505210 at 00505225
+;   core_lever.cpp_CLever_propertyActionStateCallback_FUN_00505210 at 00505225
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006310b8 = 0.5

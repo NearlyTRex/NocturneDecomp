@@ -12,7 +12,7 @@
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fe68
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdb57
-;   core_script.cpp_FUN_005592c0 at 00559305
+;   core_script.cpp_trimLine_FUN_005592c0 at 00559305
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c8e7
 ;   core_skeledit.cpp_FUN_00592690 at 0059496b
 ;   core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 at 0058967f

@@ -352,12 +352,12 @@ switchD_004e6f9a_caseD_e:
           local_178 = *(float *)(uVar6 + 0x28) - (in_stack_00000004->base).base.location.position.z;
           if (SQRT(local_178 * local_178 + local_180 * local_180 + local_17c * local_17c) <
               (float)4) {
-            fVar16 = (float)(in_stack_00000004->base).hit_points + in_stack_00000008;
+            fVar16 = (in_stack_00000004->base).hit_points + in_stack_00000008;
             in_stack_00000004[1].base.base.unk1 =
                  (int)((float)in_stack_00000004[1].base.base.unk1 - in_stack_00000008);
-            (in_stack_00000004->base).hit_points = (int)fVar16;
+            (in_stack_00000004->base).hit_points = fVar16;
             if ((float)100 < fVar16) {
-              (in_stack_00000004->base).hit_points = 0x42c80000;
+              (in_stack_00000004->base).hit_points = 100.0;
             }
             if ((float)in_stack_00000004[1].base.base.unk1 < 0.0) {
               in_stack_00000004[1].base.base.unk1 = 0;
@@ -414,8 +414,8 @@ switchD_004e6f9a_caseD_e:
             local_1f0 = *(float *)(iVar13 + 0x28) -
                         (in_stack_00000004->base).base.location.position.z;
             local_1f4 = 0.0;
-            if ((((float)(in_stack_00000004->base).hit_points < (float)25) &&
-                (cVar21 != '\0')) && (in_stack_00000004[1].base.base.validation_magic == 0)) {
+            if ((((in_stack_00000004->base).hit_points < (float)25) && (cVar21 != '\0')
+                ) && (in_stack_00000004[1].base.base.validation_magic == 0)) {
               core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0();
             }
             local_30 = &(in_stack_00000004->base).model.motion_controller;
@@ -724,7 +724,7 @@ LAB_004e7243:
               local_14 = (float)((int)in_stack_00000004[1].base.base.location.position.y + 1);
               local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                                    (10.0,(float)(int)local_14 * (float)10);
-              (in_stack_00000004->base).hit_points = (int)local_14;
+              (in_stack_00000004->base).hit_points = local_14;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(in_stack_00000004->base).model.motion_controller,0x10,1);
             }

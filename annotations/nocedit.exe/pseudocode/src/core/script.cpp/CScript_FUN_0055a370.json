@@ -3,21 +3,15 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 29,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "column": 26,
+        "line": 34,
+        "message": "invalid conversion from 'void*' to 'SScriptLine*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
-        "column": 16,
-        "line": 46,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 61,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "column": 57,
+        "line": 51,
+        "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
       }
     ],
     "success": false,
@@ -30,73 +24,54 @@
       },
       {
         "category": "other",
-        "column": 69,
-        "line": 36,
+        "column": 27,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
+        "line": 38,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 54,
         "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 42,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 44,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 65,
-        "line": 53,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 54,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 57,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 59,
+        "line": 56,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 62,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 127,
+    "complexity_score": 78,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 67,
-    "suspect_count": 5,
+    "pseudocode_lines": 63,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data"
+      "param_count_too_few"
     ],
-    "total_lines": 197
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -162,17 +137,17 @@
     {
       "addr": "005592c0",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_005592c0"
+      "name": "core_script.cpp_trimLine_FUN_005592c0"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
     },
     {
       "addr": "004a2f70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     },
     {
       "addr": "0050f250",
@@ -236,26 +211,26 @@
     },
     {
       "addr": "031091e8",
-      "name": "DAT_031091e8",
-      "type": "undefined1",
+      "name": "g_ScriptLineBuffer",
+      "type": "char[2048]",
       "value": null
     },
     {
       "addr": "031091e9",
       "name": "DAT_031091e9",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "031091ea",
       "name": "DAT_031091ea",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "031091eb",
       "name": "DAT_031091eb",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -377,34 +352,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_031091e8",
-      "text": "pcVar7 = &DAT_031091e8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_031091e8",
-      "text": "if (DAT_031091e8 != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_031091e8",
-      "text": "pcVar3 = &DAT_031091e8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_031091e8",
-      "text": "pcVar7 = &DAT_031091e8;",
-      "type": "undefined_data"
-    },
     {
       "call_site_count": 6,
       "declared_params": 1,

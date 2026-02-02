@@ -10,7 +10,7 @@
 ;   crt_stdio.c_doscan_FUN_00604950 at 0060499d
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_stdio.c_scanf_getc_wrapper_FUN_00604930

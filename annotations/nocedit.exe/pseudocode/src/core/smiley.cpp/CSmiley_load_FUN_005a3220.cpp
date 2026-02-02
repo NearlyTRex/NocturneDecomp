@@ -14,13 +14,13 @@ void __cdecl core_smiley_cpp_CSmiley_load_FUN_005a3220(void)
   CDeformableModelInstance *model_ptr;
   CEnemy *in_stack_00000004;
   
-  core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
+  core_enemy_cpp_CEnemy_archive_FUN_004a9660(in_stack_00000004);
+  core_actor_cpp_archiveFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   model_ptr = &(in_stack_00000004->base).model;
-  core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
-  core_actor_cpp_serializeFloat_FUN_0040b770
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
+  core_actor_cpp_archiveFloat_FUN_0040b770
             ((float *)(in_stack_00000004[1].base.base.actor_name + 0xc),"guardDistance");
-  core_actor_cpp_serializeMotionState_FUN_0040b9f0
+  core_actor_cpp_archiveMotionState_FUN_0040b9f0
             (&model_ptr->motion_controller,"motion state");
   return;
 }

@@ -74,7 +74,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk4_FUN_004e5530(void);
 void __cdecl core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void);
 int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5930(void);
 void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5ad0(void);
-void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(void);
+void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0 (CGargoyle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gargoyle_cpp_FUN_004e5ba0(void);
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0 (CGargoyle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 void __cdecl core_gasmask_cpp_staticInit_FUN_004e5c90(void);
@@ -120,7 +120,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
 void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass *this_ptr,CBoundingBox3D *out_box);
-void __cdecl core_glass_cpp_CGlass_serialize_FUN_004ea090(CGlass *this_ptr);
+void __cdecl core_glass_cpp_CGlass_archive_FUN_004ea090(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0 (CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v, int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location);

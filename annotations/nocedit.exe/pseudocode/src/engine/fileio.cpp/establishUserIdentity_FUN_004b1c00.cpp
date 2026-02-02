@@ -55,8 +55,8 @@ int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
     }
     pSVar4 = &g_VersionControlSession;
     while ((pSVar4->primary_username[0] == '_' ||
-           ((g_CharacterClassificationTable[(byte)(pSVar4->primary_username[0] + 1)] & 0xe0U) != 0))
-          ) {
+           ((g_CharacterClassificationTable[(byte)(pSVar4->primary_username[0] + 1)] & 0xe0) != 0)))
+    {
       pcVar2 = pSVar4->primary_username;
       pSVar4 = (SVersionControlSession *)(pSVar4->primary_username + 1);
       if (pcVar2[1] == '\0') {

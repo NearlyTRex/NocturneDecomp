@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
-;   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
+;   core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EBX                            ; 004f7a2b
     ADD EAX,0x158                       ; 004f7a2c
     PUSH EAX                            ; 004f7a31
-    CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 004f7a32
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260(CDeformableModelInstance * param_1, _FILE * param_2)
+    CALL core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260 ; 004f7a32
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260(CDeformableModelInstance * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004f7a37
     POP EBX                             ; 004f7a3a
     RET                                 ; 004f7a3b

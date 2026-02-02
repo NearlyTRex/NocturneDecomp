@@ -49,7 +49,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   g_CurrentActorBeingProcessed = this_ptr;
                     /* this must be where it does the reading of the actual actor text and filling
                        obj details */
-  (*((this_ptr->vtable)._ub)->serialize)(this_ptr);
+  (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   acStack_d8[0] = '\0';
   local_78[4] = 0;
   _fscanf(in_stack_0000000c," } %s \"%[^\"]\"\n",acStack_d8);

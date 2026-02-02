@@ -24,7 +24,7 @@ core_npc_cpp_CNPC_dtor_FUN_004f4700
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&this_ptr->model_name);
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&this_ptr->path_map);
   iVar2 = core_armour_cpp_freeFlames_FUN_00412720
                     ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));
   iVar2 = core_armour_cpp_freeFires_FUN_00412700((SFire **)(iVar2 + -0x4b0));

@@ -1,0 +1,184 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 78,
+        "line": 13,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 69,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 5,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005029c0",
+    "address_range": [
+      [
+        "005029c0",
+        "00502a35"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ladder.cpp_CLadder_archive_FUN_005029c0",
+    "signature": "void __cdecl core_ladder_cpp_CLadder_archive_FUN_005029c0(CLadder *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b870"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b340",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b340"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
+    },
+    {
+      "addr": "00502b80",
+      "is_variadic": false,
+      "name": "core_ladder.cpp_CLadder_FUN_00502b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630e38",
+      "name": "s_model_00630e38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630e3e",
+      "name": "s_ladderSize_00630e3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630e49",
+      "name": "s_masterActor_00630e49",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630e55",
+      "name": "s_groundType_00630e55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067cf48",
+      "name": "g_CLadderClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.285714285714286,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 21,
+      "INT_ADD": 15,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 18,
+      "LOAD": 5,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 150
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLadder *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 232,
+        "vtable_addr": "006605f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

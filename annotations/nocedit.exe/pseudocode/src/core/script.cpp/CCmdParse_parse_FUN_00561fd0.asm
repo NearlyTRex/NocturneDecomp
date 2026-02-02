@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse *this_ptr,int param_2,char *param_3)
+; __cdecl int __cdecl core_script_cpp_CCmdParse_parse_FUN_00561fd0 (CCmdParse *this_ptr,char *input_text,char *template_text)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   input_text
+; char *           Stack[0xc]:4   template_text
 ; Local Variables:
 ; undefined1       Stack[-0x154]:1  local_154
 ; undefined1       Stack[-0x153]:1  local_153
@@ -26,14 +26,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643b59
 ;   TerminatedCString s_SCmdParse_parse_too_many_00643b6c
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   core_script.cpp_CCmdParm_parseValue_FUN_00561cb0
 ;   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
-;   core_script.cpp_FUN_00561cb0
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;
 ; *****************************************************************************
@@ -264,7 +264,7 @@ section .text
     ADD EAX,ECX                         ; 00562290
     PUSH EAX                            ; 00562292
     CALL core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0 ; 00562293
-        ;   XREF to: 00560de0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm * this_ptr, char * param_2, int * param_3)
+        ;   XREF to: 00560de0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm * this_ptr, char * template_text, int * parse_cursor)
     ADD ESP,0xc                         ; 00562298
     TEST EAX,EAX                        ; 0056229b
     JZ 0x00562325                       ; 0056229d
@@ -304,8 +304,8 @@ section .text
     ADD EAX,EDI                         ; 00562309
     PUSH EAX                            ; 0056230b
     XOR ESI,ESI                         ; 0056230c
-    CALL core_script.cpp_FUN_00561cb0   ; 0056230e
-        ;   XREF to: 00561cb0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00561cb0()
+    CALL core_script.cpp_CCmdParm_parseValue_FUN_00561cb0 ; 0056230e
+        ;   XREF to: 00561cb0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParm_parseValue_FUN_00561cb0(CCmdParm * this_ptr, char * input_text, int * cursor, int end_position)
     ADD ESP,0x10                        ; 00562313
     TEST EAX,EAX                        ; 00562316
     JZ 0x00562335                       ; 00562318

@@ -31,9 +31,9 @@ void __cdecl CHiram::setup(CHiram *this_ptr);
 // Address: 004f4550
 void __cdecl CHiram::process(CHiram *this_ptr,float delta_time);
 
-// Original: core_hiram.cpp_CHiram_serialize_FUN_004f4690
+// Original: core_hiram.cpp_CHiram_archive_FUN_004f4690
 // Address: 004f4690
-void __cdecl CHiram::serialize(CHiram *this_ptr);
+void __cdecl CHiram::archive(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_getPropertyList_FUN_004f46a0
 // Address: 004f46a0

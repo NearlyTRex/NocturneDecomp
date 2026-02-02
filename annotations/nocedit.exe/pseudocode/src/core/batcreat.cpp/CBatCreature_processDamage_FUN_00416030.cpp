@@ -41,11 +41,11 @@ core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030
     core_charactr_cpp_CCharacter_FUN_0042b5b0((CCharacter *)this_ptr);
   }
   core_batcreat_cpp_CBatCreature_FUN_00415dd0(this_ptr);
-  fVar1 = (float)(this_ptr->base).base.hit_points - damage_info->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {

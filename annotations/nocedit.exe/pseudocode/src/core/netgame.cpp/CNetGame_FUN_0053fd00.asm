@@ -22,10 +22,10 @@
 ;   core_game.cpp_FUN_004e2fc0 at 004e3057
 ;   core_netgame.cpp_CNetGame_FUN_0053f780 at 0053f806
 ;   core_netgame.cpp_CNetGame_FUN_0053f830 at 0053f837
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 005416dc
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540f43
-;   core_netgame.cpp_FUN_00541390 at 005416dc
-;   core_netgame.cpp_initializeNetworkToHost_FUN_0053f860 at 0053f880
-;   core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 at 0053f912
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860 at 0053f880
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053f912
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Disconnecting_from_serve_0063d4a7
@@ -278,7 +278,7 @@ section .text
     PUSH EAX                            ; 0053ff59
     PUSH ESI                            ; 0053ff5a
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 0053ff5b
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930(CNetGame * this_ptr)
     ADD ESP,0xc                         ; 0053ff60
     PUSH ESI                            ; 0053ff63
     MOV EBX,dword ptr [0x02f7c8b8]      ; 0053ff64 | g_CurrentGameTime
@@ -488,7 +488,7 @@ section .text
     PUSH EDI                            ; 0054018f
     PUSH ESI                            ; 00540190
     CALL core_netgame.cpp_CNetGame_FUN_00543930 ; 00540191
-        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930()
+        ;   XREF to: 00543930 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00543930(CNetGame * this_ptr)
     ADD ESP,0xc                         ; 00540196
     INC EBX                             ; 00540199
         ;   Label: LAB_00540199

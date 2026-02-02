@@ -7,7 +7,7 @@
 ; uint             Stack[0x4]:4   seed
 ;
 ; XREF[4]:
-;   core_netgame.cpp_FUN_00541390 at 0054198b
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 0054198b
 ;   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 at 004453c4
 ;   shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 at 0044583f
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f36fe

@@ -23,7 +23,7 @@ core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int l
         (this_ptr->base).base.unk1[2] = '\0';
         (this_ptr->base).base.unk1[3] = '\0';
       }
-      core_npc_cpp_CNPC_FUN_00544b70(&this_ptr->base);
+      core_npc_cpp_CNPC_renderBackground_FUN_00544b70(&this_ptr->base,in_stack_0000000c);
       return;
     }
   }

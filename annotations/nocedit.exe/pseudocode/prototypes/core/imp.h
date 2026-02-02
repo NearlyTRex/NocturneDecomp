@@ -39,9 +39,9 @@ void __cdecl CImp::getCarryObjToBodyXForm(CImp *this_ptr);
 // Address: 004faaf0
 int __cdecl CImp(CImp *this_ptr);
 
-// Original: core_imp.cpp_CImp_serialize_FUN_004fab00
+// Original: core_imp.cpp_CImp_archive_FUN_004fab00
 // Address: 004fab00
-void __cdecl CImp::serialize(CImp *this_ptr);
+void __cdecl CImp::archive(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_FUN_004fab60
 // Address: 004fab60

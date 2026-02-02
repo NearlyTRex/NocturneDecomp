@@ -50,7 +50,7 @@ void __cdecl core_colonel_cpp_FUN_0043ff20(void)
   local_1c = 0.25;
   local_20 = 0x3f490fdb;
   pCVar7 = g_HeroActors[g_LocalHeroIndex];
-  memset(in_stack_00000004->unk2,0,0x2c);
+  memset(&in_stack_00000004->action_bindings,0,0x2c);
   if (in_stack_00000004->ai_task != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
     local_54._0_4_ =
@@ -103,28 +103,19 @@ void __cdecl core_colonel_cpp_FUN_0043ff20(void)
                           (local_80.y - (in_stack_00000004->base).base.orient.bank);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_18;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar6;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar6;
         if (fVar6 < local_24) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_24;
+          *(float *)(in_stack_00000004->unk2 + 4) = local_24;
         }
-        if (local_18 < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_18;
+        if (local_18 < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(float *)(in_stack_00000004->unk2 + 4) = local_18;
         }
         if (((float)10 <= local_8c) || (bVar1)) {
-          in_stack_00000004->unk2[8] = '\x01';
-          in_stack_00000004->unk2[9] = '\0';
-          in_stack_00000004->unk2[10] = '\0';
-          in_stack_00000004->unk2[0xb] = '\0';
-          in_stack_00000004->unk2[0] = '\x01';
-          in_stack_00000004->unk2[1] = '\0';
-          in_stack_00000004->unk2[2] = '\0';
-          in_stack_00000004->unk2[3] = '\0';
+          (in_stack_00000004->action_bindings).run_key = 1;
+          (in_stack_00000004->action_bindings).walk_key = 1;
         }
         else {
-          in_stack_00000004->unk2[0] = '\x01';
-          in_stack_00000004->unk2[1] = '\0';
-          in_stack_00000004->unk2[2] = '\0';
-          in_stack_00000004->unk2[3] = '\0';
+          (in_stack_00000004->action_bindings).walk_key = 1;
         }
       }
     }
@@ -132,19 +123,13 @@ void __cdecl core_colonel_cpp_FUN_0043ff20(void)
       this_ptr = &(in_stack_00000004->base).model;
       if (bVar1) {
         if (*(int *)in_stack_00000004[1].base.base.actor_name == 0) {
-          in_stack_00000004->unk2[0x18] = '\x01';
-          in_stack_00000004->unk2[0x19] = '\0';
-          in_stack_00000004->unk2[0x1a] = '\0';
-          in_stack_00000004->unk2[0x1b] = '\0';
+          (in_stack_00000004->action_bindings).draw_key = 1;
         }
         else {
           pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr->motion_controller);
           if ((pSVar4->state_index != 2) && (pSVar4->state_index != 1)) {
-            in_stack_00000004->unk2[0xc] = '\x01';
-            in_stack_00000004->unk2[0xd] = '\0';
-            in_stack_00000004->unk2[0xe] = '\0';
-            in_stack_00000004->unk2[0xf] = '\0';
+            (in_stack_00000004->action_bindings).fire_key = 1;
           }
         }
       }
@@ -159,20 +144,20 @@ void __cdecl core_colonel_cpp_FUN_0043ff20(void)
                              (pCVar3->y - (in_stack_00000004->base).base.orient.bank);
         fVar6 = local_14 * (float)0.31830988619288902 * (float)4;
         local_18 = -local_1c;
-        *(float *)(in_stack_00000004->unk2 + 0x24) = fVar6;
+        *(float *)(in_stack_00000004->unk2 + 4) = fVar6;
         if (fVar6 < local_18) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_18;
+          *(float *)(in_stack_00000004->unk2 + 4) = local_18;
         }
-        if (local_1c < *(float *)(in_stack_00000004->unk2 + 0x24)) {
-          *(float *)(in_stack_00000004->unk2 + 0x24) = local_1c;
+        if (local_1c < *(float *)(in_stack_00000004->unk2 + 4)) {
+          *(float *)(in_stack_00000004->unk2 + 4) = local_1c;
         }
-        if ((((float)-0.25 < *(float *)(in_stack_00000004->unk2 + 0x24)) &&
-            ((double)*(float *)(in_stack_00000004->unk2 + 0x24) < 0.25)) &&
-           (*(int *)(in_stack_00000004->unk2 + 0xc) != 0)) {
-          in_stack_00000004->unk2[0x24] = '\0';
-          in_stack_00000004->unk2[0x25] = '\0';
-          in_stack_00000004->unk2[0x26] = '\0';
-          in_stack_00000004->unk2[0x27] = '\0';
+        if ((((float)-0.25 < *(float *)(in_stack_00000004->unk2 + 4)) &&
+            ((double)*(float *)(in_stack_00000004->unk2 + 4) < 0.25)) &&
+           ((in_stack_00000004->action_bindings).fire_key != 0)) {
+          in_stack_00000004->unk2[4] = '\0';
+          in_stack_00000004->unk2[5] = '\0';
+          in_stack_00000004->unk2[6] = '\0';
+          in_stack_00000004->unk2[7] = '\0';
         }
       }
     }

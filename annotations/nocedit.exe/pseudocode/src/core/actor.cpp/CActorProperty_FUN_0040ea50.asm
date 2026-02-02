@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[6]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e8b2
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e8b2
 ;   core_actor.cpp_FUN_0040ee50 at 0040ee69
 ;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053adaf
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c7c8

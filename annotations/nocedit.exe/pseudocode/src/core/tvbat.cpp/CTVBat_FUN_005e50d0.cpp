@@ -9,7 +9,7 @@
 int __cdecl core_tvbat_cpp_CTVBat_FUN_005e50d0(CTVBat *this_ptr)
 
 {
-  if ((0.0 < (float)(this_ptr->base).base.hit_points) && (this_ptr->state != 3)) {
+  if ((0.0 < (this_ptr->base).base.hit_points) && (this_ptr->state != 3)) {
     return 1;
   }
   return 0;

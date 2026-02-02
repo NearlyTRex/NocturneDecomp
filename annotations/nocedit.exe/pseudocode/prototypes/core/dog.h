@@ -27,9 +27,9 @@ void __cdecl CZombieDog::setup(CZombieDog *this_ptr);
 // Address: 0047f140
 void __cdecl CZombieDog::process(CZombieDog *this_ptr,float delta_time);
 
-// Original: core_dog.cpp_CZombieDog_serialize_FUN_0047f7b0
+// Original: core_dog.cpp_CZombieDog_archive_FUN_0047f7b0
 // Address: 0047f7b0
-void __cdecl CZombieDog::serialize(CZombieDog *this_ptr);
+void __cdecl CZombieDog::archive(CZombieDog *this_ptr);
 
 // Original: core_dog.cpp_CZombieDog_FUN_0047f820
 // Address: 0047f820

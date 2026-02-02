@@ -13,8 +13,7 @@ core_lever_cpp_CLever_getBoundingBox_FUN_00504d80(CLever *this_ptr,CBoundingBox3
   CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model_name);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;
   (out_box->min).x = pCVar1->x;
   (out_box->min).y = pCVar1->y;

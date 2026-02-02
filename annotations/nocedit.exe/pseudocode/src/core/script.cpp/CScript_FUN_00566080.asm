@@ -16,9 +16,9 @@
 ;   undefined4 s_yntax_check_OK._00643f4e
 ;   undefined4 s_ntax_check_OK._00643f4f
 ;   undefined4 s_tax_check_OK._00643f50
-;   CPickList DAT_0310f4b0
-;   undefined4 DAT_0310fd44
-;   undefined4 DAT_0310fd48
+;   CPickList g_ScriptPickList
+;   int g_CurrentEditingColumn
+;   int g_CurrentEditingLine
 ;   undefined1 DAT_0310fdc0
 ;   undefined1 DAT_0310fdc1
 ;   undefined1 DAT_0310fdc2
@@ -27,13 +27,13 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_FUN_0055a370
 ;   core_script.cpp_CScript_FUN_0055a4b0
-;   core_script.cpp_CScript_FUN_00566910
-;   core_script.cpp_CScript_FUN_005669a0
+;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
+;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
 ;   core_script.cpp_FUN_005644e0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;
 ; *****************************************************************************
 
@@ -59,16 +59,16 @@ section .text
     TEST EAX,EAX                        ; 005660a1
     JNZ 0x0056612e                      ; 005660a3
         ;   XREF to: 0056612e (CONDITIONAL_JUMP)  ; LAB_0056612e
-    PUSH 0x310f4b0                      ; 005660a9 | DAT_0310f4b0
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005660ae
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    PUSH 0x310f4b0                      ; 005660a9 | g_ScriptPickList
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005660ae
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005660b3
     TEST EAX,EAX                        ; 005660b6
     JLE 0x00566103                      ; 005660b8
         ;   XREF to: 00566103 (CONDITIONAL_JUMP)  ; LAB_00566103
-    PUSH 0x310f4b0                      ; 005660ba | DAT_0310f4b0
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005660bf
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    PUSH 0x310f4b0                      ; 005660ba | g_ScriptPickList
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005660bf
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005660c4
     PUSH EAX                            ; 005660c7
     PUSH 0x643f0e                       ; 005660c8 | = "%d sound files missing."
@@ -79,11 +79,11 @@ section .text
     PUSH ESI                            ; 005660da
     PUSH -0x1                           ; 005660db
     PUSH 0x643f26                       ; 005660dd | = "The following sound files are missing."
-    PUSH 0x310f4b0                      ; 005660e2 | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 005660e2 | g_ScriptPickList
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 005660e7
         ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
     ADD ESP,0x10                        ; 005660ec
-    PUSH 0x310f4b0                      ; 005660ef | DAT_0310f4b0
+    PUSH 0x310f4b0                      ; 005660ef | g_ScriptPickList
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 005660f4
         ;   XREF to: 004a5770 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_004a5770(CPickList * this_ptr)
     ADD ESP,0x4                         ; 005660f9
@@ -122,14 +122,14 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 00566133
     PUSH EBX                            ; 00566136
     XOR EDX,EDX                         ; 00566137
-    MOV [0x0310fd48],EAX                ; 00566139 | DAT_0310fd48
-    MOV dword ptr [0x0310fd44],EDX      ; 0056613e | DAT_0310fd44
-    CALL core_script.cpp_CScript_FUN_00566910 ; 00566144
-        ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566910(CScript * this_ptr)
+    MOV [0x0310fd48],EAX                ; 00566139 | g_CurrentEditingLine
+    MOV dword ptr [0x0310fd44],EDX      ; 0056613e | g_CurrentEditingColumn
+    CALL core_script.cpp_CScript_updateCursorBounds_FUN_00566910 ; 00566144
+        ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateCursorBounds_FUN_00566910(CScript * this_ptr)
     ADD ESP,0x4                         ; 00566149
     PUSH EBX                            ; 0056614c
-    CALL core_script.cpp_CScript_FUN_005669a0 ; 0056614d
-        ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005669a0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_updateScrollPosition_FUN_005669a0 ; 0056614d
+        ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateScrollPosition_FUN_005669a0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00566152
     MOV EDI,0x310fdc0                   ; 00566155 | DAT_0310fdc0
     PUSH EDI                            ; 0056615a | DAT_0310fdc0

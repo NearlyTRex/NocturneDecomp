@@ -22,7 +22,7 @@ void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)
       return;
     }
     while (((cVar2 = *param_1, pcVar4 = local_d8,
-            (g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 0xe0U) != 0 ||
+            (g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 0xe0) != 0 ||
             (pcVar4 = local_d8, cVar2 == '-')) || (pcVar4 = local_d8, cVar2 == '_'))) {
       do {
         do {
@@ -31,7 +31,7 @@ void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)
           local_10 = (uint)*pbVar1;
           param_1 = param_1 + 1;
           pcVar4 = pcVar4 + 1;
-        } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
+        } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
       } while ((local_10 == 0x2d) || (local_10 == 0x5f));
       *pcVar4 = '\0';
       iVar3 = stricmp(local_d8,"none");

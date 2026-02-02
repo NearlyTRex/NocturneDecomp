@@ -16,7 +16,7 @@
 ;   core_haystack.cpp_CHaystack_renderOpaque_FUN_004f1b60 at 004f1b65
 ;   core_hostage.cpp_CHostage_renderOpaque_FUN_004f4b40 at 004f4b86
 ;   core_icepick.cpp_CIcePick_renderOpaque_FUN_004f95a0 at 004f95a5
-;   core_scat.cpp_FUN_00557df0 at 00557df9
+;   core_scat.cpp_CScat_renderOpaque_FUN_00557df0 at 00557df9
 ;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c3166
 ;   core_svetlana.cpp_CSvetlana_FUN_005d9bc0 at 005d9bf4
 ;   ... and 2 more

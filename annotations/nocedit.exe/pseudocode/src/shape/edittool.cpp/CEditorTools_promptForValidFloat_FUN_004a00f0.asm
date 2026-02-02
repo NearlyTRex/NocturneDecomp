@@ -21,7 +21,7 @@
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040efc4
-;   core_boxactor.cpp_CLightActor_FUN_00423440 at 004234ac
+;   core_boxactor.cpp_CLightActor_propertyActionFOVCallback_FUN_00423440 at 004234ac
 ;   core_cloth.cpp_FUN_0043ddf0 at 0043dffc
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044346c
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dcfa
@@ -29,7 +29,7 @@
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d7761
 ;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537b4a
 ;   core_msnedit.cpp_FUN_00536e20 at 00537027
-;   core_script.cpp_FUN_00562920 at 00562a1e
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00562a1e
 ;   ... and 5 more
 ;
 ; Referenced Globals:

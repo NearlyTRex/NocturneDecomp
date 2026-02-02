@@ -5,19 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6507
-Successful: 4175 (64.2%)
-Failed: 2332
+Successful: 4151 (63.8%)
+Failed: 2356
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          11037
-  incompatible_types              1737
+  other                          10965
+  incompatible_types              1638
   undeclared_identifier           1395
-  syntax_error                     503
+  syntax_error                     492
   missing_member                    89
 
 ====================================================================================================
-CATEGORY: other (11037 errors)
+CATEGORY: other (10965 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -39,10 +39,10 @@ CATEGORY: other (11037 errors)
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 11007 more errors
+  ... and 10935 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1737 errors)
+CATEGORY: incompatible_types (1638 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -63,7 +63,7 @@ CATEGORY: incompatible_types (1737 errors)
     Line 44: invalid conversion from 'void*' to 'void**' [-fpermissive]...
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     Line 62: invalid conversion from 'void*' to 'void**' [-fpermissive]...
-  cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
+  cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
     Line 60: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
     Line 18: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
@@ -90,7 +90,7 @@ CATEGORY: incompatible_types (1737 errors)
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     Line 33: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
 
-  ... and 1707 more errors
+  ... and 1608 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (1395 errors)
@@ -144,7 +144,7 @@ CATEGORY: undeclared_identifier (1395 errors)
   ... and 1365 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (503 errors)
+CATEGORY: syntax_error (492 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -180,7 +180,7 @@ CATEGORY: syntax_error (503 errors)
   core_drone.cpp_FUN_0048ec70
     Line 122: expected primary-expression before ')' token...
 
-  ... and 473 more errors
+  ... and 462 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (89 errors)
@@ -211,8 +211,8 @@ CATEGORY: missing_member (89 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.85
-Average suspects in failed compilations: 13.50
+Average suspects in successfully compiled functions: 2.55
+Average suspects in failed compilations: 12.40
 
-Functions that compile but have suspect patterns: 1608
+Functions that compile but have suspect patterns: 1489
 (These may have runtime issues even though syntax is valid)

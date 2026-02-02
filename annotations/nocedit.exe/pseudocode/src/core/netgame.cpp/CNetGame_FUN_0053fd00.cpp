@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame* param_1, uint
-   param_2) */
-
 void __cdecl core_netgame_cpp_CNetGame_FUN_0053fd00(CNetGame *this_ptr)
 
 {
@@ -87,7 +84,7 @@ LAB_0053fe74:
             g_CurrentGameTime = g_CurrentGameTime + iVar2;
             g_LastPingTime = iVar1 / 0x12;
           }
-          core_netgame_cpp_CNetGame_FUN_00543930();
+          core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
           uVar4 = g_CurrentGameTime;
           core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
         } while (-1 < *(int *)this_ptr->padding);
@@ -162,7 +159,7 @@ LAB_00540097:
           if (0 < this_ptr->player_count) {
             do {
               if (iVar1 != this_ptr->local_player_index) {
-                core_netgame_cpp_CNetGame_FUN_00543930();
+                core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
               }
               iVar1 = iVar1 + 1;
             } while (iVar1 < this_ptr->player_count);

@@ -1,28 +1,125 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 21,
+        "message": "'PTR_s_Momentary_00684364' was not declared in this scope; did you mean 's_Momentary_00655867'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 24,
+        "message": "'PTR_s_Hero_triggers_me_00684384' was not declared in this scope; did you mean 's_Hero_triggers_me_00655bd6'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 50,
+        "line": 26,
+        "message": "'PTR_s_Box_006843d4' was not declared in this scope"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 29,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 34,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 42,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 45,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 50,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 55,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 58,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 64,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 67,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 71,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 224,
+    "complexity_score": 250,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 19,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 65,
     "suspect_count": 18,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 237
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -46,39 +143,39 @@
   },
   "function_calls": [
     {
-      "addr": "0040e160",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
-    },
-    {
-      "addr": "0040e1a0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0"
-    },
-    {
-      "addr": "0040e1e0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1e0"
-    },
-    {
-      "addr": "0040e290",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
-    },
-    {
       "addr": "0040e330",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330"
+      "name": "core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330"
     },
     {
       "addr": "0040e480",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e480"
+      "name": "core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480"
     },
     {
       "addr": "0040e640",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e640"
+      "name": "core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640"
+    },
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160"
+    },
+    {
+      "addr": "0040e1a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0"
+    },
+    {
+      "addr": "0040e1e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0"
+    },
+    {
+      "addr": "0040e290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290"
     },
     {
       "addr": "0040d290",
@@ -277,114 +374,114 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e480(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e480(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"On event\",this_ptr->unk + 0xcc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Off event\",this_ptr->unk + 0x130);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Event type\",4,(int *)&PTR_s_Momentary_00684364);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"What triggers me\",10,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Shape\",2,(int *)&PTR_s_Box_006843d4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Actor name\",this_ptr->unk + 0x20,0x50,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 27,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e1e0(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Actor type(s)\",this_ptr->unk + 0x70,0x50,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Actor name wildcard\",this_ptr->unk + 0x20,0x50,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 35,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Light min\",(float *)(this_ptr->unk + 0xc4),0.0,1.0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);",
+      "text": "(in_stack_00000008,\"Light max\",(float *)(this_ptr->unk + 200),0.0,1.0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"Laser type\",(int *)(this_ptr->unk + 0x19c),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"Hitpoints\",(float *)(this_ptr->unk + 0x1a0),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"Damage actor name wildcard\",this_ptr->unk + 0x1ac,100,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"pressurePlate\",(int *)(this_ptr->unk + 0xc0));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"Test radius\",(float *)this_ptr->unk,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"Auto aim at me\",(int *)(this_ptr->unk + 0x1a8));",
       "type": "stack_param"
     }
   ],

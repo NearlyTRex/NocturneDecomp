@@ -28,7 +28,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_serialize_FUN_005c2fe0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c3710(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_FUN_005c3750(void);
@@ -68,7 +68,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr,float delta_time);
 int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *this_ptr);
-void __cdecl core_succubus_cpp_CSuccubus_serialize_FUN_005c7710(CSuccubus *this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_archive_FUN_005c7710(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_FUN_005c7760(void);
 int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7780(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c7790(CSuccubus *this_ptr);

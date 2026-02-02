@@ -14,10 +14,10 @@
 ;   TerminatedCString s_Death_condition_00616388
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -40,29 +40,29 @@ section .text
     PUSH EDI                            ; 0041d9ad
     PUSH 0x61636d                       ; 0041d9ae | = "Model"
     PUSH EBX                            ; 0041d9b3
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 0041d9b4
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 0041d9b4
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 0041d9b9
     PUSH EDI                            ; 0041d9bc
     PUSH 0x616373                       ; 0041d9bd | = "State"
     PUSH EBX                            ; 0041d9c2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 0041d9c3
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 0041d9c3
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 0041d9c8
     PUSH 0x0                            ; 0041d9cb
     LEA EDI,[ESI + 0xbf34]              ; 0041d9cd
     PUSH EDI                            ; 0041d9d3
     PUSH 0x616379                       ; 0041d9d4 | = "Recombine time"
     PUSH EBX                            ; 0041d9d9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0041d9da
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0041d9da
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0041d9df
     ADD ESI,0xbed0                      ; 0041d9e2
     PUSH ESI                            ; 0041d9e8
     PUSH 0x616388                       ; 0041d9e9 | = "Death condition"
     PUSH EBX                            ; 0041d9ee
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 0041d9ef
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 0041d9ef
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 0041d9f4
     POP EDI                             ; 0041d9f7
     POP ESI                             ; 0041d9f8

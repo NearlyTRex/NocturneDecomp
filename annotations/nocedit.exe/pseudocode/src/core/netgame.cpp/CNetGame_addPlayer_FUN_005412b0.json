@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 13,
+        "line": 45,
+        "message": "cast from 'SNetPlayer*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -11,57 +18,39 @@
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 30,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 31,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 33,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 4,
-        "line": 37,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 307,
+    "complexity_score": 230,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 67,
-    "suspect_count": 22,
+    "pseudocode_lines": 60,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_param",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 150
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -79,13 +68,13 @@
     {
       "addr": "0053f860",
       "from_addr": "0053f8bf",
-      "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f900",
       "from_addr": "0053f951",
-      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -99,7 +88,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0",
-    "signature": "int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)"
+    "signature": "int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -175,7 +164,7 @@
       {
         "call_addr": "0053f8bf",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -184,7 +173,7 @@
       {
         "call_addr": "0053f951",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -193,7 +182,7 @@
       {
         "call_addr": "0053f998",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
         "estimated_params": 5,
         "instructions_analyzed": 8,
         "reg_params": [],
@@ -201,7 +190,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -236,170 +225,129 @@
     "pcode_op_count": 310
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_5",
-      "text": "uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 13,
       "match": "in_stack_0000000c",
       "text": "char *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 14,
       "match": "in_stack_00000010",
       "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 15,
       "match": "in_stack_00000014",
       "text": "uint in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "if (1 < *(int *)(in_stack_00000004 + 0x1c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = *(int *)(in_stack_00000004 + 0x1c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_00000004",
-      "text": "dest = (char *)(in_stack_00000004 + 0x20 + iVar2 * 0x78);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = iVar2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
       "match": "in_stack_0000000c",
       "text": "cVar1 = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 32,
       "match": "in_stack_0000000c",
       "text": "cVar1 = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 33,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = in_stack_0000000c + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 33,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = in_stack_0000000c + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 37,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(dest + 0x1c) = *in_stack_00000008;",
+      "text": "*(uint *)(dest->name + 0x1c) = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 38,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(dest + (uint)bVar7 * -8 + 0x20) = in_stack_00000008[(uint)bVar7 * -2 + 1];",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 52,
       "match": "in_stack_00000010",
-      "text": "*(uint *)(dest + 0x14) = in_stack_00000010;",
+      "text": "*(uint *)(dest->name + 0x14) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 53,
       "match": "in_stack_00000014",
-      "text": "*(uint *)(dest + 0x18) = in_stack_00000014;",
+      "text": "*(uint *)(dest->name + 0x18) = in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 59,
       "match": "DAT_02f7c8c4",
-      "text": "iVar4 = DAT_02f7c8c4;",
+      "text": "iVar3 = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "call_site_count": 5,
-      "declared_params": 0,
+      "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "match": "declared:1 vs estimated:5",
+      "param_delta": 4,
+      "text": "Function declares 1 params but call sites push 5 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

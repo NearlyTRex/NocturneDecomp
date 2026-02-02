@@ -1,0 +1,218 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 59,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004277e0",
+      "from_addr": "00427811",
+      "name": "core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccaa0",
+      "from_addr": "004ccad0",
+      "name": "core_flies.cpp_FUN_004ccaa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8dc0",
+      "from_addr": "004e8e11",
+      "name": "core_ghoul.cpp_CGhoul_getPropertyList_FUN_004e8dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3f60",
+      "from_addr": "004f3f8d",
+      "name": "core_hero.cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e220",
+    "address_range": [
+      [
+        "0040e220",
+        "0040e25e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220",
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e6c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004f3f8d",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60",
+        "estimated_params": 6,
+        "instructions_analyzed": 11,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004ccad0",
+        "call_type": "direct",
+        "caller": "core_flies.cpp_FUN_004ccaa0",
+        "estimated_params": 6,
+        "instructions_analyzed": 11,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00427811",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004e8e11",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_getPropertyList_FUN_004e8dc0",
+        "estimated_params": 6,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3636363636363638,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 21,
+      "INT_ADD": 14,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 8,
+      "LOAD": 9,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 74
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "data_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "min_value",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "callback",
+        "offset": 24,
+        "size": 4,
+        "type": "CDemonActor_CActorPropertyValidatorFunc *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param1",
+      "text": "(pCVar1->param1).v_int = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param4",
+      "text": "(pCVar1->param4).v_int = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param2",
+      "text": "(pCVar1->param2).v_int = min_value;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param3",
+      "text": "(pCVar1->param3).v_int = max_value;",
+      "type": "unnamed_param"
+    }
+  ]
+}

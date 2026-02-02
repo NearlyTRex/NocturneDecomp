@@ -17,10 +17,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541b1d
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 005435e9
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 0054320e
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 at 00540495
-;   core_netgame.cpp_FUN_00541390 at 00541b1d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063da65
@@ -189,7 +189,7 @@ section .text
     PUSH EBX                            ; 00541e09
     PUSH ESI                            ; 00541e0a
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00541e0b
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
     ADD ESP,0xc                         ; 00541e10
     MOV ESP,EBP                         ; 00541e13
         ;   Label: LAB_00541e13

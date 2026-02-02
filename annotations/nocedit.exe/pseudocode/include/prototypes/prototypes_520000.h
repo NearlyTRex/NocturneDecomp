@@ -30,6 +30,7 @@
 #include "types/structs/SCPUInfo.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SHuffmanTable.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -54,7 +55,7 @@ int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_00520870(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_00520890(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_isDamageable_FUN_005208a0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag);
-void __cdecl core_mimic_cpp_CMimic_serialize_FUN_00520930(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr);
@@ -142,25 +143,25 @@ CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void);
 CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_005251f0(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_ptr);
-void __cdecl core_mobster_cpp_FUN_00525340(void);
-void __cdecl core_mobster_cpp_FUN_00525650(void);
-void __cdecl core_mobster_cpp_FUN_00525720(void);
-void __cdecl core_mobster_cpp_FUN_00525840(void);
-void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void);
+void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_00525650(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_00525720(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time);
+void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_FUN_00526b00(void);
-void __cdecl core_mobster_cpp_FUN_00526b20(void);
-int __cdecl core_mobster_cpp_FUN_00526d90(void);
-void __cdecl core_mobster_cpp_FUN_005271c0(void);
-void __cdecl core_mobster_cpp_CMobster_load_FUN_00527230(void);
-int __cdecl core_mobster_cpp_FUN_00527360(void);
-void __cdecl core_mobster_cpp_FUN_00527380(void);
-void __cdecl core_mobster_cpp_FUN_00527740(void);
-int __cdecl core_mobster_cpp_FUN_005278d0(void);
-void __cdecl core_mobster_cpp_FUN_005279d0(void);
-void __cdecl core_mobster_cpp_FUN_005279f0(void);
-void __cdecl core_mobster_cpp_FUN_00527b70(void);
-void __cdecl core_mobster_cpp_FUN_00527c30(void);
-void __cdecl core_mobster_cpp_FUN_00527c40(void);
+void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr);
+int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_005271c0(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr);
+int __cdecl core_mobster_cpp_CMobster_FUN_00527360(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0 (CMobster *this_ptr,CVector3f *out_points_array);
+void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0 (CMobster *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70 (CMobster *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_mobster_cpp_CMobster_FUN_00527c30(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_writeDependencies_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70 (CMobster *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
 void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename);
@@ -177,14 +178,14 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint d1,uint d2,uint d3,uint d4);
 void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch *this_ptr);
 void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,float delta_time);
-void __cdecl core_moloch_cpp_FUN_005293b0(void);
+void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr);
 int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr);
-void __cdecl core_moloch_cpp_CMoloch_load_FUN_00529880(void);
-void __cdecl core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900(void);
-void __cdecl core_moloch_cpp_FUN_00529950(void);
-void __cdecl core_moloch_cpp_FUN_005299b0(void);
-void __cdecl core_moloch_cpp_FUN_005299d0(void);
-int __cdecl core_moloch_cpp_FUN_005299e0(void);
+void __cdecl core_moloch_cpp_CMoloch_archive_FUN_00529880(CMoloch *this_ptr);
+void __cdecl core_moloch_cpp_CMoloch_FUN_00529900(CMoloch *this_ptr);
+void __cdecl core_moloch_cpp_CMoloch_getPropertyList_FUN_00529950 (CMoloch *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_moloch_cpp_CMoloch_writeDependencies_FUN_005299b0(CMoloch *this_ptr,_FILE *file_handle);
+void __cdecl core_moloch_cpp_CMoloch_FUN_005299d0(CMoloch *this_ptr);
+int __cdecl core_moloch_cpp_CMoloch_FUN_005299e0(CMoloch *this_ptr);
 void __cdecl core_moon_cpp_staticInit_FUN_005299f0(void);
 CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_00529a80(CMoon *this_ptr);
 CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00529ab0(CMoon *this_ptr);

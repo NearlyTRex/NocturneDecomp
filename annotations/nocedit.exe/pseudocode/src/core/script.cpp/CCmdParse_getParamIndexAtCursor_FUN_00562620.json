@@ -1,0 +1,127 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 68,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "00561db0",
+      "from_addr": "00561ee6",
+      "name": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00562620",
+    "address_range": [
+      [
+        "00562620",
+        "005626c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620",
+    "signature": "int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 (CCmdParse *this_ptr,int cursor_position)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00561ee6",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00561f0d",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.105263157894737,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 13,
+      "COPY": 57,
+      "INT_ADD": 33,
+      "INT_AND": 71,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 74,
+      "INT_LESS": 12,
+      "INT_MULT": 4,
+      "INT_NEGATE": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 35,
+      "INT_SUB": 33,
+      "INT_XOR": 5,
+      "INT_ZEXT": 4,
+      "LOAD": 31,
+      "POPCOUNT": 35,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 464
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCmdParse *"
+      },
+      {
+        "is_param": true,
+        "name": "cursor_position",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

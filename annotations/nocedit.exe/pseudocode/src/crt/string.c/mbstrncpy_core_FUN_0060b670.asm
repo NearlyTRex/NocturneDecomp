@@ -12,7 +12,7 @@
 ;   crt_stdio.c_stream_setup_FUN_00605f20 at 00605f57
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_buffered_FUN_0060d510

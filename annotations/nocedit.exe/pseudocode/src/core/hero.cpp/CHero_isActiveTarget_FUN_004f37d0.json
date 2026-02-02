@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 57,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 24,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 88
+    "total_lines": 90
   },
   "cross_references": [],
   "function": {
@@ -108,23 +108,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "ABS",
-      "text": "((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x20)))))))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "ABS",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x24)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ABS",
-      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 0x28)) ||",
+      "text": "((float)0.10000000000000001 < ABS(*(float *)this_ptr->unk2))))))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 4)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 8)) ||",
       "type": "decompiler_intrinsic"
     }
   ],
@@ -151,7 +151,7 @@
         "vtable_addr": "0065bd54"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CScat",
         "offset": 84,
         "vtable_addr": "00662464"
       }

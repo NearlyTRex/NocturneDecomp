@@ -34,11 +34,11 @@ LAB_005a35b4:
   if (0.0 < in_stack_00000008->damage_amount) {
     core_smiley_cpp_FUN_005a32a0();
   }
-  fVar2 = (float)(in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
+  fVar2 = (in_stack_00000004->base).hit_points - in_stack_00000008->damage_amount;
   this_ptr = &(in_stack_00000004->base).model;
-  (in_stack_00000004->base).hit_points = (int)fVar2;
+  (in_stack_00000004->base).hit_points = fVar2;
   if (fVar2 <= 0.0) {
-    (in_stack_00000004->base).hit_points = 0;
+    (in_stack_00000004->base).hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {

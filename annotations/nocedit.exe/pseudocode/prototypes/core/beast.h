@@ -27,9 +27,9 @@ void __cdecl CBeast::setup(CBeast *this_ptr);
 // Address: 004182a0
 void __cdecl CBeast::process(CBeast *this_ptr,float delta_time);
 
-// Original: core_beast.cpp_CBeast_serialize_FUN_00418330
+// Original: core_beast.cpp_CBeast_archive_FUN_00418330
 // Address: 00418330
-void __cdecl CBeast::serialize(CBeast *this_ptr);
+void __cdecl CBeast::archive(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_processDamage_FUN_00418380
 // Address: 00418380

@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_005578e0 at 00557ceb
+;   core_scat.cpp_CScat_FUN_005578e0 at 00557ceb
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

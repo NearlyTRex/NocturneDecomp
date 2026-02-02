@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_00624603
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CConsole g_ConsolePtr
 ;   undefined4 DAT_02d0a45c
 ;   undefined1 DAT_02d0a460

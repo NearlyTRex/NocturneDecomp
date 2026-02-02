@@ -39,9 +39,9 @@ void __cdecl MotionControllerAdvance::ParentBones(void);
 // Address: 005d9a10
 void __cdecl AttackWithParentBone(void);
 
-// Original: core_svetlana.cpp_CSVetlana_serialize_FUN_005d9bb0
+// Original: core_svetlana.cpp_CSVetlana_archive_FUN_005d9bb0
 // Address: 005d9bb0
-void __cdecl CSVetlana::serialize(CSvetlana *this_ptr);
+void __cdecl CSVetlana::archive(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_FUN_005d9bc0
 // Address: 005d9bc0

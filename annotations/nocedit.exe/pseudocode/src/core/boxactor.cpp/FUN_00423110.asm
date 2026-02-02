@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x3b0]:1  local_3b0
 ;
 ; XREF[2]:
-;   core_boxactor.cpp_CLightActor_FUN_00423380 at 004233ca
 ;   core_boxactor.cpp_CLightActor_initializeInEditor_FUN_00423590 at 00423599
+;   core_boxactor.cpp_CLightActor_propertyActionTypeCallback_FUN_00423380 at 004233ca
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004230b0 = 00423130

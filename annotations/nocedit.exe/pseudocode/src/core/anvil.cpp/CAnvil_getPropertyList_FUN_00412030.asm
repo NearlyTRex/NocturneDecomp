@@ -13,9 +13,9 @@
 ;   TerminatedCString s_Drop_height_00614d89
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e160
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -37,23 +37,23 @@ section .text
     PUSH EAX                            ; 0041204c
     PUSH 0x614d6d                       ; 0041204d | = "Model file (.kfm)"
     PUSH ESI                            ; 00412052
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00412053
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 00412053
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00412058
     LEA EAX,[EBX + 0x2d4]               ; 0041205b
     PUSH EAX                            ; 00412061
     PUSH 0x614d7f                       ; 00412062 | = "Drop cond"
     PUSH ESI                            ; 00412067
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00412068
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 00412068
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 0041206d
     PUSH 0x0                            ; 00412070
     ADD EBX,0x338                       ; 00412072
     PUSH EBX                            ; 00412078
     PUSH 0x614d89                       ; 00412079 | = "Drop height"
     PUSH ESI                            ; 0041207e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0041207f
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0041207f
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00412084
     POP ESI                             ; 00412087
     POP EBX                             ; 00412088

@@ -145,6 +145,46 @@ const char* g_MonthNamesLong[12] = {
     "September", "October", "November", "December"
 };
 
+// char*[141] constants
+const char* g_CommandTemplates[141] = {
+    ":<label>", "{", "}", "addItemToInventory(<actor:CHero'hero'>, <actor'itemToAdd'>)",
+    "addLightFilter(<spotLight>, <filename:art\\*.raw>, <float'filterTime'>)", "advanceLightFilter(<spotLight>)", "allowEnemyAttack(<condition>)", "allowHeroControls(<condition>)",
+    "allowHeroDamage(<condition>)", "attachActorToPlatform(<actor'actor to attach'>, <actor:CPlatform'platform to attach to'>)", "beginFadeIn", "beginFadeOut",
+    "breakPoint", "cancelCameraHold", "cancelWalkTo(<actor:CCharacter>)", "chainToMission(<filename:world\\*.msn>)",
+    "clearActorVariable(<actorVariable>)", "createExplosion(<float'radius'>, <float'posX'>, <float'posY'>, <float'posZ'>)", "createExplosion(<float'radius'>, <actor'position actor'>)", "createExplosion(<float'radius'>, <float'posX'>, <float'posY'>, <float'posZ'>, <float'radius'>)",
+    "createExplosion(<float'radius'>, <actor'position actor'>, <float'radius'>)", "dbSay(<dbTag>)", "dbStartSay(<dbTag>)", "debug(<text'debug message'>)",
+    "dismember(<actor:CCharacter'character to dismember'>, <bodyPartList:0>)", "dismember(<actor:CCharacter'character to dismember'>, <bodyPartList:0>, <float'velX'>, <float'velY'>, <float'velZ'>, <float'velConeAngle'>)", "deleteActor(<actor'actor to delete'>)", "display(<text'display text'>)",
+    "displayBitmap(<filename:art\\*.raw'bitmap filename'>, <int'xSize'>, <int'ySize'>)", "else", "enableCamera(<camera>, <condition>)", "enableCameraGroup(<int'cameraGroupNumber'>, <condition>)",
+    "enableHealthBar(<actor:CCharacter>, <condition>)", "end", "fadeAmbientSound(<float'volume'>, <float'fadeTime'>)", "fadeIn",
+    "fadeOut", "fadeSfx(<sfxUsed>, <float'volume'>, <float'fadeTime'>)", "finishedAct()", "flagOn(<persistentEventName>)",
+    "flagOff(<persistentEventName>)", "gameFlagOn(<gameFlagName>)", "gameFlagOff(<gameFlagName>)", "gesture(<actor:CCharacter>, <motionName:0>)",
+    "getIniInt(<iniVariable>, <counterSet>)", "getTriggerActor(<actorVariable>, <actor:CTrigger>)", "gosub <label>", "goto <label>",
+    "gtfo(<text>)", "holsterWeapon(<actor:CHero>)", "holsterWeapon(<actor:CHero>, <condition>)", "hurtCharacter(<actor:CCharacter>, <damageType>, <float'damageAmount'>)",
+    "idle", "if(<condition>)", "incCounter(<counterSet>)", "killCharacter(<actor:CCharacter>, <deathType>)",
+    "killCharacter(<actor:CCharacter>, <deathType>, <float'velX'>, <float'velY'>, <float'velZ'>)", "killCharacter(<actor:CCharacter>, <deathType>, <float'velX'>, <float'velY'>, <float'velZ'>, <float'angle'>)", "killHero(<deathType>)", "killSfx(<sfxUsed>)",
+    "killSfx(<sfxUsed>, <float'fadeOutTime'>)", "letterBox(<letterBoxMode>)", "lightning()", "lockFocusActor(<condition>)",
+    "lookAt(<actor:CCharacter>, <actor>)", "openDoor(<actor:CCharacter>, <actor:CDoor>)", "movePlatform(<actor:CPlatform'platformToMove'>, <float'destination parameter (0..1)'>, <float'movement rate (params/sec)'>)", "playSfx(<wav>)",
+    "playSfx(<wav>, <sfxSet>)", "pressButton(<actor:CHero>, <controlButton>)", "raise(<eventCommand>)", "releaseButton(<actor:CHero>, <controlButton>)",
+    "removeAllItemsFromInventory(<actor:CHero>)", "removeItemFromInventory(<actor:CHero>, <actor>)", "removeKeys(<int'keyMask'>)", "return",
+    "rollCredits()", "say(<actor:CCharacter>, <wav>, <text>)", "selectWeapon(<actor:CHero>, <actorClass:CWeapon>)", "setActorVariable(<actorVariable>, <actor>)",
+    "setAmbientSound(<wav>)", "setCameraAmbient(<camera>, <float'ambientValue'>)", "setCameraGroup(<camera>, <int'cameraGroupIndex'>)", "setCounter(<counterSet>)",
+    "setCounter(<counterSet>, <int>)", "setCharacterHealth(<actor:CCharacter>, <float'health pct (0..1)'>)", "setFocusActor(<actor>)", "setGroupAmbient(<int'cameraGroupIndex'>, <float'ambientValue'>)",
+    "setHeroTask(<actor:CHero>, <heroTask>)", "setIniInt(<iniVariable>, <int>)", "setLeverState(<actor:CLever>, <condition>)", "setLightFilterFrame(<spotLight>, <int'frameNumber'>)",
+    "setModelState(<actor:CCharacter>, <motionState:0>)", "setSayTimeOverride()", "setSayTimeOverride(<float'sayTimeDuration'>)", "setSkipLabel(<label>)",
+    "setSpeaker(<actor:CCharacter>)", "setTimer(<timer>, <float'timerDuration'>)", "setTimeFactor(<float>)", "setVictim(<actor:CEnemy>)",
+    "setVictim(<actor:CEnemy>, disable)", "setVictim(<actor:CEnemy>, <actor:CCharacter>)", "setWeather(<weather>)", "shakeScreen(<float'frequency'>, <float'attackTime'>, <float'sustainTime'>, <float'releaseTime'>)",
+    "slamModelToMotion(<actor:CCharacter>, <motionName:0>)", "snapToFace(<actor'actorToTurn'>, <actor'actorToFace'>)", "startSay(<actor:CCharacter>, <wav>, <text>)", "switchCamera(<camera>)",
+    "switchCamera(<camera>, <float'holdTime'>)", "syntaxCheckOff", "syntaxCheckOn", "timedDisplay(<float>, <text>)",
+    "turnToFace(<actor:CCharacter'actorToTurn'>, <actor'actorToFace'>)", "waitFor(<condition>)", "wait(<float>)", "walkTo(<actor:CCharacter'actorToWalk'>, <actor'destActor'>, <float'walkDist'>)",
+    "walkTo(<actor:CCharacter'actorToWalk'>, <actor'destActor'>, <float'walkDist'>, <float'runDist'>)", "warpTo(<actor'actorToWarp'>, <actor'destActor'>)", "warpTo(<actor'actorToWarp'>, <float'x'>, <float'y'>, <float'z'>, <float'h'>)", "warpTo(<actor'actorToWarp'>, <float'x'>, <float'y'>, <float'z'>, <float'p'>, <float'b'>, <float'h'>)",
+    "cmp(<counterUsed> <relOp> <counterUsed>)", "exists(<actor>)", "hasItem(<actor>)", "hasItemType(<actor:CHero>, <actorClass>)",
+    "isBroken(<actor:CGlass>)", "isCurrentCamera(<camera>)", "isDead(<actor:CCharacter>)", "isFacing(<actor'lookActor'>, <actor'targetActor'>)",
+    "isFacing(<actor'lookActor'>, <actor'targetActor'>, <float'toleranceAngle'>)", "isFadeFinished()", "isInRange(<actor'actor1'>, <actor'actor2'>, <float'distance'>)", "isLightOn(<spotLight)",
+    "isNudityEnabled()", "isOfType(<actor>, <text>)", "isSfxActive(<sfxUsed>)", "isTalking(<actor:CCharacter>)",
+    "isVictim(<actor:CCharacter>)", "isWeaponDrawn(<actor:CHero>)", "isWearingGasMask(<actor:CHero>)", "randBool(<float'odds'>)",
+    "reachedDest(<actor>)"
+};
+
 // char*[24] constants
 const char* g_MathFunctionNames[24] = {
     (char*)0x00002424, "acos", "asin", "sqrt",
@@ -218,30 +258,6 @@ const char g_MonthNamesShort[12][4] = {
 const char g_HexLookupTable[] = "0123456789abcdef";
 
 // char[256] constants
-const char g_CharacterClassificationTable[256] = {
-    (char)0x00, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x03, (char)0x03,
-    (char)0x03, (char)0x03, (char)0x03, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01,
-    (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x0A, (char)0x0C, (char)0x0C,
-    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
-    (char)0x0C, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x38, (char)0x0C,
-    (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x58, (char)0x58, (char)0x58, (char)0x58, (char)0x58, (char)0x58,
-    (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48,
-    (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x48, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
-    (char)0x0C, (char)0x0C, (char)0x98, (char)0x98, (char)0x98, (char)0x98, (char)0x98, (char)0x98, (char)0x88, (char)0x88, (char)0x88, (char)0x88,
-    (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x88,
-    (char)0x88, (char)0x88, (char)0x88, (char)0x88, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x01, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
-    (char)0x00, (char)0x00, (char)0x00, (char)0x00
-};
 const char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -311,6 +327,27 @@ const float10 FLOAT10_00687552 = 0.076416908f;
 // int constants
 const int DAT_00684f34 = 0x2D;
 
+// uchar[257] constants
+const uchar g_CharacterClassificationTable[257] = {
+    0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x01,
+    0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
+    0x01, 0x0A, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C,
+    0x0C, 0x38, 0x38, 0x38, 0x38, 0x38, 0x38, 0x38, 0x38, 0x38, 0x38, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C,
+    0x0C, 0x0C, 0x58, 0x58, 0x58, 0x58, 0x58, 0x58, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48,
+    0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x48, 0x0C, 0x0C, 0x0C, 0x0C,
+    0x0C, 0x0C, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88,
+    0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x0C, 0x0C, 0x0C, 0x0C,
+    0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00
+};
+
 // undefined2 constants
 const undefined2 DAT_00684f38 = 0x4002;
 const undefined2 DAT_0068546c = 0x127F;
@@ -332,143 +369,6 @@ const undefined4 DAT_006854f0 = 0x00000001;
 const undefined4 DAT_006855d8 = 0x0FFFFFFF;
 
 // void* constants
-const void* DAT_00680E30 = (void*)s_anon_006441cb;
-const void* DAT_00680E34 = (void*)s_addItemToInventory_actor_006441cd;
-const void* DAT_00680E38 = (void*)s_addLightFilter_spotLight_00644209;
-const void* DAT_00680E3C = (void*)s_advanceLightFilter_spotL_00644250;
-const void* DAT_00680E40 = (void*)s_allowEnemyAttack_conditi_00644270;
-const void* DAT_00680E44 = (void*)s_allowHeroControls_condit_0064428e;
-const void* DAT_00680E48 = (void*)s_allowHeroDamage_conditio_006442ad;
-const void* DAT_00680E4C = (void*)s_attachActorToPlatform_ac_006442ca;
-const void* DAT_00680E50 = (void*)s_beginFadeIn_00644324;
-const void* DAT_00680E54 = (void*)s_beginFadeOut_00644330;
-const void* DAT_00680E58 = (void*)s_breakPoint_0064433d;
-const void* DAT_00680E5C = (void*)s_cancelCameraHold_00644348;
-const void* DAT_00680E60 = (void*)s_cancelWalkTo_actor_CChar_00644359;
-const void* DAT_00680E64 = (void*)s_chainToMission_filename_0064437a;
-const void* DAT_00680E68 = (void*)s_clearActorVariable_actor_006443a1;
-const void* DAT_00680E6C = (void*)s_createExplosion_float_ra_006443c5;
-const void* DAT_00680E70 = (void*)s_createExplosion_float_ra_00644413;
-const void* DAT_00680E74 = (void*)s_createExplosion_float_ra_0064444d;
-const void* DAT_00680E78 = (void*)s_createExplosion_float_ra_006444ac;
-const void* DAT_00680E7C = (void*)s_dbSay_dbTag_006444f7;
-const void* DAT_00680E80 = (void*)s_dbStartSay_dbTag_00644506;
-const void* DAT_00680E84 = (void*)s_debug_text_debug_message_0064451a;
-const void* DAT_00680E88 = (void*)s_dismember_actor_CCharact_00644537;
-const void* DAT_00680E8C = (void*)s_dismember_actor_CCharact_0064457f;
-const void* DAT_00680E90 = (void*)s_deleteActor_actor_actor_0064460b;
-const void* DAT_00680E94 = (void*)s_display_text_display_tex_00644631;
-const void* DAT_00680E98 = (void*)s_displayBitmap_filename_a_0064464f;
-const void* DAT_00680E9C = (void*)s_else_006446a0;
-const void* DAT_00680EA0 = (void*)s_enableCamera_camera_cond_006446a5;
-const void* DAT_00680EA4 = (void*)s_enableCameraGroup_int_ca_006446c9;
-const void* DAT_00680EA8 = (void*)s_enableHealthBar_actor_CC_00644702;
-const void* DAT_00680EAC = (void*)s_end_00644733;
-const void* DAT_00680EB0 = (void*)s_fadeAmbientSound_float_v_00644737;
-const void* DAT_00680EB4 = (void*)s_fadeIn_0064476c;
-const void* DAT_00680EB8 = (void*)s_fadeOut_00644773;
-const void* DAT_00680EBC = (void*)s_fadeSfx_sfxUsed_float_vo_0064477b;
-const void* DAT_00680EC0 = (void*)s_finishedAct_006447b2;
-const void* DAT_00680EC4 = (void*)s_flagOn_persistentEventNa_006447c0;
-const void* DAT_00680EC8 = (void*)s_flagOff_persistentEventN_006447de;
-const void* DAT_00680ECC = (void*)s_gameFlagOn_gameFlagName_006447fd;
-const void* DAT_00680ED0 = (void*)s_gameFlagOff_gameFlagName_00644818;
-const void* DAT_00680ED4 = (void*)s_gesture_actor_CCharacter_00644834;
-const void* DAT_00680ED8 = (void*)s_getIniInt_iniVariable_co_00644860;
-const void* DAT_00680EDC = (void*)s_getTriggerActor_actorVar_00644887;
-const void* DAT_00680EE0 = (void*)s_gosub_label_006448ba;
-const void* DAT_00680EE4 = (void*)s_goto_label_006448c8;
-const void* DAT_00680EE8 = (void*)s_gtfo_text_006448d5;
-const void* DAT_00680EEC = (void*)s_holsterWeapon_actor_CHer_006448e2;
-const void* DAT_00680EF0 = (void*)s_holsterWeapon_actor_CHer_006448ff;
-const void* DAT_00680EF4 = (void*)s_hurtCharacter_actor_CCha_00644929;
-const void* DAT_00680EF8 = (void*)s_idle_00644970;
-const void* DAT_00680EFC = (void*)s_if_condition_00644975;
-const void* DAT_00680F00 = (void*)s_incCounter_counterSet_00644985;
-const void* DAT_00680F04 = (void*)s_killCharacter_actor_CCha_0064499e;
-const void* DAT_00680F08 = (void*)s_killCharacter_actor_CCha_006449cd;
-const void* DAT_00680F0C = (void*)s_killCharacter_actor_CCha_00644a29;
-const void* DAT_00680F10 = (void*)s_killHero_deathType_00644a95;
-const void* DAT_00680F14 = (void*)s_killSfx_sfxUsed_00644aab;
-const void* DAT_00680F18 = (void*)s_killSfx_sfxUsed_float_fa_00644abe;
-const void* DAT_00680F1C = (void*)s_letterBox_letterBoxMode_00644ae7;
-const void* DAT_00680F20 = (void*)s_lightning_00644b02;
-const void* DAT_00680F24 = (void*)s_lockFocusActor_condition_00644b0e;
-const void* DAT_00680F28 = (void*)s_lookAt_actor_CCharacter_00644b2a;
-const void* DAT_00680F2C = (void*)s_openDoor_actor_CCharacte_00644b4e;
-const void* DAT_00680F30 = (void*)s_movePlatform_actor_CPlat_00644b7a;
-const void* DAT_00680F34 = (void*)s_playSfx_wav_00644bf6;
-const void* DAT_00680F38 = (void*)s_playSfx_wav_sfxSet_00644c05;
-const void* DAT_00680F3C = (void*)s_pressButton_actor_CHero_00644c1e;
-const void* DAT_00680F40 = (void*)s_raise_eventCommand_00644c4a;
-const void* DAT_00680F44 = (void*)s_releaseButton_actor_CHer_00644c60;
-const void* DAT_00680F48 = (void*)s_removeAllItemsFromInvent_00644c8e;
-const void* DAT_00680F4C = (void*)s_removeItemFromInventory_00644cb9;
-const void* DAT_00680F50 = (void*)s_removeKeys_int_keyMask_00644ce9;
-const void* DAT_00680F54 = (void*)s_return_00644d04;
-const void* DAT_00680F58 = (void*)s_rollCredits_00644d0b;
-const void* DAT_00680F5C = (void*)s_say_actor_CCharacter_wav_00644d19;
-const void* DAT_00680F60 = (void*)s_selectWeapon_actor_CHero_00644d40;
-const void* DAT_00680F64 = (void*)s_setActorVariable_actorVa_00644d72;
-const void* DAT_00680F68 = (void*)s_setAmbientSound_wav_00644d9d;
-const void* DAT_00680F6C = (void*)s_setCameraAmbient_camera_00644db4;
-const void* DAT_00680F70 = (void*)s_setCameraGroup_camera_in_00644de6;
-const void* DAT_00680F74 = (void*)s_setCounter_counterSet_00644e18;
-const void* DAT_00680F78 = (void*)s_setCounter_counterSet_in_00644e31;
-const void* DAT_00680F7C = (void*)s_setCharacterHealth_actor_00644e51;
-const void* DAT_00680F80 = (void*)s_setFocusActor_actor_00644e94;
-const void* DAT_00680F84 = (void*)s_setGroupAmbient_int_came_00644eab;
-const void* DAT_00680F88 = (void*)s_setHeroTask_actor_CHero_00644eeb;
-const void* DAT_00680F8C = (void*)s_setIniInt_iniVariable_in_00644f12;
-const void* DAT_00680F90 = (void*)s_setLeverState_actor_CLev_00644f32;
-const void* DAT_00680F94 = (void*)s_setLightFilterFrame_spot_00644f5d;
-const void* DAT_00680F98 = (void*)s_setModelState_actor_CCha_00644f92;
-const void* DAT_00680F9C = (void*)s_setSayTimeOverride_00644fc5;
-const void* DAT_00680FA0 = (void*)s_setSayTimeOverride_float_00644fda;
-const void* DAT_00680FA4 = (void*)s_setSkipLabel_label_00645007;
-const void* DAT_00680FA8 = (void*)s_setSpeaker_actor_CCharac_0064501d;
-const void* DAT_00680FAC = (void*)s_setTimer_timer_float_tim_0064503c;
-const void* DAT_00680FB0 = (void*)s_setTimeFactor_float_00645066;
-const void* DAT_00680FB4 = (void*)s_setVictim_actor_CEnemy_0064507d;
-const void* DAT_00680FB8 = (void*)s_setVictim_actor_CEnemy_d_00645097;
-const void* DAT_00680FBC = (void*)s_setVictim_actor_CEnemy_a_006450ba;
-const void* DAT_00680FC0 = (void*)s_setWeather_weather_006450e8;
-const void* DAT_00680FC4 = (void*)s_shakeScreen_float_freque_006450fe;
-const void* DAT_00680FC8 = (void*)s_slamModelToMotion_actor_0064515f;
-const void* DAT_00680FCC = (void*)s_snapToFace_actor_actorTo_00645195;
-const void* DAT_00680FD0 = (void*)s_startSay_actor_CCharacte_006451cc;
-const void* DAT_00680FD4 = (void*)s_switchCamera_camera_006451f8;
-const void* DAT_00680FD8 = (void*)s_switchCamera_camera_floa_0064520f;
-const void* DAT_00680FDC = (void*)s_syntaxCheckOff_00645239;
-const void* DAT_00680FE0 = (void*)s_syntaxCheckOn_00645248;
-const void* DAT_00680FE4 = (void*)s_timedDisplay_float_text_00645256;
-const void* DAT_00680FE8 = (void*)s_turnToFace_actor_CCharac_00645274;
-const void* DAT_00680FEC = (void*)s_waitFor_condition_006452b6;
-const void* DAT_00680FF0 = (void*)s_wait_float_006452cb;
-const void* DAT_00680FF4 = (void*)s_walkTo_actor_CCharacter_006452d9;
-const void* DAT_00680FF8 = (void*)s_walkTo_actor_CCharacter_00645328;
-const void* DAT_00680FFC = (void*)s_warpTo_actor_actorToWarp_00645389;
-const void* DAT_00681000 = (void*)s_warpTo_actor_actorToWarp_006453ba;
-const void* DAT_00681004 = (void*)s_warpTo_actor_actorToWarp_00645407;
-const void* DAT_00681010 = (void*)s_hasItem_actor_006454a5;
-const void* DAT_00681014 = (void*)s_hasItemType_actor_CHero_006454b6;
-const void* DAT_00681018 = (void*)s_isBroken_actor_CGlass_006454df;
-const void* DAT_0068101C = (void*)s_isCurrentCamera_camera_006454f8;
-const void* DAT_00681020 = (void*)s_isDead_actor_CCharacter_00645512;
-const void* DAT_00681024 = (void*)s_isFacing_actor_lookActor_0064552d;
-const void* DAT_00681028 = (void*)s_isFacing_actor_lookActor_00645560;
-const void* DAT_0068102C = (void*)s_isFadeFinished_006455ac;
-const void* DAT_00681030 = (void*)s_isInRange_actor_actor1_a_006455bd;
-const void* DAT_00681034 = (void*)s_isLightOn_spotLight_006455fc;
-const void* DAT_00681038 = (void*)s_isNudityEnabled_00645612;
-const void* DAT_0068103C = (void*)s_isOfType_actor_text_00645624;
-const void* DAT_00681040 = (void*)s_isSfxActive_sfxUsed_0064563e;
-const void* DAT_00681044 = (void*)s_isTalking_actor_CCharact_00645655;
-const void* DAT_00681048 = (void*)s_isVictim_actor_CCharacte_00645673;
-const void* DAT_0068104C = (void*)s_isWeaponDrawn_actor_CHer_00645690;
-const void* DAT_00681050 = (void*)s_isWearingGasMask_actor_C_006456ad;
-const void* DAT_00681054 = (void*)s_randBool_float_odds_006456cd;
-const void* DAT_00681058 = (void*)s_reachedDest_actor_006456e5;
 const void* DAT_006810EE = (void*)0x00800000; // DAT_00800000
 const void* DAT_006817E8 = (void*)s_Off_00649199;
 const void* DAT_006817EC = (void*)s_On_0064919d;

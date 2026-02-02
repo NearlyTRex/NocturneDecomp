@@ -1,0 +1,108 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 146,
+    "complexity_score": 116,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 116,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 262
+  },
+  "cross_references": [
+    {
+      "addr": "00565f70",
+      "from_addr": "00566013",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005624f0",
+    "address_range": [
+      [
+        "005624f0",
+        "00562615"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CCmdParse_toString_FUN_005624f0",
+    "signature": "void __cdecl core_script_cpp_CCmdParse_toString_FUN_005624f0(CCmdParse *this_ptr,char *output_buffer)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.545454545454546,
+    "instruction_count": 121,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 1,
+      "CBRANCH": 20,
+      "COPY": 77,
+      "INT_ADD": 52,
+      "INT_AND": 99,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 102,
+      "INT_LESS": 20,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 28,
+      "INT_SCARRY": 19,
+      "INT_SEXT": 3,
+      "INT_SLESS": 49,
+      "INT_SUB": 45,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 44,
+      "POPCOUNT": 49,
+      "RETURN": 1,
+      "STORE": 20,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 671
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCmdParse *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

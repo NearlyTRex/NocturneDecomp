@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 38,
+        "line": 37,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 13,
         "line": 103,
@@ -24,6 +30,42 @@
         "column": 73,
         "line": 109,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 114,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 116,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 141,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 142,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 144,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 159,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -127,63 +169,69 @@
       {
         "category": "other",
         "column": 20,
-        "line": 115,
+        "line": 114,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 117,
+        "line": 116,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 129,
+        "line": 128,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 142,
+        "line": 141,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 143,
+        "line": 142,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 145,
+        "line": 144,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 159,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 429,
+    "complexity_score": 458,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 40,
-    "pseudocode_lines": 174,
-    "suspect_count": 23,
+    "pseudocode_lines": 173,
+    "suspect_count": 26,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 540
+    "total_lines": 539
   },
   "cross_references": [
     {
       "addr": "00562920",
       "from_addr": "005637ca",
-      "name": "core_script.cpp_FUN_00562920",
+      "name": "core_script.cpp_editParameterValue_FUN_00562920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -213,12 +261,12 @@
     {
       "addr": "00566910",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566910"
+      "name": "core_script.cpp_CScript_updateCursorBounds_FUN_00566910"
     },
     {
       "addr": "005669a0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_005669a0"
+      "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
     },
     {
       "addr": "005644e0",
@@ -271,14 +319,14 @@
       "name": "shape_edittool.cpp_CStrList_findString_FUN_004a3030"
     },
     {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
       "addr": "004a2f70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
   "globals": [
@@ -512,14 +560,14 @@
     },
     {
       "addr": "0310fd44",
-      "name": "DAT_0310fd44",
-      "type": "undefined4",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310fd48",
-      "name": "DAT_0310fd48",
-      "type": "undefined4",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
       "value": null
     }
   ],
@@ -529,7 +577,7 @@
       {
         "call_addr": "005637ca",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -538,7 +586,7 @@
       {
         "call_addr": "00563d4d",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -547,7 +595,7 @@
       {
         "call_addr": "00563754",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -556,7 +604,7 @@
       {
         "call_addr": "005633f5",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -565,7 +613,7 @@
       {
         "call_addr": "00562e57",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -574,7 +622,7 @@
       {
         "call_addr": "005636de",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -583,7 +631,7 @@
       {
         "call_addr": "0056331f",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -779,99 +827,120 @@
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)this_ptr->unk4 + iVar4 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->unk4 + iVar4 + 0x110) = iVar2 + 1;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 126,
       "match": "param_3",
-      "text": "iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,param_3);",
+      "text": "iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 128,
       "match": "param_2",
-      "text": "(&local_748,param_2,iVar2,iVar3);",
+      "text": "(&local_748,param_2,iVar3,iVar4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_0310fd48",
-      "text": "if (iVar3 != DAT_0310fd48) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)",
+      "text": "if (iVar3 == *(int *)((int)pvVar5 + 0x110)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_0310fd44",
-      "text": "DAT_0310fd44 = iVar2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)pvVar5 + 0x104);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_0310fd48",
-      "text": "DAT_0310fd48 = iVar3;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
+      "text": "iVar4 = *(int *)((int)pvVar5 + 0x10c) + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(void *)((int)",
+      "text": "pvVar5 = (void *)((int)pvVar5 + 0x114);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 158,
       "match": "param_3",
       "text": "*param_3 = cVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 162,
       "match": "param_3",
       "text": "param_3[1] = cVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 163,
       "match": "param_3",
       "text": "param_3 = param_3 + 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 163,
       "match": "param_3",
       "text": "param_3 = param_3 + 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_ffffd3b4",
       "text": "(&local_748,0,in_stack_ffffd3b4,in_stack_ffffd3b8,in_stack_ffffd3bc,in_stack_ffffd3c0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_ffffd3b8",
       "text": "(&local_748,0,in_stack_ffffd3b4,in_stack_ffffd3b8,in_stack_ffffd3bc,in_stack_ffffd3c0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_ffffd3bc",
       "text": "(&local_748,0,in_stack_ffffd3b4,in_stack_ffffd3b8,in_stack_ffffd3bc,in_stack_ffffd3c0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_ffffd3c0",
       "text": "(&local_748,0,in_stack_ffffd3b4,in_stack_ffffd3b8,in_stack_ffffd3bc,in_stack_ffffd3c0,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 175,
+      "line": 174,
       "match": "in_stack_ffffd3c4",
       "text": "in_stack_ffffd3c4);",
       "type": "stack_param"

@@ -38,7 +38,7 @@ scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
   while( true ) {
     local_24 = scanf_getc_wrapper(state);
     iVar5 = local_24;
-    if ((g_CharacterClassificationTable[(byte)((char)local_24 + 1)] & 2U) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)((char)local_24 + 1)] & 2) == 0) break;
     local_1c = local_1c + 1;
     local_24 = iVar5;
   }

@@ -16,43 +16,43 @@
       {
         "category": "other",
         "column": 18,
-        "line": 111,
+        "line": 108,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 144,
+        "line": 132,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 149,
+        "line": 137,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 204,
+        "line": 174,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 232,
+        "line": 193,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 237,
+        "line": 198,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
-        "column": 53,
-        "line": 258,
+        "column": 50,
+        "line": 219,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       }
     ],
@@ -68,11 +68,11 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 415,
+    "complexity_score": 376,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 295,
+    "pseudocode_lines": 256,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -80,7 +80,7 @@
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 842
+    "total_lines": 803
   },
   "cross_references": [
     {
@@ -373,42 +373,42 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 82,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 128,
+      "line": 116,
       "match": "extraout_EAX",
       "text": "pCStack_20 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 289,
+      "line": 250,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 290,
+      "line": 251,
       "match": "in_stack_00000008",
       "text": "fStack_98 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 292,
+      "line": 253,
       "match": "in_stack_00000008",
       "text": "if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 293,
+      "line": 254,
       "match": "in_stack_00000008",
       "text": "fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

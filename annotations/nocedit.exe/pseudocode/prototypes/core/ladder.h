@@ -35,9 +35,9 @@ int __cdecl CLadder(CLadder *this_ptr);
 // Address: 005028c0
 float * __cdecl CLadder(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_CLadder_serialize_FUN_005029c0
+// Original: core_ladder.cpp_CLadder_archive_FUN_005029c0
 // Address: 005029c0
-void __cdecl CLadder::serialize(CLadder *this_ptr);
+void __cdecl CLadder::archive(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_FUN_00502a40
 // Address: 00502a40

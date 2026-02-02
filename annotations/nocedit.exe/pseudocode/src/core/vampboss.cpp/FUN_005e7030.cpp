@@ -60,7 +60,7 @@ void __cdecl core_vampboss_cpp_FUN_005e7030(void)
       ;
       core_sound_cpp_CSound_playSound_FUN_005b3a20
                 (g_CSoundPtr,in_stack_00000004,"voicudeath.wav @ 2.5");
-      in_stack_00000004->hit_points = 0;
+      in_stack_00000004->hit_points = 0.0;
       return;
     }
   }
@@ -69,10 +69,10 @@ void __cdecl core_vampboss_cpp_FUN_005e7030(void)
       *(uint *)(in_stack_00000008 + 4) = 0;
       return;
     }
-    fVar1 = (float)in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
-    in_stack_00000004->hit_points = (int)fVar1;
+    fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
+    in_stack_00000004->hit_points = fVar1;
     if (fVar1 < (float)25) {
-      in_stack_00000004->hit_points = 0x41c7fdf4;
+      in_stack_00000004->hit_points = 24.999;
     }
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {

@@ -19,7 +19,7 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_ladder.cpp_CLadder_serialize_FUN_005029c0 at 00502a0b
+;   core_ladder.cpp_CLadder_archive_FUN_005029c0 at 00502a0b
 ;
 ; Called Functions:
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390

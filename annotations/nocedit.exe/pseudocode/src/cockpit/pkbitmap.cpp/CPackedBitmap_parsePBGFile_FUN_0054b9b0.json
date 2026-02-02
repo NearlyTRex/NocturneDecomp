@@ -1,0 +1,367 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 60,
+        "message": "invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 59,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 90,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 92,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 94,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 96,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 98,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 100,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 159,
+    "complexity_score": 157,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 12,
+    "pseudocode_lines": 92,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 251
+  },
+  "cross_references": [
+    {
+      "addr": "0054bb40",
+      "from_addr": "0054bb8f",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b9b0",
+    "address_range": [
+      [
+        "0054b9b0",
+        "0054bb36"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0",
+    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0 (CPackedBitmap *this_ptr,_FILE *file_handle,int param3,int param4, int selected_bitmap_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054a820",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_0054a820"
+    },
+    {
+      "addr": "0054a890",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890"
+    },
+    {
+      "addr": "0054b690",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00601272",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_new_FUN_00601272"
+    },
+    {
+      "addr": "005fd990",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "0050f1f0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f281",
+      "name": "s_cockpit_pkbitmap_cpp_0063f281",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f299",
+      "name": "s_IO_error_reading_PBG_pos_0063f299",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f2c7",
+      "name": "s_cockpit_pkbitmap_cpp_0063f2c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f2df",
+      "name": "s_Corrupt_data_detected_re_0063f2df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f302",
+      "name": "s_cockpit_pkbitmap_cpp_0063f302",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f31a",
+      "name": "s_Out_of_memory_reading_PB_0063f31a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f334",
+      "name": "s_cockpit_pkbitmap_cpp_0063f334",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00662260",
+      "name": "g_CPackedBitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "00680ca0",
+      "name": "s_PBG_00680ca0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680ca1",
+      "name": "s_BG_00680ca1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.508064516129032,
+    "instruction_count": 124,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CBRANCH": 13,
+      "COPY": 95,
+      "INT_ADD": 41,
+      "INT_AND": 68,
+      "INT_CARRY": 13,
+      "INT_DIV": 1,
+      "INT_EQUAL": 66,
+      "INT_LEFT": 1,
+      "INT_LESS": 12,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 3,
+      "INT_SLESS": 32,
+      "INT_SUB": 51,
+      "INT_XOR": 3,
+      "INT_ZEXT": 7,
+      "LOAD": 19,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 40,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 559
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "param3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param4",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "selected_bitmap_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param3",
+      "text": "(CPackedBitmap *this_ptr,_FILE *file_handle,int param3,int param4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param4",
+      "text": "(CPackedBitmap *this_ptr,_FILE *file_handle,int param3,int param4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param3",
+      "text": "uVar3 = local_1c / (uint)param3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param4",
+      "text": "iVar4 = param4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param3",
+      "text": "if (1 < param3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param3",
+      "text": "} while (iVar4 < param3);",
+      "type": "unnamed_param"
+    }
+  ]
+}

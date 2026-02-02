@@ -13,6 +13,6 @@ int __cdecl core_script_cpp_CScript_FUN_00559ac0(CScript *this_ptr)
   
   dVar1 = round
                     ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
-                             FLOAT_0310f4a0));
+                             g_ScriptTimeScale));
   return (int)ROUND(dVar1);
 }

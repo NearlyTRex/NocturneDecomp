@@ -10,6 +10,7 @@ void __cdecl core_imp_cpp_CImp_writeDependencies_FUN_004fb150(CImp *this_ptr,_FI
 
 {
   core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0((CDemonActor *)this_ptr,file_handle);
-  core_skeledit_cpp_GetModelPtrOfFile_FUN_0058a260(&(this_ptr->base).base.model,file_handle);
+  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+            (&(this_ptr->base).base.model,file_handle);
   return;
 }

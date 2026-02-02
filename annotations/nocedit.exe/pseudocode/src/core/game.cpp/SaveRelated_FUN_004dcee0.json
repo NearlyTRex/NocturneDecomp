@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 23,
-        "line": 167,
+        "line": 163,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 168,
+        "line": 164,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 246,
+        "line": 228,
         "message": "'stack0xfffffe54' was not declared in this scope"
       }
     ],
@@ -30,92 +30,86 @@
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 58,
-        "line": 136,
+        "line": 132,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 138,
+        "line": 134,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 144,
+        "line": 140,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 144,
+        "line": 140,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
+        "line": 140,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 29,
         "line": 144,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 58,
         "line": 148,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 58,
-        "line": 152,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 29,
-        "line": 154,
+        "line": 150,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 158,
+        "line": 154,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 167,
+        "line": 163,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 168,
+        "line": 164,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 864,
-    "complexity_score": 331,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
-    "pseudocode_lines": 256,
+    "pseudocode_lines": 238,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1120
+    "total_lines": 1102
   },
   "cross_references": [
     {
@@ -557,42 +551,42 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 75,
       "match": "DAT_02f43978",
       "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 75,
       "match": "DAT_02f43978",
       "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 156,
       "match": "(char *)((int)",
       "text": "*(char *)((int)piVar7 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 157,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 239,
+      "line": 221,
       "match": "&stack0xfffffe54",
       "text": "(&stack0xfffffe54,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 240,
+      "line": 222,
       "match": "&stack0xfffffe54",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);",
       "type": "stack_ref"

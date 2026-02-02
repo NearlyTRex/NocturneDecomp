@@ -126,7 +126,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
     (pCVar12->base).cloth_data[0x34e] = -0x3d;
     (pCVar12->base).cloth_data[0x34f] = 'G';
   }
-  if ((float)(this_ptr->base).base.hit_points <= 0.0) {
+  if ((this_ptr->base).base.hit_points <= 0.0) {
     pCVar12 = &this_ptr->base;
     (pCVar12->base).cloth_data[0x350] = -0x80;
     (pCVar12->base).cloth_data[0x351] = 'O';
@@ -227,7 +227,7 @@ LAB_004f4dd2:
   if (0.0 < local_18) {
     local_2c = 1;
   }
-  if ((float)(this_ptr->base).base.hit_points <= 0.0) {
+  if ((this_ptr->base).base.hit_points <= 0.0) {
     local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                          (&(this_ptr->base).base.model.motion_controller,5);
     if ((local_18 <= 0.0) &&
@@ -563,7 +563,7 @@ LAB_004f5384:
          (this_ptr->base).base.model.accumulated_root_motion.y;
   }
 switchD_004f5c7d_caseD_5:
-  if (((0.0 < (float)(this_ptr->base).base.hit_points) && (*(int *)this_ptr->unk2 == 1)) &&
+  if (((0.0 < (this_ptr->base).base.hit_points) && (*(int *)this_ptr->unk2 == 1)) &&
      (iVar14 = core_actor_cpp_randomChance_FUN_0040cd10(delta_time * 0.2f), iVar14 != 0))
   {
     pcVar22 = "Bip01 L Forearm";

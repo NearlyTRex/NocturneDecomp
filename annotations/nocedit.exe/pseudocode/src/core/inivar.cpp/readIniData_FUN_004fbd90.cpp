@@ -67,7 +67,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"gameControl",&g_CGamePtr->game_control);
-  core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0();
+  core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"keyWalk",&g_CGamePtr->key_walk);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30

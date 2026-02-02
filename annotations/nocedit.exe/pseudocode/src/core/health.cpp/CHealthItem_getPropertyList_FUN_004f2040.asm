@@ -13,9 +13,9 @@
 ;   TerminatedCString s_HP_restored_0062ea5a
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e1e0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
+;   core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -37,16 +37,16 @@ section .text
     PUSH EAX                            ; 004f205c
     PUSH 0x62ea39                       ; 004f205d | = "Model file (.kfm)"
     PUSH ESI                            ; 004f2062
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004f2063
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 004f2063
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 004f2068
     PUSH 0x0                            ; 004f206b
     LEA EAX,[EBX + 0x2d4]               ; 004f206d
     PUSH EAX                            ; 004f2073
     PUSH 0x62ea4b                       ; 004f2074 | = "Number of uses"
     PUSH ESI                            ; 004f2079
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004f207a
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 004f207a
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004f207f
     PUSH 0x0                            ; 004f2082
     PUSH 0x42c80000                     ; 004f2084
@@ -55,8 +55,8 @@ section .text
     PUSH EBX                            ; 004f2091
     PUSH 0x62ea5a                       ; 004f2092 | = "HP restored"
     PUSH ESI                            ; 004f2097
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1a0 ; 004f2098
-        ;   XREF to: 0040e1a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 ; 004f2098
+        ;   XREF to: 0040e1a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, float min_value, ...)
     ADD ESP,0x18                        ; 004f209d
     POP ESI                             ; 004f20a0
     POP EBX                             ; 004f20a1

@@ -11,7 +11,7 @@ void __cdecl core_stone_cpp_FUN_005bad40(void)
 {
   CBoxActor *in_stack_00000004;
   
-  core_boxactor_cpp_CBoxActor_serialize_FUN_00422060(in_stack_00000004);
-  core_actor_cpp_serializeActor_FUN_0040b870(&in_stack_00000004[1].base,"destActor");
+  core_boxactor_cpp_CBoxActor_archive_FUN_00422060(in_stack_00000004);
+  core_actor_cpp_archiveActor_FUN_0040b870(&in_stack_00000004[1].base,"destActor");
   return;
 }

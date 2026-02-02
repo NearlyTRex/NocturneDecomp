@@ -23,26 +23,26 @@ CPassenger * __cdecl CPassenger::ctor(CPassenger *this_ptr);
 // Address: 00545c10
 CPassenger * __cdecl CPassenger::dtor(CPassenger *this_ptr,uint d1);
 
-// Original: core_passngr.cpp_FUN_00545d30
+// Original: core_passngr.cpp_CPassenger_setup_FUN_00545d30
 // Address: 00545d30
-void __cdecl FUN_00545d30(void);
+void __cdecl CPassenger::setup(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_00545ef0
+// Original: core_passngr.cpp_CPassenger_process_FUN_00545ef0
 // Address: 00545ef0
-void __cdecl FUN_00545ef0(void);
+void __cdecl CPassenger::process(CPassenger *this_ptr,float delta_time);
 
-// Original: core_passngr.cpp_FUN_005460c0
+// Original: core_passngr.cpp_CPassenger_renderOpaque_FUN_005460c0
 // Address: 005460c0
-int __cdecl FUN_005460c0(void);
+int __cdecl CPassenger::renderOpaque(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_CPassenger_load_FUN_00546190
+// Original: core_passngr.cpp_CPassenger_archive_FUN_00546190
 // Address: 00546190
-void __cdecl CPassenger::load(void);
+void __cdecl CPassenger::archive(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_00546270
+// Original: core_passngr.cpp_CPassenger_getPropertyList_FUN_00546270
 // Address: 00546270
-void __cdecl FUN_00546270(void);
+void __cdecl CPassenger::getPropertyList(CPassenger *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_passngr.cpp_FUN_005462f0
+// Original: core_passngr.cpp_CPassenger_writeDependencies_FUN_005462f0
 // Address: 005462f0
-void __cdecl FUN_005462f0(void);
+void __cdecl CPassenger::writeDependencies(CPassenger *this_ptr,_FILE *file_handle);

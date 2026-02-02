@@ -21,13 +21,13 @@ char * __cdecl parse_format_spec(char *format_ptr,scanf_state_t *state)
     state->flags = state->flags & 0xfe;
   }
   bVar1 = *format_ptr;
-  if ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20U) != 0) {
+  if ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20) != 0) {
     iVar2 = 0;
     do {
       iVar2 = iVar2 * 10 + (bVar1 - 0x30);
       bVar1 = ((byte *)format_ptr)[1];
       format_ptr = (char *)((byte *)format_ptr + 1);
-    } while ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20U) != 0);
+    } while ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20) != 0);
     state->field_width = iVar2;
   }
   if (*format_ptr == 0x4e) {

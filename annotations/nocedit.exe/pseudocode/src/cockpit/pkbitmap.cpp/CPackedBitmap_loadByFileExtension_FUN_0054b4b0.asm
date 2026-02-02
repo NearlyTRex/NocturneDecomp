@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
-;   cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0054b4fd
     PUSH ECX                            ; 0054b501
     PUSH EBX                            ; 0054b502
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910 ; 0054b503
-        ;   XREF to: 0054b910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int post_load_processing)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910 ; 0054b503
+        ;   XREF to: 0054b910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int post_load_processing)
     ADD ESP,0x8                         ; 0054b508
     POP ESI                             ; 0054b50b
     POP EBX                             ; 0054b50c

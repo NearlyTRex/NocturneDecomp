@@ -691,7 +691,7 @@ LAB_0051390e:
              iVar22 == 0) && iVar23 == 0) && iVar24 == 0) && iVar25 == 0) && iVar26 == 0) {
         return;
       }
-      core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0();
+      core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"One or more keys not valid.  Restoring default controls.");
       return;
@@ -905,7 +905,7 @@ LAB_00514a9c:
                  in_stack_fffff59c,in_stack_fffff5a0,(uint)in_stack_fffff5a4);
       goto LAB_0051390e;
     }
-    core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0();
+    core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               ((CPickList *)&stack0xfffff584,0,(uint)unaff_ESI,unaff_EDI,(uint)in_stack_fffff584,
                in_stack_fffff588,(uint)in_stack_fffff58c);

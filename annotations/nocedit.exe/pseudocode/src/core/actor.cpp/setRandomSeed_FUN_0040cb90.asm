@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e31c6
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 0054199a
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 005433ad
-;   core_netgame.cpp_FUN_00541390 at 0054199a
 ;
 ; Referenced Globals:
 ;   uint g_RandomSeedValue

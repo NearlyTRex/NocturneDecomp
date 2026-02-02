@@ -1,0 +1,273 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "syntax_error",
+        "column": 9,
+        "line": 56,
+        "message": "expected primary-expression before '}' token"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 64,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 24,
+        "line": 64,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 79,
+        "message": "'void*' is not a pointer-to-object type"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 64,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 80,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 243,
+    "complexity_score": 140,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 85,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 328
+  },
+  "cross_references": [
+    {
+      "addr": "005571f0",
+      "from_addr": "00557435",
+      "name": "core_scat.cpp_CScat_process_FUN_005571f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558060",
+    "address_range": [
+      [
+        "00558060",
+        "005582b5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_scat.cpp_CScat_FUN_00558060",
+    "signature": "void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042e370",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370"
+    },
+    {
+      "addr": "0042e8c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00558038",
+      "name": "switchdataD_00558038",
+      "type": "void*",
+      "value": "00558106"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00557435",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_CScat_process_FUN_005571f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.686046511627907,
+    "instruction_count": 172,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BRANCH": 9,
+      "BRANCHIND": 1,
+      "CALL": 8,
+      "CALLIND": 2,
+      "CBRANCH": 29,
+      "COPY": 166,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 64,
+      "INT_AND": 105,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 90,
+      "INT_LEFT": 4,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 45,
+      "INT_SUB": 51,
+      "INT_XOR": 6,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 45,
+      "RETURN": 2,
+      "STORE": 41
+    },
+    "pcode_op_count": 806
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScat *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00558069",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000008",
+      "text": "while (0.0 < in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 57,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

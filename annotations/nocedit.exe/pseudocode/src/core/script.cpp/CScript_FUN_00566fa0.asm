@@ -8,7 +8,7 @@
 ; CStrList *       Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00562920 at 00562c68
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00562c68
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00644042

@@ -31,29 +31,29 @@ void __cdecl CNPC::setup(CNPC *this_ptr);
 // Address: 005448b0
 void __cdecl CNPC::process(CNPC *this_ptr,float delta_time);
 
-// Original: core_npc.cpp_CNPC_FUN_00544b70
+// Original: core_npc.cpp_CNPC_renderBackground_FUN_00544b70
 // Address: 00544b70
-void __cdecl CNPC(CNPC *this_ptr);
+void __cdecl CNPC::renderBackground(CNPC *this_ptr,int layer_flag);
 
-// Original: core_npc.cpp_CNPC_serialize_FUN_00544ba0
+// Original: core_npc.cpp_CNPC_archive_FUN_00544ba0
 // Address: 00544ba0
-void __cdecl CNPC::serialize(CNPC *this_ptr);
+void __cdecl CNPC::archive(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00544c50
+// Original: core_npc.cpp_CNPC_FUN_00544c50
 // Address: 00544c50
-int __cdecl FUN_00544c50(void);
+int __cdecl CNPC(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_processDamage_FUN_00544d30
 // Address: 00544d30
 void __cdecl CNPC::processDamage(CNPC *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_npc.cpp_FUN_00544e10
+// Original: core_npc.cpp_CNPC_FUN_00544e10
 // Address: 00544e10
-int __cdecl FUN_00544e10(CNPC *this_ptr);
-
-// Original: core_npc.cpp_CNPC_FUN_00544e30
-// Address: 00544e30
 int __cdecl CNPC(CNPC *this_ptr);
+
+// Original: core_npc.cpp_CNPC_getPathMap_FUN_00544e30
+// Address: 00544e30
+CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_getPropertyList_FUN_00544e40
 // Address: 00544e40

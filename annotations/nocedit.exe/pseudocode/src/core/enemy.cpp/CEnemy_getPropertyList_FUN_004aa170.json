@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 38,
+        "message": "cast from 'CActorProperty*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -11,24 +18,58 @@
       },
       {
         "category": "other",
-        "column": 4,
+        "column": 28,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
         "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 27,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 33,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 36,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 62,
+    "complexity_score": 29,
     "cross_reference_count": 27,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 17,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 93
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 105
   },
   "cross_references": [
     {
@@ -142,7 +183,7 @@
     {
       "addr": "00527b70",
       "from_addr": "00527b7d",
-      "name": "core_mobster.cpp_FUN_00527b70",
+      "name": "core_mobster.cpp_CMobster_getPropertyList_FUN_00527b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -208,24 +249,24 @@
   },
   "function_calls": [
     {
+      "addr": "0040e330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330"
+    },
+    {
       "addr": "0040e160",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
+      "name": "core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160"
     },
     {
       "addr": "0040e1a0",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0"
+      "name": "core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0"
     },
     {
       "addr": "0040e290",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290"
-    },
-    {
-      "addr": "0040e330",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330"
+      "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290"
     },
     {
       "addr": "0042f730",
@@ -417,36 +458,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0x58) = 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EAX_00",
-      "text": "return extraout_EAX_00;",
-      "type": "extra_output"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

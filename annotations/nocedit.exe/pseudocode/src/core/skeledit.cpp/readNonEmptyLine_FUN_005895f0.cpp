@@ -27,7 +27,7 @@ core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int req
         return 0;
       }
       pcVar2 = in_stack_00000004;
-    } while ((g_CharacterClassificationTable[(byte)((char)iVar1 + 1)] & 2U) != 0);
+    } while ((g_CharacterClassificationTable[(byte)((char)iVar1 + 1)] & 2) != 0);
     do {
       *pcVar2 = (char)iVar1;
       pcVar2 = pcVar2 + 1;

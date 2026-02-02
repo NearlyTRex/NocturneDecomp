@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 50,
+        "line": 48,
         "message": "'DAT_02f98ae0' was not declared in this scope; did you mean 'DAT_02f98aeb'?"
       }
     ],
@@ -18,152 +18,42 @@
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 24,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 26,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 29,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 31,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 39,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 40,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 42,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 43,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 53,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 57,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 63,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 66,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 67,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 67,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 505,
+    "complexity_score": 122,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 60,
-    "suspect_count": 43,
+    "pseudocode_lines": 57,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 228
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -189,7 +79,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_ptr,int player_index)"
   },
   "function_calls": [
     {
@@ -283,10 +173,10 @@
     "pcode_op_count": 922
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -302,310 +192,65 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x110) = 0xffffffff;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x114) = 0xffffffff;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x1c) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = iVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000008",
-      "text": "((void *)(in_stack_00000008 * 0x78 + in_stack_00000004 + 0x20),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "((void *)(in_stack_00000008 * 0x78 + in_stack_00000004 + 0x20),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "(void *)((in_stack_00000008 + 1) * 0x78 + in_stack_00000004 + 0x20),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "(void *)((in_stack_00000008 + 1) * 0x78 + in_stack_00000004 + 0x20),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "text": "(iVar1 - in_stack_00000008) * 0x78);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
       "match": "DAT_02f98ad0",
       "text": "if (0 < DAT_02f98ad0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000008",
-      "text": "dest_00 = &DAT_02f98adc + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_02f98adc",
-      "text": "dest_00 = &DAT_02f98adc + in_stack_00000008;",
+      "text": "dest_00 = &DAT_02f98adc + player_index;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "src = &DAT_02f98add + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_02f98add",
-      "text": "src = &DAT_02f98add + in_stack_00000008;",
+      "text": "src = &DAT_02f98add + player_index;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "local_14 = &DAT_02f98ae4 + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_02f98ae4",
-      "text": "local_14 = &DAT_02f98ae4 + in_stack_00000008;",
+      "text": "local_14 = &DAT_02f98ae4 + player_index;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000008",
-      "text": "dest = &DAT_02f98ae0 + in_stack_00000008 * 4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_02f98ae0",
-      "text": "dest = &DAT_02f98ae0 + in_stack_00000008 * 4;",
+      "text": "dest = &DAT_02f98ae0 + player_index * 4;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "(dest_00,src,*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000008",
-      "text": "(dest_00,src,*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "(dest,local_14,(*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008) * 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000008",
-      "text": "(dest,local_14,(*(int *)(in_stack_00000004 + 0x1c) - in_stack_00000008) * 4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 50,
       "match": "DAT_02f98ad0",
       "text": "} while (iVar1 < DAT_02f98ad0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 < *(int *)(in_stack_00000004 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000008 < *(int *)(in_stack_00000004 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x110) = *(int *)(in_stack_00000004 + 0x110) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x110) = *(int *)(in_stack_00000004 + 0x110) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 < *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000008 < *(int *)(in_stack_00000004 + 0x114)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x114) = *(int *)(in_stack_00000004 + 0x114) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x114) = *(int *)(in_stack_00000004 + 0x114) + -1;",
-      "type": "stack_param"
     }
   ]
 }

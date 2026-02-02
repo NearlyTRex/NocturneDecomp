@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 27,
+        "line": 28,
         "message": "'stack0xfffffecc' was not declared in this scope; did you mean 'in_stack_fffffecc'?"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 80,
+        "line": 81,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -24,38 +24,44 @@
       },
       {
         "category": "other",
+        "column": 23,
+        "line": 26,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 16,
-        "line": 52,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 56,
+        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 60,
+        "line": 61,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 209,
+    "complexity_score": 210,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 3,
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 75,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 236
+    "total_lines": 237
   },
   "cross_references": [
     {
@@ -85,11 +91,6 @@
   },
   "function_calls": [
     {
-      "addr": "00567310",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00567310"
-    },
-    {
       "addr": "00567490",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_00567490"
@@ -98,6 +99,11 @@
       "addr": "00567510",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_00567510"
+    },
+    {
+      "addr": "00567310",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310"
     },
     {
       "addr": "005fe7f0",
@@ -115,14 +121,14 @@
       "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
     },
     {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
       "addr": "004a2f70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
   "globals": [
@@ -299,63 +305,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_2",
-      "text": "core_script_cpp_CScript_FUN_00567310(this_ptr,param_2,(CBitFont *)&local_20,(int *)0x0);",
+      "text": "(this_ptr,(char *)param_2,&local_20,(int *)0x0);",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 21,
       "match": "&stack0xfffffecc",
       "text": "piVar6 = (int *)&stack0xfffffecc;",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_3",
       "text": "*piVar6 = *param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_3",
       "text": "param_3 = param_3 + (uint)bVar7 * -2 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_3",
       "text": "param_3 = param_3 + (uint)bVar7 * -2 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 30,
       "match": "in_stack_fffffecc",
       "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_20,0,in_stack_fffffecc);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 57,
       "match": "&stack0xfffffecc",
       "text": "pcVar5 = &stack0xfffffecc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 68,
       "match": "&stack0xfffffecc",
       "text": "core_script_cpp_CScript_FUN_00567510(this_ptr,(int *)&stack0xfffffecc);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
+      "line": 74,
       "match": "&stack0xfffffecc",
       "text": "core_script_cpp_CScript_FUN_00567490(this_ptr,(int)pcVar2,(int)&stack0xfffffecc);",
       "type": "stack_ref"

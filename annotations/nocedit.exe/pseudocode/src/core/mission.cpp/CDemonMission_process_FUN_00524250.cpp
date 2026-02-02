@@ -12,21 +12,20 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
 
 {
   CHero *pCVar1;
-  CScript *pCVar2;
-  CDemonMission *pCVar3;
-  int iVar4;
+  CDemonMission *pCVar2;
+  int iVar3;
   
   if (*(int *)(this_ptr->unk4 + 0x14) != 0) {
-    iVar4 = 0;
-    pCVar3 = this_ptr;
+    iVar3 = 0;
+    pCVar2 = this_ptr;
     if (0 < *(int *)(this_ptr->unk4 + 0x14)) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (*(CDemonActor **)(pCVar3->unk4 + 0x18),"..\\core\\mission.cpp",0x46b);
-        iVar4 = iVar4 + 1;
+                  (*(CDemonActor **)(pCVar2->unk4 + 0x18),"..\\core\\mission.cpp",0x46b);
+        iVar3 = iVar3 + 1;
         core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);
-        pCVar3 = (CDemonMission *)(pCVar3->unk1 + 4);
-      } while (iVar4 < *(int *)(this_ptr->unk4 + 0x14));
+        pCVar2 = (CDemonMission *)(pCVar2->unk1 + 4);
+      } while (iVar3 < *(int *)(this_ptr->unk4 + 0x14));
     }
     this_ptr->unk4[0x14] = '\0';
     this_ptr->unk4[0x15] = '\0';
@@ -48,11 +47,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
       core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);
       core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-      pCVar2 = g_CScriptPtr;
-      pCVar2->unk3[0] = '\x02';
-      pCVar2->unk3[1] = '\0';
-      pCVar2->unk3[2] = '\0';
-      pCVar2->unk3[3] = '\0';
+      g_CScriptPtr->unk2 = 2;
     }
     this_ptr->unk4[0x10] = -1;
     this_ptr->unk4[0x11] = -1;

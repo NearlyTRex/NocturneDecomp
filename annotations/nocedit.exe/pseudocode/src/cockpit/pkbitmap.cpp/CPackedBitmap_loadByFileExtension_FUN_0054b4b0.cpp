@@ -35,7 +35,7 @@ LAB_0054b4d2:
     }
     iVar1 = stricmp(str1->filename,".pbm");
     if (iVar1 == 0) {
-      cockpit_pkbitmap_cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(this_ptr,processing_flags);
+      cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(this_ptr,processing_flags);
       return;
     }
   }

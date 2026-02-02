@@ -39,9 +39,9 @@ int * __cdecl CTurret(CTurret *this_ptr);
 // Address: 005e2b30
 float __cdecl CTurret::getCurFrame(void);
 
-// Original: core_turret.cpp_CTurret_serialize_FUN_005e2c40
+// Original: core_turret.cpp_CTurret_archive_FUN_005e2c40
 // Address: 005e2c40
-void __cdecl CTurret::serialize(CTurret *this_ptr);
+void __cdecl CTurret::archive(CTurret *this_ptr);
 
 // Original: core_turret.cpp_FUN_005e2d50
 // Address: 005e2d50

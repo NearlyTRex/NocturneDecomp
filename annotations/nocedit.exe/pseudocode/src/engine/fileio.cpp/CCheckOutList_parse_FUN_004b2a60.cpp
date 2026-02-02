@@ -48,13 +48,13 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       if (0 < (int)SVar4) {
         pcVar7 = local_178.name + (~uVar3 - 1);
         do {
-          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2) == 0) break;
           SVar4 = SVar4 - 1;
           pcVar7 = pcVar7 + -1;
         } while (0 < (int)SVar4);
       }
       local_178.name[SVar4] = '\0';
-      while ((g_CharacterClassificationTable[(byte)(local_178.name[0] + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(local_178.name[0] + 1)] & 2) != 0) {
         memmove(&local_178,local_178.name + 1,SVar4);
         SVar4 = SVar4 - 1;
       }
@@ -70,13 +70,13 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       if (0 < (int)SVar4) {
         pcVar7 = local_178.value + (~uVar3 - 1);
         do {
-          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(pcVar7[-1] + 1)] & 2) == 0) break;
           SVar4 = SVar4 - 1;
           pcVar7 = pcVar7 + -1;
         } while (0 < (int)SVar4);
       }
       local_178.value[SVar4] = '\0';
-      while ((g_CharacterClassificationTable[(byte)(local_178.value[0] + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(local_178.value[0] + 1)] & 2) != 0) {
         memmove(local_178.value,local_178.value + 1,SVar4);
         SVar4 = SVar4 - 1;
       }

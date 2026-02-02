@@ -11,7 +11,7 @@
 ;   TerminatedCString s_deathEvent_0062ee07
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
 ;   core_npc.cpp_CNPC_getPropertyList_FUN_00544e40
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     PUSH 0x62ee07                       ; 004f46bd | = "deathEvent"
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f46c2
     PUSH EBX                            ; 004f46c6
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004f46c7
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 004f46c7
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004f46cc
     POP EBX                             ; 004f46cf
     RET                                 ; 004f46d0

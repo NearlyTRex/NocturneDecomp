@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 005416b3
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540de9
-;   core_netgame.cpp_FUN_00541390 at 005416b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dc53

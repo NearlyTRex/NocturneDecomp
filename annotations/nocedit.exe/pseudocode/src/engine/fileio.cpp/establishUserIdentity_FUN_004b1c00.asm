@@ -21,7 +21,7 @@
 ;   TerminatedCString s_You_must_enter_a_user_na_0062600e
 ;   TerminatedCString s_Name_contains_invalid_ch_0062602a
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;   SVersionControlSession g_VersionControlSession
 ;   undefined4 DAT_02d12bd1

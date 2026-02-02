@@ -1,0 +1,148 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 78,
+        "line": 13,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 69,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00418000",
+    "address_range": [
+      [
+        "00418000",
+        "0041804b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_battery.cpp_CBattery_archive_FUN_00418000",
+    "signature": "void __cdecl core_battery_cpp_CBattery_archive_FUN_00418000(CBattery *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006159ec",
+      "name": "s_modelName_006159ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006159f6",
+      "name": "s_rechargeTime_006159f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a03",
+      "name": "s_dischargeTime_00615a03",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.318181818181818,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 13,
+      "INT_ADD": 10,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 12,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 95
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBattery *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBattery",
+        "offset": 232,
+        "vtable_addr": "0065a934"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

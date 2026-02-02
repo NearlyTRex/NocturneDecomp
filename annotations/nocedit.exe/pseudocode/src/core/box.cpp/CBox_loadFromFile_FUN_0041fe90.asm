@@ -22,7 +22,7 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_actor.cpp_serializeSimBox_FUN_0040bd70 at 0040bda9
+;   core_actor.cpp_archiveSimBox_FUN_0040bd70 at 0040bda9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00616527

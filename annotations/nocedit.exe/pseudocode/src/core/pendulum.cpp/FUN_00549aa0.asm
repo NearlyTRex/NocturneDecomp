@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool __cdecl core_pendulum_cpp_FUN_00549aa0(void)
+; __cdecl int __cdecl core_pendulum_cpp_FUN_00549aa0(void)
 ;
 ;
 ; Referenced Globals:

@@ -37,7 +37,7 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
       else {
         core_morph_cpp_FUN_0052b600();
         core_morph_cpp_FUN_0052b600();
-        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk2 + 200));
+        core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk2);
       }
       if (DAT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);

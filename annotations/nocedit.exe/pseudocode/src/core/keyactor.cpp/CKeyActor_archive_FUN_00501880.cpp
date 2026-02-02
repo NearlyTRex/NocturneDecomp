@@ -1,0 +1,22 @@
+// Name: core_keyactor.cpp_CKeyActor_archive_FUN_00501880
+// Address: 00501880
+// Address Range: [[00501880, 005018eb]]
+// Convention: __cdecl
+// Signature: void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_00501880(CKeyActor *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_00501880(CKeyActor *this_ptr)
+
+{
+  char local_104 [256];
+  
+  core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->key_mask,"keyMask");
+  if (g_CKeyActorClassVersion != 2) {
+    return;
+  }
+  core_actor_cpp_archiveLocalizedString_FUN_0040b6e0(local_104,"descriptiveName");
+  return;
+}

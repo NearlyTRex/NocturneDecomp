@@ -35,9 +35,9 @@ int __cdecl CTrigger(CTrigger *this_ptr);
 // Address: 005e0630
 void __cdecl CTrigger(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_CTrigger_serialize_FUN_005e0690
+// Original: core_trigger.cpp_CTrigger_archive_FUN_005e0690
 // Address: 005e0690
-void __cdecl CTrigger::serialize(CTrigger *this_ptr);
+void __cdecl CTrigger::archive(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_FUN_005e0930
 // Address: 005e0930

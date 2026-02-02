@@ -12,24 +12,23 @@
       {
         "category": "other",
         "column": 4,
-        "line": 34,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 229,
+    "complexity_score": 182,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
-    "pseudocode_lines": 49,
-    "suspect_count": 17,
+    "pseudocode_lines": 47,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 140
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -55,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_FUN_00542370",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_FUN_00542370(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_FUN_00542370(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -193,129 +192,109 @@
     "pcode_op_count": 429
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2, uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_2, uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "param_2, uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_5",
-      "text": "param_2, uint param_3, uint param_4, uint param_5) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 13,
       "match": "in_stack_00000010",
       "text": "char *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000014",
       "text": "char *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "*(uint *)g_ChatHistory[g_ChatHistoryCount].unk = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "*(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_stack_0000000c",
       "text": "*(uint *)(g_ChatHistory[iVar2].unk + 8) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_00000010",
       "text": "cVar1 = *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 31,
       "match": "in_stack_00000010",
       "text": "cVar1 = in_stack_00000010[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 37,
       "match": "in_stack_00000014",
       "text": "pcVar4 = in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 48,
       "match": "in_stack_00000014",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_00000014,5.0);",
       "type": "stack_param"

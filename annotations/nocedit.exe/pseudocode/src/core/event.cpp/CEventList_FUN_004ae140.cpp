@@ -104,7 +104,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   
   bVar16 = 0;
   while ((g_CharacterClassificationTable
-          [(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {
+          [(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2) != 0) {
     *in_stack_0000000c = *in_stack_0000000c + 1;
   }
   if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {
@@ -136,7 +136,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {
       *in_stack_0000000c = *in_stack_0000000c + 1;
       while ((g_CharacterClassificationTable
-              [(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {
+              [(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2) != 0) {
         *in_stack_0000000c = *in_stack_0000000c + 1;
       }
       return iVar7;
@@ -192,7 +192,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   *pcVar14 = '\0';
   if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {
     while ((g_CharacterClassificationTable
-            [(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {
+            [(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2) != 0) {
       *in_stack_0000000c = *in_stack_0000000c + 1;
     }
     iVar7 = core_event_cpp_CEventList_FUN_004adc10(this_ptr,local_150);
@@ -236,14 +236,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
       if (0 < (int)SVar13) {
         pcVar15 = pcVar14 + SVar13;
         do {
-          if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
           SVar13 = SVar13 - 1;
           pcVar15 = pcVar15 + -1;
         } while (0 < (int)SVar13);
       }
       pcVar14[SVar13] = '\0';
       local_bc = acStack_345 + 2;
-      while ((g_CharacterClassificationTable[(byte)(acStack_345[1] + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(acStack_345[1] + 1)] & 2) != 0) {
         memmove(pcVar14,local_bc,SVar13);
         SVar13 = SVar13 - 1;
       }
@@ -302,14 +302,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
         if (0 < (int)SVar13) {
           pcVar15 = pcVar14 + SVar13;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+            if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
             SVar13 = SVar13 - 1;
             pcVar15 = pcVar15 + -1;
           } while (0 < (int)SVar13);
         }
         pcVar14[SVar13] = '\0';
         local_b0 = acStack_859 + 2;
-        while ((g_CharacterClassificationTable[(byte)(acStack_859[1] + 1)] & 2U) != 0) {
+        while ((g_CharacterClassificationTable[(byte)(acStack_859[1] + 1)] & 2) != 0) {
           memmove(pcVar14,local_b0,SVar13);
           SVar13 = SVar13 - 1;
         }
@@ -356,14 +356,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             if (0 < (int)SVar13) {
               pcVar15 = pcVar14 + SVar13;
               do {
-                if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+                if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
                 SVar13 = SVar13 - 1;
                 pcVar15 = pcVar15 + -1;
               } while (0 < (int)SVar13);
             }
             pcVar14[SVar13] = '\0';
             local_50 = acStack_59d + 2;
-            while ((g_CharacterClassificationTable[(byte)(acStack_59d[1] + 1)] & 2U) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(acStack_59d[1] + 1)] & 2) != 0) {
               memmove(pcVar14,local_50,SVar13);
               SVar13 = SVar13 - 1;
             }
@@ -379,14 +379,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
             if (0 < (int)SVar13) {
               pcVar14 = local_72d + ~uVar12;
               do {
-                if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2U) == 0) break;
+                if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2) == 0) break;
                 SVar13 = SVar13 - 1;
                 pcVar14 = pcVar14 + -1;
               } while (0 < (int)SVar13);
             }
             (local_72d + 1)[SVar13] = '\0';
             local_a8 = local_72d + 2;
-            while ((g_CharacterClassificationTable[(byte)(local_72d[1] + 1)] & 2U) != 0) {
+            while ((g_CharacterClassificationTable[(byte)(local_72d[1] + 1)] & 2) != 0) {
               memmove(local_72d + 1,local_a8,SVar13);
               SVar13 = SVar13 - 1;
             }
@@ -519,14 +519,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
               if (0 < (int)SVar13) {
                 pcVar15 = pcVar14 + SVar13;
                 do {
-                  if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+                  if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
                   SVar13 = SVar13 - 1;
                   pcVar15 = pcVar15 + -1;
                 } while (0 < (int)SVar13);
               }
               pcVar14[SVar13] = '\0';
               local_98 = acStack_27d + 2;
-              while ((g_CharacterClassificationTable[(byte)(acStack_27d[1] + 1)] & 2U) != 0) {
+              while ((g_CharacterClassificationTable[(byte)(acStack_27d[1] + 1)] & 2) != 0) {
                 memmove(pcVar14,local_98,SVar13);
                 SVar13 = SVar13 - 1;
               }
@@ -748,15 +748,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   if (0 < (int)SVar13) {
                     pcVar15 = pcVar14 + SVar13;
                     do {
-                      if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0)
-                      break;
+                      if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
                       SVar13 = SVar13 - 1;
                       pcVar15 = pcVar15 + -1;
                     } while (0 < (int)SVar13);
                   }
                   pcVar14[SVar13] = '\0';
                   local_68 = acStack_471 + 2;
-                  while ((g_CharacterClassificationTable[(byte)(acStack_471[1] + 1)] & 2U) != 0) {
+                  while ((g_CharacterClassificationTable[(byte)(acStack_471[1] + 1)] & 2) != 0) {
                     memmove(pcVar14,local_68,SVar13);
                     SVar13 = SVar13 - 1;
                   }
@@ -772,15 +771,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   if (0 < (int)SVar13) {
                     pcVar14 = local_665 + ~uVar12;
                     do {
-                      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2U) == 0)
-                      break;
+                      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2) == 0) break;
                       SVar13 = SVar13 - 1;
                       pcVar14 = pcVar14 + -1;
                     } while (0 < (int)SVar13);
                   }
                   (local_665 + 1)[SVar13] = '\0';
                   local_64 = local_665 + 2;
-                  while ((g_CharacterClassificationTable[(byte)(local_665[1] + 1)] & 2U) != 0) {
+                  while ((g_CharacterClassificationTable[(byte)(local_665[1] + 1)] & 2) != 0) {
                     memmove(local_665 + 1,local_64,SVar13);
                     SVar13 = SVar13 - 1;
                   }
@@ -834,14 +832,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 if (0 < (int)SVar13) {
                   pcVar15 = pcVar14 + SVar13;
                   do {
-                    if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+                    if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
                     SVar13 = SVar13 - 1;
                     pcVar15 = pcVar15 + -1;
                   } while (0 < (int)SVar13);
                 }
                 pcVar14[SVar13] = '\0';
                 local_5c = acStack_1b5 + 2;
-                while ((g_CharacterClassificationTable[(byte)(acStack_1b5[1] + 1)] & 2U) != 0) {
+                while ((g_CharacterClassificationTable[(byte)(acStack_1b5[1] + 1)] & 2) != 0) {
                   memmove(pcVar14,local_5c,SVar13);
                   SVar13 = SVar13 - 1;
                 }
@@ -857,14 +855,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 if (0 < (int)SVar13) {
                   pcVar14 = local_4d5 + ~uVar12;
                   do {
-                    if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2U) == 0) break;
+                    if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2) == 0) break;
                     SVar13 = SVar13 - 1;
                     pcVar14 = pcVar14 + -1;
                   } while (0 < (int)SVar13);
                 }
                 (local_4d5 + 1)[SVar13] = '\0';
                 local_58 = local_4d5 + 2;
-                while ((g_CharacterClassificationTable[(byte)(local_4d5[1] + 1)] & 2U) != 0) {
+                while ((g_CharacterClassificationTable[(byte)(local_4d5[1] + 1)] & 2) != 0) {
                   memmove(local_4d5 + 1,local_58,SVar13);
                   SVar13 = SVar13 - 1;
                 }
@@ -967,7 +965,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  core_set_cpp_CDemonSet_FUN_00570f10(g_CDemonSetPtr);
+                  core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
                   if (local_4c == 0) {
                     sprintf
                               (local_a84,"Spotlight %s doesn't exist.",local_218);
@@ -1049,7 +1047,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                       if (0 < (int)SVar13) {
                         pcVar15 = pcVar14 + SVar13;
                         do {
-                          if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0)
+                          if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0)
                           break;
                           SVar13 = SVar13 - 1;
                           pcVar15 = pcVar15 + -1;
@@ -1057,7 +1055,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                       }
                       pcVar14[SVar13] = '\0';
                       local_3c = acStack_791 + 2;
-                      while ((g_CharacterClassificationTable[(byte)(acStack_791[1] + 1)] & 2U) != 0)
+                      while ((g_CharacterClassificationTable[(byte)(acStack_791[1] + 1)] & 2) != 0)
                       {
                         memmove(pcVar14,local_3c,SVar13);
                         SVar13 = SVar13 - 1;
@@ -1353,14 +1351,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   if (0 < (int)SVar13) {
     pcVar15 = pcVar14 + SVar13;
     do {
-      if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2U) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar15[-1] + 1)] & 2) == 0) break;
       SVar13 = SVar13 - 1;
       pcVar15 = pcVar15 + -1;
     } while (0 < (int)SVar13);
   }
   pcVar14[SVar13] = '\0';
   local_d4 = acStack_921 + 2;
-  while ((g_CharacterClassificationTable[(byte)(acStack_921[1] + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(acStack_921[1] + 1)] & 2) != 0) {
     memmove(pcVar14,local_d4,SVar13);
     SVar13 = SVar13 - 1;
   }
@@ -1376,14 +1374,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   if (0 < (int)SVar13) {
     pcVar14 = local_3a9 + ~uVar12;
     do {
-      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2U) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2) == 0) break;
       SVar13 = SVar13 - 1;
       pcVar14 = pcVar14 + -1;
     } while (0 < (int)SVar13);
   }
   (local_3a9 + 1)[SVar13] = '\0';
   local_d0 = local_3a9 + 2;
-  while ((g_CharacterClassificationTable[(byte)(local_3a9[1] + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(local_3a9[1] + 1)] & 2) != 0) {
     memmove(local_3a9 + 1,local_d0,SVar13);
     SVar13 = SVar13 - 1;
   }
@@ -1399,14 +1397,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   if (0 < (int)SVar13) {
     pcVar14 = local_985 + ~uVar12;
     do {
-      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2U) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar14[-1] + 1)] & 2) == 0) break;
       SVar13 = SVar13 - 1;
       pcVar14 = pcVar14 + -1;
     } while (0 < (int)SVar13);
   }
   (local_985 + 1)[SVar13] = '\0';
   local_c8 = local_985 + 2;
-  while ((g_CharacterClassificationTable[(byte)(local_985[1] + 1)] & 2U) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(local_985[1] + 1)] & 2) != 0) {
     memmove(local_985 + 1,local_c8,SVar13);
     SVar13 = SVar13 - 1;
   }
@@ -1495,7 +1493,7 @@ switchD_004ae724_default:
     }
 LAB_004ae5e7:
     while ((g_CharacterClassificationTable
-            [(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {
+            [(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2) != 0) {
       *in_stack_0000000c = *in_stack_0000000c + 1;
     }
     return local_dc;

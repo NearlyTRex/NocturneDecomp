@@ -22,20 +22,20 @@ void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr)
   
   if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = (float)core_charactr_cpp_FUN_0042f9e0(g_CGamePtr);
-    FLOAT_0310f4a0 = FLOAT_0310f4a0 - fVar3 / 0.35f;
+    g_ScriptTimeScale = g_ScriptTimeScale - fVar3 / 0.35f;
   }
   else {
     INT_031061e0 = g_CGamePtr->letterbox_mode;
     fVar3 = (float)core_charactr_cpp_FUN_0042f9e0(g_CGamePtr);
-    FLOAT_0310f4a0 = fVar3 / 0.35f + FLOAT_0310f4a0;
+    g_ScriptTimeScale = fVar3 / 0.35f + g_ScriptTimeScale;
   }
   iVar8 = g_WindowHeight;
   iVar1 = g_WindowWidth;
-  if (FLOAT_0310f4a0 < 0.0) {
-    FLOAT_0310f4a0 = 0.0;
+  if (g_ScriptTimeScale < 0.0) {
+    g_ScriptTimeScale = 0.0;
   }
-  if (1.0 < FLOAT_0310f4a0) {
-    FLOAT_0310f4a0 = 1.0;
+  if (1.0 < g_ScriptTimeScale) {
+    g_ScriptTimeScale = 1.0;
   }
   iVar4 = core_script_cpp_CScript_FUN_00559ac0(this_ptr);
   if (0 < iVar4) {
@@ -45,7 +45,7 @@ void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr)
     engine_2d_c_fillRectColor_FUN_00403170(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
   }
   iVar2 = g_ClipTop;
-  if ((this_ptr->current_message != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
+  if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
     this_ptr_00 = g_MediumFont;
     if (g_WindowHeight < 0x1e0) {
       this_ptr_00 = g_TinyFont;
@@ -54,7 +54,7 @@ void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr)
       this_ptr_00 = g_SmallEditorFont;
     }
     iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                      (this_ptr_00,&this_ptr->current_message,&DAT_031061e8,10,0x400,
+                      (this_ptr_00,this_ptr->current_message,&DAT_031061e8,10,0x400,
                        (g_WindowWidth * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
     iVar4 = ((iVar8 * 2 - iVar4) - iVar6 * iVar5) / 2;

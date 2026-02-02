@@ -15,7 +15,7 @@
 ;   core_gabriela.cpp_FUN_004d4190 at 004d4269
 ;   core_haystack.cpp_CHaystack_FUN_004f13f0 at 004f14bc
 ;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f8d8e
-;   core_scat.cpp_FUN_005578e0 at 00557996
+;   core_scat.cpp_CScat_FUN_005578e0 at 00557996
 ;   core_svetlana.cpp_FUN_005d9260 at 005d937e
 ;
 ; Referenced Globals:

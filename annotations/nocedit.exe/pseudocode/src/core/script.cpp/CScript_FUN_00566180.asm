@@ -18,15 +18,15 @@
 ;   TerminatedCString s_core_script_cpp_00643f81
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 CEdScrollBar_0310fd0c.current_value
+;   undefined4 g_ScriptEditorHScrollBar.current_value
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00566800
+;   core_script.cpp_CScript_updateLineMetrics_FUN_00566800
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00566188
     LEA ESI,[EBP + 0x38]                ; 0056618c
     PUSH ESI                            ; 0056618f
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00566190
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 00566190
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00566195
     CMP EAX,0x1                         ; 00566198
     JGE 0x005661a2                      ; 0056619b
@@ -66,19 +66,19 @@ section .text
         ;   XREF to: 005661f8 (CONDITIONAL_JUMP)  ; LAB_005661f8
     XOR EDX,EDX                         ; 005661bb
     XOR EBX,EBX                         ; 005661bd
-    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | CEdScrollBar_0310fd0c.current_value
+    MOV dword ptr [0x0310fd10],EDX      ; 005661bf | g_ScriptEditorHScrollBar.current_value
     PUSH ESI                            ; 005661c5
         ;   Label: LAB_005661c5
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005661c6
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
+    CALL shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0 ; 005661c6
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005661cb
     CMP EBX,EAX                         ; 005661ce
     JGE 0x00566212                      ; 005661d0
         ;   XREF to: 00566212 (CONDITIONAL_JUMP)  ; LAB_00566212
     PUSH EBX                            ; 005661d2
     PUSH EBP                            ; 005661d3
-    CALL core_script.cpp_CScript_FUN_00566800 ; 005661d4
-        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566800(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_updateLineMetrics_FUN_00566800 ; 005661d4
+        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateLineMetrics_FUN_00566800(CScript * this_ptr, int line_number)
     ADD ESP,0x8                         ; 005661d9
     PUSH EBX                            ; 005661dc
     PUSH ESI                            ; 005661dd

@@ -12,7 +12,7 @@
 ;   core_flame.cpp_FUN_004c9c00 at 004c9fad
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0 at 004cba8b
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e8037
-;   core_platfrm.cpp_FUN_0054cc30 at 0054d1d2
+;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054d1d2
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0 at 005b39be
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b3549
 ;

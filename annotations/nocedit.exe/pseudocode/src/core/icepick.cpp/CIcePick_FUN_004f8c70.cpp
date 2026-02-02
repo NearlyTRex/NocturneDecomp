@@ -44,7 +44,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
   local_1c = (CPathMap *)0x3e800000;
   local_24 = 0.7853982;
   pCVar9 = g_HeroActors[g_LocalHeroIndex];
-  memset((this_ptr->base).unk2,0,0x2c);
+  memset(&(this_ptr->base).action_bindings,0,0x2c);
   if ((this_ptr->base).ai_task != 0) {
     pCVar5 = g_HeroActors[g_LocalHeroIndex];
     local_6c.x = (this_ptr->base).base.base.location.position.x -
@@ -67,10 +67,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       pCVar5 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar5 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (*(int *)this_ptr->unk != 0) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
       }
       else {
@@ -113,20 +110,11 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0((CCharacter *)this_ptr), uVar8 != 0))
         {
           if (uVar8 < 2) {
-            (this_ptr->base).unk2[0] = '\x01';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).action_bindings.walk_key = 1;
           }
           else if (uVar8 == 2) {
-            (this_ptr->base).unk2[8] = '\x01';
-            (this_ptr->base).unk2[9] = '\0';
-            (this_ptr->base).unk2[10] = '\0';
-            (this_ptr->base).unk2[0xb] = '\0';
-            (this_ptr->base).unk2[0] = '\x01';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).action_bindings.run_key = 1;
+            (this_ptr->base).action_bindings.walk_key = 1;
           }
         }
       }
@@ -142,28 +130,19 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
                               (CStack_48.y - (this_ptr->base).base.base.orient.bank);
         fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -(float)local_1c;
-        *(float *)((this_ptr->base).unk2 + 0x24) = fVar3;
+        *(float *)((this_ptr->base).unk2 + 4) = fVar3;
         if (fVar3 < fStack_38) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = fStack_38;
+          *(float *)((this_ptr->base).unk2 + 4) = fStack_38;
         }
-        if ((float)local_1c < *(float *)((this_ptr->base).unk2 + 0x24)) {
-          *(CPathMap **)((this_ptr->base).unk2 + 0x24) = local_1c;
+        if ((float)local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
+          *(CPathMap **)((this_ptr->base).unk2 + 4) = local_1c;
         }
         if (((float)10 <= fVar1) || (bVar2)) {
-          (this_ptr->base).unk2[8] = '\x01';
-          (this_ptr->base).unk2[9] = '\0';
-          (this_ptr->base).unk2[10] = '\0';
-          (this_ptr->base).unk2[0xb] = '\0';
-          (this_ptr->base).unk2[0] = '\x01';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).action_bindings.run_key = 1;
+          (this_ptr->base).action_bindings.walk_key = 1;
         }
         else {
-          (this_ptr->base).unk2[0] = '\x01';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).action_bindings.walk_key = 1;
         }
       }
     }
@@ -171,19 +150,13 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar2) {
         if (*(int *)this_ptr->unk == 0) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_00->motion_controller);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
-            (this_ptr->base).unk2[0xc] = '\x01';
-            (this_ptr->base).unk2[0xd] = '\0';
-            (this_ptr->base).unk2[0xe] = '\0';
-            (this_ptr->base).unk2[0xf] = '\0';
+            (this_ptr->base).action_bindings.fire_key = 1;
           }
         }
         pCVar5 = &this_ptr->base;
@@ -196,30 +169,18 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
         if ((pSVar7->state_index == 10) && (*(int *)this_ptr->unk != 0)) {
-          (this_ptr->base).unk2[0x18] = '\x01';
-          (this_ptr->base).unk2[0x19] = '\0';
-          (this_ptr->base).unk2[0x1a] = '\0';
-          (this_ptr->base).unk2[0x1b] = '\0';
+          (this_ptr->base).action_bindings.draw_key = 1;
         }
         iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).enemyfunc3)();
         if ((iVar4 == 0) &&
            (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0((CCharacter *)this_ptr), uVar8 != 0))
         {
           if (uVar8 < 2) {
-            (this_ptr->base).unk2[0] = '\x01';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).action_bindings.walk_key = 1;
           }
           else if (uVar8 == 2) {
-            (this_ptr->base).unk2[8] = '\x01';
-            (this_ptr->base).unk2[9] = '\0';
-            (this_ptr->base).unk2[10] = '\0';
-            (this_ptr->base).unk2[0xb] = '\0';
-            (this_ptr->base).unk2[0] = '\x01';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).action_bindings.run_key = 1;
+            (this_ptr->base).action_bindings.walk_key = 1;
           }
         }
       }
@@ -230,20 +191,20 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
                               (pCVar6->y - (this_ptr->base).base.base.orient.bank);
         fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -(float)local_1c;
-        *(float *)((this_ptr->base).unk2 + 0x24) = fVar1;
+        *(float *)((this_ptr->base).unk2 + 4) = fVar1;
         if (fVar1 < fStack_34) {
-          *(float *)((this_ptr->base).unk2 + 0x24) = fStack_34;
+          *(float *)((this_ptr->base).unk2 + 4) = fStack_34;
         }
-        if ((float)local_1c < *(float *)((this_ptr->base).unk2 + 0x24)) {
-          *(CPathMap **)((this_ptr->base).unk2 + 0x24) = local_1c;
+        if ((float)local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
+          *(CPathMap **)((this_ptr->base).unk2 + 4) = local_1c;
         }
-        fVar1 = *(float *)((this_ptr->base).unk2 + 0x24);
+        fVar1 = *(float *)((this_ptr->base).unk2 + 4);
         if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
-           (*(int *)((this_ptr->base).unk2 + 0xc) != 0)) {
-          (this_ptr->base).unk2[0x24] = '\0';
-          (this_ptr->base).unk2[0x25] = '\0';
-          (this_ptr->base).unk2[0x26] = '\0';
-          (this_ptr->base).unk2[0x27] = '\0';
+           ((this_ptr->base).action_bindings.fire_key != 0)) {
+          (this_ptr->base).unk2[4] = '\0';
+          (this_ptr->base).unk2[5] = '\0';
+          (this_ptr->base).unk2[6] = '\0';
+          (this_ptr->base).unk2[7] = '\0';
         }
       }
     }
@@ -255,7 +216,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         (pCVar5->base).unk1[0xd] = '\0';
         (pCVar5->base).unk1[0xe] = '\0';
         (pCVar5->base).unk1[0xf] = '\0';
-        *(float *)((this_ptr->base).unk2 + 0x24) = -(float)local_1c;
+        *(float *)((this_ptr->base).unk2 + 4) = -(float)local_1c;
       }
     }
     else {
@@ -264,7 +225,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       (pCVar5->base).unk1[0xd] = '\0';
       (pCVar5->base).unk1[0xe] = '\0';
       (pCVar5->base).unk1[0xf] = '\0';
-      *(CPathMap **)((this_ptr->base).unk2 + 0x24) = local_1c;
+      *(CPathMap **)((this_ptr->base).unk2 + 4) = local_1c;
     }
     CStack_60.x = (pCVar9->base).base.location.position.x -
                   (this_ptr->base).base.base.location.position.x;

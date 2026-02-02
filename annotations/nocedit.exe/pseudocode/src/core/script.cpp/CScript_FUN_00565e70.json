@@ -2,57 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 18,
-        "line": 44,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 44,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 44,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 44,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 44,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 84,
-        "line": 44,
-        "message": "cast from 'CCmdParse*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 21,
-        "line": 47,
-        "message": "'PTR_s_label_006441c0_00680e28' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 50,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+        "line": 46,
+        "message": "invalid conversion from 'const char**' to 'char**' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 53,
+        "line": 52,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       }
     ],
@@ -67,25 +25,24 @@
       {
         "category": "other",
         "column": 20,
-        "line": 52,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 188,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 63,
-    "suspect_count": 11,
+    "pseudocode_lines": 62,
+    "suspect_count": 9,
     "suspect_types": [
-      "extra_output",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 172
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -116,27 +73,27 @@
     {
       "addr": "00566a90",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566a90"
-    },
-    {
-      "addr": "00561c70",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00561c70"
+      "name": "core_script.cpp_CScript_editorX2Index_FUN_00566a90"
     },
     {
       "addr": "005643d0",
       "is_variadic": false,
-      "name": "core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0"
+      "name": "core_script.cpp_FUN_005643d0"
+    },
+    {
+      "addr": "00561c70",
+      "is_variadic": false,
+      "name": "core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
     },
     {
       "addr": "004a2f70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
-    },
-    {
-      "addr": "004a6ed0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
   "globals": [
@@ -166,9 +123,9 @@
     },
     {
       "addr": "00680e28",
-      "name": "PTR_s_label_006441c0_00680e28",
-      "type": "void*",
-      "value": "006441c0"
+      "name": "g_CommandTemplates",
+      "type": "char*[141]",
+      "value": null
     },
     {
       "addr": "0310fdc0",
@@ -303,66 +260,52 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_3",
       "text": "if (-1 < param_3) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_3",
       "text": "if (param_3 < iVar2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_3",
-      "text": "iVar3 = core_script_cpp_CScript_FUN_00566a90(this_ptr,param_3,param_2);",
+      "text": "cursor_position = core_script_cpp_CScript_editorX2Index_FUN_00566a90(this_ptr,param_3,param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_2",
-      "text": "iVar3 = core_script_cpp_CScript_FUN_00566a90(this_ptr,param_3,param_2);",
+      "text": "cursor_position = core_script_cpp_CScript_editorX2Index_FUN_00566a90(this_ptr,param_3,param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 34,
       "match": "param_3",
-      "text": "pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)font_ptr,param_3);",
+      "text": "input_text = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr_00,param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX < 1) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_3",
-      "text": "pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)font_ptr,param_3);",
+      "text": "pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr_00,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_0310fdc0",
-      "text": "pcVar5 = &DAT_0310fdc0;",
+      "text": "pcVar4 = &DAT_0310fdc0;",
       "type": "undefined_data"
     }
   ]

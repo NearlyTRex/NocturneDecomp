@@ -20,7 +20,7 @@
 ;   ... and 16 more
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 

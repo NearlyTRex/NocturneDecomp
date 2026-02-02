@@ -2,20 +2,17 @@
 // Address: 0053f780
 // Address Range: [[0053f780, 0053f821]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_FUN_0053f780(uint param_1) */
-
-void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
+void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(CNetGame *this_ptr)
 
 {
   char cVar1;
   int iVar2;
   char *pcVar3;
   char *pcVar4;
-  CNetGame *in_stack_00000004;
   
   remove("netlog.txt");
   g_CurrentGameTime = 1;
@@ -29,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
   if (pcVar3 == (char *)0x0) {
     pcVar3 = "MyComputer";
   }
-  pcVar4 = in_stack_00000004->network_data;
+  pcVar4 = this_ptr->network_data;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -41,6 +38,6 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(void)
   } while (cVar1 != '\0');
   g_ChatHistoryCount = 0;
   DAT_02f98ad0 = 0;
-  core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
+  core_netgame_cpp_CNetGame_FUN_0053fd00(this_ptr);
   return;
 }

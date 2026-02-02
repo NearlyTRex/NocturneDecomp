@@ -13,9 +13,9 @@
 ;   TerminatedCString s_Morph_cond_00615b61
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -38,21 +38,21 @@ section .text
     PUSH EBX                            ; 00418c9d
     PUSH 0x615b55                       ; 00418c9e | = "Model"
     PUSH ESI                            ; 00418ca3
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 00418ca4
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 00418ca4
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00418ca9
     PUSH EBX                            ; 00418cac
     PUSH 0x615b5b                       ; 00418cad | = "State"
     PUSH ESI                            ; 00418cb2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 00418cb3
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 00418cb3
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 00418cb8
     ADD EDI,0xcc6c                      ; 00418cbb
     PUSH EDI                            ; 00418cc1
     PUSH 0x615b61                       ; 00418cc2 | = "Morph cond"
     PUSH ESI                            ; 00418cc7
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00418cc8
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 00418cc8
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 00418ccd
     POP EDI                             ; 00418cd0
     POP ESI                             ; 00418cd1

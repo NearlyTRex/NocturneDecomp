@@ -54,7 +54,7 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
   int local_14;
   
   bVar11 = 0;
-  uVar2 = core_netgame_cpp_CNetGame_FUN_00541260();
+  uVar2 = core_netgame_cpp_CNetGame_FUN_00541260(this_ptr);
   local_1c = (SNetPlayer *)0x0;
   if (-1 < (int)uVar2) {
     local_1c = this_ptr->players + uVar2;
@@ -66,10 +66,10 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
     if (this_ptr->network_mode != 1) {
       local_54 = 3;
       local_58 = 9;
-      core_netgame_cpp_CNetGame_FUN_00541230();
+      core_netgame_cpp_CNetGame_FUN_00541230(this_ptr);
     }
     if ((int)uVar2 < 0) {
-      core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
+      uVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(this_ptr);
     }
     else {
       iVar5 = strcmp(local_1c->name,local_28 + 0xd);
@@ -88,7 +88,7 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
         } while (cVar1 != '\0');
         *(uint *)(local_1c->name + 0x14) = *(uint *)(local_28 + 0x21);
         *(uint *)(local_1c->name + 0x18) = *(uint *)(local_28 + 0x25);
-        core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0();
+        core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
       }
     }
     pcVar8 = local_cb;
@@ -115,7 +115,7 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
     } while (cVar1 != '\0');
     local_7b = source_addr->ip_address;
     (&uStack_77)[(uint)bVar11 * -2] = *(uint *)&source_addr[-(uint)bVar11].port;
-    core_netgame_cpp_CNetGame_send_FUN_005411c0();
+    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2);
     iVar5 = this_ptr->local_player_index;
     *(uint *)(this_ptr->players[iVar5].name + 0x1c) = *(uint *)(local_28 + 5);
     *(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =
@@ -125,7 +125,7 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
     if (((this_ptr->connection_type != 2) || ((int)uVar2 < 0)) ||
        (uVar2 != *(uint *)this_ptr->padding)) {
 LAB_0054097f:
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     if (this_ptr->network_mode == 1) {
@@ -157,17 +157,17 @@ LAB_0054097f:
     break;
   case '\x04':
     if (this_ptr->connection_type == 0) {
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     local_40 = 9;
     local_3c = 5;
     local_3b = *(uint *)(packet_data + 5);
-    core_netgame_cpp_CNetGame_FUN_00541230();
+    core_netgame_cpp_CNetGame_FUN_00541230(this_ptr);
     return;
   case '\x05':
     if ((this_ptr->connection_type == 0) || ((int)uVar2 < 0)) {
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     if (0.0 <= local_1c->ping_quality) {
@@ -207,12 +207,12 @@ LAB_0054097f:
         } while (iVar5 < g_ChatHistoryCount);
       }
       if (iVar5 == g_ChatHistoryCount) {
-        core_netgame_cpp_CNetGame_FUN_00542370();
+        core_netgame_cpp_CNetGame_FUN_00542370(this_ptr);
       }
       local_70 = 9;
       local_6c = 7;
       local_6b = *(uint *)(packet_data + 5);
-      core_netgame_cpp_CNetGame_FUN_00541230();
+      core_netgame_cpp_CNetGame_FUN_00541230(this_ptr);
       return;
     }
     break;
@@ -241,7 +241,7 @@ LAB_0054097f:
     local_4c = 9;
     local_48 = 9;
     local_47 = *(uint *)(this_ptr->players[this_ptr->local_player_index].unk1 + 4);
-    core_netgame_cpp_CNetGame_send_FUN_005411c0();
+    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,*(int *)this_ptr->padding);
     if (g_RemoteSyncStage < *(int *)(packet_data + 5)) {
       g_RemoteSyncStage = *(int *)(packet_data + 5);
       return;
@@ -250,7 +250,7 @@ LAB_0054097f:
   case '\t':
     if ((this_ptr->connection_type != 1) || ((int)uVar2 < 0)) {
 LAB_00540d18:
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     if ((this_ptr->network_mode == 2) && (*(int *)(local_1c->unk1 + 4) <= *(int *)(packet_data + 5))
@@ -262,7 +262,7 @@ LAB_00540d18:
   case '\n':
     if ((this_ptr->connection_type != 1) || ((int)uVar2 < 0)) {
 LAB_00540df8:
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     if (this_ptr->network_mode == 1) {
@@ -291,7 +291,7 @@ LAB_00540df8:
         pSVar9->name[1] = cVar1;
         pSVar9 = (SNetPlayer *)(pSVar9->name + 2);
       } while (cVar1 != '\0');
-      core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0();
+      core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
       return;
     }
     break;
@@ -300,7 +300,7 @@ LAB_00540df8:
        (uVar2 != *(uint *)this_ptr->padding)) goto LAB_00540d18;
     if (this_ptr->network_mode == 1) {
       if (DAT_02f7c8c4 < *(int *)(packet_data + 5)) {
-        iVar5 = core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470();
+        iVar5 = core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(this_ptr);
         if (iVar5 == 0) {
           return;
         }
@@ -309,7 +309,7 @@ LAB_00540df8:
       local_64 = 9;
       local_60 = 0xc;
       local_5f = DAT_02f7c8c4;
-      core_netgame_cpp_CNetGame_send_FUN_005411c0();
+      core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,*(int *)this_ptr->padding);
       return;
     }
     break;
@@ -322,19 +322,19 @@ LAB_00540df8:
     break;
   case '\r':
     if (*(int *)(packet_data + 5) != 0) {
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
     }
     if (this_ptr->connection_type == 1) {
       if (-1 < (int)uVar2) {
-        core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00();
+        core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(this_ptr,uVar2);
       }
-      core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0();
+      core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
     }
     if (((this_ptr->connection_type == 2) && (-1 < (int)uVar2)) &&
        (uVar2 == *(uint *)this_ptr->padding)) {
       core_netgame_cpp_CNetGame_FUN_0053fd00(this_ptr);
       support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_34,(uint32_t *)g_AnyAddressIP,0);
-      core_netgame_cpp_CNetGame_FUN_00542370();
+      core_netgame_cpp_CNetGame_FUN_00542370(this_ptr);
       return;
     }
     break;
@@ -394,7 +394,7 @@ LAB_00541015:
     break;
   case '\x10':
     if ((this_ptr->connection_type != 1) || ((int)uVar2 < 0)) {
-      core_netgame_cpp_CNetGame_FUN_00543930();
+      core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
       return;
     }
     if ((this_ptr->network_mode == 3) &&

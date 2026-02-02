@@ -27,9 +27,9 @@ void __cdecl CBatCreature::setup(CBatCreature *this_ptr);
 // Address: 00415470
 void __cdecl CBatCreature::process(CBatCreature *this_ptr,float delta_time);
 
-// Original: core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70
+// Original: core_batcreat.cpp_CBatCreature_archive_FUN_00415d70
 // Address: 00415d70
-void __cdecl CBatCreature::serialize(CBatCreature *this_ptr);
+void __cdecl CBatCreature::archive(CBatCreature *this_ptr);
 
 // Original: core_batcreat.cpp_CBatCreature_FUN_00415dd0
 // Address: 00415dd0

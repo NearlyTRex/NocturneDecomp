@@ -59,9 +59,9 @@ void __cdecl FUN_0041d180(void);
 // Address: 0041d1b0
 int __cdecl FUN_0041d1b0(void);
 
-// Original: core_boneguy.cpp_CBoneGuy_serialize_FUN_0041d270
+// Original: core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
 // Address: 0041d270
-void __cdecl CBoneGuy::serialize(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::archive(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_FUN_0041d4c0
 // Address: 0041d4c0

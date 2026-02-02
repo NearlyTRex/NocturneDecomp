@@ -94,7 +94,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
         if (0 < this_ptr->player_count) {
           do {
             if (*(int *)(pCVar4->players[0].unk1 + 4) < sync_stage) {
-              core_netgame_cpp_CNetGame_send_FUN_005411c0();
+              core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,iVar2);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar2,2.0);

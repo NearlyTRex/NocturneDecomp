@@ -12,72 +12,66 @@
       {
         "category": "other",
         "column": 30,
-        "line": 41,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 52,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 62,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 81,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 92,
+        "line": 76,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 104,
+        "line": 87,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 115,
+        "line": 99,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 130,
+        "line": 110,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 139,
+        "line": 125,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 134,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 195,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 46,
-    "pseudocode_lines": 135,
+    "pseudocode_lines": 130,
     "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 559
+    "total_lines": 554
   },
   "cross_references": [
     {
@@ -573,37 +567,37 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_ESI",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_ffffffe4",
       "text": "CGame *in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 14,
       "match": "unaff_ESI",
       "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_ffffffe4",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_ffffffe4);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 133,
+      "line": 128,
       "match": "unaff_ESI",
-      "text": "((double)(iVar4 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
+      "text": "((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
       "type": "unaffected_reg"
     }
   ]

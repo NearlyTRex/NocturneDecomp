@@ -25,14 +25,14 @@
 ;   CGame g_CGameInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_0310ec9c
-;   undefined1 DAT_0310eca0
-;   undefined4 DAT_0310f4a4
+;   int g_ScriptEventsEnabled
+;   char[2048] g_ScriptErrorBuffer
+;   int g_ScriptInputFlag
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CScript_FUN_00560160
+;   core_script.cpp_CScript_findLabelIndex_FUN_00560160
 ;   core_script.cpp_CScript_step_FUN_0055a810
 ;
 ; *****************************************************************************
@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0055a6c6
     XOR EDX,EDX                         ; 0055a6ca
     MOV ECX,dword ptr [EBX + 0x30]      ; 0055a6cc
-    MOV dword ptr [0x0310ec9c],EDX      ; 0055a6cf | DAT_0310ec9c
+    MOV dword ptr [0x0310ec9c],EDX      ; 0055a6cf | g_ScriptEventsEnabled
     CMP ECX,0x1                         ; 0055a6d5
     JL 0x0055a6e0                       ; 0055a6d8
         ;   XREF to: 0055a6e0 (CONDITIONAL_JUMP)  ; LAB_0055a6e0
@@ -63,8 +63,8 @@ section .text
     PUSH 0x641a99                       ; 0055a6e7 | = "initSection"
         ;   Label: LAB_0055a6e7
     PUSH EBX                            ; 0055a6ec
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055a6ed
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055a6ed
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055a6f2
     MOV ESI,EAX                         ; 0055a6f5
     TEST EAX,EAX                        ; 0055a6f7
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 0055a6fb
     PUSH 0x641aa5                       ; 0055a6fc | = "initSectionEnd"
     PUSH EBX                            ; 0055a701
-    CALL core_script.cpp_CScript_FUN_00560160 ; 0055a702
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00560160(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055a702
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0055a707
     MOV EBP,EAX                         ; 0055a70a
     TEST EAX,EAX                        ; 0055a70c
@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_0055a710
     XOR EDX,EDX                         ; 0055a713
     MOV dword ptr [ESP + 0x8],EAX       ; 0055a715
-    MOV dword ptr [0x0310f4a4],EDX      ; 0055a719 | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],EDX      ; 0055a719 | g_ScriptInputFlag
     MOV dword ptr [EBX + 0x48],ESI      ; 0055a71f
     XOR ESI,ESI                         ; 0055a722
     LEA EAX,[ESP + 0x4]                 ; 0055a724
@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_0055a742
     JNZ 0x0055a7d9                      ; 0055a745
         ;   XREF to: 0055a7d9 (CONDITIONAL_JUMP)  ; LAB_0055a7d9
-    CMP dword ptr [0x0310f4a4],0x0      ; 0055a74b | DAT_0310f4a4
+    CMP dword ptr [0x0310f4a4],0x0      ; 0055a74b | g_ScriptInputFlag
     JZ 0x0055a76b                       ; 0055a752
         ;   XREF to: 0055a76b (CONDITIONAL_JUMP)  ; LAB_0055a76b
     MOV ECX,dword ptr [0x0067b654]      ; 0055a754 | g_CGameInstance | g_CGamePtr
@@ -113,7 +113,7 @@ section .text
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70 ; 0055a75d
         ;   XREF to: 004dce70 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame * this_ptr)
     ADD ESP,0x4                         ; 0055a762
-    MOV dword ptr [0x0310f4a4],ESI      ; 0055a765 | DAT_0310f4a4
+    MOV dword ptr [0x0310f4a4],ESI      ; 0055a765 | g_ScriptInputFlag
     MOV EAX,dword ptr [ESP + 0x8]       ; 0055a76b
         ;   Label: LAB_0055a76b
     MOV dword ptr [EBX + 0x48],EAX      ; 0055a76f
@@ -140,7 +140,7 @@ section .text
     MOV [0x02f0ca48],EAX                ; 0055a7ab | g_CurrentFilename
     MOV EAX,dword ptr [EBX + 0x34]      ; 0055a7b0
     MOV dword ptr [0x02f0ca4c],EDX      ; 0055a7b3 | g_CurrentLineNumber
-    PUSH 0x310eca0                      ; 0055a7b9 | DAT_0310eca0
+    PUSH 0x310eca0                      ; 0055a7b9 | g_ScriptErrorBuffer
     MOV ECX,dword ptr [EAX + EDI*0x8 + 0x4] ; 0055a7be
     PUSH ECX                            ; 0055a7c2
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 0055a7c3

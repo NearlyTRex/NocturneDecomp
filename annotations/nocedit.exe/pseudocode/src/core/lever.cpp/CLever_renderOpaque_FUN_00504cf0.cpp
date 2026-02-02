@@ -23,11 +23,10 @@ int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_00504cf0(CLever *this_ptr)
     return 0;
   }
   render_flags = -NAN;
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)&this_ptr->model_name);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            ((CKeyFramedModelInstance *)&this_ptr->model_name,
-             (float)(pCVar2->frame_count + -1) * this_ptr->param,(int)render_flags);
+            (&this_ptr->model,(float)(pCVar2->frame_count + -1) * this_ptr->param,(int)render_flags)
+  ;
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   return iVar1;
 }

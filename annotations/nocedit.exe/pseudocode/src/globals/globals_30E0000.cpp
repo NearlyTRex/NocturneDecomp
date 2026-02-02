@@ -7,6 +7,9 @@
 // CDemonPod
 CDemonPod g_CDemonPodInstance = {};
 
+// CProceduralTexture
+CProceduralTexture g_CProceduralTextureInstance = {};
+
 // SSoftwareEdge[16]
 SSoftwareEdge g_SoftwareEdgeBuffer[16] = {};
 SSoftwareEdge g_SoftwareEdgeTable[16] = {};

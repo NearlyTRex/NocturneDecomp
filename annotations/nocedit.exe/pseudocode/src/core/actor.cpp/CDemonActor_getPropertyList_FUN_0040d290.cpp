@@ -13,15 +13,24 @@ core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290
 {
   int iVar1;
   
-  property_list->unk = (int)this_ptr;
-  core_actor_cpp_CActorPropertyList_FUN_0040e290(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e260(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
+  property_list->owner = this_ptr;
+  core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
+            (property_list,"Name",this_ptr->actor_name,0x1e,
+             core_actor_cpp_CDemonActor_FUN_0040d270);
+  core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
+            (property_list,"Pos",&(this_ptr->location).position,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
+            (property_list,"PHB",(CVector3f *)&this_ptr->orient,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"Creation event",this_ptr->create_event);
   if (this_ptr->create_event[0] != '\0') {
     iVar1 = stricmp(this_ptr->create_event,"none");
     if (iVar1 != 0) {
-      core_actor_cpp_CActorPropertyList_FUN_0040e1a0(property_list);
+      core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
+                (property_list,"Probability",&this_ptr->create_prob,0.0,1.0,
+                 (CDemonActor_CActorPropertyValidatorFunc *)0x0);
       return;
     }
   }

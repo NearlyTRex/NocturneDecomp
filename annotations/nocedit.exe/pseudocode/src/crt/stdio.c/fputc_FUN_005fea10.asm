@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   stream
 ;
 ; XREF[4]:
-;   core_actor.cpp_serializeString_FUN_0040b5c0 at 0040b62a
+;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b62a
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 at 00476e0f
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 at 00523a3a
 ;   crt_stdio.c_ungetc_helper_FUN_005fe720 at 005fe72e

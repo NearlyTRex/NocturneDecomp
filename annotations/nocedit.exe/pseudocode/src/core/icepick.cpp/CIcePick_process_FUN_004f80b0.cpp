@@ -61,7 +61,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
   fVar11 = fVar11 - delta_time;
   *(float *)((this_ptr->base).base.unk1 + 0x2c) = delta_time * fVar2;
-  (this_ptr->base).unk1 = (int)fVar11;
+  (this_ptr->base).unk1 = (uint)fVar11;
   if (fVar11 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -94,23 +94,20 @@ LAB_004f8427:
             if ((*(int *)this_ptr->unk != 0) && (*(int *)(this_ptr->unk + 0x20) == 0)) {
               iVar3 = 10;
             }
-            if (*(int *)(this_ptr->base).unk2 != 0) {
-              if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+            if ((this_ptr->base).action_bindings.walk_key != 0) {
+              if ((this_ptr->base).action_bindings.run_key == 0) {
                 iVar3 = 1;
               }
               else {
                 iVar3 = 2;
               }
             }
-            if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+            if ((this_ptr->base).action_bindings.backup_key != 0) {
               iVar3 = 3;
             }
-            if (*(int *)((this_ptr->base).unk2 + 0x18) != 0) {
+            if ((this_ptr->base).action_bindings.draw_key != 0) {
               iVar3 = *(int *)this_ptr->unk;
-              (this_ptr->base).unk2[0x18] = '\0';
-              (this_ptr->base).unk2[0x19] = '\0';
-              (this_ptr->base).unk2[0x1a] = '\0';
-              (this_ptr->base).unk2[0x1b] = '\0';
+              (this_ptr->base).action_bindings.draw_key = 0;
               uVar6 = (uint)(iVar3 == 0);
               *(uint *)this_ptr->unk = uVar6;
               if ((uVar6 == 0) || (*(int *)(this_ptr->unk + 0x20) != 0)) {
@@ -120,7 +117,7 @@ LAB_004f8427:
                 iVar3 = 10;
               }
             }
-            if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+            if ((this_ptr->base).action_bindings.fire_key != 0) {
               bVar1 = true;
               if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
                 iVar7 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -145,10 +142,7 @@ LAB_004f84cc:
               }
               if (*(int *)this_ptr->unk != 0) {
                 if (*(int *)(this_ptr->unk + 0x20) == 0) {
-                  (this_ptr->base).unk2[0xc] = '\0';
-                  (this_ptr->base).unk2[0xd] = '\0';
-                  (this_ptr->base).unk2[0xe] = '\0';
-                  (this_ptr->base).unk2[0xf] = '\0';
+                  (this_ptr->base).action_bindings.fire_key = 0;
                   switch(*(uint *)(this_ptr->unk + 4)) {
                   case 0:
                   case 2:
@@ -174,7 +168,7 @@ LAB_004f84cc:
             }
 switchD_004f8665_default:
             *(float *)((this_ptr->base).base.unk1 + 0xc) =
-                 *(float *)((this_ptr->base).unk2 + 0x24) *
+                 *(float *)((this_ptr->base).unk2 + 4) *
                  *(float *)((this_ptr->base).base.unk1 + 0x2c);
             pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                (&(this_ptr->base).base.model.motion_controller);
@@ -189,7 +183,7 @@ switchD_004f8665_default:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar3,1);
             }
-            if ((*(int *)((this_ptr->base).unk2 + 0x10) != 0) &&
+            if (((this_ptr->base).action_bindings.use_item_key != 0) &&
                (iVar3 = core_icepick_cpp_CIcePick_FUN_004f8970(this_ptr), iVar3 == 0)) {
               core_icepick_cpp_CIcePick_FUN_004f8ad0(this_ptr);
             }
@@ -286,7 +280,7 @@ LAB_004f82e5:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_004f82e5;
-    if (*(int *)((this_ptr->base).unk2 + 0xc) == 0) goto LAB_004f82f8;
+    if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_004f82f8;
     iVar3 = 0x11;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

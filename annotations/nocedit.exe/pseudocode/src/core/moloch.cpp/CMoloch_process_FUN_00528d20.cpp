@@ -45,7 +45,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
     return;
   }
   fVar10 = (float)(this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = (int)fVar10;
+  (this_ptr->base).unk1 = (uint)fVar10;
   if (fVar10 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -70,28 +70,25 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   iVar5 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar5 == 0) {
     if ((this_ptr->base).control_type == 2) {
-      core_moloch_cpp_FUN_005293b0();
+      core_moloch_cpp_CMoloch_FUN_005293b0(this_ptr);
     }
     pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     uVar9 = pSVar7->state_index;
     if ((((uVar9 == 0) || (uVar9 < 2)) || (uVar9 == 2)) &&
        (*(int *)((this_ptr->base).base.unk1 + 4) != 0)) {
-      uVar9 = (uint)(*(int *)(this_ptr->base).unk2 != 0);
-      if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+      uVar9 = (uint)((this_ptr->base).action_bindings.walk_key != 0);
+      if ((this_ptr->base).action_bindings.backup_key != 0) {
         uVar9 = 2;
       }
-      if (*(int *)((this_ptr->base).unk2 + 0x18) != 0) {
+      if ((this_ptr->base).action_bindings.draw_key != 0) {
         if (this_ptr->morphing == 0) {
-          core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900();
+          core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
         }
-        (this_ptr->base).unk2[0x18] = '\0';
-        (this_ptr->base).unk2[0x19] = '\0';
-        (this_ptr->base).unk2[0x1a] = '\0';
-        (this_ptr->base).unk2[0x1b] = '\0';
+        (this_ptr->base).action_bindings.draw_key = 0;
       }
       *(float *)((this_ptr->base).base.unk1 + 0xc) =
-           *(float *)((this_ptr->base).unk2 + 0x24) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
+           *(float *)((this_ptr->base).unk2 + 4) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
       pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (uVar9 != pSVar7->state_index) goto LAB_00528e32;
@@ -187,7 +184,7 @@ LAB_00528e3a:
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     }
     else if (((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) &&
-            (*(int *)((this_ptr->base).unk2 + 0xc) == 0)) goto LAB_00528f8e;
+            ((this_ptr->base).action_bindings.fire_key == 0)) goto LAB_00528f8e;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,0,1);
   }
@@ -200,17 +197,17 @@ LAB_00528f8e:
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                        (g_CEventListPtr,this_ptr->unk2 + 100);
+                        (g_CEventListPtr,this_ptr->demon_to_human_condition);
       if (iVar5 != 0) {
-        core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900();
+        core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
         return;
       }
     }
     else {
       iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                        (g_CEventListPtr,this_ptr->unk2);
+                        (g_CEventListPtr,this_ptr->human_to_demon_condition);
       if (iVar5 != 0) {
-        core_moloch_cpp_PlaySoundAbtMolochMorphing_FUN_00529900();
+        core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
         return;
       }
     }
@@ -255,7 +252,7 @@ LAB_00528f8e:
                 ((CDeformableModelInstance *)this_ptr_00);
       core_morph_cpp_FUN_0052b430();
       core_morph_cpp_FUN_0052b430();
-      core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->unk2 + 200));
+      core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)this_ptr->unk2);
       return;
     }
   }

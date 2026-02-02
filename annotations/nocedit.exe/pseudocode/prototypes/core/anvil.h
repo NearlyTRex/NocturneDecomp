@@ -31,9 +31,9 @@ void __cdecl CAnvil::process(CAnvil *this_ptr,float delta_time);
 // Address: 00411ec0
 int __cdecl CAnvil::renderOpaque(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_CAnvil_serialize_FUN_00411f50
+// Original: core_anvil.cpp_CAnvil_archive_FUN_00411f50
 // Address: 00411f50
-void __cdecl CAnvil::serialize(CAnvil *this_ptr);
+void __cdecl CAnvil::archive(CAnvil *this_ptr);
 
 // Original: core_anvil.cpp_CAnvil_hasCollision_FUN_00411fd0
 // Address: 00411fd0

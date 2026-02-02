@@ -27,7 +27,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006141e2
 ;   TerminatedCString s_Too_many_actor_types_006141f4
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
 ;   char* g_CurrentFilename

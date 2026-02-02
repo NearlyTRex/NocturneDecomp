@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
   uint uVar8;
   int iVar9;
   
-  iVar6 = *(int *)((this_ptr->base).unk2 + 0xc);
+  iVar6 = (this_ptr->base).action_bindings.fire_key;
   this_ptr->unk1[0x5c] = '\0';
   this_ptr->unk1[0x5d] = '\0';
   this_ptr->unk1[0x5e] = '\0';

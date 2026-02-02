@@ -106,12 +106,12 @@ LAB_004095c9:
   if (pCVar1->unk12 == 0) {
     frame_index = collision_info->result_ptr;
     if (frame_index == (void *)0x0) {
-      if (collision_info->unk5 != (void *)0x0) {
+      if (collision_info->model != (CKeyFramedModelInstance *)0x0) {
         output_normal = &local_30;
         pCVar3 = &local_54;
         ray_origin_00 = &local_3c;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                (collision_info->unk5);
+                                (collision_info->model);
         local_a0 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                              (this_ptr_01,(int)frame_index,ray_origin_00,pCVar3,output_normal);
         if (local_a0 < 0.0) {

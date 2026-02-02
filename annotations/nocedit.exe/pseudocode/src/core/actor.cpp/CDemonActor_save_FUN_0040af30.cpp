@@ -28,7 +28,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,
   g_CurrentActorBeingProcessed = this_ptr;
   g_ActorReadingMode = 2;
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
-  (*((this_ptr->vtable)._ub)->serialize)(this_ptr);
+  (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
   _fprintf(file_handle,"%s} %s \"%s\"\n",g_PropertyNamePrefix,pcVar3,this_ptr);
   if ((file_handle->_flag & 0x20) != 0) {

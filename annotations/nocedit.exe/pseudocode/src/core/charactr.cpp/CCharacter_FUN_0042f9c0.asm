@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00562920 at 00563ed3
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00563ed3
 ;
 ; *****************************************************************************
 

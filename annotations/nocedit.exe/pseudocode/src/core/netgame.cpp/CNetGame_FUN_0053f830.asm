@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 005087b1

@@ -11,10 +11,11 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
           (CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)
 
 {
+  int *str2;
   char cVar1;
   uint *puVar2;
   uint *puVar3;
-  CActorProperty *pCVar4;
+  int *piVar4;
   char *pcVar5;
   int iVar6;
   CDemonActor *pCVar7;
@@ -22,20 +23,19 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
   int *piVar9;
   int iVar10;
   char *pcVar11;
-  char *pcVar12;
   byte *in_stack_ffffafdc;
   uint in_stack_ffffafe0;
   uint in_stack_ffffafe4;
   uint in_stack_ffffafe8;
   uint in_stack_ffffafec;
-  CActorPropertyList CStack_2b24;
+  byte auStack_2b24 [9472];
   byte local_624 [936];
   char local_27c [500];
   char local_88 [104];
   CDemonActor *local_20;
   CDemonActor *pCStack_1c;
   int iStack_18;
-  CActorProperty *pCStack_14;
+  int *piStack_14;
   
   if (*(int *)(this_ptr->unk2 + 0x1c) == 0) {
     return;
@@ -79,33 +79,33 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
     if (iVar10 != 0) {
       core_actor_cpp_FUN_0040e130();
       core_actor_cpp_FUN_0040e130();
-      (*((pCVar7->vtable)._ub)->getPropertyList)(pCVar7,&CStack_2b24);
+      (*((pCVar7->vtable)._ub)->getPropertyList)(pCVar7,(CActorPropertyList *)auStack_2b24);
       in_stack_ffffafdc = &stack0xffffafe0;
       (**(code **)(*(int *)(*(int *)(param_4 + 0x28) + 0x154) + 0xd4))();
       iStack_18 = 0;
-      if (0 < CStack_2b24.property_count) {
-        pCStack_14 = CStack_2b24.properties;
+      if (0 < (int)auStack_2b24._4_4_) {
+        piStack_14 = (int *)(auStack_2b24 + 8);
         do {
-          pCVar4 = pCStack_14;
+          piVar4 = piStack_14;
           local_20 = (CDemonActor *)0x0;
           if (0 < (int)in_stack_ffffafdc) {
-            pcVar5 = pCStack_14->name;
+            str2 = piStack_14 + 1;
             piVar9 = (int *)&stack0xffffafe0;
             do {
-              if ((*piVar9 == pCVar4->type) &&
-                 (iVar10 = stricmp((char *)(piVar9 + 1),pcVar5),
+              if ((*piVar9 == *piVar4) &&
+                 (iVar10 = stricmp((char *)(piVar9 + 1),(char *)str2),
                  iVar10 == 0)) {
                 switch(*piVar9) {
                 case 0:
                 case 0xf:
-                  *(uint *)pCVar4->data_ptr = *(uint *)piVar9[0x1a];
+                  *(uint *)piVar4[0x1a] = *(uint *)piVar9[0x1a];
                   break;
                 case 1:
-                  *(uint *)pCVar4->data_ptr = *(uint *)piVar9[0x1a];
+                  *(uint *)piVar4[0x1a] = *(uint *)piVar9[0x1a];
                   break;
                 case 2:
                   puVar2 = (uint *)piVar9[0x1a];
-                  puVar3 = pCVar4->data_ptr;
+                  puVar3 = (uint *)piVar4[0x1a];
                   if (puVar3 != puVar2) {
                     *puVar3 = *puVar2;
                     puVar3[1] = puVar2[1];
@@ -117,39 +117,40 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
                 case 10:
                 case 0xb:
                 case 0xc:
-                  pcVar11 = (char *)piVar9[0x1a];
-                  pcVar12 = pCVar4->data_ptr;
+                  pcVar5 = (char *)piVar9[0x1a];
+                  pcVar11 = (char *)piVar4[0x1a];
                   do {
-                    cVar1 = *pcVar11;
-                    *pcVar12 = cVar1;
+                    cVar1 = *pcVar5;
+                    *pcVar11 = cVar1;
                     if (cVar1 == '\0') break;
-                    cVar1 = pcVar11[1];
+                    cVar1 = pcVar5[1];
+                    pcVar5 = pcVar5 + 2;
+                    pcVar11[1] = cVar1;
                     pcVar11 = pcVar11 + 2;
-                    pcVar12[1] = cVar1;
-                    pcVar12 = pcVar12 + 2;
                   } while (cVar1 != '\0');
                   break;
                 case 4:
                 case 5:
                 case 9:
-                  *(uint *)pCVar4->data_ptr = *(uint *)piVar9[0x1a];
+                  *(uint *)piVar4[0x1a] = *(uint *)piVar9[0x1a];
                   break;
                 case 6:
                   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-                            (pCVar4->data_ptr,(char *)(piVar9[0x1a] + 0x78));
+                            ((CKeyFramedModelInstance *)piVar4[0x1a],(char *)(piVar9[0x1a] + 0x78));
                   break;
                 case 7:
                   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-                            (pCVar4->data_ptr,(char *)(piVar9[0x1a] + 0x2260));
+                            ((CDeformableModelInstance *)piVar4[0x1a],
+                             (char *)(piVar9[0x1a] + 0x2260));
                 }
               }
               local_20 = (CDemonActor *)(local_20->actor_name + 1);
               piVar9 = piVar9 + 0x3b;
             } while ((int)local_20 < (int)in_stack_ffffafdc);
           }
-          pCStack_14 = pCStack_14 + 1;
+          piStack_14 = piStack_14 + 0x3b;
           iStack_18 = iStack_18 + 1;
-        } while (iStack_18 < CStack_2b24.property_count);
+        } while (iStack_18 < (int)auStack_2b24._4_4_);
       }
     }
     pcVar5 = *(char **)(param_2 + 0x28);

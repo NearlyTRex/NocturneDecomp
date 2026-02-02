@@ -18,11 +18,11 @@ core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageI
   if (*(int *)this_ptr->unk2 == 0) {
     damage_info->damage_amount = 0.0;
   }
-  fVar1 = (float)(this_ptr->base).base.hit_points - damage_info->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,6,1);
     (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);

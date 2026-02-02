@@ -50,7 +50,7 @@
 ;   core_morph.cpp_FUN_0052b310
 ;   core_morph.cpp_FUN_0052bcb0
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
-;   core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880
+;   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
 ;   ... and 34 more
 ;
@@ -652,10 +652,10 @@ section .text
     CMP EAX,0x35                        ; 00507a16
     JBE 0x005077a6                      ; 00507a19
         ;   XREF to: 005077a6 (CONDITIONAL_JUMP)  ; LAB_005077a6
-    MOV EDI,dword ptr [0x00680cf8]      ; 00507a1f | PTR_DAT_00680cf8
-    PUSH EDI                            ; 00507a25 | DAT_030e5b50
-    CALL core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880 ; 00507a26
-        ;   XREF to: 00554880 (UNCONDITIONAL_CALL)  ; void core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()
+    MOV EDI,dword ptr [0x00680cf8]      ; 00507a1f | g_CProceduralTexturePtr
+    PUSH EDI                            ; 00507a25 | g_CProceduralTextureInstance
+    CALL core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880 ; 00507a26
+        ;   XREF to: 00554880 (UNCONDITIONAL_CALL)  ; void core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture * this_ptr)
     ADD ESP,0x4                         ; 00507a2b
     JMP 0x00507522                      ; 00507a2e
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522

@@ -101,7 +101,7 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
     core_gabriela_cpp_FUN_004d4190();
   }
   fVar23 = (float)(this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = (int)fVar23;
+  (this_ptr->base).unk1 = (uint)fVar23;
   if (fVar23 < 0.0) {
     (this_ptr->base).unk1 = 0;
   }
@@ -114,7 +114,7 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   core_gabriela_cpp_CGabriella_FUN_004d4890(this_ptr);
-  bVar7 = 0.0 < (float)(this_ptr->base).base.hit_points;
+  bVar7 = 0.0 < (this_ptr->base).base.hit_points;
   bVar19 = (this_ptr->base).base.grabbed_by == (CDemonActor *)0x0;
   bVar20 = *(int *)((this_ptr->base).unk4 + 8) == 0;
   bVar21 = *(int *)((this_ptr->base).unk4 + 0x10) == 0;
@@ -237,15 +237,15 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
 LAB_004d3af9:
               if (*(int *)((this_ptr->base).base.unk1 + 4) != 0) {
                 iVar14 = 0;
-                if (*(int *)(this_ptr->base).unk2 != 0) {
-                  if (*(int *)((this_ptr->base).unk2 + 8) == 0) {
+                if ((this_ptr->base).action_bindings.walk_key != 0) {
+                  if ((this_ptr->base).action_bindings.run_key == 0) {
                     iVar14 = 1;
                   }
                   else {
                     iVar14 = 2;
                   }
                 }
-                if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+                if ((this_ptr->base).action_bindings.backup_key != 0) {
                   iVar14 = 3;
                 }
                 fVar23 = *(float *)((this_ptr->base).base.unk1 + 0x28);
@@ -253,7 +253,7 @@ LAB_004d3af9:
                 local_3c = &(this_ptr->base).base.model.motion_controller;
                 fVar4 = *(float *)((this_ptr->base).base.unk1 + 0x18);
                 *(float *)((this_ptr->base).base.unk1 + 0xc) =
-                     *(float *)((this_ptr->base).unk2 + 0x24) *
+                     *(float *)((this_ptr->base).unk2 + 4) *
                      *(float *)((this_ptr->base).base.unk1 + 0x2c);
                 *(float *)((this_ptr->base).base.unk1 + 0x18) = fVar23 + fVar4;
                 *(float *)((this_ptr->base).base.unk1 + 0x10) = fVar3 + local_20;
@@ -261,7 +261,7 @@ LAB_004d3af9:
                 if (iVar14 != pSVar18->state_index) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_3c,iVar14,1);
                 }
-                if ((*(int *)((this_ptr->base).unk2 + 0x10) != 0) &&
+                if (((this_ptr->base).action_bindings.use_item_key != 0) &&
                    (iVar14 = core_gabriela_cpp_PickupSomething_FUN_004d5870(), iVar14 == 0)) {
                   core_gabriela_cpp_FUN_004d6050();
                 }
@@ -274,7 +274,7 @@ LAB_004d3af9:
       }
       else {
         local_50 = iVar14;
-        if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+        if ((this_ptr->base).action_bindings.fire_key != 0) {
           (**(code **)(*(int *)(*(int *)((this_ptr->base).unk4 + 8) + 0x154) + 0x14))();
           local_a0.x = (local_1b4 + local_1a8) * 0.5f;
           local_a0.y = (local_1b0 + local_1a4) * 0.5f;
@@ -351,7 +351,7 @@ LAB_004d3af9:
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       }
       else if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
-        if (*(int *)((this_ptr->base).unk2 + 0xc) != 0) {
+        if ((this_ptr->base).action_bindings.fire_key != 0) {
           iVar14 = 1;
           fVar23 = 9.80909e-45;
           goto LAB_004d3215;
@@ -464,7 +464,7 @@ LAB_004d3cb4:
   }
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   if (((bVar11 && (bVar10 && (bVar9 && (bVar8 && (bVar21 && (bVar20 && (bVar19 && bVar7))))))) &&
-      (*(int *)((this_ptr->base).unk2 + 0x18) != 0)) &&
+      ((this_ptr->base).action_bindings.draw_key != 0)) &&
      ((this_ptr->base).inventory.selected_weapon != (CWeapon *)0x0)) {
     bVar5 = this_ptr->unk[0];
     if ((bVar5 & 3) == 0) {
@@ -478,7 +478,7 @@ LAB_004d3cb4:
                       ((this_ptr->base).base.carry_hands[0].carry_actor,
                        g_CLightActorClassInfo.name_hash);
   if (pCVar17 != (CDemonActor *)0x0) {
-    if (((*(int *)((this_ptr->base).unk2 + 0x14) != 0) &&
+    if ((((this_ptr->base).action_bindings.light_key != 0) &&
         (bVar11 && (bVar10 && (bVar9 && (bVar8 && (bVar21 && (bVar20 && (bVar19 && bVar7)))))))) &&
        (pCVar17[0x1a].orient.bank = (float)(uint)(pCVar17[0x1a].orient.bank == 0.0),
        pCVar17[4].scale.y == 1)) {
@@ -487,8 +487,8 @@ LAB_004d3cb4:
     }
     if (pCVar17[0x1a].orient.bank != 0.0) {
       *(float *)(this_ptr->unk + 0x14) =
-           *(float *)((this_ptr->base).unk2 + 0x28) * (float)3.1415926535000001 *
-           (float)2 * delta_time + *(float *)(this_ptr->unk + 0x14);
+           *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 * (float)2 *
+           delta_time + *(float *)(this_ptr->unk + 0x14);
       local_48 = (float)core_gabriela_cpp_FUN_004d4c90();
       local_14 = (CCharacter_full_vtable *)local_48;
       local_4c = (CCharacter_full_vtable *)core_gabriela_cpp_FUN_004d4ce0();
@@ -607,7 +607,7 @@ LAB_004d344b:
       (this_ptr->unk[0x38] = '\0', this_ptr->unk[0x39] = '\0', this_ptr->unk[0x3a] = '\0',
       this_ptr->unk[0x3b] = '\0',
       bVar11 && (bVar10 && (bVar9 && (bVar8 && (bVar21 && (bVar20 && (bVar19 && bVar7)))))))) &&
-     ((*(int *)((this_ptr->base).unk2 + 0xc) != 0 && (*(int *)(this_ptr->unk + 0x18) == 0)))) {
+     (((this_ptr->base).action_bindings.fire_key != 0 && (*(int *)(this_ptr->unk + 0x18) == 0)))) {
     if (*(int *)this_ptr->unk == 0) {
       if ((*(float *)(this_ptr->unk + 8) <= 0.0) &&
          (iVar14 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base), iVar14 == 0)) {
@@ -689,7 +689,7 @@ LAB_004d344b:
                         (&((this_ptr->base).inventory.selected_weapon)->base,
                          g_CDynamiteClassInfo.name_hash);
     if (pCVar17 != (CDemonActor *)0x0) {
-      if (*(int *)((this_ptr->base).unk2 + 0xc) == 0) {
+      if ((this_ptr->base).action_bindings.fire_key == 0) {
         this_ptr->unk[0x18] = '\x02';
         this_ptr->unk[0x19] = '\0';
         this_ptr->unk[0x1a] = '\0';
@@ -699,10 +699,7 @@ LAB_004d344b:
         fVar23 = delta_time * (float)25 + *(float *)(this_ptr->unk + 0x3feb0);
         *(float *)(this_ptr->unk + 0x3feb0) = fVar23;
         if (60.0f < fVar23) {
-          (this_ptr->base).unk2[0xc] = '\0';
-          (this_ptr->base).unk2[0xd] = '\0';
-          (this_ptr->base).unk2[0xe] = '\0';
-          (this_ptr->base).unk2[0xf] = '\0';
+          (this_ptr->base).action_bindings.fire_key = 0;
           this_ptr->unk[0x18] = '\x02';
           this_ptr->unk[0x19] = '\0';
           this_ptr->unk[0x1a] = '\0';
@@ -754,10 +751,7 @@ LAB_004d4152:
   this_ptr->unk[0x1b] = '\0';
   core_gabriela_cpp_FUN_004d5fe0();
   if (((this_ptr->base).inventory.selected_weapon)->fire_cooldown == 0.0) {
-    (this_ptr->base).unk2[0xc] = '\0';
-    (this_ptr->base).unk2[0xd] = '\0';
-    (this_ptr->base).unk2[0xe] = '\0';
-    (this_ptr->base).unk2[0xf] = '\0';
+    (this_ptr->base).action_bindings.fire_key = 0;
   }
 LAB_004d368e:
   iVar14 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);

@@ -21,8 +21,8 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
   cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(this_ptr);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
             (this_ptr,(int)(base_path + (1 - (int)extension)));
-  this_ptr->base_path = end_index;
-  this_ptr->extension = start_index;
+  this_ptr->height = end_index;
+  this_ptr->width = start_index;
   if ((int)extension <= (int)base_path) {
     iVar1 = 0;
     do {

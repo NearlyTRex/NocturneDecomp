@@ -12,10 +12,18 @@ core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10
 
 {
   core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e1e0(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e350(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e290(property_list);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"mirrorCondition",this_ptr->mirror_condition);
+  core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
+            (property_list,"attackCondition",this_ptr->attack_condition);
+  core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
+            (property_list,"attackMode",&this_ptr->attack_mode,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
+            (property_list,"mirrorPlaneActor",&this_ptr->mirror_plane_actor,0,(char *)0x0,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
+            (property_list,"morphActorType",(char *)&this_ptr->morph_actor_type,0x28,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   return;
 }

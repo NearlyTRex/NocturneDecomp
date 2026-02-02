@@ -14,9 +14,9 @@
 ;   core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0 at 0058abb5
 ;   core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0 at 00598ee5
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005968b5
+;   core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260 at 0058a265
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e695
 ;   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 at 0058f815
-;   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 at 00595fc5
 ;   ... and 84 more
 ;
 ; Called Functions:

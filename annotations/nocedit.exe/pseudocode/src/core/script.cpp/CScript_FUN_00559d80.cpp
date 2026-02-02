@@ -21,7 +21,7 @@ core_script_cpp_CScript_FUN_00559d80
   int local_20;
   int local_1c;
   int local_18;
-  CBitFont *local_14;
+  CStrList *local_14;
   
   iVar1 = (param_5 - param_3) + 1;
   cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
@@ -29,30 +29,30 @@ core_script_cpp_CScript_FUN_00559d80
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0);
   cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_40);
   cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0((CBitFont *)0x0);
-  if (*(int *)(this_ptr->unk4 + 0x18) < 1) {
+  if (this_ptr->parsed_line_count < 1) {
     cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
               (&local_40,"(No script loaded.)");
   }
   else {
     local_1c = cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(&local_40);
-    local_20 = *(int *)(*(int *)(this_ptr->unk4 + 0x1c) + this_ptr->next_cmd * 8) + -1;
+    local_20 = this_ptr->parsed_lines[this_ptr->next_cmd].line_number + -1;
     index = local_20 - (iVar1 / local_1c) / 2;
     if (index < 0) {
       index = 0;
     }
     text = (char *)0x2;
-    local_14 = (CBitFont *)(this_ptr->unk4 + 0x20);
+    local_14 = &this_ptr->script_text;
     local_18 = iVar1 - local_1c;
     if (2 < local_18) {
       do {
-        iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(local_14);
+        iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(local_14);
         if (iVar1 <= index) break;
         if (index == local_20) {
-          if (*(int *)this_ptr->unk4 == 0) {
+          if (this_ptr->script_state == 0) {
             iVar1 = 0xfa;
           }
-          else if (*(int *)this_ptr->unk4 == 1) {
+          else if (this_ptr->script_state == 1) {
             iVar1 = 0xfb;
           }
           else {
@@ -68,7 +68,7 @@ core_script_cpp_CScript_FUN_00559d80
                   (&local_40,(int)local_a4,2,text);
         iVar1 = 0x1e;
         text_00 = text;
-        x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)local_14,index);
+        x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(local_14,index);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
                   (&local_40,(int)x,iVar1,text_00);
         text = text + local_1c;

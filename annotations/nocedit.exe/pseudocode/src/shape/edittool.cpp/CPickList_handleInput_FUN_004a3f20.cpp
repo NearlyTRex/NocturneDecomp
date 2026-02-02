@@ -144,7 +144,7 @@ LAB_004a402a:
               this_ptr->search_text_buffer[0] = '\0';
             }
           } while (this_ptr->hotkey_capacity != 0);
-          if ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 0xe0U) != 0) {
+          if ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 0xe0) != 0) {
             uVar4 = 0xffffffff;
             pcVar3 = str1;
             do {

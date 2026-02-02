@@ -15,7 +15,7 @@
 ;   TerminatedCString s_No_opening_parenthesis_00624532
 ;   TerminatedCString s_Argument_too_long_00624549
 ;   TerminatedCString s_Can_t_find_closing_paren_0062455b
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005fe5e0

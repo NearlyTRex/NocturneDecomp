@@ -29,7 +29,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   this_ptr_00->unk[0xf] = '\0';
   *(uint *)(this_ptr_00->unk + 8) = *(uint *)(this_ptr_00->unk + 0xc);
   *(uint *)(this_ptr_00->unk + 4) = *(uint *)(this_ptr_00->unk + 8);
-  core_scat_cpp_FUN_00557150();
+  core_scat_cpp_CScat_FUN_00557150(this_ptr_00);
   this_ptr_00->unk[0x14] = '\0';
   this_ptr_00->unk[0x15] = '\0';
   this_ptr_00->unk[0x16] = '\0';

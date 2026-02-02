@@ -59,10 +59,10 @@ LAB_005049ad:
   }
 LAB_00504aa4:
   if (this_ptr->momentary_flag == 0) {
-    if ((this_ptr->param < (float)0.10000000000000001) && (*(char *)&this_ptr->off_event != '\0')) {
+    if ((this_ptr->param < (float)0.10000000000000001) && (this_ptr->off_event[0] != '\0')) {
       core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     }
-    if (((float)0.90000000000000002 < this_ptr->param) && (*(char *)&this_ptr->on_event != '\0')) {
+    if (((float)0.90000000000000002 < this_ptr->param) && (this_ptr->on_event[0] != '\0')) {
       core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       return;
     }

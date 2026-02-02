@@ -30,11 +30,11 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
     in_stack_00000008->damage_amount = 0.0;
   }
   *(float *)in_stack_00000004[1].base.actor_name = 3.0f;
-  fVar1 = (float)in_stack_00000004->hit_points - in_stack_00000008->damage_amount;
+  fVar1 = in_stack_00000004->hit_points - in_stack_00000008->damage_amount;
   this_ptr = &in_stack_00000004->model;
-  in_stack_00000004->hit_points = (int)fVar1;
+  in_stack_00000004->hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    in_stack_00000004->hit_points = 0;
+    in_stack_00000004->hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if (pSVar2->state_index != 9) {

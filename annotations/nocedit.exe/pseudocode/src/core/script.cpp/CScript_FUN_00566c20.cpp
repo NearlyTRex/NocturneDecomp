@@ -17,8 +17,8 @@ core_script_cpp_CScript_FUN_00566c20
   if ((((INT_031141e0 <= param_2) && (INT_031141e4 <= param_3)) && (param_2 < DAT_031141e8)) &&
      (param_3 < DAT_031141ec)) {
     *param_4 = ((param_2 - INT_031141e0) + INT_03114204 / 2) / INT_03114204 +
-               CEdScrollBar_0310fd0c.scroll_position;
-    *param_5 = (param_3 - iVar1) / DAT_03114208 + CEdScrollBar_0310fcd8.scroll_position;
+               g_ScriptEditorHScrollBar.scroll_position;
+    *param_5 = (param_3 - iVar1) / DAT_03114208 + g_ScriptEditorVScrollBar.scroll_position;
     return 1;
   }
   return 0;

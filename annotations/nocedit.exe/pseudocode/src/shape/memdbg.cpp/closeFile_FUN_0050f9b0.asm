@@ -16,9 +16,9 @@
 ;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 at 0043472e
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_00431870 at 00431980
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 at 004335d9
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40 at 0054bbab
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 at 0054b8e8
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520 at 0054b565
-;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40 at 0054bbab
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 at 0054c151
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0 at 0054c2e2
 ;   ... and 171 more

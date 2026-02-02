@@ -34,19 +34,19 @@ core_script_cpp_CScript_FUN_00566660
   DAT_031141e8 = INT_031141d8 - iVar2;
   DAT_031141ec = DAT_031141f4 - iVar1;
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-            (&CEdScrollBar_0310fd0c,INT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);
+            (&g_ScriptEditorHScrollBar,INT_031141d0,DAT_031141ec,DAT_031141e8,DAT_031141f4);
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-            (&CEdScrollBar_0310fcd8,DAT_031141e8,INT_031141e4,INT_031141d8,DAT_031141ec);
-  CEdScrollBar_0310fcd8.max_value = (DAT_031141ec - INT_031141e4) / DAT_03114208;
-  CEdScrollBar_0310fd0c.max_value = (DAT_031141e8 - INT_031141e0) / INT_03114204;
+            (&g_ScriptEditorVScrollBar,DAT_031141e8,INT_031141e4,INT_031141d8,DAT_031141ec);
+  g_ScriptEditorVScrollBar.max_value = (DAT_031141ec - INT_031141e4) / DAT_03114208;
+  g_ScriptEditorHScrollBar.max_value = (DAT_031141e8 - INT_031141e0) / INT_03114204;
   iVar1 = 0;
-  CEdScrollBar_0310fd0c.current_value = 0;
-  CEdScrollBar_0310fcd8.current_value =
-       shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(this_ptr->unk4 + 0x20));
+  g_ScriptEditorHScrollBar.current_value = 0;
+  g_ScriptEditorVScrollBar.current_value =
+       shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
   while( true ) {
-    iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(this_ptr->unk4 + 0x20));
+    iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
     if (iVar2 <= iVar1) break;
-    core_script_cpp_CScript_FUN_00566800(this_ptr,iVar1);
+    core_script_cpp_CScript_updateLineMetrics_FUN_00566800(this_ptr,iVar1);
     iVar1 = iVar1 + 1;
   }
   core_script_cpp_FUN_005644e0();

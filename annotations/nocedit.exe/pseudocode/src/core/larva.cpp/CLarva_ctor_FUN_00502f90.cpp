@@ -34,7 +34,7 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr)
   (pCVar1->base).unk2[0x71] = '\0';
   (pCVar1->base).unk2[0x72] = '\0';
   (pCVar1->base).unk2[0x73] = '\0';
-  (pCVar4->base).base.hit_points = 0x41700000;
+  (pCVar4->base).base.hit_points = 15.0;
   fVar3 = 100.0f;
   pCVar4->unk[0xc] = '\0';
   pCVar4->unk[0xd] = '\0';

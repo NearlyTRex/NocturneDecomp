@@ -57,7 +57,7 @@ core_netgame_cpp_CNetGame_updatePing_FUN_00541c80
           this_ptr->players[player_index].ping_quality = -1.0;
         }
         this_ptr->players[player_index].last_ping_sent = g_CurrentGameTime;
-        core_netgame_cpp_CNetGame_send_FUN_005411c0();
+        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index);
       }
     }
     return;

@@ -19,65 +19,65 @@ CDemonActorType * __cdecl CPendulum::getActorType(CPendulum *this_ptr);
 // Address: 00549390
 CPendulum * __cdecl CPendulum::ctor(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_005494a0
+// Original: core_pendulum.cpp_CPendulum_setup_FUN_005494a0
 // Address: 005494a0
-void __cdecl FUN_005494a0(void);
+void __cdecl CPendulum::setup(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_005495c0
+// Original: core_pendulum.cpp_CPendulum_FUN_005495c0
 // Address: 005495c0
-void __cdecl FUN_005495c0(void);
+void __cdecl CPendulum(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_FUN_00549aa0
 // Address: 00549aa0
-bool __cdecl FUN_00549aa0(void);
+int __cdecl FUN_00549aa0(void);
 
-// Original: core_pendulum.cpp_FUN_00549b90
+// Original: core_pendulum.cpp_CPendulum_FUN_00549b90
 // Address: 00549b90
-void __cdecl FUN_00549b90(void);
+void __cdecl CPendulum(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_0054a180
+// Original: core_pendulum.cpp_CPendulum_process_FUN_0054a180
 // Address: 0054a180
-void __cdecl FUN_0054a180(void);
+void __cdecl CPendulum::process(CPendulum *this_ptr,float delta_time);
 
-// Original: core_pendulum.cpp_FUN_0054a2f0
+// Original: core_pendulum.cpp_CPendulum_renderOpaque_FUN_0054a2f0
 // Address: 0054a2f0
-int __cdecl FUN_0054a2f0(void);
+int __cdecl CPendulum::renderOpaque(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_0054a360
+// Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_0054a360
 // Address: 0054a360
-float * __cdecl FUN_0054a360(void);
+CBoundingBox3D * __cdecl CPendulum::getBoundingBox(CPendulum *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_pendulum.cpp_CPendulum_load_FUN_0054a3b0
+// Original: core_pendulum.cpp_CPendulum_archive_FUN_0054a3b0
 // Address: 0054a3b0
-void __cdecl CPendulum::load(void);
+void __cdecl CPendulum::archive(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_0054a550
+// Original: core_pendulum.cpp_CPendulum_hasCollision_FUN_0054a550
 // Address: 0054a550
-int __cdecl FUN_0054a550(void);
+int __cdecl CPendulum::hasCollision(CPendulum *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_pendulum.cpp_FUN_0054a590
+// Original: core_pendulum.cpp_CPendulum_getGroundType_FUN_0054a590
 // Address: 0054a590
-int __cdecl FUN_0054a590(void);
+int __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_0054a5a0
+// Original: core_pendulum.cpp_CPendulum_propertyDisplayCallback_FUN_0054a5a0
 // Address: 0054a5a0
-void __cdecl FUN_0054a5a0(void);
+void __cdecl CPendulum::propertyDisplayCallback(CPendulum *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_pendulum.cpp_FUN_0054a5e0
+// Original: core_pendulum.cpp_CPendulum_propertyActionCallback_FUN_0054a5e0
 // Address: 0054a5e0
-int __cdecl FUN_0054a5e0(void);
+int __cdecl CPendulum::propertyActionCallback(CPendulum *this_ptr,CActorProperty *property);
 
-// Original: core_pendulum.cpp_FUN_0054a5f0
+// Original: core_pendulum.cpp_CPendulum_getPropertyList_FUN_0054a5f0
 // Address: 0054a5f0
-void __cdecl FUN_0054a5f0(void);
+void __cdecl CPendulum::getPropertyList(CPendulum *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_pendulum.cpp_FUN_0054a790
+// Original: core_pendulum.cpp_CPendulum_processInEditor_FUN_0054a790
 // Address: 0054a790
-void __cdecl FUN_0054a790(void);
+void __cdecl CPendulum::processInEditor(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_0054a7b0
+// Original: core_pendulum.cpp_CPendulum_writeDependencies_FUN_0054a7b0
 // Address: 0054a7b0
-void __cdecl FUN_0054a7b0(void);
+void __cdecl CPendulum::writeDependencies(CPendulum *this_ptr,_FILE *file_handle);
 
 // Original: core_pendulum.cpp_CPendulum_dtor_FUN_0054a7d0
 // Address: 0054a7d0

@@ -14,9 +14,9 @@
 ;   int g_CWayPointClassVersion = 0x2
 ;
 ; Called Functions:
-;   core_actor.cpp_serializeActor_FUN_0040b870
-;   core_actor.cpp_serializeInteger_FUN_0040b7f0
-;   core_trigger.cpp_CTrigger_serialize_FUN_005e0690
+;   core_actor.cpp_archiveActor_FUN_0040b870
+;   core_actor.cpp_archiveInteger_FUN_0040b7f0
+;   core_trigger.cpp_CTrigger_archive_FUN_005e0690
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     SUB ESP,0x4                         ; 005ec284
     MOV EDI,dword ptr [ESP + 0x18]      ; 005ec287
     PUSH EDI                            ; 005ec28b
-    CALL core_trigger.cpp_CTrigger_serialize_FUN_005e0690 ; 005ec28c
-        ;   XREF to: 005e0690 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_serialize_FUN_005e0690(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_archive_FUN_005e0690 ; 005ec28c
+        ;   XREF to: 005e0690 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_archive_FUN_005e0690(CTrigger * this_ptr)
     MOV EDX,dword ptr [0x0068489c]      ; 005ec291 | g_CWayPointClassVersion
     ADD ESP,0x4                         ; 005ec297
     CMP EDX,0x2                         ; 005ec29a
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_005ec2b8
     LEA EBX,[ESP + 0x4]                 ; 005ec2bd
     PUSH EBX                            ; 005ec2c1
-    CALL core_actor.cpp_serializeActor_FUN_0040b870 ; 005ec2c2
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+    CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005ec2c2
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ec2c7
     JMP 0x005ec29f                      ; 005ec2ca
         ;   XREF to: 005ec29f (UNCONDITIONAL_JUMP)  ; LAB_005ec29f
@@ -64,8 +64,8 @@ section .text
     LEA EBX,[EDI + 0x370]               ; 005ec2d1
     PUSH EBX                            ; 005ec2d7
     XOR ESI,ESI                         ; 005ec2d8
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 005ec2da
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 005ec2da
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     MOV EBX,dword ptr [EDI + 0x370]     ; 005ec2df
     ADD ESP,0x8                         ; 005ec2e5
     TEST EBX,EBX                        ; 005ec2e8
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005ec2f2
     PUSH EBX                            ; 005ec2f4
     INC ESI                             ; 005ec2f5
-    CALL core_actor.cpp_serializeActor_FUN_0040b870 ; 005ec2f6
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+    CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005ec2f6
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ec2fb
     MOV EBP,dword ptr [EDI + 0x370]     ; 005ec2fe
     ADD EBX,0x8                         ; 005ec304

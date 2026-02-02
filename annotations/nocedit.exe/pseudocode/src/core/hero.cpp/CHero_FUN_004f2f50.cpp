@@ -57,10 +57,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
   if (*(int *)(this_ptr->unk4 + 0xc) != 0) {
     iVar3 = core_event_cpp_FUN_004b18e0((int *)(*(int *)(this_ptr->unk4 + 0xc) + 0x420));
     if (iVar3 == 0) {
-      this_ptr->unk2[0xc] = '\0';
-      this_ptr->unk2[0xd] = '\0';
-      this_ptr->unk2[0xe] = '\0';
-      this_ptr->unk2[0xf] = '\0';
+      (this_ptr->action_bindings).fire_key = 0;
       return 1;
     }
   }

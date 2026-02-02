@@ -25,7 +25,7 @@
 ;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 00520492
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f700
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c46a
-;   core_passngr.cpp_FUN_00545d30 at 00545d86
+;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545d86
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00596c70
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000 at 0059e012
 ;   ... and 7 more

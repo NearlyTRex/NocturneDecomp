@@ -11,7 +11,7 @@
 ;   TerminatedCString s_index_0062edbe
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e220
+;   core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH 0x62edbe                       ; 004f3f83 | = "index"
     MOV EBX,dword ptr [ESP + 0x20]      ; 004f3f88
     PUSH EBX                            ; 004f3f8c
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e220 ; 004f3f8d
-        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e220(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220 ; 004f3f8d
+        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, int min_value, ...)
     ADD ESP,0x18                        ; 004f3f92
     POP EBX                             ; 004f3f95
     RET                                 ; 004f3f96

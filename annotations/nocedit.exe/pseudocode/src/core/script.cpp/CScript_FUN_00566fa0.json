@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 37,
+        "line": 23,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
@@ -34,7 +41,7 @@
     {
       "addr": "00562920",
       "from_addr": "00562c68",
-      "name": "core_script.cpp_FUN_00562920",
+      "name": "core_script.cpp_editParameterValue_FUN_00562920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,7 +88,7 @@
       {
         "call_addr": "00562c68",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],

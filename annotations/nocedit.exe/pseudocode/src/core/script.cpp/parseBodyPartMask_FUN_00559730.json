@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 42,
+        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CCharacter*' [-Wformat=]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 80,
+    "complexity_score": 34,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 3,
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "0055a810",
+      "from_addr": "0055c881",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00562920",
+      "from_addr": "00563d8c",
+      "name": "core_script.cpp_editParameterValue_FUN_00562920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559730",
+    "address_range": [
+      [
+        "00559730",
+        "005597eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_parseBodyPartMask_FUN_00559730",
+    "signature": "int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask)"
+  },
+  "function_calls": [
+    {
+      "addr": "00567d30",
+      "is_variadic": false,
+      "name": "core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30"
+    },
+    {
+      "addr": "0059c240",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0060013c",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641698",
+      "name": "s_n_00641698",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006416a4",
+      "name": "s_Character_s_model_s_does_006416a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0310eca0",
+      "name": "g_ScriptErrorBuffer",
+      "type": "char[2048]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.196969696969697,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 52,
+      "INT_ADD": 29,
+      "INT_AND": 31,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 31,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 15,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "LOAD": 13,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 25
+    },
+    "pcode_op_count": 277
+  },
+  "stack_frame": {
+    "frame_size": 132,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "part_names",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "part_mask",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_FUN_00543930(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_FUN_00543930(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined1       Stack[-0xc]:1  local_c
@@ -34,7 +36,7 @@ section .text
     PUSH EBX                            ; 00543952
     MOV dword ptr [ESP + 0xc],EDX       ; 00543953
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00543957
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230(CNetGame * this_ptr)
     ADD ESP,0xc                         ; 0054395c
     ADD ESP,0xc                         ; 0054395f
     POP EBX                             ; 00543962

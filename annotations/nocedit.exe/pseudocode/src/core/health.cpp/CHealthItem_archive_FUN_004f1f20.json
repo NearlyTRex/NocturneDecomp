@@ -1,0 +1,186 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 78,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 17,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f1f20",
+    "address_range": [
+      [
+        "004f1f20",
+        "004f1f9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_health.cpp_CHealthItem_archive_FUN_004f1f20",
+    "signature": "void __cdecl core_health_cpp_CHealthItem_archive_FUN_004f1f20(CHealthItem *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b6e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveLocalizedString_FUN_0040b6e0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e9fb",
+      "name": "s_modelName_0062e9fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea05",
+      "name": "s_useCount_0062ea05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea0e",
+      "name": "s_hpRestored_0062ea0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea19",
+      "name": "s_descriptiveName_0062ea19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067cc04",
+      "name": "g_CHealthItemClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 20,
+      "INT_ADD": 16,
+      "INT_AND": 20,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 268,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHealthItem *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHealthItem",
+        "offset": 232,
+        "vtable_addr": "0065f5a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

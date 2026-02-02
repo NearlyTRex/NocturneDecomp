@@ -116,10 +116,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               *(CDemonActor **)((this_ptr->base).unk4 + 0x10) = this_ptr_01;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,0x2a,1);
-              (this_ptr->base).unk2[0xc] = '\0';
-              (this_ptr->base).unk2[0xd] = '\0';
-              (this_ptr->base).unk2[0xe] = '\0';
-              (this_ptr->base).unk2[0xf] = '\0';
+              (this_ptr->base).action_bindings.fire_key = 0;
               CStack_54.z = 2.0;
               CStack_54.x = 0.0;
               CStack_54.y = 0.0;

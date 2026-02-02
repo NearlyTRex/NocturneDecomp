@@ -27,9 +27,9 @@ CBat * __cdecl CBat::ctor(CBat *this_ptr);
 // Address: 004148a0
 void __cdecl CBat::setup(CBat *this_ptr);
 
-// Original: core_bat.cpp_CBat_serialize_FUN_00414910
+// Original: core_bat.cpp_CBat_archive_FUN_00414910
 // Address: 00414910
-void __cdecl CBat::serialize(CBat *this_ptr);
+void __cdecl CBat::archive(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_process_FUN_00414a00
 // Address: 00414a00

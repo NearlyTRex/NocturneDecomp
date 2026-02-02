@@ -12,8 +12,8 @@
 ;   TerminatedCString s_State_00615a9b
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4a0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e4d0
+;   core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0
+;   core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;
 ; *****************************************************************************
@@ -35,14 +35,14 @@ section .text
     PUSH EBX                            ; 0041843c
     PUSH 0x615a95                       ; 0041843d | = "Model"
     PUSH ESI                            ; 00418442
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 00418443
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 ; 00418443
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00418448
     PUSH EBX                            ; 0041844b
     PUSH 0x615a9b                       ; 0041844c | = "State"
     PUSH ESI                            ; 00418451
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 00418452
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0 ; 00418452
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList * this_ptr, char * property_name, CDeformableModelInstance * data_ptr)
     ADD ESP,0xc                         ; 00418457
     POP ESI                             ; 0041845a
     POP EBX                             ; 0041845b

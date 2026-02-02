@@ -15,9 +15,9 @@ CHero * __cdecl core_script_cpp_FUN_005627f0(int param_1,int param_2)
   local_4 = -1;
   sscanf((char *)(param_1 + 0x25c),"%d",&local_4);
   if ((-1 < local_4) && (local_4 < *(int *)(param_2 + 0xcc))) {
-    pCVar1 = core_script_cpp_GetDemonActor_FUN_005594e0
-                       ((char *)(local_4 * 0x328 + param_2 + 0x134),g_CCharacterClassInfo.name_hash,
-                        0x823c14);
+    pCVar1 = (CHero *)core_script_cpp_getActor_FUN_005594e0
+                                ((char *)(local_4 * 0x328 + param_2 + 0x134),
+                                 g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
     return pCVar1;
   }
   return (CHero *)0x0;

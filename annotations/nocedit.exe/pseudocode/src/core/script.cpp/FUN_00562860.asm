@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00562920 at 00563952
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00563952
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0

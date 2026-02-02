@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 at 004be0fe
 ;   core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0 at 004f3fdb
-;   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 at 0058a29a
+;   core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260 at 0058a29a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DATA_s_0064a258

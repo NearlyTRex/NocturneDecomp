@@ -47,9 +47,9 @@ void __cdecl CDoor::renderBackground(CDoor *this_ptr,int layer_flag);
 // Address: 00480a50
 CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_door.cpp_CDoor_serialize_FUN_00480aa0
+// Original: core_door.cpp_CDoor_archive_FUN_00480aa0
 // Address: 00480aa0
-void __cdecl CDoor::serialize(CDoor *this_ptr);
+void __cdecl CDoor::archive(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_hasCollision_FUN_00480d90
 // Address: 00480d90
@@ -87,13 +87,13 @@ int __cdecl CDoor::getMoveType(CDoor *this_ptr);
 // Address: 00481210
 void __cdecl CDoor(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00481250
+// Original: core_door.cpp_CDoor_propertyDisplayCallback_FUN_00481250
 // Address: 00481250
-void __cdecl FUN_00481250(void);
+void __cdecl CDoor::propertyDisplayCallback(CDoor *this_ptr,CActorPropertyList *property,char *output_buffer);
 
-// Original: core_door.cpp_FUN_004812b0
+// Original: core_door.cpp_CDoor_propertyActionCallback_FUN_004812b0
 // Address: 004812b0
-int __cdecl FUN_004812b0(void);
+int __cdecl CDoor::propertyActionCallback(CDoor *this_ptr,CActorProperty *property);
 
 // Original: core_door.cpp_CDoor_getPropertyList_FUN_00481320
 // Address: 00481320

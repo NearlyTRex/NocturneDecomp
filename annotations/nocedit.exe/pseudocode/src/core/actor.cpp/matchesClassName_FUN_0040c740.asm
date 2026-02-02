@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0 at 0040c6ef
-;   core_script.cpp_FUN_00562920 at 00562be2
+;   core_script.cpp_editParameterValue_FUN_00562920 at 00562be2
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchClassExpression_FUN_0040c610

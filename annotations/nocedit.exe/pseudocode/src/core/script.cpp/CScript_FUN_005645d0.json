@@ -10,19 +10,19 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 49,
+        "line": 51,
         "message": "'stack0xfffffdfc' was not declared in this scope; did you mean 'in_stack_fffffdfc'?"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 53,
+        "line": 56,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 53,
+        "line": 56,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'char*' [-fpermissive]"
       }
     ],
@@ -38,19 +38,19 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 276,
+    "complexity_score": 229,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
-    "pseudocode_lines": 46,
-    "suspect_count": 21,
+    "pseudocode_lines": 49,
+    "suspect_count": 16,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 227
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -138,9 +138,9 @@
     },
     {
       "addr": "0068105c",
-      "name": "DAT_0068105c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_AutoIndentEnabled",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "02d02570",
@@ -150,19 +150,19 @@
     },
     {
       "addr": "0310fcd8",
-      "name": "CEdScrollBar_0310fcd8",
+      "name": "g_ScriptEditorVScrollBar",
       "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "0310fce0",
-      "name": "CEdScrollBar_0310fcd8.max_value",
+      "name": "g_ScriptEditorVScrollBar.max_value",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fd0c",
-      "name": "CEdScrollBar_0310fd0c",
+      "name": "g_ScriptEditorHScrollBar",
       "type": "CEdScrollBar",
       "value": null
     },
@@ -174,14 +174,14 @@
     },
     {
       "addr": "0310fd44",
-      "name": "DAT_0310fd44",
-      "type": "undefined4",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310fd48",
-      "name": "DAT_0310fd48",
-      "type": "undefined4",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
       "value": null
     },
     {
@@ -360,118 +360,83 @@
     {
       "description": "Undefined global data reference",
       "line": 30,
-      "match": "DAT_0310fd48",
-      "text": "iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208 + INT_031141e4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
       "match": "DAT_03114208",
-      "text": "iVar1 = (DAT_0310fd48 - CEdScrollBar_0310fcd8.scroll_position) * DAT_03114208 + INT_031141e4;",
+      "text": "iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208 +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0310fd44",
-      "text": "x1 = INT_03114204 * (DAT_0310fd44 - CEdScrollBar_0310fd0c.scroll_position) + INT_031141e0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
+      "line": 34,
       "match": "DAT_03114208",
       "text": "y = iVar1 + DAT_03114208 + -1;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0068105c",
-      "text": "if (DAT_0068105c == 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 42,
       "match": "in_stack_fffffdfc",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 44,
       "match": "&stack0xfffffdfc",
-      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
+      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",g_CurrentEditingLine + 1,",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0310fd48",
-      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_0310fd44",
-      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 47,
       "match": "&stack0xfffffdfc",
       "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 47,
       "match": "DAT_03114200",
       "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 47,
       "match": "DAT_031141f8",
       "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 47,
       "match": "DAT_031141f4",
       "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 49,
       "match": "DAT_03114200",
       "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 49,
       "match": "DAT_031141f0",
       "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 49,
       "match": "DAT_031141f4",
       "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 50,
       "match": "in_stack_fffffdfc",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"

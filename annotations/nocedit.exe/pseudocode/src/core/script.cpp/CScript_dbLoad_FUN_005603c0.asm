@@ -41,8 +41,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CScript_FUN_005606e0
-;   core_script.cpp_FUN_00559360
+;   core_script.cpp_CScript_findDialogEntry_FUN_005606e0
+;   core_script.cpp_trimString_FUN_00559360
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -140,18 +140,18 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005604b0
         ;   Label: LAB_005604b0
     PUSH EAX                            ; 005604b4
-    CALL core_script.cpp_FUN_00559360   ; 005604b5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 005604b5
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 005604ba
     LEA EAX,[ESP + 0x80]                ; 005604bd
     PUSH EAX                            ; 005604c4
-    CALL core_script.cpp_FUN_00559360   ; 005604c5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 005604c5
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 005604ca
     LEA EAX,[ESP + 0x9e]                ; 005604cd
     PUSH EAX                            ; 005604d4
-    CALL core_script.cpp_FUN_00559360   ; 005604d5
-        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00559360(char * param_1)
+    CALL core_script.cpp_trimString_FUN_00559360 ; 005604d5
+        ;   XREF to: 00559360 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_00559360(char * str)
     ADD ESP,0x4                         ; 005604da
     PUSH 0x64332f                       ; 005604dd | = "stranger"
     LEA EAX,[ESP + 0x84]                ; 005604e2
@@ -212,8 +212,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0056055c
     PUSH EAX                            ; 00560560
     PUSH EBX                            ; 00560561
-    CALL core_script.cpp_CScript_FUN_005606e0 ; 00560562
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005606e0(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 00560562
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 00560567
     TEST EAX,EAX                        ; 0056056a
     JL 0x0056058f                       ; 0056056c

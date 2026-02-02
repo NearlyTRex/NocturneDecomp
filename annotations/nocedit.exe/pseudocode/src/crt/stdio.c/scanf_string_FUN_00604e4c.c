@@ -49,7 +49,7 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
   }
   iVar5 = 0;
   while (character = scanf_getc_wrapper(state),
-        (g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) != 0) {
+        (g_CharacterClassificationTable[(byte)((char)character + 1)] & 2) != 0) {
     iVar5 = iVar5 + 1;
   }
   if ((state->flags & 2) == 0) {
@@ -79,7 +79,7 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
         }
         character = scanf_getc_with_width(state);
         if (character == 0xffffffff) goto LAB_00604f88;
-      } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2U) == 0);
+      } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 2) == 0);
     }
     scanf_ungetc_wrapper(character,state);
   }

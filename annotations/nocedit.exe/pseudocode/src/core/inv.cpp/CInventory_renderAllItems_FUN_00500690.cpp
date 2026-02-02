@@ -330,7 +330,7 @@ LAB_005009c0:
       dVar10 = round((double)(local_680 * 65535.0f));
       local_6c = (int)ROUND(dVar10);
     }
-    fStack_684 = (float)(g_HeroActors[g_LocalHeroIndex]->base).hit_points * (float)0.01;
+    fStack_684 = (g_HeroActors[g_LocalHeroIndex]->base).hit_points * (float)0.01;
     if (fStack_684 < 0.0) {
       fStack_684 = 0.0;
     }

@@ -1,0 +1,496 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 42,
+        "line": 78,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 80,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 117,
+        "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 120,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 78,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 80,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 89,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 89,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 91,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 93,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 96,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 98,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 98,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 100,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 102,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 111,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 117,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 120,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 259,
+    "complexity_score": 173,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 19,
+    "pseudocode_lines": 123,
+    "suspect_count": 4,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 382
+  },
+  "cross_references": [
+    {
+      "addr": "00554880",
+      "from_addr": "005548e4",
+      "name": "core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005542b0",
+    "address_range": [
+      [
+        "005542b0",
+        "00554610"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0",
+    "signature": "void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralTexture *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00554670",
+      "is_variadic": false,
+      "name": "core_procedur.cpp_CProceduralTexture_applyRipple_FUN_00554670"
+    },
+    {
+      "addr": "00554620",
+      "is_variadic": false,
+      "name": "core_procedur.cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "006007a0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "005fdc00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
+      "addr": "00481a50",
+      "is_variadic": false,
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "005eda20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640938",
+      "name": "s_water_d_raw_00640938",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640944",
+      "name": "s_wb_00640944",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640947",
+      "name": "s_art_00640947",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064094b",
+      "name": "s_core_procedur_cpp_0064094b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640960",
+      "name": "s_Can_t_write_water_frame_00640960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640978",
+      "name": "s_core_procedur_cpp_00640978",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064098d",
+      "name": "s_water_d_act_0064098d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640999",
+      "name": "s_wb_00640999",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064099c",
+      "name": "s_art_0064099c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006409a0",
+      "name": "s_core_procedur_cpp_006409a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006409b5",
+      "name": "s_Can_t_write_water_frame_006409b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006409cd",
+      "name": "s_core_procedur_cpp_006409cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006409e4",
+      "name": "FLOAT_006409e4",
+      "type": "float",
+      "value": "0.00003051851"
+    },
+    {
+      "addr": "006409e8",
+      "name": "DOUBLE_006409e8",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "006409f0",
+      "name": "DOUBLE_006409f0",
+      "type": "double",
+      "value": "128"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005548e4",
+        "call_type": "direct",
+        "caller": "core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.283720930232558,
+    "instruction_count": 215,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 19,
+      "CBRANCH": 11,
+      "COPY": 234,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_MULT": 6,
+      "INT2FLOAT": 4,
+      "INT_ADD": 97,
+      "INT_AND": 155,
+      "INT_CARRY": 31,
+      "INT_EQUAL": 123,
+      "INT_LEFT": 6,
+      "INT_LESS": 12,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 37,
+      "INT_SLESS": 66,
+      "INT_SUB": 76,
+      "INT_XOR": 9,
+      "LOAD": 36,
+      "POPCOUNT": 60,
+      "RETURN": 1,
+      "STORE": 82
+    },
+    "pcode_op_count": 1136
+  },
+  "stack_frame": {
+    "frame_size": 316,
+    "local_size": 312,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CProceduralTexture *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CProceduralTexture *)((int)",
+      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar9->unk1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(CProceduralTexture *)((int)",
+      "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->unk1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(CProceduralTexture *)((int)",
+      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->unk1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 114,
+      "match": "CONCAT11",
+      "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

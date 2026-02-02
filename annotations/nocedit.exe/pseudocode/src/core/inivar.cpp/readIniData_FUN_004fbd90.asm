@@ -257,7 +257,7 @@ section .text
     MOV EBP,dword ptr [0x0067b654]      ; 004fc010 | g_CGamePtr
     PUSH EBP                            ; 004fc016 | g_CGameInstance
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0 ; 004fc017
-        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
+        ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 004fc01c | g_CGamePtr
     ADD ESP,0x4                         ; 004fc021
     ADD EAX,0x28                        ; 004fc024

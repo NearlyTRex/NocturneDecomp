@@ -57,7 +57,7 @@ LAB_005784e7:
         *pcVar5 = '\0';
       }
       pcVar2 = local_19c;
-      while ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 2U) != 0) {
+      while ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 2) != 0) {
         pcVar2 = pcVar2 + 1;
       }
       if (*pcVar2 != '\0') {

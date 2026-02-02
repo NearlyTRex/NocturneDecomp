@@ -2,13 +2,11 @@
 // Address: 00541ff0
 // Address Range: [[00541ff0, 0054236f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_removeChatOut(CNetGame* param_1) */
-
-void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
+void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this_ptr)
 
 {
   char cVar1;
@@ -17,21 +15,20 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
   int *piVar4;
   int *piVar5;
   char *pcVar6;
-  int in_stack_00000004;
   float local_158;
   float local_154;
   float local_150;
   char local_143 [259];
-  int local_40;
+  SNetPlayer *local_40;
   int *local_3c;
   int local_38;
   int *local_34;
   int local_30;
   int *local_2c;
   int local_28;
-  int local_24;
+  CNetGame *local_24;
   int *local_20;
-  int local_1c;
+  char *local_1c;
   int local_18;
   
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -47,7 +44,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
   local_38 = 0;
   g_LastPingTime = iVar2;
   if (0 < DAT_02f98ad0) {
-    local_40 = in_stack_00000004 + 0x20;
+    local_40 = this_ptr->players;
     local_3c = &DAT_02f98ad4;
     do {
       local_2c = local_3c;
@@ -60,16 +57,15 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
       if ((float)30 < local_154) {
         local_154 = 30.0;
       }
-      if ((local_154 < (float)20) &&
-         (local_28 = 0, 0 < *(int *)(in_stack_00000004 + 0x1c))) {
+      if ((local_154 < (float)20) && (local_28 = 0, 0 < this_ptr->player_count)) {
         local_34 = local_3c + 5;
         local_20 = local_3c;
-        local_24 = in_stack_00000004;
-        local_1c = local_40 + 0x1c;
+        local_24 = this_ptr;
+        local_1c = local_40->name + 0x1c;
         piVar4 = local_3c;
         do {
           if ((char)local_20[2] == '\0') {
-            local_150 = *(float *)(local_24 + 0x48) * (float)4;
+            local_150 = local_24->players[0].ping_quality * (float)4;
             local_30 = 0;
             if (local_150 < (float)2) {
               local_150 = 2.0;
@@ -97,16 +93,16 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
                 pcVar6[1] = cVar1;
                 pcVar6 = pcVar6 + 2;
               } while (cVar1 != '\0');
-              core_netgame_cpp_CNetGame_FUN_00541230();
+              core_netgame_cpp_CNetGame_FUN_00541230(this_ptr);
               piVar4[3] = g_CurrentGameTime;
             }
           }
           piVar4 = piVar4 + 1;
           local_20 = (int *)((int)local_20 + 1);
-          local_24 = local_24 + 0x78;
+          local_24 = (CNetGame *)(local_24->players[0].unk1 + 0x20);
           local_1c = local_1c + 0x78;
           local_28 = local_28 + 1;
-        } while (local_28 < *(int *)(in_stack_00000004 + 0x1c));
+        } while (local_28 < this_ptr->player_count);
       }
       iVar2 = local_38;
       if (local_30 == 0) {

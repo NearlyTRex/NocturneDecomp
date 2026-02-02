@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 42,
+        "category": "other",
+        "column": 51,
         "line": 17,
-        "message": "'_WStack00000004' was not declared in this scope; did you mean 'WStack00000004'?"
+        "message": "cast from 'CNetGame*' to 'WORD' {aka 'short unsigned int'} loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -20,17 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 51,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 26
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -50,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_FUN_0053f830",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -83,8 +82,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -108,38 +107,35 @@
     "pcode_op_count": 49
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 5,
       "match": "in_stack_00000008",
       "text": "LPWSADATA in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_00000008",
-      "text": "support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WStack00000004,in_stack_00000008);",
+      "text": "support_trisock_cpp_cleanupWinsock_FUN_005e1ee0((WORD)this_ptr,in_stack_00000008);",
       "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

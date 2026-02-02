@@ -20,7 +20,7 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip *this_ptr)
   ADJ(this_ptr_00).base.vtable._ub = &g_CDripVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"stalag.kfm");
-  ADJ(this_ptr_00)->type = 2;
+  ADJ(this_ptr_00)->type = DRIP_TYPE_STALAG;
   ADJ(this_ptr_00)->auto_drop = 1;
   (ADJ(this_ptr_00)->vel).z = 0.0;
   (ADJ(this_ptr_00)->vel).y = (ADJ(this_ptr_00)->vel).z;

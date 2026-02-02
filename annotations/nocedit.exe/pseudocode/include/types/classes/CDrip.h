@@ -5,13 +5,14 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EDripType.h"
 
 // Structure: CDrip
 // Ghidra size: 0x33c (828 bytes)
 typedef struct CDrip {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int type; // 0x2d4
+    EDripType type; // 0x2d4
     int auto_drop; // 0x2d8
     char unk1[4]; // 0x2dc
     float min_auto_drip_time; // 0x2e0

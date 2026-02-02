@@ -27,9 +27,9 @@ void __cdecl CArmour::setup(CArmour *this_ptr);
 // Address: 00412260
 void __cdecl CArmour::process(CArmour *this_ptr,float delta_time);
 
-// Original: core_armour.cpp_CArmour_serialize_FUN_004123a0
+// Original: core_armour.cpp_CArmour_archive_FUN_004123a0
 // Address: 004123a0
-void __cdecl CArmour::serialize(CArmour *this_ptr);
+void __cdecl CArmour::archive(CArmour *this_ptr);
 
 // Original: core_armour.cpp_CArmour_processDamage_FUN_00412400
 // Address: 00412400

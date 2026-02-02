@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined1       Stack[-0x38]:1  local_38
@@ -14,8 +16,8 @@
 ; undefined4       Stack[-0x17]:4  local_17
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541406
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 at 005429e5
-;   core_netgame.cpp_FUN_00541390 at 00541406
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dd48
@@ -136,7 +138,7 @@ section .text
     PUSH ESI                            ; 00543107
     PUSH EBX                            ; 00543108
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543109
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0()
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
     MOV EAX,dword ptr [EBX + 0x114]     ; 0054310e
     SHL EAX,0x3                         ; 00543114
     MOV EDX,EAX                         ; 00543117

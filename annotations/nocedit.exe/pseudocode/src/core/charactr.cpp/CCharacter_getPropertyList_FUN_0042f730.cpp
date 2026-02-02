@@ -12,23 +12,34 @@ core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730
 
 {
   int iVar1;
-  int iVar2;
+  CCharacter *pCVar2;
+  int iVar3;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e500(property_list);
-  iVar2 = 0;
+  core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500
+            (property_list,"cloth",(CClothList *)&this_ptr->cloth_count,-1);
+  iVar3 = 0;
   iVar1 = *(int *)this_ptr->carry_hands[0].unk1;
+  pCVar2 = this_ptr;
   while (iVar1 < 0) {
-    iVar2 = iVar2 + 1;
-    if (1 < iVar2) goto LAB_0042f793;
-    iVar1 = *(int *)this_ptr->carry_hands[1].unk1;
-    this_ptr = (CCharacter *)&(this_ptr->base).orient_matrix.m[0].z;
+    iVar3 = iVar3 + 1;
+    if (1 < iVar3) goto LAB_0042f793;
+    iVar1 = *(int *)pCVar2->carry_hands[1].unk1;
+    pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
   }
-  core_actor_cpp_CActorPropertyList_FUN_0040e670(property_list);
+  core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
+            (property_list,"Items Carried",
+             core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340,
+             core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0);
 LAB_0042f793:
-  core_actor_cpp_CActorPropertyList_FUN_0040e480(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e330(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e290(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e640(property_list);
+  core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
+            (property_list,"talkToMeEvent",this_ptr->talk_to_me_event);
+  core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
+            (property_list,"Etheral",(int *)(this_ptr->unk2 + 0x74));
+  core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
+            (property_list,"Descriptive name",this_ptr->descriptive_name,100,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
+            (property_list,"Health bar",3,(int *)&PTR_s_None_0066e758);
   return;
 }

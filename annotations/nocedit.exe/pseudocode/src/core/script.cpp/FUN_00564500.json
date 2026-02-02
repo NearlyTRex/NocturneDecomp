@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 368,
+    "complexity_score": 139,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 8,
-    "pseudocode_lines": 23,
-    "suspect_count": 34,
+    "pseudocode_lines": 24,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 62
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -60,14 +60,14 @@
   "globals": [
     {
       "addr": "0310fd44",
-      "name": "DAT_0310fd44",
-      "type": "undefined4",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310fd48",
-      "name": "DAT_0310fd48",
-      "type": "undefined4",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
       "value": null
     },
     {
@@ -84,26 +84,26 @@
     },
     {
       "addr": "031141c0",
-      "name": "DAT_031141c0",
-      "type": "undefined4",
+      "name": "g_SelectionStartColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141c4",
-      "name": "DAT_031141c4",
-      "type": "undefined4",
+      "name": "g_SelectionStartLine",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141c8",
-      "name": "DAT_031141c8",
-      "type": "undefined4",
+      "name": "g_SelectionEndColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141cc",
-      "name": "DAT_031141cc",
-      "type": "undefined4",
+      "name": "g_SelectionEndLine",
+      "type": "int",
       "value": null
     }
   ],
@@ -208,226 +208,65 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_031141cc",
-      "text": "DAT_031141cc = -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_031141c8",
-      "text": "DAT_031141c8 = -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_031141c0",
-      "text": "DAT_031141c0 = -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_031141c4",
-      "text": "DAT_031141c4 = -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_031141cc",
-      "text": "DAT_031141cc = DAT_0310fd48;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0310fd48",
-      "text": "DAT_031141cc = DAT_0310fd48;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_031141c8",
-      "text": "DAT_031141c8 = DAT_0310fd44;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_0310fd44",
-      "text": "DAT_031141c8 = DAT_0310fd44;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_031141c0",
-      "text": "DAT_031141c0 = DAT_0310fd4c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_0310fd4c",
-      "text": "DAT_031141c0 = DAT_0310fd4c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_031141c4",
-      "text": "DAT_031141c4 = DAT_0310fd50;",
+      "text": "g_SelectionStartColumn = DAT_0310fd4c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_0310fd50",
-      "text": "DAT_031141c4 = DAT_0310fd50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_0310fd48",
-      "text": "if (((DAT_0310fd48 <= DAT_0310fd50) &&",
+      "text": "g_SelectionStartLine = DAT_0310fd50;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 16,
       "match": "DAT_0310fd50",
-      "text": "if (((DAT_0310fd48 <= DAT_0310fd50) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_031141cc",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
+      "text": "if (((g_CurrentEditingLine <= DAT_0310fd50) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_0310fd50",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_031141c8",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
+      "text": "(g_SelectionEndLine = DAT_0310fd50, g_SelectionEndColumn = DAT_0310fd4c,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_0310fd4c",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_031141c0",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_0310fd44",
-      "text": "(DAT_031141cc = DAT_0310fd50, DAT_031141c8 = DAT_0310fd4c, DAT_031141c0 = DAT_0310fd44,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_031141c4",
-      "text": "DAT_031141c4 = DAT_0310fd48, DAT_0310fd50 <= DAT_0310fd48)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0310fd48",
-      "text": "DAT_031141c4 = DAT_0310fd48, DAT_0310fd50 <= DAT_0310fd48)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0310fd50",
-      "text": "DAT_031141c4 = DAT_0310fd48, DAT_0310fd50 <= DAT_0310fd48)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0310fd48",
-      "text": "DAT_031141c4 = DAT_0310fd48, DAT_0310fd50 <= DAT_0310fd48)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_031141c4",
-      "text": "(DAT_031141c4 = DAT_0310fd50, DAT_0310fd4c < DAT_0310fd44)) {",
+      "text": "(g_SelectionEndLine = DAT_0310fd50, g_SelectionEndColumn = DAT_0310fd4c,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_0310fd50",
-      "text": "(DAT_031141c4 = DAT_0310fd50, DAT_0310fd4c < DAT_0310fd44)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0310fd4c",
-      "text": "(DAT_031141c4 = DAT_0310fd50, DAT_0310fd4c < DAT_0310fd44)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0310fd44",
-      "text": "(DAT_031141c4 = DAT_0310fd50, DAT_0310fd4c < DAT_0310fd44)) {",
+      "text": ", DAT_0310fd50 <= g_CurrentEditingLine)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 20,
-      "match": "DAT_031141c8",
-      "text": "DAT_031141c8 = DAT_0310fd44;",
+      "match": "DAT_0310fd50",
+      "text": "(g_SelectionStartLine = DAT_0310fd50, DAT_0310fd4c < g_CurrentEditingColumn)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 20,
-      "match": "DAT_0310fd44",
-      "text": "DAT_031141c8 = DAT_0310fd44;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_031141c0",
-      "text": "DAT_031141c0 = DAT_0310fd4c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
       "match": "DAT_0310fd4c",
-      "text": "DAT_031141c0 = DAT_0310fd4c;",
+      "text": "(g_SelectionStartLine = DAT_0310fd50, DAT_0310fd4c < g_CurrentEditingColumn)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_0310fd4c",
+      "text": "g_SelectionStartColumn = DAT_0310fd4c;",
       "type": "undefined_data"
     }
   ]

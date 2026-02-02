@@ -15,25 +15,18 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 94,
+    "complexity_score": 49,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 87
@@ -84,19 +77,19 @@
   "globals": [
     {
       "addr": "0310ec9c",
-      "name": "DAT_0310ec9c",
-      "type": "undefined4",
+      "name": "g_ScriptEventsEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310eca0",
-      "name": "DAT_0310eca0",
-      "type": "undefined1",
+      "name": "g_ScriptErrorBuffer",
+      "type": "char[2048]",
       "value": null
     },
     {
       "addr": "0310f4b0",
-      "name": "DAT_0310f4b0",
+      "name": "g_ScriptPickList",
       "type": "CPickList",
       "value": null
     }
@@ -166,39 +159,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0310ec9c",
-      "text": "DAT_0310ec9c = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0310f4b0",
-      "text": "shape_edittool_cpp_CPickList_clear_FUN_004a5770(&DAT_0310f4b0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_2",
-      "text": "*param_2 = *(int *)(*(int *)(this_ptr->unk4 + 0x1c) + iVar2 * 8) + -1;",
+      "text": "*param_2 = this_ptr->parsed_lines[iVar2].line_number + -1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_0310eca0",
-      "text": "return (int *)&DAT_0310eca0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0310ec9c",
-      "text": "DAT_0310ec9c = 0;",
-      "type": "undefined_data"
     }
   ]
 }

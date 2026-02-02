@@ -13,14 +13,14 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Ln_d_Col_d_00643d74
-;   undefined4 DAT_0068105c
+;   int g_AutoIndentEnabled = 0x1
 ;   int g_ActiveRenderColor
-;   CEdScrollBar CEdScrollBar_0310fcd8
-;   undefined4 CEdScrollBar_0310fcd8.max_value
-;   CEdScrollBar CEdScrollBar_0310fd0c
+;   CEdScrollBar g_ScriptEditorVScrollBar
+;   undefined4 g_ScriptEditorVScrollBar.max_value
+;   CEdScrollBar g_ScriptEditorHScrollBar
 ;   undefined4 DAT_0310fd40+1
-;   undefined4 DAT_0310fd44
-;   undefined4 DAT_0310fd48
+;   int g_CurrentEditingColumn
+;   int g_CurrentEditingLine
 ;   undefined1 DAT_0310fdc0
 ;   int INT_031141d0
 ;   int INT_031141d4
@@ -96,11 +96,11 @@ section .text
     CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 00564653
         ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 00564658
-    PUSH 0x310fd0c                      ; 0056465b | CEdScrollBar_0310fd0c
+    PUSH 0x310fd0c                      ; 0056465b | g_ScriptEditorHScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 ; 00564660
         ;   XREF to: 004a5c10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00564665
-    PUSH 0x310fcd8                      ; 00564668 | CEdScrollBar_0310fcd8
+    PUSH 0x310fcd8                      ; 00564668 | g_ScriptEditorVScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 ; 0056466d
         ;   XREF to: 004a5c10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)
     MOV EAX,[0x031141ec]                ; 00564672 | DAT_031141ec
@@ -118,11 +118,11 @@ section .text
     PUSH EBP                            ; 00564694
     CALL engine_matrix.c_pushViewport_FUN_0050e320 ; 00564695
         ;   XREF to: 0050e320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)
-    MOV EBX,dword ptr [0x0310fcd8]      ; 0056469a | CEdScrollBar_0310fcd8
+    MOV EBX,dword ptr [0x0310fcd8]      ; 0056469a | g_ScriptEditorVScrollBar
     ADD ESP,0x10                        ; 005646a0
-    MOV ECX,dword ptr [0x0310fce0]      ; 005646a3 | CEdScrollBar_0310fcd8.max_value
+    MOV ECX,dword ptr [0x0310fce0]      ; 005646a3 | g_ScriptEditorVScrollBar.max_value
         ;   Label: LAB_005646a3
-    MOV EAX,[0x0310fcd8]                ; 005646a9 | CEdScrollBar_0310fcd8
+    MOV EAX,[0x0310fcd8]                ; 005646a9 | g_ScriptEditorVScrollBar
     ADD EAX,ECX                         ; 005646ae
     CMP EBX,EAX                         ; 005646b0
     JLE 0x005647a9                      ; 005646b2
@@ -130,13 +130,13 @@ section .text
     TEST byte ptr [0x0310fd41],0x40     ; 005646b8 | DAT_0310fd40+1
     JNZ 0x00564725                      ; 005646bf
         ;   XREF to: 00564725 (CONDITIONAL_JUMP)  ; LAB_00564725
-    MOV EBX,dword ptr [0x0310fd0c]      ; 005646c1 | CEdScrollBar_0310fd0c
-    MOV EAX,[0x0310fd44]                ; 005646c7 | DAT_0310fd44
+    MOV EBX,dword ptr [0x0310fd0c]      ; 005646c1 | g_ScriptEditorHScrollBar
+    MOV EAX,[0x0310fd44]                ; 005646c7 | g_CurrentEditingColumn
     SUB EAX,EBX                         ; 005646cc
     MOV EBX,dword ptr [0x03114204]      ; 005646ce | INT_03114204
     IMUL EBX,EAX                        ; 005646d4
-    MOV EDI,dword ptr [0x0310fcd8]      ; 005646d7 | CEdScrollBar_0310fcd8
-    MOV EAX,[0x0310fd48]                ; 005646dd | DAT_0310fd48
+    MOV EDI,dword ptr [0x0310fcd8]      ; 005646d7 | g_ScriptEditorVScrollBar
+    MOV EAX,[0x0310fd48]                ; 005646dd | g_CurrentEditingLine
     MOV EBP,dword ptr [0x03114208]      ; 005646e2 | DAT_03114208
     SUB EAX,EDI                         ; 005646e8
     IMUL EAX,EBP                        ; 005646ea
@@ -147,7 +147,7 @@ section .text
     ADD EAX,EDX                         ; 00564704
     ADD EBX,ESI                         ; 00564706
     LEA ESI,[EAX + EBP*0x1]             ; 00564708
-    MOV EDI,dword ptr [0x0068105c]      ; 0056470b | DAT_0068105c
+    MOV EDI,dword ptr [0x0068105c]      ; 0056470b | g_AutoIndentEnabled
     DEC ESI                             ; 00564711
     TEST EDI,EDI                        ; 00564712
     JZ 0x005647b9                       ; 00564714
@@ -162,10 +162,10 @@ section .text
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 00564725
         ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
         ;   Label: LAB_00564725
-    MOV EAX,[0x0310fd44]                ; 0056472a | DAT_0310fd44
+    MOV EAX,[0x0310fd44]                ; 0056472a | g_CurrentEditingColumn
     INC EAX                             ; 0056472f
     PUSH EAX                            ; 00564730
-    MOV EAX,[0x0310fd48]                ; 00564731 | DAT_0310fd48
+    MOV EAX,[0x0310fd48]                ; 00564731 | g_CurrentEditingLine
     INC EAX                             ; 00564736
     PUSH EAX                            ; 00564737
     PUSH 0x643d74                       ; 00564738 | = "Ln %d, Col %d"

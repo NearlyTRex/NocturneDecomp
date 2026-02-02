@@ -11,7 +11,7 @@
 ;   TerminatedCString s_ScatDazzle_0062f0f2
 ;
 ; Called Functions:
-;   core_npc.cpp_CNPC_FUN_00544b70
+;   core_npc.cpp_CNPC_renderBackground_FUN_00544b70
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_004f615f
     PUSH ECX                            ; 004f6163
     PUSH EBX                            ; 004f6164
-    CALL core_npc.cpp_CNPC_FUN_00544b70 ; 004f6165
-        ;   XREF to: 00544b70 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_FUN_00544b70(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_renderBackground_FUN_00544b70 ; 004f6165
+        ;   XREF to: 00544b70 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_renderBackground_FUN_00544b70(CNPC * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004f616a
     POP EBX                             ; 004f616d
     RET                                 ; 004f616e

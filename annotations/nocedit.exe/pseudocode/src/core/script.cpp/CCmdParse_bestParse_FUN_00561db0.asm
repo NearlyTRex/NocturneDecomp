@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,int param_2,int param_3,int *param_4,int param_5)
+; __cdecl int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates, int template_count)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int *            Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
+; char *           Stack[0x8]:4   input_text
+; int              Stack[0xc]:4   cursor_position
+; char * *         Stack[0x10]:4   templates
+; int              Stack[0x14]:4   template_count
 ; Local Variables:
-; undefined1       Stack[-0x464]:1  local_464
+; CPickList        Stack[-0x464]:936  local_464
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -20,7 +20,7 @@
 ;   core_script.cpp_CScript_FUN_00565d00 at 00565d4c
 ;   core_script.cpp_CScript_FUN_00565e70 at 00565f27
 ;   core_script.cpp_CScript_FUN_00565f70 at 00565fcf
-;   core_script.cpp_FUN_00561690 at 005616cd
+;   core_script.cpp_parseCommandWithTemplates_FUN_00561690 at 005616cd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643b09
@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CCmdParse_FUN_00562620
+;   core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -66,7 +66,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x470]     ; 00561def
     PUSH EAX                            ; 00561df6
     CALL core_script.cpp_CCmdParse_parse_FUN_00561fd0 ; 00561df7
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, int param_2, char * param_3)
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, char * input_text, char * template_text)
     ADD ESP,0xc                         ; 00561dfc
     MOV EDX,dword ptr [ESP + 0x450]     ; 00561dff
     MOV ESI,EAX                         ; 00561e06
@@ -148,13 +148,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x470]     ; 00561ecd
     PUSH ESI                            ; 00561ed4
     CALL core_script.cpp_CCmdParse_parse_FUN_00561fd0 ; 00561ed5
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, int param_2, char * param_3)
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, char * input_text, char * template_text)
     ADD ESP,0xc                         ; 00561eda
     MOV EDI,dword ptr [ESP + 0x470]     ; 00561edd
     PUSH EDI                            ; 00561ee4
     PUSH ESI                            ; 00561ee5
-    CALL core_script.cpp_CCmdParse_FUN_00562620 ; 00561ee6
-        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_FUN_00562620(CCmdParse * this_ptr, int param_2)
+    CALL core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 ; 00561ee6
+        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse * this_ptr, int cursor_position)
     ADD ESP,0x8                         ; 00561eeb
     MOV ESI,EAX                         ; 00561eee
     MOV EAX,ESI                         ; 00561ef0
@@ -169,8 +169,8 @@ section .text
     PUSH ECX                            ; 00561f04
     MOV EAX,dword ptr [ESP + 0x46c]     ; 00561f05
     PUSH EAX                            ; 00561f0c
-    CALL core_script.cpp_CCmdParse_FUN_00562620 ; 00561f0d
-        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_FUN_00562620(CCmdParse * this_ptr, int param_2)
+    CALL core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 ; 00561f0d
+        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse * this_ptr, int cursor_position)
     ADD ESP,0x8                         ; 00561f12
     MOV dword ptr [ESP + 0x448],EAX     ; 00561f15
     TEST EAX,EAX                        ; 00561f1c

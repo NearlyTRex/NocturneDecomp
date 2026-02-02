@@ -1,18 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(void)
+; __cdecl void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
 ;
 ; XREF[8]:
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540cc0
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053faac
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 00543541
 ;   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 at 00542f73
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0 at 00543109
 ;   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970 at 00543a18
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 at 0054041a
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00541c80 at 00541e0b
-;   core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900 at 0053faac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063d90d
@@ -53,7 +56,7 @@ section .text
     PUSH EAX                            ; 005411ef
     PUSH ESI                            ; 005411f0
     CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005411f1
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230()
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230(CNetGame * this_ptr)
     ADD ESP,0xc                         ; 005411f6
     POP EBP                             ; 005411f9
     POP ESI                             ; 005411fa

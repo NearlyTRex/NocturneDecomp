@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_platfrm.cpp_FUN_0054f2a0
+;   core_platfrm.cpp_CPlatform_writeDependencies_FUN_0054f2a0
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 004422f4
     MOV ECX,dword ptr [ESP + 0x8]       ; 004422f5
     PUSH ECX                            ; 004422f9
-    CALL core_platfrm.cpp_FUN_0054f2a0  ; 004422fa
-        ;   XREF to: 0054f2a0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_0054f2a0()
+    CALL core_platfrm.cpp_CPlatform_writeDependencies_FUN_0054f2a0 ; 004422fa
+        ;   XREF to: 0054f2a0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_writeDependencies_FUN_0054f2a0(CPlatform * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004422ff
     RET                                 ; 00442302
 

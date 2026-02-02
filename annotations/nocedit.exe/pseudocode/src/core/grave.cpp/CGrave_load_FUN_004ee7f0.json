@@ -17,13 +17,13 @@
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 21,
+        "column": 86,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 59,
+        "column": 57,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -47,13 +47,13 @@
       },
       {
         "category": "other",
-        "column": 62,
+        "column": 61,
         "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 55,
         "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -88,29 +88,29 @@
   },
   "function_calls": [
     {
-      "addr": "0040c1c0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
-    },
-    {
       "addr": "0040b770",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
     },
     {
       "addr": "0040b7f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
     },
     {
       "addr": "0040b8f0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
     },
     {
       "addr": "0040b5c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
     }
   ],
   "globals": [
@@ -229,7 +229,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -241,9 +241,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004[2].location.position.z,\"fps\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b770(&in_stack_00000004[2].location.position.z,\"fps\")",
       "type": "stack_param"
     },
     {
@@ -292,14 +292,14 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
-      "text": "((char **)&in_stack_00000004[2].orient.heading,\"startCondition\");",
+      "text": "((char *)&in_stack_00000004[2].orient.heading,\"startCondition\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
-      "text": "((char **)(in_stack_00000004[2].create_event + 0x24),\"startSound\");",
+      "text": "(in_stack_00000004[2].create_event + 0x24,\"startSound\");",
       "type": "stack_param"
     }
   ],

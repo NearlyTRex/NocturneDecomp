@@ -12,17 +12,17 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_0054bd00(CPackedBitm
   int iVar1;
   int iVar2;
   
-  this_ptr->extension = this_ptr->bitmap_array->width;
-  this_ptr->base_path = this_ptr->bitmap_array->height;
+  this_ptr->width = this_ptr->bitmap_array->width;
+  this_ptr->height = this_ptr->bitmap_array->height;
   iVar1 = 1;
   if (1 < this_ptr->bitmap_count) {
     iVar2 = 0x24;
     do {
-      if (this_ptr->extension != *(int *)(this_ptr->bitmap_array->filename + iVar2 + 0x18)) {
-        this_ptr->extension = 0;
+      if (this_ptr->width != *(int *)(this_ptr->bitmap_array->filename + iVar2 + 0x18)) {
+        this_ptr->width = 0;
       }
-      if (this_ptr->base_path != *(int *)(this_ptr->bitmap_array->filename + iVar2 + 0x1c)) {
-        this_ptr->base_path = 0;
+      if (this_ptr->height != *(int *)(this_ptr->bitmap_array->filename + iVar2 + 0x1c)) {
+        this_ptr->height = 0;
       }
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 0x24;

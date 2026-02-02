@@ -26,7 +26,7 @@
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604b43
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   STRTOD_FUNC* PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_00685410 = 0060ad30
 ;
 ; Called Functions:

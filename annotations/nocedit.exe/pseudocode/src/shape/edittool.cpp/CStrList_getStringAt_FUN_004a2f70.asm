@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   index
 ;
 ; XREF[61]:
-;   core_charactr.cpp_CCharacter_FUN_0042f3e0 at 0042f639
+;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f639
 ;   core_cloth.cpp_FUN_0043c430 at 0043c523
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7a6
 ;   core_mission.cpp_FUN_00524c20 at 00524cb6

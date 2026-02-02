@@ -15,10 +15,10 @@
 ;   TerminatedCString s_Persistant_event_flag_0061e488
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e290
-;   core_actor.cpp_CActorPropertyList_FUN_0040e330
-;   core_actor.cpp_CActorPropertyList_FUN_0040e350
-;   core_actor.cpp_CActorPropertyList_FUN_0040e480
+;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480
+;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
+;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -42,15 +42,15 @@ section .text
     PUSH EAX                            ; 0046fea3
     PUSH 0x61e440                       ; 0046fea4 | = "Actor who goes here"
     PUSH ESI                            ; 0046fea9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 0046feaa
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 0046feaa
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 0046feaf
     LEA EAX,[EBX + 0x188]               ; 0046feb2
     PUSH EAX                            ; 0046feb8
     PUSH 0x61e454                       ; 0046feb9 | = "Event to raise when in place"
     PUSH ESI                            ; 0046febe
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e480 ; 0046febf
-        ;   XREF to: 0040e480 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e480(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480 ; 0046febf
+        ;   XREF to: 0040e480 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addButton_FUN_0040e480(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 0046fec4
     PUSH 0x0                            ; 0046fec7
     PUSH 0x27                           ; 0046fec9
@@ -58,15 +58,15 @@ section .text
     PUSH EAX                            ; 0046fed1
     PUSH 0x61e471                       ; 0046fed2 | = "Actor class to go here"
     PUSH ESI                            ; 0046fed7
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0046fed8
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 ; 0046fed8
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList * this_ptr, char * property_name, char * data_ptr, int max_length, ...)
     ADD ESP,0x14                        ; 0046fedd
     ADD EBX,0x1ec                       ; 0046fee0
     PUSH EBX                            ; 0046fee6
     PUSH 0x61e488                       ; 0046fee7 | = "Persistant event flag"
     PUSH ESI                            ; 0046feec
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 0046feed
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330 ; 0046feed
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 0046fef2
     POP ESI                             ; 0046fef5
     POP EBX                             ; 0046fef6

@@ -35,9 +35,9 @@ int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 // Address: 004f1ed0
 CBoundingBox3D * __cdecl CHealthItem(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_health.cpp_CHealthItem_serialize_FUN_004f1f20
+// Original: core_health.cpp_CHealthItem_archive_FUN_004f1f20
 // Address: 004f1f20
-void __cdecl CHealthItem::serialize(CHealthItem *this_ptr);
+void __cdecl CHealthItem::archive(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_hasCollision_FUN_004f1fa0
 // Address: 004f1fa0

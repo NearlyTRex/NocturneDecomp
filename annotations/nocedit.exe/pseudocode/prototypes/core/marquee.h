@@ -43,9 +43,9 @@ void __cdecl CMarquee(CMarquee *this_ptr);
 // Address: 0050c050
 int __cdecl CMarquee::renderTransparent(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_CMarquee_serialize_FUN_0050c2f0
+// Original: core_marquee.cpp_CMarquee_archive_FUN_0050c2f0
 // Address: 0050c2f0
-void __cdecl CMarquee::serialize(CMarquee *this_ptr);
+void __cdecl CMarquee::archive(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_hasCollision_FUN_0050c370
 // Address: 0050c370

@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   border_color
 ;
 ; XREF[8]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e910
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e910
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d8328
 ;   core_game.cpp_FUN_004d7fa0 at 004d7fec
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 at 0051090a

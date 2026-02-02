@@ -11,7 +11,7 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 005230ab
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
 ;   undefined4 g_ActorClassRegistrations[1]

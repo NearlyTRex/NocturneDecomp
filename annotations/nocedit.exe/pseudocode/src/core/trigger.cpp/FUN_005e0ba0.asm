@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_trigger.cpp_CTrigger_FUN_005e1180 at 005e11fb
-;   core_trigger.cpp_CTrigger_serialize_FUN_005e0690 at 005e0917
+;   core_trigger.cpp_CTrigger_archive_FUN_005e0690 at 005e0917
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005e0b78 = 005e0bba

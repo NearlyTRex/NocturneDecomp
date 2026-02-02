@@ -99,9 +99,9 @@ void __cdecl FUN_004becd0(void);
 // Address: 004bed00
 int __cdecl FUN_004bed00(void);
 
-// Original: core_filmreel.cpp_serialize_FUN_004bede0
+// Original: core_filmreel.cpp_CFilmReel_archive_FUN_004bede0
 // Address: 004bede0
-void __cdecl serialize(void);
+void __cdecl CFilmReel::archive(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmReel_FUN_004bee30
 // Address: 004bee30

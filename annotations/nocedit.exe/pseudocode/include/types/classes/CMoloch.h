@@ -12,6 +12,8 @@ typedef struct CMoloch {
     int in_human_form; // 0x21e88
     int morphing; // 0x21e8c
     float morph_timer; // 0x21e90
-    char unk2[3332]; // 0x21e94
+    char human_to_demon_condition[100]; // 0x21e94
+    char demon_to_human_condition[100]; // 0x21ef8
+    char unk2[3132]; // 0x21f5c
 } CMoloch;
 

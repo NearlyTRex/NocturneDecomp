@@ -39,7 +39,7 @@ core_actor_cpp_registerActorClass_FUN_0040c2e0
     bVar2 = pCVar5->class_name[0];
     pCVar5 = (CDemonActorType *)(pCVar5->class_name + 1);
     if (bVar2 == 0) break;
-    if ((g_CharacterClassificationTable[(byte)(bVar2 + 1)] & 0xe0U) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(bVar2 + 1)] & 0xe0) != 0) {
       iVar3 = tolower((uint)bVar2);
       uVar4 = iVar3 * 0x20001 + uVar4 * 0x80 + (uVar4 >> 0x19);
     }

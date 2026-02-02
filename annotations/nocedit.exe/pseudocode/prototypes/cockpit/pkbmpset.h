@@ -79,18 +79,10 @@ void __cdecl CPackedBitmapSet::loadStoredACTFile(CPackedBitmapSet *this_ptr);
 // Address: 0054c72e
 void __cdecl CPackedBitmapSet::ensureBitmapLoaded(CPackedBitmapSet *this_ptr,int bitmap_index,char *filename);
 
-// Original: cockpit_pkbmpset.cpp_FUN_0054c7a0
-// Address: 0054c7a0
-int __cdecl FUN_0054c7a0(void);
-
-// Original: cockpit_pkbmpset.cpp_FUN_0054c7b0
-// Address: 0054c7b0
-int __cdecl FUN_0054c7b0(void);
-
-// Original: cockpit_pkbmpset.cpp_FUN_0054c7c0
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0
 // Address: 0054c7c0
-void __cdecl FUN_0054c7c0(void);
+void __cdecl CPackedBitmapSet::doNothing(CPackedBitmapSet *this_ptr);
 
-// Original: cockpit_pkbmpset.cpp_FUN_0054c7d0
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing_FUN_0054c7d0
 // Address: 0054c7d0
-void __cdecl FUN_0054c7d0(void);
+void __cdecl CPackedBitmapSet::doNothing(CPackedBitmapSet *this_ptr);

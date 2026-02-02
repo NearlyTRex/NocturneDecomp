@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 004893ab
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e861
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e861
 ;
 ; Referenced Globals:
 ;   int g_TextWrapEnabled = 0x1

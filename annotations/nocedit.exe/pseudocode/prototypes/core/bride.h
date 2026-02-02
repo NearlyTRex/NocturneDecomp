@@ -27,9 +27,9 @@ void __cdecl CBride::setup(CBride *this_ptr);
 // Address: 00423a30
 void __cdecl CBride::process(CBride *this_ptr,float delta_time);
 
-// Original: core_bride.cpp_CBride_serialize_FUN_00424560
+// Original: core_bride.cpp_CBride_archive_FUN_00424560
 // Address: 00424560
-void __cdecl CBride::serialize(CBride *this_ptr);
+void __cdecl CBride::archive(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_FUN_00424600
 // Address: 00424600

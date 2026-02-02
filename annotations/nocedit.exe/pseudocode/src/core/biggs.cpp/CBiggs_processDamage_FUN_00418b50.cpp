@@ -14,11 +14,11 @@ core_biggs_cpp_CBiggs_processDamage_FUN_00418b50(CBiggs *this_ptr,SDamageInfo *d
   float fVar1;
   int iVar2;
   
-  fVar1 = (float)(this_ptr->base).base.hit_points - damage_info->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,7,1);
   }

@@ -10,29 +10,30 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_00538ea0(CDemonMission *this_ptr
 
 {
   CDemonActor *this_ptr_00;
-  int *piVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  CActorPropertyList CStack_2508;
+  int iStack_24fc;
+  int aiStack_24f8 [26];
+  uint auStack_2490 [2337];
   
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {
     if (this_ptr_00 != (CDemonActor *)param_2) {
       (*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);
       core_actor_cpp_FUN_0040e130();
-      (*((this_ptr_00->vtable)._ub)->getPropertyList)(this_ptr_00,&CStack_2508);
-      iVar3 = 0;
-      if (0 < (int)CStack_2508.properties[0].name._0_4_) {
-        iVar2 = 0;
+      (*((this_ptr_00->vtable)._ub)->getPropertyList)
+                (this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);
+      iVar2 = 0;
+      if (0 < iStack_24fc) {
+        iVar1 = 0;
         do {
-          if ((*(int *)(CStack_2508.properties[0].name + iVar2 + 4) == 5) &&
-             (piVar1 = *(int **)(CStack_2508.properties[0].unknown + iVar2 + 4), param_2 == *piVar1)
-             ) {
-            *piVar1 = 0;
+          if ((*(int *)((int)aiStack_24f8 + iVar1) == 5) &&
+             (param_2 == **(int **)((int)auStack_2490 + iVar1))) {
+            **(int **)((int)auStack_2490 + iVar1) = 0;
           }
-          iVar3 = iVar3 + 1;
-          iVar2 = iVar2 + 0xec;
-        } while (iVar3 < (int)CStack_2508.properties[0].name._0_4_);
+          iVar2 = iVar2 + 1;
+          iVar1 = iVar1 + 0xec;
+        } while (iVar2 < iStack_24fc);
       }
     }
   }

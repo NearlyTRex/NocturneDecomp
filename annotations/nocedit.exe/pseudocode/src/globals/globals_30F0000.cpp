@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x30F0000
 // =============================================================================
 
-// undefined1
-undefined1 DAT_030f6159 = {};
+// uchar[65536]
+uchar g_RippleBuffer[65536] = {};
 

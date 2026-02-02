@@ -21,8 +21,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_Script_line_d_006441ae
-;   void* PTR_s_label_006441c0_00680e28 = 006441c0
-;   void* PTR_s_anon_006441c9_00680e2c = 006441c9
+;   char*[141] g_CommandTemplates
+;   undefined4 PTR_s_anon_006441c9_00680e2c
 ;
 ; Called Functions:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
@@ -60,7 +60,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2260]    ; 00567c0c
         ;   Label: LAB_00567c0c
     MOV EBX,dword ptr [ESP + 0x225c]    ; 00567c13
-    MOV ECX,dword ptr [EAX + 0x680e28]  ; 00567c1a | PTR_s_label_006441c0_00680e28 | PTR_s_anon_006441c9_00680e2c
+    MOV ECX,dword ptr [EAX + 0x680e28]  ; 00567c1a | g_CommandTemplates | PTR_s_anon_006441c9_00680e2c
     MOV EAX,dword ptr [EDI + 0x34]      ; 00567c20
     ADD EAX,EBX                         ; 00567c23
     PUSH ECX                            ; 00567c25
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00567c2a
     PUSH EAX                            ; 00567c2e
     CALL core_script.cpp_CCmdParse_parse_FUN_00561fd0 ; 00567c2f
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, int param_2, char * param_3)
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse * this_ptr, char * input_text, char * template_text)
     ADD ESP,0xc                         ; 00567c34
     CMP EAX,0x3                         ; 00567c37
     JL 0x00567ca8                       ; 00567c3a

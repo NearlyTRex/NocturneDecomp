@@ -16,6 +16,7 @@
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CNetGame.h"
+#include "types/classes/CProceduralTexture.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CSpotView.h"
@@ -50,6 +51,9 @@ extern CDemonSet* g_CDemonSetPtr;
 
 // CNetGame*
 extern CNetGame* g_CNetGamePtr;
+
+// CProceduralTexture*
+extern CProceduralTexture* g_CProceduralTexturePtr;
 
 // CScript*
 extern CScript* g_CScriptPtr;
@@ -217,7 +221,7 @@ extern WORD g_WindowsPlatformVersion;
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CEdCheckDestructorNode;
 extern WatcomStaticDestructorNode DAT_0068064c;
-extern WatcomStaticDestructorNode DAT_006809f0;
+extern WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode;
 extern WatcomStaticDestructorNode g_CMouseDestructorNode;
 extern WatcomStaticDestructorNode DAT_00680bc8;
 extern WatcomStaticDestructorNode g_CDemonPodMainDestructorNode;
@@ -310,6 +314,7 @@ extern int g_CPendulumClassVersion;
 extern int g_CPlatformClassVersion;
 extern int g_MaxViewportScanline;
 extern int g_CScatClassVersion;
+extern int g_AutoIndentEnabled;
 extern int g_CSentinelClassVersion;
 extern int g_RenderMirrorsFlag;
 extern int g_CShotgunClassVersion;
@@ -464,7 +469,6 @@ extern undefined4 DAT_00680bd8;
 extern undefined4 DAT_00680bdc;
 extern undefined4 DAT_00680d60;
 extern undefined4 DAT_00680d64;
-extern undefined4 DAT_0068105c;
 extern undefined4 DAT_0068125c;
 extern undefined4 DAT_00681260;
 extern undefined4 DAT_00681a00;

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y_pos
 ;
 ; XREF[133]:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e850 at 0040e960
+;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e960
 ;   core_actor.cpp_drawTextLine_FUN_0040d240 at 0040d256
 ;   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 at 0040d222
 ;   core_cloth.cpp_FUN_0043ddf0 at 0043de28

@@ -11,6 +11,7 @@ core_hero_cpp_CHero_getPropertyList_FUN_004f3f20(CHero *this_ptr,CActorPropertyL
 
 {
   core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e4d0(property_list);
+  core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0
+            (property_list,"State",&(this_ptr->base).model);
   return;
 }

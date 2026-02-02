@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790 at 0040c7a3
 ;   core_event.cpp_FUN_004aa400 at 004aa495
-;   core_script.cpp_GetDemonActor_FUN_005594e0 at 00559566
+;   core_script.cpp_getActor_FUN_005594e0 at 00559566
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00572e20 at 00572e68
 ;
 ; Called Functions:

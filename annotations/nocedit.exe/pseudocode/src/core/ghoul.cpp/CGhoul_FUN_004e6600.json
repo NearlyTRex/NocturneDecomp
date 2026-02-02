@@ -2714,14 +2714,14 @@
       "description": "Unresolved stack parameter",
       "line": 348,
       "match": "in_stack_00000004",
-      "text": "fVar16 = (float)(in_stack_00000004->base).hit_points + in_stack_00000008;",
+      "text": "fVar16 = (in_stack_00000004->base).hit_points + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 348,
       "match": "in_stack_00000008",
-      "text": "fVar16 = (float)(in_stack_00000004->base).hit_points + in_stack_00000008;",
+      "text": "fVar16 = (in_stack_00000004->base).hit_points + in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -2749,14 +2749,14 @@
       "description": "Unresolved stack parameter",
       "line": 351,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).hit_points = (int)fVar16;",
+      "text": "(in_stack_00000004->base).hit_points = fVar16;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 353,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).hit_points = 0x42c80000;",
+      "text": "(in_stack_00000004->base).hit_points = 100.0;",
       "type": "stack_param"
     },
     {
@@ -2966,14 +2966,14 @@
       "description": "Unresolved stack parameter",
       "line": 410,
       "match": "in_stack_00000004",
-      "text": "if ((((float)(in_stack_00000004->base).hit_points < (float)25) &&",
+      "text": "if ((((in_stack_00000004->base).hit_points < (float)25) && (cVar21 != '\\0')",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 411,
       "match": "in_stack_00000004",
-      "text": "(cVar21 != '\\0')) && (in_stack_00000004[1].base.base.validation_magic == 0)) {",
+      "text": ") && (in_stack_00000004[1].base.base.validation_magic == 0)) {",
       "type": "stack_param"
     },
     {
@@ -3715,7 +3715,7 @@
       "description": "Unresolved stack parameter",
       "line": 720,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->base).hit_points = (int)local_14;",
+      "text": "(in_stack_00000004->base).hit_points = local_14;",
       "type": "stack_param"
     },
     {

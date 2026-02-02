@@ -2,9 +2,21 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 28,
+        "line": 26,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 27,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 40,
+        "column": 45,
+        "line": 34,
         "message": "invalid conversion from 'int (*)(char*, char*)' to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
       }
     ],
@@ -19,33 +31,41 @@
       {
         "category": "other",
         "column": 19,
-        "line": 29,
+        "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 28,
-        "line": 34,
+        "column": 16,
+        "line": 27,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 32,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 32,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 95
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 89
   },
   "cross_references": [
     {
       "addr": "00562920",
       "from_addr": "00563d00",
-      "name": "core_script.cpp_FUN_00562920",
+      "name": "core_script.cpp_editParameterValue_FUN_00562920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +123,7 @@
       {
         "call_addr": "00563d00",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -112,7 +132,7 @@
       {
         "call_addr": "005633a2",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -121,7 +141,7 @@
       {
         "call_addr": "00563705",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -130,7 +150,7 @@
       {
         "call_addr": "005632cd",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -139,7 +159,7 @@
       {
         "call_addr": "0056368f",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -148,7 +168,7 @@
       {
         "call_addr": "0056377d",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -157,7 +177,7 @@
       {
         "call_addr": "00562dff",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00562920",
+        "caller": "core_script.cpp_editParameterValue_FUN_00562920",
         "estimated_params": 1,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -225,5 +245,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)",
+      "text": "local_18 = *(uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
 }

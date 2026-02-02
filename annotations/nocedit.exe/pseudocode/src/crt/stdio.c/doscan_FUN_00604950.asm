@@ -15,7 +15,7 @@
 ;   crt_stdio.c_vsscanf_FUN_00600100 at 0060012e
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_stdio.c_parse_format_spec_FUN_00604c1c

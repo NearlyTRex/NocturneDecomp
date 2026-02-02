@@ -12,12 +12,24 @@ core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0
 
 {
   core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(&this_ptr->base,property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e3b0(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e160(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e160(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e330(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e2d0(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e160(property_list);
-  core_actor_cpp_CActorPropertyList_FUN_0040e160(property_list);
+  core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+            (property_list,"Model file (.kfm)",
+             (CKeyFramedModelInstance *)(this_ptr->unk1 + 0xc),0);
+  core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
+            (property_list,"Rotation speed",&this_ptr->rot_speed,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
+            (property_list,"Movement speed",&this_ptr->move_speed,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
+            (property_list,"Follow orders",&this_ptr->follow_orders);
+  core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
+            (property_list,"Periodic sound",this_ptr->unk5);
+  core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
+            (property_list,"Sound period min",&this_ptr->periodic_sound_timer_min,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
+            (property_list,"Sound period max",&this_ptr->periodic_sound_timer_max,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   return;
 }

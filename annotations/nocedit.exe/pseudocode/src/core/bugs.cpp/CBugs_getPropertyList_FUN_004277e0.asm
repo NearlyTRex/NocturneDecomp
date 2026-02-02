@@ -17,9 +17,9 @@
 ;   TerminatedCString s_animateEvent_00616eb5
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e220
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
-;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH EAX                            ; 0042780a
     PUSH 0x616e80                       ; 0042780b | = "bugCount"
     PUSH EDI                            ; 00427810
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e220 ; 00427811
-        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e220(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220 ; 00427811
+        ;   XREF to: 0040e220 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, int min_value, ...)
     ADD ESP,0x18                        ; 00427816
     MOV EBP,dword ptr [ESP + 0x74]      ; 00427819
     MOV dword ptr [EAX + 0x58],0x1      ; 0042781d
@@ -81,8 +81,8 @@ section .text
     PUSH EDI                            ; 00427861
     INC EBX                             ; 00427862
     ADD ESI,0x17c                       ; 00427863
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00427869
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 00427869
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 0042786e
     CMP EBX,EBP                         ; 00427871
     JL 0x00427846                       ; 00427873
@@ -94,24 +94,24 @@ section .text
     PUSH EAX                            ; 0042787f
     PUSH 0x616e96                       ; 00427880 | = "allowChaseEvent"
     PUSH EDI                            ; 00427885
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00427886
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 00427886
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 0042788b
     MOV EAX,dword ptr [ESP + 0x74]      ; 0042788e
     ADD EAX,0x19904                     ; 00427892
     PUSH EAX                            ; 00427897
     PUSH 0x616ea6                       ; 00427898 | = "allowSwarmvent"
     PUSH EDI                            ; 0042789d
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 0042789e
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 0042789e
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004278a3
     MOV EAX,dword ptr [ESP + 0x74]      ; 004278a6
     ADD EAX,0x19968                     ; 004278aa
     PUSH EAX                            ; 004278af
     PUSH 0x616eb5                       ; 004278b0 | = "animateEvent"
     PUSH EDI                            ; 004278b5
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004278b6
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460 ; 004278b6
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList * this_ptr, char * property_name, char * data_ptr)
     ADD ESP,0xc                         ; 004278bb
     ADD ESP,0x64                        ; 004278be
     POP EBP                             ; 004278c1

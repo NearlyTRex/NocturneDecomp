@@ -1,0 +1,296 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 14,
+        "line": 30,
+        "message": "'SCollisionInfo' {aka 'struct SCollisionInfo'} has no member named '_0_8_'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 31,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 24,
+        "line": 31,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 44,
+        "message": "invalid cast from type 'CKeyFramedModelInstance*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 45,
+        "message": "invalid cast from type 'CKeyFramedModelInstance*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 46,
+        "message": "invalid cast from type 'CKeyFramedModelInstance*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 47,
+        "message": "invalid cast from type 'CKeyFramedModelInstance*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 48,
+        "message": "invalid cast from type 'void*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 62,
+        "message": "invalid cast from type 'void*' to type 'float'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 194,
+    "complexity_score": 170,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 70,
+    "suspect_count": 8,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param",
+      "unknown_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 264
+  },
+  "cross_references": [
+    {
+      "addr": "0054cc30",
+      "from_addr": "0054d4ce",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_0054cc30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054df80",
+    "address_range": [
+      [
+        "0054df80",
+        "0054e178"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_platfrm.cpp_CPlatform_FUN_0054df80",
+    "signature": "int __cdecl core_platfrm_cpp_CPlatform_FUN_0054df80(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "004781d0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "005743c0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f97e",
+      "name": "DOUBLE_0063f97e",
+      "type": "double",
+      "value": "0.0100000000000000"
+    },
+    {
+      "addr": "0063f986",
+      "name": "FLOAT_0063f986",
+      "type": "float",
+      "value": "-1"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4733727810650885,
+    "instruction_count": 169,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 16,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 13,
+      "COPY": 362,
+      "FLOAT2FLOAT": 32,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_NAN": 20,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 84,
+      "INT_AND": 93,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 40,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 50,
+      "INT_OR": 50,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 20,
+      "INT_SUB": 32,
+      "INT_XOR": 4,
+      "INT_ZEXT": 40,
+      "LOAD": 54,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 44
+    },
+    "pcode_op_count": 1094
+  },
+  "stack_frame": {
+    "frame_size": 144,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0054df89",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._0_8_",
+      "text": "local_88._0_8_ = (ulonglong)(uint)local_88.unk1 << 0x20;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 24,
+      "match": "code *",
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ABS",
+      "text": "if ((ABS(fVar3) <= (float)0.01) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ABS",
+      "text": "(ABS((this_ptr->base).orient.heading) <= (float)0.01)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr->base,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));",
+      "type": "stack_param"
+    }
+  ]
+}

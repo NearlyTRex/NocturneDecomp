@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
-;   char[256] g_CharacterClassificationTable
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 

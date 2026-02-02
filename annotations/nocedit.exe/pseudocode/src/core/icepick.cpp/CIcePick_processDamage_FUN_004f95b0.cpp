@@ -17,7 +17,7 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
   int iVar4;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 8));
-  if (((this_ptr->base).unk1 & 0x7fffffffU) != 0) {
+  if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->unk2 != 0) {
@@ -26,12 +26,12 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = (int)3.0f;
-  fVar1 = (float)(this_ptr->base).base.hit_points - damage_info->damage_amount;
+  (this_ptr->base).unk1 = (uint)3.0f;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = (int)fVar1;
+  (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    (this_ptr->base).base.hit_points = 0;
+    (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if (pSVar2->state_index != 9) {

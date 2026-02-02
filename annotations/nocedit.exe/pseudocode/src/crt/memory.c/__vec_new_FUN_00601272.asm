@@ -9,7 +9,7 @@
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
 ;
 ; XREF[6]:
-;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0 at 0054ba93
+;   cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0 at 0054ba93
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 at 0054be02
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380 at 004943c0
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510 at 0059a630

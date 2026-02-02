@@ -16,7 +16,12 @@ void __cdecl core_filmreel_cpp_FUN_004be960(void)
   CActorPropertyList *in_stack_00000008;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);
+  core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
+            (in_stack_00000008,"Model file (.kfm)",
+             (CKeyFramedModelInstance *)(in_stack_00000004 + 1),0);
+  core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
+            (in_stack_00000008,"Movie name",
+             (char *)&in_stack_00000004[2].location.position.z,0x1f,
+             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   return;
 }

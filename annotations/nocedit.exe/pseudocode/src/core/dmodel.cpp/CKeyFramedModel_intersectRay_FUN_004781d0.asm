@@ -49,7 +49,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409733
-;   core_platfrm.cpp_FUN_0054df80 at 0054e139
+;   core_platfrm.cpp_CPlatform_FUN_0054df80 at 0054e139
 ;
 ; Referenced Globals:
 ;   float g_Fixed16ToFloat = 0.00390625

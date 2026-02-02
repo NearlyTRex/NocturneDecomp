@@ -44,8 +44,8 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   }
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(this_ptr,iVar2);
   SVar3 = local_14;
-  this_ptr->base_path = bitmap_height;
-  this_ptr->extension = bitmap_width;
+  this_ptr->height = bitmap_height;
+  this_ptr->width = bitmap_width;
   bitmap_data = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                           (local_14,"..\\cockpit\\pkbmpset.cpp",0xd3);
   if (bitmap_data == (uchar *)0x0) {
@@ -68,7 +68,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
       iVar1 = iVar1 + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
                 ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar2),bitmap_data,
-                 this_ptr->extension,this_ptr->base_path,total_bitmaps,(uchar)bitmap_width);
+                 this_ptr->width,this_ptr->height,total_bitmaps,(uchar)bitmap_width);
       iVar2 = iVar2 + 0x24;
     } while (iVar1 < this_ptr->bitmap_count);
   }

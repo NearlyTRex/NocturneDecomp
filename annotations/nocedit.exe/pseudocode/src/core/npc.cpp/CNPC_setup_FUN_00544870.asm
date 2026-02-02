@@ -9,7 +9,7 @@
 ; XREF[5]:
 ;   core_hiram.cpp_CHiram_setup_FUN_004f4530 at 004f4535
 ;   core_hostage.cpp_CHostage_setup_FUN_004f4970 at 004f4b0c
-;   core_passngr.cpp_FUN_00545d30 at 00545d38
+;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545d38
 ;   core_tbplayer.cpp_CBassPlayer_FUN_005da090 at 005da097
 ;   core_tbplayer.cpp_CDrummer_FUN_005da2f0 at 005da2f7
 ;

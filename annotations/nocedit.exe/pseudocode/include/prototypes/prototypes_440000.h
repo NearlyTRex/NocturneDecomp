@@ -33,7 +33,7 @@
 // =============================================================================
 
 ushort __cdecl core_colonel_cpp_FUN_00440430(void);
-void __cdecl core_colonel_cpp_CColonel_serialize_FUN_00440490(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_archive_FUN_00440490(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_FUN_004404a0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_FUN_004404b0(CColonel *this_ptr);
 int __cdecl core_colonel_cpp_FUN_004405d0(void);

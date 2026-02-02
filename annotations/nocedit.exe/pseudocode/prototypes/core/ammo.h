@@ -35,9 +35,9 @@ int __cdecl CAmmo::renderOpaque(CAmmo *this_ptr);
 // Address: 00410ef0
 CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_ammo.cpp_CAmmo_serialize_FUN_00410f40
+// Original: core_ammo.cpp_CAmmo_archive_FUN_00410f40
 // Address: 00410f40
-void __cdecl CAmmo::serialize(CAmmo *this_ptr);
+void __cdecl CAmmo::archive(CAmmo *this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0
 // Address: 00410fa0
@@ -55,13 +55,13 @@ void __cdecl CAmmo(void);
 // Address: 004111c0
 int __cdecl CAmmo::canPickup(CAmmo *this_ptr,CDemonActor *picker);
 
-// Original: core_ammo.cpp_FUN_00411200
+// Original: core_ammo.cpp_CAmmo_propertyDisplayCallback_FUN_00411200
 // Address: 00411200
-void __cdecl FUN_00411200(void);
+void __cdecl CAmmo::propertyDisplayCallback(CAmmo *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_ammo.cpp_FUN_004112b0
+// Original: core_ammo.cpp_CAmmo_propertyActionCallback_FUN_004112b0
 // Address: 004112b0
-int __cdecl FUN_004112b0(void);
+int __cdecl CAmmo::propertyActionCallback(CAmmo *this_ptr,CActorProperty *property);
 
 // Original: core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360
 // Address: 00411360

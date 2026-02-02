@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
+; __cdecl void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined4       Stack[-0x88]:4  local_88
@@ -22,7 +24,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_mobster.cpp_FUN_00525840 at 00525d5e
+;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525d5e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mobster_cpp_006398ae

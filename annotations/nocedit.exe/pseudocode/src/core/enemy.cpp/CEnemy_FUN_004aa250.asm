@@ -12,7 +12,7 @@
 ;   core_dog.cpp_CZombieDog_FUN_0047f960 at 0047f965
 ;   core_drone.cpp_FUN_0048f560 at 0048f565
 ;   core_ghoul.cpp_FUN_004e8e40 at 004e8e46
-;   core_mobster.cpp_FUN_00527c30 at 00527c35
+;   core_mobster.cpp_CMobster_FUN_00527c30 at 00527c35
 ;   core_werewolf.cpp_FUN_005f21e0 at 005f21e5
 ;   core_zombie.cpp_CZombie_FUN_005fcb70 at 005fcb79
 ;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_netgame.cpp_CNetGame_processServerFrame(uint param_1) */
-
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
 {
@@ -147,7 +145,7 @@ LAB_005432f5:
       } while (iVar2 < this_ptr->player_count);
     }
     local_1c = dest;
-    core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800();
+    core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(this_ptr);
     local_24 = 0;
     if (0 < this_ptr->player_count) {
       local_14 = this_ptr->players;
@@ -197,7 +195,7 @@ LAB_005434de:
                 puVar9 = puVar9 + 0xb;
               } while (iVar3 < this_ptr->player_count);
             }
-            core_netgame_cpp_CNetGame_send_FUN_005411c0();
+            core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,local_24);
             local_20 = local_20 + 1;
           }
         }

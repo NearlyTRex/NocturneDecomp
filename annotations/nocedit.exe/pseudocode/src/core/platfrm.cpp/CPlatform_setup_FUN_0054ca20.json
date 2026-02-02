@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 26,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "00441d60",
+      "from_addr": "00441dc2",
+      "name": "core_conveyor.cpp_FUN_00441d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520e90",
+      "from_addr": "00520e95",
+      "name": "core_minecar.cpp_CMinecar_setup_FUN_00520e90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054ca20",
+    "address_range": [
+      [
+        "0054ca20",
+        "0054ca2c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_setup_FUN_0054ca20",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408bb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00441dc2",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_FUN_00441d60",
+        "estimated_params": 1,
+        "instructions_analyzed": 15,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00520e95",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_CMinecar_setup_FUN_00520e90",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 5,
+      "INT_ADD": 1,
+      "INT_SUB": 5,
+      "LOAD": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 18
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPlatform",
+        "offset": 0,
+        "vtable_addr": "006622a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

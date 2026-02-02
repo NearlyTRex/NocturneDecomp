@@ -10,7 +10,7 @@ void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void)
 
 {
   core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(&g_CNetGameInstance);
-  _atexit(&DAT_006809f0);
+  _atexit(&g_CNetGameInstanceDestructorNode);
   __arrinit(g_ChatHistory,400,&g_SChatHistoryTypeInfo);
   g_NetworkPacketSize = 0x405;
   g_NetworkReceiveBuffer[0] = '\0';

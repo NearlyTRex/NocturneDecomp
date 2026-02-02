@@ -9,19 +9,23 @@
 void __cdecl core_script_cpp_CScript_FUN_00566880(CScript *this_ptr)
 
 {
-  core_script_cpp_CScript_FUN_00566910(this_ptr);
-  if (CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value <= DAT_0310fd48) {
-    DAT_0310fd48 = CEdScrollBar_0310fcd8.scroll_position + CEdScrollBar_0310fcd8.max_value + -1;
+  core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
+  if (g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value <=
+      g_CurrentEditingLine) {
+    g_CurrentEditingLine =
+         g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value + -1;
   }
-  if (DAT_0310fd48 < CEdScrollBar_0310fcd8.scroll_position) {
-    DAT_0310fd48 = CEdScrollBar_0310fcd8.scroll_position;
+  if (g_CurrentEditingLine < g_ScriptEditorVScrollBar.scroll_position) {
+    g_CurrentEditingLine = g_ScriptEditorVScrollBar.scroll_position;
   }
-  if (CEdScrollBar_0310fd0c.scroll_position + CEdScrollBar_0310fd0c.max_value <= DAT_0310fd44) {
-    DAT_0310fd44 = CEdScrollBar_0310fd0c.scroll_position + CEdScrollBar_0310fd0c.max_value + -1;
+  if (g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.max_value <=
+      g_CurrentEditingColumn) {
+    g_CurrentEditingColumn =
+         g_ScriptEditorHScrollBar.scroll_position + g_ScriptEditorHScrollBar.max_value + -1;
   }
-  if (DAT_0310fd44 < CEdScrollBar_0310fd0c.scroll_position) {
-    DAT_0310fd44 = CEdScrollBar_0310fd0c.scroll_position;
+  if (g_CurrentEditingColumn < g_ScriptEditorHScrollBar.scroll_position) {
+    g_CurrentEditingColumn = g_ScriptEditorHScrollBar.scroll_position;
   }
-  core_script_cpp_CScript_FUN_00566910(this_ptr);
+  core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
   return;
 }

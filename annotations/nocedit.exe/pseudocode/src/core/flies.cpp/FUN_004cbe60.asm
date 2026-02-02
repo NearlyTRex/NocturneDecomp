@@ -13,11 +13,11 @@
 ;   int g_CFliesClassVersion = 0x3
 ;
 ; Called Functions:
-;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0
-;   core_actor.cpp_serializeActor_FUN_0040b870
-;   core_actor.cpp_serializeFloat_FUN_0040b770
-;   core_actor.cpp_serializeInteger_FUN_0040b7f0
-;   core_actor.cpp_serializeVector_FUN_0040b340
+;   core_actor.cpp_archiveActor_FUN_0040b870
+;   core_actor.cpp_archiveFloat_FUN_0040b770
+;   core_actor.cpp_archiveInteger_FUN_0040b7f0
+;   core_actor.cpp_archiveVector_FUN_0040b340
+;   core_actor.cpp_CDemonActor_archive_FUN_0040c1c0
 ;
 ; *****************************************************************************
 
@@ -27,14 +27,14 @@ section .text
         ;   Label: core_flies.cpp_FUN_004cbe60
     MOV EBX,dword ptr [ESP + 0x8]       ; 004cbe61
     PUSH EBX                            ; 004cbe65
-    CALL core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0 ; 004cbe66
-        ;   XREF to: 0040c1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_archive_FUN_0040c1c0 ; 004cbe66
+        ;   XREF to: 0040c1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cbe6b
     PUSH 0x62a3ef                       ; 004cbe6e | = "count"
     LEA EAX,[EBX + 0x164]               ; 004cbe73
     PUSH EAX                            ; 004cbe79
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004cbe7a
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004cbe7a
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     MOV EDX,dword ptr [0x0067b510]      ; 004cbe7f | g_CFliesClassVersion
     ADD ESP,0x8                         ; 004cbe85
     CMP EDX,0x2                         ; 004cbe88
@@ -49,20 +49,20 @@ section .text
         ;   Label: LAB_004cbe98
     LEA EAX,[EBX + 0x2a08]              ; 004cbe9d
     PUSH EAX                            ; 004cbea3
-    CALL core_actor.cpp_serializeActor_FUN_0040b870 ; 004cbea4
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+    CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004cbea4
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cbea9
     PUSH 0x62a401                       ; 004cbeac | = "gatherCount"
     LEA EAX,[EBX + 0x2a0c]              ; 004cbeb1
     PUSH EAX                            ; 004cbeb7
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004cbeb8
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
+    CALL core_actor.cpp_archiveInteger_FUN_0040b7f0 ; 004cbeb8
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cbebd
     PUSH 0x62a40d                       ; 004cbec0 | = "gatherTime"
     LEA EAX,[EBX + 0x2a14]              ; 004cbec5
     PUSH EAX                            ; 004cbecb
-    CALL core_actor.cpp_serializeFloat_FUN_0040b770 ; 004cbecc
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
+    CALL core_actor.cpp_archiveFloat_FUN_0040b770 ; 004cbecc
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b770(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cbed1
     CMP dword ptr [0x0067b510],0x3      ; 004cbed4 | g_CFliesClassVersion
     JGE 0x004cbedf                      ; 004cbedb
@@ -73,8 +73,8 @@ section .text
         ;   Label: LAB_004cbedf
     ADD EBX,0x158                       ; 004cbee4
     PUSH EBX                            ; 004cbeea
-    CALL core_actor.cpp_serializeVector_FUN_0040b340 ; 004cbeeb
-        ;   XREF to: 0040b340 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeVector_FUN_0040b340(CVector3f * vector_ptr, char * property_name)
+    CALL core_actor.cpp_archiveVector_FUN_0040b340 ; 004cbeeb
+        ;   XREF to: 0040b340 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b340(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cbef0
     POP EBX                             ; 004cbef3
     RET                                 ; 004cbef4

@@ -16,7 +16,7 @@
 ;   core_icepick.cpp_CIcePick_FUN_004f8810 at 004f8872
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0 at 0052ddbf
 ;   core_motion.cpp_CMotionController_setMotionList_FUN_0052dcb0 at 0052dccc
-;   core_passngr.cpp_FUN_00545d30 at 00545ec4
+;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545ec4
 ;   ... and 9 more
 ;
 ; Referenced Globals:

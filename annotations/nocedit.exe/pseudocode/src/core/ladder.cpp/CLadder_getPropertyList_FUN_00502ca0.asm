@@ -13,9 +13,9 @@
 ;   TerminatedCString s_ground_type_00630e73
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorPropertyList_FUN_0040e300
-;   core_actor.cpp_CActorPropertyList_FUN_0040e350
-;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
+;   core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300
+;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 00502cbc
     PUSH 0x630e60                       ; 00502cbd | = "Model"
     PUSH ESI                            ; 00502cc2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00502cc3
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 ; 00502cc3
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList * this_ptr, char * property_name, CKeyFramedModelInstance * data_ptr, int allow_none)
     ADD ESP,0x10                        ; 00502cc8
     PUSH 0x0                            ; 00502ccb
     PUSH 0x0                            ; 00502ccd
@@ -47,15 +47,15 @@ section .text
     PUSH EAX                            ; 00502cd7
     PUSH 0x630e66                       ; 00502cd8 | = "Master actor"
     PUSH ESI                            ; 00502cdd
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 00502cde
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00502cde
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00502ce3
     ADD EBX,0x2fc                       ; 00502ce6
     PUSH EBX                            ; 00502cec
     PUSH 0x630e73                       ; 00502ced | = "ground type"
     PUSH ESI                            ; 00502cf2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e300 ; 00502cf3
-        ;   XREF to: 0040e300 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e300(CActorPropertyList * this_ptr)
+    CALL core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300 ; 00502cf3
+        ;   XREF to: 0040e300 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300(CActorPropertyList * this_ptr, char * property_name, int * data_ptr)
     ADD ESP,0xc                         ; 00502cf8
     POP ESI                             ; 00502cfb
     POP EBX                             ; 00502cfc
