@@ -33,4 +33,4 @@ void __cdecl FUN_00588c70(void);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00588c80
 // Address: 00588c80
-CShovel * __cdecl CShovel::dtor(CShovel *this_ptr,uint d1,uint d2);
+CShovel * __cdecl CShovel::dtor(CShovel *this_ptr,uint flags);

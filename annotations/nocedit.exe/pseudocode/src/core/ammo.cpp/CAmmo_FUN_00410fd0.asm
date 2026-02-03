@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
+; __cdecl void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class_name)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   weapon_class_name
 ;
 ; XREF[5]:
 ;   core_ammobox.cpp_CAmmoBox_FUN_00411700 at 004117cc
-;   core_game.cpp_FUN_004dd930 at 004dd991
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 at 004dd991
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe21a
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 at 004fe984
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10 at 004ffe65

@@ -2,59 +2,178 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 23,
-        "line": 37,
-        "message": "cast from 'CHiram*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 31,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 36,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 86,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
-    "pseudocode_lines": 36,
-    "suspect_count": 4,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unaffected_reg"
+      "negative_offset"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -67,7 +186,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_hiram.cpp_CHiram_dtor_FUN_004f4450",
-    "signature": "CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004f4450 (CHiram *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9)"
+    "signature": "CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004f4450(CHiram *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -139,8 +258,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 10,
-    "estimated_params": 10
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.676470588235294,
@@ -167,10 +286,10 @@
     "pcode_op_count": 318
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 40,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -182,64 +301,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d3",
-        "offset": 16,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d4",
-        "offset": 20,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d5",
-        "offset": 24,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d6",
-        "offset": 28,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d7",
-        "offset": 32,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d8",
-        "offset": 36,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d9",
-        "offset": 40,
         "size": 4,
         "type": "uint"
       }
@@ -247,31 +310,24 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar1[-1].",
+      "text": "((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39));",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 23,
-      "match": "pCVar1[-1].",
-      "text": "((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));",
+      "match": "pCVar2[-2].",
+      "text": "pSVar3 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar2[-2].base.create_event + 0x20));",
       "type": "negative_offset"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBX",
-      "text": "((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 33,
-      "match": "pCVar3[-1].",
-      "text": "((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);",
+      "line": 31,
+      "match": "pCVar6[-1].",
+      "text": "((CDemonActor *)(pCVar6[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
     }
   ],

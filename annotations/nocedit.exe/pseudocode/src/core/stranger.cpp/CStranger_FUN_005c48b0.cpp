@@ -86,11 +86,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,desired_state_index,iVar3);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 0x22c));
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk3 + 0x14));
         if (in_stack_00000008->damage_type != 1) {
           uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
-          *(uint *)(this_ptr->unk2 + 0x22c) = uVar5;
+          *(uint *)(this_ptr->unk3 + 0x14) = uVar5;
         }
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
       }
@@ -126,11 +126,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
               (&this_ptr_00->motion_controller,0x24,1);
   }
 LAB_005c4be2:
-  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk2 + 0x22c));
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x14));
   if (iVar3 == 0) {
     uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"stranger_hit??.wav");
-    *(uint *)(this_ptr->unk2 + 0x22c) = uVar5;
+    *(uint *)(this_ptr->unk3 + 0x14) = uVar5;
   }
 LAB_005c4ae0:
   if (0.0 < in_stack_00000008->damage_amount) {

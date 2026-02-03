@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 00513895 | g_CGameInstance
         ;   Label: LAB_00513895
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00513896
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051389b
     JMP 0x00513870                      ; 0051389e
         ;   XREF to: 00513870 (UNCONDITIONAL_JUMP)  ; LAB_00513870

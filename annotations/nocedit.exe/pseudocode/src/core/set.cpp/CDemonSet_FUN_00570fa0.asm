@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_drip.cpp_FUN_0048e2a0 at 0048e438
+;   core_drip.cpp_CDrip_process_FUN_0048e2a0 at 0048e438
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad3c4
 ;   core_fire.cpp_CExplosion_FUN_004c3970 at 004c39b6
 ;   core_fire.cpp_CFireEffect_FUN_004c8f50 at 004c8fc6

@@ -89,4 +89,4 @@ void __cdecl CLever::showEditorHelp(CLever *this_ptr,int *y_pos);
 
 // Original: core_lever.cpp_CLever_dtor_FUN_00505430
 // Address: 00505430
-CLever * __cdecl CLever::dtor(CLever *this_ptr,uint d1,uint d2);
+CLever * __cdecl CLever::dtor(CLever *this_ptr,uint flags);

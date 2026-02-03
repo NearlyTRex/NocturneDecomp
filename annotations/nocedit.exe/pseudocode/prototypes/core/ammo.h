@@ -45,11 +45,11 @@ int __cdecl CAmmo::hasCollision(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ammo.cpp_CAmmo_FUN_00410fd0
 // Address: 00410fd0
-void __cdecl CAmmo(void);
+void __cdecl CAmmo(CAmmo *this_ptr,char *weapon_class_name);
 
-// Original: core_ammo.cpp_CAmmo_FUN_004111b0
+// Original: core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0
 // Address: 004111b0
-void __cdecl CAmmo(void);
+void __cdecl CAmmo::setAmmoCount(CAmmo *this_ptr,int ammo_count);
 
 // Original: core_ammo.cpp_CAmmo_canPickup_FUN_004111c0
 // Address: 004111c0
@@ -73,4 +73,4 @@ void __cdecl CAmmo::writeDependencies(CAmmo *this_ptr,_FILE *file_handle);
 
 // Original: core_ammo.cpp_CAmmo_dtor_FUN_004114e0
 // Address: 004114e0
-CAmmo * __cdecl CAmmo::dtor(CAmmo *this_ptr,uint d1,uint d2);
+CAmmo * __cdecl CAmmo::dtor(CAmmo *this_ptr,uint flags);

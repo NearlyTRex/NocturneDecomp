@@ -31,9 +31,9 @@ void __cdecl FUN_00568030(void);
 // Address: 00568b70
 int __cdecl FUN_00568b70(void);
 
-// Original: core_sentinel.cpp_CSentinel_load_FUN_00568c70
+// Original: core_sentinel.cpp_CSentinel_archive_FUN_00568c70
 // Address: 00568c70
-void __cdecl CSentinel::load(void);
+void __cdecl CSentinel::archive(CSentinel *this_ptr);
 
 // Original: core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
 // Address: 00568cd0
@@ -57,4 +57,4 @@ void __cdecl FUN_00568f50(void);
 
 // Original: core_sentinel.cpp_CSentinel_dtor_FUN_00568f80
 // Address: 00568f80
-CSentinel * __cdecl CSentinel::dtor(CSentinel *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CSentinel * __cdecl CSentinel::dtor(CSentinel *this_ptr,uint flags);

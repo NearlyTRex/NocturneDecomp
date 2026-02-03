@@ -49,4 +49,4 @@ float __cdecl CCrossbow(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0
 // Address: 004495a0
-CCrossbow * __cdecl CCrossbow::dtor(CCrossbow *this_ptr,uint d1,uint d2,uint d3);
+CCrossbow * __cdecl CCrossbow::dtor(CCrossbow *this_ptr,uint flags);

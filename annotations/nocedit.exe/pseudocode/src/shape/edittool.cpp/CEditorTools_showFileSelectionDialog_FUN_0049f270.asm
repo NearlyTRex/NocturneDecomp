@@ -23,7 +23,7 @@
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bda51
 ;   core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930 at 004bd95b
 ;   core_game.cpp_CGame_FUN_004e36f0 at 004e37a5
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e179c
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e179c
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2856
 ;   core_game.cpp_FUN_004e2f10 at 004e2f49
 ;   ... and 9 more
@@ -173,7 +173,7 @@ section .text
     PUSH EAX                            ; 0049f3bc
     MOV EBX,0x1                         ; 0049f3bd
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0049f3c2
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
         ;   Label: LAB_0049f3c2
     ADD ESP,0x8                         ; 0049f3c7
     MOV EAX,EBX                         ; 0049f3ca

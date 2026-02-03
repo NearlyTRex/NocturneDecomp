@@ -18,10 +18,10 @@
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422060 at 004220c0
 ;   core_boxactor.cpp_CLightActor_archive_FUN_00422c80 at 00422cbc
 ;   core_conveyor.cpp_FUN_00442020 at 0044204e
-;   core_curtain.cpp_CCurtain_load_FUN_0044b3e0 at 0044b3fd
+;   core_curtain.cpp_CCurtain_archive_FUN_0044b3e0 at 0044b3fd
 ;   core_door.cpp_CDoor_archive_FUN_00480aa0 at 00480b83
-;   core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0 at 0048600a
-;   core_drip.cpp_CDrip_load_FUN_0048e170 at 0048e1ca
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0 at 0048600a
+;   core_drip.cpp_CDrip_archive_FUN_0048e170 at 0048e1ca
 ;   ... and 14 more
 ;
 ; Referenced Globals:

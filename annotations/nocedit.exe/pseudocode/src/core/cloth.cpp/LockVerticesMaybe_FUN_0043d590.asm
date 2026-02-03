@@ -98,7 +98,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0043d5d0 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0043d5d5 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0043d5d6
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0043d5db
     PUSH ESI                            ; 0043d5de
     PUSH 0x3f87558                      ; 0043d5df | g_ZeroVector
@@ -481,7 +481,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0043d9ee | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0043d9f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043d9f5
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043d9fa
     MOV ESI,dword ptr [ESP + 0x64]      ; 0043d9fd
     PUSH ESI                            ; 0043da01

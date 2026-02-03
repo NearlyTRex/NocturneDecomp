@@ -39,19 +39,19 @@
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_init_FUN_004727c0
 ;   core_fire.cpp_CFireEffect_init_FUN_004c6c80
-;   core_game.cpp_adjustFudgePosition_FUN_004d8750
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004e0920
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004e0960
 ;   core_game.cpp_CGame_fadeIn_FUN_004e0b90
 ;   core_game.cpp_CGame_FUN_004d7f80
 ;   core_game.cpp_CGame_FUN_004d85a0
+;   core_game.cpp_CGame_FUN_004d8750
+;   core_game.cpp_CGame_FUN_004dcee0
 ;   core_game.cpp_CGame_FUN_004e07a0
+;   core_game.cpp_CGame_FUN_004e2910
 ;   core_game.cpp_CGame_FUN_004e36f0
-;   core_game.cpp_CGame_openSomething_FUN_004e2910
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80
 ;   core_game.cpp_CGame_processFrame_FUN_004da100
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
-;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -290,7 +290,7 @@ section .text
     PUSH EDI                            ; 004db2e6
     MOV dword ptr [EAX + 0x4],0x3       ; 004db2e7 | DAT_02f7c744
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004db2ee
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db2f3
     PUSH EDI                            ; 004db2f6
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70 ; 004db2f7
@@ -334,16 +334,16 @@ section .text
     ADD ESP,0x8                         ; 004db376
     MOV ESI,dword ptr [EBP + 0x14]      ; 004db379
     PUSH ESI                            ; 004db37c
-    CALL core_game.cpp_SaveRelated_FUN_004dcee0 ; 004db37d
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_SaveRelated_FUN_004dcee0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_004dcee0 ; 004db37d
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dcee0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db382
     PUSH ESI                            ; 004db385
     CALL core_game.cpp_CGame_FUN_004d85a0 ; 004db386
         ;   XREF to: 004d85a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004d85a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db38b
     PUSH ESI                            ; 004db38e
-    CALL core_game.cpp_adjustFudgePosition_FUN_004d8750 ; 004db38f
-        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_adjustFudgePosition_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
+    CALL core_game.cpp_CGame_FUN_004d8750 ; 004db38f
+        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
     ADD ESP,0x4                         ; 004db394
     PUSH ESI                            ; 004db397
     CALL core_game.cpp_CGame_playerControls_FUN_004dbd80 ; 004db398
@@ -468,7 +468,7 @@ section .text
     LEA EAX,[EBP + 0xfffffb48]          ; 004db4ea
     PUSH EAX                            ; 004db4f0
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004db4f1
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004db4f6
     MOV EBX,dword ptr [0x0067d550]      ; 004db4f9 | g_CDemonMissionInstance | g_CDemonMissionPtr
         ;   Label: LAB_004db4f9
@@ -586,7 +586,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004db646
     PUSH EDX                            ; 004db649
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004db64a
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db64f
     MOV EAX,[0x00680d50]                ; 004db652 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_004db652
@@ -887,7 +887,7 @@ section .text
     PUSH EAX                            ; 004db9a9
     MOV EBX,EDI                         ; 004db9aa
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004db9ac
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004db9b1
     JMP 0x004db669                      ; 004db9b4
         ;   XREF to: 004db669 (UNCONDITIONAL_JUMP)  ; LAB_004db669
@@ -966,7 +966,7 @@ section .text
     LEA EAX,[EBP + 0xfffff7a0]          ; 004dba81
     PUSH EAX                            ; 004dba87
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004dba88
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     JMP 0x004db431                      ; 004dba8d
         ;   XREF to: 004db431 (UNCONDITIONAL_JUMP)  ; LAB_004db431
     MOV EAX,[0x00680a00]                ; 004dba92 | g_CNetGameInstance | g_CNetGamePtr
@@ -1046,8 +1046,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004dbb58
         ;   Label: LAB_004dbb58
     PUSH ECX                            ; 004dbb5b
-    CALL core_game.cpp_CGame_openSomething_FUN_004e2910 ; 004dbb5c
-        ;   XREF to: 004e2910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_openSomething_FUN_004e2910(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_004e2910 ; 004dbb5c
+        ;   XREF to: 004e2910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e2910(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 004dbb61
     MOV EBX,dword ptr [EAX + 0x200]     ; 004dbb64
     ADD ESP,0x4                         ; 004dbb6a

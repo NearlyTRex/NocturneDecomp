@@ -102,7 +102,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0043c8fd | g_CGamePtr
     PUSH EAX                            ; 0043c902 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0043c903
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0043c908
     PUSH 0x0                            ; 0043c90b
     PUSH EBX                            ; 0043c90d
@@ -278,7 +278,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0043cb50 | g_CEditorToolsPtr
     PUSH EDX                            ; 0043cb56 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cb57
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cb5c
     MOV [0x02d02570],EAX                ; 0043cb5f | g_ActiveRenderColor
     XOR ECX,ECX                         ; 0043cb64
@@ -342,7 +342,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0043cc35 | g_CEditorToolsPtr
     PUSH EAX                            ; 0043cc3a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cc3b
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cc40
     PUSH EAX                            ; 0043cc43
     MOV EDX,dword ptr [0x006703ec]      ; 0043cc44 | g_CDemonRendererPtr2

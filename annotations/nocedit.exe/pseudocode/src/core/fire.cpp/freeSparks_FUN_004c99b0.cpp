@@ -2,13 +2,15 @@
 // Address: 004c99b0
 // Address Range: [[004c99b0, 004c99c7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark **array)
+// Signature: CSpark * __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark **array)
+CSpark * __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark *objs)
 
 {
-  __arrfini(array,0x100,&g_CSparkTypeInfo);
-  return;
+  CSpark *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0x100,&g_CSparkTypeInfo);
+  return pCVar1;
 }

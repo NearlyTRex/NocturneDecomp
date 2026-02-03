@@ -9,12 +9,11 @@
 CMouse * __cdecl support_newmsg_cpp_CMouse_dtor_FUN_005443e0(CMouse *this_ptr)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
-  CMouse *extraout_EAX_01;
+  CAlphaBitmap *pCVar1;
+  CMouse *pCVar2;
   
-  support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(this_ptr->skulls);
-  support_newmsg_cpp_freeBitmap_FUN_00544730((CAlphaBitmap **)(extraout_EAX + -0x8c));
-  core_menu_cpp_freeBitmaps_FUN_00514f50((CAlphaBitmap **)(extraout_EAX_00 + -0xa0));
-  return extraout_EAX_01;
+  pCVar1 = support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(this_ptr->skulls);
+  pCVar1 = support_newmsg_cpp_freeBitmap_FUN_00544730(pCVar1 + -7);
+  pCVar2 = (CMouse *)core_menu_cpp_freeBitmaps_FUN_00514f50(pCVar1 + -8);
+  return pCVar2;
 }

@@ -15,7 +15,6 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   uint seed_value;
   int iVar3;
   int unaff_ESI;
-  CGame *in_stack_ffffffe4;
   
   if (this_ptr->profile_mode != 0) {
     unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -29,7 +28,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     seed_value = *(uint *)(pCVar2->unk + 0x54);
   }
   core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
-  core_game_cpp_FUN_004e09c0();
+  core_game_cpp_CGame_FUN_004e09c0(this_ptr);
   if (g_CGamePtr->profile_mode == 1) {
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
@@ -59,7 +58,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
       core_sound_cpp_CSound_init_FUN_005b2dd0(this_ptr_00);
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                 (g_CDemonSetPtr,g_CScriptPtr->focus_actor,2);
-      core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_ffffffe4);
+      core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
       g_CScriptPtr->unk2 = 0;
     }
     else {
@@ -88,7 +87,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
                ((double)(iVar3 - g_ProfileStartTime) * 0.055555555555555601 * 1.52587890625e-05 *
                1000) / (double)g_CGamePtr->delta_time_float);
   }
-  core_water_cpp_CWater_process_FUN_005e9ed0();
+  core_water_cpp_CWater_process_FUN_005e9ed0(g_CWaterPtr);
   if (g_CGamePtr->profile_mode == 1) {
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
@@ -112,7 +111,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
                1000) / (double)g_CGamePtr->delta_time_float);
   }
   core_terrain_cpp_CTerrain_process_FUN_005e2050(g_CTerrainPtr);
-  core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0();
+  core_weather_cpp_CWeather_FUN_005eeaf0(g_CWeatherPtr);
   core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(this_ptr);
   core_set_cpp_CDemonSet_FUN_0056b810(g_CDemonSetPtr);
   if (g_CGamePtr->profile_mode == 1) {

@@ -2,22 +2,21 @@
 // Address: 00411700
 // Address Range: [[00411700, 00411813]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr)
+// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory)
 
 #include "nocturne.h"
 
-void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr)
+void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory)
 
 {
   char cVar1;
   CAmmo *pCVar2;
   CAmmo *this_ptr_00;
   char *pcVar3;
-  CInventory *in_stack_00000008;
   CInventory *in_stack_0000000c;
   
   if ((CDemonActor *)this_ptr->item != (CDemonActor *)0x0) {
-    core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_00000008,(CDemonActor *)this_ptr->item,1);
+    core_inv_cpp_CInventory_addItem_FUN_004fd600(inventory,(CDemonActor *)this_ptr->item,1);
     this_ptr->item = (char *)0x0;
     this_ptr->ammo_count = 0;
     return;
@@ -35,11 +34,11 @@ void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr)
     g_CurrentLineNumber = 0xa2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  core_ammo_cpp_CAmmo_FUN_00410fd0();
-  core_ammo_cpp_CAmmo_FUN_004111b0();
+  core_ammo_cpp_CAmmo_FUN_00410fd0(this_ptr_00,this_ptr->weapon_class_name);
+  core_ammo_cpp_CAmmo_setAmmoCount_FUN_004111b0(this_ptr_00,this_ptr->ammo_count);
   this_ptr_00->ammo_type = this_ptr->ammo_type;
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
-  core_ammo_cpp_CAmmo_FUN_00410fd0();
+  core_ammo_cpp_CAmmo_FUN_00410fd0(this_ptr_00,this_ptr->weapon_class_name);
   pcVar3 = "Some_ammo";
   pCVar2 = this_ptr_00;
   do {

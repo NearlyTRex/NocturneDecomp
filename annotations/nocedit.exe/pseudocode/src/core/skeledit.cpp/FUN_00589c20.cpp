@@ -16,11 +16,7 @@ int __cdecl core_skeledit_cpp_FUN_00589c20(void)
   CLodMesh *in_stack_00000004;
   int in_stack_00000008;
   uint in_stack_0000000c;
-  uint in_stack_fffff590;
-  uint in_stack_fffff594;
-  char **in_stack_fffff598;
-  CStrList_vtable *in_stack_fffff59c;
-  uint in_stack_fffff5a0;
+  CPickList local_a70;
   CPickList local_6c8;
   
   __STK(0xa84);
@@ -42,20 +38,18 @@ int __cdecl core_skeledit_cpp_FUN_00589c20(void)
         this_ptr = &local_6c8;
       }
       else {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff590);
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a70);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffff590,"Use the file and select a shadow LOD now.");
+                  (&local_a70.base,"Use the file and select a shadow LOD now.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffff590,"Rebuild shadow LOD, recreating the precompute file.");
+                  (&local_a70.base,"Rebuild shadow LOD, recreating the precompute file.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffff590,"Don't select a shadow LOD at this time.  I can always use the precompute file later.");
+                  (&local_a70.base,"Don't select a shadow LOD at this time.  I can always use the precompute file later.");
         iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffff590,"Precomputed LOD exists for this model for shadow LOD",-1,0);
-        this_ptr = (CPickList *)&stack0xfffff590;
+                          (&local_a70,"Precomputed LOD exists for this model for shadow LOD",-1,0);
+        this_ptr = &local_a70;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (this_ptr,0,in_stack_fffff590,in_stack_fffff594,(uint)in_stack_fffff598,
-                 (uint)in_stack_fffff59c,in_stack_fffff5a0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(this_ptr,0);
       if (iVar1 != 0) {
         if (iVar1 == 1) {
           p_Var2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770

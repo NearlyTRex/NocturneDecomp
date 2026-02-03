@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CWaterActorTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffd64]          ; 005ebc7f
     PUSH EBX                            ; 005ebc85
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005ebc86
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ebc8b
     MOV DL,byte ptr [ESP + 0xc]         ; 005ebc8e
     MOV EBX,EAX                         ; 005ebc92

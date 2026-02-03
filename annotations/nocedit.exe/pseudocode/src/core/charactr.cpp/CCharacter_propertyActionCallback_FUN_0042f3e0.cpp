@@ -20,12 +20,7 @@ core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
   CCharacter *pCVar6;
   int iVar7;
   int iVar8;
-  byte *in_stack_fffff6d0;
-  byte *puVar9;
-  CCharacter *in_stack_fffff6d4;
-  char **in_stack_fffff6d8;
-  CStrList_vtable *in_stack_fffff6dc;
-  char **in_stack_fffff6e0;
+  CStrList aCStack_928 [58];
   CPickList local_588;
   char local_1e0 [400];
   CVector3f CStack_50;
@@ -72,17 +67,13 @@ core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
     if (local_588.base.item_count < 1) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"No hands an carry items!");
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,
-                 (uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_588,0);
       return 0;
     }
     local_28 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                          (&local_588,"Select hand to carry/drop item.",local_28,0);
     if (local_28 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,
-                 (uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_588,0);
       core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr_00);
       return 1;
     }
@@ -102,13 +93,10 @@ LAB_0042f571:
       }
       else {
         iVar3 = (*((pCVar6->base).vtable._ub)->canPickup)(&pCVar6->base,(CDemonActor *)this_ptr_00);
-        puVar9 = &stack0xfffff6d8;
         if (iVar3 != 3) goto LAB_0042f571;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6d8,(char *)pCVar6);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_928,(char *)pCVar6);
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 4;
-        in_stack_fffff6d0 = puVar9;
-        in_stack_fffff6d4 = pCVar6;
       }
     }
     iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -134,11 +122,7 @@ LAB_0042f571:
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(this_ptr_00);
       }
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffff6d0,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,
-               (uint)in_stack_fffff6d8,(uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_588,0,(uint)in_stack_fffff6d0,(uint)in_stack_fffff6d4,(uint)in_stack_fffff6d8,
-               (uint)in_stack_fffff6dc,(uint)in_stack_fffff6e0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff6d0,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_588,0);
   } while( true );
 }

@@ -1,50 +1,171 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 98,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output"
+      "negative_offset"
     ],
     "total_lines": 50
   },
@@ -136,60 +257,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX_01",
-      "text": "int extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_02",
-      "text": "int extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "text": "core_set_cpp_freeRooms_FUN_00571570((SRoom **)(extraout_EAX + -0x554));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX_00",
-      "text": "core_set_cpp_free3DSLights_FUN_00571550((C3DSLight **)(extraout_EAX_00 + -0x141490));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX_01",
-      "text": "core_set_cpp_free3DSCameras_FUN_00571530((C3DSCamera **)(extraout_EAX_01 + -0x19a2c));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Negative struct offset (wrong base type)",
       "line": 15,
-      "match": "extraout_EAX_02",
-      "text": "return (CDemonSet *)(extraout_EAX_02 + -4);",
-      "type": "extra_output"
+      "match": "pCVar4[-1].",
+      "text": "return (CDemonSet *)&pCVar4[-1].unk4;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

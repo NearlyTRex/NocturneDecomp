@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 113,
+    "complexity_score": 65,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 38,
-    "suspect_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 107
+    "total_lines": 104
   },
   "cross_references": [
     {
@@ -50,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca",
-    "signature": "istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(istrstream *this_ptr,int d1)"
+    "signature": "istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(istrstream *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -194,48 +193,20 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "uint"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EBX",
-      "text": "((istream *)&(this_ptr->_istream_core).__last_read_length,1,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 23,
       "match": "piVar3[-2].",
-      "text": "((strstreambase *)&piVar3[-2]._ios.__fill_character,1,unaff_EBX,",
+      "text": "((strstreambase *)&piVar3[-2]._ios.__fill_character,1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
-      "text": "((strstreambase *)&piVar3[-2]._ios.__fill_character,1,unaff_EBX,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBX",
-      "text": "piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);",
-      "type": "unaffected_reg"
     },
     {
       "address": "005ff5ca",

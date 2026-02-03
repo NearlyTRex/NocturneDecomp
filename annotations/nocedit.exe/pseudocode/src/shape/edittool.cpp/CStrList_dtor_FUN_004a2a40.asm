@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint d1,uint d2)
+; __cdecl CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[22]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd874

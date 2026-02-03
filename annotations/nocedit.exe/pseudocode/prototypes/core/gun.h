@@ -29,4 +29,4 @@ float __cdecl CGun(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_dtor_FUN_004f0b50
 // Address: 004f0b50
-CGun * __cdecl CGun::dtor(CGun *this_ptr,uint d1,uint d2);
+CGun * __cdecl CGun::dtor(CGun *this_ptr,uint flags);

@@ -19,29 +19,29 @@ CDemonActorType * __cdecl CDynamite::getActorType(CDynamite *this_ptr);
 // Address: 0049cdc0
 CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049ce70
+// Original: core_dynamite.cpp_CDynamite_fire_FUN_0049ce70
 // Address: 0049ce70
-int __cdecl FUN_0049ce70(void);
+int __cdecl CDynamite::fire(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049cee0
+// Original: core_dynamite.cpp_CDynamite_FUN_0049cee0
 // Address: 0049cee0
-float __cdecl FUN_0049cee0(void);
+float __cdecl CDynamite(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049cf10
+// Original: core_dynamite.cpp_CDynamite_FUN_0049cf10
 // Address: 0049cf10
-void __cdecl FUN_0049cf10(void);
+void __cdecl CDynamite(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049cf20
+// Original: core_dynamite.cpp_CDynamite_FUN_0049cf20
 // Address: 0049cf20
-void __cdecl FUN_0049cf20(void);
+void __cdecl CDynamite(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049cf70
+// Original: core_dynamite.cpp_CDynamite_FUN_0049cf70
 // Address: 0049cf70
-int __cdecl FUN_0049cf70(void);
+int __cdecl CDynamite(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0049cf90
+// Original: core_dynamite.cpp_CDynamite_FUN_0049cf90
 // Address: 0049cf90
-bool __cdecl FUN_0049cf90(void);
+bool __cdecl CDynamite(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0049cfb0
 // Address: 0049cfb0
@@ -49,4 +49,4 @@ void __cdecl CDynamite::process(CDynamite *this_ptr,float delta_time);
 
 // Original: core_dynamite.cpp_CDynamite_dtor_FUN_0049d120
 // Address: 0049d120
-CDynamite * __cdecl CDynamite::dtor(CDynamite *this_ptr,uint d1,uint d2);
+CDynamite * __cdecl CDynamite::dtor(CDynamite *this_ptr,uint flags);

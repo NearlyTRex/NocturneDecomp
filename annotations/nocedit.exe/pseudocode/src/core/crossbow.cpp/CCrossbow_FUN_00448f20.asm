@@ -71,8 +71,8 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00448f59
     PUSH EBX                            ; 00448f5c
-    CALL core_weapon.cpp_FUN_005ee6e0   ; 00448f5d
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
+    CALL core_weapon.cpp_CWeapon_FUN_005ee6e0 ; 00448f5d
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_FUN_005ee6e0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 00448f62
     TEST EAX,EAX                        ; 00448f65
     JNZ 0x00448f70                      ; 00448f67

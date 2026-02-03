@@ -51,9 +51,9 @@ int __cdecl FUN_00448880(void);
 // Address: 004488f0
 void __cdecl FUN_004488f0(void);
 
-// Original: core_crate.cpp_CCrate_load_FUN_00448910
+// Original: core_crate.cpp_CCrate_archive_FUN_00448910
 // Address: 00448910
-void __cdecl CCrate::load(void);
+void __cdecl CCrate::archive(CCrate *this_ptr);
 
 // Original: core_crate.cpp_FUN_00448960
 // Address: 00448960
@@ -81,4 +81,4 @@ void __cdecl FUN_00448b60(void);
 
 // Original: core_crate.cpp_CCrate_dtor_FUN_00448bb0
 // Address: 00448bb0
-CCrate * __cdecl CCrate::dtor(CCrate *this_ptr,uint d1,uint d2);
+CCrate * __cdecl CCrate::dtor(CCrate *this_ptr,uint flags);

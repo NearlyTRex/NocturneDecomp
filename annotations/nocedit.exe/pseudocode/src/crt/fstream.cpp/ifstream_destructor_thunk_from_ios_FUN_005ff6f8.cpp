@@ -10,10 +10,7 @@ void __cdecl
 crt_fstream_cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8(ios *this_ptr,int dtor_flags)
 
 {
-  uint unaff_retaddr;
-  
   crt_fstream_cpp_ifstream_dtor_FUN_005ff856
-            ((ifstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_retaddr
-             ,(uint)this_ptr,dtor_flags);
+            ((ifstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);
   return;
 }

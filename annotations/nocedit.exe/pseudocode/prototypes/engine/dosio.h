@@ -57,7 +57,7 @@ CFileFinder * __cdecl CFileFinder::ctor(CFileFinder *this_ptr);
 
 // Original: engine_dosio.c_CFileFinder_dtor_FUN_00481c50
 // Address: 00481c50
-CFileFinder * __cdecl CFileFinder::dtor(CFileFinder *this_ptr,uint d1);
+CFileFinder * __cdecl CFileFinder::dtor(CFileFinder *this_ptr);
 
 // Original: engine_dosio.c_CFileFinder_openSearch_FUN_00481c70
 // Address: 00481c70

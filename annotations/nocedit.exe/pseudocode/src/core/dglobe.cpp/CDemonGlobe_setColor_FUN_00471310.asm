@@ -9,7 +9,7 @@
 ;
 ; XREF[7]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b22
-;   core_emitter.cpp_FUN_004a8070 at 004a81a5
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a81a5
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0b99
 ;   core_fire.cpp_FUN_004c1940 at 004c1953
 ;   core_flamecan.cpp_FUN_004cad90 at 004caddc

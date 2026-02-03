@@ -416,7 +416,7 @@ LAB_004aad41:
               return pCVar9;
             }
             if (local_f0 != 0) {
-              core_game_cpp_CGame_displayBitmap_FUN_004e2890();
+              core_game_cpp_CGame_displayBitmap_FUN_004e2890(g_CGamePtr);
             }
           }
           else {

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_game.cpp_KeypressesAndCGame_FUN_004dc3e0 at 004dc869
+;   core_game.cpp_CGame_FUN_004dc3e0 at 004dc869
 ;   core_hero.cpp_CHero_FUN_004f2a30 at 004f2aa6
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe58f
 ;   core_inv.cpp_CInventory_select_FUN_004ff800 at 004ff91c

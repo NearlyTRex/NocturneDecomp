@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint flags)
 ;
 ; Parameters:
 ; strstreambase *  Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
 ;   crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca at 005ff610
@@ -48,7 +46,7 @@ section .text
     PUSH EBX                            ; 006062ce
     MOV dword ptr [EBX + EAX*0x1 + 0x24],0x665d74 ; 006062cf | g_StrStreamBase_IOSDestructor
     CALL crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f ; 006062d7
-        ;   XREF to: 0060bb7f (UNCONDITIONAL_CALL)  ; strstreambuf * crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf * this_ptr, uint d1)
+        ;   XREF to: 0060bb7f (UNCONDITIONAL_CALL)  ; strstreambuf * crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf * this_ptr, uint flags)
     ADD ESP,0x8                         ; 006062dc
     MOV DL,byte ptr [ESP + 0xc]         ; 006062df
     LEA EBX,[EAX + -0x4]                ; 006062e3
@@ -81,7 +79,7 @@ section .text
     ADD EBX,0x4c                        ; 00606313
     PUSH EBX                            ; 00606316
     CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 00606317
-        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
+        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0060631c
     LEA EBX,[EAX + -0x4c]               ; 0060631f
     JMP 0x006062eb                      ; 00606322

@@ -14,7 +14,7 @@
 ; XREF[11]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d31d
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422722
-;   core_emitter.cpp_FUN_004a8db0 at 004a8fac
+;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8fac
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 at 004aa221
 ;   core_grave.cpp_FUN_004ee9e0 at 004eea21
 ;   core_health.cpp_CHealthItem_getPropertyList_FUN_004f2040 at 004f2098

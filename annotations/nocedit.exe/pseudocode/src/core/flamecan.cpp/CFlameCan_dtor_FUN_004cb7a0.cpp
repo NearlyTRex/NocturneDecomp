@@ -2,28 +2,27 @@
 // Address: 004cb7a0
 // Address Range: [[004cb7a0, 004cb804]]
 // Convention: __cdecl
-// Signature: CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint d1,uint d2,uint d3)
+// Signature: CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CFlameCan * __cdecl
-core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint d1,uint d2,uint d3)
+CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;
   CFlameCan *ptr;
   void *ptr_00;
   
-  if ((d1 & 4) != 0) {
+  if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CFlameCanTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(this_ptr->unk + 0x60),1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)this_ptr->unk,1);
   ptr = (CFlameCan *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar1[-3].create_event + 0x50),1);
-  if ((d1 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

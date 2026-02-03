@@ -85,4 +85,4 @@ void __cdecl CWerewolf(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_dtor_FUN_005f2220
 // Address: 005f2220
-CWerewolf * __cdecl CWerewolf::dtor(CWerewolf *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CWerewolf * __cdecl CWerewolf::dtor(CWerewolf *this_ptr,uint flags);

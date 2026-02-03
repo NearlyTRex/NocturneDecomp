@@ -77,7 +77,7 @@ section .text
     MOV EDI,dword ptr [0x0067b654]      ; 0057a984 | g_CGamePtr
     PUSH EDI                            ; 0057a98a | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0057a98b
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0057a990
     PUSH EBX                            ; 0057a993
     CALL core_setedit.cpp_CallToFreeSomeMemory_FUN_00580560 ; 0057a994

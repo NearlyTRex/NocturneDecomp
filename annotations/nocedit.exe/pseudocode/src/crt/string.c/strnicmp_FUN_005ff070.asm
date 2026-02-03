@@ -11,9 +11,9 @@
 ; XREF[18]:
 ;   core_charactr.cpp_CCharacter_FUN_00428f40 at 004294c3
 ;   core_charactr.cpp_CCharacter_FUN_0042c580 at 0042c5a8
-;   core_emitter.cpp_FUN_004a8070 at 004a82c0
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a82c0
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab860
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e171e
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e171e
 ;   core_mission.cpp_CDemonMission_FUN_00524660 at 0052468f
 ;   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0 at 00560fc2
 ;   core_script.cpp_CScript_FUN_00566cc0 at 00566dc5

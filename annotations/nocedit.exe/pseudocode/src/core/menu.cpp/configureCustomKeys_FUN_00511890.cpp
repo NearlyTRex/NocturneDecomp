@@ -21,13 +21,13 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
   char *pcVar10;
   char (*pacVar11) [256];
   byte bVar12;
-  CGame *in_stack_fffffeec;
+  char local_114 [256];
   int local_14;
   
   bVar12 = 0;
   pacVar7 = g_ControlsMenuTextBuffers;
   local_14 = 0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffeec);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   iVar4 = 0;
   do {
     *(char (**) [256])((int)g_ControlOptionsMenuPointers + iVar4) = pacVar7;
@@ -35,8 +35,8 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
     pacVar7 = pacVar7 + 1;
   } while (iVar4 != 0x24);
   do {
-    pcVar8 = &stack0xfffffeec;
-    pcVar9 = &stack0xfffffeec;
+    pcVar8 = local_114;
+    pcVar9 = local_114;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
@@ -101,8 +101,8 @@ LAB_005119ab:
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
     sprintf
-              (&stack0xfffffeec,"%5.2f",
-               (double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05);
+              (local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
+              );
     iVar4 = -1;
     pacVar7 = g_ControlsMenuTextBuffers + 5;
     do {
@@ -136,8 +136,8 @@ LAB_005119ab:
     } while (cVar1 != '\0');
     iVar4 = 7;
     sprintf
-              (&stack0xfffffeec,"%5.2f",
-               (double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05);
+              (local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
+              );
     iVar6 = -1;
     pacVar7 = g_ControlsMenuTextBuffers + 6;
     do {
@@ -232,10 +232,21 @@ LAB_00511b4c:
       }
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if ((iVar4 != 0) &&
-       (((g_CGamePtr->game_control != 2 || (g_CGamePtr->x_center != 0)) ||
-        (iVar4 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar4 != 0)))) {
-      return;
+    if (iVar4 != 0) {
+      if (g_CGamePtr->game_control != 2) {
+        return;
+      }
+      if (g_CGamePtr->x_center != 0) {
+        return;
+      }
+      local_114[4] = -0xf;
+      local_114[5] = '\x1d';
+      local_114[6] = 'Q';
+      local_114[7] = '\0';
+      iVar4 = core_menu_cpp_calibrateGamepad_FUN_005104d0();
+      if (iVar4 != 0) {
+        return;
+      }
     }
   } while( true );
 }

@@ -23,11 +23,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
   int *piVar9;
   int iVar10;
   char *pcVar11;
-  byte *in_stack_ffffafdc;
-  uint in_stack_ffffafe0;
-  uint in_stack_ffffafe4;
-  uint in_stack_ffffafe8;
-  uint in_stack_ffffafec;
+  int aiStack_5020 [2367];
   byte auStack_2b24 [9472];
   byte local_624 [936];
   char local_27c [500];
@@ -80,7 +76,6 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
       core_actor_cpp_FUN_0040e130();
       core_actor_cpp_FUN_0040e130();
       (*((pCVar7->vtable)._ub)->getPropertyList)(pCVar7,(CActorPropertyList *)auStack_2b24);
-      in_stack_ffffafdc = &stack0xffffafe0;
       (**(code **)(*(int *)(*(int *)(param_4 + 0x28) + 0x154) + 0xd4))();
       iStack_18 = 0;
       if (0 < (int)auStack_2b24._4_4_) {
@@ -88,9 +83,9 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
         do {
           piVar4 = piStack_14;
           local_20 = (CDemonActor *)0x0;
-          if (0 < (int)in_stack_ffffafdc) {
+          if (0 < (int)aiStack_5020) {
             str2 = piStack_14 + 1;
-            piVar9 = (int *)&stack0xffffafe0;
+            piVar9 = aiStack_5020;
             do {
               if ((*piVar9 == *piVar4) &&
                  (iVar10 = stricmp((char *)(piVar9 + 1),(char *)str2),
@@ -146,7 +141,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
               }
               local_20 = (CDemonActor *)(local_20->actor_name + 1);
               piVar9 = piVar9 + 0x3b;
-            } while ((int)local_20 < (int)in_stack_ffffafdc);
+            } while ((int)local_20 < (int)aiStack_5020);
           }
           piStack_14 = piStack_14 + 0x3b;
           iStack_18 = iStack_18 + 1;
@@ -184,8 +179,6 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(param_3);
     core_msnedit_cpp_CDemonMission_FUN_0053c140(param_3,iStack_18);
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)(local_624 + 8),0,(uint)in_stack_ffffafdc,in_stack_ffffafe0,
-             in_stack_ffffafe4,in_stack_ffffafe8,in_stack_ffffafec);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_624 + 8),0);
   return;
 }

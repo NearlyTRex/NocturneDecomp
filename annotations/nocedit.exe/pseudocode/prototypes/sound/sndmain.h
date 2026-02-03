@@ -773,4 +773,4 @@ CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr);
 
 // Original: sound_sndmain.cpp_freeSfxSamples_FUN_005ade40
 // Address: 005ade40
-void __cdecl freeSfxSamples(CSfxSample **array);
+CSfxSample * __cdecl freeSfxSamples(CSfxSample *objs);

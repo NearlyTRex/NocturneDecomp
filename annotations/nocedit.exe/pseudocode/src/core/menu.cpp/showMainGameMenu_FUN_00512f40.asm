@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
@@ -123,7 +123,7 @@ section .text
     PUSH EDX                            ; 00513003 | g_CGameInstance
     MOV dword ptr [ESP + 0x14],EAX      ; 00513004
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00513008
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051300d
     MOV ECX,dword ptr [0x0067b654]      ; 00513010 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_00513010
@@ -531,8 +531,8 @@ section .text
     PUSH 0x0                            ; 005133f6
     MOV EDI,dword ptr [0x0067b654]      ; 005133f8 | g_CGamePtr
     PUSH EDI                            ; 005133fe | g_CGameInstance
-    CALL core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 ; 005133ff
-        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadSaveGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
+    CALL core_game.cpp_CGame_loadGame_FUN_004e12b0 ; 005133ff
+        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
     ADD ESP,0xc                         ; 00513404
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00513407
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

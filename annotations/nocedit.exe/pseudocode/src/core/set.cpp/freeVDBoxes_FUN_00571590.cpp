@@ -2,13 +2,15 @@
 // Address: 00571590
 // Address Range: [[00571590, 005715a7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox **array)
+// Signature: SVDBox * __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox **array)
+SVDBox * __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox *objs)
 
 {
-  __arrfini(array,0xfa,&g_SVDBoxTypeInfo);
-  return;
+  SVDBox *pSVar1;
+  
+  pSVar1 = __arrfini(objs,0xfa,&g_SVDBoxTypeInfo);
+  return pSVar1;
 }

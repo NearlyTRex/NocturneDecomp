@@ -65,4 +65,4 @@ void __cdecl CHealthItem::writeDependencies(CHealthItem *this_ptr,_FILE *file_ha
 
 // Original: core_health.cpp_CHealthItem_dtor_FUN_004f20d0
 // Address: 004f20d0
-CHealthItem * __cdecl CHealthItem::dtor(CHealthItem *this_ptr,uint d1,uint d2);
+CHealthItem * __cdecl CHealthItem::dtor(CHealthItem *this_ptr,uint flags);

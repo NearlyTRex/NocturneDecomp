@@ -2,15 +2,15 @@
 // Address: 00420220
 // Address Range: [[00420220, 00420234]]
 // Convention: __cdecl
-// Signature: int __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape **array)
+// Signature: SScrape * __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape *array)
 
 #include "nocturne.h"
 
-int __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape **array)
+SScrape * __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape *array)
 
 {
-  int iVar1;
+  SScrape *pSVar1;
   
-  iVar1 = __arrfini(array,8,&g_SScrapeTypeInfo);
-  return iVar1;
+  pSVar1 = __arrfini(array,8,&g_SScrapeTypeInfo);
+  return pSVar1;
 }

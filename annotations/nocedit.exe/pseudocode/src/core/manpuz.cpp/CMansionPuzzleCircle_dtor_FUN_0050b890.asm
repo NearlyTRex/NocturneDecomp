@@ -1,15 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890 (CMansionPuzzleCircle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5)
+; __cdecl CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
-; uint             Stack[0x18]:4   d5
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMansionPuzzleCircleTypeInfo
@@ -37,25 +33,25 @@ section .text
     ADD EBX,0x1340                      ; 0050b89e
     PUSH EBX                            ; 0050b8a4
     CALL core_manpuz.cpp_freeReflectors_FUN_0050bad0 ; 0050b8a5
-        ;   XREF to: 0050bad0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_freeReflectors_FUN_0050bad0(SReflector * * objs)
+        ;   XREF to: 0050bad0 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_freeReflectors_FUN_0050bad0(SReflector * objs)
     ADD ESP,0x8                         ; 0050b8aa
     PUSH 0x0                            ; 0050b8ad
     SUB EAX,0x8a0                       ; 0050b8af
     PUSH EAX                            ; 0050b8b4
     CALL core_manpuz.cpp_freeGems_FUN_0050bab0 ; 0050b8b5
-        ;   XREF to: 0050bab0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_freeGems_FUN_0050bab0(SGem * * objs)
+        ;   XREF to: 0050bab0 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_freeGems_FUN_0050bab0(SGem * objs)
     ADD ESP,0x8                         ; 0050b8ba
     PUSH 0x0                            ; 0050b8bd
     SUB EAX,0x4b0                       ; 0050b8bf
     PUSH EAX                            ; 0050b8c4
     CALL core_manpuz.cpp_freePanels_FUN_0050ba90 ; 0050b8c5
-        ;   XREF to: 0050ba90 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_freePanels_FUN_0050ba90(SPanel * * objs)
+        ;   XREF to: 0050ba90 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_freePanels_FUN_0050ba90(SPanel * objs)
     ADD ESP,0x8                         ; 0050b8ca
     PUSH 0x1                            ; 0050b8cd
     LEA EBX,[EAX + 0xfffffa10]          ; 0050b8cf
     PUSH EBX                            ; 0050b8d5
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0050b8d6
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050b8db
     MOV DL,byte ptr [ESP + 0xc]         ; 0050b8de
     MOV EBX,EAX                         ; 0050b8e2

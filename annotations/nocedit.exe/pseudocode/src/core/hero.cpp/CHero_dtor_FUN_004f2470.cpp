@@ -2,20 +2,20 @@
 // Address: 004f2470
 // Address Range: [[004f2470, 004f2535]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470 (CHero *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
+// Signature: void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl
-core_hero_cpp_CHero_dtor_FUN_004f2470
-          (CHero *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
+void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
 
 {
   int iVar1;
-  CPathMap *pCVar2;
-  CDeformableModelInstance *pCVar3;
-  uint unaff_EBX;
-  uint unaff_retaddr;
+  CInventory *pCVar2;
+  CPathMap *pCVar3;
+  CFlame *pCVar4;
+  SFire *pSVar5;
+  CVector3f *pCVar6;
+  CDeformableModelInstance *pCVar7;
   
   (this_ptr->base).base.vtable._ub = &g_CHeroVTable;
   iVar1 = 0;
@@ -25,18 +25,17 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);
-  iVar1 = core_inv_cpp_CInventory_dtor_FUN_004fd0c0(&this_ptr->inventory);
-  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(iVar1 + -0x138e0));
-  iVar1 = core_armour_cpp_freeFlames_FUN_00412720
-                    ((CFlame **)(pCVar2[-1].height_cache_tags[0xb] + 0x2c));
-  iVar1 = core_armour_cpp_freeFires_FUN_00412700((SFire **)(iVar1 + -0x4b0));
-  iVar1 = core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar1 + -0x20c));
-  core_armour_cpp_freeVectors_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
+  pCVar2 = core_inv_cpp_CInventory_dtor_FUN_004fd0c0(&this_ptr->inventory);
+  pCVar3 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(pCVar2[-0x48].item_angles + 0x21));
+  pCVar4 = core_armour_cpp_freeFlames_FUN_00412720
+                     ((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x2c));
+  pSVar5 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar4[-2].base.create_event + 0x20));
+  pCVar6 = core_armour_cpp_freeVectors_FUN_004126e0((CVector3f *)(pSVar5[-0x16].unk + 4));
+  core_armour_cpp_freeVectors_FUN_004126e0(pCVar6 + -0xf);
   iVar1 = core_cloth_cpp_FUN_0043bf80();
-  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,
-                      (uint)this_ptr);
+  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
+                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0);
   core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-            ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
+            ((CDemonActor *)(pCVar7[-1].part_visibility_flags + 7),1);
   return;
 }

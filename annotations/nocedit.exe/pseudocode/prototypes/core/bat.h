@@ -65,7 +65,7 @@ void __cdecl CBat::showEditorHelp(CBat *this_ptr,int *y_pos);
 
 // Original: core_bat.cpp_CBat_dtor_FUN_00414fe0
 // Address: 00414fe0
-CBat * __cdecl CBat::dtor(CBat *this_ptr,uint d1,uint d2,uint d3);
+CBat * __cdecl CBat::dtor(CBat *this_ptr,uint flags);
 
 // Original: core_bat.cpp_FUN_00415050
 // Address: 00415050

@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_FUN_004ee420(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,1000,&g_CFootstepTypeInfo);
   return;

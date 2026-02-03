@@ -12,7 +12,7 @@
 ;   core_set.cpp_CDemonSet_FUN_00570e20 at 00570e4d
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aad9
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870 at 005858e5
-;   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 at 005eed5c
+;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eed5c
 ;
 ; Referenced Globals:
 ;   double g_CameraEffectIntensityScaleFactor = 65535

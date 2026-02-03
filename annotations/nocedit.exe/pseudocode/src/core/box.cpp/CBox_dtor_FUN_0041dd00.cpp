@@ -9,8 +9,8 @@
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dd00(CBox *this_ptr)
 
 {
-  int iVar1;
+  SScrape *pSVar1;
   
-  iVar1 = core_box_cpp_freeScrapes_FUN_00420220((SScrape **)this_ptr->scrape_points);
-  return (CBox *)(iVar1 + -0xb4);
+  pSVar1 = core_box_cpp_freeScrapes_FUN_00420220(this_ptr->scrape_points);
+  return (CBox *)&pSVar1[-4].previous_position.y;
 }

@@ -2,291 +2,429 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "pointer_precision",
         "column": 11,
-        "line": 54,
+        "line": 55,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 22,
-        "line": 60,
+        "line": 61,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 67,
+        "line": 68,
         "message": "invalid cast from type 'float' to type 'CPathMap*'"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 29,
-        "line": 70,
+        "line": 71,
         "message": "cast from 'CPathMap*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 71,
-        "message": "invalid cast from type 'CPathMap*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 75,
-        "line": 71,
-        "message": "invalid cast from type 'CPathMap*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 71,
-        "message": "expression cannot be used as a function"
-      },
-      {
-        "category": "other",
-        "column": 32,
         "line": 72,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 75,
+        "line": 72,
+        "message": "invalid cast from type 'CPathMap*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 72,
+        "message": "expression cannot be used as a function"
+      },
+      {
+        "category": "other",
+        "column": 32,
         "line": 73,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 78,
+        "line": 74,
+        "message": "invalid cast from type 'CPathMap*' to type 'float'"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 13,
+        "line": 79,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 83,
+        "line": 84,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 85,
+        "line": 86,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 17,
-        "line": 92,
+        "line": 93,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 100,
+        "line": 101,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
         "category": "incompatible_types",
         "column": 32,
-        "line": 103,
+        "line": 104,
         "message": "invalid conversion from 'CDemonActor*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 107,
+        "line": 108,
         "message": "base operand of '->' is not a pointer"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 107,
+        "line": 108,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 28,
-        "line": 110,
+        "line": 111,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 37,
-        "line": 111,
+        "line": 112,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 67,
-        "line": 111,
+        "line": 112,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CDemonActor*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 118,
+        "line": 119,
         "message": "base operand of '->' is not a pointer"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 121,
+        "line": 122,
         "message": "base operand of '->' is not a pointer"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 124,
-        "message": "base operand of '->' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 48,
         "line": 125,
         "message": "base operand of '->' is not a pointer"
       },
       {
         "category": "other",
-        "column": 47,
+        "column": 48,
         "line": 126,
+        "message": "base operand of '->' is not a pointer"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 127,
         "message": "base operand of '->' is not a pointer"
       },
       {
         "category": "incompatible_types",
         "column": 49,
-        "line": 127,
+        "line": 128,
         "message": "invalid conversion from 'CDemonActor*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 83,
-        "line": 130,
+        "line": 131,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CDemonActor*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 49,
-        "line": 131,
+        "line": 132,
         "message": "invalid conversion from 'CDemonActor*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 28,
-        "line": 140,
+        "line": 141,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 13,
-        "line": 147,
+        "line": 148,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 160,
+        "line": 161,
         "message": "'stack0xffffff60' was not declared in this scope"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 204,
+        "line": 206,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 34,
-        "line": 217,
-        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 218,
-        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 29,
         "line": 219,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 34,
+        "category": "pointer_precision",
+        "column": 38,
         "line": 220,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 28,
+        "category": "pointer_precision",
+        "column": 29,
         "line": 221,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 37,
+        "category": "pointer_precision",
+        "column": 34,
         "line": 222,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 29,
+        "category": "pointer_precision",
+        "column": 28,
         "line": 223,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 34,
+        "category": "pointer_precision",
+        "column": 37,
         "line": 224,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 29,
         "line": 225,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 30,
-        "line": 242,
+        "category": "pointer_precision",
+        "column": 34,
+        "line": 226,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
+        "column": 29,
+        "line": 227,
+        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 30,
+        "line": 244,
+        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
         "column": 31,
-        "line": 243,
+        "line": 245,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 249,
+        "line": 251,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 259,
+        "line": 261,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 13,
-        "line": 264,
+        "line": 266,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 270,
+        "line": 272,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 10,
-        "line": 273,
+        "line": 275,
         "message": "cast from 'CDemonSet*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -294,6 +432,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -301,19 +445,13 @@
       {
         "category": "other",
         "column": 59,
-        "line": 57,
+        "line": 58,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 80,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 110,
+        "line": 81,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -324,25 +462,19 @@
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 217,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 218,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 20,
+        "line": 112,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 219,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 30,
         "line": 220,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -354,7 +486,7 @@
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 25,
         "line": 222,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -366,7 +498,7 @@
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 28,
         "line": 224,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -378,31 +510,43 @@
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 242,
+        "column": 25,
+        "line": 226,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 227,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 243,
+        "line": 244,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 245,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 267,
+        "line": 269,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 729,
+    "complexity_score": 731,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "pseudocode_lines": 264,
+    "pseudocode_lines": 266,
     "suspect_count": 44,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -411,7 +555,7 @@
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 840
+    "total_lines": 842
   },
   "cross_references": [
     {
@@ -463,7 +607,7 @@
     {
       "addr": "004cb340",
       "is_variadic": false,
-      "name": "core_flamecan.cpp_FUN_004cb340"
+      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
     },
     {
       "addr": "004eb3a0",
@@ -858,301 +1002,301 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 64,
       "match": "CONCAT22",
       "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 65,
       "match": "NAN",
       "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_00821ff4",
       "text": "DAT_00821ff4 = pCVar5;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 101,
       "match": "DAT_00821ff4",
       "text": "(*((DAT_00821ff4->vtable)._ub)->process)(DAT_00821ff4,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 101,
       "match": "DAT_00821ff4",
       "text": "(*((DAT_00821ff4->vtable)._ub)->process)(DAT_00821ff4,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 104,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_032bd794 + iVar7) = iVar8 - local_3c;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_032bd794",
       "text": "*(int *)((int)&DAT_032bd794 + iVar7) = iVar8 - local_3c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 105,
       "match": "DAT_032bf6d4",
       "text": "*(CDemonActor **)((int)&DAT_032bf6d4 + iVar7) = DAT_00821ff4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 105,
       "match": "DAT_00821ff4",
       "text": "*(CDemonActor **)((int)&DAT_032bf6d4 + iVar7) = DAT_00821ff4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_00821ff4",
       "text": "this_ptr_00 = (*((DAT_00821ff4->vtable)._ub)->getPathMap)(DAT_00821ff4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_00821ff4",
       "text": "this_ptr_00 = (*((DAT_00821ff4->vtable)._ub)->getPathMap)(DAT_00821ff4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_00821ff4",
       "text": "(this_ptr_00,&(DAT_00821ff4->location).position,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_00821ff4",
       "text": "if (((fStack_58 == (DAT_00821ff4->orient).bank) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_00821ff4",
       "text": "(fStack_5c == (DAT_00821ff4->orient).pitch)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 120,
       "match": "DAT_00821ff4",
       "text": "(fStack_54 == (DAT_00821ff4->orient).heading)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 121,
       "match": "DAT_00821ff4",
       "text": "DAT_00821ff4 = (CDemonActor *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_00821ff4",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(DAT_00821ff4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 124,
       "match": "DAT_00821ff4",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_00821ff4",
       "text": "DAT_00821ff4 = (CDemonActor *)0x0;",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 153,
+      "line": 154,
       "match": "&stack0xffffff60",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 160,
+      "line": 161,
       "match": "&stack0xffffff60",
       "text": "damage_info = (CPathMap *)&stack0xffffff60;",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 174,
+      "line": 175,
       "match": "extraout_EAX",
       "text": "extraout_EAX != 0)) {",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 212,
       "match": "(int *)((int)",
       "text": "iVar7 = *(int *)((int)&DAT_032bd794 + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 210,
+      "line": 212,
       "match": "DAT_032bd794",
       "text": "iVar7 = *(int *)((int)&DAT_032bd794 + local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 213,
       "match": "(int *)((int)",
       "text": "if (iVar7 < *(int *)((int)&DAT_032bd794 + iVar9)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 213,
       "match": "DAT_032bd794",
       "text": "if (iVar7 < *(int *)((int)&DAT_032bd794 + iVar9)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 214,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bd794 + local_2c) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 212,
+      "line": 214,
       "match": "DAT_032bd794",
       "text": "*(uint *)((int)&DAT_032bd794 + local_2c) =",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 215,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bd794 + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
+      "line": 215,
       "match": "DAT_032bd794",
       "text": "*(uint *)((int)&DAT_032bd794 + iVar9);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 214,
+      "line": 216,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_032bd794 + iVar9) = iVar7;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 214,
+      "line": 216,
       "match": "DAT_032bd794",
       "text": "*(int *)((int)&DAT_032bd794 + iVar9) = iVar7;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 217,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)&DAT_032bf6d4 + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 215,
+      "line": 217,
       "match": "DAT_032bf6d4",
       "text": "uVar3 = *(uint *)((int)&DAT_032bf6d4 + local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 218,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bf6d4 + local_2c) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 216,
+      "line": 218,
       "match": "DAT_032bf6d4",
       "text": "*(uint *)((int)&DAT_032bf6d4 + local_2c) =",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 219,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 219,
       "match": "DAT_032bf6d4",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar9);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 220,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar9) = uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 220,
       "match": "DAT_032bf6d4",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar9) = uVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 237,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&DAT_032bd794 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 237,
       "match": "DAT_032bd794",
       "text": "piVar1 = (int *)((int)&DAT_032bd794 + iVar8);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 236,
+      "line": 238,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&DAT_032bf6d4 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 236,
+      "line": 238,
       "match": "DAT_032bf6d4",
       "text": "puVar2 = (uint *)((int)&DAT_032bf6d4 + iVar8);",
       "type": "undefined_data"

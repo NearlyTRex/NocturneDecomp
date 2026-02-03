@@ -20,7 +20,7 @@ typedef struct CPodFile {
     int file_count; // 0x410
     struct CPodDirectoryEntry* directory_entries; // 0x414
     char* file_data_buffer; // 0x418
-    uint audit_count; // 0x41c
+    int audit_count; // 0x41c
     uint total_file_size; // 0x420
     int dependency_count; // 0x424
     uint dependency_records_offset; // 0x428

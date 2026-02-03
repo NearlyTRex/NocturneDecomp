@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; XREF[2]:
-;   core_enemy.cpp_CEnemy_FUN_004a9fa0 at 004a9fc1
+;   core_enemy.cpp_CEnemy_renderBackground_FUN_004a9fa0 at 004a9fc1
 ;   core_npc.cpp_CNPC_renderBackground_FUN_00544b70 at 00544b91
 ;
 ; Called Functions:

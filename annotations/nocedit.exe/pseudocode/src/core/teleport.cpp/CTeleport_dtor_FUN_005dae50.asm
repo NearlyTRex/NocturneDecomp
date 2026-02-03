@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005dae50(CTeleport *this_ptr,uint d1,uint d2)
+; __cdecl CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005dae50(CTeleport *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTeleportTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005dae5c
     PUSH EBX                            ; 005dae5e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005dae5f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005dae64
     MOV DL,byte ptr [ESP + 0xc]         ; 005dae67
     MOV EBX,EAX                         ; 005dae6b

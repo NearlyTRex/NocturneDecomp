@@ -65,4 +65,4 @@ void __cdecl CBatman::writeDependencies(CBatman *this_ptr,_FILE *file_handle);
 
 // Original: core_batman.cpp_CBatman_dtor_FUN_00417d60
 // Address: 00417d60
-CBatman * __cdecl CBatman::dtor(CBatman *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CBatman * __cdecl CBatman::dtor(CBatman *this_ptr,uint flags);

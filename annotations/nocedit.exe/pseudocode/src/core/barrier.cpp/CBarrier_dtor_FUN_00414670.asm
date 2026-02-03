@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_00414670(CBarrier *this_ptr,uint d1,uint d2)
+; __cdecl CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_00414670(CBarrier *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBarrierTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0041467c
     PUSH EBX                            ; 0041467e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041467f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00414684
     MOV DL,byte ptr [ESP + 0xc]         ; 00414687
     MOV EBX,EAX                         ; 0041468b

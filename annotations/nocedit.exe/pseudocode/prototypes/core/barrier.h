@@ -57,4 +57,4 @@ void __cdecl CBarrier(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_dtor_FUN_00414670
 // Address: 00414670
-CBarrier * __cdecl CBarrier::dtor(CBarrier *this_ptr,uint d1,uint d2);
+CBarrier * __cdecl CBarrier::dtor(CBarrier *this_ptr,uint flags);

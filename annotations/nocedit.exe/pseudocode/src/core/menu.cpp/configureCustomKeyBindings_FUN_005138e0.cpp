@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
 
 {
@@ -38,24 +40,13 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   int *piVar27;
   char (*pacVar28) [40];
   int iVar29;
-  CPickList *unaff_ESI;
   int iVar30;
-  uint unaff_EDI;
   char *pcVar31;
   int iVar32;
   char *pcVar33;
   bool bVar34;
   byte bVar35;
-  CKeys *in_stack_fffff584;
-  uint in_stack_fffff588;
-  CPickList *in_stack_fffff58c;
-  CStrList_vtable *in_stack_fffff590;
-  char **in_stack_fffff594;
-  CStrList_vtable *in_stack_fffff598;
-  uint in_stack_fffff59c;
-  uint in_stack_fffff5a0;
-  char **in_stack_fffff5a4;
-  char local_6d4 [520];
+  CPickList CStack_a64;
   char acStack_4cc [504];
   char local_2d4 [512];
   char local_d4 [200];
@@ -615,9 +606,7 @@ LAB_0051390e:
     iVar30 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                        ((CPickList *)&stack0xfffff584,pcVar2,iVar30,iVar32);
     if (iVar30 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff584,0,(uint)unaff_ESI,unaff_EDI,(uint)in_stack_fffff584,
-                 in_stack_fffff588,(uint)in_stack_fffff58c);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Forward");
       iVar30 = core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(&g_CGamePtr->key_walk,pcVar2);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Back");
@@ -704,7 +693,7 @@ LAB_0051390e:
       case 0x252:
       case 0x253:
       case 0x254:
-        pcVar2 = local_6d4;
+        pcVar2 = CStack_a64.cancel_button.button_text + 0xb4;
         pcVar31 = g_CustomKeyNames[iVar32];
         do {
           cVar1 = *pcVar31;
@@ -718,7 +707,7 @@ LAB_0051390e:
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             (" is assigned to the gamepad.  Can't assign a key.");
         iVar30 = -1;
-        pcVar2 = local_6d4;
+        pcVar2 = CStack_a64.cancel_button.button_text + 0xb4;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -738,7 +727,7 @@ LAB_0051390e:
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,local_6d4);
+                  (g_CEditorToolsPtr,CStack_a64.cancel_button.button_text + 0xb4);
         break;
       case 0x255:
       case 0x256:
@@ -780,7 +769,7 @@ LAB_0051390e:
       default:
         while( true ) {
           if (g_CGamePtr->game_control == 2) {
-            core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+            core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
           }
           iVar30 = -1;
           iVar29 = 0;
@@ -797,17 +786,12 @@ LAB_00514913:
                     (g_CEditorToolsPtr,pcVar2);
           iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar30 != 0) break;
-          in_stack_fffff588 = 0x514948;
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         }
         iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar30 != 0) {
           engine_2d_c_clearInputAndWait_FUN_00403260();
-          unaff_EDI = 0;
-          unaff_ESI = (CPickList *)&stack0xfffff58c;
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (unaff_ESI,0,(uint)unaff_ESI,in_stack_fffff588,(uint)in_stack_fffff58c,
-                     (uint)in_stack_fffff590,(uint)in_stack_fffff594);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff58c,0);
           goto LAB_0051390e;
         }
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -850,12 +834,11 @@ LAB_00514a04:
         do {
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           if (g_CGamePtr->game_control == 2) {
-            core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+            core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
           }
           iVar30 = -1;
           iVar29 = 0;
           do {
-            unaff_ESI = (CPickList *)g_CKeysPtr;
             iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a04;
             iVar29 = iVar29 + 1;
@@ -868,13 +851,11 @@ LAB_00514a04:
                   (g_CEditorToolsPtr,pcVar2);
         while( true ) {
           if (g_CGamePtr->game_control == 2) {
-            core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+            core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
           }
           iVar30 = -1;
           iVar29 = 0;
           do {
-            unaff_EDI = 0x514a8d;
-            in_stack_fffff584 = g_CKeysPtr;
             iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a9c;
             iVar29 = iVar29 + 1;
@@ -897,17 +878,10 @@ LAB_00514a9c:
         }
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
       }
-      in_stack_fffff590 = (CStrList_vtable *)0x0;
-      in_stack_fffff58c = (CPickList *)&stack0xfffff59c;
-      in_stack_fffff588 = 0x514861;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (in_stack_fffff58c,0,(uint)in_stack_fffff594,(uint)in_stack_fffff598,
-                 in_stack_fffff59c,in_stack_fffff5a0,(uint)in_stack_fffff5a4);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_a64,0);
       goto LAB_0051390e;
     }
     core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffff584,0,(uint)unaff_ESI,unaff_EDI,(uint)in_stack_fffff584,
-               in_stack_fffff588,(uint)in_stack_fffff58c);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);
   } while( true );
 }

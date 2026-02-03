@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *bitmap)
+; __cdecl CAlphaBitmap * __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *objs)
 ;
 ; Parameters:
-; CAlphaBitmap *   Stack[0x4]:4   bitmap
+; CAlphaBitmap *   Stack[0x4]:4   objs
 ;
 ; XREF[1]:
 ;   support_newmsg.cpp_CMouse_dtor_FUN_005443e0 at 005443ec
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00544757
     PUSH EDX                            ; 0054475b
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0054475c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00544761
     RET                                 ; 00544764
 

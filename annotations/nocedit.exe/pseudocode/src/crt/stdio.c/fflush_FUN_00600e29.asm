@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1640
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1640
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e10c4
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481b68
 ;

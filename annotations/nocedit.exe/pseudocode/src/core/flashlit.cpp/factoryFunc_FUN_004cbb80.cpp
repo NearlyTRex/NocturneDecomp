@@ -15,6 +15,6 @@ CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_004cbb80(void)
   if (pCVar1 == (CFlashlight *)0x0) {
     return (CFlashlight *)0x0;
   }
-  pCVar1 = core_flamegun_cpp_CFlashlight_ctor_FUN_004cbbc0(pCVar1);
+  pCVar1 = core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(pCVar1);
   return pCVar1;
 }

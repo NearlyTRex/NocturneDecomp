@@ -39,9 +39,9 @@ int __cdecl FUN_0046fcc0(void);
 // Address: 0046fd50
 int __cdecl FUN_0046fd50(void);
 
-// Original: core_dest.cpp_CActorDestination_load_FUN_0046fdb0
+// Original: core_dest.cpp_CActorDestination_archive_FUN_0046fdb0
 // Address: 0046fdb0
-void __cdecl CActorDestination::load(void);
+void __cdecl CActorDestination::archive(CActorDestination *this_ptr);
 
 // Original: core_dest.cpp_FUN_0046fe70
 // Address: 0046fe70

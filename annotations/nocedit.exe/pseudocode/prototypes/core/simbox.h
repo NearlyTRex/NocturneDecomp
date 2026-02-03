@@ -61,4 +61,4 @@ void __cdecl CSimBox(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_005893e0
 // Address: 005893e0
-CSimBox * __cdecl CSimBox::dtor(CSimBox *this_ptr,uint d1,uint d2,uint d3);
+CSimBox * __cdecl CSimBox::dtor(CSimBox *this_ptr,uint flags);

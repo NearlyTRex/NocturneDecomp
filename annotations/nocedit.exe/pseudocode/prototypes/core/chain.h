@@ -73,7 +73,7 @@ int __cdecl FUN_00431350(void);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_00431360
 // Address: 00431360
-CChain * __cdecl CChain::dtor(CChain *this_ptr,uint d1,uint d2,uint d3);
+CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
 // Original: core_chain.cpp_SChainVertex_ctor_FUN_004313d0
 // Address: 004313d0

@@ -61,4 +61,4 @@ void __cdecl CBride::writeDependencies(CBride *this_ptr,_FILE *file_handle);
 
 // Original: core_bride.cpp_CBride_dtor_FUN_00424b80
 // Address: 00424b80
-CBride * __cdecl CBride::dtor(CBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CBride * __cdecl CBride::dtor(CBride *this_ptr,uint flags);

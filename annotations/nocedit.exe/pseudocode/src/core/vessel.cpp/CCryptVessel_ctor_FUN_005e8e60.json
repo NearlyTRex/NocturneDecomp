@@ -1,10 +1,155 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -12,41 +157,41 @@
       {
         "category": "other",
         "column": 12,
-        "line": 25,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 28,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 53,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 70,
+        "line": 69,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 204,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 11,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 68,
     "suspect_count": 13,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -218,91 +363,91 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 18,
       "match": "pCVar3[-4].",
       "text": "*(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 20,
       "match": "pCVar3[-4].",
       "text": "((CKeyFramedModelInstance *)pCVar3[-4].animation_state,\"vsslbase.kfm\");",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
+      "line": 29,
       "match": "pCVar3[-3].",
       "text": "pcVar6 = pCVar3[-3].animation_state + 0xc;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 44,
+      "line": 43,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0xd] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 45,
+      "line": 44,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0xe] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 47,
+      "line": 46,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0x12] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 48,
+      "line": 47,
       "match": "pCVar3[-3].",
       "text": "pcVar6 = pCVar3[-3].animation_state + 0x70;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 49,
+      "line": 48,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0x11] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 59,
+      "line": 58,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0xf] = 0x41200000;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 60,
+      "line": 59,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0x13] = 1;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 61,
+      "line": 60,
       "match": "pCVar3[-2].",
       "text": "pCVar3[-2].part_visibility_flags[0x10] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 62,
+      "line": 61,
       "match": "pCVar3[-1].",
       "text": "pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 71,
+      "line": 70,
       "match": "pCVar3[-5].",
       "text": "return (CCryptVessel *)(pCVar3[-5].animation_state + 0x24);",
       "type": "negative_offset"

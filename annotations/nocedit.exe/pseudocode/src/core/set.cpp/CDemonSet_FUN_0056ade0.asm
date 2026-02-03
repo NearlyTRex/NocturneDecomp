@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_004a8070 at 004a82a5
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a82a5
 ;   core_grave.cpp_FUN_004ee790 at 004ee7de
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b1a1
 ;

@@ -57,4 +57,4 @@ void __cdecl CBatCreature::writeDependencies(CBatCreature *this_ptr,_FILE *file_
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_00416320
 // Address: 00416320
-CDemonActor * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CDemonActor * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);

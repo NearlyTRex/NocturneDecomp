@@ -29,7 +29,7 @@ CDemonActor * __cdecl CDemonActor::ctor(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_dtor_FUN_00408a30
 // Address: 00408a30
-CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint d1);
+CDemonActor * __cdecl CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 
 // Original: core_actor.cpp_CDemonActor_process_FUN_00408a80
 // Address: 00408a80
@@ -737,4 +737,4 @@ int __cdecl FUN_004104f0(void);
 
 // Original: core_actor.cpp_freeVectors_FUN_00410500
 // Address: 00410500
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

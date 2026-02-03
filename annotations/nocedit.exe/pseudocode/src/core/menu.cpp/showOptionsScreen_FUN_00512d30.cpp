@@ -12,7 +12,6 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
   int iVar1;
   char *pcVar2;
   char (*pacVar3) [256];
-  CGame *unaff_ESI;
   int in_stack_0000000c;
   int local_10;
   
@@ -22,7 +21,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
   }
   pacVar3 = g_OptionsMenuTextBuffers;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,unaff_ESI);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   iVar1 = 0;
   do {
     *(char (**) [256])((int)g_OptionsMenuPointers + iVar1) = pacVar3;

@@ -101,7 +101,7 @@ void __cdecl CBoneGuy::writeDependencies(CBoneGuy *this_ptr,_FILE *file_handle);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40
 // Address: 0041da40
-CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9);
+CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_ctor_FUN_0041db10
 // Address: 0041db10
@@ -113,4 +113,4 @@ SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr);
 
 // Original: core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30
 // Address: 0041db30
-int __cdecl freeBoneGuyBoxes(SBoneGuyBox **objs);
+SBoneGuyBox * __cdecl freeBoneGuyBoxes(SBoneGuyBox *objs);

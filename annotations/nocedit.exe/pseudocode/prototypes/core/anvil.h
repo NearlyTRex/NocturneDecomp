@@ -53,4 +53,4 @@ void __cdecl CAnvil::writeDependencies(CAnvil *this_ptr,_FILE *file_handle);
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_004120e0
 // Address: 004120e0
-CAnvil * __cdecl CAnvil::dtor(CAnvil *this_ptr,uint d1,uint d2);
+CAnvil * __cdecl CAnvil::dtor(CAnvil *this_ptr,uint flags);

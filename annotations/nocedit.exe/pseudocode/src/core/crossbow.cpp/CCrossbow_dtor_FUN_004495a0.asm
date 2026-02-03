@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CCrossbowTypeInfo
@@ -33,13 +31,13 @@ section .text
     ADD EBX,0x57c                       ; 004495ae
     PUSH EBX                            ; 004495b4
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004495b5
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004495ba
     PUSH 0x1                            ; 004495bd
     LEA EBX,[EAX + 0xfffffa84]          ; 004495bf
     PUSH EBX                            ; 004495c5
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 004495c6
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004495cb
     MOV DL,byte ptr [ESP + 0xc]         ; 004495ce
     MOV EBX,EAX                         ; 004495d2

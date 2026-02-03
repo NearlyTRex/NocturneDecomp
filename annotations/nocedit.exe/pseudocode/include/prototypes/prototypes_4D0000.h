@@ -9,6 +9,7 @@
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
+#include "types/enums/EAmmoType.h"
 #include "types/structs/SHardwareEdge.h"
 #include "types/structs/SPlayerControl.h"
 #include "types/structs/SRenderVertex.h"
@@ -37,7 +38,7 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_004d16e0(void);
 CDemonActorType * __cdecl core_frankgen_cpp_FUN_004d1710(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004d1720(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_FUN_004d17b0(void);
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_load_FUN_004d19e0(void);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004d19e0(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_PlaySounds_FUN_004d1a40(void);
 void __cdecl core_frankgen_cpp_FUN_004d1ec0(void);
 void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void);
@@ -55,7 +56,7 @@ void __cdecl core_frankgen_cpp_FUN_004d2740(void);
 int __cdecl core_frankgen_cpp_FUN_004d2770(void);
 int __cdecl core_frankgen_cpp_FUN_004d2880(void);
 int __cdecl core_frankgen_cpp_FUN_004d2890(void);
-CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0 (CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
 float __cdecl core_gabriela_cpp_FUN_004d29f0(void);
 float __cdecl core_gabriela_cpp_FUN_004d2a30(void);
@@ -78,7 +79,7 @@ int __cdecl core_gabriela_cpp_FUN_004d5c60(void);
 int __cdecl core_gabriela_cpp_FUN_004d5f70(void);
 void __cdecl core_gabriela_cpp_FUN_004d5fe0(void);
 int __cdecl core_gabriela_cpp_FUN_004d6050(void);
-void __cdecl core_gabriela_cpp_CGabriella_load_FUN_004d6090(void);
+void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004d6090(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004d6230(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_FUN_004d6260(void);
@@ -93,13 +94,13 @@ void __cdecl core_gabriela_cpp_FUN_004d75e0(void);
 void __cdecl core_gabriela_cpp_FUN_004d7610(void);
 void __cdecl core_gabriela_cpp_FUN_004d7630(void);
 int __cdecl core_gabriela_cpp_FUN_004d7650(void);
-CGabriella * __cdecl core_gabriela_cpp_freeMaybe_FUN_004d7660(CGabriella *this_ptr,uint d1,uint d2,uint d3);
+CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004d7660(CGabriella *this_ptr,uint flags);
 void __cdecl core_game_cpp_staticInit_FUN_004d76d0(void);
 void __cdecl core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void);
 void __cdecl core_game_cpp_FUN_004d7810(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr);
 CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004d7d70(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *n1,CGame *n2);
+void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *this_ptr,char *message,float duration);
@@ -108,7 +109,7 @@ void __cdecl core_game_cpp_FUN_004d7fa0(void);
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_FUN_004d85a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_FUN_004d8730(CGame *this_ptr);
-int __cdecl core_game_cpp_adjustFudgePosition_FUN_004d8750 (CGame *this_ptr,float delta_time,int additional_param);
+int __cdecl core_game_cpp_CGame_FUN_004d8750(CGame *this_ptr,float delta_time,int additional_param);
 void __cdecl core_game_cpp_FUN_004d8890(void);
 void __cdecl core_game_cpp_FUN_004d8910(void);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_ptr);
@@ -118,19 +119,19 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void);
-void __cdecl core_game_cpp_CallToJoystickStuff_FUN_004dc230(CGame *this_ptr,int unk1,SPlayerControl *unk);
+void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_FUN_004dc230(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_FUN_004dc270(void);
 void __cdecl core_game_cpp_FUN_004dc2a0(void);
 void __cdecl core_game_cpp_FUN_004dc2d0(void);
 void __cdecl core_game_cpp_FUN_004dc370(void);
-void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerControl *ctrl);
-void __cdecl core_game_cpp_SettingCursorPos_FUN_004dccc0(CGame *game,SPlayerControl *ctrl);
+void __cdecl core_game_cpp_CGame_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control);
+void __cdecl core_game_cpp_CGame_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame *this_ptr);
-void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_FUN_004dcee0(CGame *this_ptr);
 int __cdecl core_game_cpp_FUN_004dd7f0(void);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1);
-void __cdecl core_game_cpp_FUN_004dd930(char *p1,int p2);
+void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3);
 void __cdecl core_game_cpp_FUN_004dd9d0(void);
 void __cdecl core_game_cpp_CGame_FUN_004dda80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr);

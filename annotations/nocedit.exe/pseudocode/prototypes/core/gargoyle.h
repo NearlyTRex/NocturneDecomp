@@ -35,9 +35,9 @@ void __cdecl CGargoyle::unk6(void);
 // Address: 004e53f0
 void __cdecl CGargoyle::unk5(void);
 
-// Original: core_gargoyle.cpp_CGargoyle_load_FUN_004e5470
+// Original: core_gargoyle.cpp_CGargoyle_archive_FUN_004e5470
 // Address: 004e5470
-void __cdecl CGargoyle::load(void);
+void __cdecl CGargoyle::archive(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530
 // Address: 004e5530
@@ -65,4 +65,4 @@ void __cdecl FUN_004e5ba0(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0
 // Address: 004e5bd0
-CGargoyle * __cdecl CGargoyle::dtor(CGargoyle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CGargoyle * __cdecl CGargoyle::dtor(CGargoyle *this_ptr,uint flags);

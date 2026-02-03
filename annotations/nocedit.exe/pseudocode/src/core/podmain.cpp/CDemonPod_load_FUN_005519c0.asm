@@ -92,7 +92,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00551a4d
     PUSH EAX                            ; 00551a51
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 00551a52
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00551a57
     PUSH EBX                            ; 00551a5a
     CALL engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 ; 00551a5b

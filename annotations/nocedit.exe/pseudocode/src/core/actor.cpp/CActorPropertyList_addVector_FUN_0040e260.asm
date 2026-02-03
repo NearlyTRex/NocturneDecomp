@@ -15,7 +15,7 @@
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422751
 ;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423553
 ;   core_conveyor.cpp_FUN_00442130 at 00442192
-;   core_emitter.cpp_FUN_004a8db0 at 004a8ee3
+;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8ee3
 ;   core_simbox.cpp_CSimBox_FUN_00589310 at 005893b3
 ;   core_vehicle.cpp_CVehicle_FUN_005e8ba0 at 005e8c61
 ;

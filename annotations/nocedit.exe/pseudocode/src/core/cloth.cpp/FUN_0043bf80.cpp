@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_cloth.cpp_FUN_0043bf80(uint param_1) */
-
 int __cdecl core_cloth_cpp_FUN_0043bf80(void)
 
 {

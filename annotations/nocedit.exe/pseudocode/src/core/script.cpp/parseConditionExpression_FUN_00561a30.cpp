@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_30 */
-
 int __cdecl
 core_script_cpp_parseConditionExpression_FUN_00561a30
           (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position
@@ -82,7 +80,7 @@ core_script_cpp_parseConditionExpression_FUN_00561a30
       suffix_out[1] = cVar1;
       suffix_out = suffix_out + 2;
     } while (cVar1 != '\0');
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0,local_30.item_count);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0);
     return 0x20;
   }
   pcVar2 = input_text;
@@ -166,6 +164,6 @@ LAB_00561ae9:
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0,local_30.item_count);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_30,0);
   return iVar5;
 }

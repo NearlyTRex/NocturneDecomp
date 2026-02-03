@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_dracbrid.cpp_FUN_00484410 at 00484cfe
-;   core_emitter.cpp_FUN_004a8070 at 004a849e
-;   core_flamegun.cpp_FUN_004cb920 at 004cb971
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a849e
+;   core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920 at 004cb971
 ;
 ; Referenced Globals:
 ;   CCrater* g_CraterActiveListHead

@@ -1,0 +1,282 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cbc60",
+    "address_range": [
+      [
+        "004cbc60",
+        "004cbcad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flashlit.cpp_CFlashlight_dtor_FUN_004cbc60",
+    "signature": "CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashlight *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005edf80",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_dtor_FUN_005edf80"
+    },
+    {
+      "addr": "005fe632",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e4e0",
+      "name": "g_CFlashlightTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 11
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlashlight *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "0065e3d4"
+      },
+      {
+        "class_name": "CFlashlight",
+        "offset": 8,
+        "vtable_addr": "0065e4e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CStrangerTypeInfo
@@ -32,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005c69cc
     PUSH EBX                            ; 005c69ce
     CALL core_hero.cpp_CHero_dtor_FUN_004f2470 ; 005c69cf
-        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005c69d4
     MOV DL,byte ptr [ESP + 0xc]         ; 005c69d7
     MOV EBX,EAX                         ; 005c69db

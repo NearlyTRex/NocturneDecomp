@@ -17,11 +17,11 @@ ios * __cdecl ios::ctor(ios *this_ptr);
 
 // Original: crt_iostream.cpp_ostream_dtor_FUN_00606231
 // Address: 00606231
-ostream * __cdecl ostream::dtor(ostream *this_ptr,uint d1,uint d2);
+ostream * __cdecl ostream::dtor(ostream *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_ios_dtor_FUN_0060632c
 // Address: 0060632c
-ios * __cdecl ios::dtor(ios *this_ptr,uint d1,uint d2);
+ios * __cdecl ios::dtor(ios *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_istream_ctor_FUN_00606376
 // Address: 00606376
@@ -33,7 +33,7 @@ void __cdecl istream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_iostream.cpp_istream_dtor_FUN_006063e1
 // Address: 006063e1
-istream * __cdecl istream::dtor(istream *this_ptr,uint d1,uint d2);
+istream * __cdecl istream::dtor(istream *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_streambuf_do_sputn_FUN_00606780
 // Address: 00606780

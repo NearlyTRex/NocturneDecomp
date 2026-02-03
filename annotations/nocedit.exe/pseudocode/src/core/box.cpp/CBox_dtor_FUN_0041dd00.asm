@@ -29,7 +29,7 @@ section .text
     ADD EAX,0xb4                        ; 0041dd06
     PUSH EAX                            ; 0041dd0b
     CALL core_box.cpp_freeScrapes_FUN_00420220 ; 0041dd0c
-        ;   XREF to: 00420220 (UNCONDITIONAL_CALL)  ; int core_box.cpp_freeScrapes_FUN_00420220(SScrape * * array)
+        ;   XREF to: 00420220 (UNCONDITIONAL_CALL)  ; SScrape * core_box.cpp_freeScrapes_FUN_00420220(SScrape * array)
     ADD ESP,0x8                         ; 0041dd11
     SUB EAX,0xb4                        ; 0041dd14
     RET                                 ; 0041dd19

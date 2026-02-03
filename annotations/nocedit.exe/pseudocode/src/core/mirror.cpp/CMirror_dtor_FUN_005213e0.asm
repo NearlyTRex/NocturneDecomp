@@ -10,7 +10,7 @@
 ;   core_glass.cpp_CGlass_dtor_FUN_004eb820 at 004eb845
 ;
 ; Called Functions:
-;   core_mirror.cpp_freeClipPlaneArray_FUN_00522c10
+;   core_mirror.cpp_freeClipPlanes_FUN_00522c10
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x0                            ; 005213e4
     ADD EAX,0x98                        ; 005213e6
     PUSH EAX                            ; 005213eb
-    CALL core_mirror.cpp_freeClipPlaneArray_FUN_00522c10 ; 005213ec
-        ;   XREF to: 00522c10 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_freeClipPlaneArray_FUN_00522c10(SClipPlane * * array_ptr)
+    CALL core_mirror.cpp_freeClipPlanes_FUN_00522c10 ; 005213ec
+        ;   XREF to: 00522c10 (UNCONDITIONAL_CALL)  ; SClipPlane * core_mirror.cpp_freeClipPlanes_FUN_00522c10(SClipPlane * objs)
     ADD ESP,0x8                         ; 005213f1
     SUB EAX,0x98                        ; 005213f4
     RET                                 ; 005213f9

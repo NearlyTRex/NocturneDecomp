@@ -9,8 +9,8 @@
 int __cdecl core_chain_cpp_FUN_004313f0(SChainVertex **objs)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrfini(objs,0x14,&g_SChainVertexTypeInfo);
-  return iVar1;
+  pvVar1 = __arrfini(objs,0x14,&g_SChainVertexTypeInfo);
+  return (int)pvVar1;
 }

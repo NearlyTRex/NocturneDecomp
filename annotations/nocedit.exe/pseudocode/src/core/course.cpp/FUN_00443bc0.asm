@@ -121,7 +121,7 @@ section .text
     PUSH EDI                            ; 00443c07 | g_CGameInstance
     FSTP float ptr [EBP + -0x3a]        ; 00443c08
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00443c0b
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 00443c10
     XOR EAX,EAX                         ; 00443c13
         ;   Label: LAB_00443c13

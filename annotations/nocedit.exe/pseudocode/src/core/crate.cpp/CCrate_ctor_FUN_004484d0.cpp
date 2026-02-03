@@ -17,7 +17,7 @@ CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_004484d0(CCrate *this_ptr)
   ADJ(this_ptr_00).base.vtable._ub = &g_CCrateVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"question.kfm");
-  ADJ(this_ptr_00)->last_platform = 0;
+  ADJ(this_ptr_00)->last_platform = (CDemonActor *)0x0;
   ADJ(this_ptr_00)->unk1 = 0;
   return ADJ(this_ptr_00);
 }

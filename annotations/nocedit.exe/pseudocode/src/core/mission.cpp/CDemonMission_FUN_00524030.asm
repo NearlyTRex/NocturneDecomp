@@ -9,7 +9,7 @@
 ; XREF[21]:
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f649
 ;   core_event.cpp_FUN_004aa400 at 004aa4d5
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e199e
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e199e
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f4626
 ;   core_mission.cpp_CDemonMission_FUN_00524660 at 005246c4
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 at 00523a8f

@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1a0f
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1a0f
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2049
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524587
 ;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c88

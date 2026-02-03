@@ -29,7 +29,7 @@ CMotionController * __cdecl CMotionController::ctor(CMotionController *this_ptr)
 
 // Original: core_motion.cpp_CMotionController_dtor_FUN_0052d5a0
 // Address: 0052d5a0
-CMotionController * __cdecl CMotionController::dtor(CMotionController *this_ptr,uint d1);
+CMotionController * __cdecl CMotionController::dtor(CMotionController *this_ptr,uint flags);
 
 // Original: core_motion.cpp_CMotionController_advance_FUN_0052d610
 // Address: 0052d610

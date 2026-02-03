@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_00505430(CLever *this_ptr,uint d1,uint d2)
+; __cdecl CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_00505430(CLever *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLeverTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0050543c
     PUSH EBX                            ; 0050543e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0050543f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00505444
     MOV DL,byte ptr [ESP + 0xc]         ; 00505447
     MOV EBX,EAX                         ; 0050544b

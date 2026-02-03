@@ -2,13 +2,15 @@
 // Address: 004c9870
 // Address Range: [[004c9870, 004c9887]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame **array)
+// Signature: CGunFlame * __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame **array)
+CGunFlame * __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame *objs)
 
 {
-  __arrfini(array,500,&g_CGunFlameTypeInfo);
-  return;
+  CGunFlame *pCVar1;
+  
+  pCVar1 = __arrfini(objs,500,&g_CGunFlameTypeInfo);
+  return pCVar1;
 }

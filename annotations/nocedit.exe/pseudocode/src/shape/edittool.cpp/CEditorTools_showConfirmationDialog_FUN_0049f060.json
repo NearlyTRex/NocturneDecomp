@@ -2,6 +2,144 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 14,
         "line": 18,
@@ -12,37 +150,48 @@
         "column": 62,
         "line": 19,
         "message": "cannot convert 'char**' to '__va_list_tag*'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 21,
-        "message": "'stack0xffffffe8' was not declared in this scope; did you mean 'in_stack_ffffffe8'?"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 110,
+    "complexity_score": 33,
     "cross_reference_count": 18,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 20,
-    "suspect_count": 8,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 73
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -64,15 +213,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004daf80",
-      "from_addr": "004db92f",
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "addr": "004dcee0",
+      "from_addr": "004dd5b9",
+      "name": "core_game.cpp_CGame_FUN_004dcee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dcee0",
-      "from_addr": "004dd5b9",
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "addr": "004daf80",
+      "from_addr": "004db92f",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -275,59 +424,10 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_ffffffe8",
-      "text": "uint in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0x0000000c",
       "text": "local_8 = &stack0x0000000c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffe8",
-      "text": "shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffffe8",
-      "text": "((CStrList *)&stack0xffffffe8,\"^Yes, I know what I'm doing and I hate these annoying prompts.\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffe8",
-      "text": "((CStrList *)&stack0xffffffe8,\"^No, please, I didn't mean to do it!\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffe8",
-      "text": "((CStrList *)(g_ConfirmationMessageBuffer + 0x400),&stack0xffffffe8,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffffe8",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xffffffe8,0,in_stack_ffffffe8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffffe8",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xffffffe8,0,in_stack_ffffffe8);",
       "type": "stack_ref"
     }
   ]

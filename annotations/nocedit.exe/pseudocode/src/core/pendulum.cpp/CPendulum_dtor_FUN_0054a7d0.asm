@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint d1,uint d2)
+; __cdecl CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPendulumTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0054a7dc
     PUSH EBX                            ; 0054a7de
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0054a7df
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054a7e4
     MOV DL,byte ptr [ESP + 0xc]         ; 0054a7e7
     MOV EBX,EAX                         ; 0054a7eb

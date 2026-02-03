@@ -1,0 +1,737 @@
+
+================================================================================
+STACK REFERENCE ISSUE SUMMARY
+================================================================================
+
+IN_STACK (2884 total issues)
+----------------------------------------
+
+  MISSING PARAMETERS (positive offsets): 2452 issues
+    Offset +0x4: 848 functions [140 likely this ptr]
+      - cockpit_ckptutil.c_FUN_004338f0
+        CPackedBitmap *in_stack_00000004;
+        >>> void* [medium]
+      - support_newmsg.cpp_FUN_005445c0
+        CAlphaBitmap *in_stack_00000004;
+        >>> int [high]
+      - support_newmsg.cpp_FUN_00544510
+        int in_stack_00000004;
+      ... and 845 more
+    Offset +0x6: 1 functions
+      - support_trisock.cpp_bindSocket_FUN_005e1b80
+        ushort in_stack_00000006;
+    Offset +0x8: 907 functions [47 likely this ptr]
+      - cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+        int in_stack_00000008;
+        >>> void* [medium]
+      - cockpit_ckptutil.c_FUN_004338f0
+        short *in_stack_00000008;
+        >>> ushort [high]
+      - support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
+        int in_stack_00000008;
+      ... and 904 more
+    Offset +0xc: 297 functions
+      - cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+        int in_stack_0000000c;
+      - cockpit_ckptutil.c_FUN_004338f0
+        int in_stack_0000000c;
+      - support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
+        int in_stack_0000000c;
+      ... and 294 more
+    Offset +0xd: 1 functions
+      - engine_dosio.c_reopenFileStream_FUN_00481b50
+        undefined3 in_stack_0000000d;
+    Offset +0x10: 157 functions
+      - cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
+        int in_stack_00000010;
+      - cockpit_ckptutil.c_FUN_004338f0
+        int in_stack_00000010;
+      - engine_colquant.c_FUN_00441790
+        uint in_stack_00000010;
+      ... and 154 more
+    Offset +0x12: 1 functions
+      - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+        ushort in_stack_00000012;
+    Offset +0x14: 73 functions
+      - cockpit_ckptutil.c_FUN_004338f0
+        int in_stack_00000014;
+      - engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0
+        int in_stack_00000014;
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        uint in_stack_00000014;
+      ... and 70 more
+    Offset +0x16: 1 functions
+      - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+        ushort in_stack_00000016;
+    Offset +0x18: 52 functions
+      - cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+        int in_stack_00000018;
+      - engine_font.cpp_CBitFont_printfRight_FUN_004cdd20
+        uint in_stack_00000018;
+      - engine_font.cpp_CBitFont_printfRight_FUN_004cdd70
+        char *in_stack_00000018;
+        >>> char* [medium]
+      ... and 49 more
+    Offset +0x19: 1 functions
+      - cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+        undefined3 in_stack_00000019;
+    Offset +0x1c: 25 functions
+      - cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
+        int in_stack_0000001c;
+      - cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+        int in_stack_0000001c;
+      - engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70
+        va_list_t *in_stack_0000001c;
+        >>> char* [medium]
+      ... and 22 more
+    Offset +0x20: 25 functions
+      - cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
+        int in_stack_00000020;
+      - cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+        int in_stack_00000020;
+      - cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+        int in_stack_00000020;
+      ... and 22 more
+    Offset +0x24: 10 functions
+      - cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+        int in_stack_00000024;
+      - cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
+        int in_stack_00000024;
+      - core_script.cpp_CScript_FUN_00565130
+        EEditorActionType in_stack_00000024;
+      ... and 7 more
+    Offset +0x28: 11 functions
+      - support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
+        int in_stack_00000028;
+        >>> void* [medium]
+      - core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+        int in_stack_00000028;
+      - core_inv.cpp_CInventory_addItem_FUN_004fd600
+        CDemonActor *in_stack_00000028;
+      ... and 8 more
+    Offset +0x2c: 7 functions
+      - cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+        int in_stack_0000002c;
+      - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
+        int in_stack_0000002c;
+      - core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+        int in_stack_0000002c;
+      ... and 4 more
+    Offset +0x30: 4 functions
+      - core_flies.cpp_FUN_004ccaf0
+        float in_stack_00000030;
+      - core_barrier.cpp_CBarrier_FUN_00414460
+        float in_stack_00000030;
+      - core_trigger.cpp_CTrigger_FUN_005e1180
+        float in_stack_00000030;
+      ... and 1 more
+    Offset +0x34: 2 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        int in_stack_00000034;
+      - core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+        int in_stack_00000034;
+    Offset +0x38: 2 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        int in_stack_00000038;
+      - sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
+        double in_stack_00000038;
+        >>> float [high]
+    Offset +0x3c: 2 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        int in_stack_0000003c;
+      - core_script.cpp_CScript_FUN_00565130
+        EEditorActionType in_stack_0000003c;
+    Offset +0x40: 1 functions
+      - sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
+        double in_stack_00000040;
+        >>> float [high]
+    Offset +0x44: 2 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        uint in_stack_00000044;
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_00000044;
+    Offset +0x48: 1 functions
+      - sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
+        double in_stack_00000048;
+        >>> float [high]
+    Offset +0x4c: 1 functions
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_0000004c;
+    Offset +0x54: 1 functions
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_00000054;
+    Offset +0x5c: 1 functions
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_0000005c;
+    Offset +0x68: 1 functions
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_00000068;
+    Offset +0x70: 1 functions
+      - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+        float in_stack_00000070;
+    Offset +0x7c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        char *in_stack_0000007c;
+        >>> int [high]
+    Offset +0x8c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        char *in_stack_0000008c;
+        >>> int [high]
+    Offset +0x90: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        char *in_stack_00000090;
+        >>> uint [high]
+    Offset +0x98: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        char *in_stack_00000098;
+        >>> int [high]
+    Offset +0xac: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        int *in_stack_000000ac;
+        >>> int [high]
+    Offset +0xb0: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        int *in_stack_000000b0;
+        >>> int [high]
+    Offset +0xb4: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        uint in_stack_000000b4;
+    Offset +0xb8: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        int in_stack_000000b8;
+    Offset +0xd0: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        int in_stack_000000d0;
+    Offset +0xd4: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        uint in_stack_000000d4;
+    Offset +0xd8: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        int in_stack_000000d8;
+        >>> void* [medium]
+    Offset +0xdc: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        char in_stack_000000dc;
+    Offset +0xdd: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        byte in_stack_000000dd;
+    Offset +0x33a8: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        char in_stack_000033a8;
+    Offset +0x3614: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        char in_stack_00003614;
+    Offset +0x3678: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        char in_stack_00003678;
+
+  UNRESOLVED LOCALS (negative offsets): 432 issues
+    Offset -0x3a8: 9 functions
+      - engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+        CStrList_vtable *in_stack_fffffc58;
+      - core_setedit.cpp_FUN_00581450
+        uint in_stack_fffffc58;
+      - core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
+        uint in_stack_fffffc58;
+      ... and 6 more
+    Offset -0x3a4: 7 functions
+      - engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+        uint in_stack_fffffc5c;
+      - core_setedit.cpp_FUN_00581450
+        char **in_stack_fffffc5c;
+      - core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
+        char **in_stack_fffffc5c;
+      ... and 4 more
+    Offset -0x3b0: 6 functions
+      - engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
+        uint in_stack_fffffc50;
+      - engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+        uint in_stack_fffffc50;
+      - core_msnedit.cpp_CDemonMission_FUN_00538f90
+        char **in_stack_fffffc50;
+      ... and 3 more
+    Offset -0x3ac: 6 functions
+      - engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+        char **in_stack_fffffc54;
+      - core_msnedit.cpp_CDemonMission_FUN_00538f90
+        CStrList_vtable *in_stack_fffffc54;
+      - core_msnedit.cpp_CDemonMission_FUN_0053c210
+        char **in_stack_fffffc54;
+      ... and 3 more
+    Offset -0x64: 4 functions
+      - core_vehicle.cpp_CVehicle_FUN_005e88c0
+        float in_stack_ffffff9c;
+      - core_game.cpp_CGame_beginFadeOut_FUN_004e0960
+        CVector3i *in_stack_ffffff9c;
+      - core_game.cpp_FUN_004e09a0
+        CVector3i *in_stack_ffffff9c;
+      ... and 1 more
+    Offset -0x3a0: 4 functions
+      - core_setedit.cpp_FUN_00581450
+        CStrList_vtable *in_stack_fffffc60;
+      - core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
+        CStrList_vtable *in_stack_fffffc60;
+      - core_boxactor.cpp_FUN_00423110
+        uint in_stack_fffffc60;
+      ... and 1 more
+    Offset -0xd0: 3 functions
+      - engine_3d.c_drawLineStrip3D_FUN_00404600
+        SRenderVertex *in_stack_ffffff30;
+      - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+        uint in_stack_ffffff30;
+      - core_msnedit.cpp_CDemonMission_FUN_0053e220
+        CGame *in_stack_ffffff30;
+    Offset -0x3b4: 3 functions
+      - engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
+        CStrList_vtable *in_stack_fffffc4c;
+      - core_msnedit.cpp_CDemonMission_FUN_00538f90
+        uint in_stack_fffffc4c;
+      - core_msnedit.cpp_CDemonMission_FUN_0053cad0
+        uint in_stack_fffffc4c;
+    Offset -0x50: 3 functions
+      - sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+        uint in_stack_ffffffb0;
+      - core_door.cpp_CDoor_renderOpaque_FUN_004807d0
+        float in_stack_ffffffb0;
+      - core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
+        CDemonRenderer *in_stack_ffffffb0;
+    Offset -0x53c: 3 functions
+      - core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+        char *in_stack_fffffac4;
+      - core_msnedit.cpp_CDemonMission_FUN_0053c730
+        uint in_stack_fffffac4;
+      - core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
+        char **in_stack_fffffac4;
+    ... and 330 more unique offsets
+
+STACK_ADDR (288 total issues)
+----------------------------------------
+
+  MISSING PARAMETERS (positive offsets): 65 issues
+    Offset +0x0: 15 functions
+      - core_shotgun.cpp_FUN_00587f70
+        if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.
+      - core_setedit.cpp_CDemonSet_FUN_00583170
+        if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {
+      - core_setedit.cpp_CDemonSet_FUN_00581aa0
+        if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {
+      ... and 12 more
+    Offset +0x8: 5 functions
+      - engine_2d.c_getStringWidthFormatted_FUN_004027a0
+        local_4 = &stack0x00000008;
+      - sound_sndmain.cpp_logSoundError_FUN_005adba0
+        local_10 = &stack0x00000008;
+      - core_event.cpp_FUN_004aa2a0
+        local_4 = &stack0x00000008;
+      ... and 2 more
+    Offset +0xc: 10 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+        local_8 = &stack0x0000000c;
+      - engine_console.cpp_CConsole_printf_FUN_00441890
+        local_14 = &stack0x0000000c;
+      - shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
+        local_14 = &stack0x0000000c;
+      ... and 7 more
+    Offset +0x10: 6 functions
+      - engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
+        local_c = &stack0x00000010;
+      - engine_2d.c_drawTextColorFormatted_FUN_004024c0
+        local_c = &stack0x00000010;
+      - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
+        local_c = &stack0x00000010;
+      ... and 3 more
+    Offset +0x14: 4 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+        local_10 = &stack0x00000014;
+      - engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
+        local_10 = &stack0x00000014;
+      - engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
+        local_10 = &stack0x00000014;
+      ... and 1 more
+    Offset +0x18: 2 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+        local_14 = &stack0x00000018;
+      - engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce050
+        local_14 = &stack0x00000018;
+    Offset +0x1c: 4 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+        local_14 = &stack0x0000001c;
+      - engine_font.cpp_CBitFont_printfRight_FUN_004cdd20
+        local_14 = &stack0x0000001c;
+      - engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20
+        local_14 = &stack0x0000001c;
+      ... and 1 more
+    Offset +0x20: 1 functions
+      - engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+        local_14 = &stack0x00000020;
+    Offset +0x2c: 1 functions
+      - engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
+        pcVar5 = &stack0x0000002c;
+    Offset +0x34: 1 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        ((SRenderVertex *)&vertex1,(SRenderVertex *)&stack0x00000034,&local_40);
+    Offset +0x7c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (g_CEditorToolsPtr,"Enter line number",(int *)&stack0x0000007c,1,1,
+        >>> int [high]
+    Offset +0x8c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000007c,(int *)&stack0x0000008c,(uint *)&stack0x00000090,
+        >>> int [high]
+    Offset +0x90: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000007c,(int *)&stack0x0000008c,(uint *)&stack0x00000090,
+        >>> uint [high]
+    Offset +0x98: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_0000007c = (char *)&stack0x00000098;
+        >>> int [high]
+    Offset +0xac: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_0000008c = (char *)&stack0x000000ac;
+        >>> int [high]
+    Offset +0xb0: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_00000090 = (char *)&stack0x000000b0;
+        >>> int [high]
+    Offset +0xb4: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000008c,(int *)in_stack_00000090,&stack0x000000b4,uVar6);
+    Offset +0xdc: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_000000ac = (int *)&stack0x000000dc;
+    Offset +0x33a8: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        (g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);
+    Offset +0x354c: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        (g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);
+    Offset +0x3613: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        puVar3 = &stack0x00003613 + ~uVar5;
+    Offset +0x3614: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        pcVar7 = &stack0x00003614;
+    Offset +0x3615: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        memmove(&stack0x00003614,&stack0x00003615,SVar6);
+    Offset +0x3677: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        puVar3 = &stack0x00003677 + ~uVar5;
+    Offset +0x3678: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        pcVar9 = &stack0x00003678;
+    Offset +0x3679: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        memmove(&stack0x00003678,&stack0x00003679,SVar6);
+
+  UNRESOLVED LOCALS (negative offsets): 223 issues
+    Offset -0x20: 13 functions
+      - core_health.cpp_CHealthItem_renderOpaque_FUN_004f1e60
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+      - core_drip.cpp_FUN_0048e6c0
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+      - core_pendulum.cpp_CPendulum_renderOpaque_FUN_0054a2f0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+      ... and 10 more
+    Offset -0x18: 10 functions
+      - core_door.cpp_CDoor_renderOpaque_FUN_004807d0
+        (&this_ptr->base,(CVector3f *)&stack0xffffffe8,(CVector3f *)this_ptr->unk3)
+      - core_stranger.cpp_CStranger_FUN_005c6220
+        if (pCVar6 != (CCloth *)&stack0xffffffe8) {
+      - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
+        _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
+      ... and 7 more
+    Offset -0x28: 8 functions
+      - core_trap.cpp_CTrap_FUN_005de920
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+      - core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+        *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+      - core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+      ... and 5 more
+    Offset -0x1c: 7 functions
+      - support_trisock.cpp_receiveSocketData_FUN_005e1c20
+        ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);
+      - core_door.cpp_CDoor_renderBackground_FUN_004809e0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+      - core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+      ... and 4 more
+    Offset -0x2c: 7 functions
+      - core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+        *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
+      - core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+      - core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
+        *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;
+      ... and 4 more
+    Offset -0x3c: 7 functions
+      - core_filmreel.cpp_FUN_004bed00
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+      - core_terrain.cpp_CTerrain_render_FUN_005e1f50
+        (g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffc4);
+      - core_curtain.cpp_FUN_0044b060
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+      ... and 4 more
+    Offset -0x10: 6 functions
+      - support_trisock.cpp_acceptConnection_FUN_005e1d80
+        ((SOCKADDR_IN *)&stack0xfffffff0,&local_20);
+      - support_codec.cpp_CCodec_processFiles_FUN_0043ec30
+        (this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);
+      - core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+        (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
+      ... and 3 more
+    Offset -0x40: 6 functions
+      - core_zombie.cpp_FUN_005f8da0
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      - core_mobster.cpp_FUN_00525110
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      - core_boneguy.cpp_FUN_0041b770
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      ... and 3 more
+    Offset -0x14: 6 functions
+      - core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+        if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
+      - core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
+        *puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
+      - core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
+        *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+      ... and 3 more
+    Offset -0x84: 5 functions
+      - support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50
+        crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffff7c,0)
+      - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
+        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
+      - core_msnedit.cpp_CDemonMission_FUN_0053e220
+        if ((float *)&stack0xffffff54 != &stack0xffffff7c) {
+      ... and 2 more
+    ... and 104 more unique offsets
+
+STACK_VAR (291 total issues)
+----------------------------------------
+
+  MISSING PARAMETERS (positive offsets): 65 issues
+    Offset +0x0: 15 functions
+      - core_shotgun.cpp_FUN_00587f70
+        if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.
+      - core_setedit.cpp_CDemonSet_FUN_00583170
+        if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {
+      - core_setedit.cpp_CDemonSet_FUN_00581aa0
+        if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {
+      ... and 12 more
+    Offset +0x8: 5 functions
+      - engine_2d.c_getStringWidthFormatted_FUN_004027a0
+        local_4 = &stack0x00000008;
+      - sound_sndmain.cpp_logSoundError_FUN_005adba0
+        local_10 = &stack0x00000008;
+      - core_event.cpp_FUN_004aa2a0
+        local_4 = &stack0x00000008;
+      ... and 2 more
+    Offset +0xc: 10 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+        local_8 = &stack0x0000000c;
+      - engine_console.cpp_CConsole_printf_FUN_00441890
+        local_14 = &stack0x0000000c;
+      - shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
+        local_14 = &stack0x0000000c;
+      ... and 7 more
+    Offset +0x10: 6 functions
+      - engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
+        local_c = &stack0x00000010;
+      - engine_2d.c_drawTextColorFormatted_FUN_004024c0
+        local_c = &stack0x00000010;
+      - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
+        local_c = &stack0x00000010;
+      ... and 3 more
+    Offset +0x14: 4 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+        local_10 = &stack0x00000014;
+      - engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
+        local_10 = &stack0x00000014;
+      - engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
+        local_10 = &stack0x00000014;
+      ... and 1 more
+    Offset +0x18: 2 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+        local_14 = &stack0x00000018;
+      - engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce050
+        local_14 = &stack0x00000018;
+    Offset +0x1c: 4 functions
+      - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+        local_14 = &stack0x0000001c;
+      - engine_font.cpp_CBitFont_printfRight_FUN_004cdd20
+        local_14 = &stack0x0000001c;
+      - engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20
+        local_14 = &stack0x0000001c;
+      ... and 1 more
+    Offset +0x20: 1 functions
+      - engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+        local_14 = &stack0x00000020;
+    Offset +0x2c: 1 functions
+      - engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
+        pcVar5 = &stack0x0000002c;
+    Offset +0x34: 1 functions
+      - engine_3d.c_clipAndDrawLine3D_FUN_00408070
+        ((SRenderVertex *)&vertex1,(SRenderVertex *)&stack0x00000034,&local_40);
+    Offset +0x7c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (g_CEditorToolsPtr,"Enter line number",(int *)&stack0x0000007c,1,1,
+        >>> int [high]
+    Offset +0x8c: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000007c,(int *)&stack0x0000008c,(uint *)&stack0x00000090,
+        >>> int [high]
+    Offset +0x90: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000007c,(int *)&stack0x0000008c,(uint *)&stack0x00000090,
+        >>> uint [high]
+    Offset +0x98: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_0000007c = (char *)&stack0x00000098;
+        >>> int [high]
+    Offset +0xac: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_0000008c = (char *)&stack0x000000ac;
+        >>> int [high]
+    Offset +0xb0: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_00000090 = (char *)&stack0x000000b0;
+        >>> int [high]
+    Offset +0xb4: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        (uint *)in_stack_0000008c,(int *)in_stack_00000090,&stack0x000000b4,uVar6);
+    Offset +0xdc: 1 functions
+      - core_script.cpp_CScript_FUN_00565130
+        in_stack_000000ac = (int *)&stack0x000000dc;
+    Offset +0x33a8: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        (g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);
+    Offset +0x354c: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        (g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);
+    Offset +0x3613: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        puVar3 = &stack0x00003613 + ~uVar5;
+    Offset +0x3614: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        pcVar7 = &stack0x00003614;
+    Offset +0x3615: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        memmove(&stack0x00003614,&stack0x00003615,SVar6);
+    Offset +0x3677: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        puVar3 = &stack0x00003677 + ~uVar5;
+    Offset +0x3678: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        pcVar9 = &stack0x00003678;
+    Offset +0x3679: 1 functions
+      - core_actor.cpp_FUN_0040fffe
+        memmove(&stack0x00003678,&stack0x00003679,SVar6);
+
+  UNRESOLVED LOCALS (negative offsets): 226 issues
+    Offset -0x20: 13 functions
+      - core_health.cpp_CHealthItem_renderOpaque_FUN_004f1e60
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+      - core_drip.cpp_FUN_0048e6c0
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+      - core_pendulum.cpp_CPendulum_renderOpaque_FUN_0054a2f0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+      ... and 10 more
+    Offset -0x18: 10 functions
+      - core_door.cpp_CDoor_renderOpaque_FUN_004807d0
+        (&this_ptr->base,(CVector3f *)&stack0xffffffe8,(CVector3f *)this_ptr->unk3)
+      - core_stranger.cpp_CStranger_FUN_005c6220
+        if (pCVar6 != (CCloth *)&stack0xffffffe8) {
+      - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
+        _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
+      ... and 7 more
+    Offset -0x28: 8 functions
+      - core_trap.cpp_CTrap_FUN_005de920
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+      - core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+        *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+      - core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+      ... and 5 more
+    Offset -0x1c: 7 functions
+      - support_trisock.cpp_receiveSocketData_FUN_005e1c20
+        ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);
+      - core_door.cpp_CDoor_renderBackground_FUN_004809e0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+      - core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+      ... and 4 more
+    Offset -0x2c: 7 functions
+      - core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+        *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
+      - core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0
+        (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+      - core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
+        *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;
+      ... and 4 more
+    Offset -0x3c: 7 functions
+      - core_filmreel.cpp_FUN_004bed00
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+      - core_terrain.cpp_CTerrain_render_FUN_005e1f50
+        (g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffc4);
+      - core_curtain.cpp_FUN_0044b060
+        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+      ... and 4 more
+    Offset -0x10: 6 functions
+      - support_trisock.cpp_acceptConnection_FUN_005e1d80
+        ((SOCKADDR_IN *)&stack0xfffffff0,&local_20);
+      - support_codec.cpp_CCodec_processFiles_FUN_0043ec30
+        (this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);
+      - core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+        (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
+      ... and 3 more
+    Offset -0x40: 6 functions
+      - core_zombie.cpp_FUN_005f8da0
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      - core_mobster.cpp_FUN_00525110
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      - core_boneguy.cpp_FUN_0041b770
+        (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
+      ... and 3 more
+    Offset -0x14: 6 functions
+      - core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+        if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
+      - core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
+        *puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
+      - core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
+        *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+      ... and 3 more
+    Offset -0x84: 5 functions
+      - support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50
+        crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffff7c,0)
+      - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
+        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
+      - core_msnedit.cpp_CDemonMission_FUN_0053e220
+        if ((float *)&stack0xffffff54 != &stack0xffffff7c) {
+      ... and 2 more
+    ... and 107 more unique offsets
+
+================================================================================
+TYPE INFERENCE SUMMARY
+================================================================================
+
+  Detected this pointers: 187
+  High confidence inferences: 467
+  Medium confidence inferences: 271
+
+  Inferred types breakdown:
+    int                 : 2054
+    void*               : 532
+    uint                : 140
+    char*               : 60
+    float               : 43
+    float*              : 23
+    CZombie*            : 17
+    int*                : 15
+    double              : 12
+    CDemonActor*        : 11
+
+================================================================================
+TOTAL: 1590 functions with stack reference issues
+================================================================================

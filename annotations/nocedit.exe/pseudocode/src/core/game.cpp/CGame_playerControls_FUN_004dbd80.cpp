@@ -12,10 +12,9 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
 
 {
   uint uVar1;
-  SPlayerControl *ctrl;
+  SPlayerControl *player_control;
   int iVar2;
   char *pcVar3;
-  SPlayerControl *unaff_EDI;
   char *pcVar4;
   byte bVar5;
   
@@ -25,16 +24,17 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
     return;
   }
   if ((this_ptr->is_paused == 0) && (this_ptr->allow_hero_controls_flag == 0)) {
-    ctrl = (SPlayerControl *)core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGamePtr);
+    player_control =
+         (SPlayerControl *)core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGamePtr);
     uVar1 = this_ptr->game_control;
     if (uVar1 == 0) {
-      core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(this_ptr,ctrl);
+      core_game_cpp_CGame_FUN_004dc3e0(this_ptr,player_control);
     }
     else if (uVar1 < 2) {
-      core_game_cpp_SettingCursorPos_FUN_004dccc0(this_ptr,ctrl);
+      core_game_cpp_CGame_FUN_004dccc0(this_ptr,player_control);
     }
     else if (uVar1 == 2) {
-      core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EDI);
+      core_game_cpp_CGame_FUN_004dc230(this_ptr,player_control);
     }
     else {
       g_CurrentFilename = "..\\core\\game.cpp";

@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_0050c4c0(CMarquee *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_0050c4c0(CMarquee *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMarqueeTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffe5c]          ; 0050c4df
     PUSH EBX                            ; 0050c4e5
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0050c4e6
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050c4eb
     MOV DL,byte ptr [ESP + 0xc]         ; 0050c4ee
     MOV EBX,EAX                         ; 0050c4f2

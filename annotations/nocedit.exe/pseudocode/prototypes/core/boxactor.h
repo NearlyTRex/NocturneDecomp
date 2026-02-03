@@ -177,12 +177,12 @@ int __cdecl CLightActor(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_dtor_FUN_004235f0
 // Address: 004235f0
-CLightActor * __cdecl CLightActor::dtor(CLightActor *this_ptr,uint d1);
+CLightActor * __cdecl CLightActor::dtor(CLightActor *this_ptr,uint flags);
 
 // Original: core_boxactor.cpp_CBoxActor_dtor_FUN_00423670
 // Address: 00423670
-CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint d1,uint d2,uint d3);
+CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint flags);
 
 // Original: core_boxactor.cpp_freeFilters_FUN_004236e0
 // Address: 004236e0
-int __cdecl freeFilters(CDemonFilter **objs);
+CDemonFilter * __cdecl freeFilters(CDemonFilter *objs);

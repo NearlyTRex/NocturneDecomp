@@ -6,7 +6,7 @@
 ;
 ; XREF[16]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d63a
-;   core_game.cpp_CGame_openSomething_FUN_004e2910 at 004e2d01
+;   core_game.cpp_CGame_FUN_004e2910 at 004e2d01
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004ddb9f
 ;   core_script.cpp_CScript_FUN_00565130 at 00565771
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 005806bc

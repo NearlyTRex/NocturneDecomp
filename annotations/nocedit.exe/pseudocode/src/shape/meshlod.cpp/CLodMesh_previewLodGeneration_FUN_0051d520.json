@@ -2,51 +2,165 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 15,
-        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
       },
       {
-        "category": "other",
-        "column": 29,
-        "line": 55,
-        "message": "cast from 'CGame*' to 'int' loses precision [-fpermissive]"
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
       },
       {
-        "category": "other",
-        "column": 29,
-        "line": 60,
-        "message": "cast from 'CGame*' to 'int' loses precision [-fpermissive]"
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 71,
+        "line": 67,
         "message": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 74,
-        "message": "'extraout_var' was not declared in this scope"
       },
       {
         "category": "incompatible_types",
         "column": 36,
-        "line": 76,
+        "line": 71,
         "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CQuaternion4f*' [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 84,
+        "line": 79,
         "message": "'stack0xffffff44' was not declared in this scope; did you mean 'in_stack_ffffff44'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 106,
+        "line": 101,
         "message": "'stack0xffffff40' was not declared in this scope; did you mean 'in_stack_ffffff44'?"
       }
     ],
@@ -54,6 +168,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -61,47 +181,45 @@
       {
         "category": "other",
         "column": 14,
-        "line": 42,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 45,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 117,
+        "line": 112,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 124,
+        "line": 119,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 374,
+    "complexity_score": 309,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
-    "pseudocode_lines": 149,
-    "suspect_count": 19,
+    "pseudocode_lines": 144,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "undefined_data",
-      "undefined_type"
+      "undefined_data"
     ],
-    "total_lines": 576
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -643,136 +761,101 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 8,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_ffffff44",
-      "text": "CGame *in_stack_ffffff44;",
+      "text": "int in_stack_ffffff44;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 45,
       "match": "in_stack_ffffff44",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff44);",
+      "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,0,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 49,
       "match": "in_stack_ffffff44",
-      "text": "(this_ptr,0,(int)in_stack_ffffff44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_ffffff44",
-      "text": "(this_ptr,1,(int)in_stack_ffffff44);",
+      "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 60,
       "match": "DAT_02f313e8",
       "text": "if (DAT_02f313e8 != (CQuaternion4f *)0x0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
-      "match": "extraout_var",
-      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
-      "match": "CONCAT31",
-      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 64,
       "match": "DAT_02f313e8",
       "text": "(g_CEditorToolsPtr,DAT_02f313e8,4);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 72,
       "match": "&stack0xffffff44",
-      "text": "sprintf(&stack0xffffff44,\"%d faces, %d original\",iVar2);",
+      "text": "sprintf(&stack0xffffff44,\"%d faces, %d original\",iVar1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 73,
       "match": "&stack0xffffff44",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 93,
       "match": "ROUND",
-      "text": "local_28.z = (float)(int)ROUND(dVar5);",
+      "text": "local_28.z = (float)(int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 94,
       "match": "&stack0xffffff40",
       "text": "sprintf(&stack0xffffff40,\"Pixel Height: %d\",local_28.z);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 95,
       "match": "&stack0xffffff40",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,0x16);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 114,
       "match": "unaff_EDI",
       "text": "unaff_EDI = 0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 124,
+      "line": 119,
       "match": "unaff_EDI",
       "text": "return unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 122,
       "match": "in_stack_ffffff44",
-      "text": "in_stack_ffffff44 = (CGame *)0x51d861;",
+      "text": "in_stack_ffffff44 = 0x51d861;",
       "type": "stack_param"
     }
   ]

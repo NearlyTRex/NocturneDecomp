@@ -39,7 +39,7 @@ section .text
     LEA EBX,[EAX + 0xfffffe98]          ; 004ccccf
     PUSH EBX                            ; 004cccd5
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004cccd6
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cccdb
     MOV DL,byte ptr [ESP + 0xc]         ; 004cccde
     MOV EBX,EAX                         ; 004ccce2

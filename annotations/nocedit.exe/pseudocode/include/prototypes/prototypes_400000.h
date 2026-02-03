@@ -229,7 +229,7 @@ void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr);
 void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache);
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *this_ptr);
-CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *this_ptr,uint d1);
+CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *this_ptr,uint flags);
 void __cdecl core_actor_cpp_CDemonActor_process_FUN_00408a80(CDemonActor *this_ptr,float delta_time);
 int __cdecl core_actor_cpp_CDemonActor_renderOpaque_FUN_00408aa0(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_renderTransparent_FUN_00408ac0(CDemonActor *this_ptr);

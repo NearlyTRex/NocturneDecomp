@@ -73,7 +73,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)(this_ptr->unk2 + 0x9c),0.0,-1);
+              (&this_ptr->model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }

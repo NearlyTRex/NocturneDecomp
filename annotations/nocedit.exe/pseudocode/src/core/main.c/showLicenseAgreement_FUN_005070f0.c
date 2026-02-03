@@ -28,8 +28,7 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   if (local_14 != 0) {
     return 1;
   }
-  text_string = support_newmsg_cpp_decryptMessage_FUN_00544270
-                          ((SEncryptedMessage *)g_LicenseAgreement);
+  text_string = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
   iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text_string);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_48);
   iVar3 = g_ClipTop;

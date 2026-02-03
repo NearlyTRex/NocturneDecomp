@@ -1327,7 +1327,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 005147aa
     PUSH EAX                            ; 005147ae
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 005147af
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005147b4
     JMP 0x0051390e                      ; 005147b7
         ;   XREF to: 0051390e (UNCONDITIONAL_JUMP)  ; LAB_0051390e
@@ -1405,7 +1405,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00514857
     PUSH EAX                            ; 0051485b
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0051485c
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00514861
     JMP 0x0051390e                      ; 00514864
         ;   XREF to: 0051390e (UNCONDITIONAL_JUMP)  ; LAB_0051390e
@@ -1512,7 +1512,7 @@ section .text
     PUSH EAX                            ; 0051494a | g_CGameInstance
         ;   Label: LAB_0051494a
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 0051494b
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60(CGame * this_ptr)
     ADD ESP,0x4                         ; 00514950
     JMP 0x005148f2                      ; 00514953
         ;   XREF to: 005148f2 (UNCONDITIONAL_JUMP)  ; LAB_005148f2
@@ -1674,21 +1674,21 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00514ab1
     PUSH EAX                            ; 00514ab5
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00514ab6
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00514abb
     JMP 0x0051390e                      ; 00514abe
         ;   XREF to: 0051390e (UNCONDITIONAL_JUMP)  ; LAB_0051390e
     PUSH EAX                            ; 00514ac3 | g_CGameInstance
         ;   Label: LAB_00514ac3
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00514ac4
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60(CGame * this_ptr)
     ADD ESP,0x4                         ; 00514ac9
     JMP 0x00514a1b                      ; 00514acc
         ;   XREF to: 00514a1b (UNCONDITIONAL_JUMP)  ; LAB_00514a1b
     PUSH EAX                            ; 00514ad1 | g_CGameInstance
         ;   Label: LAB_00514ad1
     CALL core_game.cpp_CGame_resetKeyState_FUN_004dbe60 ; 00514ad2
-        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
+        ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004dbe60(CGame * this_ptr)
     ADD ESP,0x4                         ; 00514ad7
     JMP 0x00514a7a                      ; 00514ada
         ;   XREF to: 00514a7a (UNCONDITIONAL_JUMP)  ; LAB_00514a7a
@@ -1756,7 +1756,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00514b6c
     PUSH EAX                            ; 00514b70
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00514b71
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00514b76
     PUSH 0x637179                       ; 00514b79 | = "Forward"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00514b7e

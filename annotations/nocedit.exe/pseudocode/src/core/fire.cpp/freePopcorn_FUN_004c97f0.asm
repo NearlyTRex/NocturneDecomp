@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array)
+; __cdecl CPopcorn * __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn *objs)
 ;
 ; Parameters:
-; CPopcorn * *     Stack[0x4]:4   array
+; CPopcorn *       Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPopcornTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c97fa
     PUSH EDX                            ; 004c97fe
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c97ff
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9804
     RET                                 ; 004c9807
 

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb **array)
+; __cdecl CZThumb * __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb *objs)
 ;
 ; Parameters:
-; CZThumb * *      Stack[0x4]:4   array
+; CZThumb *        Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CZThumbTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0057691a
     PUSH EDX                            ; 0057691e
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0057691f
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00576924
     RET                                 ; 00576927
 

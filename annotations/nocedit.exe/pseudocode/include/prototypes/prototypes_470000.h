@@ -43,7 +43,7 @@ CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFx *this
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFx *this_ptr);
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr);
-void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array);
+CDemonFilter * __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter *objs);
 void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void);
 void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void);
 void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void);
@@ -68,7 +68,7 @@ CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (CMa
 CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540 (CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
 void __cdecl core_dlight_cpp_staticInit_FUN_00472680(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint d2,uint d3);
+CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_free_FUN_004728b0(CDemonLight *this_ptr);
 int __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count);
@@ -171,7 +171,7 @@ void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr
 CKeyFramedModel ** __cdecl core_dmodel_cpp_copyModels_FUN_0047ef90(CKeyFramedModel **first,CKeyFramedModel **second);
 CKeyFramedModel * __cdecl core_dmodel_cpp_copyModels_FUN_0047efa0(CKeyFramedModel **first,CKeyFramedModel **second);
 CKeyFramedModel * __cdecl core_dmodel_cpp_copyModels_FUN_0047efb0(CKeyFramedModel **first,CKeyFramedModel **second);
-void __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedModel **array);
+CKeyFramedModel * __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedModel *objs);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void);
 CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0047f040(CZombieDog *this_ptr);
@@ -184,7 +184,7 @@ int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0 (CZombieDog *th
 void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920 (CZombieDog *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_dog_cpp_CZombieDog_FUN_0047f960(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_writeDependencies_FUN_0047f970(CZombieDog *this_ptr,_FILE *file_handle);
-CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_0047f9a0 (CZombieDog *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_0047f9a0(CZombieDog *this_ptr,uint flags);
 void __cdecl core_door_cpp_staticInit_FUN_0047fa60(void);
 CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void);
 CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0047fac0(CDoor *this_ptr);

@@ -25,7 +25,7 @@ section .text
     ADD EBX,0x38                        ; 00559850
     PUSH EBX                            ; 00559853
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 00559854
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00559859
     SUB EAX,0x38                        ; 0055985c
     POP EBX                             ; 0055985f

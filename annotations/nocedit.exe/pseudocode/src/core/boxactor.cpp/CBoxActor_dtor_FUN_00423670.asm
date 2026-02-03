@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBoxActorTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffc6c]          ; 0042368f
     PUSH EBX                            ; 00423695
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 00423696
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042369b
     MOV DL,byte ptr [ESP + 0xc]         ; 0042369e
     MOV EBX,EAX                         ; 004236a2

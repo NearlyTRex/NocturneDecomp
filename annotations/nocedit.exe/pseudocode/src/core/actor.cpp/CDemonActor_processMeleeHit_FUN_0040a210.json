@@ -2,6 +2,144 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "other",
         "column": 16,
         "line": 77,
@@ -32,7 +170,7 @@
         "message": "request for member '_4_4_' in 'auStack_b0', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 54,
         "line": 98,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
@@ -88,7 +226,7 @@
       {
         "category": "other",
         "column": 17,
-        "line": 218,
+        "line": 219,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
@@ -100,79 +238,79 @@
       {
         "category": "other",
         "column": 39,
-        "line": 243,
+        "line": 244,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 261,
+        "line": 262,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 265,
+        "line": 266,
         "message": "request for member '_0_4_' in 'auStack_20c', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 272,
+        "line": 273,
         "message": "request for member '_0_4_' in 'auStack_68', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 275,
+        "line": 276,
         "message": "request for member '_0_4_' in 'auStack_68', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 275,
+        "line": 276,
         "message": "request for member '_0_4_' in 'auStack_68', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 279,
+        "line": 280,
         "message": "request for member '_0_4_' in 'auStack_68', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 281,
+        "line": 282,
         "message": "request for member '_4_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 282,
+        "line": 283,
         "message": "request for member '_8_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 283,
+        "line": 284,
         "message": "request for member '_12_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 288,
+        "line": 289,
         "message": "request for member '_20_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 289,
+        "line": 290,
         "message": "request for member '_24_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 290,
+        "line": 291,
         "message": "request for member '_28_4_' in 'auStack_1f4', which is of non-class type 'byte [52]' {aka 'unsigned char [52]'}"
       }
     ],
@@ -180,6 +318,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -199,18 +343,18 @@
       {
         "category": "other",
         "column": 73,
-        "line": 262,
+        "line": 263,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 767,
-    "complexity_score": 746,
+    "complexity_score": 747,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 296,
+    "pseudocode_lines": 297,
     "suspect_count": 42,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -220,7 +364,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 1063
+    "total_lines": 1064
   },
   "cross_references": [],
   "function": {
@@ -285,7 +429,7 @@
     {
       "addr": "004cb340",
       "is_variadic": false,
-      "name": "core_flamecan.cpp_FUN_004cb340"
+      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
     },
     {
       "addr": "004eb3a0",
@@ -843,98 +987,98 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 229,
+      "line": 230,
       "match": "SUB84",
       "text": "SUB84((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 246,
+      "line": 247,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 258,
+      "line": 259,
       "match": "._0_4_",
       "text": "auStack_20c._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 265,
+      "line": 266,
       "match": "._0_4_",
       "text": "auStack_68._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 269,
       "match": "._0_4_",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 269,
       "match": "._0_4_",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 268,
+      "line": 269,
       "match": "SQRT",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 272,
+      "line": 273,
       "match": "._0_4_",
       "text": "fStack_38 = (float)auStack_68._0_4_ * fStack_38;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 274,
+      "line": 275,
       "match": "._4_4_",
       "text": "auStack_1f4._4_4_ = fStack_40;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 275,
+      "line": 276,
       "match": "._8_4_",
       "text": "auStack_1f4._8_4_ = fStack_3c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 276,
+      "line": 277,
       "match": "._12_4_",
       "text": "auStack_1f4._12_4_ = fStack_38;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 281,
+      "line": 282,
       "match": "._20_4_",
       "text": "auStack_1f4._20_4_ = pCVar2->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 282,
+      "line": 283,
       "match": "._24_4_",
       "text": "auStack_1f4._24_4_ = pCVar2->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 283,
+      "line": 284,
       "match": "._28_4_",
       "text": "auStack_1f4._28_4_ = pCVar2->z;",
       "type": "unknown_field"
@@ -953,7 +1097,7 @@
         "vtable_addr": "0065ba04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CFilmProjector",
         "offset": 112,
         "vtable_addr": "0065db04"
       },

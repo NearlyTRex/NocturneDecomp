@@ -88,7 +88,7 @@ LAB_005c5f6e:
   if (iVar6 == 3) {
     return;
   }
-  if (((this_ptr->base).unk3 == 0) && (iVar6 == 0)) {
+  if (((this_ptr->base).aim_mode == 0) && (iVar6 == 0)) {
     pcVar7 = this_ptr->unk1 + 0x10;
     pcVar2 = this_ptr->unk1 + 0x30;
     if (*(int *)(this_ptr->unk1 + 0x58) != 0) {

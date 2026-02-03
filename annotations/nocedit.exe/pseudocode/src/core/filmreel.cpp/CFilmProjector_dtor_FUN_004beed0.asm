@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint d1,uint d2)
+; __cdecl CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CFilmProjectorTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004beedc
     PUSH EBX                            ; 004beede
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004beedf
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004beee4
     MOV DL,byte ptr [ESP + 0xc]         ; 004beee7
     MOV EBX,EAX                         ; 004beeeb

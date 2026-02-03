@@ -37,4 +37,4 @@ void __cdecl FUN_005de5a0(void);
 
 // Original: core_tommygun.cpp_CTommyGun_dtor_FUN_005de5d0
 // Address: 005de5d0
-CTommyGun * __cdecl CTommyGun::dtor(CTommyGun *this_ptr,uint d1,uint d2);
+CTommyGun * __cdecl CTommyGun::dtor(CTommyGun *this_ptr,uint flags);

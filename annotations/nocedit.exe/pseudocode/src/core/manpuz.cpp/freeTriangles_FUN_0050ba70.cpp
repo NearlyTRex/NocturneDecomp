@@ -2,13 +2,15 @@
 // Address: 0050ba70
 // Address Range: [[0050ba70, 0050ba84]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle **objs)
+// Signature: CDemonTriangle * __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle **objs)
+CDemonTriangle * __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle *objs)
 
 {
-  __arrfini(objs,2,&g_CDemonTriangleTypeInfo);
-  return;
+  CDemonTriangle *pCVar1;
+  
+  pCVar1 = __arrfini(objs,2,&g_CDemonTriangleTypeInfo);
+  return pCVar1;
 }

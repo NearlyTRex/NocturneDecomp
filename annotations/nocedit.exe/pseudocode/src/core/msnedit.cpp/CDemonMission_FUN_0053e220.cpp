@@ -18,7 +18,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   int iVar5;
   byte bVar6;
   float afStackY_1030 [982];
-  CGame *in_stack_ffffff30;
   CVector3i *input_ptr;
   float in_stack_ffffff4c;
   CKeys *in_stack_ffffff50;
@@ -73,7 +72,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff30);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff44);
   CStack_24.x = g_CDemonCameraInstance.corona_blend_factor;
   pCVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);

@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0 (CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CFrankenstienMachineTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffd00]          ; 004d28bf
     PUSH EBX                            ; 004d28c5
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004d28c6
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d28cb
     MOV DL,byte ptr [ESP + 0xc]         ; 004d28ce
     MOV EBX,EAX                         ; 004d28d2

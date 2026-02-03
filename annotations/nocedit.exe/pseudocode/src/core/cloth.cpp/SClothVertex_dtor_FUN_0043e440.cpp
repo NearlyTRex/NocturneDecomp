@@ -9,8 +9,8 @@
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)this_ptr->unk2);
-  return (SClothVertex *)(iVar1 + -0xec);
+  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460(this_ptr->unk2);
+  return (SClothVertex *)&pCVar1[-0x14].y;
 }

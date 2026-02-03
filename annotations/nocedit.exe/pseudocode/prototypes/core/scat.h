@@ -101,4 +101,4 @@ void __cdecl CScat::writeDependencies(CScat *this_ptr,_FILE *file_handle);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_00559160
 // Address: 00559160
-CScat * __cdecl CScat::dtor(CScat *this_ptr,uint d1,uint d2);
+CScat * __cdecl CScat::dtor(CScat *this_ptr,uint flags);

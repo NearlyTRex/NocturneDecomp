@@ -12,7 +12,7 @@ typedef struct CFlameCan {
     CKeyFramedModelInstance model; // 0x158
     int on_fire; // 0x2d4
     float time_to_explode; // 0x2d8
-    int on_fire_condition; // 0x2dc
-    char unk[776]; // 0x2e0
+    char on_fire_condition[100]; // 0x2dc
+    char unk[680]; // 0x340
 } CFlameCan;
 

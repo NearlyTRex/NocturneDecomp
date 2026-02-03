@@ -3,6 +3,8 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CCheckOutItem.h"
 #include "types/classes/CCheckOutList.h"
@@ -19,6 +21,7 @@
 #include "types/classes/CStake.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/STimestampRecord.h"
 
@@ -155,30 +158,30 @@ void __cdecl core_filmreel_cpp_staticInit_FUN_004be620(void);
 CFilmReel * __cdecl core_filmreel_cpp_factoryFunc_FUN_004be670(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_004be6a0(CFilmReel *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *this_ptr);
-void __cdecl core_filmreel_cpp_FUN_004be720(void);
-int __cdecl core_filmreel_cpp_FUN_004be7b0(void);
-void __cdecl core_filmreel_cpp_FUN_004be7d0(void);
-void __cdecl core_filmreel_cpp_FUN_004be7e0(void);
-int __cdecl core_filmreel_cpp_FUN_004be7f0(void);
+void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004be720(CFilmReel *this_ptr);
+int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_004be7b0(CFilmReel *this_ptr,CDemonActor *picker);
+void __cdecl core_filmreel_cpp_CFilmReel_pickup_FUN_004be7d0(CFilmReel *this_ptr,CDemonActor *carrier);
+void __cdecl core_filmreel_cpp_CFilmReel_onDropped_FUN_004be7e0(CFilmReel *this_ptr,CVector3f *drop_position);
+CDemonActor * __cdecl core_filmreel_cpp_CFilmReel_getCarrier_FUN_004be7f0(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_process_FUN_004be800(CFilmReel *this_ptr,float delta_time);
-int __cdecl core_filmreel_cpp_FUN_004be810(void);
-void __cdecl core_filmreel_cpp_FUN_004be880(void);
-void __cdecl core_filmreel_cpp_FUN_004be8a0(void);
-bool __cdecl core_filmreel_cpp_FUN_004be8f0(void);
-float * __cdecl core_filmreel_cpp_FUN_004be910(void);
-void __cdecl core_filmreel_cpp_FUN_004be960(void);
-void __cdecl core_filmreel_cpp_FUN_004be9b0(void);
+int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004be810(CFilmReel *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004be880(CFilmReel *this_ptr,int layer_flag);
+void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004be8a0(CFilmReel *this_ptr);
+int __cdecl core_filmreel_cpp_CFilmReel_hasCollision_FUN_004be8f0 (CFilmReel *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004be910(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960 (CFilmReel *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_filmreel_cpp_CFilmReel_writeDependencies_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr);
-void __cdecl core_filmreel_cpp_FUN_004beb00(void);
-void __cdecl core_filmreel_cpp_CFilmProjector_load_FUN_004beb40(void);
-void __cdecl core_filmreel_cpp_FUN_004becd0(void);
-int __cdecl core_filmreel_cpp_FUN_004bed00(void);
-void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004bede0(CFilmReel *this_ptr);
-void __cdecl core_filmreel_cpp_CFilmReel_FUN_004bee30(void);
-CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel *this_ptr,uint d1,uint d2);
-CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint d1,uint d2);
+void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_004beb00(CFilmProjector *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr);
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0 (CFilmProjector *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProjector *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004bede0(CFilmProjector *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30 (CFilmProjector *this_ptr,CActorPropertyList *property_list);
+CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel *this_ptr,uint flags);
+CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint flags);
 void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void);
 float __cdecl core_fire_cpp_FUN_004bf1a0(void);
 int __cdecl core_fire_cpp_CSmokeParticle_initRender_FUN_004bf1f0(CSmokeParticle *this_ptr);

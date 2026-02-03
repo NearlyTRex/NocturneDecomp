@@ -2,6 +2,144 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "syntax_error",
         "column": 15,
         "line": 126,
@@ -10,67 +148,67 @@
       {
         "category": "other",
         "column": 12,
-        "line": 181,
+        "line": 182,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 188,
+        "line": 189,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 211,
+        "line": 212,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 211,
+        "line": 212,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 217,
+        "line": 218,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 217,
+        "line": 218,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 223,
+        "line": 224,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 223,
+        "line": 224,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 253,
+        "line": 254,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 253,
+        "line": 254,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 289,
+        "line": 290,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -78,6 +216,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -97,54 +241,54 @@
       {
         "category": "other",
         "column": 74,
-        "line": 209,
+        "line": 210,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 211,
+        "line": 212,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 217,
+        "line": 218,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 223,
+        "line": 224,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 253,
+        "line": 254,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 303,
+        "line": 304,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 308,
+        "line": 309,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 476,
+    "complexity_score": 477,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
-    "pseudocode_lines": 336,
+    "pseudocode_lines": 337,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param",
@@ -152,7 +296,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 1176
+    "total_lines": 1177
   },
   "cross_references": [
     {
@@ -214,12 +358,12 @@
     {
       "addr": "0049cf20",
       "is_variadic": false,
-      "name": "core_dynamite.cpp_FUN_0049cf20"
+      "name": "core_dynamite.cpp_CDynamite_FUN_0049cf20"
     },
     {
       "addr": "0049cf70",
       "is_variadic": false,
-      "name": "core_dynamite.cpp_FUN_0049cf70"
+      "name": "core_dynamite.cpp_CDynamite_FUN_0049cf70"
     },
     {
       "addr": "004f38d0",
@@ -575,42 +719,42 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 204,
+      "line": 205,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xec))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 210,
+      "line": 211,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 216,
+      "line": 217,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 232,
+      "line": 233,
       "match": "1.12104e-44",
       "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 246,
+      "line": 247,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xf0))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 268,
+      "line": 269,
       "match": "1.12104e-44",
       "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {",
       "type": "suspect_float"

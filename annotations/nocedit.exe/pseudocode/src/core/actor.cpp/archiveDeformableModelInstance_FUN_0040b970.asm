@@ -18,9 +18,9 @@
 ;   core_biggs.cpp_CBiggs_archive_FUN_00418ac0 at 00418aef
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 at 0041d2aa
 ;   core_bride.cpp_CBride_archive_FUN_00424560 at 00424585
-;   core_cow.cpp_CZombieCow_load_FUN_00444840 at 0044486e
+;   core_cow.cpp_CZombieCow_archive_FUN_00444840 at 0044486e
 ;   core_dog.cpp_CZombieDog_archive_FUN_0047f7b0 at 0047f7de
-;   core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0 at 00485dff
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0 at 00485dff
 ;   ... and 17 more
 ;
 ; Referenced Globals:

@@ -272,7 +272,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 005392c4 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 005392c9 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 005392ca
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 005392cf
     LEA EAX,[EBP + 0xffffff1e]          ; 005392d2
     PUSH EAX                            ; 005392d8
@@ -543,7 +543,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 0053963f | g_CEditorToolsPtr
     PUSH EDI                            ; 00539645 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00539646
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0053964b
     PUSH EAX                            ; 0053964e
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053964f
@@ -596,7 +596,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 005396d9 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 005396df | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 005396e0
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005396e5
     PUSH EAX                            ; 005396e8
     MOV ESI,dword ptr [0x00678a60]      ; 005396e9 | g_CEditorToolsPtr
@@ -1777,7 +1777,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0053a3f4 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053a3fa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0053a3fb
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0053a400
     PUSH EAX                            ; 0053a403
     MOV EBX,dword ptr [EBX + 0x2c]      ; 0053a404
@@ -2230,7 +2230,7 @@ section .text
     LEA EAX,[EBP + 0xfffff6da]          ; 0053a88e
     PUSH EAX                            ; 0053a894
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0053a895
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053a89a
     PUSH 0x2f                           ; 0053a89d
         ;   Label: LAB_0053a89d
@@ -2607,7 +2607,7 @@ section .text
     PUSH EAX                            ; 0053ac91
     MOV dword ptr [EBX + 0x148],EDI     ; 0053ac92
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0053ac98
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053ac9d
     JMP 0x0053a836                      ; 0053aca0
         ;   XREF to: 0053a836 (UNCONDITIONAL_JUMP)  ; LAB_0053a836

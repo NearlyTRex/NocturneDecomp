@@ -43,9 +43,9 @@ void __cdecl FUN_004caa80(void);
 // Address: 004cac00
 void __cdecl FUN_004cac00(void);
 
-// Original: core_flame.cpp_CFlame_load_FUN_004cac60
+// Original: core_flame.cpp_CFlame_archive_FUN_004cac60
 // Address: 004cac60
-void __cdecl CFlame::load(void);
+void __cdecl CFlame::archive(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_004cad80
 // Address: 004cad80

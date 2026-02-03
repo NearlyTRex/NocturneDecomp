@@ -14,10 +14,10 @@
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422060 at 00422152
 ;   core_chain.cpp_CChain_archive_FUN_00430fe0 at 00431022
 ;   core_charactr.cpp_CCharacter_archive_FUN_004283a0 at 00428482
-;   core_crate.cpp_CCrate_load_FUN_00448910 at 0044894b
-;   core_dest.cpp_CActorDestination_load_FUN_0046fdb0 at 0046fdfd
-;   core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0 at 00485f7f
-;   core_emitter.cpp_CEmitter_load_FUN_004a8b30 at 004a8caa
+;   core_crate.cpp_CCrate_archive_FUN_00448910 at 0044894b
+;   core_dest.cpp_CActorDestination_archive_FUN_0046fdb0 at 0046fdfd
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0 at 00485f7f
+;   core_emitter.cpp_CEmitter_archive_FUN_004a8b30 at 004a8caa
 ;   ... and 25 more
 ;
 ; Referenced Globals:

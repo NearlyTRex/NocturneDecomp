@@ -2,13 +2,15 @@
 // Address: 004c9830
 // Address Range: [[004c9830, 004c9844]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail **array)
+// Signature: CTrail * __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail **array)
+CTrail * __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail *objs)
 
 {
-  __arrfini(array,100,&g_CTrailTypeInfo);
-  return;
+  CTrail *pCVar1;
+  
+  pCVar1 = __arrfini(objs,100,&g_CTrailTypeInfo);
+  return pCVar1;
 }

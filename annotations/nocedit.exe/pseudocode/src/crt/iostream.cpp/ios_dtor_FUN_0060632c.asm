@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint d1,uint d2)
+; __cdecl ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint flags)
 ;
 ; Parameters:
 ; ios *            Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[8]:
 ;   crt_fstream.cpp_fstreambase_dtor_FUN_00606509 at 0060657a

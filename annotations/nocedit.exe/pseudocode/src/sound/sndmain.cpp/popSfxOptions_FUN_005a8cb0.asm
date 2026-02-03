@@ -7,7 +7,7 @@
 ; XREF[31]:
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c5d0
 ;   core_charactr.cpp_CCharacter_FUN_0042a830 at 0042abd3
-;   core_drone.cpp_FUN_0048ec70 at 0048f2cd
+;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f2cd
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac587
 ;   core_event.cpp_CEventList_FUN_004b0f00 at 004b0f64
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c173e

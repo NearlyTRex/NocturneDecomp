@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_emitter.cpp_FUN_004a7e80
+;   core_emitter.cpp_CEmitter_FUN_004a7e80
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     JNZ 0x005e746b                      ; 005e7460
         ;   XREF to: 005e746b (CONDITIONAL_JUMP)  ; LAB_005e746b
     PUSH EAX                            ; 005e7462
-    CALL core_emitter.cpp_FUN_004a7e80  ; 005e7463
-        ;   XREF to: 004a7e80 (UNCONDITIONAL_CALL)  ; void core_emitter.cpp_FUN_004a7e80()
+    CALL core_emitter.cpp_CEmitter_FUN_004a7e80 ; 005e7463
+        ;   XREF to: 004a7e80 (UNCONDITIONAL_CALL)  ; void core_emitter.cpp_CEmitter_FUN_004a7e80(CEmitter * this_ptr)
     ADD ESP,0x4                         ; 005e7468
     INC ESI                             ; 005e746b
         ;   Label: LAB_005e746b

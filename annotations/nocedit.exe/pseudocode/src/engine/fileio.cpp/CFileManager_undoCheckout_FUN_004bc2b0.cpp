@@ -14,11 +14,6 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
   int iVar1;
   int iVar2;
   char *in_stack_0000000c;
-  uint in_stack_fffff844;
-  uint in_stack_fffff848;
-  char **in_stack_fffff84c;
-  CStrList_vtable *in_stack_fffff850;
-  uint in_stack_fffff854;
   char local_414 [500];
   char local_220 [260];
   char local_11c [260];
@@ -59,10 +54,8 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
                 iVar2 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                   (this_ptr,local_11c);
                 if (iVar2 == 0) {
-                  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                            ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
-                             (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
+                  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff844,0);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0);
                   return 0;
                 }
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,local_11c);
@@ -72,16 +65,12 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
                 iVar1 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                   (this_ptr,local_11c);
                 if (iVar1 == 0) {
-                  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                            ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
-                             (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
+                  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff844,0);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0);
                   return 0;
                 }
               }
-              shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                        ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
-                         (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
+              shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff844,0);
             }
             else {
               iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -90,7 +79,7 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
                 iVar1 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                   (this_ptr,local_11c);
                 if (iVar1 == 0) {
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0);
                   return 0;
                 }
               }
@@ -101,8 +90,7 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
               engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
               (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
             }
-            shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                      ((CStrList *)&local_18.capacity,0,in_stack_fffff848);
+            shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&local_18.capacity,0);
             return 0;
           }
         }

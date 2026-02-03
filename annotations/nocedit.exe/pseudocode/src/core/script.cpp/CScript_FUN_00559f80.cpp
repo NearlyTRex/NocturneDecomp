@@ -22,11 +22,7 @@ int __cdecl core_script_cpp_CScript_FUN_00559f80(CScript *this_ptr,char *param_2
   char *pcVar11;
   char *pcVar12;
   byte bVar14;
-  uint in_stack_fffff870;
-  uint in_stack_fffff874;
-  char **in_stack_fffff878;
-  CStrList_vtable *in_stack_fffff87c;
-  uint in_stack_fffff880;
+  CPickList local_790;
   char local_3e8 [512];
   char local_1e8 [260];
   char local_e4 [200];
@@ -124,28 +120,24 @@ LAB_0055a34a:
     while( true ) {
       sprintf
                 (&DAT_031089e8,"Syntax error on %s line %d:\n%s",param_2,local_1c + 1,piVar8);
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff870);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_790);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff870,"Try to load the script again.  (You can ALT-TAB and edit the script now.)");
+                (&local_790.base,"Try to load the script again.  (You can ALT-TAB and edit the script now.)");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff870,"Don't use the script, just keep going.");
+                (&local_790.base,"Don't use the script, just keep going.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff870,"Execute NOTEPAD on the script right now.");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff870,"Cancel");
+                (&local_790.base,"Execute NOTEPAD on the script right now.");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_790.base,"Cancel");
       iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff870,&DAT_031089e8,-1,0);
+                        (&local_790,&DAT_031089e8,-1,0);
       if (iVar4 == 0) break;
       if (iVar4 == 1) {
         core_script_cpp_CScript_FUN_00559870(this_ptr);
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
-                   (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_790,0);
         return 1;
       }
       if (iVar4 != 2) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
-                   (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_790,0);
         return 0;
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -153,12 +145,8 @@ LAB_0055a34a:
       sprintf(local_e4,"start notepad world\\%s",param_2);
       system(local_e4);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
-                 (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_790,0);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
-               (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_790,0);
   } while( true );
 }

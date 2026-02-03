@@ -29,7 +29,7 @@ CCodec * __cdecl CCodec::ctor(CCodec *this_ptr);
 
 // Original: support_codec.cpp_CCodec_dtor_FUN_0043e9b0
 // Address: 0043e9b0
-CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,int d1);
+CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CCodec_init_FUN_0043e9d0
 // Address: 0043e9d0
@@ -153,8 +153,8 @@ int __cdecl CLZWDecompress::isDictionaryEmpty(CLZWDecompress *this_ptr);
 
 // Original: support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0
 // Address: 0043f6b0
-CLZWDecompress * __cdecl CLZWDecompress::dtor(CLZWDecompress *this_ptr,uint d1,uint d2,uint d3);
+CLZWDecompress * __cdecl CLZWDecompress::dtor(CLZWDecompress *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CLZWCompress_dtor_FUN_0043f710
 // Address: 0043f710
-CLZWCompress * __cdecl CLZWCompress::dtor(CLZWCompress *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CLZWCompress * __cdecl CLZWCompress::dtor(CLZWCompress *this_ptr,uint flags);

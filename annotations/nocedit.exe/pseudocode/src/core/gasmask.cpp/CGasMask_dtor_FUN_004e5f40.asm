@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004e5f40(CGasMask *this_ptr,uint d1,uint d2)
+; __cdecl CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004e5f40(CGasMask *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGasMaskTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004e5f4c
     PUSH EBX                            ; 004e5f4e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004e5f4f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e5f54
     MOV DL,byte ptr [ESP + 0xc]         ; 004e5f57
     MOV EBX,EAX                         ; 004e5f5b

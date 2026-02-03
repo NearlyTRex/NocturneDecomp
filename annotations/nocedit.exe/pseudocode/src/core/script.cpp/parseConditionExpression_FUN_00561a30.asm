@@ -228,7 +228,7 @@ section .text
     PUSH EAX                            ; 00561bd1
     MOV EDI,dword ptr [ESP + 0x20]      ; 00561bd2
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 00561bd6
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00561bdb
     MOV EAX,EDI                         ; 00561bde
     ADD ESP,0x20                        ; 00561be0
@@ -295,7 +295,7 @@ section .text
     PUSH EAX                            ; 00561c52
     MOV EDI,0x20                        ; 00561c53
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 00561c58
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00561c5d
     MOV EAX,EDI                         ; 00561c60
     ADD ESP,0x20                        ; 00561c62

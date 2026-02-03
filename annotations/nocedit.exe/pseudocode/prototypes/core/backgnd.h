@@ -61,4 +61,4 @@ void __cdecl CBackgroundActor::writeDependencies(CBackgroundActor *this_ptr,_FIL
 
 // Original: core_backgnd.cpp_CBackgroundActor_dtor_FUN_00412ad0
 // Address: 00412ad0
-CBackgroundActor * __cdecl CBackgroundActor::dtor(CBackgroundActor *this_ptr,uint d1,uint d2);
+CBackgroundActor * __cdecl CBackgroundActor::dtor(CBackgroundActor *this_ptr,uint flags);

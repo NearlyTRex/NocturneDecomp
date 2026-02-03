@@ -19,6 +19,10 @@ void __cdecl trimLine(char *input_line,char *output_buffer);
 // Address: 00559360
 void __cdecl trimString(char *str);
 
+// Original: core_script.cpp_skipWhitespace_FUN_005593d0
+// Address: 005593d0
+char * __cdecl skipWhitespace(char *str);
+
 // Original: core_script.cpp_parseArgument_FUN_005593f0
 // Address: 005593f0
 char * __cdecl parseArgument(char **cursor,char *out_buffer,int max_length);

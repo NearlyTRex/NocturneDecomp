@@ -7,18 +7,16 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
 ; Local Variables:
-; undefined1       Stack[-0xcdc]:1  local_cdc
-; undefined1       Stack[-0xcd8]:1  local_cd8
-; undefined4       Stack[-0x8c0]:4  local_8c0
-; undefined1       Stack[-0x8b0]:1  local_8b0
+; CPodFile         Stack[-0xcdc]:1068  local_cdc
+; CPickList        Stack[-0x8b0]:936  local_8b0
 ; undefined1       Stack[-0x508]:1  local_508
 ; undefined1       Stack[-0x507]:1  local_507
 ; undefined1       Stack[-0x308]:1  local_308
 ; undefined1       Stack[-0x307]:1  local_307
 ; undefined4       Stack[-0x2e8]:4  local_2e8
 ; undefined4       Stack[-0x2e4]:4  local_2e4
-; undefined1       Stack[-0x2e0]:1  local_2e0
-; undefined1       Stack[-0x1d0]:1  local_1d0
+; char[272]        Stack[-0x2e0]:272  local_2e0
+; int[78]          Stack[-0x1d0]:312  local_1d0
 ; undefined1       Stack[-0x98]:1  local_98
 ; undefined1       Stack[-0x97]:1  local_97
 ; undefined1       Stack[-0x34]:1  local_34
@@ -167,7 +165,7 @@ section .text
     LEA ESI,[ESP + 0xb18]               ; 004b805a
     LEA EDI,[ESP + 0x9e0]               ; 004b8061
     CALL engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590 ; 004b8068
-        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
+        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
     MOV ECX,0x4e                        ; 004b806d
     ADD ESP,0x8                         ; 004b8072
     LEA EAX,[ESP + 0x9f8]               ; 004b8075
@@ -280,7 +278,7 @@ section .text
     LEA EAX,[ESP + 0x434]               ; 004b81c7
     PUSH EAX                            ; 004b81ce
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004b81cf
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b81d4
     PUSH 0x0                            ; 004b81d7
     LEA EAX,[ESP + 0x8]                 ; 004b81d9

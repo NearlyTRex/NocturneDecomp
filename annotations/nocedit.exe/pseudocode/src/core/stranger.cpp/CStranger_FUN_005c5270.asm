@@ -49,8 +49,8 @@
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-;   core_dynamite.cpp_FUN_0049cf20
-;   core_dynamite.cpp_FUN_0049cf70
+;   core_dynamite.cpp_CDynamite_FUN_0049cf20
+;   core_dynamite.cpp_CDynamite_FUN_0049cf70
 ;   core_hero.cpp_CHero_FUN_004f38d0
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004ffab0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
@@ -156,8 +156,8 @@ section .text
     JZ 0x005c5391                       ; 005c537e
         ;   XREF to: 005c5391 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH EAX                            ; 005c5380
-    CALL core_dynamite.cpp_FUN_0049cf70 ; 005c5381
-        ;   XREF to: 0049cf70 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0049cf70()
+    CALL core_dynamite.cpp_CDynamite_FUN_0049cf70 ; 005c5381
+        ;   XREF to: 0049cf70 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_CDynamite_FUN_0049cf70(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 005c5386
     TEST EAX,EAX                        ; 005c5389
     JZ 0x005c57e6                       ; 005c538b
@@ -615,8 +615,8 @@ section .text
         ;   XREF to: 005c5391 (CONDITIONAL_JUMP)  ; caseD_4
     MOV ECX,dword ptr [ESP + 0x38]      ; 005c580e
     PUSH ECX                            ; 005c5812
-    CALL core_dynamite.cpp_FUN_0049cf20 ; 005c5813
-        ;   XREF to: 0049cf20 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_FUN_0049cf20()
+    CALL core_dynamite.cpp_CDynamite_FUN_0049cf20 ; 005c5813
+        ;   XREF to: 0049cf20 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_CDynamite_FUN_0049cf20(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 005c5818
     JMP 0x005c5391                      ; 005c581b
         ;   XREF to: 005c5391 (UNCONDITIONAL_JUMP)  ; caseD_4

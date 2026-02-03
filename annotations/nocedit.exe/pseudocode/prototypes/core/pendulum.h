@@ -81,4 +81,4 @@ void __cdecl CPendulum::writeDependencies(CPendulum *this_ptr,_FILE *file_handle
 
 // Original: core_pendulum.cpp_CPendulum_dtor_FUN_0054a7d0
 // Address: 0054a7d0
-CPendulum * __cdecl CPendulum::dtor(CPendulum *this_ptr,uint d1,uint d2);
+CPendulum * __cdecl CPendulum::dtor(CPendulum *this_ptr,uint flags);

@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x10c]:1  local_10c
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_CFilmProjector_load_FUN_004beb40 at 004bec99
+;   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 at 004bec99
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_0061e78a

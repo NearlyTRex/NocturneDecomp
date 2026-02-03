@@ -20,7 +20,7 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044464a
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f4d0
 ;   core_dracbrid.cpp_FUN_00484410 at 00484fd7
-;   core_drone.cpp_FUN_0048ec70 at 0048f0aa
+;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f0aa
 ;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d48dd
 ;   ... and 26 more
 ;

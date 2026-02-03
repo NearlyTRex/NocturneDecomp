@@ -10,7 +10,7 @@
 ; _FILE *          Stack[0x10]:4   output_file
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1618
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1618
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90

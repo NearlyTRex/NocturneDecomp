@@ -2,13 +2,15 @@
 // Address: 00470980
 // Address Range: [[00470980, 00470994]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array)
+// Signature: CDemonFilter * __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array)
+CDemonFilter * __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter *objs)
 
 {
-  __arrfini(array,4,&g_CDemonFilterTypeInfo);
-  return;
+  CDemonFilter *pCVar1;
+  
+  pCVar1 = __arrfini(objs,4,&g_CDemonFilterTypeInfo);
+  return pCVar1;
 }

@@ -39,9 +39,9 @@ void __cdecl FUN_00425340(void);
 // Address: 004254b0
 int __cdecl FUN_004254b0(void);
 
-// Original: core_bugs.cpp_CBugs_load_FUN_004254f0
+// Original: core_bugs.cpp_CBugs_archive_FUN_004254f0
 // Address: 004254f0
-void __cdecl CBugs::load(void);
+void __cdecl CBugs::archive(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_FUN_00425610
 // Address: 00425610
@@ -165,7 +165,7 @@ float __cdecl FUN_00427ba0(void);
 
 // Original: core_bugs.cpp_CBugs_dtor_FUN_00427bd0
 // Address: 00427bd0
-CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9);
+CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint flags);
 
 // Original: core_bugs.cpp_SBug_ctor_FUN_00427ca0
 // Address: 00427ca0

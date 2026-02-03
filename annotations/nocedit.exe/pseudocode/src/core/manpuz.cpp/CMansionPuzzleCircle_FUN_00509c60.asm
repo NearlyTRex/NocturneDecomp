@@ -100,7 +100,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 00509d3b | g_CEditorToolsPtr
     PUSH ESI                            ; 00509d41 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00509d42
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00509d47
     POP ESI                             ; 00509d4a
     JMP 0x00509cf2                      ; 00509d4b

@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint d1,uint d2)
+; __cdecl CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CEmitterTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004a93cc
     PUSH EBX                            ; 004a93ce
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004a93cf
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a93d4
     MOV DL,byte ptr [ESP + 0xc]         ; 004a93d7
     MOV EBX,EAX                         ; 004a93db

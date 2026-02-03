@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_CFilmProjector_load_FUN_004beb40 at 004beb73
+;   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 at 004beb73
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061e3a2 = 0.25

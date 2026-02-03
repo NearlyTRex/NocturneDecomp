@@ -11,7 +11,7 @@
 void __cdecl core_curtain_cpp_FUN_0044bad0(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,1000,&g_SCurtainVertexTypeInfo);
   return;

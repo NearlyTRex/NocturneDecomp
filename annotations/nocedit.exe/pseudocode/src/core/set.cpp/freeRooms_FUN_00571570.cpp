@@ -2,13 +2,15 @@
 // Address: 00571570
 // Address Range: [[00571570, 00571584]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom **array)
+// Signature: SRoom * __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom **array)
+SRoom * __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom *objs)
 
 {
-  __arrfini(array,0x14,&g_SRoomTypeInfo);
-  return;
+  SRoom *pSVar1;
+  
+  pSVar1 = __arrfini(objs,0x14,&g_SRoomTypeInfo);
+  return pSVar1;
 }

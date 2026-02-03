@@ -205,11 +205,11 @@ void __cdecl CMirrorHack::writeDependencies(CMirrorHack *this_ptr,_FILE *file_ha
 
 // Original: core_manpuz.cpp_CMirrorHack_dtor_FUN_0050b840
 // Address: 0050b840
-CMirrorHack * __cdecl CMirrorHack::dtor(CMirrorHack *this_ptr,uint d1,uint d2);
+CMirrorHack * __cdecl CMirrorHack::dtor(CMirrorHack *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_0050b890
 // Address: 0050b890
-CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5);
+CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SReflector_ctor_FUN_0050b920
 // Address: 0050b920
@@ -241,16 +241,16 @@ void __cdecl FUN_0050b9a0(void);
 
 // Original: core_manpuz.cpp_freeTriangles_FUN_0050ba70
 // Address: 0050ba70
-void __cdecl freeTriangles(CDemonTriangle **objs);
+CDemonTriangle * __cdecl freeTriangles(CDemonTriangle *objs);
 
 // Original: core_manpuz.cpp_freePanels_FUN_0050ba90
 // Address: 0050ba90
-void __cdecl freePanels(SPanel **objs);
+SPanel * __cdecl freePanels(SPanel *objs);
 
 // Original: core_manpuz.cpp_freeGems_FUN_0050bab0
 // Address: 0050bab0
-void __cdecl freeGems(SGem **objs);
+SGem * __cdecl freeGems(SGem *objs);
 
 // Original: core_manpuz.cpp_freeReflectors_FUN_0050bad0
 // Address: 0050bad0
-void __cdecl freeReflectors(SReflector **objs);
+SReflector * __cdecl freeReflectors(SReflector *objs);

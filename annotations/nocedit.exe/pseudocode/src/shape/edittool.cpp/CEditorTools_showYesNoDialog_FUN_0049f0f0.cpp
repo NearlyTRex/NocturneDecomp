@@ -12,17 +12,17 @@ shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 
 {
   int iVar1;
-  uint in_stack_ffffffe8;
+  CStrList local_18;
   va_list_t local_8;
   
   local_8 = &stack0x0000000c;
   vsprintf(g_YesNoDialogBuffer,format_string,&local_8);
   local_8 = (va_list_t)0x0;
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffe8);
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffffe8,"^Yes");
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffffe8,"^No");
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_18);
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"^Yes");
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"^No");
   iVar1 = shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0
-                    ((CStrList *)g_YesNoDialogBuffer,&stack0xffffffe8,0);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xffffffe8,0,in_stack_ffffffe8);
+                    ((CStrList *)g_YesNoDialogBuffer,(char *)&local_18,0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0);
   return (uint)(iVar1 == 0);
 }

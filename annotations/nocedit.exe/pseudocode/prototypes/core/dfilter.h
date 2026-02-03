@@ -77,4 +77,4 @@ void __cdecl CFilterFX::process(CFilterFx *this_ptr);
 
 // Original: core_dfilter.cpp_freeFilters_FUN_00470980
 // Address: 00470980
-void __cdecl freeFilters(CDemonFilter **array);
+CDemonFilter * __cdecl freeFilters(CDemonFilter *objs);

@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_004120e0(CAnvil *this_ptr,uint d1,uint d2)
+; __cdecl CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_004120e0(CAnvil *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CAnvilTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004120ec
     PUSH EBX                            ; 004120ee
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004120ef
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004120f4
     MOV DL,byte ptr [ESP + 0xc]         ; 004120f7
     MOV EBX,EAX                         ; 004120fb

@@ -22,7 +22,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr)
                             (*(CDemonActor **)((this_ptr->base).unk4 + 4),
                              g_CAmmoBoxClassInfo.name_hash);
     if (this_ptr_00 != (CAmmoBox *)0x0) {
-      core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00);
+      core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00,&(this_ptr->base).inventory);
     }
     this_ptr->action_pending = 1;
     (this_ptr->base).unk4[4] = '\0';

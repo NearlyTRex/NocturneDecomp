@@ -13,14 +13,10 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
   int iVar2;
   _FILE *file;
   int iVar3;
-  uint unaff_ESI;
   byte *puVar4;
-  uint unaff_EDI;
   char *pcVar5;
   char *in_stack_00000004;
-  uint in_stack_fffff424;
-  uint in_stack_fffff428;
-  char **in_stack_fffff42c;
+  CPickList local_bdc;
   CPickList local_834;
   char local_48c [400];
   char local_2fc [400];
@@ -34,13 +30,13 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
               (g_CEditorToolsPtr,"No ground type entries in %s");
     return;
   }
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff424);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bdc);
   pcVar5 = (char *)0x0;
-  shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff424,1);
+  shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_bdc,1);
   do {
     while( true ) {
       iVar3 = 0;
-      shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&stack0xfffff424);
+      shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_bdc);
       if (0 < DAT_03654368) {
         puVar4 = &DAT_03654370;
         do {
@@ -49,13 +45,12 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
           sprintf(local_2fc,"%s\t%s",puVar4,pcVar1);
           iVar3 = iVar3 + 1;
           puVar4 = puVar4 + 0x28;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff424,local_2fc);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,local_2fc);
         } while (iVar3 < DAT_03654368);
       }
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff424);
+      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_bdc.base);
       pcVar5 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                 ((CPickList *)&stack0xfffff424,"Editing ground types, press ESC when done.",
-                                  (int)pcVar5,0);
+                                 (&local_bdc,"Editing ground types, press ESC when done.",(int)pcVar5,0);
       if (-1 < (int)pcVar5) break;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_834);
       shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_834);
@@ -92,20 +87,13 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
           }
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x32b);
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_834,0,unaff_ESI,unaff_EDI,in_stack_fffff424,in_stack_fffff428,
-                   (uint)in_stack_fffff42c);
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff424,0,unaff_ESI,unaff_EDI,in_stack_fffff424,
-                   in_stack_fffff428,(uint)in_stack_fffff42c);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_834,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_bdc,0);
         return;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_834,0,unaff_ESI,unaff_EDI,in_stack_fffff424,in_stack_fffff428,
-                 (uint)in_stack_fffff42c);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_834,0);
     }
-    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              ((CStrList *)&stack0xfffff424,(int)local_6c,pcVar5,0);
+    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,(int)local_6c,pcVar5,0);
     iVar3 = 0;
     engine_dosio_c_splitPath_FUN_00481f20(local_6c,(char *)0x0,(char *)0x0,local_16c,(char *)0x0);
     if (0 < DAT_03654368) {
@@ -125,16 +113,15 @@ LAB_00578779:
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find ground texture in list!");
     }
     iVar2 = 0;
-    shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&stack0xfffff424);
+    shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_bdc);
     do {
       pcVar1 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar2);
       iVar2 = iVar2 + 1;
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff424,pcVar1);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,pcVar1);
     } while (iVar2 < 0xe);
     sprintf(local_48c,"Select ground type for %s",local_6c);
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xfffff424,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0)
-    ;
+                      (&local_bdc,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0);
     if (-1 < iVar2) {
       (&DAT_03659190)[iVar3] = (char)iVar2;
     }

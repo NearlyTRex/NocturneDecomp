@@ -8,7 +8,7 @@
 ;
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c61
-;   core_elephant.cpp_CElephantGun_FUN_004a7070 at 004a714b
+;   core_elephant.cpp_CElephantGun_process_FUN_004a7070 at 004a714b
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 005065ca
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c1df
 ;   core_shotgun.cpp_FUN_00587f70 at 0058804b

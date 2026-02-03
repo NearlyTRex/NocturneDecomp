@@ -1,112 +1,183 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 85,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 86,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 86,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 89,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 89,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 90,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 94,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 95,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 95,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 98,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 98,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 99,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 228,
+    "complexity_score": 85,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 93,
-    "suspect_count": 13,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 440
+    "pseudocode_lines": 85,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 432
   },
   "cross_references": [
     {
-      "addr": "004e2910",
-      "from_addr": "004e2ef3",
-      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910",
+      "addr": "004dc230",
+      "from_addr": "004dc236",
+      "name": "core_game.cpp_CGame_FUN_004dc230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dc230",
-      "from_addr": "004dc236",
-      "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230",
+      "addr": "004e2910",
+      "from_addr": "004e2ef3",
+      "name": "core_game.cpp_CGame_FUN_004e2910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -138,7 +209,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60",
-    "signature": "void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)"
+    "signature": "void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -231,10 +302,10 @@
     "pcode_op_count": 1134
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 28,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -243,100 +314,15 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0xa4) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0xa4) < (int)g_JoyXPos) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0xa8) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0xa8) < (int)g_JoyYPos) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_freeVectors_FUN_0049a410(CVector3f **array)
+; __cdecl CVector3f * __cdecl core_dtrace_cpp_freeVectors_FUN_0049a410(CVector3f *objs)
 ;
 ; Parameters:
-; CVector3f * *    Stack[0x4]:4   array
+; CVector3f *      Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049a41a
     PUSH EDX                            ; 0049a41e
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0049a41f
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049a424
     RET                                 ; 0049a427
 

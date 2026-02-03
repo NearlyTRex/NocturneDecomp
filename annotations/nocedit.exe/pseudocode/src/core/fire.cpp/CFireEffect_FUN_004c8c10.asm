@@ -11,7 +11,7 @@
 ;   core_crate.cpp_FUN_00448a70 at 00448af4
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab1f7
 ;   core_fire.cpp_CToss_process_FUN_004c4000 at 004c406d
-;   core_flamecan.cpp_FUN_004cb390 at 004cb4af
+;   core_flamecan.cpp_CFlameCan_process_FUN_004cb390 at 004cb4af
 ;   core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 at 005e9660
 ;
 ; Referenced Globals:

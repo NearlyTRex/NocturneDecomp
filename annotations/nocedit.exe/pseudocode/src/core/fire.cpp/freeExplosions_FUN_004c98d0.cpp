@@ -2,13 +2,15 @@
 // Address: 004c98d0
 // Address Range: [[004c98d0, 004c98e4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array)
+// Signature: CExplosion * __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array)
+CExplosion * __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion *objs)
 
 {
-  __arrfini(array,10,&g_CExplosionTypeInfo);
-  return;
+  CExplosion *pCVar1;
+  
+  pCVar1 = __arrfini(objs,10,&g_CExplosionTypeInfo);
+  return pCVar1;
 }

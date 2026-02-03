@@ -33,7 +33,7 @@ void __cdecl CAmmoBox(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_CAmmoBox_FUN_00411700
 // Address: 00411700
-void __cdecl CAmmoBox(CAmmoBox *this_ptr);
+void __cdecl CAmmoBox(CAmmoBox *this_ptr,CInventory *inventory);
 
 // Original: core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820
 // Address: 00411820
@@ -73,4 +73,4 @@ void __cdecl CAmmoBox::writeDependencies(CAmmoBox *this_ptr,_FILE *file_handle);
 
 // Original: core_ammobox.cpp_CAmmoBox_dtor_FUN_00411c20
 // Address: 00411c20
-CAmmoBox * __cdecl CAmmoBox::dtor(CAmmoBox *this_ptr,uint d1,uint d2);
+CAmmoBox * __cdecl CAmmoBox::dtor(CAmmoBox *this_ptr,uint flags);

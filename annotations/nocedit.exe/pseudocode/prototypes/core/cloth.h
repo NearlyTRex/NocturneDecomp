@@ -213,15 +213,15 @@ SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr);
 
 // Original: core_cloth.cpp_freeVectors_FUN_0043e460
 // Address: 0043e460
-int __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);
 
 // Original: core_cloth.cpp_freeClothVertices_FUN_0043e480
 // Address: 0043e480
-int __cdecl freeClothVertices(SClothVertex **array);
+SClothVertex * __cdecl freeClothVertices(SClothVertex *array);
 
 // Original: core_cloth.cpp_freeClothBones_FUN_0043e4a0
 // Address: 0043e4a0
-void __cdecl freeClothBones(SClothBone **array);
+SClothBone * __cdecl freeClothBones(SClothBone *array);
 
 // Original: core_cloth.cpp_FUN_0043e4c0
 // Address: 0043e4c0

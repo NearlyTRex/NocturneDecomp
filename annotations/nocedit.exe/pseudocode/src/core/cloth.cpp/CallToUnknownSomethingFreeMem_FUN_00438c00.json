@@ -1,47 +1,179 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 55,
         "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 61,
+    "complexity_score": 37,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 11,
-    "suspect_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
       "stack_param"
     ],
-    "total_lines": 38
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -71,7 +203,7 @@
     {
       "addr": "004d7660",
       "from_addr": "004d7675",
-      "name": "core_gabriela.cpp_freeMaybe_FUN_004d7660",
+      "name": "core_gabriela.cpp_CGabriella_dtor_FUN_004d7660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -160,13 +292,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
@@ -177,15 +302,8 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone **)(in_stack_00000004 + 0x3ce90));",
+      "text": "pSVar1 = core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone *)(in_stack_00000004 + 0x3ce90));",
       "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "text": "iVar1 = core_cloth_cpp_freeClothVertices_FUN_0043e480((SClothVertex **)(extraout_EAX + -0x377b8));",
-      "type": "extra_output"
     }
   ]
 }

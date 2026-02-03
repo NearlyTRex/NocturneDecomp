@@ -12,11 +12,7 @@ engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *
 {
   _FILE *file_ptr;
   int iVar1;
-  uint in_stack_fffffb30;
-  uint in_stack_fffffb34;
-  char **in_stack_fffffb38;
-  CStrList_vtable *in_stack_fffffb3c;
-  uint in_stack_fffffb40;
+  CPickList local_4d0;
   CFileFinder local_128;
   CStrList local_14;
   
@@ -27,15 +23,12 @@ engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x1078);
     return 1;
   }
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb30);
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80
-            ((CStrList *)&stack0xfffffb30,"Create a POD.INI file now with all pods mounted.");
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80
-            ((CStrList *)&stack0xfffffb30,"Create a POD.INI file now with no pods mounted.");
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80
-            ((CStrList *)&stack0xfffffb30,"Oops - forget about it.");
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4d0);
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4d0.base,"Create a POD.INI file now with all pods mounted.");
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4d0.base,"Create a POD.INI file now with no pods mounted.");
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4d0.base,"Oops - forget about it.");
   iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    ((CPickList *)&stack0xfffffb30,"You do not have a POD.INI file.\nThe file manager requires a POD.INI\nfile to operate properly.",-1,0);
+                    (&local_4d0,"You do not have a POD.INI file.\nThe file manager requires a POD.INI\nfile to operate properly.",-1,0);
   if ((-1 < iVar1) && (iVar1 < 2)) {
     shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_14);
     if (iVar1 == 0) {
@@ -48,14 +41,10 @@ engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *
       engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_128,0);
     }
     engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(this_ptr,&local_14);
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_14,0,in_stack_fffffb30);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,
-               (uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_14,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4d0,0);
     return 1;
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,
-             (uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4d0,0);
   return 0;
 }

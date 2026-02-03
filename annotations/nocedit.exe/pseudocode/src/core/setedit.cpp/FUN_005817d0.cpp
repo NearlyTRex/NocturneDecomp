@@ -1,12 +1,12 @@
 // Name: core_setedit.cpp_FUN_005817d0
 // Address: 005817d0
 // Address Range: [[005817d0, 00581a96]]
-// Convention: __watcallRegister
-// Signature: void core_setedit_cpp_FUN_005817d0(void *unk)
+// Convention: __cdecl
+// Signature: void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_005817d0(void *unk)
+void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
 
 {
   CDemonRenderer *pCVar1;
@@ -14,7 +14,6 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int iVar3;
   uint uVar4;
   double dVar5;
-  float *in_stack_00000004;
   float *in_stack_00000008;
   float in_stack_0000000c;
   int in_stack_00000010;
@@ -55,7 +54,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       local_38.y = (int)ROUND(dVar5);
       pfVar2 = in_stack_00000008;
       if ((uVar4 & 2) != 0) {
-        pfVar2 = in_stack_00000004;
+        pfVar2 = unk;
       }
       SStack_64.base.type = (int)pfVar2[1];
       dVar5 = round
@@ -64,7 +63,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       local_38.y = (int)ROUND(dVar5);
       pfVar2 = in_stack_00000008;
       if ((uVar4 & 4) != 0) {
-        pfVar2 = in_stack_00000004;
+        pfVar2 = unk;
       }
       SStack_64.base.type = (int)pfVar2[2];
       dVar5 = round
@@ -128,7 +127,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
         return;
       }
       if ((uVar4 & 1) == 0) break;
-      SStack_64.base.type = (int)*in_stack_00000004;
+      SStack_64.base.type = *(int *)unk;
       iVar3 = iVar3 + 0x30;
     }
   } while( true );

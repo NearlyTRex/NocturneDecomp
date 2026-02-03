@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_bodypart_cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire **objs)
+; __cdecl SBodyPartFire * __cdecl core_bodypart_cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire *objs)
 ;
 ; Parameters:
-; SBodyPartFire * * Stack[0x4]:4   objs
+; SBodyPartFire *  Stack[0x4]:4   objs
 ;
 ; XREF[1]:
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00419130 at 0041916c
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041b6b7
     PUSH EDX                            ; 0041b6bb
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0041b6bc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041b6c1
     RET                                 ; 0041b6c4
 

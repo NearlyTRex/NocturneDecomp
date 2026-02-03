@@ -340,13 +340,13 @@
     {
       "addr": "00522c10",
       "from_addr": "00522c1c",
-      "name": "core_mirror.cpp_freeClipPlaneArray_FUN_00522c10",
+      "name": "core_mirror.cpp_freeClipPlanes_FUN_00522c10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522c30",
       "from_addr": "00522c3c",
-      "name": "core_mirror.cpp_freeVectorArray32_FUN_00522c30",
+      "name": "core_mirror.cpp_freeVectors_FUN_00522c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -436,7 +436,7 @@
     {
       "addr": "00574770",
       "from_addr": "0057477c",
-      "name": "core_setcolid.cpp_freeRaytraceState_FUN_00574770",
+      "name": "core_setcolid.cpp_freeRaytraceStates_FUN_00574770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -520,7 +520,7 @@
     {
       "addr": "004a6f50",
       "from_addr": "004a6f5c",
-      "name": "shape_edittool.cpp_freeVector8_FUN_004a6f50",
+      "name": "shape_edittool.cpp_freeVectors_FUN_004a6f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -564,7 +564,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c___arrfini_FUN_005feee9",
-    "signature": "int __cdecl crt_memory_c___arrfini_FUN_005feee9(void **obj_array,int obj_count,WatcomTypeInfo *type_info)"
+    "signature": "void * __cdecl crt_memory_c___arrfini_FUN_005feee9(void *obj_array,int obj_count,WatcomTypeInfo *type_info)"
   },
   "function_calls": [
     {
@@ -713,7 +713,7 @@
         "name": "obj_array",
         "offset": 4,
         "size": 4,
-        "type": "void * *"
+        "type": "void *"
       },
       {
         "is_param": true,

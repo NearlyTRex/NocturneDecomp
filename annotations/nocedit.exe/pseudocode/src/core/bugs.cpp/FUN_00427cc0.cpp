@@ -9,8 +9,8 @@
 int __cdecl core_bugs_cpp_FUN_00427cc0(SBug **objs)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrfini(objs,400,&g_SBugTypeInfo);
-  return iVar1;
+  pvVar1 = __arrfini(objs,400,&g_SBugTypeInfo);
+  return (int)pvVar1;
 }

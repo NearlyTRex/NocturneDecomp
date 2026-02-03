@@ -69,4 +69,4 @@ void __cdecl CMelee::getPropertyList(CMelee *this_ptr,CActorPropertyList *proper
 
 // Original: core_melee.cpp_CMelee_dtor_FUN_0050edf0
 // Address: 0050edf0
-CMelee * __cdecl CMelee::dtor(CMelee *this_ptr,uint d1,uint d2);
+CMelee * __cdecl CMelee::dtor(CMelee *this_ptr,uint flags);

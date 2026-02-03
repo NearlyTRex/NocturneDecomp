@@ -300,7 +300,7 @@ section .text
     MOV ECX,dword ptr [0x0067b654]      ; 0057d94b | g_CGameInstance | g_CGamePtr
     PUSH ECX                            ; 0057d951 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0057d952
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV EAX,[0x00679394]                ; 0057d957 | g_WindowWidth
     IMUL EAX,dword ptr [0x00679398]     ; 0057d95c | g_WindowHeight
     ADD ESP,0x4                         ; 0057d963
@@ -1064,7 +1064,7 @@ section .text
     LEA EAX,[ESP + 0xbec]               ; 0057e2fc
     PUSH EAX                            ; 0057e303
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0057e304
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057e309
     JMP 0x0057e21a                      ; 0057e30c
         ;   XREF to: 0057e21a (UNCONDITIONAL_JUMP)  ; LAB_0057e21a

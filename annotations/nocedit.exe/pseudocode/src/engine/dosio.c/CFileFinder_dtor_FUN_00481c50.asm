@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr,uint d1)
+; __cdecl CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr)
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
 ;
 ; XREF[10]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538a20

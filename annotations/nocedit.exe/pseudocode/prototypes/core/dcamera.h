@@ -33,7 +33,7 @@ CDemonCamera * __cdecl CDemonCamera::ctor(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090
 // Address: 0044c090
-CDemonCamera * __cdecl CDemonCamera::dtor(CDemonCamera *this_ptr,uint d1,uint d2,uint d3);
+CDemonCamera * __cdecl CDemonCamera::dtor(CDemonCamera *this_ptr,uint flags);
 
 // Original: core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0
 // Address: 0044c0f0
@@ -345,4 +345,4 @@ int __cdecl CDemonCamera::testBoxOcclusion(CDemonCamera *this_ptr,CVector3i *cor
 
 // Original: core_dcamera.cpp_freeVectors_FUN_00454700
 // Address: 00454700
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

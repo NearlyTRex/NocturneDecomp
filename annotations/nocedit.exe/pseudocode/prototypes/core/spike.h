@@ -35,9 +35,9 @@ int __cdecl FUN_005b8730(void);
 // Address: 005b87a0
 float * __cdecl FUN_005b87a0(void);
 
-// Original: core_spike.cpp_CSpike_load_FUN_005b87f0
+// Original: core_spike.cpp_CSpike_archive_FUN_005b87f0
 // Address: 005b87f0
-void __cdecl CSpike::load(void);
+void __cdecl CSpike::archive(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_FUN_005b8940
 // Address: 005b8940
@@ -61,4 +61,4 @@ void __cdecl CSpike(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005b9050
 // Address: 005b9050
-CSpike * __cdecl CSpike::dtor(CSpike *this_ptr,uint d1,uint d2);
+CSpike * __cdecl CSpike::dtor(CSpike *this_ptr,uint flags);

@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEdButton.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SWindow.h"
 
 // =============================================================================
@@ -29,6 +30,9 @@ extern CEditorTools g_CEditorToolsInstance;
 
 // CEditorTools*
 extern CEditorTools* g_CUserInterfacePtr;
+
+// CVector3f
+extern CVector3f CVector3f_02cf2b60;
 
 // HWND
 extern HWND g_DialogParentWindow;
@@ -89,6 +93,7 @@ extern int g_DragStartMouseX;
 extern int g_DragStartMouseY;
 extern int g_DragStartScrollPos;
 extern int g_DragStartThumbPos;
+extern int INT_02cf2b5c;
 extern int g_GlobalDeltaTimeInt;
 extern int g_AnimationTimerValue;
 extern int g_MouseX;
@@ -106,10 +111,6 @@ extern uint* g_ZBufferScanlineArray[1200];
 // undefined4
 extern undefined4 DAT_02cf2a78;
 extern undefined4 DAT_02cf2aac;
-extern undefined4 DAT_02cf2b5c;
-extern undefined4 DAT_02cf2b60;
-extern undefined4 DAT_02cf2b64;
-extern undefined4 DAT_02cf2b68;
 extern undefined4 DAT_02cf2b6c;
 extern undefined4 DAT_02cf2b70;
 extern undefined4 DAT_02cf2b74;

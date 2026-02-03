@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTempleStone *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTempleStoneTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffc6c]          ; 005bae2f
     PUSH EBX                            ; 005bae35
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005bae36
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005bae3b
     MOV DL,byte ptr [ESP + 0xc]         ; 005bae3e
     MOV EBX,EAX                         ; 005bae42

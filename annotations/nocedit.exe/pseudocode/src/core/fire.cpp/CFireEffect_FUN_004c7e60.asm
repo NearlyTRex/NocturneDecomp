@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_emitter.cpp_FUN_004a8070 at 004a846f
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a846f
 ;
 ; Referenced Globals:
 ;   CFireball* g_CFireEffectFireballsEnd

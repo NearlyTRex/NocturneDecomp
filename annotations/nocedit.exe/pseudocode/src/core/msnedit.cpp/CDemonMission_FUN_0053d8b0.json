@@ -2,82 +2,214 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "pointer_precision",
         "column": 29,
+        "line": 44,
+        "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 39,
         "line": 48,
         "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 39,
+        "category": "pointer_precision",
+        "column": 40,
         "line": 52,
         "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 40,
-        "line": 56,
-        "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 83,
-        "message": "'stack0xffffafe0' was not declared in this scope; did you mean 'in_stack_ffffafe0'?"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 84,
+        "line": 79,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 84,
+        "line": 79,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 86,
+        "line": 81,
         "message": "request for member '_4_4_' in 'auStack_2b24', which is of non-class type 'byte [9472]' {aka 'unsigned char [9472]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 19,
-        "line": 91,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
+        "line": 86,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 22,
-        "line": 149,
+        "line": 144,
         "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 38,
-        "line": 149,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
+        "line": 144,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 153,
+        "line": 148,
         "message": "request for member '_4_4_' in 'auStack_2b24', which is of non-class type 'byte [9472]' {aka 'unsigned char [9472]'}"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 188,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -85,145 +217,175 @@
       {
         "category": "other",
         "column": 21,
-        "line": 48,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
+        "line": 44,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 29,
         "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 32,
         "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 56,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 22,
-        "line": 56,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 67,
+        "line": 63,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 78,
+        "line": 74,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 84,
+        "line": 79,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 84,
+        "line": 79,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 101,
+        "line": 96,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 101,
+        "line": 96,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 104,
+        "line": 99,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 104,
+        "line": 99,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 107,
+        "line": 102,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 108,
+        "line": 103,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 120,
+        "line": 115,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 121,
+        "line": 116,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 135,
+        "line": 130,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 135,
+        "line": 130,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 139,
+        "line": 134,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 70,
+        "line": 134,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 138,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 30,
         "line": 139,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 143,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 144,
+        "column": 15,
+        "line": 151,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 156,
+        "line": 162,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 163,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 164,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 165,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -234,19 +396,19 @@
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 32,
         "line": 168,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 37,
         "line": 169,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 36,
         "line": 170,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -255,56 +417,24 @@
         "column": 39,
         "line": 171,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 172,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 174,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 175,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 176,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 551,
+    "complexity_score": 384,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
-    "pseudocode_lines": 181,
-    "suspect_count": 34,
+    "pseudocode_lines": 174,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 574
+    "total_lines": 567
   },
   "cross_references": [
     {
@@ -598,122 +728,59 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffafdc",
-      "text": "byte *in_stack_ffffafdc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffafe0",
-      "text": "uint in_stack_ffffafe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffafe4",
-      "text": "uint in_stack_ffffafe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffafe8",
-      "text": "uint in_stack_ffffafe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffafec",
-      "text": "uint in_stack_ffffafec;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 45,
       "match": "(int *)((int)",
       "text": "(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1));",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_ffffafdc",
-      "text": "in_stack_ffffafdc = &stack0xffffafe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xffffafe0",
-      "text": "in_stack_ffffafdc = &stack0xffffafe0;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 72,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(param_4 + 0x28) + 0x154) + 0xd4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 72,
       "match": "param_4",
       "text": "(**(code **)(*(int *)(*(int *)(param_4 + 0x28) + 0x154) + 0xd4))();",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 74,
       "match": "._4_4_",
       "text": "if (0 < (int)auStack_2b24._4_4_) {",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_ffffafdc",
-      "text": "if (0 < (int)in_stack_ffffafdc) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0xffffafe0",
-      "text": "piVar9 = (int *)&stack0xffffafe0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_ffffafdc",
-      "text": "} while ((int)local_20 < (int)in_stack_ffffafdc);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 141,
       "match": "._4_4_",
       "text": "} while (iStack_18 < (int)auStack_2b24._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 144,
       "match": "param_2",
       "text": "pcVar5 = *(char **)(param_2 + 0x28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_2",
+      "text": "iVar10 = *(int *)(param_2 + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -725,94 +792,52 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_2",
-      "text": "iVar10 = *(int *)(param_2 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 167,
       "match": "param_3",
       "text": "iVar10 = *(int *)(param_3->unk2 + 0x1c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 168,
       "match": "param_3",
       "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(param_3,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 169,
       "match": "param_3",
       "text": "core_msnedit_cpp_CDemonMission_FUN_00538ea0(param_3,iVar10);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 170,
       "match": "param_3",
       "text": "core_mission_cpp_CDemonMission_FUN_00523f20(param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 176,
+      "line": 171,
       "match": "param_3",
       "text": "core_mission_cpp_CDemonMission_FUN_00523b70(param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 172,
       "match": "param_3",
       "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 173,
       "match": "param_3",
       "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(param_3,iStack_18);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 181,
-      "match": "in_stack_ffffafdc",
-      "text": "((CPickList *)(local_624 + 8),0,(uint)in_stack_ffffafdc,in_stack_ffffafe0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 181,
-      "match": "in_stack_ffffafe0",
-      "text": "((CPickList *)(local_624 + 8),0,(uint)in_stack_ffffafdc,in_stack_ffffafe0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 182,
-      "match": "in_stack_ffffafe4",
-      "text": "in_stack_ffffafe4,in_stack_ffffafe8,in_stack_ffffafec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 182,
-      "match": "in_stack_ffffafe8",
-      "text": "in_stack_ffffafe4,in_stack_ffffafe8,in_stack_ffffafec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 182,
-      "match": "in_stack_ffffafec",
-      "text": "in_stack_ffffafe4,in_stack_ffffafe8,in_stack_ffffafec);",
-      "type": "stack_param"
     }
   ]
 }

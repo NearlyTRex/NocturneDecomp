@@ -334,8 +334,8 @@ section .text
         ;   XREF to: 0055aa2f (CONDITIONAL_JUMP)  ; LAB_0055aa2f
     INC ESI                             ; 0055a924
     PUSH ESI                            ; 0055a925
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055a926
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055a926
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV ESI,dword ptr [0x0310ec9c]      ; 0055a92b | g_ScriptEventsEnabled
     ADD ESP,0x4                         ; 0055a931
     MOV EDX,EAX                         ; 0055a934
@@ -2109,8 +2109,8 @@ section .text
     ADD ESI,0x12                        ; 0055bbc3
         ;   Label: LAB_0055bbc3
     PUSH ESI                            ; 0055bbc6
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bbc7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055bbc7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bbcc
     LEA EDX,[ESP + 0x3ec0]              ; 0055bbcf
     PUSH EDX                            ; 0055bbd6
@@ -2202,8 +2202,8 @@ section .text
     ADD ESI,0xe                         ; 0055bce5
         ;   Label: LAB_0055bce5
     PUSH ESI                            ; 0055bce8
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bce9
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055bce9
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bcee
     LEA EDX,[ESP + 0x3ec8]              ; 0055bcf1
     PUSH EDX                            ; 0055bcf8
@@ -2297,8 +2297,8 @@ section .text
     ADD ESI,0x10                        ; 0055be20
         ;   Label: LAB_0055be20
     PUSH ESI                            ; 0055be23
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055be24
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055be24
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055be29
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055be2c
     LEA EAX,[ESP + 0x3650]              ; 0055be33
@@ -2328,8 +2328,8 @@ section .text
     ADD ESI,0x11                        ; 0055be88
         ;   Label: LAB_0055be88
     PUSH ESI                            ; 0055be8b
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055be8c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055be8c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055be91
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055be94
     LEA EAX,[ESP + 0x33f8]              ; 0055be9b
@@ -2364,8 +2364,8 @@ section .text
     ADD ESI,0xf                         ; 0055befe
         ;   Label: LAB_0055befe
     PUSH ESI                            ; 0055bf01
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bf02
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055bf02
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bf07
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055bf0a
     LEA EAX,[ESP + 0x3524]              ; 0055bf11
@@ -2395,8 +2395,8 @@ section .text
     ADD ESI,0x15                        ; 0055bf66
         ;   Label: LAB_0055bf66
     PUSH ESI                            ; 0055bf69
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055bf6a
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055bf6a
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055bf6f
     LEA EDX,[ESP + 0x3e9c]              ; 0055bf72
     PUSH EDX                            ; 0055bf79
@@ -2485,8 +2485,8 @@ section .text
     ADD ESI,0xb                         ; 0055c07f
         ;   Label: LAB_0055c07f
     PUSH ESI                            ; 0055c082
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c083
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c083
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c088
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c08b
     CMP dword ptr [0x0310ec9c],0x0      ; 0055c092 | g_ScriptEventsEnabled
@@ -2502,8 +2502,8 @@ section .text
     ADD ESI,0xc                         ; 0055c0b3
         ;   Label: LAB_0055c0b3
     PUSH ESI                            ; 0055c0b6
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c0b7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c0b7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c0bc
     MOV ECX,dword ptr [0x0310ec9c]      ; 0055c0bf | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c0c5
@@ -2520,8 +2520,8 @@ section .text
     ADD ESI,0xa                         ; 0055c0e8
         ;   Label: LAB_0055c0e8
     PUSH ESI                            ; 0055c0eb
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c0ec
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c0ec
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c0f1
     MOV EDI,dword ptr [0x0310ec9c]      ; 0055c0f4 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c0fa
@@ -2550,8 +2550,8 @@ section .text
     ADD ESI,0x10                        ; 0055c14e
         ;   Label: LAB_0055c14e
     PUSH ESI                            ; 0055c151
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c152
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c152
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c157
     MOV ECX,dword ptr [0x0310ec9c]      ; 0055c15a | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055c160
@@ -2568,8 +2568,8 @@ section .text
     ADD ESI,0xc                         ; 0055c183
         ;   Label: LAB_0055c183
     PUSH ESI                            ; 0055c186
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c187
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c187
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c18c
     PUSH 0xc8                           ; 0055c18f
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c194
@@ -2681,8 +2681,8 @@ section .text
     ADD ESI,0xe                         ; 0055c2aa
         ;   Label: LAB_0055c2aa
     PUSH ESI                            ; 0055c2ad
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c2ae
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c2ae
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c2b3
     PUSH 0xc8                           ; 0055c2b6
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c2bb
@@ -2740,8 +2740,8 @@ section .text
     ADD ESI,0x12                        ; 0055c34a
         ;   Label: LAB_0055c34a
     PUSH ESI                            ; 0055c34d
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c34e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c34e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c353
     PUSH 0x12c                          ; 0055c356
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c35b
@@ -2802,8 +2802,8 @@ section .text
     ADD ESI,0x5                         ; 0055c3e7
         ;   Label: LAB_0055c3e7
     PUSH ESI                            ; 0055c3ea
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c3eb
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c3eb
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c3f0
     LEA EDX,[ESP + 0x3ea0]              ; 0055c3f3
     PUSH EDX                            ; 0055c3fa
@@ -2948,8 +2948,8 @@ section .text
     ADD ESI,0xa                         ; 0055c5b3
         ;   Label: LAB_0055c5b3
     PUSH ESI                            ; 0055c5b6
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c5b7
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c5b7
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c5bc
     LEA EDX,[ESP + 0x3eac]              ; 0055c5bf
     PUSH EDX                            ; 0055c5c6
@@ -3063,8 +3063,8 @@ section .text
     ADD ESI,0x5                         ; 0055c731
         ;   Label: LAB_0055c731
     PUSH ESI                            ; 0055c734
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c735
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c735
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c73a
     PUSH 0x12c                          ; 0055c73d
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055c742
@@ -3096,8 +3096,8 @@ section .text
     ADD ESI,0x9                         ; 0055c79f
         ;   Label: LAB_0055c79f
     PUSH ESI                            ; 0055c7a2
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055c7a3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055c7a3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055c7a8
     LEA EDX,[ESP + 0x3f48]              ; 0055c7ab
     PUSH EDX                            ; 0055c7b2
@@ -3299,8 +3299,8 @@ section .text
     ADD ESI,0x7                         ; 0055cab9
         ;   Label: LAB_0055cab9
     PUSH ESI                            ; 0055cabc
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cabd
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cabd
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cac2
     PUSH 0x400                          ; 0055cac5
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055caca
@@ -3325,8 +3325,8 @@ section .text
     ADD ESI,0x4                         ; 0055cb05
         ;   Label: LAB_0055cb05
     PUSH ESI                            ; 0055cb08
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cb09
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cb09
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cb0e
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cb11
     PUSH 0x1                            ; 0055cb18
@@ -3355,8 +3355,8 @@ section .text
     ADD ESI,0xc                         ; 0055cb52
         ;   Label: LAB_0055cb52
     PUSH ESI                            ; 0055cb55
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cb56
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cb56
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055cb5b
     ADD ESP,0x4                         ; 0055cb60
     MOV dword ptr [ESP + 0x3f5c],EDX    ; 0055cb63
@@ -3471,8 +3471,8 @@ section .text
     ADD ESI,0x11                        ; 0055cca1
         ;   Label: LAB_0055cca1
     PUSH ESI                            ; 0055cca4
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cca5
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cca5
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ccaa
     LEA EDX,[ESP + 0x3f60]              ; 0055ccad
     PUSH EDX                            ; 0055ccb4
@@ -3564,8 +3564,8 @@ section .text
     ADD ESI,0xf                         ; 0055cdab
         ;   Label: LAB_0055cdab
     PUSH ESI                            ; 0055cdae
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cdaf
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cdaf
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cdb4
     LEA EDX,[ESP + 0x3ecc]              ; 0055cdb7
     PUSH EDX                            ; 0055cdbe
@@ -3679,8 +3679,8 @@ section .text
     ADD ESI,0x3                         ; 0055cf06
         ;   Label: LAB_0055cf06
     PUSH ESI                            ; 0055cf09
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cf0a
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cf0a
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cf0f
     MOV ESI,dword ptr [0x0310ec9c]      ; 0055cf12 | g_ScriptEventsEnabled
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cf18
@@ -3694,8 +3694,8 @@ section .text
     ADD ESI,0x6                         ; 0055cf39
         ;   Label: LAB_0055cf39
     PUSH ESI                            ; 0055cf3c
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cf3d
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cf3d
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cf42
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cf45
     MOV EAX,[0x0310ec9c]                ; 0055cf4c | g_ScriptEventsEnabled
@@ -3736,8 +3736,8 @@ section .text
     ADD ESI,0x7                         ; 0055cfbe
         ;   Label: LAB_0055cfbe
     PUSH ESI                            ; 0055cfc1
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055cfc2
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055cfc2
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055cfc7
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055cfca
     MOV EAX,[0x0310ec9c]                ; 0055cfd1 | g_ScriptEventsEnabled
@@ -3775,8 +3775,8 @@ section .text
     ADD ESI,0x7                         ; 0055d033
         ;   Label: LAB_0055d033
     PUSH ESI                            ; 0055d036
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d037
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d037
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d03c
     LEA EDX,[ESP + 0x3ed0]              ; 0055d03f
     PUSH EDX                            ; 0055d046
@@ -3886,8 +3886,8 @@ section .text
     ADD ESI,0x9                         ; 0055d185
         ;   Label: LAB_0055d185
     PUSH ESI                            ; 0055d188
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d189
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d189
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055d18e
     ADD ESP,0x4                         ; 0055d193
     MOV dword ptr [ESP + 0x3ed4],EDX    ; 0055d196
@@ -3970,8 +3970,8 @@ section .text
     ADD ESI,0xf                         ; 0055d2a6
         ;   Label: LAB_0055d2a6
     PUSH ESI                            ; 0055d2a9
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d2aa
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d2aa
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d2af
     LEA EDX,[ESP + 0x3edc]              ; 0055d2b2
     PUSH EDX                            ; 0055d2b9
@@ -4054,8 +4054,8 @@ section .text
     ADD ESI,0x5                         ; 0055d3b7
         ;   Label: LAB_0055d3b7
     PUSH ESI                            ; 0055d3ba
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d3bb
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d3bb
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d3c0
     PUSH EAX                            ; 0055d3c3
     PUSH EBX                            ; 0055d3c4
@@ -4109,8 +4109,8 @@ section .text
     ADD ESI,0x4                         ; 0055d468
         ;   Label: LAB_0055d468
     PUSH ESI                            ; 0055d46b
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d46c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d46c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d471
     PUSH EAX                            ; 0055d474
     PUSH EBX                            ; 0055d475
@@ -4143,8 +4143,8 @@ section .text
     ADD ESI,0x4                         ; 0055d4cf
         ;   Label: LAB_0055d4cf
     PUSH ESI                            ; 0055d4d2
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d4d3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d4d3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d4d8
     PUSH 0x12c                          ; 0055d4db
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055d4e0
@@ -4179,8 +4179,8 @@ section .text
     ADD ESI,0xd                         ; 0055d54c
         ;   Label: LAB_0055d54c
     PUSH ESI                            ; 0055d54f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d550
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d550
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055d555
     ADD ESP,0x4                         ; 0055d55a
     MOV dword ptr [ESP + 0x3ee0],EDX    ; 0055d55d
@@ -4357,8 +4357,8 @@ section .text
     ADD ESI,0x4                         ; 0055d77e
         ;   Label: LAB_0055d77e
     PUSH ESI                            ; 0055d781
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d782
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d782
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d787
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055d78a
     XOR ESI,ESI                         ; 0055d791
@@ -4370,8 +4370,8 @@ section .text
     ADD ESI,0x2                         ; 0055d7a9
         ;   Label: LAB_0055d7a9
     PUSH ESI                            ; 0055d7ac
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d7ad
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d7ad
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d7b2
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055d7b5
     LEA EAX,[ESP + 0x3b64]              ; 0055d7bc
@@ -4438,8 +4438,8 @@ section .text
     ADD ESI,0xb                         ; 0055d862
         ;   Label: LAB_0055d862
     PUSH ESI                            ; 0055d865
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d866
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d866
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d86b
     LEA EDX,[ESP + 0x3eec]              ; 0055d86e
     PUSH EDX                            ; 0055d875
@@ -4479,8 +4479,8 @@ section .text
     ADD ESI,0x9                         ; 0055d8f9
         ;   Label: LAB_0055d8f9
     PUSH ESI                            ; 0055d8fc
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055d8fd
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055d8fd
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055d902
     PUSH 0x64                           ; 0055d905
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055d907
@@ -4604,8 +4604,8 @@ section .text
     ADD ESI,0xe                         ; 0055da9c
         ;   Label: LAB_0055da9c
     PUSH ESI                            ; 0055da9f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055daa0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055daa0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055daa5
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055daa8
     LEA EAX,[ESP + 0x3a38]              ; 0055daaf
@@ -4634,8 +4634,8 @@ section .text
     ADD ESI,0x6                         ; 0055dafb
         ;   Label: LAB_0055dafb
     PUSH ESI                            ; 0055dafe
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055daff
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055daff
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055db04
     ADD ESP,0x4                         ; 0055db09
     MOV dword ptr [ESP + 0x3ef0],EDX    ; 0055db0c
@@ -4769,8 +4769,8 @@ section .text
     ADD ESI,0xc                         ; 0055dcac
         ;   Label: LAB_0055dcac
     PUSH ESI                            ; 0055dcaf
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055dcb0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055dcb0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055dcb5
     ADD ESP,0x4                         ; 0055dcba
     MOV dword ptr [ESP + 0x3ef4],EDX    ; 0055dcbd
@@ -4880,8 +4880,8 @@ section .text
     ADD ESI,0x8                         ; 0055ddea
         ;   Label: LAB_0055ddea
     PUSH ESI                            ; 0055dded
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ddee
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ddee
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ddf3
     LEA EDX,[ESP + 0x3ef8]              ; 0055ddf6
     PUSH EDX                            ; 0055ddfd
@@ -4992,8 +4992,8 @@ section .text
     ADD ESI,0xb                         ; 0055df4f
         ;   Label: LAB_0055df4f
     PUSH ESI                            ; 0055df52
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055df53
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055df53
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055df58
     ADD ESP,0x4                         ; 0055df5d
     MOV dword ptr [ESP + 0x3f00],EDX    ; 0055df60
@@ -5092,8 +5092,8 @@ section .text
     ADD ESI,0x5                         ; 0055e08c
         ;   Label: LAB_0055e08c
     PUSH ESI                            ; 0055e08f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e090
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e090
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e095
     PUSH 0x64                           ; 0055e098
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055e09a
@@ -5162,8 +5162,8 @@ section .text
     ADD ESI,0xd                         ; 0055e13f
         ;   Label: LAB_0055e13f
     PUSH ESI                            ; 0055e142
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e143
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e143
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e148
     LEA EDX,[ESP + 0x3f08]              ; 0055e14b
     PUSH EDX                            ; 0055e152
@@ -5262,8 +5262,8 @@ section .text
     ADD ESI,0x1b                        ; 0055e27b
         ;   Label: LAB_0055e27b
     PUSH ESI                            ; 0055e27e
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e27f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e27f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e284
     LEA EDX,[ESP + 0x3f0c]              ; 0055e287
     PUSH EDX                            ; 0055e28e
@@ -5327,8 +5327,8 @@ section .text
     ADD ESI,0x17                        ; 0055e34d
         ;   Label: LAB_0055e34d
     PUSH ESI                            ; 0055e350
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e351
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e351
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055e356
     ADD ESP,0x4                         ; 0055e35b
     MOV dword ptr [ESP + 0x3f10],EDX    ; 0055e35e
@@ -5414,8 +5414,8 @@ section .text
     ADD ESI,0xa                         ; 0055e467
         ;   Label: LAB_0055e467
     PUSH ESI                            ; 0055e46a
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e46b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e46b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e470
     LEA EDX,[ESP + 0x3f18]              ; 0055e473
     PUSH EDX                            ; 0055e47a
@@ -5472,8 +5472,8 @@ section .text
     ADD ESI,0x6                         ; 0055e527
         ;   Label: LAB_0055e527
     PUSH ESI                            ; 0055e52a
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e52b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e52b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e530
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055e533
     CMP dword ptr [0x0310ec9c],0x0      ; 0055e53a | g_ScriptEventsEnabled
@@ -5503,8 +5503,8 @@ section .text
     ADD ESI,0xb                         ; 0055e58b
         ;   Label: LAB_0055e58b
     PUSH ESI                            ; 0055e58e
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e58f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e58f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e594
     LEA EDX,[ESP + 0x3f1c]              ; 0055e597
     PUSH EDX                            ; 0055e59e
@@ -5544,8 +5544,8 @@ section .text
     ADD ESI,0x3                         ; 0055e622
         ;   Label: LAB_0055e622
     PUSH ESI                            ; 0055e625
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e626
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e626
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e62b
     PUSH 0x1f4                          ; 0055e62e
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055e633
@@ -5650,8 +5650,8 @@ section .text
         ;   Label: LAB_0055e740
     ADD EAX,dword ptr [ESP + 0x3f20]    ; 0055e747
     PUSH EAX                            ; 0055e74e
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e74f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e74f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e754
     PUSH EAX                            ; 0055e757
     LEA EAX,[ESP + 0x2b50]              ; 0055e758
@@ -5676,8 +5676,8 @@ section .text
     ADD ESI,0xc                         ; 0055e795
         ;   Label: LAB_0055e795
     PUSH ESI                            ; 0055e798
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e799
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e799
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055e79e
     ADD ESP,0x4                         ; 0055e7a3
     MOV dword ptr [ESP + 0x3f24],EDX    ; 0055e7a6
@@ -5807,8 +5807,8 @@ section .text
     ADD ESI,0x10                        ; 0055e92f
         ;   Label: LAB_0055e92f
     PUSH ESI                            ; 0055e932
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055e933
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055e933
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055e938
     LEA EDX,[ESP + 0x3f30]              ; 0055e93b
     PUSH EDX                            ; 0055e942
@@ -5891,8 +5891,8 @@ section .text
     ADD ESI,0xf                         ; 0055ea3c
         ;   Label: LAB_0055ea3c
     PUSH ESI                            ; 0055ea3f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ea40
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ea40
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ea45
     PUSH 0x64                           ; 0055ea48
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055ea4a
@@ -5921,8 +5921,8 @@ section .text
     ADD ESI,0xe                         ; 0055ea9a
         ;   Label: LAB_0055ea9a
     PUSH ESI                            ; 0055ea9d
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ea9e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ea9e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055eaa3
     LEA EDX,[ESP + 0x3f38]              ; 0055eaa6
     PUSH EDX                            ; 0055eaad
@@ -5991,8 +5991,8 @@ section .text
     ADD ESI,0x12                        ; 0055eb89
         ;   Label: LAB_0055eb89
     PUSH ESI                            ; 0055eb8c
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055eb8d
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055eb8d
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055eb92
     LEA EDX,[ESP + 0x3f40]              ; 0055eb95
     PUSH EDX                            ; 0055eb9c
@@ -6056,8 +6056,8 @@ section .text
     ADD ESI,0xd                         ; 0055ec68
         ;   Label: LAB_0055ec68
     PUSH ESI                            ; 0055ec6b
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ec6c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ec6c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ec71
     PUSH 0x64                           ; 0055ec74
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055ec76
@@ -6119,8 +6119,8 @@ section .text
     ADD ESI,0xb                         ; 0055ed08
         ;   Label: LAB_0055ed08
     PUSH ESI                            ; 0055ed0b
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ed0c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ed0c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055ed11
     LEA EDX,[ESP + 0x3f44]              ; 0055ed14
     PUSH EDX                            ; 0055ed1b
@@ -6264,8 +6264,8 @@ section .text
     ADD ESI,0x9                         ; 0055eeb0
         ;   Label: LAB_0055eeb0
     PUSH ESI                            ; 0055eeb3
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055eeb4
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055eeb4
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055eeb9
     ADD ESP,0x4                         ; 0055eebe
     MOV dword ptr [ESP + 0x3f50],EDX    ; 0055eec1
@@ -6326,8 +6326,8 @@ section .text
     ADD ESI,0x12                        ; 0055ef7f
         ;   Label: LAB_0055ef7f
     PUSH ESI                            ; 0055ef82
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055ef83
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055ef83
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055ef88
     ADD ESP,0x4                         ; 0055ef8d
     MOV dword ptr [ESP + 0x3f54],EDX    ; 0055ef90
@@ -6399,8 +6399,8 @@ section .text
     ADD ESI,0xc                         ; 0055f077
         ;   Label: LAB_0055f077
     PUSH ESI                            ; 0055f07a
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f07b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f07b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f080
     PUSH 0x64                           ; 0055f083
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f085
@@ -6464,8 +6464,8 @@ section .text
     ADD ESI,0xa                         ; 0055f11a
         ;   Label: LAB_0055f11a
     PUSH ESI                            ; 0055f11d
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f11e
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f11e
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f123
     PUSH 0x64                           ; 0055f126
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f128
@@ -6519,8 +6519,8 @@ section .text
     ADD ESI,0xd                         ; 0055f1bf
         ;   Label: LAB_0055f1bf
     PUSH ESI                            ; 0055f1c2
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f1c3
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f1c3
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f1c8
     PUSH 0x64                           ; 0055f1cb
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f1cd
@@ -6600,8 +6600,8 @@ section .text
     ADD ESI,0x9                         ; 0055f29c
         ;   Label: LAB_0055f29c
     PUSH ESI                            ; 0055f29f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f2a0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f2a0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f2a5
     LEA EDX,[ESP + 0x3f64]              ; 0055f2a8
     PUSH EDX                            ; 0055f2af
@@ -6748,8 +6748,8 @@ section .text
     ADD ESI,0xa                         ; 0055f46d
         ;   Label: LAB_0055f46d
     PUSH ESI                            ; 0055f470
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f471
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f471
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f476
     LEA EDX,[ESP + 0x3f68]              ; 0055f479
     PUSH EDX                            ; 0055f480
@@ -6855,8 +6855,8 @@ section .text
     ADD ESI,0x8                         ; 0055f5bc
         ;   Label: LAB_0055f5bc
     PUSH ESI                            ; 0055f5bf
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f5c0
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f5c0
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f5c5
     PUSH 0x1f4                          ; 0055f5c8
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f5cd
@@ -6929,8 +6929,8 @@ section .text
     LEA EAX,[ESP + 0x630]               ; 0055f690
     ADD EAX,dword ptr [ESP + 0x3f6c]    ; 0055f697
     PUSH EAX                            ; 0055f69e
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f69f
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f69f
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f6a4
     PUSH EAX                            ; 0055f6a7
     LEA EAX,[ESP + 0x1e08]              ; 0055f6a8
@@ -6955,8 +6955,8 @@ section .text
     ADD ESI,0xc                         ; 0055f6e5
         ;   Label: LAB_0055f6e5
     PUSH ESI                            ; 0055f6e8
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f6e9
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f6e9
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f6ee
     PUSH 0xc8                           ; 0055f6f1
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f6f6
@@ -7157,8 +7157,8 @@ section .text
     ADD ESI,0xc                         ; 0055f8e8
         ;   Label: LAB_0055f8e8
     PUSH ESI                            ; 0055f8eb
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f8ec
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f8ec
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f8f1
     PUSH 0x12c                          ; 0055f8f4
     MOV dword ptr [ESP + 0x3e90],EAX    ; 0055f8f9
@@ -7216,8 +7216,8 @@ section .text
     LEA EAX,[ESP + 0xa7c]               ; 0055f98c
     ADD EAX,ECX                         ; 0055f993
     PUSH EAX                            ; 0055f995
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055f996
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055f996
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055f99b
     LEA EDI,[EBX + 0x54]                ; 0055f99e
     MOV ESI,EAX                         ; 0055f9a1
@@ -7262,8 +7262,8 @@ section .text
     ADD ESI,0xa                         ; 0055fa00
         ;   Label: LAB_0055fa00
     PUSH ESI                            ; 0055fa03
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fa04
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055fa04
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV EDX,0xffffffff                  ; 0055fa09
     ADD ESP,0x4                         ; 0055fa0e
     MOV dword ptr [ESP + 0x3f7c],EDX    ; 0055fa11
@@ -7352,8 +7352,8 @@ section .text
     ADD ESI,0x4                         ; 0055fb20
         ;   Label: LAB_0055fb20
     PUSH ESI                            ; 0055fb23
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fb24
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055fb24
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fb29
     LEA EDX,[ESP + 0x3f80]              ; 0055fb2c
     PUSH EDX                            ; 0055fb33
@@ -7399,8 +7399,8 @@ section .text
     ADD ESI,0x7                         ; 0055fbbe
         ;   Label: LAB_0055fbbe
     PUSH ESI                            ; 0055fbc1
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fbc2
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055fbc2
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fbc7
     MOV dword ptr [ESP + 0x3e8c],EAX    ; 0055fbca
     LEA EAX,[ESP + 0x3c2c]              ; 0055fbd1
@@ -7432,8 +7432,8 @@ section .text
     ADD ESI,0x6                         ; 0055fc28
         ;   Label: LAB_0055fc28
     PUSH ESI                            ; 0055fc2b
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0055fc2c
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0055fc2c
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 0055fc31
     LEA EDX,[ESP + 0x3e88]              ; 0055fc34
     PUSH EDX                            ; 0055fc3b

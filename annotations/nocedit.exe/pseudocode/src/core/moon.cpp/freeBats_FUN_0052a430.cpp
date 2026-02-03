@@ -2,13 +2,15 @@
 // Address: 0052a430
 // Address Range: [[0052a430, 0052a444]]
 // Convention: __cdecl
-// Signature: void __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat **array)
+// Signature: SBat * __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat **array)
+SBat * __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat *objs)
 
 {
-  __arrfini(array,0x1e,&g_SBatTypeInfo);
-  return;
+  SBat *pSVar1;
+  
+  pSVar1 = __arrfini(objs,0x1e,&g_SBatTypeInfo);
+  return pSVar1;
 }

@@ -19,7 +19,7 @@
 ;   core_curtain.cpp_FUN_0044b610 at 0044b663
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481483
 ;   core_drip.cpp_CDrip_getPropertyList_FUN_0048e930 at 0048e9a6
-;   core_emitter.cpp_FUN_004a8db0 at 004a8e05
+;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8e05
 ;   ... and 21 more
 ;
 ; Called Functions:

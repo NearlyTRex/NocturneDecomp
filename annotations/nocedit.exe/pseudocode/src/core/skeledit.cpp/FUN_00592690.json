@@ -2,892 +2,682 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "pointer_precision",
         "column": 60,
-        "line": 323,
+        "line": 319,
         "message": "cast from 'CBoneStructure*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 327,
+        "line": 323,
         "message": "'DAT_0365caf8' was not declared in this scope; did you mean 'DAT_03670a58'?"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 335,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "category": "pointer_precision",
+        "column": 23,
+        "line": 343,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
+        "column": 41,
+        "line": 344,
+        "message": "request for member '_0_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
+      },
+      {
+        "category": "pointer_precision",
         "column": 23,
+        "line": 346,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 347,
+        "message": "request for member '_0_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 15,
+        "line": 349,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 39,
+        "line": 349,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 56,
         "line": 349,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 41,
+        "column": 27,
         "line": 350,
         "message": "request for member '_0_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
-        "column": 23,
-        "line": 352,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 353,
-        "message": "request for member '_0_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 355,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 355,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 355,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 356,
-        "message": "request for member '_0_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 356,
+        "line": 350,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 360,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 69,
-        "line": 370,
+        "line": 362,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 46,
-        "line": 370,
+        "line": 362,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 63,
-        "line": 371,
+        "line": 363,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 40,
-        "line": 371,
+        "line": 363,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 71,
-        "line": 372,
+        "line": 364,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 396,
+        "line": 388,
         "message": "'DAT_0366b650' was not declared in this scope; did you mean 'DAT_0366b64c'?"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 415,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 20,
-        "line": 424,
+        "line": 414,
         "message": "request for member '_8_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 428,
+        "line": 418,
         "message": "request for member '_8_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 441,
+        "line": 431,
         "message": "request for member '_8_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 441,
+        "line": 431,
         "message": "request for member '_8_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 451,
+        "line": 441,
         "message": "request for member '_24_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 452,
+        "line": 442,
         "message": "request for member '_20_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 452,
+        "line": 442,
         "message": "'DAT_0365caf8' was not declared in this scope; did you mean 'DAT_03670a58'?"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 455,
+        "line": 445,
         "message": "request for member '_24_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 456,
+        "line": 446,
         "message": "request for member '_20_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 459,
+        "line": 449,
         "message": "request for member '_24_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 63,
-        "line": 464,
+        "line": 454,
         "message": "cast from 'CBoneStructure*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 503,
+        "line": 493,
         "message": "request for member '_16_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
+        "category": "lvalue_required",
         "column": 24,
-        "line": 504,
+        "line": 494,
         "message": "lvalue required as unary '&' operand"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 41,
-        "line": 509,
+        "line": 499,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 512,
+        "line": 502,
         "message": "request for member '_12_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 30,
-        "line": 513,
+        "line": 503,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 59,
-        "line": 516,
+        "line": 506,
         "message": "cast from 'CBoneStructure*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 46,
-        "line": 529,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 542,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 30,
-        "line": 546,
+        "line": 532,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 548,
+        "line": 534,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 548,
+        "line": 534,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 549,
+        "line": 535,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 553,
+        "line": 539,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 559,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 573,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 586,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 601,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 605,
+        "line": 583,
         "message": "request for member '_20_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
-        "column": 48,
-        "line": 616,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 630,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 646,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 656,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 685,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 695,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 724,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 764,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 778,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 794,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 804,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 840,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 863,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 874,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 898,
-        "message": "cast from 'int*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 78,
-        "line": 898,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 931,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 948,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 959,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 969,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 978,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1064,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1076,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1089,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1099,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1110,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 1126,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1147,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1158,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1169,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1182,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1215,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 1262,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 1295,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 1306,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 1325,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 1349,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 1359,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 1378,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 44,
-        "line": 1402,
+        "line": 1289,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 1402,
+        "line": 1289,
         "message": "request for member '_12_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
-        "column": 40,
-        "line": 1414,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 30,
-        "line": 1429,
+        "line": 1314,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 1433,
+        "line": 1318,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 1433,
+        "line": 1318,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 42,
-        "line": 1434,
+        "line": 1319,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 1436,
+        "line": 1321,
         "message": "request for member '_8_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 1438,
+        "line": 1323,
         "message": "request for member '_4_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1445,
+        "line": 1330,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 1453,
+        "line": 1338,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 1453,
+        "line": 1338,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 46,
-        "line": 1455,
+        "line": 1340,
         "message": "cast from 'CBoneStructure*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 1472,
+        "line": 1357,
         "message": "request for member '_4_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 1488,
+        "line": 1373,
         "message": "request for member '_4_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1506,
+        "line": 1391,
         "message": "request for member '_8_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1527,
+        "line": 1412,
         "message": "request for member '_16_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1531,
+        "line": 1416,
         "message": "request for member '_16_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 42,
-        "line": 1532,
+        "line": 1417,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 34,
-        "line": 1536,
+        "line": 1421,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 44,
-        "line": 1537,
+        "line": 1422,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 1541,
+        "line": 1426,
         "message": "request for member '_16_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 1541,
+        "line": 1426,
         "message": "request for member '_16_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 1568,
+        "line": 1453,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 1569,
+        "line": 1454,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 1576,
+        "line": 1461,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 1577,
+        "line": 1462,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1581,
+        "line": 1466,
         "message": "request for member '_12_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1585,
+        "line": 1470,
         "message": "request for member '_12_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 51,
-        "line": 1590,
+        "line": 1475,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 51,
-        "line": 1591,
+        "line": 1476,
         "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 42,
-        "line": 1594,
+        "line": 1479,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 34,
-        "line": 1598,
+        "line": 1483,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 44,
-        "line": 1599,
+        "line": 1484,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 1603,
+        "line": 1488,
         "message": "request for member '_12_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 1603,
+        "line": 1488,
         "message": "request for member '_12_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 1641,
+        "line": 1526,
         "message": "request for member '_8_4_' in 'local_b8', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 1740,
+        "line": 1625,
         "message": "request for member '_4_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1741,
+        "line": 1626,
         "message": "request for member '_4_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 1759,
+        "line": 1644,
         "message": "request for member '_20_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 1759,
+        "line": 1644,
         "message": "request for member '_20_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 1760,
+        "line": 1645,
         "message": "request for member '_24_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 1760,
+        "line": 1645,
         "message": "request for member '_24_4_' in 'local_58', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 31,
-        "line": 1775,
+        "line": 1660,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 1786,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 34,
-        "line": 1795,
+        "line": 1678,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 39,
-        "line": 1796,
+        "line": 1679,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 1805,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 35,
-        "line": 1809,
+        "line": 1690,
         "message": "invalid conversion from 'undefined4*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 1867,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 1877,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 1886,
+        "line": 1763,
         "message": "'DAT_0365caf8' was not declared in this scope; did you mean 'DAT_03670a58'?"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 1917,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 1937,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 1953,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 1962,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 1987,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 1993,
+        "line": 1860,
         "message": "'DAT_0365caf8' was not declared in this scope; did you mean 'DAT_03670a58'?"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 2021,
-        "message": "cast from 'CBoneStructure*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -895,865 +685,865 @@
       {
         "category": "other",
         "column": 53,
-        "line": 216,
+        "line": 212,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 216,
+        "line": 212,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 221,
+        "line": 217,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 227,
+        "line": 223,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 235,
+        "line": 231,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 238,
+        "line": 234,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 252,
+        "line": 248,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 259,
+        "line": 255,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 269,
+        "line": 265,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 272,
+        "line": 268,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 296,
+        "line": 292,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 312,
+        "line": 308,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 330,
+        "line": 326,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 330,
+        "line": 326,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 333,
+        "line": 329,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 347,
+        "line": 341,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 358,
+        "line": 352,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 381,
+        "line": 373,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 383,
+        "line": 375,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 389,
+        "line": 381,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 120,
+        "line": 383,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 43,
         "line": 391,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 399,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
         "column": 38,
-        "line": 448,
+        "line": 438,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 466,
+        "line": 456,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 468,
+        "line": 458,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 509,
+        "line": 499,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 513,
+        "line": 503,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 523,
+        "line": 513,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 526,
+        "line": 516,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 539,
+        "line": 527,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 556,
+        "line": 542,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 570,
+        "line": 554,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 583,
+        "line": 565,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 598,
+        "line": 578,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 610,
+        "line": 588,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 613,
+        "line": 591,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 627,
+        "line": 603,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 640,
+        "line": 614,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 643,
+        "line": 617,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 653,
+        "line": 625,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 679,
+        "line": 649,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 682,
+        "line": 652,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 692,
+        "line": 660,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 721,
+        "line": 687,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 758,
+        "line": 722,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 761,
+        "line": 725,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 775,
+        "line": 737,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 788,
+        "line": 748,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 791,
+        "line": 751,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 801,
+        "line": 759,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 821,
+        "line": 777,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 823,
+        "line": 779,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 825,
+        "line": 781,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 837,
+        "line": 793,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 855,
+        "line": 808,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 860,
+        "line": 813,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 871,
+        "line": 821,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 895,
+        "line": 842,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 928,
+        "line": 872,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 945,
+        "line": 887,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 952,
+        "line": 892,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 956,
+        "line": 896,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 966,
+        "line": 904,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 975,
+        "line": 911,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 85,
+        "line": 990,
+        "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 995,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 1004,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 1014,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 1021,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 1029,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 1042,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 60,
         "line": 1056,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 64,
-        "line": 1061,
+        "column": 50,
+        "line": 1060,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 64,
-        "line": 1073,
+        "column": 50,
+        "line": 1068,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 64,
+        "column": 50,
+        "line": 1076,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
         "line": 1086,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 64,
-        "line": 1096,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1107,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 1123,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 1140,
-        "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 1144,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 1155,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 1166,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 1179,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 73,
-        "line": 1207,
+        "line": 1111,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 1212,
+        "line": 1116,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 1255,
+        "line": 1156,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 1259,
+        "line": 1160,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 1283,
+        "line": 1182,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1292,
+        "line": 1191,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1303,
+        "line": 1200,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 1322,
+        "line": 1217,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 1331,
+        "line": 1224,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 1346,
+        "line": 1239,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 1357,
+        "line": 1248,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 1370,
+        "line": 1259,
         "message": "format '%f' expects argument of type 'float*', but argument 3 has type 'CVector3f*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 1370,
+        "line": 1259,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 1375,
+        "line": 1264,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 1407,
+        "line": 1294,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 1407,
+        "line": 1294,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 1412,
+        "line": 1299,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 1429,
+        "line": 1314,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 1434,
+        "line": 1319,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 1447,
+        "line": 1332,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 1449,
+        "line": 1334,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 1532,
+        "line": 1417,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 1535,
+        "line": 1420,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1537,
+        "line": 1422,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1568,
+        "line": 1453,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1569,
+        "line": 1454,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1576,
+        "line": 1461,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1577,
+        "line": 1462,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1590,
+        "line": 1475,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1591,
+        "line": 1476,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 1594,
+        "line": 1479,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 1597,
+        "line": 1482,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1599,
+        "line": 1484,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1612,
+        "line": 1497,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 1698,
+        "line": 1583,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1704,
+        "line": 1589,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 1712,
+        "line": 1597,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1718,
+        "line": 1603,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 1726,
+        "line": 1611,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1732,
+        "line": 1617,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 1766,
+        "line": 1651,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 1768,
+        "line": 1653,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 1775,
+        "line": 1660,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 1784,
+        "line": 1669,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 1795,
+        "line": 1678,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1796,
+        "line": 1679,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1803,
+        "line": 1686,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1837,
+        "line": 1718,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 1864,
+        "line": 1745,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1875,
+        "line": 1754,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 1892,
+        "line": 1769,
         "message": "format '%[^\"' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 1894,
+        "line": 1771,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 1897,
+        "line": 1774,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 1911,
+        "line": 1788,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1911,
+        "line": 1788,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 1915,
+        "line": 1792,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 1921,
+        "line": 1796,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 1931,
+        "line": 1806,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1934,
+        "line": 1809,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 1951,
+        "line": 1824,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 1957,
+        "line": 1828,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 1960,
+        "line": 1831,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 1985,
+        "line": 1854,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 2006,
+        "line": 1873,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 2014,
+        "line": 1881,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 2019,
+        "line": 1886,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 5080,
-    "complexity_score": 7353,
+    "complexity_score": 4288,
     "cross_reference_count": 0,
     "function_call_count": 58,
     "global_count": 186,
-    "pseudocode_lines": 2013,
-    "suspect_count": 530,
+    "pseudocode_lines": 1878,
+    "suspect_count": 237,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -1764,7 +1554,7 @@
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 7093
+    "total_lines": 6958
   },
   "cross_references": [],
   "function": {
@@ -4728,14 +4518,14 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "CSkeleton *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
@@ -4749,231 +4539,168 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_fffeec0c",
-      "text": "uint in_stack_fffeec0c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_fffeec10",
-      "text": "uint in_stack_fffeec10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_fffeec14",
-      "text": "uint in_stack_fffeec14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_fffeec18",
-      "text": "uint in_stack_fffeec18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 203,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CSkeleton_free_FUN_00599a50(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 205,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,(char *)0x0,\"rt\",\"..\\\\core\\\\skeledit.cpp\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 231,
+      "line": 227,
       "match": "in_stack_00000008",
       "text": "(\"%s has %d states, max is %d\",in_stack_00000008,local_114);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 235,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).state_count = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 240,
+      "line": 236,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->motion_list).state_count < (int)local_114) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
+      "line": 239,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->motion_list).state_names[(in_stack_00000004->motion_list).state_count]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
+      "line": 239,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->motion_list).state_names[(in_stack_00000004->motion_list).state_count]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 245,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 253,
+      "line": 249,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).state_names +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 250,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).state_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 257,
+      "line": 253,
       "match": "in_stack_00000004",
       "text": "iVar13 = (in_stack_00000004->motion_list).state_count + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 258,
+      "line": 254,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).state_count = iVar13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 281,
+      "line": 277,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,local_18,local_1070,(char *)0x0,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 291,
+      "line": 287,
       "match": "in_stack_fffeec08",
       "text": "((CBoneStructure *)local_1e74,(char *)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 303,
+      "line": 299,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).motion_count = 0;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 307,
+      "line": 303,
       "match": "DAT_03670b5c",
       "text": "DAT_03670b5c = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 311,
+      "line": 307,
       "match": "in_stack_00000004",
       "text": "local_f8 = (in_stack_00000004->motion_list).motions;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 316,
+      "line": 312,
       "match": "in_stack_fffeec08",
       "text": "((char *)local_11c,(_FILE *)0x0,(int)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 316,
       "match": "in_stack_00000004",
       "text": "local_fc = &DAT_0365caf8 + (in_stack_00000004->motion_list).motion_count * 0x104;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 320,
+      "line": 316,
       "match": "DAT_0365caf8",
       "text": "local_fc = &DAT_0365caf8 + (in_stack_00000004->motion_list).motion_count * 0x104;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 328,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 328,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 328,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 329,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 329,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 339,
+      "line": 333,
       "match": "in_stack_fffeec08",
       "text": "(pCVar7,(_FILE *)local_58,&in_stack_fffeec08->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 343,
+      "line": 337,
       "match": "._0_4_",
       "text": "local_104 = (char *)(local_58._0_4_ + -1);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 346,
+      "line": 340,
       "match": "._0_4_",
       "text": "local_100 = (char *)(local_58._0_4_ + -1);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 349,
+      "line": 343,
       "match": "._0_4_",
       "text": "((int)local_58._0_4_ <= (int)local_100)) {",
       "type": "unknown_field"
@@ -4981,1014 +4708,426 @@
     {
       "description": "Unresolved stack parameter",
       "line": 353,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 353,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 353,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 354,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 354,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 361,
       "match": "in_stack_00000004",
       "text": "iVar13 = (in_stack_00000004->motion_list).motion_count;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 365,
+      "line": 357,
       "match": "in_stack_00000004",
       "text": "aiStack_2900[(in_stack_00000004->motion_list).motion_count] = (int)local_104;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 367,
+      "line": 359,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).motion_count =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 368,
+      "line": 360,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_list).motion_count + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 373,
+      "line": 365,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->motion_list).motion_count < 1) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 389,
+      "line": 381,
       "match": "DAT_0366b650",
       "text": "pcVar11 = &DAT_0366b650;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 396,
+      "line": 388,
       "match": "DAT_0366b650",
       "text": "(g_CEditorToolsPtr,&DAT_0366b650);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 403,
+      "line": 395,
       "match": "in_stack_fffeec08",
       "text": "(pCVar7,(char *)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 408,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 408,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 408,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 409,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 409,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 413,
+      "line": 403,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,local_ded4,(int)local_10c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 415,
+      "line": 405,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->bone_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 417,
+      "line": 407,
       "match": "in_stack_00000004",
       "text": "local_58._8_4_ = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 417,
+      "line": 407,
       "match": "._8_4_",
       "text": "local_58._8_4_ = in_stack_00000004;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 418,
+      "line": 408,
       "match": "in_stack_00000004",
       "text": "pSVar9 = in_stack_00000004->bone_list;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 421,
+      "line": 411,
       "match": "._8_4_",
       "text": "((SBone *)(local_58._8_4_ + 0x2855c))->parent_index = aiStack_deb0[iVar13 * 0x21];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 434,
+      "line": 424,
       "match": "._8_4_",
       "text": "local_58._8_4_ = (CSkeleton *)(((CMotionList *)local_58._8_4_)->state_names[1] + 2);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 434,
+      "line": 424,
       "match": "._8_4_",
       "text": "local_58._8_4_ = (CSkeleton *)(((CMotionList *)local_58._8_4_)->state_names[1] + 2);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 436,
+      "line": 426,
       "match": "in_stack_00000004",
       "text": "} while (iVar13 < in_stack_00000004->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 442,
+      "line": 432,
       "match": "1.4013e-45",
       "text": "local_118 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 443,
+      "line": 433,
       "match": "in_stack_00000004",
       "text": "if (0 < (in_stack_00000004->motion_list).motion_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 444,
+      "line": 434,
       "match": "in_stack_00000004",
       "text": "local_58._24_4_ = (in_stack_00000004->motion_list).motions;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 444,
+      "line": 434,
       "match": "._24_4_",
       "text": "local_58._24_4_ = (in_stack_00000004->motion_list).motions;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 445,
+      "line": 435,
       "match": "._20_4_",
       "text": "local_58._20_4_ = &DAT_0365caf8;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 445,
+      "line": 435,
       "match": "DAT_0365caf8",
       "text": "local_58._20_4_ = &DAT_0365caf8;",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 448,
+      "line": 438,
       "match": "._24_4_",
       "text": "local_ec = (SMotion *)local_58._24_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 449,
+      "line": 439,
       "match": "._20_4_",
       "text": "local_e8 = (char *)local_58._20_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 452,
+      "line": 442,
       "match": "._24_4_",
       "text": "(g_CEditorToolsPtr,(float)*(int *)(local_58._24_4_ + 0x60),",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 457,
+      "line": 447,
       "match": "in_stack_fffeec08",
       "text": "((char *)p_Var2,(_FILE *)0x1,(int)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 496,
+      "line": 486,
       "match": "._16_4_",
       "text": "local_b8._16_4_ = &local_ec->fps;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 502,
+      "line": 492,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 505,
+      "line": 495,
       "match": "._12_4_",
       "text": "local_b8._12_4_ = fVar16;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 506,
+      "line": 496,
       "match": "(int *)((int)",
       "text": "if (0 < *(int *)((int)aiStack_2720 + (int)fVar16)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 509,
+      "line": 499,
       "match": "in_stack_fffeec08",
       "text": "((char *)local_11c,(_FILE *)0x1,(int)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 520,
+      "line": 510,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 522,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 522,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 523,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 523,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 523,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 533,
+      "line": 521,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 535,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 535,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 536,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 536,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 536,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 539,
+      "line": 525,
       "match": "._20_4_",
       "text": "local_b8._20_4_ = local_20a2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 541,
+      "line": 527,
       "match": "._20_4_",
       "text": "local_b8._20_4_ = local_b8._20_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 541,
+      "line": 527,
       "match": "._20_4_",
       "text": "local_b8._20_4_ = local_b8._20_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 542,
+      "line": 528,
       "match": "._20_4_",
       "text": "} while ((g_CharacterClassificationTable[(byte)(*(char *)local_b8._20_4_ + 1)] &",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 544,
+      "line": 530,
       "match": "NAN",
       "text": "local_a0 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 546,
+      "line": 532,
       "match": "._20_4_",
       "text": "((char *)local_b8._20_4_,\"%s %s%n\",local_468,local_28c);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 550,
+      "line": 536,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 552,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 552,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 553,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 553,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 553,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 559,
+      "line": 543,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 564,
+      "line": 548,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 566,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 566,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 567,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 567,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 567,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 580,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 580,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 580,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 592,
+      "line": 572,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 594,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 594,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 595,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 595,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 595,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 598,
+      "line": 576,
       "match": "._20_4_",
       "text": "pcVar11 = (char *)(local_b8._20_4_ + (int)local_a0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 602,
+      "line": 580,
       "match": "NAN",
       "text": "local_a0 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 607,
+      "line": 585,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 609,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 609,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 610,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 610,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 610,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 616,
+      "line": 592,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 621,
+      "line": 597,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 623,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 623,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 624,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 624,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 624,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 632,
+      "line": 606,
       "match": "NAN",
       "text": "local_a0 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 637,
+      "line": 611,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 639,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 639,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 640,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 640,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 640,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 647,
+      "line": 619,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 649,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 649,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 650,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 650,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 650,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 671,
+      "line": 641,
       "match": "NAN",
       "text": "local_a0 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 676,
+      "line": 646,
       "match": "in_stack_00000008",
       "text": ",local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 678,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 678,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 679,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 679,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 679,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 686,
+      "line": 654,
       "match": "in_stack_00000008",
       "text": ",local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 688,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 688,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 689,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 689,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 689,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 715,
+      "line": 681,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008,local_20a4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 717,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 717,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 718,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 718,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 718,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 755,
+      "line": 719,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 757,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 757,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 758,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 758,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 758,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 764,
+      "line": 726,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 769,
+      "line": 731,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 771,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
+      "line": 745,
+      "match": "in_stack_00000008",
+      "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 771,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 772,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 772,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 772,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 785,
+      "line": 753,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
@@ -5996,2430 +5135,1030 @@
     {
       "description": "Unresolved stack parameter",
       "line": 787,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 787,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 788,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 788,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 788,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 795,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 797,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 797,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 798,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 798,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 798,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 831,
-      "match": "in_stack_00000008",
-      "text": "local_ec,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 833,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 833,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 834,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 834,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 834,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 854,
+      "line": 807,
       "match": "in_stack_00000008",
       "text": ",local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 856,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 857,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 857,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 857,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 858,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 865,
+      "line": 815,
       "match": "in_stack_00000008",
       "text": ",local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 867,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 868,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 868,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 868,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 869,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 879,
+      "line": 826,
       "match": "in_stack_fffeec08",
       "text": "in_stack_fffeec08 = (CBoneStructure *)0x594670;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 884,
+      "line": 831,
       "match": "ROUND",
-      "text": "pSVar14->exit_forward_from_frame = (int)ROUND(dVar27);",
+      "text": "pSVar14->exit_forward_from_frame = (int)ROUND(dVar28);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 889,
+      "line": 836,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008,local_20a4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 891,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)piVar28,(uint)in_stack_fffeec08",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 892,
-      "match": "in_stack_fffeec0c",
-      "text": ",in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 892,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 893,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 922,
+      "line": 866,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008,local_20a4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 924,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 924,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 925,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 925,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 925,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 939,
+      "line": 881,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 941,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 941,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 942,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 942,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 942,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 950,
+      "line": 890,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 952,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 952,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 953,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 953,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 953,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 960,
+      "line": 898,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 962,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 962,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 963,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 963,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 963,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 969,
+      "line": 905,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 971,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 971,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 972,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 972,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 972,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1051,
+      "line": 985,
       "match": "DAT_03670b5c",
       "text": "iVar13 = DAT_03670b5c;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1055,
+      "line": 989,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 1057,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1057,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1058,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1058,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1058,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1062,
+      "line": 993,
       "match": "DAT_03670b60",
       "text": "(&DAT_03670b60)[DAT_03670b5c * 4] = local_38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1062,
+      "line": 993,
       "match": "DAT_03670b5c",
       "text": "(&DAT_03670b60)[DAT_03670b5c * 4] = local_38;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1067,
+      "line": 998,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1069,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1069,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1070,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1070,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1070,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1075,
+      "line": 1003,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1076,
+      "line": 1004,
       "match": "DAT_03670b68",
       "text": "(&DAT_03670b68)[iVar13 * 4] = iVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1080,
+      "line": 1008,
       "match": "in_stack_00000008",
       "text": "local_65c,local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1082,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1082,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1083,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1083,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1083,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1090,
+      "line": 1015,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1092,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1092,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1093,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1093,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1093,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1101,
+      "line": 1023,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1103,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1103,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1104,
-      "match": "in_stack_fffeec10",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1104,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1104,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec10,in_stack_fffeec14,in_stack_fffeec18)",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1108,
+      "line": 1027,
       "match": "DAT_03670b5c",
       "text": "DAT_03670b5c = DAT_03670b5c + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1108,
+      "line": 1027,
       "match": "DAT_03670b5c",
       "text": "DAT_03670b5c = DAT_03670b5c + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1119,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1120,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1120,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1120,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,in_stack_fffeec14",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1121,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1138,
+      "line": 1054,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1140,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1141,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1141,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1142,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1142,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1149,
+      "line": 1062,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1151,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1152,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1152,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1153,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1153,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1160,
+      "line": 1070,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1162,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1163,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1163,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1164,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1164,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1173,
+      "line": 1080,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1175,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1176,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1176,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1177,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1177,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1206,
+      "line": 1110,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1208,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1209,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1209,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1210,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1210,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1253,
+      "line": 1154,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1255,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1256,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1256,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1257,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1257,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1286,
+      "line": 1185,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1288,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1289,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1289,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1290,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1290,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1297,
+      "line": 1194,
       "match": "in_stack_00000008",
       "text": "local_ec,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1299,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1300,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1300,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1301,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1301,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1316,
+      "line": 1211,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1318,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1319,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1319,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1320,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1320,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1340,
+      "line": 1233,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1342,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1343,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1343,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1344,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1344,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1352,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1353,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1353,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1354,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1354,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1369,
+      "line": 1258,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1371,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1372,
-      "match": "in_stack_fffeec0c",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1372,
-      "match": "in_stack_fffeec10",
-      "text": "in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1373,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1373,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1395,
+      "line": 1282,
       "match": "(int *)((int)",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_b8._12_4_));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1395,
+      "line": 1282,
       "match": "._12_4_",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_b8._12_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1407,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1407,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1407,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1408,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1408,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1420,
+      "line": 1305,
       "match": "in_stack_fffeec08",
       "text": "(this_ptr_00,(_FILE *)local_b8,&in_stack_fffeec08->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1422,
+      "line": 1307,
       "match": "(int *)((int)",
       "text": "if (0 < *(int *)((int)aiStack_2900 + (int)fVar16)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1426,
+      "line": 1311,
       "match": "._0_4_",
       "text": "local_b8._0_4_ = local_b8._0_4_ + -1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1426,
+      "line": 1311,
       "match": "._0_4_",
       "text": "local_b8._0_4_ = local_b8._0_4_ + -1;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1427,
+      "line": 1312,
       "match": "(int *)((int)",
       "text": "} while (iVar13 < *(int *)((int)aiStack_2900 + (int)fVar16));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1429,
+      "line": 1314,
       "match": "._8_4_",
       "text": "local_b8._8_4_ = (streambuf *)0x0;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1431,
+      "line": 1316,
       "match": "1.4013e-45",
       "text": "local_b8._4_4_ = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1431,
+      "line": 1316,
       "match": "._4_4_",
       "text": "local_b8._4_4_ = 1.4013e-45;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1438,
+      "line": 1323,
       "match": "._0_4_",
       "text": "if ((int)local_b8._0_4_ < 1) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1446,
+      "line": 1331,
       "match": "._0_4_",
       "text": "local_b8._0_4_ = local_b8._0_4_ + -1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1446,
+      "line": 1331,
       "match": "._0_4_",
       "text": "local_b8._0_4_ = local_b8._0_4_ + -1;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1448,
+      "line": 1333,
       "match": "in_stack_fffeec08",
       "text": "(local_c0,local_d8,(int)in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1450,
+      "line": 1335,
       "match": "in_stack_fffeec08",
       "text": "core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(in_stack_fffeec08);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1465,
+      "line": 1350,
       "match": "._4_4_",
       "text": "if ((float)local_b8._4_4_ != 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1481,
+      "line": 1366,
       "match": "._4_4_",
       "text": "local_b8._4_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1499,
+      "line": 1384,
       "match": "._8_4_",
       "text": "local_b8._8_4_ = (streambuf *)0x1;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1509,
+      "line": 1394,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_1 + iVar13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1515,
+      "line": 1400,
       "match": "in_stack_00000004",
       "text": "iVar3 = in_stack_00000004->bone_count;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1516,
+      "line": 1401,
       "match": "in_stack_00000004",
       "text": "pCVar17 = in_stack_00000004->bone_angle_frames;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1519,
+      "line": 1404,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->bone_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1520,
+      "line": 1405,
       "match": "._16_4_",
       "text": "local_58._16_4_ = local_7434;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1524,
+      "line": 1409,
       "match": "._16_4_",
       "text": "((CMatrix3x3f *)local_58._16_4_,&local_214);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1525,
+      "line": 1410,
       "match": "(uint *)((int)",
-      "text": "puVar21 = (uint *)((int)pCVar17 + (uint)bVar26 * -8 + 4);",
+      "text": "puVar22 = (uint *)((int)pCVar17 + (uint)bVar27 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1530,
+      "line": 1415,
       "match": "(uint *)((int)",
-      "text": "*puVar21 = *(uint *)((int)&local_214 + (uint)bVar26 * -8 + 4);",
+      "text": "*puVar22 = *(uint *)((int)&local_214 + (uint)bVar27 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1534,
+      "line": 1419,
       "match": "._16_4_",
       "text": "local_58._16_4_ = &((CMatrix3x4f *)(local_58._16_4_ + 0x60))->m[2].x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1534,
+      "line": 1419,
       "match": "._16_4_",
       "text": "local_58._16_4_ = &((CMatrix3x4f *)(local_58._16_4_ + 0x60))->m[2].x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1536,
+      "line": 1421,
       "match": "in_stack_00000004",
       "text": "} while ((int)local_60 < in_stack_00000004->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1561,
+      "line": 1446,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1562,
+      "line": 1447,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1569,
+      "line": 1454,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1570,
+      "line": 1455,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1573,
+      "line": 1458,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->bone_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1574,
+      "line": 1459,
       "match": "._12_4_",
       "text": "local_58._12_4_ = local_7434;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1578,
+      "line": 1463,
       "match": "._12_4_",
       "text": "((CMatrix3x4f *)local_58._12_4_,&local_404,&local_314);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1583,
+      "line": 1468,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1584,
+      "line": 1469,
       "match": "(CMatrix3x3f *)((int)",
-      "text": "pCVar24 = (CMatrix3x3f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
+      "text": "pCVar25 = (CMatrix3x3f *)((int)pCVar25 + ((uint)bVar27 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1587,
+      "line": 1472,
       "match": "(uint *)((int)",
-      "text": "puVar21 = (uint *)((int)pCVar17 + (uint)bVar26 * -8 + 4);",
+      "text": "puVar22 = (uint *)((int)pCVar17 + (uint)bVar27 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1592,
+      "line": 1477,
       "match": "(uint *)((int)",
-      "text": "*puVar21 = *(uint *)((int)&local_224 + (uint)bVar26 * -8 + 4);",
+      "text": "*puVar22 = *(uint *)((int)&local_224 + (uint)bVar27 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1596,
+      "line": 1481,
       "match": "._12_4_",
       "text": "local_58._12_4_ = &((CMatrix3x4f *)(local_58._12_4_ + 0x60))->m[2].x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1596,
+      "line": 1481,
       "match": "._12_4_",
       "text": "local_58._12_4_ = &((CMatrix3x4f *)(local_58._12_4_ + 0x60))->m[2].x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1598,
+      "line": 1483,
       "match": "in_stack_00000004",
       "text": "} while (local_5c < in_stack_00000004->bone_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1614,
+      "line": 1499,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_1 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1615,
+      "line": 1500,
       "match": "in_stack_00000004",
       "text": "pCVar12 = in_stack_00000004->frame_positions_1 + iVar3 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1619,
+      "line": 1504,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_2 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1629,
+      "line": 1514,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_2;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1634,
+      "line": 1519,
       "match": "._8_4_",
       "text": "else if ((streambuf *)local_b8._8_4_ == (streambuf *)0x0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1635,
+      "line": 1520,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_2 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1636,
+      "line": 1521,
       "match": "in_stack_00000004",
       "text": "pCVar12 = in_stack_00000004->frame_positions_2 + iVar3 + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1644,
+      "line": 1529,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1648,
+      "line": 1533,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_2 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1657,
+      "line": 1542,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_2[iVar3].x = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1660,
+      "line": 1545,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_1[iVar3].x = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1662,
+      "line": 1547,
       "match": "in_stack_00000004",
       "text": "local_204 = local_204 + in_stack_00000004->frame_positions_2[iVar3].x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1666,
+      "line": 1551,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_2[iVar3].y = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1669,
+      "line": 1554,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_1[iVar3].y = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1671,
+      "line": 1556,
       "match": "in_stack_00000004",
       "text": "local_200 = local_200 + in_stack_00000004->frame_positions_2[iVar3].y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1675,
+      "line": 1560,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_2[iVar3].z = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1678,
+      "line": 1563,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->frame_positions_1[iVar3].z = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1680,
+      "line": 1565,
       "match": "in_stack_00000004",
       "text": "local_1fc = local_1fc + in_stack_00000004->frame_positions_2[iVar3].z;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1731,
+      "line": 1616,
       "match": "SQRT",
       "text": "if (0.0 < SQRT(local_1e4 * local_1e4 + local_1ec * local_1ec + local_1e8 * local_1e8)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1733,
+      "line": 1618,
       "match": "._4_4_",
       "text": "local_58._4_4_ = (uint)(int)local_2c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1734,
+      "line": 1619,
       "match": "._4_4_",
       "text": "fVar16 = 1.0 / (float)local_58._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1741,
+      "line": 1626,
       "match": "SBORROW4",
-      "text": "while (bVar25 || SBORROW4((int)fVar16,(int)local_94) != iVar13 < 0) {",
+      "text": "while (bVar26 || SBORROW4((int)fVar16,(int)local_94) != iVar13 < 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1743,
+      "line": 1628,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_2;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1752,
+      "line": 1637,
       "match": "._20_4_",
       "text": "local_58._20_4_ = local_58._20_4_ + 0x104;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1752,
+      "line": 1637,
       "match": "._20_4_",
       "text": "local_58._20_4_ = local_58._20_4_ + 0x104;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1753,
+      "line": 1638,
       "match": "._24_4_",
       "text": "local_58._24_4_ = local_58._24_4_ + 0x54c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1753,
+      "line": 1638,
       "match": "._24_4_",
       "text": "local_58._24_4_ = local_58._24_4_ + 0x54c;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1756,
+      "line": 1641,
       "match": "in_stack_00000004",
       "text": "} while (local_38 < (in_stack_00000004->motion_list).motion_count);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1765,
+      "line": 1650,
       "match": "DAT_03670b5c",
       "text": "if (0 < DAT_03670b5c) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1768,
+      "line": 1653,
       "match": "(int *)((int)",
-      "text": "piVar28 = (int *)((int)&DAT_03670b60 + iVar13);",
+      "text": "piVar19 = (int *)((int)&DAT_03670b60 + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1768,
+      "line": 1653,
       "match": "DAT_03670b60",
-      "text": "piVar28 = (int *)((int)&DAT_03670b60 + iVar13);",
+      "text": "piVar19 = (int *)((int)&DAT_03670b60 + iVar13);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1771,
+      "line": 1656,
       "match": "DAT_03670b5c",
       "text": "} while (iVar13 < DAT_03670b5c * 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1774,
+      "line": 1659,
       "match": "DAT_03670b5c",
       "text": "if (DAT_03670b5c < 1) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 1779,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1779,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1779,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1780,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1780,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1785,
+      "line": 1668,
       "match": "DAT_03670b5c",
       "text": "if (0 < DAT_03670b5c) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1788,
+      "line": 1671,
       "match": "(int *)((int)",
       "text": "if ((-1 < *(int *)((int)&DAT_03670b60 + iVar4)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1788,
+      "line": 1671,
       "match": "DAT_03670b60",
       "text": "if ((-1 < *(int *)((int)&DAT_03670b60 + iVar4)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1789,
+      "line": 1672,
       "match": "(int *)((int)",
       "text": "(local_2540[*(int *)((int)&DAT_03670b68 + iVar4)] == 0)) break;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1789,
+      "line": 1672,
       "match": "DAT_03670b68",
       "text": "(local_2540[*(int *)((int)&DAT_03670b68 + iVar4)] == 0)) break;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1792,
+      "line": 1675,
       "match": "DAT_03670b5c",
       "text": "} while (iVar4 < DAT_03670b5c * 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1794,
+      "line": 1677,
       "match": "DAT_03670b5c",
       "text": "if (DAT_03670b5c <= iVar3) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 1798,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1798,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1798,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1799,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1799,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1802,
+      "line": 1683,
       "match": "DAT_03670b60",
-      "text": "piVar28 = &DAT_03670b60 + iVar3 * 4;",
+      "text": "piVar19 = &DAT_03670b60 + iVar3 * 4;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1803,
+      "line": 1684,
       "match": "in_stack_00000004",
-      "text": "iVar4 = (in_stack_00000004->motion_list).motions[*piVar28].frame_start +",
+      "text": "iVar4 = (in_stack_00000004->motion_list).motions[*piVar19].frame_start +",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1804,
+      "line": 1685,
       "match": "DAT_03670b64",
       "text": "(&DAT_03670b64)[iVar3 * 4];",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1805,
+      "line": 1686,
       "match": "in_stack_00000004",
       "text": "iVar3 = (in_stack_00000004->motion_list).motions[(&DAT_03670b68)[iVar3 * 4]].frame_start +",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1805,
+      "line": 1686,
       "match": "DAT_03670b68",
       "text": "iVar3 = (in_stack_00000004->motion_list).motions[(&DAT_03670b68)[iVar3 * 4]].frame_start +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1806,
+      "line": 1687,
       "match": "DAT_03670b6c",
       "text": "(&DAT_03670b6c)[iVar3 * 4];",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1807,
+      "line": 1688,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_1;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1811,
+      "line": 1692,
       "match": "DAT_03670b5c",
       "text": "for (iVar3 = 0; iVar4 = DAT_03670b5c,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1812,
+      "line": 1693,
       "match": "in_stack_00000004",
-      "text": "iVar3 < (in_stack_00000004->motion_list).motions[*piVar28].frame_count;",
+      "text": "iVar3 < (in_stack_00000004->motion_list).motions[*piVar19].frame_count;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1814,
+      "line": 1695,
       "match": "in_stack_00000004",
-      "text": "iVar4 = (in_stack_00000004->motion_list).motions[*piVar28].frame_start + iVar3;",
+      "text": "iVar4 = (in_stack_00000004->motion_list).motions[*piVar19].frame_start + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1815,
+      "line": 1696,
       "match": "in_stack_00000004",
       "text": "pCVar8 = in_stack_00000004->frame_positions_1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1860,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1860,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1860,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1861,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1861,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1868,
+      "line": 1747,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Expected animation keyword in %s but instead found this:\\n%s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1870,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1870,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1870,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1871,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1871,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1874,
+      "line": 1751,
       "match": "in_stack_00000004",
       "text": "aiStack_2720[(in_stack_00000004->motion_list).motion_count] =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1875,
+      "line": 1752,
       "match": "in_stack_00000004",
       "text": "aiStack_2720[(in_stack_00000004->motion_list).motion_count] + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1876,
+      "line": 1753,
       "match": "in_stack_00000004",
       "text": "pSVar14 = local_f8 + (in_stack_00000004->motion_list).motion_count;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1877,
+      "line": 1754,
       "match": "in_stack_00000004",
       "text": "iVar13 = (in_stack_00000004->motion_list).motion_count;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1879,
+      "line": 1756,
       "match": "DAT_0365caf8",
       "text": "pcVar11 = &DAT_0365caf8 + iVar13 * 0x104;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1890,
+      "line": 1767,
       "match": "in_stack_00000008",
       "text": "(\"Error parsing \\\"filename\\\" statement for animation %s in %s:\\n%s\",pcVar11,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1895,
+      "line": 1772,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,local_1c,local_1470,(char *)0x0,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1910,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1910,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1910,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1911,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1911,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1928,
+      "line": 1803,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1930,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1930,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1930,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1931,
-      "match": "in_stack_fffeec14",
-      "text": ",in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1931,
-      "match": "in_stack_fffeec18",
-      "text": ",in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1942,
+      "line": 1815,
       "match": "in_stack_00000004",
       "text": "if (0x77 < (in_stack_00000004->motion_list).motion_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1944,
+      "line": 1817,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Too many motions in %s, max is %d\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1946,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1946,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1946,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1947,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1947,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1953,
+      "line": 1824,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Can't parse %s.  I don't understand this line:\\n%s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1955,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1955,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1955,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1956,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1956,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1962,
+      "line": 1831,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,local_28,local_1570,(char *)0x0,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1969,
+      "line": 1838,
       "match": "in_stack_00000004",
       "text": "pSVar14 = local_f8 + (in_stack_00000004->motion_list).motion_count;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1974,
+      "line": 1843,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_list);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1980,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1980,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1980,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1981,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1981,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1984,
+      "line": 1851,
       "match": "in_stack_00000004",
       "text": "aiStack_2720[(in_stack_00000004->motion_list).motion_count] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1986,
+      "line": 1853,
       "match": "in_stack_00000004",
       "text": "pcVar18 = &DAT_0365caf8 + (in_stack_00000004->motion_list).motion_count * 0x104;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1986,
+      "line": 1853,
       "match": "DAT_0365caf8",
       "text": "pcVar18 = &DAT_0365caf8 + (in_stack_00000004->motion_list).motion_count * 0x104;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 2012,
+      "line": 1879,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Error parsing \\\"frames\\\" statement for animation %s in %s:\\n%s\",pSVar14,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 2014,
-      "match": "in_stack_fffeec08",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 2014,
-      "match": "in_stack_fffeec0c",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 2014,
-      "match": "in_stack_fffeec10",
-      "text": "(&local_2ca8,0,(uint)in_stack_fffeec08,in_stack_fffeec0c,in_stack_fffeec10,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 2015,
-      "match": "in_stack_fffeec14",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 2015,
-      "match": "in_stack_fffeec18",
-      "text": "in_stack_fffeec14,in_stack_fffeec18);",
       "type": "stack_param"
     },
     {
@@ -8428,7 +6167,7 @@
       "expected_args": 1,
       "format_string": "No motions defined in %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 376,
+      "line_number": 368,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"No motions defined in %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

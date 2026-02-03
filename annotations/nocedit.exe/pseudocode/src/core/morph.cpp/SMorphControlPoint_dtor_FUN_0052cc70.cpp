@@ -10,8 +10,8 @@ SMorphControlPoint * __cdecl
 core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint *this_ptr)
 
 {
-  int extraout_EAX;
+  CVector3f *pCVar1;
   
-  core_morph_cpp_freeVectors_FUN_0052cc90((CVector3f **)(this_ptr->unk + 8));
-  return (SMorphControlPoint *)(extraout_EAX + -8);
+  pCVar1 = core_morph_cpp_freeVectors_FUN_0052cc90((CVector3f *)(this_ptr->unk + 8));
+  return (SMorphControlPoint *)&pCVar1[-1].y;
 }

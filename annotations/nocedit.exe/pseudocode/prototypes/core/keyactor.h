@@ -61,4 +61,4 @@ void __cdecl CKeyActor::writeDependencies(CKeyActor *this_ptr,_FILE *file_handle
 
 // Original: core_keyactor.cpp_CKeyActor_dtor_FUN_005019b0
 // Address: 005019b0
-CKeyActor * __cdecl CKeyActor::dtor(CKeyActor *this_ptr,uint d1);
+CKeyActor * __cdecl CKeyActor::dtor(CKeyActor *this_ptr,uint flags);

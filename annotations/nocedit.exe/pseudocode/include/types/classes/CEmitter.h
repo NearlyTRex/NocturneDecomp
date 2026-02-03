@@ -13,10 +13,8 @@ typedef struct CEmitter {
     int emitter_type; // 0x158
     CVector3f emitter_size; // 0x15c
     int emitter_state; // 0x168
-    char* event_on; // 0x16c
-    char unk1[96]; // 0x170
-    char* event_off; // 0x1d0
-    char unk2[96]; // 0x1d4
+    char event_on[100]; // 0x16c
+    char event_off[100]; // 0x1d0
     float max_emit_time; // 0x234
     int laser_type; // 0x238
     int laser_r; // 0x23c

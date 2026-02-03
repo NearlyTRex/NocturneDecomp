@@ -419,7 +419,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     uVar13 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_30->motion_controller);
     if (uVar13 < 2) {
       if (uVar13 == 1) {
-        core_vampboss_cpp_AnotherVoicuSummonWavCall_FUN_005e7390();
+        core_vampboss_cpp_CVampireBoss_FUN_005e7390(this_ptr);
 LAB_005e648e:
         this_ptr->unk3[0] = '\0';
         this_ptr->unk3[1] = '\0';

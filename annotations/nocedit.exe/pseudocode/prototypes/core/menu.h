@@ -89,4 +89,4 @@ void __cdecl configureCustomKeyBindings(void);
 
 // Original: core_menu.cpp_freeBitmaps_FUN_00514f50
 // Address: 00514f50
-void __cdecl freeBitmaps(CAlphaBitmap **array);
+void __cdecl freeBitmaps(CAlphaBitmap *objs);

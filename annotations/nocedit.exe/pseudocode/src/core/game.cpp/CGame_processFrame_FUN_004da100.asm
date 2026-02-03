@@ -74,12 +74,12 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 ;   core_event.cpp_CEventList_FUN_004addf0
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50
+;   core_game.cpp_CGame_FUN_004e0aa0
 ;   core_game.cpp_CGame_process_FUN_004e3190
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0
 ;   core_game.cpp_CGame_slamDT_FUN_004e3080
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-;   core_game.cpp_FUN_004e0aa0
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
@@ -479,8 +479,8 @@ section .text
     ADD ESP,0x4                         ; 004da572
     MOV ECX,dword ptr [EBP + 0x92]      ; 004da575
     PUSH ECX                            ; 004da57b
-    CALL core_game.cpp_FUN_004e0aa0     ; 004da57c
-        ;   XREF to: 004e0aa0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004e0aa0()
+    CALL core_game.cpp_CGame_FUN_004e0aa0 ; 004da57c
+        ;   XREF to: 004e0aa0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0aa0(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da581
     MOV EBX,dword ptr [EAX + 0x1e4]     ; 004da587
     ADD ESP,0x4                         ; 004da58d

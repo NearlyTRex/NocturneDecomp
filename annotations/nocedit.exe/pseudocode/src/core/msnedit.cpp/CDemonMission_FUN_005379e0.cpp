@@ -17,10 +17,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_005379e0(CDemonMission *this_ptr
   ulonglong in_stack_fffff2fc;
   char *string_data;
   ulonglong uVar5;
-  uint in_stack_fffff304;
-  char **in_stack_fffff308;
-  CStrList_vtable *in_stack_fffff30c;
-  CStrList_vtable *in_stack_fffff310;
+  CStrList aCStack_cfc [58];
   CPickList CStack_958;
   CPickList local_5b0;
   char acStack_204 [296];
@@ -41,9 +38,7 @@ LAB_005379f3:
            shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                      (&local_5b0,"Enemy randomizer",config_param1,0);
       if (config_param1 < 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                   (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         return;
       }
       if (config_param1 == 0) {
@@ -59,27 +54,21 @@ LAB_005379f3:
       if (config_param1 == 1) break;
 LAB_00537aa5:
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                 (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
     }
     iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Enter enemy types to process","CEnemy",200,1
                       );
     if (iVar4 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                 (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
       goto LAB_005379f3;
     }
     iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Enter actor name wildcard",&DAT_00680580,200,1);
     if (iVar4 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                 (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
     }
     else {
       iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
@@ -87,9 +76,7 @@ LAB_00537aa5:
                          0.01,100.0,1);
       if (iVar4 == 0) {
         in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                   (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
       }
       else {
         iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
@@ -97,9 +84,7 @@ LAB_00537aa5:
                            0.9f,100.0,1);
         if (iVar4 == 0) {
           in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                     (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         }
         else {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_958);
@@ -131,8 +116,7 @@ LAB_00537aa5:
                           (acStack_204,"%s\n%7.3f",pCVar3,
                            (double)*(float *)(pCVar3[0x8d].create_event + 0x34));
                 string_data = acStack_204;
-                shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          ((CStrList *)&stack0xfffff304,string_data);
+                shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_cfc,string_data);
               }
             }
             if ((int)string_data < 1) {
@@ -145,22 +129,14 @@ LAB_00537aa5:
               shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         ((CPickList *)&stack0xfffff300,acStack_dc,-1,0);
             }
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)&stack0xfffff300,0,(uint)string_data,in_stack_fffff304,
-                       (uint)in_stack_fffff308,(uint)in_stack_fffff30c,(uint)in_stack_fffff310);
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      (&CStack_958,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                       (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_958,0);
             goto LAB_00537aa5;
           }
           uVar5 = ZEXT48(string_data) << 0x20;
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_958,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
-                     (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_958,0);
           in_stack_fffff2fc = uVar5 & 0xffffffff00000000;
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_5b0,0,(uint)(uVar5 >> 0x20),in_stack_fffff304,(uint)in_stack_fffff308,
-                     (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         }
       }
     }

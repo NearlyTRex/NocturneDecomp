@@ -9,8 +9,8 @@
 CCrater * __cdecl core_fire_cpp_CCrater_dtor_FUN_004c95a0(CCrater *this_ptr)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)(this_ptr->unk + 0x1c));
-  return (CCrater *)(iVar1 + -0x1c);
+  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f *)(this_ptr->unk + 0x1c));
+  return (CCrater *)&pCVar1[-3].z;
 }

@@ -11,17 +11,13 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
 {
   char cVar1;
   int iVar2;
-  uint unaff_ESI;
   uint *puVar3;
   char *pcVar4;
-  uint unaff_EDI;
   byte *puVar5;
   char *pcVar6;
   byte bVar7;
   int config_param2;
-  uint in_stack_fffffac0;
-  uint in_stack_fffffac4;
-  char **in_stack_fffffac8;
+  CPickList CStack_540;
   char acStack_198 [300];
   char local_6c [100];
   
@@ -39,7 +35,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
       core_actor_cpp_FUN_0040e150();
       (**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x1c) + 0x154) + 0xd4))();
       iVar2 = 0;
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_540);
       if (0 < INT_02f7a028) {
         puVar5 = &DAT_02f7a030;
         do {
@@ -47,16 +43,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
           sprintf(&DAT_02f79c20,"%s\t%s",puVar5,&DAT_02f79820);
           iVar2 = iVar2 + 1;
           puVar5 = puVar5 + 0xec;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_540.base,&DAT_02f79c20);
         } while (iVar2 < INT_02f7a028);
       }
       sprintf
                 (acStack_198,"Edit %s properties",*(uint *)(this_ptr->unk2 + 0x1c));
       config_param2 = 0;
-      iVar2 = shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070
-                        ((CStrList *)&stack0xfffffac0,local_6c);
+      iVar2 = shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(&CStack_540.base,local_6c);
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffffac0,acStack_198,iVar2,config_param2);
+                        (&CStack_540,acStack_198,iVar2,config_param2);
       if (iVar2 < 0) break;
       iVar2 = iVar2 * 0xec;
       pcVar6 = local_6c;
@@ -75,13 +70,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
                   ((CActorProperty *)(&DAT_02f7a02c + iVar2),
                    *(CDemonActor **)(this_ptr->unk2 + 0x1c));
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,
-                 in_stack_fffffac4,(uint)in_stack_fffffac8);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_540,0);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,
-               in_stack_fffffac4,(uint)in_stack_fffffac8);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_540,0);
   }
   return;
 }

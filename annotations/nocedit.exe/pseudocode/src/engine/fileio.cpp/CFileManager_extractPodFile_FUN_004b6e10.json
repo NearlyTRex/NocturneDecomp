@@ -2,100 +2,286 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 69,
-        "message": "'stack0xfffff17c' was not declared in this scope"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
-        "line": 80,
-        "message": "'stack0xfffff280' was not declared in this scope; did you mean 'in_stack_fffff180'?"
+        "column": 58,
+        "line": 66,
+        "message": "'stack0xfffff17c' was not declared in this scope"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 23,
+        "line": 77,
+        "message": "cannot convert 'tm*' to '_tm*' in assignment"
       },
       {
         "category": "incompatible_types",
         "column": 41,
-        "line": 81,
+        "line": 78,
         "message": "cannot convert '_tm*' to 'const tm*'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 92,
-        "message": "'stack0xfffff180' was not declared in this scope; did you mean 'in_stack_fffff180'?"
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 89,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 110,
-        "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "column": 26,
+        "line": 103,
+        "message": "request for member '_1036_4_' in 'local_e80', which is of non-class type 'byte [2088]' {aka 'unsigned char [2088]'}"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 106,
+        "message": "request for member '_1040_4_' in 'local_e80', which is of non-class type 'byte [2088]' {aka 'unsigned char [2088]'}"
       },
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 111,
+        "line": 107,
         "message": "cannot convert 'uint*' {aka 'unsigned int*'} to 'time_t*' {aka 'long int*'} in assignment"
       },
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 136,
+        "line": 132,
         "message": "cannot convert 'tm*' to '_tm*' in assignment"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 137,
+        "line": 133,
         "message": "cannot convert '_tm*' to 'const tm*'"
       },
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 138,
+        "line": 134,
         "message": "cannot convert 'tm*' to '_tm*' in assignment"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 139,
+        "line": 135,
         "message": "cannot convert '_tm*' to 'const tm*'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 30,
-        "line": 153,
-        "message": "'stack0xfffff170' was not declared in this scope; did you mean 'in_stack_fffff180'?"
+        "line": 138,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 155,
-        "message": "'stack0xfffff16c' was not declared in this scope"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 88,
-        "line": 162,
+        "line": 158,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 28,
-        "line": 163,
+        "line": 159,
         "message": "cast from 'CEditorTools*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 42,
-        "line": 163,
+        "line": 159,
         "message": "cast from 'SFoundFileInfo*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 165,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 51,
+        "line": 166,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 167,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 51,
+        "line": 168,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 169,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 170,
+        "message": "invalid conversion from 'byte*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 188,
+        "message": "request for member '_1036_4_' in 'local_e80', which is of non-class type 'byte [2088]' {aka 'unsigned char [2088]'}"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -103,151 +289,158 @@
       {
         "category": "other",
         "column": 42,
-        "line": 52,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 74,
+        "line": 71,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 83,
+        "line": 80,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 13,
+        "line": 86,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 89,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
         "line": 89,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 96,
+        "line": 92,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 110,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 112,
+        "line": 108,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 120,
-        "line": 142,
+        "column": 117,
+        "line": 138,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 142,
-        "line": 142,
+        "column": 139,
+        "line": 138,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 166,
-        "line": 142,
+        "column": 163,
+        "line": 138,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 188,
-        "line": 142,
+        "column": 185,
+        "line": 138,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 166,
+        "line": 162,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 169,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 169,
+        "column": 35,
+        "line": 165,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 171,
+        "line": 165,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 167,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 173,
+        "column": 35,
+        "line": 169,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 183,
+        "line": 179,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 185,
+        "line": 181,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 194,
+        "line": 190,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 195,
+        "line": 191,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 208,
+        "line": 204,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 213,
+        "line": 209,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 387,
+    "complexity_score": 348,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
-    "pseudocode_lines": 212,
-    "suspect_count": 16,
+    "pseudocode_lines": 208,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unknown_field"
     ],
-    "total_lines": 767
+    "total_lines": 763
   },
   "cross_references": [],
   "function": {
@@ -852,109 +1045,81 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_fffff180",
-      "text": "uint in_stack_fffff180;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 59,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
+      "line": 60,
       "match": "&stack0xfffff17c",
       "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 65,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 68,
       "match": "&stack0xfffff17c",
       "text": "iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xfffff280",
-      "text": "p_Var3 = localtime((time_t *)&stack0xfffff280);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
+      "line": 75,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
-      "match": "&stack0xfffff180",
-      "text": "(&stack0xfffff180,(char *)0x0,\"rb\",\"..\\\\engine\\\\fileio.cpp\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 90,
+      "line": 86,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._1036_4_",
+      "text": "if (0 < (int)local_e80._1036_4_) {",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 99,
       "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)&local_a70->name_or_offset + local_1c);",
+      "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 146,
-      "match": "&stack0xfffff170",
-      "text": "ptVar7 = (time_t *)(&stack0xfffff170 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._1040_4_",
+      "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
+      "type": "unknown_field"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 148,
-      "match": "&stack0xfffff16c",
-      "text": "*(time_t *)(&stack0xfffff16c + (uint)bVar11 * -8) = local_40[(uint)bVar11 * -2];",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 181,
+      "match": "._1036_4_",
+      "text": "} while (local_18 < (int)local_e80._1036_4_);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 190,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 211,
-      "match": "in_stack_fffff180",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0,in_stack_fffff180);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 213,
-      "match": "&stack0xfffff180",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff180);",
-      "type": "stack_ref"
     }
   ]
 }

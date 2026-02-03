@@ -29,7 +29,7 @@ int __cdecl CWater::calculateVisibleTiles(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_process_FUN_005e9ed0
 // Address: 005e9ed0
-void __cdecl CWater::process(void);
+void __cdecl CWater::process(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_render_FUN_005ea320
 // Address: 005ea320

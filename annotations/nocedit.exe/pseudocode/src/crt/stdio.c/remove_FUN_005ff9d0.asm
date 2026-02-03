@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ;
 ; XREF[34]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e17ce
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e17ce
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e1116
 ;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538d1f
 ;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539104

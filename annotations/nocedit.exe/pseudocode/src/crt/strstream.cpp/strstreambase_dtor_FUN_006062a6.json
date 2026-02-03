@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 100,
+    "complexity_score": 73,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 97
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_strstreambase_dtor_FUN_006062a6",
-    "signature": "strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d1,uint d2,uint d3)"
+    "signature": "strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -125,7 +124,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 4,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -153,10 +152,10 @@
     "pcode_op_count": 184
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -168,22 +167,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d3",
-        "offset": 16,
         "size": 4,
         "type": "uint"
       }
@@ -191,29 +176,15 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 21,
       "match": "psVar3[-1].",
       "text": "this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;",
       "type": "negative_offset"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
-      "text": "((ios *)&psVar3[1]._streambuf.__get_base,1,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "piVar4[-2].",
       "text": "this_ptr = (strstreambase *)&piVar4[-2].__error_state;",
       "type": "negative_offset"

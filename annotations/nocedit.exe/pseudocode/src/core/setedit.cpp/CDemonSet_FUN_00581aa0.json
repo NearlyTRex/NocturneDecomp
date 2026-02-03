@@ -2,226 +2,274 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 16,
-        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 110,
+        "line": 93,
         "message": "request for member '_12_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 129,
+        "line": 112,
         "message": "request for member '_0_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 130,
+        "line": 113,
         "message": "request for member '_4_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 131,
+        "line": 114,
         "message": "request for member '_8_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 10,
-        "line": 135,
+        "line": 118,
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 136,
+        "line": 119,
         "message": "request for member '_0_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 137,
+        "line": 120,
         "message": "request for member '_4_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 138,
+        "line": 121,
         "message": "request for member '_8_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 166,
-        "message": "'extraout_var' was not declared in this scope"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 180,
+        "line": 163,
         "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 276,
+        "line": 259,
         "message": "request for member '_0_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 277,
+        "line": 260,
         "message": "request for member '_4_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 278,
+        "line": 261,
         "message": "request for member '_8_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 284,
+        "line": 267,
         "message": "request for member '_12_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 290,
+        "line": 273,
         "message": "request for member '_0_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 291,
+        "line": 274,
         "message": "request for member '_4_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 292,
+        "line": 275,
         "message": "request for member '_8_4_' in 'local_ec', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 328,
-        "message": "'DAT_00000048' was not declared in this scope; did you mean 'DAT_03FB0048'?"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 361,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
         "category": "other",
         "column": 55,
-        "line": 361,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 362,
-        "message": "cast from 'CPickList*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 362,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 362,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 400,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 400,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 401,
-        "message": "cast from 'CPickList*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 401,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 406,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 406,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 407,
-        "message": "cast from 'CPickList*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 407,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 411,
+        "line": 375,
         "message": "request for member '_0_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 412,
+        "line": 376,
         "message": "request for member '_4_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 413,
+        "line": 377,
         "message": "request for member '_8_4_' in 'local_108', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 460,
-        "message": "'stack0xfffff374' was not declared in this scope; did you mean 'in_stack_fffff3f4'?"
+        "line": 418,
+        "message": "'stack0xfffff374' was not declared in this scope"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -229,234 +277,224 @@
       {
         "category": "other",
         "column": 32,
-        "line": 83,
+        "line": 66,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 180,
+        "line": 163,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 186,
+        "line": 169,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 199,
+        "line": 182,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 350,
+        "line": 325,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 351,
+        "line": 326,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 352,
+        "line": 327,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 353,
+        "line": 328,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 354,
+        "line": 329,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 356,
+        "line": 331,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 387,
+        "line": 357,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 388,
+        "line": 358,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 390,
+        "line": 360,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 391,
+        "line": 361,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
+        "line": 363,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 365,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 38,
         "line": 393,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 397,
+        "line": 400,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 429,
+        "column": 41,
+        "line": 437,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 46,
+        "column": 41,
         "line": 438,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 472,
+        "column": 41,
+        "line": 439,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 485,
+        "line": 440,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 486,
+        "line": 441,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 487,
+        "line": 442,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 488,
+        "line": 443,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 489,
+        "line": 444,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 490,
+        "line": 445,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 491,
+        "line": 446,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 492,
+        "line": 447,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 493,
+        "line": 448,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 494,
+        "line": 449,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 495,
+        "line": 450,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 496,
+        "line": 451,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 497,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 498,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 499,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 501,
+        "line": 452,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
-    "assembly_lines": 1363,
-    "complexity_score": 1560,
+    "assembly_lines": 1372,
+    "complexity_score": 769,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
-    "pseudocode_lines": 500,
-    "suspect_count": 102,
+    "pseudocode_lines": 449,
+    "suspect_count": 30,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "undefined_data",
-      "undefined_type",
       "unknown_field"
     ],
-    "total_lines": 1863
+    "total_lines": 1821
   },
   "cross_references": [],
   "function": {
@@ -464,10 +502,6 @@
     "address_range": [
       [
         "00581aa0",
-        "00581db8"
-      ],
-      [
-        "00581dd8",
         "00582920"
       ]
     ],
@@ -1016,16 +1050,16 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.100524475524476,
-    "instruction_count": 1144,
+    "avg_pcode_per_instr": 5.118055555555555,
+    "instruction_count": 1152,
     "opcode_distribution": {
       "BOOL_NEGATE": 79,
       "BOOL_OR": 10,
       "BRANCH": 12,
       "CALL": 87,
       "CALLIND": 25,
-      "CBRANCH": 60,
-      "COPY": 1570,
+      "CBRANCH": 61,
+      "COPY": 1573,
       "FLOAT2FLOAT": 105,
       "FLOAT_ADD": 12,
       "FLOAT_EQUAL": 7,
@@ -1034,32 +1068,32 @@
       "FLOAT_NAN": 14,
       "FLOAT_NEG": 10,
       "FLOAT_SUB": 6,
-      "INT_ADD": 451,
-      "INT_AND": 671,
-      "INT_CARRY": 123,
-      "INT_EQUAL": 458,
+      "INT_ADD": 458,
+      "INT_AND": 681,
+      "INT_CARRY": 126,
+      "INT_EQUAL": 468,
       "INT_LEFT": 35,
-      "INT_LESS": 28,
+      "INT_LESS": 29,
       "INT_MULT": 13,
-      "INT_NOTEQUAL": 106,
+      "INT_NOTEQUAL": 107,
       "INT_OR": 98,
-      "INT_SBORROW": 31,
-      "INT_SCARRY": 125,
+      "INT_SBORROW": 32,
+      "INT_SCARRY": 129,
       "INT_SDIV": 7,
       "INT_SEXT": 46,
-      "INT_SLESS": 220,
+      "INT_SLESS": 225,
       "INT_SREM": 7,
       "INT_SRIGHT": 35,
-      "INT_SUB": 391,
+      "INT_SUB": 392,
       "INT_XOR": 8,
       "INT_ZEXT": 42,
-      "LOAD": 216,
-      "POPCOUNT": 220,
+      "LOAD": 224,
+      "POPCOUNT": 225,
       "RETURN": 1,
-      "STORE": 452,
+      "STORE": 453,
       "SUBPIECE": 40
     },
-    "pcode_op_count": 5835
+    "pcode_op_count": 5896
   },
   "stack_frame": {
     "frame_size": 3220,
@@ -1485,718 +1519,214 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffff378",
-      "text": "CGame *in_stack_fffff378;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffff3d4",
-      "text": "CKeys *in_stack_fffff3d4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_fffff3d8",
-      "text": "CKeys *in_stack_fffff3d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffff3dc",
-      "text": "CPickList *in_stack_fffff3dc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffff3e0",
-      "text": "CKeys *in_stack_fffff3e0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffff3e4",
-      "text": "CKeys *in_stack_fffff3e4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_fffff3ec",
-      "text": "CKeys *in_stack_fffff3ec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_fffff3f0",
-      "text": "CKeys *in_stack_fffff3f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_fffff3f4",
-      "text": "CPickList *in_stack_fffff3f4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_fffff3f8",
-      "text": "uint in_stack_fffff3f8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_fffff3fc",
-      "text": "CKeys *in_stack_fffff3fc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_fffff404",
-      "text": "uint in_stack_fffff404;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_fffff408",
-      "text": "uint in_stack_fffff408;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffff40c",
-      "text": "uint in_stack_fffff40c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_fffff410",
-      "text": "uint in_stack_fffff410;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_fffff414",
-      "text": "uint in_stack_fffff414;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_fffff378",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff378);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 86,
       "match": "._12_4_",
       "text": "local_108._12_4_ = local_a0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 105,
       "match": "._0_4_",
       "text": "local_108._0_4_ = local_58;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 106,
       "match": "._4_4_",
       "text": "local_108._4_4_ = local_54;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 107,
       "match": "._8_4_",
       "text": "local_108._8_4_ = local_50;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 111,
       "match": "&stack0x00000000",
       "text": "if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 129,
+      "line": 112,
       "match": "._0_4_",
       "text": "g_CDemonCameraInstance.base.position.x = local_108._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 130,
+      "line": 113,
       "match": "._4_4_",
       "text": "g_CDemonCameraInstance.base.position.y = local_108._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 131,
+      "line": 114,
       "match": "._8_4_",
       "text": "g_CDemonCameraInstance.base.position.z = local_108._8_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 159,
-      "match": "extraout_var",
-      "text": "(g_CEditorToolsPtr,2.0,CONCAT31(extraout_var,uVar3));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
-      "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,2.0,CONCAT31(extraout_var,uVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 164,
-      "match": "extraout_var",
-      "text": "(g_CEditorToolsPtr,&local_ac,pCVar4,CONCAT31(extraout_var,uVar3));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
-      "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,&local_ac,pCVar4,CONCAT31(extraout_var,uVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 156,
       "match": "(CMatrix3x3f *)((int)",
       "text": "local_14 = (CMatrix3x3f *)((int)(local_14 + 1) + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 269,
+      "line": 252,
       "match": "._0_4_",
       "text": "local_ec._0_4_ = (pSVar2->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 270,
+      "line": 253,
       "match": "._4_4_",
       "text": "local_ec._4_4_ = (pSVar2->position).y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 271,
+      "line": 254,
       "match": "._8_4_",
       "text": "local_ec._8_4_ = (pSVar2->position).z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 277,
+      "line": 260,
       "match": "._12_4_",
-      "text": "local_ec._12_4_ = pCVar4->x;",
+      "text": "local_ec._12_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 283,
+      "line": 266,
       "match": "._0_4_",
       "text": "(pSVar2->position).x = (float)local_ec._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 284,
+      "line": 267,
       "match": "._4_4_",
       "text": "(pSVar2->position).y = (float)local_ec._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 285,
+      "line": 268,
       "match": "._8_4_",
       "text": "(pSVar2->position).z = (float)local_ec._8_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 304,
-      "match": "in_stack_fffff3d4",
-      "text": "in_stack_fffff3d4 = (CKeys *)0x5826f1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 305,
-      "match": "in_stack_fffff3d8",
-      "text": "in_stack_fffff3d8 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 310,
-      "match": "in_stack_fffff3dc",
-      "text": "in_stack_fffff3dc = (CPickList *)0x582710;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 311,
-      "match": "in_stack_fffff3e0",
-      "text": "in_stack_fffff3e0 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 316,
-      "match": "in_stack_fffff3e4",
-      "text": "in_stack_fffff3e4 = (CKeys *)0x58272f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 321,
-      "match": "in_stack_fffff3f4",
-      "text": "in_stack_fffff3f4 = (CPickList *)&DAT_00000048;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 321,
-      "match": "DAT_00000048",
-      "text": "in_stack_fffff3f4 = (CPickList *)&DAT_00000048;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_fffff3ec",
-      "text": "in_stack_fffff3ec = (CKeys *)0x58274e;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 323,
-      "match": "in_stack_fffff3f0",
-      "text": "in_stack_fffff3f0 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 354,
-      "match": "in_stack_fffff3d4",
-      "text": "(&local_8e4,0,(uint)in_stack_fffff3d4,(uint)in_stack_fffff3d8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 354,
-      "match": "in_stack_fffff3d8",
-      "text": "(&local_8e4,0,(uint)in_stack_fffff3d4,(uint)in_stack_fffff3d8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 355,
-      "match": "in_stack_fffff3dc",
-      "text": "(uint)in_stack_fffff3dc,(uint)in_stack_fffff3e0,(uint)in_stack_fffff3e4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 355,
-      "match": "in_stack_fffff3e0",
-      "text": "(uint)in_stack_fffff3dc,(uint)in_stack_fffff3e0,(uint)in_stack_fffff3e4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 355,
-      "match": "in_stack_fffff3e4",
-      "text": "(uint)in_stack_fffff3dc,(uint)in_stack_fffff3e0,(uint)in_stack_fffff3e4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 359,
-      "match": "in_stack_fffff3d4",
-      "text": "in_stack_fffff3d4 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 374,
-      "match": "in_stack_fffff3d8",
-      "text": "in_stack_fffff3d8 = (CKeys *)0x581f6b;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 375,
-      "match": "in_stack_fffff3dc",
-      "text": "in_stack_fffff3dc = (CPickList *)g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 387,
-      "match": "in_stack_fffff3dc",
-      "text": "in_stack_fffff3dc = &local_53c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 388,
-      "match": "in_stack_fffff3d8",
-      "text": "in_stack_fffff3d8 = (CKeys *)0x582016;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 390,
-      "match": "in_stack_fffff3dc",
-      "text": "(in_stack_fffff3dc,\"Create new room\",DAT_03365cbc,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 390,
+      "line": 358,
       "match": "DAT_03365cbc",
-      "text": "(in_stack_fffff3dc,\"Create new room\",DAT_03365cbc,0);",
+      "text": "(&local_53c,\"Create new room\",DAT_03365cbc,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 393,
-      "match": "in_stack_fffff3ec",
-      "text": "(&local_53c,0,(uint)in_stack_fffff3ec,(uint)in_stack_fffff3f0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 393,
-      "match": "in_stack_fffff3f0",
-      "text": "(&local_53c,0,(uint)in_stack_fffff3ec,(uint)in_stack_fffff3f0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 394,
-      "match": "in_stack_fffff3f4",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 394,
-      "match": "in_stack_fffff3f8",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 394,
-      "match": "in_stack_fffff3fc",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 397,
+      "line": 363,
       "match": "DAT_03365cbc",
-      "text": "DAT_03365cbc = iVar7;",
+      "text": "DAT_03365cbc = iVar6;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 399,
-      "match": "in_stack_fffff3ec",
-      "text": "(&local_53c,0,(uint)in_stack_fffff3ec,(uint)in_stack_fffff3f0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 399,
-      "match": "in_stack_fffff3f0",
-      "text": "(&local_53c,0,(uint)in_stack_fffff3ec,(uint)in_stack_fffff3f0,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 400,
-      "match": "in_stack_fffff3f4",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 400,
-      "match": "in_stack_fffff3f8",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 400,
-      "match": "in_stack_fffff3fc",
-      "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
-      "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 404,
+      "line": 368,
       "match": "._0_4_",
       "text": "(local_18->position).x = (float)local_108._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 405,
+      "line": 369,
       "match": "._4_4_",
       "text": "(local_18->position).y = (float)local_108._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 406,
+      "line": 370,
       "match": "._8_4_",
       "text": "(local_18->position).z = (float)local_108._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 380,
       "match": "DAT_03365cbc",
       "text": "local_18->unk = DAT_03365cbc;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 425,
-      "match": "in_stack_fffff3e0",
-      "text": "in_stack_fffff3e0 = (CKeys *)0x5820d9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 426,
-      "match": "in_stack_fffff3e4",
-      "text": "in_stack_fffff3e4 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 434,
-      "match": "in_stack_fffff3e4",
-      "text": "in_stack_fffff3e4 = (CKeys *)0x582147;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 442,
-      "match": "in_stack_fffff3ec",
-      "text": "in_stack_fffff3ec = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 448,
-      "match": "in_stack_fffff3f0",
-      "text": "in_stack_fffff3f0 = (CKeys *)0x582192;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 449,
-      "match": "in_stack_fffff3f4",
-      "text": "in_stack_fffff3f4 = (CPickList *)g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 453,
+      "line": 411,
       "match": "&stack0xfffff374",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff374);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 454,
+      "line": 412,
       "match": "&stack0xfffff374",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Outside\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 455,
+      "line": 413,
       "match": "&stack0xfffff374",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Small\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 457,
+      "line": 415,
       "match": "&stack0xfffff374",
       "text": "((CStrList *)&stack0xfffff374,\"Medium (e.g. Mausoleum)\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 459,
+      "line": 417,
       "match": "&stack0xfffff374",
       "text": "((CStrList *)&stack0xfffff374,\"Large (e.g. Warehouse)\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 461,
+      "line": 419,
       "match": "&stack0xfffff374",
       "text": "((CStrList *)&stack0xfffff374,\"Humongous\");",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 462,
-      "match": "in_stack_fffff3f4",
-      "text": "in_stack_fffff3f4 = (CPickList *)&stack0xfffff374;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 462,
+      "line": 421,
       "match": "&stack0xfffff374",
-      "text": "in_stack_fffff3f4 = (CPickList *)&stack0xfffff374;",
+      "text": "((CPickList *)&stack0xfffff374,\"Choose room size\",pSVar2->unk,0);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 463,
-      "match": "in_stack_fffff3f0",
-      "text": "in_stack_fffff3f0 = (CKeys *)0x582235;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 465,
-      "match": "in_stack_fffff3f4",
-      "text": "(in_stack_fffff3f4,\"Choose room size\",pSVar2->unk,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 470,
-      "match": "in_stack_fffff404",
-      "text": "((CPickList *)&stack0xfffff374,0,in_stack_fffff404,in_stack_fffff408,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 470,
-      "match": "in_stack_fffff408",
-      "text": "((CPickList *)&stack0xfffff374,0,in_stack_fffff404,in_stack_fffff408,",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 470,
+      "line": 425,
       "match": "&stack0xfffff374",
-      "text": "((CPickList *)&stack0xfffff374,0,in_stack_fffff404,in_stack_fffff408,",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 471,
-      "match": "in_stack_fffff40c",
-      "text": "in_stack_fffff40c,in_stack_fffff410,in_stack_fffff414);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 471,
-      "match": "in_stack_fffff410",
-      "text": "in_stack_fffff40c,in_stack_fffff410,in_stack_fffff414);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 471,
-      "match": "in_stack_fffff414",
-      "text": "in_stack_fffff40c,in_stack_fffff410,in_stack_fffff414);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 473,
-      "match": "in_stack_fffff3f8",
-      "text": "in_stack_fffff3f8 = 0x582260;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 474,
-      "match": "in_stack_fffff3fc",
-      "text": "in_stack_fffff3fc = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 493,
-      "match": "in_stack_fffff3fc",
-      "text": "in_stack_fffff3fc = (CKeys *)0x582465;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 497,
-      "match": "in_stack_fffff404",
-      "text": "in_stack_fffff404 = 0x58247e;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 499,
-      "match": "in_stack_fffff408",
-      "text": "in_stack_fffff408 = 0x582486;",
-      "type": "stack_param"
     }
   ]
 }

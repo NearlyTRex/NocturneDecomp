@@ -277,7 +277,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0053bc11
     PUSH EAX                            ; 0053bc15
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0053bc16
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0053bc1b
     ADD ESP,0x438                       ; 0053bc1e
     POP EBP                             ; 0053bc24

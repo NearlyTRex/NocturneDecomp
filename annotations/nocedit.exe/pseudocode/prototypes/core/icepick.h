@@ -93,4 +93,4 @@ void __cdecl CIcePick::writeDependencies(CIcePick *this_ptr,_FILE *file_handle);
 
 // Original: core_icepick.cpp_CIcePick_dtor_FUN_004f97e0
 // Address: 004f97e0
-CIcePick * __cdecl CIcePick::dtor(CIcePick *this_ptr,uint d1,uint d2);
+CIcePick * __cdecl CIcePick::dtor(CIcePick *this_ptr,uint flags);

@@ -1,19 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *n1,CGame *n2)
+; __cdecl void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *this_ptr)
 ;
 ; Parameters:
-; CGame *          Stack[0x4]:4   n1
-; CGame *          Stack[0x8]:4   n2
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[26]:
 ;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043c903
 ;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d5d6
 ;   core_course.cpp_FUN_00443bc0 at 00443c0b
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cc04
+;   core_game.cpp_CGame_FUN_004e2910 at 004e2ebe
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3bd8
-;   core_game.cpp_CGame_openSomething_FUN_004e2910 at 004e2ebe
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3685
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e4156
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db64a

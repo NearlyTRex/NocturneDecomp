@@ -10,6 +10,6 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052b330(CMorphModel *this_ptr)
 
 {
   core_morph_cpp_CMorphModel_FUN_0052b350(this_ptr);
-  core_morph_cpp_freeMorphModels_FUN_0052cd10((CMorphModel **)this_ptr);
+  core_morph_cpp_freeMorphModels_FUN_0052cd10(this_ptr);
   return;
 }

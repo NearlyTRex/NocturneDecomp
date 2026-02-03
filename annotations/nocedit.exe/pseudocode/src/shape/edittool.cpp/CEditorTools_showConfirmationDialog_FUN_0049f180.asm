@@ -96,7 +96,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0049f221
     PUSH EAX                            ; 0049f225
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 0049f226
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
         ;   Label: LAB_0049f226
     ADD ESP,0x8                         ; 0049f22b
     MOV EAX,EBX                         ; 0049f22e
@@ -123,7 +123,7 @@ section .text
     PUSH EAX                            ; 0049f256
     MOV EBX,0xffffffff                  ; 0049f257
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 0049f25c
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049f261
     MOV EAX,EBX                         ; 0049f264
     ADD ESP,0x14                        ; 0049f266

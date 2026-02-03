@@ -33,7 +33,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
   int local_388;
   SIZE_T local_384;
   int local_380;
-  uint local_378;
+  int local_378;
   byte local_370 [4];
   char local_36c [256];
   int local_26c;
@@ -41,7 +41,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
   byte local_160 [8];
   char local_158 [80];
   int local_108;
-  uint local_104;
+  int local_104;
   int local_100;
   char local_fc [80];
   char local_ac [64];

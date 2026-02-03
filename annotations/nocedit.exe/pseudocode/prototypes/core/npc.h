@@ -5,7 +5,7 @@
 
 // Original: core_npc.cpp_CNPC_dtor_FUN_004f4700
 // Address: 004f4700
-CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9);
+CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);
 
 // Original: core_npc.cpp_staticInit_FUN_00544770
 // Address: 00544770

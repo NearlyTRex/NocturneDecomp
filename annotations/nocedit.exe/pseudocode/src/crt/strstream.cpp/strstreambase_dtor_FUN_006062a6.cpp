@@ -2,12 +2,12 @@
 // Address: 006062a6
 // Address Range: [[006062a6, 0060632b]]
 // Convention: __cdecl
-// Signature: strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d1,uint d2,uint d3)
+// Signature: strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 strstreambase * __cdecl
-crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d1,uint d2,uint d3)
+crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -15,9 +15,8 @@ crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d
   strstreambuf *psVar3;
   void *ptr;
   ios *piVar4;
-  uint unaff_EBX;
   
-  if ((d1 & 4) == 0) {
+  if ((flags & 4) == 0) {
     iVar1 = ((this_ptr->_strstreambase_core).layout_info)->offset_to_vbase;
     *(int *)(this_ptr->padding + iVar1 + -0x48) = iVar1;
     pWVar2 = (this_ptr->_strstreambase_core).layout_info;
@@ -27,12 +26,11 @@ crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d
     psVar3 = crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f
                        (&(this_ptr->_strstreambase_core)._strstreambuf,0);
     this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;
-    if ((d1 & 1) == 0) {
-      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c
-                         ((ios *)&psVar3[1]._streambuf.__get_base,1,unaff_EBX);
+    if ((flags & 1) == 0) {
+      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c((ios *)&psVar3[1]._streambuf.__get_base,1);
       this_ptr = (strstreambase *)&piVar4[-2].__error_state;
     }
-    if ((d1 & 2) == 0) {
+    if ((flags & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

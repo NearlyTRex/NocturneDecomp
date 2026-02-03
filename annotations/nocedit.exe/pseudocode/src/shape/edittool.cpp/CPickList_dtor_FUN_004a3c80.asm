@@ -1,16 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80 (CPickList *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6)
+; __cdecl CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(CPickList *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
-; uint             Stack[0x18]:4   d5
-; uint             Stack[0x1c]:4   d6
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[73]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f426
@@ -75,7 +70,7 @@ section .text
     LEA EBX,[EAX + 0xfffffe5c]          ; 004a3ccd
     PUSH EBX                            ; 004a3cd3
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004a3cd4
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a3cd9
     MOV DL,byte ptr [ESP + 0xc]         ; 004a3cdc
     MOV EBX,EAX                         ; 004a3ce0

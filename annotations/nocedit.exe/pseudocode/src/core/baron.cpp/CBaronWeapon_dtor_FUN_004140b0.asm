@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint d1,uint d2)
+; __cdecl CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBaronWeaponTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004140bc
     PUSH EBX                            ; 004140be
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 004140bf
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004140c4
     MOV DL,byte ptr [ESP + 0xc]         ; 004140c7
     MOV EBX,EAX                         ; 004140cb

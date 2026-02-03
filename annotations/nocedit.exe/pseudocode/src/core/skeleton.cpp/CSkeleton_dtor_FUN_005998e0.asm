@@ -29,7 +29,7 @@ section .text
     ADD EBX,0x2937c                     ; 005998fa
     PUSH EBX                            ; 00599900
     CALL core_curtain.cpp_freeVectors_FUN_0044baf0 ; 00599901
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * * array)
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * objs)
     ADD ESP,0x8                         ; 00599906
     SUB EAX,0x2937c                     ; 00599909
     POP EBX                             ; 0059990e

@@ -31,7 +31,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac2bc
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 005065b6
-;   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 at 005eedc3
+;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eedc3
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

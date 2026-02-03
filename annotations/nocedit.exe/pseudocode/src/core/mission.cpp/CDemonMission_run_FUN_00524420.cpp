@@ -69,6 +69,6 @@ LAB_005244ee:
   if (g_CGamePtr->unk12 == 0) {
     return;
   }
-  core_game_cpp_CGame_finishAct_FUN_004e3b90();
+  core_game_cpp_CGame_finishAct_FUN_004e3b90(g_CGamePtr);
   return;
 }

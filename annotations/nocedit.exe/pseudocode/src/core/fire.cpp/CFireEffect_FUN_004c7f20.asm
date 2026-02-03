@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_elephant.cpp_FUN_004a79f0 at 004a7b64
+;   core_elephant.cpp_CElephantGun_FUN_004a79f0 at 004a7b64
 ;   core_lightgun.cpp_CLightGun_FUN_005066b0 at 0050684a
 ;   core_shotgun.cpp_FUN_005888f0 at 00588a64
 ;

@@ -28,7 +28,7 @@ core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0
             (property_list,"Stone blue",&this_ptr->stone_blue,
              (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Home waypoint",this_ptr->unk2,1,"CWayPoint",
+            (property_list,"Home waypoint",&this_ptr->home_base,1,"CWayPoint",
              (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   return;
 }

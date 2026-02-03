@@ -2,13 +2,15 @@
 // Address: 0051f0c0
 // Address Range: [[0051f0c0, 0051f0d7]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array)
+// Signature: CLodFace * __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace *objs)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array)
+CLodFace * __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace *objs)
 
 {
-  __arrfini(array,200,&g_LodFaceTypeInfo);
-  return;
+  CLodFace *pCVar1;
+  
+  pCVar1 = __arrfini(objs,200,&g_LodFaceTypeInfo);
+  return pCVar1;
 }

@@ -17,11 +17,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   char *pcVar5;
   char *pcVar6;
   int iVar7;
-  uint in_stack_fffff824;
-  uint in_stack_fffff828;
-  char **in_stack_fffff82c;
-  CStrList_vtable *in_stack_fffff830;
-  uint in_stack_fffff834;
+  CPickList local_7dc;
   CFileFinder local_434;
   char local_320 [260];
   char local_21c [256];
@@ -226,16 +222,13 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       }
     }
     else if (uVar2 < 0x49) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff824);
-      core_msnedit_cpp_FUN_00537330((CStrList *)&stack0xfffff824,0,0);
-      shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff824,1);
-      shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90
-                ((CPickList *)&stack0xfffff824,(char *)0x0);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_7dc);
+      core_msnedit_cpp_FUN_00537330(&local_7dc.base,0,0);
+      shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_7dc,1);
+      shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&local_7dc,(char *)0x0);
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                ((CPickList *)&stack0xfffff824,"Actor class heirarchy.",-1,0);
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff824,0,in_stack_fffff824,in_stack_fffff828,
-                 (uint)in_stack_fffff82c,(uint)in_stack_fffff830,in_stack_fffff834);
+                (&local_7dc,"Actor class heirarchy.",-1,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_7dc,0);
     }
     else if (uVar2 < 0x55) {
       if (uVar2 == 0x53) {

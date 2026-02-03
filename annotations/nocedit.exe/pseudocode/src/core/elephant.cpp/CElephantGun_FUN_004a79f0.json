@@ -1,0 +1,369 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 32,
+        "message": "'void*' is not a pointer-to-object type"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 88,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 63,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 233
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a79f0",
+    "address_range": [
+      [
+        "004a79f0",
+        "004a7bd2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_elephant.cpp_CElephantGun_FUN_004a79f0",
+    "signature": "void __cdecl core_elephant_cpp_CElephantGun_FUN_004a79f0(CElephantGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408e80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "004c7f20",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7f20"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062403a",
+      "name": "DOUBLE_0062403a",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00624042",
+      "name": "DOUBLE_00624042",
+      "type": "double",
+      "value": "0.00555555555555555"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.630573248407643,
+    "instruction_count": 157,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 487,
+      "FLOAT2FLOAT": 43,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 11,
+      "FLOAT_NAN": 2,
+      "FLOAT_NEG": 3,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 76,
+      "INT_AND": 31,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 27,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 49
+    },
+    "pcode_op_count": 884
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CElephantGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a79f8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "SQRT",
+      "text": "SQRT((fStack_24 - aCStack_68[0].z) * (fStack_24 - aCStack_68[0].z) +",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 260,
+        "vtable_addr": "0065d534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

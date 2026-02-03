@@ -33,7 +33,6 @@ void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *par
   uint uVar11;
   SRenderVertex *output;
   CVector3f *input;
-  CGame *in_stack_fffffed4;
   byte local_cc [16];
   float local_bc;
   float local_b8;
@@ -71,7 +70,7 @@ void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *par
   local_24 = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_cc);
   local_cc._8_4_ = (float)local_cc._8_4_ + -100.0f;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffed4);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   while( true ) {
     local_b0[0].x = 0.0;
     local_b0[0].y = 0.0;

@@ -17,7 +17,7 @@ char * __cdecl getLocalizedString(char *key);
 
 // Original: support_newmsg.cpp_decryptMessage_FUN_00544270
 // Address: 00544270
-char * __cdecl decryptMessage(SEncryptedMessage *encrypted_msg);
+char * __cdecl decryptMessage(char *encrypted_msg);
 
 // Original: support_newmsg.cpp_staticInit_FUN_00544360
 // Address: 00544360
@@ -57,8 +57,8 @@ void __cdecl FUN_005445c0(void);
 
 // Original: support_newmsg.cpp_freeBitmap_FUN_00544730
 // Address: 00544730
-void __cdecl freeBitmap(CAlphaBitmap **objs);
+CAlphaBitmap * __cdecl freeBitmap(CAlphaBitmap *objs);
 
 // Original: support_newmsg.cpp_freeSkullBitmaps_FUN_00544750
 // Address: 00544750
-void __cdecl freeSkullBitmaps(CAlphaBitmap *bitmap);
+CAlphaBitmap * __cdecl freeSkullBitmaps(CAlphaBitmap *objs);

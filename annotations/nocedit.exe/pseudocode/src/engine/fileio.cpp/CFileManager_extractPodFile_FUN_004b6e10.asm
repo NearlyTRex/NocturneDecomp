@@ -404,7 +404,7 @@ section .text
     LEA EAX,[ESP + 0xe58]               ; 004b71ea
     PUSH EAX                            ; 004b71f1
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004b71f2
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b71f7
     PUSH 0x0                            ; 004b71fa
         ;   Label: LAB_004b71fa

@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40 (CDeformableModelInstance *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40 (CDeformableModelInstance *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[39]:
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 00412569
@@ -54,13 +51,13 @@ section .text
     ADD EBX,0x58                        ; 0059de5e
     PUSH EBX                            ; 0059de61
     CALL core_curtain.cpp_freeVectors_FUN_0044baf0 ; 0059de62
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * * array)
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * objs)
     ADD ESP,0x8                         ; 0059de67
     PUSH 0x1                            ; 0059de6a
     LEA EBX,[EAX + -0x58]               ; 0059de6c
     PUSH EBX                            ; 0059de6f
     CALL core_motion.cpp_CMotionController_dtor_FUN_0052d5a0 ; 0059de70
-        ;   XREF to: 0052d5a0 (UNCONDITIONAL_CALL)  ; CMotionController * core_motion.cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController * this_ptr, uint d1)
+        ;   XREF to: 0052d5a0 (UNCONDITIONAL_CALL)  ; CMotionController * core_motion.cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0059de75
     MOV DL,byte ptr [ESP + 0xc]         ; 0059de78
     MOV EBX,EAX                         ; 0059de7c

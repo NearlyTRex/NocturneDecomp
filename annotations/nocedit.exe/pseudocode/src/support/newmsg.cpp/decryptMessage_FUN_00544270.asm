@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(SEncryptedMessage *encrypted_msg)
+; __cdecl char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(char *encrypted_msg)
 ;
 ; Parameters:
-; SEncryptedMessage * Stack[0x4]:4   encrypted_msg
+; char *           Stack[0x4]:4   encrypted_msg
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

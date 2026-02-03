@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
+; __cdecl void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x550]:4  local_550
 ; undefined1       Stack[-0x54c]:1  local_54c
@@ -90,7 +92,7 @@ section .text
     PUSH EDX                            ; 004e3bd5
     MOV ESI,EAX                         ; 004e3bd6
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004e3bd8
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV ECX,0x40a00000                  ; 004e3bdd
     ADD ESP,0x4                         ; 004e3be2
     MOV dword ptr [ESP],ECX             ; 004e3be5

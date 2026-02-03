@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 005eead0
 CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 
-// Original: core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0
+// Original: core_weather.cpp_CWeather_FUN_005eeaf0
 // Address: 005eeaf0
-void __cdecl CWeather::SomethingWithLightingThunder(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
 // Address: 005eeeb0

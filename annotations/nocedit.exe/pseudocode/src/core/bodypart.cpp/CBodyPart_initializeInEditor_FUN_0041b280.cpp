@@ -15,12 +15,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   char *pcVar4;
   SPart *pSVar5;
   int iVar6;
-  CMotionList *in_stack_ffffd7c0;
-  uint in_stack_ffffd7c4;
-  uint in_stack_ffffd7c8;
-  uint in_stack_ffffd7cc;
-  float in_stack_ffffd7d0;
-  uint auStack_700 [93];
+  CDeformableModelInstance local_2840;
   CPickList local_58c;
   char local_1e4 [260];
   char local_e0 [200];
@@ -33,20 +28,16 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   if (iVar2 == 0) {
     return 0;
   }
-  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-            ((CDeformableModelInstance *)&stack0xffffd7c0);
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            ((CDeformableModelInstance *)&stack0xffffd7c0,local_1e4);
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
-            ((CDeformableModelInstance *)&stack0xffffd7c0);
-  local_14 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                       ((CDeformableModelInstance *)&stack0xffffd7c0);
+  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&local_2840);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(&local_2840,local_1e4);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&local_2840);
+  local_14 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&local_2840);
   iVar2 = local_14->num_parts;
   if (0 < iVar2) {
     iVar6 = 0;
     do {
       iVar3 = iVar6 + 4;
-      *(uint *)((int)auStack_700 + iVar6) = 0;
+      *(uint *)((int)local_2840.part_visibility_flags + iVar6) = 0;
       iVar6 = iVar3;
     } while (iVar3 < iVar2 * 4);
   }
@@ -59,7 +50,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
       iVar3 = 0;
       do {
         pcVar4 = "No";
-        if (*(int *)((int)auStack_700 + iVar3) != 0) {
+        if (*(int *)((int)local_2840.part_visibility_flags + iVar3) != 0) {
           pcVar4 = "Yes";
           bVar1 = true;
         }
@@ -78,36 +69,27 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
     if (local_18 < 0) break;
     if ((bVar1) && (local_18 == local_58c.base.item_count + -1)) {
       iVar6 = 0;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
-                 in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_58c,0);
       if (0 < iVar2) {
         iVar3 = 0;
         do {
-          if (*(int *)((int)auStack_700 + iVar3) != 0) {
+          if (*(int *)((int)local_2840.part_visibility_flags + iVar3) != 0) {
             core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
-                      ((CDeformableModelInstance *)&stack0xffffd7c0,this_ptr,iVar6);
+                      (&local_2840,this_ptr,iVar6);
           }
           iVar6 = iVar6 + 1;
           iVar3 = iVar3 + 4;
         } while (iVar6 < iVar2);
       }
       core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
-      core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                ((CDeformableModelInstance *)&stack0xffffd7c0,0,(uint)in_stack_ffffd7c0,
-                 in_stack_ffffd7c4,in_stack_ffffd7c8);
+      core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(&local_2840,0);
       return 1;
     }
-    auStack_700[local_18] = (uint)(auStack_700[local_18] == 0);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
-               in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
+    local_2840.part_visibility_flags[local_18] =
+         (uint)(local_2840.part_visibility_flags[local_18] == 0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_58c,0);
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_58c,0,(uint)in_stack_ffffd7c0,in_stack_ffffd7c4,in_stack_ffffd7c8,
-             in_stack_ffffd7cc,(uint)in_stack_ffffd7d0);
-  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-            ((CDeformableModelInstance *)&stack0xffffd7c0,0,(uint)in_stack_ffffd7c0,
-             in_stack_ffffd7c4,in_stack_ffffd7c8);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_58c,0);
+  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(&local_2840,0);
   return 0;
 }

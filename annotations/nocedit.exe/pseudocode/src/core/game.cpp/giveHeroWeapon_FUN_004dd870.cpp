@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_game.cpp_giveHeroWeapon(uint sActorClassName) */
-
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
 
 {

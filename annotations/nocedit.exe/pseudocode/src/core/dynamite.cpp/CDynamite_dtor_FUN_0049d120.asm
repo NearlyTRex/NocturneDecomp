@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *this_ptr,uint d1,uint d2)
+; __cdecl CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDynamite *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDynamiteTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0049d12c
     PUSH EBX                            ; 0049d12e
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 0049d12f
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049d134
     MOV DL,byte ptr [ESP + 0xc]         ; 0049d137
     MOV EBX,EAX                         ; 0049d13b

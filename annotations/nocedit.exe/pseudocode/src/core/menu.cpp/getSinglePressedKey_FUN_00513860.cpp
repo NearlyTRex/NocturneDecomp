@@ -14,7 +14,7 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void)
   int iVar2;
   
   if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
-    core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+    core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
   }
   iVar1 = 0;
   iVar2 = -1;

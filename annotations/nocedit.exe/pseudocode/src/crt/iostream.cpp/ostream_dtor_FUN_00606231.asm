@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint d1,uint d2)
+; __cdecl ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags)
 ;
 ; Parameters:
 ; ostream *        Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc at 005ff7f4
@@ -72,7 +71,7 @@ section .text
     ADD EBX,0xc                         ; 0060628d
     PUSH EBX                            ; 00606290
     CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 00606291
-        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
+        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00606296
     LEA EBX,[EAX + -0xc]                ; 00606299
     JMP 0x00606265                      ; 0060629c

@@ -9,7 +9,7 @@ CWinFont * __cdecl CWinFont::ctor(CWinFont *this_ptr,char *font_name,int font_he
 
 // Original: engine_winfont.cpp_CWinFont_dtor_FUN_005f2390
 // Address: 005f2390
-CWinFont * __cdecl CWinFont::dtor(CWinFont *this_ptr,uint d1,uint d2,uint d3);
+CWinFont * __cdecl CWinFont::dtor(CWinFont *this_ptr,uint flags);
 
 // Original: engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0
 // Address: 005f23f0

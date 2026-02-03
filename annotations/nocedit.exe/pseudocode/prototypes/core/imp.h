@@ -69,4 +69,4 @@ void __cdecl CImp::writeDependencies(CImp *this_ptr,_FILE *file_handle);
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004fb180
 // Address: 004fb180
-CImp * __cdecl CImp::dtor(CImp *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CImp * __cdecl CImp::dtor(CImp *this_ptr,uint flags);

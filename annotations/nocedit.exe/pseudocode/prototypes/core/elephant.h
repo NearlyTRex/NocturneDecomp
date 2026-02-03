@@ -19,26 +19,26 @@ CDemonActorType * __cdecl CElephantGun::getActorType(CElephantGun *this_ptr);
 // Address: 004a6fe0
 CElephantGun * __cdecl CElephantGun::ctor(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_CElephantGun_FUN_004a7070
+// Original: core_elephant.cpp_CElephantGun_process_FUN_004a7070
 // Address: 004a7070
-void __cdecl CElephantGun(CElephantGun *this_ptr,float delta_time);
+void __cdecl CElephantGun::process(CElephantGun *this_ptr,float delta_time);
 
-// Original: core_elephant.cpp_FUN_004a7160
+// Original: core_elephant.cpp_CElephantGun_fire_FUN_004a7160
 // Address: 004a7160
-int __cdecl FUN_004a7160(void);
+int __cdecl CElephantGun::fire(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_004a78a0
+// Original: core_elephant.cpp_CElephantGun_FUN_004a78a0
 // Address: 004a78a0
-void __cdecl FUN_004a78a0(void);
+void __cdecl CElephantGun(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_004a79b0
+// Original: core_elephant.cpp_CElephantGun_FUN_004a79b0
 // Address: 004a79b0
-float __cdecl FUN_004a79b0(void);
+float __cdecl CElephantGun(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_004a79f0
+// Original: core_elephant.cpp_CElephantGun_FUN_004a79f0
 // Address: 004a79f0
-void __cdecl FUN_004a79f0(void);
+void __cdecl CElephantGun(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_dtor_FUN_004a7be0
+// Original: core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0
 // Address: 004a7be0
-void * __cdecl dtor(CElephantGun *this_ptr,uint d1,uint d2);
+void * __cdecl CElephantGun::dtor(CElephantGun *this_ptr,uint flags);

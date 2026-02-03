@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_water_cpp_CWater_process_FUN_005e9ed0(void)
+; __cdecl void __cdecl core_water_cpp_CWater_process_FUN_005e9ed0(CWater *this_ptr)
 ;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3428

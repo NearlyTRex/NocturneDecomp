@@ -21,6 +21,9 @@ CEditorTools g_CEditorToolsInstance = {};
 // CEditorTools*
 CEditorTools* g_CUserInterfacePtr = {};
 
+// CVector3f
+CVector3f CVector3f_02cf2b60 = {};
+
 // HWND
 HWND g_DialogParentWindow = {};
 
@@ -80,6 +83,7 @@ int g_DragStartMouseX = {};
 int g_DragStartMouseY = {};
 int g_DragStartScrollPos = {};
 int g_DragStartThumbPos = {};
+int INT_02cf2b5c = {};
 int g_GlobalDeltaTimeInt = {};
 int g_AnimationTimerValue = {};
 int g_MouseX = {};
@@ -97,10 +101,6 @@ uint* g_ZBufferScanlineArray[1200] = {};
 // undefined4
 undefined4 DAT_02cf2a78 = {};
 undefined4 DAT_02cf2aac = {};
-undefined4 DAT_02cf2b5c = {};
-undefined4 DAT_02cf2b60 = {};
-undefined4 DAT_02cf2b64 = {};
-undefined4 DAT_02cf2b68 = {};
 undefined4 DAT_02cf2b6c = {};
 undefined4 DAT_02cf2b70 = {};
 undefined4 DAT_02cf2b74 = {};

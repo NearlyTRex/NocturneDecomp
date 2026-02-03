@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint d1)
+; __cdecl CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCameraView *    Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090 at 0044c0af

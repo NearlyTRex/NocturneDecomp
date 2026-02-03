@@ -2,23 +2,23 @@
 // Address: 004a2a40
 // Address Range: [[004a2a40, 004a2a8e]]
 // Convention: __cdecl
-// Signature: CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint d1,uint d2)
+// Signature: CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint d1,uint d2)
+CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags)
 
 {
   void *ptr;
   
-  if ((d1 & 4) != 0) {
+  if ((flags & 4) != 0) {
     ptr = __vec_delete(this_ptr,&g_CStrListTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
   this_ptr->vtable = &g_CStrListVTable;
   shape_edittool_cpp_CStrList_clear_FUN_004a2b10(this_ptr);
-  if ((d1 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return this_ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

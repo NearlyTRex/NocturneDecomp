@@ -18,7 +18,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
   CGlass *pCVar6;
   int extraout_EAX;
   float fVar7;
-  CDemonActor *pCVar8;
+  CFlameCan *this_ptr_00;
   int extraout_EAX_00;
   CDemonActor *unaff_retaddr;
   CCharacter *in_stack_fffffd6c;
@@ -209,17 +209,18 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
       pCStack_14 = (CDemonActor *)CStack_34.x;
       CStack_34.y = (float)core_actor_cpp_castToClassHash_FUN_0040c790
                                      (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
-      pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
+      this_ptr_00 = (CFlameCan *)
+                    core_actor_cpp_castToClassHash_FUN_0040c790
+                              (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
       pCVar5 = pCStack_14;
       if (pCVar3 == (CCharacter *)0x0) {
         if (pCVar6 == (CGlass *)0x0) {
           if (pCStack_14 == (CDemonActor *)0x0) {
             if ((CDemonActor *)CStack_34.y == (CDemonActor *)0x0) {
-              if (pCVar8 == (CDemonActor *)0x0) {
+              if (this_ptr_00 == (CFlameCan *)0x0) {
                 return 0;
               }
-              core_flamecan_cpp_FUN_004cb340();
+              core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_00);
             }
             else {
               core_crate_cpp_FUN_00448a70();

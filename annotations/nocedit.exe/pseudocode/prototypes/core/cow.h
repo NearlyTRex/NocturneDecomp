@@ -27,9 +27,9 @@ void __cdecl FUN_004441b0(void);
 // Address: 00444310
 void __cdecl CZombieCow::process(CZombieCow *this_ptr,float delta_time);
 
-// Original: core_cow.cpp_CZombieCow_load_FUN_00444840
+// Original: core_cow.cpp_CZombieCow_archive_FUN_00444840
 // Address: 00444840
-void __cdecl CZombieCow::load(void);
+void __cdecl CZombieCow::archive(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_FUN_004448c0
 // Address: 004448c0

@@ -62,7 +62,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 004a138b
     PUSH EDX                            ; 004a138f
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 004a1390
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     MOV [0x02d02570],EAX                ; 004a1395 | g_ActiveRenderColor
     MOV EAX,[0x02cf2670]                ; 004a139a | g_MouseCursorType
     ADD ESP,0x4                         ; 004a139f

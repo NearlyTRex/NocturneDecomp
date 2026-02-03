@@ -83,10 +83,10 @@ SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);
 // Address: 00522c00
 SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr);
 
-// Original: core_mirror.cpp_freeClipPlaneArray_FUN_00522c10
+// Original: core_mirror.cpp_freeClipPlanes_FUN_00522c10
 // Address: 00522c10
-void __cdecl freeClipPlaneArray(SClipPlane **array_ptr);
+SClipPlane * __cdecl freeClipPlanes(SClipPlane *objs);
 
-// Original: core_mirror.cpp_freeVectorArray32_FUN_00522c30
+// Original: core_mirror.cpp_freeVectors_FUN_00522c30
 // Address: 00522c30
-void __cdecl freeVectorArray32(CVector3f **array_ptr);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

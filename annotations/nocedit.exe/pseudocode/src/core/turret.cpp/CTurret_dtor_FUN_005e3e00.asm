@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005e3e00(CTurret *this_ptr,uint d1,uint d2)
+; __cdecl CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005e3e00(CTurret *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTurretTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005e3e0c
     PUSH EBX                            ; 005e3e0e
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 005e3e0f
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005e3e14
     MOV DL,byte ptr [ESP + 0xc]         ; 005e3e17
     MOV EBX,EAX                         ; 005e3e1b

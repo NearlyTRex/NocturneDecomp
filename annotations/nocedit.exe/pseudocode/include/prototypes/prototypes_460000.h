@@ -139,7 +139,7 @@ void __cdecl core_dest_cpp_FUN_0046f9b0(void);
 int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void);
 int __cdecl core_dest_cpp_FUN_0046fcc0(void);
 int __cdecl core_dest_cpp_FUN_0046fd50(void);
-void __cdecl core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void);
+void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0046fdb0(CActorDestination *this_ptr);
 int __cdecl core_dest_cpp_FUN_0046fe70(void);
 void __cdecl core_dest_cpp_FUN_0046fe80(void);
 CActorDestination * __cdecl core_dest_cpp_FUN_0046ff00(CActorDestination *this_ptr,uint d1,uint d2);

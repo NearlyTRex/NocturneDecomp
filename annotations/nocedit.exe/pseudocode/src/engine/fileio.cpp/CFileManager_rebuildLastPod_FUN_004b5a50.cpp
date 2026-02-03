@@ -29,15 +29,8 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   int *piVar15;
   CPodAuditRecord *pCVar16;
   byte bVar17;
-  uint in_stack_ffffe7c8;
-  uint in_stack_ffffe7cc;
-  uint in_stack_ffffe7d0;
-  uint in_stack_ffffe7d4;
-  uint in_stack_ffffe7d8;
-  uint in_stack_ffffe7dc;
-  uint local_1428;
-  CPodDirectoryEntry *local_1424;
-  char *local_141c;
+  int in_stack_ffffe7c8;
+  byte auStack_1834 [1064];
   byte local_140c [940];
   byte auStack_1060 [933];
   char local_cbb [515];
@@ -171,8 +164,8 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                         ((CPodFile *)&stack0xffffe7c8,local_290);
       if (iVar2 != 0) {
         iVar2 = 0;
-        local_6c = local_141c;
-        if (0 < (int)local_141c) {
+        local_6c = (char *)auStack_1834._1048_4_;
+        if (0 < (int)auStack_1834._1048_4_) {
           do {
             engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
                       ((CPodFile *)&stack0xffffe7c8,iVar2,local_500);
@@ -216,25 +209,25 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             } while (cVar1 != '\0');
           } while (iVar2 < (int)local_6c);
         }
-        if ((int)in_stack_ffffe7c8 < 2) {
+        if (in_stack_ffffe7c8 < 2) {
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Upgrading version 1 Pod...Computing individual file CRCs");
           iVar2 = 0;
-          if (0 < (int)local_1428) {
+          if (0 < (int)auStack_1834._1036_4_) {
             iVar7 = 0;
             do {
               uVar3 = engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0
                                 ((CPodFile *)&stack0xffffe7c8,iVar2);
-              *(uint *)((int)&local_1424->checksum + iVar7) = uVar3;
+              *(uint *)((int)(auStack_1834._1040_4_ + 0x10) + iVar7) = uVar3;
               iVar2 = iVar2 + 1;
               iVar7 = iVar7 + 0x14;
-            } while (iVar2 < (int)local_1428);
+            } while (iVar2 < (int)auStack_1834._1036_4_);
           }
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Generating audit records for deleted files...");
         local_40 = 0;
-        if (0 < (int)local_1428) {
+        if (0 < (int)auStack_1834._1036_4_) {
           local_64 = this_ptr->file_entries;
           local_2c = 0;
           do {
@@ -244,7 +237,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             if (0 < this_ptr->tracked_file_count) {
               do {
                 iVar5 = stricmp
-                                  (*(char **)((int)&local_1424->name_or_offset + iVar2),*pacVar8);
+                                  (*(char **)((int)(uint *)auStack_1834._1040_4_ + iVar2),*pacVar8);
                 if (iVar5 == 0) break;
                 iVar7 = iVar7 + 1;
                 pacVar8 = pacVar8 + 1;
@@ -253,7 +246,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             if (this_ptr->tracked_file_count <= iVar7) {
               pcVar14 = g_CurrentFilenameBuffer;
               iVar2 = 0x4e;
-              pcVar13 = *(char **)((int)&local_1424->name_or_offset + local_2c);
+              pcVar13 = *(char **)((int)(uint *)auStack_1834._1040_4_ + local_2c);
               g_AuditOperationType = 1;
               do {
                 cVar1 = *pcVar13;
@@ -266,8 +259,8 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               } while (cVar1 != '\0');
               g_CurrentFileOffset = 0;
               g_CurrentFileCompressedSize = 0;
-              g_CurrentFileTimestamp = *(int *)((int)&local_1424->timestamp + local_2c);
-              g_CurrentFileSize = *(int *)((int)&local_1424->size + local_2c);
+              g_CurrentFileTimestamp = *(int *)((int)(auStack_1834._1040_4_ + 0xc) + local_2c);
+              g_CurrentFileSize = *(int *)((int)(auStack_1834._1040_4_ + 4) + local_2c);
               piVar12 = (int *)g_WorkingDirectoryPath;
               piVar15 = local_8a8;
               for (; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -309,7 +302,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             }
             local_2c = local_2c + 0x14;
             local_40 = local_40 + 1;
-          } while (local_40 < (int)local_1428);
+          } while (local_40 < (int)auStack_1834._1036_4_);
         }
       }
       local_58 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
@@ -518,9 +511,12 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                   pcVar13 = pcVar13 + 2;
                 } while (cVar1 != '\0');
               }
-              else if (pSVar9[4] != local_1424[iVar2].checksum) {
-                g_CurrentFileTimestamp = local_1424[iVar2].timestamp;
-                g_CurrentFileSize = local_1424[iVar2].size;
+              else if (pSVar9[4] !=
+                       ((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->checksum) {
+                g_CurrentFileTimestamp =
+                     ((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->timestamp;
+                g_CurrentFileSize =
+                     ((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->size;
                 g_AuditOperationType = 2;
                 piVar12 = (int *)g_WorkingDirectoryPath;
                 piVar15 = local_770;
@@ -622,21 +618,15 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             }
             else {
               if (iVar2 != 2) {
-                shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          ((CPickList *)auStack_1060,0,in_stack_ffffe7cc,in_stack_ffffe7d0,
-                           in_stack_ffffe7d4,in_stack_ffffe7d8,in_stack_ffffe7dc);
-                shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          ((CPickList *)(local_140c + 4),0,in_stack_ffffe7cc,in_stack_ffffe7d0,
-                           in_stack_ffffe7d4,in_stack_ffffe7d8,in_stack_ffffe7dc);
-                engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffe7cc);
+                shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_1060,0);
+                shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_140c + 4),0);
+                engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)auStack_1834);
                 return;
               }
               engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90
                         ((CFileManager *)pod_filename,local_290 + 4);
             }
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)auStack_1060,0,in_stack_ffffe7cc,in_stack_ffffe7d0,
-                       in_stack_ffffe7d4,in_stack_ffffe7d8,in_stack_ffffe7dc);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_1060,0);
           } while( true );
         }
         pcVar13 = "Can't create %s";
@@ -664,9 +654,7 @@ LAB_004b629d:
       if (local_58 != (SIZE_T *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_58,"..\\engine\\fileio.cpp",0x85d);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)local_140c,0,in_stack_ffffe7c8,in_stack_ffffe7cc,in_stack_ffffe7d0,
-                 in_stack_ffffe7d4,in_stack_ffffe7d8);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_140c,0);
       engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffe7c8);
       return;
     }

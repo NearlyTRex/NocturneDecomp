@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 0053cb87
     MOV EBX,0x1                         ; 0053cb88
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0053cb8d
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
         ;   Label: LAB_0053cb8d
     ADD ESP,0x8                         ; 0053cb92
     MOV EAX,EBX                         ; 0053cb95

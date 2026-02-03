@@ -25,7 +25,6 @@ engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
   CCheckOutItem *pCVar11;
   byte bVar12;
   char *pcVar13;
-  uint in_stack_fffff970;
   CCheckOutItem local_4a8;
   char local_340 [8];
   char acStack_338 [252];
@@ -313,6 +312,6 @@ LAB_004baa7f:
     engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
     (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
   }
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0,in_stack_fffff970);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0);
   return 1;
 }

@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Can_t_find_closing_paren_00641547
 ;
 ; Called Functions:
-;   core_script.cpp_skipWhitespaceFUN_005593d0
+;   core_script.cpp_skipWhitespace_FUN_005593d0
 ;   core_script.cpp_trimString_FUN_00559360
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 005593f8
     MOV EDX,dword ptr [EBX]             ; 005593fc
     PUSH EDX                            ; 005593fe
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 005593ff
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 005593ff
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     MOV dword ptr [EBX],EAX             ; 00559404
     MOV DL,byte ptr [EAX]               ; 00559406
     ADD ESP,0x4                         ; 00559408
@@ -112,8 +112,8 @@ section .text
     ADD ESP,0x4                         ; 0055947a
     MOV EBP,dword ptr [EBX]             ; 0055947d
     PUSH EBP                            ; 0055947f
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 00559480
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 00559480
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 00559485
     MOV dword ptr [EBX],EAX             ; 00559488
     XOR EAX,EAX                         ; 0055948a

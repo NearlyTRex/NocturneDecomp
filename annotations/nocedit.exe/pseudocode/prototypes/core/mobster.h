@@ -105,4 +105,4 @@ void __cdecl CMobster::writeDependencies(CMobster *this_ptr,_FILE *file_handle);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_00527c70
 // Address: 00527c70
-CMobster * __cdecl CMobster::dtor(CMobster *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CMobster * __cdecl CMobster::dtor(CMobster *this_ptr,uint flags);

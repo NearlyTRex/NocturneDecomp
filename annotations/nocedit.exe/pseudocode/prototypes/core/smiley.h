@@ -31,9 +31,9 @@ void __cdecl FUN_005a2800(void);
 // Address: 005a3160
 int __cdecl FUN_005a3160(void);
 
-// Original: core_smiley.cpp_CSmiley_load_FUN_005a3220
+// Original: core_smiley.cpp_CSmiley_archive_FUN_005a3220
 // Address: 005a3220
-void __cdecl CSmiley::load(void);
+void __cdecl CSmiley::archive(CSmiley *this_ptr);
 
 // Original: core_smiley.cpp_FUN_005a3280
 // Address: 005a3280
@@ -65,4 +65,4 @@ void __cdecl FUN_005a3850(void);
 
 // Original: core_smiley.cpp_CSmiley_dtor_FUN_005a3880
 // Address: 005a3880
-CSmiley * __cdecl CSmiley::dtor(CSmiley *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CSmiley * __cdecl CSmiley::dtor(CSmiley *this_ptr,uint flags);

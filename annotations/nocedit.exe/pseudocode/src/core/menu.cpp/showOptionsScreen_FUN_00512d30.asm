@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 00512d4e | g_CGameInstance
     MOV EBX,0x2f28a50                   ; 00512d4f | g_OptionsMenuTextBuffers
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00512d54
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 00512d59
     XOR EAX,EAX                         ; 00512d5c
     POP ESI                             ; 00512d5e

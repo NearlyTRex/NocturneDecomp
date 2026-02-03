@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_00551b20(CDemonPod *this_ptr,uint d1,uint d2)
+; __cdecl CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_00551b20(CDemonPod *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonPod *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonPodTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 00551b2c
     PUSH EBX                            ; 00551b2e
     CALL engine_pod.cpp_CPod_dtor_FUN_005509b0 ; 00551b2f
-        ;   XREF to: 005509b0 (UNCONDITIONAL_CALL)  ; CPod * engine_pod.cpp_CPod_dtor_FUN_005509b0(CPod * this_ptr, uint d1, uint d2)
+        ;   XREF to: 005509b0 (UNCONDITIONAL_CALL)  ; CPod * engine_pod.cpp_CPod_dtor_FUN_005509b0(CPod * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00551b34
     MOV DL,byte ptr [ESP + 0xc]         ; 00551b37
     MOV EBX,EAX                         ; 00551b3b

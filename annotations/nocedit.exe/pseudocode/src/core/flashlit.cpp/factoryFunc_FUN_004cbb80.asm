@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_flashlit_cpp_0062a3b4
 ;
 ; Called Functions:
-;   core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0
+;   core_flashlit.cpp_CFlashlight_ctor_FUN_004cbbc0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 004cbb98
     PUSH EAX                            ; 004cbb99
         ;   Label: LAB_004cbb99
-    CALL core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0 ; 004cbb9a
-        ;   XREF to: 004cbbc0 (UNCONDITIONAL_CALL)  ; CFlashlight * core_flamegun.cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight * this_ptr)
+    CALL core_flashlit.cpp_CFlashlight_ctor_FUN_004cbbc0 ; 004cbb9a
+        ;   XREF to: 004cbbc0 (UNCONDITIONAL_CALL)  ; CFlashlight * core_flashlit.cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight * this_ptr)
     ADD ESP,0x4                         ; 004cbb9f
     RET                                 ; 004cbba2
 

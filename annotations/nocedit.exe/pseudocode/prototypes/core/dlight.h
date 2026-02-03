@@ -13,7 +13,7 @@ CDemonLight * __cdecl CDemonLight::ctor(CDemonLight *this_ptr,int shadow_map_wid
 
 // Original: core_dlight.cpp_CDemonLight_dtor_FUN_00472760
 // Address: 00472760
-CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint d1,uint d2,uint d3);
+CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint flags);
 
 // Original: core_dlight.cpp_CDemonLight_init_FUN_004727c0
 // Address: 004727c0

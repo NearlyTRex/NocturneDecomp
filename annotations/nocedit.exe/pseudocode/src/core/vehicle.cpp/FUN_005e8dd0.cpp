@@ -11,7 +11,7 @@
 void __cdecl core_vehicle_cpp_FUN_005e8dd0(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,4,&g_CTireTypeInfo);
   return;

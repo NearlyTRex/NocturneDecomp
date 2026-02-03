@@ -49,12 +49,12 @@ SBat * __cdecl SBat::dtor(SBat *this_ptr);
 
 // Original: core_moon.cpp_freeBats_FUN_0052a430
 // Address: 0052a430
-void __cdecl freeBats(SBat **array);
+SBat * __cdecl freeBats(SBat *objs);
 
 // Original: core_moon.cpp_freeCourses_FUN_0052a450
 // Address: 0052a450
-void __cdecl freeCourses(CCourse **array);
+CCourse * __cdecl freeCourses(CCourse *objs);
 
 // Original: core_moon.cpp_freeAlphaBitmaps_FUN_0052a470
 // Address: 0052a470
-void __cdecl freeAlphaBitmaps(CAlphaBitmap **array);
+CAlphaBitmap * __cdecl freeAlphaBitmaps(CAlphaBitmap *objs);

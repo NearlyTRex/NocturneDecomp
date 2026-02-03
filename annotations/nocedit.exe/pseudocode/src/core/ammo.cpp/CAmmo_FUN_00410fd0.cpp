@@ -2,26 +2,21 @@
 // Address: 00410fd0
 // Address Range: [[00410fd0, 004111a7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
+// Signature: void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class_name)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo* param_1_00, uint
-   param_2_00, uint param_3, uint sClassNameMaybe) */
-
-void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
+void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class_name)
 
 {
   char cVar1;
   int iVar2;
   char *pcVar3;
-  int in_stack_00000004;
-  char *in_stack_00000008;
   char *pcVar4;
   
-  pcVar4 = (char *)(in_stack_00000004 + 0x2d4);
-  pcVar3 = in_stack_00000008;
-  if (pcVar4 != in_stack_00000008) {
+  pcVar4 = this_ptr->weapon_class_name;
+  pcVar3 = weapon_class_name;
+  if (pcVar4 != weapon_class_name) {
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -32,74 +27,69 @@ void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(void)
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = strcmp(in_stack_00000008,"CGun");
+  iVar2 = strcmp(weapon_class_name,"CGun");
   if (iVar2 == 0) {
-    switch(*(uint *)(in_stack_00000004 + 0x318)) {
-    case 1:
+    switch(this_ptr->ammo_type) {
+    case AMMO_TYPE_HOLY:
       pcVar4 = "holybullet.kfm";
       break;
-    case 2:
+    case AMMO_TYPE_WOOD:
       pcVar4 = "woodbullet.kfm";
       break;
-    case 3:
+    case AMMO_TYPE_SILVER:
       pcVar4 = "silverbullet.kfm";
       break;
-    case 4:
+    case AMMO_TYPE_GOLD:
       pcVar4 = "goldbullet.kfm";
       break;
     default:
       pcVar4 = "gatbullet.kfm";
       break;
-    case 7:
+    case AMMO_TYPE_LITHIUM:
       pcVar4 = "lithiumbullet.kfm";
       break;
-    case 8:
+    case AMMO_TYPE_MERCURY:
       pcVar4 = "mercurybullet.kfm";
     }
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&this_ptr->model,pcVar4);
   }
-  iVar2 = strcmp(in_stack_00000008,"CShotgun");
+  iVar2 = strcmp(weapon_class_name,"CShotgun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"shell.kfm");
+              (&this_ptr->model,"shell.kfm");
   }
-  iVar2 = strcmp(in_stack_00000008,"CCrossbow");
+  iVar2 = strcmp(weapon_class_name,"CCrossbow");
   if (iVar2 == 0) {
-    if (*(int *)(in_stack_00000004 + 0x318) == 1) {
+    if (this_ptr->ammo_type == AMMO_TYPE_HOLY) {
       pcVar4 = "holystake.kfm";
     }
     else {
       pcVar4 = "stake.kfm";
     }
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&this_ptr->model,pcVar4);
   }
-  iVar2 = strcmp(in_stack_00000008,"CDynamite");
+  iVar2 = strcmp(weapon_class_name,"CDynamite");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"dynamitebundle.kfm")
-    ;
+              (&this_ptr->model,"dynamitebundle.kfm");
   }
-  iVar2 = strcmp(in_stack_00000008,"CTommyGun");
+  iVar2 = strcmp(weapon_class_name,"CTommyGun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"tommybullet.kfm");
+              (&this_ptr->model,"tommybullet.kfm");
   }
-  iVar2 = strcmp(in_stack_00000008,"CFlameThrower");
+  iVar2 = strcmp(weapon_class_name,"CFlameThrower");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"fgunammo.kfm");
+              (&this_ptr->model,"fgunammo.kfm");
   }
-  iVar2 = strcmp(in_stack_00000008,"CElephantGun");
+  iVar2 = strcmp(weapon_class_name,"CElephantGun");
   if (iVar2 != 0) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
     return;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"eleshell.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
+            (&this_ptr->model,"eleshell.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   return;
 }

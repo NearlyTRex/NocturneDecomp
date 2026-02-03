@@ -2,15 +2,15 @@
 // Address: 00412720
 // Address Range: [[00412720, 00412734]]
 // Convention: __cdecl
-// Signature: int __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame **array)
+// Signature: CFlame * __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame *objs)
 
 #include "nocturne.h"
 
-int __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame **array)
+CFlame * __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame *objs)
 
 {
-  int iVar1;
+  CFlame *pCVar1;
   
-  iVar1 = __arrfini(array,0x32,&g_CFlameTypeInfo);
-  return iVar1;
+  pCVar1 = __arrfini(objs,0x32,&g_CFlameTypeInfo);
+  return pCVar1;
 }

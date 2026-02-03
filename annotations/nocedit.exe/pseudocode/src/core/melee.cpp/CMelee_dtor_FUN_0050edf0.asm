@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_0050edf0(CMelee *this_ptr,uint d1,uint d2)
+; __cdecl CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_0050edf0(CMelee *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMeleeTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0050edfc
     PUSH EBX                            ; 0050edfe
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 0050edff
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050ee04
     MOV DL,byte ptr [ESP + 0xc]         ; 0050ee07
     MOV EBX,EAX                         ; 0050ee0b

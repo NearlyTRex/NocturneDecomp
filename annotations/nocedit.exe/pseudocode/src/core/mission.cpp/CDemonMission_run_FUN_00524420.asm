@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1b80
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1b80
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2058
 ;   core_game.cpp_FUN_004e2f10 at 004e2f77
 ;   core_game.cpp_FUN_004e2fc0 at 004e3044
@@ -239,7 +239,7 @@ section .text
     PUSH EAX                            ; 00524616 | g_CGameInstance
         ;   Label: LAB_00524616
     CALL core_game.cpp_CGame_finishAct_FUN_004e3b90 ; 00524617
-        ;   XREF to: 004e3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004e3b90()
+        ;   XREF to: 004e3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004e3b90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052461c
     POP EBP                             ; 0052461f
     POP EDI                             ; 00524620

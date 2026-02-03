@@ -10,9 +10,8 @@ CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr)
 
 {
   CStrList *pCVar1;
-  uint unaff_EBX;
   
   core_script_cpp_CScript_FUN_00559870(this_ptr);
-  pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&this_ptr->script_text,0,unaff_EBX);
+  pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&this_ptr->script_text,0);
   return (CScript *)&pCVar1[-4].data_array;
 }

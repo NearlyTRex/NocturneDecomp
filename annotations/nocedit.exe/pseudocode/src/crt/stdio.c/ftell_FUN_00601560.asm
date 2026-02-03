@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[17]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e142f
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e142f
 ;   core_script.cpp_CScript_FUN_00559f80 at 0055a06c
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 00560444
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579080

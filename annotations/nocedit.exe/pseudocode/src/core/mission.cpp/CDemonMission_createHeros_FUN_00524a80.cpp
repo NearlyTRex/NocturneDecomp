@@ -29,7 +29,7 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
     if (iVar4 == 0) {
       return 0;
     }
-    g_HeroActors[g_LocalHeroIndex]->unk3 = g_CGamePtr->aim_mode;
+    g_HeroActors[g_LocalHeroIndex]->aim_mode = g_CGamePtr->aim_mode;
   }
   else {
     g_HeroCount = g_CNetGamePtr->player_count;

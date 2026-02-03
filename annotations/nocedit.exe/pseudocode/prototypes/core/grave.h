@@ -39,9 +39,9 @@ void __cdecl FUN_004ee710(void);
 // Address: 004ee790
 void __cdecl FUN_004ee790(void);
 
-// Original: core_grave.cpp_CGrave_load_FUN_004ee7f0
+// Original: core_grave.cpp_CGrave_archive_FUN_004ee7f0
 // Address: 004ee7f0
-void __cdecl CGrave::load(void);
+void __cdecl CGrave::archive(CGrave *this_ptr);
 
 // Original: core_grave.cpp_FUN_004ee8f0
 // Address: 004ee8f0
@@ -69,4 +69,4 @@ void __cdecl FUN_004eeb10(void);
 
 // Original: core_grave.cpp_CGrave_dtor_FUN_004eeb40
 // Address: 004eeb40
-CGrave * __cdecl CGrave::dtor(CGrave *this_ptr,uint d1,uint d2);
+CGrave * __cdecl CGrave::dtor(CGrave *this_ptr,uint flags);

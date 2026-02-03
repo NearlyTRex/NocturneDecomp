@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSimBoxTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffca8]          ; 005893ff
     PUSH EBX                            ; 00589405
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 00589406
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058940b
     MOV DL,byte ptr [ESP + 0xc]         ; 0058940e
     MOV EBX,EAX                         ; 00589412

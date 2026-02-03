@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 692
-Signature accuracy rate: 62.8%
+Parameter mismatches detected: 676
+Signature accuracy rate: 63.6%
 
 Mismatches by confidence:
-  High confidence:   68 (multiple call sites agree)
-  Medium confidence: 91 (some agreement)
-  Low confidence:    533 (limited data)
+  High confidence:   62 (multiple call sites agree)
+  Medium confidence: 90 (some agreement)
+  Low confidence:    524 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -83,8 +83,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/fire.cpp
     Signature: void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ef0(CFireEffect *this_ptr)
     Sample call sites:
-      core_flamegun.cpp_FUN_004cb920 at 004cb971: 0 reg [], 5 stack
-      core_emitter.cpp_FUN_004a8070 at 004a849e: 0 reg [], 5 stack
+      core_flamegun.cpp_CFlameThrowe at 004cb971: 0 reg [], 5 stack
+      core_emitter.cpp_CEmitter_proc at 004a849e: 0 reg [], 5 stack
       core_dracbrid.cpp_FUN_00484410 at 00484cfe: 0 reg [], 5 stack
 
   core_morph.cpp_FUN_0052b580
@@ -187,16 +187,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_motion.cpp_CMotionControl at 0052d808: 0 reg [], 4 stack
       core_motion.cpp_CMotionControl at 0052d7ee: 0 reg [], 4 stack
 
-  core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
-    Declared: 5 params, Estimated: 2 params (-3)
-    Call sites: 42, Confidence: high
-    File: core/skeleton.cpp
-    Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40 (CDeformableModelInstance *this_ptr,uint d1,uint d2,uint d3,uint d4)
-    Sample call sites:
-      core_armour.cpp_CArmour_dtor_F at 00412569: 0 reg [], 2 stack
-      core_armour.cpp_CEnemy_dtor_FU at 00412629: 0 reg [], 2 stack
-      core_batcreat.cpp_CBatCreature at 00416389: 0 reg [], 2 stack
-
   core_xform.cpp_buildRotationX_FUN_005f6c40
     Declared: 2 params, Estimated: 5 params (+3)
     Call sites: 3, Confidence: high
@@ -206,26 +196,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_stranger.cpp_CStranger_FU at 005c088e: 2 reg [EAX, EDX], 3 stack
       core_gabriela.cpp_FUN_004d5550 at 004d5610: 2 reg [EAX, EDX], 3 stack
       core_stranger.cpp_CStranger_FU at 005c0edc: 2 reg [EAX, EDX], 3 stack
-
-  crt_fstream.cpp_ifstream_dtor_FUN_005ff856
-    Declared: 5 params, Estimated: 2 params (-3)
-    Call sites: 10, Confidence: high
-    File: crt/fstream.cpp
-    Signature: void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint d1,uint d2,uint d3,uint d4)
-    Sample call sites:
-      core_game.cpp_CGame_saveGame_F at 004e1260: 0 reg [], 2 stack
-      core_game.cpp_CGame_loadSaveGa at 004e1866: 0 reg [], 2 stack
-      crt_fstream.cpp_ifstream_destr at 005ff707: 0 reg [], 2 stack
-
-  crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
-    Declared: 5 params, Estimated: 2 params (-3)
-    Call sites: 12, Confidence: high
-    File: crt/fstream.cpp
-    Signature: ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,uint d3,uint d4)
-    Sample call sites:
-      core_game.cpp_CGame_loadSaveGa at 004e18c2: 0 reg [], 2 stack
-      core_dcamera.cpp_CDemonCamera_ at 00452f64: 0 reg [], 2 stack
-      core_game.cpp_CGame_loadSaveGa at 004e1808: 0 reg [], 2 stack
 
   engine_colquant.c_FUN_00441110
     Declared: 0 params, Estimated: 3 params (+3)
@@ -353,19 +323,9 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/fire.cpp
     Signature: void __cdecl core_fire_cpp_CFireEffect_FUN_004c9240(CFireEffect *this_ptr)
     Sample call sites:
-      core_emitter.cpp_FUN_004a8070 at 004a8540: 0 reg [], 3 stack
-      core_emitter.cpp_FUN_004a8070 at 004a8552: 0 reg [], 3 stack
-      core_emitter.cpp_FUN_004a8070 at 004a8563: 0 reg [], 3 stack
-
-  crt_fstream.cpp_fstreambase_dtor_FUN_00606509
-    Declared: 4 params, Estimated: 2 params (-2)
-    Call sites: 3, Confidence: high
-    File: crt/fstream.cpp
-    Signature: fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase *this_ptr,uint d1,uint d2,uint d3)
-    Sample call sites:
-      crt_fstream.cpp_fstream_destru at 00606500: 0 reg [], 2 stack
-      crt_fstream.cpp_ofstream_dtor_ at 005ff802: 0 reg [], 2 stack
-      crt_fstream.cpp_ifstream_dtor_ at 005ff89c: 0 reg [], 2 stack
+      core_emitter.cpp_CEmitter_proc at 004a8540: 0 reg [], 3 stack
+      core_emitter.cpp_CEmitter_proc at 004a8552: 0 reg [], 3 stack
+      core_emitter.cpp_CEmitter_proc at 004a8563: 0 reg [], 3 stack
 
   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
     Declared: 4 params, Estimated: 2 params (-2)
@@ -397,21 +357,11 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       cockpit_pkbmpset.cpp_CPackedBi at 0054be02: 0 reg [], 1 stack
       shape_edittool.cpp_showMultiCh at 0049ea6c: 0 reg [], 1 stack
 
-  crt_strstream.cpp_strstreambase_dtor_FUN_006062a6
-    Declared: 4 params, Estimated: 2 params (-2)
-    Call sites: 3, Confidence: high
-    File: crt/strstream.cpp
-    Signature: strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d1,uint d2,uint d3)
-    Sample call sites:
-      crt_strstream.cpp_ostrstream_d at 005ff4d0: 0 reg [], 2 stack
-      crt_strstream.cpp_istrstream_d at 005ff610: 0 reg [], 2 stack
-      crt_strstream.cpp_strstreambas at 00606199: 0 reg [], 2 stack
-
   core_armour.cpp_freeFires_FUN_00412700
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 37, Confidence: high
     File: core/armour.cpp
-    Signature: int __cdecl core_armour_cpp_freeFires_FUN_00412700(SFire **objs)
+    Signature: SFire * __cdecl core_armour_cpp_freeFires_FUN_00412700(SFire *objs)
     Sample call sites:
       core_armour.cpp_CArmour_dtor_F at 00412529: 0 reg [], 2 stack
       core_armour.cpp_CEnemy_dtor_FU at 004125e9: 0 reg [], 2 stack
@@ -421,7 +371,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 50, Confidence: high
     File: core/armour.cpp
-    Signature: int __cdecl core_armour_cpp_freeVectors_FUN_004126e0(CVector3f **objs)
+    Signature: CVector3f * __cdecl core_armour_cpp_freeVectors_FUN_004126e0(CVector3f *objs)
     Sample call sites:
       core_hiram.cpp_CHiram_dtor_FUN at 004f44a3: 0 reg [], 2 stack
       core_armour.cpp_CArmour_dtor_F at 00412549: 0 reg [], 2 stack
@@ -451,7 +401,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 6, Confidence: high
     File: core/cloth.cpp
-    Signature: int __cdecl core_cloth_cpp_freeVectors_FUN_0043e460(CVector3f **array)
+    Signature: CVector3f * __cdecl core_cloth_cpp_freeVectors_FUN_0043e460(CVector3f *objs)
     Sample call sites:
       core_fire.cpp_CCrater_dtor_FUN at 004c95aa: 0 reg [], 2 stack
       core_fire.cpp_CGlassParticle_d at 004c966a: 0 reg [], 2 stack
@@ -471,7 +421,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 3, Confidence: high
     File: core/curtain.cpp
-    Signature: void __cdecl core_curtain_cpp_freeVectors_FUN_0044baf0(CVector3f **array)
+    Signature: CVector3f * __cdecl core_curtain_cpp_freeVectors_FUN_0044baf0(CVector3f *objs)
     Sample call sites:
       core_skeleton.cpp_CSkeleton_dt at 00599901: 0 reg [], 2 stack
       core_skeleton.cpp_CDeformableM at 0059de62: 0 reg [], 2 stack
@@ -494,8 +444,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: int __cdecl core_enemy_cpp_CEnemy_FUN_004a9880(CEnemy *this_ptr)
     Sample call sites:
       core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
-      core_drone.cpp_FUN_0048ec70 at 0048f014: 0 reg [], 2 stack
-      core_drone.cpp_FUN_0048ec70 at 0048f07c: 0 reg [], 2 stack
+      core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
+      core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
 
   core_gargoyle.cpp_CGargoyle_FUN_004e48a0
     Declared: 0 params, Estimated: 1 params (+1)
@@ -596,16 +546,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_baron.cpp_CBaron_setup_FU at 00412d80: 0 reg [], 3 stack
       core_batcreat.cpp_CBatCreature at 00415200: 0 reg [], 3 stack
       core_batman.cpp_CBatman_setup_ at 004165c0: 0 reg [], 3 stack
-
-  crt_iostream.cpp_ios_dtor_FUN_0060632c
-    Declared: 3 params, Estimated: 2 params (-1)
-    Call sites: 8, Confidence: high
-    File: crt/iostream.cpp
-    Signature: ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint d1,uint d2)
-    Sample call sites:
-      crt_fstream.cpp_ofstream_dtor_ at 005ff841: 0 reg [], 2 stack
-      crt_iostream.cpp_istream_dtor_ at 00606441: 0 reg [], 2 stack
-      crt_strstream.cpp_ostrstream_d at 005ff50f: 0 reg [], 2 stack
 
   crt_process.c_spawn_FUN_006105a0
     Declared: 4 params, Estimated: 5 params (+1)
@@ -762,13 +702,13 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:6 est:7 (+1) [2 calls]
 
-  ... and 41 more
+  ... and 40 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  533 functions with low-confidence mismatches
+  524 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -785,10 +725,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 99
+Functions where declaration has MORE params than estimated: 91
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 593
+Functions where declaration has FEWER params than estimated: 585
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -797,11 +737,11 @@ Distribution of differences (estimated - declared):
   -6 params: 2 functions
   -5 params: 2 functions
   -4 params: 3 functions
-  -3 params: 12 functions
-  -2 params: 18 functions
-  -1 params: 60 functions
-  +1 params: 260 functions
-  +2 params: 139 functions
+  -3 params: 9 functions
+  -2 params: 15 functions
+  -1 params: 58 functions
+  +1 params: 256 functions
+  +2 params: 135 functions
   +3 params: 70 functions
   +4 params: 79 functions
   +5 params: 13 functions

@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005ec8d0(CWayPoint *this_ptr,uint d1,uint d2)
+; __cdecl CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005ec8d0(CWayPoint *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CWayPointTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005ec8dc
     PUSH EBX                            ; 005ec8de
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005ec8df
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ec8e4
     MOV DL,byte ptr [ESP + 0xc]         ; 005ec8e7
     MOV EBX,EAX                         ; 005ec8eb

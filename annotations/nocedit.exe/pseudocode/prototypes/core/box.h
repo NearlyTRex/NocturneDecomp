@@ -53,7 +53,7 @@ SScrape * __cdecl SScrape::dtor(SScrape *this_ptr);
 
 // Original: core_box.cpp_freeScrapes_FUN_00420220
 // Address: 00420220
-int __cdecl freeScrapes(SScrape **array);
+SScrape * __cdecl freeScrapes(SScrape *array);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 // Address: 00420240

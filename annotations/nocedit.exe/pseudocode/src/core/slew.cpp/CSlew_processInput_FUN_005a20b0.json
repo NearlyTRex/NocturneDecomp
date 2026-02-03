@@ -2,9 +2,147 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "other",
         "column": 37,
-        "line": 44,
+        "line": 49,
         "message": "invalid cast from type 'CSlew*' to type 'float'"
       }
     ],
@@ -12,6 +150,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -20,18 +164,18 @@
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 589,
+    "complexity_score": 481,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 11,
-    "pseudocode_lines": 114,
-    "suspect_count": 46,
+    "pseudocode_lines": 116,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 452
+    "total_lines": 454
   },
   "cross_references": [
     {
@@ -247,6 +391,27 @@
         "type": "undefined4"
       },
       {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
+      },
+      {
         "is_param": true,
         "name": "this_ptr",
         "offset": 4,
@@ -275,322 +440,245 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 6,
+      "line": 10,
       "match": "unaff_EBP",
       "text": "float unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 15,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 16,
       "match": "in_stack_00000010",
       "text": "float in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 17,
       "match": "in_stack_00000018",
       "text": "float in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 18,
       "match": "in_stack_00000020",
       "text": "float in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 19,
       "match": "in_stack_00000044",
       "text": "float in_stack_00000044;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 20,
       "match": "in_stack_0000004c",
       "text": "float in_stack_0000004c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 21,
       "match": "in_stack_00000054",
       "text": "float in_stack_00000054;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 22,
       "match": "in_stack_0000005c",
       "text": "float in_stack_0000005c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 23,
       "match": "in_stack_00000068",
       "text": "float in_stack_00000068;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 24,
       "match": "in_stack_00000070",
       "text": "float in_stack_00000070;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffe0",
-      "text": "float in_stack_ffffffe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffffe4",
-      "text": "float in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffffe8",
-      "text": "float in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffffe4",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe8 * (float)10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe8 * (float)10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffffe4",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe0 * (float)0.050000000000000003;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffffe0",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe0 * (float)0.050000000000000003;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffffe4",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe4 * (float)30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffffe4",
-      "text": "in_stack_ffffffe4 = in_stack_ffffffe4 * (float)30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 46,
       "match": "in_stack_0000000c",
       "text": "this_ptr->yaw = this_ptr->yaw + in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 50,
       "match": "fcos",
       "text": "fVar3 = (float10)fcos((float10)this_ptr->yaw);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 51,
       "match": "fsin",
       "text": "fVar2 = (float10)fsin((float10)this_ptr->yaw);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 52,
       "match": "unaff_EBP",
       "text": "(this_ptr->position).x = (float)(fVar2 * (float10)unaff_EBP + (float10)(this_ptr->position).x);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 53,
       "match": "unaff_EBP",
       "text": "(this_ptr->position).z = (float)(fVar3 * (float10)unaff_EBP + (float10)(this_ptr->position).z);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 57,
       "match": "fcos",
       "text": "fVar3 = (float10)fcos((float10)this_ptr->yaw);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 58,
       "match": "fsin",
       "text": "fVar2 = (float10)fsin((float10)this_ptr->yaw);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_ffffffe4",
-      "text": "(float)((float10)(this_ptr->position).x - fVar2 * (float10)in_stack_ffffffe4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_ffffffe4",
-      "text": "(float)((float10)(this_ptr->position).z - fVar3 * (float10)in_stack_ffffffe4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 64,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)this_ptr->yaw + (float10)-1.57079632675);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 65,
       "match": "fcos",
       "text": "fVar2 = (float10)fcos((float10)this_ptr->yaw + (float10)-1.57079632675);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 67,
       "match": "in_stack_00000008",
       "text": "(float)(fVar3 * (float10)in_stack_00000008 + (float10)(this_ptr->position).x);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 69,
       "match": "in_stack_00000008",
       "text": "(float)(fVar2 * (float10)in_stack_00000008 + (float10)(this_ptr->position).z);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 73,
       "match": "fsin",
       "text": "fVar3 = (float10)fsin((float10)this_ptr->yaw + (float10)1.57079632675);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 74,
       "match": "fcos",
       "text": "fVar2 = (float10)fcos((float10)this_ptr->yaw + (float10)1.57079632675);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 76,
       "match": "in_stack_00000010",
       "text": "(float)(fVar3 * (float10)in_stack_00000010 + (float10)(this_ptr->position).x);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 78,
       "match": "in_stack_00000010",
       "text": "(float)(fVar2 * (float10)in_stack_00000010 + (float10)(this_ptr->position).z);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 82,
       "match": "in_stack_00000018",
       "text": "(this_ptr->position).y = (this_ptr->position).y + in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 86,
       "match": "in_stack_00000020",
       "text": "(this_ptr->position).y = (this_ptr->position).y - in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 90,
       "match": "in_stack_00000044",
       "text": "this_ptr->pitch = this_ptr->pitch - in_stack_00000044;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 94,
       "match": "in_stack_0000004c",
       "text": "this_ptr->pitch = this_ptr->pitch + in_stack_0000004c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 98,
       "match": "in_stack_00000054",
       "text": "this_ptr->roll = this_ptr->roll - in_stack_00000054;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 102,
       "match": "in_stack_0000005c",
       "text": "this_ptr->roll = this_ptr->roll + in_stack_0000005c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 106,
       "match": "in_stack_00000068",
       "text": "this_ptr->slew_rate = this_ptr->slew_rate - in_stack_00000068;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 107,
+      "line": 110,
       "match": "in_stack_00000070",
       "text": "this_ptr->slew_rate = this_ptr->slew_rate + in_stack_00000070;",
       "type": "stack_param"

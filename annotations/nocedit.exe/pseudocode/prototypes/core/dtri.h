@@ -117,4 +117,4 @@ void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_freeTriangles_FUN_0049cd20
 // Address: 0049cd20
-void __cdecl freeTriangles(CDemonTriangle **array);
+CDemonTriangle * __cdecl freeTriangles(CDemonTriangle *objs);

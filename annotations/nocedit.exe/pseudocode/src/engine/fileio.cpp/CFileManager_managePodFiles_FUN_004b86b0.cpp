@@ -29,11 +29,7 @@ engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
   char *pcVar13;
   SFoundFileInfo *pSVar14;
   byte bVar15;
-  uint in_stack_ffffdcc8;
-  uint in_stack_ffffdccc;
-  uint in_stack_ffffdcd0;
-  uint in_stack_ffffdcd4;
-  uint in_stack_ffffdcd8;
+  char local_2338 [2048];
   CPodFile local_1b38;
   CPickList local_170c;
   CPickList local_1364;
@@ -114,7 +110,7 @@ engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
       if (local_94.item_count < 1) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"No POD files found in %s",local_598);
-        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_94,0,in_stack_ffffdcc8);
+        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_94,0);
         return;
       }
       shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_84);
@@ -484,10 +480,10 @@ LAB_004b8d5b:
       if (0 < local_48) {
         do {
           sprintf
-                    (&stack0xffffdcc8,"%s\t%s\t%s",pvVar10,*(uint *)((int)pvVar10 + 0x36c)
-                     ,(&PTR_s_Skip_00679da0)[*(int *)((int)pvVar10 + 0x378)]);
+                    (local_2338,"%s\t%s\t%s",pvVar10,*(uint *)((int)pvVar10 + 0x36c),
+                     (&PTR_s_Skip_00679da0)[*(int *)((int)pvVar10 + 0x378)]);
           if (*(char *)((int)pvVar10 + 0x308) != '\0') {
-            pcVar12 = &stack0xffffdcc8;
+            pcVar12 = local_2338;
             do {
               pcVar13 = pcVar12;
               if (*pcVar12 == '\0') goto LAB_004b8df1;
@@ -501,7 +497,7 @@ LAB_004b8df1:
             sprintf
                       (pcVar13,"\tChecked out by %s",(int)pvVar10 + 0x308);
           }
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,&stack0xffffdcc8);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,local_2338);
           iVar2 = iVar2 + 1;
           pvVar10 = (void *)((int)pvVar10 + 0x39c);
         } while (iVar2 < local_48);
@@ -512,16 +508,13 @@ LAB_004b8df1:
       pvVar10 = local_44;
       local_60 = iVar2;
       if (iVar2 < 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_170c,0,in_stack_ffffdcc8,in_stack_ffffdccc,in_stack_ffffdcd0,
-                   in_stack_ffffdcd4,in_stack_ffffdcd8);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
         goto LAB_004b901b;
       }
       if (iVar2 < local_170c.base.item_count + -1) {
         iVar9 = (int)local_44 + iVar2 * 0x39c + 0x204;
-        iVar4 = sprintf
-                          (&stack0xffffdcc8,"Select action for %s\n",iVar9);
-        pcVar12 = &stack0xffffdcc8 + iVar4;
+        iVar4 = sprintf(local_2338,"Select action for %s\n",iVar9);
+        pcVar12 = local_2338 + iVar4;
         switch(*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x370)) {
         case 0:
           iVar9 = sprintf
@@ -650,7 +643,7 @@ LAB_004b9590:
                           (&local_1364.base,
                            (&PTR_s_Skip_00679da0)[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);
         while (iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                 (&local_1364,&stack0xffffdcc8,iVar9,0), -1 < iVar9) {
+                                 (&local_1364,local_2338,iVar9,0), -1 < iVar9) {
           pcVar13 = "Show local file differences";
           pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
           iVar4 = stricmp(pcVar12,pcVar13);
@@ -664,9 +657,7 @@ LAB_004b9590:
         }
         goto LAB_004b9978;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_170c,0,in_stack_ffffdcc8,in_stack_ffffdccc,in_stack_ffffdcd0,
-                 in_stack_ffffdcd4,in_stack_ffffdcd8);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
       local_20 = 0;
       this_ptr->batch_mode = 1;
       g_VersionControlSession.unk1[0] = '\0';
@@ -915,8 +906,8 @@ LAB_004b901b:
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_44,"..\\engine\\fileio.cpp",0xe10);
       }
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_74);
-      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_84,0,in_stack_ffffdcc8);
-      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_94,0,in_stack_ffffdcc8);
+      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_84,0);
+      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_94,0);
       return;
     }
   }
@@ -935,11 +926,7 @@ LAB_004b994d:
     }
   }
 LAB_004b9978:
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_1364,0,in_stack_ffffdcc8,in_stack_ffffdccc,in_stack_ffffdcd0,in_stack_ffffdcd4,
-             in_stack_ffffdcd8);
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_170c,0,in_stack_ffffdcc8,in_stack_ffffdccc,in_stack_ffffdcd0,in_stack_ffffdcd4,
-             in_stack_ffffdcd8);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1364,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
   goto LAB_004b8d5b;
 }

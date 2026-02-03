@@ -1,0 +1,326 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 52,
+        "line": 15,
+        "message": "invalid conversion from 'void*' to 'CAmmo*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "004ddaf0",
+      "from_addr": "004defa6",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dd930",
+    "address_range": [
+      [
+        "004dd930",
+        "004dd9c3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930",
+    "signature": "void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410dc0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0"
+    },
+    {
+      "addr": "00410fd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_FUN_00410fd0"
+    },
+    {
+      "addr": "004fd600",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
+    },
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062b9cc",
+      "name": "s_core_game_cpp_0062b9cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.145833333333333,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 36,
+      "INT_ADD": 19,
+      "INT_AND": 23,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_MULT": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 19,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 21
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "p1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "p3",
+        "offset": 8,
+        "size": 4,
+        "type": "EAmmoType"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "EAmmoType in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "pCVar1->ammo_type = in_stack_0000000c;",
+      "type": "stack_param"
+    }
+  ]
+}

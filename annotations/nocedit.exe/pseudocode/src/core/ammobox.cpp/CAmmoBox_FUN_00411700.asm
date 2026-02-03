@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr)
+; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
+; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_FUN_004d5c10 at 004d5c3d
@@ -24,7 +25,7 @@
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0
 ;   core_ammo.cpp_CAmmo_FUN_00410fd0
-;   core_ammo.cpp_CAmmo_FUN_004111b0
+;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -94,13 +95,13 @@ section .text
     PUSH ESI                            ; 00411798
     PUSH EBX                            ; 00411799
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 0041179a
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 0041179f
     MOV EAX,dword ptr [EBP + 0x314]     ; 004117a2
     PUSH EAX                            ; 004117a8
     PUSH EBX                            ; 004117a9
-    CALL core_ammo.cpp_CAmmo_FUN_004111b0 ; 004117aa
-        ;   XREF to: 004111b0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_004111b0()
+    CALL core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0 ; 004117aa
+        ;   XREF to: 004111b0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0(CAmmo * this_ptr, int ammo_count)
     MOV EAX,dword ptr [EBP + 0x318]     ; 004117af
     ADD ESP,0x8                         ; 004117b5
     MOV dword ptr [EBX + 0x318],EAX     ; 004117b8
@@ -111,7 +112,7 @@ section .text
     PUSH ESI                            ; 004117ca
     PUSH EBX                            ; 004117cb
     CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004117cc
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0()
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004117d1
     MOV EDI,EBX                         ; 004117d4
     MOV ESI,0x614c16                    ; 004117d6 | = "Some_ammo"

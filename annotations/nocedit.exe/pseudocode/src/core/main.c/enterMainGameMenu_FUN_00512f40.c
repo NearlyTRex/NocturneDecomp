@@ -12,7 +12,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
   char cVar1;
   char *pcVar2;
   int iVar3;
-  CGame *unaff_EBX;
+  CKeys *unaff_EBX;
   int iVar4;
   int iVar5;
   CAlphaBitmap *this_ptr;
@@ -46,7 +46,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
   iVar4 = 1;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,unaff_EBX);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
@@ -141,7 +141,7 @@ LAB_005133aa:
     case 2:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_CGame_loadSaveGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,(char *)unaff_EBX);
+      core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,(char *)unaff_EBX);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
       core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
@@ -155,7 +155,7 @@ LAB_005131d5:
     if (iVar4 != 0) {
       iVar5 = 99;
     }
-    unaff_EBX = (CGame *)g_CKeysPtr;
+    unaff_EBX = g_CKeysPtr;
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32), iVar4 != 0)) {

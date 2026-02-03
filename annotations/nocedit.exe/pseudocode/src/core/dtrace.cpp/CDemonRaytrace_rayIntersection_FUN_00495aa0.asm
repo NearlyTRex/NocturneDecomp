@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_drip.cpp_FUN_0048e2a0 at 0048e33d
+;   core_drip.cpp_CDrip_process_FUN_0048e2a0 at 0048e33d
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70

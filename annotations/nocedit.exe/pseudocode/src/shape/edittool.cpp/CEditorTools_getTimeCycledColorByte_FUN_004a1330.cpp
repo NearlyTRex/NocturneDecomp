@@ -2,11 +2,11 @@
 // Address: 004a1330
 // Address Range: [[004a1330, 004a1377]]
 // Convention: __cdecl
-// Signature: uchar __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
+// Signature: uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 
-uchar __cdecl
+uint __cdecl
 shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
 
 {
@@ -16,21 +16,21 @@ shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools
   uVar1 = uVar1 & 0x30000;
   if (uVar1 < 0x10000) {
     if (uVar1 == 0) {
-      return g_ColorCubeLookup[0];
+      return (uint)g_ColorCubeLookup[0];
     }
   }
   else {
     if (uVar1 < 0x10001) {
-      return g_ColorCubeLookup[0x7fff];
+      return (uint)g_ColorCubeLookup[0x7fff];
     }
     if (0x1ffff < uVar1) {
       if (uVar1 < 0x20001) {
-        return g_ColorCubeLookup[0x3e0];
+        return (uint)g_ColorCubeLookup[0x3e0];
       }
       if (uVar1 == 0x30000) {
-        return g_ColorCubeLookup[0x7c1f];
+        return (uint)g_ColorCubeLookup[0x7c1f];
       }
     }
   }
-  return '\0';
+  return 0;
 }

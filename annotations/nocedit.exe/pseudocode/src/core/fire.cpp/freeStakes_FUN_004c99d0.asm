@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake **array)
+; __cdecl CStake * __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake *objs)
 ;
 ; Parameters:
-; CStake * *       Stack[0x4]:4   array
+; CStake *         Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CStakeTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c99da
     PUSH EDX                            ; 004c99de
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c99df
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c99e4
     RET                                 ; 004c99e7
 

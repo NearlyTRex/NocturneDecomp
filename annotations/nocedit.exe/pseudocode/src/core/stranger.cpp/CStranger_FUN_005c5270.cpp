@@ -30,7 +30,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
   int local_30;
   CMotionController *local_2c;
   CDemonActor *local_28;
-  CDemonActor *local_24;
+  CDynamite *local_24;
   int local_20;
   CInventory *local_1c;
   CDemonActor *local_18;
@@ -151,14 +151,15 @@ switchD_005c56f5_caseD_8:
     local_38 = pCVar4->motions[0].motion_name + (int)fStack_14;
     switch(*(uint *)((this_ptr->base).base.unk3 + 0x46c)) {
     case 6:
-      local_24 = core_actor_cpp_castToClassHash_FUN_0040c790
+      local_24 = (CDynamite *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(this_ptr->unk1 + 0x54),g_CDynamiteClassInfo.name_hash)
       ;
-      if (((local_24 != (CDemonActor *)0x0) &&
-          (iVar5 = core_dynamite_cpp_FUN_0049cf70(), iVar5 == 0)) &&
+      if (((local_24 != (CDynamite *)0x0) &&
+          (iVar5 = core_dynamite_cpp_CDynamite_FUN_0049cf70(local_24), iVar5 == 0)) &&
          (fStack_14 = (float)(0xb / (longlong)*(int *)(local_38 + 100)),
          (float)(int)fStack_14 <= *(float *)((this_ptr->base).base.unk3 + 0x470))) {
-        core_dynamite_cpp_FUN_0049cf20();
+        core_dynamite_cpp_CDynamite_FUN_0049cf20(local_24);
       }
       break;
     case 7:

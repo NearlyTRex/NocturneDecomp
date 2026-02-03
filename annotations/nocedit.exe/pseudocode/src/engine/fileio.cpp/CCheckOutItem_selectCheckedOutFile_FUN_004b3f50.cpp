@@ -17,11 +17,7 @@ engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
   int iVar3;
   int iVar4;
   char *pcVar5;
-  uint in_stack_fffffc40;
-  uint in_stack_fffffc44;
-  char **in_stack_fffffc48;
-  CStrList_vtable *in_stack_fffffc4c;
-  uint in_stack_fffffc50;
+  CPickList local_3c0;
   CCheckOutList local_18;
   
   iVar2 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
@@ -59,7 +55,7 @@ LAB_004b3ff0:
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_18);
     return 1;
   }
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffc40);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3c0);
   if (0 < local_18.count) {
     iVar3 = 0;
     iVar2 = 0;
@@ -69,23 +65,22 @@ LAB_004b3ff0:
       if ((iVar4 == 0) &&
          (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                             (dialog_title,(local_18.items)->name + iVar3,0), iVar4 != 0)) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffc40,(local_18.items)->name + iVar3);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3c0.base,(local_18.items)->name + iVar3)
+        ;
       }
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 0x168;
     } while (iVar2 < local_18.count);
   }
-  if ((int)in_stack_fffffc40 < 1) {
+  if (local_3c0.base.item_count < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"You currently don't have any files checked out.");
   }
   else {
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xfffffc40,wildcard_pattern,-1,0);
+                      (&local_3c0,wildcard_pattern,-1,0);
     if (-1 < iVar2) {
-      pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                         ((CStrList *)&stack0xfffffc40,iVar2);
+      pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3c0.base,iVar2);
       do {
         cVar1 = *pcVar5;
         *out_buffer = cVar1;
@@ -95,15 +90,11 @@ LAB_004b3ff0:
         out_buffer[1] = cVar1;
         out_buffer = out_buffer + 2;
       } while (cVar1 != '\0');
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffc40,0,in_stack_fffffc40,in_stack_fffffc44,
-                 (uint)in_stack_fffffc48,(uint)in_stack_fffffc4c,in_stack_fffffc50);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3c0,0);
       goto LAB_004b3ff0;
     }
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffc40,0,in_stack_fffffc40,in_stack_fffffc44,
-             (uint)in_stack_fffffc48,(uint)in_stack_fffffc4c,in_stack_fffffc50);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3c0,0);
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_18);
   return 0;
 }

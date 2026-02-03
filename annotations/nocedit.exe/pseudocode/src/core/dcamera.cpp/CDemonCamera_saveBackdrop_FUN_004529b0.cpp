@@ -24,10 +24,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   double dVar10;
   double dVar11;
   int *output_length;
-  uint d1;
-  uint in_stack_fffffd8c;
-  uint in_stack_fffffd90;
-  uint in_stack_fffffd94;
+  uint flags;
+  SIZE_T in_stack_fffffd8c;
   byte local_174 [68];
   _FILE local_130;
   int local_114;
@@ -75,7 +73,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     }
     stream_write_internal(&local_130,&g_CameraFogGrid,0x1000);
     if (g_CameraFogGrid.density_multiplier == 0) {
-      d1 = 0;
+      flags = 0;
     }
     else {
       local_50[0] = "EFD"[0];
@@ -84,7 +82,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       local_50[3] = "EFD"[3];
       stream_write_internal(&local_130,local_50,3);
       dVar11 = 256;
-      d1 = 0x452b20;
+      flags = 0x452b20;
       dVar10 = round
                          ((double)(float)(this_ptr->base).position.x * 256);
       CStack_68.z = (int)ROUND(dVar10);
@@ -225,8 +223,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0((CLZWDictionary *)(auStack_a0 + 4));
       support_codec_cpp_CCodec_dtor_FUN_0043e9b0((CCodec *)auStack_a0,1);
     }
-    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-              ((ofstream *)local_174,d1,in_stack_fffffd8c,in_stack_fffffd90,in_stack_fffffd94);
+    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_174,flags);
     return;
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\dcamera.cpp",0x12d5);

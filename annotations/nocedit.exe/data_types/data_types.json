@@ -361,10 +361,6 @@
       "type":"typedef"
     },
     {
-      "name":"CCryptVessel",
-      "type":"struct"
-    },
-    {
       "name":"CDeformableModel_MotionBlendWeightFunc",
       "type":"function_definition"
     },
@@ -3705,6 +3701,10 @@
       "type":"typedef"
     },
     {
+      "name":"CCryptVessel",
+      "type":"struct"
+    },
+    {
       "name":"CFilmProjector",
       "type":"struct"
     },
@@ -4182,10 +4182,6 @@
     },
     {
       "name":"CDrone",
-      "type":"struct"
-    },
-    {
-      "name":"CGargoyle",
       "type":"struct"
     },
     {
@@ -5778,6 +5774,10 @@
     },
     {
       "name":"CFrankenstienMachine",
+      "type":"struct"
+    },
+    {
+      "name":"CGargoyle",
       "type":"struct"
     },
     {
@@ -21006,7 +21006,7 @@
       "fields":[
         {
           "len":344,
-          "name":"base_actor",
+          "name":"base",
           "offset":0,
           "type":"CDemonActor"
         },
@@ -21014,7 +21014,7 @@
           "len":4,
           "name":"dest_actor",
           "offset":344,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":44,
@@ -23960,7 +23960,7 @@
           "len":4,
           "name":"last_platform",
           "offset":732,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":28,
@@ -24035,16 +24035,10 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
-        },
-        {
-          "len":376,
-          "name":"unk1",
-          "offset":348,
-          "type":"char[376]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -27703,28 +27697,16 @@
           "type":"int"
         },
         {
-          "len":4,
+          "len":100,
           "name":"event_on",
           "offset":364,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk1",
-          "offset":368,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"event_off",
           "offset":464,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk2",
-          "offset":468,
-          "type":"char[96]"
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -29012,21 +28994,27 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"carrier",
           "offset":724,
-          "type":"int"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":32,
+          "name":"movie_name",
+          "offset":728,
+          "type":"char[32]"
         },
         {
           "len":4,
-          "name":"movieName",
-          "offset":728,
-          "type":"char*"
+          "name":"unk1",
+          "offset":760,
+          "type":"float"
         },
         {
-          "len":64,
+          "len":32,
           "name":"unk2",
-          "offset":732,
-          "type":"char[64]"
+          "offset":764,
+          "type":"char[32]"
         }
       ],
       "importable":true,
@@ -29239,10 +29227,16 @@
           "type":"int"
         },
         {
-          "len":200,
-          "name":"unk3",
+          "len":100,
+          "name":"on_event",
           "offset":440,
-          "type":"char[200]"
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"on_event_alt",
+          "offset":540,
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -29311,16 +29305,16 @@
           "type":"float"
         },
         {
-          "len":4,
+          "len":100,
           "name":"on_fire_condition",
           "offset":732,
-          "type":"int"
+          "type":"char[100]"
         },
         {
-          "len":776,
+          "len":680,
           "name":"unk",
-          "offset":736,
-          "type":"char[776]"
+          "offset":832,
+          "type":"char[680]"
         }
       ],
       "importable":true,
@@ -29488,7 +29482,7 @@
           "len":4,
           "name":"which_part",
           "offset":344,
-          "type":"char*"
+          "type":"int"
         },
         {
           "len":4,
@@ -30229,10 +30223,16 @@
           "type":"int"
         },
         {
-          "len":32,
-          "name":"unk2",
+          "len":4,
+          "name":"home_base",
           "offset":48888,
-          "type":"char[32]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":28,
+          "name":"unk2",
+          "offset":48892,
+          "type":"char[28]"
         }
       ],
       "importable":true,
@@ -30571,28 +30571,16 @@
           "type":"int"
         },
         {
-          "len":4,
+          "len":100,
           "name":"start_condition",
           "offset":744,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk2",
-          "offset":748,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"start_sound",
           "offset":844,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk3",
-          "offset":848,
-          "type":"char[96]"
+          "type":"char[100]"
         }
       ],
       "importable":true,
@@ -30872,7 +30860,7 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"aim_mode",
           "offset":128820,
           "type":"int"
         },
@@ -35834,7 +35822,7 @@
           "len":4,
           "name":"audit_count",
           "offset":1052,
-          "type":"uint"
+          "type":"int"
         },
         {
           "len":4,
@@ -37373,10 +37361,22 @@
           "type":"CEnemy"
         },
         {
-          "len":76,
-          "name":"unk",
+          "len":12,
+          "name":"unk1",
           "offset":48820,
-          "type":"char[76]"
+          "type":"char[12]"
+        },
+        {
+          "len":4,
+          "name":"guard_distance",
+          "offset":48832,
+          "type":"float"
+        },
+        {
+          "len":60,
+          "name":"unk2",
+          "offset":48836,
+          "type":"char[60]"
         }
       ],
       "importable":true,
@@ -37853,52 +37853,28 @@
           "type":"float"
         },
         {
-          "len":4,
+          "len":100,
           "name":"start_event",
           "offset":752,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk2",
-          "offset":756,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"stop_event",
           "offset":852,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk3",
-          "offset":856,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"extend_event",
           "offset":952,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk4",
-          "offset":956,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"retract_event",
           "offset":1052,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk5",
-          "offset":1056,
-          "type":"char[96]"
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -37919,28 +37895,16 @@
           "type":"char[4]"
         },
         {
-          "len":4,
+          "len":100,
           "name":"extend_sound",
           "offset":1164,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk7",
-          "offset":1168,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"retract_sound",
           "offset":1264,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk8",
-          "offset":1268,
-          "type":"char[96]"
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -38069,10 +38033,22 @@
           "type":"int"
         },
         {
-          "len":564,
+          "len":156,
           "name":"unk2",
           "offset":130108,
-          "type":"char[564]"
+          "type":"char[156]"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":130264,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":28,
+          "name":"unk3",
+          "offset":130644,
+          "type":"char[28]"
         }
       ],
       "importable":true,

@@ -17,11 +17,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
   CDemonActor *pCVar5;
   int iVar6;
   double dVar7;
-  uint in_stack_ffffef3c;
-  uint in_stack_ffffef40;
-  char **in_stack_ffffef44;
-  CStrList_vtable *in_stack_ffffef48;
-  uint in_stack_ffffef4c;
+  CPickList local_10c4;
   CPickList local_d1c;
   CPickList local_974;
   CPickList local_5cc;
@@ -36,7 +32,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_d1c);
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_974);
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffef3c);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_10c4);
   actor_ptr = this_ptr->first_actor;
   local_20 = 0.0;
   local_1c = 0;
@@ -82,7 +78,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
                 (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar5,SUB84(dVar1,0),
                  (int)((ulonglong)dVar1 >> 0x20),pCVar5[2].location.position.y,SUB84(dVar7,0),
                  (int)((ulonglong)dVar7 >> 0x20));
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_10c4.base,local_224);
       local_24 = (float)(int)pCVar5[2].location.position.y * pCVar5[2].location.position.z +
                  local_24;
     }
@@ -112,7 +108,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5cc.base,local_224);
   sprintf(local_224,"Total\t\t\t\t\t%g hp",uVar3,uVar4);
   iVar6 = 0;
-  shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
+  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_10c4.base,local_224);
   while( true ) {
     iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_5cc,"Mission difficulty stats.  Select an item for details",iVar6,0);
@@ -127,20 +123,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
     }
     if (iVar6 == 2) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                ((CPickList *)&stack0xffffef3c,"Health detail",-1,0);
+                (&local_10c4,"Health detail",-1,0);
     }
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_5cc,0,in_stack_ffffef3c,in_stack_ffffef40,(uint)in_stack_ffffef44,
-             (uint)in_stack_ffffef48,in_stack_ffffef4c);
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xffffef3c,0,in_stack_ffffef3c,in_stack_ffffef40,
-             (uint)in_stack_ffffef44,(uint)in_stack_ffffef48,in_stack_ffffef4c);
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_974,0,in_stack_ffffef3c,in_stack_ffffef40,(uint)in_stack_ffffef44,
-             (uint)in_stack_ffffef48,in_stack_ffffef4c);
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_d1c,0,in_stack_ffffef3c,in_stack_ffffef40,(uint)in_stack_ffffef44,
-             (uint)in_stack_ffffef48,in_stack_ffffef4c);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5cc,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_10c4,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_974,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_d1c,0);
   return;
 }

@@ -48,7 +48,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   
   if (0.0 <= *(float *)(this_ptr->cloth_data + 0x32c)) {
     pCVar6 = &(this_ptr->base).location;
-    pCVar3 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170();
+    pCVar3 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(pCVar6);
     local_2c = pCVar3;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(pCVar3,&local_a4,&pCVar6->position);
     pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);

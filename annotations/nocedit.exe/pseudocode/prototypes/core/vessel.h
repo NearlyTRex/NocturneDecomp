@@ -81,4 +81,4 @@ void __cdecl CCryptVessel(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_dtor_FUN_005e9d30
 // Address: 005e9d30
-CCryptVessel * __cdecl CCryptVessel::dtor(CCryptVessel *this_ptr,uint d1,uint d2,uint d3);
+CCryptVessel * __cdecl CCryptVessel::dtor(CCryptVessel *this_ptr,uint flags);

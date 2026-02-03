@@ -2,22 +2,19 @@
 // Address: 005ff7bc
 // Address Range: [[005ff7bc, 005ff855]]
 // Convention: __cdecl
-// Signature: ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,uint d3,uint d4)
+// Signature: ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-ofstream * __cdecl
-crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,uint d3,uint d4)
+ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint flags)
 
 {
   int iVar1;
   ostream *poVar2;
   void *pvVar3;
   ios *piVar4;
-  uint unaff_EBX;
-  uint unaff_retaddr;
   
-  if ((d1 & 4) == 0) {
+  if ((flags & 4) == 0) {
     iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);
     *(int *)((this_ptr->_fstreambase_core)._filebuf.__unbuffered_get_area + iVar1 + -0x3c) = iVar1;
     (this_ptr->_fstreambase_core).destructor_vtable = &g_OFStream_FStreamBaseDestructor;
@@ -26,17 +23,15 @@ crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,ui
     *(void ***)
      ((this_ptr->_fstreambase_core)._filebuf.__unbuffered_get_area +
      *(int *)((int)pvVar3 + 4) + -0x10) = &g_OFStream_IOS;
-    poVar2 = crt_iostream_cpp_ostream_dtor_FUN_00606231
-                       ((ostream *)&this_ptr->_ostream_core,1,unaff_EBX);
+    poVar2 = crt_iostream_cpp_ostream_dtor_FUN_00606231((ostream *)&this_ptr->_ostream_core,1);
     this_ptr = (ofstream *)
                crt_fstream_cpp_fstreambase_dtor_FUN_00606509
-                         ((fstreambase *)&poVar2[-2]._ios.__fill_character,1,unaff_EBX,unaff_retaddr
-                         );
-    if ((d1 & 1) == 0) {
-      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);
+                         ((fstreambase *)&poVar2[-2]._ios.__fill_character,1);
+    if ((flags & 1) == 0) {
+      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1);
       this_ptr = (ofstream *)&piVar4[-2].__format_flags;
     }
-    if ((d1 & 2) == 0) {
+    if ((flags & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

@@ -72,7 +72,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_ios_dtor_FUN_0060632c",
-    "signature": "ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint d1,uint d2)"
+    "signature": "ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -187,7 +187,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 3,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -214,10 +214,10 @@
     "pcode_op_count": 106
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -229,15 +229,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
         "size": 4,
         "type": "uint"
       }

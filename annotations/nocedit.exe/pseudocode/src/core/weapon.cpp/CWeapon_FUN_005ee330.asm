@@ -7,7 +7,7 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_weapon.cpp_FUN_005ee6e0 at 005ee6ec
+;   core_weapon.cpp_CWeapon_FUN_005ee6e0 at 005ee6ec
 ;
 ; *****************************************************************************
 

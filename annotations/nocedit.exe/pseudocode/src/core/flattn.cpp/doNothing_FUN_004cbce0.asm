@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void __cdecl core_flattn_cpp_doNothing_FUN_004cbce0(void)
+;
+;
+; XREF[1]:
+;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b3c
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 004cbce0
+        ;   Label: core_flattn.cpp_doNothing_FUN_004cbce0
+

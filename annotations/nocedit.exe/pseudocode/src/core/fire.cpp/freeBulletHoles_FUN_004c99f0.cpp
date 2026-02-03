@@ -2,13 +2,15 @@
 // Address: 004c99f0
 // Address Range: [[004c99f0, 004c9a07]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole **array)
+// Signature: CBulletHole * __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole **array)
+CBulletHole * __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole *objs)
 
 {
-  __arrfini(array,0x100,&g_CBulletHoleTypeInfo);
-  return;
+  CBulletHole *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0x100,&g_CBulletHoleTypeInfo);
+  return pCVar1;
 }

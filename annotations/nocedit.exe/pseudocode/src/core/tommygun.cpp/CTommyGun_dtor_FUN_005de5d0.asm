@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint d1,uint d2)
+; __cdecl CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTommyGun *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTommyGunTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005de5dc
     PUSH EBX                            ; 005de5de
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 005de5df
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005de5e4
     MOV DL,byte ptr [ESP + 0xc]         ; 005de5e7
     MOV EBX,EAX                         ; 005de5eb

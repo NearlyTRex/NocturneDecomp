@@ -19,10 +19,6 @@ void __cdecl core_cloth_cpp_FUN_0043c430(void)
   char *pcVar7;
   int in_stack_00000004;
   char *in_stack_fffffb34;
-  uint in_stack_fffffb38;
-  char **in_stack_fffffb3c;
-  CStrList_vtable *in_stack_fffffb40;
-  uint in_stack_fffffb44;
   char local_124 [256];
   double local_24;
   float local_1c;
@@ -100,8 +96,6 @@ void __cdecl core_cloth_cpp_FUN_0043c430(void)
     *(int *)(in_stack_00000004 + 0x3ce8c) = *(int *)(in_stack_00000004 + 0x3ce8c) + 1;
   }
   core_cloth_cpp_FUN_00439710();
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffb34,0,(uint)in_stack_fffffb34,in_stack_fffffb38,
-             (uint)in_stack_fffffb3c,(uint)in_stack_fffffb40,in_stack_fffffb44);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffb34,0);
   return;
 }

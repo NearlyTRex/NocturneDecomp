@@ -18,8 +18,8 @@
 ;   core_bat.cpp_CBat_archive_FUN_00414910 at 0041498e
 ;   core_battery.cpp_CBattery_archive_FUN_00418000 at 0041801a
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422060 at 00422084
-;   core_bugs.cpp_CBugs_load_FUN_004254f0 at 00425579
-;   core_crate.cpp_CCrate_load_FUN_00448910 at 0044892a
+;   core_bugs.cpp_CBugs_archive_FUN_004254f0 at 00425579
+;   core_crate.cpp_CCrate_archive_FUN_00448910 at 0044892a
 ;   core_door.cpp_CDoor_archive_FUN_00480aa0 at 00480abb
 ;   ... and 19 more
 ;

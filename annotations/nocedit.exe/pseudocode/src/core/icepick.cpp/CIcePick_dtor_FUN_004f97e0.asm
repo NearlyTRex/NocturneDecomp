@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f97e0(CIcePick *this_ptr,uint d1,uint d2)
+; __cdecl CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f97e0(CIcePick *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CIcePickTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 004f97ec
     PUSH EBX                            ; 004f97ee
     CALL core_hero.cpp_CHero_dtor_FUN_004f2470 ; 004f97ef
-        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f97f4
     MOV DL,byte ptr [ESP + 0xc]         ; 004f97f7
     MOV EBX,EAX                         ; 004f97fb

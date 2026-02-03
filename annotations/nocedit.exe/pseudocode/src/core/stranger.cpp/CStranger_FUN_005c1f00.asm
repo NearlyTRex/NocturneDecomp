@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 005c1f3a
     PUSH EAX                            ; 005c1f3b
     CALL core_ammobox.cpp_CAmmoBox_FUN_00411700 ; 005c1f3c
-        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_FUN_00411700(CAmmoBox * this_ptr)
+        ;   XREF to: 00411700 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_FUN_00411700(CAmmoBox * this_ptr, CInventory * inventory)
     ADD ESP,0x8                         ; 005c1f41
     MOV dword ptr [EBX + 0x1fc38],0x1   ; 005c1f44
         ;   Label: LAB_005c1f44

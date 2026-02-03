@@ -2,13 +2,15 @@
 // Address: 0051f0e0
 // Address Range: [[0051f0e0, 0051f0f7]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f **array)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f *objs)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f **array)
+CVector3f * __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f *objs)
 
 {
-  __arrfini(array,400,&g_CVectorTypeInfo);
-  return;
+  CVector3f *pCVar1;
+  
+  pCVar1 = __arrfini(objs,400,&g_CVectorTypeInfo);
+  return pCVar1;
 }

@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_005d9f50(CSvetlana *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_005d9f50(CSvetlana *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSvetlanaTypeInfo
@@ -46,7 +43,7 @@ section .text
     LEA EBX,[EAX + 0xfffe0424]          ; 005d9f7f
     PUSH EBX                            ; 005d9f85
     CALL core_hero.cpp_CHero_dtor_FUN_004f2470 ; 005d9f86
-        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d9f8b
     MOV DL,byte ptr [ESP + 0xc]         ; 005d9f8e
     MOV EBX,EAX                         ; 005d9f92

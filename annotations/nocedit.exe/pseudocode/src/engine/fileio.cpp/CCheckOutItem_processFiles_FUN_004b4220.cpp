@@ -25,11 +25,7 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
   char *pcVar11;
   byte bVar12;
   char *pcVar13;
-  uint in_stack_ffffec38;
-  uint in_stack_ffffec3c;
-  char **in_stack_ffffec40;
-  CStrList_vtable *in_stack_ffffec44;
-  uint in_stack_ffffec48;
+  CPickList local_13c8;
   SFoundFileInfo local_1020;
   SFoundFileInfo local_e0c;
   char local_bf8 [400];
@@ -116,19 +112,16 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
   if (((local_e0c.file_size == local_1020.file_size) &&
       (local_e0c.timestamp < (char *)(local_1020.timestamp + 2))) &&
      (local_1020.timestamp < (char *)(local_e0c.timestamp + 2))) {
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffec38);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_13c8);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_13c8.base,"Undo the checkout.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec38,"Undo the checkout.");
+              (&local_13c8.base,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec38,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec38,"Oops.  Keep the file checked out.");
+              (&local_13c8.base,"Oops.  Keep the file checked out.");
     iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xffffec38,"Checking in file that didn't change.",-1,0);
+                      (&local_13c8,"Checking in file that didn't change.",-1,0);
     if ((iVar6 < 0) || (iVar6 == 2)) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
-                 (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_13c8,0);
       return 0;
     }
     if (iVar6 == 0) {
@@ -144,14 +137,10 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
         iVar6 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(this_ptr->name,local_658)
         ;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
-                 (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_13c8,0);
       return iVar6;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
-               (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_13c8,0);
   }
   local_34 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_e0c);

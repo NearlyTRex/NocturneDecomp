@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_CFilmReel_FUN_004bee30 at 004bee3c
+;   core_filmreel.cpp_CFilmProjector_getPropertyList_FUN_004bee30 at 004bee3c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDemonActor_0061e434

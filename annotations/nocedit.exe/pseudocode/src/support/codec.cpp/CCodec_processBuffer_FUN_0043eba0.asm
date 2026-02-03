@@ -60,7 +60,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0043ec0b
     PUSH EAX                            ; 0043ec0f
     CALL crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca ; 0043ec10
-        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, int d1)
+        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043ec15
     MOV EAX,EBX                         ; 0043ec18
     ADD ESP,0x84                        ; 0043ec1a

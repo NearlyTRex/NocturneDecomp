@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_464 */
-
 int __cdecl
 core_script_cpp_CCmdParse_bestParse_FUN_00561db0
           (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,
@@ -79,14 +77,10 @@ core_script_cpp_CCmdParse_bestParse_FUN_00561db0
     iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_464,"Choose command form",-1,0);
     if (iVar6 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_464,0,local_464.base.item_count,local_464.base.capacity,
-                 (uint)local_464.base.data_array,(uint)local_464.base.vtable,local_464.unk1._0_4_);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_464,0);
       return -1;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_464,0,local_464.base.item_count,local_464.base.capacity,
-               (uint)local_464.base.data_array,(uint)local_464.base.vtable,local_464.unk1._0_4_);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_464,0);
   }
   core_script_cpp_CCmdParse_parse_FUN_00561fd0(this_ptr,input_text,templates[aiStack_bc[iVar6]]);
   iVar4 = core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(this_ptr,cursor_position);

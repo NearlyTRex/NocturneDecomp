@@ -32,12 +32,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   int iVar18;
   int iVar19;
   byte bVar20;
-  uint in_stack_ffffc814;
-  uint in_stack_ffffc818;
-  char **in_stack_ffffc81c;
-  CStrList_vtable *in_stack_ffffc820;
-  uint in_stack_ffffc824;
-  uint in_stack_ffffc828;
+  int in_stack_ffffc814;
   byte local_3444 [936];
   CPickList local_309c;
   CPickList local_2cf4;
@@ -219,12 +214,10 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  ((CPickList *)&stack0xffffc814,local_2a0,-1,0);
       if ((int)pcVar6 < 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,
-                   (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xffffc814,0);
         return 0;
       }
-      if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {
+      if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 + -1))) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   ((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar6,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -240,9 +233,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,
-               (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xffffc814,0);
     return 1;
   case PROP_MODEL_DFM:
     sprintf
@@ -270,9 +261,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_2cf4,local_2a0,-1,0);
       if ((int)pcVar6 < 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-                   (uint)in_stack_ffffc820,in_stack_ffffc824);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2cf4,0);
         return 0;
       }
       if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_2cf4.base.item_count + -1)))
@@ -292,9 +281,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-               (uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2cf4,0);
     return 1;
   case PROP_SOUND:
     core_sound_cpp_editSoundName_FUN_005b3de0(this_ptr->data_ptr,local_2a0);
@@ -314,14 +301,10 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)(local_3444 + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-                 (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_3444 + 4),0);
       return 1;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)local_3444,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c
-               ,(uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_3444,0);
     return 0;
   case PROP_FILE:
     pbVar13 = local_750;
@@ -346,9 +329,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_309c,local_2a0,-1,0);
       if ((int)pcVar6 < 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-                   (uint)in_stack_ffffc820,in_stack_ffffc824);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_309c,0);
         return 0;
       }
       if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_309c.base.item_count + -1)))
@@ -380,9 +361,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-               (uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_309c,0);
     return 1;
   case PROP_EVENT:
     pcVar6 = local_ac;
@@ -488,14 +467,10 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)(local_21fc + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-                 (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_21fc + 4),0);
       return 1;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)local_21fc,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c
-               ,(uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_21fc,0);
     return 0;
   case PROP_CLOTH:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_294c);
@@ -514,9 +489,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     pcVar6 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                ((CPickList *)local_294c,local_2a0,-1,0);
     if ((int)pcVar6 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)local_294c,0,in_stack_ffffc814,in_stack_ffffc818,
-                 (uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_294c,0);
       return 0;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
@@ -547,9 +520,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       core_cloth_cpp_CClothList_add_FUN_0043c0f0(pCVar15);
     }
     (*((actor->vtable)._ub)->setup)(actor);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)(local_294c + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-               (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_294c + 4),0);
     return 1;
   case PROP_ENUM_PAIR:
     iVar12 = -1;
@@ -580,9 +551,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     }
     *(uint *)this_ptr->data_ptr = *(uint *)((int)pvVar9 + iVar12 + 4);
 LAB_00410163:
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-               (uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1e54,0);
     return 0;
   case PROP_RULE:
     piVar4 = this_ptr->data_ptr;
@@ -740,13 +709,9 @@ LAB_0040fdd3:
                          (&local_25a4,local_2a0,iVar12,0);
       if (iVar12 < 0) break;
       *(uint *)this_ptr->data_ptr = *(uint *)this_ptr->data_ptr ^ (&0x00000001)[iVar12 * 2];
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-                 (uint)in_stack_ffffc820,in_stack_ffffc824);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_25a4,0);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
-               (uint)in_stack_ffffc820,in_stack_ffffc824);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_25a4,0);
     return 0;
   default:
     g_CurrentFilename = "..\\core\\actor.cpp";

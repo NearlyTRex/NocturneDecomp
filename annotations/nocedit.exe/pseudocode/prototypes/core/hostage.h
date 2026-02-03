@@ -73,4 +73,4 @@ void __cdecl CHostage::writeDependencies(CHostage *this_ptr,_FILE *file_handle);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004f6b60
 // Address: 004f6b60
-CHostage * __cdecl CHostage::dtor(CHostage *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9);
+CHostage * __cdecl CHostage::dtor(CHostage *this_ptr,uint flags);

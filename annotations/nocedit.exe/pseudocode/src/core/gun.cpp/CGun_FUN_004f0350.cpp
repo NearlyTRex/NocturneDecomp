@@ -14,7 +14,7 @@ int __cdecl core_gun_cpp_CGun_FUN_004f0350(CGun *this_ptr)
   int iVar2;
   CCharacter *this_ptr_01;
   CDemonActor *pCVar3;
-  CDemonActor *pCVar4;
+  CFlameCan *this_ptr_02;
   int extraout_EAX;
   ulonglong uStack_150;
   SDamageInfo SStack_148;
@@ -45,7 +45,7 @@ int __cdecl core_gun_cpp_CGun_FUN_004f0350(CGun *this_ptr)
   pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_c0,pCVar1);
-  iVar2 = core_weapon_cpp_FUN_005ee6e0();
+  iVar2 = core_weapon_cpp_CWeapon_FUN_005ee6e0(&this_ptr->base);
   if (iVar2 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_005b3a40
               (g_CSoundPtr,(CDemonActor *)this_ptr,"45-dry-!.wav",&CStack_c0);
@@ -94,17 +94,18 @@ int __cdecl core_gun_cpp_CGun_FUN_004f0350(CGun *this_ptr)
     pCStack_2c = pCVar3;
     pCStack_28 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
-    pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
+    this_ptr_02 = (CFlameCan *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
     if (this_ptr_01 == (CCharacter *)0x0) {
       if (pCStack_1c == (CGlass *)0x0) {
         if (pCVar3 == (CDemonActor *)0x0) {
           if (pCStack_28 == (CDemonActor *)0x0) {
-            if (pCVar4 == (CDemonActor *)0x0) {
+            if (this_ptr_02 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
               break;
             }
-            core_flamecan_cpp_FUN_004cb340();
+            core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_02);
           }
           else {
             core_crate_cpp_FUN_00448a70();

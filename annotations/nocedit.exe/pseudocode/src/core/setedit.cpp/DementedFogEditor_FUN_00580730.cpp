@@ -21,10 +21,6 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
   byte bVar10;
   int config_param2;
   char *in_stack_fffffa18;
-  uint in_stack_fffffa1c;
-  char **in_stack_fffffa20;
-  CStrList_vtable *in_stack_fffffa24;
-  uint in_stack_fffffa28;
   char local_240 [256];
   char local_140 [256];
   double local_40;
@@ -382,13 +378,9 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
                            ((CStrList *)&stack0xfffffa18,iVar6);
         sound_sndmain_cpp_startSfx_FUN_005a8e90(pcVar4);
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,
-                   (uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,
-                 (uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);
       sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     }
     if (local_2c == 0x1b) {

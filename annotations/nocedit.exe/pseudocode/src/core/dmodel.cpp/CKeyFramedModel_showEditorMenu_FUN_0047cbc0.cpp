@@ -27,7 +27,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   byte bVar15;
   double dVar16;
   uint uVar17;
-  CGame *in_stack_fffff150;
   int local_ca8;
   char local_c9c [260];
   char local_b98 [256];
@@ -138,7 +137,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   local_d8.y = 0.0;
   local_80 = 28.0;
   local_7c = 15.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff150);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   local_6c = 0;
   local_68 = 0;
   local_64 = (uint)(0 < this_ptr->poly_count);

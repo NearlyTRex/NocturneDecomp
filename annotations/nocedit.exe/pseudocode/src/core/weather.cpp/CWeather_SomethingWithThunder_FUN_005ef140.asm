@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 at 005eedd4
+;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eedd4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

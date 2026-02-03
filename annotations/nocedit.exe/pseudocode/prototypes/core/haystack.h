@@ -73,4 +73,4 @@ void __cdecl CHaystack::writeDependencies(CHaystack *this_ptr,_FILE *file_handle
 
 // Original: core_haystack.cpp_CHaystack_dtor_FUN_004f1d10
 // Address: 004f1d10
-CHaystack * __cdecl CHaystack::dtor(CHaystack *this_ptr,uint d1,uint d2);
+CHaystack * __cdecl CHaystack::dtor(CHaystack *this_ptr,uint flags);

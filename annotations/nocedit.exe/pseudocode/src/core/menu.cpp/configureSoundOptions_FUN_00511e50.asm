@@ -95,7 +95,7 @@ section .text
     PUSH ECX                            ; 00511e67 | g_CGameInstance
     MOV dword ptr [ESP + 0xa10],EDX     ; 00511e68
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00511e6f
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV EDX,0x2f28028                   ; 00511e74 | g_SoundMenuTextBuffers
     ADD ESP,0x4                         ; 00511e79
     XOR EAX,EAX                         ; 00511e7c
@@ -1544,7 +1544,7 @@ section .text
     LEA EAX,[ESP + 0x2c]                ; 00512ce3
     PUSH EAX                            ; 00512ce7
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00512ce8
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00512ced
     JMP 0x005126fd                      ; 00512cf0
         ;   XREF to: 005126fd (UNCONDITIONAL_JUMP)  ; default

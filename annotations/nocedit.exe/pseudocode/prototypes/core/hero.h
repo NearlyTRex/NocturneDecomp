@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004f2170
 // Address: 004f2170
-int __cdecl closestHeroToPoint(void);
+int __cdecl closestHeroToPoint(CLocation *location);
 
 // Original: core_hero.cpp_FUN_004f2220
 // Address: 004f2220
@@ -25,7 +25,7 @@ CHero * __cdecl CHero::ctor(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_dtor_FUN_004f2470
 // Address: 004f2470
-void __cdecl CHero::dtor(CHero *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+void __cdecl CHero::dtor(CHero *this_ptr,uint flags);
 
 // Original: core_hero.cpp_CHero_setup_FUN_004f2540
 // Address: 004f2540
@@ -165,7 +165,7 @@ CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30
 // Address: 004f3c30
-CHeroPlaceholder * __cdecl CHeroPlaceholder::dtor(CHeroPlaceholder *this_ptr,uint d1,uint d2);
+CHeroPlaceholder * __cdecl CHeroPlaceholder::dtor(CHeroPlaceholder *this_ptr,uint flags);
 
 // Original: core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90
 // Address: 004f3c90

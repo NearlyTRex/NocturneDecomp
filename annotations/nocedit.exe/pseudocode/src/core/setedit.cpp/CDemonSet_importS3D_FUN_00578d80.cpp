@@ -26,60 +26,22 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
   C3DSLight *pCVar9;
   char *pcVar10;
   char *pcVar11;
-  float *pfVar12;
+  uint *puVar12;
+  char (*pacVar13) [40];
+  float *pfVar14;
+  CDemonFilter **ppCVar15;
   C3DSLight *dest;
-  uint *puVar13;
-  uint *puVar14;
-  char (*pacVar15) [40];
-  float *pfVar16;
-  int *piVar17;
-  CDemonFilter **ppCVar18;
-  byte bVar19;
+  uint *puVar16;
+  uint *puVar17;
+  char (*pacVar18) [40];
+  float *pfVar19;
+  int *piVar20;
+  CDemonFilter **ppCVar21;
+  byte bVar22;
   CDemonSet *in_stack_00000004;
   _FILE *in_stack_00000008;
-  uint auStackY_3a30 [1378];
-  uint in_stack_ffffdb88;
-  uint in_stack_ffffdb8c;
-  uint in_stack_ffffdb90;
-  uint in_stack_ffffdb94;
-  uint in_stack_ffffdb98;
-  float local_2374;
-  float local_2370;
-  float local_236c;
-  float local_2368;
-  float local_2364;
-  float local_2360;
-  float local_235c;
-  float local_2358;
-  float local_2354;
-  uint local_2350 [63];
-  char local_2254 [4];
-  uint auStack_2250 [999];
-  float local_12b4;
-  float local_12b0;
-  float local_12ac;
-  float local_12a8;
-  float local_12a4;
-  char local_12a0 [4];
-  char local_129c [4];
-  float local_1298;
-  float local_1294;
-  float local_1290;
-  int local_128c;
-  int local_1288;
-  uint local_1284 [320];
-  float local_d84 [32];
-  int local_d04 [32];
-  int local_c84;
-  int local_c80;
-  int local_c7c;
-  int local_c78;
-  int local_c74;
-  int local_c70;
-  int local_c6c;
-  uint local_c68 [32];
-  int local_be8;
-  float local_be4;
+  int aiStackY_3a30 [1378];
+  C3DSLight local_2478;
   CPickList local_be0;
   char local_838 [400];
   char local_6a8 [260];
@@ -125,7 +87,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
   int local_18;
   char local_14 [4];
   
-  bVar19 = 0;
+  bVar22 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   local_78 = core_setedit_cpp_FUN_00578c90();
   if ((((local_78 < 0) || (iVar1 = core_setedit_cpp_FUN_00578c90(), iVar1 < 0)) ||
@@ -322,17 +284,13 @@ LAB_0057981a:
       if (iVar1 < 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,"..\\core\\setedit.cpp",0x516)
         ;
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_be0,0,in_stack_ffffdb88,in_stack_ffffdb8c,in_stack_ffffdb90,
-                   in_stack_ffffdb94,in_stack_ffffdb98);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
         return;
       }
       if (iVar1 != 0) goto LAB_00579a7e;
       core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630();
       _fseek(in_stack_00000008,local_34,0);
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_be0,0,in_stack_ffffdb88,in_stack_ffffdb8c,in_stack_ffffdb90,
-                 in_stack_ffffdb94,in_stack_ffffdb98);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
     } while( true );
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -413,16 +371,16 @@ LAB_0057911a:
     iVar1 = 0;
     if (0 < local_50) {
       piVar5 = local_38 + 2;
-      piVar17 = local_38 + 1;
+      piVar20 = local_38 + 1;
       do {
-        iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",local_38 + iVar1 * 3,piVar17,piVar5);
+        iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",local_38 + iVar1 * 3,piVar20,piVar5);
         if (iVar2 != 3) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x54f;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("File is corrupt on vertex %d of %d",iVar1,local_50);
         }
-        piVar17 = piVar17 + 3;
+        piVar20 = piVar20 + 3;
         iVar1 = iVar1 + 1;
         piVar5 = piVar5 + 3;
       } while (iVar1 < local_50);
@@ -485,18 +443,17 @@ LAB_00579173:
     if (0 < local_44) {
       local_1c = in_stack_00000004->lights;
       do {
-        core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffdb88);
-        core_setutil_cpp_C3DSLight_importS3D_FUN_00587710
-                  ((C3DSLight *)&stack0xffffdb88,in_stack_00000008);
+        core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2478);
+        core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);
         iVar1 = local_70;
-        if ((in_stack_ffffdb88 == 0) || (iVar1 = local_74, in_stack_ffffdb88 == 1)) {
+        if ((local_2478.light_type == 0) || (iVar1 = local_74, local_2478.light_type == 1)) {
           local_20 = iVar1;
         }
         else {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x589;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("unknown light type: %d",in_stack_ffffdb88);
+                    ("unknown light type: %d",local_2478.light_type);
         }
         if (local_20 != 0) {
           if (199 < in_stack_00000004->light_count) {
@@ -505,91 +462,92 @@ LAB_00579173:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many lights!");
           }
           pCVar9 = local_1c + in_stack_00000004->light_count;
-          pCVar9->light_type = in_stack_ffffdb88;
-          puVar13 = (uint *)&stack0xffffdb8c;
-          pcVar11 = pCVar9->name;
+          pCVar9->light_type = local_2478.light_type;
+          pcVar11 = local_2478.name;
+          pcVar10 = pCVar9->name;
           for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)pcVar11 = *puVar13;
-            puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
-            pcVar11 = pcVar11 + (uint)bVar19 * -8 + 4;
+            *(uint *)pcVar10 = *(uint *)pcVar11;
+            pcVar11 = pcVar11 + ((uint)bVar22 * -2 + 1) * 4;
+            pcVar10 = pcVar10 + (uint)bVar22 * -8 + 4;
           }
-          if (&pCVar9->pos != (CVector3f *)&local_2374) {
-            (pCVar9->pos).x = local_2374;
-            (pCVar9->pos).y = local_2370;
-            (pCVar9->pos).z = local_236c;
+          if (&pCVar9->pos != &local_2478.pos) {
+            (pCVar9->pos).x = local_2478.pos.x;
+            (pCVar9->pos).y = local_2478.pos.y;
+            (pCVar9->pos).z = local_2478.pos.z;
           }
-          if (&pCVar9->orient != (CVector3f *)&local_2368) {
-            (pCVar9->orient).x = local_2368;
-            (pCVar9->orient).y = local_2364;
-            (pCVar9->orient).z = local_2360;
+          if (&pCVar9->orient != &local_2478.orient) {
+            (pCVar9->orient).x = local_2478.orient.x;
+            (pCVar9->orient).y = local_2478.orient.y;
+            (pCVar9->orient).z = local_2478.orient.z;
           }
-          pCVar9->fov = local_235c;
-          pCVar9->aspect = local_2358;
-          pCVar9->intensity = local_2354;
-          puVar13 = local_2350;
-          pcVar11 = pCVar9->visible_flags;
+          pCVar9->fov = local_2478.fov;
+          pCVar9->aspect = local_2478.aspect;
+          pCVar9->intensity = local_2478.intensity;
+          pcVar11 = local_2478.visible_flags;
+          pcVar10 = pCVar9->visible_flags;
           for (iVar1 = 0x3e; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)pcVar11 = *puVar13;
-            puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
-            pcVar11 = pcVar11 + (uint)bVar19 * -8 + 4;
+            *(uint *)pcVar10 = *(uint *)pcVar11;
+            pcVar11 = pcVar11 + ((uint)bVar22 * -2 + 1) * 4;
+            pcVar10 = pcVar10 + (uint)bVar22 * -8 + 4;
           }
-          *(ushort *)pcVar11 = *(ushort *)puVar13;
-          puVar13 = (uint *)((int)pCVar9 + (uint)bVar19 * -8 + 0x228);
-          *(char (*) [4])(pCVar9->unk1 + 6) = local_2254;
-          puVar14 = puVar13 + (uint)bVar19 * -2 + 1;
-          *puVar13 = auStack_2250[(uint)bVar19 * -2];
-          *puVar14 = auStack_2250[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
-          puVar14[(uint)bVar19 * -2 + 1] =
-               (auStack_2250 + (uint)bVar19 * -2 + (uint)bVar19 * -2 + 1)[(uint)bVar19 * -2 + 1];
-          (pCVar9->color).r = local_12b4;
-          (pCVar9->color).g = local_12b0;
-          (pCVar9->color).b = local_12ac;
-          pCVar9->atten_start = local_12a8;
-          pCVar9->atten_end = local_12a4;
-          *(char (*) [4])pCVar9->unk2 = local_12a0;
-          *(char (*) [4])(pCVar9->unk2 + 4) = local_129c;
-          pCVar9->on_time = local_1298;
-          pCVar9->cycle_time = local_1294;
-          pCVar9->cycle_elapsed = local_1290;
-          pCVar9->filter_count = local_128c;
-          pCVar9->blend_filter = local_1288;
-          puVar13 = local_1284;
-          pacVar15 = pCVar9->filter_names;
+          *(ushort *)pcVar10 = *(ushort *)pcVar11;
+          puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);
+          *(uint *)(pCVar9->unk1 + 6) = local_2478.unk1._6_4_;
+          puVar17 = puVar16 + (uint)bVar22 * -2 + 1;
+          puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
+          ;
+          *puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);
+          *puVar17 = *puVar12;
+          puVar17[(uint)bVar22 * -2 + 1] = puVar12[(uint)bVar22 * -2 + 1];
+          (pCVar9->color).r = local_2478.color.r;
+          (pCVar9->color).g = local_2478.color.g;
+          (pCVar9->color).b = local_2478.color.b;
+          pCVar9->atten_start = local_2478.atten_start;
+          pCVar9->atten_end = local_2478.atten_end;
+          *(uint *)pCVar9->unk2 = local_2478.unk2._0_4_;
+          *(uint *)(pCVar9->unk2 + 4) = local_2478.unk2._4_4_;
+          pCVar9->on_time = local_2478.on_time;
+          pCVar9->cycle_time = local_2478.cycle_time;
+          pCVar9->cycle_elapsed = local_2478.cycle_elapsed;
+          pCVar9->filter_count = local_2478.filter_count;
+          pCVar9->blend_filter = local_2478.blend_filter;
+          pacVar13 = local_2478.filter_names;
+          pacVar18 = pCVar9->filter_names;
           for (iVar1 = 0x140; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)*pacVar15 = *puVar13;
-            puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
-            pacVar15 = (char (*) [40])((int)pacVar15 + (uint)bVar19 * -8 + 4);
+            *(uint *)*pacVar18 = *(uint *)*pacVar13;
+            pacVar13 = (char (*) [40])((int)pacVar13 + ((uint)bVar22 * -2 + 1) * 4);
+            pacVar18 = (char (*) [40])((int)pacVar18 + (uint)bVar22 * -8 + 4);
           }
-          pfVar12 = local_d84;
-          pfVar16 = pCVar9->filter_durations;
+          pfVar14 = local_2478.filter_durations;
+          pfVar19 = pCVar9->filter_durations;
           for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *pfVar16 = *pfVar12;
-            pfVar12 = pfVar12 + (uint)bVar19 * -2 + 1;
-            pfVar16 = pfVar16 + (uint)bVar19 * -2 + 1;
+            *pfVar19 = *pfVar14;
+            pfVar14 = pfVar14 + (uint)bVar22 * -2 + 1;
+            pfVar19 = pfVar19 + (uint)bVar22 * -2 + 1;
           }
-          piVar5 = local_d04;
-          piVar17 = pCVar9->filter_indices;
+          piVar5 = local_2478.filter_indices;
+          piVar20 = pCVar9->filter_indices;
           for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *piVar17 = *piVar5;
-            piVar5 = piVar5 + (uint)bVar19 * -2 + 1;
-            piVar17 = piVar17 + (uint)bVar19 * -2 + 1;
+            *piVar20 = *piVar5;
+            piVar5 = piVar5 + (uint)bVar22 * -2 + 1;
+            piVar20 = piVar20 + (uint)bVar22 * -2 + 1;
           }
-          pCVar9->move_filter = local_c84;
-          (pCVar9->filter_vel).x = local_c80;
-          (pCVar9->filter_vel).y = local_c7c;
-          (pCVar9->filter_pos).x = local_c78;
-          (pCVar9->filter_pos).y = local_c74;
-          (pCVar9->size).x = local_c70;
-          (pCVar9->size).y = local_c6c;
-          puVar13 = local_c68;
-          ppCVar18 = pCVar9->filters;
+          pCVar9->move_filter = local_2478.move_filter;
+          (pCVar9->filter_vel).x = local_2478.filter_vel.x;
+          (pCVar9->filter_vel).y = local_2478.filter_vel.y;
+          (pCVar9->filter_pos).x = local_2478.filter_pos.x;
+          (pCVar9->filter_pos).y = local_2478.filter_pos.y;
+          (pCVar9->size).x = local_2478.size.x;
+          (pCVar9->size).y = local_2478.size.y;
+          ppCVar15 = local_2478.filters;
+          ppCVar21 = pCVar9->filters;
           for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *ppCVar18 = (CDemonFilter *)*puVar13;
-            puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
-            ppCVar18 = ppCVar18 + (uint)bVar19 * -2 + 1;
+            *ppCVar21 = *ppCVar15;
+            ppCVar15 = ppCVar15 + (uint)bVar22 * -2 + 1;
+            ppCVar21 = ppCVar21 + (uint)bVar22 * -2 + 1;
           }
-          pCVar9->current_filter_frame = local_be8;
-          pCVar9->filter_frame_elapsed = local_be4;
+          pCVar9->current_filter_frame = local_2478.current_filter_frame;
+          pCVar9->filter_frame_elapsed = local_2478.filter_frame_elapsed;
           in_stack_00000004->light_count = in_stack_00000004->light_count + 1;
         }
         local_7c = local_7c + 1;
@@ -708,8 +666,6 @@ LAB_0057a07e:
             (g_CEditorToolsPtr,"CDemonSet::importS3D completed OK");
   return;
 LAB_00579a7e:
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_be0,0,in_stack_ffffdb88,in_stack_ffffdb8c,in_stack_ffffdb90,in_stack_ffffdb94,
-             in_stack_ffffdb98);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
   goto LAB_0057904b;
 }

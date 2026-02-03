@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,int d1)
+; __cdecl CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452f52
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e16cd
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e16cd
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e10e7
 ;   support_codec.cpp_CLZWCompress_dtor_FUN_0043f710 at 0043f730
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0 at 0043f6d0

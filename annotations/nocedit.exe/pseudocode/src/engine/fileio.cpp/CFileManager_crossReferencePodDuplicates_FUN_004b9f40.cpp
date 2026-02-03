@@ -19,11 +19,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   char *pcVar6;
   char *pcVar7;
   WatcomTypeInfo *type_info;
-  uint in_stack_fffffb04;
-  uint in_stack_fffffb08;
-  char **in_stack_fffffb0c;
-  CStrList_vtable *in_stack_fffffb10;
-  uint in_stack_fffffb14;
+  CPickList local_4fc;
   char local_154 [260];
   CStrList local_50;
   CPodFile *local_40;
@@ -74,7 +70,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   if (local_50.item_count < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"No POD files found in %s",local_154);
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0,in_stack_fffffb04);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0);
     return;
   }
   type_info = &g_CPodFileTypeInfo;
@@ -107,7 +103,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
         g_CurrentDebugLine = 0xe3f;
         pvVar2 = __vec_delete(local_3c,&g_CPodFileTypeInfo);
         shape_memdbg_cpp_free_FUN_005fe659(pvVar2);
-        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0,in_stack_fffffb04);
+        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0);
         return;
       }
       iVar4 = iVar4 + 1;
@@ -115,7 +111,7 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
     } while (iVar4 < local_28);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb04);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4fc);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Finding duplicates...");
   local_1c = 0;
@@ -140,21 +136,18 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                  -1 < local_20)) {
                 if (iVar4 < local_1c) break;
                 if (local_18 != 0) {
-                  shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                            ((CStrList *)&stack0xfffffb04,&DAT_00628c6a);
+                  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,&DAT_00628c6a);
                   sprintf
                             (local_154,"%s\t%s\t%08X",pcVar7,local_30,
                              *(uint *)((int)&local_24->directory_entries->checksum + local_2c)
                             );
-                  shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                            ((CStrList *)&stack0xfffffb04,local_154);
+                  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
                   local_18 = 0;
                 }
                 sprintf
                           (local_154,"\t%s\t%08X",pCVar5->filename,
                            pCVar5->directory_entries[local_20].checksum);
-                shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffb04,local_154)
-                ;
+                shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
               }
               iVar4 = iVar4 + 1;
               pCVar5 = pCVar5 + 1;
@@ -172,23 +165,18 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   g_CurrentDebugLine = 0xe63;
   pvVar2 = __vec_delete(local_3c,&g_CPodFileTypeInfo);
   shape_memdbg_cpp_free_FUN_005fe659(pvVar2);
-  if (0 < (int)in_stack_fffffb04) {
-    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffffb04,1);
-    shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90
-              ((CPickList *)&stack0xfffffb04,(char *)0x0);
+  if (0 < local_4fc.base.item_count) {
+    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_4fc,1);
+    shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&local_4fc,(char *)0x0);
     shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-              ((CPickList *)&stack0xfffffb04,"List of duplicates",-1,0);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffffb04,0,in_stack_fffffb04,in_stack_fffffb08,
-               (uint)in_stack_fffffb0c,(uint)in_stack_fffffb10,in_stack_fffffb14);
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0,in_stack_fffffb04);
+              (&local_4fc,"List of duplicates",-1,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4fc,0);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0);
     return;
   }
   shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
             (g_CEditorToolsPtr,"No duplicates found.");
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffb04,0,in_stack_fffffb04,in_stack_fffffb08,
-             (uint)in_stack_fffffb0c,(uint)in_stack_fffffb10,in_stack_fffffb14);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0,in_stack_fffffb04);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4fc,0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0);
   return;
 }

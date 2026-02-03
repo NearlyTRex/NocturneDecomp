@@ -9,8 +9,8 @@
 int __cdecl core_gore_cpp_cleanupBloodParticles_FUN_004ee480(CBloodParticle *ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrfini((void **)ptr,0x100,&g_CBloodParticleTypeInfo);
-  return iVar1;
+  pvVar1 = __arrfini(ptr,0x100,&g_CBloodParticleTypeInfo);
+  return (int)pvVar1;
 }

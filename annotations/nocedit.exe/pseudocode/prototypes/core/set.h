@@ -333,20 +333,20 @@ void __cdecl FUN_005714c0(void);
 
 // Original: core_set.cpp_freeVectors_FUN_00571510
 // Address: 00571510
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);
 
 // Original: core_set.cpp_free3DSCameras_FUN_00571530
 // Address: 00571530
-void __cdecl free3DSCameras(C3DSCamera **array);
+C3DSCamera * __cdecl free3DSCameras(C3DSCamera *objs);
 
 // Original: core_set.cpp_free3DSLights_FUN_00571550
 // Address: 00571550
-void __cdecl free3DSLights(C3DSLight **array);
+C3DSLight * __cdecl free3DSLights(C3DSLight *objs);
 
 // Original: core_set.cpp_freeRooms_FUN_00571570
 // Address: 00571570
-void __cdecl freeRooms(SRoom **array);
+SRoom * __cdecl freeRooms(SRoom *objs);
 
 // Original: core_set.cpp_freeVDBoxes_FUN_00571590
 // Address: 00571590
-void __cdecl freeVDBoxes(SVDBox **array);
+SVDBox * __cdecl freeVDBoxes(SVDBox *objs);

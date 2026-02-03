@@ -17,7 +17,7 @@ core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int ma
   int iVar5;
   char *pcVar6;
   
-  pcVar2 = core_script_cpp_skipWhitespaceFUN_005593d0(*cursor);
+  pcVar2 = core_script_cpp_skipWhitespace_FUN_005593d0(*cursor);
   *cursor = pcVar2;
   if (*pcVar2 != '(') {
     return "No opening parenthesis";
@@ -41,7 +41,7 @@ core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int ma
           *cursor = pcVar2 + 2;
           out_buffer[iVar4] = '\0';
           core_script_cpp_trimString_FUN_00559360(out_buffer);
-          pcVar2 = core_script_cpp_skipWhitespaceFUN_005593d0(*cursor);
+          pcVar2 = core_script_cpp_skipWhitespace_FUN_005593d0(*cursor);
           *cursor = pcVar2;
           return (char *)0x0;
         }

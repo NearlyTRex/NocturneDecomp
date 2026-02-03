@@ -19,11 +19,8 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
   int iVar8;
   char *pcVar9;
   byte bVar11;
-  float in_stack_fffff028;
-  uint in_stack_fffff02c;
-  uint in_stack_fffff030;
-  char **in_stack_fffff034;
-  CStrList_vtable *in_stack_fffff038;
+  float local_fd8;
+  CPickList local_fd4;
   CPickList local_c2c;
   CPickList local_884;
   CPickList local_4dc;
@@ -163,9 +160,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
             core_setedit_cpp_ResolveMasterLights_FUN_0057c550();
             core_setedit_cpp_FUN_0057b500();
           }
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_4dc,0,(uint)in_stack_fffff028,in_stack_fffff02c,in_stack_fffff030,
-                     (uint)in_stack_fffff034,(uint)in_stack_fffff038);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4dc,0);
         }
         else {
           iVar5 = 0;
@@ -191,9 +186,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
               core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
             }
           }
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_884,0,(uint)in_stack_fffff028,in_stack_fffff02c,in_stack_fffff030,
-                     (uint)in_stack_fffff034,(uint)in_stack_fffff038);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_884,0);
         }
       }
       else if (local_28 < 0x35) {
@@ -206,12 +199,12 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
         core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
       }
       else if (local_28 < 0x36) {
-        in_stack_fffff028 = this_ptr->min_ambient_value * 100.0f;
+        local_fd8 = this_ptr->min_ambient_value * 100.0f;
         iVar5 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                          (g_CEditorToolsPtr,"Set ambient level (0..100)",
-                           (float *)&stack0xfffff028,1,0.0,100.0,1);
+                          (g_CEditorToolsPtr,"Set ambient level (0..100)",&local_fd8,1,0.0,
+                           100.0,1);
         if (iVar5 != 0) {
-          this_ptr->min_ambient_value = in_stack_fffff028 * (float)0.01;
+          this_ptr->min_ambient_value = local_fd8 * (float)0.01;
           iVar5 = 0;
           pCVar4 = this_ptr;
           if (0 < this_ptr->camera_count) {
@@ -241,32 +234,27 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
           core_setedit_cpp_ResolveMasterLights_FUN_0057c550();
           core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0();
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_c2c,0,(uint)in_stack_fffff028,in_stack_fffff02c,in_stack_fffff030,
-                   (uint)in_stack_fffff034,(uint)in_stack_fffff038);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c2c,0);
       }
       else if (local_28 < 0x38) {
         iVar5 = 0;
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff02c);
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_fd4);
         if (0 < g_MasterLightCount) {
           iVar7 = 0;
           do {
             piVar1 = (int *)((int)g_MasterLightList + iVar7);
             iVar7 = iVar7 + 4;
             iVar5 = iVar5 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                      ((CStrList *)&stack0xfffff02c,(char *)(*piVar1 + 0x40));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_fd4.base,(char *)(*piVar1 + 0x40));
           } while (iVar5 < g_MasterLightCount);
         }
         iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffff02c,"Clone which light",-1,0);
+                          (&local_fd4,"Clone which light",-1,0);
         if (-1 < iVar5) {
           core_setedit_cpp_ResolveMasterLights_FUN_0057c550();
           core_setedit_cpp_FUN_0057b600();
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff02c,0,(uint)in_stack_fffff028,in_stack_fffff02c,
-                   in_stack_fffff030,(uint)in_stack_fffff034,(uint)in_stack_fffff038);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_fd4,0);
       }
       else if (local_28 == 0x53) {
         if (this_ptr->geometry_filename[0] == '\0') {

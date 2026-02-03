@@ -113,4 +113,4 @@ int __cdecl FUN_00481650(void);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_00481670
 // Address: 00481670
-CDoor * __cdecl CDoor::dtor(CDoor *this_ptr,uint d1,uint d2);
+CDoor * __cdecl CDoor::dtor(CDoor *this_ptr,uint flags);

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 54,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 7,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 20
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -90,16 +90,16 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 9,
+      "line": 7,
       "match": "this_ptr[-1].",
-      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,",
+      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 9,
+      "line": 7,
       "match": "(strstreambase *)((int)",
-      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,",
+      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
       "type": "pointer_cast"
     },
     {

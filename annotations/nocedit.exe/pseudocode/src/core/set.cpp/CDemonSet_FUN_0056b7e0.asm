@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   param_4
 ;
 ; XREF[4]:
+;   core_game.cpp_CGame_FUN_004dcee0 at 004dd0a7
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004ddfdd
-;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd0a7
 ;   core_msnedit.cpp_CDemonMission_FUN_00539060 at 005390a9
 ;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b302
 ;

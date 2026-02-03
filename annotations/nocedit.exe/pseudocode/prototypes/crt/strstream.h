@@ -21,7 +21,7 @@ int __cdecl ostrstream::tellp(ostrstream *this_ptr);
 
 // Original: crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a
 // Address: 005ff48a
-ostrstream * __cdecl ostrstream::dtor(ostrstream *this_ptr,int d1);
+ostrstream * __cdecl ostrstream::dtor(ostrstream *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_istrstream_constructor_FUN_005ff524
 // Address: 005ff524
@@ -37,7 +37,7 @@ void __cdecl istrstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags)
 
 // Original: crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca
 // Address: 005ff5ca
-istrstream * __cdecl istrstream::dtor(istrstream *this_ptr,int d1);
+istrstream * __cdecl istrstream::dtor(istrstream *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambase_constructor_FUN_006060fe
 // Address: 006060fe
@@ -49,7 +49,7 @@ void __cdecl strstreambase::destructor_thunk(ios *this_ptr,int dtor_flags);
 
 // Original: crt_strstream.cpp_strstreambase_dtor_FUN_006062a6
 // Address: 006062a6
-strstreambase * __cdecl strstreambase::dtor(strstreambase *this_ptr,uint d1,uint d2,uint d3);
+strstreambase * __cdecl strstreambase::dtor(strstreambase *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambuf_init_FUN_0060b815
 // Address: 0060b815
@@ -77,7 +77,7 @@ int __watcallStack strstreambuf::sync(void);
 
 // Original: crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f
 // Address: 0060bb7f
-strstreambuf * __cdecl strstreambuf::dtor(strstreambuf *this_ptr,uint d1);
+strstreambuf * __cdecl strstreambuf::dtor(strstreambuf *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8
 // Address: 0060bbf8

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint d1)
+; __cdecl strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint flags)
 ;
 ; Parameters:
 ; strstreambuf *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   crt_strstream.cpp_strstreambase_dtor_FUN_006062a6 at 006062d7

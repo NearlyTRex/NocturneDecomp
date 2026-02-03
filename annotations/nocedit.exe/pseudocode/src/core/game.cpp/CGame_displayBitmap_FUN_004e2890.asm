@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
+; __cdecl void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab47c

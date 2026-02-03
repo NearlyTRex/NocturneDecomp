@@ -57,4 +57,4 @@ void __cdecl CBiggs::writeDependencies(CBiggs *this_ptr,_FILE *file_handle);
 
 // Original: core_biggs.cpp_CBiggs_dtor_FUN_00418d10
 // Address: 00418d10
-CBiggs * __cdecl CBiggs::dtor(CBiggs *this_ptr,uint d1);
+CBiggs * __cdecl CBiggs::dtor(CBiggs *this_ptr,uint flags);

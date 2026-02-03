@@ -205,4 +205,4 @@ STriangleRef * __cdecl STriangleRef::dtor(STriangleRef *this_ptr);
 
 // Original: core_dtrace.cpp_freeVectors_FUN_0049a410
 // Address: 0049a410
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

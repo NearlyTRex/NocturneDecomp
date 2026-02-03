@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_enemy.cpp_CEnemy_FUN_004a9fa0
+;   core_enemy.cpp_CEnemy_renderBackground_FUN_004a9fa0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e81a8
     PUSH EBX                            ; 004e81ac
     PUSH EAX                            ; 004e81ad
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fa0 ; 004e81ae
-        ;   XREF to: 004a9fa0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fa0(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_renderBackground_FUN_004a9fa0 ; 004e81ae
+        ;   XREF to: 004a9fa0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_renderBackground_FUN_004a9fa0(CEnemy * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004e81b3
     POP EBX                             ; 004e81b6
     RET                                 ; 004e81b7

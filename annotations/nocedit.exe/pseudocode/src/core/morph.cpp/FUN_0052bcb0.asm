@@ -219,7 +219,7 @@ section .text
     XOR EBP,EBP                         ; 0052be02
     MOV EBX,0xffffffff                  ; 0052be04
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0052be09
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052be0e
     MOV dword ptr [0x02cf6a94],EBP      ; 0052be11 | g_MouseButtonFlags
     MOV dword ptr [ESP + 0x4d68],EBP    ; 0052be17
@@ -429,7 +429,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0052c0fb
     PUSH EAX                            ; 0052c0ff
     CALL core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0 ; 0052c100
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance * * array)
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance * objs)
     ADD ESP,0x8                         ; 0052c105
     ADD ESP,0x4db4                      ; 0052c108
     POP EBP                             ; 0052c10e
@@ -586,7 +586,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0052c2fa | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0052c300 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0052c301
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0052c306
     MOV [0x02d02570],EAX                ; 0052c309 | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0x4dbc]    ; 0052c30e
@@ -1092,7 +1092,7 @@ section .text
     LEA EAX,[ESP + 0x4578]              ; 0052ca07
     PUSH EAX                            ; 0052ca0e
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0052ca0f
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052ca14
     PUSH 0x18                           ; 0052ca17
         ;   Label: LAB_0052ca17
@@ -1120,13 +1120,13 @@ section .text
     LEA EAX,[ESP + 0x4920]              ; 0052ca64
     PUSH EAX                            ; 0052ca6b
     CALL core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0 ; 0052ca6c
-        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint * * array)
+        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; SMorphControlPoint * core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint * objs)
     ADD ESP,0x8                         ; 0052ca71
     PUSH 0x0                            ; 0052ca74
     LEA EAX,[ESP + 0x10]                ; 0052ca76
     PUSH EAX                            ; 0052ca7a
     CALL core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0 ; 0052ca7b
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance * * array)
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance * objs)
     ADD ESP,0x8                         ; 0052ca80
     POP EBX                             ; 0052ca83
     POP ESI                             ; 0052ca84

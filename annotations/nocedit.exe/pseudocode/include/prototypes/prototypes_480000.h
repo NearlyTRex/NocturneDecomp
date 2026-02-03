@@ -29,6 +29,7 @@
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFoundFileInfo.h"
@@ -65,7 +66,7 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
 void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_writeDependencies_FUN_00481630(CDoor *this_ptr,_FILE *file_handle);
 int __cdecl core_door_cpp_FUN_00481650(void);
-CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint d1,uint d2);
+CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename);
 void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandler *handler);
 int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context);
@@ -79,7 +80,7 @@ int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new
 _FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode);
 void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50 (char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream);
 CFileFinder * __cdecl engine_dosio_c_CFileFinder_ctor_FUN_00481c30(CFileFinder *this_ptr);
-CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr,uint d1);
+CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr);
 int __cdecl engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *search_pattern);
 int __cdecl engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder *this_ptr);
@@ -118,7 +119,7 @@ void __cdecl core_dracbrid_cpp_FUN_004858f0(void);
 void __cdecl core_dracbrid_cpp_FUN_00485b20(void);
 int __cdecl core_dracbrid_cpp_FUN_00485bc0(void);
 int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride *this_ptr);
-void __cdecl core_dracbrid_cpp_CDraculaBride_load_FUN_00485dd0(void);
+void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_ShotThruHeart_FUN_00486020(void);
 void __cdecl core_dracbrid_cpp_FUN_00486070(void);
 int __cdecl core_dracbrid_cpp_FUN_00486320(void);
@@ -130,7 +131,7 @@ void __cdecl core_dracbrid_cpp_FUN_00486c90(void);
 void __cdecl core_dracbrid_cpp_FUN_00486d00(void);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr);
-CDraculaBride * __cdecl core_dracbrid_cpp_dtor_FUN_00486d70 (CDraculaBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDraculaBride *this_ptr,uint flags);
 void __cdecl core_dracbrid_cpp_FUN_00486e30(void);
 void __cdecl core_dracbrid_cpp_FUN_00486e50(void);
 CDrawSurface * __cdecl core_dracbrid_cpp_FUN_00486e70(void);
@@ -314,34 +315,34 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dc
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 (CDemonRenderer *this_ptr,SCameraViewportState *output_state);
 void __cdecl core_drip_cpp_staticInit_FUN_0048df80(void);
 CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_0048dfc0(void);
-CDemonActorType * __cdecl core_drip_cpp_FUN_0048dff0(void);
+CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0048dff0(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip *this_ptr);
-void __cdecl core_drip_cpp_FUN_0048e0e0(void);
-void __cdecl core_drip_cpp_CDrip_load_FUN_0048e170(void);
-void __cdecl core_drip_cpp_FUN_0048e2a0(void);
-void __cdecl core_drip_cpp_FUN_0048e6b0(void);
-int __cdecl core_drip_cpp_FUN_0048e6c0(void);
-float * __cdecl core_drip_cpp_FUN_0048e740(void);
-int __cdecl core_drip_cpp_FUN_0048e820(void);
+void __cdecl core_drip_cpp_CDrip_setup_FUN_0048e0e0(CDrip *this_ptr);
+void __cdecl core_drip_cpp_CDrip_archive_FUN_0048e170(CDrip *this_ptr);
+void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delta_time);
+void __cdecl core_drip_cpp_CDrip_FUN_0048e6b0(CDrip *this_ptr);
+int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_0048e6c0(CDrip *this_ptr);
+CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_drip_cpp_CDrip_hasCollision_FUN_0048e820(CDrip *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (CDrip *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property);
 void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_drip_cpp_FUN_0048ea30(void);
-void __cdecl core_drip_cpp_FUN_0048ea60(void);
-CDrip * __cdecl core_drip_cpp_dtor_FUN_0048ea90(CDrip *this_ptr,uint d1,uint d2);
+void __cdecl core_drip_cpp_CDrip_processInEditor_FUN_0048ea30(CDrip *this_ptr);
+void __cdecl core_drip_cpp_CDrip_writeDependencies_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle);
+CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0048ea90(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void);
 CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void);
-CDemonActorType * __cdecl core_drone_cpp_FUN_0048eb40(void);
+CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_0048eb40(CDrone *this_ptr);
 CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr);
-void __cdecl core_drone_cpp_FUN_0048ebc0(void);
-void __cdecl core_drone_cpp_FUN_0048ec70(void);
-void __cdecl core_drone_cpp_CDrone_load_FUN_0048f2f0(void);
-void __cdecl core_drone_cpp_FUN_0048f360(void);
-int __cdecl core_drone_cpp_FUN_0048f4d0(void);
+void __cdecl core_drone_cpp_CDrone_setup_FUN_0048ebc0(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float delta_time);
+void __cdecl core_drone_cpp_CDrone_archive_FUN_0048f2f0(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_0048f4d0(CDrone *this_ptr,CVector3f *out_points_array);
 void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520 (CDrone *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_drone_cpp_FUN_0048f560(void);
-void __cdecl core_drone_cpp_FUN_0048f570(void);
-CDrone * __cdecl core_drone_cpp_dtor_FUN_0048f5a0 (CDrone *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+void __cdecl core_drone_cpp_CDrone_FUN_0048f560(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_writeDependencies_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle);
+CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_0048f5a0(CDrone *this_ptr,uint flags);
 void __cdecl shape_dsemodel_cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel *this_ptr,int vertex_id);
 int __cdecl shape_dsemodel_cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel *this_ptr,int vertex_id);
 void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEModel *this_ptr,uint part_index);

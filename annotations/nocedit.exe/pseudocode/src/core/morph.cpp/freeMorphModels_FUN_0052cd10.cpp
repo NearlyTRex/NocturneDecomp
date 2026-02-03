@@ -2,13 +2,15 @@
 // Address: 0052cd10
 // Address Range: [[0052cd10, 0052cd24]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel **array)
+// Signature: CMorphModel * __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel **array)
+CMorphModel * __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel *objs)
 
 {
-  __arrfini(array,2,&g_CMorphModelTypeInfo);
-  return;
+  CMorphModel *pCVar1;
+  
+  pCVar1 = __arrfini(objs,2,&g_CMorphModelTypeInfo);
+  return pCVar1;
 }

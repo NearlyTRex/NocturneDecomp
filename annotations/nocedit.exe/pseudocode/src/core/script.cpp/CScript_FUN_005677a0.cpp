@@ -16,11 +16,7 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
   void *pvVar5;
   char *pcVar6;
   char *pcVar7;
-  uint in_stack_ffffd3b4;
-  uint in_stack_ffffd3b8;
-  uint in_stack_ffffd3bc;
-  uint in_stack_ffffd3c0;
-  uint in_stack_ffffd3c4;
+  byte auStack_2c40 [9464];
   CPickList local_748;
   char local_3a0 [500];
   char local_1ac [200];
@@ -103,7 +99,7 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
         (**(code **)(*(int *)(*(int *)(local_14 + 0x104) + 0x154) + 0xd4))();
         sprintf
                   (local_e4,"%s\t%s",*(uint *)(local_14 + 0x104),
-                   &stack0xffffd3c0 + *(int *)(local_14 + 0x108) * 0xec);
+                   auStack_2c40 + *(int *)(local_14 + 0x108) * 0xec);
       }
       sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
       shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar3,(int)local_3a0);
@@ -176,8 +172,6 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
 LAB_005679f9:
   iVar3 = 0;
 LAB_00567a01:
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_748,0,in_stack_ffffd3b4,in_stack_ffffd3b8,in_stack_ffffd3bc,in_stack_ffffd3c0,
-             in_stack_ffffd3c4);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_748,0);
   return iVar3;
 }

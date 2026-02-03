@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint d3)
+; __watcallStack filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint flags)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   crt_fstream.cpp_fstreambase_dtor_FUN_00606509 at 0060653a

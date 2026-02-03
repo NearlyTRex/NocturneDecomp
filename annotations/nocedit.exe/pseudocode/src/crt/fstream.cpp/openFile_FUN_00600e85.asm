@@ -10,7 +10,7 @@
 ; SIZE_T           Stack[0x10]:4   buffer_size
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e15ba
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e15ba
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0fcf
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481bc3
 ;

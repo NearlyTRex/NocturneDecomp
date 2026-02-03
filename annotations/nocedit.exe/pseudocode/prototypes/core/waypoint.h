@@ -77,4 +77,4 @@ void __cdecl FUN_005ec830(void);
 
 // Original: core_waypoint.cpp_CWayPoint_dtor_FUN_005ec8d0
 // Address: 005ec8d0
-CWayPoint * __cdecl CWayPoint::dtor(CWayPoint *this_ptr,uint d1,uint d2);
+CWayPoint * __cdecl CWayPoint::dtor(CWayPoint *this_ptr,uint flags);

@@ -17,7 +17,8 @@ void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,
   char *pcVar5;
   int *piVar6;
   byte bVar7;
-  uint in_stack_fffffecc;
+  uint local_134;
+  uint local_34;
   CStrList local_20;
   
   bVar7 = 0;
@@ -25,7 +26,7 @@ void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,
   core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310
             (this_ptr,(char *)param_2,&local_20,(int *)0x0);
   index = 0;
-  piVar6 = (int *)&stack0xfffffecc;
+  piVar6 = &local_134;
   for (iVar3 = 0x45; iVar3 != 0; iVar3 = iVar3 + -1) {
     *piVar6 = *param_3;
     param_3 = param_3 + (uint)bVar7 * -2 + 1;
@@ -34,7 +35,7 @@ void __cdecl core_script_cpp_CScript_FUN_005671a0(CScript *this_ptr,int param_2,
   do {
     iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_20);
     if (iVar3 <= index) {
-      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_20,0,in_stack_fffffecc);
+      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_20,0);
       return;
     }
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,index);
@@ -61,7 +62,7 @@ LAB_00567250:
           pcVar4 = "false";
           pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,index);
           iVar3 = stricmp(pcVar5,pcVar4);
-          pcVar5 = &stack0xfffffecc;
+          pcVar5 = (char *)&local_134;
           if (iVar3 != 0) {
             do {
               cVar1 = *pcVar2;
@@ -72,13 +73,14 @@ LAB_00567250:
               pcVar5[1] = cVar1;
               pcVar5 = pcVar5 + 2;
             } while (cVar1 != '\0');
-            core_script_cpp_CScript_FUN_00567510(this_ptr,(int *)&stack0xfffffecc);
+            local_34 = 0;
+            core_script_cpp_CScript_FUN_00567510(this_ptr,&local_134);
           }
         }
       }
     }
     else {
-      core_script_cpp_CScript_FUN_00567490(this_ptr,(int)pcVar2,(int)&stack0xfffffecc);
+      core_script_cpp_CScript_FUN_00567490(this_ptr,(int)pcVar2,(int)&local_134);
     }
     index = index + 1;
   } while( true );

@@ -62,7 +62,7 @@ section .text
     MOV EBX,dword ptr [0x0067b654]      ; 0052cab6 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0052cabc | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0052cabd
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052cac2
     FLD float ptr [ESP + 0x4]           ; 0052cac5
         ;   Label: LAB_0052cac5

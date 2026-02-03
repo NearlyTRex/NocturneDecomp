@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint d1,uint d2)
+; __cdecl CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CScatTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0055916c
     PUSH EBX                            ; 0055916e
     CALL core_hero.cpp_CHero_dtor_FUN_004f2470 ; 0055916f
-        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00559174
     MOV DL,byte ptr [ESP + 0xc]         ; 00559177
     MOV EBX,EAX                         ; 0055917b

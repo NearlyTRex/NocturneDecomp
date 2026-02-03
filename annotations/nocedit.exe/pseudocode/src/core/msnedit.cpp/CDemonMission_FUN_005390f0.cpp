@@ -10,16 +10,14 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
 
 {
   CGame *this_ptr_00;
-  uchar uVar1;
-  int iVar2;
-  undefined3 extraout_var;
+  int iVar1;
+  uint uVar2;
   float *pfVar3;
   CQuaternion4f *label_offset;
-  undefined3 extraout_var_00;
+  CQuaternion4f *world_position;
   int extraout_EAX;
   CVector3f *pCVar4;
   CDemonActor *pCVar5;
-  undefined3 extraout_var_01;
   int extraout_EAX_00;
   int iVar6;
   int iVar7;
@@ -36,13 +34,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
   CDemonMission *in_stack_fffff634;
   CKeys *in_stack_fffff638;
   char *pcVar14;
-  CGame *in_stack_fffff64c;
   void *param5;
-  CKeys *d2;
-  uint d3;
-  CKeys *in_stack_fffff668;
-  uint d5;
-  CKeys *d6;
   CDemonSet *in_stack_fffff698;
   CDemonSet *pCVar15;
   char local_60c [300];
@@ -180,7 +172,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
   }
   core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)local_50);
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff64c);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_170);
   local_7c = 0.0;
   local_78 = 0.0;
@@ -409,7 +401,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
       if ((((*(int *)(this_ptr->unk2 + 0x18) != 0) && (iVar6 = DAT_02f7c634, DAT_02f7c634 == 0)) &&
           (iVar7 = core_setedit_cpp_CDemonSet_FUN_00577af0(g_CDemonSetPtr), local_38 = iVar7,
           iVar10 = local_14, -1 < iVar7)) &&
-         (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar10 = iVar6, iVar2 != 0))
+         (iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar10 = iVar6, iVar1 != 0))
       {
         core_script_cpp_CScript_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -426,10 +418,10 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
         pCVar5 = core_msnedit_cpp_CDemonMission_FUN_0053c340(this_ptr,g_MouseX,g_MouseY);
         *(CDemonActor **)(this_ptr->unk2 + 0x20) = pCVar5;
         if (pCVar5 != (CDemonActor *)0x0) {
-          uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+          uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-                    (*(CDemonActor **)(this_ptr->unk2 + 0x20),CONCAT31(extraout_var_01,uVar1));
+                    (*(CDemonActor **)(this_ptr->unk2 + 0x20),uVar2);
         }
       }
       else {
@@ -439,10 +431,10 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
         this_ptr->unk2[0x23] = '\0';
       }
       if (*(int *)(this_ptr->unk2 + 0x1c) != 0) {
-        uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+        uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                           (g_CEditorToolsPtr);
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-                  (*(CDemonActor **)(this_ptr->unk2 + 0x1c),CONCAT31(extraout_var,uVar1));
+                  (*(CDemonActor **)(this_ptr->unk2 + 0x1c),uVar2);
         pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x1c) + 0x154) + 0x14))();
         local_c4 = pfVar3[3] - *pfVar3;
         local_c0 = pfVar3[4] - pfVar3[1];
@@ -454,12 +446,12 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
         }
         param5 = (void *)(*(int *)(this_ptr->unk2 + 0x1c) + 0x30);
         label_offset = (CQuaternion4f *)(*(int *)(this_ptr->unk2 + 0x1c) + 0x20);
-        uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
-                          (g_CEditorToolsPtr);
+        world_position =
+             (CQuaternion4f *)
+             shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
         in_stack_fffff638 = (CKeys *)0x5396f8;
         shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-                  (g_CEditorToolsPtr,(int)local_40,(CQuaternion4f *)CONCAT31(extraout_var_00,uVar1),
-                   label_offset,param5);
+                  (g_CEditorToolsPtr,(int)local_40,world_position,label_offset,param5);
       }
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -665,17 +657,16 @@ int __cdecl core_msnedit_cpp_CDemonMission_FUN_005390f0(CDemonMission *this_ptr,
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3c);
       if (iVar10 != 0) {
         iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-        in_stack_fffff668 = (CKeys *)(g_WindowWidth + -1);
         if (iVar10 == 0) {
           iVar10 = 0x101;
           core_script_cpp_CScript_FUN_00566660
-                    (g_CScriptPtr,0,0x101,(int)in_stack_fffff668,g_WindowHeight + -1);
+                    (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
           DAT_02f7c634 = 1;
         }
         else {
           iVar10 = 0;
           core_script_cpp_CScript_FUN_00566660
-                    (g_CScriptPtr,0,0,(int)in_stack_fffff668,g_WindowHeight + -1);
+                    (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
           DAT_02f7c634 = 2;
         }
 LAB_00539d68:
@@ -720,33 +711,24 @@ LAB_00539d68:
         goto LAB_00539d68;
       }
     }
-    d3 = 0x1d;
-    d2 = g_CKeysPtr;
     iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-    if (iVar10 != 0) {
-      d3 = 0x539d95;
-      in_stack_fffff668 = g_CKeysPtr;
-      iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
-      if (iVar10 != 0) {
-        engine_2d_c_clearInputAndWait_FUN_00403260();
-        if (this_ptr->unk2[0x38] == '\0') {
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"No mission name!");
-        }
-        else {
-          sprintf(local_3b4,"%s.msn");
-          in_stack_fffff668 = (CKeys *)0x53a627;
-          iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                             (g_CEditorToolsPtr,"Save mission to %s.msn");
-          if (iVar10 != 0) {
-            core_msnedit_cpp_CDemonMission_FUN_0053d190(this_ptr,local_3b4);
-          }
-        }
-        engine_2d_c_clearInputAndWait_FUN_00403260();
+    if ((iVar10 != 0) &&
+       (iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f), iVar10 != 0)) {
+      engine_2d_c_clearInputAndWait_FUN_00403260();
+      if (this_ptr->unk2[0x38] == '\0') {
+        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                  (g_CEditorToolsPtr,"No mission name!");
       }
+      else {
+        sprintf(local_3b4,"%s.msn");
+        iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                           (g_CEditorToolsPtr,"Save mission to %s.msn");
+        if (iVar10 != 0) {
+          core_msnedit_cpp_CDemonMission_FUN_0053d190(this_ptr,local_3b4);
+        }
+      }
+      engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    d5 = 0x539dd6;
-    d6 = g_CKeysPtr;
     iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if ((iVar10 != 0) &&
        (iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19), iVar10 != 0)) {
@@ -889,18 +871,14 @@ LAB_00539e00:
             pcVar14[0x149] = '\0';
             pcVar14[0x14a] = '\0';
             pcVar14[0x14b] = '\0';
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,
-                       (uint)d6);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);
           }
           if (iVar6 < 0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No actors hidden.");
           }
 LAB_0053a88c:
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,(uint)d6
-                    );
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);
         }
         else {
           for (pCVar5 = this_ptr->first_actor; pCVar5 != (CDemonActor *)0x0;
@@ -926,16 +904,12 @@ LAB_0053a88c:
         }
         local_64 = 1;
       }
-      in_stack_fffff668 = g_CKeysPtr;
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
-      if (iVar10 != 0) {
-        in_stack_fffff668 = (CKeys *)0x53a909;
-        pcVar14 = core_msnedit_cpp_CDemonMission_FUN_0053c210
-                            (this_ptr,"Select actor by name",
-                             *(char **)(this_ptr->unk2 + 0x1c));
-        if (pcVar14 != (char *)0x0) {
-          core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)pcVar14);
-        }
+      if ((iVar10 != 0) &&
+         (pcVar14 = core_msnedit_cpp_CDemonMission_FUN_0053c210
+                              (this_ptr,"Select actor by name",
+                               *(char **)(this_ptr->unk2 + 0x1c)), pcVar14 != (char *)0x0)) {
+        core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)pcVar14);
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11);
       if (iVar10 != 0) {

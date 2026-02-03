@@ -91,9 +91,9 @@ void __cdecl FUN_004d5fe0(void);
 // Address: 004d6050
 int __cdecl FUN_004d6050(void);
 
-// Original: core_gabriela.cpp_CGabriella_load_FUN_004d6090
+// Original: core_gabriela.cpp_CGabriella_archive_FUN_004d6090
 // Address: 004d6090
-void __cdecl CGabriella::load(void);
+void __cdecl CGabriella::archive(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140
 // Address: 004d6140
@@ -151,6 +151,6 @@ void __cdecl FUN_004d7630(void);
 // Address: 004d7650
 int __cdecl FUN_004d7650(void);
 
-// Original: core_gabriela.cpp_freeMaybe_FUN_004d7660
+// Original: core_gabriela.cpp_CGabriella_dtor_FUN_004d7660
 // Address: 004d7660
-CGabriella * __cdecl freeMaybe(CGabriella *this_ptr,uint d1,uint d2,uint d3);
+CGabriella * __cdecl CGabriella::dtor(CGabriella *this_ptr,uint flags);

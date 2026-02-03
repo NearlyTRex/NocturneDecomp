@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uchar __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
+; __cdecl uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cb57
 ;   core_cloth.cpp_FUN_0043b7e0 at 0043b9c4
 ;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d9f5
-;   core_emitter.cpp_FUN_004a8860 at 004a8a4b
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a8a4b
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60 at 00509d42
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 00509dcd
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c301

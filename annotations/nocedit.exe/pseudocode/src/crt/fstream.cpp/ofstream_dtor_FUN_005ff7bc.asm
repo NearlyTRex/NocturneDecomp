@@ -1,18 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint flags)
 ;
 ; Parameters:
 ; ofstream *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452f64
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e18c2
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e18c2
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e128c
 ;   crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4 at 005ff7b3
 ;   crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e at 005ff79b
@@ -55,13 +52,13 @@ section .text
     PUSH EBX                            ; 005ff7eb
     MOV dword ptr [EBX + EAX*0x1 + -0x1c],0x665ce4 ; 005ff7ec | g_OFStream_IOS
     CALL crt_iostream.cpp_ostream_dtor_FUN_00606231 ; 005ff7f4
-        ;   XREF to: 00606231 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_dtor_FUN_00606231(ostream * this_ptr, uint d1, uint d2)
+        ;   XREF to: 00606231 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_dtor_FUN_00606231(ostream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff7f9
     PUSH 0x1                            ; 005ff7fc
     LEA EBX,[EAX + -0x44]               ; 005ff7fe
     PUSH EBX                            ; 005ff801
     CALL crt_fstream.cpp_fstreambase_dtor_FUN_00606509 ; 005ff802
-        ;   XREF to: 00606509 (UNCONDITIONAL_CALL)  ; fstreambase * crt_fstream.cpp_fstreambase_dtor_FUN_00606509(fstreambase * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 00606509 (UNCONDITIONAL_CALL)  ; fstreambase * crt_fstream.cpp_fstreambase_dtor_FUN_00606509(fstreambase * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff807
     MOV DL,byte ptr [ESP + 0xc]         ; 005ff80a
     MOV EBX,EAX                         ; 005ff80e
@@ -94,7 +91,7 @@ section .text
     ADD EAX,0x50                        ; 005ff83d
     PUSH EAX                            ; 005ff840
     CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 005ff841
-        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
+        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff846
     LEA EBX,[EAX + -0x50]               ; 005ff849
     JMP 0x005ff815                      ; 005ff84c

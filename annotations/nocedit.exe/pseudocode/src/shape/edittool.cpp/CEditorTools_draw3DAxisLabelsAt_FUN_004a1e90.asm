@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_emitter.cpp_FUN_004a8860 at 004a8a60
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a8a60
 ;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005396f3
 ;
 ; Referenced Globals:

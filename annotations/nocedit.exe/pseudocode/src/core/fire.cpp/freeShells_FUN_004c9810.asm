@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell **array)
+; __cdecl CShell * __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell *objs)
 ;
 ; Parameters:
-; CShell * *       Stack[0x4]:4   array
+; CShell *         Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CShellTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c9817
     PUSH EDX                            ; 004c981b
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c981c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9821
     RET                                 ; 004c9824
 

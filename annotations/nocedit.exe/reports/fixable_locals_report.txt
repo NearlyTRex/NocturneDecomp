@@ -1,0 +1,3898 @@
+====================================================================================================
+FIXABLE LOCAL VARIABLES REPORT
+These are negative-offset stack references that can be fixed by adding stack variables in Ghidra.
+====================================================================================================
+
+Found 245 functions with fixable locals.
+Total local variable fixes: 881
+
+
+====================================================================================================
+CLEAN FUNCTIONS (no stack alignment - 181 functions)
+These fixes should work reliably.
+====================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_FUN_00581aa0
+Address:  0x00581aa0
+Locals to add (16):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xbec       int                  low          local_bec           
+  -0xbf0       int                  low          local_bf0           
+  -0xbf4       int                  low          local_bf4           
+  -0xbf8       int                  low          local_bf8           
+  -0xbfc       int                  low          local_bfc           
+  -0xc04       uint                 high         local_c04           
+  -0xc08       int                  low          local_c08           
+  -0xc0c       uint                 high         local_c0c           
+  -0xc10       uint                 high         local_c10           
+  -0xc14       uint                 high         local_c14           
+  -0xc1c       uint                 high         local_c1c           
+  -0xc20       uint                 high         local_c20           
+  -0xc24       uint                 high         local_c24           
+  -0xc28       uint                 high         local_c28           
+  -0xc2c       uint                 high         local_c2c           
+  -0xc88       int                  low          local_c88           
+
+  Code context:
+    [-0xbec] uint in_stack_fffff414;
+    [-0xbf0] uint in_stack_fffff410;
+    [-0xbf4] uint in_stack_fffff40c;
+    [-0xbf8] uint in_stack_fffff408;
+    [-0xbfc] uint in_stack_fffff404;
+    ... and 11 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053b9f0
+Address:  0x0053b9f0
+Locals to add (14):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x410       int                  low          local_410           
+  -0x414       uint                 high         local_414           
+  -0x418       uint                 high         local_418           
+  -0x41c       int                  low          local_41c           
+  -0x420       int                  low          local_420           
+  -0x420       int                  low          local_420           
+  -0x420       int                  low          local_420           
+  -0x42c       int                  low          local_42c           
+  -0x430       int                  low          local_430           
+  -0x434       int                  low          local_434           
+  -0x438       int                  low          local_438           
+  -0x43c       uint                 high         local_43c           
+  -0x440       uint                 high         local_440           
+  -0x444       int                  low          local_444           
+
+  Code context:
+    [-0x410] uint in_stack_fffffbf0;
+    [-0x414] CStrList_vtable *in_stack_fffffbec;
+    [-0x418] char **in_stack_fffffbe8;
+    [-0x41c] uint in_stack_fffffbe4;
+    [-0x420] uint in_stack_fffffbe0;
+    ... and 9 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+Address:  0x005968b0
+Locals to add (14):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3290      uint                 high         local_3290          
+  -0x3294      uint                 high         local_3294          
+  -0x3298      uint                 high         local_3298          
+  -0x329c      uint                 high         local_329c          
+  -0x32a0      uint                 high         local_32a0          
+  -0x32a8      float                high         local_32a8          
+  -0x32b0      float                high         local_32b0          
+  -0x32b8      ulonglong            high         local_32b8          
+  -0x32d0      ulonglong            high         local_32d0          
+  -0x32d4      uint                 high         local_32d4          
+  -0x32d8      uint                 high         local_32d8          
+  -0x32dc      uint                 high         local_32dc          
+  -0x3350      int                  low          local_3350          
+  -0x3354      int                  low          local_3354          
+
+  Code context:
+    [-0x3290] CKeys *in_stack_ffffcd70;
+    [-0x3294] float in_stack_ffffcd6c;
+    [-0x3298] CKeys *in_stack_ffffcd68;
+    [-0x329c] float in_stack_ffffcd64;
+    [-0x32a0] CKeys *in_stack_ffffcd60;
+    ... and 9 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_course.cpp_FUN_00443bc0
+Address:  0x00443bc0
+Locals to add (14):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x12c       int                  low          local_12c           
+  -0x148       float                high         local_148           
+  -0x150       int                  low          local_150           
+  -0x158       int                  low          local_158           
+  -0x160       int                  low          local_160           
+  -0x160       int                  low          local_160           
+  -0x160       int                  low          local_160           
+  -0x168       int                  low          local_168           
+  -0x16c       int                  high         local_16c           
+  -0x170       float                high         local_170           
+  -0x174       float                high         local_174           
+  -0x190       float                high         local_190           
+  -0x190       float                high         local_190           
+  -0x190       float                high         local_190           
+
+  Code context:
+    [-0x12c] CGame *in_stack_fffffed4;
+    [-0x148] uint in_stack_fffffeb8;
+    [-0x150] double in_stack_fffffeb0;
+    [-0x158] double in_stack_fffffea8;
+    [-0x160] double in_stack_fffffea0;
+    ... and 9 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
+Address:  0x005138e0
+Locals to add (12):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa5c       uint                 high         local_a5c           
+  -0xa60       int                  low          local_a60           
+  -0xa64       int                  low          local_a64           
+  -0xa64       int                  low          local_a64           
+  -0xa64       int                  low          local_a64           
+  -0xa68       uint                 high         local_a68           
+  -0xa6c       uint                 high         local_a6c           
+  -0xa70       uint                 high         local_a70           
+  -0xa74       uint                 high         local_a74           
+  -0xa74       uint                 high         local_a74           
+  -0xa74       uint                 high         local_a74           
+  -0xa78       int                  low          local_a78           
+
+  Code context:
+    [-0xa5c] char **in_stack_fffff5a4;
+    [-0xa60] uint in_stack_fffff5a0;
+    [-0xa64] uint in_stack_fffff59c;
+    [-0xa64] in_stack_fffff58c = (CPickList *)&stack0xfffff59c;
+    [-0xa64] in_stack_fffff58c = (CPickList *)&stack0xfffff59c;
+    ... and 7 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
+Address:  0x0051bd30
+Locals to add (12):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x84        int                  low          local_84            
+  -0x84        int                  low          local_84            
+  -0x88        int                  low          local_88            
+  -0x88        int                  low          local_88            
+  -0xa8        int                  low          local_a8            
+  -0xa8        int                  low          local_a8            
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+  -0xb8        int                  low          local_b8            
+  -0xb8        int                  low          local_b8            
+  -0xbc        int                  low          local_bc            
+  -0xbc        int                  low          local_bc            
+
+  Code context:
+    [-0x84] *(uint *)(&stack0xffffff7c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+    [-0x84] *(uint *)(&stack0xffffff7c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+    [-0x88] *(uint *)(&stack0xffffff78 + (uint)bVar6 * -8) = puVar2[(uint)bVar6 * 
+    [-0x88] *(uint *)(&stack0xffffff78 + (uint)bVar6 * -8) = puVar2[(uint)bVar6 * 
+    [-0xa8] *(uint *)(&stack0xffffff58 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+    ... and 7 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
+Address:  0x005ad5c0
+Locals to add (11):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xf10       uint                 high         local_f10           
+  -0xf14       uint                 high         local_f14           
+  -0xf18       uint                 high         local_f18           
+  -0xf18       uint                 high         local_f18           
+  -0xf18       uint                 high         local_f18           
+  -0xf1c       char*                high         local_f1c           
+  -0xf20       uint                 high         local_f20           
+  -0xf20       uint                 high         local_f20           
+  -0xf20       uint                 high         local_f20           
+  -0xf28       int                  low          local_f28           
+  -0xf28       int                  low          local_f28           
+
+  Code context:
+    [-0xf10] char **in_stack_fffff0f0;
+    [-0xf14] CStrList_vtable *in_stack_fffff0ec;
+    [-0xf18] char **in_stack_fffff0e8;
+    [-0xf18] in_stack_fffff0e0 = &stack0xfffff0e8;
+    [-0xf18] in_stack_fffff0e0 = &stack0xfffff0e8;
+    ... and 6 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_morph.cpp_FUN_0052bcb0
+Address:  0x0052bcb0
+Locals to add (11):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4d9c      uint                 high         local_4d9c          
+  -0x4da0      int                  low          local_4da0          
+  -0x4da0      int                  low          local_4da0          
+  -0x4da0      int                  low          local_4da0          
+  -0x4da4      uint                 high         local_4da4          
+  -0x4da8      uint                 high         local_4da8          
+  -0x4da8      uint                 high         local_4da8          
+  -0x4da8      uint                 high         local_4da8          
+  -0x4dac      int                  low          local_4dac          
+  -0x4db0      int                  low          local_4db0          
+  -0x4db0      int                  low          local_4db0          
+
+  Code context:
+    [-0x4d9c] float in_stack_ffffb264;
+    [-0x4da0] uint in_stack_ffffb260;
+    [-0x4da0] this_ptr_00 = (CMotionController *)(&stack0xffffb260 + in_stack_000000
+    [-0x4da0] this_ptr_00 = (CMotionController *)(&stack0xffffb260 + in_stack_000000
+    [-0x4da4] float in_stack_ffffb25c;
+    ... and 6 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_FUN_00583170
+Address:  0x00583170
+Locals to add (10):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x268       int                  low          local_268           
+  -0x27c       float                high         local_27c           
+  -0x280       float                high         local_280           
+  -0x284       int                  low          local_284           
+  -0x298       void*                low          local_298           
+  -0x298       void*                low          local_298           
+  -0x298       void*                low          local_298           
+  -0x2c8       int                  low          local_2c8           
+  -0x2c8       int                  low          local_2c8           
+  -0x2c8       int                  low          local_2c8           
+
+  Code context:
+    [-0x268] CGame *in_stack_fffffd98;
+    [-0x27c] CVector3f *in_stack_fffffd84;
+    [-0x280] float *in_stack_fffffd80;
+    [-0x284] uint in_stack_fffffd7c;
+    [-0x298] byte in_stack_fffffd68 [20];
+    ... and 5 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_inv.cpp_CInventory_addItem_FUN_004fd600
+Address:  0x004fd600
+Locals to add (9):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x308       int                  low          local_308           
+  -0x30c       int                  low          local_30c           
+  -0x310       int                  low          local_310           
+  -0x314       int                  low          local_314           
+  -0x318       int                  low          local_318           
+  -0x31c       int                  low          local_31c           
+  -0x320       int                  low          local_320           
+  -0x320       int                  low          local_320           
+  -0x320       int                  low          local_320           
+
+  Code context:
+    [-0x308] uint in_stack_fffffcf8;
+    [-0x30c] uint in_stack_fffffcf4;
+    [-0x310] uint in_stack_fffffcf0;
+    [-0x314] uint in_stack_fffffcec;
+    [-0x318] uint in_stack_fffffce8;
+    ... and 4 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_005379e0
+Address:  0x005379e0
+Locals to add (9):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcf0       uint                 high         local_cf0           
+  -0xcf4       uint                 high         local_cf4           
+  -0xcf8       uint                 high         local_cf8           
+  -0xcfc       int                  low          local_cfc           
+  -0xcfc       int                  low          local_cfc           
+  -0xcfc       int                  low          local_cfc           
+  -0xd00       int                  low          local_d00           
+  -0xd00       int                  low          local_d00           
+  -0xd04       int                  low          local_d04           
+
+  Code context:
+    [-0xcf0] CStrList_vtable *in_stack_fffff310;
+    [-0xcf4] CStrList_vtable *in_stack_fffff30c;
+    [-0xcf8] char **in_stack_fffff308;
+    [-0xcfc] uint in_stack_fffff304;
+    [-0xcfc] ((CStrList *)&stack0xfffff304,string_data);
+    ... and 4 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053ec80
+Address:  0x0053ec80
+Locals to add (9):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2aa0      int                  low          local_2aa0          
+  -0x2aa0      int                  low          local_2aa0          
+  -0x2aa0      int                  low          local_2aa0          
+  -0x2aa4      int                  high         local_2aa4          
+  -0x2aa8      int                  low          local_2aa8          
+  -0x2aac      uint                 high         local_2aac          
+  -0x2ab0      CStrList*            high         local_2ab0          
+  -0x2ab0      CStrList*            high         local_2ab0          
+  -0x2ab0      CStrList*            high         local_2ab0          
+
+  Code context:
+    [-0x2aa0] uint in_stack_ffffd560;
+    [-0x2aa0] piVar1 = (int *)&stack0xffffd560;
+    [-0x2aa0] piVar1 = (int *)&stack0xffffd560;
+    [-0x2aa4] uint in_stack_ffffd55c;
+    [-0x2aa8] EActorPropertyType in_stack_ffffd558;
+    ... and 4 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053bd80
+Address:  0x0053bd80
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8c        int                  low          local_8c            
+  -0x90        int                  low          local_90            
+  -0x94        int                  low          local_94            
+  -0x98        int                  low          local_98            
+  -0x9c        int                  low          local_9c            
+  -0xa0        int                  low          local_a0            
+  -0xa5        int                  low          local_a5            
+  -0xa5        int                  low          local_a5            
+
+  Code context:
+    [-0x8c] uint in_stack_ffffff74;
+    [-0x90] uint in_stack_ffffff70;
+    [-0x94] uint in_stack_ffffff6c;
+    [-0x98] uint in_stack_ffffff68;
+    [-0x9c] uint in_stack_ffffff64;
+    ... and 3 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_005390f0
+Address:  0x005390f0
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x968       CDemonMission*       high         local_968           
+  -0x998       int                  high         local_998           
+  -0x9c8       int                  high         local_9c8           
+  -0x9cc       int                  low          local_9cc           
+  -0x9d0       int                  high         local_9d0           
+  -0x9d8       int                  low          local_9d8           
+  -0x9dc       int                  low          local_9dc           
+  -0x9e0       int                  high         local_9e0           
+
+  Code context:
+    [-0x968] CDemonSet *in_stack_fffff698;
+    [-0x998] CKeys *in_stack_fffff668;
+    [-0x9c8] CKeys *in_stack_fffff638;
+    [-0x9cc] CDemonMission *in_stack_fffff634;
+    [-0x9d0] CKeys *in_stack_fffff630;
+    ... and 3 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
+Address:  0x0059b640
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x58        int                  low          local_58            
+  -0x5c        float                high         local_5c            
+  -0x7c        float                high         local_7c            
+  -0x7c        float                high         local_7c            
+  -0x7c        float                high         local_7c            
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+
+  Code context:
+    [-0x58] uint in_stack_ffffffa8;
+    [-0x5c] uint in_stack_ffffffa4;
+    [-0x7c] byte in_stack_ffffff84 [32];
+    [-0x7c] piVar8 = (int *)&stack0xffffff84;
+    [-0x7c] piVar8 = (int *)&stack0xffffff84;
+    ... and 3 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280
+Address:  0x0049a280
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+  -0x24        int                  low          local_24            
+  -0x24        int                  low          local_24            
+
+  Code context:
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
+    [-0x20] *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+    ... and 3 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_mimic.cpp_CMimic_setup_FUN_0051f3e0
+Address:  0x0051f3e0
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+  -0x24        int                  low          local_24            
+  -0x24        int                  low          local_24            
+
+  Code context:
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;
+    [-0x20] *(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+    ... and 3 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0
+Address:  0x004bcec0
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x5c4       int                  low          local_5c4           
+  -0x5c8       uint                 high         local_5c8           
+  -0x5cc       uint                 high         local_5cc           
+  -0x5d0       uint                 high         local_5d0           
+  -0x5d4       int                  low          local_5d4           
+  -0x5d4       int                  low          local_5d4           
+  -0x5d4       int                  low          local_5d4           
+
+  Code context:
+    [-0x5c4] uint in_stack_fffffa3c;
+    [-0x5c8] CStrList_vtable *in_stack_fffffa38;
+    [-0x5cc] CStrList_vtable *in_stack_fffffa34;
+    [-0x5d0] char **in_stack_fffffa30;
+    [-0x5d4] uint in_stack_fffffa2c;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+Address:  0x004b5a50
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1824      int                  low          local_1824          
+  -0x1828      int                  low          local_1828          
+  -0x182c      int                  low          local_182c          
+  -0x1830      int                  low          local_1830          
+  -0x1834      int                  low          local_1834          
+  -0x1834      int                  low          local_1834          
+  -0x1834      int                  low          local_1834          
+
+  Code context:
+    [-0x1824] uint in_stack_ffffe7dc;
+    [-0x1828] uint in_stack_ffffe7d8;
+    [-0x182c] uint in_stack_ffffe7d4;
+    [-0x1830] uint in_stack_ffffe7d0;
+    [-0x1834] uint in_stack_ffffe7cc;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_FUN_00582930
+Address:  0x00582930
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8c        float                high         local_8c            
+  -0xac        float                high         local_ac            
+  -0xac        float                high         local_ac            
+  -0xac        float                high         local_ac            
+  -0xdc        int                  low          local_dc            
+  -0xdc        int                  low          local_dc            
+  -0xdc        int                  low          local_dc            
+
+  Code context:
+    [-0x8c] uint in_stack_ffffff74;
+    [-0xac] byte in_stack_ffffff54 [32];
+    [-0xac] piVar4 = (int *)&stack0xffffff54;
+    [-0xac] piVar4 = (int *)&stack0xffffff54;
+    [-0xdc] SRenderVertex in_stack_ffffff24;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_script.cpp_CScript_FUN_005677a0
+Address:  0x005677a0
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2c3c      int                  low          local_2c3c          
+  -0x2c40      int                  low          local_2c40          
+  -0x2c40      int                  low          local_2c40          
+  -0x2c40      int                  low          local_2c40          
+  -0x2c44      int                  low          local_2c44          
+  -0x2c48      int                  low          local_2c48          
+  -0x2c4c      int                  low          local_2c4c          
+
+  Code context:
+    [-0x2c3c] uint in_stack_ffffd3c4;
+    [-0x2c40] uint in_stack_ffffd3c0;
+    [-0x2c40] &stack0xffffd3c0 + *(int *)(local_14 + 0x108) * 0xec);
+    [-0x2c40] &stack0xffffd3c0 + *(int *)(local_14 + 0x108) * 0xec);
+    [-0x2c44] uint in_stack_ffffd3bc;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053b030
+Address:  0x0053b030
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2ba0      int                  low          local_2ba0          
+  -0x2ba4      int                  high         local_2ba4          
+  -0x2ba8      int                  low          local_2ba8          
+  -0x2bac      uint                 high         local_2bac          
+  -0x2bb0      uint                 high         local_2bb0          
+  -0x2bb0      uint                 high         local_2bb0          
+  -0x2bb0      uint                 high         local_2bb0          
+
+  Code context:
+    [-0x2ba0] uint in_stack_ffffd460;
+    [-0x2ba4] uint in_stack_ffffd45c;
+    [-0x2ba8] EActorPropertyType in_stack_ffffd458;
+    [-0x2bac] CDemonActor *in_stack_ffffd454;
+    [-0x2bb0] CDemonActor *in_stack_ffffd450;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053d8b0
+Address:  0x0053d8b0
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x5014      int                  low          local_5014          
+  -0x5018      int                  low          local_5018          
+  -0x501c      int                  low          local_501c          
+  -0x5020      int                  low          local_5020          
+  -0x5020      int                  low          local_5020          
+  -0x5020      int                  low          local_5020          
+  -0x5024      int                  high         local_5024          
+
+  Code context:
+    [-0x5014] uint in_stack_ffffafec;
+    [-0x5018] uint in_stack_ffffafe8;
+    [-0x501c] uint in_stack_ffffafe4;
+    [-0x5020] uint in_stack_ffffafe0;
+    [-0x5020] in_stack_ffffafdc = &stack0xffffafe0;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053b510
+Address:  0x0053b510
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2ba0      int                  low          local_2ba0          
+  -0x2ba4      int                  high         local_2ba4          
+  -0x2ba8      int                  low          local_2ba8          
+  -0x2bac      uint                 high         local_2bac          
+  -0x2bb0      uint                 high         local_2bb0          
+  -0x2bb0      uint                 high         local_2bb0          
+  -0x2bb0      uint                 high         local_2bb0          
+
+  Code context:
+    [-0x2ba0] uint in_stack_ffffd460;
+    [-0x2ba4] uint in_stack_ffffd45c;
+    [-0x2ba8] EActorPropertyType in_stack_ffffd458;
+    [-0x2bac] CDemonActor *in_stack_ffffd454;
+    [-0x2bb0] CDemonActor *in_stack_ffffd450;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_curtain.cpp_FUN_0044b060
+Address:  0x0044b060
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+  -0x24        int                  low          local_24            
+  -0x28        int                  high         local_28            
+  -0x2c        int                  high         local_2c            
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x1c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x24] int in_stack_ffffffdc;
+    [-0x28] float in_stack_ffffffd8;
+    [-0x2c] float in_stack_ffffffd4;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_runGameSession_FUN_004daf80
+Address:  0x004daf80
+Locals to add (7):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x854       int                  low          local_854           
+  -0x858       int                  low          local_858           
+  -0x85c       int                  low          local_85c           
+  -0x860       int                  low          local_860           
+  -0x864       uint                 high         local_864           
+  -0x868       int                  high         local_868           
+  -0x86c       int                  high         local_86c           
+
+  Code context:
+    [-0x854] uint in_stack_fffff7ac;
+    [-0x858] uint in_stack_fffff7a8;
+    [-0x85c] uint in_stack_fffff7a4;
+    [-0x860] uint in_stack_fffff7a0;
+    [-0x864] CStrList_vtable *in_stack_fffff79c;
+    ... and 2 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
+Address:  0x005aca90
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x7c        int                  low          local_7c            
+  -0x80        int                  low          local_80            
+  -0x84        float*               high         local_84            
+  -0x98        float*               high         local_98            
+  -0x98        float*               high         local_98            
+  -0x98        float*               high         local_98            
+
+  Code context:
+    [-0x7c] void *in_stack_ffffff84;
+    [-0x80] float *in_stack_ffffff80;
+    [-0x84] uint in_stack_ffffff7c;
+    [-0x98] byte in_stack_ffffff68 [20];
+    [-0x98] puVar8 = (uint *)&stack0xffffff68;
+    ... and 1 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
+Address:  0x0042f3e0
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x920       uint                 high         local_920           
+  -0x924       uint                 high         local_924           
+  -0x928       uint                 high         local_928           
+  -0x928       uint                 high         local_928           
+  -0x928       uint                 high         local_928           
+  -0x92c       uint                 high         local_92c           
+
+  Code context:
+    [-0x920] char **in_stack_fffff6e0;
+    [-0x924] CStrList_vtable *in_stack_fffff6dc;
+    [-0x928] char **in_stack_fffff6d8;
+    [-0x928] puVar9 = &stack0xfffff6d8;
+    [-0x928] puVar9 = &stack0xfffff6d8;
+    ... and 1 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_teleport.cpp_CTeleportDest_FUN_005da870
+Address:  0x005da870
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x460       uint                 high         local_460           
+  -0x464       uint                 high         local_464           
+  -0x468       int                  low          local_468           
+  -0x46c       int                  high         local_46c           
+  -0x46c       int                  high         local_46c           
+  -0x46c       int                  high         local_46c           
+
+  Code context:
+    [-0x460] CStrList_vtable *in_stack_fffffba0;
+    [-0x464] char **in_stack_fffffb9c;
+    [-0x468] uint in_stack_fffffb98;
+    [-0x46c] uint in_stack_fffffb94;
+    [-0x46c] shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xff
+    ... and 1 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
+Address:  0x00547320
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x11c       int                  low          local_11c           
+  -0x11c       int                  low          local_11c           
+  -0x128       int                  low          local_128           
+  -0x128       int                  low          local_128           
+  -0x12c       int                  low          local_12c           
+  -0x130       int                  low          local_130           
+
+  Code context:
+    [-0x11c] ((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);
+    [-0x11c] ((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);
+    [-0x128] ((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);
+    [-0x128] ((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);
+    [-0x12c] CVector3f *in_stack_fffffed4;
+    ... and 1 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_emitter.cpp_FUN_004a8fe0
+Address:  0x004a8fe0
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x34        int                  low          local_34            
+  -0x34        int                  low          local_34            
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+  -0x58        int                  low          local_58            
+  -0x58        int                  low          local_58            
+
+  Code context:
+    [-0x34] ((CVector3f *)&stack0xffffffcc,(CVector3f *)&stack0xffffffa8);
+    [-0x34] ((CVector3f *)&stack0xffffffcc,(CVector3f *)&stack0xffffffa8);
+    [-0x40] (in_stack_00000004,&CStack_28,(CVector3f *)&stack0xffffffc0);
+    [-0x40] (in_stack_00000004,&CStack_28,(CVector3f *)&stack0xffffffc0);
+    [-0x58] ((CVector3f *)&stack0xffffffcc,(CVector3f *)&stack0xffffffa8);
+    ... and 1 more
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+Address:  0x004b76d0
+Locals to add (5):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1100      int                  low          local_1100          
+  -0x111c      int                  low          local_111c          
+  -0x111c      int                  low          local_111c          
+  -0x1120      int                  low          local_1120          
+  -0x1120      int                  low          local_1120          
+
+  Code context:
+    [-0x1100] uint in_stack_ffffef00;
+    [-0x111c] ptVar6 = (time_t *)(&stack0xffffeee4 + (uint)bVar10 * -8 + (uint)bVar1
+    [-0x111c] ptVar6 = (time_t *)(&stack0xffffeee4 + (uint)bVar10 * -8 + (uint)bVar1
+    [-0x1120] *(time_t *)(&stack0xffffeee0 + (uint)bVar10 * -8) = local_1c[(uint)bVa
+    [-0x1120] *(time_t *)(&stack0xffffeee0 + (uint)bVar10 * -8) = local_1c[(uint)bVa
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+Address:  0x0040eed0
+Locals to add (5):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x37d8      int                  low          local_37d8          
+  -0x37dc      int                  low          local_37dc          
+  -0x37e0      uint                 high         local_37e0          
+  -0x37e4      uint                 high         local_37e4          
+  -0x37e8      int                  low          local_37e8          
+
+  Code context:
+    [-0x37d8] uint in_stack_ffffc828;
+    [-0x37dc] uint in_stack_ffffc824;
+    [-0x37e0] CStrList_vtable *in_stack_ffffc820;
+    [-0x37e4] char **in_stack_ffffc81c;
+    [-0x37e8] uint in_stack_ffffc818;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053c730
+Address:  0x0053c730
+Locals to add (5):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x538       uint                 high         local_538           
+  -0x53c       int                  low          local_53c           
+  -0x540       int                  low          local_540           
+  -0x540       int                  low          local_540           
+  -0x540       int                  low          local_540           
+
+  Code context:
+    [-0x538] char **in_stack_fffffac8;
+    [-0x53c] uint in_stack_fffffac4;
+    [-0x540] uint in_stack_fffffac0;
+    [-0x540] shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xff
+    [-0x540] shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xff
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_FUN_00592690
+Address:  0x00592690
+Locals to add (5):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x113e8     int                  low          local_113e8         
+  -0x113ec     int                  low          local_113ec         
+  -0x113f0     int                  low          local_113f0         
+  -0x113f4     int                  low          local_113f4         
+  -0x113f8     uint                 high         local_113f8         
+
+  Code context:
+    [-0x113e8] uint in_stack_fffeec18;
+    [-0x113ec] uint in_stack_fffeec14;
+    [-0x113f0] uint in_stack_fffeec10;
+    [-0x113f4] uint in_stack_fffeec0c;
+    [-0x113f8] CBoneStructure *in_stack_fffeec08;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_codec.cpp_CCodec_processFiles_FUN_0043ec30
+Address:  0x0043ec30
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+  -0x108       uint                 high         local_108           
+  -0x10c       uint                 high         local_10c           
+
+  Code context:
+    [-0x10] (this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);
+    [-0x10] (this_ptr,&_Stack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);
+    [-0x108] char *in_stack_fffffef8;
+    [-0x10c] void *in_stack_fffffef4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
+Address:  0x00550230
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3b8       int                  low          local_3b8           
+  -0x3bc       uint                 high         local_3bc           
+  -0x3c0       uint                 high         local_3c0           
+  -0x3c4       int                  low          local_3c4           
+
+  Code context:
+    [-0x3b8] uint in_stack_fffffc48;
+    [-0x3bc] CStrList_vtable *in_stack_fffffc44;
+    [-0x3c0] char **in_stack_fffffc40;
+    [-0x3c4] uint in_stack_fffffc3c;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_3d.c_drawLineStrip3D_FUN_00404600
+Address:  0x00404600
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcc        int                  low          local_cc            
+  -0xd0        int                  low          local_d0            
+  -0xd0        int                  low          local_d0            
+  -0xd0        int                  low          local_d0            
+
+  Code context:
+    [-0xcc] SRenderVertex *in_stack_ffffff34;
+    [-0xd0] SRenderVertex *in_stack_ffffff30;
+    [-0xd0] piVar7 = (int *)&stack0xffffff30;
+    [-0xd0] piVar7 = (int *)&stack0xffffff30;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
+Address:  0x00407ff0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc4        int                  low          local_c4            
+  -0xc8        int                  low          local_c8            
+  -0xc8        int                  low          local_c8            
+  -0xc8        int                  low          local_c8            
+
+  Code context:
+    [-0xc4] SRenderVertex *in_stack_ffffff3c;
+    [-0xc8] SRenderVertex *in_stack_ffffff38;
+    [-0xc8] piVar4 = (int *)&stack0xffffff38;
+    [-0xc8] piVar4 = (int *)&stack0xffffff38;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+Address:  0x004b6e10
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xe90       int                  low          local_e90           
+  -0xe90       int                  low          local_e90           
+  -0xe94       int                  low          local_e94           
+  -0xe94       int                  low          local_e94           
+
+  Code context:
+    [-0xe90] ptVar7 = (time_t *)(&stack0xfffff170 + (uint)bVar11 * -8 + (uint)bVar1
+    [-0xe90] ptVar7 = (time_t *)(&stack0xfffff170 + (uint)bVar11 * -8 + (uint)bVar1
+    [-0xe94] *(time_t *)(&stack0xfffff16c + (uint)bVar11 * -8) = local_40[(uint)bVa
+    [-0xe94] *(time_t *)(&stack0xfffff16c + (uint)bVar11 * -8) = local_40[(uint)bVa
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70
+Address:  0x004bcb70
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x9bc       int                  low          local_9bc           
+  -0x9c0       uint                 high         local_9c0           
+  -0x9c4       uint                 high         local_9c4           
+  -0x9c8       int                  low          local_9c8           
+
+  Code context:
+    [-0x9bc] uint in_stack_fffff644;
+    [-0x9c0] CStrList_vtable *in_stack_fffff640;
+    [-0x9c4] char **in_stack_fffff63c;
+    [-0x9c8] uint in_stack_fffff638;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
+Address:  0x004b3f50
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3b0       int                  low          local_3b0           
+  -0x3b4       uint                 high         local_3b4           
+  -0x3b8       uint                 high         local_3b8           
+  -0x3bc       int                  low          local_3bc           
+
+  Code context:
+    [-0x3b0] uint in_stack_fffffc50;
+    [-0x3b4] CStrList_vtable *in_stack_fffffc4c;
+    [-0x3b8] char **in_stack_fffffc48;
+    [-0x3bc] uint in_stack_fffffc44;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0
+Address:  0x004bc2b0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x7ac       int                  low          local_7ac           
+  -0x7b0       uint                 high         local_7b0           
+  -0x7b4       uint                 high         local_7b4           
+  -0x7b8       int                  low          local_7b8           
+
+  Code context:
+    [-0x7ac] uint in_stack_fffff854;
+    [-0x7b0] CStrList_vtable *in_stack_fffff850;
+    [-0x7b4] char **in_stack_fffff84c;
+    [-0x7b8] uint in_stack_fffff848;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+Address:  0x004b86b0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2328      int                  low          local_2328          
+  -0x232c      int                  low          local_232c          
+  -0x2330      int                  low          local_2330          
+  -0x2334      int                  low          local_2334          
+
+  Code context:
+    [-0x2328] uint in_stack_ffffdcd8;
+    [-0x232c] uint in_stack_ffffdcd4;
+    [-0x2330] uint in_stack_ffffdcd0;
+    [-0x2334] uint in_stack_ffffdccc;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+Address:  0x004b2f90
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a4       int                  low          local_3a4           
+  -0x3a8       uint                 high         local_3a8           
+  -0x3ac       uint                 high         local_3ac           
+  -0x3b0       int                  low          local_3b0           
+
+  Code context:
+    [-0x3a4] uint in_stack_fffffc5c;
+    [-0x3a8] CStrList_vtable *in_stack_fffffc58;
+    [-0x3ac] char **in_stack_fffffc54;
+    [-0x3b0] uint in_stack_fffffc50;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+Address:  0x004b9f40
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4ec       int                  low          local_4ec           
+  -0x4f0       uint                 high         local_4f0           
+  -0x4f4       uint                 high         local_4f4           
+  -0x4f8       int                  low          local_4f8           
+
+  Code context:
+    [-0x4ec] uint in_stack_fffffb14;
+    [-0x4f0] CStrList_vtable *in_stack_fffffb10;
+    [-0x4f4] char **in_stack_fffffb0c;
+    [-0x4f8] uint in_stack_fffffb08;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
+Address:  0x004b5030
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x85c       int                  low          local_85c           
+  -0x860       uint                 high         local_860           
+  -0x864       uint                 high         local_864           
+  -0x868       int                  low          local_868           
+
+  Code context:
+    [-0x85c] uint in_stack_fffff7a4;
+    [-0x860] CStrList_vtable *in_stack_fffff7a0;
+    [-0x864] char **in_stack_fffff79c;
+    [-0x868] uint in_stack_fffff798;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
+Address:  0x004bccf0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4c0       int                  low          local_4c0           
+  -0x4c4       uint                 high         local_4c4           
+  -0x4c8       uint                 high         local_4c8           
+  -0x4cc       int                  low          local_4cc           
+
+  Code context:
+    [-0x4c0] uint in_stack_fffffb40;
+    [-0x4c4] CStrList_vtable *in_stack_fffffb3c;
+    [-0x4c8] char **in_stack_fffffb38;
+    [-0x4cc] uint in_stack_fffffb34;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+Address:  0x005a59c0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x50        float*               high         local_50            
+  -0x6c        float*               high         local_6c            
+  -0x6c        float*               high         local_6c            
+  -0x6c        float*               high         local_6c            
+
+  Code context:
+    [-0x50] uint in_stack_ffffffb0;
+    [-0x6c] byte in_stack_ffffff94 [28];
+    [-0x6c] puVar6 = (uint *)&stack0xffffff94;
+    [-0x6c] puVar6 = (uint *)&stack0xffffff94;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+Address:  0x0044d7d0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+  Code context:
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+    [-0x2c] *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
+    [-0x2c] *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+Address:  0x004518f0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8c        int                  low          local_8c            
+  -0x8c        int                  low          local_8c            
+  -0x90        int                  low          local_90            
+  -0x90        int                  low          local_90            
+
+  Code context:
+    [-0x8c] *(int *)(&stack0xffffff74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+    [-0x8c] *(int *)(&stack0xffffff74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+    [-0x90] (&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff70 + (ui
+    [-0x90] (&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff70 + (ui
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_cloth.cpp_FUN_0043c430
+Address:  0x0043c430
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4bc       int                  low          local_4bc           
+  -0x4c0       uint                 high         local_4c0           
+  -0x4c4       uint                 high         local_4c4           
+  -0x4c8       int                  low          local_4c8           
+
+  Code context:
+    [-0x4bc] uint in_stack_fffffb44;
+    [-0x4c0] CStrList_vtable *in_stack_fffffb40;
+    [-0x4c4] char **in_stack_fffffb3c;
+    [-0x4c8] uint in_stack_fffffb38;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
+Address:  0x00584940
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x704       int                  low          local_704           
+  -0x708       uint                 high         local_708           
+  -0x70c       uint                 high         local_70c           
+  -0x710       int                  low          local_710           
+
+  Code context:
+    [-0x704] uint in_stack_fffff8fc;
+    [-0x708] CStrList_vtable *in_stack_fffff8f8;
+    [-0x70c] char **in_stack_fffff8f4;
+    [-0x710] uint in_stack_fffff8f0;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_FUN_00581450
+Address:  0x00581450
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x39c       int                  low          local_39c           
+  -0x3a0       uint                 high         local_3a0           
+  -0x3a4       uint                 high         local_3a4           
+  -0x3a8       int                  low          local_3a8           
+
+  Code context:
+    [-0x39c] uint in_stack_fffffc64;
+    [-0x3a0] CStrList_vtable *in_stack_fffffc60;
+    [-0x3a4] char **in_stack_fffffc5c;
+    [-0x3a8] uint in_stack_fffffc58;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_script.cpp_CScript_FUN_00559f80
+Address:  0x00559f80
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x780       int                  low          local_780           
+  -0x784       uint                 high         local_784           
+  -0x788       uint                 high         local_788           
+  -0x78c       int                  low          local_78c           
+
+  Code context:
+    [-0x780] uint in_stack_fffff880;
+    [-0x784] CStrList_vtable *in_stack_fffff87c;
+    [-0x788] char **in_stack_fffff878;
+    [-0x78c] uint in_stack_fffff874;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
+Address:  0x00409270
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+  -0x54        int                  low          local_54            
+  -0x54        int                  low          local_54            
+
+  Code context:
+    [-0x10] (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
+    [-0x10] (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
+    [-0x54] (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *
+    [-0x54] (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
+Address:  0x005b3d20
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x39c       int                  low          local_39c           
+  -0x3a0       uint                 high         local_3a0           
+  -0x3a4       uint                 high         local_3a4           
+  -0x3a8       int                  low          local_3a8           
+
+  Code context:
+    [-0x39c] uint in_stack_fffffc64;
+    [-0x3a0] CStrList_vtable *in_stack_fffffc60;
+    [-0x3a4] char **in_stack_fffffc5c;
+    [-0x3a8] uint in_stack_fffffc58;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053df90
+Address:  0x0053df90
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x754       int                  low          local_754           
+  -0x758       uint                 high         local_758           
+  -0x75c       uint                 high         local_75c           
+  -0x760       int                  low          local_760           
+
+  Code context:
+    [-0x754] uint in_stack_fffff8ac;
+    [-0x758] CStrList_vtable *in_stack_fffff8a8;
+    [-0x75c] char **in_stack_fffff8a4;
+    [-0x760] uint in_stack_fffff8a0;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_00538f90
+Address:  0x00538f90
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a8       int                  low          local_3a8           
+  -0x3ac       uint                 high         local_3ac           
+  -0x3b0       uint                 high         local_3b0           
+  -0x3b4       int                  low          local_3b4           
+
+  Code context:
+    [-0x3a8] uint in_stack_fffffc58;
+    [-0x3ac] CStrList_vtable *in_stack_fffffc54;
+    [-0x3b0] char **in_stack_fffffc50;
+    [-0x3b4] uint in_stack_fffffc4c;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053c210
+Address:  0x0053c210
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a4       int                  low          local_3a4           
+  -0x3a8       uint                 high         local_3a8           
+  -0x3ac       uint                 high         local_3ac           
+  -0x3b0       int                  low          local_3b0           
+
+  Code context:
+    [-0x3a4] uint in_stack_fffffc5c;
+    [-0x3a8] CStrList_vtable *in_stack_fffffc58;
+    [-0x3ac] char **in_stack_fffffc54;
+    [-0x3b0] uint in_stack_fffffc50;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053d3b0
+Address:  0x0053d3b0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10b4      int                  low          local_10b4          
+  -0x10b8      uint                 high         local_10b8          
+  -0x10bc      uint                 high         local_10bc          
+  -0x10c0      int                  low          local_10c0          
+
+  Code context:
+    [-0x10b4] uint in_stack_ffffef4c;
+    [-0x10b8] CStrList_vtable *in_stack_ffffef48;
+    [-0x10bc] char **in_stack_ffffef44;
+    [-0x10c0] uint in_stack_ffffef40;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
+Address:  0x005381e0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x7cc       int                  low          local_7cc           
+  -0x7d0       uint                 high         local_7d0           
+  -0x7d4       uint                 high         local_7d4           
+  -0x7d8       int                  low          local_7d8           
+
+  Code context:
+    [-0x7cc] uint in_stack_fffff834;
+    [-0x7d0] CStrList_vtable *in_stack_fffff830;
+    [-0x7d4] char **in_stack_fffff82c;
+    [-0x7d8] uint in_stack_fffff828;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053dcf0
+Address:  0x0053dcf0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x750       int                  low          local_750           
+  -0x754       uint                 high         local_754           
+  -0x758       uint                 high         local_758           
+  -0x75c       int                  low          local_75c           
+
+  Code context:
+    [-0x750] uint in_stack_fffff8b0;
+    [-0x754] CStrList_vtable *in_stack_fffff8ac;
+    [-0x758] char **in_stack_fffff8a8;
+    [-0x75c] uint in_stack_fffff8a4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053cad0
+Address:  0x0053cad0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a8       int                  low          local_3a8           
+  -0x3ac       uint                 high         local_3ac           
+  -0x3b0       uint                 high         local_3b0           
+  -0x3b4       int                  low          local_3b4           
+
+  Code context:
+    [-0x3a8] uint in_stack_fffffc58;
+    [-0x3ac] CStrList_vtable *in_stack_fffffc54;
+    [-0x3b0] char **in_stack_fffffc50;
+    [-0x3b4] uint in_stack_fffffc4c;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_turret.cpp_FUN_005e2d50
+Address:  0x005e2d50
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x158       int                  low          local_158           
+  -0x158       int                  low          local_158           
+  -0x15c       int                  low          local_15c           
+  -0x15c       int                  low          local_15c           
+
+  Code context:
+    [-0x158] __arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);
+    [-0x158] __arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);
+    [-0x15c] (actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);
+    [-0x15c] (actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_FUN_00589c20
+Address:  0x00589c20
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa60       int                  low          local_a60           
+  -0xa64       uint                 high         local_a64           
+  -0xa68       uint                 high         local_a68           
+  -0xa6c       int                  low          local_a6c           
+
+  Code context:
+    [-0xa60] uint in_stack_fffff5a0;
+    [-0xa64] CStrList_vtable *in_stack_fffff59c;
+    [-0xa68] char **in_stack_fffff598;
+    [-0xa6c] uint in_stack_fffff594;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_FUN_0058afe0
+Address:  0x0058afe0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x474       int                  low          local_474           
+  -0x478       uint                 high         local_478           
+  -0x47c       uint                 high         local_47c           
+  -0x480       int                  low          local_480           
+
+  Code context:
+    [-0x474] uint in_stack_fffffb8c;
+    [-0x478] CStrList_vtable *in_stack_fffffb88;
+    [-0x47c] char **in_stack_fffffb84;
+    [-0x480] uint in_stack_fffffb80;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
+Address:  0x005716b0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x300       int                  low          local_300           
+  -0x300       int                  low          local_300           
+  -0x308       int                  low          local_308           
+  -0x308       int                  low          local_308           
+
+  Code context:
+    [-0x300] __arrinit(&stack0xfffffd00,8,&g_CVectorTypeInfo);
+    [-0x300] __arrinit(&stack0xfffffd00,8,&g_CVectorTypeInfo);
+    [-0x308] (&CStack_260,(CVector3f *)&stack0xfffffcf8,&CStack_2c8,&CStack_2b0);
+    [-0x308] (&CStack_260,(CVector3f *)&stack0xfffffcf8,&CStack_2c8,&CStack_2b0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
+Address:  0x0059f750
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+
+  Code context:
+    [-0x10] *puVar2 = *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 
+    [-0x10] *puVar2 = *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 
+    [-0x14] *puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
+    [-0x14] *puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_enemy.cpp_CEnemy_FUN_004a9a50
+Address:  0x004a9a50
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc         int                  low          local_c             
+  -0xc         int                  low          local_c             
+  -0x5c        int                  low          local_5c            
+  -0x5c        int                  low          local_5c            
+
+  Code context:
+    [-0xc] (in_stack_00000008,(CVector3f *)&stack0xfffffff4,aCStack_30);
+    [-0xc] (in_stack_00000008,(CVector3f *)&stack0xfffffff4,aCStack_30);
+    [-0x5c] (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);
+    [-0x5c] (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_trash.cpp_CTrash_FUN_005df550
+Address:  0x005df550
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x10] (&this_ptr->base,(CVector3f *)&stack0xfffffff0,&CStack_1c);
+    [-0x10] (&this_ptr->base,(CVector3f *)&stack0xfffffff0,&CStack_1c);
+    [-0x3c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);
+    [-0x3c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330
+Address:  0x00479330
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc74       int                  low          local_c74           
+  -0xc78       uint                 high         local_c78           
+  -0xc7c       uint                 high         local_c7c           
+  -0xc80       int                  low          local_c80           
+
+  Code context:
+    [-0xc74] uint in_stack_fffff38c;
+    [-0xc78] CStrList_vtable *in_stack_fffff388;
+    [-0xc7c] char **in_stack_fffff384;
+    [-0xc80] uint in_stack_fffff380;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_boxactor.cpp_FUN_00423110
+Address:  0x00423110
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a0       int                  low          local_3a0           
+  -0x3a4       uint                 high         local_3a4           
+  -0x3a8       uint                 high         local_3a8           
+  -0x3ac       int                  low          local_3ac           
+
+  Code context:
+    [-0x3a0] uint in_stack_fffffc60;
+    [-0x3a4] CStrList_vtable *in_stack_fffffc5c;
+    [-0x3a8] char **in_stack_fffffc58;
+    [-0x3ac] uint in_stack_fffffc54;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_frankgen.cpp_FUN_004d2770
+Address:  0x004d2770
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x39c       int                  low          local_39c           
+  -0x3a0       uint                 high         local_3a0           
+  -0x3a4       uint                 high         local_3a4           
+  -0x3a8       int                  low          local_3a8           
+
+  Code context:
+    [-0x39c] uint in_stack_fffffc64;
+    [-0x3a0] CStrList_vtable *in_stack_fffffc60;
+    [-0x3a4] char **in_stack_fffffc5c;
+    [-0x3a8] uint in_stack_fffffc58;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_path.cpp_FUN_00548390
+Address:  0x00548390
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+  -0x30        int                  low          local_30            
+  -0x30        int                  low          local_30            
+
+  Code context:
+    [-0x2c] *(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    [-0x2c] *(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    [-0x30] local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 *
+    [-0x30] local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 *
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_path.cpp_FUN_00548680
+Address:  0x00548680
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+
+  Code context:
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x14] *(uint *)(&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8);
+    [-0x18] *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
+Address:  0x004997d0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+  Code context:
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x2c] extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uin
+    [-0x2c] extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uin
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
+Address:  0x00499880
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+  Code context:
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x28] *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    [-0x2c] extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uin
+    [-0x2c] extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uin
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
+Address:  0x0054e530
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x534       int                  low          local_534           
+  -0x538       uint                 high         local_538           
+  -0x53c       uint                 high         local_53c           
+  -0x540       int                  low          local_540           
+
+  Code context:
+    [-0x534] uint in_stack_fffffacc;
+    [-0x538] CStrList_vtable *in_stack_fffffac8;
+    [-0x53c] char **in_stack_fffffac4;
+    [-0x540] uint in_stack_fffffac0;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_mission.cpp_FUN_00524c20
+Address:  0x00524c20
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3a4       int                  low          local_3a4           
+  -0x3a8       uint                 high         local_3a8           
+  -0x3ac       uint                 high         local_3ac           
+  -0x3b0       int                  low          local_3b0           
+
+  Code context:
+    [-0x3a4] uint in_stack_fffffc5c;
+    [-0x3a8] CStrList_vtable *in_stack_fffffc58;
+    [-0x3ac] char **in_stack_fffffc54;
+    [-0x3b0] uint in_stack_fffffc50;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_waypoint.cpp_CWaypoint_FUN_005ebf70
+Address:  0x005ebf70
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+  -0xa4        int                  low          local_a4            
+  -0xa4        int                  low          local_a4            
+
+  Code context:
+    [-0x18] ((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xffffffe8,&CStack_48);
+    [-0x18] ((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xffffffe8,&CStack_48);
+    [-0xa4] ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff5c);
+    [-0xa4] ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff5c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
+Address:  0x004e1cb0
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x6dc       int                  low          local_6dc           
+  -0x6e0       uint                 high         local_6e0           
+  -0x6e4       uint                 high         local_6e4           
+  -0x6e8       int                  low          local_6e8           
+
+  Code context:
+    [-0x6dc] uint in_stack_fffff924;
+    [-0x6e0] CStrList_vtable *in_stack_fffff920;
+    [-0x6e4] char **in_stack_fffff91c;
+    [-0x6e8] uint in_stack_fffff918;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280
+Address:  0x0041b280
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2830      uint                 high         local_2830          
+  -0x2834      int                  low          local_2834          
+  -0x2838      int                  low          local_2838          
+  -0x283c      int                  low          local_283c          
+
+  Code context:
+    [-0x2830] float in_stack_ffffd7d0;
+    [-0x2834] uint in_stack_ffffd7cc;
+    [-0x2838] uint in_stack_ffffd7c8;
+    [-0x283c] uint in_stack_ffffd7c4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+Address:  0x0049f270
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8ac       int                  low          local_8ac           
+  -0x8b0       uint                 high         local_8b0           
+  -0x8b4       uint                 high         local_8b4           
+  -0x8b8       int                  low          local_8b8           
+
+  Code context:
+    [-0x8ac] uint in_stack_fffff754;
+    [-0x8b0] CStrList_vtable *in_stack_fffff750;
+    [-0x8b4] char **in_stack_fffff74c;
+    [-0x8b8] uint in_stack_fffff748;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
+Address:  0x004b82a0
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x11fc      int                  low          local_11fc          
+  -0x1200      int                  low          local_1200          
+  -0x1204      int                  low          local_1204          
+
+  Code context:
+    [-0x11fc] uint in_stack_ffffee04;
+    [-0x1200] uint in_stack_ffffee00;
+    [-0x1204] uint in_stack_ffffedfc;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
+Address:  0x00578d80
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2468      int                  low          local_2468          
+  -0x246c      int                  low          local_246c          
+  -0x2470      int                  low          local_2470          
+
+  Code context:
+    [-0x2468] uint in_stack_ffffdb98;
+    [-0x246c] uint in_stack_ffffdb94;
+    [-0x2470] uint in_stack_ffffdb90;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+Address:  0x0040d040
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+
+  Code context:
+    [-0x14] float in_stack_ffffffec;
+    [-0x14] if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
+    [-0x14] if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053ccf0
+Address:  0x0053ccf0
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x43c       uint                 high         local_43c           
+  -0x440       uint                 high         local_440           
+  -0x444       int                  low          local_444           
+
+  Code context:
+    [-0x43c] CStrList_vtable *in_stack_fffffbc4;
+    [-0x440] char **in_stack_fffffbc0;
+    [-0x444] uint in_stack_fffffbbc;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
+Address:  0x0058a3d0
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  high         local_18            
+  -0x18        int                  high         local_18            
+  -0x18        int                  high         local_18            
+
+  Code context:
+    [-0x18] CBoneStructure *in_stack_ffffffe8;
+    [-0x18] _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
+    [-0x18] _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_FUN_0058c190
+Address:  0x0058c190
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa218      int                  low          local_a218          
+  -0xa21c      int                  low          local_a21c          
+  -0xa220      int                  low          local_a220          
+
+  Code context:
+    [-0xa218] uint in_stack_ffff5de8;
+    [-0xa21c] uint in_stack_ffff5de4;
+    [-0xa220] uint in_stack_ffff5de0;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
+Address:  0x005dc760
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x50        int                  low          local_50            
+  -0x50        int                  low          local_50            
+  -0x50        int                  low          local_50            
+
+  Code context:
+    [-0x50] CDemonRenderer *in_stack_ffffffb0;
+    [-0x50] engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimit
+    [-0x50] engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimit
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_beginFadeOut_FUN_004e0960
+Address:  0x004e0960
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x64        int                  low          local_64            
+  -0x6c        int                  low          local_6c            
+  -0x6c        int                  low          local_6c            
+
+  Code context:
+    [-0x64] CVector3i *in_stack_ffffff9c;
+    [-0x6c] (this_ptr_00,(CBoundingBox3D *)&stack0xffffff94);
+    [-0x6c] (this_ptr_00,(CBoundingBox3D *)&stack0xffffff94);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_FUN_004e09a0
+Address:  0x004e09a0
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x64        int                  low          local_64            
+  -0x6c        int                  low          local_6c            
+  -0x6c        int                  low          local_6c            
+
+  Code context:
+    [-0x64] CVector3i *in_stack_ffffff9c;
+    [-0x6c] (this_ptr,(CBoundingBox3D *)&stack0xffffff94);
+    [-0x6c] (this_ptr,(CBoundingBox3D *)&stack0xffffff94);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_openSomething_FUN_004e2910
+Address:  0x004e2910
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa28       int                  low          local_a28           
+  -0xa30       int                  low          local_a30           
+  -0xa30       int                  low          local_a30           
+
+  Code context:
+    [-0xa28] CGame *in_stack_fffff5d8;
+    [-0xa30] *(uint *)(&stack0xfffff5d0 + local_20) =
+    [-0xa30] *(uint *)(&stack0xfffff5d0 + local_20) =
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_trisock.cpp_receiveSocketData_FUN_005e1c20
+Address:  0x005e1c20
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);
+    [-0x1c] ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_trisock.cpp_acceptConnection_FUN_005e1d80
+Address:  0x005e1d80
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+
+  Code context:
+    [-0x10] ((SOCKADDR_IN *)&stack0xfffffff0,&local_20);
+    [-0x10] ((SOCKADDR_IN *)&stack0xfffffff0,&local_20);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_trisock.cpp_getSocketName_FUN_005e1df0
+Address:  0x005e1df0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc         int                  low          local_c             
+  -0xc         int                  low          local_c             
+
+  Code context:
+    [-0xc] ((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);
+    [-0xc] ((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30
+Address:  0x0043eb30
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x80        char*                medium       local_80            
+  -0x80        char*                medium       local_80            
+
+  Code context:
+    [-0x80] crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca((istrstream *)&stack0xf
+    [-0x80] crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca((istrstream *)&stack0xf
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50
+Address:  0x0043ed50
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x84        char*                medium       local_84            
+  -0x84        char*                medium       local_84            
+
+  Code context:
+    [-0x84] crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xf
+    [-0x84] crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xf
+
+────────────────────────────────────────────────────────────────────────────────
+Function: support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
+Address:  0x0043ea80
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x78        char*                medium       local_78            
+  -0x78        char*                medium       local_78            
+
+  Code context:
+    [-0x78] crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xf
+    [-0x78] crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xf
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
+Address:  0x004b7460
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcf4       int                  low          local_cf4           
+  -0xcf8       int                  low          local_cf8           
+
+  Code context:
+    [-0xcf4] uint in_stack_fffff30c;
+    [-0xcf8] uint in_stack_fffff308;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
+Address:  0x004b7f50
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcd0       int                  low          local_cd0           
+  -0xcd4       int                  low          local_cd4           
+
+  Code context:
+    [-0xcd0] uint in_stack_fffff330;
+    [-0xcd4] uint in_stack_fffff32c;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
+Address:  0x005ae830
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x6b4       int                  low          local_6b4           
+  -0x6b4       int                  low          local_6b4           
+
+  Code context:
+    [-0x6b4] (&stack0xfffff94c,"DirectSux: Unable to %s.  (%s)",
+    [-0x6b4] (&stack0xfffff94c,"DirectSux: Unable to %s.  (%s)",
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_startSfx_FUN_005a8e90
+Address:  0x005a8e90
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x394       int                  low          local_394           
+  -0x394       int                  low          local_394           
+
+  Code context:
+    [-0x394] ("startSfx - can't get sample %s\n",&stack0xfffffc6c);
+    [-0x394] ("startSfx - can't get sample %s\n",&stack0xfffffc6c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+Address:  0x00542470
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x170       int                  low          local_170           
+  -0x170       int                  low          local_170           
+
+  Code context:
+    [-0x170] puVar8 = (uint *)&stack0xfffffe90;
+    [-0x170] puVar8 = (uint *)&stack0xfffffe90;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_trap.cpp_CTrap_FUN_005de920
+Address:  0x005de920
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+
+  Code context:
+    [-0x28] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+    [-0x28] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_trap.cpp_CTrap_process_FUN_005de770
+Address:  0x005de770
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc         int                  low          local_c             
+  -0xc         int                  low          local_c             
+
+  Code context:
+    [-0xc] (&this_ptr->base,(CVector3f *)&stack0xfffffff4,
+    [-0xc] (&this_ptr->base,(CVector3f *)&stack0xfffffff4,
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0
+Address:  0x004529b0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x26c       int                  low          local_26c           
+  -0x270       int                  low          local_270           
+
+  Code context:
+    [-0x26c] uint in_stack_fffffd94;
+    [-0x270] uint in_stack_fffffd90;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_health.cpp_CHealthItem_renderOpaque_FUN_004f1e60
+Address:  0x004f1e60
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_drip.cpp_FUN_0048e6c0
+Address:  0x0048e6c0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_gore.cpp_FUN_004eb9d0
+Address:  0x004eb9d0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x68        int                  low          local_68            
+  -0x68        int                  low          local_68            
+
+  Code context:
+    [-0x68] piVar4 = (int *)&stack0xffffff98;
+    [-0x68] piVar4 = (int *)&stack0xffffff98;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_pendulum.cpp_CPendulum_renderOpaque_FUN_0054a2f0
+Address:  0x0054a2f0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_door.cpp_CDoor_renderBackground_FUN_004809e0
+Address:  0x004809e0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_vehicle.cpp_CVehicle_FUN_005e88c0
+Address:  0x005e88c0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x64        int                  high         local_64            
+  -0x68        int                  high         local_68            
+
+  Code context:
+    [-0x64] float in_stack_ffffff9c;
+    [-0x68] float in_stack_ffffff98;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_filmreel.cpp_FUN_004bed00
+Address:  0x004bed00
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x3c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+    [-0x3c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
+Address:  0x00509d50
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc0        int                  low          local_c0            
+  -0xc0        int                  low          local_c0            
+
+  Code context:
+    [-0xc0] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff40);
+    [-0xc0] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff40);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440
+Address:  0x0050b440
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x78        int                  low          local_78            
+  -0x78        int                  low          local_78            
+
+  Code context:
+    [-0x78] core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
+    [-0x78] core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0
+Address:  0x005090d0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+  Code context:
+    [-0x2c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+    [-0x2c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630
+Address:  0x00578630
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xbd4       uint                 high         local_bd4           
+  -0xbd8       int                  low          local_bd8           
+
+  Code context:
+    [-0xbd4] char **in_stack_fffff42c;
+    [-0xbd8] uint in_stack_fffff428;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
+Address:  0x00587b50
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x84        int                  low          local_84            
+  -0x84        int                  low          local_84            
+
+  Code context:
+    [-0x84] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
+    [-0x84] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_bat.cpp_CBat_renderOpaque_FUN_00414bf0
+Address:  0x00414bf0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_spike.cpp_FUN_005b8730
+Address:  0x005b8730
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
+Address:  0x004e9e90
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+Address:  0x004e9ca0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+
+  Code context:
+    [-0x28] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+    [-0x28] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_keyactor.cpp_CKeyActor_renderOpaque_FUN_005017c0
+Address:  0x005017c0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860
+Address:  0x00412860
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dskybox.cpp_renderSkyDome_FUN_004901f0
+Address:  0x004901f0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xbc        int                  low          local_bc            
+  -0xbc        int                  low          local_bc            
+
+  Code context:
+    [-0xbc] (pCVar3,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);
+    [-0xbc] (pCVar3,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CFireball_initRender_FUN_004c0d80
+Address:  0x004c0d80
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x68        int                  low          local_68            
+  -0x68        int                  low          local_68            
+
+  Code context:
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
+Address:  0x004bf4c0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x74        int                  low          local_74            
+  -0x74        int                  low          local_74            
+
+  Code context:
+    [-0x74] (CVector3i *)&stack0xffffff8c);
+    [-0x74] (CVector3i *)&stack0xffffff8c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CLightningBolt_render_FUN_004c5720
+Address:  0x004c5720
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xe4        int                  low          local_e4            
+  -0xe4        int                  low          local_e4            
+
+  Code context:
+    [-0xe4] (pCVar5,(SMRGLHeaderPrimitive *)&stack0xffffff1c);
+    [-0xe4] (pCVar5,(SMRGLHeaderPrimitive *)&stack0xffffff1c);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
+Address:  0x004bf1f0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x68        int                  low          local_68            
+  -0x68        int                  low          local_68            
+
+  Code context:
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CRainDrop_render_FUN_004c6830
+Address:  0x004c6830
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+
+  Code context:
+    [-0xac] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff54);
+    [-0xac] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff54);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CSpark_initRender_FUN_004c0300
+Address:  0x004c0300
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x68        int                  low          local_68            
+  -0x68        int                  low          local_68            
+
+  Code context:
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+    [-0x68] piVar5 = (int *)&stack0xffffff98;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053ea30
+Address:  0x0053ea30
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2628      int                  low          local_2628          
+  -0x2628      int                  low          local_2628          
+
+  Code context:
+    [-0x2628] (this_ptr_00,(CActorPropertyList *)&stack0xffffd9d8);
+    [-0x2628] (this_ptr_00,(CActorPropertyList *)&stack0xffffd9d8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_00538ea0
+Address:  0x00538ea0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2508      int                  low          local_2508          
+  -0x2508      int                  low          local_2508          
+
+  Code context:
+    [-0x2508] (this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);
+    [-0x2508] (this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_set.cpp_CDemonSet_FUN_0056fbd0
+Address:  0x0056fbd0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x88        int                  low          local_88            
+  -0x88        int                  low          local_88            
+
+  Code context:
+    [-0x88] ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);
+    [-0x88] ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_smiley.cpp_FUN_005a3160
+Address:  0x005a3160
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+  -0x10        int                  low          local_10            
+
+  Code context:
+    [-0x10] ((CVector3f *)&stack0xfffffff0,&g_ZeroVector,
+    [-0x10] ((CVector3f *)&stack0xfffffff0,&g_ZeroVector,
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_turret.cpp_CTurret_FUN_005e2320
+Address:  0x005e2320
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+
+  Code context:
+    [-0x28] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
+    [-0x28] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_simbox.cpp_CSimBox_FUN_005890f0
+Address:  0x005890f0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_simbox.cpp_CSimBox_FUN_00588e00
+Address:  0x00588e00
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x44        int                  low          local_44            
+  -0x44        int                  low          local_44            
+
+  Code context:
+    [-0x44] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffbc);
+    [-0x44] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffbc);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_grave.cpp_FUN_004ee710
+Address:  0x004ee710
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80
+Address:  0x00410e80
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_weapon.cpp_CWeapon_FUN_005ee740
+Address:  0x005ee740
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4c        int                  low          local_4c            
+  -0x4c        int                  low          local_4c            
+
+  Code context:
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_weapon.cpp_CWeapon_renderOpaque_FUN_005ee030
+Address:  0x005ee030
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
+Address:  0x005e9e70
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xb8        int                  low          local_b8            
+  -0xb8        int                  low          local_b8            
+
+  Code context:
+    [-0xb8] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff48);
+    [-0xb8] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff48);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
+Address:  0x00417f80
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+  -0x20        int                  low          local_20            
+
+  Code context:
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    [-0x20] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dest.cpp_CDestActor_renderTransparent_FUN_0046fb70
+Address:  0x0046fb70
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x3c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+    [-0x3c] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00
+Address:  0x00448e00
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x24        int                  low          local_24            
+  -0x24        int                  low          local_24            
+
+  Code context:
+    [-0x24] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
+    [-0x24] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_charactr.cpp_CCharacter_FUN_0042af60
+Address:  0x0042af60
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1ab0      int                  low          local_1ab0          
+  -0x1ab0      int                  low          local_1ab0          
+
+  Code context:
+    [-0x1ab0] (this_ptr_00,(SBoneTransformData *)&stack0xffffe550);
+    [-0x1ab0] (this_ptr_00,(SBoneTransformData *)&stack0xffffe550);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0
+Address:  0x00428ee0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x3c] core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0
+    [-0x3c] core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_charactr.cpp_CCharacter_FUN_0042b930
+Address:  0x0042b930
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+
+  Code context:
+    [-0x40] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc0);
+    [-0x40] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_lever.cpp_CLever_FUN_00504dd0
+Address:  0x00504dd0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+
+  Code context:
+    [-0x28] (&this_ptr->base,in_stack_00000008,(CVector3f *)&stack0xffffffd8);
+    [-0x28] (&this_ptr->base,in_stack_00000008,(CVector3f *)&stack0xffffffd8);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_teleport.cpp_CTeleport_process_FUN_005daa20
+Address:  0x005daa20
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+  Code context:
+    [-0x2c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+    [-0x2c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_boxactor.cpp_CBoxActor_FUN_004218d0
+Address:  0x004218d0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4c        int                  low          local_4c            
+  -0x4c        int                  low          local_4c            
+
+  Code context:
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_frankgen.cpp_LoadModel_FUN_004d2190
+Address:  0x004d2190
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+  Code context:
+    [-0x3c] (in_stack_00000004,(CVector3f *)&stack0xffffffc4,&local_24);
+    [-0x3c] (in_stack_00000004,(CVector3f *)&stack0xffffffc4,&local_24);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
+Address:  0x00511840
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x224       int                  low          local_224           
+  -0x224       int                  low          local_224           
+
+  Code context:
+    [-0x224] (&stack0xfffffddc,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
+    [-0x224] (&stack0xfffffddc,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_crate.cpp_FUN_00448660
+Address:  0x00448660
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+
+  Code context:
+    [-0x18] (&in_stack_00000004->standing_platform->base,(CBoundingBox3D *)&stack0
+    [-0x18] (&in_stack_00000004->standing_platform->base,(CBoundingBox3D *)&stack0
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_lightgun.cpp_CLightGun_FUN_00505b70
+Address:  0x00505b70
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4c        int                  low          local_4c            
+  -0x4c        int                  low          local_4c            
+
+  Code context:
+    [-0x4c] (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb4);
+    [-0x4c] (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_wateract.cpp_CWaterActor_FUN_005eb280
+Address:  0x005eb280
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x24        int                  low          local_24            
+  -0x24        int                  low          local_24            
+
+  Code context:
+    [-0x24] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffdc);
+    [-0x24] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffdc);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720
+Address:  0x0054d720
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x58        int                  high         local_58            
+  -0x5c        int                  high         local_5c            
+
+  Code context:
+    [-0x58] float in_stack_ffffffa8;
+    [-0x5c] float in_stack_ffffffa4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_emitter.cpp_FUN_004a8d20
+Address:  0x004a8d20
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x30        int                  low          local_30            
+  -0x30        int                  low          local_30            
+
+  Code context:
+    [-0x30] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
+    [-0x30] (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_mimic.cpp_CMimic_renderBackground_FUN_005208b0
+Address:  0x005208b0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_loadSaveGame_FUN_004e12b0
+Address:  0x004e12b0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x630       int                  low          local_630           
+  -0x634       int                  low          local_634           
+
+  Code context:
+    [-0x630] uint in_stack_fffff9d0;
+    [-0x634] uint in_stack_fffff9cc;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_displayActStats_FUN_004e3800
+Address:  0x004e3800
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x558       int                  low          local_558           
+  -0x558       int                  low          local_558           
+
+  Code context:
+    [-0x558] pcVar9 = &stack0xfffffaa8;
+    [-0x558] pcVar9 = &stack0xfffffaa8;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_saveGame_FUN_004e0cd0
+Address:  0x004e0cd0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x550       int                  low          local_550           
+  -0x554       int                  low          local_554           
+
+  Code context:
+    [-0x550] uint in_stack_fffffab0;
+    [-0x554] uint in_stack_fffffaac;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610
+Address:  0x00419610
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+    [-0x1c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_bodypart.cpp_CBodyPart_FUN_0041b070
+Address:  0x0041b070
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4c        int                  low          local_4c            
+  -0x4c        int                  low          local_4c            
+
+  Code context:
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+    [-0x4c] (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+Address:  0x0051d520
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc0        char*                medium       local_c0            
+  -0xc0        char*                medium       local_c0            
+
+  Code context:
+    [-0xc0] sprintf(&stack0xffffff40,"Pixel Height: %d",local_28.z);
+    [-0xc0] sprintf(&stack0xffffff40,"Pixel Height: %d",local_28.z);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+Address:  0x0051ead0
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x80        int                  low          local_80            
+  -0x80        int                  low          local_80            
+
+  Code context:
+    [-0x80] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);
+    [-0x80] (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
+Address:  0x0049f420
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1ec0      uint                 high         local_1ec0          
+  -0x1ec4      int                  low          local_1ec4          
+
+  Code context:
+    [-0x1ec0] char **in_stack_ffffe140;
+    [-0x1ec4] uint in_stack_ffffe13c;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
+Address:  0x004ccff0
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x438       int                  low          local_438           
+
+  Code context:
+    [-0x438] int in_stack_fffffbc8;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+Address:  0x004ba740
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x690       int                  low          local_690           
+
+  Code context:
+    [-0x690] uint in_stack_fffff970;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+Address:  0x0040d940
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1a4       int                  low          local_1a4           
+
+  Code context:
+    [-0x1a4] engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2);
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
+Address:  0x004c7bb0
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x58        int                  low          local_58            
+
+  Code context:
+    [-0x58] CVector3f *in_stack_ffffffa8;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_weapon.cpp_CWeapon_FUN_005ee4a0
+Address:  0x005ee4a0
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x38        int                  low          local_38            
+
+  Code context:
+    [-0x38] uint in_stack_ffffffc8;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
+Address:  0x0059d460
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x22c       int                  low          local_22c           
+
+  Code context:
+    [-0x22c] CVector3f *in_stack_fffffdd4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_stairs.cpp_FUN_005b9c10
+Address:  0x005b9c10
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x118       int                  low          local_118           
+
+  Code context:
+    [-0x118] for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_process_FUN_004e3190
+Address:  0x004e3190
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1c        int                  low          local_1c            
+
+  Code context:
+    [-0x1c] CGame *in_stack_ffffffe4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+Address:  0x0049fb70
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x35c       int                  low          local_35c           
+
+  Code context:
+    [-0x35c] int in_stack_fffffca4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_edittool.cpp_showTextInputDialog_FUN_0049db10
+Address:  0x0049db10
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x31c       int                  low          local_31c           
+
+  Code context:
+    [-0x31c] int in_stack_fffffce4;
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
+Address:  0x005d1230
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x64        int                  low          local_64            
+
+  Code context:
+    [-0x64] CVector3d *in_stack_ffffff9c;
+
+
+====================================================================================================
+STACK-ALIGNED FUNCTIONS (64 functions)
+These have AND ESP instructions - fixes may not fully resolve issues.
+====================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+Address:  0x0047b1e0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (16):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc4        int                  low          local_c4            
+  -0xc4        int                  low          local_c4            
+  -0xc8        int                  low          local_c8            
+  -0xc8        int                  low          local_c8            
+  -0xd0        int                  low          local_d0            
+  -0xd0        int                  low          local_d0            
+  -0xd4        int                  low          local_d4            
+  -0xd4        int                  low          local_d4            
+  -0xdc        int                  low          local_dc            
+  -0xdc        int                  low          local_dc            
+  -0xe0        int                  low          local_e0            
+  -0xe0        int                  low          local_e0            
+  -0xe8        int                  low          local_e8            
+  -0xe8        int                  low          local_e8            
+  -0xec        int                  low          local_ec            
+  -0xec        int                  low          local_ec            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_msnedit.cpp_CDemonMission_FUN_0053e220
+Address:  0x0053e220
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (11):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x84        int                  low          local_84            
+  -0x84        int                  low          local_84            
+  -0xa8        ulonglong            high         local_a8            
+  -0xa8        ulonglong            high         local_a8            
+  -0xa8        ulonglong            high         local_a8            
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+  -0xac        int                  low          local_ac            
+  -0xb0        float                high         local_b0            
+  -0xb4        int                  low          local_b4            
+  -0xd0        int                  low          local_d0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_UserInputCreate_FUN_0057d660
+Address:  0x0057d660
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (10):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1148      int                  low          local_1148          
+  -0x114c      int                  low          local_114c          
+  -0x1150      int                  low          local_1150          
+  -0x1154      int                  low          local_1154          
+  -0x1158      int                  low          local_1158          
+  -0x1170      int                  low          local_1170          
+  -0x1170      int                  low          local_1170          
+  -0x117c      int                  low          local_117c          
+  -0x117c      int                  low          local_117c          
+  -0x1180      ulonglong            high         local_1180          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+Address:  0x0051d990
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (8):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x71c       int                  low          local_71c           
+  -0x720       uint                 high         local_720           
+  -0x724       uint                 high         local_724           
+  -0x728       int                  low          local_728           
+  -0x72c       int                  low          local_72c           
+  -0x72c       int                  low          local_72c           
+  -0x72c       int                  low          local_72c           
+  -0x780       int                  low          local_780           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+Address:  0x0043c880
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x534       uint                 high         local_534           
+  -0x538       uint                 high         local_538           
+  -0x53c       uint                 high         local_53c           
+  -0x540       int                  low          local_540           
+  -0x540       int                  low          local_540           
+  -0x544       uint                 high         local_544           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_ladder.cpp_CLadder_FUN_00502620
+Address:  0x00502620
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa8        float                high         local_a8            
+  -0xa8        float                high         local_a8            
+  -0xa8        float                high         local_a8            
+  -0xd8        int                  low          local_d8            
+  -0xd8        int                  low          local_d8            
+  -0xd8        int                  low          local_d8            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
+Address:  0x005d64a0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (6):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x34        int                  low          local_34            
+  -0x34        int                  low          local_34            
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+  -0x44        int                  low          local_44            
+  -0x44        int                  low          local_44            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_door.cpp_CDoor_renderOpaque_FUN_004807d0
+Address:  0x004807d0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (5):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+  -0x48        int                  high         local_48            
+  -0x4c        int                  high         local_4c            
+  -0x50        int                  high         local_50            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+Address:  0x004baf00
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x25f0      int                  low          local_25f0          
+  -0x25f4      int                  low          local_25f4          
+  -0x25f8      int                  low          local_25f8          
+  -0x25fc      int                  low          local_25fc          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+Address:  0x004b4220
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x13b8      int                  low          local_13b8          
+  -0x13bc      uint                 high         local_13bc          
+  -0x13c0      uint                 high         local_13c0          
+  -0x13c4      int                  low          local_13c4          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+Address:  0x00534d40
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x60ec      int                  low          local_60ec          
+  -0x60f0      SMpegFrameHeader*    high         local_60f0          
+  -0x60f0      SMpegFrameHeader*    high         local_60f0          
+  -0x60f0      SMpegFrameHeader*    high         local_60f0          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0
+Address:  0x0057e7c0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x4778      int                  low          local_4778          
+  -0x477c      int                  low          local_477c          
+  -0x4780      int                  low          local_4780          
+  -0x4784      int                  low          local_4784          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_DementedFogEditor_FUN_00580730
+Address:  0x00580730
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x5d8       int                  low          local_5d8           
+  -0x5dc       uint                 high         local_5dc           
+  -0x5e0       uint                 high         local_5e0           
+  -0x5e4       int                  low          local_5e4           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
+Address:  0x0040a210
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x27c       int                  low          local_27c           
+  -0x27c       int                  low          local_27c           
+  -0x290       float                high         local_290           
+  -0x294       CVector3f*           high         local_294           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_stranger.cpp_CStranger_FUN_005c6220
+Address:  0x005c6220
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+  -0x24        int                  low          local_24            
+  -0x24        int                  low          local_24            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
+Address:  0x0059a070
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x28        int                  low          local_28            
+  -0x28        int                  low          local_28            
+  -0x2c        int                  low          local_2c            
+  -0x2c        int                  low          local_2c            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+Address:  0x005a0ad0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x54        int                  low          local_54            
+  -0x54        int                  low          local_54            
+  -0x58        int                  low          local_58            
+  -0x58        int                  low          local_58            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
+Address:  0x00546a60
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14        int                  low          local_14            
+  -0x14        int                  low          local_14            
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_path.cpp_FUN_00547fc0
+Address:  0x00547fc0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x80        int                  low          local_80            
+  -0x80        int                  low          local_80            
+  -0x84        int                  low          local_84            
+  -0x84        int                  low          local_84            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+Address:  0x00495b70
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (4):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcc        int                  low          local_cc            
+  -0xcc        int                  low          local_cc            
+  -0xd8        int                  low          local_d8            
+  -0xd8        int                  low          local_d8            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940
+Address:  0x0057a940
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x51c       int                  low          local_51c           
+  -0x51c       int                  low          local_51c           
+  -0x528       ulonglong            high         local_528           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50
+Address:  0x0057ae50
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x170       int                  low          local_170           
+  -0x170       int                  low          local_170           
+  -0x184       int                  low          local_184           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0
+Address:  0x0057c5d0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xfc8       uint                 high         local_fc8           
+  -0xfcc       uint                 high         local_fcc           
+  -0xfd0       int                  low          local_fd0           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
+Address:  0x0057bbe0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x898       uint                 high         local_898           
+  -0x89c       uint                 high         local_89c           
+  -0x8a0       int                  low          local_8a0           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_slew.cpp_CSlew_processInput_FUN_005a20b0
+Address:  0x005a20b0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (3):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x1c        float10              high         local_1c            
+  -0x20        int                  low          local_20            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
+Address:  0x00450ac0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x64        int                  low          local_64            
+  -0x64        int                  low          local_64            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_zombie.cpp_FUN_005f8da0
+Address:  0x005f8da0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_flies.cpp_FUN_004cc300
+Address:  0x004cc300
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x9c        int                  low          local_9c            
+  -0x9c        int                  low          local_9c            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_pendulum.cpp_CPendulum_FUN_005495c0
+Address:  0x005495c0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x110       int                  low          local_110           
+  -0x110       int                  low          local_110           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dynamite.cpp_CDynamite_process_FUN_0049cfb0
+Address:  0x0049cfb0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8         int                  low          local_8             
+  -0x8         int                  low          local_8             
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_hero.cpp_CHero_FUN_004f33b0
+Address:  0x004f33b0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x80        int                  low          local_80            
+  -0x80        int                  low          local_80            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_mobster.cpp_FUN_00525110
+Address:  0x00525110
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_terrain.cpp_CTerrain_render_FUN_005e1f50
+Address:  0x005e1f50
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x3c        int                  low          local_3c            
+  -0x3c        int                  low          local_3c            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_glass.cpp_CGlass_setup_FUN_004e9180
+Address:  0x004e9180
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xe0        int                  low          local_e0            
+  -0xe0        int                  low          local_e0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210
+Address:  0x00475210
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xf0        int                  low          local_f0            
+  -0xf0        int                  low          local_f0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_flame.cpp_FUN_004caa80
+Address:  0x004caa80
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x38        int                  low          local_38            
+  -0x38        int                  low          local_38            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_set.cpp_CDemonSet_FUN_0056b810
+Address:  0x0056b810
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa0        int                  low          local_a0            
+  -0xa0        int                  low          local_a0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+Address:  0x00573470
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x29c       CVector3f*           high         local_29c           
+  -0x2a0       CVector3f*           high         local_2a0           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+Address:  0x0059eb50
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x930       int                  low          local_930           
+  -0x930       int                  low          local_930           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_boneguy.cpp_FUN_0041b770
+Address:  0x0041b770
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x40        int                  low          local_40            
+  -0x40        int                  low          local_40            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_charactr.cpp_CCharacter_FUN_0042c180
+Address:  0x0042c180
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+  -0x18        int                  low          local_18            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
+Address:  0x005751d0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x174       int                  low          local_174           
+  -0x174       int                  low          local_174           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
+Address:  0x0047c5f0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x8c        int                  low          local_8c            
+  -0x8c        int                  low          local_8c            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_course.cpp_CCourse_FUN_004427a0
+Address:  0x004427a0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x70        int                  low          local_70            
+  -0x70        int                  low          local_70            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_tvbat.cpp_CTVBat_FUN_005e4d80
+Address:  0x005e4d80
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x78        int                  low          local_78            
+  -0x78        int                  low          local_78            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_menu.cpp_configureSoundOptions_FUN_00511e50
+Address:  0x00511e50
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa3c       int                  low          local_a3c           
+  -0xa44       int                  low          local_a44           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_main.c_initializeGameSystems_FUN_00507a60
+Address:  0x00507a60
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x728       int                  low          local_728           
+  -0x728       int                  low          local_728           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
+Address:  0x005eb740
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x9c        int                  low          local_9c            
+  -0xa0        int                  low          local_a0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
+Address:  0x00496220
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xc4        int                  low          local_c4            
+  -0xc4        int                  low          local_c4            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
+Address:  0x0054ea00
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2cc       int                  low          local_2cc           
+  -0x2cc       int                  low          local_2cc           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_SaveRelated_FUN_004dcee0
+Address:  0x004dcee0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x1ac       int                  low          local_1ac           
+  -0x1ac       int                  low          local_1ac           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_finishAct_FUN_004e3b90
+Address:  0x004e3b90
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x55c       int                  low          local_55c           
+  -0x55c       int                  low          local_55c           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
+Address:  0x004ddaf0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (2):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x458       char*                medium       local_458           
+  -0x458       char*                medium       local_458           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
+Address:  0x005ad3b0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x168       int                  low          local_168           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+Address:  0x005a75e0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xd0        int                  low          local_d0            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
+Address:  0x005a80e0
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x20        int                  low          local_20            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_tommygun.cpp_FUN_005ddb30
+Address:  0x005ddb30
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x14c       int                  low          local_14c           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+Address:  0x00409470
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xb8        CVector3f*           high         local_b8            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_morph.cpp_FUN_0052ca90
+Address:  0x0052ca90
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x18        int                  low          local_18            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_stranger.cpp_CStranger_FUN_005bdd20
+Address:  0x005bdd20
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xcc        int                  low          local_cc            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_stranger.cpp_CStranger_FUN_005bb960
+Address:  0x005bb960
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x2f0       ulonglong            high         local_2f0           
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+Address:  0x0058f810
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xa1e8      int                  low          local_a1e8          
+
+────────────────────────────────────────────────────────────────────────────────
+Function: core_gabriela.cpp_CGabriella_FUN_004d4890
+Address:  0x004d4890
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0xbc        int                  low          local_bc            
+
+────────────────────────────────────────────────────────────────────────────────
+Function: shape_spotview.cpp_CSpotView_FUN_005b9670
+Address:  0x005b9670
+⚠ HAS STACK ALIGNMENT - fixes may have limited effect
+Locals to add (1):
+
+  Offset       Type                 Confidence   Suggested Name      
+  ------------ -------------------- ------------ --------------------
+  -0x10        int                  low          local_10            
+
+
+====================================================================================================
+SUMMARY BY INFERRED TYPE
+====================================================================================================
+  int                           : 668
+  uint                          : 148
+  float                         : 23
+  char*                         : 11
+  float*                        : 8
+  ulonglong                     : 8
+  CVector3f*                    : 4
+  SMpegFrameHeader*             : 3
+  void*                         : 3
+  CStrList*                     : 3
+  CDemonMission*                : 1
+  float10                       : 1

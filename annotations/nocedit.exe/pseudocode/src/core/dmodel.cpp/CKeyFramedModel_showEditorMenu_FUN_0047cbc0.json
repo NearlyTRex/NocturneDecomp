@@ -2,177 +2,315 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 18,
-        "line": 171,
-        "message": "invalid cast from type 'float' to type 'CKeyFramedModelInstance*'"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       },
       {
         "category": "other",
+        "column": 18,
+        "line": 170,
+        "message": "invalid cast from type 'float' to type 'CKeyFramedModelInstance*'"
+      },
+      {
+        "category": "pointer_precision",
         "column": 26,
+        "line": 201,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 33,
         "line": 202,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 33,
+        "category": "pointer_precision",
+        "column": 30,
         "line": 203,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 30,
-        "line": 204,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 28,
-        "line": 413,
+        "line": 412,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 61,
+        "line": 412,
+        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 32,
         "line": 413,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
+        "column": 69,
+        "line": 413,
+        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
         "column": 32,
         "line": 414,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 69,
         "line": 414,
-        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 415,
-        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 415,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 424,
+        "line": 423,
         "message": "'DAT_02c14c88' was not declared in this scope; did you mean 'DAT_02c14d88'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 27,
-        "line": 447,
+        "line": 446,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 48,
-        "line": 449,
+        "line": 448,
         "message": "cast from 'CKeyFramedModel**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 27,
-        "line": 450,
+        "line": 449,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 55,
-        "line": 472,
+        "line": 471,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 61,
-        "line": 489,
+        "line": 488,
         "message": "cast from 'CKeyFramedModel*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 49,
-        "line": 522,
+        "line": 521,
         "message": "cast from 'CKeyFramedModel*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 526,
+        "line": 525,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 546,
-        "message": "'stack0xfffff150' was not declared in this scope; did you mean 'in_stack_fffff150'?"
+        "line": 545,
+        "message": "'stack0xfffff150' was not declared in this scope"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 696,
+        "line": 695,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 40,
-        "line": 739,
+        "line": 738,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 55,
+        "line": 748,
+        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 59,
         "line": 749,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 59,
         "line": 750,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 59,
-        "line": 751,
-        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 55,
-        "line": 763,
+        "line": 762,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 47,
-        "line": 767,
+        "line": 766,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 59,
-        "line": 771,
+        "line": 770,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 85,
-        "line": 810,
+        "line": 809,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 80,
-        "line": 833,
+        "line": 832,
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -180,6 +318,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -187,62 +331,68 @@
       {
         "category": "other",
         "column": 41,
-        "line": 161,
+        "line": 160,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 164,
+        "line": 163,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 194,
+        "line": 193,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 202,
+        "line": 201,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 203,
+        "line": 202,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 204,
+        "line": 203,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 206,
+        "line": 205,
         "message": "too many arguments for format [-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 221,
+        "line": 220,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 222,
+        "line": 221,
         "message": "format '%d' expects argument of type 'int', but argument 3 has type 'CKeyFramedModelInstance*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 222,
+        "line": 221,
         "message": "too many arguments for format [-Wformat-extra-args]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 226,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
@@ -313,25 +463,25 @@
       {
         "category": "other",
         "column": 41,
-        "line": 238,
+        "line": 239,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 241,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 244,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 240,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 242,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 245,
+        "line": 248,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -366,43 +516,49 @@
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 254,
+        "column": 19,
+        "line": 255,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 256,
+        "line": 258,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 259,
+        "line": 263,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 264,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 267,
+        "line": 266,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 413,
+        "line": 412,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 45,
+        "line": 412,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 413,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 49,
         "line": 413,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -420,315 +576,309 @@
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 415,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 415,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 16,
-        "line": 446,
+        "line": 445,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 449,
+        "line": 448,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 56,
+        "line": 470,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 38,
         "line": 471,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 472,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 47,
-        "line": 472,
+        "line": 471,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 481,
+        "line": 480,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 485,
+        "line": 484,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 488,
+        "line": 487,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 489,
+        "line": 488,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 496,
+        "line": 495,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 508,
+        "line": 507,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 515,
+        "line": 514,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 522,
+        "line": 521,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 526,
+        "line": 525,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 540,
+        "line": 539,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 541,
+        "line": 540,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 560,
+        "line": 559,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 573,
+        "line": 572,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 581,
+        "line": 580,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 587,
+        "line": 586,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 588,
+        "line": 587,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 594,
+        "line": 593,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 596,
+        "line": 595,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 602,
+        "line": 601,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 614,
+        "line": 613,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 619,
+        "line": 618,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 629,
+        "line": 628,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 636,
+        "line": 635,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 644,
+        "line": 643,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 649,
+        "line": 648,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 654,
+        "line": 653,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 667,
+        "line": 666,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 677,
+        "line": 676,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 681,
+        "line": 680,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 691,
+        "line": 690,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 695,
+        "line": 694,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 725,
+        "line": 724,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 727,
+        "line": 726,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 727,
+        "line": 726,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 107,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 117,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 131,
-        "line": 727,
+        "line": 726,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 142,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 727,
+        "line": 726,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 166,
-        "line": 727,
+        "line": 726,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 738,
+        "line": 737,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 738,
+        "line": 737,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 739,
+        "line": 738,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 748,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -744,215 +894,208 @@
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 751,
+        "column": 28,
+        "line": 761,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 18,
         "line": 762,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 763,
+        "column": 28,
+        "line": 765,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 18,
         "line": 766,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 767,
+        "column": 28,
+        "line": 769,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 18,
         "line": 770,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 771,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 44,
-        "line": 785,
+        "line": 784,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 791,
+        "line": 790,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 796,
+        "line": 795,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 805,
+        "line": 804,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 809,
+        "line": 808,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 817,
+        "line": 816,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 828,
+        "line": 827,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 832,
+        "line": 831,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 838,
+        "line": 837,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 859,
+        "line": 858,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 84,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 859,
+        "line": 858,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 107,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 117,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 129,
-        "line": 859,
+        "line": 858,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 140,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 150,
-        "line": 859,
+        "line": 858,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 162,
-        "line": 859,
+        "line": 858,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 869,
+        "line": 868,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 869,
+        "line": 868,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 869,
+        "line": 868,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 879,
+        "line": 878,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 911,
+        "line": 910,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 920,
+        "line": 919,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1242,
+    "complexity_score": 1216,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
-    "pseudocode_lines": 912,
-    "suspect_count": 30,
+    "pseudocode_lines": 911,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 3341
+    "total_lines": 3340
   },
   "cross_references": [
     {
@@ -3001,211 +3144,197 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_fffff150",
-      "text": "CGame *in_stack_fffff150;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_fffff150",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff150);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 186,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 194,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 195,
       "match": "(int *)((int)",
       "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 196,
       "match": "(int *)((int)",
       "text": "x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 213,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 398,
+      "line": 397,
       "match": "ROUND",
       "text": "local_cc = (int)ROUND(local_18c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 399,
+      "line": 398,
       "match": "ROUND",
       "text": "local_c8 = (int)ROUND(local_188 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 400,
+      "line": 399,
       "match": "ROUND",
       "text": "local_c4 = (int)ROUND(local_184 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 416,
       "match": "DAT_02c14c88",
       "text": "sprintf(&DAT_02c14c88,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 418,
+      "line": 417,
       "match": "DAT_02c14c88",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);",
       "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 442,
+      "line": 441,
       "match": "local_1c[-1].",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 442,
+      "line": 441,
       "match": "(CKeyFramedModelInstance *)((int)",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 515,
+      "line": 514,
       "match": "(CKeyFramedModel *)((int)",
       "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 519,
+      "line": 518,
       "match": "pCVar14[-1].",
       "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 519,
+      "line": 518,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 539,
+      "line": 538,
       "match": "&stack0xfffff150",
       "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 540,
+      "line": 539,
       "match": "&stack0xfffff150",
       "text": "iVar8 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 542,
+      "line": 541,
       "match": "&stack0xfffff150",
       "text": "iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 688,
+      "line": 687,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 718,
+      "line": 717,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 755,
+      "line": 754,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 759,
+      "line": 758,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 763,
+      "line": 762,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 790,
+      "line": 789,
       "match": "collision_triangle_list[-1].",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 802,
+      "line": 801,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 825,
+      "line": 824,
       "match": "ROUND",
       "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 835,
+      "line": 834,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 853,
+      "line": 852,
       "match": "DAT_00670210",
       "text": "puVar12 = &DAT_00670210;",
       "type": "undefined_data"

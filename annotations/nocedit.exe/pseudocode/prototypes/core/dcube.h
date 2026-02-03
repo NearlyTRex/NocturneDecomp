@@ -157,4 +157,4 @@ void __cdecl CDemonCube::buildVoxelOccupancyGrid(SVoxelGridParams *params);
 
 // Original: core_dcube.cpp_freeVectors_FUN_00457eb0
 // Address: 00457eb0
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

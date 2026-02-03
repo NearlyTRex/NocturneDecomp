@@ -137,8 +137,8 @@ int __cdecl CBaron::hasCollision(CBaron *this_ptr,SCollisionInfo *collision_info
 
 // Original: core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0
 // Address: 004140b0
-CBaronWeapon * __cdecl CBaronWeapon::dtor(CBaronWeapon *this_ptr,uint d1,uint d2);
+CBaronWeapon * __cdecl CBaronWeapon::dtor(CBaronWeapon *this_ptr,uint flags);
 
 // Original: core_baron.cpp_CBaron_dtor_FUN_00414100
 // Address: 00414100
-CBaron * __cdecl CBaron::dtor(CBaron *this_ptr,uint d1,uint d2);
+CBaron * __cdecl CBaron::dtor(CBaron *this_ptr,uint flags);

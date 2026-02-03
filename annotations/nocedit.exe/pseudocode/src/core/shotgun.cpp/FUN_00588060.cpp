@@ -19,7 +19,7 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
   int extraout_EAX;
   float10 fVar5;
   float10 fVar6;
-  CDemonActor *in_stack_00000004;
+  CWeapon *in_stack_00000004;
   byte auStack_128 [8];
   float fStack_120;
   CDemonActor *pCStack_11c;
@@ -50,24 +50,25 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
   float fStack_3c;
   float fStack_38;
   CDemonActor *pCStack_34;
-  CDemonActor *pCStack_30;
+  CFlameCan *pCStack_30;
   CDemonActor *pCStack_2c;
   float fStack_28;
   int iStack_24;
   CGlass *pCStack_20;
   float fStack_18;
   
-  pCVar1 = (CVector3f *)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc3)();
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_bc,pCVar1);
-  iVar2 = core_weapon_cpp_FUN_005ee6e0();
+  pCVar1 = (CVector3f *)(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc3)();
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+            (&in_stack_00000004->base,&CStack_bc,pCVar1);
+  iVar2 = core_weapon_cpp_CWeapon_FUN_005ee6e0(in_stack_00000004);
   if (iVar2 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_005b3a40
-              (g_CSoundPtr,in_stack_00000004,"shotgun-noammo.wav",&CStack_bc);
+              (g_CSoundPtr,&in_stack_00000004->base,"shotgun-noammo.wav",&CStack_bc);
     return 0;
   }
-  fVar5 = (float10)fptan((float10)*(float *)(in_stack_00000004[4].actor_name + 0x18) *
+  fVar5 = (float10)fptan((float10)*(float *)in_stack_00000004[1].base.actor_name *
                          (float10)3.1415926535000001 * (float10)0.0055555555555555497);
-  fStack_44 = (float)(fVar5 * (float10)in_stack_00000004[2].orient.heading);
+  fStack_44 = (float)(fVar5 * (float10)in_stack_00000004->bolt_velocity);
   fStack_38 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
   iStack_40 = 0;
   if (0 < (int)fStack_38) {
@@ -79,9 +80,9 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
       fVar6 = (float10)fsin((float10)fStack_4c);
       CStack_b0.x = (float)(fVar5 * (float10)fStack_18);
       CStack_b0.y = (float)(fVar6 * (float10)fStack_18);
-      CStack_b0.z = in_stack_00000004[2].orient.heading;
+      CStack_b0.z = in_stack_00000004->bolt_velocity;
       pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                         (in_stack_00000004,&CStack_c8,&CStack_b0);
+                         (&in_stack_00000004->base,&CStack_c8,&CStack_b0);
       if (&CStack_b0 != pCVar1) {
         CStack_b0.x = pCVar1->x;
         CStack_b0.y = pCVar1->y;
@@ -90,7 +91,7 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
       CStack_74.x = CStack_bc.x + CStack_b0.x;
       CStack_74.y = CStack_bc.y + CStack_b0.y;
       CStack_74.z = CStack_bc.z + CStack_b0.z;
-      fStack_3c = (float)1.5 / in_stack_00000004[2].orient.heading;
+      fStack_3c = (float)1.5 / in_stack_00000004->bolt_velocity;
       fStack_a4 = CStack_b0.x * fStack_3c;
       fStack_a0 = CStack_b0.y * fStack_3c;
       fStack_9c = CStack_b0.z * fStack_3c;
@@ -99,10 +100,10 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
       aCStack_68[0].z = CStack_bc.z - fStack_9c;
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
-      pCVar3 = (CDemonActor *)in_stack_00000004[2].orient_matrix.m[2].x;
-      if (pCVar3 != (CDemonActor *)0x0) {
-        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar3);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&in_stack_00000004->base);
+      if (*(CDemonActor **)&in_stack_00000004->carried_by_actor != (CDemonActor *)0x0) {
+        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
+                  (g_CDemonSetPtr,*(CDemonActor **)&in_stack_00000004->carried_by_actor);
       }
       iStack_24 = 0;
       do {
@@ -126,20 +127,21 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
         pCStack_34 = pCVar3;
         pCStack_2c = core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
-        pCStack_30 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCStack_30 = (CFlameCan *)
+                     core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
-        fVar4 = (float)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc6)();
+        fVar4 = (float)(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc6)();
         fStack_18 = fStack_38;
         fStack_28 = ((1.0 - fStack_120) * fVar4) / (float)(int)fStack_38;
         if (this_ptr == (CCharacter *)0x0) {
           if (pCStack_20 == (CGlass *)0x0) {
             if (pCVar3 == (CDemonActor *)0x0) {
               if (pCStack_2c == (CDemonActor *)0x0) {
-                if (pCStack_30 == (CDemonActor *)0x0) {
+                if (pCStack_30 == (CFlameCan *)0x0) {
                   core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
                   break;
                 }
-                core_flamecan_cpp_FUN_004cb340();
+                core_flamecan_cpp_CFlameCan_FUN_004cb340(pCStack_30);
               }
               else {
                 core_crate_cpp_FUN_00448a70();
@@ -192,13 +194,14 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
             CStack_10c.y = pCVar1->y;
             CStack_10c.z = pCVar1->z;
           }
-          iStack_100 = *(int *)(in_stack_00000004[4].actor_name + 0xc);
+          iStack_100 = in_stack_00000004->ammo_type;
           iStack_f8 = 0x65;
           fStack_fc = 0.15;
-          pCStack_ec = (*((in_stack_00000004->vtable)._ub)->getCarrier)(in_stack_00000004);
+          pCStack_ec = (*((in_stack_00000004->base).vtable._ub)->getCarrier)
+                                 (&in_stack_00000004->base);
           (*(((this_ptr->base).vtable._uc)->_uc).processDamage)
                     (this_ptr,(SDamageInfo *)(auStack_128 + 4));
-          if (in_stack_00000004[2].orient.bank == 0.0) break;
+          if (*(int *)(in_stack_00000004->unk1 + 0xc) == 0) break;
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                     (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
         }
@@ -213,7 +216,10 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
   fStack_88 = CStack_bc.y + -0.125f;
   core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
-            (g_CSoundPtr,in_stack_00000004,"shotgun.wav",&CStack_bc);
-  in_stack_00000004[2].orient_matrix.m[1].z = 0.666;
+            (g_CSoundPtr,&in_stack_00000004->base,"shotgun.wav",&CStack_bc);
+  in_stack_00000004->unk2[0xc] = -6;
+  in_stack_00000004->unk2[0xd] = '~';
+  in_stack_00000004->unk2[0xe] = '*';
+  in_stack_00000004->unk2[0xf] = '?';
   return 1;
 }

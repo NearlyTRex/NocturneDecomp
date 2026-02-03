@@ -23,50 +23,50 @@ CDemonActorType * __cdecl CFlameCan::getActorType(CFlameCan *this_ptr);
 // Address: 004cb160
 CFlameCan * __cdecl CFlameCan::ctor(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb200
+// Original: core_flamecan.cpp_CFlameCan_setup_FUN_004cb200
 // Address: 004cb200
-void __cdecl FUN_004cb200(void);
+void __cdecl CFlameCan::setup(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb340
+// Original: core_flamecan.cpp_CFlameCan_FUN_004cb340
 // Address: 004cb340
-void __cdecl FUN_004cb340(void);
+void __cdecl CFlameCan(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb390
+// Original: core_flamecan.cpp_CFlameCan_process_FUN_004cb390
 // Address: 004cb390
-void __cdecl FUN_004cb390(void);
+void __cdecl CFlameCan::process(CFlameCan *this_ptr,float delta_time);
 
-// Original: core_flamecan.cpp_FUN_004cb4c0
+// Original: core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004cb4c0
 // Address: 004cb4c0
-int __cdecl FUN_004cb4c0(void);
+int __cdecl CFlameCan::renderOpaque(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb550
+// Original: core_flamecan.cpp_CFlameCan_renderTransparent_FUN_004cb550
 // Address: 004cb550
-int __cdecl FUN_004cb550(void);
+int __cdecl CFlameCan::renderTransparent(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb580
+// Original: core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004cb580
 // Address: 004cb580
-int __cdecl FUN_004cb580(void);
+int __cdecl CFlameCan::getTargetPoints(CFlameCan *this_ptr,CVector3f *out_points_array);
 
-// Original: core_flamecan.cpp_CFlameCan_load_FUN_004cb620
+// Original: core_flamecan.cpp_CFlameCan_archive_FUN_004cb620
 // Address: 004cb620
-void __cdecl CFlameCan::load(void);
+void __cdecl CFlameCan::archive(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004cb680
+// Original: core_flamecan.cpp_CFlameCan_hasCollision_FUN_004cb680
 // Address: 004cb680
-int __cdecl FUN_004cb680(void);
+int __cdecl CFlameCan::hasCollision(CFlameCan *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flamecan.cpp_FUN_004cb690
+// Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_004cb690
 // Address: 004cb690
-float * __cdecl FUN_004cb690(void);
+CBoundingBox3D * __cdecl CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_flamecan.cpp_FUN_004cb6e0
+// Original: core_flamecan.cpp_CFlameCan_getPropertyList_FUN_004cb6e0
 // Address: 004cb6e0
-void __cdecl FUN_004cb6e0(void);
+void __cdecl CFlameCan::getPropertyList(CFlameCan *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_flamecan.cpp_FUN_004cb750
+// Original: core_flamecan.cpp_CFlameCan_writeDependencies_FUN_004cb750
 // Address: 004cb750
-void __cdecl FUN_004cb750(void);
+void __cdecl CFlameCan::writeDependencies(CFlameCan *this_ptr,_FILE *file_handle);
 
 // Original: core_flamecan.cpp_CFlameCan_dtor_FUN_004cb7a0
 // Address: 004cb7a0
-CFlameCan * __cdecl CFlameCan::dtor(CFlameCan *this_ptr,uint d1,uint d2,uint d3);
+CFlameCan * __cdecl CFlameCan::dtor(CFlameCan *this_ptr,uint flags);

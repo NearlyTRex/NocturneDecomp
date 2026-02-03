@@ -65,4 +65,4 @@ void __cdecl CMarquee::writeDependencies(CMarquee *this_ptr,_FILE *file_handle);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0
 // Address: 0050c4c0
-CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint d1,uint d2,uint d3);
+CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);

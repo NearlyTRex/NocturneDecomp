@@ -73,7 +73,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
 void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 (CDemonCamera *this_ptr,CVector3i *corners);
-void __cdecl core_dcamera_cpp_freeVectors_FUN_00454700(CVector3f **array);
+CVector3f * __cdecl core_dcamera_cpp_freeVectors_FUN_00454700(CVector3f *objs);
 void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void);
 void __cdecl core_dcube_cpp_copyVector3_FUN_004547b0(CVector3f *dest,CVector3f *src);
 void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0 (CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx, double plane_ny,double plane_nz,double plane_d);
@@ -112,7 +112,7 @@ void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90 (CDemon
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0 (CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max);
 void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params);
-void __cdecl core_dcube_cpp_freeVectors_FUN_00457eb0(CVector3f **array);
+CVector3f * __cdecl core_dcube_cpp_freeVectors_FUN_00457eb0(CVector3f *objs);
 STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void);
 void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename);
 void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,_FILE *file,int depth);

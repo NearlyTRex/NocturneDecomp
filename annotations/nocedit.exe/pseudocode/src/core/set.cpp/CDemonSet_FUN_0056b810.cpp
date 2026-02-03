@@ -17,6 +17,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   CGlass *this_ptr_01;
   int extraout_EAX;
   CDemonActor *pCVar5;
+  CFlameCan *this_ptr_02;
   CDemonSet *pCVar6;
   int iVar7;
   int iVar8;
@@ -192,12 +193,13 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
             core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
           }
         }
-        pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)pCVar6->actor_list_data,g_CFlameCanClassInfo.name_hash)
-        ;
-        if ((pCVar5 != (CDemonActor *)0x0) &&
+        this_ptr_02 = (CFlameCan *)
+                      core_actor_cpp_castToClassHash_FUN_0040c790
+                                (*(CDemonActor **)pCVar6->actor_list_data,
+                                 g_CFlameCanClassInfo.name_hash);
+        if ((this_ptr_02 != (CFlameCan *)0x0) &&
            (iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar7 != 0)) {
-          core_flamecan_cpp_FUN_004cb340();
+          core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_02);
         }
         iVar9 = iVar9 + 1;
         pCVar6 = (CDemonSet *)pCVar6->cameras;

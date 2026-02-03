@@ -413,7 +413,7 @@ int __cdecl FUN_0042f9e0(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0
 // Address: 0042f9f0
-CDemonActor * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CDemonActor * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042fab0
 // Address: 0042fab0

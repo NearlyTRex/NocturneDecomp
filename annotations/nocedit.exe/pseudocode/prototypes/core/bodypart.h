@@ -25,7 +25,7 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_dtor_FUN_00419130
 // Address: 00419130
-CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6);
+CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 // Address: 004191d0
@@ -177,8 +177,8 @@ SBodyPartModel * __cdecl SBodyPartModel::dtor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_freeBodyPartModels_FUN_0041b690
 // Address: 0041b690
-int __cdecl freeBodyPartModels(SBodyPartModel **objs);
+SBodyPartModel * __cdecl freeBodyPartModels(SBodyPartModel *objs);
 
 // Original: core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0
 // Address: 0041b6b0
-int __cdecl freeBodyPartFires(SBodyPartFire **objs);
+SBodyPartFire * __cdecl freeBodyPartFires(SBodyPartFire *objs);

@@ -185,7 +185,7 @@ section .text
     LEA EAX,[ESP + 0x7a8]               ; 004bc412
     PUSH EAX                            ; 004bc419
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bc41a
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc41f
     MOV EAX,EBX                         ; 004bc422
     ADD ESP,0x7b4                       ; 004bc424
@@ -255,7 +255,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004bc4ca
     PUSH EAX                            ; 004bc4ce
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004bc4cf
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc4d4
     JMP 0x004bc3cf                      ; 004bc4d7
         ;   XREF to: 004bc3cf (UNCONDITIONAL_JUMP)  ; LAB_004bc3cf
@@ -289,14 +289,14 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004bc51d
     PUSH EAX                            ; 004bc521
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004bc522
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc527
     PUSH ESI                            ; 004bc52a
     LEA EAX,[ESP + 0x7a8]               ; 004bc52b
     PUSH EAX                            ; 004bc532
     XOR EBX,EBX                         ; 004bc533
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bc535
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc53a
     MOV EAX,EBX                         ; 004bc53d
     ADD ESP,0x7b4                       ; 004bc53f
@@ -308,14 +308,14 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004bc549
     PUSH EAX                            ; 004bc54d
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004bc54e
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc553
     XOR EBX,EBX                         ; 004bc556
     PUSH EBX                            ; 004bc558
     LEA EAX,[ESP + 0x7a8]               ; 004bc559
     PUSH EAX                            ; 004bc560
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bc561
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc566
     MOV EAX,EBX                         ; 004bc569
     ADD ESP,0x7b4                       ; 004bc56b
@@ -328,7 +328,7 @@ section .text
     PUSH EAX                            ; 004bc57c
     XOR EBX,EBX                         ; 004bc57d
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bc57f
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bc584
     MOV EAX,EBX                         ; 004bc587
     ADD ESP,0x7b4                       ; 004bc589

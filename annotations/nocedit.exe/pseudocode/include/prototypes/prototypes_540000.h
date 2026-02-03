@@ -25,7 +25,6 @@
 #include "types/structs/SChatHistory.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
-#include "types/structs/SEncryptedMessage.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SNetPlayer.h"
 #include "types/structs/SNetworkAddr.h"
@@ -84,7 +83,7 @@ int __cdecl core_netgame_cpp_FUN_00543e30(void);
 void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file);
 char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,int upper_bound);
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key);
-char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(SEncryptedMessage *encrypted_msg);
+char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(char *encrypted_msg);
 void __cdecl support_newmsg_cpp_staticInit_FUN_00544360(void);
 CMouse * __cdecl support_newmsg_cpp_CMouse_ctor_FUN_00544380(CMouse *ptr);
 CMouse * __cdecl support_newmsg_cpp_CMouse_dtor_FUN_005443e0(CMouse *this_ptr);
@@ -94,8 +93,8 @@ int __cdecl support_newmsg_cpp_FUN_00544510(void);
 int __cdecl support_newmsg_cpp_FUN_00544540(void);
 void __cdecl support_newmsg_cpp_FUN_005445a0(void);
 void __cdecl support_newmsg_cpp_FUN_005445c0(void);
-void __cdecl support_newmsg_cpp_freeBitmap_FUN_00544730(CAlphaBitmap **objs);
-void __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *bitmap);
+CAlphaBitmap * __cdecl support_newmsg_cpp_freeBitmap_FUN_00544730(CAlphaBitmap *objs);
+CAlphaBitmap * __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *objs);
 void __cdecl core_npc_cpp_staticInit_FUN_00544770(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_005447d0(CNPC *this_ptr);
@@ -130,7 +129,7 @@ void __cdecl core_passngr_cpp_staticInit_FUN_00545ac0(void);
 CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_00545af0(void);
 CDemonActorType * __cdecl core_passngr_cpp_CPassenger_getActorType_FUN_00545b20(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *this_ptr);
-CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint d1);
+CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint flags);
 void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_ptr,float delta_time);
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *this_ptr);
@@ -161,7 +160,7 @@ void __cdecl core_path_cpp_FUN_005485f0(void);
 void __cdecl core_path_cpp_FUN_00548680(void);
 void __cdecl core_path_cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap *this_ptr);
 uint __cdecl core_path_cpp_CPathMap_queuePop_FUN_005487a0(CPathMap *this_ptr,int start_height);
-void __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap **array);
+CPathMap * __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap *objs);
 void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx_file);
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename);
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename);
@@ -185,7 +184,7 @@ int __cdecl core_pendulum_cpp_CPendulum_propertyActionCallback_FUN_0054a5e0 (CPe
 void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0 (CPendulum *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_pendulum_cpp_CPendulum_processInEditor_FUN_0054a790(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_writeDependencies_FUN_0054a7b0(CPendulum *this_ptr,_FILE *file_handle);
-CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint d1,uint d2);
+CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint flags);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap *this_ptr);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840 (CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color, int stride,int apply_palette_flag);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_0054a890(CPackedBitmap *this_ptr);

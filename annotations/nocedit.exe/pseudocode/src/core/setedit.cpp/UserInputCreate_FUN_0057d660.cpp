@@ -33,13 +33,6 @@ int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
   int unaff_retaddr;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
-  ulonglong in_stack_ffffee80;
-  CGame *n2;
-  uint in_stack_ffffeea8;
-  uint in_stack_ffffeeac;
-  uint in_stack_ffffeeb0;
-  uint in_stack_ffffeeb4;
-  uint in_stack_ffffeeb8;
   uint auStack_d7c [261];
   uint auStack_968 [254];
   CPickList CStack_570;
@@ -75,7 +68,6 @@ int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
   void *pvStack_18;
   byte *pbStack_14;
   
-  n2 = (CGame *)((ulonglong)in_stack_ffffee80 >> 0x20);
   pcVar15 = CStack_570.cancel_button.button_text + 0xa4;
   local_60 = 0.0;
   local_40 = 0;
@@ -169,7 +161,7 @@ LAB_0057d6df:
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pvStack_18 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
   if (pvStack_18 == (void *)0x0) {
@@ -394,9 +386,7 @@ LAB_0057db4e:
                 (&CStack_570.base,"D\tToggle original background 'difference' mode");
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&CStack_570,"Camera editor hot keys",-1,0);
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_570,0,in_stack_ffffeea8,in_stack_ffffeeac,in_stack_ffffeeb0,
-                 in_stack_ffffeeb4,in_stack_ffffeeb8);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_570,0);
     }
     while (iVar16 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar16 != 0) {
       uVar6 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);

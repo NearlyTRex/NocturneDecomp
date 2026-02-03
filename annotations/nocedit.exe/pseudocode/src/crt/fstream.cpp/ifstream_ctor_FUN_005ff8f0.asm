@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   c1
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e152c
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e152c
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0f8e
 ;
 ; Referenced Globals:

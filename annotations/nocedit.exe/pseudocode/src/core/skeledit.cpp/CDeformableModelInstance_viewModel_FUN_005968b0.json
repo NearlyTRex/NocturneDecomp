@@ -2,435 +2,273 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 207,
+        "line": 190,
         "message": "request for member '_16_4_' in 'local_35c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 219,
+        "line": 202,
         "message": "request for member '_16_4_' in 'local_35c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 503,
+        "line": 486,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 31,
-        "line": 504,
+        "line": 487,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 28,
-        "line": 505,
+        "line": 488,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
-        "line": 528,
+        "line": 511,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
-        "line": 529,
+        "line": 512,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 533,
+        "line": 516,
         "message": "request for member '_0_4_' in 'local_200', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 534,
+        "line": 517,
         "message": "request for member '_4_4_' in 'local_200', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 535,
+        "line": 518,
         "message": "request for member '_8_4_' in 'local_200', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 540,
+        "line": 523,
         "message": "request for member '_12_4_' in 'local_200', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 59,
-        "line": 553,
-        "message": "'stack0xffffcc64' was not declared in this scope; did you mean 'in_stack_ffffcc64'?"
+        "line": 536,
+        "message": "'stack0xffffcc64' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 555,
+        "line": 538,
         "message": "'DAT_036644d8' was not declared in this scope; did you mean 'DAT_03FB44D8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 567,
+        "line": 550,
         "message": "'DAT_036712e8' was not declared in this scope; did you mean 'DAT_036712e0'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 17,
-        "line": 577,
+        "line": 560,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 17,
-        "line": 578,
+        "line": 561,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "lvalue_required",
         "column": 14,
-        "line": 579,
+        "line": 562,
         "message": "lvalue required as unary '&' operand"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 637,
-        "message": "'extraout_var' was not declared in this scope"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
-        "line": 754,
+        "line": 736,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
-        "line": 755,
+        "line": 737,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 32,
-        "line": 894,
-        "message": "cast from 'int*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 894,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 895,
-        "message": "cast from 'char*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CKeys*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CKeys*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CKeys*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CPickList*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 1007,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 1008,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 1008,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CEditorTools*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 39,
-        "line": 1018,
+        "line": 965,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'CPickList*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 1050,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 1051,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 1051,
-        "message": "cast from 'CKeys*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 1054,
-        "message": "'ZEXT48' was not declared in this scope"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 1064,
-        "message": "'ZEXT48' was not declared in this scope"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 105,
-        "message": "cast from 'char*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 1134,
-        "message": "request for member '_4_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 1135,
-        "message": "request for member '_0_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 1140,
-        "message": "request for member '_4_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 1140,
-        "message": "invalid cast from type 'CEditorTools*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 1141,
-        "message": "request for member '_0_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 1146,
-        "message": "request for member '_4_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 1146,
-        "message": "invalid cast from type 'char*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 1147,
-        "message": "request for member '_0_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 1151,
-        "message": "request for member '_4_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 1151,
-        "message": "invalid cast from type 'char*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 1152,
-        "message": "request for member '_0_4_' in 'in_stack_ffffcd50', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 1160,
-        "message": "request for member '_4_4_' in 'in_stack_ffffcd58', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 1161,
-        "message": "request for member '_0_4_' in 'in_stack_ffffcd58', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 1161,
-        "message": "invalid cast from type 'char*' to type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 1179,
+        "line": 1077,
         "message": "'DAT_036644d8' was not declared in this scope; did you mean 'DAT_03FB44D8'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 1272,
+        "line": 1167,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -438,6 +276,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -445,895 +289,875 @@
       {
         "category": "other",
         "column": 73,
-        "line": 239,
+        "line": 222,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 503,
+        "line": 486,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 504,
+        "line": 487,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 505,
+        "line": 488,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 507,
+        "line": 490,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 528,
+        "line": 511,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 529,
+        "line": 512,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 577,
+        "line": 560,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 578,
+        "line": 561,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 642,
+        "column": 25,
+        "line": 624,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 642,
+        "column": 29,
+        "line": 624,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 646,
+        "column": 26,
+        "line": 628,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 646,
+        "column": 32,
+        "line": 628,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 650,
+        "column": 35,
+        "line": 632,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 652,
+        "column": 41,
+        "line": 634,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 654,
+        "column": 44,
+        "line": 636,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 659,
+        "column": 41,
+        "line": 641,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 641,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 641,
+        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 648,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 648,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 659,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 659,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 666,
+        "line": 648,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 650,
+        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 653,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 666,
-        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+        "line": 653,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 666,
-        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 668,
-        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 671,
+        "line": 653,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 671,
+        "column": 47,
+        "line": 655,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 671,
-        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 673,
-        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 673,
-        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 673,
-        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 754,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 755,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 792,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 854,
+        "line": 655,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 854,
+        "line": 655,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 736,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 737,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 774,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 836,
+        "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 100,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 110,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 119,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 127,
-        "line": 854,
+        "line": 836,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 869,
+        "line": 851,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 888,
+        "line": 870,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 908,
+        "line": 887,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 918,
+        "line": 897,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 927,
+        "line": 904,
         "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 952,
+        "column": 31,
+        "line": 920,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 952,
+        "column": 35,
+        "line": 920,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 961,
+        "line": 926,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 988,
+        "column": 39,
+        "line": 945,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 46,
-        "line": 990,
+        "column": 38,
+        "line": 947,
         "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 992,
+        "column": 39,
+        "line": 949,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 53,
-        "line": 992,
+        "column": 45,
+        "line": 949,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 992,
+        "column": 51,
+        "line": 949,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 995,
+        "column": 42,
+        "line": 951,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 995,
+        "column": 48,
+        "line": 951,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 995,
+        "column": 54,
+        "line": 951,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 998,
+        "line": 954,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 1000,
+        "line": 956,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 1004,
+        "column": 44,
+        "line": 958,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 1017,
+        "line": 964,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 1017,
+        "line": 964,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 1018,
+        "line": 965,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 1044,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 1057,
+        "column": 42,
+        "line": 985,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 1067,
+        "line": 993,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 1001,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1083,
+        "line": 1014,
         "message": "format '%f' expects a matching 'float*' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 1083,
+        "line": 1014,
         "message": "format '%n' expects a matching 'int*' argument [-Wformat=]"
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 1098,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 50,
-        "line": 1102,
+        "line": 1027,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1115,
+        "line": 1039,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 31,
-        "line": 1121,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 39,
+        "line": 1043,
+        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 1043,
+        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 1043,
+        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 1125,
+        "line": 1043,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 1125,
+        "line": 1043,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 1125,
-        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 77,
-        "line": 1125,
-        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 1125,
-        "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 83,
-        "line": 1125,
+        "line": 1043,
         "message": "format '%g' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 40,
+        "line": 1047,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 1054,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 1069,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1084,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1085,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1086,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1087,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1088,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1089,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1090,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1091,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1092,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1093,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1094,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1095,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1096,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1097,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1098,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1099,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1100,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1101,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1102,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1103,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1104,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1105,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1106,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1107,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1108,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1109,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1110,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1111,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1112,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1113,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1114,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1115,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1116,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1117,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1118,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1119,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1120,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1121,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1122,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1123,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1124,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1125,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1126,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1127,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1128,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1129,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
         "line": 1130,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 41,
+        "line": 1131,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1132,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1133,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1134,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1135,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1136,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1137,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1138,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
         "line": 1139,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 44,
+        "column": 41,
+        "line": 1140,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1141,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 1142,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
         "line": 1143,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 1171,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1188,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1189,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1190,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1191,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1192,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1193,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1194,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1195,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1196,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1197,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1198,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1199,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1200,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1201,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1202,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1203,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1204,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1205,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1206,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1207,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1208,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1209,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1210,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1211,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1212,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1213,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1214,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1215,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1216,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1217,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1218,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1219,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1220,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1221,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1222,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1223,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1224,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1225,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1226,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1227,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1228,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1229,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1230,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1231,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1232,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1233,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1234,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1235,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1236,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1237,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1238,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1239,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1240,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1241,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1242,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1243,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1244,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1245,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1246,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 1248,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 44,
-        "line": 1258,
+        "line": 1153,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 1271,
+        "line": 1166,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 1271,
+        "line": 1166,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 3337,
-    "complexity_score": 4165,
+    "complexity_score": 2620,
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
-    "pseudocode_lines": 1270,
-    "suspect_count": 285,
+    "pseudocode_lines": 1165,
+    "suspect_count": 142,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "suspect_float",
       "undefined_data",
-      "undefined_type",
       "unknown_field"
     ],
-    "total_lines": 4607
+    "total_lines": 4502
   },
   "cross_references": [
     {
@@ -3914,20 +3738,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 15,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
@@ -3937,314 +3747,237 @@
     {
       "description": "Unresolved stack parameter",
       "line": 32,
-      "match": "in_stack_ffffcc64",
-      "text": "CGame *in_stack_ffffcc64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
       "match": "in_stack_ffffccac",
       "text": "CDeformableModel *in_stack_ffffccac;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 33,
       "match": "in_stack_ffffccb0",
       "text": "char *in_stack_ffffccb0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_ffffcd24",
-      "text": "int *in_stack_ffffcd24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_ffffcd28",
-      "text": "CKeys *in_stack_ffffcd28;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_ffffcd2c",
-      "text": "char *in_stack_ffffcd2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_ffffcd30",
-      "text": "double in_stack_ffffcd30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_ffffcd48",
-      "text": "double in_stack_ffffcd48;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffcd50",
-      "text": "ulonglong in_stack_ffffcd50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_ffffcd58",
-      "text": "ulonglong in_stack_ffffcd58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_ffffcd60",
-      "text": "CKeys *in_stack_ffffcd60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_ffffcd64",
-      "text": "float in_stack_ffffcd64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_ffffcd68",
-      "text": "CKeys *in_stack_ffffcd68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_ffffcd6c",
-      "text": "float in_stack_ffffcd6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_ffffcd70",
-      "text": "CKeys *in_stack_ffffcd70;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 167,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
+      "line": 168,
       "match": "in_stack_00000004",
       "text": "local_c0 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
-      "match": "in_stack_ffffcc64",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffcc64);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 171,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 200,
+      "line": 183,
       "match": "._16_4_",
       "text": "local_35c._16_4_ = local_f4 * 0.5f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 212,
+      "line": 195,
       "match": "._16_4_",
       "text": "local_e8 = (float)local_35c._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 212,
       "match": "DAT_0366b64c",
       "text": "if ((DAT_0366b64c & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 213,
       "match": "DAT_0366b64c",
       "text": "DAT_0366b64c = DAT_0366b64c | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 213,
       "match": "DAT_0366b64c",
       "text": "DAT_0366b64c = DAT_0366b64c | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 220,
       "match": "DAT_0366b64c",
       "text": "if ((DAT_0366b64c & 2) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 238,
+      "line": 221,
       "match": "DAT_0366b64c",
       "text": "DAT_0366b64c = DAT_0366b64c | 2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 238,
+      "line": 221,
       "match": "DAT_0366b64c",
       "text": "DAT_0366b64c = DAT_0366b64c | 2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 239,
+      "line": 222,
       "match": "DAT_03665f74",
       "text": "core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_03665f74);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 223,
       "match": "DAT_00681850",
       "text": "_atexit(&DAT_00681850);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 242,
+      "line": 225,
       "match": "DAT_03665f74",
       "text": "core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_03665f74);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 232,
       "match": "in_stack_00000004",
       "text": "core_motion_cpp_CMotionController_reset_FUN_0052dad0(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 257,
+      "line": 240,
       "match": "in_stack_00000004",
       "text": "local_58 = in_stack_00000004->transformed_vertices;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 258,
+      "line": 241,
       "match": "in_stack_00000004",
       "text": "local_c4 = &(in_stack_00000004->motion_controller).current_frame_number;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 259,
+      "line": 242,
       "match": "in_stack_00000004",
       "text": "local_54 = (in_stack_00000004->bone_transform).bone_world_matrices;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 260,
+      "line": 243,
       "match": "in_stack_00000004",
       "text": "local_60 = &in_stack_00000004->bounding_box;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 261,
+      "line": 244,
       "match": "in_stack_00000004",
       "text": "local_6c = &in_stack_00000004->accumulated_root_motion;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 275,
+      "line": 258,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_controller).current_frame_number = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 263,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 282,
+      "line": 265,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_controller).current_frame_number = (int)(float)(int)local_18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 288,
+      "line": 271,
       "match": "in_stack_00000004",
       "text": "piVar1 = &(in_stack_00000004->motion_controller).current_motion_index;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 292,
+      "line": 275,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 294,
+      "line": 277,
       "match": "in_stack_00000004",
       "text": "piVar1 = &(in_stack_00000004->motion_controller).current_motion_index;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 297,
+      "line": 280,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->motion_controller).current_motion_index < 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 299,
+      "line": 282,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 303,
+      "line": 286,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->motion_controller);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 287,
+      "match": "in_stack_00000004",
+      "text": "if (pCVar10->motion_count <= (in_stack_00000004->motion_controller).current_motion_index) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 288,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->motion_controller).current_motion_index = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 302,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
@@ -4253,1657 +3986,747 @@
       "description": "Unresolved stack parameter",
       "line": 304,
       "match": "in_stack_00000004",
-      "text": "if (pCVar9->motion_count <= (in_stack_00000004->motion_controller).current_motion_index) {",
+      "text": "local_80 = (float)(in_stack_00000004->motion_controller).current_frame_number;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 305,
+      "line": 306,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->motion_controller).current_motion_index = 0;",
+      "text": "(&in_stack_00000004->motion_controller);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 307,
+      "match": "in_stack_00000004",
+      "text": "pCVar15 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 311,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->motion_controller);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 318,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 319,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller);",
+      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar8 + local_80,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 321,
       "match": "in_stack_00000004",
-      "text": "local_80 = (float)(in_stack_00000004->motion_controller).current_frame_number;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 323,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller);",
+      "text": "(in_stack_00000004->motion_controller).current_frame_number =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 324,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 328,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 335,
-      "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 336,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar21 + local_80,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 338,
-      "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 340,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->motion_controller).current_frame_number =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 341,
-      "match": "in_stack_00000004",
       "text": "(int)((float)(in_stack_00000004->motion_controller).current_frame_number -",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 346,
+      "line": 329,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 351,
+      "line": 334,
       "match": "in_stack_00000004",
       "text": "} while (local_7c < (float)(in_stack_00000004->motion_controller).current_frame_number);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 354,
+      "line": 337,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 355,
+      "line": 338,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar21 + local_80,",
+      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar8 + local_80,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 357,
+      "line": 340,
       "match": "in_stack_00000004",
       "text": "(float)(in_stack_00000004->motion_controller).current_frame_number,1.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 358,
+      "line": 341,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 363,
+      "line": 346,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_controller).current_frame_number =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 364,
+      "line": 347,
       "match": "in_stack_00000004",
       "text": "(int)((float)(in_stack_00000004->motion_controller).current_frame_number + local_8c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 366,
+      "line": 349,
       "match": "in_stack_00000004",
       "text": "if ((float)(in_stack_00000004->motion_controller).current_frame_number < local_7c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 367,
+      "line": 350,
       "match": "in_stack_00000004",
       "text": "local_78 = (float)(in_stack_00000004->motion_controller).current_frame_number;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 370,
+      "line": 353,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 371,
+      "line": 354,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar21 + local_80,",
+      "text": "(&in_stack_00000004->motion_controller,(float)(int)fVar8 + local_80,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 375,
+      "line": 358,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 377,
+      "line": 360,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->motion_controller).current_frame_number =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 378,
+      "line": 361,
       "match": "in_stack_00000004",
       "text": "(int)((float)(in_stack_00000004->motion_controller).current_frame_number - local_8c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 380,
+      "line": 363,
       "match": "in_stack_00000004",
       "text": "if (0.0 < (float)(in_stack_00000004->motion_controller).current_frame_number) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
+      "line": 364,
       "match": "in_stack_00000004",
       "text": "local_74 = (float)(in_stack_00000004->motion_controller).current_frame_number;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 385,
+      "line": 368,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 386,
+      "line": 369,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller,local_70 + local_74,local_70 + local_80,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 388,
+      "line": 371,
       "match": "in_stack_00000004",
       "text": "if ((float)(in_stack_00000004->motion_controller).current_frame_number < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
+      "line": 373,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->motion_controller).vtable)->accumulateScaledRootMotion)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 391,
+      "line": 374,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
+      "line": 375,
       "match": "in_stack_00000004",
       "text": "local_18 + (float)(in_stack_00000004->motion_controller).current_frame_number",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 381,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 406,
+      "line": 389,
       "match": "in_stack_00000004",
-      "text": "while (pCVar12 = in_stack_00000004,",
+      "text": "while (pCVar13 = in_stack_00000004,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 407,
+      "line": 390,
       "match": "in_stack_00000004",
       "text": "(float)(in_stack_00000004->motion_controller).current_frame_number < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 415,
+      "line": 398,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 433,
+      "line": 416,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 434,
+      "line": 417,
       "match": "in_stack_00000004",
       "text": "pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 446,
+      "line": 429,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 452,
+      "line": 435,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 455,
+      "line": 438,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 458,
+      "line": 441,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 460,
+      "line": 443,
       "match": "in_stack_00000004",
-      "text": "pCVar12 = in_stack_00000004;",
+      "text": "pCVar13 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 472,
+      "line": 455,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004), iVar6 < pCVar7->num_parts; iVar6 = iVar6 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 476,
+      "line": 459,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->part_visibility_flags[local_44] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 479,
+      "line": 462,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 482,
+      "line": 465,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->texture_set_indices[local_44] = local_ac;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 486,
+      "line": 469,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,local_b0,0xffffffff,1,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 490,
+      "line": 473,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 494,
+      "line": 477,
       "match": "in_stack_00000004",
       "text": "while (iVar6 < local_c0->vertex_count[in_stack_00000004->cached_skinned_lod_index]) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 496,
+      "line": 479,
       "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar13 + 3) & 0x80) == 0) {",
+      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar14 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 497,
+      "line": 480,
       "match": "(int *)((int)",
-      "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar13) >> 0x10;",
+      "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar14) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 498,
+      "line": 481,
       "match": "(int *)((int)",
-      "text": "x_pos = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar13) >> 0x10;",
+      "text": "x_pos = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar14) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 513,
+      "line": 496,
       "match": "DAT_03665f74",
       "text": "if (0 < DAT_03665f74.poly_count) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 521,
+      "line": 504,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 522,
+      "line": 505,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 526,
+      "line": 509,
       "match": "._0_4_",
-      "text": "local_200._0_4_ = pCVar10->x;",
+      "text": "local_200._0_4_ = pCVar11->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 527,
+      "line": 510,
       "match": "._4_4_",
-      "text": "local_200._4_4_ = pCVar10->y;",
+      "text": "local_200._4_4_ = pCVar11->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 528,
+      "line": 511,
       "match": "._8_4_",
-      "text": "local_200._8_4_ = pCVar10->z;",
+      "text": "local_200._8_4_ = pCVar11->z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 533,
+      "line": 516,
       "match": "._12_4_",
-      "text": "local_200._12_4_ = pCVar10->x;",
+      "text": "local_200._12_4_ = pCVar11->x;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 540,
+      "line": 523,
       "match": "DAT_03665f74",
       "text": "(&DAT_03665f74,(CKeyFramedModelInstance *)0x0,0,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 543,
+      "line": 526,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 546,
+      "line": 529,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(SBoneTransformData *)&stack0xffffcc64);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 546,
+      "line": 529,
       "match": "&stack0xffffcc64",
       "text": "(in_stack_00000004,(SBoneTransformData *)&stack0xffffcc64);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 548,
+      "line": 531,
       "match": "DAT_036644d8",
-      "text": "(pCVar14,(SBoneTransformData *)&DAT_036644d8);",
+      "text": "(pCVar15,(SBoneTransformData *)&DAT_036644d8);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 555,
+      "line": 538,
       "match": "&stack0xffffcc64",
-      "text": "(pCVar14,(SBoneTransformData *)&stack0xffffcc64);",
+      "text": "(pCVar15,(SBoneTransformData *)&stack0xffffcc64);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 559,
+      "line": 542,
       "match": "DAT_036712e0",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 559,
+      "line": 542,
       "match": "DAT_036712e0",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 560,
+      "line": 543,
       "match": "DAT_036712e8",
       "text": "sprintf(&DAT_036712e8,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 561,
+      "line": 544,
       "match": "DAT_036712e8",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_036712e8);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 570,
+      "line": 553,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_154 + (uint)bVar19 * -8 + 4) = (&DAT_00681a00)[(uint)bVar19 * -2];",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&DAT_00681a00)[(uint)bVar20 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 570,
+      "line": 553,
       "match": "DAT_00681a00",
-      "text": "*(uint *)((int)&local_154 + (uint)bVar19 * -8 + 4) = (&DAT_00681a00)[(uint)bVar19 * -2];",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&DAT_00681a00)[(uint)bVar20 * -2];",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 571,
+      "line": 554,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_154 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 602,
+      "line": 585,
       "match": "DAT_006819e4",
       "text": "(g_CDemonRendererPtr2,&DAT_006819e4);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 609,
+      "line": 592,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 616,
+      "line": 599,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(uint)g_ColorCubeLookup[0x7c00],iVar13);",
+      "text": "(in_stack_00000004,(uint)g_ColorCubeLookup[0x7c00],iVar14);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 623,
+      "line": 606,
       "match": "3.57331e-43",
-      "text": "fVar21 = 3.57331e-43;",
+      "text": "fVar8 = 3.57331e-43;",
       "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 630,
-      "match": "extraout_var",
-      "text": "fVar21 = (float)CONCAT31(extraout_var,uVar5);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 630,
-      "match": "CONCAT31",
-      "text": "fVar21 = (float)CONCAT31(extraout_var,uVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 638,
+      "line": 620,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 642,
+      "line": 624,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 658,
+      "line": 640,
       "match": "ROUND",
-      "text": "local_18 = (float)(int)ROUND(dVar20);",
+      "text": "local_18 = (float)(int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 663,
+      "line": 645,
       "match": "DAT_03665f74",
       "text": "if (0 < DAT_03665f74.poly_count) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 688,
+      "line": 670,
       "match": "DAT_03665f74",
       "text": "if (((DAT_03665f74.poly_count < 1) ||",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 732,
+      "line": 714,
       "match": "SQRT",
       "text": "if (0.0 < SQRT(local_110 * local_110 + local_118 * local_118 + local_114 * local_114)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 747,
+      "line": 729,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 748,
+      "line": 730,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 764,
+      "line": 746,
       "match": "in_stack_ffffccb0",
       "text": "in_stack_ffffccb0 = (char *)0x30;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 765,
+      "line": 747,
       "match": "in_stack_ffffccac",
       "text": "in_stack_ffffccac = (CDeformableModel *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 768,
+      "line": 750,
       "match": "in_stack_ffffccb0",
       "text": "in_stack_ffffccb0 = (char *)0x597c43;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 783,
+      "line": 765,
       "match": "in_stack_ffffccb0",
       "text": "in_stack_ffffccb0 = (char *)0x597c68;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 787,
+      "line": 769,
       "match": "SQRT",
       "text": "(0.0 < SQRT(local_13c.z * local_13c.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 828,
+      "line": 810,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 834,
+      "line": 816,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 860,
+      "line": 842,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 866,
+      "line": 848,
       "match": "in_stack_00000004",
-      "text": "pCVar14 = in_stack_00000004;",
+      "text": "pCVar15 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 887,
-      "match": "in_stack_ffffcd24",
-      "text": "(&local_1900,0,(uint)in_stack_ffffcd24,(uint)in_stack_ffffcd28,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 887,
-      "match": "in_stack_ffffcd28",
-      "text": "(&local_1900,0,(uint)in_stack_ffffcd24,(uint)in_stack_ffffcd28,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 888,
-      "match": "in_stack_ffffcd2c",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 888,
-      "match": "in_stack_ffffcd30",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 888,
-      "match": "SUB84",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 889,
-      "match": "in_stack_ffffcd30",
-      "text": "(uint)(float)((ulonglong)in_stack_ffffcd30 >> 0x20));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 894,
+      "line": 873,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 896,
+      "line": 875,
       "match": "ROUND",
-      "text": "local_38 = (float)(int)ROUND(dVar20);",
+      "text": "local_38 = (float)(int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 899,
+      "line": 878,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->motion_controller);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 913,
-      "match": "in_stack_ffffcd24",
-      "text": "in_stack_ffffcd24 = (int *)0x598266;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 914,
-      "match": "in_stack_ffffcd28",
-      "text": "in_stack_ffffcd28 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 918,
+      "line": 895,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 921,
-      "match": "in_stack_ffffcd28",
-      "text": "in_stack_ffffcd28 = (CKeys *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 922,
-      "match": "in_stack_ffffcd24",
-      "text": "in_stack_ffffcd24 = &local_b0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 924,
-      "match": "in_stack_ffffcd24",
-      "text": "(g_CEditorToolsPtr,local_534,in_stack_ffffcd24,1,-1,iVar6 + -1,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 926,
-      "match": "in_stack_ffffcd2c",
-      "text": "in_stack_ffffcd2c = (char *)0x5982c2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 932,
-      "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x5982e5,pCVar22);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 932,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x5982e5,pCVar22);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 937,
-      "match": "in_stack_ffffcd58",
-      "text": "fVar24 = (float)in_stack_ffffcd58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 938,
-      "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 938,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 942,
-      "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 942,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 944,
-      "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 944,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 947,
-      "match": "in_stack_ffffcd58",
-      "text": "fVar24 = (float)in_stack_ffffcd58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 948,
-      "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 948,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 952,
-      "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598378,fVar21);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 952,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598378,fVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 956,
-      "match": "in_stack_ffffcd48",
-      "text": "(&local_1558,0,(uint)SUB84(in_stack_ffffcd48,0),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 956,
-      "match": "SUB84",
-      "text": "(&local_1558,0,(uint)SUB84(in_stack_ffffcd48,0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 957,
-      "match": "in_stack_ffffcd48",
-      "text": "(uint)(float)((ulonglong)in_stack_ffffcd48 >> 0x20),(uint)(float)in_stack_ffffcd50,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 957,
-      "match": "in_stack_ffffcd50",
-      "text": "(uint)(float)((ulonglong)in_stack_ffffcd48 >> 0x20),(uint)(float)in_stack_ffffcd50,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 958,
-      "match": "in_stack_ffffcd50",
-      "text": "(uint)SUB84(in_stack_ffffcd50,4),(uint)fVar24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 958,
-      "match": "SUB84",
-      "text": "(uint)SUB84(in_stack_ffffcd50,4),(uint)fVar24);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 960,
-      "match": "in_stack_ffffcd48",
-      "text": "pCVar22 = SUB84(in_stack_ffffcd48,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 960,
-      "match": "SUB84",
-      "text": "pCVar22 = SUB84(in_stack_ffffcd48,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 972,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(0x17,g_CKeysPtr);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 973,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5983c7,pCVar22);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 973,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5983c7,pCVar22);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 975,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(dVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 979,
+      "line": 936,
       "match": "DAT_03665f74",
       "text": "if (0 < DAT_03665f74.poly_count) {",
       "type": "undefined_data"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 987,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84((double)local_19c.x,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 995,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 995,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 998,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(0x59883f,pCVar23);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1000,
-      "match": "in_stack_ffffcd60",
-      "text": "(&local_e08,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1000,
-      "match": "in_stack_ffffcd64",
-      "text": "(&local_e08,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1001,
-      "match": "in_stack_ffffcd68",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1001,
-      "match": "in_stack_ffffcd6c",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1001,
-      "match": "in_stack_ffffcd70",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1003,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(dVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1007,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1008,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(\"Select model to position\",g_CEditorToolsPtr);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1012,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(dVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1014,
+      "line": 960,
       "match": "DAT_03665f74",
       "text": "if (DAT_03665f74.poly_count < 1) break;",
       "type": "undefined_data"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1017,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(0x598431,fVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1018,
+      "line": 963,
       "match": "DAT_03665f74",
       "text": "core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&DAT_03665f74,local_408);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1023,
-      "match": "in_stack_ffffcd48",
-      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1023,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1029,
-      "match": "in_stack_ffffcd48",
-      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1029,
-      "match": "SUB84",
-      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1035,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598495,fVar21);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1035,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598495,fVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1041,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(0x5984ad,pCVar23);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1043,
-      "match": "in_stack_ffffcd60",
-      "text": "(&local_11b0,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1043,
-      "match": "in_stack_ffffcd64",
-      "text": "(&local_11b0,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1044,
-      "match": "in_stack_ffffcd68",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1044,
-      "match": "in_stack_ffffcd6c",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1044,
-      "match": "in_stack_ffffcd70",
-      "text": "(uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1048,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1048,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1048,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1048,
-      "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1058,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1058,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1058,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1058,
-      "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1066,
-      "match": "SUB84",
-      "text": "pcVar18 = SUB84(dVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1074,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1074,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1074,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1074,
-      "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1089,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)local_1c0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1090,
-      "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)local_1cc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1091,
-      "match": "in_stack_ffffcd2c",
-      "text": "in_stack_ffffcd2c = \"Import these values:\\nX: %g\\nY: %g\\nZ: %g\\nP: %g\\nB: %g\\nH: %g\\n\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1092,
-      "match": "in_stack_ffffcd24",
-      "text": "in_stack_ffffcd24 = (int *)0x5985f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1093,
-      "match": "in_stack_ffffcd28",
-      "text": "in_stack_ffffcd28 = (CKeys *)g_CEditorToolsPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1106,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(0x598e17,pcVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1112,
-      "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)local_19c.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1113,
-      "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)local_184.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1114,
-      "match": "in_stack_ffffcd2c",
-      "text": "in_stack_ffffcd2c = \"CVector(%g,%g,%g), makePBH(%g,%g,%g)\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1115,
-      "match": "in_stack_ffffcd28",
-      "text": "in_stack_ffffcd28 = local_46c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1116,
-      "match": "in_stack_ffffcd24",
-      "text": "in_stack_ffffcd24 = (int *)0x5986a2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1118,
-      "match": "in_stack_ffffcd28",
-      "text": "((char *)in_stack_ffffcd28,\"CVector(%g,%g,%g), makePBH(%g,%g,%g)\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1121,
-      "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(g_CEditorToolsPtr,0x5986d2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1127,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._4_4_ = 8.222283e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1127,
-      "match": "8.222283e-39",
-      "text": "in_stack_ffffcd50._4_4_ = 8.222283e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1127,
-      "match": "._4_4_",
-      "text": "in_stack_ffffcd50._4_4_ = 8.222283e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1128,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._0_4_ = fVar21;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1128,
-      "match": "._0_4_",
-      "text": "in_stack_ffffcd50._0_4_ = fVar21;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1133,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._4_4_ = (float)g_CEditorToolsPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1133,
-      "match": "._4_4_",
-      "text": "in_stack_ffffcd50._4_4_ = (float)g_CEditorToolsPtr;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1134,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222337e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1134,
-      "match": "8.222337e-39",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222337e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1134,
-      "match": "._0_4_",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222337e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1139,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._4_4_ = (float)local_4d0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1139,
-      "match": "._4_4_",
-      "text": "in_stack_ffffcd50._4_4_ = (float)local_4d0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1140,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222399e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1140,
-      "match": "8.222399e-39",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222399e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1140,
-      "match": "._0_4_",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222399e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1144,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._4_4_ = (float)local_4d0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1144,
-      "match": "._4_4_",
-      "text": "in_stack_ffffcd50._4_4_ = (float)local_4d0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1145,
-      "match": "in_stack_ffffcd50",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222466e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1145,
-      "match": "8.222466e-39",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222466e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1145,
-      "match": "._0_4_",
-      "text": "in_stack_ffffcd50._0_4_ = 8.222466e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1149,
+      "line": 1054,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,local_4d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1152,
-      "match": "in_stack_ffffcd64",
-      "text": "in_stack_ffffcd64 = 2.66247e-44;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1152,
-      "match": "2.66247e-44",
-      "text": "in_stack_ffffcd64 = 2.66247e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1153,
-      "match": "in_stack_ffffcd58",
-      "text": "in_stack_ffffcd58._4_4_ = 8.22252e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1153,
-      "match": "8.22252e-39",
-      "text": "in_stack_ffffcd58._4_4_ = 8.22252e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1153,
-      "match": "._4_4_",
-      "text": "in_stack_ffffcd58._4_4_ = 8.22252e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1154,
-      "match": "in_stack_ffffcd58",
-      "text": "in_stack_ffffcd58._0_4_ = (float)pcVar18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 1154,
-      "match": "._0_4_",
-      "text": "in_stack_ffffcd58._0_4_ = (float)pcVar18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1155,
-      "match": "in_stack_ffffcd60",
-      "text": "in_stack_ffffcd60 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1158,
-      "match": "in_stack_ffffcd64",
-      "text": "in_stack_ffffcd64 = 8.222546e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1158,
-      "match": "8.222546e-39",
-      "text": "in_stack_ffffcd64 = 8.222546e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1159,
-      "match": "in_stack_ffffcd68",
-      "text": "in_stack_ffffcd68 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1172,
+      "line": 1070,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(SBoneTransformData *)&DAT_036644d8);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1172,
+      "line": 1070,
       "match": "DAT_036644d8",
       "text": "(in_stack_00000004,(SBoneTransformData *)&DAT_036644d8);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1176,
-      "match": "in_stack_ffffcd6c",
-      "text": "in_stack_ffffcd6c = 8.222619e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 1176,
-      "match": "8.222619e-39",
-      "text": "in_stack_ffffcd6c = 8.222619e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1177,
-      "match": "in_stack_ffffcd70",
-      "text": "in_stack_ffffcd70 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1240,
-      "match": "in_stack_ffffcd70",
-      "text": "in_stack_ffffcd70 = (CKeys *)0x598dcc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1267,
+      "line": 1162,
       "match": "in_stack_ffffccac",
       "text": "core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccac,in_stack_ffffccb0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1267,
+      "line": 1162,
       "match": "in_stack_ffffccb0",
       "text": "core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccac,in_stack_ffffccb0);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1271,
+      "line": 1166,
       "match": "DAT_03665f74",
       "text": "core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_03665f74);",
       "type": "undefined_data"

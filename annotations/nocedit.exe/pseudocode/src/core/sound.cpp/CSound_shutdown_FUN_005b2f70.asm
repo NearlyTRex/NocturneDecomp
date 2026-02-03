@@ -7,8 +7,8 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_FUN_004dcee0 at 004dcf63
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db754
-;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dcf63
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ec32
 ;
 ; Referenced Globals:

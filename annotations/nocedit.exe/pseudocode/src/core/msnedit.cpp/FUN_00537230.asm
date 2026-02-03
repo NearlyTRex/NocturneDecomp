@@ -112,7 +112,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005372f1
     PUSH EAX                            ; 005372f5
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 005372f6
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005372fb
     ADD ESP,0x114                       ; 005372fe
     POP EBP                             ; 00537304

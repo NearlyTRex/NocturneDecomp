@@ -23,9 +23,9 @@ CFrankenstienMachine * __cdecl CFrankenstienMachine::ctor(CFrankenstienMachine *
 // Address: 004d17b0
 void __cdecl FUN_004d17b0(void);
 
-// Original: core_frankgen.cpp_CFrankenstienMachine_load_FUN_004d19e0
+// Original: core_frankgen.cpp_CFrankenstienMachine_archive_FUN_004d19e0
 // Address: 004d19e0
-void __cdecl CFrankenstienMachine::load(void);
+void __cdecl CFrankenstienMachine::archive(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_PlaySounds_FUN_004d1a40
 // Address: 004d1a40
@@ -97,4 +97,4 @@ int __cdecl FUN_004d2890(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0
 // Address: 004d28a0
-CFrankenstienMachine * __cdecl CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3);
+CFrankenstienMachine * __cdecl CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint flags);

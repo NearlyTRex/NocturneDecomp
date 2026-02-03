@@ -10,11 +10,12 @@ CDeformableModel * __cdecl
 core_skeleton_cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel *this_ptr)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
+  CBoundingBox3D *pCVar1;
+  CVector3f *pCVar2;
   
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
-  core_skeleton_cpp_freeBoundingBoxes_FUN_005a2030((CBoundingBox3D **)&this_ptr->bbox_pool[0].max);
-  core_curtain_cpp_freeVectors_FUN_0044baf0((CVector3f **)(extraout_EAX + -0x4bc));
-  return (CDeformableModel *)(extraout_EAX_00 + -0x7c90);
+  pCVar1 = core_skeleton_cpp_freeBoundingBoxes_FUN_005a2030
+                     ((CBoundingBox3D *)&this_ptr->bbox_pool[0].max);
+  pCVar2 = core_curtain_cpp_freeVectors_FUN_0044baf0(&pCVar1[-0x33].max);
+  return (CDeformableModel *)&pCVar2[-0xa62].z;
 }

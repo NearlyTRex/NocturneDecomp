@@ -97,4 +97,4 @@ void __cdecl CTurret(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_dtor_FUN_005e3e00
 // Address: 005e3e00
-CTurret * __cdecl CTurret::dtor(CTurret *this_ptr,uint d1,uint d2);
+CTurret * __cdecl CTurret::dtor(CTurret *this_ptr,uint flags);

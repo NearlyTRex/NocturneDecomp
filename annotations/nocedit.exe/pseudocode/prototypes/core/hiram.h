@@ -21,7 +21,7 @@ CHiram * __cdecl CHiram::ctor(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004f4450
 // Address: 004f4450
-CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8,uint d9);
+CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint flags);
 
 // Original: core_hiram.cpp_CHiram_setup_FUN_004f4530
 // Address: 004f4530

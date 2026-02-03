@@ -277,4 +277,4 @@ CKeyFramedModel * __cdecl copyModels(CKeyFramedModel **first,CKeyFramedModel **s
 
 // Original: core_dmodel.cpp_freeModels_FUN_0047efc0
 // Address: 0047efc0
-void __cdecl freeModels(CKeyFramedModel **array);
+CKeyFramedModel * __cdecl freeModels(CKeyFramedModel *objs);

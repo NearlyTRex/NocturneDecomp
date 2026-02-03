@@ -365,7 +365,7 @@ RuntimeHandlerEntry g_InitHandlers[166] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_flamegun_cpp_staticInit_FUN_004cbcb0
+        .func = (RUNTIME_HANDLER_FUNC *)core_flattn_cpp_staticInit_FUN_004cbcb0
     },
     {
         .status = 0x00,

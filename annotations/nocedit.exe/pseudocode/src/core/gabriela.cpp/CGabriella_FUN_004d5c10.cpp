@@ -20,7 +20,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c10(CGabriella *this_ptr)
                 core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoBoxClassInfo.name_hash)
   ;
   if (this_ptr_00 != (CAmmoBox *)0x0) {
-    core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00);
+    core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00,&(this_ptr->base).inventory);
   }
   (this_ptr->base).unk4[4] = '\0';
   (this_ptr->base).unk4[5] = '\0';

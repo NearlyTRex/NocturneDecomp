@@ -21,7 +21,7 @@ CMoloch * __cdecl CMoloch::ctor(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_dtor_FUN_00528bf0
 // Address: 00528bf0
-CMoloch * __cdecl CMoloch::dtor(CMoloch *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CMoloch * __cdecl CMoloch::dtor(CMoloch *this_ptr,uint flags);
 
 // Original: core_moloch.cpp_CMoloch_setup_FUN_00528c70
 // Address: 00528c70

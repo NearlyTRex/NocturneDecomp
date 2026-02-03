@@ -14,13 +14,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
   int iVar3;
   int iVar4;
   char *format;
-  uint in_stack_fffffa28;
-  uint in_stack_fffffa2c;
-  char **in_stack_fffffa30;
-  CStrList_vtable *in_stack_fffffa34;
-  CStrList_vtable *in_stack_fffffa38;
-  uint in_stack_fffffa3c;
-  char local_230 [512];
+  CPickList CStack_5d4;
   byte local_30 [16];
   CStrList local_20;
   
@@ -62,8 +56,9 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
           pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar2);
           format = "%s\tMounted";
         }
-        sprintf(local_230,format,pcVar1);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffa28,local_230);
+        sprintf((char *)&CStack_5d4.selection_state,format,pcVar1);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                  ((CStrList *)&stack0xfffffa28,(char *)&CStack_5d4.selection_state);
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_20.item_count);
     }
@@ -80,9 +75,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
     else {
       shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0((CStrList *)local_30,iVar2);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffffa28,0,in_stack_fffffa28,in_stack_fffffa2c,
-               (uint)in_stack_fffffa30,(uint)in_stack_fffffa34,(uint)in_stack_fffffa38);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa28,0);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Applying changes to POD.INI");
@@ -93,10 +86,8 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
     engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
     (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffa2c,0,in_stack_fffffa2c,(uint)in_stack_fffffa30,
-             (uint)in_stack_fffffa34,(uint)in_stack_fffffa38,in_stack_fffffa3c);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0,in_stack_fffffa2c);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&local_20.capacity,0,in_stack_fffffa2c);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_5d4,0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&local_20.capacity,0);
   return;
 }

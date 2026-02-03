@@ -6,6 +6,10 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_20 */
+/* WARNING: Variable defined which should be unmapped: local_1c */
+/* WARNING: Variable defined which should be unmapped: local_18 */
+
 void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
 
 {
@@ -13,6 +17,7 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   float unaff_EBP;
   float10 fVar2;
   float10 fVar3;
+  float fVar4;
   float in_stack_00000008;
   float in_stack_0000000c;
   float in_stack_00000010;
@@ -24,21 +29,21 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   float in_stack_0000005c;
   float in_stack_00000068;
   float in_stack_00000070;
-  float in_stack_ffffffe0;
-  float in_stack_ffffffe4;
-  float in_stack_ffffffe8;
+  float local_20;
+  float local_1c;
+  float local_18;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   if (iVar1 == 0) {
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     if (iVar1 != 0) {
-      in_stack_ffffffe4 = in_stack_ffffffe8 * (float)10;
+      local_1c = local_18 * (float)10;
     }
   }
   else {
-    in_stack_ffffffe4 = in_stack_ffffffe0 * (float)0.050000000000000003;
+    local_1c = local_20 * (float)0.050000000000000003;
   }
-  in_stack_ffffffe4 = in_stack_ffffffe4 * (float)30;
+  fVar4 = local_1c * (float)30;
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4f);
   if (iVar1 != 0) {
     this_ptr->yaw = this_ptr->yaw - (float)this_ptr;
@@ -58,10 +63,8 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   if (iVar1 != 0) {
     fVar3 = (float10)fcos((float10)this_ptr->yaw);
     fVar2 = (float10)fsin((float10)this_ptr->yaw);
-    (this_ptr->position).x =
-         (float)((float10)(this_ptr->position).x - fVar2 * (float10)in_stack_ffffffe4);
-    (this_ptr->position).z =
-         (float)((float10)(this_ptr->position).z - fVar3 * (float10)in_stack_ffffffe4);
+    (this_ptr->position).x = (float)((float10)(this_ptr->position).x - fVar2 * (float10)fVar4);
+    (this_ptr->position).z = (float)((float10)(this_ptr->position).z - fVar3 * (float10)fVar4);
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar1 != 0) {

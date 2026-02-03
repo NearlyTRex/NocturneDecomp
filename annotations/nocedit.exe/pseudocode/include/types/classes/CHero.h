@@ -16,7 +16,7 @@ typedef struct CHero {
     SActionKeyBindings action_bindings; // 0xbe2c
     char unk2[12]; // 0xbe4c
     CPathMap path_map; // 0xbe58
-    int unk3; // 0x1f734
+    int aim_mode; // 0x1f734
     CInventory inventory; // 0x1f738
     int is_wearing_gas_mask; // 0x1fb98
     char unk4[52]; // 0x1fb9c

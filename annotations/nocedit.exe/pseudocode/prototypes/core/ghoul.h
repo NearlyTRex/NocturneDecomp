@@ -35,9 +35,9 @@ void __cdecl CGhoul(void);
 // Address: 004e8190
 void __cdecl FUN_004e8190(void);
 
-// Original: core_ghoul.cpp_CGhoul_load_FUN_004e81c0
+// Original: core_ghoul.cpp_CGhoul_archive_FUN_004e81c0
 // Address: 004e81c0
-void __cdecl CGhoul::load(void);
+void __cdecl CGhoul::archive(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_FUN_004e82d0
 // Address: 004e82d0
@@ -73,4 +73,4 @@ void __cdecl FUN_004e8ee0(void);
 
 // Original: core_ghoul.cpp_CGhoul_dtor_FUN_004e8f10
 // Address: 004e8f10
-CGhoul * __cdecl CGhoul::dtor(CGhoul *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CGhoul * __cdecl CGhoul::dtor(CGhoul *this_ptr,uint flags);

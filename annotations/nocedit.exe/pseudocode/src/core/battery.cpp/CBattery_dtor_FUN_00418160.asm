@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00418160(CBattery *this_ptr,uint d1,uint d2)
+; __cdecl CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00418160(CBattery *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBatteryTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0041816c
     PUSH EBX                            ; 0041816e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041816f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00418174
     MOV DL,byte ptr [ESP + 0xc]         ; 00418177
     MOV EBX,EAX                         ; 0041817b

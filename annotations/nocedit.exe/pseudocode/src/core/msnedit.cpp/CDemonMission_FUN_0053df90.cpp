@@ -14,11 +14,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr
   char *pcVar3;
   int iVar4;
   int iVar5;
-  uint in_stack_fffff89c;
-  uint in_stack_fffff8a0;
-  char **in_stack_fffff8a4;
-  CStrList_vtable *in_stack_fffff8a8;
-  uint in_stack_fffff8ac;
+  CPickList local_764;
   CPickList local_3bc;
   int local_14;
   
@@ -34,18 +30,17 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr
                          (&local_3bc,"Delete actors",local_14,0);
     if (local_14 < 0) break;
     if (local_14 == 0) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff89c);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_764);
       for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor
           ) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffff89c,pCVar1->actor_name);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_764.base,pCVar1->actor_name);
       }
       iVar5 = 0;
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff89c);
+      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_764.base);
       while (iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                               ((CPickList *)&stack0xfffff89c,"Delete actors.  Press ESC When done.",
-                                iVar5,0), -1 < iVar5) {
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff89c,iVar5);
+                               (&local_764,"Delete actors.  Press ESC When done.",iVar5,0), -1 < iVar5)
+      {
+        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_764.base,iVar5);
         pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr);
         if (pcVar3 == (char *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -53,11 +48,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         core_msnedit_cpp_CDemonMission_FUN_0053bc80(this_ptr,(int)pcVar3,1);
-        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0((CStrList *)&stack0xfffff89c,iVar5);
+        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_764.base,iVar5);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff89c,0,in_stack_fffff89c,in_stack_fffff8a0,
-                 (uint)in_stack_fffff8a4,(uint)in_stack_fffff8a8,in_stack_fffff8ac);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_764,0);
     }
     if ((local_14 == 1) &&
        (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -94,12 +87,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"%d actors deleted",iVar5);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_3bc,0,in_stack_fffff89c,in_stack_fffff8a0,(uint)in_stack_fffff8a4,
-               (uint)in_stack_fffff8a8,in_stack_fffff8ac);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3bc,0);
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            (&local_3bc,0,in_stack_fffff89c,in_stack_fffff8a0,(uint)in_stack_fffff8a4,
-             (uint)in_stack_fffff8a8,in_stack_fffff8ac);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3bc,0);
   return;
 }

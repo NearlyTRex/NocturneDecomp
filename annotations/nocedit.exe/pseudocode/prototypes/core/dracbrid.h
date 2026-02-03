@@ -43,9 +43,9 @@ int __cdecl FUN_00485bc0(void);
 // Address: 00485be0
 int __cdecl CDraculaBride::renderOpaque(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0
+// Original: core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0
 // Address: 00485dd0
-void __cdecl CDraculaBride::load(void);
+void __cdecl CDraculaBride::archive(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_ShotThruHeart_FUN_00486020
 // Address: 00486020
@@ -91,9 +91,9 @@ SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 // Address: 00486d50
 SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr);
 
-// Original: core_dracbrid.cpp_dtor_FUN_00486d70
+// Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70
 // Address: 00486d70
-CDraculaBride * __cdecl dtor(CDraculaBride *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_FUN_00486e30
 // Address: 00486e30

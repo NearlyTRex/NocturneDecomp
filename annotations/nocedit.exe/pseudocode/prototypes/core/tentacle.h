@@ -61,4 +61,4 @@ void __cdecl CTentacle(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_dtor_FUN_005dbcf0
 // Address: 005dbcf0
-CTentacle * __cdecl CTentacle::dtor(CTentacle *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CTentacle * __cdecl CTentacle::dtor(CTentacle *this_ptr,uint flags);

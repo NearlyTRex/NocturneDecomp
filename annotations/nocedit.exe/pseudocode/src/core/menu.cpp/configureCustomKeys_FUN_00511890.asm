@@ -59,7 +59,7 @@ section .text
     MOV EBX,0x2f27700                   ; 005118a3 | g_ControlsMenuTextBuffers
     MOV dword ptr [ESP + 0x104],EDX     ; 005118a8
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 005118af
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 005118b4
     XOR EAX,EAX                         ; 005118b7
     MOV dword ptr [EAX + 0x2f28000],EBX ; 005118b9 | g_ControlOptionsMenuPointers | DAT_02f28004 | g_ControlsMenuTextBuffers

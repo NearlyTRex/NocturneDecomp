@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(CDemonCamera *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(CDemonCamera *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_CDemonLight_dtor_FUN_00472760 at 0047277f
@@ -41,7 +39,7 @@ section .text
     PUSH 0x1                            ; 0044c0ac
     PUSH EBX                            ; 0044c0ae
     CALL core_camview.cpp_CCameraView_dtor_FUN_00427d00 ; 0044c0af
-        ;   XREF to: 00427d00 (UNCONDITIONAL_CALL)  ; CCameraView * core_camview.cpp_CCameraView_dtor_FUN_00427d00(CCameraView * this_ptr, uint d1)
+        ;   XREF to: 00427d00 (UNCONDITIONAL_CALL)  ; CCameraView * core_camview.cpp_CCameraView_dtor_FUN_00427d00(CCameraView * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044c0b4
     MOV DL,byte ptr [ESP + 0xc]         ; 0044c0b7
     MOV EBX,EAX                         ; 0044c0bb

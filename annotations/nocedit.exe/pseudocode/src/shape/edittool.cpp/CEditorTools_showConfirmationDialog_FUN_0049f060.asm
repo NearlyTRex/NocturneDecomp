@@ -14,8 +14,8 @@
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044352e
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479968
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d891
+;   core_game.cpp_CGame_FUN_004dcee0 at 004dd5b9
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db92f
-;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd5b9
 ;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a622
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bcd2
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538928
@@ -86,7 +86,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0049f0d7
     PUSH EAX                            ; 0049f0db
     CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 0049f0dc
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049f0e1
     MOV EAX,EBX                         ; 0049f0e4
     ADD ESP,0x14                        ; 0049f0e6

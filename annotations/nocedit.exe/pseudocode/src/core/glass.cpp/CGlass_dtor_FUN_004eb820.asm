@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGlassTypeInfo
@@ -35,7 +32,7 @@ section .text
     ADD EBX,0x38c                       ; 004eb82e
     PUSH EBX                            ; 004eb834
     CALL core_glass.cpp_freeVectors_FUN_004eb8a0 ; 004eb835
-        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_freeVectors_FUN_004eb8a0(CVector3f * * array)
+        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_freeVectors_FUN_004eb8a0(CVector3f * objs)
     ADD ESP,0x8                         ; 004eb83a
     PUSH 0x0                            ; 004eb83d
     SUB EAX,0x1a0                       ; 004eb83f
@@ -47,7 +44,7 @@ section .text
     LEA EBX,[EAX + 0xfffffe14]          ; 004eb84f
     PUSH EBX                            ; 004eb855
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004eb856
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004eb85b
     MOV DL,byte ptr [ESP + 0xc]         ; 004eb85e
     MOV EBX,EAX                         ; 004eb862

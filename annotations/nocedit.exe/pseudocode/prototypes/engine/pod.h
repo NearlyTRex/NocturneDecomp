@@ -53,7 +53,7 @@ int __cdecl CPodFile::verifyChecksum(CPodFile *this_ptr);
 
 // Original: engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
 // Address: 00550590
-void __cdecl CPodFile::getAuditRecord(CPodFile *this_ptr,int record_index,void *output_buffer);
+void * __stack2_esi CPodFile::getAuditRecord(CPodFile *this_ptr,int record_index,void *output_buffer);
 
 // Original: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
 // Address: 005506c0
@@ -69,7 +69,7 @@ CPod * __cdecl CPod::ctor(CPod *this_ptr);
 
 // Original: engine_pod.cpp_CPod_dtor_FUN_005509b0
 // Address: 005509b0
-CPod * __cdecl CPod::dtor(CPod *this_ptr,uint d1,uint d2);
+CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 
 // Original: engine_pod.cpp_CPod_load_FUN_005509e0
 // Address: 005509e0

@@ -29,10 +29,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   uint file_size;
   char *pcVar12;
   CEditorTools *checksum;
-  uint in_stack_fffff180;
-  uint local_a74;
-  CPodDirectoryEntry *local_a70;
-  SFoundFileInfo local_a58;
+  byte local_e80 [2088];
   SFoundFileInfo local_658;
   char local_444 [256];
   char local_344 [256];
@@ -77,7 +74,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   }
   iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);
   if (iVar2 == 0) {
-    p_Var3 = localtime((time_t *)&stack0xfffff280);
+    p_Var3 = localtime((time_t *)(local_e80 + 0x100));
     strftime(local_444,0x100,"%m/%d/%Y",p_Var3);
     iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Warning!  This .POD file has an invalid CRC.  If it's date is earlier\nthan 07/28/1998, it has no CRC, and you should ignore this message.\n\n%s %s\n\nDo you wish to continue?");
@@ -89,8 +86,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   pcVar12 = "rb";
   file_size = 0;
   local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (&stack0xfffff180,(char *)0x0,"rb","..\\engine\\fileio.cpp",
-                        0x94f);
+                       (local_e80,(char *)0x0,"rb","..\\engine\\fileio.cpp",0x94f);
   if (local_20 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
@@ -104,10 +100,10 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
     local_14 = 2;
   }
   local_18 = 0;
-  if (0 < (int)local_a74) {
+  if (0 < (int)local_e80._1036_4_) {
     local_1c = 0;
     do {
-      puVar5 = (uint *)((int)&local_a70->name_or_offset + local_1c);
+      puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);
       ptVar6 = puVar5 + (uint)bVar11 * -2 + 1;
       local_44 = (char *)*puVar5;
       ptVar9 = local_40 + (uint)bVar11 * -2 + (uint)bVar11 * -2 + 1;
@@ -139,20 +135,20 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
         strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
         file_size = local_658.file_size;
         sprintf
-                  (local_a58.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path);
-        pSVar10 = &local_a58;
+                  (local_e80 + 0x428,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path);
+        pSVar10 = (SFoundFileInfo *)(local_e80 + 0x428);
         pcVar12 = (char *)0x4b70a5;
         checksum = g_CEditorToolsPtr;
         local_14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
-                             (g_CEditorToolsPtr,pSVar10->found_path);
+                             (g_CEditorToolsPtr,(char *)pSVar10);
       }
       dest_filename = local_20;
       pcVar8 = local_44;
       if (local_14 == -1) break;
       if ((0 < local_14) || (iVar4 == 0)) {
-        ptVar7 = (time_t *)(&stack0xfffff170 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+        ptVar7 = (time_t *)(local_e80 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + -0x10);
         ptVar6 = local_40 + (uint)bVar11 * -2 + (uint)bVar11 * -2 + 1;
-        *(time_t *)(&stack0xfffff16c + (uint)bVar11 * -8) = local_40[(uint)bVar11 * -2];
+        *(time_t *)(local_e80 + (uint)bVar11 * -8 + -0x14) = local_40[(uint)bVar11 * -2];
         source_file = this_ptr;
         *ptVar7 = *ptVar6;
         ptVar7[(uint)bVar11 * -2 + 1] = ptVar6[(uint)bVar11 * -2 + 1];
@@ -166,12 +162,12 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
                     (g_CEditorToolsPtr,"Unable to extract file:\n%s");
         }
       }
-      sprintf(local_a58.found_path,"%s %s");
-      engine_2d_c_drawText_FUN_00401fd0(local_a58.found_path,0,iVar2);
-      sprintf(local_a58.found_path,"%d");
-      engine_2d_c_drawText_FUN_00401fd0(local_a58.found_path,g_WindowWidth / 2,iVar2);
-      sprintf(local_a58.found_path,"%d");
-      pcVar12 = local_a58.found_path;
+      sprintf(local_e80 + 0x428,"%s %s");
+      engine_2d_c_drawText_FUN_00401fd0(local_e80 + 0x428,0,iVar2);
+      sprintf(local_e80 + 0x428,"%d");
+      engine_2d_c_drawText_FUN_00401fd0(local_e80 + 0x428,g_WindowWidth / 2,iVar2);
+      sprintf(local_e80 + 0x428,"%d");
+      pcVar12 = local_e80 + 0x428;
       file_size = 0x4b73ac;
       engine_2d_c_drawText_FUN_00401fd0
                 (pcVar12,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
@@ -189,7 +185,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
       }
       local_1c = local_1c + 0x14;
       local_18 = local_18 + 1;
-    } while (local_18 < (int)local_a74);
+    } while (local_18 < (int)local_e80._1036_4_);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x99a);
   engine_2d_c_drawText_FUN_00401fd0("End.",0,g_WindowHeight + -0xc);
@@ -215,8 +211,8 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
         (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
       }
     }
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0,in_stack_fffff180);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0);
   }
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff180);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)local_e80);
   return;
 }

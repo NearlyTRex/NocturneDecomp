@@ -77,4 +77,4 @@ void __cdecl CLadder::writeDependencies(CLadder *this_ptr,_FILE *file_handle);
 
 // Original: core_ladder.cpp_CLadder_dtor_FUN_00502ed0
 // Address: 00502ed0
-CLadder * __cdecl CLadder::dtor(CLadder *this_ptr,uint d1,uint d2);
+CLadder * __cdecl CLadder::dtor(CLadder *this_ptr,uint flags);

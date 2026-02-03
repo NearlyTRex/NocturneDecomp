@@ -18,10 +18,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ccf0(CDemonMission *this_ptr
   uint *puVar6;
   char *unaff_EDI;
   byte bVar7;
-  uint in_stack_fffffbb8;
-  uint in_stack_fffffbbc;
-  char **in_stack_fffffbc0;
-  CStrList_vtable *in_stack_fffffbc4;
+  CPickList local_448;
   char local_a0 [100];
   char local_3c [40];
   int local_14;
@@ -64,7 +61,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ccf0(CDemonMission *this_ptr
     core_mission_cpp_CDemonMission_load_FUN_00522d90(local_10,local_3c,1);
   }
   else {
-    core_game_cpp_CGame_loadSaveGame_FUN_004e12b0(g_CGamePtr,local_3c,0,unaff_EDI);
+    core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,local_3c,0,unaff_EDI);
   }
   core_mission_cpp_CDemonMission_FUN_00523cf0(local_10);
   local_14 = 0;
@@ -103,34 +100,31 @@ LAB_0053ce9f:
       g_CDemonMissionPtr = this_ptr;
       return;
     }
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffbb8);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_448);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xfffffbb8,"Import by choosing from actor list.");
+              (&local_448.base,"Import by choosing from actor list.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xfffffbb8,"Import using wildcard on actor name.");
+              (&local_448.base,"Import using wildcard on actor name.");
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xfffffbb8,"Import actors.",-1,0);
+                      (&local_448,"Import actors.",-1,0);
     if (iVar2 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffbb8,0,(uint)unaff_EDI,in_stack_fffffbb8,in_stack_fffffbbc
-                 ,(uint)in_stack_fffffbc0,(uint)in_stack_fffffbc4);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_448,0);
       goto LAB_0053ce9f;
     }
     if (iVar2 == 0) {
       while( true ) {
-        shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&stack0xfffffbb8);
+        shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_448);
         for (pCVar4 = local_10->first_actor; pCVar4 != (CDemonActor *)0x0;
             pCVar4 = pCVar4->next_actor) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)&stack0xfffffbb8,pCVar4->actor_name);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_448.base,pCVar4->actor_name);
         }
-        if ((int)in_stack_fffffbb8 <= local_14) {
-          local_14 = in_stack_fffffbb8 - 1;
+        if (local_448.base.item_count <= local_14) {
+          local_14 = local_448.base.item_count + -1;
         }
         iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffffbb8,"Import actor",local_14,0);
+                          (&local_448,"Import actor",local_14,0);
         if (iVar2 < 0) break;
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffffbb8,iVar2);
+        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_448.base,iVar2);
         pCVar4 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(local_10);
         if (pCVar4 == (CDemonActor *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -146,9 +140,7 @@ LAB_0053ce9f:
         local_14 = iVar2;
       }
 LAB_0053d103:
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffbb8,0,(uint)unaff_EDI,in_stack_fffffbb8,in_stack_fffffbbc
-                 ,(uint)in_stack_fffffbc0,(uint)in_stack_fffffbc4);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_448,0);
     }
     else {
       if (iVar2 != 1) goto LAB_0053d103;
@@ -175,9 +167,7 @@ LAB_0053d103:
                   (g_CEditorToolsPtr,"Imported %d actors from %s.",iVar2,local_3c);
         goto LAB_0053d103;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffbb8,0,(uint)unaff_EDI,in_stack_fffffbb8,in_stack_fffffbbc
-                 ,(uint)in_stack_fffffbc0,(uint)in_stack_fffffbc4);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_448,0);
     }
   } while( true );
 }

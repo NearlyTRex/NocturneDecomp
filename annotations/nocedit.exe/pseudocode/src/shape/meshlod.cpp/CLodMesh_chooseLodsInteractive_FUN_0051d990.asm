@@ -220,7 +220,7 @@ section .text
         ;   Label: LAB_0051db17
     PUSH EBX                            ; 0051db1d | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0051db1e
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051db23
     LEA EAX,[ESP + 0x600]               ; 0051db26
     PUSH EAX                            ; 0051db2d
@@ -474,7 +474,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0051debf | g_CEditorToolsPtr
     PUSH EDX                            ; 0051dec5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0051dec6
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051decb
     MOV [0x02d02570],EAX                ; 0051dece | g_ActiveRenderColor
     PUSH EDI                            ; 0051ded3
@@ -531,7 +531,7 @@ section .text
         ;   Label: LAB_0051df6a
     PUSH EAX                            ; 0051df6f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0051df70
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051df75
     PUSH EBX                            ; 0051df78
     PUSH 0xa                            ; 0051df79
@@ -1147,7 +1147,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0051e63a
     PUSH EAX                            ; 0051e63e
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0051e63f
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051e644
     JMP 0x0051e3b0                      ; 0051e647
         ;   XREF to: 0051e3b0 (UNCONDITIONAL_JUMP)  ; LAB_0051e3b0
@@ -1157,7 +1157,7 @@ section .text
     PUSH EAX                            ; 0051e651
     MOV ESI,dword ptr [ESP + 0x758]     ; 0051e652
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0051e659
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051e65e
     PUSH 0x0                            ; 0051e661
     LEA EAX,[ESP + 0x604]               ; 0051e663
@@ -1177,7 +1177,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0051e67e
     PUSH EAX                            ; 0051e682
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0051e683
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051e688
     PUSH 0x0                            ; 0051e68b
     LEA EAX,[ESP + 0x604]               ; 0051e68d

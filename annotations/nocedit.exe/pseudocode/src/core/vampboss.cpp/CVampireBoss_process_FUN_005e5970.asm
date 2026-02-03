@@ -1030,8 +1030,8 @@ section .text
     JNZ 0x005e649b                      ; 005e6486
         ;   XREF to: 005e649b (CONDITIONAL_JUMP)  ; LAB_005e649b
     PUSH EBX                            ; 005e6488
-    CALL core_vampboss.cpp_AnotherVoicuSummonWavCall_FUN_005e7390 ; 005e6489
-        ;   XREF to: 005e7390 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_AnotherVoicuSummonWavCall_FUN_005e7390()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e7390 ; 005e6489
+        ;   XREF to: 005e7390 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e7390(CVampireBoss * this_ptr)
     ADD ESP,0x4                         ; 005e648e
         ;   Label: LAB_005e648e
     MOV dword ptr [EBX + 0xce8f4],0x3f800000 ; 005e6491

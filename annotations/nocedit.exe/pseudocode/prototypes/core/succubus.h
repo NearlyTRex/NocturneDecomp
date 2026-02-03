@@ -57,4 +57,4 @@ void __cdecl CSuccubus(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_dtor_FUN_005c7820
 // Address: 005c7820
-CSuccubus * __cdecl CSuccubus::dtor(CSuccubus *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11);
+CSuccubus * __cdecl CSuccubus::dtor(CSuccubus *this_ptr,uint flags);

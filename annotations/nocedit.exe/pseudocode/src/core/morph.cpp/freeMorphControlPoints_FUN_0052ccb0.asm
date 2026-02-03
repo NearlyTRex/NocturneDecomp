@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint **array)
+; __cdecl SMorphControlPoint * __cdecl core_morph_cpp_freeMorphControlPoints_FUN_0052ccb0(SMorphControlPoint *objs)
 ;
 ; Parameters:
-; SMorphControlPoint * * Stack[0x4]:4   array
+; SMorphControlPoint * Stack[0x4]:4   objs
 ;
 ; XREF[1]:
 ;   core_morph.cpp_FUN_0052bcb0 at 0052ca6c
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0052ccb7
     PUSH EDX                            ; 0052ccbb
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0052ccbc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052ccc1
     RET                                 ; 0052ccc4
 

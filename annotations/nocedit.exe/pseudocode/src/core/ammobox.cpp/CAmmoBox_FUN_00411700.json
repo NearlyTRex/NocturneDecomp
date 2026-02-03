@@ -2,15 +2,153 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "incompatible_types",
         "column": 52,
-        "line": 28,
+        "line": 27,
         "message": "invalid conversion from 'void*' to 'CAmmo*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 38,
-        "line": 40,
+        "line": 39,
         "message": "cannot convert 'EAmmoBoxType' to 'EAmmoType' in assignment"
       }
     ],
@@ -18,6 +156,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -25,41 +169,41 @@
       {
         "category": "other",
         "column": 59,
-        "line": 28,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 34,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 36,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 43,
+        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 92,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 158
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -85,7 +229,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_ammobox.cpp_CAmmoBox_FUN_00411700",
-    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr)"
+    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory)"
   },
   "function_calls": [
     {
@@ -101,7 +245,7 @@
     {
       "addr": "004111b0",
       "is_variadic": false,
-      "name": "core_ammo.cpp_CAmmo_FUN_004111b0"
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0"
     },
     {
       "addr": "004fd600",
@@ -201,10 +345,10 @@
     "pcode_op_count": 361
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -213,6 +357,13 @@
         "offset": 4,
         "size": 4,
         "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "inventory",
+        "offset": 8,
+        "size": 4,
+        "type": "CInventory *"
       }
     ]
   },
@@ -220,27 +371,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_00000008",
-      "text": "CInventory *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
       "match": "in_stack_0000000c",
       "text": "CInventory *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_00000008,(CDemonActor *)this_ptr->item,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_0000000c",
       "text": "core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_0000000c,&this_ptr_00->base,1);",
       "type": "stack_param"

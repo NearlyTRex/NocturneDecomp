@@ -35,9 +35,9 @@
 ;   core_dfilter.cpp_CFilterFX_process_FUN_004708e0
 ;   core_event.cpp_CEventList_process_FUN_004aaac0
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0
+;   core_game.cpp_CGame_FUN_004e09c0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_FUN_004e09c0
 ;   core_gore.cpp_CGore_process_FUN_004ed9e0
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250
 ;   core_script.cpp_CScript_process_FUN_00559960
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_004e31c6
     ADD ESP,0x4                         ; 004e31cb
     PUSH EBX                            ; 004e31ce
-    CALL core_game.cpp_FUN_004e09c0     ; 004e31cf
-        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004e09c0()
+    CALL core_game.cpp_CGame_FUN_004e09c0 ; 004e31cf
+        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e09c0(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e31d4 | g_CGameInstance | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x20c]     ; 004e31d9 | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e31df
@@ -257,7 +257,7 @@ section .text
         ;   Label: LAB_004e3421
     PUSH EBP                            ; 004e3427 | g_CWaterInstance
     CALL core_water.cpp_CWater_process_FUN_005e9ed0 ; 004e3428
-        ;   XREF to: 005e9ed0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_process_FUN_005e9ed0()
+        ;   XREF to: 005e9ed0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_process_FUN_005e9ed0(CWater * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e342d | g_CGameInstance | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3432 | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e3438
@@ -349,8 +349,8 @@ section .text
     ADD ESP,0x4                         ; 004e3554
     MOV ECX,dword ptr [0x006848fc]      ; 004e3557 | g_CWeatherInstance | g_CWeatherPtr
     PUSH ECX                            ; 004e355d | g_CWeatherInstance
-    CALL core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 ; 004e355e
-        ;   XREF to: 005eeaf0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0()
+    CALL core_weather.cpp_CWeather_FUN_005eeaf0 ; 004e355e
+        ;   XREF to: 005eeaf0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005eeaf0(CWeather * this_ptr)
     ADD ESP,0x4                         ; 004e3563
     PUSH EBX                            ; 004e3566
     CALL core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 ; 004e3567
@@ -447,7 +447,7 @@ section .text
     ADD ESP,0xc                         ; 004e3681
     PUSH EBX                            ; 004e3684
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004e3685
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV EAX,[0x00680d50]                ; 004e368a | g_CScriptPtr
     ADD ESP,0x4                         ; 004e368f
     MOV dword ptr [EAX + 0x10],0x0      ; 004e3692 | DAT_0310f868

@@ -22,14 +22,14 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   char (*pacVar11) [256];
   bool bVar12;
   byte bVar13;
-  CGame *in_stack_fffffec0;
+  char local_140 [256];
   char local_40 [32];
   int local_20;
   int local_1c [3];
   
   bVar13 = 0;
   local_20 = 0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffec0);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pacVar6 = g_GraphicsMenuTextBuffers;
   iVar4 = 0;
   do {
@@ -48,7 +48,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   local_1c[2] = 0;
   wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
   do {
-    pcVar9 = &stack0xfffffec0;
+    pcVar9 = local_140;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
@@ -288,7 +288,7 @@ LAB_00510f71:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    sprintf(&stack0xfffffec0,"%d",g_CGamePtr->game_bpp);
+    sprintf(local_140,"%d",g_CGamePtr->game_bpp);
     iVar4 = -1;
     pacVar6 = g_GraphicsMenuTextBuffers + 5;
     do {

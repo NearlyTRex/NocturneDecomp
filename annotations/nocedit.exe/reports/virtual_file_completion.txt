@@ -6,20 +6,20 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 258
 Total functions: 7154
-Clean functions: 3223 (45.1%)
+Clean functions: 3320 (46.4%)
 Files at 100%: 8
 Files at 90%+: 12
-Files at 50%+: 126
+Files at 50%+: 138
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
 ====================================================================================================
-  .: 1 functions, 7 lines
-  core/camview.cpp: 6 functions, 38 lines
+  core/camview.cpp: 6 functions, 39 lines
   core/dfont.cpp: 3 functions, 279 lines
-  core/flashlit.cpp: 2 functions, 18 lines
-  core/litecone.cpp: 12 functions, 178 lines
-  core/minecar.cpp: 7 functions, 70 lines
+  core/flashlit.cpp: 7 functions, 79 lines
+  core/flattn.cpp: 2 functions, 11 lines
+  core/litecone.cpp: 12 functions, 177 lines
+  core/minecar.cpp: 7 functions, 69 lines
   engine/keys.cpp: 9 functions, 56 lines
   wincore/winvideo.cpp: 5 functions, 261 lines
 
@@ -30,7 +30,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
    92.9% | core/beast.cpp
          13/14 clean, 1 remaining
-         Suspects: negative_offset:1, unaffected_reg:2
+         Suspects: negative_offset:2
 
    92.3% | core/anvil.cpp
          12/13 clean, 1 remaining
@@ -38,7 +38,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    90.0% | core/hiram.cpp
          9/10 clean, 1 remaining
-         Suspects: negative_offset:2, unaffected_reg:2
+         Suspects: negative_offset:3
 
    90.0% | engine/light.cpp
          9/10 clean, 1 remaining
@@ -49,72 +49,90 @@ Total: 4 files
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
+   88.9% | core/ammo.cpp
+         16/18 clean, 2 remaining
+         Suspects: decompiler_intrinsic:5, stack_ref:1
    88.9% | core/hpriest.cpp
          8/9 clean, 1 remaining
-         Suspects: negative_offset:2, unaffected_reg:2
+         Suspects: negative_offset:3
    88.5% | engine/dosio.c
          23/26 clean, 3 remaining
          Suspects: param_count_too_many:1, pointer_cast:1, stack_param:1, undefined_type:1, unresolved_funcptr:1
    88.2% | core/battery.cpp
          15/17 clean, 2 remaining
          Suspects: decompiler_intrinsic:4, stack_ref:1
+   88.2% | core/melee.cpp
+         15/17 clean, 2 remaining
+         Suspects: param_count_too_few:1, pointer_cast:3, stack_param:4
+   87.5% | core/shovel.cpp
+         7/8 clean, 1 remaining
+         Suspects: format_string_mismatch:1
+   85.7% | core/gun.cpp
+         6/7 clean, 1 remaining
+         Suspects: decompiler_intrinsic:2, extra_output:2, suspect_float:1, unknown_field:11
    84.6% | shape/memdbg.cpp
          22/26 clean, 4 remaining
          Suspects: pointer_cast:5
+   83.3% | core/dynamite.cpp
+         10/12 clean, 2 remaining
+         Suspects: stack_ref:1, undefined_data:3
    83.3% | core/fileman.cpp
          10/12 clean, 2 remaining
-         Suspects: extra_output:2, stack_param:2, stack_ref:5
+         Suspects: extra_output:2, pointer_cast:2
    83.3% | core/level.cpp
          5/6 clean, 1 remaining
          Suspects: decompiler_intrinsic:12, param_count_too_many:1, pointer_cast:3, suspect_float:5
    83.3% | shape/multicrm.cpp
          5/6 clean, 1 remaining
          Suspects: param_count_too_few:1
-   82.4% | core/melee.cpp
-         14/17 clean, 3 remaining
-         Suspects: param_count_too_few:1, pointer_cast:3, stack_param:4, unaffected_reg:2
+   82.4% | engine/pod.cpp
+         28/34 clean, 6 remaining
+         Suspects: decompiler_intrinsic:2, pointer_cast:22, warning_type_propagation:1
+   82.1% | core/filmreel.cpp
+         23/28 clean, 5 remaining
+         Suspects: decompiler_intrinsic:8, pointer_cast:12, stack_param:3, stack_ref:2
    81.2% | core/health.cpp
          13/16 clean, 3 remaining
          Suspects: decompiler_intrinsic:4, param_count_too_few:1, stack_param:4, stack_ref:1
    80.0% | core/backgnd.cpp
          12/15 clean, 3 remaining
          Suspects: decompiler_intrinsic:4, stack_ref:2
+   80.0% | core/flamegun.cpp
+         8/10 clean, 2 remaining
+         Suspects: extra_output:2, suspect_float:1
    80.0% | core/keyactor.cpp
          12/15 clean, 3 remaining
          Suspects: decompiler_intrinsic:2, negative_offset:2, stack_ref:1
    80.0% | core/setcolid.cpp
          32/40 clean, 8 remaining
          Suspects: decompiler_intrinsic:12, format_string_mismatch:1, param_count_too_few:2, pointer_cast:4, stack_param:37, stack_ref:10, unaffected_reg:11, unknown_field:40, unresolved_funcptr:3, warning_type_propagation:1
-   79.4% | engine/pod.cpp
-         27/34 clean, 7 remaining
-         Suspects: decompiler_intrinsic:2, pointer_cast:23, stack_param:15, stack_ref:5, warning_type_propagation:1
    78.6% | core/biggs.cpp
          11/14 clean, 3 remaining
-         Suspects: extra_output:13, negative_offset:1, stack_ref:1, unaffected_reg:2, undefined_data:1
+         Suspects: extra_output:13, negative_offset:2, stack_ref:1, undefined_data:1
    78.6% | core/hotdemon.cpp
          11/14 clean, 3 remaining
-         Suspects: decompiler_intrinsic:4, extra_output:4, negative_offset:1, stack_ref:1, unaffected_reg:2, unresolved_funcptr:1
+         Suspects: decompiler_intrinsic:4, extra_output:4, negative_offset:2, stack_ref:1, unresolved_funcptr:1
    78.6% | core/npc.cpp
          11/14 clean, 3 remaining
-         Suspects: negative_offset:10, stack_param:5, unaffected_reg:2
+         Suspects: negative_offset:11, stack_param:5
    78.6% | core/texlist.cpp
          11/14 clean, 3 remaining
          Suspects: param_count_too_few:1, pointer_cast:2, stack_param:2, stack_ref:1, suspect_float:8
-   77.8% | core/ammo.cpp
-         14/18 clean, 4 remaining
-         Suspects: decompiler_intrinsic:5, param_count_too_few:1, stack_param:27, stack_ref:1, unnamed_param:2
    77.8% | core/ammobox.cpp
          14/18 clean, 4 remaining
-         Suspects: decompiler_intrinsic:10, pointer_cast:3, stack_param:7, stack_ref:1
+         Suspects: decompiler_intrinsic:10, pointer_cast:3, stack_param:5, stack_ref:1
    77.3% | core/lever.cpp
          17/22 clean, 5 remaining
          Suspects: decompiler_intrinsic:1, negative_offset:2, stack_param:13, stack_ref:2
    76.9% | core/dog.cpp
          10/13 clean, 3 remaining
-         Suspects: decompiler_intrinsic:1, extra_output:10, negative_offset:1, stack_param:5, stack_ref:1, unaffected_reg:2, unresolved_funcptr:2
+         Suspects: decompiler_intrinsic:1, extra_output:10, negative_offset:2, stack_param:5, stack_ref:1, unresolved_funcptr:2
+   76.9% | core/drone.cpp
+         10/13 clean, 3 remaining
+         Suspects: extra_output:4, negative_offset:2, stack_param:3, suspect_float:1, unresolved_funcptr:2
    76.9% | core/larva.cpp
          10/13 clean, 3 remaining
-         Suspects: decompiler_intrinsic:9, extra_output:10, negative_offset:1, stack_param:3, unaffected_reg:2, unknown_type:1, unresolved_funcptr:2, warning_unreachable:1
+         Suspects: decompiler_intrinsic:9, extra_output:10, negative_offset:2, stack_param:3, unknown_type:1, unresolved_funcptr:2, warning_unreachable:1
    76.4% | wincore/windll.cpp
          55/72 clean, 17 remaining
          Suspects: decompiler_intrinsic:281, mmx_assembly:6, nonstandard_int:66, param_count_too_few:1, pointer_cast:58, register_param:6, stack_param:2, unaffected_reg:2, undefined_ram:24, undefined_type:3, unknown_field:4, warning_indirect_jump:1, warning_jumptable:1, warning_overlapping_globals:2
@@ -124,33 +142,42 @@ FILES AT 50-89%
    75.0% | core/marquee.cpp
          12/16 clean, 4 remaining
          Suspects: decompiler_intrinsic:5, negative_offset:12, pointer_cast:8, stack_param:4, suspect_float:10, undefined_data:1, unknown_field:3
-   75.0% | core/shovel.cpp
-         6/8 clean, 2 remaining
-         Suspects: format_string_mismatch:1, unaffected_reg:2
+   75.0% | core/podmain.cpp
+         3/4 clean, 1 remaining
+         Suspects: builtin_function:1, unaffected_reg:2
    75.0% | core/slew.cpp
          3/4 clean, 1 remaining
-         Suspects: decompiler_intrinsic:8, stack_param:35, unaffected_reg:3
+         Suspects: decompiler_intrinsic:8, stack_param:24, unaffected_reg:3
    75.0% | engine/console.cpp
          6/8 clean, 2 remaining
          Suspects: pointer_cast:1, stack_ref:1
+   74.3% | core/baron.cpp
+         26/35 clean, 9 remaining
+         Suspects: decompiler_intrinsic:1, param_count_too_few:1, pointer_cast:4, stack_param:2, stack_ref:3, suspect_float:1, undefined_data:1, unknown_field:6, unnamed_param:27, unresolved_funcptr:3, warning_type_propagation:1
    73.7% | core/armour.cpp
          14/19 clean, 5 remaining
-         Suspects: negative_offset:2, param_count_too_few:2, stack_param:2, unaffected_reg:4
+         Suspects: negative_offset:4, param_count_too_few:2, stack_param:2
    73.3% | core/moloch.cpp
          11/15 clean, 4 remaining
-         Suspects: decompiler_intrinsic:1, extra_output:11, stack_param:5, stack_ref:1, unaffected_reg:3, undefined_data:1
+         Suspects: decompiler_intrinsic:1, extra_output:11, stack_param:5, stack_ref:1, undefined_data:1
+   72.2% | core/haystack.cpp
+         13/18 clean, 5 remaining
+         Suspects: decompiler_intrinsic:2, extra_output:2, param_count_too_few:2, pointer_cast:5, stack_param:11, unknown_field:14, unresolved_funcptr:1
+   71.8% | shape/edittool.cpp
+         112/156 clean, 44 remaining
+         Suspects: decompiler_intrinsic:46, negative_offset:8, param_count_too_few:8, param_count_too_many:3, pointer_cast:54, register_param:6, stack_param:16, stack_ref:24, suspect_float:15, unaffected_reg:2, undefined_data:7, unknown_field:5, unnamed_param:9
    71.4% | core/barrier.cpp
          10/14 clean, 4 remaining
          Suspects: stack_param:31, undefined_data:1
-   71.4% | core/gun.cpp
-         5/7 clean, 2 remaining
-         Suspects: decompiler_intrinsic:2, extra_output:2, suspect_float:1, unaffected_reg:2, unknown_field:11
    71.4% | engine/prim.c
          15/21 clean, 6 remaining
          Suspects: decompiler_intrinsic:12
-   71.2% | shape/edittool.cpp
-         111/156 clean, 45 remaining
-         Suspects: decompiler_intrinsic:47, extra_output:2, negative_offset:8, param_count_too_few:8, param_count_too_many:3, pointer_cast:54, register_param:6, stack_param:54, stack_ref:67, suspect_float:15, unaffected_reg:12, undefined_data:7, undefined_type:1, unknown_field:5, unnamed_param:9
+   70.6% | core/flamecan.cpp
+         12/17 clean, 5 remaining
+         Suspects: decompiler_intrinsic:1, negative_offset:5, stack_param:15, stack_ref:1, warning_type_propagation:1
+   70.0% | core/elephant.cpp
+         7/10 clean, 3 remaining
+         Suspects: decompiler_intrinsic:6, extra_output:2, stack_ref:1, unknown_field:2
    70.0% | core/pendulum.cpp
          14/20 clean, 6 remaining
          Suspects: decompiler_intrinsic:4, extra_output:9, negative_offset:2, pointer_cast:4, stack_param:58, stack_ref:2, unknown_field:21, unresolved_funcptr:7
@@ -162,31 +189,25 @@ FILES AT 50-89%
          Suspects: decompiler_intrinsic:25, param_count_too_few:1, pointer_cast:6, suspect_float:3, unaffected_reg:4, unknown_field:9
    68.8% | core/batman.cpp
          11/16 clean, 5 remaining
-         Suspects: decompiler_intrinsic:5, extra_output:4, negative_offset:1, param_count_too_few:1, pointer_cast:1, stack_param:24, stack_ref:1, unaffected_reg:2, undefined_data:1, unknown_field:1, unresolved_funcptr:1, unresolved_register:1
+         Suspects: decompiler_intrinsic:5, extra_output:4, negative_offset:2, param_count_too_few:1, pointer_cast:1, stack_param:24, stack_ref:1, undefined_data:1, unknown_field:1, unresolved_funcptr:1, unresolved_register:1
    68.8% | sound/snddx.cpp
          22/32 clean, 10 remaining
          Suspects: decompiler_intrinsic:3, extra_output:2, pointer_cast:4, stack_param:6, stack_ref:2, undefined_data:2, unknown_field:12, unresolved_funcptr:13, warning_max_restarts:3
-   68.6% | core/baron.cpp
-         24/35 clean, 11 remaining
-         Suspects: decompiler_intrinsic:1, param_count_too_few:1, pointer_cast:4, stack_param:6, stack_ref:3, suspect_float:1, unaffected_reg:4, undefined_data:1, unknown_field:6, unnamed_param:27, unresolved_funcptr:3, warning_type_propagation:1
    68.4% | core/ladder.cpp
          13/19 clean, 6 remaining
          Suspects: decompiler_intrinsic:7, extra_output:3, negative_offset:2, pointer_cast:10, stack_param:30, stack_ref:6, unknown_field:24
    68.3% | core/sound.cpp
          28/41 clean, 13 remaining
-         Suspects: decompiler_intrinsic:6, extra_output:8, format_string_mismatch:5, param_count_too_few:1, pointer_cast:9, stack_param:17, stack_ref:11, undefined_data:1
+         Suspects: decompiler_intrinsic:6, extra_output:8, format_string_mismatch:5, param_count_too_few:1, pointer_cast:9, stack_param:2, stack_ref:6, undefined_data:1
    68.2% | engine/texture.cpp
          15/22 clean, 7 remaining
          Suspects: extra_output:2, param_count_too_few:2, param_count_too_many:2, pointer_cast:3, unaffected_reg:16, unknown_field:24, warning_unreachable:1
    67.4% | core/actor.cpp
          124/184 clean, 60 remaining
-         Suspects: decompiler_intrinsic:93, extra_output:16, format_string_mismatch:6, param_count_too_few:7, pointer_cast:58, register_param:9, stack_param:272, stack_ref:40, suspect_float:58, unaffected_reg:18, undefined_data:2, unknown_field:31, unnamed_param:55, unresolved_funcptr:1
+         Suspects: decompiler_intrinsic:93, extra_output:16, format_string_mismatch:6, param_count_too_few:7, pointer_cast:58, register_param:9, stack_param:192, stack_ref:40, suspect_float:58, unaffected_reg:18, undefined_data:2, unknown_field:31, unnamed_param:55, unresolved_funcptr:1
    66.7% | core/dimage.cpp
          4/6 clean, 2 remaining
          Suspects: param_count_too_few:1, stack_param:6
-   66.7% | core/haystack.cpp
-         12/18 clean, 6 remaining
-         Suspects: decompiler_intrinsic:2, extra_output:2, param_count_too_few:2, pointer_cast:5, stack_param:15, unaffected_reg:2, unknown_field:14, unresolved_funcptr:1
    66.7% | engine/alphabit.cpp
          6/9 clean, 3 remaining
          Suspects: param_count_too_many:1, pointer_cast:8, stack_param:3
@@ -201,28 +222,37 @@ FILES AT 50-89%
          Suspects: decompiler_intrinsic:2, extra_output:25, param_count_too_few:1, param_count_too_many:1, pointer_cast:95, register_param:3, stack_param:65, stack_ref:17, suspect_float:25, undefined_data:3, unresolved_funcptr:2
    65.2% | core/boxactor.cpp
          30/46 clean, 16 remaining
-         Suspects: decompiler_intrinsic:4, extra_output:2, negative_offset:26, param_count_too_few:2, pointer_cast:2, stack_param:45, stack_ref:13, suspect_float:3, unaffected_reg:5, undefined_data:3, unknown_field:32, unnamed_param:2, unresolved_funcptr:1
-   64.7% | core/flamegun.cpp
+         Suspects: decompiler_intrinsic:4, extra_output:2, negative_offset:26, param_count_too_few:2, pointer_cast:2, stack_param:15, stack_ref:2, suspect_float:3, unaffected_reg:3, undefined_data:3, unknown_field:32, unnamed_param:2, unresolved_funcptr:1
+   64.7% | core/drip.cpp
          11/17 clean, 6 remaining
-         Suspects: extra_output:2, stack_param:14, suspect_float:1, unaffected_reg:4
+         Suspects: decompiler_intrinsic:20, pointer_cast:3, stack_ref:1, undefined_data:4, unknown_field:5, unresolved_funcptr:1, warning_unreachable:1
    64.3% | core/batcreat.cpp
          9/14 clean, 5 remaining
-         Suspects: decompiler_intrinsic:8, extra_output:4, negative_offset:1, param_count_too_few:1, stack_param:14, stack_ref:1, unaffected_reg:2, undefined_data:2, unresolved_funcptr:1
+         Suspects: decompiler_intrinsic:8, extra_output:4, negative_offset:2, param_count_too_few:1, stack_param:14, stack_ref:1, undefined_data:2, unresolved_funcptr:1
    64.3% | core/door.cpp
          18/28 clean, 10 remaining
          Suspects: decompiler_intrinsic:37, param_count_too_few:1, stack_param:41, stack_ref:3, suspect_float:2, undefined_data:2, unknown_field:8, unresolved_funcptr:1
-   63.7% | sound/sndmain.cpp
-         123/193 clean, 70 remaining
-         Suspects: decompiler_intrinsic:183, extra_output:9, format_string_mismatch:5, param_count_too_few:7, param_count_too_many:2, pointer_cast:124, register_param:2, stack_param:155, stack_ref:35, unaffected_reg:5, unknown_field:114, warning_deadcode_restart:2, warning_unreachable:2
+   64.2% | sound/sndmain.cpp
+         124/193 clean, 69 remaining
+         Suspects: decompiler_intrinsic:183, extra_output:9, format_string_mismatch:5, param_count_too_few:7, param_count_too_many:2, pointer_cast:124, register_param:2, stack_param:126, stack_ref:23, unaffected_reg:5, unknown_field:114, warning_deadcode_restart:2, warning_unreachable:2
    63.6% | core/passngr.cpp
          7/11 clean, 4 remaining
-         Suspects: decompiler_intrinsic:1, extra_output:12, negative_offset:2, unaffected_reg:4, unresolved_funcptr:2, warning_type_propagation:1
+         Suspects: decompiler_intrinsic:1, extra_output:12, negative_offset:3, unresolved_funcptr:2, warning_type_propagation:1
    63.6% | wincore/winrun.cpp
          21/33 clean, 12 remaining
          Suspects: decompiler_intrinsic:6, param_count_too_few:1, param_count_too_many:2, pointer_cast:3, stack_param:4, undefined_data:2, undefined_type:1, unknown_field:8, unresolved_funcptr:1
+   63.4% | engine/fileio.cpp
+         45/71 clean, 26 remaining
+         Suspects: negative_offset:2, param_count_too_few:3, pointer_cast:90, stack_param:17, stack_ref:29, undefined_data:1, unknown_field:20, warning_unreachable:3
+   63.3% | core/platfrm.cpp
+         19/30 clean, 11 remaining
+         Suspects: decompiler_intrinsic:5, extra_output:2, negative_offset:8, pointer_cast:36, stack_param:24, stack_ref:4, suspect_float:5, unknown_field:24, unresolved_funcptr:6
    62.9% | sound/sndwav.cpp
          22/35 clean, 13 remaining
          Suspects: decompiler_intrinsic:1, negative_offset:2, pointer_cast:55, stack_param:12, unknown_field:4, unresolved_funcptr:1
+   62.5% | core/water.cpp
+         5/8 clean, 3 remaining
+         Suspects: decompiler_intrinsic:36, extra_output:2, pointer_cast:2, stack_ref:1, undefined_data:1, unknown_field:12
    61.9% | core/chain.cpp
          13/21 clean, 8 remaining
          Suspects: decompiler_intrinsic:37, negative_offset:6, pointer_cast:18, stack_param:63, suspect_float:18, unnamed_param:1
@@ -238,96 +268,108 @@ FILES AT 50-89%
    61.0% | core/setutil.cpp
          25/41 clean, 16 remaining
          Suspects: decompiler_intrinsic:24, param_count_too_few:1, pointer_cast:11, stack_param:20, stack_ref:1, suspect_float:3, unaffected_reg:2
+   60.9% | core/icepick.cpp
+         14/23 clean, 9 remaining
+         Suspects: decompiler_intrinsic:3, extra_output:2, param_count_too_few:3, pointer_cast:6, stack_param:28, unaffected_reg:4, unknown_field:1, unresolved_funcptr:2, warning_type_propagation:1, warning_unreachable:1
+   60.9% | core/teleport.cpp
+         14/23 clean, 9 remaining
+         Suspects: stack_param:46, stack_ref:1
    60.7% | wincore/wddvmem.cpp
          17/28 clean, 11 remaining
          Suspects: decompiler_intrinsic:2, mmx_assembly:1, param_count_too_few:2, pointer_cast:17, unknown_field:18, warning_unreachable:1
-   60.0% | core/box.cpp
-         18/30 clean, 12 remaining
-         Suspects: decompiler_intrinsic:27, param_count_too_few:4, param_count_too_many:3, pointer_cast:47, suspect_float:8, unnamed_param:3, warning_unreachable:1
    60.0% | core/dpart.cpp
          9/15 clean, 6 remaining
          Suspects: decompiler_intrinsic:15, param_count_too_few:1, pointer_cast:65, unknown_field:1
-   60.0% | core/platfrm.cpp
-         18/30 clean, 12 remaining
-         Suspects: decompiler_intrinsic:5, extra_output:2, negative_offset:8, pointer_cast:36, stack_param:44, stack_ref:12, suspect_float:5, unknown_field:24, unresolved_funcptr:6
+   60.0% | core/emitter.cpp
+         12/20 clean, 8 remaining
+         Suspects: decompiler_intrinsic:33, extra_output:6, param_count_too_few:1, stack_param:11, stack_ref:4, suspect_float:2, unaffected_reg:2, undefined_data:19, unknown_field:4, unknown_type:1, unnamed_param:3, unresolved_funcptr:1
+   60.0% | core/scat.cpp
+         15/25 clean, 10 remaining
+         Suspects: decompiler_intrinsic:4, extra_output:2, param_count_too_few:2, pointer_cast:51, stack_param:32, unaffected_reg:2, unknown_field:4, unresolved_funcptr:11, warning_type_propagation:2
    58.8% | core/imp.cpp
          10/17 clean, 7 remaining
-         Suspects: decompiler_intrinsic:8, extra_output:4, negative_offset:1, pointer_cast:1, stack_param:35, stack_ref:2, unaffected_reg:6, unresolved_funcptr:10, warning_type_propagation:1
-   58.4% | core/fire.cpp
-         108/185 clean, 77 remaining
-         Suspects: decompiler_intrinsic:318, extra_output:6, negative_offset:4, param_count_too_few:18, pointer_cast:50, stack_param:415, stack_ref:9, suspect_float:165, unaffected_reg:5, undefined_data:28, unknown_field:11, unresolved_funcptr:2, warning_unreachable:1
+         Suspects: decompiler_intrinsic:8, extra_output:4, negative_offset:2, pointer_cast:1, stack_param:35, stack_ref:2, unaffected_reg:4, unresolved_funcptr:10, warning_type_propagation:1
    58.3% | core/glass.cpp
          14/24 clean, 10 remaining
-         Suspects: decompiler_intrinsic:16, extra_output:2, negative_offset:1, pointer_cast:25, stack_param:21, stack_ref:4, suspect_float:3
+         Suspects: decompiler_intrinsic:16, negative_offset:1, pointer_cast:25, stack_param:21, stack_ref:4, suspect_float:3
    58.3% | core/setdir.cpp
          21/36 clean, 15 remaining
          Suspects: decompiler_intrinsic:10, param_count_too_few:2, pointer_cast:30, stack_param:53, stack_ref:1, unaffected_reg:4, unknown_field:4
    57.9% | core/dfilter.cpp
          11/19 clean, 8 remaining
          Suspects: decompiler_intrinsic:5, param_count_too_few:4, pointer_cast:5, undefined_data:2
+   57.9% | core/enemy.cpp
+         11/19 clean, 8 remaining
+         Suspects: decompiler_intrinsic:2, param_count_too_few:3, pointer_cast:4, stack_param:24, stack_ref:2, undefined_data:6, unresolved_funcptr:9
+   57.8% | core/fire.cpp
+         107/185 clean, 78 remaining
+         Suspects: decompiler_intrinsic:318, extra_output:6, negative_offset:5, param_count_too_few:18, pointer_cast:49, stack_param:415, stack_ref:9, suspect_float:165, unaffected_reg:5, undefined_data:28, unknown_field:11, unresolved_funcptr:2, warning_unreachable:1
    57.6% | shape/quantize.cpp
          19/33 clean, 14 remaining
          Suspects: decompiler_intrinsic:11, extra_output:2, param_count_too_few:2, pointer_cast:46, stack_param:25, stack_ref:8, unaffected_reg:9, unknown_field:19, warning_spacebase:1
    57.1% | core/dirmat.cpp
          4/7 clean, 3 remaining
          Suspects: decompiler_intrinsic:14, extra_output:3
+   57.1% | core/lightgun.cpp
+         8/14 clean, 6 remaining
+         Suspects: decompiler_intrinsic:4, format_string_mismatch:1, stack_param:5, stack_ref:2, suspect_float:2, unaffected_reg:4, unknown_field:14
+   56.8% | core/dlight.cpp
+         21/37 clean, 16 remaining
+         Suspects: decompiler_intrinsic:119, extra_output:12, param_count_too_few:1, pointer_cast:27, stack_ref:1, suspect_float:73, unaffected_reg:2, unknown_field:9, unknown_type:3, warning_unreachable:1
+   56.7% | core/box.cpp
+         17/30 clean, 13 remaining
+         Suspects: decompiler_intrinsic:27, negative_offset:1, param_count_too_few:4, param_count_too_many:3, pointer_cast:47, suspect_float:8, unnamed_param:3, warning_unreachable:1
    56.5% | cockpit/drawsurf.cpp
          52/92 clean, 40 remaining
          Suspects: decompiler_intrinsic:3, param_count_too_few:12, param_count_too_many:2, pointer_cast:32, register_param:18, stack_param:14, stack_ref:18, unaffected_reg:21, warning_unreachable:2
-   56.5% | core/icepick.cpp
-         13/23 clean, 10 remaining
-         Suspects: decompiler_intrinsic:3, extra_output:2, param_count_too_few:3, pointer_cast:6, stack_param:32, unaffected_reg:6, unknown_field:1, unresolved_funcptr:2, warning_type_propagation:1, warning_unreachable:1
-   56.5% | core/teleport.cpp
-         13/23 clean, 10 remaining
-         Suspects: stack_param:55, stack_ref:6, unaffected_reg:2
-   56.3% | engine/fileio.cpp
-         40/71 clean, 31 remaining
-         Suspects: negative_offset:2, param_count_too_few:3, pointer_cast:86, stack_param:325, stack_ref:152, unaffected_reg:10, undefined_data:1, unknown_field:3, warning_unreachable:3
    56.2% | core/hero.cpp
          27/48 clean, 21 remaining
-         Suspects: decompiler_intrinsic:22, extra_output:25, negative_offset:2, param_count_too_few:3, pointer_cast:4, stack_param:41, stack_ref:2, unaffected_reg:6, unnamed_param:2, unresolved_funcptr:3
+         Suspects: decompiler_intrinsic:22, extra_output:25, negative_offset:3, param_count_too_few:2, pointer_cast:4, stack_param:37, stack_ref:2, unaffected_reg:4, unnamed_param:2, unresolved_funcptr:3
    56.2% | core/tbplayer.cpp
          9/16 clean, 7 remaining
-         Suspects: negative_offset:4, pointer_cast:2, stack_param:39, unaffected_reg:12
+         Suspects: negative_offset:6, pointer_cast:2, stack_param:39, unaffected_reg:8
    56.2% | support/trisock.cpp
          18/32 clean, 14 remaining
          Suspects: param_count_too_few:5, param_count_too_many:2, pointer_cast:14, stack_param:1, stack_ref:3, unknown_field:1, unnamed_param:3
-   56.0% | core/scat.cpp
-         14/25 clean, 11 remaining
-         Suspects: decompiler_intrinsic:4, extra_output:2, param_count_too_few:2, pointer_cast:51, stack_param:36, unaffected_reg:4, unknown_field:4, unresolved_funcptr:11, warning_type_propagation:2
    55.6% | core/hostage.cpp
          10/18 clean, 8 remaining
-         Suspects: decompiler_intrinsic:8, negative_offset:2, pointer_cast:1, stack_param:14, unaffected_reg:6, undefined_data:5, warning_type_propagation:2, warning_unreachable:5
+         Suspects: decompiler_intrinsic:8, negative_offset:3, pointer_cast:1, stack_param:14, unaffected_reg:4, undefined_data:5, warning_type_propagation:2, warning_unreachable:5
+   55.6% | core/tommygun.cpp
+         5/9 clean, 4 remaining
+         Suspects: decompiler_intrinsic:6, extra_output:7, stack_param:41, suspect_float:2, unknown_field:24, unnamed_param:1, unresolved_funcptr:1
    55.1% | engine/font.cpp
          27/49 clean, 22 remaining
          Suspects: decompiler_intrinsic:18, extra_output:3, mmx_assembly:1, nonstandard_int:10, param_count_too_few:7, param_count_too_many:3, pointer_cast:27, stack_param:14, stack_ref:10, suspect_float:2, unaffected_reg:4, undefined_data:1, warning_unreachable:2
    55.1% | core/dmodel.cpp
          38/69 clean, 31 remaining
-         Suspects: decompiler_intrinsic:68, extra_output:16, negative_offset:6, param_count_too_few:1, param_count_too_many:4, pointer_cast:81, stack_param:37, stack_ref:37, suspect_float:1, unaffected_reg:7, undefined_data:3, warning_unreachable:6
+         Suspects: decompiler_intrinsic:68, extra_output:16, negative_offset:6, param_count_too_few:1, param_count_too_many:4, pointer_cast:81, stack_param:2, stack_ref:27, suspect_float:1, unaffected_reg:7, undefined_data:3, warning_unreachable:6
    55.0% | core/ground.cpp
          11/20 clean, 9 remaining
          Suspects: extra_output:2, param_count_too_few:2, pointer_cast:20, stack_param:2, suspect_float:11, unaffected_reg:4
    54.7% | core/skeleton.cpp
          64/117 clean, 53 remaining
-         Suspects: decompiler_intrinsic:28, extra_output:14, negative_offset:2, param_count_too_few:9, param_count_too_many:14, pointer_cast:258, stack_param:38, stack_ref:37, suspect_float:2, unaffected_reg:23, unknown_field:17
+         Suspects: decompiler_intrinsic:28, extra_output:6, negative_offset:4, param_count_too_few:9, param_count_too_many:14, pointer_cast:258, stack_param:38, stack_ref:37, suspect_float:2, unaffected_reg:23, unknown_field:17
    54.5% | cockpit/pkbitmap.cpp
          18/33 clean, 15 remaining
          Suspects: param_count_too_few:4, param_count_too_many:1, pointer_cast:18, stack_param:1, unaffected_reg:4, undefined_type:1, unnamed_param:10
+   54.5% | core/menu.cpp
+         12/22 clean, 10 remaining
+         Suspects: decompiler_intrinsic:17, param_count_too_few:1, pointer_cast:4, stack_param:20, stack_ref:13, suspect_float:8, unaffected_reg:19, undefined_data:6, warning_type_propagation:1
    54.5% | core/motion.cpp
          18/33 clean, 15 remaining
          Suspects: decompiler_intrinsic:8, format_string_mismatch:2, param_count_too_few:4, pointer_cast:1, stack_param:30, stack_ref:5, unaffected_reg:11, undefined_data:1
-   54.1% | core/dlight.cpp
-         20/37 clean, 17 remaining
-         Suspects: decompiler_intrinsic:119, extra_output:12, param_count_too_few:1, pointer_cast:27, stack_ref:1, suspect_float:73, unaffected_reg:4, unknown_field:9, unknown_type:3, warning_unreachable:1
+   53.8% | core/dest.cpp
+         7/13 clean, 6 remaining
+         Suspects: decompiler_intrinsic:4, stack_param:73, stack_ref:1, unresolved_funcptr:1
    53.8% | core/mobster.cpp
          14/26 clean, 12 remaining
-         Suspects: decompiler_intrinsic:10, extra_output:4, negative_offset:1, param_count_too_few:2, pointer_cast:10, stack_param:66, stack_ref:3, unaffected_reg:6, undefined_data:4, unresolved_funcptr:6, warning_type_propagation:4
+         Suspects: decompiler_intrinsic:10, extra_output:4, negative_offset:2, param_count_too_few:2, pointer_cast:10, stack_param:66, stack_ref:3, unaffected_reg:4, undefined_data:4, unresolved_funcptr:6, warning_type_propagation:4
    53.3% | core/bride.cpp
          8/15 clean, 7 remaining
-         Suspects: extra_output:4, fpu_register_input:2, negative_offset:1, param_count_too_few:1, pointer_cast:2, stack_param:26, stack_ref:1, unaffected_reg:4, unresolved_funcptr:5
+         Suspects: extra_output:4, fpu_register_input:2, negative_offset:2, param_count_too_few:1, pointer_cast:2, stack_param:26, stack_ref:1, unaffected_reg:2, unresolved_funcptr:5
    53.3% | core/tentacle.cpp
          8/15 clean, 7 remaining
-         Suspects: decompiler_intrinsic:4, negative_offset:1, param_count_too_few:1, pointer_cast:18, stack_param:25, unaffected_reg:6, undefined_data:8, unnamed_param:2, unresolved_funcptr:5, warning_type_propagation:1
+         Suspects: decompiler_intrinsic:4, negative_offset:2, param_count_too_few:1, pointer_cast:18, stack_param:25, unaffected_reg:4, undefined_data:8, unnamed_param:2, unresolved_funcptr:5, warning_type_propagation:1
    53.3% | core/trash.cpp
          8/15 clean, 7 remaining
          Suspects: decompiler_intrinsic:1, negative_offset:2, pointer_cast:2, stack_param:29, stack_ref:3
@@ -337,12 +379,9 @@ FILES AT 50-89%
    52.6% | core/bat.cpp
          10/19 clean, 9 remaining
          Suspects: decompiler_intrinsic:7, extra_output:4, negative_offset:4, stack_param:39, stack_ref:1
-   52.6% | core/enemy.cpp
-         10/19 clean, 9 remaining
-         Suspects: decompiler_intrinsic:2, param_count_too_few:3, pointer_cast:4, stack_param:27, stack_ref:2, undefined_data:6, unresolved_funcptr:9
    52.4% | core/manpuz.cpp
          33/63 clean, 30 remaining
-         Suspects: builtin_function:1, decompiler_intrinsic:24, extra_output:8, format_string_mismatch:1, negative_offset:2, param_count_too_few:9, pointer_cast:26, stack_param:170, stack_ref:3, suspect_float:4, undefined_data:7, unknown_field:41
+         Suspects: builtin_function:1, decompiler_intrinsic:24, format_string_mismatch:1, negative_offset:4, param_count_too_few:9, pointer_cast:26, stack_param:170, stack_ref:3, suspect_float:4, undefined_data:7, unknown_field:41
    52.1% | shape/design.c
          85/163 clean, 78 remaining
          Suspects: decompiler_intrinsic:213, param_count_too_few:6, param_count_too_many:8, pointer_cast:114, stack_param:79, stack_ref:5, suspect_float:6, unknown_field:14, unresolved_funcptr:2, warning_type_propagation:2, warning_unreachable:3
@@ -351,28 +390,28 @@ FILES AT 50-89%
          Suspects: decompiler_intrinsic:31, extra_output:10, param_count_too_few:6, param_count_too_many:2, pointer_cast:68, register_param:13, stack_param:13, stack_ref:9, suspect_float:2, unaffected_reg:2, unknown_field:1, unresolved_funcptr:1
    50.0% | core/crossbow.cpp
          6/12 clean, 6 remaining
-         Suspects: decompiler_intrinsic:11, extra_output:2, negative_offset:1, param_count_too_few:1, stack_param:7, stack_ref:1, suspect_float:1, unaffected_reg:2, unknown_field:1
+         Suspects: decompiler_intrinsic:11, extra_output:2, negative_offset:1, param_count_too_few:1, stack_param:7, stack_ref:1, suspect_float:1, unknown_field:1
    50.0% | core/dskybox.cpp
          2/4 clean, 2 remaining
          Suspects: decompiler_intrinsic:8, pointer_cast:1, stack_ref:2, unknown_field:8
+   50.0% | core/gasmask.cpp
+         7/14 clean, 7 remaining
+         Suspects: negative_offset:2, stack_param:34, unnamed_param:4, unresolved_funcptr:1
    50.0% | core/inivar.cpp
          1/2 clean, 1 remaining
          Suspects: unaffected_reg:2
-   50.0% | core/lightgun.cpp
-         7/14 clean, 7 remaining
-         Suspects: decompiler_intrinsic:4, format_string_mismatch:1, stack_param:5, stack_ref:2, suspect_float:2, unaffected_reg:6, unknown_field:14
    50.0% | core/mimic.cpp
          12/24 clean, 12 remaining
-         Suspects: decompiler_intrinsic:4, extra_output:19, negative_offset:1, param_count_too_few:1, pointer_cast:22, stack_param:24, stack_ref:12, unaffected_reg:2, undefined_data:1, unknown_field:6, unresolved_funcptr:2, warning_type_propagation:3
+         Suspects: decompiler_intrinsic:4, extra_output:19, negative_offset:2, param_count_too_few:1, pointer_cast:22, stack_param:24, stack_ref:12, undefined_data:1, unknown_field:6, unresolved_funcptr:2, warning_type_propagation:3
    50.0% | core/moon.cpp
          7/14 clean, 7 remaining
          Suspects: decompiler_intrinsic:5, mmx_assembly:1, negative_offset:3, param_count_too_many:1, pointer_cast:28, suspect_float:1, undefined_data:4
    50.0% | core/particle.cpp
          3/6 clean, 3 remaining
          Suspects: decompiler_intrinsic:4, param_count_too_few:1, pointer_cast:3, stack_param:2
-   50.0% | core/podmain.cpp
-         2/4 clean, 2 remaining
-         Suspects: builtin_function:1, unaffected_reg:4
+   50.0% | core/shotgun.cpp
+         5/10 clean, 5 remaining
+         Suspects: decompiler_intrinsic:6, extra_output:2, stack_param:50, stack_ref:1, unknown_field:2, unnamed_param:1
    50.0% | core/stone.cpp
          4/8 clean, 4 remaining
          Suspects: negative_offset:1, stack_param:15
@@ -382,9 +421,6 @@ FILES AT 50-89%
    50.0% | core/vehicle.cpp
          11/22 clean, 11 remaining
          Suspects: decompiler_intrinsic:7, extra_output:2, negative_offset:1, param_count_too_few:1, pointer_cast:5, stack_param:50, stack_ref:1, suspect_float:1, unknown_field:8, unnamed_param:1, unresolved_funcptr:3, warning_type_propagation:1
-   50.0% | core/water.cpp
-         4/8 clean, 4 remaining
-         Suspects: decompiler_intrinsic:36, extra_output:2, param_count_too_few:1, pointer_cast:2, stack_ref:1, undefined_data:1, unknown_field:12
    50.0% | engine/model.c
          4/8 clean, 4 remaining
          Suspects: decompiler_intrinsic:8, param_count_too_many:1, pointer_cast:6, stack_param:2, stack_ref:2, unaffected_reg:4
@@ -392,7 +428,7 @@ FILES AT 50-89%
          2/4 clean, 2 remaining
          Suspects: pointer_cast:8
 
-Total: 114 files
+Total: 126 files
 
 ====================================================================================================
 FILES BELOW 50%
@@ -403,25 +439,29 @@ FILES BELOW 50%
          19/39 clean, 20 remaining
    47.6% | shape/meshlod.cpp
          59/124 clean, 65 remaining
+   46.7% | core/spike.cpp
+         7/15 clean, 8 remaining
    46.4% | core/boneguy.cpp
          13/28 clean, 15 remaining
-   46.2% | core/dest.cpp
-         6/13 clean, 7 remaining
-   45.5% | core/menu.cpp
-         10/22 clean, 12 remaining
    45.5% | core/mirror.cpp
          10/22 clean, 12 remaining
    45.5% | engine/palette.cpp
          5/11 clean, 6 remaining
    45.0% | core/conveyor.cpp
          9/20 clean, 11 remaining
-   44.4% | core/tommygun.cpp
-         4/9 clean, 5 remaining
+   44.4% | core/weapon.cpp
+         12/27 clean, 15 remaining
    44.0% | core/path.cpp
          11/25 clean, 14 remaining
+   43.8% | core/flame.cpp
+         7/16 clean, 9 remaining
+   43.8% | core/smiley.cpp
+         7/16 clean, 9 remaining
    43.3% | engine/matrix.c
          13/30 clean, 17 remaining
-   42.9% | core/gasmask.cpp
+   42.9% | core/cow.cpp
+         6/14 clean, 8 remaining
+   42.9% | core/sentinel.cpp
          6/14 clean, 8 remaining
    42.9% | core/succubus.cpp
          6/14 clean, 8 remaining
@@ -431,19 +471,9 @@ FILES BELOW 50%
          24/57 clean, 33 remaining
    41.8% | cockpit/ckptutil.c
          23/55 clean, 32 remaining
-   41.7% | core/dynamite.cpp
-         5/12 clean, 7 remaining
-   40.7% | core/weapon.cpp
-         11/27 clean, 16 remaining
    40.0% | core/bodypart.cpp
          18/45 clean, 27 remaining
-   40.0% | core/elephant.cpp
-         4/10 clean, 6 remaining
-   40.0% | core/shotgun.cpp
-         4/10 clean, 6 remaining
    40.0% | core/simbox.cpp
-         6/15 clean, 9 remaining
-   40.0% | core/spike.cpp
          6/15 clean, 9 remaining
    40.0% | core/tvbat.cpp
          8/20 clean, 12 remaining
@@ -451,90 +481,72 @@ FILES BELOW 50%
          8/20 clean, 12 remaining
    40.0% | engine/boss.c
          2/5 clean, 3 remaining
+   40.0% | support/newmsg.cpp
+         6/15 clean, 9 remaining
    39.5% | core/dcamera.cpp
          34/86 clean, 52 remaining
-   38.5% | core/drone.cpp
-         5/13 clean, 8 remaining
+   38.9% | core/colonel.cpp
+         7/18 clean, 11 remaining
    37.7% | core/xform.cpp
          23/61 clean, 38 remaining
-   37.5% | core/flame.cpp
+   37.7% | core/stranger.cpp
+         26/69 clean, 43 remaining
+   37.5% | core/gargoyle.cpp
          6/16 clean, 10 remaining
    37.5% | core/netgame.cpp
          24/64 clean, 40 remaining
-   37.5% | core/smiley.cpp
-         6/16 clean, 10 remaining
+   37.5% | core/turret.cpp
+         9/24 clean, 15 remaining
    36.8% | core/waypoint.cpp
          7/19 clean, 12 remaining
-   36.2% | core/game.cpp
-         25/69 clean, 44 remaining
-   36.2% | core/stranger.cpp
-         25/69 clean, 44 remaining
-   35.7% | core/cow.cpp
-         5/14 clean, 9 remaining
-   35.7% | core/filmreel.cpp
-         10/28 clean, 18 remaining
-   35.7% | core/sentinel.cpp
-         5/14 clean, 9 remaining
    35.7% | engine/clipper.c
          10/28 clean, 18 remaining
-   35.3% | core/drip.cpp
+   35.3% | core/grave.cpp
          6/17 clean, 11 remaining
-   35.0% | core/emitter.cpp
-         7/20 clean, 13 remaining
-   33.3% | core/colonel.cpp
-         6/18 clean, 12 remaining
-   33.3% | core/turret.cpp
-         8/24 clean, 16 remaining
-   33.3% | support/newmsg.cpp
-         5/15 clean, 10 remaining
+   34.8% | core/game.cpp
+         24/69 clean, 45 remaining
    32.1% | core/charactr.cpp
          35/109 clean, 74 remaining
    31.7% | shape/superopt.cpp
          59/186 clean, 127 remaining
-   31.2% | core/gargoyle.cpp
-         5/16 clean, 11 remaining
-   30.5% | core/script.cpp
-         29/95 clean, 66 remaining
+   31.2% | core/script.cpp
+         30/96 clean, 66 remaining
    30.4% | core/trigger.cpp
+         7/23 clean, 16 remaining
+   30.4% | core/vampboss.cpp
          7/23 clean, 16 remaining
    30.4% | core/wateract.cpp
          7/23 clean, 16 remaining
+   30.0% | core/crate.cpp
+         6/20 clean, 14 remaining
    30.0% | core/main.c
          3/10 clean, 7 remaining
    30.0% | shape/dsemodel.cpp
          3/10 clean, 7 remaining
-   29.4% | core/grave.cpp
-         5/17 clean, 12 remaining
    29.3% | core/mission.cpp
          12/41 clean, 29 remaining
+   29.2% | core/frankgen.cpp
+         7/24 clean, 17 remaining
    28.6% | core/werewolf.cpp
          6/21 clean, 15 remaining
+   27.8% | core/ghoul.cpp
+         5/18 clean, 13 remaining
+   26.9% | core/curtain.cpp
+         7/26 clean, 19 remaining
    26.7% | core/course.cpp
          4/15 clean, 11 remaining
-   26.1% | core/vampboss.cpp
-         6/23 clean, 17 remaining
    25.7% | core/zombie.cpp
          9/35 clean, 26 remaining
-   25.0% | core/crate.cpp
-         5/20 clean, 15 remaining
-   25.0% | core/frankgen.cpp
-         6/24 clean, 18 remaining
    24.1% | core/set.cpp
          21/87 clean, 66 remaining
-   23.5% | core/flamecan.cpp
-         4/17 clean, 13 remaining
-   23.1% | core/curtain.cpp
-         6/26 clean, 20 remaining
-   22.2% | core/ghoul.cpp
-         4/18 clean, 14 remaining
+   21.1% | core/gabriela.cpp
+         8/38 clean, 30 remaining
    20.0% | core/weather.cpp
          2/10 clean, 8 remaining
    20.0% | engine/keyframe.c
          1/5 clean, 4 remaining
    19.0% | core/stairs.cpp
          4/21 clean, 17 remaining
-   18.4% | core/gabriela.cpp
-         7/38 clean, 31 remaining
    18.2% | core/flies.cpp
          4/22 clean, 18 remaining
    16.7% | core/dglobe.cpp
@@ -545,20 +557,20 @@ FILES BELOW 50%
          8/49 clean, 41 remaining
    15.9% | core/bugs.cpp
          7/44 clean, 37 remaining
+   15.5% | core/setedit.cpp
+         9/58 clean, 49 remaining
+   15.4% | core/dracbrid.cpp
+         4/26 clean, 22 remaining
    14.7% | core/event.cpp
          10/68 clean, 58 remaining
    14.3% | shape/cramtex.cpp
          3/21 clean, 18 remaining
-   13.8% | core/setedit.cpp
-         8/58 clean, 50 remaining
    12.9% | core/dstrender.cpp
          4/31 clean, 27 remaining
+   12.7% | core/msnedit.cpp
+         8/63 clean, 55 remaining
    12.5% | core/cloth.cpp
          7/56 clean, 49 remaining
-   11.5% | core/dracbrid.cpp
-         3/26 clean, 23 remaining
-   11.1% | core/msnedit.cpp
-         7/63 clean, 56 remaining
     5.4% | core/skeledit.cpp
          4/74 clean, 70 remaining
     0.0% | core/mmx.c
@@ -662,4 +674,4 @@ FILES BELOW 50%
     0.0% | entry
          0/1 clean, 1 remaining
 
-Total: 132 files
+Total: 120 files

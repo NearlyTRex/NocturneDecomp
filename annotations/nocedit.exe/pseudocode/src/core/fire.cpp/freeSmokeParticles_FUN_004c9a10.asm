@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle **array)
+; __cdecl CSmokeParticle * __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle *objs)
 ;
 ; Parameters:
-; CSmokeParticle * * Stack[0x4]:4   array
+; CSmokeParticle * Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSmokeParticleTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c9a1a
     PUSH EDX                            ; 004c9a1e
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c9a1f
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9a24
     RET                                 ; 004c9a27
 

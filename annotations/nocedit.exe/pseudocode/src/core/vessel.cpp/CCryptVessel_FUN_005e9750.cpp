@@ -34,7 +34,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   if ((this_ptr->state == 3) || (local_30[0] = (double)this_ptr->timer, local_30[0] <= 0.0)) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&this_ptr->model_name,0.0,-1);
+              (&this_ptr->model,0.0,-1);
   }
   else {
     dVar2 = round(65535 - local_30[0] * 65535);
@@ -42,7 +42,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iStack_14);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              ((CKeyFramedModelInstance *)&this_ptr->model_name,0.0,0x2e7);
+              (&this_ptr->model,0.0,0x2e7);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

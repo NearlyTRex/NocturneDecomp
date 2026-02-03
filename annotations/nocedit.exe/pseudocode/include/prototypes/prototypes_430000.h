@@ -40,7 +40,7 @@ void __cdecl core_chain_cpp_CChain_writeDependencies_FUN_00431250(CChain *this_p
 int __cdecl core_chain_cpp_FUN_00431330(void);
 int __cdecl core_chain_cpp_FUN_00431340(void);
 int __cdecl core_chain_cpp_FUN_00431350(void);
-CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint d1,uint d2,uint d3);
+CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint flags);
 SChainVertex * __cdecl core_chain_cpp_SChainVertex_ctor_FUN_004313d0(SChainVertex *this_ptr);
 SChainVertex * __cdecl core_chain_cpp_SChainVertex_dtor_FUN_004313e0(SChainVertex *this_ptr);
 int __cdecl core_chain_cpp_FUN_004313f0(SChainVertex **objs);
@@ -179,9 +179,9 @@ SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_0043e400(SClothBone *thi
 SClothBone * __cdecl core_cloth_cpp_SClothBone_dtor_FUN_0043e410(SClothBone *this_ptr);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_0043e420(SClothVertex *this_ptr);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr);
-int __cdecl core_cloth_cpp_freeVectors_FUN_0043e460(CVector3f **array);
-int __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVertex **array);
-void __cdecl core_cloth_cpp_freeClothBones_FUN_0043e4a0(SClothBone **array);
+CVector3f * __cdecl core_cloth_cpp_freeVectors_FUN_0043e460(CVector3f *objs);
+SClothVertex * __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVertex *array);
+SClothBone * __cdecl core_cloth_cpp_freeClothBones_FUN_0043e4a0(SClothBone *array);
 uint __cdecl core_cloth_cpp_FUN_0043e4c0(void);
 void __cdecl support_codec_cpp_resetDictionary_FUN_0043e510(CLZWDictionary *dict);
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining);
@@ -189,7 +189,7 @@ void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_b
 void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream);
 int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840 (SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_0043e9a0(CCodec *this_ptr);
-CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,int d1);
+CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CCodec_init_FUN_0043e9d0(CCodec *this_ptr);
 int __cdecl support_codec_cpp_CCodec_finalize_FUN_0043ea00(CCodec *this_ptr,_FILE *output_file);
 int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
@@ -220,8 +220,8 @@ int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510 (CLZWDecompres
 int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress *this_ptr,_FILE *output_file);
 int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 (CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback);
 int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZWDecompress *this_ptr);
-CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint d1,uint d2,uint d3);
-CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710 (CLZWCompress *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags);
+CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint flags);
 void __cdecl core_colonel_cpp_staticInit_FUN_0043f770(void);
 CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void);
 CDemonActorType * __cdecl core_colonel_cpp_FUN_0043f7d0(void);

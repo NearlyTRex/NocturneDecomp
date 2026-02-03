@@ -10,8 +10,9 @@
 typedef struct CFilmReel {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk1; // 0x2d4
-    char* movieName; // 0x2d8
-    char unk2[64]; // 0x2dc
+    struct CDemonActor* carrier; // 0x2d4
+    char movie_name[32]; // 0x2d8
+    float unk1; // 0x2f8
+    char unk2[32]; // 0x2fc
 } CFilmReel;
 

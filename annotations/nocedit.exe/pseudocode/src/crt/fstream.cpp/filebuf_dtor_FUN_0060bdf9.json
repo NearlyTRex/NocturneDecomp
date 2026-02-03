@@ -1,16 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 41,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "special_crt_function"
     ],
-    "total_lines": 87
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -30,7 +30,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9",
-    "signature": "filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint d3)"
+    "signature": "filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -104,10 +104,10 @@
     "pcode_op_count": 185
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -119,22 +119,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d3",
-        "offset": 16,
         "size": 4,
         "type": "uint"
       }

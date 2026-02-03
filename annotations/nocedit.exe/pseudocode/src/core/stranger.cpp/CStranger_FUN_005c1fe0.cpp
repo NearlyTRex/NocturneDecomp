@@ -125,10 +125,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               fStack_60 = pCVar1->x - (this_ptr->base).base.base.location.position.x;
               fStack_5c = pCVar1->y - (this_ptr->base).base.base.location.position.y;
               fStack_58 = pCVar1->z - (this_ptr->base).base.base.location.position.z;
-              if ((float *)(this_ptr->unk2 + 0x218) != &fStack_60) {
-                *(float *)(this_ptr->unk2 + 0x218) = fStack_60;
-                *(float *)(this_ptr->unk2 + 0x21c) = fStack_5c;
-                *(float *)(this_ptr->unk2 + 0x220) = fStack_58;
+              if ((float *)this_ptr->unk3 != &fStack_60) {
+                *(float *)this_ptr->unk3 = fStack_60;
+                *(float *)(this_ptr->unk3 + 4) = fStack_5c;
+                *(float *)(this_ptr->unk3 + 8) = fStack_58;
               }
               CStack_6c.x = (float)local_a4._8_4_ - (this_ptr->base).base.base.location.position.x;
               CStack_6c.y = fStack_98 - (this_ptr->base).base.base.location.position.y;
@@ -136,11 +136,11 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_78,&CStack_6c);
               this_ptr_00 = g_CConsolePtr;
-              *(float *)(this_ptr->unk2 + 0x224) = pCVar1->y;
-              this_ptr->unk2[0x228] = '\0';
-              this_ptr->unk2[0x229] = '\0';
-              this_ptr->unk2[0x22a] = -0x80;
-              this_ptr->unk2[0x22b] = '?';
+              *(float *)(this_ptr->unk3 + 0xc) = pCVar1->y;
+              this_ptr->unk3[0x10] = '\0';
+              this_ptr->unk3[0x11] = '\0';
+              this_ptr->unk3[0x12] = -0x80;
+              this_ptr->unk3[0x13] = '?';
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (this_ptr_00,"Climbing ladder %s\n");
               return 1;

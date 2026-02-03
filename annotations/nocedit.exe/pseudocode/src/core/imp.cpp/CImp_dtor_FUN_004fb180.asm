@@ -1,18 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004fb180 (CImp *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8)
+; __cdecl CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004fb180(CImp *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
-; uint             Stack[0x18]:4   d5
-; uint             Stack[0x1c]:4   d6
-; uint             Stack[0x20]:4   d7
-; uint             Stack[0x24]:4   d8
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CImpTypeInfo
@@ -42,25 +35,25 @@ section .text
     ADD EBX,0x33cc                      ; 004fb192
     PUSH EBX                            ; 004fb198
     CALL core_armour.cpp_freeFlames_FUN_00412720 ; 004fb199
-        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeFlames_FUN_00412720(CFlame * * array)
+        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_freeFlames_FUN_00412720(CFlame * objs)
     ADD ESP,0x8                         ; 004fb19e
     PUSH 0x0                            ; 004fb1a1
     SUB EAX,0x4b0                       ; 004fb1a3
     PUSH EAX                            ; 004fb1a8
     CALL core_armour.cpp_freeFires_FUN_00412700 ; 004fb1a9
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeFires_FUN_00412700(SFire * * objs)
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_freeFires_FUN_00412700(SFire * objs)
     ADD ESP,0x8                         ; 004fb1ae
     PUSH 0x0                            ; 004fb1b1
     SUB EAX,0x20c                       ; 004fb1b3
     PUSH EAX                            ; 004fb1b8
     CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004fb1b9
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * * objs)
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
     ADD ESP,0x8                         ; 004fb1be
     PUSH 0x0                            ; 004fb1c1
     SUB EAX,0xb4                        ; 004fb1c3
     PUSH EAX                            ; 004fb1c8
     CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004fb1c9
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; int core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * * objs)
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
     ADD ESP,0x8                         ; 004fb1ce
     PUSH 0x0                            ; 004fb1d1
     SUB EAX,0x1c8                       ; 004fb1d3
@@ -72,13 +65,13 @@ section .text
     SUB EAX,0x293c                      ; 004fb1e3
     PUSH EAX                            ; 004fb1e8
     CALL core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40 ; 004fb1e9
-        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004fb1ee
     PUSH 0x1                            ; 004fb1f1
     LEA EBX,[EAX + 0xfffffea8]          ; 004fb1f3
     PUSH EBX                            ; 004fb1f9
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004fb1fa
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004fb1ff
     MOV DL,byte ptr [ESP + 0xc]         ; 004fb202
     MOV EBX,EAX                         ; 004fb206

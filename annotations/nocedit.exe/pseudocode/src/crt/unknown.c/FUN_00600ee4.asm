@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1591
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1591
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481c13
 ;
 ; Called Functions:

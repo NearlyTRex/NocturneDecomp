@@ -928,7 +928,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00581140
     PUSH EAX                            ; 00581144
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00581145
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058114a
     JMP 0x00580fd6                      ; 0058114d
         ;   XREF to: 00580fd6 (UNCONDITIONAL_JUMP)  ; LAB_00580fd6
@@ -937,7 +937,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00581154
     PUSH EAX                            ; 00581158
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00581159
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058115e
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130 ; 00581161
         ;   XREF to: 005ab130 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_005ab130()

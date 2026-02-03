@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_00506a50(CLightGun *this_ptr,uint d1,uint d2)
+; __cdecl CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_00506a50(CLightGun *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLightGunTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 00506a5c
     PUSH EBX                            ; 00506a5e
     CALL core_weapon.cpp_CWeapon_dtor_FUN_005edf80 ; 00506a5f
-        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 005edf80 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_005edf80(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00506a64
     MOV DL,byte ptr [ESP + 0xc]         ; 00506a67
     MOV EBX,EAX                         ; 00506a6b

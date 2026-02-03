@@ -54,7 +54,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   }
   local_13c = *(float *)(this_ptr->unk + 0x18);
   local_2c = *(float *)(this_ptr->unk + 0x1c);
-  if (((this_ptr->base).unk3 != 0) && ((this_ptr->base).control_type != 2)) {
+  if (((this_ptr->base).aim_mode != 0) && ((this_ptr->base).control_type != 2)) {
     local_13c = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 *
                 (float)2 * in_stack_00000008 + local_13c;
     local_1c = 0x3fc90fdb;

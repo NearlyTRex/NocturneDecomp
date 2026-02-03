@@ -14,25 +14,19 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr
   int iVar3;
   int iVar4;
   int config_param1;
-  uint in_stack_fffff8a0;
-  uint in_stack_fffff8a4;
-  char **in_stack_fffff8a8;
-  CStrList_vtable *in_stack_fffff8ac;
-  uint in_stack_fffff8b0;
+  CPickList local_760;
   CPickList local_3b8;
   
   config_param1 = 0;
   while( true ) {
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8a0);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_760);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_760.base,"Hide actors using list.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xfffff8a0,"Hide actors using list.");
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xfffff8a0,"Hide actors using wildcard");
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xfffff8a0,"Hide actors by type");
+              (&local_760.base,"Hide actors using wildcard");
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_760.base,"Hide actors by type");
     config_param1 =
          shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                   ((CPickList *)&stack0xfffff8a0,"Hide actors",config_param1,0);
+                   (&local_760,"Hide actors",config_param1,0);
     if (config_param1 < 0) break;
     if (config_param1 == 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b8);
@@ -60,9 +54,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr
         pcVar2[0x14b] = '\0';
         shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_3b8.base,iVar4);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_3b8,0,in_stack_fffff8a0,in_stack_fffff8a4,(uint)in_stack_fffff8a8,
-                 (uint)in_stack_fffff8ac,in_stack_fffff8b0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b8,0);
     }
     if ((config_param1 == 1) &&
        (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -96,18 +88,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"%d actors hidden",iVar4);
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff8a0,0,in_stack_fffff8a0,in_stack_fffff8a4,
-                 (uint)in_stack_fffff8a8,(uint)in_stack_fffff8ac,in_stack_fffff8b0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_760,0);
     }
     else {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff8a0,0,in_stack_fffff8a0,in_stack_fffff8a4,
-                 (uint)in_stack_fffff8a8,(uint)in_stack_fffff8ac,in_stack_fffff8b0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_760,0);
     }
   }
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffff8a0,0,in_stack_fffff8a0,in_stack_fffff8a4,
-             (uint)in_stack_fffff8a8,(uint)in_stack_fffff8ac,in_stack_fffff8b0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_760,0);
   return;
 }

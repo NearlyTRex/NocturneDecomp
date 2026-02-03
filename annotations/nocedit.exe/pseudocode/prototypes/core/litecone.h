@@ -49,4 +49,4 @@ void __cdecl CLightCone::getPropertyList(CLightCone *this_ptr,CActorPropertyList
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_00506e30
 // Address: 00506e30
-CLightCone * __cdecl CLightCone::dtor(CLightCone *this_ptr,uint d1,uint d2);
+CLightCone * __cdecl CLightCone::dtor(CLightCone *this_ptr,uint flags);

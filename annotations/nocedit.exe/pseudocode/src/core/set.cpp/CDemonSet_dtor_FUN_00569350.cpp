@@ -9,15 +9,15 @@
 CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
-  int extraout_EAX_02;
+  SVDBox *pSVar1;
+  SRoom *pSVar2;
+  C3DSLight *pCVar3;
+  C3DSCamera *pCVar4;
   
   core_set_cpp_CDemonSet_clear_FUN_005693c0(this_ptr);
-  core_set_cpp_freeVDBoxes_FUN_00571590((SVDBox **)this_ptr->vdir_boxes);
-  core_set_cpp_freeRooms_FUN_00571570((SRoom **)(extraout_EAX + -0x554));
-  core_set_cpp_free3DSLights_FUN_00571550((C3DSLight **)(extraout_EAX_00 + -0x141490));
-  core_set_cpp_free3DSCameras_FUN_00571530((C3DSCamera **)(extraout_EAX_01 + -0x19a2c));
-  return (CDemonSet *)(extraout_EAX_02 + -4);
+  pSVar1 = core_set_cpp_freeVDBoxes_FUN_00571590(this_ptr->vdir_boxes);
+  pSVar2 = core_set_cpp_freeRooms_FUN_00571570((SRoom *)(pSVar1[-0x15].unk + 4));
+  pCVar3 = core_set_cpp_free3DSLights_FUN_00571550((C3DSLight *)&pSVar2[-0x4b99].extents.z);
+  pCVar4 = core_set_cpp_free3DSCameras_FUN_00571530((C3DSCamera *)(pCVar3[-0x11].unk1 + 0x5ce));
+  return (CDemonSet *)&pCVar4[-1].unk4;
 }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array)
+; __cdecl CExplosion * __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion *objs)
 ;
 ; Parameters:
-; CExplosion * *   Stack[0x4]:4   array
+; CExplosion *     Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CExplosionTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c98d7
     PUSH EDX                            ; 004c98db
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c98dc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c98e1
     RET                                 ; 004c98e4
 

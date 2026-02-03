@@ -165,4 +165,4 @@ int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 
 // Original: core_sound.cpp_freeTrainNoises_FUN_005b3e50
 // Address: 005b3e50
-void __cdecl freeTrainNoises(STrainNoise **array);
+STrainNoise * __cdecl freeTrainNoises(STrainNoise *objs);

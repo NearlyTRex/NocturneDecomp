@@ -159,6 +159,6 @@ SCollisionReturnInfo * __cdecl SCollisionReturnInfo::ctor(SCollisionReturnInfo *
 // Address: 00574760
 SCollisionReturnInfo * __cdecl SCollisionReturnInfo::dtor(SCollisionReturnInfo *this_ptr);
 
-// Original: core_setcolid.cpp_freeRaytraceState_FUN_00574770
+// Original: core_setcolid.cpp_freeRaytraceStates_FUN_00574770
 // Address: 00574770
-void __cdecl freeRaytraceState(SRaytraceState **array);
+SRaytraceState * __cdecl freeRaytraceStates(SRaytraceState *objs);

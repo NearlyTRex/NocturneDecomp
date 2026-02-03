@@ -77,4 +77,4 @@ void __cdecl CSvetlana(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50
 // Address: 005d9f50
-CSvetlana * __cdecl CSvetlana::dtor(CSvetlana *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CSvetlana * __cdecl CSvetlana::dtor(CSvetlana *this_ptr,uint flags);

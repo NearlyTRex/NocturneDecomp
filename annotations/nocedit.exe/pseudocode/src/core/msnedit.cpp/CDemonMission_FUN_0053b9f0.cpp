@@ -26,12 +26,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMissio
   uint in_stack_fffffbcc;
   uint in_stack_fffffbd0;
   uint in_stack_fffffbd4;
-  uint in_stack_fffffbe0;
-  uint in_stack_fffffbe4;
-  char **in_stack_fffffbe8;
-  CStrList_vtable *in_stack_fffffbec;
-  uint in_stack_fffffbf0;
-  char local_a0 [100];
+  CPickList CStack_420;
   char local_3c [32];
   float local_1c [3];
   
@@ -57,8 +52,10 @@ core_msnedit_cpp_CDemonMission_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMissio
     INT_00680648 = iVar4;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                        ((CStrList *)&stack0xfffffbb8,iVar4);
-    sprintf(local_a0,"C%s",pcVar2);
-    this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
+    sprintf
+              (CStack_420.cancel_button.button_text + 0xa4,"C%s",pcVar2);
+    this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430
+                            (CStack_420.cancel_button.button_text + 0xa4);
     core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(this_ptr);
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     (this_ptr_00->location).area_id = *(int *)this_ptr->unk1;
@@ -126,8 +123,6 @@ core_msnedit_cpp_CDemonMission_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMissio
     }
   }
 LAB_0053bc0f:
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffbe0,0,in_stack_fffffbe0,in_stack_fffffbe4,
-             (uint)in_stack_fffffbe8,(uint)in_stack_fffffbec,in_stack_fffffbf0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_420,0);
   return;
 }

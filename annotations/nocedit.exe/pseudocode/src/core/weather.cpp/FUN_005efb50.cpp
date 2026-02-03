@@ -9,7 +9,7 @@
 void __cdecl core_weather_cpp_FUN_005efb50(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,200,&g_CVectorTypeInfo);
   return;

@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dynamite.cpp_FUN_0049ce70 at 0049cea8
+;   core_dynamite.cpp_CDynamite_fire_FUN_0049ce70 at 0049cea8
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062a0b3 = 0.000100000000000000

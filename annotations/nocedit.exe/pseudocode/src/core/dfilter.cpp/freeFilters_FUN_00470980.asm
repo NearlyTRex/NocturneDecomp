@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter **array)
+; __cdecl CDemonFilter * __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter *objs)
 ;
 ; Parameters:
-; CDemonFilter * * Stack[0x4]:4   array
+; CDemonFilter *   Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonFilterTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00470987
     PUSH EDX                            ; 0047098b
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0047098c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00470991
     RET                                 ; 00470994
 

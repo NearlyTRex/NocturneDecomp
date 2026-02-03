@@ -9,8 +9,8 @@
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_dtor_FUN_0051efc0(CLodFace *this_ptr)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)this_ptr->edge_perpendiculars);
-  return (CLodFace *)(iVar1 + -0x54);
+  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460(this_ptr->edge_perpendiculars);
+  return (CLodFace *)(pCVar1 + -7);
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint d1)
+; __cdecl CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLightActorTypeInfo
@@ -32,7 +32,7 @@ section .text
     ADD EBX,0x670                       ; 004235fe
     PUSH EBX                            ; 00423604
     CALL core_dlight.cpp_CDemonLight_dtor_FUN_00472760 ; 00423605
-        ;   XREF to: 00472760 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 00472760 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042360a
     PUSH 0x0                            ; 0042360d
     SUB EAX,0x2dc                       ; 0042360f
@@ -44,7 +44,7 @@ section .text
     LEA EBX,[EAX + 0xfffffc6c]          ; 0042361f
     PUSH EBX                            ; 00423625
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 00423626
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042362b
     MOV DL,byte ptr [ESP + 0xc]         ; 0042362e
     MOV EBX,EAX                         ; 00423632

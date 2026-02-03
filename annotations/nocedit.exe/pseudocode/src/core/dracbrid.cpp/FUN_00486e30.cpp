@@ -9,7 +9,7 @@
 void __cdecl core_dracbrid_cpp_FUN_00486e30(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,4,&g_CVectorTypeInfo);
   return;

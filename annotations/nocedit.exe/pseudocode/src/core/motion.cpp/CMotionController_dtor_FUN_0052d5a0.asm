@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,uint d1)
+; __cdecl CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40 at 0059de70

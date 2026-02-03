@@ -57,4 +57,4 @@ void __cdecl CHotDemon::writeDependencies(CHotDemon *this_ptr,_FILE *file_handle
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
 // Address: 004f7a40
-CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

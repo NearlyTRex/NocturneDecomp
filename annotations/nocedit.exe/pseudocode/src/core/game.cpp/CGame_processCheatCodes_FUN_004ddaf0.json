@@ -2,27 +2,177 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 28,
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
         "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 253,
         "message": "'int3' was not declared in this scope; did you mean 'int'?"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 257,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 293,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 331,
+        "line": 330,
         "message": "request for member '_4_4_' in 'local_2ac', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 332,
+        "line": 331,
         "message": "request for member '_4_4_' in 'local_2ac', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 333,
+        "line": 332,
         "message": "request for member '_0_4_' in 'local_2ac', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
@@ -34,82 +184,346 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 336,
+        "line": 335,
         "message": "'stack0xfffffba8' was not declared in this scope"
       },
       {
-        "category": "other",
-        "column": 32,
-        "line": 616,
+        "category": "const_error",
+        "column": 74,
+        "line": 340,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 374,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 416,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 468,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 509,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 543,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 578,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 67,
+        "line": 607,
         "message": "lvalue required as unary '&' operand"
       },
       {
-        "category": "other",
-        "column": 75,
-        "line": 622,
+        "category": "lvalue_required",
+        "column": 74,
+        "line": 614,
         "message": "lvalue required as unary '&' operand"
       },
       {
-        "category": "other",
-        "column": 75,
-        "line": 625,
+        "category": "lvalue_required",
+        "column": 74,
+        "line": 617,
         "message": "lvalue required as unary '&' operand"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 626,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 655,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 708,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 751,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 792,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 827,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 861,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 895,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 930,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 965,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1000,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1035,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1068,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1116,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1155,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
-        "column": 72,
-        "line": 1214,
+        "column": 71,
+        "line": 1191,
         "message": "'DAT_0067b5f0' was not declared in this scope; did you mean 'DAT_0067d5c0'?"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1202,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 1265,
+        "line": 1241,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 1265,
+        "line": 1241,
         "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1246,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1287,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1319,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1349,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1379,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1433,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1466,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1498,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1537,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1571,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1599,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1627,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1752,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1781,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 63,
-        "line": 1849,
+        "line": 1807,
         "message": "invalid conversion from 'void*' to 'CGasMask*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1822,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1853,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1891,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1919,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 72,
+        "line": 1947,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+      },
+      {
+        "category": "const_error",
+        "column": 74,
+        "line": 1976,
+        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
       }
     ],
     "success": false,
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 214,
+        "column": 40,
+        "line": 215,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 219,
+        "line": 220,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 221,
+        "line": 222,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 228,
+        "line": 229,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -127,648 +541,648 @@
       {
         "category": "other",
         "column": 23,
+        "line": 403,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 406,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 409,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 46,
-        "line": 415,
+        "line": 412,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 451,
+        "line": 447,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 459,
+        "line": 455,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 468,
+        "line": 464,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 502,
+        "line": 497,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 505,
+        "line": 500,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 511,
+        "line": 506,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 543,
+        "line": 537,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 545,
+        "line": 539,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 578,
+        "line": 571,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 580,
+        "line": 573,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 619,
+        "column": 54,
+        "line": 611,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 628,
+        "line": 620,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 692,
+        "line": 682,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 694,
+        "line": 684,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 695,
+        "line": 685,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 709,
+        "line": 699,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 714,
+        "line": 704,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 749,
+        "line": 738,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 755,
+        "line": 744,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 759,
+        "line": 748,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 792,
+        "line": 780,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 795,
+        "line": 783,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 800,
+        "line": 788,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 803,
+        "line": 791,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 806,
+        "line": 793,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 835,
+        "line": 822,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 838,
+        "line": 825,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 842,
+        "line": 828,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 871,
+        "line": 857,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 874,
+        "line": 860,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 878,
+        "line": 863,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 906,
+        "line": 891,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 909,
+        "line": 894,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 912,
+        "line": 896,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 941,
+        "line": 925,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 945,
+        "line": 929,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 948,
+        "line": 931,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 977,
+        "line": 960,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 981,
+        "line": 964,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 985,
+        "line": 967,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1013,
+        "line": 995,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 1017,
+        "line": 999,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1020,
+        "line": 1001,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1049,
+        "line": 1030,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 1053,
+        "line": 1034,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1056,
+        "line": 1036,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1085,
+        "line": 1065,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 1115,
+        "column": 55,
+        "line": 1094,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 1116,
+        "column": 55,
+        "line": 1095,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 1117,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 1118,
+        "column": 55,
+        "line": 1096,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1119,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 1120,
+        "line": 1097,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1121,
+        "line": 1098,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 1099,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1122,
+        "line": 1100,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1123,
+        "line": 1101,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1124,
+        "line": 1102,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 1125,
+        "line": 1103,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 1104,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1128,
+        "line": 1107,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1134,
+        "line": 1113,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1171,
+        "line": 1149,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1173,
+        "line": 1151,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1211,
+        "line": 1188,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1216,
+        "line": 1193,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1252,
+        "line": 1228,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 1258,
+        "line": 1234,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 1259,
+        "line": 1235,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 1260,
+        "line": 1236,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 1265,
+        "line": 1241,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1300,
+        "line": 1275,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1303,
+        "line": 1278,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1308,
+        "line": 1283,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1340,
+        "line": 1314,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 1342,
+        "line": 1316,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1372,
+        "line": 1345,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1403,
+        "line": 1375,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 1440,
+        "line": 1411,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 74,
-        "line": 1443,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 1447,
+        "column": 73,
+        "line": 1414,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 1453,
+        "line": 1418,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 1424,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1458,
+        "line": 1429,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1492,
+        "line": 1462,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 1559,
+        "line": 1527,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 1562,
+        "line": 1530,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1599,
+        "line": 1566,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 1601,
+        "line": 1568,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1693,
+        "line": 1657,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 1696,
+        "line": 1660,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 1703,
+        "line": 1667,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 1705,
+        "line": 1669,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 1710,
+        "column": 79,
+        "line": 1673,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 1730,
+        "column": 44,
+        "line": 1693,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 1751,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 1780,
+        "column": 44,
+        "line": 1713,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 1783,
+        "line": 1741,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 1744,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 1849,
+        "line": 1807,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 1861,
+        "line": 1819,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 1893,
+        "line": 1850,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 1929,
+        "column": 38,
+        "line": 1885,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 1933,
+        "line": 1888,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 1963,
+        "column": 55,
+        "line": 1917,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 1992,
+        "column": 55,
+        "line": 1945,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 2021,
+        "column": 55,
+        "line": 1973,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2657,
+    "complexity_score": 2608,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
-    "pseudocode_lines": 2047,
+    "pseudocode_lines": 1998,
     "suspect_count": 58,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -778,7 +1192,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 5994
+    "total_lines": 5945
   },
   "cross_references": [
     {
@@ -868,14 +1282,14 @@
       "name": "core_game.cpp_CGame_FUN_004dda80"
     },
     {
-      "addr": "004dd930",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004dd930"
-    },
-    {
       "addr": "004dd870",
       "is_variadic": false,
       "name": "core_game.cpp_giveHeroWeapon_FUN_004dd870"
+    },
+    {
+      "addr": "004dd930",
+      "is_variadic": false,
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930"
     },
     {
       "addr": "004e5d00",
@@ -2558,408 +2972,408 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 221,
+      "line": 222,
       "match": "code",
-      "text": "pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
+      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 245,
+      "line": 246,
       "match": "CONCAT31",
-      "text": "iVar10 = CONCAT31((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
+      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 245,
+      "line": 246,
       "match": "int3",
-      "text": "iVar10 = CONCAT31((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
+      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
       "type": "nonstandard_int"
     },
     {
       "description": "Undefined global data reference",
       "line": 250,
       "match": "DAT_0062ba32",
-      "text": "((SEncryptedMessage *)DAT_0062ba32);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062ba32);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 287,
+      "line": 286,
       "match": "DAT_0062ba90",
-      "text": "((SEncryptedMessage *)DAT_0062ba90);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062ba90);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 323,
+      "match": "._4_4_",
+      "text": "local_2ac._4_4_ = (uint)((ulonglong)dVar6 >> 0x20);",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 324,
       "match": "._4_4_",
-      "text": "local_2ac._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);",
+      "text": "uVar7 = local_2ac._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 325,
-      "match": "._4_4_",
-      "text": "uVar8 = local_2ac._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 326,
       "match": "._0_4_",
-      "text": "local_2ac._0_4_ = SUB84(dVar7,0);",
+      "text": "local_2ac._0_4_ = SUB84(dVar6,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 326,
+      "line": 325,
       "match": "SUB84",
-      "text": "local_2ac._0_4_ = SUB84(dVar7,0);",
+      "text": "local_2ac._0_4_ = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 329,
+      "line": 328,
       "match": "&stack0xfffffba8",
-      "text": "sprintf(&stack0xfffffba8,\"FPS: %3.2lf\",uVar9,uVar8);",
+      "text": "sprintf(&stack0xfffffba8,\"FPS: %3.2lf\",uVar8,uVar7);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 330,
+      "line": 329,
       "match": "&stack0xfffffba8",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffba8,5.0);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 335,
+      "line": 333,
       "match": "DAT_0062bad0",
-      "text": "((SEncryptedMessage *)DAT_0062bad0);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bad0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 370,
+      "line": 367,
       "match": "DAT_0062bb05",
-      "text": "((SEncryptedMessage *)DAT_0062bb05);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bb05);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 413,
+      "line": 409,
       "match": "DAT_0062bb63",
-      "text": "((SEncryptedMessage *)DAT_0062bb63);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bb63);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 466,
+      "line": 461,
       "match": "DAT_0062bbc4",
-      "text": "((SEncryptedMessage *)DAT_0062bbc4);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bbc4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 508,
+      "line": 502,
       "match": "DAT_0062bc2d",
-      "text": "((SEncryptedMessage *)DAT_0062bc2d);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bc2d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 543,
+      "line": 536,
       "match": "DAT_0062bc80",
-      "text": "((SEncryptedMessage *)DAT_0062bc80);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bc80);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 579,
+      "line": 571,
       "match": "DAT_0062bccf",
-      "text": "((SEncryptedMessage *)DAT_0062bccf);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bccf);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 628,
+      "line": 619,
       "match": "DAT_0062bd02",
-      "text": "((SEncryptedMessage *)DAT_0062bd02);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bd02);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 658,
+      "line": 648,
       "match": "DAT_0062bd39",
-      "text": "((SEncryptedMessage *)DAT_0062bd39);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bd39);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 690,
+      "line": 680,
       "match": "NAN",
       "text": "this_ptr_01[2].location.position.y = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 712,
+      "line": 701,
       "match": "DAT_0062bdbc",
-      "text": "((SEncryptedMessage *)DAT_0062bdbc);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bdbc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 756,
+      "line": 744,
       "match": "DAT_0062be21",
-      "text": "((SEncryptedMessage *)DAT_0062be21);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062be21);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 798,
+      "line": 785,
       "match": "DAT_0062be9e",
-      "text": "((SEncryptedMessage *)DAT_0062be9e);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062be9e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 834,
+      "line": 820,
       "match": "DAT_0062bef3",
-      "text": "((SEncryptedMessage *)DAT_0062bef3);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bef3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 869,
+      "line": 854,
       "match": "DAT_0062bf3e",
-      "text": "((SEncryptedMessage *)DAT_0062bf3e);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bf3e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 904,
+      "line": 888,
       "match": "DAT_0062bf92",
-      "text": "((SEncryptedMessage *)DAT_0062bf92);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bf92);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 940,
+      "line": 923,
       "match": "DAT_0062bfe9",
-      "text": "((SEncryptedMessage *)DAT_0062bfe9);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bfe9);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 976,
+      "line": 958,
       "match": "DAT_0062c04b",
-      "text": "((SEncryptedMessage *)DAT_0062c04b);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c04b);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1012,
+      "line": 993,
       "match": "DAT_0062c0a8",
-      "text": "((SEncryptedMessage *)DAT_0062c0a8);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c0a8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1048,
+      "line": 1028,
       "match": "DAT_0062c10c",
-      "text": "((SEncryptedMessage *)DAT_0062c10c);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c10c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1082,
+      "line": 1061,
       "match": "DAT_0062c141",
-      "text": "((SEncryptedMessage *)DAT_0062c141);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c141);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1131,
+      "line": 1109,
       "match": "DAT_0062c203",
-      "text": "((SEncryptedMessage *)DAT_0062c203);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c203);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1171,
+      "line": 1148,
       "match": "DAT_0062c263",
-      "text": "((SEncryptedMessage *)DAT_0062c263);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c263);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1207,
+      "line": 1184,
       "match": "DAT_0067b5f0",
       "text": "(g_CEditorToolsPtr,\"Raise an event\",&DAT_0067b5f0,100,1),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1219,
+      "line": 1195,
       "match": "DAT_0062c2b1",
-      "text": "((SEncryptedMessage *)DAT_0062c2b1);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2b1);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1254,
+      "line": 1230,
       "match": "SQRT",
       "text": "if (SQRT(fStack_2b0 * fStack_2b0 + fStack_2b8 * fStack_2b8 + local_2b4 * local_2b4) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1258,
+      "line": 1234,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar17 + 0x154) + 0x11c))();",
+      "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1264,
+      "line": 1239,
       "match": "DAT_0062c2f2",
-      "text": "((SEncryptedMessage *)DAT_0062c2f2);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2f2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1306,
+      "line": 1280,
       "match": "DAT_0062c377",
-      "text": "((SEncryptedMessage *)DAT_0062c377);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c377);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1339,
+      "line": 1312,
       "match": "DAT_0062c3c7",
-      "text": "((SEncryptedMessage *)DAT_0062c3c7);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c3c7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1370,
+      "line": 1342,
       "match": "DAT_0062c406",
-      "text": "((SEncryptedMessage *)DAT_0062c406);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c406);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1401,
+      "line": 1372,
       "match": "DAT_0062c445",
-      "text": "((SEncryptedMessage *)DAT_0062c445);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c445);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1456,
+      "line": 1426,
       "match": "DAT_0062c4f0",
-      "text": "((SEncryptedMessage *)DAT_0062c4f0);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c4f0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1490,
+      "line": 1459,
       "match": "DAT_0062c52f",
-      "text": "((SEncryptedMessage *)DAT_0062c52f);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c52f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1523,
+      "line": 1491,
       "match": "DAT_0062c561",
-      "text": "((SEncryptedMessage *)DAT_0062c561);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c561);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1563,
+      "line": 1530,
       "match": "DAT_0062c5bc",
-      "text": "((SEncryptedMessage *)DAT_0062c5bc);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c5bc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1598,
+      "line": 1564,
       "match": "DAT_0062c61a",
-      "text": "((SEncryptedMessage *)DAT_0062c61a);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c61a);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1627,
+      "line": 1592,
       "match": "DAT_0062c654",
-      "text": "((SEncryptedMessage *)DAT_0062c654);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c654);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1656,
+      "line": 1620,
       "match": "DAT_0062c68b",
-      "text": "((SEncryptedMessage *)DAT_0062c68b);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1786,
+      "line": 1745,
       "match": "DAT_0062c710",
-      "text": "((SEncryptedMessage *)DAT_0062c710);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c710);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1816,
+      "line": 1774,
       "match": "DAT_0062c744",
-      "text": "((SEncryptedMessage *)DAT_0062c744);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c744);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1858,
+      "line": 1815,
       "match": "DAT_0062c7a0",
-      "text": "((SEncryptedMessage *)DAT_0062c7a0);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7a0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1890,
+      "line": 1846,
       "match": "DAT_0062c7e5",
-      "text": "((SEncryptedMessage *)DAT_0062c7e5);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7e5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1930,
+      "line": 1884,
       "match": "DAT_0062c830",
-      "text": "((SEncryptedMessage *)DAT_0062c830);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c830);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1959,
+      "line": 1912,
       "match": "DAT_0062c869",
-      "text": "((SEncryptedMessage *)DAT_0062c869);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c869);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1988,
+      "line": 1940,
       "match": "DAT_0062c8a0",
-      "text": "((SEncryptedMessage *)DAT_0062c8a0);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8a0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 2018,
+      "line": 1969,
       "match": "DAT_0062c8da",
-      "text": "((SEncryptedMessage *)DAT_0062c8da);",
+      "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8da);",
       "type": "undefined_data"
     }
   ]

@@ -277,4 +277,4 @@ int __cdecl FUN_005c69a0(void);
 
 // Original: core_stranger.cpp_CStranger_dtor_FUN_005c69c0
 // Address: 005c69c0
-CStranger * __cdecl CStranger::dtor(CStranger *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CStranger * __cdecl CStranger::dtor(CStranger *this_ptr,uint flags);

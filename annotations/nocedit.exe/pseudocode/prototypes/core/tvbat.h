@@ -81,4 +81,4 @@ void __cdecl CTVBat(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_dtor_FUN_005e5460
 // Address: 005e5460
-CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);

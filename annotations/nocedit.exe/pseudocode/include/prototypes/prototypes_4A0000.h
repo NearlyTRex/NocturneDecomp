@@ -2,8 +2,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEdButton.h"
@@ -19,6 +21,7 @@
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 
@@ -40,7 +43,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230 (CEditorTools *editor_tools,int line_position);
-uchar __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr);
+uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380 (CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0 (CEditorTools *this_ptr,char *text_data);
@@ -54,7 +57,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004a2660 (CEditor
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920 (CEditorTools *this_ptr,int cursor_type,int width,int height);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(CStrList *this_ptr);
-CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint d1,uint d2);
+CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_004a2a90(CStrList *this_ptr,CStrList *other);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *dest_ptr,CStrList *source_ptr);
 void __cdecl shape_edittool_cpp_CStrList_clear_FUN_004a2b10(CStrList *this_ptr);
@@ -80,7 +83,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0 (CS
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0 (CStrList *this_ptr,char *base_path,char *search_path);
 CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(CPickList *this_ptr);
-CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80 (CPickList *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6);
+CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(CPickList *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_004a3d20(CPickList *this_ptr,char *text);
 void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList *this_ptr,char *text);
 void __cdecl shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(CPickList *this_ptr,int result_value);
@@ -144,35 +147,35 @@ int __cdecl shape_edittool_cpp_getFontSpaceCharWidth_FUN_004a6f10(CBitFont *font
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f21(int *dest_ptr,int *src_ptr);
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f31(int *dest_ptr,int *src_ptr);
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dest_ptr,int *src_ptr);
-void __cdecl shape_edittool_cpp_freeVector8_FUN_004a6f50(CVector3f **array);
+CVector3f * __cdecl shape_edittool_cpp_freeVectors_FUN_004a6f50(CVector3f *objs);
 void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void);
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_004a6fd0(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephantGun *this_ptr);
-void __cdecl core_elephant_cpp_CElephantGun_FUN_004a7070(CElephantGun *this_ptr,float delta_time);
-int __cdecl core_elephant_cpp_FUN_004a7160(void);
-void __cdecl core_elephant_cpp_FUN_004a78a0(void);
-float __cdecl core_elephant_cpp_FUN_004a79b0(void);
-void __cdecl core_elephant_cpp_FUN_004a79f0(void);
-void * __cdecl core_elephant_cpp_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint d1,uint d2);
+void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time);
+int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_ptr);
+void __cdecl core_elephant_cpp_CElephantGun_FUN_004a78a0(CElephantGun *this_ptr);
+float __cdecl core_elephant_cpp_CElephantGun_FUN_004a79b0(CElephantGun *this_ptr);
+void __cdecl core_elephant_cpp_CElephantGun_FUN_004a79f0(CElephantGun *this_ptr);
+void * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_staticInit_FUN_004a7c30(void);
 CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void);
-CDemonActorType * __cdecl core_emitter_cpp_OtherClass_FUN_004a7c90(void);
+CDemonActorType * __cdecl core_emitter_cpp_CEmitter_getActorType_FUN_004a7c90(CEmitter *this_ptr);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_ptr);
-void __cdecl core_emitter_cpp_FUN_004a7e00(void);
-void __cdecl core_emitter_cpp_FUN_004a7e80(void);
-void __cdecl core_emitter_cpp_FUN_004a8070(void);
-int __cdecl core_emitter_cpp_FUN_004a8860(void);
-void __cdecl core_emitter_cpp_FUN_004a8a80(void);
-void __cdecl core_emitter_cpp_FUN_004a8ad0(void);
-void __cdecl core_emitter_cpp_CEmitter_load_FUN_004a8b30(void);
-int __cdecl core_emitter_cpp_FUN_004a8d10(void);
-CVector3f * __cdecl core_emitter_cpp_FUN_004a8d20(void);
-void __cdecl core_emitter_cpp_FUN_004a8db0(void);
-void __cdecl core_emitter_cpp_FUN_004a8fe0(void);
-void __cdecl core_emitter_cpp_FUN_004a9350(void);
-void __cdecl core_emitter_cpp_FUN_004a9390(void);
-CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint d1,uint d2);
+void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr);
+void __cdecl core_emitter_cpp_CEmitter_FUN_004a7e80(CEmitter *this_ptr);
+void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,float delta_time);
+int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_ptr);
+void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004a8a80(CEmitter *this_ptr,int layer_flag);
+CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_004a8ad0(CEmitter *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004a8b30(CEmitter *this_ptr);
+int __cdecl core_emitter_cpp_CEmitter_hasCollision_FUN_004a8d10 (CEmitter *this_ptr,SCollisionInfo *collision_info);
+CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr);
+void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0 (CEmitter *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *this_ptr);
+void __cdecl core_emitter_cpp_CEmitter_showEditorHelp_FUN_004a9350(CEmitter *this_ptr,int *y_pos);
+void __cdecl core_emitter_cpp_CEmitter_writeDependencies_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle);
+CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo *this_ptr,SLaserInfo *copy);
 SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void);
@@ -187,7 +190,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9ef0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fa0(CEnemy *this_ptr);
+void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0(CEnemy *this_ptr,int layer_flag);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa030(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr);

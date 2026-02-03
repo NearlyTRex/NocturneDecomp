@@ -41,4 +41,4 @@ void __cdecl FUN_005888f0(void);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0
 // Address: 00588ae0
-CShotgun * __cdecl CShotgun::dtor(CShotgun *this_ptr,uint d1,uint d2);
+CShotgun * __cdecl CShotgun::dtor(CShotgun *this_ptr,uint flags);

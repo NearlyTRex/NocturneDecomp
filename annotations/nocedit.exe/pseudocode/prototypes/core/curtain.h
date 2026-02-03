@@ -59,9 +59,9 @@ int __cdecl FUN_0044b370(void);
 // Address: 0044b380
 void __cdecl FUN_0044b380(void);
 
-// Original: core_curtain.cpp_CCurtain_load_FUN_0044b3e0
+// Original: core_curtain.cpp_CCurtain_archive_FUN_0044b3e0
 // Address: 0044b3e0
-void __cdecl CCurtain::load(void);
+void __cdecl CCurtain::archive(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_FUN_0044b600
 // Address: 0044b600
@@ -105,4 +105,4 @@ void __cdecl FUN_0044bad0(void);
 
 // Original: core_curtain.cpp_freeVectors_FUN_0044baf0
 // Address: 0044baf0
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

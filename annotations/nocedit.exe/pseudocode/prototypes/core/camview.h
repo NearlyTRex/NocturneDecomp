@@ -9,7 +9,7 @@ CCameraView * __cdecl CCameraView::ctor(CCameraView *this_ptr);
 
 // Original: core_camview.cpp_CCameraView_dtor_FUN_00427d00
 // Address: 00427d00
-CCameraView * __cdecl CCameraView::dtor(CCameraView *this_ptr,uint d1);
+CCameraView * __cdecl CCameraView::dtor(CCameraView *this_ptr,uint flags);
 
 // Original: core_camview.cpp_CCameraView_FUN_00427d20
 // Address: 00427d20

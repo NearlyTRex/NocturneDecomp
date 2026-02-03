@@ -209,7 +209,7 @@ void __cdecl CEditorTools::drawWindowSeparator(CEditorTools *editor_tools,int li
 
 // Original: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 // Address: 004a1330
-uchar __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
+uint __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 // Address: 004a1380
@@ -265,7 +265,7 @@ CStrList * __cdecl CStrList::ctor(CStrList *this_ptr);
 
 // Original: shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 // Address: 004a2a40
-CStrList * __cdecl CStrList::dtor(CStrList *this_ptr,uint d1,uint d2);
+CStrList * __cdecl CStrList::dtor(CStrList *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CStrList_copy_FUN_004a2a90
 // Address: 004a2a90
@@ -369,7 +369,7 @@ CPickList * __cdecl CPickList::ctor(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 // Address: 004a3c80
-CPickList * __cdecl CPickList::dtor(CPickList *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6);
+CPickList * __cdecl CPickList::dtor(CPickList *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20
 // Address: 004a3d20
@@ -623,6 +623,6 @@ int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 // Address: 004a6f40
 int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 
-// Original: shape_edittool.cpp_freeVector8_FUN_004a6f50
+// Original: shape_edittool.cpp_freeVectors_FUN_004a6f50
 // Address: 004a6f50
-void __cdecl freeVector8(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

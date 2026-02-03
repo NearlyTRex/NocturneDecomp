@@ -1161,7 +1161,7 @@ section .text
     LEA EAX,[ESP + 0x189c]              ; 00579911
     PUSH EAX                            ; 00579918
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00579919
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057991e
     JMP 0x00579675                      ; 00579921
         ;   XREF to: 00579675 (UNCONDITIONAL_JUMP)  ; LAB_00579675
@@ -1277,7 +1277,7 @@ section .text
     LEA EAX,[ESP + 0x189c]              ; 00579a63
     PUSH EAX                            ; 00579a6a
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00579a6b
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00579a70
     ADD ESP,0x2468                      ; 00579a73
     POP EBP                             ; 00579a79
@@ -1290,7 +1290,7 @@ section .text
     LEA EAX,[ESP + 0x189c]              ; 00579a80
     PUSH EAX                            ; 00579a87
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00579a88
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00579a8d
     JMP 0x0057904b                      ; 00579a90
         ;   XREF to: 0057904b (UNCONDITIONAL_JUMP)  ; LAB_0057904b

@@ -9,7 +9,7 @@
 void __cdecl core_stairs_cpp_FUN_005bac80(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,0x28,&g_CDemonTriangleTypeInfo);
   return;

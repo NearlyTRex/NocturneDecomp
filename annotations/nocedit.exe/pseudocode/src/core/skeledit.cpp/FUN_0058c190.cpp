@@ -40,10 +40,6 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
   CDeformableModel *in_stack_00000004;
   CDeformableModel *in_stack_00000008;
   CDeformableModel *in_stack_ffff5dd8;
-  uint in_stack_ffff5ddc;
-  uint in_stack_ffff5de0;
-  uint in_stack_ffff5de4;
-  uint in_stack_ffff5de8;
   float afStack_a1d0 [3279];
   int aiStack_6e94 [4701];
   float local_2520 [1200];
@@ -155,9 +151,7 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
           core_skeledit_cpp_FUN_0058afe0();
         }
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1260,0,(uint)in_stack_ffff5dd8,in_stack_ffff5ddc,in_stack_ffff5de0,
-                 in_stack_ffff5de4,in_stack_ffff5de8);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1260,0);
     }
     return 0;
   }

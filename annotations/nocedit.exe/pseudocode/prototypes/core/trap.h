@@ -69,4 +69,4 @@ void __cdecl CTrap(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_dtor_FUN_005deab0
 // Address: 005deab0
-CTrap * __cdecl CTrap::dtor(CTrap *this_ptr,uint d1,uint d2);
+CTrap * __cdecl CTrap::dtor(CTrap *this_ptr,uint flags);

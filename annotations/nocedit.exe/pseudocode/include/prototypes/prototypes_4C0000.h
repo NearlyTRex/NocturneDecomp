@@ -4,7 +4,9 @@
 #include "system/basetypes.h"
 #include "system/stdarg.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
 #include "types/classes/CCrater.h"
@@ -34,6 +36,7 @@
 #include "types/classes/CToss.h"
 #include "types/classes/CTrail.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SFly.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -195,25 +198,25 @@ CBulletHole * __cdecl core_fire_cpp_CBulletHole_dtor_FUN_004c9790(CBulletHole *t
 CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_ctor_FUN_004c97a0(CSmokeParticle *this_ptr);
 CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_dtor_FUN_004c97b0(CSmokeParticle *this_ptr);
 CKeyFramedModelInstance * __cdecl core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_004c97c0(CKeyFramedModelInstance *this_ptr);
-void __cdecl core_fire_cpp_freeRainDrops_FUN_004c97d0(CRainDrop **array);
-void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array);
-void __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell **array);
-void __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail **array);
-void __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightningBolt **array);
-void __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame **array);
-void __cdecl core_fire_cpp_freeCraters_FUN_004c9890(CCrater **array);
-void __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss **array);
-void __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion **array);
-void __cdecl core_fire_cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam **array);
-void __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock **array);
-void __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball **array);
-void __cdecl core_fire_cpp_freeBulletTrails_FUN_004c9950(CBulletTrail **array);
-void __cdecl core_fire_cpp_freeGlassParticles_FUN_004c9970(CGlassParticle **array);
-void __cdecl core_fire_cpp_freeMuzzleFlashes_FUN_004c9990(CMuzzleFlash **array);
-void __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark **array);
-void __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake **array);
-void __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole **array);
-void __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle **array);
+CRainDrop * __cdecl core_fire_cpp_freeRainDrops_FUN_004c97d0(CRainDrop *objs);
+CPopcorn * __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn *objs);
+CShell * __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell *objs);
+CTrail * __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail *objs);
+CLightningBolt * __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightningBolt *objs);
+CGunFlame * __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame *objs);
+CCrater * __cdecl core_fire_cpp_freeCraters_FUN_004c9890(CCrater *objs);
+CToss * __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss *objs);
+CExplosion * __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion *objs);
+CLaserBeam * __cdecl core_fire_cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam *objs);
+CRock * __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock *objs);
+CFireball * __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball *objs);
+CBulletTrail * __cdecl core_fire_cpp_freeBulletTrails_FUN_004c9950(CBulletTrail *objs);
+CGlassParticle * __cdecl core_fire_cpp_freeGlassParticles_FUN_004c9970(CGlassParticle *objs);
+CMuzzleFlash * __cdecl core_fire_cpp_freeMuzzleFlashes_FUN_004c9990(CMuzzleFlash *objs);
+CSpark * __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark *objs);
+CStake * __cdecl core_fire_cpp_freeStakes_FUN_004c99d0(CStake *objs);
+CBulletHole * __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole *objs);
+CSmokeParticle * __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokeParticle *objs);
 void __cdecl core_flame_cpp_staticInit_FUN_004c9a30(void);
 CFlame * __cdecl core_flame_cpp_factoryFunc_FUN_004c9a60(void);
 CDemonActorType * __cdecl core_flame_cpp_CFlame_getActorType_FUN_004c9a90(CFlame *this_ptr);
@@ -224,7 +227,7 @@ float __cdecl core_flame_cpp_FUN_004ca110(void);
 void __cdecl core_flame_cpp_FUN_004caa70(void);
 void __cdecl core_flame_cpp_FUN_004caa80(void);
 void __cdecl core_flame_cpp_FUN_004cac00(void);
-void __cdecl core_flame_cpp_CFlame_load_FUN_004cac60(void);
+void __cdecl core_flame_cpp_CFlame_archive_FUN_004cac60(CFlame *this_ptr);
 int __cdecl core_flame_cpp_FUN_004cad80(void);
 void __cdecl core_flamecan_cpp_FUN_004cad90(void);
 void __cdecl core_flame_cpp_FUN_004cae70(void);
@@ -235,37 +238,37 @@ void __cdecl core_flamecan_cpp_staticInit_FUN_004cb0f0(void);
 CFlameCan * __cdecl core_flamecan_cpp_factoryFunc_FUN_004cb120(void);
 CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_004cb150(CFlameCan *this_ptr);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan *this_ptr);
-void __cdecl core_flamecan_cpp_FUN_004cb200(void);
-void __cdecl core_flamecan_cpp_FUN_004cb340(void);
-void __cdecl core_flamecan_cpp_FUN_004cb390(void);
-int __cdecl core_flamecan_cpp_FUN_004cb4c0(void);
-int __cdecl core_flamecan_cpp_FUN_004cb550(void);
-int __cdecl core_flamecan_cpp_FUN_004cb580(void);
-void __cdecl core_flamecan_cpp_CFlameCan_load_FUN_004cb620(void);
-int __cdecl core_flamecan_cpp_FUN_004cb680(void);
-float * __cdecl core_flamecan_cpp_FUN_004cb690(void);
-void __cdecl core_flamecan_cpp_FUN_004cb6e0(void);
-void __cdecl core_flamecan_cpp_FUN_004cb750(void);
-CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint d1,uint d2,uint d3);
+void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr);
+void __cdecl core_flamecan_cpp_CFlameCan_FUN_004cb340(CFlameCan *this_ptr);
+void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_ptr,float delta_time);
+int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004cb4c0(CFlameCan *this_ptr);
+int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004cb550(CFlameCan *this_ptr);
+int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004cb580 (CFlameCan *this_ptr,CVector3f *out_points_array);
+void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004cb620(CFlameCan *this_ptr);
+int __cdecl core_flamecan_cpp_CFlameCan_hasCollision_FUN_004cb680 (CFlameCan *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004cb690(CFlameCan *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0 (CFlameCan *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_flamecan_cpp_CFlameCan_writeDependencies_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle);
+CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint flags);
 void __cdecl core_flamegun_cpp_staticInit_FUN_004cb810(void);
 CFlameThrower * __cdecl core_flamegun_cpp_factoryFunc_FUN_004cb840(void);
 CDemonActorType * __cdecl core_flamegun_cpp_CFlameThrower_getActorType_FUN_004cb870(CFlameThrower *this_ptr);
 CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlameThrower *this_ptr);
-int __cdecl core_flamegun_cpp_FUN_004cb920(void);
+int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004cb920(CFlameThrower *this_ptr);
 void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower *this_ptr,float delta_time);
-float __cdecl core_flamegun_cpp_FUN_004cbab0(void);
-void __cdecl core_flamegun_cpp_FUN_004cbad0(void);
-float __cdecl core_flamegun_cpp_FUN_004cbad1(void);
-CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint d1,uint d2);
+float __cdecl core_flamegun_cpp_CFlameThrower_FUN_004cbab0(CFlameThrower *this_ptr);
+void __cdecl core_flamegun_cpp_CFlameThrower_FUN_004cbad0(CFlameThrower *this_ptr);
+float __cdecl core_flamegun_cpp_CFlameThrower_FUN_004cbad1(CFlameThrower *this_ptr);
+CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint flags);
 void __cdecl core_flashlit_cpp_staticInit_FUN_004cbb50(void);
 CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_004cbb80(void);
-CDemonActorType * __cdecl core_flamegun_cpp_CFlashlight_getActorType_FUN_004cbbb0(CFlashlight *this_ptr);
-CFlashlight * __cdecl core_flamegun_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight *this_ptr);
-int __cdecl core_flamegun_cpp_FUN_004cbc40(void);
-int __cdecl core_flamegun_cpp_FUN_004cbc50(void);
-CFlashlight * __cdecl core_flamegun_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashlight *this_ptr,uint d1,uint d2);
-void __cdecl core_flamegun_cpp_staticInit_FUN_004cbcb0(void);
-void __cdecl core_flamegun_cpp_initializeFlamegun_FUN_004cbce0(void);
+CDemonActorType * __cdecl core_flashlit_cpp_CFlashlight_getActorType_FUN_004cbbb0(CFlashlight *this_ptr);
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashlight *this_ptr);
+int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_004cbc40(CFlashlight *this_ptr);
+int __cdecl core_flashlit_cpp_CFlashlight_FUN_004cbc50(CFlashlight *this_ptr);
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashlight *this_ptr,uint flags);
+void __cdecl core_flattn_cpp_staticInit_FUN_004cbcb0(void);
+void __cdecl core_flattn_cpp_doNothing_FUN_004cbce0(void);
 void __cdecl core_flies_cpp_staticInit_FUN_004cbcf0(void);
 CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_004cbd20(void);
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_004cbd50(CFlies *this_ptr);

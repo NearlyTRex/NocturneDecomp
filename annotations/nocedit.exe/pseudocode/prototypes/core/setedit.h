@@ -201,7 +201,7 @@ void __cdecl FUN_00581590(void);
 
 // Original: core_setedit.cpp_FUN_005817d0
 // Address: 005817d0
-void FUN_005817d0(void *unk);
+void __cdecl FUN_005817d0(void *unk);
 
 // Original: core_setedit.cpp_CDemonSet_FUN_00581aa0
 // Address: 00581aa0

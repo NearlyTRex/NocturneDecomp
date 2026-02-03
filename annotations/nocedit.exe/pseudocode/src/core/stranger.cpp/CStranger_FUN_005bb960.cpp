@@ -695,23 +695,22 @@ LAB_005bd19f:
         this_ptr->unk1[0x52] = '\0';
         this_ptr->unk1[0x53] = '\0';
       }
-      if (0.0 < *(float *)(this_ptr->unk2 + 0x228)) {
-        if (*(float *)(this_ptr->unk2 + 0x228) <= in_stack_00000008) {
-          this_ptr->unk2[0x228] = '\0';
-          this_ptr->unk2[0x229] = '\0';
-          this_ptr->unk2[0x22a] = '\0';
-          this_ptr->unk2[0x22b] = '\0';
+      if (0.0 < *(float *)(this_ptr->unk3 + 0x10)) {
+        if (*(float *)(this_ptr->unk3 + 0x10) <= in_stack_00000008) {
+          this_ptr->unk3[0x10] = '\0';
+          this_ptr->unk3[0x11] = '\0';
+          this_ptr->unk3[0x12] = '\0';
+          this_ptr->unk3[0x13] = '\0';
           fStack_2c0 = 1.0;
         }
         else {
-          fStack_2c0 = in_stack_00000008 / *(float *)(this_ptr->unk2 + 0x228);
-          *(float *)(this_ptr->unk2 + 0x228) =
-               *(float *)(this_ptr->unk2 + 0x228) - in_stack_00000008;
+          fStack_2c0 = in_stack_00000008 / *(float *)(this_ptr->unk3 + 0x10);
+          *(float *)(this_ptr->unk3 + 0x10) = *(float *)(this_ptr->unk3 + 0x10) - in_stack_00000008;
         }
-        pcVar2 = this_ptr->unk2 + 0x218;
+        pcVar2 = this_ptr->unk3;
         fStack_c8 = *(float *)pcVar2 * fStack_2c0;
-        fStack_c4 = *(float *)(this_ptr->unk2 + 0x21c) * fStack_2c0;
-        fStack_c0 = *(float *)(this_ptr->unk2 + 0x220) * fStack_2c0;
+        fStack_c4 = *(float *)(this_ptr->unk3 + 4) * fStack_2c0;
+        fStack_c0 = *(float *)(this_ptr->unk3 + 8) * fStack_2c0;
         pCVar1 = &(this_ptr->base).base.base.location;
         fStack_4c = 1.0 - fStack_2c0;
         fVar18 = (this_ptr->base).base.base.location.position.y;
@@ -719,11 +718,13 @@ LAB_005bd19f:
         fVar4 = (this_ptr->base).base.base.location.position.z;
         (this_ptr->base).base.base.location.position.y = fVar18 + fStack_c4;
         (this_ptr->base).base.base.location.position.z = fVar4 + fStack_c0;
+        fVar18 = *(float *)(this_ptr->unk3 + 4);
+        fVar4 = *(float *)(this_ptr->unk3 + 8);
         *(float *)pcVar2 = *(float *)pcVar2 * fStack_4c;
-        *(float *)(this_ptr->unk2 + 0x21c) = *(float *)(this_ptr->unk2 + 0x21c) * fStack_4c;
-        *(float *)(this_ptr->unk2 + 0x220) = *(float *)(this_ptr->unk2 + 0x220) * fStack_4c;
+        *(float *)(this_ptr->unk3 + 4) = fVar18 * fStack_4c;
+        *(float *)(this_ptr->unk3 + 8) = fVar4 * fStack_4c;
         fVar18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                           (*(float *)(this_ptr->unk2 + 0x224) -
+                           (*(float *)(this_ptr->unk3 + 0xc) -
                             (this_ptr->base).base.base.orient.bank);
         *(float *)((this_ptr->base).base.unk1 + 0xc) = fVar18 * fStack_2c0;
       }
@@ -751,22 +752,22 @@ LAB_005bd19f:
       (this_ptr->base).unk4[0x12] = '\0';
       (this_ptr->base).unk4[0x13] = '\0';
     }
-    if (0.0 < *(float *)(this_ptr->unk2 + 0x228)) {
-      if (*(float *)(this_ptr->unk2 + 0x228) <= in_stack_00000008) {
-        this_ptr->unk2[0x228] = '\0';
-        this_ptr->unk2[0x229] = '\0';
-        this_ptr->unk2[0x22a] = '\0';
-        this_ptr->unk2[0x22b] = '\0';
+    if (0.0 < *(float *)(this_ptr->unk3 + 0x10)) {
+      if (*(float *)(this_ptr->unk3 + 0x10) <= in_stack_00000008) {
+        this_ptr->unk3[0x10] = '\0';
+        this_ptr->unk3[0x11] = '\0';
+        this_ptr->unk3[0x12] = '\0';
+        this_ptr->unk3[0x13] = '\0';
         fStack_2d8 = 1.0;
       }
       else {
-        fStack_2d8 = in_stack_00000008 / *(float *)(this_ptr->unk2 + 0x228);
-        *(float *)(this_ptr->unk2 + 0x228) = *(float *)(this_ptr->unk2 + 0x228) - in_stack_00000008;
+        fStack_2d8 = in_stack_00000008 / *(float *)(this_ptr->unk3 + 0x10);
+        *(float *)(this_ptr->unk3 + 0x10) = *(float *)(this_ptr->unk3 + 0x10) - in_stack_00000008;
       }
-      pcVar2 = this_ptr->unk2 + 0x218;
+      pcVar2 = this_ptr->unk3;
       fStack_1a0 = *(float *)pcVar2 * fStack_2d8;
-      fStack_19c = *(float *)(this_ptr->unk2 + 0x21c) * fStack_2d8;
-      fStack_198 = *(float *)(this_ptr->unk2 + 0x220) * fStack_2d8;
+      fStack_19c = *(float *)(this_ptr->unk3 + 4) * fStack_2d8;
+      fStack_198 = *(float *)(this_ptr->unk3 + 8) * fStack_2d8;
       pCVar1 = &(this_ptr->base).base.base.location;
       fStack_3c = 1.0 - fStack_2d8;
       fVar18 = (this_ptr->base).base.base.location.position.y;
@@ -774,12 +775,14 @@ LAB_005bd19f:
       fVar4 = (this_ptr->base).base.base.location.position.z;
       (this_ptr->base).base.base.location.position.y = fVar18 + fStack_19c;
       (this_ptr->base).base.base.location.position.z = fVar4 + fStack_198;
+      fVar18 = *(float *)(this_ptr->unk3 + 4);
+      fVar4 = *(float *)(this_ptr->unk3 + 8);
       *(float *)pcVar2 = *(float *)pcVar2 * fStack_3c;
-      *(float *)(this_ptr->unk2 + 0x21c) = *(float *)(this_ptr->unk2 + 0x21c) * fStack_3c;
-      *(float *)(this_ptr->unk2 + 0x220) = *(float *)(this_ptr->unk2 + 0x220) * fStack_3c;
+      *(float *)(this_ptr->unk3 + 4) = fVar18 * fStack_3c;
+      *(float *)(this_ptr->unk3 + 8) = fVar4 * fStack_3c;
       fVar18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                         (*(float *)(this_ptr->unk2 + 0x224) -
-                          (this_ptr->base).base.base.orient.bank);
+                         (*(float *)(this_ptr->unk3 + 0xc) - (this_ptr->base).base.base.orient.bank)
+      ;
       *(float *)((this_ptr->base).base.unk1 + 0xc) = fVar18 * fStack_2d8;
     }
   }
@@ -965,7 +968,7 @@ LAB_005bd5e6:
     fStack_1bc = fStack_150 + pCVar17->z;
     fStack_214 = fStack_214 + fStack_1c0;
     fStack_210 = fStack_210 + fStack_1bc;
-    *(uint *)(this_ptr->unk2 + 0x230) = *(uint *)((this_ptr->base).base.unk1 + 0x20);
+    *(uint *)(this_ptr->unk3 + 0x18) = *(uint *)((this_ptr->base).base.unk1 + 0x20);
     core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
     if ((this_ptr->base).base.base.location.position.y <
         *(float *)((this_ptr->base).base.unk1 + 8) + (float)0.10000000000000001) {
@@ -980,7 +983,7 @@ LAB_005bd5e6:
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"Splat at %3.2f fps\n",
                    (double)*(float *)((this_ptr->base).base.unk1 + 0x20));
-        fVar18 = -*(float *)(this_ptr->unk2 + 0x230);
+        fVar18 = -*(float *)(this_ptr->unk3 + 0x18);
         if (fVar18 < (float)20) {
           if (((iStack_20 == 0xd) || (iStack_20 == 9)) || (iStack_20 == 0xf)) goto LAB_005bd763;
         }
@@ -1029,7 +1032,7 @@ joined_r0x005bdb44:
         fStack_2c4 = fStack_2c4 * (float)2;
       }
       if ((fStack_2c4 < *(float *)(this_ptr->unk2 + 0x54)) ||
-         (*(float *)(this_ptr->unk2 + 0x230) < (float)-20)) {
+         (*(float *)(this_ptr->unk3 + 0x18) < (float)-20)) {
         if (iStack_20 != 0xf) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0xf,1);
@@ -1149,7 +1152,7 @@ LAB_005bc1a6:
     core_stranger_cpp_CStranger_FUN_005c5b90(this_ptr);
   }
   core_stranger_cpp_CStranger_FUN_005be520(this_ptr);
-  if ((((this_ptr->base).unk3 == 2) && (*(int *)(this_ptr->unk1 + 0x54) != 0)) &&
+  if ((((this_ptr->base).aim_mode == 2) && (*(int *)(this_ptr->unk1 + 0x54) != 0)) &&
      (*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) == 0)) {
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
               (&(this_ptr->base).base.model);

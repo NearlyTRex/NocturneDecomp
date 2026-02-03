@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void core_setedit_cpp_FUN_005817d0(void *unk)
+; __cdecl void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   unk
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x5c]:4  local_5c

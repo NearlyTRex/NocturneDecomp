@@ -13,8 +13,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9c00(CCryptVessel *this_ptr)
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
-            (in_stack_00000008,"Model file (.kfm)",
-             (CKeyFramedModelInstance *)&this_ptr->model_name,0);
+            (in_stack_00000008,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (in_stack_00000008,"Prey",&this_ptr->prey,1,"CCryptVessel",
              (CDemonActor_CActorPropertyValidatorFunc *)0x0);

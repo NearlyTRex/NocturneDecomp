@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *this_ptr,uint d1)
+; __cdecl CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[92]:
 ;   core_ammo.cpp_CAmmo_dtor_FUN_004114e0 at 004114ef

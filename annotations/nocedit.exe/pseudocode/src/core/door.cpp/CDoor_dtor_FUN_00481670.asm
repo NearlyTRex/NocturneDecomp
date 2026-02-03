@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint d1,uint d2)
+; __cdecl CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDoorTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0048167c
     PUSH EBX                            ; 0048167e
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0048167f
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00481684
     MOV DL,byte ptr [ESP + 0xc]         ; 00481687
     MOV EBX,EAX                         ; 0048168b

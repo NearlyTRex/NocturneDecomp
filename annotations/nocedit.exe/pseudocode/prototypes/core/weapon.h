@@ -13,7 +13,7 @@ CWeapon * __cdecl CWeapon::ctor(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_dtor_FUN_005edf80
 // Address: 005edf80
-CWeapon * __cdecl CWeapon::dtor(CWeapon *this_ptr,uint d1,uint d2,uint d3);
+CWeapon * __cdecl CWeapon::dtor(CWeapon *this_ptr,uint flags);
 
 // Original: core_weapon.cpp_CWeapon_setup_FUN_005edff0
 // Address: 005edff0
@@ -71,9 +71,9 @@ void __cdecl CWeapon(CWeapon *this_ptr);
 // Address: 005ee670
 int * __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_005ee6e0
+// Original: core_weapon.cpp_CWeapon_FUN_005ee6e0
 // Address: 005ee6e0
-int __cdecl FUN_005ee6e0(void);
+int __cdecl CWeapon(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee710
 // Address: 005ee710

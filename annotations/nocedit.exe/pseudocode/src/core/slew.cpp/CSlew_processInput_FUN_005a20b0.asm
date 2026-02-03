@@ -8,6 +8,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[13]:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 at 0040d0fb

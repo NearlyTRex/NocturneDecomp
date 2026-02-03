@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710 (CLZWCompress *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLZWCompress *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLZWCompressTypeInfo
@@ -40,7 +37,7 @@ section .text
     LEA EBX,[EAX + -0x4]                ; 0043f72c
     PUSH EBX                            ; 0043f72f
     CALL support_codec.cpp_CCodec_dtor_FUN_0043e9b0 ; 0043f730
-        ;   XREF to: 0043e9b0 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_dtor_FUN_0043e9b0(CCodec * this_ptr, int d1)
+        ;   XREF to: 0043e9b0 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_dtor_FUN_0043e9b0(CCodec * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043f735
     MOV DL,byte ptr [ESP + 0xc]         ; 0043f738
     MOV EBX,EAX                         ; 0043f73c

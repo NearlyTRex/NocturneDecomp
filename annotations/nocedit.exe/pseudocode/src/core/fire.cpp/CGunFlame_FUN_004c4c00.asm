@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_charactr.cpp_CCharacter_FUN_0042b5b0
-;   core_flamecan.cpp_FUN_004cb340
+;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;
 ; *****************************************************************************
@@ -164,8 +164,8 @@ section .text
         ;   XREF to: 004c4c48 (UNCONDITIONAL_JUMP)  ; LAB_004c4c48
     PUSH EDX                            ; 004c4d3b
         ;   Label: LAB_004c4d3b
-    CALL core_flamecan.cpp_FUN_004cb340 ; 004c4d3c
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
+    CALL core_flamecan.cpp_CFlameCan_FUN_004cb340 ; 004c4d3c
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_FUN_004cb340(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 004c4d41
     JMP 0x004c4cae                      ; 004c4d44
         ;   XREF to: 004c4cae (UNCONDITIONAL_JUMP)  ; LAB_004c4cae

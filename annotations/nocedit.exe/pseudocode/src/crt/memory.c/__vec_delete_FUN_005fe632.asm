@@ -45,7 +45,7 @@ section .text
     PUSH ECX                            ; 005fe64b
     PUSH EAX                            ; 005fe64c
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 005fe64d
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005fe652
     MOV EAX,EBX                         ; 005fe655
     POP EBX                             ; 005fe657

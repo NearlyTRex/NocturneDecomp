@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVertex **array)
+; __cdecl SClothVertex * __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVertex *array)
 ;
 ; Parameters:
-; SClothVertex * * Stack[0x4]:4   array
+; SClothVertex *   Stack[0x4]:4   array
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 at 00438c27
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043e48a
     PUSH EDX                            ; 0043e48e
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0043e48f
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0043e494
     RET                                 ; 0043e497
 

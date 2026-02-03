@@ -2,304 +2,352 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "other",
         "column": 61,
-        "line": 94,
+        "line": 89,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 109,
+        "line": 104,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 119,
+        "line": 114,
         "message": "invalid conversion from 'void*' to 'float*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 133,
+        "line": 128,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 135,
+        "line": 130,
         "message": "invalid conversion from 'void*' to 'CVector3f*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 147,
+        "line": 142,
         "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 163,
+        "line": 158,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 166,
+        "line": 161,
         "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 44,
-        "line": 186,
+        "line": 181,
         "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 25,
-        "line": 187,
+        "line": 182,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 48,
-        "line": 187,
+        "line": 182,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 83,
-        "line": 199,
+        "line": 194,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 201,
+        "line": 196,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 211,
+        "line": 206,
         "message": "'stack0xffffc814' was not declared in this scope; did you mean 'in_stack_ffffc814'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 11,
-        "line": 221,
+        "line": 216,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 20,
-        "line": 224,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 224,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 49,
-        "line": 229,
+        "line": 222,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 49,
-        "line": 231,
+        "line": 224,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 237,
+        "line": 230,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 81,
-        "line": 239,
+        "line": 232,
         "message": "invalid conversion from 'void*' to 'CKeyFramedModelInstance*' [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 16,
-        "line": 245,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 245,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 83,
-        "line": 249,
+        "line": 240,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 252,
+        "line": 243,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 11,
+        "line": 263,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 37,
+        "line": 270,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 37,
         "line": 272,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 274,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 275,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 281,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 283,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 64,
-        "line": 289,
+        "line": 278,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 76,
-        "line": 291,
+        "line": 280,
         "message": "invalid conversion from 'void*' to 'CDeformableModelInstance*' [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 296,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 297,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 57,
-        "line": 300,
+        "line": 287,
         "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 318,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 319,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 78,
-        "line": 323,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 324,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 328,
+        "line": 311,
         "message": "invalid conversion from 'void*' to 'byte*' {aka 'unsigned char*'} [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 11,
-        "line": 348,
+        "line": 331,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 70,
-        "line": 350,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 351,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 37,
-        "line": 357,
+        "line": 338,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 37,
-        "line": 359,
+        "line": 340,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 31,
-        "line": 364,
+        "line": 345,
         "message": "cast from 'char*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 367,
+        "line": 348,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 370,
+        "line": 351,
         "message": "invalid conversion from 'void*' to 'byte*' {aka 'unsigned char*'} [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 66,
-        "line": 384,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 385,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 368,
+        "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
@@ -310,7 +358,7 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 410,
+        "line": 405,
         "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
       },
       {
@@ -321,236 +369,146 @@
       },
       {
         "category": "incompatible_types",
-        "column": 25,
-        "line": 447,
-        "message": "invalid conversion from 'void*' to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
         "column": 87,
-        "line": 463,
+        "line": 442,
         "message": "invalid conversion from 'void*' to 'CMotionController*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 92,
-        "line": 474,
+        "line": 453,
         "message": "invalid conversion from 'void*' to 'CMotionController*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 77,
-        "line": 487,
+        "line": 466,
         "message": "invalid conversion from 'void*' to 'CMotionController*' [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 68,
-        "line": 492,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 493,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 78,
-        "line": 497,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 498,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 26,
-        "line": 508,
+        "line": 483,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 9,
-        "line": 516,
+        "line": 491,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 18,
-        "line": 519,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 519,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 39,
-        "line": 523,
+        "line": 496,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 39,
-        "line": 525,
+        "line": 498,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 527,
+        "line": 500,
         "message": "invalid conversion from 'void*' to 'CClothList*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 529,
+        "line": 502,
         "message": "request for member '_0_4_' in 'local_294c', which is of non-class type 'byte [936]' {aka 'unsigned char [936]'}"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 21,
-        "line": 541,
+        "line": 514,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 542,
+        "line": 515,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 66,
-        "line": 551,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 552,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 57,
-        "line": 562,
+        "line": 533,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 45,
-        "line": 581,
+        "line": 552,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 584,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 585,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 588,
+        "line": 557,
         "message": "invalid conversion from 'void*' to 'int*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 612,
+        "line": 581,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
         "column": 66,
-        "line": 613,
+        "line": 582,
         "message": "invalid conversion from 'void*' to 'CRuleList*' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 33,
-        "line": 695,
+        "line": 664,
         "message": "invalid conversion from 'void*' to 'CRuleList*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 714,
+        "line": 683,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
-        "category": "other",
+        "category": "lvalue_required",
         "column": 60,
-        "line": 730,
+        "line": 699,
         "message": "lvalue required as unary '&' operand"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 734,
+        "line": 703,
         "message": "'PTR_s_thrust_0066e310' was not declared in this scope"
       },
       {
-        "category": "other",
+        "category": "lvalue_required",
         "column": 69,
-        "line": 742,
+        "line": 711,
         "message": "lvalue required as unary '&' operand"
       },
       {
-        "category": "other",
-        "column": 68,
-        "line": 744,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 745,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 748,
-        "message": "cast from 'char**' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 749,
-        "message": "cast from 'CStrList_vtable*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 15,
-        "line": 762,
+        "line": 727,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 29,
-        "line": 763,
+        "line": 728,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 22,
-        "line": 771,
+        "line": 736,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -558,6 +516,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -565,289 +529,289 @@
       {
         "category": "other",
         "column": 36,
-        "line": 87,
+        "line": 82,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'CDemonActor*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 199,
+        "line": 194,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CDemonActor*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 199,
+        "line": 194,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'int' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 201,
+        "line": 196,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 227,
+        "line": 220,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 249,
+        "line": 240,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CDemonActor*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 249,
+        "line": 240,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'int' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 252,
+        "line": 243,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 264,
+        "line": 255,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 264,
+        "line": 255,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 69,
+        "line": 258,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 261,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 57,
         "line": 267,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 270,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 278,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 343,
+        "line": 326,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 346,
+        "line": 329,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 354,
+        "line": 335,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 405,
+        "line": 384,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 442,
+        "line": 421,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 472,
+        "line": 451,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'SMotion*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 472,
+        "line": 451,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'char (*)[30]' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 503,
+        "line": 478,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 503,
+        "line": 478,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 508,
+        "line": 483,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 507,
+        "line": 482,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'CDemonActor*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 507,
+        "line": 482,
         "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'int*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 509,
+        "line": 484,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 512,
+        "line": 487,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'CDemonActor*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 514,
+        "line": 489,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 541,
+        "line": 514,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 542,
+        "line": 515,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 562,
+        "line": 533,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 563,
+        "line": 534,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 581,
+        "line": 552,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 592,
+        "line": 561,
         "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'int*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 592,
+        "line": 561,
         "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'int*' [-Wformat=]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 595,
+        "line": 564,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 620,
+        "line": 589,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 691,
+        "line": 660,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 693,
+        "line": 662,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 729,
+        "line": 698,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 731,
+        "line": 700,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 752,
+        "line": 717,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 754,
+        "line": 719,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 762,
+        "line": 727,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 763,
+        "line": 728,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 771,
+        "line": 736,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1900,
-    "complexity_score": 2154,
+    "complexity_score": 1319,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 45,
-    "pseudocode_lines": 774,
-    "suspect_count": 135,
+    "pseudocode_lines": 739,
+    "suspect_count": 55,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
@@ -856,7 +820,7 @@
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 2674
+    "total_lines": 2639
   },
   "cross_references": [
     {
@@ -1768,936 +1732,376 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_ffffc814",
-      "text": "uint in_stack_ffffc814;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_ffffc818",
-      "text": "uint in_stack_ffffc818;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffc81c",
-      "text": "char **in_stack_ffffc81c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffc820",
-      "text": "CStrList_vtable *in_stack_ffffc820;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffc824",
-      "text": "uint in_stack_ffffc824;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffc828",
-      "text": "uint in_stack_ffffc828;",
+      "text": "int in_stack_ffffc814;",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 80,
       "match": "param1",
       "text": "(g_CEditorToolsPtr,local_2a0,&local_2c,(this_ptr->param1).v_int,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 81,
       "match": "param2",
       "text": "(this_ptr->param2).v_int,(this_ptr->param3).v_int,1), iVar12 != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 81,
       "match": "param3",
       "text": "(this_ptr->param2).v_int,(this_ptr->param3).v_int,1), iVar12 != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 94,
       "match": "param1",
       "text": "(g_CEditorToolsPtr,local_2a0,&local_30,(this_ptr->param1).v_int,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 95,
       "match": "param2",
       "text": "(this_ptr->param2).v_float,(this_ptr->param3).v_float,1), iVar12 != 0",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 95,
       "match": "param3",
       "text": "(this_ptr->param2).v_float,(this_ptr->param3).v_float,1), iVar12 != 0",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 147,
       "match": "param3",
       "text": "(g_CEditorToolsPtr,local_2a0,local_aac,(this_ptr->param3).v_int,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 174,
       "match": "param1",
       "text": "(g_CDemonMissionPtr,(int)actor,local_2a0,&local_28,(this_ptr->param1).v_int,",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 189,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)this_ptr->data_ptr + 0x78);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 204,
+      "line": 199,
       "match": "&stack0xffffc814",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffc814);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 206,
+      "line": 201,
       "match": "&stack0xffffc814",
       "text": "((CStrList *)&stack0xffffc814,\"models\",\"*.kfm\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 207,
+      "line": 202,
       "match": "&stack0xffffc814",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xffffc814);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 208,
+      "line": 203,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 209,
+      "line": 204,
       "match": "&stack0xffffc814",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffc814,\"(none)\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 213,
+      "line": 208,
       "match": "&stack0xffffc814",
       "text": "((CPickList *)&stack0xffffc814,local_2a0,-1,0);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_ffffc814",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 216,
+      "line": 210,
       "match": "&stack0xffffc814",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xffffc814,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffc81c",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 220,
+      "line": 213,
       "match": "in_stack_ffffc814",
-      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {",
+      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 + -1))) {",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 220,
+      "line": 213,
       "match": "param1",
-      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 - 1))) {",
+      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(in_stack_ffffc814 + -1))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 222,
+      "line": 215,
       "match": "&stack0xffffc814",
       "text": "((CStrList *)&stack0xffffc814,(int)local_18ac,pcVar6,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 224,
+      "line": 217,
       "match": "&stack0xffffc814",
       "text": "((CStrList *)&stack0xffffc814,(int)local_eac,pcVar6,1);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 237,
-      "match": "in_stack_ffffc814",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 237,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 237,
+      "line": 229,
       "match": "&stack0xffffc814",
-      "text": "((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xffffc814,0);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_ffffc81c",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 236,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)this_ptr->data_ptr + 0x2260);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
+      "line": 250,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 267,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 267,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 267,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 268,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 268,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 271,
+      "line": 260,
       "match": "param1",
       "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_2cf4.base.item_count + -1)))",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 289,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 289,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 289,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 290,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 290,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 294,
+      "line": 281,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 311,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)(local_3444 + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 311,
-      "match": "in_stack_ffffc81c",
-      "text": "((CPickList *)(local_3444 + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 312,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 312,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 312,
-      "match": "in_stack_ffffc828",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 316,
-      "match": "in_stack_ffffc814",
-      "text": "((CPickList *)local_3444,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 316,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)local_3444,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 316,
-      "match": "in_stack_ffffc81c",
-      "text": "((CPickList *)local_3444,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 317,
-      "match": "in_stack_ffffc820",
-      "text": ",(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 317,
-      "match": "in_stack_ffffc824",
-      "text": ",(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 335,
+      "line": 318,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 344,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 344,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 328,
       "match": "param1",
       "text": "if (((this_ptr->param1).v_int == 0) || (pcVar6 != (char *)(local_309c.base.item_count + -1)))",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 377,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 377,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 377,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 378,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 378,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 485,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)(local_21fc + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 485,
-      "match": "in_stack_ffffc81c",
-      "text": "((CPickList *)(local_21fc + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 486,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 486,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 486,
-      "match": "in_stack_ffffc828",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 490,
-      "match": "in_stack_ffffc814",
-      "text": "((CPickList *)local_21fc,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 490,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)local_21fc,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 490,
-      "match": "in_stack_ffffc81c",
-      "text": "((CPickList *)local_21fc,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 491,
-      "match": "in_stack_ffffc820",
-      "text": ",(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 491,
-      "match": "in_stack_ffffc824",
-      "text": ",(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 498,
+      "line": 473,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int < *(int *)this_ptr->data_ptr) {",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 501,
+      "line": 476,
       "match": "(int *)((int)",
       "text": "(int *)((int)this_ptr->data_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 501,
+      "line": 476,
       "match": "param1",
       "text": "(int *)((int)this_ptr->data_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4));",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 511,
-      "match": "in_stack_ffffc814",
-      "text": "((CPickList *)local_294c,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 511,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)local_294c,0,in_stack_ffffc814,in_stack_ffffc818,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 512,
-      "match": "in_stack_ffffc81c",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 512,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 512,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc81c,(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 521,
+      "line": 494,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int < pCVar15->unk) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 522,
+      "line": 495,
       "match": "._0_4_",
       "text": "if (pcVar6 == (char *)(local_294c._0_4_ + -1)) {",
       "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 527,
+      "line": 500,
       "match": "param1",
       "text": "pCVar15 = pCVar15 + (this_ptr->param1).v_int * 10 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 534,
+      "line": 507,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&pCVar15->unk + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 535,
+      "line": 508,
       "match": "(CClothList *)((int)",
       "text": "pCVar15 = (CClothList *)((int)&pCVar15->unk + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 544,
-      "match": "in_stack_ffffc818",
-      "text": "((CPickList *)(local_294c + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 544,
-      "match": "in_stack_ffffc81c",
-      "text": "((CPickList *)(local_294c + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 545,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 545,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 545,
-      "match": "in_stack_ffffc828",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 551,
+      "line": 522,
       "match": "param1",
       "text": "if (0 < (this_ptr->param1).v_int) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 555,
+      "line": 526,
       "match": "param2",
       "text": "(&local_1e54.base,*(char **)(iVar18 + (int)(this_ptr->param2).v_ptr));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 556,
+      "line": 527,
       "match": "param2",
       "text": "if (*(int *)this_ptr->data_ptr == *(int *)((this_ptr->param2).v_int + 4 + iVar18)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 561,
+      "line": 532,
       "match": "param1",
       "text": "} while (iVar19 < (this_ptr->param1).v_int);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 563,
+      "line": 534,
       "match": "param1",
       "text": "if (((this_ptr->param1).v_int == 2) && (-1 < iVar12)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 564,
+      "line": 535,
       "match": "param2",
       "text": "pvVar9 = (this_ptr->param2).v_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 572,
+      "line": 543,
       "match": "param2",
       "text": "pvVar9 = (this_ptr->param2).v_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 574,
+      "line": 545,
       "match": "(uint *)((int)",
       "text": "*(uint *)this_ptr->data_ptr = *(uint *)((int)pvVar9 + iVar12 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 577,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 577,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 577,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_1e54,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 578,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 578,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 582,
+      "line": 551,
       "match": "param1",
       "text": "iVar12 = (this_ptr->param1).v_int;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 605,
+      "line": 574,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int < this_ptr->data_ptr->list_size) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 689,
+      "line": 658,
       "match": "param1",
       "text": "if (pCVar17->list_size <= (this_ptr->param1).v_int) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 693,
+      "line": 662,
       "match": "param1",
       "text": "pCVar17 = pCVar17 + (this_ptr->param1).v_int * 0x19 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 723,
+      "line": 692,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&0x00000001 + iVar19)) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 727,
+      "line": 696,
       "match": "(uint *)((int)",
       "text": "(local_368,\"%s\\t%s\",*(uint *)((int)&PTR_s_thrust_0066e310 + iVar19),",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 737,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 737,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 737,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 738,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 738,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 741,
-      "match": "in_stack_ffffc814",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 741,
-      "match": "in_stack_ffffc818",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 741,
-      "match": "in_stack_ffffc81c",
-      "text": "(&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 742,
-      "match": "in_stack_ffffc820",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 742,
-      "match": "in_stack_ffffc824",
-      "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 755,
+      "line": 720,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&pCVar17->list_size + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 756,
+      "line": 721,
       "match": "(CRuleList *)((int)",
       "text": "pCVar17 = (CRuleList *)((int)&pCVar17->list_size + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 764,
+      "line": 729,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)this_ptr->data_ptr + (this_ptr->param1).v_int * 100 + 0x1f8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 764,
+      "line": 729,
       "match": "param1",
       "text": "pcVar11 = (char *)((int)this_ptr->data_ptr + (this_ptr->param1).v_int * 100 + 0x1f8);",
       "type": "unnamed_param"

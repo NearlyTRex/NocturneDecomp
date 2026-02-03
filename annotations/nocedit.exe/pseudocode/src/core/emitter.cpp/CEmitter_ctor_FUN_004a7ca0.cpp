@@ -13,7 +13,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   CEmitter *pCVar2;
   CEmitter_ptr_584 this_ptr_00;
   char *pcVar2;
-  char **ppcVar3;
+  char *pcVar3;
   
   pCVar2 = (CEmitter *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
@@ -22,27 +22,27 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   pcVar2 = "none";
   (ADJ(this_ptr_00)->emitter_size).y = 1.0;
   (ADJ(this_ptr_00)->emitter_size).z = 1.0;
-  ppcVar3 = &ADJ(this_ptr_00)->event_on;
+  pcVar3 = ADJ(this_ptr_00)->event_on;
   ADJ(this_ptr_00)->emitter_type = 0;
   do {
     cVar1 = *pcVar2;
-    *(char *)ppcVar3 = cVar1;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    *(char *)((int)ppcVar3 + 1) = cVar1;
-    ppcVar3 = (char **)((int)ppcVar3 + 2);
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   pcVar2 = "none";
-  ppcVar3 = &ADJ(this_ptr_00)->event_off;
+  pcVar3 = ADJ(this_ptr_00)->event_off;
   do {
     cVar1 = *pcVar2;
-    *(char *)ppcVar3 = cVar1;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    *(char *)((int)ppcVar3 + 1) = cVar1;
-    ppcVar3 = (char **)((int)ppcVar3 + 2);
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   this_ptr_00[1].model_name[4] = '\0';
   this_ptr_00[1].model_name[5] = '\0';

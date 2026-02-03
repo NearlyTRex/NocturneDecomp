@@ -19,10 +19,7 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
   _FILE *file_ptr;
   char *pcVar4;
   SFoundFileInfo *pSVar5;
-  char *pcVar6;
-  uint in_stack_fffff8b0;
-  uint local_54c;
-  uint local_544;
+  SFoundFileInfo local_750;
   SFoundFileInfo local_53c;
   char local_328 [260];
   char local_224 [256];
@@ -54,15 +51,15 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
       } while (cVar1 != '\0');
       pcVar4 = local_328;
-      pcVar6 = &stack0xfffff8b0;
+      pSVar5 = &local_750;
       do {
         cVar1 = *pcVar4;
-        *pcVar6 = cVar1;
+        pSVar5->found_path[0] = cVar1;
         if (cVar1 == '\0') break;
         cVar1 = pcVar4[1];
         pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar1;
-        pcVar6 = pcVar6 + 2;
+        *(char *)((int)pSVar5 + 1) = cVar1;
+        pSVar5 = (SFoundFileInfo *)((int)pSVar5 + 2);
       } while (cVar1 != '\0');
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
@@ -70,9 +67,10 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         g_CurrentLineNumber = 0xfe7;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s",&local_53c);
       }
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffff8b0);
-      if ((((iVar3 == 0) || (local_53c.timestamp < (char *)(local_544 - 1))) ||
-          ((char *)(local_544 + 1) < local_53c.timestamp)) || (local_53c.file_size != local_54c)) {
+      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_750);
+      if ((((iVar3 == 0) || (local_53c.timestamp < (char *)(local_750.timestamp - 1))) ||
+          ((char *)(local_750.timestamp + 1) < local_53c.timestamp)) ||
+         (local_53c.file_size != local_750.file_size)) {
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xff8);
         if (file == (_FILE *)0x0) {
@@ -126,6 +124,6 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
       local_14 = local_14 + 1;
     } while (local_14 < local_24.item_count);
   }
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_24,0,in_stack_fffff8b0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_24,0);
   return;
 }

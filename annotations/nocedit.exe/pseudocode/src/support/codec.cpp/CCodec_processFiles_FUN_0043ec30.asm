@@ -93,14 +93,14 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 0043ecef
     PUSH EAX                            ; 0043ecf6
     CALL crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc ; 0043ecf7
-        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043ecfc
     PUSH 0x0                            ; 0043ecff
     LEA EAX,[ESP + 0x4]                 ; 0043ed01
     PUSH EAX                            ; 0043ed05
     MOV EBX,ESI                         ; 0043ed06
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 0043ed08
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
         ;   Label: LAB_0043ed08
     ADD ESP,0x8                         ; 0043ed0d
     MOV EAX,EBX                         ; 0043ed10
@@ -122,7 +122,7 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 0043ed28
     PUSH EAX                            ; 0043ed2f
     CALL crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc ; 0043ed30
-        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043ed35
     PUSH ESI                            ; 0043ed38
     LEA EAX,[ESP + 0x4]                 ; 0043ed39

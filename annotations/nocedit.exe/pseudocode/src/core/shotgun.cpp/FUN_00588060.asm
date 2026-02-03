@@ -26,7 +26,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c7a60
 ;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-;   core_weapon.cpp_FUN_005ee6e0
+;   core_weapon.cpp_CWeapon_FUN_005ee6e0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00588096
     PUSH EBX                            ; 00588099
-    CALL core_weapon.cpp_FUN_005ee6e0   ; 0058809a
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
+    CALL core_weapon.cpp_CWeapon_FUN_005ee6e0 ; 0058809a
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_FUN_005ee6e0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0058809f
     TEST EAX,EAX                        ; 005880a2
     JZ 0x00588398                       ; 005880a4

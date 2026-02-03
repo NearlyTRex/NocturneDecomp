@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVehicleTypeInfo
@@ -47,7 +44,7 @@ section .text
     LEA EBX,[EAX + 0xfffff6c4]          ; 005e8d4f
     PUSH EBX                            ; 005e8d55
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005e8d56
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005e8d5b
     MOV DL,byte ptr [ESP + 0xc]         ; 005e8d5e
     MOV EBX,EAX                         ; 005e8d62

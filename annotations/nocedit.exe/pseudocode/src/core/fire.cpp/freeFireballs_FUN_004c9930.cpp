@@ -2,13 +2,15 @@
 // Address: 004c9930
 // Address Range: [[004c9930, 004c9944]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball **array)
+// Signature: CFireball * __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball **array)
+CFireball * __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball *objs)
 
 {
-  __arrfini(array,0x40,&g_CFireballTypeInfo);
-  return;
+  CFireball *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0x40,&g_CFireballTypeInfo);
+  return pCVar1;
 }

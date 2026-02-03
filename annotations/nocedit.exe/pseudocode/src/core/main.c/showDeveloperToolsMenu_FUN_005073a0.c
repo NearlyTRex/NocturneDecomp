@@ -173,7 +173,7 @@ LAB_0050740e:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     return;
   }
-  pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270((SEncryptedMessage *)g_LicenseAgreement);
+  pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar3);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_60);
   iVar1 = g_ClipTop;

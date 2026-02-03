@@ -20,7 +20,6 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   int color_mode;
   int iVar7;
   int iVar8;
-  CGame *unaff_ESI;
   char *pcVar9;
   byte bVar10;
   double dVar11;
@@ -105,7 +104,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   iVar7 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
   local_1c = -NAN;
   local_c = iVar7;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,unaff_ESI);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   do {
     fVar2 = local_1c;

@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_KeypressesAndCGame_FUN_004dc3e0 at 004dc7c6
+;   core_game.cpp_CGame_FUN_004dc3e0 at 004dc7c6
 ;
 ; Referenced Globals:
 ;   CHero*[4] g_HeroActors

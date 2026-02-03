@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_freeSkeletons_FUN_005a1fb0(CSkeleton **array)
+; __cdecl CSkeleton * __cdecl core_skeleton_cpp_freeSkeletons_FUN_005a1fb0(CSkeleton *objs)
 ;
 ; Parameters:
-; CSkeleton * *    Stack[0x4]:4   array
+; CSkeleton *      Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSkeletonTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a1fb7
     PUSH EDX                            ; 005a1fbb
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 005a1fbc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005a1fc1
     RET                                 ; 005a1fc4
 

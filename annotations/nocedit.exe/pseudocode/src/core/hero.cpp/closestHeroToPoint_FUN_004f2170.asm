@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
+; __cdecl int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042ee67
-;   core_emitter.cpp_FUN_004a7e80 at 004a7e91
+;   core_emitter.cpp_CEmitter_FUN_004a7e80 at 004a7e91
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_0062ea7d

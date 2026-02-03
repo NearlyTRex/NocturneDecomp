@@ -1,13 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPlatformTypeInfo
@@ -39,7 +37,7 @@ section .text
     LEA EBX,[EAX + 0xfffffcf0]          ; 0044239f
     PUSH EBX                            ; 004423a5
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004423a6
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004423ab
     MOV DL,byte ptr [ESP + 0xc]         ; 004423ae
     MOV EBX,EAX                         ; 004423b2

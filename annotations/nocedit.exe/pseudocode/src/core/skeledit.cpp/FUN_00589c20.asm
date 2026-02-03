@@ -128,7 +128,7 @@ section .text
     PUSH EAX                            ; 00589ce8
         ;   Label: LAB_00589ce8
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00589ce9
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00589cee
     TEST ESI,ESI                        ; 00589cf1
     JZ 0x00589d87                       ; 00589cf3

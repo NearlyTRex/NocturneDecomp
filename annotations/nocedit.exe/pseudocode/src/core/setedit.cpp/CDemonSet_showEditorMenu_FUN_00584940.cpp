@@ -16,11 +16,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
-  uint in_stack_fffff8ec;
-  uint in_stack_fffff8f0;
-  char **in_stack_fffff8f4;
-  CStrList_vtable *in_stack_fffff8f8;
-  uint in_stack_fffff8fc;
+  CPickList local_714;
   char local_36c [260];
   char local_268 [256];
   char local_168 [256];
@@ -131,21 +127,19 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         }
         else if (uVar3 == 0x44) {
           iVar4 = 2;
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8ec);
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_714);
           do {
             pcVar2 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar4);
             iVar4 = iVar4 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff8ec,pcVar2);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_714.base,pcVar2);
           } while (iVar4 < 0xe);
           uVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff8ec,"Select default ground type.",
+                            (&local_714,"Select default ground type.",
                              this_ptr->default_ground_type + -2,0);
           if (-1 < (int)uVar3) {
             this_ptr->default_ground_type = uVar3 + 2;
           }
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff8ec,0,in_stack_fffff8ec,in_stack_fffff8f0,
-                     (uint)in_stack_fffff8f4,(uint)in_stack_fffff8f8,in_stack_fffff8fc);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_714,0);
         }
       }
     }

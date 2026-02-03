@@ -9,13 +9,14 @@
 void __cdecl core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00(void)
 
 {
-  int extraout_EAX;
-  int iVar1;
+  SClothBone *pSVar1;
+  SClothVertex *pSVar2;
   int in_stack_00000004;
   
   core_cloth_cpp_UnknownSomethingAndFreeMem_FUN_00438cb0();
-  core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone **)(in_stack_00000004 + 0x3ce90));
-  iVar1 = core_cloth_cpp_freeClothVertices_FUN_0043e480((SClothVertex **)(extraout_EAX + -0x377b8));
-  core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90((CKeyFramedModel *)(iVar1 + -0x56d8));
+  pSVar1 = core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone *)(in_stack_00000004 + 0x3ce90));
+  pSVar2 = core_cloth_cpp_freeClothVertices_FUN_0043e480
+                     ((SClothVertex *)(pSVar1[-0x52a].unk + 0x80));
+  core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90((CKeyFramedModel *)(pSVar2[-0x4f].unk1 + 0xcc));
   return;
 }

@@ -21,8 +21,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047ce65
 ;   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 at 0047c615
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be3ba
+;   core_game.cpp_CGame_FUN_004e2910 at 004e2ce3
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3fe0
-;   core_game.cpp_CGame_openSomething_FUN_004e2910 at 004e2ce3
 ;   ... and 122 more
 ;
 ; Referenced Globals:

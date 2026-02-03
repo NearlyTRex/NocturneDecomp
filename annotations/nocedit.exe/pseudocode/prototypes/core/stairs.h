@@ -81,7 +81,7 @@ void __cdecl FUN_005babf0(void);
 
 // Original: core_stairs.cpp_CStairs_dtor_FUN_005bac10
 // Address: 005bac10
-CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint d1,uint d2,uint d3);
+CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
 // Original: core_stairs.cpp_FUN_005bac80
 // Address: 005bac80

@@ -2,13 +2,16 @@
 // Address: 005a1fd0
 // Address Range: [[005a1fd0, 005a1fe4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel **array)
+// Signature: CDeformableModel * __cdecl core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel **array)
+CDeformableModel * __cdecl
+core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel *objs)
 
 {
-  __arrfini(array,0x40,&g_CDeformableModelTypeInfo);
-  return;
+  CDeformableModel *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0x40,&g_CDeformableModelTypeInfo);
+  return pCVar1;
 }

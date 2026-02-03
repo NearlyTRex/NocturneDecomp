@@ -77,7 +77,7 @@ void __cdecl CVehicle(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20
 // Address: 005e8d20
-CVehicle * __cdecl CVehicle::dtor(CVehicle *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CVehicle * __cdecl CVehicle::dtor(CVehicle *this_ptr,uint flags);
 
 // Original: core_vehicle.cpp_CTire_ctor_FUN_005e8da0
 // Address: 005e8da0

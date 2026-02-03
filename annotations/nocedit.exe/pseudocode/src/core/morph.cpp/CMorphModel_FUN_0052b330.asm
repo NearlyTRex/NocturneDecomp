@@ -33,7 +33,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 0052b33f
     PUSH ECX                            ; 0052b343
     CALL core_morph.cpp_freeMorphModels_FUN_0052cd10 ; 0052b344
-        ;   XREF to: 0052cd10 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_freeMorphModels_FUN_0052cd10(CMorphModel * * array)
+        ;   XREF to: 0052cd10 (UNCONDITIONAL_CALL)  ; CMorphModel * core_morph.cpp_freeMorphModels_FUN_0052cd10(CMorphModel * objs)
     ADD ESP,0x8                         ; 0052b349
     RET                                 ; 0052b34c
 

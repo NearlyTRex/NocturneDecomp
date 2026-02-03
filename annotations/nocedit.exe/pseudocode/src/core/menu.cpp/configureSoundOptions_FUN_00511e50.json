@@ -2,91 +2,217 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "pointer_precision",
         "column": 53,
         "line": 105,
         "message": "cast from 'CGame*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 24,
-        "line": 75,
+        "line": 74,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      },
+      {
+        "category": "pointer_precision",
         "column": 17,
         "line": 93,
         "message": "cast from 'char (*)[256]' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
         "line": 94,
         "message": "cast from 'char (*)[256]' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 35,
         "line": 111,
         "message": "cast from 'char (*)[256]' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 37,
         "line": 153,
         "message": "cast from 'char (*)[256]' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 37,
         "line": 173,
         "message": "cast from 'char (*)[256]' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 27,
         "line": 305,
         "message": "cast from 'DWORD*' {aka 'long unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 29,
         "line": 306,
         "message": "cast from 'DWORD*' {aka 'long unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 23,
-        "line": 550,
-        "message": "request for member '_0_4_' in 'uStack_44', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 75,
-        "line": 580,
+        "line": 577,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 42,
-        "line": 127,
-        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
-      },
-      {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 53,
         "line": 105,
         "message": "cast from 'CPickList*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 53,
         "line": 105,
         "message": "cast from 'SSoundDeviceInfo*' to 'uint32_t' {aka 'unsigned int'} loses precision [-fpermissive]"
@@ -96,6 +222,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -103,7 +235,7 @@
       {
         "category": "other",
         "column": 6,
-        "line": 75,
+        "line": 74,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -325,38 +457,37 @@
       {
         "category": "other",
         "column": 65,
-        "line": 578,
+        "line": 575,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 625,
+        "line": 622,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 786,
+        "line": 777,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 1256,
+    "complexity_score": 1030,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
-    "pseudocode_lines": 806,
-    "suspect_count": 43,
+    "pseudocode_lines": 795,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "unknown_field"
+      "stack_param"
     ],
-    "total_lines": 2288
+    "total_lines": 2277
   },
   "cross_references": [
     {
@@ -1321,303 +1452,156 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_fffff5b4",
       "text": "ulonglong in_stack_fffff5b4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffff5bc",
-      "text": "uint in_stack_fffff5bc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffff5c0",
-      "text": "uint in_stack_fffff5c0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_fffff5c4",
-      "text": "uint in_stack_fffff5c4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_fffff5c8",
-      "text": "uint in_stack_fffff5c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_fffff5b4",
-      "text": "n2 = (CGame *)((ulonglong)in_stack_fffff5b4 >> 0x20);",
+      "text": "uVar22 = CONCAT44((int)((ulonglong)in_stack_fffff5b4 >> 0x20),g_CGamePtr);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(n2,g_CGamePtr);",
+      "text": "uVar22 = CONCAT44((int)((ulonglong)in_stack_fffff5b4 >> 0x20),g_CGamePtr);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "SUB84",
+      "text": "local_a38 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)pacVar10 + 1) = cVar1;",
+      "text": "*(char *)((int)pacVar11 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 132,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,0x511fbd);",
+      "text": "uVar22 = CONCAT44(uVar24,0x511fbd);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar20);",
+      "text": "local_18 = (int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 203,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,0x5120c3);",
+      "text": "uVar22 = CONCAT44(uVar24,0x5120c3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 207,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar20);",
+      "text": "local_18 = (int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 255,
       "match": "CONCAT44",
-      "text": "uStack_44 = (double)CONCAT44(iVar9 + 1,(float)uStack_44);",
+      "text": "uStack_44 = (double)CONCAT44(iVar10 + 1,(float)uStack_44);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 274,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,0x5121c7);",
+      "text": "uVar22 = CONCAT44(uVar24,0x5121c7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 278,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar20);",
+      "text": "local_18 = (int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 298,
       "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)pDVar11 + 1);",
+      "text": "cVar2 = *(char *)((int)pDVar12 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 299,
       "match": "(DWORD *)((int)",
-      "text": "pDVar11 = (DWORD *)((int)pDVar11 + 2);",
+      "text": "pDVar12 = (DWORD *)((int)pDVar12 + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 537,
-      "match": "in_stack_fffff5c0",
-      "text": "in_stack_fffff5c0 = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 538,
-      "match": "in_stack_fffff5c4",
-      "text": "in_stack_fffff5c4 = 0x40690000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 543,
-      "match": "._0_4_",
-      "text": "uStack_44._0_4_ = (float)0x40690000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 545,
-      "match": "in_stack_fffff5c8",
-      "text": "fVar19 = (float10)(double)CONCAT44(in_stack_fffff5c8,(float)uStack_44) *",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 545,
       "match": "CONCAT44",
-      "text": "fVar19 = (float10)(double)CONCAT44(in_stack_fffff5c8,(float)uStack_44) *",
+      "text": "fVar20 = (float10)(double)CONCAT44(local_a38,uStack_a3c) *",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 546,
-      "match": "in_stack_fffff5bc",
-      "text": "(float10)(double)CONCAT44(uVar23,in_stack_fffff5bc);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 546,
+      "line": 544,
       "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44(uVar23,in_stack_fffff5bc);",
+      "text": "(float10)(double)CONCAT44(local_a40,uStack_a44);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 547,
-      "match": "in_stack_fffff5c8",
-      "text": "dVar20 = (double)CONCAT44(in_stack_fffff5c8,(float)uStack_44);",
-      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 547,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(in_stack_fffff5c8,(float)uStack_44);",
+      "text": "(iVar10,(float)(double)CONCAT44(local_a38,uStack_a3c),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 554,
+      "match": "ROUND",
+      "text": "local_14 = (float)(int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 556,
-      "match": "ROUND",
-      "text": "local_14 = (float)(int)ROUND(dVar20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 558,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44(uVar24,height_half);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 561,
-      "match": "in_stack_fffff5c0",
-      "text": "in_stack_fffff5c0 = local_48;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 563,
-      "match": "in_stack_fffff5c4",
-      "text": "in_stack_fffff5c4 = (uint)(float)uStack_44;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 660,
-      "match": "in_stack_fffff5c8",
-      "text": "dVar20 = (double)(ulonglong)in_stack_fffff5c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 664,
-      "match": "in_stack_fffff5c8",
-      "text": "dVar20 = (double)(ulonglong)in_stack_fffff5c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 671,
-      "match": "SUB84",
-      "text": "uVar6 = SUB84(dVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 683,
-      "match": "in_stack_fffff5c8",
-      "text": "dVar20 = (double)(ulonglong)in_stack_fffff5c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 695,
-      "match": "in_stack_fffff5c8",
-      "text": "in_stack_fffff5c8 = SUB84(dVar20,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 695,
-      "match": "SUB84",
-      "text": "in_stack_fffff5c8 = SUB84(dVar20,0);",
+      "text": "dVar21 = (double)CONCAT44(uVar24,height_half);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 764,
+      "line": 755,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,&local_a20);",
+      "text": "uVar22 = CONCAT44(uVar24,&local_a20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 772,
+      "line": 763,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,&local_560);",
+      "text": "uVar22 = CONCAT44(uVar7,&local_560);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 792,
-      "match": "in_stack_fffff5bc",
-      "text": "(&local_a20,0,uVar23,in_stack_fffff5bc,in_stack_fffff5c0,in_stack_fffff5c4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 792,
-      "match": "in_stack_fffff5c0",
-      "text": "(&local_a20,0,uVar23,in_stack_fffff5bc,in_stack_fffff5c0,in_stack_fffff5c4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 792,
-      "match": "in_stack_fffff5c4",
-      "text": "(&local_a20,0,uVar23,in_stack_fffff5bc,in_stack_fffff5c0,in_stack_fffff5c4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 793,
-      "match": "in_stack_fffff5c8",
-      "text": "in_stack_fffff5c8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 803,
       "match": "CONCAT44",
-      "text": "uVar21 = CONCAT44(uVar23,1);",
+      "text": "uVar22 = CONCAT44(uVar24,1);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -238,7 +238,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       core_script_cpp_CScript_FUN_00559b20(g_CScriptPtr);
       core_game_cpp_CGame_renderOverlay_FUN_004d8040(this_ptr);
-      core_game_cpp_FUN_004e0aa0();
+      core_game_cpp_CGame_FUN_004e0aa0(this_ptr);
       if (this_ptr->camera_debug_enabled == 0) {
         DOUBLE_02d7c2e0 = 0.0;
         FLOAT_02d7c2e8 = 0.0;

@@ -81,7 +81,7 @@ void __cdecl CWaterActor(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_dtor_FUN_005ebc60
 // Address: 005ebc60
-CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint d1,uint d2,uint d3);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_ctor_FUN_005ebcd0
 // Address: 005ebcd0

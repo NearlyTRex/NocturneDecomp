@@ -2,13 +2,15 @@
 // Address: 004c97f0
 // Address Range: [[004c97f0, 004c9807]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array)
+// Signature: CPopcorn * __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn **array)
+CPopcorn * __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn *objs)
 
 {
-  __arrfini(array,0x100,&g_CPopcornTypeInfo);
-  return;
+  CPopcorn *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0x100,&g_CPopcornTypeInfo);
+  return pCVar1;
 }

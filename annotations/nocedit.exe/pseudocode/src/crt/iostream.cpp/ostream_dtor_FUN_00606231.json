@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 83,
+    "complexity_score": 57,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_ostream_dtor_FUN_00606231",
-    "signature": "ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint d1,uint d2)"
+    "signature": "ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -113,10 +112,10 @@
     "pcode_op_count": 155
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -128,15 +127,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
         "size": 4,
         "type": "uint"
       }
@@ -144,22 +136,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBX",
-      "text": "piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 18,
       "match": "piVar2[-1].",
       "text": "this_ptr = (ostream *)&piVar2[-1].__fill_character;",
       "type": "negative_offset"

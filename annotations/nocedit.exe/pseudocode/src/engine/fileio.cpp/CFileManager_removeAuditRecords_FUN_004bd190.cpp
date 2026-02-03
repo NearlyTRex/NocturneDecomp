@@ -81,7 +81,7 @@ LAB_004bd3c3:
       g_AuditRecordsArray = (CPodAuditRecord *)0x0;
     }
     record_index = 0;
-    if (0 < (int)local_9d8.audit_count) {
+    if (0 < local_9d8.audit_count) {
       do {
         engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,local_33c);
         piVar5 = local_33c;
@@ -134,7 +134,7 @@ LAB_004bd3c3:
           } while (cVar1 != '\0');
         }
         record_index = record_index + 1;
-      } while (record_index < (int)local_9d8.audit_count);
+      } while (record_index < local_9d8.audit_count);
     }
     file = (_FILE *)0x0;
     if (iVar2 == 0) {

@@ -29,4 +29,4 @@ CMineCar * __cdecl CMineCar::ctor(CMineCar *this_ptr);
 
 // Original: core_minecar.cpp_CMineCar_dtor_FUN_00520f40
 // Address: 00520f40
-CMineCar * __cdecl CMineCar::dtor(CMineCar *this_ptr,uint d1,uint d2,uint d3);
+CMineCar * __cdecl CMineCar::dtor(CMineCar *this_ptr,uint flags);

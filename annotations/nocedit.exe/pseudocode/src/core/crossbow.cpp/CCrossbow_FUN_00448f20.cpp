@@ -37,7 +37,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
   pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_70,pCVar1);
-  iVar2 = core_weapon_cpp_FUN_005ee6e0();
+  iVar2 = core_weapon_cpp_CWeapon_FUN_005ee6e0(&this_ptr->base);
   if (iVar2 == 0) {
     return 0;
   }

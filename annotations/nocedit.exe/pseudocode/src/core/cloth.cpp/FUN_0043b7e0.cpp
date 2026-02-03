@@ -9,12 +9,11 @@
 void __cdecl core_cloth_cpp_FUN_0043b7e0(void)
 
 {
-  uchar uVar1;
-  undefined3 extraout_var;
+  uint text_color;
   int vertex_index1;
-  int iVar2;
+  int iVar1;
+  float10 fVar2;
   float10 fVar3;
-  float10 fVar4;
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
@@ -32,11 +31,11 @@ void __cdecl core_cloth_cpp_FUN_0043b7e0(void)
   int local_18;
   int local_14;
   
-  iVar2 = in_stack_00000008 * 0xac + in_stack_00000004 + 0x3ce90;
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160((CMatrix3x3f *)(iVar2 + 0x78),&local_58);
+  iVar1 = in_stack_00000008 * 0xac + in_stack_00000004 + 0x3ce90;
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160((CMatrix3x3f *)(iVar1 + 0x78),&local_58);
   vertex_index1 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&local_58,(CVector3i *)(iVar2 + 0xa0));
+            (g_CDemonRendererPtr2,(CVector3i *)&local_58,(CVector3i *)(iVar1 + 0xa0));
   local_20 = 0x270;
   local_1c = 0;
   local_68 = 0;
@@ -44,12 +43,12 @@ void __cdecl core_cloth_cpp_FUN_0043b7e0(void)
   local_18 = -1;
   do {
     local_14 = local_68;
-    fVar3 = (float10)local_68 * (float10)3.1415926535000001 * (float10)0.083333333333333301;
-    fVar4 = (float10)fsin(fVar3);
-    fVar3 = (float10)fcos(fVar3);
-    local_40 = (float)(fVar4 * (float10)*(float *)(iVar2 + 0x14));
+    fVar2 = (float10)local_68 * (float10)3.1415926535000001 * (float10)0.083333333333333301;
+    fVar3 = (float10)fsin(fVar2);
+    fVar2 = (float10)fcos(fVar2);
+    local_40 = (float)(fVar3 * (float10)*(float *)(iVar1 + 0x14));
     local_38 = 0.0;
-    local_3c = (float)(fVar3 * (float10)*(float *)(iVar2 + 0x18));
+    local_3c = (float)(fVar2 * (float10)*(float *)(iVar1 + 0x18));
     local_64.x = (int)ROUND(local_40 * 256.0f);
     local_64.y = (int)ROUND(local_3c * 256.0f);
     local_64.z = (int)ROUND(256.0f * 0.0);
@@ -57,7 +56,7 @@ void __cdecl core_cloth_cpp_FUN_0043b7e0(void)
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_1c),&local_64);
-    local_38 = *(float *)(iVar2 + 0x44);
+    local_38 = *(float *)(iVar1 + 0x44);
     local_28 = vertex_index1 + 0xd;
     local_4c.x = (int)ROUND(local_40 * 256.0f);
     local_4c.y = (int)ROUND(local_3c * 256.0f);
@@ -82,10 +81,10 @@ void __cdecl core_cloth_cpp_FUN_0043b7e0(void)
     local_18 = local_18 + 1;
   } while (vertex_index1 < 0xd);
   if (in_stack_0000000c != 0) {
-    uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
+    text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+                           (g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-              (g_CEditorToolsPtr,*(float *)(iVar2 + 0x14) + *(float *)(iVar2 + 0x18),
-               CONCAT31(extraout_var,uVar1));
+              (g_CEditorToolsPtr,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),text_color);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;

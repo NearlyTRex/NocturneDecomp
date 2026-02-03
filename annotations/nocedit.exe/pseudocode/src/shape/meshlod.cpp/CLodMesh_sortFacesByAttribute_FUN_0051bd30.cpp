@@ -25,7 +25,7 @@ shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,
   float local_78;
   float local_74;
   uint local_70;
-  CVector3f *local_6c [9];
+  CVector3f local_6c [3];
   uint local_48;
   int aiStack_44 [4];
   int local_34;

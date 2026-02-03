@@ -31,11 +31,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   C3DSCamera *pCVar18;
   byte bVar19;
   _FILE *p_Var20;
-  uint in_stack_ffffb878;
-  uint in_stack_ffffb87c;
-  uint in_stack_ffffb880;
-  uint in_stack_ffffb884;
-  uint in_stack_ffffb888;
+  C3DSLight local_4788;
   C3DSLight local_2ef0;
   CPickList local_1658;
   CPickList local_12b0;
@@ -197,9 +193,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         core_setedit_cpp_FUN_0057e430();
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_f08,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
-                 in_stack_ffffb884,in_stack_ffffb888);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_f08,0);
       break;
     case 0x33:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1658);
@@ -217,9 +211,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
       if ((-1 < iVar9) && (iVar9 = core_setedit_cpp_UserInputCreate_FUN_0057d660(), iVar9 != 0)) {
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1658,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
-                 in_stack_ffffb884,in_stack_ffffb888);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1658,0);
       break;
     case 0x34:
       if (this_ptr->geometry_filename[0] == '\0') {
@@ -439,9 +431,7 @@ LAB_0057eb3b:
             }
           }
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_12b0,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
-                   in_stack_ffffb884,in_stack_ffffb888);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_12b0,0);
       }
       break;
     case 0x37:
@@ -559,8 +549,8 @@ LAB_0057eb3b:
         iVar9 = 0;
         if (0 < local_50) {
           do {
-            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb878);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb878,p_Var4);
+            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_4788);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_4788,p_Var4);
             iVar9 = iVar9 + 1;
           } while (iVar9 < local_50);
         }

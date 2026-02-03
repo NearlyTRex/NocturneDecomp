@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CEnemy.h"
@@ -12,6 +15,7 @@ typedef struct CGargoyle {
     int stone_red; // 0xbeec
     int stone_green; // 0xbef0
     int stone_blue; // 0xbef4
-    char unk2[32]; // 0xbef8
+    struct CDemonActor* home_base; // 0xbef8
+    char unk2[28]; // 0xbefc
 } CGargoyle;
 

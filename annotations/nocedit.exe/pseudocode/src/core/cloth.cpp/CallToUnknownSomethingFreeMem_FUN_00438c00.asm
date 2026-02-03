@@ -9,7 +9,7 @@
 ;   core_cloth.cpp_CClothList_remove_FUN_0043c170 at 0043c1d7
 ;   core_cloth.cpp_FUN_0043c070 at 0043c0a4
 ;   core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 at 004be214
-;   core_gabriela.cpp_freeMaybe_FUN_004d7660 at 004d7675
+;   core_gabriela.cpp_CGabriella_dtor_FUN_004d7660 at 004d7675
 ;   core_mimic.cpp_CMimic_dtor_FUN_0051f2c0 at 0051f32f
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50 at 005d9f65
 ;   core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700 at 005e7729
@@ -35,13 +35,13 @@ section .text
     ADD EBX,0x3ce90                     ; 00438c10
     PUSH EBX                            ; 00438c16
     CALL core_cloth.cpp_freeClothBones_FUN_0043e4a0 ; 00438c17
-        ;   XREF to: 0043e4a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_freeClothBones_FUN_0043e4a0(SClothBone * * array)
+        ;   XREF to: 0043e4a0 (UNCONDITIONAL_CALL)  ; SClothBone * core_cloth.cpp_freeClothBones_FUN_0043e4a0(SClothBone * array)
     ADD ESP,0x8                         ; 00438c1c
     PUSH 0x0                            ; 00438c1f
     SUB EAX,0x377b8                     ; 00438c21
     PUSH EAX                            ; 00438c26
     CALL core_cloth.cpp_freeClothVertices_FUN_0043e480 ; 00438c27
-        ;   XREF to: 0043e480 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_freeClothVertices_FUN_0043e480(SClothVertex * * array)
+        ;   XREF to: 0043e480 (UNCONDITIONAL_CALL)  ; SClothVertex * core_cloth.cpp_freeClothVertices_FUN_0043e480(SClothVertex * array)
     ADD ESP,0x8                         ; 00438c2c
     PUSH 0x1                            ; 00438c2f
     LEA EBX,[EAX + 0xffffa928]          ; 00438c31

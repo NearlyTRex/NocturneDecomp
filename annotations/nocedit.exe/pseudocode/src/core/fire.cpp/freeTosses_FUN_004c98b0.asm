@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss **array)
+; __cdecl CToss * __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss *objs)
 ;
 ; Parameters:
-; CToss * *        Stack[0x4]:4   array
+; CToss *          Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTossTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c98b7
     PUSH EDX                            ; 004c98bb
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 004c98bc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c98c1
     RET                                 ; 004c98c4
 

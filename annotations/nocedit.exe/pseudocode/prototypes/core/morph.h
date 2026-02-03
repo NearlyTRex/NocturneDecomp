@@ -177,23 +177,23 @@ SMorphControlPoint * __cdecl SMorphControlPoint::dtor(SMorphControlPoint *this_p
 
 // Original: core_morph.cpp_freeVectors_FUN_0052cc90
 // Address: 0052cc90
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);
 
 // Original: core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0
 // Address: 0052ccb0
-void __cdecl freeMorphControlPoints(SMorphControlPoint **array);
+SMorphControlPoint * __cdecl freeMorphControlPoints(SMorphControlPoint *objs);
 
 // Original: core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0
 // Address: 0052ccd0
-void __cdecl freeDeformableModelInstances(CDeformableModelInstance **array);
+CDeformableModelInstance * __cdecl freeDeformableModelInstances(CDeformableModelInstance *objs);
 
 // Original: core_morph.cpp_freeBoundingBoxes_FUN_0052ccf0
 // Address: 0052ccf0
-void __cdecl freeBoundingBoxes(CBoundingBox3D **array);
+CBoundingBox3D * __cdecl freeBoundingBoxes(CBoundingBox3D *objs);
 
 // Original: core_morph.cpp_freeMorphModels_FUN_0052cd10
 // Address: 0052cd10
-void __cdecl freeMorphModels(CMorphModel **array);
+CMorphModel * __cdecl freeMorphModels(CMorphModel *objs);
 
 // Original: core_morph.cpp_FUN_0052cd30
 // Address: 0052cd30

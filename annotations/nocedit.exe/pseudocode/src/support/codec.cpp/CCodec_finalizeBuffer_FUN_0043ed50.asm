@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 0043edb1
     MOV dword ptr [ESI],EDI             ; 0043edb2
     CALL crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a ; 0043edb4
-        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)  ; ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
+        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)  ; ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043edb9
     MOV EAX,EBX                         ; 0043edbc
     ADD ESP,0x80                        ; 0043edbe

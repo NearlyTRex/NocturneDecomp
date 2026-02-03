@@ -166,7 +166,7 @@ section .text
     MOV dword ptr [ESP + 0x1134],EAX    ; 004e4148
     MOV dword ptr [ESP + 0x1124],EBX    ; 004e414f
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004e4156
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004e415b
     PUSH 0xffff                         ; 004e415e
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004e4163

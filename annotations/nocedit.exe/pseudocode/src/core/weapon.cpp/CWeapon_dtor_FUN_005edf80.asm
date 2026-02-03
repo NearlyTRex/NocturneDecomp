@@ -1,21 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint d1,uint d2,uint d3)
+; __cdecl CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[13]:
 ;   core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0 at 004140bf
 ;   core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 at 004495c6
 ;   core_dynamite.cpp_CDynamite_dtor_FUN_0049d120 at 0049d12f
-;   core_elephant.cpp_dtor_FUN_004a7be0 at 004a7bef
+;   core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0 at 004a7bef
 ;   core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00 at 004cbb0f
-;   core_flamegun.cpp_CFlashlight_dtor_FUN_004cbc60 at 004cbc6f
+;   core_flashlit.cpp_CFlashlight_dtor_FUN_004cbc60 at 004cbc6f
 ;   core_gun.cpp_CGun_dtor_FUN_004f0b50 at 004f0b5f
 ;   core_lightgun.cpp_CLightGun_dtor_FUN_00506a50 at 00506a5f
 ;   core_melee.cpp_CMelee_dtor_FUN_0050edf0 at 0050edff
@@ -54,7 +52,7 @@ section .text
     LEA EBX,[EAX + 0xfffffcf8]          ; 005edfa9
     PUSH EBX                            ; 005edfaf
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005edfb0
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005edfb5
     MOV DL,byte ptr [ESP + 0xc]         ; 005edfb8
     MOV EBX,EAX                         ; 005edfbc

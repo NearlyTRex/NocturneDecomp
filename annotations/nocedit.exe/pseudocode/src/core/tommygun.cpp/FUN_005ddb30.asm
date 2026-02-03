@@ -34,7 +34,7 @@
 ;   core_crate.cpp_FUN_00448a70
 ;   core_fire.cpp_CFireEffect_FUN_004c76a0
 ;   core_fire.cpp_CFireEffect_FUN_004c7a60
-;   core_flamecan.cpp_FUN_004cb340
+;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
@@ -88,8 +88,8 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005ddb9d
     PUSH EBX                            ; 005ddba0
-    CALL core_weapon.cpp_FUN_005ee6e0   ; 005ddba1
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ee6e0()
+    CALL core_weapon.cpp_CWeapon_FUN_005ee6e0 ; 005ddba1
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_FUN_005ee6e0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005ddba6
     TEST EAX,EAX                        ; 005ddba9
     JZ 0x005ddecb                       ; 005ddbab
@@ -351,8 +351,8 @@ section .text
     JZ 0x005de2fc                       ; 005de00d
         ;   XREF to: 005de2fc (CONDITIONAL_JUMP)  ; LAB_005de2fc
     PUSH EAX                            ; 005de013
-    CALL core_flamecan.cpp_FUN_004cb340 ; 005de014
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_FUN_004cb340()
+    CALL core_flamecan.cpp_CFlameCan_FUN_004cb340 ; 005de014
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_FUN_004cb340(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 005de019
     JMP 0x005de2df                      ; 005de01c
         ;   XREF to: 005de2df (UNCONDITIONAL_JUMP)  ; LAB_005de2df

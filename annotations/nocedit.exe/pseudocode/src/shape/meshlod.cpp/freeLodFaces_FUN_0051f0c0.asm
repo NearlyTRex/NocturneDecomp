@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace **array)
+; __cdecl CLodFace * __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace *objs)
 ;
 ; Parameters:
-; CLodFace * *     Stack[0x4]:4   array
+; CLodFace *       Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_LodFaceTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0051f0ca
     PUSH EDX                            ; 0051f0ce
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0051f0cf
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0051f0d4
     RET                                 ; 0051f0d7
 

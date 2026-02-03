@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 at 005eebb0
+;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eebb0
 ;
 ; Referenced Globals:
 ;   CPopcorn* g_CFireEffectPopcornsEnd

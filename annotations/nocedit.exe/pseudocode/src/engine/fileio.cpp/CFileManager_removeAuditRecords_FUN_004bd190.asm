@@ -291,7 +291,7 @@ section .text
     LEA ESI,[ESP + 0x6a4]               ; 004bd401
     LEA EDI,[ESP + 0x434]               ; 004bd408
     CALL engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590 ; 004bd40f
-        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
+        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
     MOV ECX,0x4e                        ; 004bd414
     LEA ESI,[ESP + 0x6a4]               ; 004bd419
     ADD ESP,0x8                         ; 004bd420

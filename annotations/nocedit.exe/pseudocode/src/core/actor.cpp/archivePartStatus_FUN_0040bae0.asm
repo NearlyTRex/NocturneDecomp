@@ -11,7 +11,7 @@
 ;
 ; XREF[6]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 at 0041d361
-;   core_ghoul.cpp_CGhoul_load_FUN_004e81c0 at 004e827f
+;   core_ghoul.cpp_CGhoul_archive_FUN_004e81c0 at 004e827f
 ;   core_hero.cpp_CHero_archive_FUN_004f2610 at 004f2670
 ;   core_hostage.cpp_CHostage_archive_FUN_004f6170 at 004f61d6
 ;   core_tentacle.cpp_CTentacle_archive_FUN_005db880 at 005db8c8

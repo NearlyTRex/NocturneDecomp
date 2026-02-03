@@ -94,7 +94,7 @@ section .text
     MOV EDX,dword ptr [0x0067b654]      ; 0057aed3 | g_CGameInstance | g_CGamePtr
     PUSH EDX                            ; 0057aed9 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0057aeda
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0057aedf
     MOV EDX,dword ptr [EBP + 0x18]      ; 0057aee2
     MOV EAX,[0x00681ab8]                ; 0057aee5 | PTR_DAT_00681ab8

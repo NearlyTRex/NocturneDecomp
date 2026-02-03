@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_freeTriangles_FUN_0049cd20(CDemonTriangle **array)
+; __cdecl CDemonTriangle * __cdecl core_dtri_cpp_freeTriangles_FUN_0049cd20(CDemonTriangle *objs)
 ;
 ; Parameters:
-; CDemonTriangle * * Stack[0x4]:4   array
+; CDemonTriangle * Stack[0x4]:4   objs
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonTriangleTypeInfo
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049cd27
     PUSH EDX                            ; 0049cd2b
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0049cd2c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049cd31
     RET                                 ; 0049cd34
 

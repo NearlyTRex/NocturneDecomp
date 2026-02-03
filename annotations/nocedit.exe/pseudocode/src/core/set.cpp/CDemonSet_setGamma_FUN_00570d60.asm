@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_FUN_004dcee0 at 004dd253
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db251
-;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd253
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0064606b = 0.0000152587890625

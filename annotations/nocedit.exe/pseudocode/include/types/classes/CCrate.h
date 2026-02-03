@@ -12,7 +12,7 @@ typedef struct CCrate {
     CKeyFramedModelInstance model; // 0x158
     int unk1; // 0x2d4
     int unk2; // 0x2d8
-    int last_platform; // 0x2dc
+    struct CDemonActor* last_platform; // 0x2dc
     char unk3[28]; // 0x2e0
 } CCrate;
 

@@ -63,7 +63,7 @@ section .text
     PUSH EAX                            ; 004819b4
     MOV EBX,dword ptr [ESP + 0x31c]     ; 004819b5
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004819bc
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004819c1
     MOV EAX,EBX                         ; 004819c4
     ADD ESP,0x328                       ; 004819c6
@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 004819d6
     MOV EBX,0xffffffff                  ; 004819d7
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004819dc
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004819e1
     MOV EAX,EBX                         ; 004819e4
     ADD ESP,0x328                       ; 004819e6

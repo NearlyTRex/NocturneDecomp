@@ -88,7 +88,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
     local_48 = *(float *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0);
   }
   if (in_stack_00000008 == 0) {
-    if (((this_ptr->base).unk3 == 2) && (iStack_44 == 0)) {
+    if (((this_ptr->base).aim_mode == 2) && (iStack_44 == 0)) {
       return;
     }
     local_2c = -1.3089969;
@@ -133,7 +133,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
   pfStack_20[7] = 0.0;
   fStack_34 = pfStack_20[1];
   local_30 = *pfStack_20;
-  if ((iStack_44 == 3) || (fVar8 = (float)(this_ptr->base).unk3, fVar8 != 0.0)) {
+  if ((iStack_44 == 3) || (fVar8 = (float)(this_ptr->base).aim_mode, fVar8 != 0.0)) {
     pfStack_20[3] = 0.0;
   }
   else {

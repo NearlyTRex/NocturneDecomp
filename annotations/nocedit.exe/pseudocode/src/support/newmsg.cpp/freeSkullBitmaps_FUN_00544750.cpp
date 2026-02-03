@@ -2,13 +2,15 @@
 // Address: 00544750
 // Address Range: [[00544750, 00544764]]
 // Convention: __cdecl
-// Signature: void __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *bitmap)
+// Signature: CAlphaBitmap * __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *objs)
 
 #include "nocturne.h"
 
-void __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *bitmap)
+CAlphaBitmap * __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap *objs)
 
 {
-  __arrfini(&bitmap->raw,0xf,&g_CAlphaBitmapTypeInfo);
-  return;
+  CAlphaBitmap *pCVar1;
+  
+  pCVar1 = __arrfini(objs,0xf,&g_CAlphaBitmapTypeInfo);
+  return pCVar1;
 }

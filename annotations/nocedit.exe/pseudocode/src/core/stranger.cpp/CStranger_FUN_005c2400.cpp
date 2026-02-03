@@ -137,21 +137,21 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
               fStack_5c = pCVar3->x - (this_ptr->base).base.base.location.position.x;
               fStack_58 = pCVar3->y - (this_ptr->base).base.base.location.position.y;
               fStack_54 = pCVar3->z - (this_ptr->base).base.base.location.position.z;
-              if ((float *)(this_ptr->unk2 + 0x218) != &fStack_5c) {
-                *(float *)(this_ptr->unk2 + 0x218) = fStack_5c;
-                *(float *)(this_ptr->unk2 + 0x21c) = fStack_58;
-                *(float *)(this_ptr->unk2 + 0x220) = fStack_54;
+              if ((float *)this_ptr->unk3 != &fStack_5c) {
+                *(float *)this_ptr->unk3 = fStack_5c;
+                *(float *)(this_ptr->unk3 + 4) = fStack_58;
+                *(float *)(this_ptr->unk3 + 8) = fStack_54;
               }
               CStack_44.x = (float)local_d0._8_4_ - (this_ptr->base).base.base.location.position.x;
               CStack_44.y = fStack_c4 - (this_ptr->base).base.base.location.position.y;
               CStack_44.z = fStack_c0 - (this_ptr->base).base.base.location.position.z;
               pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_bc,&CStack_44);
-              *(float *)(this_ptr->unk2 + 0x224) = pCVar3->y;
-              this_ptr->unk2[0x228] = '\0';
-              this_ptr->unk2[0x229] = '\0';
-              this_ptr->unk2[0x22a] = -0x80;
-              this_ptr->unk2[0x22b] = '?';
+              *(float *)(this_ptr->unk3 + 0xc) = pCVar3->y;
+              this_ptr->unk3[0x10] = '\0';
+              this_ptr->unk3[0x11] = '\0';
+              this_ptr->unk3[0x12] = -0x80;
+              this_ptr->unk3[0x13] = '?';
               return 1;
             }
           }

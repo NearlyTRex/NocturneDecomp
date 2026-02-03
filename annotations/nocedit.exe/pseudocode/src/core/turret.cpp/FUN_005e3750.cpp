@@ -16,7 +16,7 @@ int __cdecl core_turret_cpp_FUN_005e3750(void)
   CCharacter *this_ptr;
   int iVar3;
   CDemonActor *pCVar4;
-  CDemonActor *pCVar5;
+  CFlameCan *this_ptr_00;
   int extraout_EAX;
   CDemonActor *in_stack_00000004;
   ulonglong uStack_e8;
@@ -67,8 +67,9 @@ int __cdecl core_turret_cpp_FUN_005e3750(void)
     local_5c.attacker =
          core_actor_cpp_castToClassHash_FUN_0040c790
                    (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
+    this_ptr_00 = (CFlameCan *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
     if (this_ptr == (CCharacter *)0x0) {
       if (pCStack_20 == (CGlass *)0x0) {
         if (pCVar4 != (CDemonActor *)0x0) {
@@ -83,11 +84,11 @@ int __cdecl core_turret_cpp_FUN_005e3750(void)
           goto LAB_005e3ae2;
         }
         if (local_5c.attacker == (CDemonActor *)0x0) {
-          if (pCVar5 == (CDemonActor *)0x0) {
+          if (this_ptr_00 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
             break;
           }
-          core_flamecan_cpp_FUN_004cb340();
+          core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_00);
         }
         else {
           core_crate_cpp_FUN_00448a70();

@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   output_file
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1630
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1630
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200

@@ -69,4 +69,4 @@ void __cdecl CBattery::writeDependencies(CBattery *this_ptr,_FILE *file_handle);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00418160
 // Address: 00418160
-CBattery * __cdecl CBattery::dtor(CBattery *this_ptr,uint d1,uint d2);
+CBattery * __cdecl CBattery::dtor(CBattery *this_ptr,uint flags);

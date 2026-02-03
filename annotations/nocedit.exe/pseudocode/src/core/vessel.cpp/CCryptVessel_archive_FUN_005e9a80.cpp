@@ -10,8 +10,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005e9a80(CCryptVessel *thi
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)&this_ptr->model_name,"modelName");
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
   core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->prey,"prey");
   core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->neutral,"neutral");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->destroyed_event,"destroyedEvent");

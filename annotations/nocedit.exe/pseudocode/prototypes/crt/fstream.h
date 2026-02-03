@@ -29,11 +29,11 @@ void __cdecl ofstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
 // Address: 005ff7bc
-ofstream * __cdecl ofstream::dtor(ofstream *this_ptr,uint d1,uint d2,uint d3,uint d4);
+ofstream * __cdecl ofstream::dtor(ofstream *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_dtor_FUN_005ff856
 // Address: 005ff856
-void * __cdecl ifstream::dtor(ifstream *this_ptr,uint d1,uint d2,uint d3,uint d4);
+void * __cdecl ifstream::dtor(ifstream *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
 // Address: 005ff8f0
@@ -57,7 +57,7 @@ void __cdecl fstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_fstreambase_dtor_FUN_00606509
 // Address: 00606509
-fstreambase * __cdecl fstreambase::dtor(fstreambase *this_ptr,uint d1,uint d2,uint d3);
+fstreambase * __cdecl fstreambase::dtor(fstreambase *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
 // Address: 0060658f
@@ -77,7 +77,7 @@ filebuf * __cdecl filebuf::ctor(filebuf *this_ptr);
 
 // Original: crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9
 // Address: 0060bdf9
-filebuf * __watcallStack filebuf::dtor(filebuf *this_ptr,uint d1,uint d2,uint d3);
+filebuf * __watcallStack filebuf::dtor(filebuf *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340
 // Address: 0060c340

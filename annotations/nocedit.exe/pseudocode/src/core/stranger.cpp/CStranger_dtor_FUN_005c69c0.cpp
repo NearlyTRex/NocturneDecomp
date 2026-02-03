@@ -2,27 +2,23 @@
 // Address: 005c69c0
 // Address Range: [[005c69c0, 005c6a0d]]
 // Convention: __cdecl
-// Signature: CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint d1,uint d2,uint d3,uint d4)
+// Signature: CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CStranger * __cdecl
-core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint d1,uint d2,uint d3,uint d4)
+CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags)
 
 {
   CStranger *ptr;
   void *ptr_00;
-  uint unaff_EBX;
-  uint unaff_retaddr;
   
-  if ((d1 & 4) != 0) {
+  if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CStrangerTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_hero_cpp_CHero_dtor_FUN_004f2470
-            (&this_ptr->base,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,d4);
-  if ((d1 & 2) == 0) {
+  core_hero_cpp_CHero_dtor_FUN_004f2470(&this_ptr->base,1);
+  if ((flags & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

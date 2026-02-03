@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(ostrstream *this_ptr,int d1)
+; __cdecl ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(ostrstream *this_ptr,uint flags)
 ;
 ; Parameters:
 ; ostrstream *     Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[4]:
 ;   crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445 at 005ff454
@@ -50,13 +50,13 @@ section .text
     PUSH EBX                            ; 005ff4b9
     MOV dword ptr [EBX + EAX*0x1 + -0x20],0x665b8c ; 005ff4ba | PTR_FUN_00665b8c
     CALL crt_iostream.cpp_ostream_dtor_FUN_00606231 ; 005ff4c2
-        ;   XREF to: 00606231 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_dtor_FUN_00606231(ostream * this_ptr, uint d1, uint d2)
+        ;   XREF to: 00606231 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_dtor_FUN_00606231(ostream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff4c7
     PUSH 0x1                            ; 005ff4ca
     LEA EBX,[EAX + -0x48]               ; 005ff4cc
     PUSH EBX                            ; 005ff4cf
     CALL crt_strstream.cpp_strstreambase_dtor_FUN_006062a6 ; 005ff4d0
-        ;   XREF to: 006062a6 (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_dtor_FUN_006062a6(strstreambase * this_ptr, uint d1, uint d2, uint d3)
+        ;   XREF to: 006062a6 (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_dtor_FUN_006062a6(strstreambase * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff4d5
     MOV DL,byte ptr [ESP + 0xc]         ; 005ff4d8
     MOV EBX,EAX                         ; 005ff4dc
@@ -89,7 +89,7 @@ section .text
     ADD EAX,0x54                        ; 005ff50b
     PUSH EAX                            ; 005ff50e
     CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 005ff50f
-        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
+        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff514
     LEA EBX,[EAX + -0x54]               ; 005ff517
     JMP 0x005ff4e3                      ; 005ff51a

@@ -344,13 +344,13 @@ section .text
     LEA EAX,[ESP + 0x5e4]               ; 0049f6f7
     PUSH EAX                            ; 0049f6fe
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 0049f6ff
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049f704
     PUSH 0x0                            ; 0049f707
     LEA EAX,[ESP + 0xc]                 ; 0049f709
     PUSH EAX                            ; 0049f70d
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0049f70e
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049f713
     JMP 0x0049f47a                      ; 0049f716
         ;   XREF to: 0049f47a (UNCONDITIONAL_JUMP)  ; LAB_0049f47a
@@ -557,14 +557,14 @@ section .text
     LEA EAX,[ESP + 0x5e4]               ; 0049f97b
     PUSH EAX                            ; 0049f982
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 0049f983
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
         ;   Label: LAB_0049f983
     ADD ESP,0x8                         ; 0049f988
     PUSH 0x0                            ; 0049f98b
     LEA EAX,[ESP + 0xc]                 ; 0049f98d
     PUSH EAX                            ; 0049f991
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0049f992
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049f997
     LEA EAX,[ESP + 0xa00]               ; 0049f99a
     PUSH EAX                            ; 0049f9a1
@@ -643,13 +643,13 @@ section .text
     LEA EAX,[ESP + 0x5e4]               ; 0049fa6d
     PUSH EAX                            ; 0049fa74
     CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 0049fa75
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049fa7a
     PUSH 0x0                            ; 0049fa7d
     LEA EAX,[ESP + 0xc]                 ; 0049fa7f
     PUSH EAX                            ; 0049fa83
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0049fa84
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049fa89
     JMP 0x0049f47a                      ; 0049fa8c
         ;   XREF to: 0049f47a (UNCONDITIONAL_JUMP)  ; LAB_0049f47a

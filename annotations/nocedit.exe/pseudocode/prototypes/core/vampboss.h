@@ -63,9 +63,9 @@ int __cdecl CVampireBoss(CVampireBoss *this_ptr);
 // Address: 005e7320
 void __cdecl VoicuSummonWavFile(void);
 
-// Original: core_vampboss.cpp_AnotherVoicuSummonWavCall_FUN_005e7390
+// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7390
 // Address: 005e7390
-void __cdecl AnotherVoicuSummonWavCall(void);
+void __cdecl CVampireBoss(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410
 // Address: 005e7410
@@ -93,4 +93,4 @@ void __cdecl CVampireBoss::getPropertyList(CVampireBoss *this_ptr,CActorProperty
 
 // Original: core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700
 // Address: 005e7700
-CVampireBoss * __cdecl CVampireBoss::dtor(CVampireBoss *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8, uint d9,uint d10,uint d11,uint d12,uint d13);
+CVampireBoss * __cdecl CVampireBoss::dtor(CVampireBoss *this_ptr,uint flags);

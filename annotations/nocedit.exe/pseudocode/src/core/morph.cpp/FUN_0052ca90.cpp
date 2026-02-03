@@ -13,10 +13,9 @@ void __cdecl core_morph_cpp_FUN_0052ca90(void)
 {
   int iVar1;
   CMorphModel *in_stack_00000004;
-  CGame *in_stack_ffffffe8;
   
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffffe8);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   while( true ) {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();

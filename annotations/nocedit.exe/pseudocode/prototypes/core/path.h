@@ -101,4 +101,4 @@ uint __cdecl CPathMap::queuePop(CPathMap *this_ptr,int start_height);
 
 // Original: core_path.cpp_freePathMaps_FUN_00548c30
 // Address: 00548c30
-void __cdecl freePathMaps(CPathMap **array);
+CPathMap * __cdecl freePathMaps(CPathMap *objs);

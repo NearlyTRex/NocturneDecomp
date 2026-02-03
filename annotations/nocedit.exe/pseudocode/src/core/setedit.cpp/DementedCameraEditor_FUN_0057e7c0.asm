@@ -505,7 +505,7 @@ section .text
     LEA EAX,[ESP + 0x3884]              ; 0057ebf6
     PUSH EAX                            ; 0057ebfd
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0057ebfe
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     JMP 0x0057eb40                      ; 0057ec03
         ;   XREF to: 0057eb40 (UNCONDITIONAL_JUMP)  ; LAB_0057eb40
     LEA EAX,[ESP + 0x3130]              ; 0057ec08
@@ -566,7 +566,7 @@ section .text
     LEA EAX,[ESP + 0x3134]              ; 0057ec86
     PUSH EAX                            ; 0057ec8d
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0057ec8e
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     JMP 0x0057eb40                      ; 0057ec93
         ;   XREF to: 0057eb40 (UNCONDITIONAL_JUMP)  ; LAB_0057eb40
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057ec98
@@ -1034,7 +1034,7 @@ section .text
     LEA EAX,[ESP + 0x34dc]              ; 0057f20a
     PUSH EAX                            ; 0057f211
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0057f212
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     JMP 0x0057eb40                      ; 0057f217
         ;   XREF to: 0057eb40 (UNCONDITIONAL_JUMP)  ; LAB_0057eb40
     CMP CL,0x39                         ; 0057f21c

@@ -28,7 +28,6 @@ int __cdecl core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   int in_stack_00000010;
   CDemonLight *this_ptr;
   CDemonLight *intensity;
-  CGame *in_stack_fffffe7c;
   char acStack_80 [16];
   char acStack_70 [24];
   char acStack_58 [16];
@@ -49,7 +48,7 @@ int __cdecl core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   pvVar2 = PTR_DAT_00681ab8;
   in_stack_00000004->actor_list_ptr = (void *)0x0;
   core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe7c);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pvVar2 = PTR_DAT_00681ab8;
   if (PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {
     *(uint *)PTR_DAT_00681ab8 = *(uint *)(in_stack_00000008 + 0x104);

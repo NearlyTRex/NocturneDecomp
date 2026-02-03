@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 40,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 8,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "special_crt_function"
     ],
-    "total_lines": 20
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -89,9 +89,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 10,
+      "line": 8,
       "match": "this_ptr[-2].",
-      "text": "((ofstream *)&this_ptr[-2]._ios.__fill_character,dtor_flags,unaff_retaddr,(uint)this_ptr",
+      "text": "((ofstream *)&this_ptr[-2]._ios.__fill_character,dtor_flags);",
       "type": "negative_offset"
     },
     {

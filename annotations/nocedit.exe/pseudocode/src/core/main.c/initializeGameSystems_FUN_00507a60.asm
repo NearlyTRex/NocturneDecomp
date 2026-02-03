@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
 ;   core_dfont.cpp_initFonts_FUN_004709a0
-;   core_flamegun.cpp_initializeFlamegun_FUN_004cbce0
+;   core_flattn.cpp_doNothing_FUN_004cbce0
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0
@@ -118,8 +118,8 @@ section .text
         ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopenThreadSafe_FUN_00601b14(char * filename, char * mode, _FILE * * output_file_ptr)
     ADD ESP,0xc                         ; 00507b33
     MOV dword ptr [0x00772628],EBX      ; 00507b36 | g_RenderingMode
-    CALL core_flamegun.cpp_initializeFlamegun_FUN_004cbce0 ; 00507b3c
-        ;   XREF to: 004cbce0 (UNCONDITIONAL_CALL)  ; void core_flamegun.cpp_initializeFlamegun_FUN_004cbce0()
+    CALL core_flattn.cpp_doNothing_FUN_004cbce0 ; 00507b3c
+        ;   XREF to: 004cbce0 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_004cbce0()
     CALL core_inivar.cpp_readIniData_FUN_004fbd90 ; 00507b41
         ;   XREF to: 004fbd90 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004fbd90()
     MOV EDI,dword ptr [0x00680cdc]      ; 00507b46 | g_CDemonPodPtr

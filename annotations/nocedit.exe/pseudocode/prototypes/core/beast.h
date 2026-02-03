@@ -57,4 +57,4 @@ void __cdecl CBeast::writeDependencies(CBeast *this_ptr,_FILE *file_handle);
 
 // Original: core_beast.cpp_CBeast_dtor_FUN_00418490
 // Address: 00418490
-CBeast * __cdecl CBeast::dtor(CBeast *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CBeast * __cdecl CBeast::dtor(CBeast *this_ptr,uint flags);

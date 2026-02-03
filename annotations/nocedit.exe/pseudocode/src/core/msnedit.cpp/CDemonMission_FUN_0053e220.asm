@@ -146,7 +146,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053e331 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0053e336 | g_CGameInstance
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0053e337
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 0053e33c
     LEA EAX,[ESP + 0x14]                ; 0053e33f
     PUSH EAX                            ; 0053e343

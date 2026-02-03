@@ -10,15 +10,14 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVess
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
+  CCryptVessel *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   CFlame *pCVar4;
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
+  pCVar2 = (CCryptVessel *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0((CFlame *)(pCVar3[1].animation_state + 0x14));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));

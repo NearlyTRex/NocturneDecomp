@@ -9,7 +9,7 @@
 void __cdecl core_dracbrid_cpp_FUN_00486e50(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,6,&g_SFreakyTypeInfo);
   return;

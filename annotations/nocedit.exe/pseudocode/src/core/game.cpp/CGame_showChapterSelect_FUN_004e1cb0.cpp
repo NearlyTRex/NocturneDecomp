@@ -18,10 +18,6 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   char *pcVar7;
   bool bVar8;
   char *in_stack_fffff914;
-  uint in_stack_fffff918;
-  char **in_stack_fffff91c;
-  CStrList_vtable *in_stack_fffff920;
-  uint in_stack_fffff924;
   CIniFile local_344;
   char local_144 [260];
   char *local_40 [4];
@@ -137,9 +133,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
                         ((CPickList *)&stack0xfffff914,pcVar7,iVar3,iVar5);
       if (iVar3 < 0) {
         g_EditorFont = local_1c;
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff914,0,(uint)in_stack_fffff914,in_stack_fffff918,
-                   (uint)in_stack_fffff91c,(uint)in_stack_fffff920,in_stack_fffff924);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
         return;
       }
       if ((iVar3 == 0) && (local_2c == 0x331)) {
@@ -352,17 +346,13 @@ LAB_004e2250:
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff914,0,(uint)in_stack_fffff914,in_stack_fffff918,
-                   (uint)in_stack_fffff91c,(uint)in_stack_fffff920,in_stack_fffff924);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
       }
       else {
         if (unknown != 0) goto LAB_004e2250;
         iVar6 = 0;
 LAB_004e2376:
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff914,0,(uint)in_stack_fffff914,in_stack_fffff918,
-                   (uint)in_stack_fffff91c,(uint)in_stack_fffff920,in_stack_fffff924);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
       }
     }
     pcVar4 = *(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar3 * 0x34 + iVar6 * 4);
@@ -421,7 +411,7 @@ LAB_004e2376:
     core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;
-      core_game_cpp_CGame_loadSaveGame_FUN_004e12b0
+      core_game_cpp_CGame_loadGame_FUN_004e12b0
                 (this_ptr,(char *)&this_ptr->save_version,1,in_stack_fffff914);
     }
   }

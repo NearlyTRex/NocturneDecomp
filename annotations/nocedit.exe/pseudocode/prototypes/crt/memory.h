@@ -21,7 +21,7 @@ void * __cdecl ::_arrdtor(WatcomTypeArrayInfo *destroy_info);
 
 // Original: crt_memory.c___arrfini_FUN_005feee9
 // Address: 005feee9
-int __cdecl ::_arrfini(void **obj_array,int obj_count,WatcomTypeInfo *type_info);
+void * __cdecl ::_arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___arrcopy_FUN_00600bc2
 // Address: 00600bc2

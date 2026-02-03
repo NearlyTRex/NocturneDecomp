@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance **array)
+; __cdecl CDeformableModelInstance * __cdecl core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstance *objs)
 ;
 ; Parameters:
-; CDeformableModelInstance * * Stack[0x4]:4   array
+; CDeformableModelInstance * Stack[0x4]:4   objs
 ;
 ; XREF[1]:
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c100
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0052ccd7
     PUSH EDX                            ; 0052ccdb
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0052ccdc
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052cce1
     RET                                 ; 0052cce4
 

@@ -26,13 +26,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   char *pcVar12;
   byte bVar13;
   char *pcVar14;
-  uint in_stack_ffffda00;
-  uint in_stack_ffffda04;
-  uint in_stack_ffffda08;
-  uint in_stack_ffffda0c;
-  uint in_stack_ffffda10;
-  int local_21f0;
-  CPodDirectoryEntry *local_21ec;
+  CPodFile local_2600;
   CPickList local_21d4;
   CPickList local_1e2c;
   CPickList local_1a84;
@@ -85,21 +79,20 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   if (iVar2 == 0) {
     return 0;
   }
-  engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffda00);
-  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xffffda00,local_77c)
-  ;
+  engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_2600);
+  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_2600,local_77c);
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to check status",local_77c);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
     return 0;
   }
   local_30 = 0;
-  if (0 < local_21f0) {
+  if (0 < local_2600.file_count) {
     local_2c = 0;
     do {
-      puVar7 = (uint *)((int)&local_21ec->name_or_offset + local_2c);
+      puVar7 = (uint *)((int)&(local_2600.directory_entries)->name_or_offset + local_2c);
       pSVar9 = &local_14c8;
       pcVar8 = (char *)*puVar7;
       do {
@@ -116,9 +109,9 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
           (local_14c8.timestamp < puVar7[3] - 2)) || (local_14c8.file_size != puVar7[1])) break;
       local_2c = local_2c + 0x14;
       local_30 = local_30 + 1;
-    } while (local_30 < local_21f0);
+    } while (local_30 < local_2600.file_count);
   }
-  if (local_30 != local_21f0) {
+  if (local_30 != local_2600.file_count) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1e2c);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
               (&local_1e2c.base,"That's OK, check it in anyway.");
@@ -131,25 +124,21 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1e2c,local_eac,1,0);
       if ((iVar2 < 0) || (iVar2 == 1)) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,
-                   in_stack_ffffda0c,in_stack_ffffda10);
-        engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1e2c,0);
+        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
         return 0;
       }
       if (iVar2 == 0) break;
       engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(this_ptr,local_77c);
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c
-               ,in_stack_ffffda10);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1e2c,0);
   }
   if ((g_CDemonPodPtr != (CDemonPod *)0x0) &&
      (iVar2 = engine_pod_cpp_CPod_verifyIntegrity_FUN_00551280((CPod *)g_CDemonPodPtr,local_77c),
      iVar2 == 0)) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s fails CRC check.  File not checked in",local_77c);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
     return 0;
   }
   local_50 = checkout_item_name;
@@ -216,9 +205,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_1a84,"Checking in file that didn't change.",-1,0);
     if ((iVar2 < 0) || (iVar2 == 2)) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,
-                 in_stack_ffffda0c,in_stack_ffffda10);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a84,0);
       goto LAB_004bb1fa;
     }
     if (iVar2 == 0) {
@@ -234,16 +221,12 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
         iVar2 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
                           (checkout_item_name,local_a88);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,
-                 in_stack_ffffda0c,in_stack_ffffda10);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a84,0);
       if (iVar2 == 0) goto LAB_004bb1fa;
       if (iVar2 == 2) goto LAB_004bbfdd;
       goto LAB_004bb492;
     }
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c
-               ,in_stack_ffffda10);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a84,0);
   }
   local_44 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_12b4);
@@ -520,7 +503,7 @@ LAB_004bbb45:
               if (p_Var3 != (_FILE *)0x0) {
                 engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_60);
 LAB_004bbfdd:
-                engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+                engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
                 return 2;
               }
               iVar2 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_60,local_48);
@@ -572,12 +555,9 @@ LAB_004bb492:
                       iVar6 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                         (this_ptr,local_77c);
                       if (iVar6 == 0) {
-                        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,
-                                   in_stack_ffffda08,in_stack_ffffda0c,in_stack_ffffda10);
-                        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00)
-                        ;
-                        engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+                        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
+                        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
+                        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
                         return 0;
                       }
                       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_70,local_77c);
@@ -587,16 +567,12 @@ LAB_004bb492:
                     if ((iVar2 == 1) &&
                        (iVar2 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                           (this_ptr,local_77c), iVar2 == 0)) {
-                      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                (&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08
-                                 ,in_stack_ffffda0c,in_stack_ffffda10);
-                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);
-                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+                      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
+                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
+                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
                       return 0;
                     }
-                    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,
-                               in_stack_ffffda0c,in_stack_ffffda10);
+                    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
                   }
                   else {
                     iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -604,8 +580,8 @@ LAB_004bb492:
                     if ((iVar2 != 0) &&
                        (iVar2 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                           (this_ptr,local_77c), iVar2 == 0)) {
-                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);
-                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
+                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
                       return 0;
                     }
                   }
@@ -615,8 +591,8 @@ LAB_004bb492:
                     engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
                     (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
                   }
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);
-                  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
+                  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
                   return 1;
                 }
               }
@@ -658,6 +634,6 @@ LAB_004bb847:
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
 LAB_004bb1fa:
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
   return 0;
 }

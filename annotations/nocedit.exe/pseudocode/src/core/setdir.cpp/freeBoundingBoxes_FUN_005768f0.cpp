@@ -2,13 +2,15 @@
 // Address: 005768f0
 // Address Range: [[005768f0, 00576907]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D **array)
+// Signature: CBoundingBox3D * __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D **array)
+CBoundingBox3D * __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D *objs)
 
 {
-  __arrfini(array,2000,&g_CBoundingBox3DTypeInfo);
-  return;
+  CBoundingBox3D *pCVar1;
+  
+  pCVar1 = __arrfini(objs,2000,&g_CBoundingBox3DTypeInfo);
+  return pCVar1;
 }

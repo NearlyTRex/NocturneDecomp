@@ -2,13 +2,15 @@
 // Address: 005a1ff0
 // Address Range: [[005a1ff0, 005a2007]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_freeVectors_FUN_005a1ff0(CVector3f **array)
+// Signature: CVector3f * __cdecl core_skeleton_cpp_freeVectors_FUN_005a1ff0(CVector3f *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_freeVectors_FUN_005a1ff0(CVector3f **array)
+CVector3f * __cdecl core_skeleton_cpp_freeVectors_FUN_005a1ff0(CVector3f *objs)
 
 {
-  __arrfini(array,3000,&g_CVectorTypeInfo);
-  return;
+  CVector3f *pCVar1;
+  
+  pCVar1 = __arrfini(objs,3000,&g_CVectorTypeInfo);
+  return pCVar1;
 }

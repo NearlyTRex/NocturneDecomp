@@ -97,7 +97,7 @@ CLeakChecker * __cdecl CLeakChecker::ctor(CLeakChecker *this_ptr);
 
 // Original: shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
 // Address: 0050fbc0
-CLeakChecker * __cdecl CLeakChecker::dtor(CLeakChecker *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CLeakChecker * __cdecl CLeakChecker::dtor(CLeakChecker *this_ptr,uint flags);
 
 // Original: shape_memdbg.cpp_free_FUN_005fe659
 // Address: 005fe659

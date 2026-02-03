@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *this_ptr,uint d1)
+; __cdecl CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CKeyActorTypeInfo
@@ -29,7 +29,7 @@ section .text
     PUSH 0x1                            ; 005019bc
     PUSH EBX                            ; 005019be
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005019bf
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005019c4
     MOV DL,byte ptr [ESP + 0xc]         ; 005019c7
     MOV EBX,EAX                         ; 005019cb

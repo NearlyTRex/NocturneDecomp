@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_FUN_004ee440(void)
 
 {
-  void **in_stack_00000004;
+  void *in_stack_00000004;
   
   __arrfini(in_stack_00000004,0x20,&g_CBloodPoolTypeInfo);
   return;

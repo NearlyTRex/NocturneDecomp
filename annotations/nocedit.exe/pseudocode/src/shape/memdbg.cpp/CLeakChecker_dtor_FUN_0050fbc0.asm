@@ -1,14 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0 (CLeakChecker *this_ptr,uint d1,uint d2,uint d3,uint d4)
+; __cdecl CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChecker *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLeakChecker *   Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Files_left_open_006363dd

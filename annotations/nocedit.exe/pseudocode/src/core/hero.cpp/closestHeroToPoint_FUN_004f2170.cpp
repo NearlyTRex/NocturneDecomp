@@ -2,11 +2,11 @@
 // Address: 004f2170
 // Address Range: [[004f2170, 004f221e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
+// Signature: int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
 
 #include "nocturne.h"
 
-int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
+int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
 
 {
   int iVar1;
@@ -15,7 +15,6 @@ int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
   float fVar4;
   int iVar5;
   int iVar6;
-  float *in_stack_00000004;
   float local_1c;
   
   iVar6 = 0;
@@ -25,9 +24,9 @@ int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
     do {
       iVar1 = *(int *)((int)g_HeroActors + iVar5);
       if ((iVar1 != 0) &&
-         (fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004,
-         fVar4 = *(float *)(iVar1 + 0x24) - in_stack_00000004[1],
-         fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2],
+         (fVar2 = *(float *)(iVar1 + 0x20) - (location->position).x,
+         fVar4 = *(float *)(iVar1 + 0x24) - (location->position).y,
+         fVar3 = *(float *)(iVar1 + 0x28) - (location->position).z,
          fVar2 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2, fVar2 < local_1c)) {
         iVar6 = iVar1;
         local_1c = fVar2;

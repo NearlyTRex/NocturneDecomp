@@ -2,15 +2,153 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "pointer_precision",
         "column": 24,
-        "line": 28,
+        "line": 27,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 63,
-        "line": 47,
+        "line": 46,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -18,6 +156,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -25,78 +169,77 @@
       {
         "category": "other",
         "column": 6,
-        "line": 28,
+        "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 65,
+        "line": 35,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 12,
         "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format not a string literal and no format arguments [-Wformat-security]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 65,
         "line": 37,
-        "message": "format not a string literal and no format arguments [-Wformat-security]"
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 12,
         "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format not a string literal and no format arguments [-Wformat-security]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 65,
         "line": 39,
-        "message": "format not a string literal and no format arguments [-Wformat-security]"
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 65,
+        "column": 12,
         "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format not a string literal and no format arguments [-Wformat-security]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 65,
         "line": 41,
-        "message": "format not a string literal and no format arguments [-Wformat-security]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 43,
+        "line": 42,
         "message": "format not a string literal and no format arguments [-Wformat-security]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 45,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 119,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 22,
-    "pseudocode_lines": 69,
-    "suspect_count": 4,
+    "pseudocode_lines": 68,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 256
+    "total_lines": 255
   },
   "cross_references": [
     {
@@ -431,29 +574,15 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "CGame *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"

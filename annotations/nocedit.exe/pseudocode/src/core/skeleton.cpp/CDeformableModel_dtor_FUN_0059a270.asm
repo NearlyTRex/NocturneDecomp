@@ -29,13 +29,13 @@ section .text
     ADD EBX,0x814c                      ; 0059a280
     PUSH EBX                            ; 0059a286
     CALL core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030 ; 0059a287
-        ;   XREF to: 005a2030 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D * * array)
+        ;   XREF to: 005a2030 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030(CBoundingBox3D * objs)
     ADD ESP,0x8                         ; 0059a28c
     PUSH 0x0                            ; 0059a28f
     SUB EAX,0x4bc                       ; 0059a291
     PUSH EAX                            ; 0059a296
     CALL core_curtain.cpp_freeVectors_FUN_0044baf0 ; 0059a297
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * * array)
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * objs)
     ADD ESP,0x8                         ; 0059a29c
     SUB EAX,0x7c90                      ; 0059a29f
     POP EBX                             ; 0059a2a4

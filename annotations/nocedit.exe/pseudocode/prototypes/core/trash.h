@@ -61,4 +61,4 @@ void __cdecl CTrash(CTrash *this_ptr);
 
 // Original: core_trash.cpp_CTrash_dtor_FUN_005df780
 // Address: 005df780
-CTrash * __cdecl CTrash::dtor(CTrash *this_ptr,uint d1,uint d2);
+CTrash * __cdecl CTrash::dtor(CTrash *this_ptr,uint flags);

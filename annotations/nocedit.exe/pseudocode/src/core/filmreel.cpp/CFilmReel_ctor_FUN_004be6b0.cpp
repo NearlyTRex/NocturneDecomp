@@ -13,7 +13,7 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *thi
   CFilmReel *pCVar2;
   CFilmReel_ptr_344 this_ptr_00;
   char *pcVar2;
-  char **ppcVar3;
+  char *pcVar3;
   
   pCVar2 = (CFilmReel *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
@@ -21,17 +21,17 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *thi
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"filmreel.kfm");
   pcVar2 = "movie3";
-  ppcVar3 = &ADJ(this_ptr_00)->movieName;
+  pcVar3 = ADJ(this_ptr_00)->movie_name;
   do {
     cVar1 = *pcVar2;
-    *(char *)ppcVar3 = cVar1;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return ADJ(this_ptr_00);
     }
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    *(char *)((int)ppcVar3 + 1) = cVar1;
-    ppcVar3 = (char **)((int)ppcVar3 + 2);
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   return ADJ(this_ptr_00);
 }

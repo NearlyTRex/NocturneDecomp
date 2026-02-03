@@ -9,11 +9,11 @@
 CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_004c9660(CGlassParticle *this_ptr)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
   CGlassParticle *pCVar2;
   
-  iVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((CVector3f **)&this_ptr->triangle_delta);
+  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460((this_ptr->triangle_delta).vertices);
   pCVar2 = (CGlassParticle *)
-           core_particle_cpp_CParticle_dtor_FUN_00545670((CParticle *)(iVar1 + -0x78));
+           core_particle_cpp_CParticle_dtor_FUN_00545670((CParticle *)(pCVar1 + -10));
   return pCVar2;
 }

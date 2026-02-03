@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_dynamite.cpp_FUN_0049cf90
+;   core_dynamite.cpp_CDynamite_FUN_0049cf90
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     JZ 0x005c65a1                       ; 005c65d0
         ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)  ; LAB_005c65a1
     PUSH EAX                            ; 005c65d2
-    CALL core_dynamite.cpp_FUN_0049cf90 ; 005c65d3
-        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)  ; bool core_dynamite.cpp_FUN_0049cf90()
+    CALL core_dynamite.cpp_CDynamite_FUN_0049cf90 ; 005c65d3
+        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)  ; bool core_dynamite.cpp_CDynamite_FUN_0049cf90(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 005c65d8
     TEST EAX,EAX                        ; 005c65db
     JZ 0x005c65a1                       ; 005c65dd

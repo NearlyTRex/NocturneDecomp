@@ -65,11 +65,11 @@ void __cdecl FUN_004422f0(void);
 
 // Original: core_conveyor.cpp_dtor_FUN_00442310
 // Address: 00442310
-CConveyor * __cdecl dtor(CConveyor *this_ptr,uint d1,uint d2,uint d3);
+CConveyor * __cdecl dtor(CConveyor *this_ptr,uint flags);
 
 // Original: core_conveyor.cpp_CPlatform_dtor_FUN_00442380
 // Address: 00442380
-CPlatform * __cdecl CPlatform::dtor(CPlatform *this_ptr,uint d1,uint d2,uint d3);
+CPlatform * __cdecl CPlatform::dtor(CPlatform *this_ptr,uint flags);
 
 // Original: core_conveyor.cpp_FUN_004423f0
 // Address: 004423f0

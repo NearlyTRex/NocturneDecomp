@@ -201,7 +201,7 @@ section .text
     LEA EAX,[ESP + 0x22b8]              ; 0041b41d
     PUSH EAX                            ; 0041b424
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0041b425
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041b42a
     JMP 0x0041b339                      ; 0041b42d
         ;   XREF to: 0041b339 (UNCONDITIONAL_JUMP)  ; LAB_0041b339
@@ -211,13 +211,13 @@ section .text
     LEA EAX,[ESP + 0x22b8]              ; 0041b435
     PUSH EAX                            ; 0041b43c
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0041b43d
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041b442
     PUSH EBX                            ; 0041b445
     LEA EAX,[ESP + 0x4]                 ; 0041b446
     PUSH EAX                            ; 0041b44a
     CALL core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40 ; 0041b44b
-        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041b450
     MOV EAX,EBX                         ; 0041b453
     ADD ESP,0x2830                      ; 0041b455
@@ -237,7 +237,7 @@ section .text
     PUSH EAX                            ; 0041b475
     XOR ESI,ESI                         ; 0041b476
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0041b478
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041b47d
     TEST EBP,EBP                        ; 0041b480
     JLE 0x0041b4ae                      ; 0041b482
@@ -272,7 +272,7 @@ section .text
     PUSH EAX                            ; 0041b4c4
     MOV EBX,0x1                         ; 0041b4c5
     CALL core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40 ; 0041b4ca
-        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 0059de40 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041b4cf
     MOV EAX,EBX                         ; 0041b4d2
     ADD ESP,0x2830                      ; 0041b4d4

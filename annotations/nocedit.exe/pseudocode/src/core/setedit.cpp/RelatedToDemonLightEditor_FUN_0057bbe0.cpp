@@ -23,11 +23,8 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
   char *pcVar10;
   float *result_ptr;
   ulonglong uVar11;
-  float in_stack_fffff758;
-  uint in_stack_fffff75c;
-  uint in_stack_fffff760;
-  char **in_stack_fffff764;
-  CStrList_vtable *in_stack_fffff768;
+  float local_8a8;
+  CPickList local_8a4;
   CPickList local_4fc;
   char local_154 [252];
   double dStack_58;
@@ -191,9 +188,7 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
           }
           local_18->filter_count = iVar7;
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_4fc,0,(uint)in_stack_fffff758,in_stack_fffff75c,in_stack_fffff760,
-                   (uint)in_stack_fffff764,(uint)in_stack_fffff768);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4fc,0);
       }
       break;
     case 0x45:
@@ -202,18 +197,18 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
                   (g_CEditorToolsPtr,"No filters to edit!");
       }
       else {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff75c);
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8a4);
         iVar7 = 0;
         pacVar2 = local_28;
         if (0 < local_18->filter_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff75c,*pacVar2);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8a4.base,*pacVar2);
             iVar7 = iVar7 + 1;
             pacVar2 = pacVar2 + 1;
           } while (iVar7 < local_18->filter_count);
         }
         iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffff75c,"Select filter to edit",-1,0);
+                          (&local_8a4,"Select filter to edit",-1,0);
         if ((-1 < iVar7) &&
            (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                               (g_CEditorToolsPtr,"Edit filter name",local_28[iVar7],0x28,0)
@@ -221,9 +216,7 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Edit filter time",local_2c + iVar7,0,0.0,0.0,1);
         }
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff75c,0,(uint)in_stack_fffff758,in_stack_fffff75c,
-                   in_stack_fffff760,(uint)in_stack_fffff764,(uint)in_stack_fffff768);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8a4,0);
       }
       break;
     case 0x46:
@@ -233,28 +226,28 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       local_18->move_filter = (uint)(local_18->move_filter == 0);
       break;
     case 0x48:
-      in_stack_fffff758 = (float)(local_18->filter_vel).x * (float)0.00390625;
+      local_8a8 = (float)(local_18->filter_vel).x * (float)0.00390625;
       iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                        (g_CEditorToolsPtr,"Enter light X velocity",
-                         (float *)&stack0xfffff758,0,0.0,0.0,1);
+                        (g_CEditorToolsPtr,"Enter light X velocity",&local_8a8,0,0.0,0.0,1)
+      ;
       if (iVar7 != 0) {
         dStack_58 = floor
-                              ((double)(in_stack_fffff758 * (float)256 +
-                                       (float)0.5));
+                              ((double)(local_8a8 * (float)256 + (float)0.5)
+                              );
         iVar7 = local_1c;
         dVar9 = round(dStack_58);
         *(int *)(iVar7 + 0x17f8) = (int)ROUND(dVar9);
       }
       break;
     case 0x49:
-      in_stack_fffff758 = (float)(local_18->filter_vel).y * (float)0.00390625;
+      local_8a8 = (float)(local_18->filter_vel).y * (float)0.00390625;
       iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                        (g_CEditorToolsPtr,"Enter light Y velocity",
-                         (float *)&stack0xfffff758,0,0.0,0.0,1);
+                        (g_CEditorToolsPtr,"Enter light Y velocity",&local_8a8,0,0.0,0.0,1)
+      ;
       if (iVar7 != 0) {
         dStack_58 = floor
-                              ((double)(in_stack_fffff758 * (float)256 +
-                                       (float)0.5));
+                              ((double)(local_8a8 * (float)256 + (float)0.5)
+                              );
         iVar7 = local_1c;
         dVar9 = round(dStack_58);
         *(int *)(iVar7 + 0x17fc) = (int)ROUND(dVar9);

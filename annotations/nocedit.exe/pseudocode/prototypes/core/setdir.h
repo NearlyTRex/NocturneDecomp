@@ -141,8 +141,8 @@ CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
 
 // Original: core_setdir.cpp_freeBoundingBoxes_FUN_005768f0
 // Address: 005768f0
-void __cdecl freeBoundingBoxes(CBoundingBox3D **array);
+CBoundingBox3D * __cdecl freeBoundingBoxes(CBoundingBox3D *objs);
 
 // Original: core_setdir.cpp_freeCZThumbs_FUN_00576910
 // Address: 00576910
-void __cdecl freeCZThumbs(CZThumb **array);
+CZThumb * __cdecl freeCZThumbs(CZThumb *objs);

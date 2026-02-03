@@ -493,8 +493,8 @@ float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
 
 // Original: shape_meshlod.cpp_freeLodFaces_FUN_0051f0c0
 // Address: 0051f0c0
-void __cdecl freeLodFaces(CLodFace **array);
+CLodFace * __cdecl freeLodFaces(CLodFace *objs);
 
 // Original: shape_meshlod.cpp_freeVectors_FUN_0051f0e0
 // Address: 0051f0e0
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

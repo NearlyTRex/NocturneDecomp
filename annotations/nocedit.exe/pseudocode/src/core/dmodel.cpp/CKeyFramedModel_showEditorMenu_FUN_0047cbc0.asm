@@ -192,7 +192,7 @@ section .text
     MOV dword ptr [EBP + 0xe],ECX       ; 0047cbfe
     MOV dword ptr [EBP + 0x12],EAX      ; 0047cc01
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0047cc04
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 0047cc09
     MOV dword ptr [EBP + 0x22],EBX      ; 0047cc0f
     MOV dword ptr [EBP + 0x26],EBX      ; 0047cc12

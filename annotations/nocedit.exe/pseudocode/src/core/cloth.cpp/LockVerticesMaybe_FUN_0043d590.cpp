@@ -16,17 +16,15 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   CSpotView *pCVar3;
   uint x2;
   uint x1;
-  uchar uVar4;
-  undefined3 extraout_var;
+  int iVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
   CVector3f *point;
+  int iVar7;
   int iVar8;
-  int iVar9;
   int in_stack_00000004;
   char *text;
-  CGame *in_stack_ffffff7c;
+  float in_stack_ffffff7c;
   float in_stack_ffffff80;
   float in_stack_ffffff84;
   float in_stack_ffffff88;
@@ -58,11 +56,11 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
   local_30 = 1;
   local_3c = 0;
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff7c);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_cloth_cpp_FUN_00439710();
   pfVar1 = (float *)(in_stack_00000004 + 0x56d8);
   if ((float *)&stack0xffffff7c != pfVar1) {
-    in_stack_ffffff7c = (CGame *)*pfVar1;
+    in_stack_ffffff7c = *pfVar1;
     in_stack_ffffff80 = *(float *)(in_stack_00000004 + 0x56dc);
     in_stack_ffffff84 = *(float *)(in_stack_00000004 + 0x56e0);
   }
@@ -71,17 +69,17 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     local_74 = *(float *)(in_stack_00000004 + 0x56dc);
     local_70 = *(float *)(in_stack_00000004 + 0x56e0);
   }
-  iVar7 = 1;
+  iVar6 = 1;
   if (1 < *(int *)(in_stack_00000004 + 0x104)) {
     point = (CVector3f *)(in_stack_00000004 + 0x57f4);
     do {
-      iVar7 = iVar7 + 1;
+      iVar6 = iVar6 + 1;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff7c,point);
       point = (CVector3f *)&point[0x17].z;
-    } while (iVar7 < *(int *)(in_stack_00000004 + 0x104));
+    } while (iVar6 < *(int *)(in_stack_00000004 + 0x104));
   }
   pCVar3 = g_CSpotViewPtr;
-  local_4c = (float)in_stack_ffffff7c + in_stack_ffffff88;
+  local_4c = in_stack_ffffff7c + in_stack_ffffff88;
   local_58 = local_4c * 0.5f;
   local_48 = in_stack_ffffff80 + local_74;
   local_44 = in_stack_ffffff84 + local_70;
@@ -101,15 +99,15 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
               (g_CDemonRendererPtr2,&g_ZeroVector);
     local_18 = 0;
     if (0 < *(int *)(in_stack_00000004 + 0x104)) {
-      iVar7 = 0;
-      iVar9 = 0;
+      iVar6 = 0;
+      iVar8 = 0;
       do {
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)
                    ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
-                   + iVar9),(CVector3i *)(*(int *)(in_stack_00000004 + 0x10c) + iVar7));
-        iVar7 = iVar7 + 0xc;
-        iVar9 = iVar9 + 0x30;
+                   + iVar8),(CVector3i *)(*(int *)(in_stack_00000004 + 0x10c) + iVar6));
+        iVar6 = iVar6 + 0xc;
+        iVar8 = iVar8 + 0x30;
         local_18 = local_18 + 1;
       } while (local_18 < *(int *)(in_stack_00000004 + 0x104));
     }
@@ -119,17 +117,17 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     if (0 < *(int *)(in_stack_00000004 + 0x110)) {
       local_1c = 0;
       do {
-        iVar8 = *(int *)(in_stack_00000004 + 0x114) + local_1c;
-        iVar7 = 0;
-        iVar9 = iVar8;
-        if (0 < *(int *)(iVar8 + 4)) {
+        iVar7 = *(int *)(in_stack_00000004 + 0x114) + local_1c;
+        iVar6 = 0;
+        iVar8 = iVar7;
+        if (0 < *(int *)(iVar7 + 4)) {
           do {
-            iVar7 = iVar7 + 1;
+            iVar6 = iVar6 + 1;
             engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                      (g_CDemonRendererPtr2,*(int *)(iVar9 + 0x18),
-                       *(int *)((iVar7 % *(int *)(iVar8 + 4)) * 0xc + 0x18 + iVar8));
-            iVar9 = iVar9 + 0xc;
-          } while (iVar7 < *(int *)(iVar8 + 4));
+                      (g_CDemonRendererPtr2,*(int *)(iVar8 + 0x18),
+                       *(int *)((iVar6 % *(int *)(iVar7 + 4)) * 0xc + 0x18 + iVar7));
+            iVar8 = iVar8 + 0xc;
+          } while (iVar6 < *(int *)(iVar7 + 4));
         }
         local_1c = local_1c + 0x48;
         local_14 = local_14 + 1;
@@ -155,27 +153,27 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
         local_2c = g_MouseY;
       }
     }
-    iVar7 = 0;
+    iVar6 = 0;
     if (0 < *(int *)(in_stack_00000004 + 0x104)) {
-      iVar8 = 0;
-      iVar9 = in_stack_00000004;
+      iVar7 = 0;
+      iVar8 = in_stack_00000004;
       do {
-        if (*(int *)(iVar9 + 0x574c) == 0) {
+        if (*(int *)(iVar8 + 0x574c) == 0) {
           g_ActiveRenderColor = 4;
         }
         else {
           g_ActiveRenderColor = 1;
         }
         pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {
-          iVar6 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;
-          iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;
-          if (((((int)local_24 <= iVar6) && (iVar6 <= (int)local_28)) && (local_2c <= iVar5)) &&
-             (iVar5 <= local_20)) {
+        if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar7 + 3) & 0x80) == 0) {
+          iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar7) >> 0x10;
+          iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar7) >> 0x10;
+          if (((((int)local_24 <= iVar5) && (iVar5 <= (int)local_28)) && (local_2c <= iVar4)) &&
+             (iVar4 <= local_20)) {
             if (g_MouseButtonFlags == 0) {
-              *(int *)(iVar9 + 0x574c) = local_30;
+              *(int *)(iVar8 + 0x574c) = local_30;
             }
-            if (*(int *)(iVar9 + 0x574c) == 0) {
+            if (*(int *)(iVar8 + 0x574c) == 0) {
               g_ActiveRenderColor = 0xfc;
             }
             else {
@@ -184,55 +182,55 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
           }
         }
         core_cloth_cpp_FUN_0043c6e0();
-        iVar8 = iVar8 + 0x30;
-        iVar9 = iVar9 + 0x11c;
-        iVar7 = iVar7 + 1;
-      } while (iVar7 < *(int *)(in_stack_00000004 + 0x104));
+        iVar7 = iVar7 + 0x30;
+        iVar8 = iVar8 + 0x11c;
+        iVar6 = iVar6 + 1;
+      } while (iVar6 < *(int *)(in_stack_00000004 + 0x104));
     }
-    if ((local_3c != 0) && (iVar7 = 0, 0 < *(int *)(in_stack_00000004 + 0x104))) {
-      iVar9 = 0;
+    if ((local_3c != 0) && (iVar6 = 0, 0 < *(int *)(in_stack_00000004 + 0x104))) {
+      iVar8 = 0;
       do {
-        iVar8 = *(int *)(iVar9 + *(int *)(in_stack_00000004 + 0x3fe3c));
+        iVar7 = *(int *)(iVar8 + *(int *)(in_stack_00000004 + 0x3fe3c));
         pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        if ((int)(pSVar2[iVar8].projected_vertex.screen_x & -0x80000000) == 0) {
-          iVar5 = pSVar2[iVar8].projected_vertex.screen_x;
-          local_40 = pSVar2[iVar8].projected_vertex.screen_y >> 0x10;
-          sprintf(local_6c,"%d",iVar7);
-          engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar5 >> 0x10,local_40);
+        if ((int)(pSVar2[iVar7].projected_vertex.screen_x & -0x80000000) == 0) {
+          iVar4 = pSVar2[iVar7].projected_vertex.screen_x;
+          local_40 = pSVar2[iVar7].projected_vertex.screen_y >> 0x10;
+          sprintf(local_6c,"%d",iVar6);
+          engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar4 >> 0x10,local_40);
         }
-        iVar7 = iVar7 + 1;
-        iVar9 = iVar9 + 4;
-      } while (iVar7 < *(int *)(in_stack_00000004 + 0x104));
+        iVar6 = iVar6 + 1;
+        iVar8 = iVar8 + 4;
+      } while (iVar6 < *(int *)(in_stack_00000004 + 0x104));
     }
     if ((g_MouseButtonFlags == 0) && (-1 < (int)local_24)) {
-      iVar8 = 0;
       iVar7 = 0;
-      iVar9 = in_stack_00000004;
+      iVar6 = 0;
+      iVar8 = in_stack_00000004;
       if (0 < *(int *)(in_stack_00000004 + 0x104)) {
         do {
-          if (*(int *)(iVar9 + 0x574c) != 0) {
-            iVar7 = iVar7 + 1;
+          if (*(int *)(iVar8 + 0x574c) != 0) {
+            iVar6 = iVar6 + 1;
           }
-          iVar8 = iVar8 + 1;
-          iVar9 = iVar9 + 0x11c;
-        } while (iVar8 < *(int *)(in_stack_00000004 + 0x104));
+          iVar7 = iVar7 + 1;
+          iVar8 = iVar8 + 0x11c;
+        } while (iVar7 < *(int *)(in_stack_00000004 + 0x104));
       }
-      if (iVar7 < 0x65) {
+      if (iVar6 < 0x65) {
         *(uint *)(in_stack_00000004 + 0x3f028) = 0;
-        iVar8 = 0;
-        iVar9 = in_stack_00000004;
+        iVar7 = 0;
+        iVar8 = in_stack_00000004;
         if (0 < *(int *)(in_stack_00000004 + 0x104)) {
           do {
-            if (*(int *)(iVar9 + 0x574c) != 0) {
+            if (*(int *)(iVar8 + 0x574c) != 0) {
               *(int *)(in_stack_00000004 + 0x3f02c + *(int *)(in_stack_00000004 + 0x3f028) * 4) =
-                   iVar8;
+                   iVar7;
               *(int *)(in_stack_00000004 + 0x3f028) = *(int *)(in_stack_00000004 + 0x3f028) + 1;
             }
-            iVar8 = iVar8 + 1;
-            iVar9 = iVar9 + 0x11c;
-          } while (iVar8 < *(int *)(in_stack_00000004 + 0x104));
+            iVar7 = iVar7 + 1;
+            iVar8 = iVar8 + 0x11c;
+          } while (iVar7 < *(int *)(in_stack_00000004 + 0x104));
         }
-        if (iVar7 != *(int *)(in_stack_00000004 + 0x3f028)) {
+        if (iVar6 != *(int *)(in_stack_00000004 + 0x3f028)) {
           g_CurrentFilename = "..\\core\\cloth.cpp";
           g_CurrentLineNumber = 0x8ec;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
@@ -241,23 +239,23 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
       else {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't lock this many vertices!");
-        iVar9 = 0;
-        iVar7 = in_stack_00000004;
+        iVar8 = 0;
+        iVar6 = in_stack_00000004;
         if (0 < *(int *)(in_stack_00000004 + 0x104)) {
           do {
-            *(uint *)(iVar7 + 0x574c) = 0;
-            iVar9 = iVar9 + 1;
-            iVar7 = iVar7 + 0x11c;
-          } while (iVar9 < *(int *)(in_stack_00000004 + 0x104));
+            *(uint *)(iVar6 + 0x574c) = 0;
+            iVar8 = iVar8 + 1;
+            iVar6 = iVar6 + 0x11c;
+          } while (iVar8 < *(int *)(in_stack_00000004 + 0x104));
         }
-        iVar9 = 0;
-        iVar7 = in_stack_00000004;
+        iVar8 = 0;
+        iVar6 = in_stack_00000004;
         if (0 < *(int *)(in_stack_00000004 + 0x3f028)) {
           do {
-            *(uint *)(*(int *)(iVar7 + 0x3f02c) * 0x11c + 0x574c + in_stack_00000004) = 1;
-            iVar9 = iVar9 + 1;
-            iVar7 = iVar7 + 4;
-          } while (iVar9 < *(int *)(in_stack_00000004 + 0x3f028));
+            *(uint *)(*(int *)(iVar6 + 0x3f02c) * 0x11c + 0x574c + in_stack_00000004) = 1;
+            iVar8 = iVar8 + 1;
+            iVar6 = iVar6 + 4;
+          } while (iVar8 < *(int *)(in_stack_00000004 + 0x3f028));
         }
       }
       local_34 = 0xffffffff;
@@ -274,16 +272,15 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     engine_2d_c_drawTextXY_FUN_00402130(0,0x16,"N Toggle vertex numbers.");
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     if (-1 < (int)local_24) {
-      uVar4 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
-      ;
-      iVar9 = local_20;
-      g_ActiveRenderColor = CONCAT31(extraout_var,uVar4);
+      g_ActiveRenderColor =
+           shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
+      iVar8 = local_20;
       engine_2d_c_drawLine_FUN_004011b0(local_24,local_2c,local_24,local_20);
       x2 = local_28;
-      iVar7 = local_2c;
-      engine_2d_c_drawLine_FUN_004011b0(local_28,local_2c,local_28,iVar9);
+      iVar6 = local_2c;
+      engine_2d_c_drawLine_FUN_004011b0(local_28,local_2c,local_28,iVar8);
       x1 = local_24;
-      engine_2d_c_drawLine_FUN_004011b0(local_24,iVar7,x2,iVar7);
+      engine_2d_c_drawLine_FUN_004011b0(local_24,iVar6,x2,iVar6);
       engine_2d_c_drawLine_FUN_004011b0(x1,local_20,x2,local_20);
     }
     if (((int)local_34 < 0) && (g_MouseButtonFlags != 0)) {
@@ -292,14 +289,14 @@ void __cdecl core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x26);
-    if (iVar7 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x26);
+    if (iVar6 != 0) {
       local_28 = (uint)(local_28 == 0);
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if (iVar7 != 0) break;
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
-    if (iVar7 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    if (iVar6 != 0) break;
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
+    if (iVar6 != 0) {
       local_24 = (uint)(local_24 == 0);
     }
   }

@@ -56,7 +56,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   pcVar6 = &stack0xfffff8d8;
   fopenThreadSafe("stderr.txt","wt",&g_StderrLogFile);
   g_RenderingMode = 4;
-  core_flamegun_cpp_initializeFlamegun_FUN_004cbce0();
+  core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
   g_PodSystemVersion = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);

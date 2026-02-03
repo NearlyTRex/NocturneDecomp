@@ -17,7 +17,7 @@
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0 at 004701b9
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 at 00470079
 ;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 at 004826cd
-;   core_emitter.cpp_FUN_004a8070 at 004a8094
+;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a8094
 ;   ... and 41 more
 ;
 ; *****************************************************************************

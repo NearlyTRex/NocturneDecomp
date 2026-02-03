@@ -19,7 +19,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   uint uVar7;
   char *pcVar8;
   byte bVar9;
-  uint in_stack_fffff7a4;
+  short local_85c [512];
   char local_45c [300];
   char local_330 [260];
   char local_22c [256];
@@ -57,7 +57,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   iVar2 = (int)(0x200 / (ulonglong)(uint)pCVar4->num_channels);
   local_1c = 0;
   do {
-    iVar5 = sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(pCVar4,(short *)&stack0xfffff7a4,iVar2);
+    iVar5 = sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(pCVar4,local_85c,iVar2);
     local_1c = local_1c + iVar5;
   } while (iVar5 == iVar2);
   g_CurrentDebugFilename = "..\\sound\\sndmain.cpp";
@@ -166,6 +166,6 @@ joined_r0x005ad2dc:
     } while (iVar2 < local_2c.item_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\sound\\sndmain.cpp",0x17b1);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_2c,0,in_stack_fffff7a4);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_2c,0);
   return;
 }

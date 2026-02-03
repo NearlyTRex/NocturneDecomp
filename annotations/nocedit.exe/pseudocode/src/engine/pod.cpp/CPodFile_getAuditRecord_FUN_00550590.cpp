@@ -1,12 +1,12 @@
 // Name: engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
 // Address: 00550590
 // Address Range: [[00550590, 005506ba]]
-// Convention: __cdecl
-// Signature: void __cdecl engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,void *output_buffer)
+// Convention: __stack2_esi
+// Signature: void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,void *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
+void * __stack2_esi
 engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
           (CPodFile *this_ptr,int record_index,void *output_buffer)
 
@@ -14,11 +14,12 @@ engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
   _FILE *file;
   int iVar1;
   uint *puVar2;
-  byte bVar3;
+  uint *puVar3;
+  byte bVar4;
   uint local_144 [78];
   
-  bVar3 = 0;
-  if ((record_index < 0) || ((int)this_ptr->audit_count <= record_index)) {
+  bVar4 = 0;
+  if ((record_index < 0) || (this_ptr->audit_count <= record_index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x308;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
@@ -41,10 +42,11 @@ engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",800);
   puVar2 = local_144;
+  puVar3 = output_buffer;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)output_buffer = *puVar2;
-    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    output_buffer = (uint *)((int)output_buffer + ((uint)bVar3 * -2 + 1) * 4);
+    *puVar3 = *puVar2;
+    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  return;
+  return output_buffer;
 }

@@ -2,20 +2,19 @@
 // Address: 004d28a0
 // Address Range: [[004d28a0, 004d2904]]
 // Convention: __cdecl
-// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0 (CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3)
+// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 CFrankenstienMachine * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0
-          (CFrankenstienMachine *this_ptr,uint d1,uint d2,uint d3)
+core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;
   CFrankenstienMachine *ptr;
   void *ptr_00;
   
-  if ((d1 & 4) != 0) {
+  if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CFrankenstienMachineTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
@@ -23,7 +22,7 @@ core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->unk + 0x1a0));
   ptr = (CFrankenstienMachine *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pCVar1 + -0x40),1);
-  if ((d1 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

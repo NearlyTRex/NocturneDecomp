@@ -9,8 +9,8 @@
 CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr)
 
 {
-  int extraout_EAX;
+  SClipPlane *pSVar1;
   
-  core_mirror_cpp_freeClipPlaneArray_FUN_00522c10((SClipPlane **)this_ptr->clip_planes);
-  return (CMirror *)(extraout_EAX + -0x98);
+  pSVar1 = core_mirror_cpp_freeClipPlanes_FUN_00522c10(this_ptr->clip_planes);
+  return (CMirror *)&pSVar1[-10].C;
 }

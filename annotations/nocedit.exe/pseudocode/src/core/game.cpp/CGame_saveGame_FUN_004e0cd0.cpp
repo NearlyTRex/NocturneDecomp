@@ -18,10 +18,8 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   char *pcVar6;
   char *filename_buffer;
   char *buffer_size;
-  byte *show_directory;
-  uint in_stack_fffffaa8;
-  uint in_stack_fffffaac;
-  uint in_stack_fffffab0;
+  char *show_directory;
+  char local_558 [260];
   char local_454 [260];
   char local_350 [260];
   char local_24c [256];
@@ -45,7 +43,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   iVar3 = stricmp(local_24c,"noc");
   if ((iVar3 == 0) ||
      (iVar3 = stricmp(local_24c,".noc"), iVar3 == 0)) {
-    pcVar6 = &stack0xfffffaa8;
+    pcVar6 = local_558;
     pcVar5 = &g_CurrentSaveFile;
     do {
       cVar2 = *pcVar5;
@@ -58,11 +56,11 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     } while (cVar2 != '\0');
   }
   else {
-    in_stack_fffffaa8 = in_stack_fffffaa8 & 0xffffff00;
+    local_558[0] = '\0';
   }
-  pcVar5 = &stack0xfffffaa8;
-  show_directory = &stack0xfffffaa8;
-  pcVar6 = &stack0xfffffaa8;
+  pcVar5 = local_558;
+  show_directory = local_558;
+  pcVar6 = local_558;
   if (save_filename == (char *)0x0) {
     buffer_size = "noc";
     filename_buffer = "save";
@@ -73,9 +71,8 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     if (iVar3 == 0) {
       return;
     }
-    splitpath
-              (&stack0xfffffaa8,(char *)0x0,(char *)0x0,local_454,(char *)0x0);
-    sprintf(&stack0xfffffaa8,"%s.noc",local_454);
+    splitpath(local_558,(char *)0x0,(char *)0x0,local_454,(char *)0x0);
+    sprintf(local_558,"%s.noc",local_454);
   }
   else {
     do {
@@ -90,7 +87,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   }
   _mkdir("save");
   local_14 = 0;
-  file = engine_dosio_c_getFile_FUN_00481a50("save",&stack0xfffffaa8,"wt");
+  file = engine_dosio_c_getFile_FUN_00481a50("save",local_558,"wt");
   if (file == (_FILE *)0x0) {
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Warning!  Your game didn't save.")
     ;
@@ -146,20 +143,16 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
               ((ifstream *)local_14c,"save\\$$SAVE$$.TMP",0x121,g_DefaultStreamBufferSize);
     if (local_e8 != 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar5);
-      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-                ((ofstream *)local_cc,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
-      crt_fstream_cpp_ifstream_dtor_FUN_005ff856
-                ((ifstream *)local_14c,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
+      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_cc,0);
+      crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)local_14c,0);
       return;
     }
-    sprintf(local_350,"%s\\%s","save",&stack0xfffffaa8);
+    sprintf(local_350,"%s\\%s","save",local_558);
     crt_fstream_cpp_openFile_FUN_00600e85((ifstream *)local_cc,local_350,0x112,iVar3);
     if (local_6c != 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar5);
-      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-                ((ofstream *)local_cc,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
-      crt_fstream_cpp_ifstream_dtor_FUN_005ff856
-                ((ifstream *)local_14c,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
+      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_cc,0);
+      crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)local_14c,0);
       return;
     }
     stream_write_internal((_FILE *)(local_cc + 0x44),&g_MagicNumEFD,4);
@@ -172,10 +165,8 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     _fflush((_FILE *)local_cc);
     support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_50.dictionary);
     support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_50.base,1);
-    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-              ((ofstream *)local_cc,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
-    crt_fstream_cpp_ifstream_dtor_FUN_005ff856
-              ((ifstream *)local_14c,0,in_stack_fffffaa8,in_stack_fffffaac,in_stack_fffffab0);
+    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_cc,0);
+    crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)local_14c,0);
   }
   remove("save\\$$SAVE$$.TMP");
   pcVar5 = &g_CurrentSaveFile;

@@ -234,7 +234,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
     local_11c = &s_EmptyChar_00641c5a;
   }
   else if (cVar2 == ':') {
-    local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 1);
+    local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 1);
     dVar1 = (double)CONCAT44(local_124,local_11c);
     if (g_ScriptEventsEnabled != 0) {
       cVar2 = *local_11c;
@@ -378,7 +378,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
           iVar6 = strnicmp(pcVar17,"addItemToInventory",0x12);
           if ((iVar6 == 0) &&
              ((g_CharacterClassificationTable[(byte)(pcVar17[0x12] + 1)] & 0xe0) == 0)) {
-            local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0x12);
+            local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x12);
             local_e8 = -1;
             sscanf(local_11c," ( %[^,], %[^)])%n",local_ee4,local_27e4,&local_e8);
             if (local_e8 < 3) {
@@ -405,7 +405,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
             iVar6 = strnicmp(pcVar17,"addLightFilter",0xe);
             if ((iVar6 == 0) &&
                ((g_CharacterClassificationTable[(byte)(pcVar17[0xe] + 1)] & 0xe0) == 0)) {
-              local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0xe);
+              local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xe);
               local_e0 = -1;
               sscanf
                         (local_11c,"( %[^,], %[^,], %f )%n",local_5d4,local_250,&local_a4,&local_e0);
@@ -435,7 +435,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
               iVar6 = strnicmp(pcVar17,"allowEnemyAttack",0x10);
               if ((iVar6 == 0) &&
                  ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)) {
-                local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0x10);
+                local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x10);
                 core_script_cpp_parseConditionExpr_FUN_005594a0(&local_11c,local_958);
                 pcVar17 = extraout_EAX;
                 if (extraout_EAX != (char *)0x0) {
@@ -465,7 +465,7 @@ LAB_0055bb9d:
                                   (pcVar17,"allowHeroControls",0x11);
                 if ((iVar6 == 0) &&
                    ((g_CharacterClassificationTable[(byte)(pcVar17[0x11] + 1)] & 0xe0) == 0)) {
-                  local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0x11);
+                  local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x11);
                   core_script_cpp_parseConditionExpr_FUN_005594a0(&local_11c,local_bb0);
                   pcVar17 = extraout_EAX_00;
                   if (extraout_EAX_00 != (char *)0x0) goto LAB_0055bb9d;
@@ -481,7 +481,7 @@ LAB_0055bb9d:
                   ;
                   if ((iVar6 == 0) &&
                      ((g_CharacterClassificationTable[(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) {
-                    local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0xf);
+                    local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xf);
                     core_script_cpp_parseConditionExpr_FUN_005594a0(&local_11c,local_a84);
                     pcVar17 = extraout_EAX_01;
                     if (extraout_EAX_01 != (char *)0x0) goto LAB_0055bb9d;
@@ -496,7 +496,7 @@ LAB_0055bb9d:
                                       (pcVar17,"attachActorToPlatform",0x15);
                     if ((iVar6 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(pcVar17[0x15] + 1)] & 0xe0) == 0)) {
-                      local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0x15);
+                      local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x15);
                       local_10c = -1;
                       sscanf
                                 (local_11c,"(%[^,], %[^)])%n",local_190c,local_1a9c,&local_10c);
@@ -526,7 +526,7 @@ LAB_0055bb9d:
                       ;
                       if ((iVar6 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
-                        local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0xb);
+                        local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xb);
                         if (g_ScriptEventsEnabled == 0) {
                           core_game_cpp_CGame_beginFadeIn_FUN_004e0920(g_CGamePtr);
                         }
@@ -537,7 +537,7 @@ LAB_0055bb9d:
                         if ((iVar6 == 0) &&
                            ((g_CharacterClassificationTable[(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0))
                         {
-                          local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0xc);
+                          local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xc);
                           if (g_ScriptEventsEnabled == 0) {
                             core_game_cpp_CGame_beginFadeOut_FUN_004e0960(g_CGamePtr);
                           }
@@ -548,7 +548,7 @@ LAB_0055bb9d:
                           if ((iVar6 == 0) &&
                              ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)
                              ) {
-                            local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 10);
+                            local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 10);
                             if (g_ScriptEventsEnabled == 0) {
                               sprintf
                                         (local_890,"Script breakpoint reached at line %d",local_124);
@@ -563,8 +563,8 @@ LAB_0055bb9d:
                             if ((iVar6 == 0) &&
                                ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0)
                                 == 0)) {
-                              local_11c = core_script_cpp_skipWhitespaceFUN_005593d0(pcVar17 + 0x10)
-                              ;
+                              local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
+                                                    (pcVar17 + 0x10);
                               if (g_ScriptEventsEnabled == 0) {
                                 core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
                                           (g_CDemonSetPtr);
@@ -576,7 +576,7 @@ LAB_0055bb9d:
                               if ((iVar6 == 0) &&
                                  ((g_CharacterClassificationTable[(byte)(pcVar17[0xc] + 1)] & 0xe0)
                                   == 0)) {
-                                local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                       (pcVar17 + 0xc);
                                 pcVar17 = core_script_cpp_parseArgument_FUN_005593f0
                                                     (&local_11c,local_2334,200);
@@ -630,7 +630,7 @@ LAB_0055bb9d:
                                 if ((iVar6 == 0) &&
                                    ((g_CharacterClassificationTable[(byte)(pcVar17[0xe] + 1)] & 0xe0
                                     ) == 0)) {
-                                  local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                  local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                         (pcVar17 + 0xe);
                                   pcVar17 = core_script_cpp_parseArgument_FUN_005593f0
                                                       (&local_11c,local_2e24,200);
@@ -663,7 +663,7 @@ LAB_0055bb9d:
                                   if ((iVar6 == 0) &&
                                      ((g_CharacterClassificationTable[(byte)(pcVar17[0x12] + 1)] &
                                       0xe0) == 0)) {
-                                    local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                    local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                           (pcVar17 + 0x12);
                                     pcVar17 = core_script_cpp_parseArgument_FUN_005593f0
                                                         (&local_11c,local_3784,300);
@@ -699,7 +699,7 @@ LAB_0055c37e:
                                     if ((iVar6 == 0) &&
                                        ((g_CharacterClassificationTable[(byte)(pcVar17[5] + 1)] &
                                         0xe0) == 0)) {
-                                      local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                      local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 5);
                                       local_108 = -1;
                                       sscanf
@@ -764,7 +764,7 @@ LAB_0055c37e:
                                       if ((iVar6 == 0) &&
                                          ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] &
                                           0xe0) == 0)) {
-                                        local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                        local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                               (pcVar17 + 10);
                                         local_fc = -1;
                                         sscanf
@@ -821,7 +821,7 @@ joined_r0x0055f6da:
                                         if ((iVar6 == 0) &&
                                            ((g_CharacterClassificationTable[(byte)(pcVar17[5] + 1)]
                                             & 0xe0) == 0)) {
-                                          local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                          local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                                 (pcVar17 + 5);
                                           pcVar17 = core_script_cpp_parseArgument_FUN_005593f0
                                                               (&local_11c,local_3658,300);
@@ -839,7 +839,7 @@ joined_r0x0055f6da:
                                           if ((iVar6 == 0) &&
                                              ((g_CharacterClassificationTable
                                                [(byte)(pcVar17[9] + 1)] & 0xe0) == 0)) {
-                                            local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
+                                            local_11c = core_script_cpp_skipWhitespace_FUN_005593d0
                                                                   (pcVar17 + 9);
                                             local_60 = -1;
                                             sscanf
@@ -932,8 +932,9 @@ joined_r0x0055f6da:
                                             if ((iVar6 == 0) &&
                                                ((g_CharacterClassificationTable
                                                  [(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) {
-                                              local_11c = core_script_cpp_skipWhitespaceFUN_005593d0
-                                                                    (pcVar17 + 7);
+                                              local_11c = 
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
+                                                            (pcVar17 + 7);
                                               pcVar17 = core_script_cpp_parseArgument_FUN_005593f0
                                                                   (&local_11c,
                                                                    this_ptr->current_message,0x400);
@@ -952,7 +953,7 @@ joined_r0x0055f6da:
                                                  ((g_CharacterClassificationTable
                                                    [(byte)(pcVar17[4] + 1)] & 0xe0) == 0)) {
                                                 local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 4);
                                                 iVar6 = 
                                                   core_script_cpp_CScript_skipCommands_FUN_005601c0
@@ -974,7 +975,7 @@ joined_r0x0055f6da:
                                                    ((g_CharacterClassificationTable
                                                      [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                   local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   local_4c = -1;
                                                   sscanf
@@ -1036,7 +1037,7 @@ joined_r0x0055f6da:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x11] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x11);
                                                   local_48 = -1;
                                                   sscanf
@@ -1088,7 +1089,7 @@ LAB_0055cd52:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xf);
                                                   local_dc = -1;
                                                   sscanf
@@ -1146,7 +1147,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[3] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 3);
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
@@ -1160,7 +1161,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[6] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 6);
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
@@ -1188,7 +1189,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 7);
                                                   iVar6 = g_ScriptEventsEnabled;
                                                   pCVar4 = g_CGamePtr;
@@ -1217,7 +1218,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 7);
                                                   local_d8 = -1;
                                                   sscanf
@@ -1272,7 +1273,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[9] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 9);
                                                   local_d4 = -1;
                                                   sscanf
@@ -1311,7 +1312,7 @@ LAB_0055cd52:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xf);
                                                   local_cc = -1;
                                                   sscanf
@@ -1353,7 +1354,7 @@ LAB_0055cd52:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[5] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 5);
                                                   iVar6 = 
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
@@ -1394,7 +1395,7 @@ LAB_0055a97f:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[4] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 4);
                                                   iVar6 = 
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
@@ -1419,7 +1420,7 @@ LAB_0055a97f:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[4] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 4);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -1443,7 +1444,7 @@ LAB_0055a97f:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xd);
                                                   local_c8 = 0xffffffff;
                                                   sscanf
@@ -1532,7 +1533,7 @@ LAB_0055a97f:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[4] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 4);
                                                   local_110 = this_ptr->next_cmd;
                                                   local_114 = 0;
@@ -1544,7 +1545,7 @@ LAB_0055a97f:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[2] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 2);
                                                   core_script_cpp_parseConditionExpr_FUN_005594a0
                                                             (&local_11c,local_444);
@@ -1583,7 +1584,7 @@ LAB_0055a97f:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xb);
                                                   local_bc = -1;
                                                   sscanf
@@ -1611,7 +1612,7 @@ LAB_0055a97f:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[9] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 9);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -1694,7 +1695,7 @@ LAB_0055d708:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xe);
                                                   core_script_cpp_parseConditionExpr_FUN_005594a0
                                                             (&local_11c,local_570);
@@ -1715,7 +1716,7 @@ LAB_0055d708:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[6] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 6);
                                                   local_b8 = -1;
                                                   sscanf
@@ -1786,7 +1787,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   local_b4 = -1;
                                                   sscanf
@@ -1833,7 +1834,7 @@ joined_r0x0055c026:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[8] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 8);
                                                   local_b0 = -1;
                                                   sscanf
@@ -1885,7 +1886,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xb);
                                                   local_a8 = -1;
                                                   sscanf
@@ -1937,7 +1938,7 @@ joined_r0x0055c026:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[5] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 5);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -1982,7 +1983,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xd);
                                                   local_a0 = -1;
                                                   sscanf
@@ -2036,7 +2037,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x1b] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x1b);
                                                   local_9c = -1;
                                                   sscanf
@@ -2072,7 +2073,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x17] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x17);
                                                   local_98 = -1;
                                                   sscanf
@@ -2115,7 +2116,7 @@ joined_r0x0055c026:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 10);
                                                   local_90 = -1;
                                                   sscanf
@@ -2146,7 +2147,7 @@ joined_r0x0055c026:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[6] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 6);
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     iVar6 = this_ptr->call_stack_count;
@@ -2170,7 +2171,7 @@ joined_r0x0055c026:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xb);
                                                   local_8c = -1;
                                                   sscanf
@@ -2197,7 +2198,7 @@ joined_r0x0055c026:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[3] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 3);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2234,7 +2235,7 @@ LAB_0055e656:
                                                             (local_145c);
                                                   if (this_ptr->dialog_wav_time < 0.0) {
                                                     pcVar17 = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (local_3b6c + local_88);
                                                   local_14 = 
                                                   core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
@@ -2262,7 +2263,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   local_84 = -1;
                                                   sscanf
@@ -2327,7 +2328,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x10);
                                                   local_78 = -1;
                                                   sscanf
@@ -2373,7 +2374,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xf);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2393,7 +2394,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xe] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xe);
                                                   local_70 = -1;
                                                   sscanf
@@ -2429,7 +2430,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x12] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x12);
                                                   local_68 = -1;
                                                   sscanf
@@ -2466,7 +2467,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xd);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2506,7 +2507,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xb);
                                                   local_64 = -1;
                                                   sscanf
@@ -2563,7 +2564,7 @@ LAB_0055e656:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[9] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 9);
                                                   local_58 = -1;
                                                   sscanf
@@ -2595,7 +2596,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0x12] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0x12);
                                                   local_54 = -1;
                                                   sscanf
@@ -2639,7 +2640,7 @@ LAB_0055e656:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2682,7 +2683,7 @@ LAB_0055f0a8:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 10);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2718,7 +2719,7 @@ LAB_0055f0a8:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xd);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2761,7 +2762,7 @@ LAB_0055f0a8:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[9] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 9);
                                                   local_44 = -1;
                                                   sscanf
@@ -2829,7 +2830,7 @@ LAB_0055f0a8:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 10);
                                                   local_40 = -1;
                                                   sscanf
@@ -2877,7 +2878,7 @@ LAB_0055f0a8:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[8] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 8);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -2912,7 +2913,7 @@ LAB_0055f0a8:
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_21a4);
                                                   pcVar17 = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (local_3978 + local_3c);
                                                   local_14 = 
                                                   core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
@@ -2929,7 +2930,7 @@ LAB_0055f0a8:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -3041,7 +3042,7 @@ LAB_0055f760:
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0)) {
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 0xc);
                                                   pcVar17 = 
                                                   core_script_cpp_parseArgument_FUN_005593f0
@@ -3074,7 +3075,7 @@ LAB_0055f91c:
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     pcVar20 = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (local_352c + local_34);
                                                   pcVar17 = this_ptr->current_message;
                                                   do {
@@ -3102,7 +3103,7 @@ LAB_0055f91c:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 10);
                                                   local_2c = -1;
                                                   sscanf
@@ -3143,7 +3144,7 @@ LAB_0055f91c:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[4] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 4);
                                                   local_28 = -1;
                                                   sscanf
@@ -3170,7 +3171,7 @@ LAB_0055f91c:
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) {
                                                       local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 7);
                                                   core_script_cpp_parseConditionExpr_FUN_005594a0
                                                             (&local_11c,local_37c);
@@ -3196,7 +3197,7 @@ LAB_0055f91c:
                                                       goto LAB_0055a97f;
                                                     }
                                                     local_11c = 
-                                                  core_script_cpp_skipWhitespaceFUN_005593d0
+                                                  core_script_cpp_skipWhitespace_FUN_005593d0
                                                             (pcVar17 + 6);
                                                   local_120 = -1;
                                                   sscanf

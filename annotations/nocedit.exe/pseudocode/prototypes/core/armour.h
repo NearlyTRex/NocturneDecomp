@@ -53,11 +53,11 @@ void __cdecl CArmour::writeDependencies(CArmour *this_ptr,_FILE *file_handle);
 
 // Original: core_armour.cpp_CArmour_dtor_FUN_00412500
 // Address: 00412500
-CArmour * __cdecl CArmour::dtor(CArmour *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CArmour * __cdecl CArmour::dtor(CArmour *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CEnemy_dtor_FUN_004125c0
 // Address: 004125c0
-CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
 // Original: core_armour.cpp_SFire_dtor_FUN_00412680
 // Address: 00412680
@@ -65,16 +65,16 @@ SFire * __cdecl SFire::dtor(SFire *this_ptr);
 
 // Original: core_armour.cpp_CFlame_dtor_FUN_00412690
 // Address: 00412690
-CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint d1,uint d2);
+CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
 // Original: core_armour.cpp_freeVectors_FUN_004126e0
 // Address: 004126e0
-int __cdecl freeVectors(CVector3f **objs);
+CVector3f * __cdecl freeVectors(CVector3f *objs);
 
 // Original: core_armour.cpp_freeFires_FUN_00412700
 // Address: 00412700
-int __cdecl freeFires(SFire **objs);
+SFire * __cdecl freeFires(SFire *objs);
 
 // Original: core_armour.cpp_freeFlames_FUN_00412720
 // Address: 00412720
-int __cdecl freeFlames(CFlame **array);
+CFlame * __cdecl freeFlames(CFlame *objs);

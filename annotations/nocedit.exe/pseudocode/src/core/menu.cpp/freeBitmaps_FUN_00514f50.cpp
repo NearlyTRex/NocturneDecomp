@@ -2,13 +2,13 @@
 // Address: 00514f50
 // Address Range: [[00514f50, 00514f64]]
 // Convention: __cdecl
-// Signature: void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap **array)
+// Signature: void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap *objs)
 
 #include "nocturne.h"
 
-void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap **array)
+void __cdecl core_menu_cpp_freeBitmaps_FUN_00514f50(CAlphaBitmap *objs)
 
 {
-  __arrfini(array,8,&g_CAlphaBitmapTypeInfo);
+  __arrfini(objs,8,&g_CAlphaBitmapTypeInfo);
   return;
 }

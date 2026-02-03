@@ -3,13 +3,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CCryptVessel
 // Ghidra size: 0x7f4 (2036 bytes)
 typedef struct CCryptVessel {
     CDemonActor base; // 0x0
-    char* model_name; // 0x158
-    char unk1[376]; // 0x15c
+    CKeyFramedModelInstance model; // 0x158
     int unk2; // 0x2d4
     int prey; // 0x2d8
     int neutral; // 0x2dc

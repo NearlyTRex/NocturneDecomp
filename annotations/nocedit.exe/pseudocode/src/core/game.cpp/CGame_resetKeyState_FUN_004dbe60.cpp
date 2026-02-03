@@ -2,17 +2,14 @@
 // Address: 004dbe60
 // Address Range: [[004dbe60, 004dc22d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
+// Signature: void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_game.cpp_CGame_resetKeyState(CGame* pGame) */
-
-void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
+void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr)
 
 {
   DWORD DVar1;
-  int in_stack_00000004;
   
   DVar1 = g_JoyButtons;
   g_JoystickPresent = 2;
@@ -81,22 +78,16 @@ void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(void)
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(g_CKeysPtr,0x252);
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(g_CKeysPtr,0x253);
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(g_CKeysPtr,0x254);
-  if ((int)g_JoyXPos <
-      *(int *)(in_stack_00000004 + 0xa4) -
-      (*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {
+  if ((int)g_JoyXPos < this_ptr->x_center - (this_ptr->x_center - this_ptr->x_stick_min) / 2) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(g_CKeysPtr,0x251);
   }
-  if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +
-      *(int *)(in_stack_00000004 + 0xa4) < (int)g_JoyXPos) {
+  if ((this_ptr->x_stick_max - this_ptr->x_center) / 2 + this_ptr->x_center < (int)g_JoyXPos) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(g_CKeysPtr,0x252);
   }
-  if ((int)g_JoyYPos <
-      *(int *)(in_stack_00000004 + 0xa8) -
-      (*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {
+  if ((int)g_JoyYPos < this_ptr->y_center - (this_ptr->y_center - this_ptr->y_stick_min) / 2) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(g_CKeysPtr,0x253);
   }
-  if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +
-      *(int *)(in_stack_00000004 + 0xa8) < (int)g_JoyYPos) {
+  if ((this_ptr->y_stick_max - this_ptr->y_center) / 2 + this_ptr->y_center < (int)g_JoyYPos) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(g_CKeysPtr,0x254);
     return;
   }

@@ -39,7 +39,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
     sprintf
               (&stack0xfffffddc,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
     engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffddc,0,0);
-    core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+    core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
     DVar6 = 0;
@@ -65,7 +65,7 @@ LAB_005105cd:
               (g_MediumFont,pcVar2,iStack_18,0xf0 - iVar3 / 2,7,0);
     sprintf(acStack_11c,"%d,%d,%x",g_JoyXPos);
     engine_2d_c_drawText_FUN_00401fd0(acStack_11c,0,0);
-    core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
+    core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
     pCVar1 = g_CGamePtr;

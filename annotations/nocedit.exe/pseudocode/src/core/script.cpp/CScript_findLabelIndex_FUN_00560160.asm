@@ -13,7 +13,7 @@
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055a9b5
 ;
 ; Called Functions:
-;   core_script.cpp_skipWhitespaceFUN_005593d0
+;   core_script.cpp_skipWhitespace_FUN_005593d0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_00560198
     INC EAX                             ; 00560199
     PUSH EAX                            ; 0056019a
-    CALL core_script.cpp_skipWhitespaceFUN_005593d0 ; 0056019b
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespaceFUN_005593d0(char * str)
+    CALL core_script.cpp_skipWhitespace_FUN_005593d0 ; 0056019b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 005601a0
     PUSH EAX                            ; 005601a3
     CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005601a4

@@ -1,25 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 149,
+    "complexity_score": 100,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 39,
-    "suspect_count": 9,
+    "pseudocode_lines": 35,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 108
+    "total_lines": 104
   },
   "cross_references": [
     {
       "addr": "004e12b0",
       "from_addr": "004e1866",
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +56,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_ifstream_dtor_FUN_005ff856",
-    "signature": "void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint d1,uint d2,uint d3,uint d4)"
+    "signature": "void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -132,7 +131,7 @@
       {
         "call_addr": "004e1866",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -177,7 +176,7 @@
       {
         "call_addr": "004e16f1",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -186,7 +185,7 @@
       {
         "call_addr": "004e18d3",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -195,7 +194,7 @@
       {
         "call_addr": "004e181a",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -212,7 +211,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 5,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -240,10 +239,10 @@
     "pcode_op_count": 206
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -255,29 +254,8 @@
       },
       {
         "is_param": true,
-        "name": "d1",
+        "name": "flags",
         "offset": 8,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d2",
-        "offset": 12,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d3",
-        "offset": 16,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": true,
-        "name": "d4",
-        "offset": 20,
         "size": 4,
         "type": "uint"
       }
@@ -285,57 +263,29 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 11,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 19,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pvVar3 + 4) + -0x10) = &g_IFStream_IOSDestructor;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBX",
-      "text": "((istream *)&this_ptr->_istream_core,1,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 23,
       "match": "piVar2[-2].",
-      "text": "((fstreambase *)&piVar2[-2]._ios.__i_lock,1,unaff_EBX,unaff_retaddr);",
+      "text": "((fstreambase *)&piVar2[-2]._ios.__i_lock,1);",
       "type": "negative_offset"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBX",
-      "text": "((fstreambase *)&piVar2[-2]._ios.__i_lock,1,unaff_EBX,unaff_retaddr);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBX",
-      "text": "piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
+      "line": 26,
       "match": "piVar4[-2].",
       "text": "this_ptr = (ifstream *)&piVar4[-2].__tied_stream;",
       "type": "negative_offset"

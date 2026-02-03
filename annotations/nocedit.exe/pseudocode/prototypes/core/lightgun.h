@@ -57,4 +57,4 @@ void __cdecl CLightGun::writeDependencies(CLightGun *this_ptr,_FILE *file_handle
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_00506a50
 // Address: 00506a50
-CLightGun * __cdecl CLightGun::dtor(CLightGun *this_ptr,uint d1,uint d2);
+CLightGun * __cdecl CLightGun::dtor(CLightGun *this_ptr,uint flags);

@@ -2,19 +2,19 @@
 // Address: 005ebc60
 // Address Range: [[005ebc60, 005ebcc4]]
 // Convention: __cdecl
-// Signature: CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,uint d2,uint d3)
+// Signature: CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 CWaterActor * __cdecl
-core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,uint d2,uint d3)
+core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
 
 {
   int extraout_EAX;
   CWaterActor *ptr;
   void *ptr_00;
   
-  if ((d1 & 4) != 0) {
+  if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CWaterActorTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
@@ -22,7 +22,7 @@ core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,ui
   core_wateract_cpp_FUN_005ebcf0();
   ptr = (CWaterActor *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(extraout_EAX + -0x29c),1);
-  if ((d1 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

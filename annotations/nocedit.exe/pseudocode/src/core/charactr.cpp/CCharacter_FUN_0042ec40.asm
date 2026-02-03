@@ -21,7 +21,7 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 00444564
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f3ab
 ;   core_dracbrid.cpp_FUN_00484410 at 00484623
-;   core_drone.cpp_FUN_0048ec70 at 0048ef3f
+;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048ef3f
 ;   ... and 21 more
 ;
 ; Referenced Globals:

@@ -212,7 +212,7 @@ section .text
         ;   Label: LAB_0043b9bd
     PUSH ESI                            ; 0043b9c3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043b9c4
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043b9c9
     FLD float ptr [EDI + 0x14]          ; 0043b9cc
     PUSH EAX                            ; 0043b9cf

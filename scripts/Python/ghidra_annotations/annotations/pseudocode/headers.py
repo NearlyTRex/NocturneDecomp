@@ -619,9 +619,11 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
 
     # Write struct
     content.append("typedef struct %s {" % struct.getName())
-    for comp in struct.getComponents():
+    for field_index, comp in enumerate(struct.getComponents()):
         field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+        # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+        # This matches what the decompiler outputs for unnamed struct fields
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
         field_offset = comp.getOffset()
         comment_parts = []
         comment_parts.append("0x%x" % field_offset)
@@ -662,9 +664,10 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
     if union.getDescription():
         content.append("// %s" % union.getDescription())
     content.append("typedef union %s {" % union.getName())
-    for comp in union.getComponents():
+    for field_index, comp in enumerate(union.getComponents()):
         field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+        # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
         comment = " // %s" % comp.getComment() if comp.getComment() else ""
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
@@ -860,9 +863,10 @@ def generate_structs_header(currentProgram, structs):
         if struct.getDescription():
             content.append("// %s" % struct.getDescription())
         content.append("typedef struct %s {" % struct.getName())
-        for comp in struct.getComponents():
+        for field_index, comp in enumerate(struct.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -889,9 +893,10 @@ def generate_unions_header(currentProgram, unions):
         if union.getDescription():
             content.append("// %s" % union.getDescription())
         content.append("typedef union %s {" % union.getName())
-        for comp in union.getComponents():
+        for field_index, comp in enumerate(union.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -1447,9 +1452,10 @@ def generate_type_definition(currentProgram, dt):
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
         lines.append("typedef union %s {" % dt_name)
-        for comp in dt.getComponents():
+        for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
@@ -1461,9 +1467,10 @@ def generate_type_definition(currentProgram, dt):
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
         lines.append("typedef struct %s {" % dt_name)
-        for comp in dt.getComponents():
+        for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
@@ -2180,6 +2187,172 @@ def generate_watcom_runtime_inlines():
     return lines
 
 
+def generate_winsock_runtime_inlines():
+    """Generate Winsock inline function stubs.
+
+    These are appended to winsock.h after the struct/typedef definitions from Ghidra.
+    The transforms.py CRT transform converts crt_wsock32_c_* calls to standard
+    winsock function names, and these inline stubs provide the declarations.
+
+    Returns:
+        List of content lines to append to winsock.h
+    """
+    lines = []
+    lines.append("// =============================================================================")
+    lines.append("// WINSOCK FUNCTION STUBS")
+    lines.append("// =============================================================================")
+    lines.append("//")
+    lines.append("// Inline function stubs for Winsock functions.")
+    lines.append("// The CRT transform in transforms.py converts crt_wsock32_c_* calls to")
+    lines.append("// standard winsock function names (e.g., crt_wsock32_c_recv_FUN_XXXX -> recv).")
+    lines.append("// These stubs provide declarations so the code compiles.")
+    lines.append("//")
+    lines.append("// Note: These are stub implementations that return error values.")
+    lines.append("// For actual runtime execution, link against ws2_32.lib or equivalent.")
+    lines.append("//")
+    lines.append("// =============================================================================")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Byte Order Conversion")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("inline ushort htons(ushort hostshort) {")
+    lines.append("    return (ushort)(((hostshort & 0xFF) << 8) | ((hostshort >> 8) & 0xFF));")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline ulong htonl(ulong hostlong) {")
+    lines.append("    return ((hostlong & 0xFF) << 24) |")
+    lines.append("           ((hostlong & 0xFF00) << 8) |")
+    lines.append("           ((hostlong >> 8) & 0xFF00) |")
+    lines.append("           ((hostlong >> 24) & 0xFF);")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline ushort ntohs(ushort netshort) {")
+    lines.append("    return htons(netshort);")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline ulong ntohl(ulong netlong) {")
+    lines.append("    return htonl(netlong);")
+    lines.append("}")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Winsock Initialization")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("inline int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData) {")
+    lines.append("    (void)wVersionRequested; (void)lpWSAData;")
+    lines.append("    return 0;  // Success")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int WSACleanup(void) {")
+    lines.append("    return 0;  // Success")
+    lines.append("}")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Socket Operations")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("inline SOCKET accept(SOCKET s, struct SOCKADDR* addr, int* addrlen) {")
+    lines.append("    (void)s; (void)addr; (void)addrlen;")
+    lines.append("    return (SOCKET)-1;  // INVALID_SOCKET")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int bind(SOCKET s, const struct SOCKADDR* addr, int namelen) {")
+    lines.append("    (void)s; (void)addr; (void)namelen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int closesocket(SOCKET s) {")
+    lines.append("    (void)s;")
+    lines.append("    return 0;")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int connect(SOCKET s, const struct SOCKADDR* name, int namelen) {")
+    lines.append("    (void)s; (void)name; (void)namelen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int getsockname(SOCKET s, struct SOCKADDR* name, int* namelen) {")
+    lines.append("    (void)s; (void)name; (void)namelen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int ioctlsocket(SOCKET s, long cmd, ulong* argp) {")
+    lines.append("    (void)s; (void)cmd; (void)argp;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int listen(SOCKET s, int backlog) {")
+    lines.append("    (void)s; (void)backlog;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int recv(SOCKET s, char* buf, int len, int flags) {")
+    lines.append("    (void)s; (void)buf; (void)len; (void)flags;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int recvfrom(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {")
+    lines.append("    (void)s; (void)buf; (void)len; (void)flags; (void)from; (void)fromlen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int send(SOCKET s, const char* buf, int len, int flags) {")
+    lines.append("    (void)s; (void)buf; (void)len; (void)flags;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int sendto(SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {")
+    lines.append("    (void)s; (void)buf; (void)len; (void)flags; (void)to; (void)tolen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int setsockopt(SOCKET s, int level, int optname, const char* optval, int optlen) {")
+    lines.append("    (void)s; (void)level; (void)optname; (void)optval; (void)optlen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int shutdown(SOCKET s, int how) {")
+    lines.append("    (void)s; (void)how;")
+    lines.append("    return 0;")
+    lines.append("}")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Name Resolution")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("inline struct HOSTENT* gethostbyname(const char* name) {")
+    lines.append("    (void)name;")
+    lines.append("    return (struct HOSTENT*)0;")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline ulong inet_addr(const char* cp) {")
+    lines.append("    (void)cp;")
+    lines.append("    return 0xFFFFFFFF;  // INADDR_NONE")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int gethostname(char* name, int namelen) {")
+    lines.append("    (void)name; (void)namelen;")
+    lines.append("    return -1;  // SOCKET_ERROR")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline struct SERVENT* getservbyport(int port, const char* proto) {")
+    lines.append("    (void)port; (void)proto;")
+    lines.append("    return (struct SERVENT*)0;")
+    lines.append("}")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Socket Creation (if socket() is called)")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("inline SOCKET socket(int af, int type, int protocol) {")
+    lines.append("    (void)af; (void)type; (void)protocol;")
+    lines.append("    return (SOCKET)-1;  // INVALID_SOCKET")
+    lines.append("}")
+    lines.append("")
+    return lines
+
+
 def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map=None):
     """Export grouped header files for system types as single files.
 
@@ -2304,6 +2477,10 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         # Special case: append Watcom C++ runtime inline functions to watcom.h
         if header_name == "watcom":
             content.extend(generate_watcom_runtime_inlines())
+
+        # Special case: append Winsock inline function stubs to winsock.h
+        if header_name == "winsock":
+            content.extend(generate_winsock_runtime_inlines())
 
         # Write header file
         header_path = os.path.join(system_dir, "%s.h" % header_name)

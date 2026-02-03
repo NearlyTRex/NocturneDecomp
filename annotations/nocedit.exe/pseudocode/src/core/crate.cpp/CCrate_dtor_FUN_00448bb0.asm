@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_00448bb0(CCrate *this_ptr,uint d1,uint d2)
+; __cdecl CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_00448bb0(CCrate *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CCrateTypeInfo
@@ -30,7 +29,7 @@ section .text
     PUSH 0x1                            ; 00448bbc
     PUSH EBX                            ; 00448bbe
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 00448bbf
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00448bc4
     MOV DL,byte ptr [ESP + 0xc]         ; 00448bc7
     MOV EBX,EAX                         ; 00448bcb

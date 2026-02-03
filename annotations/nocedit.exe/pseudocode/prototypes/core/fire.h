@@ -669,76 +669,76 @@ CKeyFramedModelInstance * __cdecl CKeyFramedModelInstance::dtor(CKeyFramedModelI
 
 // Original: core_fire.cpp_freeRainDrops_FUN_004c97d0
 // Address: 004c97d0
-void __cdecl freeRainDrops(CRainDrop **array);
+CRainDrop * __cdecl freeRainDrops(CRainDrop *objs);
 
 // Original: core_fire.cpp_freePopcorn_FUN_004c97f0
 // Address: 004c97f0
-void __cdecl freePopcorn(CPopcorn **array);
+CPopcorn * __cdecl freePopcorn(CPopcorn *objs);
 
 // Original: core_fire.cpp_freeShells_FUN_004c9810
 // Address: 004c9810
-void __cdecl freeShells(CShell **array);
+CShell * __cdecl freeShells(CShell *objs);
 
 // Original: core_fire.cpp_freeTrails_FUN_004c9830
 // Address: 004c9830
-void __cdecl freeTrails(CTrail **array);
+CTrail * __cdecl freeTrails(CTrail *objs);
 
 // Original: core_fire.cpp_freeLightningBolts_FUN_004c9850
 // Address: 004c9850
-void __cdecl freeLightningBolts(CLightningBolt **array);
+CLightningBolt * __cdecl freeLightningBolts(CLightningBolt *objs);
 
 // Original: core_fire.cpp_freeGunFlames_FUN_004c9870
 // Address: 004c9870
-void __cdecl freeGunFlames(CGunFlame **array);
+CGunFlame * __cdecl freeGunFlames(CGunFlame *objs);
 
 // Original: core_fire.cpp_freeCraters_FUN_004c9890
 // Address: 004c9890
-void __cdecl freeCraters(CCrater **array);
+CCrater * __cdecl freeCraters(CCrater *objs);
 
 // Original: core_fire.cpp_freeTosses_FUN_004c98b0
 // Address: 004c98b0
-void __cdecl freeTosses(CToss **array);
+CToss * __cdecl freeTosses(CToss *objs);
 
 // Original: core_fire.cpp_freeExplosions_FUN_004c98d0
 // Address: 004c98d0
-void __cdecl freeExplosions(CExplosion **array);
+CExplosion * __cdecl freeExplosions(CExplosion *objs);
 
 // Original: core_fire.cpp_freeLaserBeams_FUN_004c98f0
 // Address: 004c98f0
-void __cdecl freeLaserBeams(CLaserBeam **array);
+CLaserBeam * __cdecl freeLaserBeams(CLaserBeam *objs);
 
 // Original: core_fire.cpp_freeRocks_FUN_004c9910
 // Address: 004c9910
-void __cdecl freeRocks(CRock **array);
+CRock * __cdecl freeRocks(CRock *objs);
 
 // Original: core_fire.cpp_freeFireballs_FUN_004c9930
 // Address: 004c9930
-void __cdecl freeFireballs(CFireball **array);
+CFireball * __cdecl freeFireballs(CFireball *objs);
 
 // Original: core_fire.cpp_freeBulletTrails_FUN_004c9950
 // Address: 004c9950
-void __cdecl freeBulletTrails(CBulletTrail **array);
+CBulletTrail * __cdecl freeBulletTrails(CBulletTrail *objs);
 
 // Original: core_fire.cpp_freeGlassParticles_FUN_004c9970
 // Address: 004c9970
-void __cdecl freeGlassParticles(CGlassParticle **array);
+CGlassParticle * __cdecl freeGlassParticles(CGlassParticle *objs);
 
 // Original: core_fire.cpp_freeMuzzleFlashes_FUN_004c9990
 // Address: 004c9990
-void __cdecl freeMuzzleFlashes(CMuzzleFlash **array);
+CMuzzleFlash * __cdecl freeMuzzleFlashes(CMuzzleFlash *objs);
 
 // Original: core_fire.cpp_freeSparks_FUN_004c99b0
 // Address: 004c99b0
-void __cdecl freeSparks(CSpark **array);
+CSpark * __cdecl freeSparks(CSpark *objs);
 
 // Original: core_fire.cpp_freeStakes_FUN_004c99d0
 // Address: 004c99d0
-void __cdecl freeStakes(CStake **array);
+CStake * __cdecl freeStakes(CStake *objs);
 
 // Original: core_fire.cpp_freeBulletHoles_FUN_004c99f0
 // Address: 004c99f0
-void __cdecl freeBulletHoles(CBulletHole **array);
+CBulletHole * __cdecl freeBulletHoles(CBulletHole *objs);
 
 // Original: core_fire.cpp_freeSmokeParticles_FUN_004c9a10
 // Address: 004c9a10
-void __cdecl freeSmokeParticles(CSmokeParticle **array);
+CSmokeParticle * __cdecl freeSmokeParticles(CSmokeParticle *objs);

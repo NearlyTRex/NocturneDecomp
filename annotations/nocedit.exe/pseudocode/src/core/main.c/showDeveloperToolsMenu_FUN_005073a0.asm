@@ -209,7 +209,7 @@ section .text
     PUSH 0x6316d0                       ; 0050753b | g_LicenseAgreement
         ;   Label: LAB_0050753b
     CALL support_newmsg.cpp_decryptMessage_FUN_00544270 ; 00507540
-        ;   XREF to: 00544270 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_00544270(SEncryptedMessage * encrypted_msg)
+        ;   XREF to: 00544270 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_00544270(char * encrypted_msg)
     ADD ESP,0x4                         ; 00507545
     PUSH EAX                            ; 00507548
     MOV EBX,dword ptr [0x02cf1cd0]      ; 00507549 | g_EditorFont

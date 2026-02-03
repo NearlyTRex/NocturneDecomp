@@ -79,17 +79,17 @@ typedef struct WatcomDestructorCall {
 
 // Structure: WatcomDestructorFlags
 typedef struct WatcomDestructorFlags {
-    byte field_0[38];
-    undefined1 field_38;
-    undefined1 field_39;
-    undefined1 field_40;
-    undefined1 field_41;
-    undefined1 field_42;
-    undefined1 field_43;
-    undefined1 field_44;
-    undefined1 field_45;
-    undefined1 field_46;
-    undefined1 field_47;
+    byte field0_0x0[38];
+    undefined1 field1_0x26;
+    undefined1 field2_0x27;
+    undefined1 field3_0x28;
+    undefined1 field4_0x29;
+    undefined1 field5_0x2a;
+    undefined1 field6_0x2b;
+    undefined1 field7_0x2c;
+    undefined1 field8_0x2d;
+    undefined1 field9_0x2e;
+    undefined1 field10_0x2f;
 } WatcomDestructorFlags;
 
 // Structure: WatcomInheritanceLayout

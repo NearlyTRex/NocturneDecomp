@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_FUN_004beb00 at 004beb06
+;   core_filmreel.cpp_CFilmProjector_setup_FUN_004beb00 at 004beb06
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0

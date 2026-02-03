@@ -89,8 +89,8 @@ int __cdecl CTeleport(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_dtor_FUN_005dae50
 // Address: 005dae50
-CTeleport * __cdecl CTeleport::dtor(CTeleport *this_ptr,uint d1,uint d2);
+CTeleport * __cdecl CTeleport::dtor(CTeleport *this_ptr,uint flags);
 
 // Original: core_teleport.cpp_CTeleportDest_dtor_FUN_005daea0
 // Address: 005daea0
-CTeleportDest * __cdecl CTeleportDest::dtor(CTeleportDest *this_ptr,uint d1,uint d2);
+CTeleportDest * __cdecl CTeleportDest::dtor(CTeleportDest *this_ptr,uint flags);

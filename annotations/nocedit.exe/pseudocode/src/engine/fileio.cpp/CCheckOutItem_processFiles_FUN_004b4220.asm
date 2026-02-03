@@ -415,7 +415,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b458f
     PUSH EAX                            ; 004b4593
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004b4594
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b4599
     MOV EAX,EBX                         ; 004b459c
     MOV ESP,EBP                         ; 004b459e
@@ -430,7 +430,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b45a8
     PUSH EAX                            ; 004b45ac
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004b45ad
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b45b2
     MOV EAX,EBX                         ; 004b45b5
     MOV ESP,EBP                         ; 004b45b7
@@ -448,7 +448,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b45c4
     PUSH EAX                            ; 004b45c8
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 004b45c9
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b45ce
     JMP 0x004b435e                      ; 004b45d1
         ;   XREF to: 004b435e (UNCONDITIONAL_JUMP)  ; LAB_004b435e

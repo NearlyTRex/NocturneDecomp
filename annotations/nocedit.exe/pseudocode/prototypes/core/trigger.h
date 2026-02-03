@@ -93,4 +93,4 @@ void __cdecl CTrigger(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_005e1660
 // Address: 005e1660
-CTrigger * __cdecl CTrigger::dtor(CTrigger *this_ptr,uint d1,uint d2);
+CTrigger * __cdecl CTrigger::dtor(CTrigger *this_ptr,uint flags);

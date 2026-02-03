@@ -18,8 +18,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
   float fStack_8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)&this_ptr->model_name);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->unk3 + 0x2ac));
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);

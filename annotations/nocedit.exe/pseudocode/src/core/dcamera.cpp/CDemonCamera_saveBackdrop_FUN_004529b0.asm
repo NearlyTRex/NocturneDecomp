@@ -453,14 +453,14 @@ section .text
     LEA EAX,[ESP + 0x1e4]               ; 00452f4a
     PUSH EAX                            ; 00452f51
     CALL support_codec.cpp_CCodec_dtor_FUN_0043e9b0 ; 00452f52
-        ;   XREF to: 0043e9b0 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_dtor_FUN_0043e9b0(CCodec * this_ptr, int d1)
+        ;   XREF to: 0043e9b0 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_dtor_FUN_0043e9b0(CCodec * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00452f57
     PUSH 0x0                            ; 00452f5a
     LEA EAX,[ESP + 0x104]               ; 00452f5c
         ;   Label: LAB_00452f5c
     PUSH EAX                            ; 00452f63
     CALL crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc ; 00452f64
-        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint d1, uint d2, uint d3, ...)
+        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00452f69
     ADD ESP,0x264                       ; 00452f6c
     POP EBP                             ; 00452f72

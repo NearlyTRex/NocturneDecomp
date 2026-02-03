@@ -1,16 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00419130 (CBodyPart *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6)
+; __cdecl CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00419130(CBodyPart *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   d1
-; uint             Stack[0xc]:4   d2
-; uint             Stack[0x10]:4   d3
-; uint             Stack[0x14]:4   d4
-; uint             Stack[0x18]:4   d5
-; uint             Stack[0x1c]:4   d6
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBodyPartVTable
@@ -53,19 +48,19 @@ section .text
     SUB EAX,0x57c                       ; 00419166
     PUSH EAX                            ; 0041916b
     CALL core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0 ; 0041916c
-        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire * * objs)
+        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire * objs)
     ADD ESP,0x8                         ; 00419171
     PUSH 0x0                            ; 00419174
     SUB EAX,0x4c0                       ; 00419176
     PUSH EAX                            ; 0041917b
     CALL core_bodypart.cpp_freeBodyPartModels_FUN_0041b690 ; 0041917c
-        ;   XREF to: 0041b690 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel * * objs)
+        ;   XREF to: 0041b690 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel * objs)
     ADD ESP,0x8                         ; 00419181
     PUSH 0x1                            ; 00419184
     LEA EBX,[EAX + 0xfffffd70]          ; 00419186
     PUSH EBX                            ; 0041918c
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041918d
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00419192
     MOV DL,byte ptr [ESP + 0xc]         ; 00419195
     MOV EBX,EAX                         ; 00419199

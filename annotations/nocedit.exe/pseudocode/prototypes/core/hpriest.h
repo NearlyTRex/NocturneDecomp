@@ -37,4 +37,4 @@ void __cdecl CHighPriestOfGardath::getPropertyList(CHighPriestOfGardath *this_pt
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
 // Address: 004f7cb0
-CHighPriestOfGardath * __cdecl CHighPriestOfGardath::dtor(CHighPriestOfGardath *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7, uint d8,uint d9);
+CHighPriestOfGardath * __cdecl CHighPriestOfGardath::dtor(CHighPriestOfGardath *this_ptr,uint flags);

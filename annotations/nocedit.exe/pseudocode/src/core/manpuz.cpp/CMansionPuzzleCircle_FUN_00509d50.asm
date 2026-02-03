@@ -122,7 +122,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 00509dc7 | g_CEditorToolsPtr
     PUSH EAX                            ; 00509dcc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00509dcd
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00509dd2
     PUSH EBX                            ; 00509dd5
         ;   Label: LAB_00509dd5

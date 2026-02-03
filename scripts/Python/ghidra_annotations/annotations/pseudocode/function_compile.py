@@ -51,29 +51,69 @@ def normalize_path_in_message(message, repo_dir):
 # =============================================================================
 
 # Error category patterns (regex patterns for g++ error messages)
+# Categories are checked in order - more specific patterns should come before general ones
 ERROR_CATEGORIES = {
+    # Pointer precision issues (32-bit to 64-bit portability)
+    'pointer_precision': [
+        r"loses precision",
+        r"cast from '.*\*' to '.*int",
+        r"cast from pointer to integer of different size",
+    ],
+    # Pointer arithmetic on void* or function pointers
+    'pointer_arithmetic': [
+        r"pointer.*used in arithmetic",
+        r"arithmetic on.*pointer",
+        r"pointer of type 'void \*'.*arithmetic",
+    ],
+    # Private/protected member access
+    'private_member': [
+        r"is private",
+        r"is protected",
+        r"within this context",
+        r"private member",
+        r"protected member",
+    ],
+    # Lvalue requirement errors
+    'lvalue_required': [
+        r"lvalue required",
+        r"cannot take the address",
+        r"non-lvalue",
+        r"not an lvalue",
+    ],
+    # Const-related errors
+    'const_error': [
+        r"discards.*const",
+        r"invalid conversion from 'const",
+        r"assignment of read-only",
+        r"binding.*to.*const",
+    ],
+    # Undeclared identifiers and scope issues
     'undeclared_identifier': [
         r"use of undeclared identifier",
         r"'[^']+' was not declared",
         r"undeclared \(first use",
         r"'[^']+' undeclared",
     ],
+    # Type name errors
     'type_error': [
         r"unknown type name",
         r"does not name a type",
         r"invalid use of incomplete type",
         r"expected class-name",
     ],
+    # Incomplete type usage
     'incomplete_type': [
         r"incomplete type",
         r"forward declaration of",
         r"has incomplete type",
     ],
+    # Missing header files
     'missing_header': [
         r"file not found",
         r"No such file or directory",
         r"cannot open source file",
     ],
+    # Syntax errors
     'syntax_error': [
         r"expected ';'",
         r"expected '\)'",
@@ -86,10 +126,12 @@ ERROR_CATEGORIES = {
         r"stray '",
         r"missing terminating",
     ],
+    # Undefined references (linker-style errors)
     'undefined_reference': [
         r"undefined reference to",
         r"unresolved external",
     ],
+    # Type incompatibility and conversion issues
     'incompatible_types': [
         r"incompatible",
         r"cannot convert",
@@ -98,17 +140,50 @@ ERROR_CATEGORIES = {
         r"could not convert",
         r"invalid operands",
     ],
+    # Missing struct/class members
     'missing_member': [
         r"no member named",
         r"has no member",
         r"is not a member",
         r"class has no member",
     ],
+    # Redefinition errors
     'redefinition': [
         r"redefinition of",
         r"redeclared",
         r"previous definition",
         r"conflicting declaration",
+    ],
+    # Function overload resolution failures
+    'overload_error': [
+        r"ambiguous",
+        r"call of overloaded.*is ambiguous",
+        r"no matching function for call",
+    ],
+    # Template-related errors
+    'template_error': [
+        r"template argument",
+        r"no type named.*in.*template",
+        r"dependent name",
+    ],
+    # Narrowing conversion (C++11)
+    'narrowing_conversion': [
+        r"narrowing conversion",
+        r"narrowing",
+    ],
+    # Initialization errors
+    'initialization_error': [
+        r"cannot be initialized",
+        r"no matching constructor",
+        r"invalid initialization",
+        r"initializer",
+    ],
+    # Array-related errors
+    'array_error': [
+        r"array.*bounds",
+        r"subscript.*is.*out of range",
+        r"size of array",
+        r"variable length array",
     ],
 }
 

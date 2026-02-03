@@ -73,4 +73,4 @@ int __cdecl FUN_00440650(void);
 
 // Original: core_colonel.cpp_CColonel_dtor_FUN_00440670
 // Address: 00440670
-CColonel * __cdecl CColonel::dtor(CColonel *this_ptr,uint d1,uint d2);
+CColonel * __cdecl CColonel::dtor(CColonel *this_ptr,uint flags);

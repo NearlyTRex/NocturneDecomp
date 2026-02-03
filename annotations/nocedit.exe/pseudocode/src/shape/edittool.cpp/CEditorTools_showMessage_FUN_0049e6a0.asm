@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[35]:
-;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e1be2
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1be2
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de3fb
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d77f5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005079b8

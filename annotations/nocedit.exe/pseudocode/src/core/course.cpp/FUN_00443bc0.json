@@ -2,172 +2,310 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "redefinition",
+        "column": 37,
+        "line": 156,
+        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 34,
+        "line": 160,
+        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 36,
+        "line": 167,
+        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 168,
+        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 172,
+        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
+      },
+      {
+        "category": "redefinition",
+        "column": 66,
+        "line": 179,
+        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 27,
+        "line": 184,
+        "message": "'int WSACleanup()' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 192,
+        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 67,
+        "line": 197,
+        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 32,
+        "line": 202,
+        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 70,
+        "line": 207,
+        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 69,
+        "line": 212,
+        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 55,
+        "line": 217,
+        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 40,
+        "line": 222,
+        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 56,
+        "line": 227,
+        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 97,
+        "line": 232,
+        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 62,
+        "line": 237,
+        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 102,
+        "line": 242,
+        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 87,
+        "line": 247,
+        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 252,
+        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 54,
+        "line": 261,
+        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 38,
+        "line": 266,
+        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
+      },
+      {
+        "category": "redefinition",
+        "column": 65,
+        "line": 276,
+        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
+      },
+      {
         "category": "other",
         "column": 12,
-        "line": 73,
+        "line": 72,
         "message": "request for member '_8_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 73,
+        "line": 72,
         "message": "request for member '_8_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 98,
+        "line": 97,
         "message": "request for member '_0_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 99,
+        "line": 98,
         "message": "request for member '_4_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 100,
+        "line": 99,
         "message": "request for member '_8_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 103,
+        "line": 102,
         "message": "request for member '_12_4_' in 'local_cc', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 149,
+        "line": 148,
         "message": "'stack0xfffffea0' was not declared in this scope; did you mean 'in_stack_fffffea0'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 152,
+        "line": 151,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 155,
+        "line": 154,
         "message": "'stack0xfffffe70' was not declared in this scope; did you mean 'in_stack_fffffe70'?"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 36,
-        "line": 158,
+        "line": 157,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 162,
+        "line": 161,
         "message": "request for member '_0_24_' in 'in_stack_fffffe70', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 163,
+        "line": 162,
         "message": "request for member '_0_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 164,
+        "line": 163,
         "message": "request for member '_4_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 165,
+        "line": 164,
         "message": "request for member '_8_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 166,
+        "line": 165,
         "message": "request for member '_12_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 167,
+        "line": 166,
         "message": "request for member '_16_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 168,
+        "line": 167,
         "message": "request for member '_20_4_' in 'auVar7', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 169,
+        "line": 168,
         "message": "request for member '_24_4_' in 'in_stack_fffffe70', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 170,
+        "line": 169,
         "message": "invalid cast from type 'char*' to type 'float'"
       },
       {
-        "category": "other",
+        "category": "pointer_precision",
         "column": 23,
-        "line": 171,
+        "line": 170,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
         "column": 15,
-        "line": 172,
+        "line": 171,
         "message": "'SRenderVertex' {aka 'struct SRenderVertex'} has no member named '_40_8_'"
       },
       {
         "category": "missing_member",
         "column": 32,
-        "line": 173,
+        "line": 172,
         "message": "'SProjectedVertex' {aka 'struct SProjectedVertex'} has no member named '_8_8_'"
       },
       {
         "category": "missing_member",
         "column": 32,
-        "line": 174,
+        "line": 173,
         "message": "'SProjectedVertex' {aka 'struct SProjectedVertex'} has no member named '_0_8_'"
       },
       {
         "category": "missing_member",
         "column": 32,
-        "line": 175,
+        "line": 174,
         "message": "'SProjectedVertex' {aka 'struct SProjectedVertex'} has no member named '_16_8_'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 178,
+        "line": 177,
         "message": "invalid cast from type 'CCourse*' to type 'float'"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 180,
+        "line": 179,
         "message": "invalid cast from type 'SRenderVertex*' to type 'float'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 181,
+        "line": 180,
         "message": "invalid cast from type 'CVector3f*' to type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 208,
-        "message": "'stack0xfffffed0' was not declared in this scope; did you mean 'in_stack_fffffed4'?"
+        "line": 207,
+        "message": "'stack0xfffffed0' was not declared in this scope; did you mean 'in_stack_fffffeb0'?"
       },
       {
         "category": "incompatible_types",
@@ -186,6 +324,12 @@
     "warnings": [
       {
         "category": "other",
+        "column": 12,
+        "line": 168,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "pointer_arithmetic",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
@@ -193,73 +337,73 @@
       {
         "category": "other",
         "column": 18,
-        "line": 152,
+        "line": 151,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 158,
+        "line": 157,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 207,
+        "line": 206,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       },
       {
         "category": "other",
         "column": 86,
-        "line": 210,
+        "line": 209,
         "message": "format '%f' expects a matching 'double' argument [-Wformat=]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 479,
-    "complexity_score": 920,
+    "complexity_score": 899,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
-    "pseudocode_lines": 240,
-    "suspect_count": 65,
+    "pseudocode_lines": 239,
+    "suspect_count": 63,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -268,7 +412,7 @@
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 719
+    "total_lines": 718
   },
   "cross_references": [
     {
@@ -1000,386 +1144,372 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_fffffed4",
-      "text": "CGame *in_stack_fffffed4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 65,
       "match": "._8_4_",
       "text": "local_cc._8_4_ = (float)local_cc._8_4_ + -100.0f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 65,
       "match": "._8_4_",
       "text": "local_cc._8_4_ = (float)local_cc._8_4_ + -100.0f;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_fffffed4",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffed4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 91,
+      "line": 90,
       "match": "._0_4_",
       "text": "local_cc._0_4_ = local_80.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 91,
       "match": "._4_4_",
       "text": "local_cc._4_4_ = local_80.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 92,
       "match": "._8_4_",
       "text": "local_cc._8_4_ = local_80.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 95,
       "match": "._12_4_",
       "text": "local_cc._12_4_ = local_98.x;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 126,
       "match": "ROUND",
       "text": "local_5c.x = (int)ROUND(local_8c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 127,
       "match": "ROUND",
       "text": "local_5c.y = (int)ROUND(local_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 128,
       "match": "ROUND",
       "text": "local_5c.z = (int)ROUND(local_84 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 131,
       "match": "ROUND",
       "text": "local_74.x = (float)(int)ROUND(local_68 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 132,
       "match": "ROUND",
       "text": "local_74.y = (float)(int)ROUND(local_64 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "ROUND",
       "text": "local_74.z = (float)(int)ROUND(local_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 142,
+      "line": 141,
       "match": "&stack0xfffffea0",
       "text": "piVar5 = (int *)&stack0xfffffea0;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 144,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 148,
+      "line": 147,
       "match": "&stack0xfffffe70",
       "text": "piVar5 = (int *)&stack0xfffffe70;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 154,
+      "line": 153,
       "match": "in_stack_fffffe8c",
       "text": "vertex1.v = (float)in_stack_fffffe8c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 154,
       "match": "in_stack_fffffe70",
       "text": "auVar7 = in_stack_fffffe70._0_24_;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 154,
       "match": "._0_24_",
       "text": "auVar7 = in_stack_fffffe70._0_24_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 155,
       "match": "._0_4_",
       "text": "vertex1.projected_vertex.transformed_x = auVar7._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 156,
       "match": "._4_4_",
       "text": "vertex1.projected_vertex.transformed_y = auVar7._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 157,
       "match": "._8_4_",
       "text": "vertex1.projected_vertex.transformed_z = auVar7._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 159,
+      "line": 158,
       "match": "._12_4_",
       "text": "vertex1.projected_vertex.inv_z = auVar7._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 159,
       "match": "._16_4_",
       "text": "vertex1.projected_vertex.screen_x = auVar7._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 160,
       "match": "._20_4_",
       "text": "vertex1.projected_vertex.screen_y = auVar7._20_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_fffffe70",
       "text": "vertex1.u = (float)in_stack_fffffe70._24_4_;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 161,
       "match": "._24_4_",
       "text": "vertex1.u = (float)in_stack_fffffe70._24_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
+      "line": 162,
       "match": "in_stack_fffffe90",
       "text": "vertex1.light = (float)in_stack_fffffe90;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 163,
       "match": "in_stack_fffffe94",
       "text": "vertex1.color = (int)in_stack_fffffe94;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 164,
       "match": "in_stack_fffffe98",
       "text": "vertex1._40_8_ = in_stack_fffffe98;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 165,
+      "line": 164,
       "match": "._40_8_",
       "text": "vertex1._40_8_ = in_stack_fffffe98;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 165,
       "match": "in_stack_fffffea8",
       "text": "vertex2.projected_vertex._8_8_ = in_stack_fffffea8;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 165,
       "match": "._8_8_",
       "text": "vertex2.projected_vertex._8_8_ = in_stack_fffffea8;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 166,
       "match": "in_stack_fffffea0",
       "text": "vertex2.projected_vertex._0_8_ = in_stack_fffffea0;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 166,
       "match": "._0_8_",
       "text": "vertex2.projected_vertex._0_8_ = in_stack_fffffea0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 167,
       "match": "in_stack_fffffeb0",
       "text": "vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 167,
       "match": "._16_8_",
       "text": "vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 168,
       "match": "in_stack_fffffeb8",
       "text": "vertex2.u = (float)in_stack_fffffeb8;",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 191,
       "match": "param_2",
       "text": "(param_2,(CKeyFramedModelInstance *)0x0,0,-1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 195,
       "match": "in_stack_fffffeb0",
       "text": "in_stack_fffffeb0 = (double)local_80.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 197,
+      "line": 196,
       "match": "in_stack_fffffea8",
       "text": "in_stack_fffffea8 = (double)local_80.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 198,
+      "line": 197,
       "match": "in_stack_fffffea0",
       "text": "in_stack_fffffea0 = (double)local_80.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 199,
+      "line": 198,
       "match": "in_stack_fffffe98",
       "text": "in_stack_fffffe98 = (double)local_18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 199,
       "match": "in_stack_fffffe94",
       "text": "in_stack_fffffe94 = \"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 201,
+      "line": 200,
       "match": "in_stack_fffffe90",
       "text": "in_stack_fffffe90 = &stack0xfffffed0;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 201,
+      "line": 200,
       "match": "&stack0xfffffed0",
       "text": "in_stack_fffffe90 = &stack0xfffffed0;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 201,
       "match": "in_stack_fffffe8c",
       "text": "in_stack_fffffe8c = 0x443f7f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 203,
+      "line": 202,
       "match": "in_stack_fffffe90",
       "text": "sprintf(in_stack_fffffe90,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\");",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 204,
+      "line": 203,
       "match": "&stack0xfffffed0",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 226,
       "match": "in_stack_fffffeb8",
       "text": "in_stack_fffffeb8 = SUB84(dVar8,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 227,
+      "line": 226,
       "match": "SUB84",
       "text": "in_stack_fffffeb8 = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
+      "line": 232,
       "match": "in_stack_fffffeb8",
       "text": "in_stack_fffffeb8 = SUB84(dVar8,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 232,
       "match": "SUB84",
       "text": "in_stack_fffffeb8 = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"

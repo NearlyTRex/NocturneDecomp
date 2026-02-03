@@ -33,4 +33,4 @@ void __cdecl FUN_005badd0(void);
 
 // Original: core_stone.cpp_CTempleStone_dtor_FUN_005bae10
 // Address: 005bae10
-CTempleStone * __cdecl CTempleStone::dtor(CTempleStone *this_ptr,uint d1,uint d2,uint d3);
+CTempleStone * __cdecl CTempleStone::dtor(CTempleStone *this_ptr,uint flags);

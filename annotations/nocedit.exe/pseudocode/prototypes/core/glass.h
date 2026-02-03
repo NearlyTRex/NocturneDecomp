@@ -93,8 +93,8 @@ void __cdecl CGlass::writeDependencies(CGlass *this_ptr,_FILE *file_handle);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004eb820
 // Address: 004eb820
-CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint d1,uint d2,uint d3,uint d4);
+CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint flags);
 
 // Original: core_glass.cpp_freeVectors_FUN_004eb8a0
 // Address: 004eb8a0
-void __cdecl freeVectors(CVector3f **array);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

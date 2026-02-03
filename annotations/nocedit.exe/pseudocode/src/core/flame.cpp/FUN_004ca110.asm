@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 at 004197dd
 ;   core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80 at 00448e96
-;   core_flamecan.cpp_FUN_004cb550 at 004cb56d
+;   core_flamecan.cpp_CFlameCan_renderTransparent_FUN_004cb550 at 004cb56d
 ;   core_vessel.cpp_FUN_005e98b0 at 005e9a11
 ;
 ; Referenced Globals:

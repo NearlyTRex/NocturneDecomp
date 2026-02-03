@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame **array)
+; __cdecl CFlame * __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame *objs)
 ;
 ; Parameters:
-; CFlame * *       Stack[0x4]:4   array
+; CFlame *         Stack[0x4]:4   objs
 ;
 ; XREF[37]:
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 00412519
@@ -35,7 +35,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00412727
     PUSH EDX                            ; 0041272b
     CALL crt_memory.c___arrfini_FUN_005feee9 ; 0041272c
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c___arrfini_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00412731
     RET                                 ; 00412734
 

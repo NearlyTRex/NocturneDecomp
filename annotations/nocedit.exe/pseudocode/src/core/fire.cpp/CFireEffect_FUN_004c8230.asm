@@ -159,7 +159,7 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_004a8860 at 004a89bb
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a89bb
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0 at 0050ab13
 ;   core_weapon.cpp_CWeapon_FUN_005ee830 at 005ee9c5
 ;

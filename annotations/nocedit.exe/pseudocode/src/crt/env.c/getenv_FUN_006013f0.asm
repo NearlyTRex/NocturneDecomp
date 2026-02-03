@@ -7,9 +7,9 @@
 ; char *           Stack[0x4]:4   name
 ;
 ; XREF[16]:
+;   core_game.cpp_CGame_FUN_004dcee0 at 004dd623
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab63
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db18e
-;   core_game.cpp_SaveRelated_FUN_004dcee0 at 004dd623
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507a92
 ;   core_netgame.cpp_CNetGame_FUN_0053f780 at 0053f816
 ;   core_skeledit.cpp_FUN_00592690 at 005933d6
