@@ -15,30 +15,30 @@ CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 // Address: 005eeaf0
 void __cdecl CWeather(CWeather *this_ptr);
 
-// Original: core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
+// Original: core_weather.cpp_CWeather_FUN_005eeeb0
 // Address: 005eeeb0
-void __cdecl CWeather::AnotherLightningThunderThing(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
-// Original: core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140
+// Original: core_weather.cpp_CWeather_FUN_005ef140
 // Address: 005ef140
-void __cdecl CWeather::SomethingWithThunder(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_FUN_005ef190
 // Address: 005ef190
-void __cdecl CWeather(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_FUN_005ef8c0
 // Address: 005ef8c0
-void __cdecl CWeather(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_FUN_005ef940
 // Address: 005ef940
-void __cdecl CWeather(void);
+void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_dtor_FUN_005efb40
 // Address: 005efb40
 CWeather * __cdecl CWeather::dtor(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_005efb50
+// Original: core_weather.cpp_freeVectors_FUN_005efb50
 // Address: 005efb50
-void __cdecl FUN_005efb50(void);
+CVector3f * __cdecl freeVectors(CVector3f *objs);

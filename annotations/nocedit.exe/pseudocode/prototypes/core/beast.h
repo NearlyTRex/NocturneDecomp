@@ -51,9 +51,9 @@ int __cdecl CBeast::hasCollision(CBeast *this_ptr,SCollisionInfo *collision_info
 // Address: 00418420
 void __cdecl CBeast::getPropertyList(CBeast *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_beast.cpp_CBeast_writeDependencies_FUN_00418460
+// Original: core_beast.cpp_CBeast_addFilesToExtract_FUN_00418460
 // Address: 00418460
-void __cdecl CBeast::writeDependencies(CBeast *this_ptr,_FILE *file_handle);
+void __cdecl CBeast::addFilesToExtract(CBeast *this_ptr,_FILE *file_handle);
 
 // Original: core_beast.cpp_CBeast_dtor_FUN_00418490
 // Address: 00418490

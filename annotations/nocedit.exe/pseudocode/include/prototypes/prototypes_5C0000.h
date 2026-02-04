@@ -54,7 +54,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6850(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c68a0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0 (CStranger *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_stranger_cpp_CStranger_writeDependencies_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
+void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
 void __cdecl core_stranger_cpp_FUN_005c6930(void);
 int __cdecl core_stranger_cpp_FUN_005c6950(void);
 int __cdecl core_stranger_cpp_FUN_005c695e(void);

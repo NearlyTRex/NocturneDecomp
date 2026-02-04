@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c27d
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c27d
 ;   core_crate.cpp_FUN_00448a70 at 00448b06
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004cb390 at 004cb40f
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f45e2

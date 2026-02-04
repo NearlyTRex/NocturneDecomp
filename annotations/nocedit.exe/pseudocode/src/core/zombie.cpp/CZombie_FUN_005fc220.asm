@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_zombie.cpp_CZombie_FUN_005fc4f0 at 005fc4fd
+;   core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0 at 005fc4fd
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005fc200 = 005fc25d

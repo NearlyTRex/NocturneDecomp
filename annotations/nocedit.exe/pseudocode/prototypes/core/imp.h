@@ -63,9 +63,9 @@ void __cdecl CImp::hasCollision(CImp *this_ptr,SCollisionInfo *collision_info);
 // Address: 004fb110
 void __cdecl CImp::getPropertyList(CImp *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_imp.cpp_CImp_writeDependencies_FUN_004fb150
+// Original: core_imp.cpp_CImp_addFilesToExtract_FUN_004fb150
 // Address: 004fb150
-void __cdecl CImp::writeDependencies(CImp *this_ptr,_FILE *file_handle);
+void __cdecl CImp::addFilesToExtract(CImp *this_ptr,_FILE *file_handle);
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004fb180
 // Address: 004fb180

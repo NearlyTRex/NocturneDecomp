@@ -1,0 +1,319 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 25,
+        "message": "'stack0xffffffdc' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 88,
+        "message": "void value not ignored as it ought to be"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 58,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 88,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 234,
+    "complexity_score": 99,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 15,
+    "pseudocode_lines": 84,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 318
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005e7030",
+    "address_range": [
+      [
+        "005e7030",
+        "005e726e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030 (CVampireBoss *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "0042cdb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0"
+    },
+    {
+      "addr": "004aabe0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_FUN_004aabe0"
+    },
+    {
+      "addr": "004c79d0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+    },
+    {
+      "addr": "004fe9d0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0"
+    },
+    {
+      "addr": "004fea70",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70"
+    },
+    {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005b3a20",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656c5f",
+      "name": "s_voicuhurt_wav_00656c5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656c6d",
+      "name": "s_VampireBossBitesIt_00656c6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656c80",
+      "name": "s_voicudeath_wav_2_5_00656c80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656c9b",
+      "name": "DOUBLE_00656c9b",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00656ca3",
+      "name": "DOUBLE_00656ca3",
+      "type": "double",
+      "value": "25"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02db880c",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d928",
+      "name": "g_CMeleeClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.444444444444445,
+    "instruction_count": 189,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "CALL": 15,
+      "CALLIND": 3,
+      "CBRANCH": 13,
+      "COPY": 200,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 73,
+      "INT_AND": 85,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 74,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 37,
+      "INT_SUB": 80,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 37,
+      "POPCOUNT": 37,
+      "RETURN": 4,
+      "STORE": 79
+    },
+    "pcode_op_count": 840
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffdc",
+      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffdc,&damage_info->impact_direction)",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CVampireBoss",
+        "offset": 284,
+        "vtable_addr": "00664e94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

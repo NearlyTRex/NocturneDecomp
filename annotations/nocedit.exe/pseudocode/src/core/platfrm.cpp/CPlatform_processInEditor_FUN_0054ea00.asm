@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_conveyor.cpp_FUN_004421c0 at 004422db
+;   core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0 at 004422db
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0054e9f0 = 0054eb61

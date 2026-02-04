@@ -9,8 +9,8 @@
 ; undefined1       Stack[-0x20]:1  local_20
 ;
 ; XREF[12]:
-;   core_boneguy.cpp_FUN_0041d180 at 0041d199
-;   core_colonel.cpp_FUN_004404a0 at 004404a5
+;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180 at 0041d199
+;   core_colonel.cpp_CColonel_renderOpaque_FUN_004404a0 at 004404a5
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140 at 004d614a
 ;   core_gargoyle.cpp_CGargoyle_unk5_FUN_004e53f0 at 004e5443
 ;   core_haystack.cpp_CHaystack_renderOpaque_FUN_004f1b60 at 004f1b65

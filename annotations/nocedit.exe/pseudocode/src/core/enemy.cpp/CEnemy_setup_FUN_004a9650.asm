@@ -12,10 +12,10 @@
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 00416518
 ;   core_beast.cpp_CBeast_setup_FUN_00418280 at 00418297
 ;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 00418688
-;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 at 0041bf32
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bf32
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 004239ee
-;   core_bugs.cpp_FUN_00424e50 at 00424e73
-;   core_cow.cpp_FUN_004441b0 at 004441fe
+;   core_bugs.cpp_CBugs_setup_FUN_00424e50 at 00424e73
+;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441fe
 ;   core_dog.cpp_CZombieDog_setup_FUN_0047f0c0 at 0047f10d
 ;   ... and 17 more
 ;

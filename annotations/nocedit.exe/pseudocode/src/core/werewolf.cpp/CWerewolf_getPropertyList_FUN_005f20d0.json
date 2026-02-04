@@ -1,0 +1,282 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 23,
+        "message": "cannot convert 'void (*)(CWerewolf*, CActorProperty*, char*)' to 'void (**)(CDemonActor*, CActorProperty*, char*)'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 44,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 44,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 47,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 47,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 40,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 143
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005f20d0",
+    "address_range": [
+      [
+        "005f20d0",
+        "005f21da"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_getPropertyList_FUN_005f20d0",
+    "signature": "void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0 (CWerewolf *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670"
+    },
+    {
+      "addr": "0040e330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330"
+    },
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350"
+    },
+    {
+      "addr": "0040e1a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0"
+    },
+    {
+      "addr": "0040e4a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0"
+    },
+    {
+      "addr": "0040e4d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addMotion_FUN_0040e4d0"
+    },
+    {
+      "addr": "004aa170",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657ea5",
+      "name": "s_Model_00657ea5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657eab",
+      "name": "s_State_00657eab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657eb1",
+      "name": "s_Type_00657eb1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657eb6",
+      "name": "s_Light_up_eyes_00657eb6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ec4",
+      "name": "s_CDemonActor_00657ec4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ed0",
+      "name": "s_chainAnchor_00657ed0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657edc",
+      "name": "s_chainLength_00657edc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ee8",
+      "name": "s_CWayPoint_00657ee8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ef2",
+      "name": "s_Way_Point_1_00657ef2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657efe",
+      "name": "s_CWayPoint_00657efe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657f08",
+      "name": "s_Way_Point_2_00657f08",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9431818181818183,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 73,
+      "INT_ADD": 32,
+      "INT_AND": 27,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 54,
+      "LOAD": 17,
+      "POPCOUNT": 13,
+      "RETURN": 3,
+      "STORE": 52
+    },
+    "pcode_op_count": 347
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWerewolf",
+        "offset": 212,
+        "vtable_addr": "00665784"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

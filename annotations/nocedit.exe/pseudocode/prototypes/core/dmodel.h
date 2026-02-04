@@ -235,13 +235,13 @@ void __cdecl CKeyFramedModel::exportToDSE(CKeyFramedModel *this_ptr);
 // Address: 0047ea10
 void __cdecl CKeyFramedModel::importFromDSE(CKeyFramedModel *this_ptr);
 
-// Original: core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
+// Original: core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00
 // Address: 0047ed00
-void __cdecl CKeyFramedModel::writeDependencies(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files);
+void __cdecl CKeyFramedModel::addFilesToExtract(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files);
 
-// Original: core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+// Original: core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
 // Address: 0047edd0
-void __cdecl CKeyFramedModelInstance::writeDependencies(CKeyFramedModelInstance *this_ptr,_FILE *file_handle);
+void __cdecl CKeyFramedModelInstance::addFilesToExtract(CKeyFramedModelInstance *this_ptr,_FILE *file_handle);
 
 // Original: core_dmodel.cpp_writeModelDependencies_FUN_0047ee30
 // Address: 0047ee30

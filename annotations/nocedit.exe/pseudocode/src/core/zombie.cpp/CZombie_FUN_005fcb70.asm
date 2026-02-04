@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005fcb58 = 005fcba3

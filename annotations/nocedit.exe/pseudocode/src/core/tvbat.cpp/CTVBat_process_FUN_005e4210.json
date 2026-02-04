@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 238,
+        "line": 230,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 238,
+        "line": 230,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 254,
+        "line": 246,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 336,
+        "line": 324,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -37,12 +37,18 @@
       {
         "category": "other",
         "column": 27,
-        "line": 77,
+        "line": 76,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
+        "line": 85,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 33,
         "line": 86,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -60,68 +66,62 @@
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 89,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 27,
-        "line": 207,
+        "line": 199,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 209,
+        "line": 201,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 238,
+        "line": 230,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 240,
+        "line": 232,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 241,
+        "line": 233,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 242,
+        "line": 234,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 254,
+        "line": 246,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 470,
+    "complexity_score": 458,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "pseudocode_lines": 335,
+    "pseudocode_lines": 323,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unresolved_funcptr"
     ],
-    "total_lines": 1126
+    "total_lines": 1114
   },
   "cross_references": [],
   "function": {
@@ -833,86 +833,86 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 24,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 133,
       "match": "SQRT",
       "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 179,
       "match": "SQRT",
       "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
+      "line": 180,
       "match": "ABS",
       "text": "(this_ptr->max_height <= ABS(local_84))) && ((CVector3f *)&local_58 != &this_ptr->home_pos)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 225,
+      "line": 217,
       "match": "SQRT",
       "text": "SQRT((float10)local_8c * (float10)local_8c +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 227,
+      "line": 219,
       "match": "extraout_ST1",
       "text": "local_24 = (float)extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 231,
+      "line": 223,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 247,
+      "line": 239,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 254,
+      "line": 246,
       "match": "fsin",
-      "text": "fVar18 = (float10)fsin(fVar17);",
+      "text": "fVar17 = (float10)fsin(fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 256,
+      "line": 248,
       "match": "fsin",
-      "text": "fVar20 = (float10)fsin(fVar19);",
+      "text": "fVar19 = (float10)fsin(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 257,
+      "line": 249,
       "match": "fcos",
-      "text": "fVar17 = (float10)fcos(fVar17);",
+      "text": "fVar16 = (float10)fcos(fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 258,
+      "line": 250,
       "match": "fcos",
-      "text": "fVar19 = (float10)fcos(fVar19);",
+      "text": "fVar18 = (float10)fcos(fVar18);",
       "type": "decompiler_intrinsic"
     }
   ],

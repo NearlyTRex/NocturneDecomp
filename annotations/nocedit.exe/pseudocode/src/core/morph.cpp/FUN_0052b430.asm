@@ -12,7 +12,7 @@
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c481
 ;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545da1
 ;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6dc9
-;   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 at 005e5827
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e5827
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_free_FUN_0052a510

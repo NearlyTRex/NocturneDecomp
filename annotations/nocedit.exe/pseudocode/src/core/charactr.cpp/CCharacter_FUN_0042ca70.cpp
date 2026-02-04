@@ -57,7 +57,9 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
     if (((0.0 <= *(float *)(this_ptr->unk2 + 4)) &&
         (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
                             (*(CDemonActor **)this_ptr->unk2,g_CWayPointClassInfo.name_hash),
-        pCVar7 != (CDemonActor *)0x0)) && (iVar3 = core_waypoint_cpp_FUN_005ec320(), iVar3 == 0)) {
+        pCVar7 != (CDemonActor *)0x0)) &&
+       (iVar3 = core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location),
+       iVar3 == 0)) {
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s can't figure out next waypoint trying to reach %s\n",this_ptr,
                  *(uint *)this_ptr->unk2);

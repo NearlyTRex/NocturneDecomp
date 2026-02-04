@@ -29,9 +29,9 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416ab7
 ;   core_beast.cpp_CBeast_process_FUN_004182a0 at 004182f8
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 0041894e
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c313
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c313
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423bc4
-;   core_colonel.cpp_FUN_00440430 at 00440446
+;   core_colonel.cpp_CColonel_FUN_00440430 at 00440446
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044455a
 ;   ... and 30 more
 ;

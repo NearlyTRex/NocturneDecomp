@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_FUN_004ae140 at 004aea3d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de559
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e440
-;   core_vampboss.cpp_FUN_005e7030 at 005e71de
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e71de
 ;
 ; Called Functions:
 ;   crt_string.c_stricmp_FUN_005fe7f0

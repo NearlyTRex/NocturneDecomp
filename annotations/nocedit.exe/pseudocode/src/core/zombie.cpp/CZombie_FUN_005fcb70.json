@@ -11,48 +11,46 @@
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 26,
+        "column": 30,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 29,
+        "column": 30,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 77,
+        "column": 30,
         "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 35,
+        "column": 30,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 38,
+        "column": 30,
+        "line": 40,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 77,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 32,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 118
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -66,7 +64,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_zombie.cpp_CZombie_FUN_005fcb70",
-    "signature": "void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void)"
+    "signature": "void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr)"
   },
   "function_calls": [
     {
@@ -138,8 +136,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.119402985074627,
@@ -169,43 +167,22 @@
     "pcode_op_count": 276
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "CEnemy *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "core_enemy_cpp_CEnemy_FUN_004aa250(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = &(in_stack_00000004->base).model;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004->base).model.model_name,\"jeff.dfm\");",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

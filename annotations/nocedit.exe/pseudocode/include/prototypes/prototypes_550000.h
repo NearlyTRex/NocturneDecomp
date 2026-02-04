@@ -141,7 +141,7 @@ int __cdecl core_scat_cpp_CScat_FUN_00558cf0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_onActorDeleted_FUN_00559100(CScat *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_scat_cpp_CScat_getPropertyList_FUN_00559120(CScat *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_scat_cpp_CScat_writeDependencies_FUN_00559140(CScat *this_ptr,_FILE *file_handle);
+void __cdecl core_scat_cpp_CScat_addFilesToExtract_FUN_00559140(CScat *this_ptr,_FILE *file_handle);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_005591b0(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_00559220(char *variable_name);

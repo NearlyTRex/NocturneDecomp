@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(void)
+; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_ptr,int index)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; XREF[2]:
-;   core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640 at 005ec675
-;   core_waypoint.cpp_FUN_005ec830 at 005ec861
+;   core_waypoint.cpp_CWayPoint_FUN_005ec640 at 005ec675
+;   core_waypoint.cpp_CWayPoint_FUN_005ec830 at 005ec861
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_waypoint_cpp_0065767a

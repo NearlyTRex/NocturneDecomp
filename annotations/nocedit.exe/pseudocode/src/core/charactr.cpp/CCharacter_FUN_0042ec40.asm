@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
@@ -15,9 +15,9 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415693
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416ac1
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 00418958
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c322
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c322
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423bd3
-;   core_colonel.cpp_FUN_00440430 at 00440484
+;   core_colonel.cpp_CColonel_FUN_00440430 at 00440484
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 00444564
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f3ab
 ;   core_dracbrid.cpp_FUN_00484410 at 00484623

@@ -191,6 +191,6 @@ void __cdecl CHero::getPropertyList(CHero *this_ptr,CActorPropertyList *property
 // Address: 004f3f60
 void __cdecl CHeroPlaceholder::getPropertyList(CHeroPlaceholder *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hero.cpp_CHero_writeDependencies_FUN_004f3fa0
+// Original: core_hero.cpp_CHero_addFilesToExtract_FUN_004f3fa0
 // Address: 004f3fa0
-void __cdecl CHero::writeDependencies(CHero *this_ptr,_FILE *file_handle);
+void __cdecl CHero::addFilesToExtract(CHero *this_ptr,_FILE *file_handle);

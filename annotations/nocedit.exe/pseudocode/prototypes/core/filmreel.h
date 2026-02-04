@@ -67,9 +67,9 @@ CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBounding
 // Address: 004be960
 void __cdecl CFilmReel::getPropertyList(CFilmReel *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_filmreel.cpp_CFilmReel_writeDependencies_FUN_004be9b0
+// Original: core_filmreel.cpp_CFilmReel_addFilesToExtract_FUN_004be9b0
 // Address: 004be9b0
-void __cdecl CFilmReel::writeDependencies(CFilmReel *this_ptr,_FILE *file_handle);
+void __cdecl CFilmReel::addFilesToExtract(CFilmReel *this_ptr,_FILE *file_handle);
 
 // Original: core_filmreel.cpp_factoryFunc_FUN_004bea00
 // Address: 004bea00

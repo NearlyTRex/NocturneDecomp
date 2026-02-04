@@ -1594,7 +1594,7 @@ LAB_004df408:
       }
       if (iStack_150 == iStack_154) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_FUN_005ef8c0();
+        core_weather_cpp_CWeather_FUN_005ef8c0(g_CWeatherPtr);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c654);
       iStack_148 = 0;
@@ -1622,7 +1622,7 @@ LAB_004df408:
       }
       if (iStack_148 == iStack_14c) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_FUN_005ef8c0();
+        core_weather_cpp_CWeather_FUN_005ef8c0(g_CWeatherPtr);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);
       uVar11 = 0xffffffff;

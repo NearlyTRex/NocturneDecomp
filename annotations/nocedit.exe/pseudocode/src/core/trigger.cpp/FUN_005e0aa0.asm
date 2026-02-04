@@ -9,7 +9,7 @@
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a62
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 005061f3
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de27b
-;   core_turret.cpp_FUN_005e3750 at 005e3b89
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3b89
 ;
 ; *****************************************************************************
 

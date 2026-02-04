@@ -32,11 +32,11 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr)
   }
   if (3 < g_CZombieClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0
-              (this_ptr->unk1 + 0x28,"riseFromGraveCondition");
+              (this_ptr->rise_from_grave_condition,"riseFromGraveCondition");
   }
   if (4 < g_CZombieClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk1 + 0x20),"graveActor");
+              ((CDemonActor *)&this_ptr->grave_actor,"graveActor");
   }
   if ((5 < g_CZombieClassVersion) && (g_CZombieClassVersion < 9)) {
     core_actor_cpp_archiveClothList_FUN_0040be60

@@ -51,9 +51,9 @@ void __cdecl CHotDemon::hasCollision(CHotDemon *this_ptr,SCollisionInfo *collisi
 // Address: 004f79d0
 void __cdecl CHotDemon::getPropertyList(CHotDemon *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hotdemon.cpp_CHotDemon_writeDependencies_FUN_004f7a10
+// Original: core_hotdemon.cpp_CHotDemon_addFilesToExtract_FUN_004f7a10
 // Address: 004f7a10
-void __cdecl CHotDemon::writeDependencies(CHotDemon *this_ptr,_FILE *file_handle);
+void __cdecl CHotDemon::addFilesToExtract(CHotDemon *this_ptr,_FILE *file_handle);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
 // Address: 004f7a40

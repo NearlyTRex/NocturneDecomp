@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   polygon_info
 ;
 ; XREF[13]:
-;   core_chain.cpp_CChain_FUN_004308f0 at 00430e92
+;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 00430e92
 ;   core_fire.cpp_CBulletHole_render_FUN_004bfac0 at 004bfd0e
 ;   core_fire.cpp_CCrater_render_FUN_004c4620 at 004c4865
 ;   core_fire.cpp_CGlassParticle_render_FUN_004c1ef0 at 004c20cd

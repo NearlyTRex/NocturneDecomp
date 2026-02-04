@@ -130,7 +130,7 @@ void __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *
 void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0 (CGlass *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_showEditorHelp_FUN_004eb600(CGlass *this_ptr,int *y_pos);
-void __cdecl core_glass_cpp_CGlass_writeDependencies_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle);
+void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint flags);
 CVector3f * __cdecl core_glass_cpp_freeVectors_FUN_004eb8a0(CVector3f *objs);
 void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void);

@@ -23,10 +23,10 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
+;   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00
 ;   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
-;   core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -84,8 +84,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 0047eea1
     PUSH EAX                            ; 0047eea5
     PUSH EBX                            ; 0047eea6
-    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0047eea7
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
+    CALL core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00 ; 0047eea7
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     MOV EDX,0x620f6e                    ; 0047eeac | = "..\\core\\dmodel.cpp"
     MOV ECX,0xe8e                       ; 0047eeb1
     ADD ESP,0xc                         ; 0047eeb6

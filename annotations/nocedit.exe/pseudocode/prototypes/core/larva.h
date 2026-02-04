@@ -47,9 +47,9 @@ int __cdecl CLarva::getTargetPoints(CLarva *this_ptr,CVector3f *out_points_array
 // Address: 00503c50
 void __cdecl CLarva::getPropertyList(CLarva *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_larva.cpp_CLarva_writeDependencies_FUN_00503c90
+// Original: core_larva.cpp_CLarva_addFilesToExtract_FUN_00503c90
 // Address: 00503c90
-void __cdecl CLarva::writeDependencies(CLarva *this_ptr,_FILE *file_handle);
+void __cdecl CLarva::addFilesToExtract(CLarva *this_ptr,_FILE *file_handle);
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_00503cc0
 // Address: 00503cc0

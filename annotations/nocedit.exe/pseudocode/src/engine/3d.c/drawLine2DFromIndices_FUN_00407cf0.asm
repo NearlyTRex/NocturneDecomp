@@ -13,7 +13,7 @@
 ; SRenderVertex    Stack[-0x38]:48  local_38
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWaypoint_FUN_005ebf70 at 005ec24e
+;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ec24e
 ;
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer

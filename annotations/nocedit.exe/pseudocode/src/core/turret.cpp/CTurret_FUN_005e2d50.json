@@ -1,0 +1,443 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 48,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 48,
+        "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 65,
+        "message": "request for member '_12_4_' in 'auStack_d8', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 65,
+        "message": "request for member '_12_4_' in 'auStack_d8', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 11,
+        "line": 75,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 79,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 92,
+        "message": "request for member '_12_4_' in 'auStack_d8', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 104,
+        "message": "'stack0xfffffea8' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 111,
+        "message": "invalid cast from type 'float' to type 'char*'"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 113,
+        "message": "invalid cast from type 'char*' to type 'float'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 51,
+        "line": 121,
+        "message": "'stack0xfffffea4' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 45,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 48,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 54,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 123,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 404,
+    "complexity_score": 260,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 14,
+    "pseudocode_lines": 135,
+    "suspect_count": 10,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "param_count_too_few",
+      "stack_ref",
+      "unknown_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 539
+  },
+  "cross_references": [
+    {
+      "addr": "005e2430",
+      "from_addr": "005e2626",
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e2d50",
+    "address_range": [
+      [
+        "005e2d50",
+        "005e3273"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_turret.cpp_CTurret_FUN_005e2d50",
+    "signature": "void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "00420240",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
+    },
+    {
+      "addr": "004202b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
+    },
+    {
+      "addr": "00420fb0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0"
+    },
+    {
+      "addr": "005e3280",
+      "is_variadic": false,
+      "name": "core_turret.cpp_CTurret_FUN_005e3280"
+    },
+    {
+      "addr": "005e3560",
+      "is_variadic": false,
+      "name": "core_turret.cpp_CTurret_FUN_005e3560"
+    },
+    {
+      "addr": "005e7830",
+      "is_variadic": false,
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+    },
+    {
+      "addr": "005fe667",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065675b",
+      "name": "s_s_has_no_guard_trigger_0065675b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656778",
+      "name": "FLOAT_00656778",
+      "type": "float",
+      "value": "-15"
+    },
+    {
+      "addr": "0065677c",
+      "name": "FLOAT_0065677c",
+      "type": "float",
+      "value": "15"
+    },
+    {
+      "addr": "00656780",
+      "name": "FLOAT_00656780",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "006598c0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "00664b6c",
+      "name": "FLOAT_00664b6c",
+      "type": "float",
+      "value": "-0.5235988"
+    },
+    {
+      "addr": "00664b70",
+      "name": "FLOAT_00664b70",
+      "type": "float",
+      "value": "1.221730"
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "DAT_032613d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005e2626",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_process_FUN_005e2430",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.323863636363637,
+    "instruction_count": 352,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 23,
+      "BRANCH": 2,
+      "CALL": 13,
+      "CALLIND": 5,
+      "CBRANCH": 26,
+      "COPY": 896,
+      "FLOAT2FLOAT": 62,
+      "FLOAT_ADD": 13,
+      "FLOAT_EQUAL": 16,
+      "FLOAT_LESS": 16,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 32,
+      "FLOAT_SQRT": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 161,
+      "INT_AND": 163,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 83,
+      "INT_LEFT": 64,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 81,
+      "INT_OR": 80,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 40,
+      "INT_SUB": 71,
+      "INT_XOR": 3,
+      "INT_ZEXT": 64,
+      "LOAD": 89,
+      "POPCOUNT": 40,
+      "RETURN": 3,
+      "STORE": 92
+    },
+    "pcode_op_count": 2226
+  },
+  "stack_frame": {
+    "frame_size": 188,
+    "local_size": 184,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 41,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(this_ptr->unk3 + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._12_4_",
+      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._12_4_",
+      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._12_4_",
+      "text": "if ((((iVar2 != 0) && ((float)auStack_d8._12_4_ <= (actor_ptr->location).position.x)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 97,
+      "match": "&stack0xfffffea8",
+      "text": "__arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 98,
+      "match": "&stack0xfffffea8",
+      "text": "iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 114,
+      "match": "&stack0xfffffea4",
+      "text": "(actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 125,
+      "match": "SQRT",
+      "text": "(SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 126,
+      "match": "SQRT",
+      "text": "SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

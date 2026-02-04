@@ -7,7 +7,7 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWayPoint_FUN_005ec690 at 005ec69b
+;   core_waypoint.cpp_CWayPoint_showEditorHelp_FUN_005ec690 at 005ec69b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_With_CTRL_held_down_use__00655a3c

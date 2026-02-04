@@ -17,7 +17,7 @@
 ;   core_msnedit.cpp_FUN_00536e20 at 005371de
 ;   core_stranger.cpp_CStranger_FUN_005c6750 at 005c679e
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c70f3
-;   core_vampboss.cpp_SomethingVoicuHumanWav_FUN_005e74c0 at 005e74dd
+;   core_vampboss.cpp_CVampireBoss_FUN_005e74c0 at 005e74dd
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0

@@ -341,10 +341,6 @@
       "type":"struct"
     },
     {
-      "name":"CConveyor",
-      "type":"struct"
-    },
-    {
       "name":"CCrater",
       "type":"struct"
     },
@@ -379,6 +375,10 @@
     {
       "name":"CDemonActorType",
       "type":"struct"
+    },
+    {
+      "name":"CDemonActor_addFilesToExtract",
+      "type":"function_definition"
     },
     {
       "name":"CDemonActor_allowBulletHoles",
@@ -614,10 +614,6 @@
     },
     {
       "name":"CDemonActor_updateInteraction",
-      "type":"function_definition"
-    },
-    {
-      "name":"CDemonActor_writeDependencies",
       "type":"function_definition"
     },
     {
@@ -1637,6 +1633,10 @@
       "type":"struct"
     },
     {
+      "name":"CConveyor",
+      "type":"struct"
+    },
+    {
       "name":"CCourseFrame",
       "type":"struct"
     },
@@ -1946,6 +1946,10 @@
     },
     {
       "name":"EPlatformType",
+      "type":"enum"
+    },
+    {
+      "name":"EWerewolfType",
       "type":"enum"
     },
     {
@@ -3321,10 +3325,6 @@
       "type":"struct"
     },
     {
-      "name":"CBugs",
-      "type":"struct"
-    },
-    {
       "name":"SCANF_GETC_FUNC",
       "type":"function_definition"
     },
@@ -3790,6 +3790,10 @@
     },
     {
       "name":"CBoxActor",
+      "type":"struct"
+    },
+    {
+      "name":"CBugs",
       "type":"struct"
     },
     {
@@ -4341,19 +4345,15 @@
       "type":"struct"
     },
     {
+      "name":"CTVBat_ptr_48832",
+      "type":"typedef"
+    },
+    {
       "name":"CTentacle",
       "type":"struct"
     },
     {
-      "name":"CVampireBoss",
-      "type":"struct"
-    },
-    {
       "name":"CWerewolf",
-      "type":"struct"
-    },
-    {
-      "name":"CZombie",
       "type":"struct"
     },
     {
@@ -5921,6 +5921,10 @@
       "type":"struct"
     },
     {
+      "name":"CVampireBoss",
+      "type":"struct"
+    },
+    {
       "name":"CVehicle",
       "type":"struct"
     },
@@ -6014,6 +6018,14 @@
     },
     {
       "name":"CTurret",
+      "type":"struct"
+    },
+    {
+      "name":"CTurret_ptr_1412",
+      "type":"typedef"
+    },
+    {
+      "name":"CZombie",
       "type":"struct"
     },
     {
@@ -6615,6 +6627,26 @@
         {
           "name":"PLATFORM_TYPE_BOTH",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EWerewolfType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"WEREWOLF_TYPE_TRAIN",
+          "val":0
+        },
+        {
+          "name":"WEREWOLF_TYPE_TRAIN_ALPHA",
+          "val":1
+        },
+        {
+          "name":"WEREWOLF_TYPE_FOREST",
+          "val":2
         }
       ]
     },
@@ -7952,6 +7984,24 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CDemonActor_addFilesToExtract",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"file_handle",
+          "type":"_FILE*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CDemonActor_allowBulletHoles",
       "parameters":[
         {
@@ -9111,24 +9161,6 @@
         }
       ],
       "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CDemonActor_writeDependencies",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CDemonActor*"
-        },
-        {
-          "name":"file_handle",
-          "type":"_FILE*"
-        }
-      ],
-      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -22139,10 +22171,22 @@
           "type":"CEnemy"
         },
         {
-          "len":128,
+          "len":24,
           "name":"unk1",
           "offset":48820,
-          "type":"char[128]"
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":48844,
+          "type":"uint"
+        },
+        {
+          "len":100,
+          "name":"death_event",
+          "offset":48848,
+          "type":"char[100]"
         },
         {
           "len":4,
@@ -22596,7 +22640,7 @@
         },
         {
           "len":25600,
-          "name":"unk2",
+          "name":"bugs",
           "offset":48836,
           "type":"SBug[400]"
         },
@@ -22607,10 +22651,22 @@
           "type":"int"
         },
         {
-          "len":30160,
+          "len":2100,
           "name":"unk3",
           "offset":74440,
-          "type":"char[30160]"
+          "type":"char[2100]"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":76540,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":27680,
+          "name":"unk4",
+          "offset":76920,
+          "type":"char[27680]"
         },
         {
           "len":4,
@@ -22623,10 +22679,34 @@
           "name":"allow_swarm",
           "offset":104604,
           "type":"int"
+        },
+        {
+          "len":100,
+          "name":"allow_chase_event",
+          "offset":104608,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"allow_swarm_event",
+          "offset":104708,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"animate_event",
+          "offset":104808,
+          "type":"char[100]"
+        },
+        {
+          "len":44,
+          "name":"unk5",
+          "offset":104908,
+          "type":"char[44]"
         }
       ],
       "importable":true,
-      "len":104608,
+      "len":104952,
       "name":"CBugs",
       "pack":false,
       "type":"struct"
@@ -22847,10 +22927,16 @@
           "type":"float"
         },
         {
-          "len":8,
+          "len":4,
           "name":"unk1",
           "offset":352,
-          "type":"char[8]"
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"target",
+          "offset":356,
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -22859,10 +22945,58 @@
           "type":"int"
         },
         {
-          "len":284,
+          "len":4,
           "name":"unk2",
           "offset":364,
-          "type":"char[284]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":368,
+          "type":"int"
+        },
+        {
+          "len":20,
+          "name":"texture_name",
+          "offset":372,
+          "type":"char[20]"
+        },
+        {
+          "len":44,
+          "name":"unk4",
+          "offset":392,
+          "type":"char[44]"
+        },
+        {
+          "len":100,
+          "name":"pull_wav_name",
+          "offset":436,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"pull_wav_handle",
+          "offset":536,
+          "type":"uint"
+        },
+        {
+          "len":100,
+          "name":"move_wav_name",
+          "offset":540,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"move_wav_handle",
+          "offset":640,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"unk5",
+          "offset":644,
+          "type":"float"
         },
         {
           "len":4,
@@ -22872,7 +23006,7 @@
         },
         {
           "len":720,
-          "name":"unk3",
+          "name":"unk6",
           "offset":652,
           "type":"SChainVertex[20]"
         },
@@ -22902,7 +23036,7 @@
         },
         {
           "len":12,
-          "name":"unk4",
+          "name":"unk7",
           "offset":1388,
           "type":"char[12]"
         }
@@ -23807,10 +23941,40 @@
           "type":"CPlatform"
         },
         {
-          "len":308,
-          "name":"unk",
+          "len":12,
+          "name":"size",
           "offset":1836,
-          "type":"char[308]"
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"direction",
+          "offset":1848,
+          "type":"CVector3f"
+        },
+        {
+          "len":100,
+          "name":"start_event",
+          "offset":1860,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"stop_event",
+          "offset":1960,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"state",
+          "offset":2060,
+          "type":"int"
+        },
+        {
+          "len":80,
+          "name":"actor_class",
+          "offset":2064,
+          "type":"char[80]"
         }
       ],
       "importable":true,
@@ -25056,9 +25220,9 @@
         },
         {
           "len":4,
-          "name":"writeDependencies",
+          "name":"addFilesToExtract",
           "offset":224,
-          "type":"CDemonActor_writeDependencies*"
+          "type":"CDemonActor_addFilesToExtract*"
         },
         {
           "len":4,
@@ -32765,10 +32929,22 @@
           "type":"CDemonActor"
         },
         {
-          "len":1140,
-          "name":"unk1",
+          "len":380,
+          "name":"panel_model",
           "offset":344,
-          "type":"char[1140]"
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":380,
+          "name":"gem_model",
+          "offset":724,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":380,
+          "name":"model3",
+          "offset":1104,
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":12,
@@ -38627,10 +38803,16 @@
           "type":"CWeapon"
         },
         {
-          "len":392,
+          "len":12,
           "name":"unk1",
           "offset":1400,
-          "type":"char[392]"
+          "type":"char[12]"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":1412,
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -38640,7 +38822,7 @@
         },
         {
           "len":100,
-          "name":"unk2",
+          "name":"activate_event",
           "offset":1796,
           "type":"char[100]"
         },
@@ -38681,10 +38863,22 @@
           "type":"float"
         },
         {
-          "len":216,
+          "len":4,
           "name":"unk3",
           "offset":1920,
-          "type":"char[216]"
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"allowed_victim_types",
+          "offset":1924,
+          "type":"char[200]"
+        },
+        {
+          "len":12,
+          "name":"unk4",
+          "offset":2124,
+          "type":"char[12]"
         },
         {
           "len":4,
@@ -38693,10 +38887,16 @@
           "type":"int"
         },
         {
-          "len":96,
-          "name":"unk4",
+          "len":4,
+          "name":"user",
           "offset":2140,
-          "type":"char[96]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":92,
+          "name":"unk5",
+          "offset":2144,
+          "type":"char[92]"
         }
       ],
       "importable":true,
@@ -38717,10 +38917,16 @@
           "type":"CEnemy"
         },
         {
-          "len":392,
+          "len":12,
           "name":"unk1",
           "offset":48820,
-          "type":"char[392]"
+          "type":"char[12]"
+        },
+        {
+          "len":380,
+          "name":"model",
+          "offset":48832,
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":4,
@@ -38732,7 +38938,7 @@
           "len":4,
           "name":"unk2",
           "offset":49216,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":12,
@@ -38768,7 +38974,7 @@
           "len":4,
           "name":"unk3",
           "offset":49248,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
@@ -38777,10 +38983,28 @@
           "type":"int"
         },
         {
-          "len":16,
+          "len":4,
           "name":"unk4",
           "offset":49256,
-          "type":"char[16]"
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"unk5",
+          "offset":49260,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk6",
+          "offset":49264,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk7",
+          "offset":49268,
+          "type":"int"
         },
         {
           "len":4,
@@ -38790,7 +39014,7 @@
         },
         {
           "len":100,
-          "name":"unk5",
+          "name":"periodic_sound",
           "offset":49276,
           "type":"char[100]"
         },
@@ -38807,10 +39031,22 @@
           "type":"float"
         },
         {
-          "len":12,
-          "name":"unk6",
+          "len":4,
+          "name":"unk9",
           "offset":49384,
-          "type":"char[12]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk10",
+          "offset":49388,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"unk11",
+          "offset":49392,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -38831,10 +39067,22 @@
           "type":"CEnemy"
         },
         {
-          "len":794124,
+          "len":8,
           "name":"unk1",
           "offset":48820,
-          "type":"char[794124]"
+          "type":"char[8]"
+        },
+        {
+          "len":8884,
+          "name":"model",
+          "offset":48828,
+          "type":"CDeformableModelInstance"
+        },
+        {
+          "len":785232,
+          "name":"unk2",
+          "offset":57712,
+          "type":"char[785232]"
         },
         {
           "len":4,
@@ -38844,7 +39092,7 @@
         },
         {
           "len":3116,
-          "name":"unk2",
+          "name":"unk3",
           "offset":842948,
           "type":"char[3116]"
         },
@@ -38855,10 +39103,40 @@
           "type":"float"
         },
         {
-          "len":44,
-          "name":"unk3",
+          "len":24,
+          "name":"unk4",
           "offset":846068,
-          "type":"char[44]"
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"way_point_0",
+          "offset":846092,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"way_point_1",
+          "offset":846096,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"way_point_2",
+          "offset":846100,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"way_point_3",
+          "offset":846104,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"unk5",
+          "offset":846108,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -39656,13 +39934,19 @@
           "len":4,
           "name":"type",
           "offset":48828,
+          "type":"EWerewolfType"
+        },
+        {
+          "len":4,
+          "name":"bone_index",
+          "offset":48832,
           "type":"int"
         },
         {
-          "len":20,
+          "len":16,
           "name":"unk3",
-          "offset":48832,
-          "type":"char[20]"
+          "offset":48836,
+          "type":"char[16]"
         },
         {
           "len":4,
@@ -39671,10 +39955,16 @@
           "type":"int"
         },
         {
-          "len":20,
-          "name":"unk4",
+          "len":4,
+          "name":"sfx_handle",
           "offset":48856,
-          "type":"char[20]"
+          "type":"uint"
+        },
+        {
+          "len":16,
+          "name":"unk4",
+          "offset":48860,
+          "type":"char[16]"
         },
         {
           "len":4,
@@ -39833,10 +40123,34 @@
           "type":"CEnemy"
         },
         {
-          "len":140,
+          "len":32,
           "name":"unk1",
           "offset":48820,
-          "type":"char[140]"
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"grave_actor",
+          "offset":48852,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":48856,
+          "type":"int"
+        },
+        {
+          "len":32,
+          "name":"rise_from_grave_condition",
+          "offset":48860,
+          "type":"char[32]"
+        },
+        {
+          "len":68,
+          "name":"unk3",
+          "offset":48892,
+          "type":"char[68]"
         },
         {
           "len":4,
@@ -39852,7 +40166,7 @@
         },
         {
           "len":100,
-          "name":"unk2",
+          "name":"unk4",
           "offset":48968,
           "type":"char[100]"
         }
@@ -54303,6 +54617,22 @@
       "component_offset":56,
       "importable":true,
       "name":"CScript_ptr_56",
+      "type":"typedef"
+    },
+    {
+      "base":"CTurret*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":1412,
+      "importable":true,
+      "name":"CTurret_ptr_1412",
+      "type":"typedef"
+    },
+    {
+      "base":"CTVBat*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":48832,
+      "importable":true,
+      "name":"CTVBat_ptr_48832",
       "type":"typedef"
     },
     {

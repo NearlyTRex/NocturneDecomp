@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWayPoint_FUN_005ec5e0 at 005ec5ef
+;   core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0 at 005ec5ef
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00655a34 = 4

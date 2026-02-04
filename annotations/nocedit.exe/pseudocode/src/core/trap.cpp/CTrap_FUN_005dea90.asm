@@ -7,7 +7,7 @@
 ; CTrap *          Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
+;   core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
     PUSH EDX                            ; 005dea94
     MOV ECX,dword ptr [ESP + 0x8]       ; 005dea95
     PUSH ECX                            ; 005dea99
-    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005dea9a
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
+    CALL core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0 ; 005dea9a
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 005dea9f
     RET                                 ; 005deaa2
 

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_models_s_00618ac9
 ;
 ; Called Functions:
-;   core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
+;   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH EBX                            ; 0043e0bf
     MOV ESI,dword ptr [ESP + 0x14]      ; 0043e0c0
     PUSH ESI                            ; 0043e0c4
-    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0043e0c5
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
+    CALL core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00 ; 0043e0c5
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKeyFramedModel * this_ptr, _FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 0043e0ca
     POP ESI                             ; 0043e0cd
     POP EBX                             ; 0043e0ce

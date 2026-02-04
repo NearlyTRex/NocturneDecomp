@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410 at 005e7463
+;   core_vampboss.cpp_CVampireBoss_FUN_005e7410 at 005e7463
 ;
 ; Referenced Globals:
 ;   float FLOAT_0062407e = 5

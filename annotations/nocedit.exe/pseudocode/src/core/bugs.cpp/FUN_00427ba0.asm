@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_00425b70 at 00425c62
+;   core_bugs.cpp_CBugs_FUN_00425b70 at 00425c62
 ;   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 at 005552e5
 ;
 ; *****************************************************************************

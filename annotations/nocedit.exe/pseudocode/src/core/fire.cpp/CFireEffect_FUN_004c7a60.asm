@@ -11,7 +11,7 @@
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0596
 ;   core_shotgun.cpp_FUN_00588060 at 00588360
 ;   core_tommygun.cpp_FUN_005ddb30 at 005dddbc
-;   core_turret.cpp_FUN_005e3750 at 005e3b4b
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3b4b
 ;
 ; Referenced Globals:
 ;   int g_SparkActiveCount

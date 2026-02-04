@@ -188,7 +188,7 @@ section .text
     PUSH ESI                            ; 004f4ca1
     PUSH EBX                            ; 004f4ca2
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004f4ca3
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004f4ca8
     JMP 0x004f4c6b                      ; 004f4cab
         ;   XREF to: 004f4c6b (UNCONDITIONAL_JUMP)  ; LAB_004f4c6b
@@ -362,7 +362,7 @@ section .text
     PUSH ESI                            ; 004f4ee0
     PUSH EBX                            ; 004f4ee1
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004f4ee2
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004f4ee7
     JMP 0x004f4c6b                      ; 004f4eea
         ;   XREF to: 004f4c6b (UNCONDITIONAL_JUMP)  ; LAB_004f4c6b
@@ -998,8 +998,8 @@ section .text
     PUSH ECX                            ; 004f563f
     LEA EAX,[EBX + 0x20]                ; 004f5640
     PUSH EAX                            ; 004f5643
-    CALL core_waypoint.cpp_FUN_005ec320 ; 004f5644
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
+    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 004f5644
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
     ADD ESP,0x8                         ; 004f5649
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f564c
     JMP 0x004f55ce                      ; 004f5652
@@ -1222,8 +1222,8 @@ section .text
         ;   Label: LAB_004f589e
     LEA EAX,[EBX + 0x20]                ; 004f589f
     PUSH EAX                            ; 004f58a2
-    CALL core_waypoint.cpp_FUN_005ec320 ; 004f58a3
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
+    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 004f58a3
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
     ADD ESP,0x8                         ; 004f58a8
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f58ab
     JMP 0x004f4fc5                      ; 004f58b1

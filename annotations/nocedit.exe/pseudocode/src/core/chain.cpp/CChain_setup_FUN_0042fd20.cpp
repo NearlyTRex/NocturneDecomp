@@ -27,8 +27,8 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
   float local_28;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  if (*(int *)(this_ptr->unk1 + 4) != 0) {
-    pCVar9 = core_chain_cpp_FUN_0042fcc0();
+  if (this_ptr->target != (CDemonActor *)0x0) {
+    pCVar9 = core_chain_cpp_CChain_FUN_0042fcc0(this_ptr);
     pCVar1 = &(this_ptr->base).location;
     fVar2 = pCVar9->x;
     fVar3 = (pCVar1->position).x;
@@ -42,10 +42,10 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
     fVar8 = 1.0 / (float)(this_ptr->vertex_count + -1);
     iVar10 = 0;
     if (0 < this_ptr->vertex_count) {
-      pcVar13 = this_ptr->unk3[0].unk + 0x18;
-      pcVar11 = this_ptr->unk3[0].unk + 0xc;
+      pcVar13 = this_ptr->unk6[0].unk + 0x18;
+      pcVar11 = this_ptr->unk6[0].unk + 0xc;
       do {
-        pSVar12 = this_ptr->unk3 + iVar10;
+        pSVar12 = this_ptr->unk6 + iVar10;
         if (pSVar12 != (SChainVertex *)&local_30) {
           *(float *)pSVar12->unk = local_30;
           *(float *)(pSVar12->unk + 4) = local_2c;
@@ -59,7 +59,7 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
         pcVar11[10] = '\0';
         pcVar11[0xb] = '\0';
         *(uint *)(pcVar11 + 4) = *(uint *)(pcVar11 + 8);
-        pSVar12 = this_ptr->unk3 + iVar10;
+        pSVar12 = this_ptr->unk6 + iVar10;
         *(uint *)pcVar11 = *(uint *)(pcVar11 + 4);
         if ((SChainVertex *)pcVar13 != pSVar12) {
           *(uint *)(pcVar11 + 0xc) = *(uint *)pSVar12->unk;
@@ -74,26 +74,17 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
   }
   iVar10 = this_ptr->vertex_count;
   fVar2 = this_ptr->chain_length;
-  this_ptr->unk2[0xac] = '\0';
-  this_ptr->unk2[0xad] = '\0';
-  this_ptr->unk2[0xae] = '\0';
-  this_ptr->unk2[0xaf] = '\0';
-  this_ptr->unk2[0x114] = '\0';
-  this_ptr->unk2[0x115] = '\0';
-  this_ptr->unk2[0x116] = '\0';
-  this_ptr->unk2[0x117] = '\0';
-  this_ptr->unk2[0x118] = '\0';
-  this_ptr->unk2[0x119] = '\0';
-  this_ptr->unk2[0x11a] = '\0';
-  this_ptr->unk2[0x11b] = '\0';
-  this_ptr->unk4[0] = -0x66;
-  this_ptr->unk4[1] = '?';
-  this_ptr->unk4[2] = '\x1c';
-  this_ptr->unk4[3] = -0x3a;
-  this_ptr->unk4[8] = '\0';
-  this_ptr->unk4[9] = '\0';
-  this_ptr->unk4[10] = '\0';
-  this_ptr->unk4[0xb] = '\0';
-  *(float *)this_ptr->unk1 = fVar2 / (float)(iVar10 + -1);
+  this_ptr->pull_wav_handle = 0;
+  this_ptr->move_wav_handle = 0;
+  this_ptr->unk5 = 0.0;
+  this_ptr->unk7[0] = -0x66;
+  this_ptr->unk7[1] = '?';
+  this_ptr->unk7[2] = '\x1c';
+  this_ptr->unk7[3] = -0x3a;
+  this_ptr->unk7[8] = '\0';
+  this_ptr->unk7[9] = '\0';
+  this_ptr->unk7[10] = '\0';
+  this_ptr->unk7[0xb] = '\0';
+  this_ptr->unk1 = fVar2 / (float)(iVar10 + -1);
   return;
 }

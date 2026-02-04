@@ -24,11 +24,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_pt
   }
   if (3 < g_CWerewolfClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk4 + 0x10),"chainAnchor");
+              ((CDemonActor *)(this_ptr->unk4 + 0xc),"chainAnchor");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->chain_length,"chainLength");
   }
   if (4 < g_CWerewolfClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->type,"type");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->type,"type");
   }
   if (g_CWerewolfClassVersion < 6) {
     return;

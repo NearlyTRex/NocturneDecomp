@@ -25,7 +25,7 @@
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 005839c1
 ;   core_setedit.cpp_FUN_00582930 at 00582bec
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 at 0059b607
-;   core_tvbat.cpp_CTVBat_FUN_005e4d80 at 005e5007
+;   core_tvbat.cpp_CTVBat_renderOpaque_FUN_005e4d80 at 005e5007
 ;
 ; Referenced Globals:
 ;   int g_CurrentPolygonColor

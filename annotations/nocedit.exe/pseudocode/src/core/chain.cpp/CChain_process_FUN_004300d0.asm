@@ -65,8 +65,8 @@
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
-;   core_chain.cpp_FUN_0042fcc0
-;   core_chain.cpp_FUN_0042fed0
+;   core_chain.cpp_CChain_FUN_0042fcc0
+;   core_chain.cpp_CChain_FUN_0042fed0
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -162,8 +162,8 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 004301d1
     PUSH EAX                            ; 004301d5
     PUSH ESI                            ; 004301d6
-    CALL core_chain.cpp_FUN_0042fcc0    ; 004301d7
-        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_FUN_0042fcc0()
+    CALL core_chain.cpp_CChain_FUN_0042fcc0 ; 004301d7
+        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_FUN_0042fcc0(CChain * this_ptr)
     MOV EBX,dword ptr [ESI + 0x158]     ; 004301dc
     DEC EBX                             ; 004301e2
     MOV EDX,EAX                         ; 004301e3
@@ -241,8 +241,8 @@ section .text
         ;   Label: LAB_0043030f
     PUSH EAX                            ; 00430316
     PUSH ESI                            ; 00430317
-    CALL core_chain.cpp_FUN_0042fcc0    ; 00430318
-        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_FUN_0042fcc0()
+    CALL core_chain.cpp_CChain_FUN_0042fcc0 ; 00430318
+        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_FUN_0042fcc0(CChain * this_ptr)
     MOV EBX,dword ptr [ESI + 0x158]     ; 0043031d
     DEC EBX                             ; 00430323
     IMUL EBX,EBX,0x24                   ; 00430324
@@ -296,15 +296,15 @@ section .text
     PUSH EAX                            ; 004303d8
     PUSH EBX                            ; 004303d9
     PUSH ESI                            ; 004303da
-    CALL core_chain.cpp_FUN_0042fed0    ; 004303db
-        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_0042fed0()
+    CALL core_chain.cpp_CChain_FUN_0042fed0 ; 004303db
+        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_FUN_0042fed0(CChain * this_ptr)
     ADD ESP,0xc                         ; 004303e0
     PUSH EDI                            ; 004303e3
     PUSH EBX                            ; 004303e4
     PUSH ESI                            ; 004303e5
     ADD EDI,0x24                        ; 004303e6
-    CALL core_chain.cpp_FUN_0042fed0    ; 004303e9
-        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_0042fed0()
+    CALL core_chain.cpp_CChain_FUN_0042fed0 ; 004303e9
+        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_FUN_0042fed0(CChain * this_ptr)
     ADD ESP,0xc                         ; 004303ee
     ADD EBX,0x24                        ; 004303f1
     MOV EDX,dword ptr [ESP + 0xd0]      ; 004303f4
@@ -415,15 +415,15 @@ section .text
     FADD float ptr [ESP + 0x6c]         ; 00430544
     PUSH ESI                            ; 00430548
     FSTP float ptr [EBX + 0x8]          ; 00430549
-    CALL core_chain.cpp_FUN_0042fed0    ; 0043054c
-        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_0042fed0()
+    CALL core_chain.cpp_CChain_FUN_0042fed0 ; 0043054c
+        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_FUN_0042fed0(CChain * this_ptr)
     ADD ESP,0xc                         ; 00430551
     MOV EAX,dword ptr [ESP + 0xbc]      ; 00430554
     PUSH EAX                            ; 0043055b
     PUSH EBX                            ; 0043055c
     PUSH ESI                            ; 0043055d
-    CALL core_chain.cpp_FUN_0042fed0    ; 0043055e
-        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_0042fed0()
+    CALL core_chain.cpp_CChain_FUN_0042fed0 ; 0043055e
+        ;   XREF to: 0042fed0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_FUN_0042fed0(CChain * this_ptr)
     ADD ESP,0xc                         ; 00430563
     ADD EDI,0x24                        ; 00430566
     MOV EDX,dword ptr [ESP + 0xbc]      ; 00430569
@@ -451,8 +451,8 @@ section .text
         ;   Label: LAB_004305b6
     PUSH EAX                            ; 004305ba
     PUSH ESI                            ; 004305bb
-    CALL core_chain.cpp_FUN_0042fcc0    ; 004305bc
-        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_FUN_0042fcc0()
+    CALL core_chain.cpp_CChain_FUN_0042fcc0 ; 004305bc
+        ;   XREF to: 0042fcc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_FUN_0042fcc0(CChain * this_ptr)
     MOV EBX,dword ptr [ESI + 0x158]     ; 004305c1
     DEC EBX                             ; 004305c7
     IMUL EBX,EBX,0x24                   ; 004305c8

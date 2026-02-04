@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D 
 // Address: 00412030
 void __cdecl CAnvil::getPropertyList(CAnvil *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_anvil.cpp_CAnvil_writeDependencies_FUN_00412090
+// Original: core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090
 // Address: 00412090
-void __cdecl CAnvil::writeDependencies(CAnvil *this_ptr,_FILE *file_handle);
+void __cdecl CAnvil::addFilesToExtract(CAnvil *this_ptr,_FILE *file_handle);
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_004120e0
 // Address: 004120e0

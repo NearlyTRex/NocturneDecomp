@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d680 at 0041d68c
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 at 0041d68c
 ;   core_charactr.cpp_CCharacter_FUN_00428e30 at 00428ecb
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c56b
 ;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544dd9

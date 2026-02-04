@@ -11,8 +11,8 @@ void __cdecl core_trash_cpp_CTrash_FUN_005df720(CTrash *this_ptr)
 {
   _FILE *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base,in_stack_00000008);
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(&this_ptr->base,in_stack_00000008);
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             (&this_ptr->model,in_stack_00000008);
   return;
 }

@@ -22,7 +22,7 @@ section .text
     PUSH 0x0                            ; 005eead5
     PUSH EBX                            ; 005eead7
     CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 005eead8
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0()
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0(CWeather * this_ptr)
     ADD ESP,0x8                         ; 005eeadd
     MOV EAX,EBX                         ; 005eeae0
     POP EBX                             ; 005eeae2

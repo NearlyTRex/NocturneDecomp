@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Called Functions:
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d680
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -37,8 +37,8 @@ section .text
         ;   XREF to: 0041d523 (CONDITIONAL_JUMP)  ; LAB_0041d523
     PUSH EBX                            ; 0041d500
     MOV dword ptr [EBX + 0x243c],0x3f800000 ; 0041d501
-    CALL core_boneguy.cpp_CBoneGuy_FUN_0041d680 ; 0041d50b
-        ;   XREF to: 0041d680 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_CBoneGuy_FUN_0041d680(CBoneGuy * this_ptr)
+    CALL core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 ; 0041d50b
+        ;   XREF to: 0041d680 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy * this_ptr)
     ADD ESP,0x4                         ; 0041d510
     MOV ECX,dword ptr [ESP + 0xc]       ; 0041d513
     PUSH ECX                            ; 0041d517

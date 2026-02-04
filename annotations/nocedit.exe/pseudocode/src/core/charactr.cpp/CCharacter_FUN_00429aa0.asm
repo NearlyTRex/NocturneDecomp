@@ -9,7 +9,7 @@
 ; XREF[9]:
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 00417456
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418ab3
-;   core_boneguy.cpp_FUN_0041d1b0 at 0041d22b
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0 at 0041d22b
 ;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390 at 0042a3cd
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 at 0042a324
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485cda

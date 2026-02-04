@@ -47,9 +47,9 @@ void __cdecl CZombieDog::getPropertyList(CZombieDog *this_ptr,CActorPropertyList
 // Address: 0047f960
 void __cdecl CZombieDog(CZombieDog *this_ptr);
 
-// Original: core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970
+// Original: core_dog.cpp_CZombieDog_addFilesToExtract_FUN_0047f970
 // Address: 0047f970
-void __cdecl CZombieDog::writeDependencies(CZombieDog *this_ptr,_FILE *file_handle);
+void __cdecl CZombieDog::addFilesToExtract(CZombieDog *this_ptr,_FILE *file_handle);
 
 // Original: core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0
 // Address: 0047f9a0

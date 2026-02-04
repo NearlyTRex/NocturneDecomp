@@ -63,9 +63,9 @@ CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBo
 // Address: 004180b0
 void __cdecl CBattery::getPropertyList(CBattery *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_battery.cpp_CBattery_writeDependencies_FUN_00418110
+// Original: core_battery.cpp_CBattery_addFilesToExtract_FUN_00418110
 // Address: 00418110
-void __cdecl CBattery::writeDependencies(CBattery *this_ptr,_FILE *file_handle);
+void __cdecl CBattery::addFilesToExtract(CBattery *this_ptr,_FILE *file_handle);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00418160
 // Address: 00418160

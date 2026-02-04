@@ -67,16 +67,12 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   
   bVar14 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->unk1);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c));
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x2f8));
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->panel_model);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->gem_model);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model3);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk3 + 0xe78));
-  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->unk1);
+  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
   local_c4 = (pCVar6->bounds_min).x;
   local_c0 = (pCVar6->bounds_min).y;
   local_bc = (pCVar6->bounds_min).z;
@@ -112,8 +108,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   local_18 = local_b0;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_17c,&this_ptr->gem_pos,(CVector3f *)&this_ptr->gem_orient);
-  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c));
+  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->gem_model);
   local_ac = (pCVar6->bounds_min).x;
   local_a8 = (pCVar6->bounds_min).y;
   local_a4 = (pCVar6->bounds_min).z;

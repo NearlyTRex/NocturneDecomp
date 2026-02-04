@@ -11,7 +11,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005eea60(CWeapon *this_ptr)
 {
   _FILE *in_stack_00000008;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             (&this_ptr->model,in_stack_00000008);
   return;
 }

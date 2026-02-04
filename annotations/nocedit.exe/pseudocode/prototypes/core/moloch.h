@@ -51,9 +51,9 @@ void __cdecl CMoloch(CMoloch *this_ptr);
 // Address: 00529950
 void __cdecl CMoloch::getPropertyList(CMoloch *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_moloch.cpp_CMoloch_writeDependencies_FUN_005299b0
+// Original: core_moloch.cpp_CMoloch_addFilesToExtract_FUN_005299b0
 // Address: 005299b0
-void __cdecl CMoloch::writeDependencies(CMoloch *this_ptr,_FILE *file_handle);
+void __cdecl CMoloch::addFilesToExtract(CMoloch *this_ptr,_FILE *file_handle);
 
 // Original: core_moloch.cpp_CMoloch_FUN_005299d0
 // Address: 005299d0

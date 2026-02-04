@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004250f0",
+    "address_range": [
+      [
+        "004250f0",
+        "004251a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_process_FUN_004250f0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00425cc0",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_FUN_00425cc0"
+    },
+    {
+      "addr": "00425fe0",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_FUN_00425fe0"
+    },
+    {
+      "addr": "00426410",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_FUN_00426410"
+    },
+    {
+      "addr": "00429870",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
+    },
+    {
+      "addr": "004adca0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004250d4",
+      "name": "switchdataD_004250d4",
+      "type": "void*",
+      "value": "0042512b"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.275862068965517,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 6,
+      "CBRANCH": 6,
+      "COPY": 43,
+      "INT_ADD": 28,
+      "INT_AND": 27,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 24,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 23,
+      "LOAD": 18,
+      "POPCOUNT": 12,
+      "RETURN": 3,
+      "STORE": 22
+    },
+    "pcode_op_count": 248
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBugs",
+        "offset": 4,
+        "vtable_addr": "0065b5e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

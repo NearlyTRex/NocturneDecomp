@@ -13,9 +13,9 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415740
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416f3c
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419da3
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c61c
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c61c
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421dbb
-;   core_bugs.cpp_FUN_00425fe0 at 0042607d
+;   core_bugs.cpp_CBugs_FUN_00425fe0 at 0042607d
 ;   core_charactr.cpp_CCharacter_FUN_00428e30 at 00428e69
 ;   ... and 36 more
 ;

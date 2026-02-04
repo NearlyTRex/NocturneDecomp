@@ -135,7 +135,7 @@ void __cdecl core_skeledit_cpp_FUN_00589fc0(void);
 void __cdecl core_skeledit_cpp_FUN_00589fe0(void);
 void __cdecl core_skeledit_cpp_FUN_0058a0f0(void);
 int __cdecl core_skeledit_cpp_FUN_0058a1b0(void);
-void __cdecl core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260 (CDeformableModelInstance *this_ptr,_FILE *file_handle);
+void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260 (CDeformableModelInstance *this_ptr,_FILE *file_handle);
 void __cdecl core_skeledit_cpp_FUN_0058a2b0(void);
 void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out);

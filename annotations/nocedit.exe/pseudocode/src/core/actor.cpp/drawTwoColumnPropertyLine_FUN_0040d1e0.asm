@@ -15,7 +15,7 @@
 ;   core_platfrm.cpp_CPlatform_showEditorHelp_FUN_0054f060 at 0054f073
 ;   core_teleport.cpp_CTeleportDest_FUN_005da970 at 005da995
 ;   core_teleport.cpp_CTeleport_FUN_005dadc0 at 005dae03
-;   core_waypoint.cpp_CWayPoint_FUN_005ec690 at 005ec6c8
+;   core_waypoint.cpp_CWayPoint_showEditorHelp_FUN_005ec690 at 005ec6c8
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

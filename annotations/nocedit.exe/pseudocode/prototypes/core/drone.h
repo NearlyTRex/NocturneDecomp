@@ -47,9 +47,9 @@ void __cdecl CDrone::getPropertyList(CDrone *this_ptr,CActorPropertyList *proper
 // Address: 0048f560
 void __cdecl CDrone(CDrone *this_ptr);
 
-// Original: core_drone.cpp_CDrone_writeDependencies_FUN_0048f570
+// Original: core_drone.cpp_CDrone_addFilesToExtract_FUN_0048f570
 // Address: 0048f570
-void __cdecl CDrone::writeDependencies(CDrone *this_ptr,_FILE *file_handle);
+void __cdecl CDrone::addFilesToExtract(CDrone *this_ptr,_FILE *file_handle);
 
 // Original: core_drone.cpp_CDrone_dtor_FUN_0048f5a0
 // Address: 0048f5a0

@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_CZombie_FUN_005fc4f0 at 005fc582
+;   core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0 at 005fc582
 ;
 ; *****************************************************************************
 

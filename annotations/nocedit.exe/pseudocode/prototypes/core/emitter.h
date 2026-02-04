@@ -67,9 +67,9 @@ void __cdecl CEmitter::processInEditor(CEmitter *this_ptr);
 // Address: 004a9350
 void __cdecl CEmitter::showEditorHelp(CEmitter *this_ptr,int *y_pos);
 
-// Original: core_emitter.cpp_CEmitter_writeDependencies_FUN_004a9390
+// Original: core_emitter.cpp_CEmitter_addFilesToExtract_FUN_004a9390
 // Address: 004a9390
-void __cdecl CEmitter::writeDependencies(CEmitter *this_ptr,_FILE *file_handle);
+void __cdecl CEmitter::addFilesToExtract(CEmitter *this_ptr,_FILE *file_handle);
 
 // Original: core_emitter.cpp_CEmitter_dtor_FUN_004a93c0
 // Address: 004a93c0

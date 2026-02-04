@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c803
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c803
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062439a = 1.20000000000000

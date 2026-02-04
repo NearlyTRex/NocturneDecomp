@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_FUN_005f11a0 at 005f11cd
+;   core_werewolf.cpp_CWerewolf_FUN_005f11a0 at 005f11cd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_00617252

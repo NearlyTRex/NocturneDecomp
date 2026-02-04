@@ -51,9 +51,9 @@ void __cdecl CBiggs::hasCollision(CBiggs *this_ptr,SCollisionInfo *collision_inf
 // Address: 00418c80
 void __cdecl CBiggs::getPropertyList(CBiggs *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_biggs.cpp_CBiggs_writeDependencies_FUN_00418ce0
+// Original: core_biggs.cpp_CBiggs_addFilesToExtract_FUN_00418ce0
 // Address: 00418ce0
-void __cdecl CBiggs::writeDependencies(CBiggs *this_ptr,_FILE *file_handle);
+void __cdecl CBiggs::addFilesToExtract(CBiggs *this_ptr,_FILE *file_handle);
 
 // Original: core_biggs.cpp_CBiggs_dtor_FUN_00418d10
 // Address: 00418d10

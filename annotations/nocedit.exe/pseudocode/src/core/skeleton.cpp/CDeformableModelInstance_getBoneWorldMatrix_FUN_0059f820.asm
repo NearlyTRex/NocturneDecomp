@@ -32,7 +32,7 @@
 ;   core_ghoul.cpp_FUN_004e84a0 at 004e84c3
 ;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 0051ff64
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 at 0059fac6
-;   core_zombie.cpp_CZombie_FUN_005fbe70 at 005fbeb3
+;   core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70 at 005fbeb3
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820

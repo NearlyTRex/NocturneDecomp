@@ -63,9 +63,9 @@ CBoundingBox3D * __cdecl CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBounding
 // Address: 004cb6e0
 void __cdecl CFlameCan::getPropertyList(CFlameCan *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_flamecan.cpp_CFlameCan_writeDependencies_FUN_004cb750
+// Original: core_flamecan.cpp_CFlameCan_addFilesToExtract_FUN_004cb750
 // Address: 004cb750
-void __cdecl CFlameCan::writeDependencies(CFlameCan *this_ptr,_FILE *file_handle);
+void __cdecl CFlameCan::addFilesToExtract(CFlameCan *this_ptr,_FILE *file_handle);
 
 // Original: core_flamecan.cpp_CFlameCan_dtor_FUN_004cb7a0
 // Address: 004cb7a0

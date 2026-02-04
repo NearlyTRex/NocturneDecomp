@@ -39,9 +39,9 @@ void __cdecl CWeapon::archive(CWeapon *this_ptr);
 // Address: 005ee330
 int __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee340
+// Original: core_weapon.cpp_CWeapon_canPickup_FUN_005ee340
 // Address: 005ee340
-int __cdecl CWeapon(CWeapon *this_ptr);
+int __cdecl CWeapon::canPickup(CWeapon *this_ptr,CDemonActor *picker);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee3e0
 // Address: 005ee3e0

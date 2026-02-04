@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fdf8
+;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fdf8
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d4034
 ;   core_haystack.cpp_CHaystack_process_FUN_004f0e40 at 004f1285
 ;   core_icepick.cpp_CIcePick_process_FUN_004f80b0 at 004f8608

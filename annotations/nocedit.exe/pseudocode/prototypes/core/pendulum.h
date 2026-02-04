@@ -75,9 +75,9 @@ void __cdecl CPendulum::getPropertyList(CPendulum *this_ptr,CActorPropertyList *
 // Address: 0054a790
 void __cdecl CPendulum::processInEditor(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_CPendulum_writeDependencies_FUN_0054a7b0
+// Original: core_pendulum.cpp_CPendulum_addFilesToExtract_FUN_0054a7b0
 // Address: 0054a7b0
-void __cdecl CPendulum::writeDependencies(CPendulum *this_ptr,_FILE *file_handle);
+void __cdecl CPendulum::addFilesToExtract(CPendulum *this_ptr,_FILE *file_handle);
 
 // Original: core_pendulum.cpp_CPendulum_dtor_FUN_0054a7d0
 // Address: 0054a7d0

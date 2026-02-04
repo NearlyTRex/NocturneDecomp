@@ -24,7 +24,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[15]:
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c146
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c146
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd79
 ;   core_course.cpp_CCourse_FUN_004427a0 at 004428e5
 ;   core_gabriela.cpp_FUN_004d4d80 at 004d54c1

@@ -8,40 +8,25 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 62,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param",
-      "unnamed_param"
-    ],
-    "total_lines": 38
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
   },
   "cross_references": [
     {
       "addr": "005fb530",
       "from_addr": "005fb728",
-      "name": "core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530",
+      "name": "core_zombie.cpp_CZombie_FUN_005fb530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_zombie.cpp_CZombie_FUN_005fbda0",
-    "signature": "int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void)"
+    "signature": "int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr)"
   },
   "function_calls": [
     {
@@ -93,41 +78,20 @@
     "pcode_op_count": 129
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "if ((-1 < iVar1) && (iVar1 = *(int *)(in_stack_00000004 + 0x24b0 + iVar1 * 0x44), -1 < iVar1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "return *(int *)(in_stack_00000004 + 0x2298 + iVar1 * 4);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,183 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 11,
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 155
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004113e0",
+    "address_range": [
+      [
+        "004113e0",
+        "004114de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_ammo.cpp_CAmmo_addFilesToExtract_FUN_004113e0",
+    "signature": "void __cdecl core_ammo_cpp_CAmmo_addFilesToExtract_FUN_004113e0(CAmmo *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047edd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0"
+    },
+    {
+      "addr": "005fef20",
+      "is_variadic": false,
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614afc",
+      "name": "s_gatbullet_kfm_00614afc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b0a",
+      "name": "s_holybullet_kfm_00614b0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b19",
+      "name": "s_woodbullet_kfm_00614b19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b28",
+      "name": "s_silverbullet_kfm_00614b28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b39",
+      "name": "s_goldbullet_kfm_00614b39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b48",
+      "name": "s_lithiumbullet_kfm_00614b48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b5a",
+      "name": "s_mercurybullet_kfm_00614b5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b6c",
+      "name": "s_shell_kfm_00614b6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b76",
+      "name": "s_stake_kfm_00614b76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b80",
+      "name": "s_dynamitebundle_kfm_00614b80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614b93",
+      "name": "s_tommybullet_kfm_00614b93",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.465116279069767,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 12,
+      "CBRANCH": 11,
+      "COPY": 65,
+      "INT_ADD": 24,
+      "INT_AND": 59,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 48,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 24,
+      "INT_SUB": 39,
+      "LOAD": 10,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 384
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAmmo",
+        "offset": 224,
+        "vtable_addr": "006599a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

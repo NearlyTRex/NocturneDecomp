@@ -148,8 +148,8 @@ section .text
         ;   XREF to: 005e609b (CONDITIONAL_JUMP)  ; LAB_005e609b
     PUSH dword ptr [EBP + 0x18]         ; 005e59be
     PUSH EBX                            ; 005e59c1
-    CALL core_vampboss.cpp_FUN_005e6ca0 ; 005e59c2
-        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_FUN_005e6ca0()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e6ca0 ; 005e59c2
+        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss * this_ptr)
     ADD ESP,0x8                         ; 005e59c7
     LEA ESI,[EBX + 0xbebc]              ; 005e59ca
     PUSH ESI                            ; 005e59d0
@@ -184,7 +184,7 @@ section .text
         ;   XREF to: 005e5a42 (CONDITIONAL_JUMP)  ; LAB_005e5a42
     PUSH EBX                            ; 005e5a25
     CALL core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510 ; 005e5a26
-        ;   XREF to: 005e7510 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510()
+        ;   XREF to: 005e7510 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss * this_ptr)
     MOV dword ptr [EBX + 0xce904],0x2   ; 005e5a2b
     ADD ESP,0x4                         ; 005e5a35
     MOV dword ptr [EBX + 0xce8f8],0x40a00000 ; 005e5a38
@@ -673,8 +673,8 @@ section .text
         ;   XREF to: 005e5cad (CONDITIONAL_JUMP)  ; LAB_005e5cad
     PUSH EBX                            ; 005e607e
         ;   Label: LAB_005e607e
-    CALL core_vampboss.cpp_SomethingVoicuHumanWav_FUN_005e74c0 ; 005e607f
-        ;   XREF to: 005e74c0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_SomethingVoicuHumanWav_FUN_005e74c0()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e74c0 ; 005e607f
+        ;   XREF to: 005e74c0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e74c0(CVampireBoss * this_ptr)
     ADD ESP,0x4                         ; 005e6084
     JMP 0x005e5cad                      ; 005e6087
         ;   XREF to: 005e5cad (UNCONDITIONAL_JUMP)  ; LAB_005e5cad
@@ -708,8 +708,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005e60df
         ;   Label: LAB_005e60df
     PUSH EBX                            ; 005e60e2
-    CALL core_vampboss.cpp_FUN_005e6ca0 ; 005e60e3
-        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_FUN_005e6ca0()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e6ca0 ; 005e60e3
+        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss * this_ptr)
     ADD ESP,0x8                         ; 005e60e8
     LEA ESI,[EBX + 0xbebc]              ; 005e60eb
     PUSH ESI                            ; 005e60f1
@@ -869,8 +869,8 @@ section .text
         ;   Label: LAB_005e62c0
     PUSH dword ptr [EBP + 0x18]         ; 005e62c3
     PUSH EBX                            ; 005e62c6
-    CALL core_vampboss.cpp_FUN_005e6ca0 ; 005e62c7
-        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_FUN_005e6ca0()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e6ca0 ; 005e62c7
+        ;   XREF to: 005e6ca0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss * this_ptr)
     ADD ESP,0x8                         ; 005e62cc
     LEA ESI,[EBX + 0xbebc]              ; 005e62cf
     PUSH ESI                            ; 005e62d5
@@ -1107,8 +1107,8 @@ section .text
         ;   XREF to: 005e67a8 (CONDITIONAL_JUMP)  ; LAB_005e67a8
     PUSH EBX                            ; 005e6560
         ;   Label: LAB_005e6560
-    CALL core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480 ; 005e6561
-        ;   XREF to: 005e7480 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e7480 ; 005e6561
+        ;   XREF to: 005e7480 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e7480(CVampireBoss * this_ptr)
     ADD ESP,0x4                         ; 005e6566
         ;   Label: LAB_005e6566
     MOV EAX,[0x0067b654]                ; 005e6569 | g_CGamePtr
@@ -1202,14 +1202,14 @@ section .text
         ;   XREF to: 005e5f5f (UNCONDITIONAL_JUMP)  ; LAB_005e5f5f
     PUSH EBX                            ; 005e6686
         ;   Label: LAB_005e6686
-    CALL core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410 ; 005e6687
-        ;   XREF to: 005e7410 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e7410 ; 005e6687
+        ;   XREF to: 005e7410 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e7410(CVampireBoss * this_ptr)
     JMP 0x005e648e                      ; 005e668c
         ;   XREF to: 005e648e (UNCONDITIONAL_JUMP)  ; LAB_005e648e
     PUSH EBX                            ; 005e6691
         ;   Label: LAB_005e6691
-    CALL core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320 ; 005e6692
-        ;   XREF to: 005e7320 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320()
+    CALL core_vampboss.cpp_CVampireBoss_FUN_005e7320 ; 005e6692
+        ;   XREF to: 005e7320 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_FUN_005e7320(CVampireBoss * this_ptr)
     JMP 0x005e648e                      ; 005e6697
         ;   XREF to: 005e648e (UNCONDITIONAL_JUMP)  ; LAB_005e648e
     PUSH 0x0                            ; 005e669c
@@ -1516,7 +1516,7 @@ section .text
     PUSH EBX                            ; 005e6ab9
         ;   Label: LAB_005e6ab9
     CALL core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510 ; 005e6aba
-        ;   XREF to: 005e7510 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510()
+        ;   XREF to: 005e7510 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss * this_ptr)
     JMP 0x005e6566                      ; 005e6abf
         ;   XREF to: 005e6566 (UNCONDITIONAL_JUMP)  ; LAB_005e6566
     MOV dword ptr [EBX + 0xce8f4],0x40400000 ; 005e6ac4

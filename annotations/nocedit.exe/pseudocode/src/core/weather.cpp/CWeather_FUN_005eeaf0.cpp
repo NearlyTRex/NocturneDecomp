@@ -91,10 +91,10 @@ LAB_005eeb1c:
     if (fVar3 < 0.0) {
       iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
       if (iVar4 == 0) {
-        core_weather_cpp_CWeather_SomethingWithThunder_FUN_005ef140();
+        core_weather_cpp_CWeather_FUN_005ef140(this_ptr);
       }
       else {
-        core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0();
+        core_weather_cpp_CWeather_FUN_005eeeb0(this_ptr);
       }
     }
     else {

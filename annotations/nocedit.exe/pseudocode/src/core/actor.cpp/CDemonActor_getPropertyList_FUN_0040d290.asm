@@ -16,7 +16,7 @@
 ;   core_bat.cpp_CBat_getPropertyList_FUN_00414dc0 at 00414dcf
 ;   core_battery.cpp_CBattery_getPropertyList_FUN_004180b0 at 004180bc
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004226ed
-;   core_chain.cpp_CChain_FUN_00431120 at 0043112c
+;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 0043112c
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f73c
 ;   ... and 36 more
 ;

@@ -10,10 +10,10 @@
 ; XREF[42]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c21
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 at 0041979b
-;   core_boneguy.cpp_FUN_0041d1b0 at 0041d222
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0 at 0041d222
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421f6e
-;   core_bugs.cpp_FUN_004251b0 at 004252c3
-;   core_chain.cpp_CChain_FUN_004308f0 at 004309d7
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 004252c3
+;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 004309d7
 ;   core_charactr.cpp_CCharacter_FUN_00429b40 at 0042a285
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042af8d
 ;   core_cloth.cpp_FUN_0043bae0 at 0043bb28

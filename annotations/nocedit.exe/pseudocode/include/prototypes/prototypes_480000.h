@@ -64,7 +64,7 @@ void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250 (CDoor *th
 int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property);
 void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr);
-void __cdecl core_door_cpp_CDoor_writeDependencies_FUN_00481630(CDoor *this_ptr,_FILE *file_handle);
+void __cdecl core_door_cpp_CDoor_addFilesToExtract_FUN_00481630(CDoor *this_ptr,_FILE *file_handle);
 int __cdecl core_door_cpp_FUN_00481650(void);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename);
@@ -328,7 +328,7 @@ void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (CDrip *th
 int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property);
 void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_drip_cpp_CDrip_processInEditor_FUN_0048ea30(CDrip *this_ptr);
-void __cdecl core_drip_cpp_CDrip_writeDependencies_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle);
+void __cdecl core_drip_cpp_CDrip_addFilesToExtract_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0048ea90(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void);
 CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void);
@@ -341,7 +341,7 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,S
 int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_0048f4d0(CDrone *this_ptr,CVector3f *out_points_array);
 void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520 (CDrone *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_drone_cpp_CDrone_FUN_0048f560(CDrone *this_ptr);
-void __cdecl core_drone_cpp_CDrone_writeDependencies_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle);
+void __cdecl core_drone_cpp_CDrone_addFilesToExtract_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle);
 CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_0048f5a0(CDrone *this_ptr,uint flags);
 void __cdecl shape_dsemodel_cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel *this_ptr,int vertex_id);
 int __cdecl shape_dsemodel_cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel *this_ptr,int vertex_id);

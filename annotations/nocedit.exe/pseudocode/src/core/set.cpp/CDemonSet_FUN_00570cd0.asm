@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_004251b0 at 004252af
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 004252af
 ;
 ; Referenced Globals:
 ;   float FLOAT_00662850 = 256

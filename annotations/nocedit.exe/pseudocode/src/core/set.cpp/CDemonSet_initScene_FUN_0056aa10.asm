@@ -250,7 +250,7 @@ section .text
     MOV EBX,dword ptr [0x006848fc]      ; 0056ac27 | g_CWeatherInstance | g_CWeatherPtr
     PUSH EBX                            ; 0056ac2d | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 0056ac2e
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0()
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0(CWeather * this_ptr)
     ADD ESP,0x8                         ; 0056ac33
     ADD ESP,0x4                         ; 0056ac36
     POP EBP                             ; 0056ac39

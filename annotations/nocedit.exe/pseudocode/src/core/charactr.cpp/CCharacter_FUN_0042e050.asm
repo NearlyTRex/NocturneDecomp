@@ -30,7 +30,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
-;   core_waypoint.cpp_FUN_005ec320
+;   core_waypoint.cpp_CWayPoint_FUN_005ec320
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
 ;
 ; *****************************************************************************
@@ -146,8 +146,8 @@ section .text
     PUSH ESI                            ; 0042e1c6
     LEA EAX,[EDI + 0x20]                ; 0042e1c7
     PUSH EAX                            ; 0042e1ca
-    CALL core_waypoint.cpp_FUN_005ec320 ; 0042e1cb
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
+    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 0042e1cb
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
     ADD ESP,0x8                         ; 0042e1d0
     MOV dword ptr [EDI + 0x25f0],EAX    ; 0042e1d3
     CMP dword ptr [EDI + 0x25f0],0x0    ; 0042e1d9
@@ -229,8 +229,8 @@ section .text
     PUSH EDX                            ; 0042e2c6
         ;   Label: LAB_0042e2c6
     PUSH EBP                            ; 0042e2c7
-    CALL core_waypoint.cpp_FUN_005ec320 ; 0042e2c8
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
+    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 0042e2c8
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
     ADD ESP,0x8                         ; 0042e2cd
     MOV dword ptr [EDI + 0x25f0],EAX    ; 0042e2d0
     TEST EAX,EAX                        ; 0042e2d6

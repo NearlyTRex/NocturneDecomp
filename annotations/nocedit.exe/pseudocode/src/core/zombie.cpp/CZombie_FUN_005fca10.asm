@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(void)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 at 005fb933
+;   core_zombie.cpp_CZombie_FUN_005fb530 at 005fb933
 ;   core_zombie.cpp_CZombie_process_FUN_005f9470 at 005f95b4
 ;
 ; Referenced Globals:

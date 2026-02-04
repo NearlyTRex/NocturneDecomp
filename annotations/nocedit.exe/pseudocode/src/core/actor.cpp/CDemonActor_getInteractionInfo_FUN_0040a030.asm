@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0 at 0050b2fb
-;   core_turret.cpp_CTurret_FUN_005e3440 at 005e344c
+;   core_turret.cpp_CTurret_getInteractionInfo_FUN_005e3440 at 005e344c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006139d1

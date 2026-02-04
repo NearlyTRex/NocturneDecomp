@@ -47,9 +47,9 @@ int __cdecl CArmour::hasCollision(CArmour *this_ptr,SCollisionInfo *collision_in
 // Address: 00412470
 void __cdecl CArmour::getPropertyList(CArmour *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_armour.cpp_CArmour_writeDependencies_FUN_004124d0
+// Original: core_armour.cpp_CArmour_addFilesToExtract_FUN_004124d0
 // Address: 004124d0
-void __cdecl CArmour::writeDependencies(CArmour *this_ptr,_FILE *file_handle);
+void __cdecl CArmour::addFilesToExtract(CArmour *this_ptr,_FILE *file_handle);
 
 // Original: core_armour.cpp_CArmour_dtor_FUN_00412500
 // Address: 00412500

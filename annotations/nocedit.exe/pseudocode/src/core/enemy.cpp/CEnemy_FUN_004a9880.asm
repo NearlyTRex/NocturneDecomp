@@ -9,7 +9,7 @@
 ; XREF[14]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004157b4
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416fb6
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c696
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c696
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044461d
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f468
 ;   core_dracbrid.cpp_FUN_00484410 at 00484dc8

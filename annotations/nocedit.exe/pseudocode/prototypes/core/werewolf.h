@@ -19,25 +19,25 @@ CDemonActorType * __cdecl CWerewolf::getActorType(CWerewolf *this_ptr);
 // Address: 005efc10
 CWerewolf * __cdecl CWerewolf::ctor(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005efcc0
+// Original: core_werewolf.cpp_CWerewolf_setup_FUN_005efcc0
 // Address: 005efcc0
-void __cdecl CWerewolf(CWerewolf *this_ptr);
+void __cdecl CWerewolf::setup(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_process_FUN_005efde0
 // Address: 005efde0
 void __cdecl CWerewolf::process(CWerewolf *this_ptr,float delta_time);
 
-// Original: core_werewolf.cpp_FUN_005f11a0
+// Original: core_werewolf.cpp_CWerewolf_FUN_005f11a0
 // Address: 005f11a0
-void __cdecl FUN_005f11a0(void);
+void __cdecl CWerewolf(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_FUN_005f11e0
+// Original: core_werewolf.cpp_CWerewolf_FUN_005f11e0
 // Address: 005f11e0
-void __cdecl FUN_005f11e0(void);
+void __cdecl CWerewolf(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_FUN_005f1230
+// Original: core_werewolf.cpp_CWerewolf_FUN_005f1230
 // Address: 005f1230
-void __cdecl FUN_005f1230(void);
+void __cdecl CWerewolf(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f1820
 // Address: 005f1820
@@ -47,41 +47,41 @@ int __cdecl CWerewolf(CWerewolf *this_ptr);
 // Address: 005f1980
 void __cdecl CWerewolf::archive(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_FUN_005f1ac0
+// Original: core_werewolf.cpp_CWerewolf_processDamage_FUN_005f1ac0
 // Address: 005f1ac0
-void __cdecl FUN_005f1ac0(void);
+void __cdecl CWerewolf::processDamage(CWerewolf *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_werewolf.cpp_FUN_005f1db0
+// Original: core_werewolf.cpp_CWerewolf_isDamageable_FUN_005f1db0
 // Address: 005f1db0
-int __cdecl FUN_005f1db0(void);
+int __cdecl CWerewolf::isDamageable(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f1df0
+// Original: core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_005f1df0
 // Address: 005f1df0
-int __cdecl CWerewolf(CWerewolf *this_ptr);
+int __cdecl CWerewolf::getTargetPoints(CWerewolf *this_ptr,CVector3f *out_points_array);
 
-// Original: core_werewolf.cpp_FUN_005f1e40
+// Original: core_werewolf.cpp_CWerewolf_FUN_005f1e40
 // Address: 005f1e40
-void __cdecl FUN_005f1e40(void);
+void __cdecl CWerewolf(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_FUN_005f2010
+// Original: core_werewolf.cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
 // Address: 005f2010
-void __cdecl FUN_005f2010(void);
+void __cdecl CWerewolf::propertyDisplayCallback(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_werewolf.cpp_FUN_005f2070
+// Original: core_werewolf.cpp_CWerewolf_propertyActionCallback_FUN_005f2070
 // Address: 005f2070
-int __cdecl FUN_005f2070(void);
+int __cdecl CWerewolf::propertyActionCallback(CWerewolf *this_ptr,CActorProperty *property);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f20d0
+// Original: core_werewolf.cpp_CWerewolf_getPropertyList_FUN_005f20d0
 // Address: 005f20d0
-void __cdecl CWerewolf(CWerewolf *this_ptr);
+void __cdecl CWerewolf::getPropertyList(CWerewolf *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_werewolf.cpp_FUN_005f21e0
+// Original: core_werewolf.cpp_CWerewolf_FUN_005f21e0
 // Address: 005f21e0
-void __cdecl FUN_005f21e0(void);
-
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f21f0
-// Address: 005f21f0
 void __cdecl CWerewolf(CWerewolf *this_ptr);
+
+// Original: core_werewolf.cpp_CWerewolf_addFilesToExtract_FUN_005f21f0
+// Address: 005f21f0
+void __cdecl CWerewolf::addFilesToExtract(CWerewolf *this_ptr,_FILE *file_handle);
 
 // Original: core_werewolf.cpp_CWerewolf_dtor_FUN_005f2220
 // Address: 005f2220

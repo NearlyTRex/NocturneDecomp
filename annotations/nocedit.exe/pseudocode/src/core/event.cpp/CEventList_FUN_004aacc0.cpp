@@ -974,8 +974,7 @@ LAB_004aaf38:
                                     }
                                     local_ec = local_ec + local_84;
                                     if (local_f0 != 0) {
-                                      core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
-                                                ();
+                                      core_weather_cpp_CWeather_FUN_005eeeb0(g_CWeatherPtr);
                                     }
                                   }
                                   else {
@@ -1711,7 +1710,8 @@ LAB_004aaf38:
                                                     return (CDemonActor *)0x0;
                                                   }
                                                   if (local_f0 != 0) {
-                                                    core_weather_cpp_CWeather_FUN_005ef8c0();
+                                                    core_weather_cpp_CWeather_FUN_005ef8c0
+                                                              (g_CWeatherPtr);
                                                   }
                                                   }
                                                   else {

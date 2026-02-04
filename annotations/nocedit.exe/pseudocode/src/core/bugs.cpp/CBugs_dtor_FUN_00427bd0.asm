@@ -15,7 +15,7 @@
 ;   core_armour.cpp_freeFires_FUN_00412700
 ;   core_armour.cpp_freeFlames_FUN_00412720
 ;   core_armour.cpp_freeVectors_FUN_004126e0
-;   core_bugs.cpp_FUN_00427cc0
+;   core_bugs.cpp_freeBugs_FUN_00427cc0
 ;   core_cloth.cpp_FUN_0043bf80
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 ;   crt_memory.c___vec_delete_FUN_005fe632
@@ -35,8 +35,8 @@ section .text
     PUSH 0x0                            ; 00427be0
     ADD EBX,0xbec4                      ; 00427be2
     PUSH EBX                            ; 00427be8
-    CALL core_bugs.cpp_FUN_00427cc0     ; 00427be9
-        ;   XREF to: 00427cc0 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00427cc0(SBug * * objs)
+    CALL core_bugs.cpp_freeBugs_FUN_00427cc0 ; 00427be9
+        ;   XREF to: 00427cc0 (UNCONDITIONAL_CALL)  ; SBug * core_bugs.cpp_freeBugs_FUN_00427cc0(SBug * objs)
     ADD ESP,0x8                         ; 00427bee
     PUSH 0x0                            ; 00427bf1
     SUB EAX,0x8af8                      ; 00427bf3

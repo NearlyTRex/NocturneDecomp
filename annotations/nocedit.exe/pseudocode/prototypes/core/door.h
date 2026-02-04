@@ -103,9 +103,9 @@ void __cdecl CDoor::getPropertyList(CDoor *this_ptr,CActorPropertyList *property
 // Address: 00481590
 void __cdecl CDoor::processInEditor(CDoor *this_ptr);
 
-// Original: core_door.cpp_CDoor_writeDependencies_FUN_00481630
+// Original: core_door.cpp_CDoor_addFilesToExtract_FUN_00481630
 // Address: 00481630
-void __cdecl CDoor::writeDependencies(CDoor *this_ptr,_FILE *file_handle);
+void __cdecl CDoor::addFilesToExtract(CDoor *this_ptr,_FILE *file_handle);
 
 // Original: core_door.cpp_FUN_00481650
 // Address: 00481650

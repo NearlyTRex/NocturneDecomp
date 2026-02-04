@@ -49,7 +49,7 @@ section .text
     PUSH EAX                            ; 00557d47
     PUSH ESI                            ; 00557d48
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00557d49
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00557d4e
         ;   Label: LAB_00557d4e
     FLD float ptr [EBP + 0x18]          ; 00557d51

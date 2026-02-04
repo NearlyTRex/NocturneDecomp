@@ -99,9 +99,9 @@ void __cdecl CMobster::getPropertyList(CMobster *this_ptr,CActorPropertyList *pr
 // Address: 00527c30
 void __cdecl CMobster(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_writeDependencies_FUN_00527c40
+// Original: core_mobster.cpp_CMobster_addFilesToExtract_FUN_00527c40
 // Address: 00527c40
-void __cdecl CMobster::writeDependencies(CMobster *this_ptr,_FILE *file_handle);
+void __cdecl CMobster::addFilesToExtract(CMobster *this_ptr,_FILE *file_handle);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_00527c70
 // Address: 00527c70

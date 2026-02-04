@@ -2,19 +2,17 @@
 // Address: 005e7510
 // Address Range: [[005e7510, 005e75ec]]
 // Convention: __cdecl
-// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* Signature: byte actors_enemy_vampboss.cpp_CVampireBoss_chooseDestWayPoint(CVampireBoss*
-   param_1) */
 
-void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void)
+void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss *this_ptr)
 
 {
   CHero *pCVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   float fVar3;
   float fVar4;
   float fVar5;
@@ -22,36 +20,38 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(void
   float fVar7;
   float fVar8;
   int iVar9;
-  int iVar10;
-  int in_stack_00000004;
+  CVampireBoss *pCVar10;
   float local_20;
   
-  *(uint *)(in_stack_00000004 + 0xce908) = 0;
+  this_ptr->unk4[0x14] = '\0';
+  this_ptr->unk4[0x15] = '\0';
+  this_ptr->unk4[0x16] = '\0';
+  this_ptr->unk4[0x17] = '\0';
   iVar9 = 0;
   local_20 = -8675309.0;
-  iVar10 = in_stack_00000004;
+  pCVar10 = this_ptr;
   do {
-    if (*(int *)(iVar10 + 0xce90c) == 0) {
+    if (pCVar10->way_point_0 == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\vampboss.cpp";
       g_CurrentLineNumber = 0x423;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL",iVar9);
     }
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
-    iVar2 = *(int *)(iVar10 + 0xce90c);
-    fVar3 = *(float *)(iVar2 + 0x20) - (pCVar1->base).base.location.position.x;
-    fVar4 = *(float *)(iVar2 + 0x20) - *(float *)(in_stack_00000004 + 0x20);
-    fVar8 = *(float *)(iVar2 + 0x24) - (pCVar1->base).base.location.position.y;
-    fVar5 = *(float *)(iVar2 + 0x24) - *(float *)(in_stack_00000004 + 0x24);
-    fVar6 = *(float *)(iVar2 + 0x28) - *(float *)(in_stack_00000004 + 0x28);
-    fVar7 = *(float *)(iVar2 + 0x28) - (pCVar1->base).base.location.position.z;
+    pCVar2 = pCVar10->way_point_0;
+    fVar3 = (pCVar2->location).position.x - (pCVar1->base).base.location.position.x;
+    fVar4 = (pCVar2->location).position.x - (this_ptr->base).base.base.location.position.x;
+    fVar8 = (pCVar2->location).position.y - (pCVar1->base).base.location.position.y;
+    fVar5 = (pCVar2->location).position.y - (this_ptr->base).base.base.location.position.y;
+    fVar6 = (pCVar2->location).position.z - (this_ptr->base).base.base.location.position.z;
+    fVar7 = (pCVar2->location).position.z - (pCVar1->base).base.location.position.z;
     fVar3 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
             fVar7 * fVar7 + fVar8 * fVar8 + fVar3 * fVar3;
     if (local_20 < fVar3) {
-      *(int *)(in_stack_00000004 + 0xce908) = iVar9;
+      *(int *)(this_ptr->unk4 + 0x14) = iVar9;
       local_20 = fVar3;
     }
     iVar9 = iVar9 + 1;
-    iVar10 = iVar10 + 4;
+    pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);
   } while (iVar9 < 4);
   return;
 }

@@ -8,7 +8,7 @@
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040abaa
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0abe
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de2d7
-;   core_turret.cpp_FUN_005e3750 at 005e3c2a
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c2a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_exploding_00619b2e

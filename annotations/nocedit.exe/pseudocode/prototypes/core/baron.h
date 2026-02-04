@@ -123,9 +123,9 @@ void __cdecl CBaron::onActorDeleted(CBaron *this_ptr,CDemonActor *deleted_actor)
 // Address: 00414010
 void __cdecl CBaron::getPropertyList(CBaron *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_baron.cpp_CBaron_writeDependencies_FUN_00414070
+// Original: core_baron.cpp_CBaron_addFilesToExtract_FUN_00414070
 // Address: 00414070
-void __cdecl CBaron::writeDependencies(CBaron *this_ptr,_FILE *file_handle);
+void __cdecl CBaron::addFilesToExtract(CBaron *this_ptr,_FILE *file_handle);
 
 // Original: core_baron.cpp_CBaron_FUN_00414090
 // Address: 00414090

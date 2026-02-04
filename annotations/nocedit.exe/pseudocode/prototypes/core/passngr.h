@@ -43,6 +43,6 @@ void __cdecl CPassenger::archive(CPassenger *this_ptr);
 // Address: 00546270
 void __cdecl CPassenger::getPropertyList(CPassenger *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_passngr.cpp_CPassenger_writeDependencies_FUN_005462f0
+// Original: core_passngr.cpp_CPassenger_addFilesToExtract_FUN_005462f0
 // Address: 005462f0
-void __cdecl CPassenger::writeDependencies(CPassenger *this_ptr,_FILE *file_handle);
+void __cdecl CPassenger::addFilesToExtract(CPassenger *this_ptr,_FILE *file_handle);

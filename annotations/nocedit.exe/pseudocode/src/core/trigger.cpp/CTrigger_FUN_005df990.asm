@@ -7,7 +7,7 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWaypoint_FUN_005ebeb0 at 005ebebb
+;   core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0 at 005ebebb
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0

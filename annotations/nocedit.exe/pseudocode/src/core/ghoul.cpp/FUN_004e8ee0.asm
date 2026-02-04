@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
-;   core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+;   core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0
+;   core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
 ;
 ; *****************************************************************************
 
@@ -18,16 +18,16 @@ section .text
     PUSH EDX                            ; 004e8ee5
     MOV ECX,dword ptr [ESP + 0xc]       ; 004e8ee6
     PUSH ECX                            ; 004e8eea
-    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 004e8eeb
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
+    CALL core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0 ; 004e8eeb
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e8ef0
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e8ef3
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e8ef7
     PUSH EBX                            ; 004e8efb
     ADD EAX,0x158                       ; 004e8efc
     PUSH EAX                            ; 004e8f01
-    CALL core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260 ; 004e8f02
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260(CDeformableModelInstance * this_ptr, _FILE * file_handle)
+    CALL core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260 ; 004e8f02
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260(CDeformableModelInstance * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e8f07
     POP EBX                             ; 004e8f0a
     RET                                 ; 004e8f0b

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_count_00616d33
 ;   TerminatedCString s_modelCount_00616d39
-;   undefined4 DAT_00616d44
+;   char s_EmptyChar_00616d44 = \x00
 ;   TerminatedCString s_modelName_00616d45
 ;   TerminatedCString s_allowChase_00616d4f
 ;   TerminatedCString s_allowSwarm_00616d5a
@@ -58,7 +58,7 @@ section .text
     LEA ESI,[EDI + 0x122c8]             ; 00425534
     MOV EBX,ESI                         ; 0042553a
     ADD ESI,0x5f0                       ; 0042553c
-    PUSH 0x616d44                       ; 00425542 | DAT_00616d44
+    PUSH 0x616d44                       ; 00425542 | s_EmptyChar_00616d44
         ;   Label: LAB_00425542
     PUSH EBX                            ; 00425547
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00425548

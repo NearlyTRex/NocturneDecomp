@@ -2,14 +2,11 @@
 // Address: 005ef940
 // Address Range: [[005ef940, 005ef99b] [005efb24, 005efb3f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
+// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_weather.cpp_CWeather_FUN_005ef940(CWeather* param_1, uint
-   param_2, uint param_3) */
-
-void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
+void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr)
 
 {
   float fVar1;
@@ -17,9 +14,8 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
   int iVar3;
   float10 fVar4;
   float10 fVar5;
-  int *in_stack_00000004;
   float *in_stack_00000008;
-  int *in_stack_0000000c;
+  uint *in_stack_0000000c;
   CVector3f local_50;
   CVector3f local_44;
   CVector3f local_38;
@@ -27,17 +23,17 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
   float local_18;
   float local_14;
   
-  if ((float *)(in_stack_00000004 + 2) != in_stack_00000008) {
-    in_stack_00000004[2] = (int)*in_stack_00000008;
-    in_stack_00000004[3] = (int)in_stack_00000008[1];
-    in_stack_00000004[4] = (int)in_stack_00000008[2];
+  if ((float *)(this_ptr->unk + 8) != in_stack_00000008) {
+    *(float *)(this_ptr->unk + 8) = *in_stack_00000008;
+    *(float *)(this_ptr->unk + 0xc) = in_stack_00000008[1];
+    *(float *)(this_ptr->unk + 0x10) = in_stack_00000008[2];
   }
-  if (in_stack_00000004 + 5 != in_stack_0000000c) {
-    in_stack_00000004[5] = *in_stack_0000000c;
-    in_stack_00000004[6] = in_stack_0000000c[1];
-    in_stack_00000004[7] = in_stack_0000000c[2];
+  if (this_ptr->unk + 0x14 != (char *)in_stack_0000000c) {
+    *(uint *)(this_ptr->unk + 0x14) = *in_stack_0000000c;
+    *(uint *)(this_ptr->unk + 0x18) = in_stack_0000000c[1];
+    *(uint *)(this_ptr->unk + 0x1c) = in_stack_0000000c[2];
   }
-  if (*in_stack_00000004 != 0) {
+  if (*(int *)this_ptr->unk != 0) {
     pCVar2 = DAT_03f95df8;
     iVar3 = 0;
     do {
@@ -80,8 +76,14 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef940(void)
       iVar3 = iVar3 + 4;
       pCVar2 = pCVar2 + 1;
     } while (iVar3 != 800);
-    in_stack_00000004[10] = 0;
-    in_stack_00000004[9] = 0;
+    this_ptr->unk[0x28] = '\0';
+    this_ptr->unk[0x29] = '\0';
+    this_ptr->unk[0x2a] = '\0';
+    this_ptr->unk[0x2b] = '\0';
+    this_ptr->unk[0x24] = '\0';
+    this_ptr->unk[0x25] = '\0';
+    this_ptr->unk[0x26] = '\0';
+    this_ptr->unk[0x27] = '\0';
   }
   return;
 }

@@ -16,7 +16,7 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042fb80(CChain *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CChain *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar2 = __arrinit(pCVar2->unk3,0x14,&g_SChainVertexTypeInfo);
+  pvVar2 = __arrinit(pCVar2->unk6,0x14,&g_SChainVertexTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar2 + -0x138) = &g_CChainVTable;
   *(uint *)((int)pvVar2 + -0x134) = 10;
   *(uint *)((int)pvVar2 + -0x130) = 0x40a00000;

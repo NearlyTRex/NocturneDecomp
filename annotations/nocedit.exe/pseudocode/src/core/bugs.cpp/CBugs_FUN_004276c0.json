@@ -1,0 +1,228 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "pointer_precision",
+        "column": 18,
+        "line": 60,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 54,
+        "line": 60,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 60,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 60,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 170,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 55,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_param",
+      "warning_type_propagation"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "00425cc0",
+      "from_addr": "00425fb0",
+      "name": "core_bugs.cpp_CBugs_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425fe0",
+      "from_addr": "00426207",
+      "name": "core_bugs.cpp_CBugs_FUN_00425fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004278d0",
+      "from_addr": "00427946",
+      "name": "core_bugs.cpp_CBugs_processInEditor_FUN_004278d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004276c0",
+    "address_range": [
+      [
+        "004276c0",
+        "004277db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_FUN_004276c0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_FUN_004276c0(CBugs *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.020408163265306,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 373,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_SUB": 16,
+      "INT_ADD": 58,
+      "INT_AND": 29,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 28,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 42,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 21,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 688
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "fVar3 = *in_stack_00000008 - (pCVar1->position).x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "fVar4 = in_stack_00000008[1] - (this_ptr->base).base.base.location.position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "fVar5 = in_stack_00000008[2] - (this_ptr->base).base.base.location.position.z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "(pCVar1->position).x = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr->base).base.base.location.position.y = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr->base).base.base.location.position.z = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)pcVar7 + 0x128b8) = *(float *)((int)pcVar7 + 0x128b8) - fVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)pcVar7 + 0x128b8) = *(float *)((int)pcVar7 + 0x128b8) - fVar4;",
+      "type": "pointer_cast"
+    }
+  ]
+}

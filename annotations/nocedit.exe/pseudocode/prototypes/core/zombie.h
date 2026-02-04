@@ -19,9 +19,9 @@ float * __cdecl FUN_005f8d30(void);
 // Address: 005f8da0
 CVector3f * __cdecl FUN_005f8da0(void);
 
-// Original: core_zombie.cpp_CZombie_FUN_005f8e50
+// Original: core_zombie.cpp_FUN_005f8e50
 // Address: 005f8e50
-int __cdecl CZombie(void);
+int __cdecl FUN_005f8e50(void);
 
 // Original: core_zombie.cpp_factoryFunc_FUN_005f8fa0
 // Address: 005f8fa0
@@ -35,41 +35,41 @@ CDemonActorType * __cdecl CZombie::getActorType(CZombie *this_ptr);
 // Address: 005f8fe0
 CZombie * __cdecl CZombie::ctor(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005f9140
+// Original: core_zombie.cpp_CZombie_setup_FUN_005f9140
 // Address: 005f9140
-void __cdecl CZombie(CZombie *this_ptr);
+void __cdecl CZombie::setup(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_process_FUN_005f9470
 // Address: 005f9470
 void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fb1f0
+// Original: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
 // Address: 005fb1f0
-void __cdecl CZombie(void);
+void __cdecl CZombie::getCarryObjToBodyXForm(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530
+// Original: core_zombie.cpp_CZombie_FUN_005fb530
 // Address: 005fb530
-int __cdecl CZombie::PickupSomethingPossibly(void);
+int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbd00
 // Address: 005fbd00
-int __cdecl CZombie(void);
+int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbda0
 // Address: 005fbda0
-int __cdecl CZombie(void);
+int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fbde0
 // Address: 005fbde0
-void __cdecl CZombie(void);
+void __cdecl CZombie(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fbe20
+// Original: core_zombie.cpp_CZombie_renderOpaque_FUN_005fbe20
 // Address: 005fbe20
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::renderOpaque(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fbe70
+// Original: core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70
 // Address: 005fbe70
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::renderTransparent(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_archive_FUN_005fbfd0
 // Address: 005fbfd0
@@ -77,39 +77,39 @@ void __cdecl CZombie::archive(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc120
 // Address: 005fc120
-int __cdecl CZombie(void);
+int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc220
 // Address: 005fc220
-void __cdecl CZombie(void);
+void __cdecl CZombie(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc4f0
+// Original: core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
 // Address: 005fc4f0
-void __cdecl CZombie(void);
+void __cdecl CZombie::processDamage(CZombie *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc720
+// Original: core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720
 // Address: 005fc720
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::getTargetPoints(CZombie *this_ptr,CVector3f *out_points_array);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc920
 // Address: 005fc920
-int __cdecl CZombie(void);
+int __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc960
 // Address: 005fc960
-bool __cdecl CZombie(void);
+bool __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc970
 // Address: 005fc970
-int __cdecl CZombie(void);
-
-// Original: core_zombie.cpp_CZombie_FUN_005fc9e0
-// Address: 005fc9e0
 int __cdecl CZombie(CZombie *this_ptr);
+
+// Original: core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0
+// Address: 005fc9e0
+int __cdecl CZombie::shouldIgnoreForTargeting(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fca10
 // Address: 005fca10
-void __cdecl CZombie(void);
+void __cdecl CZombie(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_getPropertyList_FUN_005fca80
 // Address: 005fca80
@@ -117,11 +117,11 @@ void __cdecl CZombie::getPropertyList(CZombie *this_ptr,CActorPropertyList *prop
 
 // Original: core_zombie.cpp_CZombie_FUN_005fcb70
 // Address: 005fcb70
-void __cdecl CZombie(void);
+void __cdecl CZombie(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fcc20
+// Original: core_zombie.cpp_CZombie_addFilesToExtract_FUN_005fcc20
 // Address: 005fcc20
-void __cdecl CZombie(CZombie *this_ptr,_FILE *file_handle);
+void __cdecl CZombie::addFilesToExtract(CZombie *this_ptr,_FILE *file_handle);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_005fcc50
 // Address: 005fcc50

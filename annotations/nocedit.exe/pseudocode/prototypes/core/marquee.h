@@ -59,9 +59,9 @@ CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBo
 // Address: 0050c3e0
 void __cdecl CMarquee::getPropertyList(CMarquee *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_marquee.cpp_CMarquee_writeDependencies_FUN_0050c480
+// Original: core_marquee.cpp_CMarquee_addFilesToExtract_FUN_0050c480
 // Address: 0050c480
-void __cdecl CMarquee::writeDependencies(CMarquee *this_ptr,_FILE *file_handle);
+void __cdecl CMarquee::addFilesToExtract(CMarquee *this_ptr,_FILE *file_handle);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0
 // Address: 0050c4c0

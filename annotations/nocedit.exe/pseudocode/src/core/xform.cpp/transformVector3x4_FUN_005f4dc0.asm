@@ -13,11 +13,11 @@
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041326b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041579c
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416f9e
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c67e
-;   core_boneguy.cpp_FUN_0041ca40 at 0041cb6c
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041cb6c
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c67e
 ;   core_bride.cpp_CBride_FUN_00424aa0 at 00424af2
-;   core_bugs.cpp_FUN_004268e0 at 00426ace
-;   core_chain.cpp_FUN_0042fcc0 at 0042fcf8
+;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426ace
+;   core_chain.cpp_CChain_FUN_0042fcc0 at 0042fcf8
 ;   core_charactr.cpp_CCharacter_FUN_0042a520 at 0042a754
 ;   ... and 42 more
 ;

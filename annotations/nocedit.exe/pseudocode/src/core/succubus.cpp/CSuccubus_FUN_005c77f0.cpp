@@ -11,9 +11,9 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c77f0(CSuccubus *this_ptr)
 {
   _FILE *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0
+  core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0
             ((CDemonActor *)this_ptr,in_stack_00000008);
-  core_skeledit_cpp_CDeformableModelInstance_writeDependencies_FUN_0058a260
+  core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
             (&(this_ptr->base).base.model,in_stack_00000008);
   return;
 }

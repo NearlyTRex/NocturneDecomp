@@ -15,4 +15,5 @@
 #include "types/enums/ELightActorType.h"
 #include "types/enums/EPlatformStateType.h"
 #include "types/enums/EPlatformType.h"
+#include "types/enums/EWerewolfType.h"
 

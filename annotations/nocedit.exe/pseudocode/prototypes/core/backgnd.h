@@ -55,9 +55,9 @@ int __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 // Address: 00412a40
 void __cdecl CBackgroundActor::getPropertyList(CBackgroundActor *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_backgnd.cpp_CBackgroundActor_writeDependencies_FUN_00412ab0
+// Original: core_backgnd.cpp_CBackgroundActor_addFilesToExtract_FUN_00412ab0
 // Address: 00412ab0
-void __cdecl CBackgroundActor::writeDependencies(CBackgroundActor *this_ptr,_FILE *file_handle);
+void __cdecl CBackgroundActor::addFilesToExtract(CBackgroundActor *this_ptr,_FILE *file_handle);
 
 // Original: core_backgnd.cpp_CBackgroundActor_dtor_FUN_00412ad0
 // Address: 00412ad0

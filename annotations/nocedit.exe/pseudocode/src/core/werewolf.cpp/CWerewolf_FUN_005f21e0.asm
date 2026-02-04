@@ -1,0 +1,23 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f21e0(CWerewolf *this_ptr)
+;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
+;
+; Called Functions:
+;   core_enemy.cpp_CEnemy_FUN_004aa250
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 005f21e0
+        ;   Label: core_werewolf.cpp_CWerewolf_FUN_005f21e0
+    PUSH EDX                            ; 005f21e4
+    CALL core_enemy.cpp_CEnemy_FUN_004aa250 ; 005f21e5
+        ;   XREF to: 004aa250 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004aa250(CEnemy * this_ptr)
+    ADD ESP,0x4                         ; 005f21ea
+    RET                                 ; 005f21ed
+

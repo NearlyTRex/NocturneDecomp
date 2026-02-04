@@ -251,9 +251,9 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c68f0
 void __cdecl CStranger::getPropertyList(CStranger *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_stranger.cpp_CStranger_writeDependencies_FUN_005c6910
+// Original: core_stranger.cpp_CStranger_addFilesToExtract_FUN_005c6910
 // Address: 005c6910
-void __cdecl CStranger::writeDependencies(CStranger *this_ptr,_FILE *file_handle);
+void __cdecl CStranger::addFilesToExtract(CStranger *this_ptr,_FILE *file_handle);
 
 // Original: core_stranger.cpp_FUN_005c6930
 // Address: 005c6930

@@ -14,17 +14,17 @@ void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005e6f50(CVampireBoss *t
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
               (&(this_ptr->base).base.model.motion_controller,"human model motion state");
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              ((CMotionController *)(this_ptr->unk1 + 8),"bat model motion state");
+              (&(this_ptr->model).motion_controller,"bat model motion state");
   }
   if (2 < g_CVampireBossVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk3 + 0x18),"wayPoint0");
+              ((CDemonActor *)&this_ptr->way_point_0,"wayPoint0");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk3 + 0x1c),"wayPoint1");
+              ((CDemonActor *)&this_ptr->way_point_1,"wayPoint1");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk3 + 0x20),"wayPoint2");
+              ((CDemonActor *)&this_ptr->way_point_2,"wayPoint2");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk3 + 0x24),"wayPoint3");
+              ((CDemonActor *)&this_ptr->way_point_3,"wayPoint3");
   }
   if (g_CVampireBossVersion < 4) {
     return;

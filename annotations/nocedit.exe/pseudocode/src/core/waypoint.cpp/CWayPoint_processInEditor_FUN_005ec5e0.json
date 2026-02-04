@@ -1,0 +1,107 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ec5e0",
+    "address_range": [
+      [
+        "005ec5e0",
+        "005ec604"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0",
+    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_processInEditor_FUN_005ec5e0(CWayPoint *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005e1180",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1180"
+    },
+    {
+      "addr": "005ec4f0",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec4f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLIND": 1,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 63
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWaypoint",
+        "offset": 208,
+        "vtable_addr": "00665484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

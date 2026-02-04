@@ -20,8 +20,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720
   float local_14;
   float local_10;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->unk1);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
   local_24 = (pCVar1->bounds_min).x;
   local_20 = (pCVar1->bounds_min).y;
   local_1c = (pCVar1->bounds_min).z;

@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 39,
+        "message": "cast from 'CConveyor*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 42,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 23,
+        "line": 43,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 46,
+        "message": "cast from 'CConveyor*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 47,
+        "message": "cast from 'CConveyor*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 46,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 102,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 47,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00441d60",
+    "address_range": [
+      [
+        "00441d60",
+        "00441dec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_conveyor.cpp_CConveyor_setup_FUN_00441d60",
+    "signature": "void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054ca20",
+      "is_variadic": false,
+      "name": "core_platfrm.cpp_CPlatform_setup_FUN_0054ca20"
+    },
+    {
+      "addr": "005f7b20",
+      "is_variadic": false,
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9423076923076925,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 61,
+      "INT_ADD": 42,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 16,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 26,
+      "INT_ZEXT": 16,
+      "LOAD": 19,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 257
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConveyor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x348);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)&local_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*puVar5 = *(uint *)((int)&local_1c + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x338);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x348);",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConveyor",
+        "offset": 0,
+        "vtable_addr": "0065bf34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

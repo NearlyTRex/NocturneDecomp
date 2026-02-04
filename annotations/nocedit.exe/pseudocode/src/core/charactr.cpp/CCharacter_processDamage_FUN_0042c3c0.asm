@@ -14,7 +14,7 @@
 ;
 ; XREF[10]:
 ;   core_baron.cpp_CBaron_processDamage_FUN_00413cd0 at 00413ce1
-;   core_colonel.cpp_CColonel_FUN_004404b0 at 004405a0
+;   core_colonel.cpp_CColonel_processDamage_FUN_004404b0 at 004405a0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10 at 004a9f2d
 ;   core_gabriela.cpp_CGabriella_FUN_004d6b30 at 004d6c88
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004f1b70 at 004f1c00

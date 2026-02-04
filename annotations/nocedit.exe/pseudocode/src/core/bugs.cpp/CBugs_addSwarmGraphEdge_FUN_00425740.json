@@ -11,61 +11,36 @@
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 28,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 30,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 238,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 48,
-    "suspect_count": 18,
+    "pseudocode_lines": 45,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 125
+    "total_lines": 122
   },
   "cross_references": [
     {
       "addr": "00425660",
       "from_addr": "004256c1",
-      "name": "core_bugs.cpp_FUN_00425660",
+      "name": "core_bugs.cpp_CBugs_FUN_00425660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740",
-    "signature": "void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)"
+    "signature": "void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(CBugs *this_ptr)"
   },
   "function_calls": [
     {
@@ -146,136 +121,88 @@
     "pcode_op_count": 312
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2, uint param_3, uint param_4) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_2, uint param_3, uint param_4) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "param_2, uint param_3, uint param_4) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 10,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 11,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x12b34) <= in_stack_00000008) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 13,
       "match": "in_stack_00000008",
-      "text": "if (*(int *)(in_stack_00000004 + 0x12b34) <= in_stack_00000008) {",
+      "text": "if ((this_ptr->model).part_visibility_flags[0xe] <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x12b34) = in_stack_00000008 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "*(int *)(in_stack_00000004 + 0x12b34) = in_stack_00000008 + 1;",
+      "text": "(this_ptr->model).part_visibility_flags[0xe] = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "if (700 < *(int *)(in_stack_00000004 + 0x12b34)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "piVar3 = (int *)(in_stack_00000004 + 0x12b38 + in_stack_00000008 * 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 21,
       "match": "in_stack_00000008",
-      "text": "piVar3 = (int *)(in_stack_00000004 + 0x12b38 + in_stack_00000008 * 0x28);",
+      "text": "piVar3 = (this_ptr->model).part_visibility_flags + in_stack_00000008 * 10 + 0xf;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 24,
       "match": "in_stack_00000010",
       "text": "piVar3[1] = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 34,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == piVar4[2]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 40,
       "match": "in_stack_0000000c",
       "text": "piVar3[*piVar3 + 2] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 45,
       "match": "in_stack_0000000c",
       "text": "piVar3[*piVar3 + 2] = in_stack_0000000c;",
       "type": "stack_param"

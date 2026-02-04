@@ -15,7 +15,7 @@ void __cdecl core_cloth_cpp_FUN_0043e0a0(void)
   _FILE *in_stack_00000008;
   
   _fprintf(in_stack_00000008,"models\\%s\n");
-  core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
+  core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00
             (in_stack_00000004,in_stack_00000008,0);
   return;
 }

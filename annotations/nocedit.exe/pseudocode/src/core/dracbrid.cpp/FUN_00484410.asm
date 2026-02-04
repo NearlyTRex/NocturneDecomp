@@ -304,7 +304,7 @@ section .text
         ;   Label: LAB_00484621
     PUSH EBX                            ; 00484622
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00484623
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00484628
     JMP 0x0048450b                      ; 0048462b
         ;   XREF to: 0048450b (UNCONDITIONAL_JUMP)  ; LAB_0048450b

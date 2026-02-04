@@ -20,7 +20,7 @@
 ;   core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30 at 0041db3c
 ;   core_box.cpp_freeScrapes_FUN_00420220 at 0042022c
 ;   core_boxactor.cpp_freeFilters_FUN_004236e0 at 004236ec
-;   core_bugs.cpp_FUN_00427cc0 at 00427ccf
+;   core_bugs.cpp_freeBugs_FUN_00427cc0 at 00427ccf
 ;   ... and 80 more
 ;
 ; Called Functions:

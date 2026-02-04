@@ -20,8 +20,8 @@
 ;   core_teleport.cpp_CTeleportDest_FUN_005da7d0 at 005da837
 ;   core_teleport.cpp_CTeleport_FUN_005dae10 at 005dae3c
 ;   core_tentacle.cpp_CTentacle_FUN_005db840 at 005db864
-;   core_waypoint.cpp_CWaypoint_FUN_005ebf70 at 005ebfd2
-;   core_zombie.cpp_CZombie_FUN_005fbe20 at 005fbe4a
+;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ebfd2
+;   core_zombie.cpp_CZombie_renderOpaque_FUN_005fbe20 at 005fbe4a
 ;
 ; Referenced Globals:
 ;   float FLOAT_0061445c = 0.2000000

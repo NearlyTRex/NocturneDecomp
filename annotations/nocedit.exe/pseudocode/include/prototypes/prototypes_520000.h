@@ -61,7 +61,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10 (CMimic *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor);
-void __cdecl core_mimic_cpp_CMimic_writeDependencies_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle);
+void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle);
 void __cdecl core_mimic_cpp_FUN_00520e00(void);
 void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void);
@@ -161,7 +161,7 @@ void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0 (CMobster *this
 void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70 (CMobster *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_mobster_cpp_CMobster_FUN_00527c30(CMobster *this_ptr);
-void __cdecl core_mobster_cpp_CMobster_writeDependencies_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle);
+void __cdecl core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle);
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_ptr,uint flags);
 void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename);
@@ -183,7 +183,7 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
 void __cdecl core_moloch_cpp_CMoloch_archive_FUN_00529880(CMoloch *this_ptr);
 void __cdecl core_moloch_cpp_CMoloch_FUN_00529900(CMoloch *this_ptr);
 void __cdecl core_moloch_cpp_CMoloch_getPropertyList_FUN_00529950 (CMoloch *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_moloch_cpp_CMoloch_writeDependencies_FUN_005299b0(CMoloch *this_ptr,_FILE *file_handle);
+void __cdecl core_moloch_cpp_CMoloch_addFilesToExtract_FUN_005299b0(CMoloch *this_ptr,_FILE *file_handle);
 void __cdecl core_moloch_cpp_CMoloch_FUN_005299d0(CMoloch *this_ptr);
 int __cdecl core_moloch_cpp_CMoloch_FUN_005299e0(CMoloch *this_ptr);
 void __cdecl core_moon_cpp_staticInit_FUN_005299f0(void);

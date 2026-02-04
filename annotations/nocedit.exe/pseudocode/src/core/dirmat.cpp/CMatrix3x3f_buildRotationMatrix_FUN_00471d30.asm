@@ -20,8 +20,8 @@
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041e758
 ;   core_box.cpp_CBox_updateTransform_FUN_0041e0e0 at 0041e11a
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c51
-;   core_bugs.cpp_FUN_00425cc0 at 00425e41
-;   core_bugs.cpp_FUN_00425fe0 at 004262c8
+;   core_bugs.cpp_CBugs_FUN_00425cc0 at 00425e41
+;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004262c8
 ;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042efa5
 ;   core_cloth.cpp_FUN_0043abb0 at 0043aebc
 ;   ... and 36 more

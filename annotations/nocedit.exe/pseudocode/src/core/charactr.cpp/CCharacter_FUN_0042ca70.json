@@ -10,19 +10,19 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 70,
+        "line": 72,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 70,
+        "line": 72,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 104,
+        "line": 106,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -85,36 +85,36 @@
       {
         "category": "other",
         "column": 32,
-        "line": 62,
+        "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 70,
+        "line": 72,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 88,
+        "line": 90,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 145,
+    "complexity_score": 147,
     "cross_reference_count": 31,
     "function_call_count": 9,
     "global_count": 6,
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 107,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 376
+    "total_lines": 378
   },
   "cross_references": [
     {
@@ -150,13 +150,13 @@
     {
       "addr": "0041bf90",
       "from_addr": "0041c3a1",
-      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0043fa00",
       "from_addr": "0043faa2",
-      "name": "core_colonel.cpp_CColonel_FUN_0043fa00",
+      "name": "core_colonel.cpp_CColonel_process_FUN_0043fa00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -355,7 +355,7 @@
     {
       "addr": "005ec320",
       "is_variadic": false,
-      "name": "core_waypoint.cpp_FUN_005ec320"
+      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec320"
     },
     {
       "addr": "00441890",
@@ -480,7 +480,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 65,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x14) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"

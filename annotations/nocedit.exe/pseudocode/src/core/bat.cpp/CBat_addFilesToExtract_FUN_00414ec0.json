@@ -1,0 +1,125 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414ec0",
+    "address_range": [
+      [
+        "00414ec0",
+        "00414efb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bat.cpp_CBat_addFilesToExtract_FUN_00414ec0",
+    "signature": "void __cdecl core_bat_cpp_CBat_addFilesToExtract_FUN_00414ec0(CBat *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0"
+    },
+    {
+      "addr": "0047edd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0"
+    },
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615417",
+      "name": "s_data_s_00615417",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8181818181818183,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 17,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 12,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 84
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 224,
+        "vtable_addr": "0065a484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

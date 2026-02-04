@@ -22,7 +22,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524e60(CDemonMission *this_ptr
          && (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CNPC"), iVar1 == 0))
         && (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CWeapon"), iVar1 == 0)
         ))) {
-      (*((actor_ptr->vtable)._ub)->writeDependencies)(actor_ptr,in_stack_00000008);
+      (*((actor_ptr->vtable)._ub)->addFilesToExtract)(actor_ptr,in_stack_00000008);
     }
   }
   return;

@@ -2,22 +2,19 @@
 // Address: 005fbda0
 // Address Range: [[005fbda0, 005fbdd5]]
 // Convention: __cdecl
-// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void)
+// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fbda0(CZombie* param_1, uint
-   param_2) */
-
-int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void)
+int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr)
 
 {
   int iVar1;
-  int in_stack_00000004;
   
-  iVar1 = core_zombie_cpp_CZombie_FUN_005fbd00();
-  if ((-1 < iVar1) && (iVar1 = *(int *)(in_stack_00000004 + 0x24b0 + iVar1 * 0x44), -1 < iVar1)) {
-    return *(int *)(in_stack_00000004 + 0x2298 + iVar1 * 4);
+  iVar1 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+  if ((-1 < iVar1) &&
+     (iVar1 = *(int *)((this_ptr->base).base.carry_hands[iVar1].unk1 + 4), -1 < iVar1)) {
+    return (this_ptr->base).base.model.part_visibility_flags[iVar1];
   }
   return 0;
 }

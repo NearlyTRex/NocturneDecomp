@@ -8,8 +8,8 @@
 ;
 ; XREF[9]:
 ;   core_bat.cpp_CBat_dtor_FUN_00414fe0 at 00414ff5
+;   core_conveyor.cpp_CConveyor_dtor_FUN_00442310 at 00442325
 ;   core_conveyor.cpp_CPlatform_dtor_FUN_00442380 at 00442395
-;   core_conveyor.cpp_dtor_FUN_00442310 at 00442325
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e38e
 ;   core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0 at 004d28b5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050785c

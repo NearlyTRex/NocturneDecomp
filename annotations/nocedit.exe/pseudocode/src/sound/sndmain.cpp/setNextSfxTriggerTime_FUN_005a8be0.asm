@@ -8,7 +8,7 @@
 ; int              Stack[0xc]:4   trigger_id
 ;
 ; XREF[4]:
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c5b0
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5b0
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f2ad
 ;   core_event.cpp_CEventList_FUN_004b0f00 at 004b0f46
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de540

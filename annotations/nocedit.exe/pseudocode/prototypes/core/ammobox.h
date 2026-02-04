@@ -67,9 +67,9 @@ int __cdecl CAmmoBox::propertyActionFunc(CAmmoBox *this_ptr,CActorProperty *prop
 // Address: 00411b30
 void __cdecl CAmmoBox::getPropertyList(CAmmoBox *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_ammobox.cpp_CAmmoBox_writeDependencies_FUN_00411c00
+// Original: core_ammobox.cpp_CAmmoBox_addFilesToExtract_FUN_00411c00
 // Address: 00411c00
-void __cdecl CAmmoBox::writeDependencies(CAmmoBox *this_ptr,_FILE *file_handle);
+void __cdecl CAmmoBox::addFilesToExtract(CAmmoBox *this_ptr,_FILE *file_handle);
 
 // Original: core_ammobox.cpp_CAmmoBox_dtor_FUN_00411c20
 // Address: 00411c20

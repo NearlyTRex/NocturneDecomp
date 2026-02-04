@@ -21,5 +21,7 @@
 #include "types/typedefs/CFilmReel_ptr_344.h"
 #include "types/typedefs/CHealthItem_ptr_344.h"
 #include "types/typedefs/CScript_ptr_56.h"
+#include "types/typedefs/CTVBat_ptr_48832.h"
+#include "types/typedefs/CTurret_ptr_1412.h"
 #include "types/typedefs/SBitBuffer_ptr_8.h"
 

@@ -491,9 +491,9 @@ void __cdecl crc32ProcessVector(uint *crc_state,CVector3f *vector);
 // Address: 0040cf90
 void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
-// Original: core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
+// Original: core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0
 // Address: 0040cfd0
-void __cdecl CDemonActor::writeDependencies(CDemonActor *this_ptr,_FILE *file_handle);
+void __cdecl CDemonActor::addFilesToExtract(CDemonActor *this_ptr,_FILE *file_handle);
 
 // Original: core_actor.cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0
 // Address: 0040cfe0

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c054
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c054
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_boneguy_comeback_wav_00616358

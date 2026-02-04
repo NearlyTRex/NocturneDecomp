@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb32
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c256
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c256
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005971eb
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 at 005a0876
 ;

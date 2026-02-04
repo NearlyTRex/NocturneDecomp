@@ -11,13 +11,13 @@
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412d80
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 00415200
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 004165c0
-;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 at 0041bea0
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bea0
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042383c
 ;   core_charactr.cpp_CCharacter_FUN_0042ea40 at 0042ebc4
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40 at 0042ec83
 ;   core_cloth.cpp_OrientBoneCheck_FUN_0043a110 at 0043a156
-;   core_colonel.cpp_FUN_0043f850 at 0043f920
-;   core_cow.cpp_FUN_004441b0 at 004441ef
+;   core_colonel.cpp_CColonel_setup_FUN_0043f850 at 0043f920
+;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441ef
 ;   ... and 29 more
 ;
 ; Referenced Globals:

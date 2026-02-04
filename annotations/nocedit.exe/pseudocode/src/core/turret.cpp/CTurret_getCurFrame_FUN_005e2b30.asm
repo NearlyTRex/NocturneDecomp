@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
+; __cdecl float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,8 +12,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_turret.cpp_CTurret_FUN_005e2320 at 005e2357
-;   core_turret.cpp_CTurret_FUN_005e2910 at 005e2929
+;   core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910 at 005e2929
+;   core_turret.cpp_CTurret_renderOpaque_FUN_005e2320 at 005e2357
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005e2b14 = 005e2bcd

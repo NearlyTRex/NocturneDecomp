@@ -53,7 +53,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
   local_20 = (int)ROUND(dVar7);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x17c),0.0,-1);
+            (&this_ptr->gem_model,0.0,-1);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar3 == 0) &&

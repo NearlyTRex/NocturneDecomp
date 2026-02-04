@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0 at 0050ecfc
-;   core_turret.cpp_CTurret_FUN_005e3ca0 at 005e3cac
+;   core_turret.cpp_CTurret_getPropertyList_FUN_005e3ca0 at 005e3cac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Model_file_kfm_00657b31

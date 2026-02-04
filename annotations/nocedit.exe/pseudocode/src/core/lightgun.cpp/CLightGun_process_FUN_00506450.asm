@@ -36,7 +36,7 @@
 ;   core_lightgun.cpp_CLightGun_FUN_00505ac0
 ;   core_set.cpp_CDemonSet_FUN_0056d090
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
-;   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
+;   core_weather.cpp_CWeather_FUN_005eeeb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -158,8 +158,8 @@ section .text
     MOV ESI,dword ptr [0x006848fc]      ; 005065aa | g_CWeatherPtr
     PUSH 0x3dcccccd                     ; 005065b0
     PUSH ESI                            ; 005065b5 | g_CWeatherInstance
-    CALL core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0 ; 005065b6
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
+    CALL core_weather.cpp_CWeather_FUN_005eeeb0 ; 005065b6
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005eeeb0(CWeather * this_ptr)
     ADD ESP,0xc                         ; 005065bb
     PUSH 0x2d7eaf0                      ; 005065be | g_CDemonLightInstance
         ;   Label: LAB_005065be

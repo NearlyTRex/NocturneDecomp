@@ -95,9 +95,9 @@ void __cdecl CScat::onActorDeleted(CScat *this_ptr,CDemonActor *deleted_actor);
 // Address: 00559120
 void __cdecl CScat::getPropertyList(CScat *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_scat.cpp_CScat_writeDependencies_FUN_00559140
+// Original: core_scat.cpp_CScat_addFilesToExtract_FUN_00559140
 // Address: 00559140
-void __cdecl CScat::writeDependencies(CScat *this_ptr,_FILE *file_handle);
+void __cdecl CScat::addFilesToExtract(CScat *this_ptr,_FILE *file_handle);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_00559160
 // Address: 00559160

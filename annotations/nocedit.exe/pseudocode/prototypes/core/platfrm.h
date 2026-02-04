@@ -119,6 +119,6 @@ void __cdecl CPlatform::processInEditor(CPlatform *this_ptr);
 // Address: 0054f060
 void __cdecl CPlatform::showEditorHelp(CPlatform *this_ptr,int *y_pos);
 
-// Original: core_platfrm.cpp_CPlatform_writeDependencies_FUN_0054f2a0
+// Original: core_platfrm.cpp_CPlatform_addFilesToExtract_FUN_0054f2a0
 // Address: 0054f2a0
-void __cdecl CPlatform::writeDependencies(CPlatform *this_ptr,_FILE *file_handle);
+void __cdecl CPlatform::addFilesToExtract(CPlatform *this_ptr,_FILE *file_handle);

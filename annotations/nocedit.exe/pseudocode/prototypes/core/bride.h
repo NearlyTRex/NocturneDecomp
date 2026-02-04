@@ -55,9 +55,9 @@ CVector3f * __cdecl CBride(CBride *this_ptr);
 // Address: 00424b10
 void __cdecl CBride::getPropertyList(CBride *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_bride.cpp_CBride_writeDependencies_FUN_00424b50
+// Original: core_bride.cpp_CBride_addFilesToExtract_FUN_00424b50
 // Address: 00424b50
-void __cdecl CBride::writeDependencies(CBride *this_ptr,_FILE *file_handle);
+void __cdecl CBride::addFilesToExtract(CBride *this_ptr,_FILE *file_handle);
 
 // Original: core_bride.cpp_CBride_dtor_FUN_00424b80
 // Address: 00424b80

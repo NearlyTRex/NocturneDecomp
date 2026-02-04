@@ -1,0 +1,116 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 19,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "005e5970",
+      "from_addr": "005e607f",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e74c0",
+    "address_range": [
+      [
+        "005e74c0",
+        "005e7502"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_FUN_005e74c0",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e74c0(CVampireBoss *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052ddb0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656cec",
+      "name": "s_float_00656cec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656cf2",
+      "name": "s_voicuhuman_wav_00656cf2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "COPY": 14,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,194 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 21,
+        "line": 43,
+        "message": "void value not ignored as it ought to be"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 62,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 3,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 118
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00444b40",
+    "address_range": [
+      [
+        "00444b40",
+        "00444bf3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cow.cpp_CZombieCow_processDamage_FUN_00444b40",
+    "signature": "void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "004448c0",
+      "is_variadic": false,
+      "name": "core_cow.cpp_CZombieCow_FUN_004448c0"
+    },
+    {
+      "addr": "004a9f10",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005b3b80",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006195ad",
+      "name": "s_cow_wav_006195ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.769230769230769,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 83,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 27,
+      "INT_AND": 26,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 28,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 310
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieCow *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX != 0) {",
+      "type": "extra_output"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombieCow",
+        "offset": 284,
+        "vtable_addr": "0065c0b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

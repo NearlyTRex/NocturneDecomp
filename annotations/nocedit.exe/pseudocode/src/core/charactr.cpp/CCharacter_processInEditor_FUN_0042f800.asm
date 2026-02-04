@@ -7,8 +7,8 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_004278d0 at 004278f8
-;   core_tvbat.cpp_CTVBat_FUN_005e5260 at 005e53ea
+;   core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 at 004278f8
+;   core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 at 005e53ea
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065b834 = 9999

@@ -22,7 +22,7 @@
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210 at 0041b23b
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419db5
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10 at 00418f30
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d680 at 0041d72b
+;   core_boneguy.cpp_CBoneGuy_FUN_0041cc40 at 0041cccd
 ;   ... and 119 more
 ;
 ; Referenced Globals:

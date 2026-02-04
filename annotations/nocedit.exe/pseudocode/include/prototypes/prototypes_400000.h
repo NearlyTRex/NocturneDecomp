@@ -345,7 +345,7 @@ void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf10(uint *crc_state,byte
 void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040cf50(uint *crc_state,int value);
 void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf70(uint *crc_state,CVector3f *vector);
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040cf90(uint *crc_state,char *string);
-void __cdecl core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle);
+void __cdecl core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle);
 void __cdecl core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0(CDemonActor *this_ptr,int deleted_area_index);
 void __cdecl core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000 (CDemonActor *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor *this_ptr);

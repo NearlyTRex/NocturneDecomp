@@ -32,7 +32,7 @@ LAB_005e6e2e:
   else {
     if (this_ptr->form == 2) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
-                ((CDeformableModelInstance *)(this_ptr->unk1 + 8),-1,0xffffffff,1,0);
+                (&this_ptr->model,-1,0xffffffff,1,0);
       goto LAB_005e6e2e;
     }
     core_morph_cpp_FUN_0052b600();
@@ -43,7 +43,7 @@ LAB_005e6e2e:
     core_morph_cpp_FUN_0052b600();
     core_morph_cpp_FUN_0052b640();
     core_morph_cpp_FUN_0052b640();
-    core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk2);
+    core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk3);
   }
   core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
   if (DAT_02f43978 != 0) {

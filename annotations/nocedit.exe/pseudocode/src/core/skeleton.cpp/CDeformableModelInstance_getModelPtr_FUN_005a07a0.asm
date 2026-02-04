@@ -11,11 +11,11 @@
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 004152e0
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 004166a0
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b2f3
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d680 at 0041d6b2
-;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 at 0041bf02
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 at 0041d6b2
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bf02
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042391c
-;   core_bugs.cpp_FUN_004268e0 at 00426b5d
-;   core_bugs.cpp_FUN_00427400 at 00427500
+;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426b5d
+;   core_bugs.cpp_CBugs_FUN_00427400 at 00427500
 ;   core_charactr.cpp_CCharacter_FUN_0042a3f0 at 0042a3ff
 ;   ... and 47 more
 ;

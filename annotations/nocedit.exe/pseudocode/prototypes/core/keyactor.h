@@ -55,9 +55,9 @@ void __cdecl CKeyActor::onPickup(CKeyActor *this_ptr,CDemonActor *owner);
 // Address: 00501940
 void __cdecl CKeyActor::getPropertyList(CKeyActor *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_keyactor.cpp_CKeyActor_writeDependencies_FUN_00501990
+// Original: core_keyactor.cpp_CKeyActor_addFilesToExtract_FUN_00501990
 // Address: 00501990
-void __cdecl CKeyActor::writeDependencies(CKeyActor *this_ptr,_FILE *file_handle);
+void __cdecl CKeyActor::addFilesToExtract(CKeyActor *this_ptr,_FILE *file_handle);
 
 // Original: core_keyactor.cpp_CKeyActor_dtor_FUN_005019b0
 // Address: 005019b0

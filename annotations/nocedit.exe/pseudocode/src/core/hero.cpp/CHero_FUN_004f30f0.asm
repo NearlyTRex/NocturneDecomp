@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fe15
+;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fe15
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d4041
 ;   core_haystack.cpp_CHaystack_process_FUN_004f0e40 at 004f12a2
 ;   core_icepick.cpp_CIcePick_process_FUN_004f80b0 at 004f8625

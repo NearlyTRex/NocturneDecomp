@@ -2,13 +2,11 @@
 // Address: 005ef190
 // Address Range: [[005ef190, 005ef5f0] [005ef5f4, 005ef8b6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
+// Signature: void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte core_weather.cpp_CWeather_FUN_005ef190(CWeather* param_1) */
-
-void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
+void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
 
 {
   SRenderVertex *vertex_ptr;
@@ -19,7 +17,6 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
   int iVar4;
   uint uVar5;
   int iVar6;
-  int *in_stack_00000004;
   SMRGLHeaderPrimitive local_f0;
   uint local_d8;
   uint local_d4;
@@ -49,15 +46,15 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
   float local_14;
   float local_10;
   
-  if (*in_stack_00000004 == 0) {
+  if (*(int *)this_ptr->unk == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_b0);
-  if (*in_stack_00000004 == 1) {
+  if (*(int *)this_ptr->unk == 1) {
     local_b0.x = 0;
   }
-  if (*in_stack_00000004 == 1) {
+  if (*(int *)this_ptr->unk == 1) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&DAT_00684900);
     pCVar1 = g_CDemonRendererPtr2;
@@ -77,7 +74,7 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
   core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
   local_14 = 0.1;
   local_10 = 0.1;
-  if (*in_stack_00000004 == 1) {
+  if (*(int *)this_ptr->unk == 1) {
     local_10 = -0.4;
     local_14 = 0.05;
   }
@@ -113,7 +110,7 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
       core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                 (g_CDemonSetPtr,&local_80,(CVector3i *)0x0,0,4);
       pCVar1 = g_CDemonRendererPtr2;
-      if (*in_stack_00000004 == 2) {
+      if (*(int *)this_ptr->unk == 2) {
         local_20 = (uVar5 & 3) * 0x400000;
         iVar2 = ((int)(uVar5 & 0xc) >> 2) * 0x400000;
         g_CDemonRendererPtr2->vertex_buffer_ptr->u = (float)(local_20 + 0x80000);
@@ -161,7 +158,7 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(void)
     uVar5 = uVar5 + 1;
     world_position = world_position + 1;
   } while ((int)uVar5 < 200);
-  if (*in_stack_00000004 == 1) {
+  if (*(int *)this_ptr->unk == 1) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&DAT_00684918);
     pCVar1 = g_CDemonRendererPtr2;

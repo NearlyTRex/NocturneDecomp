@@ -11,6 +11,6 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9f30(CSvetlana *this_ptr)
 {
   _FILE *in_stack_00000008;
   
-  core_hero_cpp_CHero_writeDependencies_FUN_004f3fa0(&this_ptr->base,in_stack_00000008);
+  core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(&this_ptr->base,in_stack_00000008);
   return;
 }

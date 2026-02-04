@@ -13,10 +13,10 @@
 ;   core_beast.cpp_CBeast_setup_FUN_00418280 at 0041828a
 ;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 00418697
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b2e8
-;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90 at 0041bd9e
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bd9e
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 00423821
 ;   core_cloth.cpp_FUN_0043ddf0 at 0043dfaa
-;   core_cow.cpp_FUN_004441b0 at 004441be
+;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441be
 ;   ... and 26 more
 ;
 ; Called Functions:

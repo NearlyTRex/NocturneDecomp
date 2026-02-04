@@ -87,9 +87,9 @@ void __cdecl CIcePick::onActorDeleted(CIcePick *this_ptr,CDemonActor *deleted_ac
 // Address: 004f97a0
 void __cdecl CIcePick::getPropertyList(CIcePick *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_icepick.cpp_CIcePick_writeDependencies_FUN_004f97c0
+// Original: core_icepick.cpp_CIcePick_addFilesToExtract_FUN_004f97c0
 // Address: 004f97c0
-void __cdecl CIcePick::writeDependencies(CIcePick *this_ptr,_FILE *file_handle);
+void __cdecl CIcePick::addFilesToExtract(CIcePick *this_ptr,_FILE *file_handle);
 
 // Original: core_icepick.cpp_CIcePick_dtor_FUN_004f97e0
 // Address: 004f97e0

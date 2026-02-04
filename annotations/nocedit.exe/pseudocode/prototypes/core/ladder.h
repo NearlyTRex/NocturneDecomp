@@ -27,21 +27,21 @@ void __cdecl CLadder::setup(CLadder *this_ptr);
 // Address: 00502610
 void __cdecl CLadder::process(CLadder *this_ptr,float delta_time);
 
-// Original: core_ladder.cpp_CLadder_FUN_00502620
+// Original: core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
 // Address: 00502620
-int __cdecl CLadder(CLadder *this_ptr);
+int __cdecl CLadder::renderOpaque(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_CLadder_FUN_005028c0
+// Original: core_ladder.cpp_getBoundingBox_CLadder_FUN_005028c0
 // Address: 005028c0
-float * __cdecl CLadder(CLadder *this_ptr);
+CBoundingBox3D * __cdecl getBoundingBox::CLadder(CLadder *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ladder.cpp_CLadder_archive_FUN_005029c0
 // Address: 005029c0
 void __cdecl CLadder::archive(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_CLadder_FUN_00502a40
+// Original: core_ladder.cpp_CLadder_hasCollision_FUN_00502a40
 // Address: 00502a40
-int __cdecl CLadder(CLadder *this_ptr);
+int __cdecl CLadder::hasCollision(CLadder *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ladder.cpp_CLadder_FUN_00502a70
 // Address: 00502a70
@@ -71,9 +71,9 @@ void __cdecl CLadder::showEditorHelp(CLadder *this_ptr,int *y_pos);
 // Address: 00502e90
 void __cdecl CLadder::onActorDeleted(CLadder *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_ladder.cpp_CLadder_writeDependencies_FUN_00502eb0
+// Original: core_ladder.cpp_CLadder_addFilesToExtract_FUN_00502eb0
 // Address: 00502eb0
-void __cdecl CLadder::writeDependencies(CLadder *this_ptr,_FILE *file_handle);
+void __cdecl CLadder::addFilesToExtract(CLadder *this_ptr,_FILE *file_handle);
 
 // Original: core_ladder.cpp_CLadder_dtor_FUN_00502ed0
 // Address: 00502ed0

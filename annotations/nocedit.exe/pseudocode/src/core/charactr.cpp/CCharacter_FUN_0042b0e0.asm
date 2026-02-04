@@ -10,7 +10,7 @@
 ;   core_gabriela.cpp_CGabriella_renderTransparent_FUN_004d6230 at 004d624c
 ;   core_stranger.cpp_CStranger_FUN_005c3710 at 005c3716
 ;   core_werewolf.cpp_CWerewolf_FUN_005f1820 at 005f1968
-;   core_zombie.cpp_CZombie_FUN_005fbe70 at 005fbfb9
+;   core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70 at 005fbfb9
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042b110

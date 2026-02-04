@@ -21,7 +21,7 @@
 ;   core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0 at 0050ed72
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e92b
 ;   core_trigger.cpp_CTrigger_FUN_005e0f70 at 005e108a
-;   core_turret.cpp_CTurret_FUN_005e3ca0 at 005e3d73
+;   core_turret.cpp_CTurret_getPropertyList_FUN_005e3ca0 at 005e3d73
 ;   ... and 1 more
 ;
 ; Called Functions:

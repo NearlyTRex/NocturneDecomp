@@ -69,7 +69,7 @@
 ;   core_mimic.cpp_CMimic_FUN_00520500 at 00520526
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f5cb
 ;   core_svetlana.cpp_CSvetlana_FUN_005d88e0 at 005d8ae9
-;   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 at 005e5748
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e5748
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065bb3c = 256

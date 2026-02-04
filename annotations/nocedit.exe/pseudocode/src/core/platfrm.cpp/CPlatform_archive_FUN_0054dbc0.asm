@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_conveyor.cpp_FUN_00442020 at 00442026
+;   core_conveyor.cpp_CConveyor_archive_FUN_00442020 at 00442026
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0063f79e

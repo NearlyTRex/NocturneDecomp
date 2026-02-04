@@ -15,8 +15,8 @@ void __cdecl core_frankgen_cpp_FUN_004d2560(void)
   CDemonActor *in_stack_00000004;
   _FILE *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             ((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);
   if (in_stack_00000004[1].actor_name[8] != '\0') {
     _fprintf(in_stack_00000008,"data\\%s\n",in_stack_00000004[1].actor_name + 8);
@@ -24,7 +24,7 @@ void __cdecl core_frankgen_cpp_FUN_004d2560(void)
   if (in_stack_00000004[2].create_event[0x5c] == '\0') {
     return;
   }
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             ((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008
             );
   return;

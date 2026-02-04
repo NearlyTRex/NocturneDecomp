@@ -23,10 +23,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a1f0(CMansionPuzzleCir
             (g_CDemonRendererPtr2,(CVector3i *)(this_ptr->unk3 + iVar1 + 0xd20),
              (CVector3i *)(this_ptr->unk3 + iVar1 + 0xd14));
   render_flags = -1;
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x2f8));
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model3);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x2f8),
+            (&this_ptr->model3,
              (float)(pCVar2->frame_count + -1) * *(float *)(this_ptr->unk3 + iVar1 + 0xd10),
              render_flags);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

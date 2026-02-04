@@ -1,0 +1,309 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 15,
+        "message": "request for member '_0_1_' in 'iVar2', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 16,
+        "message": "request for member '_1_1_' in 'iVar2', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 17,
+        "message": "request for member '_2_1_' in 'iVar2', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 18,
+        "message": "request for member '_3_1_' in 'iVar2', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 24,
+        "message": "request for member '_0_1_' in 'iVar1', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 24,
+        "message": "request for member '_1_1_' in 'iVar1', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 25,
+        "message": "request for member '_2_1_' in 'iVar1', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 25,
+        "message": "request for member '_3_1_' in 'iVar1', which is of non-class type 'int'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 30,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 129,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 9,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "unknown_field"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [
+    {
+      "addr": "005e3c70",
+      "from_addr": "005e3c8c",
+      "name": "core_turret.cpp_CTurret_canPickup_FUN_005e3c70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee340",
+    "address_range": [
+      [
+        "005ee340",
+        "005ee3dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_canPickup_FUN_005ee340",
+    "signature": "int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_005ee340(CWeapon *this_ptr,CDemonActor *picker)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657b0a",
+      "name": "s_CIcePick_00657b0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657b13",
+      "name": "s_CHero_00657b13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657b19",
+      "name": "DOUBLE_00657b19",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005e3c8c",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_canPickup_FUN_005e3c70",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.344827586206897,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 9,
+      "COPY": 101,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 24,
+      "INT_AND": 30,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 11,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 11,
+      "RETURN": 4,
+      "STORE": 8
+    },
+    "pcode_op_count": 310
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      },
+      {
+        "is_param": true,
+        "name": "picker",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._0_1_",
+      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._1_1_",
+      "text": "iVar2._1_1_ = this_ptr->unk3[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 10,
+      "match": "._2_1_",
+      "text": "iVar2._2_1_ = this_ptr->unk3[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 11,
+      "match": "._3_1_",
+      "text": "iVar2._3_1_ = this_ptr->unk3[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "SQRT",
+      "text": "SQRT(*(float *)(this_ptr->unk3 + 0x57) * *(float *)(this_ptr->unk3 + 0x57) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 17,
+      "match": "._0_1_",
+      "text": "(iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->unk3[0],",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 17,
+      "match": "._1_1_",
+      "text": "(iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->unk3[0],",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._2_1_",
+      "text": "iVar1._2_1_ = this_ptr->unk3[1], iVar1._3_1_ = this_ptr->unk3[2], iVar1 != 0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._3_1_",
+      "text": "iVar1._2_1_ = this_ptr->unk3[1], iVar1._3_1_ = this_ptr->unk3[2], iVar1 != 0)) {",
+      "type": "unknown_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 124,
+        "vtable_addr": "0065d314"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 124,
+        "vtable_addr": "0065d534"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 124,
+        "vtable_addr": "00660a64"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 124,
+        "vtable_addr": "00664674"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 124,
+        "vtable_addr": "0065e284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 12
+  }
+}

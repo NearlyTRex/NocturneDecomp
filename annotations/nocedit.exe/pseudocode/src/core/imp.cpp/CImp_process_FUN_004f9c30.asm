@@ -161,7 +161,7 @@ section .text
     PUSH ESI                            ; 004f9cc3
     PUSH EBX                            ; 004f9cc4
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004f9cc5
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004f9cca
     JMP 0x004f9c99                      ; 004f9ccd
         ;   XREF to: 004f9c99 (UNCONDITIONAL_JUMP)  ; LAB_004f9c99
@@ -409,7 +409,7 @@ section .text
     PUSH ESI                            ; 004f9f4b
     PUSH EBX                            ; 004f9f4c
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004f9f4d
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004f9f52
     JMP 0x004f9c99                      ; 004f9f55
         ;   XREF to: 004f9c99 (UNCONDITIONAL_JUMP)  ; LAB_004f9c99

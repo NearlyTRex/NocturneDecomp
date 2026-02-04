@@ -10,7 +10,7 @@
 ; XREF[32]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c0d
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 004174e2
-;   core_chain.cpp_CChain_FUN_004308f0 at 004309e9
+;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 004309e9
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b0ce
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 at 00473ee6
 ;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 at 0047428e

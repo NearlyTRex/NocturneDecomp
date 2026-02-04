@@ -67,9 +67,9 @@ void __cdecl CHostage(CHostage *this_ptr);
 // Address: 004f69c0
 void __cdecl CHostage::getPropertyList(CHostage *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hostage.cpp_CHostage_writeDependencies_FUN_004f6b30
+// Original: core_hostage.cpp_CHostage_addFilesToExtract_FUN_004f6b30
 // Address: 004f6b30
-void __cdecl CHostage::writeDependencies(CHostage *this_ptr,_FILE *file_handle);
+void __cdecl CHostage::addFilesToExtract(CHostage *this_ptr,_FILE *file_handle);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004f6b60
 // Address: 004f6b60

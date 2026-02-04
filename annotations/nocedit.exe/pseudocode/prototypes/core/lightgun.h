@@ -51,9 +51,9 @@ float __cdecl CLightGun(CLightGun *this_ptr);
 // Address: 005066b0
 void __cdecl CLightGun(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_writeDependencies_FUN_005066f0
+// Original: core_lightgun.cpp_CLightGun_addFilesToExtract_FUN_005066f0
 // Address: 005066f0
-void __cdecl CLightGun::writeDependencies(CLightGun *this_ptr,_FILE *file_handle);
+void __cdecl CLightGun::addFilesToExtract(CLightGun *this_ptr,_FILE *file_handle);
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_00506a50
 // Address: 00506a50

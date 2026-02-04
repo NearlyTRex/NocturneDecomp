@@ -8,7 +8,7 @@
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412cb7
-;   core_colonel.cpp_FUN_0043f850 at 0043f857
+;   core_colonel.cpp_CColonel_setup_FUN_0043f850 at 0043f857
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2c48
 ;   core_haystack.cpp_CHaystack_setup_FUN_004f0c80 at 004f0c87
 ;   core_icepick.cpp_CIcePick_setup_FUN_004f7e80 at 004f7e87

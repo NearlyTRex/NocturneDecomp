@@ -7,7 +7,7 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_conveyor.cpp_FUN_00441d60 at 00441dc2
+;   core_conveyor.cpp_CConveyor_setup_FUN_00441d60 at 00441dc2
 ;   core_minecar.cpp_CMinecar_setup_FUN_00520e90 at 00520e95
 ;
 ; Called Functions:

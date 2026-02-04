@@ -14,7 +14,7 @@
 ; XREF[20]:
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411b7b
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004227d4
-;   core_chain.cpp_CChain_FUN_00431120 at 00431178
+;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 00431178
 ;   core_dest.cpp_FUN_0046fe80 at 0046feaa
 ;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8fcf
 ;   core_filmreel.cpp_CFilmProjector_getPropertyList_FUN_004bee30 at 004bee5a

@@ -433,7 +433,7 @@ section .text
         ;   Label: caseD_4
     PUSH EBX                            ; 004d4c7e
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004d4c7f
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004d4c84
     JMP 0x004d4927                      ; 004d4c87
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12

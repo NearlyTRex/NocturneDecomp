@@ -67,9 +67,9 @@ void __cdecl CHaystack::onActorDeleted(CHaystack *this_ptr,CDemonActor *deleted_
 // Address: 004f1cd0
 void __cdecl CHaystack::getPropertyList(CHaystack *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_haystack.cpp_CHaystack_writeDependencies_FUN_004f1cf0
+// Original: core_haystack.cpp_CHaystack_addFilesToExtract_FUN_004f1cf0
 // Address: 004f1cf0
-void __cdecl CHaystack::writeDependencies(CHaystack *this_ptr,_FILE *file_handle);
+void __cdecl CHaystack::addFilesToExtract(CHaystack *this_ptr,_FILE *file_handle);
 
 // Original: core_haystack.cpp_CHaystack_dtor_FUN_004f1d10
 // Address: 004f1d10

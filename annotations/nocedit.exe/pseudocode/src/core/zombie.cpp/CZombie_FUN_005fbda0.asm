@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void)
+; __cdecl int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530 at 005fb728
+;   core_zombie.cpp_CZombie_FUN_005fb530 at 005fb728
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_FUN_005fbd00
@@ -21,7 +23,7 @@ section .text
     PUSH EDX                            ; 005fbda9
     PUSH EBX                            ; 005fbdaa
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fbdab
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00()
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_005fbd00(CZombie * this_ptr)
     ADD ESP,0x8                         ; 005fbdb0
     TEST EAX,EAX                        ; 005fbdb3
     JL 0x005fbdd2                       ; 005fbdb5

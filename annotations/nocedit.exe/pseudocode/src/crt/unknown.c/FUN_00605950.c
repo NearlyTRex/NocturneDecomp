@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_CallToDoNothing14SandwichMax() */
-
 void crt_unknown_c_FUN_00605950(void)
 
 {

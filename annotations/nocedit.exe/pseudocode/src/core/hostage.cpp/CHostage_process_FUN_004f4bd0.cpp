@@ -280,7 +280,8 @@ LAB_004f4dd2:
              (fVar8 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar14 + 0x20),
              fVar3 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar14 + 0x28),
              SQRT(fVar3 * fVar3 + fVar8 * fVar8) < (float)40)) {
-            iVar14 = core_waypoint_cpp_FUN_005ec320();
+            iVar14 = core_waypoint_cpp_CWayPoint_FUN_005ec320
+                               ((CWayPoint *)&(this_ptr->base).base.base.location);
             *(int *)(this_ptr->unk3 + 8) = iVar14;
           }
           pCVar13 = g_CConsolePtr;
@@ -389,7 +390,8 @@ LAB_004f579d:
                 this_ptr->unk3[0xb] = '\0';
               }
               else {
-                iVar14 = core_waypoint_cpp_FUN_005ec320();
+                iVar14 = core_waypoint_cpp_CWayPoint_FUN_005ec320
+                                   ((CWayPoint *)&(this_ptr->base).base.base.location);
                 *(int *)(this_ptr->unk3 + 8) = iVar14;
               }
               break;

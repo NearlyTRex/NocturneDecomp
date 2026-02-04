@@ -45,8 +45,8 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_FUN_004c9290
 ;   core_sound.cpp_CSound_playSound_FUN_005b3a20
-;   core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
-;   core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140
+;   core_weather.cpp_CWeather_FUN_005eeeb0
+;   core_weather.cpp_CWeather_FUN_005ef140
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
@@ -302,16 +302,16 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005eedba
     PUSH 0x3dcccccd                     ; 005eedbd
     PUSH EDX                            ; 005eedc2
-    CALL core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0 ; 005eedc3
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
+    CALL core_weather.cpp_CWeather_FUN_005eeeb0 ; 005eedc3
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005eeeb0(CWeather * this_ptr)
     ADD ESP,0xc                         ; 005eedc8
     JMP 0x005eec84                      ; 005eedcb
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eedd0
         ;   Label: LAB_005eedd0
     PUSH EAX                            ; 005eedd3
-    CALL core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140 ; 005eedd4
-        ;   XREF to: 005ef140 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_SomethingWithThunder_FUN_005ef140()
+    CALL core_weather.cpp_CWeather_FUN_005ef140 ; 005eedd4
+        ;   XREF to: 005ef140 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef140(CWeather * this_ptr)
     ADD ESP,0x4                         ; 005eedd9
     JMP 0x005eec84                      ; 005eeddc
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84

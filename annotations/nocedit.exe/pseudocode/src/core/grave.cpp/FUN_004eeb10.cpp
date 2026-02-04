@@ -15,8 +15,8 @@ void __cdecl core_grave_cpp_FUN_004eeb10(void)
   CDemonActor *in_stack_00000004;
   _FILE *in_stack_00000008;
   
-  core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),in_stack_00000008);
   return;
 }

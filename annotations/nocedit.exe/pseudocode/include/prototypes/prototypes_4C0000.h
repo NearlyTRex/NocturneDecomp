@@ -248,7 +248,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004cb620(CFlameCan *this_pt
 int __cdecl core_flamecan_cpp_CFlameCan_hasCollision_FUN_004cb680 (CFlameCan *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004cb690(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0 (CFlameCan *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_flamecan_cpp_CFlameCan_writeDependencies_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle);
+void __cdecl core_flamecan_cpp_CFlameCan_addFilesToExtract_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004cb7a0(CFlameCan *this_ptr,uint flags);
 void __cdecl core_flamegun_cpp_staticInit_FUN_004cb810(void);
 CFlameThrower * __cdecl core_flamegun_cpp_factoryFunc_FUN_004cb840(void);

@@ -14,8 +14,8 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415518
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041691b
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 0041878c
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c3a1
-;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043faa2
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c3a1
+;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043faa2
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004443b8
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f1ff
 ;   core_dracbrid.cpp_FUN_00484410 at 0048467e
@@ -37,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-;   core_waypoint.cpp_FUN_005ec320
+;   core_waypoint.cpp_CWayPoint_FUN_005ec320
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -274,8 +274,8 @@ section .text
         ;   XREF to: 0042ccf3 (CONDITIONAL_JUMP)  ; LAB_0042ccf3
     PUSH EAX                            ; 0042cce3
     PUSH EDI                            ; 0042cce4
-    CALL core_waypoint.cpp_FUN_005ec320 ; 0042cce5
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_FUN_005ec320()
+    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 0042cce5
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
     ADD ESP,0x8                         ; 0042ccea
     MOV ESI,EAX                         ; 0042cced
     TEST EAX,EAX                        ; 0042ccef

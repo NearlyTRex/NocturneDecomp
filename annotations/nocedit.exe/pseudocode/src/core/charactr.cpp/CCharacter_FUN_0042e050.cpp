@@ -52,7 +52,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
      (float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {
     if (*(int *)(this_ptr->unk2 + 0x50) == 0) goto LAB_0042e0e4;
     if (*(int *)(this_ptr->unk2 + 0x4c) == 0) goto LAB_0042e0ee;
-    iVar4 = core_waypoint_cpp_FUN_005ec320();
+    iVar4 = core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
     *(int *)(this_ptr->unk2 + 0x50) = iVar4;
   }
   else {
@@ -102,7 +102,7 @@ LAB_0042e0ee:
           iVar4 = iVar4 + 1;
           if (9 < iVar4) goto LAB_0042e1d9;
         }
-        iVar2 = core_waypoint_cpp_FUN_005ec320();
+        iVar2 = core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
         *(int *)(this_ptr->unk2 + 0x50) = iVar2;
         if (iVar2 != 0) {
           *(int *)(this_ptr->unk2 + 0x4c) = local_1f80[iVar3];

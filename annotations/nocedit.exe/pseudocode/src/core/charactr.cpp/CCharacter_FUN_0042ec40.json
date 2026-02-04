@@ -37,12 +37,12 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 159,
+    "complexity_score": 299,
     "cross_reference_count": 31,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 84,
-    "suspect_count": 7,
+    "suspect_count": 21,
     "suspect_types": [
       "stack_param"
     ],
@@ -70,7 +70,7 @@
     {
       "addr": "0041bf90",
       "from_addr": "0041c322",
-      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,7 +82,7 @@
     {
       "addr": "00440430",
       "from_addr": "00440484",
-      "name": "core_colonel.cpp_FUN_00440430",
+      "name": "core_colonel.cpp_CColonel_FUN_00440430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -246,7 +246,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_FUN_0042ec40",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)"
   },
   "function_calls": [
     {
@@ -386,9 +386,51 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < (int)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,&local_3c,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
       "text": "else if (in_stack_00000008 < 8) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < (int)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,&local_18,in_stack_00000008);",
       "type": "stack_param"
     },
     {
@@ -407,9 +449,65 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < (int)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,&local_24,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0x25) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000008",
+      "text": "return in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < (int)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,&local_30,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_00000008",
+      "text": "return in_stack_00000008;",
       "type": "stack_param"
     }
   ]

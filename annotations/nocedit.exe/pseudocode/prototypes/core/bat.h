@@ -51,9 +51,9 @@ void __cdecl CBat(CBat *this_ptr);
 // Address: 00414dc0
 void __cdecl CBat::getPropertyList(CBat *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_bat.cpp_CBat_writeDependencies_FUN_00414ec0
+// Original: core_bat.cpp_CBat_addFilesToExtract_FUN_00414ec0
 // Address: 00414ec0
-void __cdecl CBat::writeDependencies(CBat *this_ptr,_FILE *file_handle);
+void __cdecl CBat::addFilesToExtract(CBat *this_ptr,_FILE *file_handle);
 
 // Original: core_bat.cpp_CBat_processInEditor_FUN_00414f00
 // Address: 00414f00

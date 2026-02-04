@@ -19,8 +19,8 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416aee
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 0041897f
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610 at 00419712
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c5f7
-;   core_boneguy.cpp_FUN_0041cc40 at 0041cee9
+;   core_boneguy.cpp_CBoneGuy_FUN_0041cc40 at 0041cee9
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5f7
 ;   ... and 69 more
 ;
 ; Referenced Globals:

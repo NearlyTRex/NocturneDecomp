@@ -15,10 +15,10 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041688c
 ;   core_beast.cpp_CBeast_process_FUN_004182a0 at 004182b2
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 00418712
-;   core_boneguy.cpp_FUN_0041bf90 at 0041c00a
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c00a
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423a4c
-;   core_bugs.cpp_FUN_004250f0 at 004250fb
-;   core_colonel.cpp_CColonel_FUN_0043fa00 at 0043fa16
+;   core_bugs.cpp_CBugs_process_FUN_004250f0 at 004250fb
+;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fa16
 ;   ... and 28 more
 ;
 ; Referenced Globals:

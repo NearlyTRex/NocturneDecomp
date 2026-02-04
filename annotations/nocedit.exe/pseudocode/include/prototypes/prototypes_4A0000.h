@@ -174,7 +174,7 @@ CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0 (CEmitter *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_showEditorHelp_FUN_004a9350(CEmitter *this_ptr,int *y_pos);
-void __cdecl core_emitter_cpp_CEmitter_writeDependencies_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle);
+void __cdecl core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo *this_ptr,SLaserInfo *copy);
 SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr);

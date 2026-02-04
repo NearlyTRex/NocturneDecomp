@@ -11,7 +11,7 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_005893c0(CSimBox *this_ptr)
 {
   _FILE *in_stack_00000008;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
+  core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
             ((CKeyFramedModelInstance *)this_ptr->unk,in_stack_00000008);
   return;
 }

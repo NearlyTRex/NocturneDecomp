@@ -2,31 +2,26 @@
 // Address: 005e2b30
 // Address Range: [[005e2b30, 005e2c3f]]
 // Convention: __cdecl
-// Signature: float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
+// Signature: float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_weapon_turret.cpp_CTurret_getCurFrame(CTurret* param_1, uint
-   param_2) */
-
-float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
+float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
 
 {
   CKeyFramedModel *pCVar1;
-  CKeyFramedModelInstance *this_ptr;
-  int in_stack_00000004;
+  CKeyFramedModelInstance *this_ptr_00;
   int in_stack_00000008;
   float local_18;
   float local_14;
   
   local_18 = 0.0;
-  switch(*(uint *)(in_stack_00000004 + 0x700)) {
+  switch(this_ptr->state) {
   case 0:
     break;
   case 1:
-    if (0.0 < *(float *)(in_stack_00000004 + 0x768)) {
-      local_18 = 1.0 - *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x768)
-      ;
+    if (0.0 < this_ptr->charge_time) {
+      local_18 = 1.0 - this_ptr->timer / this_ptr->charge_time;
     }
     break;
   case 2:
@@ -34,8 +29,8 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
     local_18 = 1.0;
     break;
   case 4:
-    if (0.0 < *(float *)(in_stack_00000004 + 0x770)) {
-      local_18 = *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x770);
+    if (0.0 < this_ptr->power_down_time) {
+      local_18 = this_ptr->timer / this_ptr->power_down_time;
     }
     break;
   default:
@@ -51,12 +46,12 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)
       local_18 = 1.0;
     }
     if (in_stack_00000008 == 0) {
-      this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x158);
+      this_ptr_00 = &(this_ptr->base).model;
     }
     else {
-      this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x584);
+      this_ptr_00 = &this_ptr->model;
     }
-    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
+    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
     local_14 = (float)(pCVar1->frame_count + -1) * local_18;
   }
   return local_14;

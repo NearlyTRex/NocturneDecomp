@@ -16,7 +16,7 @@
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 at 0059c38b
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 at 0059d52e
 ;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6d8a
-;   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 at 005e578f
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e578f
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820

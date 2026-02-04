@@ -89,7 +89,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
   
   pCVar17 = this_ptr;
   do {
-    if (*(int *)(pCVar17->unk3 + 0x18) == 0) {
+    if (pCVar17->way_point_0 == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\vampboss.cpp";
       g_CurrentLineNumber = 0xcf;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CVampireBoss::process - Need 4 waypoints");
@@ -102,26 +102,26 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
   }
   iVar10 = this_ptr->form;
   if (iVar10 == 2) {
-    core_vampboss_cpp_FUN_005e6ca0();
+    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
-              ((CDeformableModelInstance *)(this_ptr->unk1 + 8));
+              (&this_ptr->model);
     core_cloth_cpp_FUN_0043ab80();
     if ((this_ptr->base).base.hit_points < (float)25) {
-      iVar10 = *(int *)(this_ptr->unk3 + 0x10);
+      iVar10 = *(int *)(this_ptr->unk4 + 0x10);
       (this_ptr->base).base.hit_points = 24.999;
       if ((iVar10 != 2) && (iVar10 != 3)) {
-        core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510();
-        this_ptr->unk3[0x10] = '\x02';
-        this_ptr->unk3[0x11] = '\0';
-        this_ptr->unk3[0x12] = '\0';
-        this_ptr->unk3[0x13] = '\0';
-        this_ptr->unk3[4] = '\0';
-        this_ptr->unk3[5] = '\0';
-        this_ptr->unk3[6] = -0x60;
-        this_ptr->unk3[7] = '@';
+        core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(this_ptr);
+        this_ptr->unk4[0x10] = '\x02';
+        this_ptr->unk4[0x11] = '\0';
+        this_ptr->unk4[0x12] = '\0';
+        this_ptr->unk4[0x13] = '\0';
+        this_ptr->unk4[4] = '\0';
+        this_ptr->unk4[5] = '\0';
+        this_ptr->unk4[6] = -0x60;
+        this_ptr->unk4[7] = '@';
       }
     }
-    if ((*(int *)(this_ptr->unk3 + 0x10) != 2) && (*(int *)(this_ptr->unk3 + 0x10) != 3)) {
+    if ((*(int *)(this_ptr->unk4 + 0x10) != 2) && (*(int *)(this_ptr->unk4 + 0x10) != 3)) {
       pCVar5 = g_HeroActors[g_LocalHeroIndex];
       local_f4 = (this_ptr->base).base.base.location.position.x -
                  (pCVar5->base).base.location.position.x;
@@ -130,10 +130,10 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       local_ec = (this_ptr->base).base.base.location.position.z -
                  (pCVar5->base).base.location.position.z;
       if (SQRT(local_f4 * local_f4 + local_ec * local_ec) < (float)5) {
-        this_ptr->unk3[0x10] = '\x01';
-        this_ptr->unk3[0x11] = '\0';
-        this_ptr->unk3[0x12] = '\0';
-        this_ptr->unk3[0x13] = '\0';
+        this_ptr->unk4[0x10] = '\x01';
+        this_ptr->unk4[0x11] = '\0';
+        this_ptr->unk4[0x12] = '\0';
+        this_ptr->unk4[0x13] = '\0';
         local_18 = (CLocation *)(uint)(local_f0 < (float)10);
         if ((float10)0 != ABS((float10)(int)local_18)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_244);
@@ -145,39 +145,39 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
         }
       }
       if ((float)40 < local_248) {
-        this_ptr->unk3[0] = '\0';
-        this_ptr->unk3[1] = '\0';
-        this_ptr->unk3[2] = -0x60;
-        this_ptr->unk3[3] = '@';
-        this_ptr->unk3[8] = '\0';
-        this_ptr->unk3[9] = '\0';
-        this_ptr->unk3[10] = '\0';
-        this_ptr->unk3[0xb] = '\0';
-        this_ptr->unk3[0x10] = '\0';
-        this_ptr->unk3[0x11] = '\0';
-        this_ptr->unk3[0x12] = '\0';
-        this_ptr->unk3[0x13] = '\0';
+        this_ptr->unk4[0] = '\0';
+        this_ptr->unk4[1] = '\0';
+        this_ptr->unk4[2] = -0x60;
+        this_ptr->unk4[3] = '@';
+        this_ptr->unk4[8] = '\0';
+        this_ptr->unk4[9] = '\0';
+        this_ptr->unk4[10] = '\0';
+        this_ptr->unk4[0xb] = '\0';
+        this_ptr->unk4[0x10] = '\0';
+        this_ptr->unk4[0x11] = '\0';
+        this_ptr->unk4[0x12] = '\0';
+        this_ptr->unk4[0x13] = '\0';
       }
-      if ((*(int *)(this_ptr->unk3 + 0x10) == 0) &&
-         (fVar4 = *(float *)this_ptr->unk3 - delta_time, *(float *)this_ptr->unk3 = fVar4,
+      if ((*(int *)(this_ptr->unk4 + 0x10) == 0) &&
+         (fVar4 = *(float *)this_ptr->unk4 - delta_time, *(float *)this_ptr->unk4 = fVar4,
          fVar4 < 0.0)) {
-        this_ptr->unk3[0x10] = '\x01';
-        this_ptr->unk3[0x11] = '\0';
-        this_ptr->unk3[0x12] = '\0';
-        this_ptr->unk3[0x13] = '\0';
-        this_ptr->unk3[0] = '\0';
-        this_ptr->unk3[1] = '\0';
-        this_ptr->unk3[2] = '\0';
-        this_ptr->unk3[3] = '\0';
+        this_ptr->unk4[0x10] = '\x01';
+        this_ptr->unk4[0x11] = '\0';
+        this_ptr->unk4[0x12] = '\0';
+        this_ptr->unk4[0x13] = '\0';
+        this_ptr->unk4[0] = '\0';
+        this_ptr->unk4[1] = '\0';
+        this_ptr->unk4[2] = '\0';
+        this_ptr->unk4[3] = '\0';
       }
       pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                          ((CMotionController *)(this_ptr->unk1 + 8));
-      if ((((pSVar11->state_index == 0) && (*(int *)(this_ptr->unk3 + 0x10) == 0)) &&
-          (local_248 < (float)24)) && (*(int *)(this_ptr->unk3 + 8) == 0)) {
-        this_ptr->unk3[8] = '\x01';
-        this_ptr->unk3[9] = '\0';
-        this_ptr->unk3[10] = '\0';
-        this_ptr->unk3[0xb] = '\0';
+                          (&(this_ptr->model).motion_controller);
+      if ((((pSVar11->state_index == 0) && (*(int *)(this_ptr->unk4 + 0x10) == 0)) &&
+          (local_248 < (float)24)) && (*(int *)(this_ptr->unk4 + 8) == 0)) {
+        this_ptr->unk4[8] = '\x01';
+        this_ptr->unk4[9] = '\0';
+        this_ptr->unk4[10] = '\0';
+        this_ptr->unk4[0xb] = '\0';
         iVar10 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
         if (iVar10 == 0) {
           iVar10 = 2;
@@ -186,7 +186,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
           iVar10 = 1;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  ((CMotionController *)(this_ptr->unk1 + 8),iVar10,1);
+                  (&(this_ptr->model).motion_controller,iVar10,1);
       }
     }
     pCVar5 = g_HeroActors[g_LocalHeroIndex];
@@ -196,42 +196,42 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       fStack_ac = (pCVar5->base).base.location.position.y;
       fStack_a8 = (pCVar5->base).base.location.position.z;
     }
-    if (*(int *)(this_ptr->unk3 + 0x10) == 2) {
-      *(float *)(this_ptr->unk3 + 4) = *(float *)(this_ptr->unk3 + 4) - delta_time;
-      iVar10 = *(int *)((int)this_ptr + (4 - *(int *)(this_ptr->unk3 + 0x14)) * 4 + 0xce908);
+    if (*(int *)(this_ptr->unk4 + 0x10) == 2) {
+      *(float *)(this_ptr->unk4 + 4) = *(float *)(this_ptr->unk4 + 4) - delta_time;
+      iVar10 = *(int *)((int)this_ptr + (4 - *(int *)(this_ptr->unk4 + 0x14)) * 4 + 0xce908);
       if (&local_b0 != (float *)(iVar10 + 0x20)) {
         local_b0 = *(float *)(iVar10 + 0x20);
         fStack_ac = *(float *)(iVar10 + 0x24);
         fStack_a8 = *(float *)(iVar10 + 0x28);
       }
-      if ((*(float *)(this_ptr->unk3 + 4) <= 0.0) ||
+      if ((*(float *)(this_ptr->unk4 + 4) <= 0.0) ||
          (fVar4 = local_b0 - (this_ptr->base).base.base.location.position.x,
          fVar6 = fStack_a8 - (this_ptr->base).base.base.location.position.z,
          SQRT(fVar6 * fVar6 + fVar4 * fVar4) < (float)6)) {
-        this_ptr->unk3[4] = '\0';
-        this_ptr->unk3[5] = '\0';
-        this_ptr->unk3[6] = -0x60;
-        this_ptr->unk3[7] = '@';
-        this_ptr->unk3[0x10] = '\x03';
-        this_ptr->unk3[0x11] = '\0';
-        this_ptr->unk3[0x12] = '\0';
-        this_ptr->unk3[0x13] = '\0';
+        this_ptr->unk4[4] = '\0';
+        this_ptr->unk4[5] = '\0';
+        this_ptr->unk4[6] = -0x60;
+        this_ptr->unk4[7] = '@';
+        this_ptr->unk4[0x10] = '\x03';
+        this_ptr->unk4[0x11] = '\0';
+        this_ptr->unk4[0x12] = '\0';
+        this_ptr->unk4[0x13] = '\0';
       }
     }
-    else if (*(int *)(this_ptr->unk3 + 0x10) == 3) {
-      iVar10 = *(int *)(this_ptr->unk3 + *(int *)(this_ptr->unk3 + 0x14) * 4 + 0x18);
+    else if (*(int *)(this_ptr->unk4 + 0x10) == 3) {
+      iVar10 = *(int *)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x14) * 4 + 0x18);
       if (&local_b0 != (float *)(iVar10 + 0x20)) {
         local_b0 = *(float *)(iVar10 + 0x20);
         fStack_ac = *(float *)(iVar10 + 0x24);
         fStack_a8 = *(float *)(iVar10 + 0x28);
       }
-      fVar4 = *(float *)(this_ptr->unk3 + 4) - delta_time;
-      *(float *)(this_ptr->unk3 + 4) = fVar4;
+      fVar4 = *(float *)(this_ptr->unk4 + 4) - delta_time;
+      *(float *)(this_ptr->unk4 + 4) = fVar4;
       if ((fVar4 <= 0.0) ||
          (fVar4 = local_b0 - (this_ptr->base).base.base.location.position.x,
          fVar6 = fStack_a8 - (this_ptr->base).base.base.location.position.z,
          SQRT(fVar6 * fVar6 + fVar4 * fVar4) < (float)4)) {
-        core_vampboss_cpp_SomethingVoicuHumanWav_FUN_005e74c0();
+        core_vampboss_cpp_CVampireBoss_FUN_005e74c0(this_ptr);
       }
     }
     fStack_ac = fStack_ac + 4.0f;
@@ -248,7 +248,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     local_44 = 20.0;
     local_40 = (float)extraout_ST1;
     local_38 = (CLocation *)(float)-fVar18;
-    if (*(int *)(this_ptr->unk3 + 0x10) == 1) {
+    if (*(int *)(this_ptr->unk4 + 0x10) == 1) {
       local_40 = -local_40;
       local_38 = (CLocation *)-(float)local_38;
     }
@@ -270,7 +270,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     local_24 = 0.3926991;
     (this_ptr->base).base.base.orient.pitch =
          (float)local_38 * delta_time * local_68 + (this_ptr->base).base.base.orient.pitch;
-    if ((fVar4 < (float)25) && (*(int *)(this_ptr->unk3 + 0x10) == 0)) {
+    if ((fVar4 < (float)25) && (*(int *)(this_ptr->unk4 + 0x10) == 0)) {
       local_24 = 1.5707964;
       local_58 = -1.5707964;
     }
@@ -302,7 +302,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     local_18 = local_38;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     pCVar12 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
-                        ((CDeformableModelInstance *)(this_ptr->unk1 + 8),&local_19c);
+                        (&this_ptr->model,&local_19c);
     pCVar2 = (CBoundingBox3D *)((this_ptr->base).base.unk2 + 0x58);
     if (pCVar2 != pCVar12) {
       (pCVar2->min).x = (pCVar12->min).x;
@@ -325,9 +325,9 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       this_ptr->form = 2;
       core_event_cpp_CEventList_FUN_004aabe0(pCVar8);
     }
-    core_vampboss_cpp_FUN_005e6ca0();
+    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
-              ((CDeformableModelInstance *)(this_ptr->unk1 + 8));
+              (&this_ptr->model);
     core_cloth_cpp_FUN_0043ab80();
     pCVar3 = &(this_ptr->base).base.model;
     local_20 = delta_time;
@@ -353,7 +353,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       *(float *)((this_ptr->base).base.unk2 + 0x6c) = (pCVar12->max).z;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
-              ((CDeformableModelInstance *)(this_ptr->unk1 + 8),&local_184);
+              (&this_ptr->model,&local_184);
     pCVar2 = (CBoundingBox3D *)((this_ptr->base).base.unk2 + 0x58);
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,&local_184.min);
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,&local_184.max);
@@ -379,9 +379,9 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       this_ptr->morph_t = 0.0;
     }
     (this_ptr->base).base.base.location.position.y = fVar4;
-    core_vampboss_cpp_FUN_005e6ca0();
+    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
-              ((CDeformableModelInstance *)(this_ptr->unk1 + 8));
+              (&this_ptr->model);
     core_cloth_cpp_FUN_0043ab80();
     pCVar3 = &(this_ptr->base).base.model;
     local_1c = delta_time;
@@ -407,7 +407,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       *(float *)((this_ptr->base).base.unk2 + 0x6c) = (pCVar12->max).z;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
-              ((CDeformableModelInstance *)(this_ptr->unk1 + 8),&local_1cc);
+              (&this_ptr->model,&local_1cc);
     pCVar2 = (CBoundingBox3D *)((this_ptr->base).base.unk2 + 0x58);
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,&local_1cc.min);
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,&local_1cc.max);
@@ -421,19 +421,19 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
       if (uVar13 == 1) {
         core_vampboss_cpp_CVampireBoss_FUN_005e7390(this_ptr);
 LAB_005e648e:
-        this_ptr->unk3[0] = '\0';
-        this_ptr->unk3[1] = '\0';
-        this_ptr->unk3[2] = -0x80;
-        this_ptr->unk3[3] = '?';
+        this_ptr->unk4[0] = '\0';
+        this_ptr->unk4[1] = '\0';
+        this_ptr->unk4[2] = -0x80;
+        this_ptr->unk4[3] = '?';
       }
     }
     else {
       if (uVar13 < 3) {
-        core_vampboss_cpp_VoicuSummonWavFile2_FUN_005e7410();
+        core_vampboss_cpp_CVampireBoss_FUN_005e7410(this_ptr);
         goto LAB_005e648e;
       }
       if (uVar13 < 4) {
-        core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320();
+        core_vampboss_cpp_CVampireBoss_FUN_005e7320(this_ptr);
         goto LAB_005e648e;
       }
       if (uVar13 == 0x29a) {
@@ -488,7 +488,7 @@ LAB_005e648e:
     if (pCVar9->letterbox_mode == 0) {
       *(float *)((this_ptr->base).base.unk1 + 0x28) = 10.0f * delta_time;
       core_charactr_cpp_CCharacter_FUN_0042c5f0((CCharacter *)this_ptr);
-      switch(*(uint *)(this_ptr->unk3 + 0x28)) {
+      switch(this_ptr->unk5) {
       default:
         fVar4 = ((this_ptr->base).base.max_hit_points * delta_time) / 120.0f +
                 (this_ptr->base).base.hit_points;
@@ -518,15 +518,15 @@ LAB_005e648e:
           if ((local_28 <= local_3c) && (local_4c = local_3c, local_48 < local_3c)) {
             local_4c = local_48;
           }
-          fVar4 = *(float *)this_ptr->unk3 - delta_time;
+          fVar4 = *(float *)this_ptr->unk4 - delta_time;
           *(float *)((this_ptr->base).base.unk1 + 0xc) = local_4c;
-          *(float *)this_ptr->unk3 = fVar4;
+          *(float *)this_ptr->unk4 = fVar4;
           local_18 = (CLocation *)local_3c;
           if (fVar4 <= 0.0) {
-            this_ptr->unk3[0] = '\0';
-            this_ptr->unk3[1] = '\0';
-            this_ptr->unk3[2] = '\0';
-            this_ptr->unk3[3] = '\0';
+            this_ptr->unk4[0] = '\0';
+            this_ptr->unk4[1] = '\0';
+            this_ptr->unk4[2] = '\0';
+            this_ptr->unk4[3] = '\0';
             iVar15 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
             pCVar3 = &(this_ptr->base).base.model;
             if (iVar15 == 0) {
@@ -544,22 +544,22 @@ LAB_005e648e:
           }
         }
         else {
-          core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510();
+          core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(this_ptr);
         }
         break;
       case 1:
       case 2:
-        this_ptr->unk3[0] = '\0';
-        this_ptr->unk3[1] = '\0';
-        this_ptr->unk3[2] = '@';
-        this_ptr->unk3[3] = '@';
+        this_ptr->unk4[0] = '\0';
+        this_ptr->unk4[1] = '\0';
+        this_ptr->unk4[2] = '@';
+        this_ptr->unk4[3] = '@';
       }
     }
     else {
-      this_ptr->unk3[0] = '\0';
-      this_ptr->unk3[1] = '\0';
-      this_ptr->unk3[2] = '@';
-      this_ptr->unk3[3] = '@';
+      this_ptr->unk4[0] = '\0';
+      this_ptr->unk4[1] = '\0';
+      this_ptr->unk4[2] = '@';
+      this_ptr->unk4[3] = '@';
       iVar15 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                          (pCVar8,"morphToBat");
       if (iVar15 == 0) {
@@ -590,7 +590,7 @@ LAB_005e648e:
       }
       else {
 LAB_005e6560:
-        core_vampboss_cpp_CallToCountVoicuBatWav_FUN_005e7480();
+        core_vampboss_cpp_CVampireBoss_FUN_005e7480(this_ptr);
       }
     }
     break;

@@ -12,7 +12,7 @@
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a34
 ;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bbd5
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de24d
-;   core_turret.cpp_FUN_005e3750 at 005e3bdf
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3bdf
 ;
 ; Referenced Globals:
 ;   CEventList* g_CEventListPtr = 02d05310

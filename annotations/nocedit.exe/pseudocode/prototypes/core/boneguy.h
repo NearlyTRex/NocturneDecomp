@@ -35,29 +35,29 @@ float * __cdecl FUN_0041ba10(void);
 // Address: 0041bbc0
 CBoneGuy * __cdecl CBoneGuy::ctor(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90
+// Original: core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90
 // Address: 0041bd90
-void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::setup(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041bf90
+// Original: core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
 // Address: 0041bf90
-void __cdecl FUN_0041bf90(void);
+void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 
-// Original: core_boneguy.cpp_FUN_0041ca40
+// Original: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
 // Address: 0041ca40
-void __cdecl FUN_0041ca40(void);
+void __cdecl CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041cc40
+// Original: core_boneguy.cpp_CBoneGuy_FUN_0041cc40
 // Address: 0041cc40
-int __cdecl FUN_0041cc40(void);
+int __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041d180
+// Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180
 // Address: 0041d180
-void __cdecl FUN_0041d180(void);
+void __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041d1b0
+// Original: core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0
 // Address: 0041d1b0
-int __cdecl FUN_0041d1b0(void);
+int __cdecl CBoneGuy::renderTransparent(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
 // Address: 0041d270
@@ -75,9 +75,9 @@ void __cdecl CBoneGuy::processDamage(CBoneGuy *this_ptr,SDamageInfo *damage_info
 // Address: 0041d550
 int __cdecl CBoneGuy::getTargetPoints(CBoneGuy *this_ptr,CVector3f *out_points_array);
 
-// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d680
+// Original: core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680
 // Address: 0041d680
-void __cdecl CBoneGuy(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_FUN_0041d8a0
 // Address: 0041d8a0
@@ -95,9 +95,9 @@ void __cdecl CBoneGuy::getPropertyList(CBoneGuy *this_ptr,CActorPropertyList *pr
 // Address: 0041da00
 void __cdecl CBoneGuy(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_CBoneGuy_writeDependencies_FUN_0041da10
+// Original: core_boneguy.cpp_CBoneGuy_addFilesToExtract_FUN_0041da10
 // Address: 0041da10
-void __cdecl CBoneGuy::writeDependencies(CBoneGuy *this_ptr,_FILE *file_handle);
+void __cdecl CBoneGuy::addFilesToExtract(CBoneGuy *this_ptr,_FILE *file_handle);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40
 // Address: 0041da40

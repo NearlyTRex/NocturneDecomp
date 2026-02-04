@@ -170,7 +170,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004be8a0(CFilmReel *this_pt
 int __cdecl core_filmreel_cpp_CFilmReel_hasCollision_FUN_004be8f0 (CFilmReel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004be910(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960 (CFilmReel *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_filmreel_cpp_CFilmReel_writeDependencies_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle);
+void __cdecl core_filmreel_cpp_CFilmReel_addFilesToExtract_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle);
 CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr);

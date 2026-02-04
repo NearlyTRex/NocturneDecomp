@@ -9,7 +9,7 @@
 ;
 ; XREF[51]:
 ;   core_ammo.cpp_CAmmo_FUN_00410fd0 at 00411087
-;   core_ammo.cpp_CAmmo_writeDependencies_FUN_004113e0 at 00411422
+;   core_ammo.cpp_CAmmo_addFilesToExtract_FUN_004113e0 at 00411422
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 at 0043e0f0
 ;   core_curtain.cpp_FUN_0044a920 at 0044a990
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 at 0044f5ec

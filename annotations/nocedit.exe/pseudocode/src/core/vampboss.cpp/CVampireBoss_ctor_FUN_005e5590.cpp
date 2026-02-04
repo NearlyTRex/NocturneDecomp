@@ -9,12 +9,11 @@
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampireBoss *this_ptr)
 
 {
-  CEnemy *pCVar1;
+  CVampireBoss *pCVar1;
   int extraout_EAX;
   
-  pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-            ((CDeformableModelInstance *)(pCVar1[1].base.base.actor_name + 8));
+  pCVar1 = (CVampireBoss *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar1->model);
   core_cloth_cpp_FUN_00438ba0();
   core_cloth_cpp_FUN_00438ba0();
   core_cloth_cpp_FUN_00438ba0();

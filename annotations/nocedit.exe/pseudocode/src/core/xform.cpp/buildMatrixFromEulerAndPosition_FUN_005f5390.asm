@@ -16,7 +16,7 @@
 ;
 ; XREF[17]:
 ;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a87b
-;   core_bugs.cpp_FUN_00425fe0 at 004260e0
+;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004260e0
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cec0
 ;   core_cloth.cpp_OrientBoneCheck_FUN_0043a110 at 0043a20a
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e27f

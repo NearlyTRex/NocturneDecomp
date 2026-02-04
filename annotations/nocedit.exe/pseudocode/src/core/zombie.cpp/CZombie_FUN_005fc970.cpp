@@ -2,30 +2,28 @@
 // Address: 005fc970
 // Address Range: [[005fc970, 005fc9d0]]
 // Convention: __cdecl
-// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(void)
+// Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(CZombie *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fc970(CZombie* param_1, uint
-   param_2, uint param_3) */
-
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(void)
+int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(CZombie *this_ptr)
 
 {
   int iVar1;
-  int in_stack_00000004;
-  uint in_stack_00000008;
+  CZombie *pCVar2;
+  CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
   
   if (in_stack_0000000c == 1) {
-    if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {
-      iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x108))();
-      if (iVar1 == in_stack_00000004) {
-        (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x104))();
+    iVar1 = *(int *)((this_ptr->base).unk2 + 4);
+    if (iVar1 != 0) {
+      pCVar2 = (CZombie *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x108))();
+      if (pCVar2 == this_ptr) {
+        (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x104))();
       }
     }
-    *(uint *)(in_stack_00000004 + 0x2598) = in_stack_00000008;
-    *(uint *)(in_stack_00000004 + 0x259c) = 1;
+    (this_ptr->base).base.grabbed_by = in_stack_00000008;
+    (this_ptr->base).base.grabbed_type = 1;
     return 1;
   }
   return 0;

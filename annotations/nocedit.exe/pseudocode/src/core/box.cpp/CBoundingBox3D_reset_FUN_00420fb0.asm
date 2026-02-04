@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 at 005a16ee
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 at 0059da11
 ;   core_spike.cpp_FUN_005b8950 at 005b89f7
-;   core_turret.cpp_FUN_005e2d50 at 005e2d90
+;   core_turret.cpp_CTurret_FUN_005e2d50 at 005e2d90
 ;
 ; *****************************************************************************
 

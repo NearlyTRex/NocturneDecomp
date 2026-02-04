@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_bugs.cpp_FUN_00427b70(CCharacter* param_1) */
-
 int __cdecl core_bugs_cpp_FUN_00427b70(void)
 
 {

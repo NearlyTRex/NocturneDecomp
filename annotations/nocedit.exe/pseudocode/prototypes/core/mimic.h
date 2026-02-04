@@ -91,9 +91,9 @@ void __cdecl CMimic::getPropertyList(CMimic *this_ptr,CActorPropertyList *proper
 // Address: 00520da0
 void __cdecl CMimic::onActorDeleted(CMimic *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_mimic.cpp_CMimic_writeDependencies_FUN_00520dd0
+// Original: core_mimic.cpp_CMimic_addFilesToExtract_FUN_00520dd0
 // Address: 00520dd0
-void __cdecl CMimic::writeDependencies(CMimic *this_ptr,_FILE *file_handle);
+void __cdecl CMimic::addFilesToExtract(CMimic *this_ptr,_FILE *file_handle);
 
 // Original: core_mimic.cpp_FUN_00520e00
 // Address: 00520e00

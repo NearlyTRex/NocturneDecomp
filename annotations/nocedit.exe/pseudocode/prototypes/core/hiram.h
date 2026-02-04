@@ -39,6 +39,6 @@ void __cdecl CHiram::archive(CHiram *this_ptr);
 // Address: 004f46a0
 void __cdecl CHiram::getPropertyList(CHiram *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_hiram.cpp_CHiram_writeDependencies_FUN_004f46e0
+// Original: core_hiram.cpp_CHiram_addFilesToExtract_FUN_004f46e0
 // Address: 004f46e0
-void __cdecl CHiram::writeDependencies(CHiram *this_ptr,_FILE *file_handle);
+void __cdecl CHiram::addFilesToExtract(CHiram *this_ptr,_FILE *file_handle);

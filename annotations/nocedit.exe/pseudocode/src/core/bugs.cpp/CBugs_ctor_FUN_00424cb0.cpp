@@ -17,7 +17,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CBugs *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  pvVar2 = __arrinit(pCVar2->unk2,400,&g_SBugTypeInfo);
+  pvVar2 = __arrinit(pCVar2->bugs,400,&g_SBugTypeInfo);
   this_ptr_00 = __arrinit
                           ((void *)((int)pvVar2 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
   this_ptr_00[-0xc3].part_visibility_flags[0] = (int)&g_CBugsVTable;

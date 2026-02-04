@@ -8,39 +8,25 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 63,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 28,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
     {
       "addr": "005fb530",
       "from_addr": "005fb933",
-      "name": "core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530",
+      "name": "core_zombie.cpp_CZombie_FUN_005fb530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_zombie.cpp_CZombie_FUN_005fca10",
-    "signature": "void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(void)"
+    "signature": "void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(CZombie *this_ptr)"
   },
   "function_calls": [
     {
@@ -118,34 +104,20 @@
     "pcode_op_count": 169
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "this_ptr_00 = (CMotionController *)(in_stack_00000004 + 0x158);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0xbf44) == 0) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

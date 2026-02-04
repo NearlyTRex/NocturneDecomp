@@ -25,9 +25,9 @@ core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80
                      (&data_ptr->motion_controller);
   if (pSVar1->state_index == 0xe) {
     core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
-              (property_list,"RiseFromGraveCondition",this_ptr->unk1 + 0x28);
+              (property_list,"RiseFromGraveCondition",this_ptr->rise_from_grave_condition);
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-              (property_list,"Grave actor",this_ptr->unk1 + 0x20,0,"CGrave",
+              (property_list,"Grave actor",&this_ptr->grave_actor,0,"CGrave",
                (CDemonActor_CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330

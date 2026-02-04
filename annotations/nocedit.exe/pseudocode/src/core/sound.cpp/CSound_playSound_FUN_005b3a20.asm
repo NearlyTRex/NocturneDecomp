@@ -16,7 +16,7 @@
 ;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0056007a
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2ec5
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0 at 005b3a02
-;   core_vampboss.cpp_FUN_005e7030 at 005e7246
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e7246
 ;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eee9b
 ;
 ; Called Functions:

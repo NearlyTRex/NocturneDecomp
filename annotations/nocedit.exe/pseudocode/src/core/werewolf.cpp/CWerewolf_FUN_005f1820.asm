@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_FUN_0042b0e0
-;   core_werewolf.cpp_FUN_005f1230
+;   core_werewolf.cpp_CWerewolf_FUN_005f1230
 ;   core_xform.cpp_getTranslation_FUN_005f6110
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -106,13 +106,13 @@ section .text
     ADD ESP,0xc                         ; 005f18f7
     PUSH 0x3f96b44                      ; 005f18fa | FLOAT_03f96b44
     PUSH EBX                            ; 005f18ff
-    CALL core_werewolf.cpp_FUN_005f1230 ; 005f1900
-        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f1230()
+    CALL core_werewolf.cpp_CWerewolf_FUN_005f1230 ; 005f1900
+        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_FUN_005f1230(CWerewolf * this_ptr)
     ADD ESP,0x8                         ; 005f1905
     PUSH 0x3f96b50                      ; 005f1908 | FLOAT_03f96b50
     PUSH EBX                            ; 005f190d
-    CALL core_werewolf.cpp_FUN_005f1230 ; 005f190e
-        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_FUN_005f1230()
+    CALL core_werewolf.cpp_CWerewolf_FUN_005f1230 ; 005f190e
+        ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_FUN_005f1230(CWerewolf * this_ptr)
     ADD ESP,0x8                         ; 005f1913
     PUSH EBX                            ; 005f1916
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005f1917

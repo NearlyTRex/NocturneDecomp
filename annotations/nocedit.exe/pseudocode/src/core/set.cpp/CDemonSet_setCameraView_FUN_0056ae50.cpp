@@ -273,7 +273,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     local_3c.y = pCVar4->y;
     local_3c.z = pCVar4->z;
   }
-  core_weather_cpp_CWeather_FUN_005ef940();
+  core_weather_cpp_CWeather_FUN_005ef940(g_CWeatherPtr);
   iVar5 = 0;
   if (0 < (int)this_ptr->actor_list_ptr) {
     do {

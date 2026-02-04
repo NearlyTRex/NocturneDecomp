@@ -14,7 +14,7 @@
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00506231
 ;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bc47
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de2b6
-;   core_turret.cpp_FUN_005e3750 at 005e3bc4
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3bc4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_received_g_damage_hitp_006557a7

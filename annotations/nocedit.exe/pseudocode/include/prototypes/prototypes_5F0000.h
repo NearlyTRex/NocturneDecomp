@@ -15,6 +15,7 @@
 #include "system/wingdi.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
+#include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3f.h"
@@ -25,6 +26,7 @@
 #include "types/classes/CWinFont.h"
 #include "types/classes/CZombie.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SRenderVertex.h"
 
@@ -32,20 +34,20 @@
 // FUNCTION PROTOTYPES - Range 0x5F0000
 // =============================================================================
 
-void __cdecl core_werewolf_cpp_FUN_005f11a0(void);
-void __cdecl core_werewolf_cpp_FUN_005f11e0(void);
-void __cdecl core_werewolf_cpp_FUN_005f1230(void);
+void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11a0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11e0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_ptr);
-void __cdecl core_werewolf_cpp_FUN_005f1ac0(void);
-int __cdecl core_werewolf_cpp_FUN_005f1db0(void);
-int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1df0(CWerewolf *this_ptr);
-void __cdecl core_werewolf_cpp_FUN_005f1e40(void);
-void __cdecl core_werewolf_cpp_FUN_005f2010(void);
-int __cdecl core_werewolf_cpp_FUN_005f2070(void);
-void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f20d0(CWerewolf *this_ptr);
-void __cdecl core_werewolf_cpp_FUN_005f21e0(void);
-void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f21f0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_werewolf_cpp_CWerewolf_isDamageable_FUN_005f1db0(CWerewolf *this_ptr);
+int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0 (CWerewolf *this_ptr,CVector3f *out_points_array);
+void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010 (CWerewolf *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_werewolf_cpp_CWerewolf_propertyActionCallback_FUN_005f2070 (CWerewolf *this_ptr,CActorProperty *property);
+void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0 (CWerewolf *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f21e0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_addFilesToExtract_FUN_005f21f0(CWerewolf *this_ptr,_FILE *file_handle);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0 (CWinFont *this_ptr,char *font_name,int font_height,int font_width);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint flags);
@@ -159,32 +161,32 @@ void __cdecl core_zombie_cpp_staticInit_FUN_005f8c90(void);
 float __cdecl core_zombie_cpp_FUN_005f8cc0(void);
 float * __cdecl core_zombie_cpp_FUN_005f8d30(void);
 CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005f8e50(void);
+int __cdecl core_zombie_cpp_FUN_005f8e50(void);
 CZombie * __cdecl core_zombie_cpp_factoryFunc_FUN_005f8fa0(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005f8fd0(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr);
-void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fb1f0(void);
-int __cdecl core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fbd00(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(void);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fbe20(CZombie *this_ptr);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fbd00(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderOpaque_FUN_005fbe20(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc120(void);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(void);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fc4f0(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc720(CZombie *this_ptr);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc920(void);
-bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(void);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc9e0(CZombie *this_ptr);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(void);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fc120(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f *out_points_array);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fc920(CZombie *this_ptr);
+bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80 (CZombie *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle);
+void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_addFilesToExtract_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,uint flags);
 int __cdecl core_zombie_cpp_FUN_005fcd10(void);
 void __cdecl core_zombie_cpp_FUN_005fcd20(void);

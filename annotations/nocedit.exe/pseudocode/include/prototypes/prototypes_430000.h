@@ -31,12 +31,12 @@
 // =============================================================================
 
 void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float delta_time);
-int __cdecl core_chain_cpp_CChain_FUN_004308f0(CChain *this_ptr);
-CBoundingBox3D * __cdecl core_chain_cpp_CChain_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_ptr);
+CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_chain_cpp_CChain_archive_FUN_00430fe0(CChain *this_ptr);
 int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_chain_cpp_CChain_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_chain_cpp_CChain_writeDependencies_FUN_00431250(CChain *this_ptr,_FILE *file_handle);
+void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120 (CChain *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_chain_cpp_CChain_addFilesToExtract_FUN_00431250(CChain *this_ptr,_FILE *file_handle);
 int __cdecl core_chain_cpp_FUN_00431330(void);
 int __cdecl core_chain_cpp_FUN_00431340(void);
 int __cdecl core_chain_cpp_FUN_00431350(void);
@@ -224,9 +224,9 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZW
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint flags);
 void __cdecl core_colonel_cpp_staticInit_FUN_0043f770(void);
 CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void);
-CDemonActorType * __cdecl core_colonel_cpp_FUN_0043f7d0(void);
+CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_0043f7d0(CColonel *this_ptr);
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_FUN_0043f850(void);
-void __cdecl core_colonel_cpp_CColonel_FUN_0043fa00(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_FUN_0043ff20(void);
+void __cdecl core_colonel_cpp_CColonel_setup_FUN_0043f850(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,float delta_time);
+void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr);
 

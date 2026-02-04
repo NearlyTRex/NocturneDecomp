@@ -14,9 +14,9 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416ef6
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 00418901
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419d8e
-;   core_boneguy.cpp_FUN_0041bf90 at 0041bfb3
-;   core_bugs.cpp_FUN_004250f0 at 00425149
-;   core_conveyor.cpp_FUN_00441df0 at 00441e09
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041bfb3
+;   core_bugs.cpp_CBugs_process_FUN_004250f0 at 00425149
+;   core_conveyor.cpp_CConveyor_process_FUN_00441df0 at 00441e09
 ;   core_curtain.cpp_FUN_0044a920 at 0044a96e
 ;   ... and 38 more
 ;

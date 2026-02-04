@@ -10,7 +10,7 @@
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a6c
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00506200
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de285
-;   core_turret.cpp_FUN_005e3750 at 005e3b93
+;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3b93
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20

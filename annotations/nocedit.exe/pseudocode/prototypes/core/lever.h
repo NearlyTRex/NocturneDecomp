@@ -79,9 +79,9 @@ int __cdecl CLever::propertyActionStateCallback(CLever *this_ptr,CActorProperty 
 // Address: 00505240
 void __cdecl CLever::getPropertyList(CLever *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_lever.cpp_CLever_writeDependencies_FUN_00505370
+// Original: core_lever.cpp_CLever_addFilesToExtract_FUN_00505370
 // Address: 00505370
-void __cdecl CLever::writeDependencies(CLever *this_ptr,_FILE *file_handle);
+void __cdecl CLever::addFilesToExtract(CLever *this_ptr,_FILE *file_handle);
 
 // Original: core_lever.cpp_CLever_showEditorHelp_FUN_00505390
 // Address: 00505390

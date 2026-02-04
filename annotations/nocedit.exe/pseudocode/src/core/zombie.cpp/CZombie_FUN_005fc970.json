@@ -3,20 +3,20 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 22,
+        "column": 31,
+        "line": 20,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
-        "column": 26,
-        "line": 22,
+        "column": 38,
+        "line": 20,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 24,
+        "line": 22,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -30,62 +30,31 @@
       },
       {
         "category": "other",
-        "column": 10,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 24,
+        "column": 41,
+        "line": 20,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 28,
+        "line": 22,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 186,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 15,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 58
+    "total_lines": 57
   },
   "cross_references": [],
   "function": {
@@ -98,7 +67,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_zombie.cpp_CZombie_FUN_005fc970",
-    "signature": "int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(void)"
+    "signature": "int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(CZombie *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -106,8 +75,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.413793103448276,
@@ -136,117 +105,62 @@
     "pcode_op_count": 128
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
+      "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 8,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 1) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x108))();",
-      "type": "stack_param"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "text": "pCVar2 = (CZombie *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x108))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 15,
       "match": "code *",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x108))();",
+      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "if (iVar1 == in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x104))();",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x104))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x2598) = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000004 + 0x2598) = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x259c) = 1;",
+      "text": "(this_ptr->base).base.grabbed_by = in_stack_00000008;",
       "type": "stack_param"
     }
   ],

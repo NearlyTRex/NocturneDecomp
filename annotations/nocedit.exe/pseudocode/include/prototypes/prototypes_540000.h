@@ -135,7 +135,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00546190(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270 (CPassenger *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_passngr_cpp_CPassenger_writeDependencies_FUN_005462f0(CPassenger *this_ptr,_FILE *file_handle);
+void __cdecl core_passngr_cpp_CPassenger_addFilesToExtract_FUN_005462f0(CPassenger *this_ptr,_FILE *file_handle);
 void __cdecl core_path_cpp_FUN_00546310(void);
 bool __cdecl core_path_cpp_FUN_00546330(void);
 void __cdecl core_path_cpp_FUN_00546350(void);
@@ -183,7 +183,7 @@ void __cdecl core_pendulum_cpp_CPendulum_propertyDisplayCallback_FUN_0054a5a0 (C
 int __cdecl core_pendulum_cpp_CPendulum_propertyActionCallback_FUN_0054a5e0 (CPendulum *this_ptr,CActorProperty *property);
 void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0 (CPendulum *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_pendulum_cpp_CPendulum_processInEditor_FUN_0054a790(CPendulum *this_ptr);
-void __cdecl core_pendulum_cpp_CPendulum_writeDependencies_FUN_0054a7b0(CPendulum *this_ptr,_FILE *file_handle);
+void __cdecl core_pendulum_cpp_CPendulum_addFilesToExtract_FUN_0054a7b0(CPendulum *this_ptr,_FILE *file_handle);
 CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_0054a7d0(CPendulum *this_ptr,uint flags);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap *this_ptr);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840 (CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color, int stride,int apply_palette_flag);
@@ -268,7 +268,7 @@ int __cdecl core_platfrm_cpp_CPlatform_propertyActionStateCallback_FUN_0054e760(
 void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0 (CPlatform *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_showEditorHelp_FUN_0054f060(CPlatform *this_ptr,int *y_pos);
-void __cdecl core_platfrm_cpp_CPlatform_writeDependencies_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle);
+void __cdecl core_platfrm_cpp_CPlatform_addFilesToExtract_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(uint current_crc,uchar data_byte);
 uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_0054f3a0(uchar *data_buffer,uint byte_count,uint initial_crc);
 uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(_FILE *file_stream,uint total_bytes);

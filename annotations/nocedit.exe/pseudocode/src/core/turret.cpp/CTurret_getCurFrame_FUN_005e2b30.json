@@ -11,97 +11,42 @@
       },
       {
         "category": "other",
-        "column": 11,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
         "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 42,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 44,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 54,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 57,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 192,
+    "complexity_score": 73,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 52,
-    "suspect_count": 13,
+    "pseudocode_lines": 48,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 160
+    "total_lines": 156
   },
   "cross_references": [
     {
-      "addr": "005e2320",
-      "from_addr": "005e2357",
-      "name": "core_turret.cpp_CTurret_FUN_005e2320",
+      "addr": "005e2910",
+      "from_addr": "005e2929",
+      "name": "core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005e2910",
-      "from_addr": "005e2929",
-      "name": "core_turret.cpp_CTurret_FUN_005e2910",
+      "addr": "005e2320",
+      "from_addr": "005e2357",
+      "name": "core_turret.cpp_CTurret_renderOpaque_FUN_005e2320",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -116,7 +61,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30",
-    "signature": "float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(void)"
+    "signature": "float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)"
   },
   "function_calls": [
     {
@@ -204,10 +149,10 @@
     "pcode_op_count": 568
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -237,6 +182,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
       }
     ]
   },
@@ -259,94 +211,17 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "switch(*(uint *)(in_stack_00000004 + 0x700)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "if (0.0 < *(float *)(in_stack_00000004 + 0x768)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "local_18 = 1.0 - *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x768)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "local_18 = 1.0 - *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x768)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "if (0.0 < *(float *)(in_stack_00000004 + 0x770)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "local_18 = *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x770);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "local_18 = *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x770);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x158);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x584);",
       "type": "stack_param"
     }
   ]

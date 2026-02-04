@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(void)
+; __cdecl bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

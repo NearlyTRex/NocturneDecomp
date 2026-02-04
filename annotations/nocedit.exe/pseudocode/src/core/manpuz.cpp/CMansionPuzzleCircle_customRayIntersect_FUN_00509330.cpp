@@ -38,8 +38,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
   float local_1c;
   float local_18;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->unk1);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
   local_cc.min.x = (pCVar1->bounds_min).x;
   local_cc.min.y = (pCVar1->bounds_min).y;
   local_cc.min.z = (pCVar1->bounds_min).z;
@@ -95,8 +94,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
     local_20 = local_20 + 0xb8;
     local_2c = local_2c + 0x19;
   } while (local_20 != 0x8a0);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)(this_ptr->unk1 + 0x2f8));
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model3);
   if (&local_cc != (CBoundingBox3D *)&pCVar1->bounds_min) {
     local_cc.min.x = (pCVar1->bounds_min).x;
     local_cc.min.y = (pCVar1->bounds_min).y;

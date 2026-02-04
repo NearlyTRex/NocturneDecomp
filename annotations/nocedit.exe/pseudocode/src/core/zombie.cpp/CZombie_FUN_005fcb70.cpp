@@ -2,40 +2,42 @@
 // Address: 005fcb70
 // Address Range: [[005fcb70, 005fcc14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void)
+// Signature: void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fcb70(CZombie* param_1) */
-
-void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(void)
+void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr)
 
 {
-  CDeformableModelInstance *this_ptr;
+  CDeformableModelInstance *this_ptr_00;
   int iVar1;
-  CEnemy *in_stack_00000004;
   
-  core_enemy_cpp_CEnemy_FUN_004aa250(in_stack_00000004);
-  this_ptr = &(in_stack_00000004->base).model;
+  core_enemy_cpp_CEnemy_FUN_004aa250(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
   iVar1 = stricmp
-                    ((in_stack_00000004->base).model.model_name,"jeff.dfm");
+                    ((this_ptr->base).base.model.model_name,"jeff.dfm");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,4);
     switch(iVar1) {
     case 0:
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie1.dfm");
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                (this_ptr_00,"zombie1.dfm");
       return;
     case 1:
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie2.dfm");
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                (this_ptr_00,"zombie2.dfm");
       return;
     case 2:
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"zombie3.dfm");
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                (this_ptr_00,"zombie3.dfm");
       return;
     case 3:
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"fletch.dfm");
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                (this_ptr_00,"fletch.dfm");
       return;
     case 4:
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,"skinned.dfm");
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
+                (this_ptr_00,"skinned.dfm");
       return;
     }
   }

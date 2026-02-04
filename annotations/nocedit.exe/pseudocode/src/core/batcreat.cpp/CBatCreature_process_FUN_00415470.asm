@@ -288,7 +288,7 @@ section .text
     PUSH EAX                            ; 00415691
     PUSH EBX                            ; 00415692
     CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00415693
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00415698
     JMP 0x004154c9                      ; 0041569b
         ;   XREF to: 004154c9 (UNCONDITIONAL_JUMP)  ; LAB_004154c9

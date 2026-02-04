@@ -19,6 +19,7 @@ struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/funcdefs/CDemonActor_addFilesToExtract.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
 #include "types/funcdefs/CDemonActor_archive.h"
 #include "types/funcdefs/CDemonActor_calculateChecksum.h"
@@ -77,7 +78,6 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_testLineIntersection.h"
 #include "types/funcdefs/CDemonActor_updateCollisionData.h"
 #include "types/funcdefs/CDemonActor_updateInteraction.h"
-#include "types/funcdefs/CDemonActor_writeDependencies.h"
 
 // Structure: CDemonActor_vtable
 // Ghidra size: 0xec (236 bytes)
@@ -138,7 +138,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_getPropertyList* getPropertyList; // 0xd4
     CDemonActor_initializeInEditor* initializeInEditor; // 0xd8
     CDemonActor_showEditorHelp* showEditorHelp; // 0xdc
-    CDemonActor_writeDependencies* writeDependencies; // 0xe0
+    CDemonActor_addFilesToExtract* addFilesToExtract; // 0xe0
     CDemonActor_dtor* dtor; // 0xe4
     CDemonActor_archive* archive; // 0xe8
 } CDemonActor_vtable;

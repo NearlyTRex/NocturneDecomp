@@ -49,13 +49,13 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       (this_ptr->base).base.orient.bank = *(float *)(this_ptr->unk1 + 4);
       (this_ptr->base).base.orient.heading = *(float *)(this_ptr->unk1 + 8);
     }
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,this_ptr->unk2)
-    ;
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                      (g_CEventListPtr,this_ptr->activate_event);
     if (iVar5 == 0) {
       this_ptr->timer = 0.0;
       break;
     }
-    uVar2 = *(uint *)(this_ptr->unk4 + 0x5c);
+    uVar2 = *(uint *)(this_ptr->unk5 + 0x58);
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
@@ -87,13 +87,14 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     (this_ptr->base).unk2[9] = '\0';
     (this_ptr->base).unk2[10] = '\0';
     (this_ptr->base).unk2[0xb] = '\0';
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->unk2);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                      (pCVar3,this_ptr->activate_event);
     if (iVar5 == 0) {
       this_ptr->state = 3;
       this_ptr->timer = this_ptr->patrol_time;
     }
     else {
-      core_turret_cpp_FUN_005e2d50();
+      core_turret_cpp_CTurret_FUN_005e2d50(this_ptr);
       this_ptr->timer = 0.0;
     }
     break;
@@ -111,7 +112,8 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     (this_ptr->base).unk2[9] = '\0';
     (this_ptr->base).unk2[10] = '\0';
     (this_ptr->base).unk2[0xb] = '\0';
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->unk2);
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                      (pCVar3,this_ptr->activate_event);
     if (iVar5 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
@@ -124,17 +126,17 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     fVar4 = this_ptr->timer - delta_time;
     this_ptr->timer = fVar4;
     if (0.0 < fVar4) {
-      core_turret_cpp_FUN_005e3560();
+      core_turret_cpp_CTurret_FUN_005e3560(this_ptr);
       break;
     }
-    uVar2 = *(uint *)(this_ptr->unk4 + 0x5c);
+    uVar2 = *(uint *)(this_ptr->unk5 + 0x58);
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
     sound_name = "turret-ani?.wav";
 LAB_005e24c7:
     uVar7 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
-    *(uint *)(this_ptr->unk4 + 0x5c) = uVar7;
+    *(uint *)(this_ptr->unk5 + 0x58) = uVar7;
     break;
   case 4:
     local_1c = (CVector3f *)this_ptr->unk1;
@@ -198,27 +200,27 @@ LAB_005e24c7:
     (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc7)();
   }
   fVar4 = *(float *)((this_ptr->base).unk2 + 0xc);
-  iVar5 = *(int *)(this_ptr->unk4 + 0x54);
-  *(float *)(this_ptr->unk4 + 0x10) = *(float *)(this_ptr->unk4 + 0x10) - delta_time;
+  iVar5 = *(int *)(this_ptr->unk5 + 0x50);
+  *(float *)(this_ptr->unk5 + 0xc) = *(float *)(this_ptr->unk5 + 0xc) - delta_time;
   *(float *)((this_ptr->base).unk2 + 0xc) = fVar4 - delta_time;
-  if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->unk4 + 0x10))) {
-    *(int *)(this_ptr->unk4 + 0x54) = *(int *)(this_ptr->unk4 + 0x54) + -1;
+  if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->unk5 + 0xc))) {
+    *(int *)(this_ptr->unk5 + 0x50) = *(int *)(this_ptr->unk5 + 0x50) + -1;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
     local_14 = fVar4;
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
-                      (*(uint *)(this_ptr->unk4 + 0x58),fVar4);
+                      (*(uint *)(this_ptr->unk5 + 0x54),fVar4);
     if (iVar5 == 0) {
       sprintf(local_f4,"turret-loop.wav * %f",(double)fVar4);
       uVar7 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
-      *(uint *)(this_ptr->unk4 + 0x58) = uVar7;
+      *(uint *)(this_ptr->unk5 + 0x54) = uVar7;
       return;
     }
   }
   else {
     local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);
     if (0.0 <= (double)local_30._12_8_) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0x58));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk5 + 0x54));
       (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;

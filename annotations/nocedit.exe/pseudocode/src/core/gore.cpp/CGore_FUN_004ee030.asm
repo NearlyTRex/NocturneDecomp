@@ -9,7 +9,7 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70 at 00409ea9
-;   core_colonel.cpp_CColonel_FUN_004404b0 at 00440596
+;   core_colonel.cpp_CColonel_processDamage_FUN_004404b0 at 00440596
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004f1b70 at 004f1c70
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0 at 004f96f6
 ;   core_scat.cpp_CScat_processDamage_FUN_00557ea0 at 00557f86

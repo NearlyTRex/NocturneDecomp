@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   direction_hint
 ;
 ; XREF[11]:
-;   core_bugs.cpp_FUN_00425cc0 at 00425e27
-;   core_bugs.cpp_FUN_00425fe0 at 004262a8
+;   core_bugs.cpp_CBugs_FUN_00425cc0 at 00425e27
+;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004262a8
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0 at 00428868
-;   core_colonel.cpp_FUN_0043ff20 at 00440359
+;   core_colonel.cpp_CColonel_FUN_0043ff20 at 00440359
 ;   core_gabriela.cpp_FUN_004d4190 at 004d46f7
 ;   core_haystack.cpp_CHaystack_FUN_004f13f0 at 004f1879
 ;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f922b

@@ -59,9 +59,9 @@ int __cdecl CBatman::hasCollision(CBatman *this_ptr,SCollisionInfo *collision_in
 // Address: 00417cd0
 void __cdecl CBatman::getPropertyList(CBatman *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_batman.cpp_CBatman_writeDependencies_FUN_00417d30
+// Original: core_batman.cpp_CBatman_addFilesToExtract_FUN_00417d30
 // Address: 00417d30
-void __cdecl CBatman::writeDependencies(CBatman *this_ptr,_FILE *file_handle);
+void __cdecl CBatman::addFilesToExtract(CBatman *this_ptr,_FILE *file_handle);
 
 // Original: core_batman.cpp_CBatman_dtor_FUN_00417d60
 // Address: 00417d60

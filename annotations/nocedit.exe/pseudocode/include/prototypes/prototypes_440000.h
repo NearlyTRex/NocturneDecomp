@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CColonel.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CConveyor.h"
@@ -11,6 +12,7 @@
 #include "types/classes/CCrate.h"
 #include "types/classes/CCrossbow.h"
 #include "types/classes/CCurtain.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonLight.h"
@@ -25,6 +27,7 @@
 #include "types/structs/SCramRectangle.h"
 #include "types/structs/SCramWorkingEntry.h"
 #include "types/structs/SCurtainVertex.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SFogGrid.h"
 #include "types/structs/STextureAtlasEntry.h"
 
@@ -32,15 +35,15 @@
 // FUNCTION PROTOTYPES - Range 0x440000
 // =============================================================================
 
-ushort __cdecl core_colonel_cpp_FUN_00440430(void);
+int __cdecl core_colonel_cpp_CColonel_FUN_00440430(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_00440490(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_FUN_004404a0(CColonel *this_ptr);
-void __cdecl core_colonel_cpp_CColonel_FUN_004404b0(CColonel *this_ptr);
-int __cdecl core_colonel_cpp_FUN_004405d0(void);
-void __cdecl core_colonel_cpp_FUN_004405e0(void);
-void __cdecl core_colonel_cpp_FUN_004405f0(void);
-void __cdecl core_colonel_cpp_FUN_00440610(void);
-void __cdecl core_colonel_cpp_FUN_00440630(void);
+void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_colonel_cpp_CColonel_FUN_004405d0(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_FUN_004405e0(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_onActorDeleted_FUN_004405f0(CColonel *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_colonel_cpp_CColonel_getPropertyList_FUN_00440610 (CColonel *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_colonel_cpp_CColonel_addFilesToExtract_FUN_00440630(CColonel *this_ptr,_FILE *file_handle);
 int __cdecl core_colonel_cpp_FUN_00440650(void);
 CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_ptr,uint flags);
 int * __cdecl engine_colquant_c_FUN_004406c0(void);
@@ -62,20 +65,20 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
 void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr);
 void __cdecl core_conveyor_cpp_staticInit_FUN_00441c30(void);
 CConveyor * __cdecl core_conveyor_cpp_factoryFunc_FUN_00441c60(void);
-CDemonActorType * __cdecl core_conveyor_cpp_FUN_00441c90(void);
+CDemonActorType * __cdecl core_conveyor_cpp_CConveyor_getActorType_FUN_00441c90(CConveyor *this_ptr);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00441ca0(CConveyor *this_ptr);
-void __cdecl core_conveyor_cpp_FUN_00441d60(void);
-void __cdecl core_conveyor_cpp_FUN_00441df0(void);
-int __cdecl core_conveyor_cpp_FUN_00441f40(void);
-void __cdecl core_conveyor_cpp_FUN_00441f50(void);
-int __cdecl core_conveyor_cpp_FUN_00441f60(void);
-void __cdecl core_conveyor_cpp_FUN_00442020(void);
-int __cdecl core_conveyor_cpp_FUN_004420c0(void);
-void __cdecl core_conveyor_cpp_FUN_004420d0(void);
-void __cdecl core_conveyor_cpp_FUN_00442130(void);
-void __cdecl core_conveyor_cpp_FUN_004421c0(void);
-void __cdecl core_conveyor_cpp_FUN_004422f0(void);
-CConveyor * __cdecl core_conveyor_cpp_dtor_FUN_00442310(CConveyor *this_ptr,uint flags);
+void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr);
+void __cdecl core_conveyor_cpp_CConveyor_process_FUN_00441df0(CConveyor *this_ptr,float delta_time);
+int __cdecl core_conveyor_cpp_CConveyor_renderOpaque_FUN_00441f40(CConveyor *this_ptr);
+void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag);
+int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor *this_ptr);
+void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_00442020(CConveyor *this_ptr);
+int __cdecl core_conveyor_cpp_CConveyor_hasCollision_FUN_004420c0 (CConveyor *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_004420d0(CConveyor *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130 (CConveyor *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_conveyor_cpp_CConveyor_processInEditor_FUN_004421c0(CConveyor *this_ptr);
+void __cdecl core_conveyor_cpp_CConveyor_addFilesToExtract_FUN_004422f0(CConveyor *this_ptr,_FILE *file_handle);
+CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_00442310(CConveyor *this_ptr,uint flags);
 CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint flags);
 int __cdecl core_conveyor_cpp_FUN_004423f0(void);
 float __cdecl core_conveyor_cpp_FUN_00442400(void);
@@ -97,18 +100,18 @@ void __cdecl core_course_cpp_FUN_00443760(void);
 void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2);
 void __cdecl core_cow_cpp_staticInit_FUN_004440d0(void);
 CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_00444100(void);
-CDemonActorType * __cdecl core_cow_cpp_FUN_00444130(void);
+CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_00444130(CZombieCow *this_ptr);
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_ptr);
-void __cdecl core_cow_cpp_FUN_004441b0(void);
+void __cdecl core_cow_cpp_CZombieCow_setup_FUN_004441b0(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,float delta_time);
 void __cdecl core_cow_cpp_CZombieCow_archive_FUN_00444840(CZombieCow *this_ptr);
-void __cdecl core_cow_cpp_FUN_004448c0(void);
-void __cdecl core_cow_cpp_FUN_00444b40(void);
-int __cdecl core_cow_cpp_FUN_00444c00(void);
+void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr);
+void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00 (CZombieCow *this_ptr,CVector3f *out_points_array);
 void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50 (CZombieCow *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_cow_cpp_FUN_00444c90(void);
-void __cdecl core_cow_cpp_FUN_00444ca0(void);
-CZombieCow * __cdecl core_cow_cpp_FUN_00444cd0 (CZombieCow *this_ptr,uint d1,uint d2,uint d3,uint d4,uint d5,uint d6,uint d7,uint d8);
+void __cdecl core_cow_cpp_CZombieCow_FUN_00444c90(CZombieCow *this_ptr);
+void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle);
+CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_ptr,uint flags);
 int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90 (uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height, int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width, int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations);
 int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0 (SCramWorkingEntry *entry_a,SCramWorkingEntry *entry_b);
 void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void);

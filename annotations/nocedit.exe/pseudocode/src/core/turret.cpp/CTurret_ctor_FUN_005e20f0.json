@@ -2,10 +2,52 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "pointer_precision",
-        "column": 49,
+        "category": "incompatible_types",
+        "column": 74,
+        "line": 23,
+        "message": "cannot convert 'CKeyFramedModelInstance*' to 'CTurret_ptr_1412' {aka 'CTurret*'} in assignment"
+      },
+      {
+        "category": "other",
+        "column": 20,
         "line": 24,
-        "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CTurret_ptr_1412' {aka 'CTurret*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 26,
+        "message": "request for member 'base' in 'this_ptr_00', which is of pointer type 'CTurret_ptr_1412' {aka 'CTurret*'} (maybe you meant to use '->' ?)"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 28,
+        "message": "cannot convert 'CTurret_ptr_1412' {aka 'CTurret*'} to 'CKeyFramedModelInstance*'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 65,
+        "message": "'struct CTurret' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 66,
+        "message": "'struct CTurret' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 67,
+        "message": "'struct CTurret' has no member named 'animation_state'"
+      },
+      {
+        "category": "missing_member",
+        "column": 18,
+        "line": 68,
+        "message": "'struct CTurret' has no member named 'animation_state'"
       }
     ],
     "success": false,
@@ -18,36 +60,24 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 12,
-        "line": 40,
+        "line": 36,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 129,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 74,
-    "suspect_count": 5,
+    "pseudocode_lines": 61,
+    "suspect_count": 21,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 167
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -224,39 +254,151 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
-      "match": "this_ptr_00[-3].",
-      "text": "this_ptr_00[-3].part_visibility_flags[0x11] = (int)&g_CTurretVTable;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00).base.base.vtable._ub = &g_CTurretVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "this_ptr_00[-3].",
-      "text": "((CKeyFramedModelInstance *)(this_ptr_00[-3].part_visibility_flags + 0x12),",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(&ADJ(this_ptr_00).base.model,\"gturret_head.kfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 38,
-      "match": "this_ptr_00[-2].",
-      "text": "this_ptr_00[-2].part_visibility_flags[0x1d] = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->state = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->activate_event[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->charge_time = 3.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->patrol_time = 6.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->power_down_time = 3.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->fire_delay_time = 0.2;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->rotate_deg_per_sec = 30.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "pCVar3 = ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ADJ",
+      "text": "pcVar6 = ADJ(this_ptr_00)->allowed_victim_types;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk3 = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ADJ",
+      "text": "((CDemonActor *)ADJ(this_ptr_00),&local_24,&local_18);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "if ((CVector3f *)ADJ(this_ptr_00)->unk4 != pCVar4) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ADJ",
+      "text": "*(float *)ADJ(this_ptr_00)->unk4 = pCVar4->x;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ADJ",
+      "text": "*(float *)(ADJ(this_ptr_00)->unk4 + 4) = pCVar4->y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ADJ",
+      "text": "*(float *)(ADJ(this_ptr_00)->unk4 + 8) = pCVar4->z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 57,
-      "match": "this_ptr_00[-4].",
-      "text": "((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1b),&local_24,",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->user = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 76,
-      "match": "this_ptr_00[-4].",
-      "text": "return (CTurret *)(this_ptr_00[-4].part_visibility_flags + 0x1b);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->can_manual_aim = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

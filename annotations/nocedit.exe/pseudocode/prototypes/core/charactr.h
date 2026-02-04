@@ -353,7 +353,7 @@ void __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042ec40
 // Address: 0042ec40
-void __cdecl CCharacter(CCharacter *this_ptr);
+int __cdecl CCharacter(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042ede0
 // Address: 0042ede0

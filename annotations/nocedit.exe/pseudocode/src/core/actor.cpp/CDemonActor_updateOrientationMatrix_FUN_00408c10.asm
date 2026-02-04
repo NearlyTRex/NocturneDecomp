@@ -18,7 +18,7 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421c95
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 at 0042267a
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 004243b1
-;   core_bugs.cpp_FUN_004278d0 at 00427916
+;   core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 at 00427916
 ;   ... and 35 more
 ;
 ; Called Functions:

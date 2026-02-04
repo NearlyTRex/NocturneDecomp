@@ -63,9 +63,9 @@ void __cdecl CDrip::getPropertyList(CDrip *this_ptr,CActorPropertyList *property
 // Address: 0048ea30
 void __cdecl CDrip::processInEditor(CDrip *this_ptr);
 
-// Original: core_drip.cpp_CDrip_writeDependencies_FUN_0048ea60
+// Original: core_drip.cpp_CDrip_addFilesToExtract_FUN_0048ea60
 // Address: 0048ea60
-void __cdecl CDrip::writeDependencies(CDrip *this_ptr,_FILE *file_handle);
+void __cdecl CDrip::addFilesToExtract(CDrip *this_ptr,_FILE *file_handle);
 
 // Original: core_drip.cpp_CDrip_dtor_FUN_0048ea90
 // Address: 0048ea90

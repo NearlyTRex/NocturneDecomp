@@ -51,9 +51,9 @@ void __cdecl CBatCreature::hasCollision(CBatCreature *this_ptr,SCollisionInfo *c
 // Address: 004162b0
 void __cdecl CBatCreature::getPropertyList(CBatCreature *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_batcreat.cpp_CBatCreature_writeDependencies_FUN_004162f0
+// Original: core_batcreat.cpp_CBatCreature_addFilesToExtract_FUN_004162f0
 // Address: 004162f0
-void __cdecl CBatCreature::writeDependencies(CBatCreature *this_ptr,_FILE *file_handle);
+void __cdecl CBatCreature::addFilesToExtract(CBatCreature *this_ptr,_FILE *file_handle);
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_00416320
 // Address: 00416320

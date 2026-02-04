@@ -59,9 +59,9 @@ void __cdecl CHealthItem::onPickup(CHealthItem *this_ptr,CDemonActor *owner);
 // Address: 004f2040
 void __cdecl CHealthItem::getPropertyList(CHealthItem *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_health.cpp_CHealthItem_writeDependencies_FUN_004f20b0
+// Original: core_health.cpp_CHealthItem_addFilesToExtract_FUN_004f20b0
 // Address: 004f20b0
-void __cdecl CHealthItem::writeDependencies(CHealthItem *this_ptr,_FILE *file_handle);
+void __cdecl CHealthItem::addFilesToExtract(CHealthItem *this_ptr,_FILE *file_handle);
 
 // Original: core_health.cpp_CHealthItem_dtor_FUN_004f20d0
 // Address: 004f20d0

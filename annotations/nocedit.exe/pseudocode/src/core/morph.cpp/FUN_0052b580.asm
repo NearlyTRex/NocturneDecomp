@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6e0d
-;   core_vampboss.cpp_CVampireBoss_FUN_005e56c0 at 005e57c2
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e57c2
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_FUN_0052a8d0
