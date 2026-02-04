@@ -12,9 +12,9 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_005f4a00 at 005f4a91
 ;
 ; Referenced Globals:
-;   mciSendStringA* g_mciSendStringAFunc = 00211850
-;   InvalidateRect* g_InvalidateRectFunc = 00211b0c
-;   UpdateWindow* g_UpdateWindowFunc = 00211c28
+;   MCI_SEND_STRING_A_FUNC* g_mciSendStringAFunc = 00211850
+;   INVALIDATE_RECT_FUNC* g_InvalidateRectFunc = 00211b0c
+;   UPDATE_WINDOW_FUNC* g_UpdateWindowFunc = 00211c28
 ;   TerminatedCString s_close_mov_006581ee
 ;   DWORD g_MovieHandle
 ;   int g_MoviePlaying

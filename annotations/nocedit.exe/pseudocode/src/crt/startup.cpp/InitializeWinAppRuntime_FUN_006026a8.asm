@@ -8,7 +8,7 @@
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609eb1
 ;
 ; Referenced Globals:
-;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
+;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24 = 00602458
 ;   undefined4 DAT_00684ff4

@@ -2,260 +2,116 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "redefinition",
-        "column": 37,
-        "line": 156,
-        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 34,
-        "line": 160,
-        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 36,
-        "line": 167,
-        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 168,
-        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 172,
-        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
-      },
-      {
-        "category": "redefinition",
-        "column": 66,
-        "line": 179,
-        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 27,
-        "line": 184,
-        "message": "'int WSACleanup()' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 67,
-        "line": 192,
-        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 67,
-        "line": 197,
-        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 32,
-        "line": 202,
-        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 70,
-        "line": 207,
-        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 69,
-        "line": 212,
-        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 55,
-        "line": 217,
-        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 40,
-        "line": 222,
-        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 56,
-        "line": 227,
-        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 97,
-        "line": 232,
-        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 62,
-        "line": 237,
-        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 102,
-        "line": 242,
-        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 87,
-        "line": 247,
-        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 38,
-        "line": 252,
-        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 54,
-        "line": 261,
-        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 38,
-        "line": 266,
-        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 65,
-        "line": 276,
-        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
-      },
-      {
         "category": "other",
         "column": 14,
         "line": 24,
-        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+        "message": "invalid cast from type 'UActorVTable' to type 'float'"
       },
       {
         "category": "incompatible_types",
-        "column": 86,
+        "column": 74,
         "line": 32,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(CMotionList*&)'"
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(CMotionList*&)'"
       },
       {
         "category": "incompatible_types",
-        "column": 60,
-        "line": 37,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int&)'"
+        "column": 74,
+        "line": 35,
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(int&)'"
       },
       {
         "category": "incompatible_types",
-        "column": 60,
+        "column": 74,
+        "line": 38,
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(int&)'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 74,
         "line": 41,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int&)'"
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(float&)'"
       },
       {
         "category": "incompatible_types",
-        "column": 86,
+        "column": 74,
         "line": 44,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(float&)'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 86,
-        "line": 47,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(float&)'"
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(float&)'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 61,
+        "line": 58,
         "message": "invalid cast from type 'float' to type 'CMotionList*'"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 62,
+        "line": 59,
         "message": "invalid cast from type 'float' to type 'CMotionList*'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 64,
+        "line": 61,
         "message": "invalid cast from type 'float' to type 'CDemonActor_vtable*'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 68,
+        "line": 65,
         "message": "invalid cast from type 'float' to type 'CDemonActor_vtable*'"
       },
       {
         "category": "incompatible_types",
-        "column": 44,
-        "line": 73,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
+        "column": 32,
+        "line": 70,
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(int)'"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 78,
-        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+        "line": 75,
+        "message": "invalid cast from type 'UActorVTable' to type 'float'"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 89,
+        "line": 86,
         "message": "invalid cast from type 'float' to type 'CDemonActor_vtable*'"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 103,
-        "message": "no match for 'operator*' (operand types are 'CDemonActor_union_vtable' and 'float')"
+        "line": 100,
+        "message": "no match for 'operator*' (operand types are 'UActorVTable' and 'float')"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 110,
+        "line": 107,
         "message": "invalid cast from type 'float' to type 'CDemonActor_vtable*'"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 111,
-        "message": "no match for 'operator*' (operand types are 'CDemonActor_union_vtable' and 'float')"
+        "line": 108,
+        "message": "no match for 'operator*' (operand types are 'UActorVTable' and 'float')"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 115,
+        "line": 112,
         "message": "invalid cast from type 'float' to type 'CDemonActor_vtable*'"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 116,
-        "message": "no match for 'operator*' (operand types are 'CDemonActor_union_vtable' and 'float')"
+        "line": 113,
+        "message": "no match for 'operator*' (operand types are 'UActorVTable' and 'float')"
       }
     ],
     "success": false,
     "warnings": [
-      {
-        "category": "other",
-        "column": 12,
-        "line": 168,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
       {
         "category": "pointer_arithmetic",
         "column": 88,
@@ -265,43 +121,43 @@
       {
         "category": "other",
         "column": 19,
-        "line": 58,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 59,
+        "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 85,
+        "line": 82,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 114,
+        "line": 111,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 695,
+    "complexity_score": 692,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 9,
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 107,
     "suspect_count": 57,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 394
+    "total_lines": 391
   },
   "cross_references": [
     {
@@ -511,7 +367,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "CDemonActor_union_vtable *in_stack_00000008;",
+      "text": "UActorVTable *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -532,196 +388,217 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "CVar4 = in_stack_00000004[1].base.vtable;",
+      "text": "UVar4 = in_stack_00000004[1].base.vtable;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
-      "text": "CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.motion_list_ptr",
+      "text": "UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.motion_list_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].model.motion_controller.current_motion_index;",
+      "text": "UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.current_motion_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.current_frame_number;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].model.motion_controller.current_frame_number;",
+      "text": "UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.tween_progress;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.tween_progress;",
+      "text": "UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.tween_speed;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.tween_speed;",
+      "line": 42,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = UVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = CVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000008",
       "text": "pCVar1 = (CMotionList *)in_stack_00000008->_ub;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "if (((((pCVar1 == (CMotionList *)in_stack_00000004[1].base.vtable._ub) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "(pCVar1 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "(pCVar1 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].model.motion_controller.current_frame_number ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(pCVar1 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed)))) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "(pCVar1 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 53,
       "match": "in_stack_00000008",
       "text": "local_14 = in_stack_00000008[0xb];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "if ((CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_progress ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 55,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->_ub) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "if ((CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_speed ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 59,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->_ub) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 72,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008->_ub == in_stack_00000004[1].base.vtable._ub) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 72,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000008->_ub == in_stack_00000004[1].base.vtable._ub) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 75,
       "match": "in_stack_00000004",
       "text": "if ((CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.current_motion_index ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->_ub) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 79,
       "match": "in_stack_00000004",
       "text": "if ((CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_speed ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 80,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->_ub) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -740,98 +617,84 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 87,
-      "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 89,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->model).part_visibility_flags",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 90,
       "match": "in_stack_00000004",
       "text": "[(int)in_stack_00000004[1].model.motion_controller.tween_progress] == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 94,
+      "line": 91,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1]._ub = (CDemonActor_vtable *)0x461c3c00;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 93,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[2] = (CDemonActor_vtable *)(in_stack_00000008[2] * (float)7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 93,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[2] = (CDemonActor_vtable *)(in_stack_00000008[2] * (float)7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 94,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].model.motion_controller.tween_type < 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 95,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1]._ub = (CDemonActor_vtable *)0x4479c000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
+      "line": 99,
       "match": "in_stack_00000008",
       "text": "pCVar2 = in_stack_00000008->_ub;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 100,
       "match": "in_stack_00000004",
       "text": "if (pCVar2 == (CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_progress) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)2.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)2.5);",
       "type": "stack_param"
@@ -839,27 +702,27 @@
     {
       "description": "Unresolved stack parameter",
       "line": 104,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)2.5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
       "match": "in_stack_00000004",
       "text": "if ((pCVar2 != (CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_type) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 105,
       "match": "in_stack_00000004",
       "text": "(pCVar2 != (CDemonActor_vtable *)in_stack_00000004[1].model.motion_controller.tween_speed)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 106,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)0.5);",
       "type": "stack_param"
@@ -867,20 +730,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 109,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008[1] = (CDemonActor_vtable *)(in_stack_00000008[1] * (float)0.5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 109,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = in_stack_00000008[1];",
       "type": "stack_param"

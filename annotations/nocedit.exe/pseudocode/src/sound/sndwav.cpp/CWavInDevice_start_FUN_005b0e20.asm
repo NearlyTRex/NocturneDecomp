@@ -7,7 +7,7 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveInStart* g_waveInStartFunc = 002118f8
+;   WAVE_IN_START_FUNC* g_waveInStartFunc = 002118f8
 ;   TerminatedCString s_waveInStart_failed_0065244e
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders

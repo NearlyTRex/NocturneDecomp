@@ -19,8 +19,8 @@
 ;   engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0 at 005f242a
 ;
 ; Referenced Globals:
-;   SetTextColor* g_SetTextColorFunc = 00211800
-;   TextOutA* g_TextOutAFunc = 00211810
+;   SET_TEXT_COLOR_FUNC* g_SetTextColorFunc = 00211800
+;   TEXT_OUT_A_FUNC* g_TextOutAFunc = 00211810
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8

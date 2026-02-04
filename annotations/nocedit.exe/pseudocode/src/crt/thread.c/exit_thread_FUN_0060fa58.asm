@@ -8,7 +8,7 @@
 ;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878 at 0060e878
 ;
 ; Referenced Globals:
-;   ExitThread* g_ExitThreadFunc = 00211d20
+;   EXIT_THREAD_FUNC* g_ExitThreadFunc = 00211d20
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f28 = 00602458
 ;   int g_EmergencyExitFlag
 ;

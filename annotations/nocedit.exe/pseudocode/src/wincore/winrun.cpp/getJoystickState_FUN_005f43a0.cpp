@@ -13,7 +13,7 @@ void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005f43a0(void)
   joyinfo_tag local_1c;
   
   if (g_JoystickPresent != 0) {
-    if (g_joyGetPosEx == (joyGetPosEx *)0x0) {
+    if (g_joyGetPosEx == (JOY_GET_POS_EX_FUNC *)0x0) {
       (*g_joyGetPosFunc)(0,&local_1c);
       g_JoyButtons = local_1c.wButtons;
       g_JoyXPos = local_1c.wXpos;

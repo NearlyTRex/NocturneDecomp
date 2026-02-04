@@ -8,7 +8,7 @@
 ;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a552
 ;
 ; Referenced Globals:
-;   TlsFree* g_TlsFreeFunc = 00212254
+;   TLS_FREE_FUNC* g_TlsFreeFunc = 00212254
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:

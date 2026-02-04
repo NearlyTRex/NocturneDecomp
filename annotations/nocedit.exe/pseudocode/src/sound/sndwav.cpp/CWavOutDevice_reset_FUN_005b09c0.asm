@@ -7,8 +7,8 @@
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveOutReset* g_waveOutResetFunc = 0021196a
-;   waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc = 0021197a
+;   WAVE_OUT_RESET_FUNC* g_waveOutResetFunc = 0021196a
+;   WAVE_OUT_UNPREPARE_HEADER_FUNC* g_waveOutUnprepareHeaderFunc = 0021197a
 ;   TerminatedCString s_waveOutReset_failed_0065238f
 ;   HWAVEOUT g_WaveOutHandle
 ;   LPWAVEHDR[8] g_WaveOutHeaders

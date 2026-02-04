@@ -10,7 +10,7 @@
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046d1e1
 ;
 ; Referenced Globals:
-;   Sleep* g_SleepFunc = 00212228
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;
 ; Called Functions:
 ;   Sleep

@@ -20,7 +20,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3ab4
 ;
 ; Referenced Globals:
-;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
+;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;
 ; Called Functions:
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70

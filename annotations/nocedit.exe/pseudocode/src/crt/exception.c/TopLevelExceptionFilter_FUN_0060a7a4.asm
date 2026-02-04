@@ -13,7 +13,7 @@
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8 at 0060abe6
 ;
 ; Referenced Globals:
-;   WriteFile* g_WriteFileFunc = 00212300
+;   WRITE_FILE_FUNC* g_WriteFileFunc = 00212300
 ;   TerminatedCString s_The_instruction_at_0x000_0065912c
 ;   TerminatedCString s_The_instruction_at_0x000_00659180
 ;   TerminatedCString s_The_instruction_at_0x000_006591d4

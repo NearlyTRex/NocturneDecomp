@@ -14,7 +14,7 @@
 ;   crt_startup.c_HandleRuntimeError_FUN_00606660 at 00606684
 ;
 ; Referenced Globals:
-;   WriteFile* g_WriteFileFunc = 00212300
+;   WRITE_FILE_FUNC* g_WriteFileFunc = 00212300
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:

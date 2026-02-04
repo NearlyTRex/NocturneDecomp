@@ -9,7 +9,7 @@
 ;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 0060913b
 ;
 ; Referenced Globals:
-;   CreateEventA* g_CreateEventAFunc = 00211c5a
+;   CREATE_EVENT_A_FUNC* g_CreateEventAFunc = 00211c5a
 ;   int g_FakeHandleCounter = -0x80000000
 ;
 ; Called Functions:

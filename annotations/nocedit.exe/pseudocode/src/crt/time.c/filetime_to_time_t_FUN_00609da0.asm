@@ -12,8 +12,8 @@
 ;   crt_io.c_convertFileInfo_FUN_00602264 at 006022a1
 ;
 ; Referenced Globals:
-;   FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc = 00211d46
-;   FileTimeToSystemTime* g_FileTimeToSystemTimeFunc = 00211d60
+;   FILE_TIME_TO_LOCAL_FILE_TIME_FUNC* g_FileTimeToLocalFileTimeFunc = 00211d46
+;   FILE_TIME_TO_SYSTEM_TIME_FUNC* g_FileTimeToSystemTimeFunc = 00211d60
 ;
 ; Called Functions:
 ;   crt_time.c__mktime_FUN_00600f80

@@ -177,6 +177,10 @@
       "type":"function_definition"
     },
     {
+      "name":"BASIC_LENGTH_FLAGS",
+      "type":"enum"
+    },
+    {
       "name":"BOOL",
       "type":"typedef"
     },
@@ -185,16 +189,8 @@
       "type":"typedef"
     },
     {
-      "name":"BasicLengthFlags",
-      "type":"enum"
-    },
-    {
       "name":"CActorDestination",
       "type":"struct"
-    },
-    {
-      "name":"CActorPropertyParam",
-      "type":"union"
     },
     {
       "name":"CAlphaBitmap",
@@ -777,10 +773,6 @@
       "type":"struct"
     },
     {
-      "name":"CDemonActor_union_vtable",
-      "type":"union"
-    },
-    {
       "name":"CIni",
       "type":"struct"
     },
@@ -815,6 +807,10 @@
     {
       "name":"CKeys",
       "type":"struct"
+    },
+    {
+      "name":"CLOSE_CLIPBOARD_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"CLZWDecompress_vtable",
@@ -1801,10 +1797,6 @@
       "type":"struct"
     },
     {
-      "name":"CloseClipboard",
-      "type":"function_definition"
-    },
-    {
       "name":"ColorConversionFunc",
       "type":"function_definition"
     },
@@ -1857,6 +1849,10 @@
       "type":"union"
     },
     {
+      "name":"DELETE_CRITICAL_SECTION_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"DS3DBUFFER",
       "type":"struct"
     },
@@ -1893,20 +1889,8 @@
       "type":"typedef"
     },
     {
-      "name":"DeleteCriticalSection",
-      "type":"function_definition"
-    },
-    {
       "name":"EActorPropertyType",
       "type":"enum"
-    },
-    {
-      "name":"CActorProperty",
-      "type":"struct"
-    },
-    {
-      "name":"CActorPropertyList",
-      "type":"struct"
     },
     {
       "name":"EAmmoBoxType",
@@ -1985,28 +1969,24 @@
       "type":"function_definition"
     },
     {
+      "name":"EXIT_PROCESS_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"EXIT_THREAD_CRITICAL_SECTION_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"EnterCriticalSection",
+      "name":"EXIT_THREAD_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"EXTENDED_LENGTH_FLAGS",
+      "type":"enum"
     },
     {
       "name":"ExceptionFrame",
       "type":"struct"
-    },
-    {
-      "name":"ExitProcess",
-      "type":"function_definition"
-    },
-    {
-      "name":"ExitThread",
-      "type":"function_definition"
-    },
-    {
-      "name":"ExtendedLengthFlags",
-      "type":"enum"
     },
     {
       "name":"FARPROC_FUNC",
@@ -2015,6 +1995,10 @@
     {
       "name":"FARPROC",
       "type":"typedef"
+    },
+    {
+      "name":"FORMAT_FLAGS",
+      "type":"enum"
     },
     {
       "name":"FileBase",
@@ -2033,39 +2017,47 @@
       "type":"function_definition"
     },
     {
-      "name":"FormatFlags",
-      "type":"enum"
-    },
-    {
       "name":"FormatSpec",
       "type":"struct"
+    },
+    {
+      "name":"GET_ACP_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_CURRENT_PROCESS_ID_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_CURRENT_THREAD_ID_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_HOSTNAME_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_HOST_BY_NAME_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_LAST_ERROR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_OEMCP_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_SERV_BY_PORT_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"GET_TLS_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetACP",
-      "type":"function_definition"
-    },
-    {
-      "name":"GetCurrentProcessId",
-      "type":"function_definition"
-    },
-    {
-      "name":"GetCurrentThreadId",
-      "type":"function_definition"
-    },
-    {
-      "name":"GetLastError",
-      "type":"function_definition"
-    },
-    {
-      "name":"GetOEMCP",
-      "type":"function_definition"
-    },
-    {
-      "name":"GetVersion",
+      "name":"GET_VERSION_FUNC",
       "type":"function_definition"
     },
     {
@@ -2077,35 +2069,35 @@
       "type":"struct"
     },
     {
-      "name":"CloseHandle",
+      "name":"CLOSE_HANDLE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FindClose",
+      "name":"FIND_CLOSE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FlushFileBuffers",
+      "name":"FLUSH_FILE_BUFFERS_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetClipboardData",
+      "name":"GET_CLIPBOARD_DATA_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetCurrentProcess",
+      "name":"GET_CURRENT_PROCESS_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetCurrentThread",
+      "name":"GET_CURRENT_THREAD_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetFileType",
+      "name":"GET_FILE_TYPE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetStdHandle",
+      "name":"GET_STD_HANDLE_FUNC",
       "type":"function_definition"
     },
     {
@@ -2133,11 +2125,11 @@
       "type":"typedef"
     },
     {
-      "name":"CreateCompatibleDC",
+      "name":"CREATE_COMPATIBLE_DC_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"DeleteDC",
+      "name":"DELETE_DC_FUNC",
       "type":"function_definition"
     },
     {
@@ -2161,11 +2153,11 @@
       "type":"struct"
     },
     {
-      "name":"DeleteObject",
+      "name":"DELETE_OBJECT_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetStockObject",
+      "name":"GET_STOCK_OBJECT_FUNC",
       "type":"function_definition"
     },
     {
@@ -2173,11 +2165,11 @@
       "type":"typedef"
     },
     {
-      "name":"GlobalFree",
+      "name":"GLOBAL_FREE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GlobalUnlock",
+      "name":"GLOBAL_UNLOCK_FUNC",
       "type":"function_definition"
     },
     {
@@ -2225,12 +2217,20 @@
       "type":"function_definition"
     },
     {
-      "name":"FreeLibrary",
+      "name":"FREE_LIBRARY_FUNC",
       "type":"function_definition"
     },
     {
       "name":"HOSTENT",
       "type":"struct"
+    },
+    {
+      "name":"HOST_TO_NETWORK_LONG_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"HOST_TO_NETWORK_SHORT_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"HWAVEIN__",
@@ -2261,11 +2261,11 @@
       "type":"function_definition"
     },
     {
-      "name":"BringWindowToTop",
+      "name":"BRING_WINDOW_TO_TOP_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetLastActivePopup",
+      "name":"GET_LAST_ACTIVE_POPUP_FUNC",
       "type":"function_definition"
     },
     {
@@ -2345,7 +2345,23 @@
       "type":"union"
     },
     {
+      "name":"IMPERSONATE_LOGGED_ON_USER_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"INET_ADDR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"INITIALIZE_CRITICAL_SECTION_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"INVALIDATE_HANDLE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"IS_ICONIC_FUNC",
       "type":"function_definition"
     },
     {
@@ -2377,20 +2393,12 @@
       "type":"struct"
     },
     {
-      "name":"ImpersonateLoggedOnUser",
-      "type":"function_definition"
-    },
-    {
-      "name":"InitializeCriticalSection",
-      "type":"function_definition"
-    },
-    {
-      "name":"IsIconic",
-      "type":"function_definition"
-    },
-    {
       "name":"JOYINFOEX",
       "type":"struct"
+    },
+    {
+      "name":"LEAVE_CRITICAL_SECTION_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"LONG",
@@ -2717,27 +2725,39 @@
       "type":"typedef"
     },
     {
-      "name":"CreateFontA",
+      "name":"CREATE_FONT_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"DeleteFileA",
+      "name":"DELETE_FILE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FindWindowA",
+      "name":"FIND_WINDOW_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetFileAttributesA",
+      "name":"GET_FILE_ATTRIBUTES_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetModuleHandleA",
+      "name":"GET_MODULE_HANDLE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetProcAddress",
+      "name":"GET_PROC_ADDRESS_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LOAD_CURSOR_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LOAD_ICON_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LOAD_LIBRARY_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -2865,11 +2885,11 @@
       "type":"typedef"
     },
     {
-      "name":"GetConsoleMode",
+      "name":"GET_CONSOLE_MODE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetExitCodeProcess",
+      "name":"GET_EXIT_CODE_PROCESS_FUNC",
       "type":"function_definition"
     },
     {
@@ -2917,7 +2937,7 @@
       "type":"typedef"
     },
     {
-      "name":"DuplicateHandle",
+      "name":"DUPLICATE_HANDLE_FUNC",
       "type":"function_definition"
     },
     {
@@ -2973,43 +2993,43 @@
       "type":"typedef"
     },
     {
-      "name":"CharUpperBuffA",
+      "name":"CHAR_UPPER_BUFF_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FreeEnvironmentStringsA",
+      "name":"FREE_ENVIRONMENT_STRINGS_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetCommandLineA",
+      "name":"GET_COMMAND_LINE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetComputerNameA",
+      "name":"GET_COMPUTER_NAME_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetCurrentDirectoryA",
+      "name":"GET_CURRENT_DIRECTORY_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetEnvironmentStrings",
+      "name":"GET_ENVIRONMENT_STRINGS_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetFullPathNameA",
+      "name":"GET_FULL_PATH_NAME_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetKeyNameTextA",
+      "name":"GET_KEY_NAME_TEXT_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetModuleFileNameA",
+      "name":"GET_MODULE_FILE_NAME_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetUserNameA",
+      "name":"GET_USER_NAME_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -3021,7 +3041,7 @@
       "type":"typedef"
     },
     {
-      "name":"CreateWindowExA",
+      "name":"CREATE_WINDOW_EX_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -3029,7 +3049,7 @@
       "type":"struct"
     },
     {
-      "name":"GlobalLock",
+      "name":"GLOBAL_LOCK_FUNC",
       "type":"function_definition"
     },
     {
@@ -3049,28 +3069,32 @@
       "type":"typedef"
     },
     {
-      "name":"LeaveCriticalSection",
-      "type":"function_definition"
-    },
-    {
-      "name":"LoadCursorA",
-      "type":"function_definition"
-    },
-    {
-      "name":"LoadIconA",
-      "type":"function_definition"
-    },
-    {
-      "name":"LoadLibraryA",
-      "type":"function_definition"
-    },
-    {
       "name":"MATH_CHECK_REPORTING_FUNC",
       "type":"function_definition"
     },
     {
       "name":"MCIERROR",
       "type":"typedef"
+    },
+    {
+      "name":"MCI_GET_ERROR_STRING_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"MCI_SEND_STRING_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"MESSAGE_BOX_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"MOVE_FILE_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"MOVE_WINDOW_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"MRGLBlockHandlerFunc",
@@ -3081,19 +3105,15 @@
       "type":"struct"
     },
     {
-      "name":"MessageBoxA",
-      "type":"function_definition"
-    },
-    {
       "name":"Misc",
       "type":"union"
     },
     {
-      "name":"MoveFileA",
+      "name":"NETWORK_TO_HOST_SHORT_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"MoveWindow",
+      "name":"OPEN_CLIPBOARD_FUNC",
       "type":"function_definition"
     },
     {
@@ -3103,10 +3123,6 @@
     {
       "name":"OUTPUT_CALLBACK",
       "type":"typedef"
-    },
-    {
-      "name":"OpenClipboard",
-      "type":"function_definition"
     },
     {
       "name":"OptimizedMemcpyFunc",
@@ -3121,7 +3137,7 @@
       "type":"typedef"
     },
     {
-      "name":"LogonUserA",
+      "name":"LOGON_USER_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -3143,6 +3159,10 @@
     {
       "name":"PLONG",
       "type":"typedef"
+    },
+    {
+      "name":"POST_QUIT_MESSAGE_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"PRTL_CRITICAL_SECTION",
@@ -3169,16 +3189,16 @@
       "type":"typedef"
     },
     {
-      "name":"PostQuitMessage",
-      "type":"function_definition"
-    },
-    {
       "name":"QSORT_COMPARATOR_FUNC",
       "type":"function_definition"
     },
     {
       "name":"QSORT_COMPARATOR",
       "type":"typedef"
+    },
+    {
+      "name":"RECTANGLE_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"REGISTER_HANDLE_FUNC",
@@ -3189,6 +3209,30 @@
       "type":"typedef"
     },
     {
+      "name":"REG_CLOSE_KEY_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"REG_OPEN_KEY_EX_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"REG_QUERY_VALUE_EX_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"REG_SET_VALUE_EX_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"RELEASE_MUTEX_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"REVERT_TO_SELF_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"RGB_ENTRY",
       "type":"struct"
     },
@@ -3197,39 +3241,11 @@
       "type":"function_definition"
     },
     {
-      "name":"Rectangle",
-      "type":"function_definition"
-    },
-    {
       "name":"ReentrantCriticalSection",
       "type":"struct"
     },
     {
-      "name":"RegCloseKey",
-      "type":"function_definition"
-    },
-    {
-      "name":"RegOpenKeyExA",
-      "type":"function_definition"
-    },
-    {
-      "name":"RegQueryValueExA",
-      "type":"function_definition"
-    },
-    {
-      "name":"RegSetValueExA",
-      "type":"function_definition"
-    },
-    {
-      "name":"ReleaseMutex",
-      "type":"function_definition"
-    },
-    {
       "name":"RenderScanlineFunc",
-      "type":"function_definition"
-    },
-    {
-      "name":"RevertToSelf",
       "type":"function_definition"
     },
     {
@@ -3349,10 +3365,6 @@
       "type":"struct"
     },
     {
-      "name":"CodeCommandData",
-      "type":"union"
-    },
-    {
       "name":"SClothBone",
       "type":"struct"
     },
@@ -3409,12 +3421,92 @@
       "type":"struct"
     },
     {
+      "name":"SELECT_OBJECT_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"SERVENT",
       "type":"struct"
     },
     {
       "name":"PSERVENT",
       "type":"typedef"
+    },
+    {
+      "name":"SET_BK_COLOR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_BK_MODE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CLIPBOARD_DATA_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CONSOLE_CTRL_HANDLER_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CONSOLE_MODE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CURRENT_DIRECTORY_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CURSOR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_CURSOR_POS_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_END_OF_FILE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_ENVIRONMENT_VARIABLE_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_EVENT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_FILE_ATTRIBUTES_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_FILE_POINTER_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_FOCUS_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_FOREGROUND_WINDOW_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_LAST_ERROR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_STD_HANDLE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_TEXT_COLOR_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_THREAD_PRIORITY_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"SEdge",
@@ -3493,6 +3585,10 @@
       "type":"typedef"
     },
     {
+      "name":"SHOW_WINDOW_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"SHardwareEdge",
       "type":"struct"
     },
@@ -3543,6 +3639,10 @@
     {
       "name":"SKFMBinaryTexture",
       "type":"struct"
+    },
+    {
+      "name":"SLEEP_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"SLaserInfo",
@@ -4321,96 +4421,8 @@
       "type":"struct"
     },
     {
-      "name":"SelectObject",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetBkColor",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetBkMode",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetClipboardData",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetConsoleCtrlHandler",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetConsoleMode",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetCurrentDirectoryA",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetCursor",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetCursorPos",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetEndOfFile",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetEnvironmentVariableA",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetEvent",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetFileAttributesA",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetFilePointer",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetFocus",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetForegroundWindow",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetLastError",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetStdHandle",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetTextColor",
-      "type":"function_definition"
-    },
-    {
-      "name":"SetThreadPriority",
-      "type":"function_definition"
-    },
-    {
-      "name":"ShowWindow",
-      "type":"function_definition"
-    },
-    {
       "name":"SignalHandlerEntry",
       "type":"struct"
-    },
-    {
-      "name":"Sleep",
-      "type":"function_definition"
     },
     {
       "name":"StringFileInfo",
@@ -4429,7 +4441,27 @@
       "type":"struct"
     },
     {
-      "name":"TextOutA",
+      "name":"TEXT_OUT_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TIME_GET_TIME_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TLS_ALLOC_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TLS_FREE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TLS_GET_VALUE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TLS_SET_VALUE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4437,20 +4469,24 @@
       "type":"struct"
     },
     {
-      "name":"TlsAlloc",
-      "type":"function_definition"
+      "name":"UActorPropertyParam",
+      "type":"union"
     },
     {
-      "name":"TlsFree",
-      "type":"function_definition"
+      "name":"CActorProperty",
+      "type":"struct"
     },
     {
-      "name":"TlsGetValue",
-      "type":"function_definition"
+      "name":"CActorPropertyList",
+      "type":"struct"
     },
     {
-      "name":"TlsSetValue",
-      "type":"function_definition"
+      "name":"UActorVTable",
+      "type":"union"
+    },
+    {
+      "name":"UCodeCommandData",
+      "type":"union"
     },
     {
       "name":"UINT",
@@ -4461,6 +4497,10 @@
       "type":"typedef"
     },
     {
+      "name":"JOY_GET_POS_EX_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"MMVERSION",
       "type":"typedef"
     },
@@ -4469,8 +4509,68 @@
       "type":"typedef"
     },
     {
+      "name":"ACCEPT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"BIND_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"CLOSE_SOCKET_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"CONNECT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_SOCK_NAME_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"IOCTL_SOCKET_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LISTEN_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"RECV_FROM_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"RECV_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SEND_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SEND_TO_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_SOCK_OPT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SHUTDOWN_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"SSocketContext",
       "type":"struct"
+    },
+    {
+      "name":"TIME_BEGIN_PERIOD_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"TIME_END_PERIOD_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"UINT_PTR",
@@ -4489,11 +4589,19 @@
       "type":"typedef"
     },
     {
-      "name":"GlobalAlloc",
+      "name":"GLOBAL_ALLOC_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"UpdateWindow",
+      "name":"UPDATE_WINDOW_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"VIRTUAL_ALLOC_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"VIRTUAL_FREE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4513,11 +4621,7 @@
       "type":"struct"
     },
     {
-      "name":"VirtualAlloc",
-      "type":"function_definition"
-    },
-    {
-      "name":"VirtualFree",
+      "name":"WAIT_FOR_SINGLE_OBJECT_FUNC",
       "type":"function_definition"
     },
     {
@@ -4533,6 +4637,26 @@
       "type":"function_definition"
     },
     {
+      "name":"WAVE_IN_CLOSE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WAVE_IN_RESET_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WAVE_IN_START_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WAVE_OUT_CLOSE_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WAVE_OUT_RESET_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"WCHAR",
       "type":"typedef"
     },
@@ -4545,19 +4669,23 @@
       "type":"typedef"
     },
     {
-      "name":"GetCommandLineW",
+      "name":"GET_COMMAND_LINE_W_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetModuleFileNameW",
+      "name":"GET_MODULE_FILE_NAME_W_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"MultiByteToWideChar",
+      "name":"MULTI_BYTE_TO_WIDE_CHAR_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"SetEnvironmentVariableW",
+      "name":"SET_ENVIRONMENT_VARIABLE_W_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WIDE_CHAR_TO_MULTI_BYTE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4577,7 +4705,7 @@
       "type":"typedef"
     },
     {
-      "name":"DefWindowProcA",
+      "name":"DEF_WINDOW_PROC_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -4589,7 +4717,7 @@
       "type":"typedef"
     },
     {
-      "name":"WSACleanup",
+      "name":"WRITE_CONSOLE_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -4601,11 +4729,11 @@
       "type":"typedef"
     },
     {
-      "name":"WSAStartup",
+      "name":"WSA_CLEANUP_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"WaitForSingleObject",
+      "name":"WSA_STARTUP_FUNC",
       "type":"function_definition"
     },
     {
@@ -4645,14 +4773,6 @@
       "type":"struct"
     },
     {
-      "name":"WideCharToMultiByte",
-      "type":"function_definition"
-    },
-    {
-      "name":"WriteConsoleA",
-      "type":"function_definition"
-    },
-    {
       "name":"_COORD",
       "type":"struct"
     },
@@ -4681,7 +4801,7 @@
       "type":"typedef"
     },
     {
-      "name":"FileTimeToDosDateTime",
+      "name":"FILE_TIME_TO_DOS_DATE_TIME_FUNC",
       "type":"function_definition"
     },
     {
@@ -4689,19 +4809,19 @@
       "type":"typedef"
     },
     {
-      "name":"DosDateTimeToFileTime",
+      "name":"DOS_DATE_TIME_TO_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FileTimeToLocalFileTime",
+      "name":"FILE_TIME_TO_LOCAL_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetFileTime",
+      "name":"GET_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"LocalFileTimeToFileTime",
+      "name":"LOCAL_FILE_TIME_TO_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
@@ -4709,7 +4829,7 @@
       "type":"typedef"
     },
     {
-      "name":"SetFileTime",
+      "name":"SET_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
@@ -4757,11 +4877,11 @@
       "type":"typedef"
     },
     {
-      "name":"SetUnhandledExceptionFilter",
+      "name":"SET_UNHANDLED_EXCEPTION_FILTER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"UnhandledExceptionFilter",
+      "name":"UNHANDLED_EXCEPTION_FILTER_FUNC",
       "type":"function_definition"
     },
     {
@@ -4797,7 +4917,7 @@
       "type":"struct"
     },
     {
-      "name":"DirectDrawCreate",
+      "name":"DIRECT_DRAW_CREATE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4809,7 +4929,7 @@
       "type":"typedef"
     },
     {
-      "name":"DirectSoundCreate",
+      "name":"DIRECT_SOUND_CREATE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4849,7 +4969,7 @@
       "type":"typedef"
     },
     {
-      "name":"DirectSoundEnumerateA",
+      "name":"DIRECT_SOUND_ENUMERATE_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -4877,7 +4997,7 @@
       "type":"typedef"
     },
     {
-      "name":"GlobalMemoryStatus",
+      "name":"GLOBAL_MEMORY_STATUS_FUNC",
       "type":"function_definition"
     },
     {
@@ -4889,7 +5009,7 @@
       "type":"typedef"
     },
     {
-      "name":"VirtualQuery",
+      "name":"VIRTUAL_QUERY_FUNC",
       "type":"function_definition"
     },
     {
@@ -4933,27 +5053,27 @@
       "type":"typedef"
     },
     {
-      "name":"CreateDirectoryA",
+      "name":"CREATE_DIRECTORY_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"CreateEventA",
+      "name":"CREATE_EVENT_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"CreateFileA",
+      "name":"CREATE_FILE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"CreateMutexA",
+      "name":"CREATE_MUTEX_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"CreateThread",
+      "name":"CREATE_THREAD_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"RegCreateKeyExA",
+      "name":"REG_CREATE_KEY_EX_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -4965,7 +5085,7 @@
       "type":"typedef"
     },
     {
-      "name":"CreateProcessA",
+      "name":"CREATE_PROCESS_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -4977,11 +5097,11 @@
       "type":"typedef"
     },
     {
-      "name":"FileTimeToSystemTime",
+      "name":"FILE_TIME_TO_SYSTEM_TIME_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"GetLocalTime",
+      "name":"GET_LOCAL_TIME_FUNC",
       "type":"function_definition"
     },
     {
@@ -4989,7 +5109,7 @@
       "type":"typedef"
     },
     {
-      "name":"SystemTimeToFileTime",
+      "name":"SYSTEM_TIME_TO_FILE_TIME_FUNC",
       "type":"function_definition"
     },
     {
@@ -5001,7 +5121,7 @@
       "type":"typedef"
     },
     {
-      "name":"GetTimeZoneInformation",
+      "name":"GET_TIME_ZONE_INFORMATION_FUNC",
       "type":"function_definition"
     },
     {
@@ -5013,11 +5133,11 @@
       "type":"typedef"
     },
     {
-      "name":"FindFirstFileA",
+      "name":"FIND_FIRST_FILE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"FindNextFileA",
+      "name":"FIND_NEXT_FILE_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -5041,11 +5161,7 @@
       "type":"typedef"
     },
     {
-      "name":"GetCPInfo",
-      "type":"function_definition"
-    },
-    {
-      "name":"_gethostname",
+      "name":"GET_CP_INFO_FUNC",
       "type":"function_definition"
     },
     {
@@ -5065,11 +5181,11 @@
       "type":"typedef"
     },
     {
-      "name":"QueryPerformanceCounter",
+      "name":"QUERY_PERFORMANCE_COUNTER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"QueryPerformanceFrequency",
+      "name":"QUERY_PERFORMANCE_FREQUENCY_FUNC",
       "type":"function_definition"
     },
     {
@@ -5101,11 +5217,11 @@
       "type":"typedef"
     },
     {
-      "name":"ReadFile",
+      "name":"READ_FILE_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"WriteFile",
+      "name":"WRITE_FILE_FUNC",
       "type":"function_definition"
     },
     {
@@ -5133,23 +5249,7 @@
       "type":"typedef"
     },
     {
-      "name":"ReadConsoleInputA",
-      "type":"function_definition"
-    },
-    {
-      "name":"accept",
-      "type":"function_definition"
-    },
-    {
-      "name":"bind",
-      "type":"function_definition"
-    },
-    {
-      "name":"closesocket",
-      "type":"function_definition"
-    },
-    {
-      "name":"connect",
+      "name":"READ_CONSOLE_INPUT_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -5205,44 +5305,12 @@
       "type":"struct"
     },
     {
-      "name":"gethostbyname",
-      "type":"function_definition"
-    },
-    {
-      "name":"getservbyport",
-      "type":"function_definition"
-    },
-    {
-      "name":"getsockname",
-      "type":"function_definition"
-    },
-    {
-      "name":"htonl",
-      "type":"function_definition"
-    },
-    {
-      "name":"htons",
-      "type":"function_definition"
-    },
-    {
-      "name":"inet_addr",
-      "type":"function_definition"
-    },
-    {
       "name":"intptr_t",
       "type":"typedef"
     },
     {
-      "name":"ioctlsocket",
-      "type":"function_definition"
-    },
-    {
       "name":"istream_core",
       "type":"struct"
-    },
-    {
-      "name":"joyGetPosEx",
-      "type":"function_definition"
     },
     {
       "name":"joyinfo_tag",
@@ -5253,23 +5321,7 @@
       "type":"typedef"
     },
     {
-      "name":"joyGetPos",
-      "type":"function_definition"
-    },
-    {
-      "name":"listen",
-      "type":"function_definition"
-    },
-    {
-      "name":"mciGetErrorStringA",
-      "type":"function_definition"
-    },
-    {
-      "name":"mciSendStringA",
-      "type":"function_definition"
-    },
-    {
-      "name":"ntohs",
+      "name":"JOY_GET_POS_FUNC",
       "type":"function_definition"
     },
     {
@@ -5277,32 +5329,8 @@
       "type":"struct"
     },
     {
-      "name":"recv",
-      "type":"function_definition"
-    },
-    {
-      "name":"recvfrom",
-      "type":"function_definition"
-    },
-    {
       "name":"scanf_state_t",
       "type":"struct"
-    },
-    {
-      "name":"send",
-      "type":"function_definition"
-    },
-    {
-      "name":"sendto",
-      "type":"function_definition"
-    },
-    {
-      "name":"setsockopt",
-      "type":"function_definition"
-    },
-    {
-      "name":"shutdown",
-      "type":"function_definition"
     },
     {
       "name":"streambuf",
@@ -5501,6 +5529,14 @@
       "type":"struct"
     },
     {
+      "name":"WAVE_IN_OPEN_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"WAVE_OUT_OPEN_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"tagBITMAPINFOHEADER",
       "type":"struct"
     },
@@ -5517,7 +5553,7 @@
       "type":"typedef"
     },
     {
-      "name":"joyGetDevCapsA",
+      "name":"JOY_GET_DEV_CAPS_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -5525,7 +5561,7 @@
       "type":"struct"
     },
     {
-      "name":"CreateBrushIndirect",
+      "name":"CREATE_BRUSH_INDIRECT_FUNC",
       "type":"function_definition"
     },
     {
@@ -5545,7 +5581,7 @@
       "type":"struct"
     },
     {
-      "name":"DispatchMessageA",
+      "name":"DISPATCH_MESSAGE_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -5557,11 +5593,11 @@
       "type":"typedef"
     },
     {
-      "name":"PeekMessageA",
+      "name":"PEEK_MESSAGE_A_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"TranslateMessage",
+      "name":"TRANSLATE_MESSAGE_FUNC",
       "type":"function_definition"
     },
     {
@@ -5597,7 +5633,7 @@
       "type":"struct"
     },
     {
-      "name":"InvalidateRect",
+      "name":"INVALIDATE_RECT_FUNC",
       "type":"function_definition"
     },
     {
@@ -5605,7 +5641,7 @@
       "type":"typedef"
     },
     {
-      "name":"GetClientRect",
+      "name":"GET_CLIENT_RECT_FUNC",
       "type":"function_definition"
     },
     {
@@ -5613,7 +5649,7 @@
       "type":"typedef"
     },
     {
-      "name":"SetRectEmpty",
+      "name":"SET_RECT_EMPTY_FUNC",
       "type":"function_definition"
     },
     {
@@ -5633,7 +5669,7 @@
       "type":"typedef"
     },
     {
-      "name":"CreateDIBSection",
+      "name":"CREATE_DIB_SECTION_FUNC",
       "type":"function_definition"
     },
     {
@@ -5645,7 +5681,7 @@
       "type":"typedef"
     },
     {
-      "name":"GetTextExtentPoint32A",
+      "name":"GET_TEXT_EXTENT_POINT32_A_FUNC",
       "type":"function_definition"
     },
     {
@@ -5657,6 +5693,10 @@
       "type":"typedef"
     },
     {
+      "name":"WAVE_IN_GET_DEV_CAPS_A_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"tagWAVEOUTCAPSA",
       "type":"struct"
     },
@@ -5665,28 +5705,20 @@
       "type":"typedef"
     },
     {
+      "name":"WAVE_OUT_GET_DEV_CAPS_A_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"tagWNDCLASSA",
       "type":"struct"
     },
     {
-      "name":"RegisterClassA",
+      "name":"REGISTER_CLASS_A_FUNC",
       "type":"function_definition"
     },
     {
       "name":"WNDCLASSA",
       "type":"typedef"
-    },
-    {
-      "name":"timeBeginPeriod",
-      "type":"function_definition"
-    },
-    {
-      "name":"timeEndPeriod",
-      "type":"function_definition"
-    },
-    {
-      "name":"timeGetTime",
-      "type":"function_definition"
     },
     {
       "name":"time_t",
@@ -6025,42 +6057,6 @@
       "type":"struct"
     },
     {
-      "name":"waveInClose",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveInGetDevCapsA",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveInOpen",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveInReset",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveInStart",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveOutClose",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveOutGetDevCapsA",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveOutOpen",
-      "type":"function_definition"
-    },
-    {
-      "name":"waveOutReset",
-      "type":"function_definition"
-    },
-    {
       "name":"wavehdr_tag",
       "type":"struct"
     },
@@ -6069,27 +6065,27 @@
       "type":"typedef"
     },
     {
-      "name":"waveInAddBuffer",
+      "name":"WAVE_IN_ADD_BUFFER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"waveInPrepareHeader",
+      "name":"WAVE_IN_PREPARE_HEADER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"waveInUnprepareHeader",
+      "name":"WAVE_IN_UNPREPARE_HEADER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"waveOutPrepareHeader",
+      "name":"WAVE_OUT_PREPARE_HEADER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"waveOutUnprepareHeader",
+      "name":"WAVE_OUT_UNPREPARE_HEADER_FUNC",
       "type":"function_definition"
     },
     {
-      "name":"waveOutWrite",
+      "name":"WAVE_OUT_WRITE_FUNC",
       "type":"function_definition"
     }
   ],
@@ -6097,7 +6093,7 @@
     {
       "cat":"/Nocturne/Enum/System/stdio.h",
       "importable":true,
-      "name":"BasicLengthFlags",
+      "name":"BASIC_LENGTH_FLAGS",
       "type":"enum",
       "values":[
         {
@@ -6649,7 +6645,7 @@
     {
       "cat":"/Nocturne/Enum/System/stdio.h",
       "importable":true,
-      "name":"ExtendedLengthFlags",
+      "name":"EXTENDED_LENGTH_FLAGS",
       "type":"enum",
       "values":[
         {
@@ -6693,7 +6689,7 @@
     {
       "cat":"/Nocturne/Enum/System/stdio.h",
       "importable":true,
-      "name":"FormatFlags",
+      "name":"FORMAT_FLAGS",
       "type":"enum",
       "values":[
         {
@@ -6892,25 +6888,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"_gethostname",
-      "parameters":[
-        {
-          "name":"name",
-          "type":"char*"
-        },
-        {
-          "name":"namelen",
-          "type":"int"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
-      "importable":true,
-      "name":"accept",
+      "name":"ACCEPT_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -7684,7 +7662,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"bind",
+      "name":"BIND_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -7706,7 +7684,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"BringWindowToTop",
+      "name":"BRING_WINDOW_TO_TOP_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -9287,7 +9265,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"CharUpperBuffA",
+      "name":"CHAR_UPPER_BUFF_A_FUNC",
       "parameters":[
         {
           "name":"lpsz",
@@ -9355,7 +9333,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"CloseClipboard",
+      "name":"CLOSE_CLIPBOARD_FUNC",
       "parameters":[],
       "return_type":"BOOL",
       "type":"function_definition"
@@ -9364,7 +9342,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CloseHandle",
+      "name":"CLOSE_HANDLE_FUNC",
       "parameters":[
         {
           "name":"hObject",
@@ -9378,7 +9356,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"closesocket",
+      "name":"CLOSE_SOCKET_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -10502,7 +10480,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"connect",
+      "name":"CONNECT_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -11534,7 +11512,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"CreateBrushIndirect",
+      "name":"CREATE_BRUSH_INDIRECT_FUNC",
       "parameters":[
         {
           "name":"plbrush",
@@ -11548,7 +11526,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"CreateCompatibleDC",
+      "name":"CREATE_COMPATIBLE_DC_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -11562,7 +11540,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"CreateDIBSection",
+      "name":"CREATE_DIB_SECTION_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -11596,7 +11574,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateDirectoryA",
+      "name":"CREATE_DIRECTORY_A_FUNC",
       "parameters":[
         {
           "name":"lpPathName",
@@ -11614,7 +11592,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateEventA",
+      "name":"CREATE_EVENT_A_FUNC",
       "parameters":[
         {
           "name":"lpEventAttributes",
@@ -11640,7 +11618,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateFileA",
+      "name":"CREATE_FILE_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -11678,7 +11656,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"CreateFontA",
+      "name":"CREATE_FONT_A_FUNC",
       "parameters":[
         {
           "name":"cHeight",
@@ -11744,7 +11722,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateMutexA",
+      "name":"CREATE_MUTEX_A_FUNC",
       "parameters":[
         {
           "name":"lpMutexAttributes",
@@ -11766,7 +11744,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateProcessA",
+      "name":"CREATE_PROCESS_A_FUNC",
       "parameters":[
         {
           "name":"lpApplicationName",
@@ -11816,7 +11794,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"CreateThread",
+      "name":"CREATE_THREAD_FUNC",
       "parameters":[
         {
           "name":"lpThreadAttributes",
@@ -11850,7 +11828,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"CreateWindowExA",
+      "name":"CREATE_WINDOW_EX_A_FUNC",
       "parameters":[
         {
           "name":"dwExStyle",
@@ -12538,7 +12516,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"DefWindowProcA",
+      "name":"DEF_WINDOW_PROC_A_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -12561,10 +12539,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/syncapi.h",
       "importable":true,
-      "name":"DeleteCriticalSection",
+      "name":"DELETE_CRITICAL_SECTION_FUNC",
       "parameters":[
         {
           "name":"lpCriticalSection",
@@ -12578,7 +12556,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"DeleteDC",
+      "name":"DELETE_DC_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -12592,7 +12570,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"DeleteFileA",
+      "name":"DELETE_FILE_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -12606,7 +12584,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"DeleteObject",
+      "name":"DELETE_OBJECT_FUNC",
       "parameters":[
         {
           "name":"ho",
@@ -12620,7 +12598,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
-      "name":"DirectDrawCreate",
+      "name":"DIRECT_DRAW_CREATE_FUNC",
       "parameters":[
         {
           "name":"lpGUID",
@@ -12642,7 +12620,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
       "importable":true,
-      "name":"DirectSoundCreate",
+      "name":"DIRECT_SOUND_CREATE_FUNC",
       "parameters":[
         {
           "name":"lpGuid",
@@ -12664,7 +12642,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
       "importable":true,
-      "name":"DirectSoundEnumerateA",
+      "name":"DIRECT_SOUND_ENUMERATE_A_FUNC",
       "parameters":[
         {
           "name":"lpDSEnumCallback",
@@ -12682,7 +12660,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"DispatchMessageA",
+      "name":"DISPATCH_MESSAGE_A_FUNC",
       "parameters":[
         {
           "name":"lpMsg",
@@ -12696,7 +12674,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"DosDateTimeToFileTime",
+      "name":"DOS_DATE_TIME_TO_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"wFatDate",
@@ -12718,7 +12696,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"DuplicateHandle",
+      "name":"DUPLICATE_HANDLE_FUNC",
       "parameters":[
         {
           "name":"hSourceProcessHandle",
@@ -12773,7 +12751,7 @@
       "name":"ENTER_CRITICAL_SECTION_FUNC",
       "parameters":[
         {
-          "name":"param0",
+          "name":"lpCriticalSection",
           "type":"LPCRITICAL_SECTION"
         }
       ],
@@ -12786,20 +12764,6 @@
       "importable":true,
       "name":"ENTER_THREAD_CRITICAL_SECTION_FUNC",
       "parameters":[],
-      "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
-      "importable":true,
-      "name":"EnterCriticalSection",
-      "parameters":[
-        {
-          "name":"lpCriticalSection",
-          "type":"LPCRITICAL_SECTION"
-        }
-      ],
       "return_type":"void",
       "type":"function_definition"
     },
@@ -12882,8 +12846,22 @@
       "name":"EXIT_CRITICAL_SECTION_FUNC",
       "parameters":[
         {
-          "name":"param0",
+          "name":"lpCriticalSection",
           "type":"LPCRITICAL_SECTION"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
+      "importable":true,
+      "name":"EXIT_PROCESS_FUNC",
+      "parameters":[
+        {
+          "name":"uExitCode",
+          "type":"UINT"
         }
       ],
       "return_type":"void",
@@ -12902,21 +12880,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"ExitProcess",
-      "parameters":[
-        {
-          "name":"uExitCode",
-          "type":"UINT"
-        }
-      ],
-      "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
-      "importable":true,
-      "name":"ExitThread",
+      "name":"EXIT_THREAD_FUNC",
       "parameters":[
         {
           "name":"dwExitCode",
@@ -12936,24 +12900,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"FileSearchHandler",
-      "parameters":[
-        {
-          "name":"param0",
-          "type":"void*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FileTimeToDosDateTime",
+      "name":"FILE_TIME_TO_DOS_DATE_TIME_FUNC",
       "parameters":[
         {
           "name":"lpFileTime",
@@ -12975,7 +12925,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FileTimeToLocalFileTime",
+      "name":"FILE_TIME_TO_LOCAL_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"lpFileTime",
@@ -12993,7 +12943,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FileTimeToSystemTime",
+      "name":"FILE_TIME_TO_SYSTEM_TIME_FUNC",
       "parameters":[
         {
           "name":"lpFileTime",
@@ -13008,10 +12958,24 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"FileSearchHandler",
+      "parameters":[
+        {
+          "name":"param0",
+          "type":"void*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FindClose",
+      "name":"FIND_CLOSE_FUNC",
       "parameters":[
         {
           "name":"hFindFile",
@@ -13025,7 +12989,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FindFirstFileA",
+      "name":"FIND_FIRST_FILE_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -13043,7 +13007,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FindNextFileA",
+      "name":"FIND_NEXT_FILE_A_FUNC",
       "parameters":[
         {
           "name":"hFindFile",
@@ -13061,7 +13025,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"FindWindowA",
+      "name":"FIND_WINDOW_A_FUNC",
       "parameters":[
         {
           "name":"lpClassName",
@@ -13079,7 +13043,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FlushFileBuffers",
+      "name":"FLUSH_FILE_BUFFERS_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -13093,7 +13057,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FreeEnvironmentStringsA",
+      "name":"FREE_ENVIRONMENT_STRINGS_A_FUNC",
       "parameters":[
         {
           "name":"penv",
@@ -13107,7 +13071,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"FreeLibrary",
+      "name":"FREE_LIBRARY_FUNC",
       "parameters":[
         {
           "name":"hLibModule",
@@ -13118,19 +13082,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/System/syncapi.h",
-      "importable":true,
-      "name":"GET_TLS_FUNC",
-      "parameters":[],
-      "return_type":"ThreadData*",
-      "type":"function_definition"
-    },
-    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetACP",
+      "name":"GET_ACP_FUNC",
       "parameters":[],
       "return_type":"UINT",
       "type":"function_definition"
@@ -13139,7 +13094,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"GetClientRect",
+      "name":"GET_CLIENT_RECT_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -13157,7 +13112,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"GetClipboardData",
+      "name":"GET_CLIPBOARD_DATA_FUNC",
       "parameters":[
         {
           "name":"uFormat",
@@ -13171,7 +13126,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCommandLineA",
+      "name":"GET_COMMAND_LINE_A_FUNC",
       "parameters":[],
       "return_type":"LPSTR",
       "type":"function_definition"
@@ -13180,7 +13135,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCommandLineW",
+      "name":"GET_COMMAND_LINE_W_FUNC",
       "parameters":[],
       "return_type":"LPWSTR",
       "type":"function_definition"
@@ -13189,7 +13144,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetComputerNameA",
+      "name":"GET_COMPUTER_NAME_A_FUNC",
       "parameters":[
         {
           "name":"lpBuffer",
@@ -13207,7 +13162,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetConsoleMode",
+      "name":"GET_CONSOLE_MODE_FUNC",
       "parameters":[
         {
           "name":"hConsoleHandle",
@@ -13225,7 +13180,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCPInfo",
+      "name":"GET_CP_INFO_FUNC",
       "parameters":[
         {
           "name":"CodePage",
@@ -13243,7 +13198,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCurrentDirectoryA",
+      "name":"GET_CURRENT_DIRECTORY_A_FUNC",
       "parameters":[
         {
           "name":"nBufferLength",
@@ -13261,7 +13216,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCurrentProcess",
+      "name":"GET_CURRENT_PROCESS_FUNC",
       "parameters":[],
       "return_type":"HANDLE",
       "type":"function_definition"
@@ -13270,7 +13225,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCurrentProcessId",
+      "name":"GET_CURRENT_PROCESS_ID_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -13279,7 +13234,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCurrentThread",
+      "name":"GET_CURRENT_THREAD_FUNC",
       "parameters":[],
       "return_type":"HANDLE",
       "type":"function_definition"
@@ -13288,7 +13243,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetCurrentThreadId",
+      "name":"GET_CURRENT_THREAD_ID_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -13297,7 +13252,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetEnvironmentStrings",
+      "name":"GET_ENVIRONMENT_STRINGS_FUNC",
       "parameters":[],
       "return_type":"LPSTR",
       "type":"function_definition"
@@ -13306,7 +13261,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetExitCodeProcess",
+      "name":"GET_EXIT_CODE_PROCESS_FUNC",
       "parameters":[
         {
           "name":"hProcess",
@@ -13324,7 +13279,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetFileAttributesA",
+      "name":"GET_FILE_ATTRIBUTES_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -13338,7 +13293,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetFileTime",
+      "name":"GET_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -13364,7 +13319,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetFileType",
+      "name":"GET_FILE_TYPE_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -13378,7 +13333,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetFullPathNameA",
+      "name":"GET_FULL_PATH_NAME_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -13404,7 +13359,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"gethostbyname",
+      "name":"GET_HOST_BY_NAME_FUNC",
       "parameters":[
         {
           "name":"name",
@@ -13416,9 +13371,27 @@
     },
     {
       "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
+      "importable":true,
+      "name":"GET_HOSTNAME_FUNC",
+      "parameters":[
+        {
+          "name":"name",
+          "type":"char*"
+        },
+        {
+          "name":"namelen",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"GetKeyNameTextA",
+      "name":"GET_KEY_NAME_TEXT_A_FUNC",
       "parameters":[
         {
           "name":"lParam",
@@ -13440,7 +13413,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"GetLastActivePopup",
+      "name":"GET_LAST_ACTIVE_POPUP_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -13454,7 +13427,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetLastError",
+      "name":"GET_LAST_ERROR_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -13463,7 +13436,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetLocalTime",
+      "name":"GET_LOCAL_TIME_FUNC",
       "parameters":[
         {
           "name":"lpSystemTime",
@@ -13477,7 +13450,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetModuleFileNameA",
+      "name":"GET_MODULE_FILE_NAME_A_FUNC",
       "parameters":[
         {
           "name":"hModule",
@@ -13499,7 +13472,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetModuleFileNameW",
+      "name":"GET_MODULE_FILE_NAME_W_FUNC",
       "parameters":[
         {
           "name":"hModule",
@@ -13521,7 +13494,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetModuleHandleA",
+      "name":"GET_MODULE_HANDLE_A_FUNC",
       "parameters":[
         {
           "name":"lpModuleName",
@@ -13535,7 +13508,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetOEMCP",
+      "name":"GET_OEMCP_FUNC",
       "parameters":[],
       "return_type":"UINT",
       "type":"function_definition"
@@ -13544,7 +13517,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetProcAddress",
+      "name":"GET_PROC_ADDRESS_FUNC",
       "parameters":[
         {
           "name":"hModule",
@@ -13562,7 +13535,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"getservbyport",
+      "name":"GET_SERV_BY_PORT_FUNC",
       "parameters":[
         {
           "name":"port",
@@ -13580,7 +13553,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"getsockname",
+      "name":"GET_SOCK_NAME_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -13602,7 +13575,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetStdHandle",
+      "name":"GET_STD_HANDLE_FUNC",
       "parameters":[
         {
           "name":"nStdHandle",
@@ -13616,7 +13589,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"GetStockObject",
+      "name":"GET_STOCK_OBJECT_FUNC",
       "parameters":[
         {
           "name":"i",
@@ -13630,7 +13603,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"GetTextExtentPoint32A",
+      "name":"GET_TEXT_EXTENT_POINT32_A_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -13656,7 +13629,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetTimeZoneInformation",
+      "name":"GET_TIME_ZONE_INFORMATION_FUNC",
       "parameters":[
         {
           "name":"lpTimeZoneInformation",
@@ -13667,10 +13640,19 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/syncapi.h",
+      "importable":true,
+      "name":"GET_TLS_FUNC",
+      "parameters":[],
+      "return_type":"ThreadData*",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"GetUserNameA",
+      "name":"GET_USER_NAME_A_FUNC",
       "parameters":[
         {
           "name":"lpBuffer",
@@ -13688,7 +13670,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GetVersion",
+      "name":"GET_VERSION_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -13697,7 +13679,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GlobalAlloc",
+      "name":"GLOBAL_ALLOC_FUNC",
       "parameters":[
         {
           "name":"uFlags",
@@ -13715,7 +13697,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GlobalFree",
+      "name":"GLOBAL_FREE_FUNC",
       "parameters":[
         {
           "name":"hMem",
@@ -13729,7 +13711,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GlobalLock",
+      "name":"GLOBAL_LOCK_FUNC",
       "parameters":[
         {
           "name":"hMem",
@@ -13743,7 +13725,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GlobalMemoryStatus",
+      "name":"GLOBAL_MEMORY_STATUS_FUNC",
       "parameters":[
         {
           "name":"lpBuffer",
@@ -13757,7 +13739,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"GlobalUnlock",
+      "name":"GLOBAL_UNLOCK_FUNC",
       "parameters":[
         {
           "name":"hMem",
@@ -13771,7 +13753,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"htonl",
+      "name":"HOST_TO_NETWORK_LONG_FUNC",
       "parameters":[
         {
           "name":"hostlong",
@@ -13785,7 +13767,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"htons",
+      "name":"HOST_TO_NETWORK_SHORT_FUNC",
       "parameters":[
         {
           "name":"hostshort",
@@ -16411,7 +16393,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"ImpersonateLoggedOnUser",
+      "name":"IMPERSONATE_LOGGED_ON_USER_FUNC",
       "parameters":[
         {
           "name":"hToken",
@@ -16425,7 +16407,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"inet_addr",
+      "name":"INET_ADDR_FUNC",
       "parameters":[
         {
           "name":"cp",
@@ -16436,10 +16418,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/syncapi.h",
       "importable":true,
-      "name":"InitializeCriticalSection",
+      "name":"INITIALIZE_CRITICAL_SECTION_FUNC",
       "parameters":[
         {
           "name":"lpCriticalSection",
@@ -16467,7 +16449,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"InvalidateRect",
+      "name":"INVALIDATE_RECT_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -16489,7 +16471,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"ioctlsocket",
+      "name":"IOCTL_SOCKET_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -16508,6 +16490,20 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/user32.h",
+      "importable":true,
+      "name":"IS_ICONIC_FUNC",
+      "parameters":[
+        {
+          "name":"hWnd",
+          "type":"HWND"
+        }
+      ],
+      "return_type":"BOOL",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/System/winuser.h",
       "importable":true,
@@ -16519,20 +16515,6 @@
         }
       ],
       "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/user32.h",
-      "importable":true,
-      "name":"IsIconic",
-      "parameters":[
-        {
-          "name":"hWnd",
-          "type":"HWND"
-        }
-      ],
-      "return_type":"BOOL",
       "type":"function_definition"
     },
     {
@@ -16589,7 +16571,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"joyGetDevCapsA",
+      "name":"JOY_GET_DEV_CAPS_A_FUNC",
       "parameters":[
         {
           "name":"uJoyID",
@@ -16611,25 +16593,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"joyGetPos",
-      "parameters":[
-        {
-          "name":"uJoyID",
-          "type":"UINT"
-        },
-        {
-          "name":"pji",
-          "type":"LPJOYINFO"
-        }
-      ],
-      "return_type":"MMRESULT",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
-      "importable":true,
-      "name":"joyGetPosEx",
+      "name":"JOY_GET_POS_EX_FUNC",
       "parameters":[
         {
           "name":"uJoyID",
@@ -16645,9 +16609,27 @@
     },
     {
       "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
+      "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"LeaveCriticalSection",
+      "name":"JOY_GET_POS_FUNC",
+      "parameters":[
+        {
+          "name":"uJoyID",
+          "type":"UINT"
+        },
+        {
+          "name":"pji",
+          "type":"LPJOYINFO"
+        }
+      ],
+      "return_type":"MMRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/syncapi.h",
+      "importable":true,
+      "name":"LEAVE_CRITICAL_SECTION_FUNC",
       "parameters":[
         {
           "name":"lpCriticalSection",
@@ -16661,7 +16643,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"listen",
+      "name":"LISTEN_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -16679,7 +16661,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"LoadCursorA",
+      "name":"LOAD_CURSOR_A_FUNC",
       "parameters":[
         {
           "name":"hInstance",
@@ -16697,7 +16679,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"LoadIconA",
+      "name":"LOAD_ICON_A_FUNC",
       "parameters":[
         {
           "name":"hInstance",
@@ -16715,7 +16697,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"LoadLibraryA",
+      "name":"LOAD_LIBRARY_A_FUNC",
       "parameters":[
         {
           "name":"lpLibFileName",
@@ -16729,7 +16711,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"LocalFileTimeToFileTime",
+      "name":"LOCAL_FILE_TIME_TO_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"lpLocalFileTime",
@@ -16747,7 +16729,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"LogonUserA",
+      "name":"LOGON_USER_A_FUNC",
       "parameters":[
         {
           "name":"lpszUsername",
@@ -16865,7 +16847,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"mciGetErrorStringA",
+      "name":"MCI_GET_ERROR_STRING_A_FUNC",
       "parameters":[
         {
           "name":"mcierr",
@@ -16887,7 +16869,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"mciSendStringA",
+      "name":"MCI_SEND_STRING_A_FUNC",
       "parameters":[
         {
           "name":"lpstrCommand",
@@ -16913,7 +16895,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"MessageBoxA",
+      "name":"MESSAGE_BOX_A_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -16939,7 +16921,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"MoveFileA",
+      "name":"MOVE_FILE_A_FUNC",
       "parameters":[
         {
           "name":"lpExistingFileName",
@@ -16957,7 +16939,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"MoveWindow",
+      "name":"MOVE_WINDOW_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -17005,7 +16987,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"MultiByteToWideChar",
+      "name":"MULTI_BYTE_TO_WIDE_CHAR_FUNC",
       "parameters":[
         {
           "name":"CodePage",
@@ -17039,7 +17021,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"ntohs",
+      "name":"NETWORK_TO_HOST_SHORT_FUNC",
       "parameters":[
         {
           "name":"netshort",
@@ -17053,7 +17035,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"OpenClipboard",
+      "name":"OPEN_CLIPBOARD_FUNC",
       "parameters":[
         {
           "name":"hWndNewOwner",
@@ -17107,7 +17089,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"PeekMessageA",
+      "name":"PEEK_MESSAGE_A_FUNC",
       "parameters":[
         {
           "name":"lpMsg",
@@ -17151,7 +17133,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"PostQuitMessage",
+      "name":"POST_QUIT_MESSAGE_FUNC",
       "parameters":[
         {
           "name":"nExitCode",
@@ -17211,7 +17193,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"QueryPerformanceCounter",
+      "name":"QUERY_PERFORMANCE_COUNTER_FUNC",
       "parameters":[
         {
           "name":"lpPerformanceCount",
@@ -17225,7 +17207,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"QueryPerformanceFrequency",
+      "name":"QUERY_PERFORMANCE_FREQUENCY_FUNC",
       "parameters":[
         {
           "name":"lpFrequency",
@@ -17239,7 +17221,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"ReadConsoleInputA",
+      "name":"READ_CONSOLE_INPUT_A_FUNC",
       "parameters":[
         {
           "name":"hConsoleInput",
@@ -17265,7 +17247,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"ReadFile",
+      "name":"READ_FILE_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -17295,7 +17277,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"Rectangle",
+      "name":"RECTANGLE_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -17325,33 +17307,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"recv",
-      "parameters":[
-        {
-          "name":"s",
-          "type":"SOCKET"
-        },
-        {
-          "name":"buf",
-          "type":"char*"
-        },
-        {
-          "name":"len",
-          "type":"int"
-        },
-        {
-          "name":"flags",
-          "type":"int"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
-      "importable":true,
-      "name":"recvfrom",
+      "name":"RECV_FROM_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -17383,9 +17339,35 @@
     },
     {
       "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
+      "importable":true,
+      "name":"RECV_FUNC",
+      "parameters":[
+        {
+          "name":"s",
+          "type":"SOCKET"
+        },
+        {
+          "name":"buf",
+          "type":"char*"
+        },
+        {
+          "name":"len",
+          "type":"int"
+        },
+        {
+          "name":"flags",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RegCloseKey",
+      "name":"REG_CLOSE_KEY_FUNC",
       "parameters":[
         {
           "name":"hKey",
@@ -17399,7 +17381,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RegCreateKeyExA",
+      "name":"REG_CREATE_KEY_EX_A_FUNC",
       "parameters":[
         {
           "name":"hKey",
@@ -17442,38 +17424,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/System/stdio.h",
-      "importable":true,
-      "name":"REGISTER_HANDLE_FUNC",
-      "parameters":[
-        {
-          "name":"file_handle",
-          "type":"HANDLE"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__stdcall",
-      "cat":"/Nocturne/FunctionDefinition/System/user32.h",
-      "importable":true,
-      "name":"RegisterClassA",
-      "parameters":[
-        {
-          "name":"lpWndClass",
-          "type":"WNDCLASSA*"
-        }
-      ],
-      "return_type":"ATOM",
-      "type":"function_definition"
-    },
-    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RegOpenKeyExA",
+      "name":"REG_OPEN_KEY_EX_A_FUNC",
       "parameters":[
         {
           "name":"hKey",
@@ -17503,7 +17457,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RegQueryValueExA",
+      "name":"REG_QUERY_VALUE_EX_A_FUNC",
       "parameters":[
         {
           "name":"hKey",
@@ -17537,7 +17491,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RegSetValueExA",
+      "name":"REG_SET_VALUE_EX_A_FUNC",
       "parameters":[
         {
           "name":"hKey",
@@ -17569,9 +17523,37 @@
     },
     {
       "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/user32.h",
+      "importable":true,
+      "name":"REGISTER_CLASS_A_FUNC",
+      "parameters":[
+        {
+          "name":"lpWndClass",
+          "type":"WNDCLASSA*"
+        }
+      ],
+      "return_type":"ATOM",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/stdio.h",
+      "importable":true,
+      "name":"REGISTER_HANDLE_FUNC",
+      "parameters":[
+        {
+          "name":"file_handle",
+          "type":"HANDLE"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"ReleaseMutex",
+      "name":"RELEASE_MUTEX_FUNC",
       "parameters":[
         {
           "name":"hMutex",
@@ -17607,7 +17589,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/advapi32.h",
       "importable":true,
-      "name":"RevertToSelf",
+      "name":"REVERT_TO_SELF_FUNC",
       "parameters":[],
       "return_type":"BOOL",
       "type":"function_definition"
@@ -17657,7 +17639,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"SelectObject",
+      "name":"SELECT_OBJECT_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -17675,7 +17657,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"send",
+      "name":"SEND_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -17701,7 +17683,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"sendto",
+      "name":"SEND_TO_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -17735,7 +17717,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"SetBkColor",
+      "name":"SET_BK_COLOR_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -17753,7 +17735,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"SetBkMode",
+      "name":"SET_BK_MODE_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -17771,7 +17753,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetClipboardData",
+      "name":"SET_CLIPBOARD_DATA_FUNC",
       "parameters":[
         {
           "name":"uFormat",
@@ -17789,7 +17771,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetConsoleCtrlHandler",
+      "name":"SET_CONSOLE_CTRL_HANDLER_FUNC",
       "parameters":[
         {
           "name":"HandlerRoutine",
@@ -17807,7 +17789,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetConsoleMode",
+      "name":"SET_CONSOLE_MODE_FUNC",
       "parameters":[
         {
           "name":"hConsoleHandle",
@@ -17825,7 +17807,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetCurrentDirectoryA",
+      "name":"SET_CURRENT_DIRECTORY_A_FUNC",
       "parameters":[
         {
           "name":"lpPathName",
@@ -17839,7 +17821,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetCursor",
+      "name":"SET_CURSOR_FUNC",
       "parameters":[
         {
           "name":"hCursor",
@@ -17853,7 +17835,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetCursorPos",
+      "name":"SET_CURSOR_POS_FUNC",
       "parameters":[
         {
           "name":"X",
@@ -17871,7 +17853,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetEndOfFile",
+      "name":"SET_END_OF_FILE_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -17885,7 +17867,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetEnvironmentVariableA",
+      "name":"SET_ENVIRONMENT_VARIABLE_A_FUNC",
       "parameters":[
         {
           "name":"lpName",
@@ -17903,7 +17885,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetEnvironmentVariableW",
+      "name":"SET_ENVIRONMENT_VARIABLE_W_FUNC",
       "parameters":[
         {
           "name":"lpName",
@@ -17921,7 +17903,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetEvent",
+      "name":"SET_EVENT_FUNC",
       "parameters":[
         {
           "name":"hEvent",
@@ -17935,7 +17917,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetFileAttributesA",
+      "name":"SET_FILE_ATTRIBUTES_A_FUNC",
       "parameters":[
         {
           "name":"lpFileName",
@@ -17953,7 +17935,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetFilePointer",
+      "name":"SET_FILE_POINTER_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -17979,7 +17961,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetFileTime",
+      "name":"SET_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -18005,7 +17987,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetFocus",
+      "name":"SET_FOCUS_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -18019,7 +18001,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetForegroundWindow",
+      "name":"SET_FOREGROUND_WINDOW_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -18033,7 +18015,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetLastError",
+      "name":"SET_LAST_ERROR_FUNC",
       "parameters":[
         {
           "name":"dwErrCode",
@@ -18047,7 +18029,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"SetRectEmpty",
+      "name":"SET_RECT_EMPTY_FUNC",
       "parameters":[
         {
           "name":"lpRect",
@@ -18061,7 +18043,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"setsockopt",
+      "name":"SET_SOCK_OPT_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -18091,7 +18073,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetStdHandle",
+      "name":"SET_STD_HANDLE_FUNC",
       "parameters":[
         {
           "name":"nStdHandle",
@@ -18109,7 +18091,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"SetTextColor",
+      "name":"SET_TEXT_COLOR_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -18127,7 +18109,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetThreadPriority",
+      "name":"SET_THREAD_PRIORITY_FUNC",
       "parameters":[
         {
           "name":"hThread",
@@ -18145,7 +18127,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SetUnhandledExceptionFilter",
+      "name":"SET_UNHANDLED_EXCEPTION_FILTER_FUNC",
       "parameters":[
         {
           "name":"lpTopLevelExceptionFilter",
@@ -18159,7 +18141,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"ShowWindow",
+      "name":"SHOW_WINDOW_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -18177,7 +18159,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"shutdown",
+      "name":"SHUTDOWN_FUNC",
       "parameters":[
         {
           "name":"s",
@@ -18209,7 +18191,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"Sleep",
+      "name":"SLEEP_FUNC",
       "parameters":[
         {
           "name":"dwMilliseconds",
@@ -18301,7 +18283,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"SystemTimeToFileTime",
+      "name":"SYSTEM_TIME_TO_FILE_TIME_FUNC",
       "parameters":[
         {
           "name":"lpSystemTime",
@@ -18319,7 +18301,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wingdi.h",
       "importable":true,
-      "name":"TextOutA",
+      "name":"TEXT_OUT_A_FUNC",
       "parameters":[
         {
           "name":"hdc",
@@ -18349,7 +18331,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"timeBeginPeriod",
+      "name":"TIME_BEGIN_PERIOD_FUNC",
       "parameters":[
         {
           "name":"uPeriod",
@@ -18363,7 +18345,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"timeEndPeriod",
+      "name":"TIME_END_PERIOD_FUNC",
       "parameters":[
         {
           "name":"uPeriod",
@@ -18377,7 +18359,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"timeGetTime",
+      "name":"TIME_GET_TIME_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -18386,7 +18368,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"TlsAlloc",
+      "name":"TLS_ALLOC_FUNC",
       "parameters":[],
       "return_type":"DWORD",
       "type":"function_definition"
@@ -18395,7 +18377,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"TlsFree",
+      "name":"TLS_FREE_FUNC",
       "parameters":[
         {
           "name":"dwTlsIndex",
@@ -18409,7 +18391,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"TlsGetValue",
+      "name":"TLS_GET_VALUE_FUNC",
       "parameters":[
         {
           "name":"dwTlsIndex",
@@ -18423,7 +18405,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"TlsSetValue",
+      "name":"TLS_SET_VALUE_FUNC",
       "parameters":[
         {
           "name":"dwTlsIndex",
@@ -18441,7 +18423,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"TranslateMessage",
+      "name":"TRANSLATE_MESSAGE_FUNC",
       "parameters":[
         {
           "name":"lpMsg",
@@ -18455,7 +18437,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"UnhandledExceptionFilter",
+      "name":"UNHANDLED_EXCEPTION_FILTER_FUNC",
       "parameters":[
         {
           "name":"ExceptionInfo",
@@ -18469,7 +18451,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/user32.h",
       "importable":true,
-      "name":"UpdateWindow",
+      "name":"UPDATE_WINDOW_FUNC",
       "parameters":[
         {
           "name":"hWnd",
@@ -18483,7 +18465,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"VirtualAlloc",
+      "name":"VIRTUAL_ALLOC_FUNC",
       "parameters":[
         {
           "name":"lpAddress",
@@ -18509,7 +18491,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"VirtualFree",
+      "name":"VIRTUAL_FREE_FUNC",
       "parameters":[
         {
           "name":"lpAddress",
@@ -18531,7 +18513,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"VirtualQuery",
+      "name":"VIRTUAL_QUERY_FUNC",
       "parameters":[
         {
           "name":"lpAddress",
@@ -18562,7 +18544,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"WaitForSingleObject",
+      "name":"WAIT_FOR_SINGLE_OBJECT_FUNC",
       "parameters":[
         {
           "name":"hHandle",
@@ -18630,7 +18612,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInAddBuffer",
+      "name":"WAVE_IN_ADD_BUFFER_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18652,7 +18634,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInClose",
+      "name":"WAVE_IN_CLOSE_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18666,7 +18648,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInGetDevCapsA",
+      "name":"WAVE_IN_GET_DEV_CAPS_A_FUNC",
       "parameters":[
         {
           "name":"uDeviceID",
@@ -18688,7 +18670,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInOpen",
+      "name":"WAVE_IN_OPEN_FUNC",
       "parameters":[
         {
           "name":"phwi",
@@ -18722,7 +18704,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInPrepareHeader",
+      "name":"WAVE_IN_PREPARE_HEADER_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18744,7 +18726,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInReset",
+      "name":"WAVE_IN_RESET_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18758,7 +18740,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInStart",
+      "name":"WAVE_IN_START_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18772,7 +18754,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveInUnprepareHeader",
+      "name":"WAVE_IN_UNPREPARE_HEADER_FUNC",
       "parameters":[
         {
           "name":"hwi",
@@ -18794,7 +18776,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutClose",
+      "name":"WAVE_OUT_CLOSE_FUNC",
       "parameters":[
         {
           "name":"hwo",
@@ -18808,7 +18790,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutGetDevCapsA",
+      "name":"WAVE_OUT_GET_DEV_CAPS_A_FUNC",
       "parameters":[
         {
           "name":"uDeviceID",
@@ -18830,7 +18812,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutOpen",
+      "name":"WAVE_OUT_OPEN_FUNC",
       "parameters":[
         {
           "name":"phwo",
@@ -18864,7 +18846,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutPrepareHeader",
+      "name":"WAVE_OUT_PREPARE_HEADER_FUNC",
       "parameters":[
         {
           "name":"hwo",
@@ -18886,7 +18868,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutReset",
+      "name":"WAVE_OUT_RESET_FUNC",
       "parameters":[
         {
           "name":"hwo",
@@ -18900,7 +18882,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutUnprepareHeader",
+      "name":"WAVE_OUT_UNPREPARE_HEADER_FUNC",
       "parameters":[
         {
           "name":"hwo",
@@ -18922,7 +18904,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
       "importable":true,
-      "name":"waveOutWrite",
+      "name":"WAVE_OUT_WRITE_FUNC",
       "parameters":[
         {
           "name":"hwo",
@@ -18944,7 +18926,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"WideCharToMultiByte",
+      "name":"WIDE_CHAR_TO_MULTI_BYTE_FUNC",
       "parameters":[
         {
           "name":"CodePage",
@@ -19012,7 +18994,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"WriteConsoleA",
+      "name":"WRITE_CONSOLE_A_FUNC",
       "parameters":[
         {
           "name":"hConsoleOutput",
@@ -19042,7 +19024,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
-      "name":"WriteFile",
+      "name":"WRITE_FILE_FUNC",
       "parameters":[
         {
           "name":"hFile",
@@ -19072,7 +19054,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"WSACleanup",
+      "name":"WSA_CLEANUP_FUNC",
       "parameters":[],
       "return_type":"int",
       "type":"function_definition"
@@ -19081,7 +19063,7 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
       "importable":true,
-      "name":"WSAStartup",
+      "name":"WSA_STARTUP_FUNC",
       "parameters":[
         {
           "name":"wVersionRequested",
@@ -21081,21 +21063,21 @@
           "len":4,
           "name":"param1",
           "offset":92,
-          "type":"CActorPropertyParam"
+          "type":"UActorPropertyParam"
         },
         {
           "comment":"min, pairs_ptr",
           "len":4,
           "name":"param2",
           "offset":96,
-          "type":"CActorPropertyParam"
+          "type":"UActorPropertyParam"
         },
         {
           "comment":"max, max_length",
           "len":4,
           "name":"param3",
           "offset":100,
-          "type":"CActorPropertyParam"
+          "type":"UActorPropertyParam"
         },
         {
           "len":4,
@@ -21108,7 +21090,7 @@
           "len":4,
           "name":"param4",
           "offset":108,
-          "type":"CActorPropertyParam"
+          "type":"UActorPropertyParam"
         },
         {
           "comment":"search_path",
@@ -24722,7 +24704,7 @@
           "len":4,
           "name":"vtable",
           "offset":340,
-          "type":"CDemonActor_union_vtable"
+          "type":"UActorVTable"
         }
       ],
       "importable":true,
@@ -41318,7 +41300,7 @@
           "len":4,
           "name":"extended_length_flags",
           "offset":24,
-          "type":"ExtendedLengthFlags"
+          "type":"EXTENDED_LENGTH_FLAGS"
         },
         {
           "len":2,
@@ -41330,13 +41312,13 @@
           "len":1,
           "name":"flags",
           "offset":30,
-          "type":"FormatFlags"
+          "type":"FORMAT_FLAGS"
         },
         {
           "len":1,
           "name":"length_flags",
           "offset":31,
-          "type":"BasicLengthFlags"
+          "type":"BASIC_LENGTH_FLAGS"
         },
         {
           "len":4,
@@ -55538,96 +55520,6 @@
       "type":"union"
     },
     {
-      "alig":1,
-      "cat":"/Nocturne/Union/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"v_int",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"v_float",
-          "offset":0,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"v_ptr",
-          "offset":0,
-          "type":"void*"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"CActorPropertyParam",
-      "pack":false,
-      "type":"union"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Union/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"_ub",
-          "offset":0,
-          "type":"CDemonActor_vtable*"
-        },
-        {
-          "len":4,
-          "name":"_uc",
-          "offset":0,
-          "type":"CCharacter_full_vtable*"
-        },
-        {
-          "len":4,
-          "name":"_ue",
-          "offset":0,
-          "type":"CEnemy_full_vtable*"
-        },
-        {
-          "len":4,
-          "name":"_uh",
-          "offset":0,
-          "type":"CHero_full_vtable*"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"CDemonActor_union_vtable",
-      "pack":false,
-      "type":"union"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Union/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":16,
-          "name":"texture_name",
-          "offset":0,
-          "type":"char[16]"
-        },
-        {
-          "len":16,
-          "name":"clipping_plane",
-          "offset":0,
-          "type":"SClipPlane"
-        }
-      ],
-      "importable":true,
-      "len":16,
-      "name":"CodeCommandData",
-      "pack":false,
-      "type":"union"
-    },
-    {
       "alig":4,
       "cat":"/Nocturne/Union/System/ddraw.h",
       "desc":"",
@@ -55924,6 +55816,96 @@
       "importable":false,
       "len":4,
       "name":"Misc",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"v_int",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"v_float",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"v_ptr",
+          "offset":0,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UActorPropertyParam",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_uc",
+          "offset":0,
+          "type":"CCharacter_full_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_ue",
+          "offset":0,
+          "type":"CEnemy_full_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_uh",
+          "offset":0,
+          "type":"CHero_full_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UActorVTable",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
+          "name":"texture_name",
+          "offset":0,
+          "type":"char[16]"
+        },
+        {
+          "len":16,
+          "name":"clipping_plane",
+          "offset":0,
+          "type":"SClipPlane"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"UCodeCommandData",
       "pack":false,
       "type":"union"
     }

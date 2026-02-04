@@ -13,7 +13,7 @@
 ;   engine_dosio.c_setFileAttributes_FUN_004819f0 at 00481a09
 ;
 ; Referenced Globals:
-;   SetFileAttributesA* g_SetFileAttributesAFunc = 002121a0
+;   SET_FILE_ATTRIBUTES_A_FUNC* g_SetFileAttributesAFunc = 002121a0
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc

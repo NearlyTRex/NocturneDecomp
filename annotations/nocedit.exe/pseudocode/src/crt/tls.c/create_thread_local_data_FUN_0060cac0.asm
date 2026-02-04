@@ -8,7 +8,7 @@
 ;   crt_tls.c_get_thread_local_data_FUN_0060a1fc at 0060a21b
 ;
 ; Referenced Globals:
-;   TlsGetValue* g_TlsGetValueFunc = 0021225e
+;   TLS_GET_VALUE_FUNC* g_TlsGetValueFunc = 0021225e
 ;   TerminatedCString s_Thread_has_no_thread_spe_00659620
 ;   DWORD g_TLSIndex = 0xffffffff
 ;

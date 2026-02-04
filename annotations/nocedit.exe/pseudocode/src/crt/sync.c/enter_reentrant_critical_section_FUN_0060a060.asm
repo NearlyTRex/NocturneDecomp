@@ -16,8 +16,8 @@
 ;   crt_unknown.c_FUN_0060a1dc at 0060a1e1
 ;
 ; Referenced Globals:
-;   EnterCriticalSection* g_EnterCriticalSectionFunc = 00211cfa
-;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
+;   ENTER_CRITICAL_SECTION_FUNC* g_EnterCriticalSectionFunc = 00211cfa
+;   GET_CURRENT_THREAD_ID_FUNC* g_GetCurrentThreadIdFunc = 00211e84
 ;   LPCRITICAL_SECTION g_GlobalInitLock
 ;
 ; Called Functions:

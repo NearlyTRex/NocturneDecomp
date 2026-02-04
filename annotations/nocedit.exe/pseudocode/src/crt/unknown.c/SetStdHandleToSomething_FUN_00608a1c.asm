@@ -8,7 +8,7 @@
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4bd
 ;
 ; Referenced Globals:
-;   SetStdHandle* g_SetStdHandleFunc = 002121e6
+;   SET_STD_HANDLE_FUNC* g_SetStdHandleFunc = 002121e6
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c = 00602434
 ;   SIOControlBlock* g_IOControlBlock = 00000000

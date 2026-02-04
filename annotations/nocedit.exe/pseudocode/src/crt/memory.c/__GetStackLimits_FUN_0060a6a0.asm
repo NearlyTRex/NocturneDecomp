@@ -15,7 +15,7 @@
 ;   crt_thread.c_InitializeThreadContext_FUN_0060ccf0 at 0060cd03
 ;
 ; Referenced Globals:
-;   VirtualQuery* g_VirtualQueryFunc = 002122b4
+;   VIRTUAL_QUERY_FUNC* g_VirtualQueryFunc = 002122b4
 ;   BYTE g_WindowsMinorVersion = \x00
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;

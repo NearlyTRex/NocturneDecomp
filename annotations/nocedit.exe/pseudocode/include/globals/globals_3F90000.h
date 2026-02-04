@@ -73,6 +73,9 @@ extern IDirectDrawSurface* g_SoftwareRenderSurface;
 // IUnknown*
 extern IUnknown* g_DirectDrawUnknown;
 
+// JOY_GET_POS_EX_FUNC*
+extern JOY_GET_POS_EX_FUNC* g_joyGetPosEx;
+
 // LARGE_INTEGER
 extern LARGE_INTEGER g_PerformanceCounter;
 extern LARGE_INTEGER g_PerformanceFrequency;
@@ -197,9 +200,6 @@ extern int g_InputBuffer[20];
 
 // int[513]
 extern int g_MessageFlags[513];
-
-// joyGetPosEx*
-extern joyGetPosEx* g_joyGetPosEx;
 
 // undefined1
 extern undefined1 DAT_03f96a78;

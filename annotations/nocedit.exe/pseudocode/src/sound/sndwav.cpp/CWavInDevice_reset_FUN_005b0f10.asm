@@ -7,8 +7,8 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveInReset* g_waveInResetFunc = 002118ea
-;   waveInUnprepareHeader* g_waveInUnprepareHeaderFunc = 00211906
+;   WAVE_IN_RESET_FUNC* g_waveInResetFunc = 002118ea
+;   WAVE_IN_UNPREPARE_HEADER_FUNC* g_waveInUnprepareHeaderFunc = 00211906
 ;   TerminatedCString s_waveInReset_failed_00652462
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders

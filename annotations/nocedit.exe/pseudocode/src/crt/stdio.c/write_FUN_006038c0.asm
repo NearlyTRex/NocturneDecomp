@@ -13,8 +13,8 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00 at 005fdcc8
 ;
 ; Referenced Globals:
-;   SetFilePointer* g_SetFilePointerFunc = 002121b6
-;   WriteFile* g_WriteFileFunc = 00212300
+;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
+;   WRITE_FILE_FUNC* g_WriteFileFunc = 00212300
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14

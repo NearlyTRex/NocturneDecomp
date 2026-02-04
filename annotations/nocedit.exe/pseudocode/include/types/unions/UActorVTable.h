@@ -9,11 +9,11 @@ struct CHero_full_vtable;
 // Dependencies
 #include "system/basetypes.h"
 
-// Union: CDemonActor_union_vtable
-typedef union CDemonActor_union_vtable {
+// Union: UActorVTable
+typedef union UActorVTable {
     struct CDemonActor_vtable* _ub;
     struct CCharacter_full_vtable* _uc;
     struct CEnemy_full_vtable* _ue;
     struct CHero_full_vtable* _uh;
-} CDemonActor_union_vtable;
+} UActorVTable;
 

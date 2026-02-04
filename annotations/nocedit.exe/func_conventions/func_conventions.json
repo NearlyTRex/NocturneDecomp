@@ -1,4 +1,8 @@
 {
+  "ACCEPT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
   "APIDLL_Information":{
     "convention":"__stdcall",
     "param_bytes":8
@@ -183,7 +187,11 @@
     "convention":"__cdecl",
     "param_bytes":0
   },
-  "BringWindowToTop":{
+  "BIND_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "BRING_WINDOW_TO_TOP_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -515,6 +523,10 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "CHAR_UPPER_BUFF_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
   "CKeys_clearKeypresses":{
     "convention":"__cdecl",
     "param_bytes":4
@@ -527,6 +539,18 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "CLOSE_CLIPBOARD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "CLOSE_HANDLE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "CLOSE_SOCKET_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
   "CMotionController_accumulateScaledRootMotion":{
     "convention":"__cdecl",
     "param_bytes":16
@@ -538,6 +562,10 @@
   "CMotionController_findPatchToFrame":{
     "convention":"__cdecl",
     "param_bytes":16
+  },
+  "CONNECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
   },
   "CObj_addPolygons":{
     "convention":"__cdecl",
@@ -935,6 +963,50 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "CREATE_BRUSH_INDIRECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "CREATE_COMPATIBLE_DC_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "CREATE_DIB_SECTION_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "CREATE_DIRECTORY_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "CREATE_EVENT_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "CREATE_FILE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":28
+  },
+  "CREATE_FONT_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":56
+  },
+  "CREATE_MUTEX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "CREATE_PROCESS_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":40
+  },
+  "CREATE_THREAD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "CREATE_WINDOW_EX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":48
+  },
   "CSoundDevice_allocateSample":{
     "convention":"__cdecl",
     "param_bytes":20
@@ -1059,107 +1131,51 @@
     "convention":"__cdecl",
     "param_bytes":12
   },
-  "CharUpperBuffA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "CloseClipboard":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "CloseHandle":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
   "ColorConversionFunc":{
     "convention":"__cdecl",
     "param_bytes":12
   },
-  "CreateBrushIndirect":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "CreateCompatibleDC":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "CreateDIBSection":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "CreateDirectoryA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "CreateEventA":{
+  "DEF_WINDOW_PROC_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":16
   },
-  "CreateFileA":{
-    "convention":"__stdcall",
-    "param_bytes":28
+  "DELETE_CRITICAL_SECTION_FUNC":{
+    "convention":"__cdecl",
+    "param_bytes":4
   },
-  "CreateFontA":{
+  "DELETE_DC_FUNC":{
     "convention":"__stdcall",
-    "param_bytes":56
+    "param_bytes":4
   },
-  "CreateMutexA":{
+  "DELETE_FILE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "DELETE_OBJECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "DIRECT_DRAW_CREATE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":12
   },
-  "CreateProcessA":{
-    "convention":"__stdcall",
-    "param_bytes":40
-  },
-  "CreateThread":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "CreateWindowExA":{
-    "convention":"__stdcall",
-    "param_bytes":48
-  },
-  "DefWindowProcA":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "DeleteCriticalSection":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "DeleteDC":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "DeleteFileA":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "DeleteObject":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "DirectDrawCreate":{
+  "DIRECT_SOUND_CREATE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":12
   },
-  "DirectSoundCreate":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "DirectSoundEnumerateA":{
+  "DIRECT_SOUND_ENUMERATE_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
   },
-  "DispatchMessageA":{
+  "DISPATCH_MESSAGE_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "DosDateTimeToFileTime":{
+  "DOS_DATE_TIME_TO_FILE_TIME_FUNC":{
     "convention":"__stdcall",
     "param_bytes":12
   },
-  "DuplicateHandle":{
+  "DUPLICATE_HANDLE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":28
   },
@@ -1195,19 +1211,15 @@
     "convention":"__cdecl",
     "param_bytes":4
   },
+  "EXIT_PROCESS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
   "EXIT_THREAD_CRITICAL_SECTION_FUNC":{
     "convention":"__cdecl",
     "param_bytes":0
   },
-  "EnterCriticalSection":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "ExitProcess":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "ExitThread":{
+  "EXIT_THREAD_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -1215,47 +1227,191 @@
     "convention":"__stdcall",
     "param_bytes":0
   },
+  "FILE_TIME_TO_DOS_DATE_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "FILE_TIME_TO_LOCAL_FILE_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "FILE_TIME_TO_SYSTEM_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "FIND_CLOSE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "FIND_FIRST_FILE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "FIND_NEXT_FILE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "FIND_WINDOW_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "FLUSH_FILE_BUFFERS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "FREE_ENVIRONMENT_STRINGS_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "FREE_LIBRARY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
   "FileSearchHandler":{
     "convention":"__cdecl",
     "param_bytes":4
   },
-  "FileTimeToDosDateTime":{
+  "GET_ACP_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_CLIENT_RECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_CLIPBOARD_DATA_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_COMMAND_LINE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_COMMAND_LINE_W_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_COMPUTER_NAME_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_CONSOLE_MODE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_CP_INFO_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_CURRENT_DIRECTORY_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_CURRENT_PROCESS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_CURRENT_PROCESS_ID_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_CURRENT_THREAD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_CURRENT_THREAD_ID_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_ENVIRONMENT_STRINGS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_EXIT_CODE_PROCESS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_FILE_ATTRIBUTES_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_FILE_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "GET_FILE_TYPE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_FULL_PATH_NAME_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "GET_HOSTNAME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_HOST_BY_NAME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_KEY_NAME_TEXT_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":12
   },
-  "FileTimeToLocalFileTime":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "FileTimeToSystemTime":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "FindClose":{
+  "GET_LAST_ACTIVE_POPUP_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "FindFirstFileA":{
+  "GET_LAST_ERROR_FUNC":{
     "convention":"__stdcall",
-    "param_bytes":8
+    "param_bytes":0
   },
-  "FindNextFileA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "FindWindowA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "FlushFileBuffers":{
+  "GET_LOCAL_TIME_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "FreeEnvironmentStringsA":{
+  "GET_MODULE_FILE_NAME_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "GET_MODULE_FILE_NAME_W_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "GET_MODULE_HANDLE_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "FreeLibrary":{
+  "GET_OEMCP_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GET_PROC_ADDRESS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_SERV_BY_PORT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "GET_SOCK_NAME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "GET_STD_HANDLE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_STOCK_OBJECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "GET_TEXT_EXTENT_POINT32_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "GET_TIME_ZONE_INFORMATION_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -1263,159 +1419,39 @@
     "convention":"__cdecl",
     "param_bytes":0
   },
-  "GetACP":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetCPInfo":{
+  "GET_USER_NAME_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
   },
-  "GetClientRect":{
+  "GET_VERSION_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "GLOBAL_ALLOC_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
   },
-  "GetClipboardData":{
+  "GLOBAL_FREE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "GetCommandLineA":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetCommandLineW":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetComputerNameA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetConsoleMode":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetCurrentDirectoryA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetCurrentProcess":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetCurrentProcessId":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetCurrentThread":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetCurrentThreadId":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetEnvironmentStrings":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetExitCodeProcess":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetFileAttributesA":{
+  "GLOBAL_LOCK_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "GetFileTime":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "GetFileType":{
+  "GLOBAL_MEMORY_STATUS_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "GetFullPathNameA":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "GetKeyNameTextA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "GetLastActivePopup":{
+  "GLOBAL_UNLOCK_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "GetLastError":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetLocalTime":{
+  "HOST_TO_NETWORK_LONG_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "GetModuleFileNameA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "GetModuleFileNameW":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "GetModuleHandleA":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GetOEMCP":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GetProcAddress":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetStdHandle":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GetStockObject":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GetTextExtentPoint32A":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "GetTimeZoneInformation":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GetUserNameA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GetVersion":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "GlobalAlloc":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "GlobalFree":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GlobalLock":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GlobalMemoryStatus":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "GlobalUnlock":{
+  "HOST_TO_NETWORK_SHORT_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -1899,8 +1935,32 @@
     "convention":"__cdecl",
     "param_bytes":28
   },
+  "IMPERSONATE_LOGGED_ON_USER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "INET_ADDR_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "INITIALIZE_CRITICAL_SECTION_FUNC":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
   "INVALIDATE_HANDLE_FUNC":{
     "convention":"__cdecl",
+    "param_bytes":4
+  },
+  "INVALIDATE_RECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "IOCTL_SOCKET_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "IS_ICONIC_FUNC":{
+    "convention":"__stdcall",
     "param_bytes":4
   },
   "IS_SPECIAL_DEVICE_FUNC":{
@@ -1919,87 +1979,107 @@
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "ImpersonateLoggedOnUser":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "InitializeCriticalSection":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "InvalidateRect":{
+  "JOY_GET_DEV_CAPS_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":12
   },
-  "IsIconic":{
+  "JOY_GET_POS_EX_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "JOY_GET_POS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "LEAVE_CRITICAL_SECTION_FUNC":{
+    "convention":"__cdecl",
+    "param_bytes":4
+  },
+  "LISTEN_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "LOAD_CURSOR_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "LOAD_ICON_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "LOAD_LIBRARY_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
+  },
+  "LOCAL_FILE_TIME_TO_FILE_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "LOGON_USER_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
   },
   "LPDSENUMCALLBACKA_FUNC":{
     "convention":"__stdcall",
     "param_bytes":16
   },
-  "LeaveCriticalSection":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "LoadCursorA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "LoadIconA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "LoadLibraryA":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "LocalFileTimeToFileTime":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "LogonUserA":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
   "MATH_CHECK_REPORTING_FUNC":{
     "convention":"__cdecl",
     "param_bytes":4
+  },
+  "MCI_GET_ERROR_STRING_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "MCI_SEND_STRING_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "MESSAGE_BOX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "MOVE_FILE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "MOVE_WINDOW_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
   },
   "MRGLBlockHandlerFunc":{
     "convention":"__cdecl",
     "param_bytes":4
   },
-  "MessageBoxA":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "MoveFileA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "MoveWindow":{
+  "MULTI_BYTE_TO_WIDE_CHAR_FUNC":{
     "convention":"__stdcall",
     "param_bytes":24
   },
-  "MultiByteToWideChar":{
+  "NETWORK_TO_HOST_SHORT_FUNC":{
     "convention":"__stdcall",
-    "param_bytes":24
+    "param_bytes":4
+  },
+  "OPEN_CLIPBOARD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
   },
   "OUTPUT_CALLBACK_FUNC":{
     "convention":"__cdecl",
     "param_bytes":8
   },
-  "OpenClipboard":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
   "OptimizedMemcpyFunc":{
     "convention":"__cdecl",
     "param_bytes":12
   },
+  "PEEK_MESSAGE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
   "PHANDLER_ROUTINE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "POST_QUIT_MESSAGE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -2011,23 +2091,39 @@
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "PeekMessageA":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "PostQuitMessage":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
   "QSORT_COMPARATOR_FUNC":{
     "convention":"__cdecl",
     "param_bytes":8
   },
-  "QueryPerformanceCounter":{
+  "QUERY_PERFORMANCE_COUNTER_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "QueryPerformanceFrequency":{
+  "QUERY_PERFORMANCE_FREQUENCY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "READ_CONSOLE_INPUT_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "READ_FILE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "RECTANGLE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "RECV_FROM_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "RECV_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "REGISTER_CLASS_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
@@ -2035,57 +2131,41 @@
     "convention":"__cdecl",
     "param_bytes":4
   },
+  "REG_CLOSE_KEY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "REG_CREATE_KEY_EX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":36
+  },
+  "REG_OPEN_KEY_EX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "REG_QUERY_VALUE_EX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "REG_SET_VALUE_EX_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "RELEASE_MUTEX_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "REVERT_TO_SELF_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
   "RUNTIME_HANDLER_FUNC":{
     "convention":"__cdecl",
     "param_bytes":0
   },
-  "ReadConsoleInputA":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "ReadFile":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "Rectangle":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "RegCloseKey":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "RegCreateKeyExA":{
-    "convention":"__stdcall",
-    "param_bytes":36
-  },
-  "RegOpenKeyExA":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "RegQueryValueExA":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "RegSetValueExA":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "RegisterClassA":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "ReleaseMutex":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
   "RenderScanlineFunc":{
     "convention":"__edi_esi_ebx",
     "param_bytes":12
-  },
-  "RevertToSelf":{
-    "convention":"__stdcall",
-    "param_bytes":0
   },
   "SCANF_GETC_FUNC":{
     "convention":"__cdecl",
@@ -2095,8 +2175,128 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "SELECT_OBJECT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SEND_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "SEND_TO_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "SET_BK_COLOR_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_BK_MODE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_CLIPBOARD_DATA_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_CONSOLE_CTRL_HANDLER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_CONSOLE_MODE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_CURRENT_DIRECTORY_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_CURSOR_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_CURSOR_POS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_END_OF_FILE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_ENVIRONMENT_VARIABLE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_ENVIRONMENT_VARIABLE_W_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_EVENT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_FILE_ATTRIBUTES_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_FILE_POINTER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "SET_FILE_TIME_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "SET_FOCUS_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_FOREGROUND_WINDOW_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_LAST_ERROR_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_RECT_EMPTY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SET_SOCK_OPT_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "SET_STD_HANDLE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_TEXT_COLOR_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_THREAD_PRIORITY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SET_UNHANDLED_EXCEPTION_FILTER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "SHOW_WINDOW_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
+  "SHUTDOWN_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":8
+  },
   "SIGNAL_HANDLER_FUNC":{
     "convention":"__cdecl",
+    "param_bytes":4
+  },
+  "SLEEP_FUNC":{
+    "convention":"__stdcall",
     "param_bytes":4
   },
   "SPECIAL_CONSOLE_INPUT_HANDLER_FUNC":{
@@ -2127,161 +2327,73 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
-  "SelectObject":{
+  "SYSTEM_TIME_TO_FILE_TIME_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
   },
-  "SetBkColor":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetBkMode":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetClipboardData":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetConsoleCtrlHandler":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetConsoleMode":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetCurrentDirectoryA":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetCursor":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetCursorPos":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetEndOfFile":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetEnvironmentVariableA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetEnvironmentVariableW":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetEvent":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetFileAttributesA":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetFilePointer":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "SetFileTime":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "SetFocus":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetForegroundWindow":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetLastError":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetRectEmpty":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SetStdHandle":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetTextColor":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetThreadPriority":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "SetUnhandledExceptionFilter":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "ShowWindow":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "Sleep":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "SystemTimeToFileTime":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "TextOutA":{
+  "TEXT_OUT_A_FUNC":{
     "convention":"__stdcall",
     "param_bytes":20
   },
-  "TlsAlloc":{
+  "TIME_BEGIN_PERIOD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "TIME_END_PERIOD_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "TIME_GET_TIME_FUNC":{
     "convention":"__stdcall",
     "param_bytes":0
   },
-  "TlsFree":{
+  "TLS_ALLOC_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":0
+  },
+  "TLS_FREE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "TlsGetValue":{
+  "TLS_GET_VALUE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "TlsSetValue":{
+  "TLS_SET_VALUE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
   },
-  "TranslateMessage":{
+  "TRANSLATE_MESSAGE_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "UnhandledExceptionFilter":{
+  "UNHANDLED_EXCEPTION_FILTER_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
   },
-  "UpdateWindow":{
+  "UPDATE_WINDOW_FUNC":{
     "convention":"__stdcall",
     "param_bytes":4
+  },
+  "VIRTUAL_ALLOC_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":16
+  },
+  "VIRTUAL_FREE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "VIRTUAL_QUERY_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
   },
   "VOID_FUNC":{
     "convention":"__cdecl",
     "param_bytes":0
   },
-  "VirtualAlloc":{
+  "WAIT_FOR_SINGLE_OBJECT_FUNC":{
     "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "VirtualFree":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "VirtualQuery":{
-    "convention":"__stdcall",
-    "param_bytes":12
+    "param_bytes":8
   },
   "WATCOM_COPY_CONSTRUCTOR_FUNC":{
     "convention":"__cdecl",
@@ -2295,53 +2407,89 @@
     "convention":"__cdecl",
     "param_bytes":8
   },
+  "WAVE_IN_ADD_BUFFER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_IN_CLOSE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "WAVE_IN_GET_DEV_CAPS_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_IN_OPEN_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "WAVE_IN_PREPARE_HEADER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_IN_RESET_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "WAVE_IN_START_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "WAVE_IN_UNPREPARE_HEADER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_OUT_CLOSE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "WAVE_OUT_GET_DEV_CAPS_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_OUT_OPEN_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":24
+  },
+  "WAVE_OUT_PREPARE_HEADER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_OUT_RESET_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":4
+  },
+  "WAVE_OUT_UNPREPARE_HEADER_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WAVE_OUT_WRITE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":12
+  },
+  "WIDE_CHAR_TO_MULTI_BYTE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":32
+  },
   "WNDPROC_FUNC":{
     "convention":"__stdcall",
     "param_bytes":16
   },
-  "WSACleanup":{
+  "WRITE_CONSOLE_A_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "WRITE_FILE_FUNC":{
+    "convention":"__stdcall",
+    "param_bytes":20
+  },
+  "WSA_CLEANUP_FUNC":{
     "convention":"__stdcall",
     "param_bytes":0
   },
-  "WSAStartup":{
+  "WSA_STARTUP_FUNC":{
     "convention":"__stdcall",
     "param_bytes":8
-  },
-  "WaitForSingleObject":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "WideCharToMultiByte":{
-    "convention":"__stdcall",
-    "param_bytes":32
-  },
-  "WriteConsoleA":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "WriteFile":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "_gethostname":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "accept":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "bind":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "closesocket":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "connect":{
-    "convention":"__stdcall",
-    "param_bytes":12
   },
   "cpp_streambuf_destructor":{
     "convention":"__cdecl",
@@ -2386,157 +2534,5 @@
   "cpp_streambuf_underflow":{
     "convention":"__cdecl",
     "param_bytes":4
-  },
-  "gethostbyname":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "getservbyport":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "getsockname":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "htonl":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "htons":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "inet_addr":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "ioctlsocket":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "joyGetDevCapsA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "joyGetPos":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "joyGetPosEx":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "listen":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "mciGetErrorStringA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "mciSendStringA":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "ntohs":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "recv":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "recvfrom":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "send":{
-    "convention":"__stdcall",
-    "param_bytes":16
-  },
-  "sendto":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "setsockopt":{
-    "convention":"__stdcall",
-    "param_bytes":20
-  },
-  "shutdown":{
-    "convention":"__stdcall",
-    "param_bytes":8
-  },
-  "timeBeginPeriod":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "timeEndPeriod":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "timeGetTime":{
-    "convention":"__stdcall",
-    "param_bytes":0
-  },
-  "waveInAddBuffer":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveInClose":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "waveInGetDevCapsA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveInOpen":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "waveInPrepareHeader":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveInReset":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "waveInStart":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "waveInUnprepareHeader":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveOutClose":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "waveOutGetDevCapsA":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveOutOpen":{
-    "convention":"__stdcall",
-    "param_bytes":24
-  },
-  "waveOutPrepareHeader":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveOutReset":{
-    "convention":"__stdcall",
-    "param_bytes":4
-  },
-  "waveOutUnprepareHeader":{
-    "convention":"__stdcall",
-    "param_bytes":12
-  },
-  "waveOutWrite":{
-    "convention":"__stdcall",
-    "param_bytes":12
   }
 }

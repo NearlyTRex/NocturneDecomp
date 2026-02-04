@@ -15,41 +15,38 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(void)
   CMotionList *pCVar1;
   CDemonActor_vtable *pCVar2;
   int iVar3;
-  CDemonActor_union_vtable CVar4;
+  UActorVTable UVar4;
   CBodyPart *this_ptr;
   CCharacter *in_stack_00000004;
-  CDemonActor_union_vtable *in_stack_00000008;
-  CDemonActor_union_vtable local_14;
+  UActorVTable *in_stack_00000008;
+  UActorVTable local_14;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) &&
      (in_stack_00000008->_ub == (CDemonActor_vtable *)0xffffffff)) {
     iVar3 = rand();
     switch(iVar3 % 6) {
     case 0:
-      CVar4 = in_stack_00000004[1].base.vtable;
+      UVar4 = in_stack_00000004[1].base.vtable;
       break;
     case 1:
-      CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.motion_list_ptr
-      ;
+      UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.motion_list_ptr;
       break;
     case 2:
-      CVar4 = (CDemonActor_union_vtable)
-              in_stack_00000004[1].model.motion_controller.current_motion_index;
+      UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.current_motion_index;
       break;
     case 3:
-      CVar4 = (CDemonActor_union_vtable)
-              in_stack_00000004[1].model.motion_controller.current_frame_number;
+      UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.current_frame_number;
       break;
     case 4:
-      CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.tween_progress;
+      UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.tween_progress;
       break;
     case 5:
-      CVar4 = (CDemonActor_union_vtable)in_stack_00000004[1].model.motion_controller.tween_speed;
+      UVar4 = (UActorVTable)in_stack_00000004[1].model.motion_controller.tween_speed;
       break;
     default:
       goto switchD_005fc256_default;
     }
-    *in_stack_00000008 = CVar4;
+    *in_stack_00000008 = UVar4;
   }
 switchD_005fc256_default:
   pCVar1 = (CMotionList *)in_stack_00000008->_ub;
@@ -70,7 +67,7 @@ switchD_005fc256_default:
       local_14._ub = (CDemonActor_vtable *)0x3ca3d70a;
     }
     if (g_CGamePtr->unk4 != 0) {
-      local_14 = (CDemonActor_union_vtable)0x3f800000;
+      local_14 = (UActorVTable)0x3f800000;
     }
     if (g_CGamePtr->blood_flag == 0) {
       local_14._ub = (CDemonActor_vtable *)0x0;

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   mode
 ;
 ; Referenced Globals:
-;   Sleep* g_SleepFunc = 00212228
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;
 ; Called Functions:

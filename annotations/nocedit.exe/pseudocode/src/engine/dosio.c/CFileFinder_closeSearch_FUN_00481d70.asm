@@ -16,7 +16,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3b63
 ;
 ; Referenced Globals:
-;   FindClose* g_FindCloseFunc = 00211d78
+;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
 ;
 ; Called Functions:
 ;   engine_dosio.c_CFileFinder_reset_FUN_00481db0

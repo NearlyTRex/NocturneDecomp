@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_0060fb40 at 0060fc24
 ;
 ; Referenced Globals:
-;   SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc = 00212160
-;   SetEnvironmentVariableW* g_SetEnvironmentVariableWFunc = 0021217a
+;   SET_ENVIRONMENT_VARIABLE_A_FUNC* g_SetEnvironmentVariableAFunc = 00212160
+;   SET_ENVIRONMENT_VARIABLE_W_FUNC* g_SetEnvironmentVariableWFunc = 0021217a
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;
 ; Called Functions:

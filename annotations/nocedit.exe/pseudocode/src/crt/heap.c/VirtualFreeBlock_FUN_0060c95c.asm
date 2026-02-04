@@ -10,7 +10,7 @@
 ;   crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc at 0060c9c9
 ;
 ; Referenced Globals:
-;   VirtualFree* g_VirtualFreeFunc = 002122a6
+;   VIRTUAL_FREE_FUNC* g_VirtualFreeFunc = 002122a6
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
 ;   undefined4 DAT_00684edc

@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSoundThread_FUN_005abc00 at 005abc58
 ;
 ; Referenced Globals:
-;   CreateThread* g_CreateThreadFunc = 00211c9a
+;   CREATE_THREAD_FUNC* g_CreateThreadFunc = 00211c9a
 ;
 ; Called Functions:
 ;   CreateThread

@@ -12,7 +12,7 @@
 ;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 at 005b6ac0
 ;
 ; Referenced Globals:
-;   GetProcAddress* g_GetProcAddressFunc = 00211f8e
+;   GET_PROC_ADDRESS_FUNC* g_GetProcAddressFunc = 00211f8e
 ;
 ; Called Functions:
 ;   GetProcAddress

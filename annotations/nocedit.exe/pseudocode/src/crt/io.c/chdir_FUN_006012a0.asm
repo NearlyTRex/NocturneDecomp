@@ -11,7 +11,7 @@
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 at 0049f9a2
 ;
 ; Referenced Globals:
-;   SetCurrentDirectoryA* g_SetCurrentDirectoryAFunc = 00212138
+;   SET_CURRENT_DIRECTORY_A_FUNC* g_SetCurrentDirectoryAFunc = 00212138
 ;
 ; Called Functions:
 ;   SetCurrentDirectoryA

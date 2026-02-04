@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_processAudio_FUN_005abe20 at 005abe43
 ;
 ; Referenced Globals:
-;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
+;   WAIT_FOR_SINGLE_OBJECT_FUNC* g_WaitForSingleObjectFunc = 002122c4
 ;   double g_SecondsToMillisecondsWaitMultiplier = 1000
 ;
 ; Called Functions:

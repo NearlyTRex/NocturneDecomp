@@ -13,7 +13,7 @@
 ;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5f2
 ;
 ; Referenced Globals:
-;   CharUpperBuffA* g_CharUpperBuffAFunc = 00211a56
+;   CHAR_UPPER_BUFF_A_FUNC* g_CharUpperBuffAFunc = 00211a56
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   char[256] g_LeadByteTable

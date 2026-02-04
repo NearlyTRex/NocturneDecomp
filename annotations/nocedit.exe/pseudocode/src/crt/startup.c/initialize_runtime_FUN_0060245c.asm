@@ -12,12 +12,12 @@
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ba
 ;
 ; Referenced Globals:
-;   ExitProcess* g_ExitProcessFunc = 00211d12
-;   GetCommandLineA* g_GetCommandLineAFunc = 00211df8
-;   GetCommandLineW* g_GetCommandLineWFunc = 00211e0a
-;   GetEnvironmentStrings* g_GetEnvironmentStringsFunc = 00211eae
-;   GetModuleFileNameA* g_GetModuleFileNameAFunc = 00211f42
-;   GetVersion* g_GetVersionFunc = 00211fca
+;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
+;   GET_COMMAND_LINE_A_FUNC* g_GetCommandLineAFunc = 00211df8
+;   GET_COMMAND_LINE_W_FUNC* g_GetCommandLineWFunc = 00211e0a
+;   GET_ENVIRONMENT_STRINGS_FUNC* g_GetEnvironmentStringsFunc = 00211eae
+;   GET_MODULE_FILE_NAME_A_FUNC* g_GetModuleFileNameAFunc = 00211f42
+;   GET_VERSION_FUNC* g_GetVersionFunc = 00211fca
 ;   char[36] g_EmptyStringBuffer
 ;   uchar[257] g_CharacterClassificationTable
 ;   DWORD g_WinMainCmdShow = 0x0

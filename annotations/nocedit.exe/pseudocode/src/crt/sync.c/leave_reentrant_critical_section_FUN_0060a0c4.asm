@@ -17,7 +17,7 @@
 ;   crt_tls.c_leave_critical_section_by_index_FUN_0060a128 at 0060a138
 ;
 ; Referenced Globals:
-;   LeaveCriticalSection* g_LeaveCriticalSectionFunc = 00212044
+;   LEAVE_CRITICAL_SECTION_FUNC* g_LeaveCriticalSectionFunc = 00212044
 ;
 ; Called Functions:
 ;   LeaveCriticalSection

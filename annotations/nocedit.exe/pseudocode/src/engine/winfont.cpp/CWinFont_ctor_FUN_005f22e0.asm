@@ -13,7 +13,7 @@
 ;   core_dfont.cpp_initFonts_FUN_004709a0 at 00470ee4
 ;
 ; Referenced Globals:
-;   CreateFontA* g_CreateFontAFunc = 00211776
+;   CREATE_FONT_A_FUNC* g_CreateFontAFunc = 00211776
 ;   CFont_vtable g_CWinFontVTable
 ;
 ; Called Functions:

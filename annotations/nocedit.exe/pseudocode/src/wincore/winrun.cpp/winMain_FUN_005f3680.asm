@@ -17,21 +17,21 @@
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609f0d
 ;
 ; Referenced Globals:
-;   GetStockObject* g_GetStockObjectFunc = 002117a0
-;   timeGetTime* g_timeGetTimeFunc = 00211884
-;   BringWindowToTop* g_BringWindowToTopFunc = 00211a42
-;   CreateWindowExA* g_CreateWindowExAFunc = 00211a7a
-;   FindWindowA* g_FindWindowAFunc = 00211ab2
-;   GetLastActivePopup* g_GetLastActivePopupFunc = 00211af6
-;   IsIconic* g_IsIconicFunc = 00211b1e
-;   LoadCursorA* g_LoadCursorAFunc = 00211b2a
-;   LoadIconA* g_LoadIconAFunc = 00211b38
-;   RegisterClassA* g_RegisterClassAFunc = 00211b92
-;   SetForegroundWindow* g_SetForegroundWindowFunc = 00211be0
-;   ShowWindow* g_ShowWindowFunc = 00211c06
-;   UpdateWindow* g_UpdateWindowFunc = 00211c28
-;   GetCommandLineA* g_GetCommandLineAFunc = 00211df8
-;   GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc = 00211e42
+;   GET_STOCK_OBJECT_FUNC* g_GetStockObjectFunc = 002117a0
+;   TIME_GET_TIME_FUNC* g_timeGetTimeFunc = 00211884
+;   BRING_WINDOW_TO_TOP_FUNC* g_BringWindowToTopFunc = 00211a42
+;   CREATE_WINDOW_EX_A_FUNC* g_CreateWindowExAFunc = 00211a7a
+;   FIND_WINDOW_A_FUNC* g_FindWindowAFunc = 00211ab2
+;   GET_LAST_ACTIVE_POPUP_FUNC* g_GetLastActivePopupFunc = 00211af6
+;   IS_ICONIC_FUNC* g_IsIconicFunc = 00211b1e
+;   LOAD_CURSOR_A_FUNC* g_LoadCursorAFunc = 00211b2a
+;   LOAD_ICON_A_FUNC* g_LoadIconAFunc = 00211b38
+;   REGISTER_CLASS_A_FUNC* g_RegisterClassAFunc = 00211b92
+;   SET_FOREGROUND_WINDOW_FUNC* g_SetForegroundWindowFunc = 00211be0
+;   SHOW_WINDOW_FUNC* g_ShowWindowFunc = 00211c06
+;   UPDATE_WINDOW_FUNC* g_UpdateWindowFunc = 00211c28
+;   GET_COMMAND_LINE_A_FUNC* g_GetCommandLineAFunc = 00211df8
+;   GET_CURRENT_DIRECTORY_A_FUNC* g_GetCurrentDirectoryAFunc = 00211e42
 ;   ... and 24 more
 ;
 ; Called Functions:

@@ -18,7 +18,7 @@
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30 at 005abd75
 ;
 ; Referenced Globals:
-;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
+;   WAIT_FOR_SINGLE_OBJECT_FUNC* g_WaitForSingleObjectFunc = 002122c4
 ;
 ; Called Functions:
 ;   WaitForSingleObject

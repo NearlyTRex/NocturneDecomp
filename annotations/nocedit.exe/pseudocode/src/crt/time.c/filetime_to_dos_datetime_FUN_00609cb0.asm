@@ -12,8 +12,8 @@
 ;   crt_io.c_stat_FUN_00607e64 at 00608056
 ;
 ; Referenced Globals:
-;   FileTimeToDosDateTime* g_FileTimeToDosDateTimeFunc = 00211d2e
-;   FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc = 00211d46
+;   FILE_TIME_TO_DOS_DATE_TIME_FUNC* g_FileTimeToDosDateTimeFunc = 00211d2e
+;   FILE_TIME_TO_LOCAL_FILE_TIME_FUNC* g_FileTimeToLocalFileTimeFunc = 00211d46
 ;
 ; Called Functions:
 ;   FileTimeToDosDateTime

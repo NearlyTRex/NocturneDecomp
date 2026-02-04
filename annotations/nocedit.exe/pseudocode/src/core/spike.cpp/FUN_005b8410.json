@@ -2,178 +2,40 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "redefinition",
-        "column": 37,
-        "line": 156,
-        "message": "'ushort htons(ushort)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 34,
-        "line": 160,
-        "message": "'ulong htonl(ulong)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 36,
-        "line": 167,
-        "message": "'ushort ntohs(ushort)' redeclared as different kind of entity"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 168,
-        "message": "invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)'} to 'ushort' {aka 'short unsigned int'} [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 172,
-        "message": "invalid conversion from 'htonl' {aka 'long unsigned int (*)(long unsigned int)'} to 'ulong' {aka 'long unsigned int'} [-fpermissive]"
-      },
-      {
-        "category": "redefinition",
-        "column": 66,
-        "line": 179,
-        "message": "'int WSAStartup(WORD, LPWSADATA)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 27,
-        "line": 184,
-        "message": "'int WSACleanup()' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 67,
-        "line": 192,
-        "message": "'SOCKET accept(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 67,
-        "line": 197,
-        "message": "'int bind(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 32,
-        "line": 202,
-        "message": "'int closesocket(SOCKET)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 70,
-        "line": 207,
-        "message": "'int connect(SOCKET, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 69,
-        "line": 212,
-        "message": "'int getsockname(SOCKET, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 55,
-        "line": 217,
-        "message": "'int ioctlsocket(SOCKET, long int, ulong*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 40,
-        "line": 222,
-        "message": "'int listen(SOCKET, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 56,
-        "line": 227,
-        "message": "'int recv(SOCKET, char*, int, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 97,
-        "line": 232,
-        "message": "'int recvfrom(SOCKET, char*, int, int, SOCKADDR*, int*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 62,
-        "line": 237,
-        "message": "'int send(SOCKET, const char*, int, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 102,
-        "line": 242,
-        "message": "'int sendto(SOCKET, const char*, int, int, const SOCKADDR*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 87,
-        "line": 247,
-        "message": "'int setsockopt(SOCKET, int, int, const char*, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 38,
-        "line": 252,
-        "message": "'int shutdown(SOCKET, int)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 54,
-        "line": 261,
-        "message": "'HOSTENT* gethostbyname(const char*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 38,
-        "line": 266,
-        "message": "'ulong inet_addr(const char*)' redeclared as different kind of entity"
-      },
-      {
-        "category": "redefinition",
-        "column": 65,
-        "line": 276,
-        "message": "'SERVENT* getservbyport(int, const char*)' redeclared as different kind of entity"
-      },
-      {
         "category": "other",
         "column": 82,
         "line": 87,
-        "message": "no match for 'operator+' (operand types are 'float' and 'CDemonActor_union_vtable')"
+        "message": "no match for 'operator+' (operand types are 'float' and 'UActorVTable')"
       },
       {
         "category": "other",
         "column": 9,
         "line": 90,
-        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+        "message": "invalid cast from type 'UActorVTable' to type 'float'"
       },
       {
         "category": "incompatible_types",
-        "column": 61,
+        "column": 49,
         "line": 93,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(int)'"
       },
       {
         "category": "incompatible_types",
-        "column": 63,
+        "column": 51,
         "line": 106,
-        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
+        "message": "no matching function for call to 'UActorVTable::UActorVTable(int)'"
       },
       {
         "category": "other",
         "column": 50,
         "line": 112,
-        "message": "no match for 'operator-' (operand types are 'CDemonActor_union_vtable' and 'float')"
+        "message": "no match for 'operator-' (operand types are 'UActorVTable' and 'float')"
       },
       {
         "category": "other",
         "column": 52,
         "line": 114,
-        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+        "message": "invalid cast from type 'UActorVTable' to type 'float'"
       },
       {
         "category": "other",
@@ -185,17 +47,11 @@
         "category": "other",
         "column": 60,
         "line": 132,
-        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+        "message": "invalid cast from type 'UActorVTable' to type 'float'"
       }
     ],
     "success": false,
     "warnings": [
-      {
-        "category": "other",
-        "column": 12,
-        "line": 168,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
       {
         "category": "pointer_arithmetic",
         "column": 88,
@@ -639,7 +495,7 @@
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = CVar2;",
+      "text": "in_stack_00000004[3].vtable = UVar2;",
       "type": "stack_param"
     },
     {
@@ -667,7 +523,7 @@
       "description": "Unresolved stack parameter",
       "line": 86,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;",
+      "text": "in_stack_00000004[3].vtable = (UActorVTable)0x3f800000;",
       "type": "stack_param"
     },
     {
@@ -716,7 +572,7 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;",
+      "text": "in_stack_00000004[3].vtable = (UActorVTable)0x3f800000;",
       "type": "stack_param"
     },
     {
@@ -765,7 +621,7 @@
       "description": "Unresolved stack parameter",
       "line": 107,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = CVar2, 0.0 <= (float)CVar2)) goto LAB_005b84db;",
+      "text": "in_stack_00000004[3].vtable = UVar2, 0.0 <= (float)UVar2)) goto LAB_005b84db;",
       "type": "stack_param"
     },
     {

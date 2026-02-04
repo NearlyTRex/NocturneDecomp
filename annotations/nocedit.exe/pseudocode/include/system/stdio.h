@@ -12,8 +12,8 @@
 // Forward declarations
 struct scanf_state_t;
 
-// Enum: BasicLengthFlags
-typedef enum BasicLengthFlags {
+// Enum: BASIC_LENGTH_FLAGS
+typedef enum BASIC_LENGTH_FLAGS {
     BASIC_I64_FLAG = 1,
     BASIC_LONG_FLAG = 2,
     BASIC_SHORT_FLAG = 4,
@@ -22,10 +22,10 @@ typedef enum BasicLengthFlags {
     BASIC_FAR_PTR_FLAG = 32,
     BASIC_NEAR_PTR_FLAG = 64,
     BASIC_RESERVED = 128
-} BasicLengthFlags;
+} BASIC_LENGTH_FLAGS;
 
-// Enum: ExtendedLengthFlags
-typedef enum ExtendedLengthFlags {
+// Enum: EXTENDED_LENGTH_FLAGS
+typedef enum EXTENDED_LENGTH_FLAGS {
     EXT_CHAR_MODIFIER = 65536,
     EXT_SHORT_MODIFIER = 1048576,
     EXT_I64_MODIFIER = 2097152,
@@ -35,7 +35,19 @@ typedef enum ExtendedLengthFlags {
     EXT_WIDE_MODIFIER = 33554432,
     EXT_SIZE_T_MODIFIER = 67108864,
     EXT_PTRDIFF_MODIFIER = 134217728
-} ExtendedLengthFlags;
+} EXTENDED_LENGTH_FLAGS;
+
+// Enum: FORMAT_FLAGS
+typedef enum FORMAT_FLAGS {
+    ALTERNATE_FORM = 1,
+    SPACE_SIGN = 2,
+    FORCE_SIGN = 4,
+    LEFT_ALIGN = 8,
+    SHORT_MODIFIER = 16,
+    LONG_MODIFIER = 32,
+    NEAR_PTR = 64,
+    FAR_PTR = 128
+} FORMAT_FLAGS;
 
 // Structure: FORMAT_OUTPUT_CONTEXT
 typedef struct FORMAT_OUTPUT_CONTEXT {
@@ -99,18 +111,6 @@ typedef struct FileTrackingEntry {
     struct _FILE* file_ptr;
 } FileTrackingEntry;
 
-// Enum: FormatFlags
-typedef enum FormatFlags {
-    ALTERNATE_FORM = 1,
-    SPACE_SIGN = 2,
-    FORCE_SIGN = 4,
-    LEFT_ALIGN = 8,
-    SHORT_MODIFIER = 16,
-    LONG_MODIFIER = 32,
-    NEAR_PTR = 64,
-    FAR_PTR = 128
-} FormatFlags;
-
 // Structure: FormatSpec
 typedef struct FormatSpec {
     char unknown_0x00[4];
@@ -124,10 +124,10 @@ typedef struct FormatSpec {
     char conversion_char;
     char zerofill;
     char unknown_0x17;
-    ExtendedLengthFlags extended_length_flags;
+    EXTENDED_LENGTH_FLAGS extended_length_flags;
     char unknown_0x1C[2];
-    FormatFlags flags;
-    BasicLengthFlags length_flags;
+    FORMAT_FLAGS flags;
+    BASIC_LENGTH_FLAGS length_flags;
     int output_length;
     int padding_needed;
     int content_length;

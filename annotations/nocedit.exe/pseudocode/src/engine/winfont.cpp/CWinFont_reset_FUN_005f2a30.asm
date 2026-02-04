@@ -11,8 +11,8 @@
 ;   engine_winfont.cpp_CWinFont_dtor_FUN_005f2390 at 005f23a3
 ;
 ; Referenced Globals:
-;   DeleteDC* g_DeleteDCFunc = 00211784
-;   SelectObject* g_SelectObjectFunc = 002117d6
+;   DELETE_DC_FUNC* g_DeleteDCFunc = 00211784
+;   SELECT_OBJECT_FUNC* g_SelectObjectFunc = 002117d6
 ;
 ; Called Functions:
 ;   DeleteDC

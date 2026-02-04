@@ -14,8 +14,8 @@
 ;   engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0 at 004b2f78
 ;
 ; Referenced Globals:
-;   SetEndOfFile* g_SetEndOfFileFunc = 00212150
-;   SetFilePointer* g_SetFilePointerFunc = 002121b6
+;   SET_END_OF_FILE_FUNC* g_SetEndOfFileFunc = 00212150
+;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   WORD g_WindowsPlatformVersion = 0x0

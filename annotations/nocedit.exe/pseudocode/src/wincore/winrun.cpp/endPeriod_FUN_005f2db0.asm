@@ -9,7 +9,7 @@
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 005087fa
 ;
 ; Referenced Globals:
-;   timeEndPeriod* g_timeEndPeriodFunc = 00211874
+;   TIME_END_PERIOD_FUNC* g_timeEndPeriodFunc = 00211874
 ;
 ; Called Functions:
 ;   timeEndPeriod

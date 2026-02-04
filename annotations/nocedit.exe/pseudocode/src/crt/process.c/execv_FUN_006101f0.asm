@@ -12,7 +12,7 @@
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f45d
 ;
 ; Referenced Globals:
-;   ExitProcess* g_ExitProcessFunc = 00211d12
+;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478 = 0060b530
 ;

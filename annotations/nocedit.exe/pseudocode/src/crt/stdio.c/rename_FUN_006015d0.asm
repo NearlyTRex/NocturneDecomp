@@ -13,7 +13,7 @@
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004fb660 at 004fb87d
 ;
 ; Referenced Globals:
-;   MoveFileA* g_MoveFileAFunc = 00212086
+;   MOVE_FILE_A_FUNC* g_MoveFileAFunc = 00212086
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc

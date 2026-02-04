@@ -11,7 +11,7 @@
 ;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 at 005b678e
 ;
 ; Referenced Globals:
-;   LoadLibraryA* g_LoadLibraryAFunc = 0021205c
+;   LOAD_LIBRARY_A_FUNC* g_LoadLibraryAFunc = 0021205c
 ;
 ; Called Functions:
 ;   LoadLibraryA

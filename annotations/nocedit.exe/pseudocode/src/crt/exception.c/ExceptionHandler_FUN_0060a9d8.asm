@@ -17,8 +17,8 @@
 ;
 ; Referenced Globals:
 ;   void*[7] g_FPExceptionJumpTable
-;   ExitProcess* g_ExitProcessFunc = 00211d12
-;   UnhandledExceptionFilter* g_UnhandledExceptionFilterFunc = 0021227a
+;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
+;   UNHANDLED_EXCEPTION_FILTER_FUNC* g_UnhandledExceptionFilterFunc = 0021227a
 ;   EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = 00000000
 ;   EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = 00000000
 ;   BYTE g_SignalHandlingActive

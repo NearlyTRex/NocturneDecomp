@@ -13,7 +13,7 @@
 ;   crt_io.c__findnext_FUN_00602300 at 00602336
 ;
 ; Referenced Globals:
-;   FindNextFileA* g_FindNextFileAFunc = 00211d96
+;   FIND_NEXT_FILE_A_FUNC* g_FindNextFileAFunc = 00211d96
 ;
 ; *****************************************************************************
 

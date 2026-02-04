@@ -12,7 +12,7 @@
 ;   crt_stdio.c_ftell_FUN_00601560 at 00601581
 ;
 ; Referenced Globals:
-;   SetFilePointer* g_SetFilePointerFunc = 002121b6
+;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14

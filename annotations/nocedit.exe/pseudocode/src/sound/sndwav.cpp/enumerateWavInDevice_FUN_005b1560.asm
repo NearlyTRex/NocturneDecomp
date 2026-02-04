@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 at 005ab757
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
+;   WAVE_IN_GET_DEV_CAPS_A_FUNC* g_waveInGetDevCapsAFunc = 002118b2
 ;   TerminatedCString s_WavIn_006524e6
 ;
 ; Called Functions:

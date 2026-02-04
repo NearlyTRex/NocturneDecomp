@@ -8,9 +8,9 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a4b5
 ;
 ; Referenced Globals:
-;   GetLastError* g_GetLastErrorFunc = 00211f22
-;   SetLastError* g_SetLastErrorFunc = 002121d6
-;   TlsGetValue* g_TlsGetValueFunc = 0021225e
+;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
+;   SET_LAST_ERROR_FUNC* g_SetLastErrorFunc = 002121d6
+;   TLS_GET_VALUE_FUNC* g_TlsGetValueFunc = 0021225e
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:

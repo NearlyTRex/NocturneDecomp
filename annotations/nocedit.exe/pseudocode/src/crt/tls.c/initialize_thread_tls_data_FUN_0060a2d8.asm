@@ -11,7 +11,7 @@
 ;   crt_tls.c_create_thread_local_data_FUN_0060cac0 at 0060cac4
 ;
 ; Referenced Globals:
-;   TlsSetValue* g_TlsSetValueFunc = 0021226c
+;   TLS_SET_VALUE_FUNC* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:

@@ -10,7 +10,7 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc44d
 ;
 ; Referenced Globals:
-;   FindClose* g_FindCloseFunc = 00211d78
+;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
 ;
 ; *****************************************************************************
 

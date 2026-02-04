@@ -272,8 +272,8 @@ typedef HRESULT (*IDirectSoundCapture_Initialize)(struct IDirectSoundCapture* th
 // pointer to IDirectSound
 typedef struct IDirectSound* LPDIRECTSOUND;
 
-// Function Definition: DirectSoundCreate
-typedef HRESULT (*DirectSoundCreate)(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
+// Function Definition: DIRECT_SOUND_CREATE_FUNC
+typedef HRESULT (*DIRECT_SOUND_CREATE_FUNC)(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
 
 // Function Definition: IDirectSound_Compact
 typedef HRESULT (*IDirectSound_Compact)(LPDIRECTSOUND this_ptr);
@@ -513,8 +513,8 @@ typedef BOOL (*LPDSENUMCALLBACKA_FUNC)(LPGUID lpGuid, LPCSTR lpcstrDescription, 
 // pointer to LPDSENUMCALLBACKA_FUNC
 typedef LPDSENUMCALLBACKA_FUNC* LPDSENUMCALLBACKA;
 
-// Function Definition: DirectSoundEnumerateA
-typedef HRESULT (*DirectSoundEnumerateA)(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
+// Function Definition: DIRECT_SOUND_ENUMERATE_A_FUNC
+typedef HRESULT (*DIRECT_SOUND_ENUMERATE_A_FUNC)(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
 
 // Typedef: LPLPDIRECTSOUNDBUFFER
 // pointer to pointer to IDirectSoundBuffer

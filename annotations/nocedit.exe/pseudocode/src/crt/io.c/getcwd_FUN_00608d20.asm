@@ -14,7 +14,7 @@
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 00601189
 ;
 ; Referenced Globals:
-;   GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc = 00211e42
+;   GET_CURRENT_DIRECTORY_A_FUNC* g_GetCurrentDirectoryAFunc = 00211e42
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc

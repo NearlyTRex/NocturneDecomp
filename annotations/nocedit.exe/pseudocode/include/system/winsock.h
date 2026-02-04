@@ -7,6 +7,19 @@
 // WINSOCK - System Header
 // =============================================================================
 
+// Forward declarations
+struct HOSTENT;
+struct SERVENT;
+
+// Function Definition: GET_HOSTNAME_FUNC
+typedef int (*GET_HOSTNAME_FUNC)(char* name, int namelen);
+
+// Function Definition: GET_HOST_BY_NAME_FUNC
+typedef struct HOSTENT* (*GET_HOST_BY_NAME_FUNC)(char* name);
+
+// Function Definition: GET_SERV_BY_PORT_FUNC
+typedef struct SERVENT* (*GET_SERV_BY_PORT_FUNC)(int port, char* proto);
+
 // Structure: HOSTENT
 typedef struct HOSTENT {
     char* h_name;
@@ -16,9 +29,21 @@ typedef struct HOSTENT {
     char** h_addr_list;
 } HOSTENT;
 
+// Function Definition: HOST_TO_NETWORK_LONG_FUNC
+typedef ulong (*HOST_TO_NETWORK_LONG_FUNC)(ulong hostlong);
+
+// Function Definition: HOST_TO_NETWORK_SHORT_FUNC
+typedef ushort (*HOST_TO_NETWORK_SHORT_FUNC)(ushort hostshort);
+
+// Function Definition: INET_ADDR_FUNC
+typedef ulong (*INET_ADDR_FUNC)(char* cp);
+
 // Typedef: LPWSADATA
 // pointer to WSADATA
 typedef struct WSADATA* LPWSADATA;
+
+// Function Definition: NETWORK_TO_HOST_SHORT_FUNC
+typedef ushort (*NETWORK_TO_HOST_SHORT_FUNC)(ushort netshort);
 
 // Typedef: PHOSTENT
 // pointer to HOSTENT
@@ -58,8 +83,44 @@ typedef struct SOCKADDR_IN {
 // Unsigned Integer (compiler-specific size)
 typedef uint SOCKET;
 
-// Function Definition: WSACleanup
-typedef int (*WSACleanup)(void);
+// Function Definition: ACCEPT_FUNC
+typedef SOCKET (*ACCEPT_FUNC)(SOCKET s, struct SOCKADDR* addr, int* addrlen);
+
+// Function Definition: BIND_FUNC
+typedef int (*BIND_FUNC)(SOCKET s, struct SOCKADDR* addr, int namelen);
+
+// Function Definition: CLOSE_SOCKET_FUNC
+typedef int (*CLOSE_SOCKET_FUNC)(SOCKET s);
+
+// Function Definition: CONNECT_FUNC
+typedef int (*CONNECT_FUNC)(SOCKET s, struct SOCKADDR* name, int namelen);
+
+// Function Definition: GET_SOCK_NAME_FUNC
+typedef int (*GET_SOCK_NAME_FUNC)(SOCKET s, struct SOCKADDR* name, int* namelen);
+
+// Function Definition: IOCTL_SOCKET_FUNC
+typedef int (*IOCTL_SOCKET_FUNC)(SOCKET s, long cmd, ulong* argp);
+
+// Function Definition: LISTEN_FUNC
+typedef int (*LISTEN_FUNC)(SOCKET s, int backlog);
+
+// Function Definition: RECV_FROM_FUNC
+typedef int (*RECV_FROM_FUNC)(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
+
+// Function Definition: RECV_FUNC
+typedef int (*RECV_FUNC)(SOCKET s, char* buf, int len, int flags);
+
+// Function Definition: SEND_FUNC
+typedef int (*SEND_FUNC)(SOCKET s, char* buf, int len, int flags);
+
+// Function Definition: SEND_TO_FUNC
+typedef int (*SEND_TO_FUNC)(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* to, int tolen);
+
+// Function Definition: SET_SOCK_OPT_FUNC
+typedef int (*SET_SOCK_OPT_FUNC)(SOCKET s, int level, int optname, char* optval, int optlen);
+
+// Function Definition: SHUTDOWN_FUNC
+typedef int (*SHUTDOWN_FUNC)(SOCKET s, int how);
 
 // Structure: WSADATA
 typedef struct WSADATA {
@@ -72,68 +133,11 @@ typedef struct WSADATA {
     char* lpVendorInfo;
 } WSADATA;
 
-// Function Definition: WSAStartup
-typedef int (*WSAStartup)(WORD wVersionRequested, LPWSADATA lpWSAData);
+// Function Definition: WSA_CLEANUP_FUNC
+typedef int (*WSA_CLEANUP_FUNC)(void);
 
-// Function Definition: _gethostname
-typedef int (*_gethostname)(char* name, int namelen);
-
-// Function Definition: accept
-typedef SOCKET (*accept)(SOCKET s, struct SOCKADDR* addr, int* addrlen);
-
-// Function Definition: bind
-typedef int (*bind)(SOCKET s, struct SOCKADDR* addr, int namelen);
-
-// Function Definition: closesocket
-typedef int (*closesocket)(SOCKET s);
-
-// Function Definition: connect
-typedef int (*connect)(SOCKET s, struct SOCKADDR* name, int namelen);
-
-// Function Definition: gethostbyname
-typedef struct HOSTENT* (*gethostbyname)(char* name);
-
-// Function Definition: getservbyport
-typedef struct SERVENT* (*getservbyport)(int port, char* proto);
-
-// Function Definition: getsockname
-typedef int (*getsockname)(SOCKET s, struct SOCKADDR* name, int* namelen);
-
-// Function Definition: htonl
-typedef ulong (*htonl)(ulong hostlong);
-
-// Function Definition: htons
-typedef ushort (*htons)(ushort hostshort);
-
-// Function Definition: inet_addr
-typedef ulong (*inet_addr)(char* cp);
-
-// Function Definition: ioctlsocket
-typedef int (*ioctlsocket)(SOCKET s, long cmd, ulong* argp);
-
-// Function Definition: listen
-typedef int (*listen)(SOCKET s, int backlog);
-
-// Function Definition: ntohs
-typedef ushort (*ntohs)(ushort netshort);
-
-// Function Definition: recv
-typedef int (*recv)(SOCKET s, char* buf, int len, int flags);
-
-// Function Definition: recvfrom
-typedef int (*recvfrom)(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
-
-// Function Definition: send
-typedef int (*send)(SOCKET s, char* buf, int len, int flags);
-
-// Function Definition: sendto
-typedef int (*sendto)(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* to, int tolen);
-
-// Function Definition: setsockopt
-typedef int (*setsockopt)(SOCKET s, int level, int optname, char* optval, int optlen);
-
-// Function Definition: shutdown
-typedef int (*shutdown)(SOCKET s, int how);
+// Function Definition: WSA_STARTUP_FUNC
+typedef int (*WSA_STARTUP_FUNC)(WORD wVersionRequested, LPWSADATA lpWSAData);
 
 // =============================================================================
 // WINSOCK FUNCTION STUBS

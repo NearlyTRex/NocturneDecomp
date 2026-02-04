@@ -9,7 +9,7 @@
 ;   crt_thread.c_threadStartupWrapper_FUN_0060f8c0 at 0060f937
 ;
 ; Referenced Globals:
-;   SetUnhandledExceptionFilter* g_SetUnhandledExceptionFilterFunc = 0021220a
+;   SET_UNHANDLED_EXCEPTION_FILTER_FUNC* g_SetUnhandledExceptionFilterFunc = 0021220a
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;
 ; Called Functions:

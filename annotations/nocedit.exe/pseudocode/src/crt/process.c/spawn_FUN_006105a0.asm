@@ -17,14 +17,14 @@
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f74f
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   CreateProcessA* g_CreateProcessAFunc = 00211c88
-;   DuplicateHandle* g_DuplicateHandleFunc = 00211ce8
-;   GetCurrentProcess* g_GetCurrentProcessFunc = 00211e5a
-;   GetExitCodeProcess* g_GetExitCodeProcessFunc = 00211ec6
-;   GetLastError* g_GetLastErrorFunc = 00211f22
-;   Sleep* g_SleepFunc = 00212228
-;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   CREATE_PROCESS_A_FUNC* g_CreateProcessAFunc = 00211c88
+;   DUPLICATE_HANDLE_FUNC* g_DuplicateHandleFunc = 00211ce8
+;   GET_CURRENT_PROCESS_FUNC* g_GetCurrentProcessFunc = 00211e5a
+;   GET_EXIT_CODE_PROCESS_FUNC* g_GetExitCodeProcessFunc = 00211ec6
+;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
+;   SLEEP_FUNC* g_SleepFunc = 00212228
+;   WAIT_FOR_SINGLE_OBJECT_FUNC* g_WaitForSingleObjectFunc = 002122c4
 ;   BYTE g_WindowsMinorVersion = \x00
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;

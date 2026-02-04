@@ -14,8 +14,8 @@
 ;   engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 at 00481cbf
 ;
 ; Referenced Globals:
-;   FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc = 00211d46
-;   FileTimeToSystemTime* g_FileTimeToSystemTimeFunc = 00211d60
+;   FILE_TIME_TO_LOCAL_FILE_TIME_FUNC* g_FileTimeToLocalFileTimeFunc = 00211d46
+;   FILE_TIME_TO_SYSTEM_TIME_FUNC* g_FileTimeToSystemTimeFunc = 00211d60
 ;   TerminatedCString s_engine_dosio_c_00621617
 ;   TerminatedCString s_CFileFinder_convertStruc_00621629
 ;   char* g_CurrentFilename

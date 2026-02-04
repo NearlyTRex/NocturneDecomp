@@ -10,7 +10,7 @@
 ;   crt_stdio.c_remove_FUN_005ff9d0 at 005ff9d5
 ;
 ; Referenced Globals:
-;   DeleteFileA* g_DeleteFileAFunc = 00211cc2
+;   DELETE_FILE_A_FUNC* g_DeleteFileAFunc = 00211cc2
 ;
 ; Called Functions:
 ;   DeleteFileA

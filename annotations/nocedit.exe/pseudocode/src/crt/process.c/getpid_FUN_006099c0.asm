@@ -8,7 +8,7 @@
 ;   crt_io.c__tempnam_FUN_00601f1c at 00601f24
 ;
 ; Referenced Globals:
-;   GetCurrentProcessId* g_GetCurrentProcessIdFunc = 00211e6e
+;   GET_CURRENT_PROCESS_ID_FUNC* g_GetCurrentProcessIdFunc = 00211e6e
 ;
 ; Called Functions:
 ;   GetCurrentProcessId

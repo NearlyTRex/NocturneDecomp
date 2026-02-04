@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   FreeEnvironmentStringsA* g_FreeEnvironmentStringsAFunc = 00211dba
+;   FREE_ENVIRONMENT_STRINGS_A_FUNC* g_FreeEnvironmentStringsAFunc = 00211dba
 ;   char* g_EnvironmentStrings = 00000000
 ;   char** g_EnvironmentBlock
 ;   int INT_03f9c150

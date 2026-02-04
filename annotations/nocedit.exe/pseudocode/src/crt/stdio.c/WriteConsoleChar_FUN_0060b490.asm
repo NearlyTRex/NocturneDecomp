@@ -12,7 +12,7 @@
 ;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059c9
 ;
 ; Referenced Globals:
-;   WriteConsoleA* g_WriteConsoleAFunc = 002122f0
+;   WRITE_CONSOLE_A_FUNC* g_WriteConsoleAFunc = 002122f0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = 00000000

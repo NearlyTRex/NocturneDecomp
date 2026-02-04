@@ -10,7 +10,7 @@
 ;   crt_unknown.c_FUN_0060d1ec at 0060d1f5
 ;
 ; Referenced Globals:
-;   SetConsoleCtrlHandler* g_SetConsoleCtrlHandlerFunc = 0021210e
+;   SET_CONSOLE_CTRL_HANDLER_FUNC* g_SetConsoleCtrlHandlerFunc = 0021210e
 ;   byte g_ConsoleHandlerRegistered = 0x0
 ;
 ; Called Functions:

@@ -8,15 +8,15 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bd5
 ;
 ; Referenced Globals:
-;   joyGetDevCapsA* g_joyGetDevCapsAFunc = 0021181c
-;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
-;   GetProcAddress* g_GetProcAddressFunc = 00211f8e
+;   JOY_GET_DEV_CAPS_A_FUNC* g_joyGetDevCapsAFunc = 0021181c
+;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
+;   GET_PROC_ADDRESS_FUNC* g_GetProcAddressFunc = 00211f8e
 ;   TerminatedCString s_winmm_dll_006581c7
 ;   TerminatedCString s_joyGetPosEx_006581d1
 ;   int g_JoystickNumButtons = 0x4
 ;   int g_JoystickPresent
 ;   int g_JoystickHasPOV
-;   joyGetPosEx* g_joyGetPosEx
+;   JOY_GET_POS_EX_FUNC* g_joyGetPosEx
 ;   HMODULE g_WinmmDll
 ;
 ; *****************************************************************************

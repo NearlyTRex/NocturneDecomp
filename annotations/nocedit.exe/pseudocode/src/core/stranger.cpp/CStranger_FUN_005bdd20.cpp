@@ -37,7 +37,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(void)
   CVector3f *local_20;
   CVector3f *local_1c;
   CCharacter *local_18;
-  CDemonActor_union_vtable local_14;
+  UActorVTable local_14;
   
   this_ptr = &(in_stack_00000004->base).base.model;
   local_1c = (CVector3f *)((in_stack_00000004->base).unk4 + 0x28);
@@ -59,7 +59,7 @@ LAB_005bdd85:
             if (iVar5 == 0) {
               if (*(int *)(in_stack_00000004->unk1 + 0x50) == 0) {
                 if (*(int *)((in_stack_00000004->base).base.unk1 + 4) != 0) {
-                  local_14 = (CDemonActor_union_vtable)
+                  local_14 = (UActorVTable)
                              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                        (&this_ptr->motion_controller,3);
                   if ((float)0.40000000000000002 < (float)local_14) {
@@ -67,11 +67,11 @@ LAB_005bdd85:
                               ((CDemonActor *)in_stack_00000004,&local_5c,1.7);
                   }
                   else {
-                    local_14 = (CDemonActor_union_vtable)
+                    local_14 = (UActorVTable)
                                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                          (&this_ptr->motion_controller,1);
                     if ((float)local_14 <= (float)0.40000000000000002) {
-                      local_14 = (CDemonActor_union_vtable)
+                      local_14 = (UActorVTable)
                                  core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                            (&this_ptr->motion_controller,2);
                       if ((float)0.40000000000000002 < (float)local_14) {
@@ -218,8 +218,7 @@ LAB_005bde44:
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)in_stack_00000004,&local_38,pCVar6);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_b0);
-          local_14 = (CDemonActor_union_vtable)core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0)
-          ;
+          local_14 = (UActorVTable)core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
           local_b0._4_4_ = (float)local_14._ub;
           pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr_00,&local_50,&local_38);

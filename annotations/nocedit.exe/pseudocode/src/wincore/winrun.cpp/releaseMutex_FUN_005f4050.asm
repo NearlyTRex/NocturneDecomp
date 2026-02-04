@@ -19,7 +19,7 @@
 ;   sound_sndmain.cpp_unlockSound_FUN_005abdc0 at 005abddf
 ;
 ; Referenced Globals:
-;   ReleaseMutex* g_ReleaseMutexFunc = 002120fe
+;   RELEASE_MUTEX_FUNC* g_ReleaseMutexFunc = 002120fe
 ;
 ; Called Functions:
 ;   ReleaseMutex

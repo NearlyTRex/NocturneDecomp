@@ -12,7 +12,7 @@
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 at 005ab5f7
 ;
 ; Referenced Globals:
-;   waveOutGetDevCapsA* g_waveOutGetDevCapsAFunc = 0021192e
+;   WAVE_OUT_GET_DEV_CAPS_A_FUNC* g_waveOutGetDevCapsAFunc = 0021192e
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   CWavOutDevice g_CWavOutDeviceInstance
 ;

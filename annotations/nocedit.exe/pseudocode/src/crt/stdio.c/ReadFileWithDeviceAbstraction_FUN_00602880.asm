@@ -13,7 +13,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990 at 005fdaa9
 ;
 ; Referenced Globals:
-;   ReadFile* g_ReadFileFunc = 002120f2
+;   READ_FILE_FUNC* g_ReadFileFunc = 002120f2
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14

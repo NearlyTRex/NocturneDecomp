@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   CreateEventA* g_CreateEventAFunc = 00211c5a
-;   CreateThread* g_CreateThreadFunc = 00211c9a
-;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
-;   GetCurrentThread* g_GetCurrentThreadFunc = 00211e9a
-;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   CREATE_EVENT_A_FUNC* g_CreateEventAFunc = 00211c5a
+;   CREATE_THREAD_FUNC* g_CreateThreadFunc = 00211c9a
+;   GET_CURRENT_THREAD_ID_FUNC* g_GetCurrentThreadIdFunc = 00211e84
+;   GET_CURRENT_THREAD_FUNC* g_GetCurrentThreadFunc = 00211e9a
+;   WAIT_FOR_SINGLE_OBJECT_FUNC* g_WaitForSingleObjectFunc = 002122c4
 ;   TerminatedCString s_bgnthd_00659784
 ;   undefined4 DAT_00659788
 ;   undefined4 DAT_0065978c

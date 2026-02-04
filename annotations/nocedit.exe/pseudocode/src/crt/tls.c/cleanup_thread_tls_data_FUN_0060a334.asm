@@ -11,9 +11,9 @@
 ;   crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388 at 0060a38a
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   TlsGetValue* g_TlsGetValueFunc = 0021225e
-;   TlsSetValue* g_TlsSetValueFunc = 0021226c
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   TLS_GET_VALUE_FUNC* g_TlsGetValueFunc = 0021225e
+;   TLS_SET_VALUE_FUNC* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:

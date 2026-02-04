@@ -12,7 +12,7 @@
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 at 00608eef
 ;
 ; Referenced Globals:
-;   GetFileType* g_GetFileTypeFunc = 00211f00
+;   GET_FILE_TYPE_FUNC* g_GetFileTypeFunc = 00211f00
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   SIOControlBlock* g_IOControlBlock = 00000000

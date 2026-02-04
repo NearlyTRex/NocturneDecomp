@@ -11,8 +11,8 @@
 ;   sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20 at 005b0e8a
 ;
 ; Referenced Globals:
-;   waveInAddBuffer* g_waveInAddBufferFunc = 00211892
-;   waveInPrepareHeader* g_waveInPrepareHeaderFunc = 002118d4
+;   WAVE_IN_ADD_BUFFER_FUNC* g_waveInAddBufferFunc = 00211892
+;   WAVE_IN_PREPARE_HEADER_FUNC* g_waveInPrepareHeaderFunc = 002118d4
 ;   TerminatedCString s_waveOutPrepareHeader_fai_00652408
 ;   TerminatedCString s_waveOutWrite_failed_00652425
 ;   HWAVEIN g_WaveInHandle

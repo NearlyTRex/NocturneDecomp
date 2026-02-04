@@ -28,8 +28,8 @@
 ;   crt_io.c_stat_thunk_00600c18 at 00600c18
 ;
 ; Referenced Globals:
-;   FindClose* g_FindCloseFunc = 00211d78
-;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
+;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
+;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;   TerminatedCString s_anon_0065906c
 ;   uchar[257] g_CharacterClassificationTable
 ;

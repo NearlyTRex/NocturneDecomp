@@ -56,6 +56,9 @@ IDirectDrawSurface* g_SoftwareRenderSurface = {};
 // IUnknown*
 IUnknown* g_DirectDrawUnknown = {};
 
+// JOY_GET_POS_EX_FUNC*
+JOY_GET_POS_EX_FUNC* g_joyGetPosEx = {};
+
 // LARGE_INTEGER
 LARGE_INTEGER g_PerformanceCounter = {};
 LARGE_INTEGER g_PerformanceFrequency = {};
@@ -180,9 +183,6 @@ int g_InputBuffer[20] = {};
 
 // int[513]
 int g_MessageFlags[513] = {};
-
-// joyGetPosEx*
-joyGetPosEx* g_joyGetPosEx = {};
 
 // undefined1
 undefined1 DAT_03f96a78 = {};

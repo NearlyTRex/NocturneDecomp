@@ -18,7 +18,7 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   GetLastError* g_GetLastErrorFunc = 00211f22
+;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390

@@ -18,8 +18,8 @@
 ;   ... and 36 more
 ;
 ; Referenced Globals:
-;   timeGetTime* g_timeGetTimeFunc = 00211884
-;   QueryPerformanceCounter* g_QueryPerformanceCounterFunc = 002120a8
+;   TIME_GET_TIME_FUNC* g_timeGetTimeFunc = 00211884
+;   QUERY_PERFORMANCE_COUNTER_FUNC* g_QueryPerformanceCounterFunc = 002120a8
 ;   double g_HighPartMultiplier = 4294967296
 ;   double g_TimeScaleFactor1 = 65536
 ;   double g_TimeScaleFactor2 = 18

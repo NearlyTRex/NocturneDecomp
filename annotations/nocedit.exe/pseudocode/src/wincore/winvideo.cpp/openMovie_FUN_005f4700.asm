@@ -10,12 +10,12 @@
 ; undefined        Stack[-0x1b4]:1  local_1b4
 ;
 ; Referenced Globals:
-;   mciGetErrorStringA* g_mciGetErrorStringAFunc = 0021183a
-;   mciSendStringA* g_mciSendStringAFunc = 00211850
-;   GetClientRect* g_GetClientRectFunc = 00211ac0
-;   MessageBoxA* g_MessageBoxAFunc = 00211b44
-;   MoveWindow* g_MoveWindowFunc = 00211b52
-;   SetRectEmpty* g_SetRectEmptyFunc = 00211bf6
+;   MCI_GET_ERROR_STRING_A_FUNC* g_mciGetErrorStringAFunc = 0021183a
+;   MCI_SEND_STRING_A_FUNC* g_mciSendStringAFunc = 00211850
+;   GET_CLIENT_RECT_FUNC* g_GetClientRectFunc = 00211ac0
+;   MESSAGE_BOX_A_FUNC* g_MessageBoxAFunc = 00211b44
+;   MOVE_WINDOW_FUNC* g_MoveWindowFunc = 00211b52
+;   SET_RECT_EMPTY_FUNC* g_SetRectEmptyFunc = 00211bf6
 ;   TerminatedCString s_where_mov_source_006581dd
 ;   TerminatedCString s_open_s_alias_mov_style_c_006581f8
 ;   TerminatedCString s_status_mov_window_handle_00658222

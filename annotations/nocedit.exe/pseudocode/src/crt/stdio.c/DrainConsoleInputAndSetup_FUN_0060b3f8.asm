@@ -8,8 +8,8 @@
 ;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059b8
 ;
 ; Referenced Globals:
-;   GetConsoleMode* g_GetConsoleModeFunc = 00211e30
-;   SetConsoleMode* g_SetConsoleModeFunc = 00212126
+;   GET_CONSOLE_MODE_FUNC* g_GetConsoleModeFunc = 00211e30
+;   SET_CONSOLE_MODE_FUNC* g_SetConsoleModeFunc = 00212126
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   int g_ConsoleInitializationFlag = 0x0

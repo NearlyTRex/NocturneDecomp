@@ -10,7 +10,7 @@
 ;   crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c at 0060a26d
 ;
 ; Referenced Globals:
-;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
+;   GET_CURRENT_THREAD_ID_FUNC* g_GetCurrentThreadIdFunc = 00211e84
 ;
 ; Called Functions:
 ;   crt_memory.c___GetStackLimits_FUN_0060a6a0

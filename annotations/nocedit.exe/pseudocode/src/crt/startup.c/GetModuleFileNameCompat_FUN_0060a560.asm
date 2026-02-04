@@ -12,10 +12,10 @@
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 00602540
 ;
 ; Referenced Globals:
-;   GetModuleFileNameA* g_GetModuleFileNameAFunc = 00211f42
-;   GetModuleFileNameW* g_GetModuleFileNameWFunc = 00211f58
-;   GetVersion* g_GetVersionFunc = 00211fca
-;   MultiByteToWideChar* g_MultiByteToWideCharFunc = 00212092
+;   GET_MODULE_FILE_NAME_A_FUNC* g_GetModuleFileNameAFunc = 00211f42
+;   GET_MODULE_FILE_NAME_W_FUNC* g_GetModuleFileNameWFunc = 00211f58
+;   GET_VERSION_FUNC* g_GetVersionFunc = 00211fca
+;   MULTI_BYTE_TO_WIDE_CHAR_FUNC* g_MultiByteToWideCharFunc = 00212092
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0

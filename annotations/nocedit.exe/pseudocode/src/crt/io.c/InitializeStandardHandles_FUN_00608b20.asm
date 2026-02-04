@@ -8,7 +8,7 @@
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 00602491
 ;
 ; Referenced Globals:
-;   GetStdHandle* g_GetStdHandleFunc = 00211fa0
+;   GET_STD_HANDLE_FUNC* g_GetStdHandleFunc = 00211fa0
 ;
 ; Called Functions:
 ;   crt_io.c_CreateFallbackHandle_FUN_00608b88

@@ -10,7 +10,7 @@
 ;   engine_dosio.c_setReadonlyAttribute_FUN_00600c30 at 00600c36
 ;
 ; Referenced Globals:
-;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
+;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;
 ; Called Functions:
 ;   FindFirstFileA

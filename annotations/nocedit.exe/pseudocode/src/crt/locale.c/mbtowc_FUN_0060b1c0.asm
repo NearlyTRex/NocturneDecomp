@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_0060fac0 at 0060fae3
 ;
 ; Referenced Globals:
-;   MultiByteToWideChar* g_MultiByteToWideCharFunc = 00212092
+;   MULTI_BYTE_TO_WIDE_CHAR_FUNC* g_MultiByteToWideCharFunc = 00212092
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   char[256] g_LeadByteTable

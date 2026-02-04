@@ -11,7 +11,7 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc426
 ;
 ; Referenced Globals:
-;   FindNextFileA* g_FindNextFileAFunc = 00211d96
+;   FIND_NEXT_FILE_A_FUNC* g_FindNextFileAFunc = 00211d96
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc

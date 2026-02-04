@@ -14,7 +14,8 @@ void __cdecl wincore_winrun_cpp_initJoystick_FUN_005f4310(void)
   
   g_WinmmDll = (*g_GetModuleHandleAFunc)("winmm.dll");
   if (g_WinmmDll != (HMODULE)0x0) {
-    g_joyGetPosEx = (joyGetPosEx *)(*g_GetProcAddressFunc)(g_WinmmDll,"joyGetPosEx");
+    g_joyGetPosEx =
+         (JOY_GET_POS_EX_FUNC *)(*g_GetProcAddressFunc)(g_WinmmDll,"joyGetPosEx");
   }
   MVar1 = (*g_joyGetDevCapsAFunc)(0,&tStack_194,0x194);
   if (MVar1 == 0) {

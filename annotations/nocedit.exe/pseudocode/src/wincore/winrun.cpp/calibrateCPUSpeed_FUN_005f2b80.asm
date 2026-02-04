@@ -12,10 +12,10 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bd0
 ;
 ; Referenced Globals:
-;   timeBeginPeriod* g_timeBeginPeriodFunc = 00211862
-;   MessageBoxA* g_MessageBoxAFunc = 00211b44
-;   QueryPerformanceCounter* g_QueryPerformanceCounterFunc = 002120a8
-;   QueryPerformanceFrequency* g_QueryPerformanceFrequencyFunc = 002120c2
+;   TIME_BEGIN_PERIOD_FUNC* g_timeBeginPeriodFunc = 00211862
+;   MESSAGE_BOX_A_FUNC* g_MessageBoxAFunc = 00211b44
+;   QUERY_PERFORMANCE_COUNTER_FUNC* g_QueryPerformanceCounterFunc = 002120a8
+;   QUERY_PERFORMANCE_FREQUENCY_FUNC* g_QueryPerformanceFrequencyFunc = 002120c2
 ;   TerminatedCString s_Unable_to_set_timer_00657f14
 ;   double g_RelatedToQPC3 = 4294967296
 ;   TerminatedCString s_Nocturne_Editor_006581b7

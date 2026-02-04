@@ -8,7 +8,7 @@
 ;   wincore_winrun.cpp_mainWindowProc_FUN_005f3150 at 005f3282
 ;
 ; Referenced Globals:
-;   ShowWindow* g_ShowWindowFunc = 00211c06
+;   SHOW_WINDOW_FUNC* g_ShowWindowFunc = 00211c06
 ;   int g_FullscreenMode
 ;   int g_GraphicsResetFlag
 ;   HWND g_MainWindowHandle

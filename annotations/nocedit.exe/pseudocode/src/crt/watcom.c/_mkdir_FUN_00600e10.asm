@@ -17,7 +17,7 @@
 ;   shape_meshlod.cpp_initializeLogDirectory_FUN_00515190 at 00515195
 ;
 ; Referenced Globals:
-;   CreateDirectoryA* g_CreateDirectoryAFunc = 00211c46
+;   CREATE_DIRECTORY_A_FUNC* g_CreateDirectoryAFunc = 00211c46
 ;
 ; Called Functions:
 ;   CreateDirectoryA

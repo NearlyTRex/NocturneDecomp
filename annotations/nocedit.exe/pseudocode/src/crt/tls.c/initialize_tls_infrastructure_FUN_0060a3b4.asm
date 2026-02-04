@@ -8,7 +8,7 @@
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f982
 ;
 ; Referenced Globals:
-;   TlsSetValue* g_TlsSetValueFunc = 0021226c
+;   TLS_SET_VALUE_FUNC* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

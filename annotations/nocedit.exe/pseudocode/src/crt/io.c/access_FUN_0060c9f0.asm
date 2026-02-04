@@ -11,7 +11,7 @@
 ;   crt_io.c_exists_FUN_0060f380 at 0060f387
 ;
 ; Referenced Globals:
-;   GetFileAttributesA* g_GetFileAttributesAFunc = 00211edc
+;   GET_FILE_ATTRIBUTES_A_FUNC* g_GetFileAttributesAFunc = 00211edc
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390

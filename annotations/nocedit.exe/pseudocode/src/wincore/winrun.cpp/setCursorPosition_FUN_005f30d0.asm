@@ -14,7 +14,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 at 004a61e3
 ;
 ; Referenced Globals:
-;   SetCursorPos* g_SetCursorPosFunc = 00211bb8
+;   SET_CURSOR_POS_FUNC* g_SetCursorPosFunc = 00211bb8
 ;   int g_MouseX
 ;   int g_MouseY
 ;

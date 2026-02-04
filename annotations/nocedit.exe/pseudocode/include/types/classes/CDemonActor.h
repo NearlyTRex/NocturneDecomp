@@ -12,7 +12,7 @@ struct CPlatform;
 #include "types/classes/COrientation.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/unions/CDemonActor_union_vtable.h"
+#include "types/unions/UActorVTable.h"
 
 // Structure: CDemonActor
 // Ghidra size: 0x158 (344 bytes)
@@ -46,6 +46,6 @@ typedef struct CDemonActor {
     int unk14; // 0x148
     struct CDemonActor* next_actor; // 0x14c
     struct CDemonActor* prev_actor; // 0x150
-    CDemonActor_union_vtable vtable; // 0x154
+    UActorVTable vtable; // 0x154
 } CDemonActor;
 

@@ -10,7 +10,7 @@
 ;   crt_heap.c_SystemAllocWrapper_FUN_00609718 at 00609722
 ;
 ; Referenced Globals:
-;   VirtualAlloc* g_VirtualAllocFunc = 00212296
+;   VIRTUAL_ALLOC_FUNC* g_VirtualAllocFunc = 00212296
 ;   undefined4 DAT_00684fd0
 ;   undefined4 DAT_006854f0
 ;

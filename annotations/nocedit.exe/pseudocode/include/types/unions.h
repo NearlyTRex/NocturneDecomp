@@ -5,7 +5,7 @@
 // =============================================================================
 // Auto-generated aggregate of all unions type definitions.
 
-#include "types/unions/CActorPropertyParam.h"
-#include "types/unions/CDemonActor_union_vtable.h"
-#include "types/unions/CodeCommandData.h"
+#include "types/unions/UActorPropertyParam.h"
+#include "types/unions/UActorVTable.h"
+#include "types/unions/UCodeCommandData.h"
 

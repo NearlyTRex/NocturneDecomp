@@ -9,7 +9,7 @@
 char * __cdecl ParseFormatFlags(char *format,FormatSpec *spec_info)
 
 {
-  FormatFlags FVar1;
+  FORMAT_FLAGS FVar1;
   char cVar2;
   
   spec_info->flags =

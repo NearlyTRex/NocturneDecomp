@@ -10,7 +10,7 @@
 ;   core_menu.cpp_getKeyDisplayName_FUN_005134e0 at 0051370d
 ;
 ; Referenced Globals:
-;   GetKeyNameTextA* g_GetKeyNameTextAFunc = 00211ae4
+;   GET_KEY_NAME_TEXT_A_FUNC* g_GetKeyNameTextAFunc = 00211ae4
 ;   TerminatedCString s_Esc_00657f9a
 ;   TerminatedCString s_s_1_00657f9e
 ;   TerminatedCString s_s_2_00657fa0

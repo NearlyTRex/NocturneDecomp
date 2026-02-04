@@ -10,8 +10,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050702c
 ;
 ; Referenced Globals:
-;   MessageBoxA* g_MessageBoxAFunc = 00211b44
-;   ExitProcess* g_ExitProcessFunc = 00211d12
+;   MESSAGE_BOX_A_FUNC* g_MessageBoxAFunc = 00211b44
+;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   TerminatedCString s_s_File_s_Line_d_00657f84
 ;   TerminatedCString s_Nocturne_Editor_006581a7
 ;   char* g_ApplicationTitle = 006581a7

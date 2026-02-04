@@ -67,7 +67,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b868c = 004b97f9
-;   Sleep* g_SleepFunc = 00212228
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_0062604b
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;   TerminatedCString s_You_currently_have_s_che_00626502

@@ -14,10 +14,10 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_005f4a00 at 005f4d0f
 ;
 ; Referenced Globals:
-;   DispatchMessageA* g_DispatchMessageAFunc = 00211a9e
-;   PeekMessageA* g_PeekMessageAFunc = 00211b70
-;   TranslateMessage* g_TranslateMessageFunc = 00211c14
-;   Sleep* g_SleepFunc = 00212228
+;   DISPATCH_MESSAGE_A_FUNC* g_DispatchMessageAFunc = 00211a9e
+;   PEEK_MESSAGE_A_FUNC* g_PeekMessageAFunc = 00211b70
+;   TRANSLATE_MESSAGE_FUNC* g_TranslateMessageFunc = 00211c14
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   int g_WindowActive = -0x1
 ;   int g_ForceMessagePump = 0x1
 ;   char[256] g_KeyboardState

@@ -8,7 +8,7 @@
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f975
 ;
 ; Referenced Globals:
-;   TlsAlloc* g_TlsAllocFunc = 00212248
+;   TLS_ALLOC_FUNC* g_TlsAllocFunc = 00212248
 ;   DWORD g_TLSIndex = 0xffffffff
 ;   BYTE g_WindowsMinorVersion = \x00
 ;   WORD g_WindowsPlatformVersion = 0x0

@@ -9,7 +9,7 @@
 ;   crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c at 0060ce3c
 ;
 ; Referenced Globals:
-;   CreateFileA* g_CreateFileAFunc = 00211c6a
+;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_conin_00659698
 ;   TerminatedCString s_conout_006596a0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

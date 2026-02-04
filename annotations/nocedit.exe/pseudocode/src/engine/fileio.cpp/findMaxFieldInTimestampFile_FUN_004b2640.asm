@@ -14,7 +14,7 @@
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb696
 ;
 ; Referenced Globals:
-;   Sleep* g_SleepFunc = 00212228
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_0062604b
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;   TerminatedCString s_rt_006261e5

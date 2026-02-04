@@ -14,7 +14,7 @@
 ;   engine_dosio.c_getFullPath_FUN_004820c0 at 004820d1
 ;
 ; Referenced Globals:
-;   GetFullPathNameA* g_GetFullPathNameAFunc = 00211f0e
+;   GET_FULL_PATH_NAME_A_FUNC* g_GetFullPathNameAFunc = 00211f0e
 ;   TerminatedCString s_con_00658c2c
 ;   undefined4 DAT_006e6f63
 ;

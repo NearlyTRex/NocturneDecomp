@@ -18,7 +18,7 @@
 ;   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 at 005ad5ac
 ;
 ; Referenced Globals:
-;   Sleep* g_SleepFunc = 00212228
+;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   double g_SecondsToMillisecondsSleepMultiplier = 1000
 ;
 ; Called Functions:

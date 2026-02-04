@@ -13,7 +13,7 @@
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   uint g_MaxHandleCount = 0x14
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;   IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = 00000000

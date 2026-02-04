@@ -14,7 +14,7 @@
 ;   crt_string.c_wcstombs_FUN_0060c0c0 at 0060c163
 ;
 ; Referenced Globals:
-;   WideCharToMultiByte* g_WideCharToMultiByteFunc = 002122da
+;   WIDE_CHAR_TO_MULTI_BYTE_FUNC* g_WideCharToMultiByteFunc = 002122da
 ;   uint g_CodePage = 0x1
 ;
 ; Called Functions:

@@ -10,7 +10,7 @@
 ;   entry at 0060239a
 ;
 ; Referenced Globals:
-;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
+;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   DWORD g_StackAllocSize = 0x0
 ;   void* g_CrtStackBuffer = 00000000

@@ -334,8 +334,8 @@ typedef struct IDirectDraw_vtable {
 // pointer to IDirectDraw
 typedef struct IDirectDraw* LPDIRECTDRAW;
 
-// Function Definition: DirectDrawCreate
-typedef HRESULT (*DirectDrawCreate)(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);
+// Function Definition: DIRECT_DRAW_CREATE_FUNC
+typedef HRESULT (*DIRECT_DRAW_CREATE_FUNC)(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);
 
 // Structure: PALETTEENTRY
 typedef struct PALETTEENTRY {

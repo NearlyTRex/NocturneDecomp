@@ -9,7 +9,7 @@
 ;   wincore_winrun.cpp_mainWindowProc_FUN_005f3150 at 005f325c
 ;
 ; Referenced Globals:
-;   SetFocus* g_SetFocusFunc = 00211bd4
+;   SET_FOCUS_FUNC* g_SetFocusFunc = 00211bd4
 ;   TerminatedCString s_wincore_wddvmem_cpp_00657a60
 ;   TerminatedCString s_videoRestore_Unable_to_s_00657a77
 ;   int g_WindowWidth = 0x140

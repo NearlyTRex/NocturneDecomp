@@ -10,9 +10,9 @@
 ;   crt_startup.c_staticInit_FUN_0060aef4 at 0060aef6
 ;
 ; Referenced Globals:
-;   GetACP* g_GetACPFunc = 00211de2
-;   GetCPInfo* g_GetCPInfoFunc = 00211dec
-;   GetOEMCP* g_GetOEMCPFunc = 00211f82
+;   GET_ACP_FUNC* g_GetACPFunc = 00211de2
+;   GET_CP_INFO_FUNC* g_GetCPInfoFunc = 00211dec
+;   GET_OEMCP_FUNC* g_GetOEMCPFunc = 00211f82
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   undefined4 DAT_03f9c030

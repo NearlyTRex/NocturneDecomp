@@ -11,10 +11,10 @@
 ;   crt_io.c_stat_FUN_00607e64 at 00607ff7
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   CreateFileA* g_CreateFileAFunc = 00211c6a
-;   GetFileType* g_GetFileTypeFunc = 00211f00
-;   GetLastError* g_GetLastErrorFunc = 00211f22
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
+;   GET_FILE_TYPE_FUNC* g_GetFileTypeFunc = 00211f00
+;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
 ;   TerminatedCString s_con_0065905c
 ;   TerminatedCString s_conin_00659060
 ;   TerminatedCString s_EXE_00659068

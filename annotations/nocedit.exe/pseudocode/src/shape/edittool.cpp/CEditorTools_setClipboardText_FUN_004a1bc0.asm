@@ -17,13 +17,13 @@
 ;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270 at 004a332e
 ;
 ; Referenced Globals:
-;   CloseClipboard* g_CloseClipboardFunc = 00211a68
-;   OpenClipboard* g_OpenClipboardFunc = 00211b60
-;   SetClipboardData* g_SetClipboardDataFunc = 00211ba4
-;   GlobalAlloc* g_GlobalAllocFunc = 00211fd8
-;   GlobalFree* g_GlobalFreeFunc = 00211fe6
-;   GlobalLock* g_GlobalLockFunc = 00211ff4
-;   GlobalUnlock* g_GlobalUnlockFunc = 00212018
+;   CLOSE_CLIPBOARD_FUNC* g_CloseClipboardFunc = 00211a68
+;   OPEN_CLIPBOARD_FUNC* g_OpenClipboardFunc = 00211b60
+;   SET_CLIPBOARD_DATA_FUNC* g_SetClipboardDataFunc = 00211ba4
+;   GLOBAL_ALLOC_FUNC* g_GlobalAllocFunc = 00211fd8
+;   GLOBAL_FREE_FUNC* g_GlobalFreeFunc = 00211fe6
+;   GLOBAL_LOCK_FUNC* g_GlobalLockFunc = 00211ff4
+;   GLOBAL_UNLOCK_FUNC* g_GlobalUnlockFunc = 00212018
 ;   char s_EmptyChar_00623594 = \x00
 ;   TerminatedCString s_shape_edittool_cpp_00623595
 ;   char* g_ClipboardBackupText

@@ -20,8 +20,8 @@
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   CreateFileA* g_CreateFileAFunc = 00211c6a
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
 ;   int INT_00684ed0 = 0x100
 ;   REGISTER_HANDLE_FUNC* PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0 = 00602438

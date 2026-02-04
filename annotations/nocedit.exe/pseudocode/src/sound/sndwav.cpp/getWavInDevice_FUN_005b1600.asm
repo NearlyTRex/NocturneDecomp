@@ -12,7 +12,7 @@
 ;   sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0 at 005ab90e
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
+;   WAVE_IN_GET_DEV_CAPS_A_FUNC* g_waveInGetDevCapsAFunc = 002118b2
 ;   UINT g_WaveInDeviceID = 0xffffffff
 ;   CWavInDevice g_CWavInDeviceInstance
 ;

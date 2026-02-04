@@ -8,7 +8,7 @@
 ;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a506
 ;
 ; Referenced Globals:
-;   DeleteCriticalSection* g_DeleteCriticalSectionFunc = 00211caa
+;   DELETE_CRITICAL_SECTION_FUNC* g_DeleteCriticalSectionFunc = 00211caa
 ;   DWORD g_DynamicCriticalSectionCounter
 ;   LPCRITICAL_SECTION* g_DynamicCriticalSectionArray
 ;

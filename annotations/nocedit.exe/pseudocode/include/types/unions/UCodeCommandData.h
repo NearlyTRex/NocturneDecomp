@@ -4,9 +4,9 @@
 #include "system/basetypes.h"
 #include "types/structs/SClipPlane.h"
 
-// Union: CodeCommandData
-typedef union CodeCommandData {
+// Union: UCodeCommandData
+typedef union UCodeCommandData {
     char texture_name[16];
     SClipPlane clipping_plane;
-} CodeCommandData;
+} UCodeCommandData;
 

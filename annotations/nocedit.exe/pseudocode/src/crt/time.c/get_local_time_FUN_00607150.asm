@@ -10,7 +10,7 @@
 ;   crt_time.c_time_FUN_006001f0 at 006001fb
 ;
 ; Referenced Globals:
-;   GetLocalTime* g_GetLocalTimeFunc = 00211f32
+;   GET_LOCAL_TIME_FUNC* g_GetLocalTimeFunc = 00211f32
 ;
 ; Called Functions:
 ;   GetLocalTime

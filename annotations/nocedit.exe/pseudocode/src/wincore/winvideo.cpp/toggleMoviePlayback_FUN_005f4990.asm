@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   play_state
 ;
 ; Referenced Globals:
-;   mciSendStringA* g_mciSendStringAFunc = 00211850
+;   MCI_SEND_STRING_A_FUNC* g_mciSendStringAFunc = 00211850
 ;   TerminatedCString s_play_mov_fullscreen_noti_00658250
 ;   TerminatedCString s_play_mov_window_notify_0065826b
 ;   TerminatedCString s_pause_mov_00658282

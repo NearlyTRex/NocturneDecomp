@@ -10,8 +10,8 @@
 ;   sound_sndwav.cpp_getWavInDevice_FUN_005b1600 at 005b1608
 ;
 ; Referenced Globals:
-;   waveInClose* g_waveInCloseFunc = 002118a4
-;   GlobalFree* g_GlobalFreeFunc = 00211fe6
+;   WAVE_IN_CLOSE_FUNC* g_waveInCloseFunc = 002118a4
+;   GLOBAL_FREE_FUNC* g_GlobalFreeFunc = 00211fe6
 ;   TerminatedCString s_waveInClose_failed_0065243a
 ;   HWAVEIN g_WaveInHandle
 ;   HGLOBAL[20] g_WaveInHeaderHandles

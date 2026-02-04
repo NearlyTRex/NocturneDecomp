@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0xc]:1  local_c
 ;
 ; Referenced Globals:
-;   GetTextExtentPoint32A* g_GetTextExtentPoint32A = 002117b2
+;   GET_TEXT_EXTENT_POINT32_A_FUNC* g_GetTextExtentPoint32A = 002117b2
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860

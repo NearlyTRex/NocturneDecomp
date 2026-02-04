@@ -10,7 +10,7 @@
 ;   wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 at 005b5e9b
 ;
 ; Referenced Globals:
-;   FreeLibrary* g_FreeLibraryFunc = 00211dd4
+;   FREE_LIBRARY_FUNC* g_FreeLibraryFunc = 00211dd4
 ;
 ; Called Functions:
 ;   FreeLibrary

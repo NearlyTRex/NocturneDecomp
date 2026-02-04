@@ -11,8 +11,8 @@
 ;   crt_fstream.cpp_filebuf_underflow_FUN_0060da87 at 0060db7a
 ;
 ; Referenced Globals:
-;   GetLastError* g_GetLastErrorFunc = 00211f22
-;   ReadFile* g_ReadFileFunc = 002120f2
+;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
+;   READ_FILE_FUNC* g_ReadFileFunc = 002120f2
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14

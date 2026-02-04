@@ -13,11 +13,11 @@
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f37eb
 ;
 ; Referenced Globals:
-;   DefWindowProcA* g_DefWindowProcAFunc = 00211a8c
-;   PostQuitMessage* g_PostQuitMessageFunc = 00211b80
-;   SetCursor* g_SetCursorFunc = 00211bc8
-;   GetCurrentProcess* g_GetCurrentProcessFunc = 00211e5a
-;   SetThreadPriority* g_SetThreadPriorityFunc = 002121f6
+;   DEF_WINDOW_PROC_A_FUNC* g_DefWindowProcAFunc = 00211a8c
+;   POST_QUIT_MESSAGE_FUNC* g_PostQuitMessageFunc = 00211b80
+;   SET_CURSOR_FUNC* g_SetCursorFunc = 00211bc8
+;   GET_CURRENT_PROCESS_FUNC* g_GetCurrentProcessFunc = 00211e5a
+;   SET_THREAD_PRIORITY_FUNC* g_SetThreadPriorityFunc = 002121f6
 ;   int g_InputKeyMask = 0x7f
 ;   int g_WindowActive = -0x1
 ;   int g_PreviousActiveState = -0x1

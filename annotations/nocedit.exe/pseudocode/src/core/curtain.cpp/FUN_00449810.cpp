@@ -265,7 +265,7 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
                *(CDemonActor **)((int)&in_stack_00000004[2].orient_matrix + iVar11 + -0xcc);
           ppCVar9[0x1d] =
                (CPlatform *)*(CDemonActor **)(in_stack_00000004[2].create_event + iVar11 + -0x104);
-          ((CDemonActor_union_vtable *)(ppCVar9 + 0x1e))->_ub = (CDemonActor_vtable *)(iVar7 + -1);
+          ((UActorVTable *)(ppCVar9 + 0x1e))->_ub = (CDemonActor_vtable *)(iVar7 + -1);
           iVar10 = iVar6 * 0x74 + local_20 * 0x74 + iVar10 * 0x74;
           ppCVar9[0x1f] =
                (CPlatform *)
@@ -274,8 +274,7 @@ void __cdecl core_curtain_cpp_FUN_00449810(void)
                (CPlatform *)
                *(uint *)(in_stack_00000004[1].footstep_sound_code + iVar10 + 0x24);
           puVar18 = (uint *)((int)pCVar15 + (uint)bVar19 * -8 + 100);
-          *(CDemonActor_union_vtable *)(pCVar15 + 8) = *(CDemonActor_union_vtable *)(ppCVar9 + 0x1e)
-          ;
+          *(UActorVTable *)(pCVar15 + 8) = *(UActorVTable *)(ppCVar9 + 0x1e);
           *puVar18 = ppCVar9[(uint)bVar19 * -2 + 0x1f];
           puVar18[(uint)bVar19 * -2 + 1] =
                (ppCVar9 + (uint)bVar19 * -2 + 0x1f)[(uint)bVar19 * -2 + 1];

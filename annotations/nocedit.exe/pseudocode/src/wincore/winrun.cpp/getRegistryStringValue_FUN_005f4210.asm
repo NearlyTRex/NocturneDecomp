@@ -10,9 +10,9 @@
 ; uint *           Stack[0x14]:4   buffer_size
 ;
 ; Referenced Globals:
-;   RegCloseKey* g_RegCloseKeyFunc = 002119dc
-;   RegOpenKeyExA* g_RegOpenKeyExAFunc = 002119fc
-;   RegQueryValueExA* g_RegQueryValueExAFunc = 00211a0c
+;   REG_CLOSE_KEY_FUNC* g_RegCloseKeyFunc = 002119dc
+;   REG_OPEN_KEY_EX_A_FUNC* g_RegOpenKeyExAFunc = 002119fc
+;   REG_QUERY_VALUE_EX_A_FUNC* g_RegQueryValueExAFunc = 00211a0c
 ;   undefined4 DAT_80000002
 ;
 ; *****************************************************************************

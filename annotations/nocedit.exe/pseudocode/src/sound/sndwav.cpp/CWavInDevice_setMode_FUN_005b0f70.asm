@@ -11,10 +11,10 @@
 ; int *            Stack[0x14]:4   out_samples_per_block
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
-;   waveInOpen* g_waveInOpenFunc = 002118c6
-;   GlobalAlloc* g_GlobalAllocFunc = 00211fd8
-;   GlobalLock* g_GlobalLockFunc = 00211ff4
+;   WAVE_IN_GET_DEV_CAPS_A_FUNC* g_waveInGetDevCapsAFunc = 002118b2
+;   WAVE_IN_OPEN_FUNC* g_waveInOpenFunc = 002118c6
+;   GLOBAL_ALLOC_FUNC* g_GlobalAllocFunc = 00211fd8
+;   GLOBAL_LOCK_FUNC* g_GlobalLockFunc = 00211ff4
 ;   TerminatedCString s_WavInDevice_setMode_Can__00652476
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   UINT g_WaveInDeviceID = 0xffffffff

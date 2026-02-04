@@ -9,10 +9,10 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   mciSendStringA* g_mciSendStringAFunc = 00211850
-;   GetClientRect* g_GetClientRectFunc = 00211ac0
-;   MoveWindow* g_MoveWindowFunc = 00211b52
-;   SetRectEmpty* g_SetRectEmptyFunc = 00211bf6
+;   MCI_SEND_STRING_A_FUNC* g_mciSendStringAFunc = 00211850
+;   GET_CLIENT_RECT_FUNC* g_GetClientRectFunc = 00211ac0
+;   MOVE_WINDOW_FUNC* g_MoveWindowFunc = 00211b52
+;   SET_RECT_EMPTY_FUNC* g_SetRectEmptyFunc = 00211bf6
 ;   TerminatedCString s_where_mov_source_006581dd
 ;   HWND g_MovieWindowHandle
 ;   int g_MoviePlaying

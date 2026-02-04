@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSoundThread_FUN_005abc00 at 005abc6c
 ;
 ; Referenced Globals:
-;   SetThreadPriority* g_SetThreadPriorityFunc = 002121f6
+;   SET_THREAD_PRIORITY_FUNC* g_SetThreadPriorityFunc = 002121f6
 ;
 ; Called Functions:
 ;   SetThreadPriority

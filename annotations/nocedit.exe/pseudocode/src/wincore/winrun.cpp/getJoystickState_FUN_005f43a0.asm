@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60 at 004dbe7e
 ;
 ; Referenced Globals:
-;   joyGetPos* g_joyGetPosFunc = 0021182e
+;   JOY_GET_POS_FUNC* g_joyGetPosFunc = 0021182e
 ;   DWORD g_JoyXPos
 ;   DWORD g_JoyYPos
 ;   DWORD g_JoyRPos
@@ -23,7 +23,7 @@
 ;   int g_JoyWantRAxis
 ;   int g_JoystickHasPOV
 ;   int g_JoyPOVDirection
-;   joyGetPosEx* g_joyGetPosEx
+;   JOY_GET_POS_EX_FUNC* g_joyGetPosEx
 ;
 ; Called Functions:
 ;   joyGetPos

@@ -10,7 +10,7 @@
 ;   crt_time.c_strftime_FUN_006002d4 at 006006a3
 ;
 ; Referenced Globals:
-;   GetTimeZoneInformation* g_GetTimeZoneInformationFunc = 00211fb0
+;   GET_TIME_ZONE_INFORMATION_FUNC* g_GetTimeZoneInformationFunc = 00211fb0
 ;   TerminatedCString s_TZ_00659058
 ;   TerminatedCString s_EST_006850bc
 ;   undefined4 DAT_0068513c

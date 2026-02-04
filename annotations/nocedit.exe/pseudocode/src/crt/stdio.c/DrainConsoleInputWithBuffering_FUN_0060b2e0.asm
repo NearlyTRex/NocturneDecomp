@@ -13,7 +13,7 @@
 ;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8 at 0060b458
 ;
 ; Referenced Globals:
-;   ReadConsoleInputA* g_ReadConsoleInputAFunc = 002120de
+;   READ_CONSOLE_INPUT_A_FUNC* g_ReadConsoleInputAFunc = 002120de
 ;   int g_ConsoleInputState = 0x0
 ;   int g_BufferedCharacter
 ;   int g_BufferedVirtualKey

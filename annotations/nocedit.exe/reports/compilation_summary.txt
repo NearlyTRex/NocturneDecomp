@@ -5,66 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6507
-Successful: 0 (0.0%)
-Failed: 6507
+Successful: 4192 (64.4%)
+Failed: 2315
 
 ERROR CATEGORIES
 --------------------------------------------------
-  redefinition                   136647
-  incompatible_types             14567
   pointer_precision               7155
   other                           3236
+  incompatible_types              1553
   undeclared_identifier           1262
   syntax_error                     476
   const_error                      144
   missing_member                    68
   lvalue_required                   32
-
-====================================================================================================
-CATEGORY: redefinition (136647 errors)
-====================================================================================================
-
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
-    Line 156: 'ushort htons(ushort)' redeclared as different kind of entity...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-    Line 156: 'ushort htons(ushort)' redeclared as different kind of entity...
-
-  ... and 136617 more errors
-
-====================================================================================================
-CATEGORY: incompatible_types (14567 errors)
-====================================================================================================
-
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteOrReload_FUN_0054c660
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_alignTo4ByteBoundary_FUN_0054bcc0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_0054c6a0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    Line 168: invalid conversion from 'htons' {aka 'short unsigned int (*)(short unsigned int)...
-
-  ... and 14537 more errors
 
 ====================================================================================================
 CATEGORY: pointer_precision (7155 errors)
@@ -121,6 +74,57 @@ CATEGORY: other (3236 errors)
     Line 75: request for member '_0_4_' in 'g_TextureShift1', which is of non-class type 'ulo...
 
   ... and 3206 more errors
+
+====================================================================================================
+CATEGORY: incompatible_types (1553 errors)
+====================================================================================================
+
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    Line 50: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
+    Line 28: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    Line 34: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Line 18: cannot convert 'char**' to '__va_list_tag*'...
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    Line 44: invalid conversion from 'void*' to 'void**' [-fpermissive]...
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    Line 62: invalid conversion from 'void*' to 'void**' [-fpermissive]...
+  cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
+    Line 60: invalid conversion from 'void*' to 'CPackedBitmap*' [-fpermissive]...
+  cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
+    Line 18: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
+    Line 20: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+  cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
+    Line 28: invalid conversion from 'void*' to 'byte*' {aka 'unsigned char*'} [-fpermissive]...
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    Line 101: invalid conversion from 'void*' to 'int*' [-fpermissive]...
+  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
+    Line 72: invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]...
+  cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
+    Line 33: invalid conversion from 'void*' to 'int*' [-fpermissive]...
+  cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760
+    Line 14: cannot convert 'void (*)(void*, void*, int)' to 'void (**)(void*, void*, int)' i...
+  cockpit_ckptutil.c_get16BitConversionFunction_FUN_004317a0
+    Line 12: cannot convert 'void (*)(void*, void*, int)' to 'void (**)(void*, void*, int)' i...
+  cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00431770
+    Line 12: cannot convert 'void (*)(void*, void*, int)' to 'void (**)(void*, void*, int)' i...
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    Line 42: invalid conversion from 'void*' to 'byte*' {aka 'unsigned char*'} [-fpermissive]...
+  cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780
+    Line 13: cannot convert 'void (*)(void*, void*, int)' to 'void (**)(void*, void*, int)' i...
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    Line 33: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
+
+  ... and 1523 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (1262 errors)
@@ -305,7 +309,8 @@ CATEGORY: lvalue_required (32 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 5.53
+Average suspects in successfully compiled functions: 2.41
+Average suspects in failed compilations: 11.17
 
-Functions that compile but have suspect patterns: 0
+Functions that compile but have suspect patterns: 1450
 (These may have runtime issues even though syntax is valid)

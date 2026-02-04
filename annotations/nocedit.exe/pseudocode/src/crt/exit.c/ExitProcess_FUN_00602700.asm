@@ -12,7 +12,7 @@
 ;   crt_startup.c_WriteErrorAndExit_FUN_00606620 at 00606658
 ;
 ; Referenced Globals:
-;   ExitProcess* g_ExitProcessFunc = 00211d12
+;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   void* PTR_crt_sync.c_CriticalSectionCleanup_FUN_00602434_00684f20 = 00602434
 ;   int g_SpecialExitHandler = 0x0
 ;   int g_EmergencyExitFlag

@@ -15,9 +15,9 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 005081e2
 ;
 ; Referenced Globals:
-;   RegCloseKey* g_RegCloseKeyFunc = 002119dc
-;   RegCreateKeyExA* g_RegCreateKeyExAFunc = 002119ea
-;   RegSetValueExA* g_RegSetValueExAFunc = 00211a20
+;   REG_CLOSE_KEY_FUNC* g_RegCloseKeyFunc = 002119dc
+;   REG_CREATE_KEY_EX_A_FUNC* g_RegCreateKeyExAFunc = 002119ea
+;   REG_SET_VALUE_EX_A_FUNC* g_RegSetValueExAFunc = 00211a20
 ;   TerminatedCString s_suck_006581a2
 ;
 ; Called Functions:

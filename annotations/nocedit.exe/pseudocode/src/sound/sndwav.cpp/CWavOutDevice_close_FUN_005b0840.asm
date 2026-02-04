@@ -10,8 +10,8 @@
 ;   sound_sndwav.cpp_getWavOutDevice_FUN_005b1510 at 005b1518
 ;
 ; Referenced Globals:
-;   waveOutClose* g_waveOutCloseFunc = 0021191e
-;   GlobalFree* g_GlobalFreeFunc = 00211fe6
+;   WAVE_OUT_CLOSE_FUNC* g_waveOutCloseFunc = 0021191e
+;   GLOBAL_FREE_FUNC* g_GlobalFreeFunc = 00211fe6
 ;   TerminatedCString s_waveOutClose_failed_00652370
 ;   HWAVEOUT g_WaveOutHandle
 ;   HGLOBAL[8] g_WaveOutHeaderHandles

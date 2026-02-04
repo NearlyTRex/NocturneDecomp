@@ -16,7 +16,7 @@
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30 at 005abd3b
 ;
 ; Referenced Globals:
-;   CreateMutexA* g_CreateMutexAFunc = 00211c78
+;   CREATE_MUTEX_A_FUNC* g_CreateMutexAFunc = 00211c78
 ;
 ; Called Functions:
 ;   CreateMutexA

@@ -8,8 +8,8 @@
 ;   crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4 at 0060a7ba
 ;
 ; Referenced Globals:
-;   GetProcAddress* g_GetProcAddressFunc = 00211f8e
-;   LoadLibraryA* g_LoadLibraryAFunc = 0021205c
+;   GET_PROC_ADDRESS_FUNC* g_GetProcAddressFunc = 00211f8e
+;   LOAD_LIBRARY_A_FUNC* g_LoadLibraryAFunc = 0021205c
 ;   TerminatedCString s_USER32_DLL_00659110
 ;   TerminatedCString s_GetActiveWindow_0065911c
 ;

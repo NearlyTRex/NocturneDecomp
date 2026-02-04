@@ -18,7 +18,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3b43
 ;
 ; Referenced Globals:
-;   FindNextFileA* g_FindNextFileAFunc = 00211d96
+;   FIND_NEXT_FILE_A_FUNC* g_FindNextFileAFunc = 00211d96
 ;   TerminatedCString s_engine_dosio_c_006215de
 ;   TerminatedCString s_CFileFinder_open_search__006215f0
 ;   char* g_CurrentFilename

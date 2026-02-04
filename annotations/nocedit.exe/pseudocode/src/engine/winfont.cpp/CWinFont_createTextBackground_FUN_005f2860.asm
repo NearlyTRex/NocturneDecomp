@@ -14,14 +14,14 @@
 ;   engine_winfont.cpp_CWinFont_getStringWidth_FUN_005f2aa0 at 005f2ab1
 ;
 ; Referenced Globals:
-;   CreateBrushIndirect* g_CreateBrushIndirectFunc = 00211736
-;   CreateCompatibleDC* g_CreateCompatibleDCFunc = 0021174c
-;   CreateDIBSection* g_CreateDIBSectionFunc = 00211762
-;   DeleteObject* g_DeleteObjectFunc = 00211790
-;   Rectangle* g_RectangleFunc = 002117ca
-;   SelectObject* g_SelectObjectFunc = 002117d6
-;   SetBkColor* g_SetBkColorFunc = 002117e6
-;   SetBkMode* g_SetBkModeFunc = 002117f4
+;   CREATE_BRUSH_INDIRECT_FUNC* g_CreateBrushIndirectFunc = 00211736
+;   CREATE_COMPATIBLE_DC_FUNC* g_CreateCompatibleDCFunc = 0021174c
+;   CREATE_DIB_SECTION_FUNC* g_CreateDIBSectionFunc = 00211762
+;   DELETE_OBJECT_FUNC* g_DeleteObjectFunc = 00211790
+;   RECTANGLE_FUNC* g_RectangleFunc = 002117ca
+;   SELECT_OBJECT_FUNC* g_SelectObjectFunc = 002117d6
+;   SET_BK_COLOR_FUNC* g_SetBkColorFunc = 002117e6
+;   SET_BK_MODE_FUNC* g_SetBkModeFunc = 002117f4
 ;   int g_WindowWidth = 0x140
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_ColorMagenta

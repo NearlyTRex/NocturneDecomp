@@ -12,8 +12,8 @@
 ;   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 at 004b1c20
 ;
 ; Referenced Globals:
-;   GetUserNameA* g_GetUserNameAFunc = 002119a4
-;   GetComputerNameA* g_GetComputerNameAFunc = 00211e1c
+;   GET_USER_NAME_A_FUNC* g_GetUserNameAFunc = 002119a4
+;   GET_COMPUTER_NAME_A_FUNC* g_GetComputerNameAFunc = 00211e1c
 ;   TerminatedCString s_COMPUTERNAME_0065818c
 ;   TerminatedCString s_USERNAME_00658199
 ;

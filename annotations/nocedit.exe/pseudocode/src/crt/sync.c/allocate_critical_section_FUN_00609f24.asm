@@ -9,7 +9,7 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a46a
 ;
 ; Referenced Globals:
-;   InitializeCriticalSection* g_InitializeCriticalSectionFunc = 00212028
+;   INITIALIZE_CRITICAL_SECTION_FUNC* g_InitializeCriticalSectionFunc = 00212028
 ;   TerminatedCString s_Unable_to_allocate_semap_006590c8
 ;   TerminatedCString s_Unable_to_allocate_semap_006590ec
 ;   CRITICAL_SECTION[64] g_StaticCriticalSectionArray

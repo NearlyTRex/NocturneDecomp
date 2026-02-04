@@ -16,7 +16,7 @@
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4de
 ;
 ; Referenced Globals:
-;   SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc = 00212160
+;   SET_ENVIRONMENT_VARIABLE_A_FUNC* g_SetEnvironmentVariableAFunc = 00212160
 ;   int g_EnvironInitialized
 ;
 ; Called Functions:

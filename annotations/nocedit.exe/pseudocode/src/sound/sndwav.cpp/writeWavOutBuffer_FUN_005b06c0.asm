@@ -11,9 +11,9 @@
 ;   sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0 at 005b0957
 ;
 ; Referenced Globals:
-;   waveOutPrepareHeader* g_waveOutPrepareHeaderFunc = 00211952
-;   waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc = 0021197a
-;   waveOutWrite* g_waveOutWriteFunc = 00211994
+;   WAVE_OUT_PREPARE_HEADER_FUNC* g_waveOutPrepareHeaderFunc = 00211952
+;   WAVE_OUT_UNPREPARE_HEADER_FUNC* g_waveOutUnprepareHeaderFunc = 0021197a
+;   WAVE_OUT_WRITE_FUNC* g_waveOutWriteFunc = 00211994
 ;   TerminatedCString s_waveOutUnprepareHeader_f_0065231f
 ;   TerminatedCString s_waveOutPrepareHeader_fai_0065233e
 ;   TerminatedCString s_waveOutWrite_failed_0065235b

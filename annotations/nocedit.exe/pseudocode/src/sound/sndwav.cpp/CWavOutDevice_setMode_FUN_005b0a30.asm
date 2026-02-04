@@ -11,9 +11,9 @@
 ; int *            Stack[0x14]:4   out_samples_per_block
 ;
 ; Referenced Globals:
-;   waveOutOpen* g_waveOutOpenFunc = 00211944
-;   GlobalAlloc* g_GlobalAllocFunc = 00211fd8
-;   GlobalLock* g_GlobalLockFunc = 00211ff4
+;   WAVE_OUT_OPEN_FUNC* g_waveOutOpenFunc = 00211944
+;   GLOBAL_ALLOC_FUNC* g_GlobalAllocFunc = 00211fd8
+;   GLOBAL_LOCK_FUNC* g_GlobalLockFunc = 00211ff4
 ;   TerminatedCString s_waveOutOpen_failed_006523a4
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   HWAVEOUT g_WaveOutHandle

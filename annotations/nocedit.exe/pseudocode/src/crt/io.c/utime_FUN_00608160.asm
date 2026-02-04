@@ -11,12 +11,12 @@
 ;   crt_io.c_utime_thunk_00600c1e at 00600c1e
 ;
 ; Referenced Globals:
-;   CloseHandle* g_CloseHandleFunc = 00211c38
-;   CreateFileA* g_CreateFileAFunc = 00211c6a
-;   GetFileTime* g_GetFileTimeFunc = 00211ef2
-;   LocalFileTimeToFileTime* g_LocalFileTimeToFileTimeFunc = 0021206c
-;   SetFileTime* g_SetFileTimeFunc = 002121c8
-;   SystemTimeToFileTime* g_SystemTimeToFileTimeFunc = 00212230
+;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
+;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
+;   GET_FILE_TIME_FUNC* g_GetFileTimeFunc = 00211ef2
+;   LOCAL_FILE_TIME_TO_FILE_TIME_FUNC* g_LocalFileTimeToFileTimeFunc = 0021206c
+;   SET_FILE_TIME_FUNC* g_SetFileTimeFunc = 002121c8
+;   SYSTEM_TIME_TO_FILE_TIME_FUNC* g_SystemTimeToFileTimeFunc = 00212230
 ;
 ; Called Functions:
 ;   CloseHandle
