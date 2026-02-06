@@ -5,22 +5,22 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6507
-Successful: 4197 (64.5%)
-Failed: 2310
+Successful: 4192 (64.4%)
+Failed: 2315
 
 ERROR CATEGORIES
 --------------------------------------------------
-  pointer_precision               7152
-  other                           3232
-  incompatible_types              1550
-  undeclared_identifier           1248
-  syntax_error                     462
+  pointer_precision               7177
+  other                           3236
+  incompatible_types              1542
+  undeclared_identifier           1235
+  syntax_error                     444
   const_error                      145
   missing_member                    76
   lvalue_required                   32
 
 ====================================================================================================
-CATEGORY: pointer_precision (7152 errors)
+CATEGORY: pointer_precision (7177 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -42,10 +42,10 @@ CATEGORY: pointer_precision (7152 errors)
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 7122 more errors
+  ... and 7147 more errors
 
 ====================================================================================================
-CATEGORY: other (3232 errors)
+CATEGORY: other (3236 errors)
 ====================================================================================================
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
@@ -73,10 +73,10 @@ CATEGORY: other (3232 errors)
   engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
     Line 75: request for member '_0_4_' in 'g_TextureShift1', which is of non-class type 'ulo...
 
-  ... and 3202 more errors
+  ... and 3206 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1550 errors)
+CATEGORY: incompatible_types (1542 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -124,10 +124,10 @@ CATEGORY: incompatible_types (1550 errors)
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     Line 33: invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive...
 
-  ... and 1520 more errors
+  ... and 1512 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1248 errors)
+CATEGORY: undeclared_identifier (1235 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -175,10 +175,10 @@ CATEGORY: undeclared_identifier (1248 errors)
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Line 22: 'crt_wsock32_c_htons' was not declared in this scope...
 
-  ... and 1218 more errors
+  ... and 1205 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (462 errors)
+CATEGORY: syntax_error (444 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -202,21 +202,21 @@ CATEGORY: syntax_error (462 errors)
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
     Line 50: expected primary-expression before ')' token...
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 148: expected primary-expression before ')' token...
+    Line 145: expected primary-expression before ')' token...
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 108: expected primary-expression before ')' token...
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Line 197: expected primary-expression before ')' token...
+    Line 195: expected primary-expression before ')' token...
   core_dracbrid.cpp_FUN_00484410
-    Line 391: expected primary-expression before ')' token...
+    Line 389: expected primary-expression before ')' token...
   core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 116: expected primary-expression before ')' token...
+    Line 115: expected primary-expression before ')' token...
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 55: expected primary-expression before ')' token...
   core_zombie.cpp_CZombie_FUN_005fc970
     Line 20: expected primary-expression before ')' token...
 
-  ... and 432 more errors
+  ... and 414 more errors
 
 ====================================================================================================
 CATEGORY: const_error (145 errors)
@@ -279,7 +279,7 @@ CATEGORY: lvalue_required (32 errors)
   core_gore.cpp_FUN_004ed240
     Line 38: lvalue required as unary '&' operand...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 699: lvalue required as unary '&' operand...
+    Line 700: lvalue required as unary '&' operand...
   core_actor.cpp_CActorProperty_FUN_0040ea50
     Line 266: lvalue required as unary '&' operand...
   core_msnedit.cpp_CDemonMission_FUN_005379e0
@@ -293,7 +293,7 @@ CATEGORY: lvalue_required (32 errors)
   core_stranger.cpp_CStranger_FUN_005c02b0
     Line 142: lvalue required as unary '&' operand...
   core_stranger.cpp_CStranger_FUN_005bb960
-    Line 1028: lvalue required as left operand of assignment...
+    Line 996: lvalue required as left operand of assignment...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 562: lvalue required as unary '&' operand...
   core_skeledit.cpp_FUN_00592690
@@ -311,8 +311,8 @@ CATEGORY: lvalue_required (32 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.29
-Average suspects in failed compilations: 10.81
+Average suspects in successfully compiled functions: 2.16
+Average suspects in failed compilations: 10.49
 
-Functions that compile but have suspect patterns: 1408
+Functions that compile but have suspect patterns: 1365
 (These may have runtime issues even though syntax is valid)

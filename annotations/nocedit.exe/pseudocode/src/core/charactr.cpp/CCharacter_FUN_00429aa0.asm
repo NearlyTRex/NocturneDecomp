@@ -29,7 +29,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042a420
 ;   core_charactr.cpp_CCharacter_FUN_0042ad00
 ;   core_charactr.cpp_CCharacter_FUN_0042af60
-;   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320
+;   core_cloth.cpp_CClothList_render_FUN_0043c320
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
@@ -99,8 +99,8 @@ section .text
     PUSH ESI                            ; 00429b1d
     LEA EAX,[EBX + 0x2a94]              ; 00429b1e
     PUSH EAX                            ; 00429b24
-    CALL core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 ; 00429b25
-        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+    CALL core_cloth.cpp_CClothList_render_FUN_0043c320 ; 00429b25
+        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_0043c320(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 00429b2a
     POP ESI                             ; 00429b2d
     JMP 0x00429ab0                      ; 00429b2e

@@ -262,7 +262,7 @@ section .text
     LEA EAX,[EBX + 0x2a94]              ; 005bb490
     PUSH EAX                            ; 005bb496
     CALL core_cloth.cpp_CClothList_add_FUN_0043c0f0 ; 005bb497
-        ;   XREF to: 0043c0f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_0043c0f0(CClothList * this_ptr)
+        ;   XREF to: 0043c0f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_0043c0f0(CClothList * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005bb49c
     MOV EAX,EBX                         ; 005bb49f
     MOV dword ptr [EBX + 0x1fe6c],0x0   ; 005bb4a1

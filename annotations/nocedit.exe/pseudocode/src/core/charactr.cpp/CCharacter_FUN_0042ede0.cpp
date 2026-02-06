@@ -46,7 +46,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
   uint uStack_18;
   float fStack_14;
   
-  if (0.0 <= *(float *)(this_ptr->cloth_data + 0x32c)) {
+  if (0.0 <= *(float *)this_ptr->field53_0x2dc4) {
     pCVar6 = &(this_ptr->base).location;
     pCVar3 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(pCVar6);
     local_2c = pCVar3;
@@ -84,21 +84,21 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
           fStack_68 = (pCVar6->position).x + pCVar4->x;
           fStack_64 = (pCVar3->location).position.y + pCVar4->y;
           fStack_60 = (pCVar3->location).position.z + pCVar4->z;
-          if ((float *)(this_ptr->cloth_data + 0x330) != &fStack_68) {
-            *(float *)(this_ptr->cloth_data + 0x330) = fStack_68;
-            *(float *)(this_ptr->cloth_data + 0x334) = fStack_64;
-            *(float *)(this_ptr->cloth_data + 0x338) = fStack_60;
+          if ((float *)(this_ptr->field53_0x2dc4 + 4) != &fStack_68) {
+            *(float *)(this_ptr->field53_0x2dc4 + 4) = fStack_68;
+            *(float *)(this_ptr->field53_0x2dc4 + 8) = fStack_64;
+            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = fStack_60;
           }
           iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
           if (-1 < iVar2) {
-            this_ptr->cloth_data[0x33c] = '\0';
-            this_ptr->cloth_data[0x33d] = '\0';
-            this_ptr->cloth_data[0x33e] = '\0';
-            this_ptr->cloth_data[0x33f] = '\0';
-            this_ptr->cloth_data[0x32c] = '\0';
-            this_ptr->cloth_data[0x32d] = '\0';
-            this_ptr->cloth_data[0x32e] = -0x80;
-            this_ptr->cloth_data[0x32f] = -0x40;
+            this_ptr->field53_0x2dc4[0x10] = '\0';
+            this_ptr->field53_0x2dc4[0x11] = '\0';
+            this_ptr->field53_0x2dc4[0x12] = '\0';
+            this_ptr->field53_0x2dc4[0x13] = '\0';
+            this_ptr->field53_0x2dc4[0] = '\0';
+            this_ptr->field53_0x2dc4[1] = '\0';
+            this_ptr->field53_0x2dc4[2] = -0x80;
+            this_ptr->field53_0x2dc4[3] = -0x40;
             return 2;
           }
         }
@@ -109,8 +109,8 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
     if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&
        (SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y) <=
         (float)4.5)) {
-      fVar1 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;
-      *(float *)(this_ptr->cloth_data + 0x32c) = fVar1;
+      fVar1 = *(float *)this_ptr->field53_0x2dc4 + in_stack_00000008;
+      *(float *)this_ptr->field53_0x2dc4 = fVar1;
       if (fVar1 < (float)1.75) {
         return 0;
       }
@@ -136,21 +136,21 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
           fStack_98 = (pCVar6->position).x + pCVar4->x;
           fStack_94 = (pCVar3->location).position.y + pCVar4->y;
           fStack_90 = (pCVar3->location).position.z + pCVar4->z;
-          if ((float *)(this_ptr->cloth_data + 0x330) != &fStack_98) {
-            *(float *)(this_ptr->cloth_data + 0x330) = fStack_98;
-            *(float *)(this_ptr->cloth_data + 0x334) = fStack_94;
-            *(float *)(this_ptr->cloth_data + 0x338) = fStack_90;
+          if ((float *)(this_ptr->field53_0x2dc4 + 4) != &fStack_98) {
+            *(float *)(this_ptr->field53_0x2dc4 + 4) = fStack_98;
+            *(float *)(this_ptr->field53_0x2dc4 + 8) = fStack_94;
+            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = fStack_90;
           }
           iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
           if (-1 < iVar2) {
-            this_ptr->cloth_data[0x33c] = '\0';
-            this_ptr->cloth_data[0x33d] = '\0';
-            this_ptr->cloth_data[0x33e] = '\0';
-            this_ptr->cloth_data[0x33f] = '\0';
-            this_ptr->cloth_data[0x32c] = '\0';
-            this_ptr->cloth_data[0x32d] = '\0';
-            this_ptr->cloth_data[0x32e] = -0x60;
-            this_ptr->cloth_data[0x32f] = -0x40;
+            this_ptr->field53_0x2dc4[0x10] = '\0';
+            this_ptr->field53_0x2dc4[0x11] = '\0';
+            this_ptr->field53_0x2dc4[0x12] = '\0';
+            this_ptr->field53_0x2dc4[0x13] = '\0';
+            this_ptr->field53_0x2dc4[0] = '\0';
+            this_ptr->field53_0x2dc4[1] = '\0';
+            this_ptr->field53_0x2dc4[2] = -0x60;
+            this_ptr->field53_0x2dc4[3] = -0x40;
             return 1;
           }
         }
@@ -158,26 +158,26 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ede0(CCharacter *this_ptr)
         if (8 < (int)uStack_18) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s was in the way, but couldn't figure out where to move!\n",this_ptr);
-          this_ptr->cloth_data[0x32c] = '\0';
-          this_ptr->cloth_data[0x32d] = '\0';
-          this_ptr->cloth_data[0x32e] = '\0';
-          this_ptr->cloth_data[0x32f] = '\0';
+          this_ptr->field53_0x2dc4[0] = '\0';
+          this_ptr->field53_0x2dc4[1] = '\0';
+          this_ptr->field53_0x2dc4[2] = '\0';
+          this_ptr->field53_0x2dc4[3] = '\0';
           return 0;
         }
       } while( true );
     }
   }
   else {
-    fVar1 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;
-    *(float *)(this_ptr->cloth_data + 0x32c) = fVar1;
-    if (((fVar1 < 0.0) && (*(float *)(this_ptr->cloth_data + 0x33c) <= (float)1.5)) &&
-       (iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr), iVar2 == 0)) {
+    fVar1 = *(float *)this_ptr->field53_0x2dc4 + in_stack_00000008;
+    *(float *)this_ptr->field53_0x2dc4 = fVar1;
+    if (((fVar1 < 0.0) && (*(float *)(this_ptr->field53_0x2dc4 + 0x10) <= (float)1.5))
+       && (iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr), iVar2 == 0)) {
       return 1;
     }
   }
-  this_ptr->cloth_data[0x32c] = '\0';
-  this_ptr->cloth_data[0x32d] = '\0';
-  this_ptr->cloth_data[0x32e] = '\0';
-  this_ptr->cloth_data[0x32f] = '\0';
+  this_ptr->field53_0x2dc4[0] = '\0';
+  this_ptr->field53_0x2dc4[1] = '\0';
+  this_ptr->field53_0x2dc4[2] = '\0';
+  this_ptr->field53_0x2dc4[3] = '\0';
   return 0;
 }

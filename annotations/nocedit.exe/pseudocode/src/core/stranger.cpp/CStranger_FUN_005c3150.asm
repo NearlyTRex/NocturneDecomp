@@ -64,7 +64,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
-;   core_cloth.cpp_FUN_0043c070
+;   core_cloth.cpp_CClothList_reset_FUN_0043c070
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_fire.cpp_CFireEffect_FUN_004c7f80
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
@@ -425,8 +425,8 @@ section .text
         ;   XREF to: 005c3542 (CONDITIONAL_JUMP)  ; LAB_005c3542
     ADD EBX,0x2a94                      ; 005c3533
     PUSH EBX                            ; 005c3539
-    CALL core_cloth.cpp_FUN_0043c070    ; 005c353a
-        ;   XREF to: 0043c070 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c070()
+    CALL core_cloth.cpp_CClothList_reset_FUN_0043c070 ; 005c353a
+        ;   XREF to: 0043c070 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_reset_FUN_0043c070(CClothList * this_ptr)
     ADD ESP,0x4                         ; 005c353f
     MOV EAX,0x1                         ; 005c3542
         ;   Label: LAB_005c3542

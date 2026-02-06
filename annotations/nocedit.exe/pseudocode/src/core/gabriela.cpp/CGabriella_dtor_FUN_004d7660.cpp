@@ -9,7 +9,7 @@
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004d7660(CGabriella *this_ptr,uint flags)
 
 {
-  int extraout_EAX;
+  CCloth *pCVar1;
   CGabriella *ptr;
   void *ptr_00;
   
@@ -18,8 +18,9 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004d7660(CGabriella *
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-  core_hero_cpp_CHero_dtor_FUN_004f2470((CHero *)(extraout_EAX + -0x1fc14),1);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(&this_ptr->coat);
+  core_hero_cpp_CHero_dtor_FUN_004f2470
+            ((CHero *)(pCVar1[-1].vertices[0x181].connected_indices + 10),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

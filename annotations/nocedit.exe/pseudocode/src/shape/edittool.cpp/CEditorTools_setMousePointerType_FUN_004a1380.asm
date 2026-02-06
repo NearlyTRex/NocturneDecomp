@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[15]:
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d9df
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d9df
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab06
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050770d
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 005072d2

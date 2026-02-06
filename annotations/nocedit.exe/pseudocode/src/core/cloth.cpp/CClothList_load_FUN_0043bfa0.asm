@@ -20,9 +20,9 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
+;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0
+;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
-;   core_cloth.cpp_FUN_00438ba0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -64,8 +64,8 @@ section .text
     JZ 0x0043c002                       ; 0043bff7
         ;   XREF to: 0043c002 (CONDITIONAL_JUMP)  ; LAB_0043c002
     PUSH EAX                            ; 0043bff9
-    CALL core_cloth.cpp_FUN_00438ba0    ; 0043bffa
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_00438ba0 ; 0043bffa
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00438ba0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 0043bfff
     MOV dword ptr [EBX + 0x194],EAX     ; 0043c002
         ;   Label: LAB_0043c002
@@ -103,8 +103,8 @@ section .text
     PUSH 0x0                            ; 0043c056
         ;   Label: LAB_0043c056
     PUSH EAX                            ; 0043c058
-    CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0043c059
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 0043c059
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
     ADD ESP,0x8                         ; 0043c05e
     PUSH EAX                            ; 0043c061
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c062

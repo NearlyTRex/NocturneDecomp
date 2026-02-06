@@ -28,31 +28,31 @@
       {
         "category": "other",
         "column": 25,
-        "line": 133,
+        "line": 134,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 167,
+        "line": 168,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 170,
+        "line": 171,
         "message": "request for member '_4_4_' in 'auStack_128', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 171,
+        "line": 172,
         "message": "request for member '_0_4_' in 'auStack_128', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 181,
+        "line": 182,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       }
     ],
@@ -73,18 +73,18 @@
       {
         "category": "other",
         "column": 51,
-        "line": 219,
+        "line": 220,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 544,
+    "complexity_score": 545,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 214,
+    "pseudocode_lines": 215,
     "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -92,7 +92,7 @@
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 324
+    "total_lines": 325
   },
   "cross_references": [],
   "function": {
@@ -411,98 +411,98 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 127,
       "match": "in_stack_00000004",
       "text": "fVar4 = (float)(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc6)();",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 154,
+      "line": 155,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 164,
       "match": "._4_4_",
       "text": "auStack_128._4_4_ = pCStack_34;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 165,
       "match": "._0_4_",
       "text": "auStack_128._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 174,
       "match": "SQRT",
       "text": "SQRT(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
+      "line": 191,
       "match": "in_stack_00000004",
       "text": "iStack_100 = in_stack_00000004->ammo_type;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 194,
       "match": "in_stack_00000004",
       "text": "pCStack_ec = (*((in_stack_00000004->base).vtable._ub)->getCarrier)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 195,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 197,
+      "line": 198,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004->unk1 + 0xc) == 0) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 212,
+      "line": 213,
       "match": "in_stack_00000004",
       "text": "(g_CSoundPtr,&in_stack_00000004->base,\"shotgun.wav\",&CStack_bc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 214,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->unk2[0xc] = -6;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 214,
+      "line": 215,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->unk2[0xd] = '~';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 216,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->unk2[0xe] = '*';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 217,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->unk2[0xf] = '?';",
       "type": "stack_param"

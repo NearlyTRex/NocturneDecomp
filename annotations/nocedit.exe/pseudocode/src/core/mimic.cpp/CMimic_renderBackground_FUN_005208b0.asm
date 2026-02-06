@@ -11,7 +11,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_cloth.cpp_FUN_0043bae0
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     PUSH 0x0                            ; 0052090f
     LEA EAX,[EBX + 0xbf84]              ; 00520911
     PUSH EAX                            ; 00520917
-    CALL core_cloth.cpp_FUN_0043bae0    ; 00520918
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
+    CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 00520918
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
     ADD ESP,0x8                         ; 0052091d
     PUSH EBX                            ; 00520920
         ;   Label: LAB_00520920

@@ -16,7 +16,7 @@
 ;
 ; XREF[15]:
 ;   cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0 at 004336b5
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043da26
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043da26
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50 at 004d7e62
 ;   core_msnedit.cpp_FUN_00535e70 at 00536989
 ;   core_msnedit.cpp_FUN_00536cd0 at 00536d81

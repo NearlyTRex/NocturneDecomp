@@ -265,7 +265,7 @@ LAB_005be795:
   else {
     if (iVar6 != 0x16) {
       if (iVar6 == 0x1f) {
-        this_ptr_00 = *(CLever **)((this_ptr->base).unk4 + 0xc);
+        this_ptr_00 = (CLever *)(this_ptr->base).lever_to_pull;
         if (this_ptr_00 == (CLever *)0x0) {
           pCVar3 = core_lever_cpp_CLever_FUN_00504dd0(DAT_03f6baa8);
           pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -285,7 +285,7 @@ LAB_005be795:
             *(float *)(this_ptr->unk2 + 0x60) = pCVar3->y;
             *(float *)(this_ptr->unk2 + 100) = pCVar3->z;
           }
-          DAT_03f6baa8 = *(CLever **)((this_ptr->base).unk4 + 0xc);
+          DAT_03f6baa8 = (CLever *)(this_ptr->base).lever_to_pull;
         }
         local_100 = *(float *)(this_ptr->unk2 + 0x5c);
         local_fc = *(float *)(this_ptr->unk2 + 0x60);
@@ -484,7 +484,7 @@ LAB_005be795:
                   (&(this_ptr->base).base.model,&local_c4,INT_03f6badc);
         local_20 = (*(float *)(this_ptr->unk2 + 0x60) + *(float *)(this_ptr->unk2 + 0x78)) -
                    *(float *)(this_ptr->unk2 + 0x6c);
-        if (*(int *)((this_ptr->base).unk4 + 4) != 0) {
+        if ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) {
           INT_03f6bb64 = (int)core_stranger_cpp_FUN_005bb010();
           local_18 = (CQuaternion4f *)INT_03f6bb64;
         }
@@ -533,11 +533,11 @@ LAB_005be795:
       goto LAB_005be795;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              ((CMatrix3x3f *)(auStack_434 + 4),(CVector3f *)((this_ptr->base).unk4 + 0x28));
+              ((CMatrix3x3f *)(auStack_434 + 4),(CVector3f *)((this_ptr->base).unk3 + 0x14));
     if ((DAT_03f6baac & 1) == 0) {
       DAT_03f6baac = DAT_03f6baac | 1;
     }
-    iVar6 = *(int *)((this_ptr->base).unk4 + 0x18);
+    iVar6 = *(int *)((this_ptr->base).unk3 + 4);
     if (iVar6 != 0) {
       pfVar4 = (float *)(**(code **)(*(int *)(iVar6 + 0x154) + 0x14))();
       fStack_d4 = *pfVar4 + pfVar4[3];
@@ -555,9 +555,9 @@ LAB_005be795:
     pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        ((CMatrix3x3f *)auStack_434,(CVector3f *)(local_70 + 8),
                         (CVector3f *)&FLOAT_03f6ba9c);
-    local_148._8_4_ = *(float *)((this_ptr->base).unk4 + 0x1c) + pCVar5->x;
-    fStack_13c = *(float *)((this_ptr->base).unk4 + 0x20) + pCVar5->y;
-    fStack_138 = *(float *)((this_ptr->base).unk4 + 0x24) + pCVar5->z;
+    local_148._8_4_ = *(float *)((this_ptr->base).unk3 + 8) + pCVar5->x;
+    fStack_13c = *(float *)((this_ptr->base).unk3 + 0xc) + pCVar5->y;
+    fStack_138 = *(float *)((this_ptr->base).unk3 + 0x10) + pCVar5->z;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)this_ptr,&local_128,(CVector3f *)(local_148 + 8));
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20

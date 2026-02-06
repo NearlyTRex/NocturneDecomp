@@ -13,7 +13,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
 
 {
   CDeformableModelInstance *pCVar1;
-  char *pcVar2;
+  CVector3f *pCVar2;
   uint uVar3;
   float fVar4;
   int iVar5;
@@ -83,9 +83,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   }
   fVar9 = in_stack_00000004->speed;
   fVar4 = (float)3.1415926535000001;
-  *(float *)((in_stack_00000004->base).unk1 + 0x28) =
+  (in_stack_00000004->base).walk_step_speed =
        (in_stack_00000004->base).model.accumulated_root_motion.z;
-  *(float *)((in_stack_00000004->base).unk1 + 0x2c) = in_stack_00000008 * fVar4 * fVar9;
+  (in_stack_00000004->base).turn_speed = in_stack_00000008 * fVar4 * fVar9;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   iVar5 = pSVar6->state_index;
@@ -294,7 +294,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
     }
     goto switchD_004e531f_caseD_4;
   }
-  uVar3 = *(uint *)((in_stack_00000004->base).unk2 + 0x10);
+  uVar3 = (in_stack_00000004->base).field22_0x25b0;
   if (uVar3 < 2) {
     if (uVar3 == 1) {
 LAB_004e4b02:
@@ -325,31 +325,26 @@ switchD_004e531f_caseD_4:
   }
   iVar5 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base);
   if (iVar5 != 0) {
-    *(float *)((in_stack_00000004->base).unk1 + 0x20) =
-         *(float *)((in_stack_00000004->base).unk1 + 0x20) -
-         in_stack_00000008 * (float)32;
-    local_98 = *(float *)((in_stack_00000004->base).unk1 + 0x1c) * in_stack_00000008;
-    local_94 = *(float *)((in_stack_00000004->base).unk1 + 0x20) * in_stack_00000008;
-    pcVar2 = (in_stack_00000004->base).unk1 + 0x10;
-    local_90 = in_stack_00000008 * *(float *)((in_stack_00000004->base).unk1 + 0x24);
-    pCVar8 = &(in_stack_00000004->base).model.accumulated_root_motion;
-    local_74 = local_98 + *(float *)pcVar2;
-    local_70 = local_94 + *(float *)((in_stack_00000004->base).unk1 + 0x14);
-    local_6c = local_90 + *(float *)((in_stack_00000004->base).unk1 + 0x18);
-    local_b0 = local_74 + pCVar8->x;
+    (in_stack_00000004->base).field7_0x2428.y =
+         (in_stack_00000004->base).field7_0x2428.y - in_stack_00000008 * (float)32;
+    local_98 = (in_stack_00000004->base).field7_0x2428.x * in_stack_00000008;
+    local_94 = (in_stack_00000004->base).field7_0x2428.y * in_stack_00000008;
+    pCVar8 = &(in_stack_00000004->base).field6_0x241c;
+    local_90 = in_stack_00000008 * (in_stack_00000004->base).field7_0x2428.z;
+    pCVar2 = &(in_stack_00000004->base).model.accumulated_root_motion;
+    local_74 = local_98 + pCVar8->x;
+    local_70 = local_94 + (in_stack_00000004->base).field6_0x241c.y;
+    local_6c = local_90 + (in_stack_00000004->base).field6_0x241c.z;
+    local_b0 = local_74 + pCVar2->x;
     local_ac = local_70 + (in_stack_00000004->base).model.accumulated_root_motion.y;
     local_a8 = local_6c + (in_stack_00000004->base).model.accumulated_root_motion.z;
-    (in_stack_00000004->base).unk1[0x18] = '\0';
-    (in_stack_00000004->base).unk1[0x19] = '\0';
-    (in_stack_00000004->base).unk1[0x1a] = '\0';
-    (in_stack_00000004->base).unk1[0x1b] = '\0';
-    *(uint *)((in_stack_00000004->base).unk1 + 0x14) =
-         *(uint *)((in_stack_00000004->base).unk1 + 0x18);
-    *(float *)pcVar2 = *(float *)((in_stack_00000004->base).unk1 + 0x14);
+    (in_stack_00000004->base).field6_0x241c.z = 0.0;
+    (in_stack_00000004->base).field6_0x241c.y = (in_stack_00000004->base).field6_0x241c.z;
+    pCVar8->x = (in_stack_00000004->base).field6_0x241c.y;
     (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base).model.accumulated_root_motion.y =
          (in_stack_00000004->base).model.accumulated_root_motion.z;
-    pCVar8->x = (in_stack_00000004->base).model.accumulated_root_motion.y;
+    pCVar2->x = (in_stack_00000004->base).model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base);

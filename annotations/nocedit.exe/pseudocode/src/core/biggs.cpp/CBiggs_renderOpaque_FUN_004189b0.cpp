@@ -13,7 +13,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
   int iVar1;
   int iVar2;
   
-  if (*(int *)(this_ptr->base).base.unk1 != 0) {
+  if ((this_ptr->base).base.field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
@@ -22,10 +22,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
     iVar2 = this_ptr->morphing;
-    (this_ptr->base).base.unk3[0] = '\x01';
-    (this_ptr->base).base.unk3[1] = '\0';
-    (this_ptr->base).base.unk3[2] = '\0';
-    (this_ptr->base).base.unk3[3] = '\0';
+    (this_ptr->base).base.field43_0x2620 = 1;
     if (iVar2 == 0) {
       core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     }

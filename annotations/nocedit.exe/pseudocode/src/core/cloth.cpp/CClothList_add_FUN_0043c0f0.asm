@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr)
+; __cdecl void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fd67

@@ -18,8 +18,8 @@ core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500
   if (max_count < 0) {
     max_count = 10;
   }
-  if (data_ptr->unk <= max_count) {
-    max_count = data_ptr->unk + 1;
+  if (data_ptr->count <= max_count) {
+    max_count = data_ptr->count + 1;
   }
   if (10 < max_count) {
     max_count = 10;

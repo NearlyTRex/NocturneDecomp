@@ -9,13 +9,13 @@
 void __cdecl core_hero_cpp_CHero_FUN_004f3580(CHero *this_ptr)
 
 {
-  if (*(int *)(this_ptr->unk4 + 0x14) == 0) {
+  if (*(int *)this_ptr->unk3 == 0) {
     return;
   }
-  (**(code **)(*(int *)(*(int *)(this_ptr->unk4 + 0x14) + 0x154) + 0x9c))();
-  this_ptr->unk4[0x14] = '\0';
-  this_ptr->unk4[0x15] = '\0';
-  this_ptr->unk4[0x16] = '\0';
-  this_ptr->unk4[0x17] = '\0';
+  (**(code **)(*(int *)(*(int *)this_ptr->unk3 + 0x154) + 0x9c))();
+  this_ptr->unk3[0] = '\0';
+  this_ptr->unk3[1] = '\0';
+  this_ptr->unk3[2] = '\0';
+  this_ptr->unk3[3] = '\0';
   return;
 }

@@ -46,7 +46,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   float fStack_3c;
   float fStack_38;
   CDemonActor *pCStack_34;
-  CDemonActor *pCStack_30;
+  CCrate *pCStack_30;
   CFlameCan *pCStack_2c;
   float fStack_28;
   int iStack_24;
@@ -122,7 +122,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
         pCStack_34 = pCVar3;
-        pCStack_30 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCStack_30 = (CCrate *)
+                     core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
         pCStack_2c = (CFlameCan *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
@@ -133,7 +134,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
         if (this_ptr_00 == (CCharacter *)0x0) {
           if (pCStack_20 == (CGlass *)0x0) {
             if (pCVar3 == (CDemonActor *)0x0) {
-              if (pCStack_30 == (CDemonActor *)0x0) {
+              if (pCStack_30 == (CCrate *)0x0) {
                 if (pCStack_2c == (CFlameCan *)0x0) {
                   core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
                   break;
@@ -141,7 +142,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                 core_flamecan_cpp_CFlameCan_FUN_004cb340(pCStack_2c);
               }
               else {
-                core_crate_cpp_FUN_00448a70();
+                core_crate_cpp_CCrate_FUN_00448a70(pCStack_30);
               }
             }
             else {

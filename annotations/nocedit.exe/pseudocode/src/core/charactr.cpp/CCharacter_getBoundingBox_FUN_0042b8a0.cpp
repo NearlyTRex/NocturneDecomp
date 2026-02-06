@@ -11,11 +11,11 @@ core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042b8a0
           (CCharacter *this_ptr,CBoundingBox3D *out_box)
 
 {
-  (out_box->min).x = *(float *)(this_ptr->unk2 + 0x58);
-  (out_box->min).y = *(float *)(this_ptr->unk2 + 0x5c);
-  (out_box->min).z = *(float *)(this_ptr->unk2 + 0x60);
-  (out_box->max).x = *(float *)(this_ptr->unk2 + 100);
-  (out_box->max).y = *(float *)(this_ptr->unk2 + 0x68);
-  (out_box->max).z = *(float *)(this_ptr->unk2 + 0x6c);
+  (out_box->min).x = (this_ptr->cached_bounding_box).min.x;
+  (out_box->min).y = (this_ptr->cached_bounding_box).min.y;
+  (out_box->min).z = (this_ptr->cached_bounding_box).min.z;
+  (out_box->max).x = (this_ptr->cached_bounding_box).max.x;
+  (out_box->max).y = (this_ptr->cached_bounding_box).max.y;
+  (out_box->max).z = (this_ptr->cached_bounding_box).max.z;
   return out_box;
 }

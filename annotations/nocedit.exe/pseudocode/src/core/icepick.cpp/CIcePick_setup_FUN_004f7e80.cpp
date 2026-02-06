@@ -9,10 +9,7 @@
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
 
 {
-  CHero *pCVar1;
-  CCharacter *pCVar2;
-  SCarryHand *pSVar3;
-  int iVar4;
+  int iVar1;
   CSkeleton *this_ptr_00;
   
   core_hero_cpp_CHero_setup_FUN_004f2540(&this_ptr->base);
@@ -54,33 +51,21 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
                            (this_ptr_00,"Bip01 Spine1");
   INT_02db89b4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine");
-  pCVar2 = &(this_ptr->base).base;
-  pCVar2->carry_hands[0].unk1[4] = '\0';
-  pCVar2->carry_hands[0].unk1[5] = '\0';
-  pCVar2->carry_hands[0].unk1[6] = '\0';
-  pCVar2->carry_hands[0].unk1[7] = '\0';
-  pSVar3 = (this_ptr->base).base.carry_hands;
-  pSVar3[1].unk1[4] = '\0';
-  pSVar3[1].unk1[5] = '\0';
-  pSVar3[1].unk1[6] = '\0';
-  pSVar3[1].unk1[7] = '\0';
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = 0;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = 0;
   this_ptr->unk[0] = '\0';
   this_ptr->unk[1] = '\0';
   this_ptr->unk[2] = '\0';
   this_ptr->unk[3] = '\0';
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_02db89a4;
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = INT_02db89a8;
-  iVar4 = g_LocalHeroIndex;
+  (this_ptr->base).base.carry_hands[0].bone_index = INT_02db89a4;
+  (this_ptr->base).base.carry_hands[1].bone_index = INT_02db89a8;
+  iVar1 = g_LocalHeroIndex;
   this_ptr->unk[0x24] = '\0';
   this_ptr->unk[0x25] = '\0';
   this_ptr->unk[0x26] = '\0';
   this_ptr->unk[0x27] = '\0';
-  if (this_ptr == (CIcePick *)g_HeroActors[iVar4]) {
-    pCVar1 = &((CIcePick *)g_HeroActors[iVar4])->base;
-    (pCVar1->base).cloth_data[0x348] = '\0';
-    (pCVar1->base).cloth_data[0x349] = '\0';
-    (pCVar1->base).cloth_data[0x34a] = -0x40;
-    (pCVar1->base).cloth_data[0x34b] = '?';
+  if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
+    (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->unk[0xc] = '\0';
   this_ptr->unk[0xd] = '\0';

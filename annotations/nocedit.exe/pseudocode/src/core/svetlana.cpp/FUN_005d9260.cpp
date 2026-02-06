@@ -92,18 +92,15 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
       local_6c.z = CStack_78.z;
     }
     fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
-    (in_stack_00000004->base).unk1[0xc] = '\0';
-    (in_stack_00000004->base).unk1[0xd] = '\0';
-    (in_stack_00000004->base).unk1[0xe] = '\0';
-    (in_stack_00000004->base).unk1[0xf] = '\0';
+    (in_stack_00000004->base).turn_angle_accumulator = 0.0;
     fStack_18 = fVar1;
     if ((float)6 <= fVar1) {
       pCStack_20 = (CPathMap *)0x0;
       if (bVar2) {
-        (in_stack_00000004->base).cloth_data[0x32c] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32d] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32e] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32f] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[0] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[1] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[2] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[3] = '\0';
       }
       else {
         local_1c = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
@@ -162,10 +159,10 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
             (in_stack_00000004->action_bindings).fire_key = 1;
           }
         }
-        (in_stack_00000004->base).cloth_data[0x32c] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32d] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32e] = '\0';
-        (in_stack_00000004->base).cloth_data[0x32f] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[0] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[1] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[2] = '\0';
+        (in_stack_00000004->base).field53_0x2dc4[3] = '\0';
       }
       else {
         pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -211,21 +208,15 @@ void __cdecl core_svetlana_cpp_FUN_005d9260(void)
         }
       }
     }
-    fVar1 = *(float *)((in_stack_00000004->base).unk1 + 0xc);
+    fVar1 = (in_stack_00000004->base).turn_angle_accumulator;
     if (fVar1 <= 0.0) {
       if (fVar1 < 0.0) {
-        (in_stack_00000004->base).unk1[0xc] = '\0';
-        (in_stack_00000004->base).unk1[0xd] = '\0';
-        (in_stack_00000004->base).unk1[0xe] = '\0';
-        (in_stack_00000004->base).unk1[0xf] = '\0';
+        (in_stack_00000004->base).turn_angle_accumulator = 0.0;
         *(float *)(in_stack_00000004->unk2 + 4) = -(float)local_1c;
       }
     }
     else {
-      (in_stack_00000004->base).unk1[0xc] = '\0';
-      (in_stack_00000004->base).unk1[0xd] = '\0';
-      (in_stack_00000004->base).unk1[0xe] = '\0';
-      (in_stack_00000004->base).unk1[0xf] = '\0';
+      (in_stack_00000004->base).turn_angle_accumulator = 0.0;
       *(CPathMap **)(in_stack_00000004->unk2 + 4) = local_1c;
     }
     CStack_60.x = (pCVar9->base).base.location.position.x -

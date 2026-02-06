@@ -102,9 +102,6 @@ void __cdecl core_smiley_cpp_FUN_005a24d0(void)
     return;
   }
   in_stack_00000004[1].base.base.orient_matrix.m[1].x = 4.2039e-45;
-  (in_stack_00000004->base).unk3[4] = '\0';
-  (in_stack_00000004->base).unk3[5] = '\0';
-  (in_stack_00000004->base).unk3[6] = '\0';
-  (in_stack_00000004->base).unk3[7] = '\0';
+  (in_stack_00000004->base).field44_0x2624 = 0;
   return;
 }

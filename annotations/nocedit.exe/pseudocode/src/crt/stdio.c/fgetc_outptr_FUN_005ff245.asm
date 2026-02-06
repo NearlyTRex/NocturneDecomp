@@ -8,10 +8,10 @@
 ; uchar *          Stack[0x8]:4   output_byte
 ;
 ; XREF[4]:
-;   core_cloth.cpp_FUN_0043e4c0 at 0043e4e5
 ;   support_codec.cpp_CCodec_process_FUN_0043ea10 at 0043ea48
 ;   support_codec.cpp_CLZWCompress_process_FUN_0043f360 at 0043f3b1
 ;   support_codec.cpp_readBitsFromStream_FUN_0043e530 at 0043e687
+;   support_codec.cpp_readByteWithCount_FUN_0043e4c0 at 0043e4e5
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetcInternal_FUN_00605fad

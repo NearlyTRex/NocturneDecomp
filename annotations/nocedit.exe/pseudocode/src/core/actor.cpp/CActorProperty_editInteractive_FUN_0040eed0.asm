@@ -1412,7 +1412,7 @@ section .text
     PUSH ECX                            ; 0040fca9
     PUSH EDI                            ; 0040fcaa
     CALL core_cloth.cpp_CClothList_remove_FUN_0043c170 ; 0040fcab
-        ;   XREF to: 0043c170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_remove_FUN_0043c170(CClothList * this_ptr)
+        ;   XREF to: 0043c170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_remove_FUN_0043c170(CClothList * this_ptr, int index)
     ADD ESP,0x8                         ; 0040fcb0
         ;   Label: LAB_0040fcb0
     PUSH EBP                            ; 0040fcb3
@@ -1489,7 +1489,7 @@ section .text
     PUSH EAX                            ; 0040fd65
     PUSH EDI                            ; 0040fd66
     CALL core_cloth.cpp_CClothList_add_FUN_0043c0f0 ; 0040fd67
-        ;   XREF to: 0043c0f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_0043c0f0(CClothList * this_ptr)
+        ;   XREF to: 0043c0f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_0043c0f0(CClothList * this_ptr, char * filename)
     JMP 0x0040fcb0                      ; 0040fd6c
         ;   XREF to: 0040fcb0 (UNCONDITIONAL_JUMP)  ; LAB_0040fcb0
     PUSH 0x0                            ; 0040fd71

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d4d80 at 004d4ef1
+;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d4ef1
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062ac8d = 0.700000000000000

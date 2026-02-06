@@ -85,19 +85,17 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
     *(uint *)(this_ptr->unk4 + 0x34) = *(uint *)(this_ptr->unk4 + 0x3c);
     *(uint *)(this_ptr->unk4 + 0x3c) = uVar1;
   }
-  *(uint *)(this_ptr->base).base.carry_hands[0].unk1 = *(uint *)(this_ptr->unk4 + 8);
-  *(uint *)((this_ptr->base).base.carry_hands[0].unk1 + 4) =
-       *(uint *)(this_ptr->unk4 + 0x34);
-  *(uint *)(this_ptr->base).base.carry_hands[1].unk1 = *(uint *)(this_ptr->unk4 + 0xc);
-  *(uint *)((this_ptr->base).base.carry_hands[1].unk1 + 4) =
-       *(uint *)(this_ptr->unk4 + 0x3c);
+  (this_ptr->base).base.carry_hands[0].bone_index = *(int *)(this_ptr->unk4 + 8);
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = *(int *)(this_ptr->unk4 + 0x34);
+  (this_ptr->base).base.carry_hands[1].bone_index = *(int *)(this_ptr->unk4 + 0xc);
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = *(int *)(this_ptr->unk4 + 0x3c);
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = (uint)(this_ptr->is_miner_zombie != 0);
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   *(float *)(this_ptr->unk4 + 0x5c) = fVar3;
-  if ((-1 < *(int *)(this_ptr->unk4 + 0x40)) &&
-     (*(float *)((this_ptr->base).base.cloth_data + 0x358) < 0.0)) {
-    *(float *)((this_ptr->base).base.cloth_data + 0x358) =
+  if ((-1 < *(int *)(this_ptr->unk4 + 0x40)) && ((this_ptr->base).base.collision_cylinder_top < 0.0)
+     ) {
+    (this_ptr->base).base.collision_cylinder_top =
          (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }
   str1 = (this_ptr->base).base.model.model_name;

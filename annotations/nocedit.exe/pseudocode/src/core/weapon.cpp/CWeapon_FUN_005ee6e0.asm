@@ -7,7 +7,7 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 00448f5d
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00448f5d
 ;   core_dynamite.cpp_CDynamite_fire_FUN_0049ce70 at 0049ce76
 ;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a719d
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f038d

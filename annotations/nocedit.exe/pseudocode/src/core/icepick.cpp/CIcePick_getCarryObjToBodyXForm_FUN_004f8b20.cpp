@@ -24,7 +24,7 @@ void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIceP
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;
+  iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
   if (in_stack_00000008 == 1) {
     local_18.x = 0.45;
     local_18.y = -0.229;

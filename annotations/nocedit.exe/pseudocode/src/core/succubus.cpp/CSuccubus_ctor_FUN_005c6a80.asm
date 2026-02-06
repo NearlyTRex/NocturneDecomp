@@ -21,7 +21,7 @@
 ;   CDemonActor_vtable g_CSuccubusVTable
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043bf40
+;   core_cloth.cpp_CClothList_ctor_FUN_0043bf40
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_morph.cpp_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x4                         ; 005c6a9b
     ADD EAX,0x22b4                      ; 005c6a9e
     PUSH EAX                            ; 005c6aa3
-    CALL core_cloth.cpp_FUN_0043bf40    ; 005c6aa4
-        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf40()
+    CALL core_cloth.cpp_CClothList_ctor_FUN_0043bf40 ; 005c6aa4
+        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_ctor_FUN_0043bf40(CClothList * this_ptr)
     ADD ESP,0x4                         ; 005c6aa9
     ADD EAX,0x1cc                       ; 005c6aac
     PUSH EAX                            ; 005c6ab1

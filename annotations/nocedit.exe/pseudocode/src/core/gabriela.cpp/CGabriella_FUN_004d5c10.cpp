@@ -12,7 +12,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c10(CGabriella *this_ptr)
   CDemonActor *actor_ptr;
   CAmmoBox *this_ptr_00;
   
-  actor_ptr = *(CDemonActor **)((this_ptr->base).unk4 + 4);
+  actor_ptr = (this_ptr->base).object_to_pick_up;
   if (actor_ptr == (CDemonActor *)0x0) {
     return;
   }
@@ -22,9 +22,6 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c10(CGabriella *this_ptr)
   if (this_ptr_00 != (CAmmoBox *)0x0) {
     core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00,&(this_ptr->base).inventory);
   }
-  (this_ptr->base).unk4[4] = '\0';
-  (this_ptr->base).unk4[5] = '\0';
-  (this_ptr->base).unk4[6] = '\0';
-  (this_ptr->base).unk4[7] = '\0';
+  (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
   return;
 }

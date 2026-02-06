@@ -27,7 +27,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   CDemonActor *local_14;
   
   bVar4 = 0;
-  if (*(int *)(this_ptr->base).base.unk1 == 0) {
+  if ((this_ptr->base).base.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,&local_64);
@@ -45,7 +45,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
         g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-        core_cloth_cpp_FUN_0043bae0();
+        core_cloth_cpp_CCloth_render_FUN_0043bae0((CCloth *)this_ptr->unk3,0);
         local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                               g_CStrangerClassInfo.name_hash);

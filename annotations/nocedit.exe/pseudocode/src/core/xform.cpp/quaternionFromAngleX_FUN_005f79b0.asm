@@ -13,7 +13,7 @@
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd08
-;   core_gabriela.cpp_FUN_004d4d80 at 004d4f12
+;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d4f12
 ;   core_icepick.cpp_CIcePick_FUN_004f8810 at 004f88f4
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 00526a06
 ;   core_scat.cpp_CScat_FUN_005584a0 at 005585ca

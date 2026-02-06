@@ -1,0 +1,305 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 64,
+        "line": 32,
+        "message": "'stack0xfffffb34' was not declared in this scope; did you mean 'in_stack_fffffb34'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 70,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 75,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 195,
+    "complexity_score": 176,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 6,
+    "pseudocode_lines": 86,
+    "suspect_count": 8,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 281
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043c430",
+    "address_range": [
+      [
+        "0043c430",
+        "0043c6a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00439710",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_setup_FUN_00439710"
+    },
+    {
+      "addr": "005a0820",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005ff0f3",
+      "is_variadic": false,
+      "name": "crt_string.c__strtod_FUN_005ff0f3"
+    },
+    {
+      "addr": "004032c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "005b3e70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618656",
+      "name": "s_Select_bone_to_add_00618656",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618669",
+      "name": "s_Enter_in_X_radius_00618669",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061867e",
+      "name": "s_Enter_in_Y_radius_0061867e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00838e40",
+      "name": "INT_00838e40",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00838e4c",
+      "name": "INT_00838e4c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00838e58",
+      "name": "g_CDeformableModelInstanceInstance",
+      "type": "CDeformableModelInstance",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.85625,
+    "instruction_count": 160,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CBRANCH": 9,
+      "COPY": 155,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 94,
+      "INT_AND": 78,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 75,
+      "INT_LESS": 6,
+      "INT_MULT": 16,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 23,
+      "INT_SEXT": 18,
+      "INT_SLESS": 37,
+      "INT_SUB": 51,
+      "INT_XOR": 4,
+      "LOAD": 37,
+      "POPCOUNT": 37,
+      "RETURN": 1,
+      "STORE": 65,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 777
+  },
+  "stack_frame": {
+    "frame_size": 1236,
+    "local_size": 1232,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4cc",
+        "offset": -1228,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_fffffb34",
+      "text": "char *in_stack_fffffb34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xfffffb34",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb34);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xfffffb34",
+      "text": "((CStrList *)&stack0xfffffb34,string_data->bone_name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xfffffb34",
+      "text": "((CPickList *)&stack0xfffffb34,\"Select bone to add\",-1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 50,
+      "match": "&stack0xfffffb34",
+      "text": "((CStrList *)&stack0xfffffb34,iVar6);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_fffffb34",
+      "text": "local_24 = _strtod(in_stack_fffffb34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_fffffb34",
+      "text": "local_24 = _strtod(in_stack_fffffb34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 87,
+      "match": "&stack0xfffffb34",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffb34,0);",
+      "type": "stack_ref"
+    }
+  ]
+}

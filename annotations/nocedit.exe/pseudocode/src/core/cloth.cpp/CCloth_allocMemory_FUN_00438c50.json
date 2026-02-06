@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 16,
+        "message": "invalid conversion from 'void*' to 'int*' [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -11,7 +18,7 @@
       },
       {
         "category": "other",
-        "column": 60,
+        "column": 59,
         "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
@@ -42,15 +49,15 @@
   },
   "cross_references": [
     {
-      "addr": "00438cf0",
-      "from_addr": "00438f4a",
-      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0",
+      "addr": "0043dcc0",
+      "from_addr": "0043dd71",
+      "name": "core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0043dcc0",
-      "from_addr": "0043dd71",
-      "name": "core_cloth.cpp_FUN_0043dcc0",
+      "addr": "00438cf0",
+      "from_addr": "00438f4a",
+      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +77,7 @@
     {
       "addr": "00438cb0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0"
+      "name": "core_cloth.cpp_CCloth_free_FUN_00438cb0"
     },
     {
       "addr": "00506f10",
@@ -130,7 +137,7 @@
       {
         "call_addr": "0043dd71",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_0043dcc0",
+        "caller": "core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0",
         "estimated_params": 1,
         "instructions_analyzed": 28,
         "reg_params": [],

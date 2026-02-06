@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_00428f40 at 00429083
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d8fd
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 00444469
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 00449096
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449096
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f2b0
 ;   ... and 27 more
 ;

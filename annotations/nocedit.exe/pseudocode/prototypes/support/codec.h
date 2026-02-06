@@ -3,6 +3,10 @@
 // Function prototypes for support/codec.cpp
 // Generated from Ghidra function signatures
 
+// Original: support_codec.cpp_readByteWithCount_FUN_0043e4c0
+// Address: 0043e4c0
+int __cdecl readByteWithCount(_FILE *file,int *remaining_count);
+
 // Original: support_codec.cpp_resetDictionary_FUN_0043e510
 // Address: 0043e510
 void __cdecl resetDictionary(CLZWDictionary *dict);

@@ -80,8 +80,8 @@
 ;
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419394
-;   core_cloth.cpp_FUN_0043bae0 at 0043bee2
-;   core_curtain.cpp_FUN_0044b060 at 0044b2aa
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bee2
+;   core_curtain.cpp_CCurtain_FUN_0044b060 at 0044b2aa
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 at 00477964
 ;   core_glass.cpp_CGlass_renderOpaque_FUN_004e9930 at 004e9a73
 ;   core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0 at 004e9c1f

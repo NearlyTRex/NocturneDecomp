@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[116]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043ca7b
-;   core_cloth.cpp_FUN_0043c430 at 0043c454
-;   core_cloth.cpp_FUN_0043ddf0 at 0043de1a
+;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c454
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca7b
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043de1a
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443064
 ;   core_course.cpp_FUN_00443bc0 at 00443cca
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c653

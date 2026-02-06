@@ -1,0 +1,239 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "pointer_precision",
+        "column": 32,
+        "line": 18,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 13,
+        "line": 19,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 13,
+        "line": 20,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 13,
+        "line": 21,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 22,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 18,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 19,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 20,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 21,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 22,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 68,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "0043bfa0",
+      "from_addr": "0043bffa",
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be150",
+      "from_addr": "004be204",
+      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2b20",
+      "from_addr": "004d2b36",
+      "name": "core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f1d0",
+      "from_addr": "0051f1e5",
+      "name": "core_mimic.cpp_CMimic_ctor_FUN_0051f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d8850",
+      "from_addr": "005d8864",
+      "name": "core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e5590",
+      "from_addr": "005e55c0",
+      "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00438ba0",
+    "address_range": [
+      [
+        "00438ba0",
+        "00438bf7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_ctor_FUN_00438ba0",
+    "signature": "CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00438ba0(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00476cf0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0"
+    },
+    {
+      "addr": "005fe667",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005fe667"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065bb80",
+      "name": "g_SClothVertexTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "0065bba0",
+      "name": "g_SClothBoneTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.714285714285714,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 11,
+      "INT_ADD": 10,
+      "INT_AND": 12,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 2,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)pvVar1 + 0x377b8),0x32,&g_SClothBoneTypeInfo);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar1 + 0x2fac) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar1 + -4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar1 + -0xc) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(CCloth *)((int)",
+      "text": "return (CCloth *)((int)pvVar1 + -0x3ce90);",
+      "type": "pointer_cast"
+    }
+  ]
+}

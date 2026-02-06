@@ -17,7 +17,7 @@
 ;
 ; XREF[19]:
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b2aa
-;   core_cloth.cpp_FUN_0043ddf0 at 0043deec
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043deec
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 004431a0
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d69d
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bda51

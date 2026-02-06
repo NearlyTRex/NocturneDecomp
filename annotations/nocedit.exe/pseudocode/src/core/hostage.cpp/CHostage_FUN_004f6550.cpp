@@ -57,7 +57,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_204,
                (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_1d4);
+               (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index,local_1d4);
     pCVar2 = local_1d4;
   }
   else if (*(int *)this_ptr->unk2 == 3) {
@@ -81,7 +81,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_e4,
                (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,local_264);
+               (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index,local_264);
     pCVar2 = local_264;
   }
   else if (*(int *)this_ptr->unk2 == 5) {
@@ -106,7 +106,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_114,
                (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-               *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1,&local_174);
+               (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index,&local_174);
     pCVar2 = &local_174;
   }
   else {

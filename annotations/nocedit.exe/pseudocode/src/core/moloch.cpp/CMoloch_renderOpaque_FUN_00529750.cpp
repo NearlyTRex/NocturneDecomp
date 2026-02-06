@@ -15,22 +15,16 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
-    (this_ptr->base).base.unk3[0] = '\0';
-    (this_ptr->base).base.unk3[1] = '\0';
-    (this_ptr->base).base.unk3[2] = '\0';
-    (this_ptr->base).base.unk3[3] = '\0';
+    (this_ptr->base).base.field43_0x2620 = 0;
   }
-  if (*(int *)(this_ptr->base).base.unk1 == 0) {
+  if ((this_ptr->base).base.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       iVar2 = this_ptr->morphing;
-      (this_ptr->base).base.unk3[0] = '\x01';
-      (this_ptr->base).base.unk3[1] = '\0';
-      (this_ptr->base).base.unk3[2] = '\0';
-      (this_ptr->base).base.unk3[3] = '\0';
+      (this_ptr->base).base.field43_0x2620 = 1;
       if (iVar2 == 0) {
         core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
       }

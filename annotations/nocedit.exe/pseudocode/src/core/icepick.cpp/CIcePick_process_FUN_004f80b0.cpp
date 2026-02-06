@@ -60,7 +60,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   *(uint *)(this_ptr->unk + 0x20) =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
   fVar11 = fVar11 - delta_time;
-  *(float *)((this_ptr->base).base.unk1 + 0x2c) = delta_time * fVar2;
+  (this_ptr->base).base.turn_speed = delta_time * fVar2;
   (this_ptr->base).unk1 = (uint)fVar11;
   if (fVar11 < 0.0) {
     (this_ptr->base).unk1 = 0;
@@ -71,8 +71,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   core_icepick_cpp_CIcePick_FUN_004f93a0(this_ptr);
-  *(float *)((this_ptr->base).base.unk1 + 0x28) =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar3 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   pCVar12 = &(this_ptr->base).base.model;
   if (iVar3 == 0) {
@@ -89,7 +88,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
       if (uVar6 < 0xf) {
         if (uVar6 < 0xb) {
 LAB_004f8427:
-          if (*(int *)((this_ptr->base).base.unk1 + 4) != 0) {
+          if ((this_ptr->base).base.field3_0x2410 != 0) {
             iVar3 = 0;
             if ((*(int *)this_ptr->unk != 0) && (*(int *)(this_ptr->unk + 0x20) == 0)) {
               iVar3 = 10;
@@ -167,9 +166,8 @@ LAB_004f84cc:
               }
             }
 switchD_004f8665_default:
-            *(float *)((this_ptr->base).base.unk1 + 0xc) =
-                 *(float *)((this_ptr->base).unk2 + 4) *
-                 *(float *)((this_ptr->base).base.unk1 + 0x2c);
+            (this_ptr->base).base.turn_angle_accumulator =
+                 *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
             pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                (&(this_ptr->base).base.model.motion_controller);
             if (iVar3 != pSVar9->state_index) {
@@ -198,7 +196,7 @@ switchD_004f8665_default:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    uVar6 = *(uint *)((this_ptr->base).base.unk2 + 0x10);
+    uVar6 = (this_ptr->base).base.field22_0x25b0;
     if (uVar6 < 2) {
       if (uVar6 == 1) {
         iVar3 = 1;
@@ -230,15 +228,15 @@ LAB_004f81b6:
     local_38 = (this_ptr->base).base.model.accumulated_root_motion.x;
     local_34 = (this_ptr->base).base.model.accumulated_root_motion.y;
     local_30 = (this_ptr->base).base.model.accumulated_root_motion.z;
-    *(float *)((this_ptr->base).base.unk1 + 0x20) =
-         *(float *)((this_ptr->base).base.unk1 + 0x20) - delta_time * (float)32;
-    local_50 = *(float *)((this_ptr->base).base.unk1 + 0x1c) * delta_time;
-    local_4c = *(float *)((this_ptr->base).base.unk1 + 0x20) * delta_time;
-    local_48 = delta_time * *(float *)((this_ptr->base).base.unk1 + 0x24);
-    local_5c = local_50 + *(float *)((this_ptr->base).base.unk1 + 0x10);
-    local_58 = local_4c + *(float *)((this_ptr->base).base.unk1 + 0x14);
+    (this_ptr->base).base.field7_0x2428.y =
+         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
+    local_50 = (this_ptr->base).base.field7_0x2428.x * delta_time;
+    local_4c = (this_ptr->base).base.field7_0x2428.y * delta_time;
+    local_48 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    local_5c = local_50 + (this_ptr->base).base.field6_0x241c.x;
+    local_58 = local_4c + (this_ptr->base).base.field6_0x241c.y;
     local_38 = local_38 + local_5c;
-    local_54 = local_48 + *(float *)((this_ptr->base).base.unk1 + 0x18);
+    local_54 = local_48 + (this_ptr->base).base.field6_0x241c.z;
     local_34 = local_34 + local_58;
     local_30 = local_30 + local_54;
     core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);

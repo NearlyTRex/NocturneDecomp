@@ -202,7 +202,8 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_cloth_cpp_CClothList_add_FUN_0043c0f0((CClothList *)(pCVar6[-0x13b].animation_state + 0x74));
+  core_cloth_cpp_CClothList_add_FUN_0043c0f0
+            ((CClothList *)(pCVar6[-0x13b].animation_state + 0x74),"strcoat.cth");
   pCVar6[1].part_visibility_flags[6] = 0;
   return this_ptr_00;
 }

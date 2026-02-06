@@ -13,9 +13,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   uint uVar2;
   float fVar3;
   int iVar4;
-  CVector3f *input_local_point;
+  CVector3f *pCVar5;
   CMotionList *this_ptr_00;
-  char *pcVar5;
+  char *state_name;
   float fVar6;
   CVector3f CStack_44;
   float fStack_38;
@@ -45,32 +45,31 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   iVar4 = (*(((this_ptr->base).base.vtable._uc)->_uc).isDamageable)(&this_ptr->base);
   if ((((1 < iVar4) && ((this_ptr->base).base.was_created == 1)) && (this_ptr->pool_me == 0)) &&
      ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
-    input_local_point =
-         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                   (pCVar1,&CStack_44,0);
+    pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+                       (pCVar1,&CStack_44,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_2c,input_local_point);
+              ((CDemonActor *)this_ptr,&CStack_2c,pCVar5);
     core_gore_cpp_FUN_004ede30();
     this_ptr->pool_me = 1;
   }
   fVar3 = (float)3.1415926535000001;
   fVar6 = (float)0.5;
-  *(float *)((this_ptr->base).unk1 + 0x28) = (this_ptr->base).model.accumulated_root_motion.z;
-  *(float *)((this_ptr->base).unk1 + 0x2c) = delta_time * fVar3 * fVar6;
+  (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
+  (this_ptr->base).turn_speed = delta_time * fVar3 * fVar6;
   iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70(&this_ptr->base);
   if (iVar4 == 0) goto LAB_00544a0c;
-  uVar2 = *(uint *)((this_ptr->base).unk2 + 0x10);
+  uVar2 = (this_ptr->base).field22_0x25b0;
   if (uVar2 < 2) {
     if (uVar2 == 1) {
 LAB_005449de:
-      pcVar5 = "WALK";
+      state_name = "WALK";
     }
     else {
 LAB_00544b62:
-      pcVar5 = "STAND";
+      state_name = "STAND";
     }
     core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-              (&(this_ptr->base).model.motion_controller,pcVar5,1);
+              (&(this_ptr->base).model.motion_controller,state_name,1);
   }
   else {
     pCVar1 = &(this_ptr->base).model;
@@ -96,21 +95,18 @@ LAB_00544b62:
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_00544a0c:
-  *(float *)((this_ptr->base).unk1 + 0x20) =
-       *(float *)((this_ptr->base).unk1 + 0x20) - delta_time * (float)32;
-  fStack_38 = *(float *)((this_ptr->base).unk1 + 0x1c) * delta_time;
-  fStack_34 = *(float *)((this_ptr->base).unk1 + 0x20) * delta_time;
-  pcVar5 = (this_ptr->base).unk1 + 0x10;
-  fStack_30 = *(float *)((this_ptr->base).unk1 + 0x24) * delta_time;
-  fStack_20 = fStack_38 + *(float *)pcVar5;
-  fStack_1c = fStack_34 + *(float *)((this_ptr->base).unk1 + 0x14);
-  fStack_18 = fStack_30 + *(float *)((this_ptr->base).unk1 + 0x18);
-  (this_ptr->base).unk1[0x18] = '\0';
-  (this_ptr->base).unk1[0x19] = '\0';
-  (this_ptr->base).unk1[0x1a] = '\0';
-  (this_ptr->base).unk1[0x1b] = '\0';
-  *(uint *)((this_ptr->base).unk1 + 0x14) = *(uint *)((this_ptr->base).unk1 + 0x18);
-  *(float *)pcVar5 = *(float *)((this_ptr->base).unk1 + 0x14);
+  (this_ptr->base).field7_0x2428.y =
+       (this_ptr->base).field7_0x2428.y - delta_time * (float)32;
+  fStack_38 = (this_ptr->base).field7_0x2428.x * delta_time;
+  fStack_34 = (this_ptr->base).field7_0x2428.y * delta_time;
+  pCVar5 = &(this_ptr->base).field6_0x241c;
+  fStack_30 = (this_ptr->base).field7_0x2428.z * delta_time;
+  fStack_20 = fStack_38 + pCVar5->x;
+  fStack_1c = fStack_34 + (this_ptr->base).field6_0x241c.y;
+  fStack_18 = fStack_30 + (this_ptr->base).field6_0x241c.z;
+  (this_ptr->base).field6_0x241c.z = 0.0;
+  (this_ptr->base).field6_0x241c.y = (this_ptr->base).field6_0x241c.z;
+  pCVar5->x = (this_ptr->base).field6_0x241c.y;
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;

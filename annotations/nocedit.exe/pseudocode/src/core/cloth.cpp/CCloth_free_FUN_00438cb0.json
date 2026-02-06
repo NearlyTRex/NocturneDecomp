@@ -1,0 +1,163 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 15,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 26,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "00438c50",
+      "from_addr": "00438c56",
+      "name": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438c00",
+      "from_addr": "00438c06",
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_00438c00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00438cb0",
+    "address_range": [
+      [
+        "00438cb0",
+        "00438ced"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_free_FUN_00438cb0",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_free_FUN_00438cb0(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006181aa",
+      "name": "s_core_cloth_cpp_006181aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00438c06",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_dtor_FUN_00438c00",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00438c56",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3157894736842106,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 9,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 7,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 63
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

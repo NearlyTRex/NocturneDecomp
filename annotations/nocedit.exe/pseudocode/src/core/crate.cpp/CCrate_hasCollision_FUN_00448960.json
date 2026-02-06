@@ -1,0 +1,103 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00448960",
+    "address_range": [
+      [
+        "00448960",
+        "0044897a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crate.cpp_CCrate_hasCollision_FUN_00448960",
+    "signature": "int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 7,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2
+    },
+    "pcode_op_count": 47
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrate *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCrate",
+        "offset": 52,
+        "vtable_addr": "0065c264"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

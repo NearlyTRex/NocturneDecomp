@@ -18,8 +18,8 @@
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417f94
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421e5b
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421f28
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cab0
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d70a
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cab0
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d70a
 ;   core_course.cpp_FUN_00443760 at 0044394a
 ;   core_course.cpp_FUN_00443bc0 at 00443d30
 ;   ... and 67 more

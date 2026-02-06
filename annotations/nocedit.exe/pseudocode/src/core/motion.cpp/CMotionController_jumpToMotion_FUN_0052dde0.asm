@@ -11,7 +11,7 @@
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fb45
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041bffb
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043c913
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043c913
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad5c0
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 at 00524a17
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 at 0052d9d5

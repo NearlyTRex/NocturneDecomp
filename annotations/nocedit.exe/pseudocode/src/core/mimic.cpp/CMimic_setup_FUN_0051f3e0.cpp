@@ -18,7 +18,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   int iVar6;
   uint *puVar7;
   byte bVar8;
-  uint auStackY_1010 [1015];
+  uint auStackY_1010 [1014];
   uint class_name_hash;
   char *model_name;
   uint uStack_28;
@@ -77,7 +77,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
                            (this_ptr_00,"Bip01 Spine");
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   core_cloth_cpp_CCloth_load_FUN_00438cf0((CCloth *)this_ptr->unk3,"strcoat.cth");
-  core_cloth_cpp_FUN_00439710();
+  core_cloth_cpp_CCloth_setup_FUN_00439710
+            ((CCloth *)this_ptr->unk3,&(this_ptr->base).base.base.location.position,
+             (CVector3f *)&(this_ptr->base).base.base.orient,pCVar1);
   class_name_hash = g_CEnemyClassInfo.name_hash;
   pCVar4 = core_actor_cpp_createActorByName_FUN_0040c430((char *)&this_ptr->morph_actor_type);
   pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,class_name_hash);

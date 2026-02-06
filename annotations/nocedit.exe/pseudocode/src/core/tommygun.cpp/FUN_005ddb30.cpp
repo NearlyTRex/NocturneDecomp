@@ -22,7 +22,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
   CFlameCan *this_ptr_01;
   int extraout_EAX;
   CWeapon *in_stack_00000004;
-  CDemonActor *pCStack_150;
+  CCrate *pCStack_150;
   SDamageInfo SStack_148;
   CMatrix3x3f CStack_10c;
   CVector3f CStack_e4;
@@ -42,7 +42,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
   float fStack_3c;
   float fStack_2c;
   CDemonActor *pCStack_28;
-  CDemonActor *pCStack_24;
+  CCrate *pCStack_24;
   int iStack_20;
   CGlass *pCStack_1c;
   float fStack_18;
@@ -71,7 +71,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
               (&in_stack_00000004->base,"45-dry-!.wav @2.0");
     fVar1 = *(float *)(in_stack_00000004[1].base.actor_name + 4);
     stack0xfffffeb4 = fVar1;
-    pCStack_150 = (CDemonActor *)0x5ddeef;
+    pCStack_150 = (CCrate *)0x5ddeef;
     sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)fVar1);
     pCVar3 = in_stack_00000004 + 1;
     (pCVar3->base).actor_name[4] = '\0';
@@ -121,7 +121,8 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
     pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
     pCStack_28 = pCVar6;
-    pCStack_24 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCStack_24 = (CCrate *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
     this_ptr_01 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
@@ -129,7 +130,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
     if (this_ptr_00 == (CCharacter *)0x0) {
       if (pCStack_1c == (CGlass *)0x0) {
         if (pCVar6 == (CDemonActor *)0x0) {
-          if (pCStack_24 == (CDemonActor *)0x0) {
+          if (pCStack_24 == (CCrate *)0x0) {
             if (this_ptr_01 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
               goto LAB_005ddd4e;
@@ -137,7 +138,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
             core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_01);
           }
           else {
-            core_crate_cpp_FUN_00448a70();
+            core_crate_cpp_CCrate_FUN_00448a70(pCStack_24);
           }
         }
         else {
@@ -173,7 +174,7 @@ int __cdecl core_tommygun_cpp_FUN_005ddb30(void)
       }
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_148);
       SStack_148.unknown = g_CDemonSetPtr->unk1;
-      pCStack_24 = (CDemonActor *)(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc6)();
+      pCStack_24 = (CCrate *)(*(((in_stack_00000004->base).vtable._uc)->_uc).cfunc6)();
       _pCStack_150 = (double)CONCAT44(0x3ecccccd,pCStack_24);
       auStack_78._24_4_ =
            (g_CDemonSetPtr->collision_result_vec2).x - (g_CDemonSetPtr->collision_result_vec1).x;

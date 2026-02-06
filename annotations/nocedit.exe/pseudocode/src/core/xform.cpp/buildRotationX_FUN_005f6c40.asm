@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_FUN_004d5550 at 004d5610
+;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d5610
 ;   core_stranger.cpp_CStranger_FUN_005c07b0 at 005c088e
 ;
 ; *****************************************************************************

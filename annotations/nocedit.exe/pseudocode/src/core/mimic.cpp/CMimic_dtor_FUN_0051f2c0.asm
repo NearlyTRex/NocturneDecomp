@@ -19,8 +19,8 @@
 ;   core_armour.cpp_freeFires_FUN_00412700
 ;   core_armour.cpp_freeFlames_FUN_00412720
 ;   core_armour.cpp_freeVectors_FUN_004126e0
-;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
-;   core_cloth.cpp_FUN_0043bf80
+;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
+;   core_cloth.cpp_CClothList_dtor_FUN_0043bf80
 ;   core_morph.cpp_CMorphModel_FUN_0052b330
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 ;   crt_memory.c___vec_delete_FUN_005fe632
@@ -62,8 +62,8 @@ section .text
     PUSH 0x0                            ; 0051f327
     SUB EAX,0x3fea0                     ; 0051f329
     PUSH EAX                            ; 0051f32e
-    CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 0051f32f
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 0051f32f
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
     ADD ESP,0x8                         ; 0051f334
     PUSH 0x0                            ; 0051f337
     SUB EAX,0x8bb8                      ; 0051f339
@@ -92,8 +92,8 @@ section .text
     PUSH 0x0                            ; 0051f377
     SUB EAX,0x1c8                       ; 0051f379
     PUSH EAX                            ; 0051f37e
-    CALL core_cloth.cpp_FUN_0043bf80    ; 0051f37f
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf80()
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043bf80 ; 0051f37f
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr)
     ADD ESP,0x8                         ; 0051f384
     PUSH 0x0                            ; 0051f387
     SUB EAX,0x293c                      ; 0051f389

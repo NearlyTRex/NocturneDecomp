@@ -14,6 +14,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   char cVar1;
   float *pfVar2;
   CVector3f *pCVar3;
+  CClothList *this_ptr_00;
   int *piVar4;
   int extraout_EAX;
   SMotion *pSVar5;
@@ -26,7 +27,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   int iVar12;
   byte *pbVar13;
   SMotion *pSVar14;
-  CClothList *pCVar15;
+  char (*pacVar15) [40];
   char *pcVar16;
   CRuleList *pCVar17;
   int iVar18;
@@ -497,27 +498,27 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
               ((CStrList *)local_294c,(int)local_14ac,pcVar6,1);
     makepath(local_64c,(char *)0x0,(char *)0x0,local_16ac,local_14ac);
-    pCVar15 = this_ptr->data_ptr;
-    if ((this_ptr->param1).v_int < pCVar15->unk) {
+    this_ptr_00 = this_ptr->data_ptr;
+    if ((this_ptr->param1).v_int < this_ptr_00->count) {
       if (pcVar6 == (char *)(local_294c._0_4_ + -1)) {
-        core_cloth_cpp_CClothList_remove_FUN_0043c170(pCVar15);
+        core_cloth_cpp_CClothList_remove_FUN_0043c170(this_ptr_00,(this_ptr->param1).v_int);
       }
       else {
         pcVar6 = local_64c;
-        pCVar15 = pCVar15 + (this_ptr->param1).v_int * 10 + 1;
+        pacVar15 = this_ptr_00->filenames + (this_ptr->param1).v_int;
         do {
           cVar1 = *pcVar6;
-          *(char *)&pCVar15->unk = cVar1;
+          (*pacVar15)[0] = cVar1;
           if (cVar1 == '\0') break;
           cVar1 = pcVar6[1];
           pcVar6 = pcVar6 + 2;
-          *(char *)((int)&pCVar15->unk + 1) = cVar1;
-          pCVar15 = (CClothList *)((int)&pCVar15->unk + 2);
+          (*pacVar15)[1] = cVar1;
+          pacVar15 = (char (*) [40])(*pacVar15 + 2);
         } while (cVar1 != '\0');
       }
     }
     else {
-      core_cloth_cpp_CClothList_add_FUN_0043c0f0(pCVar15);
+      core_cloth_cpp_CClothList_add_FUN_0043c0f0(this_ptr_00,local_64c);
     }
     (*((actor->vtable)._ub)->setup)(actor);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_294c + 4),0);

@@ -95,12 +95,10 @@ void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr)
   this_ptr->unk[0xe] = '\0';
   this_ptr->unk[0xf] = '\0';
   *(int *)(this_ptr->unk + 0x3c) = iVar1;
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_02db89f8;
-  *(uint *)((this_ptr->base).base.carry_hands[0].unk1 + 4) =
-       *(uint *)(this_ptr->unk + 0x18);
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = INT_02db89fc;
-  *(uint *)((this_ptr->base).base.carry_hands[1].unk1 + 4) =
-       *(uint *)(this_ptr->unk + 0x20);
+  (this_ptr->base).base.carry_hands[0].bone_index = INT_02db89f8;
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = *(int *)(this_ptr->unk + 0x18);
+  (this_ptr->base).base.carry_hands[1].bone_index = INT_02db89fc;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = *(int *)(this_ptr->unk + 0x20);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
   *(float *)(this_ptr->unk + 0x10) = fVar2;
   return;

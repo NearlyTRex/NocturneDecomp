@@ -1,0 +1,152 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 24,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 25,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 26,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 83,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043c3e0",
+    "address_range": [
+      [
+        "0043c3e0",
+        "0043c42f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_editCollisionBone_FUN_0043c3e0",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_editCollisionBone_FUN_0043c3e0(CCloth *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 20,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "if ((uint *)(iVar1 + 0x3fe64) == in_stack_00000008) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(iVar1 + 0x3fe64) = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(iVar1 + 0x3fe68) = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(iVar1 + 0x3fe6c) = in_stack_00000008[2];",
+      "type": "stack_param"
+    }
+  ]
+}

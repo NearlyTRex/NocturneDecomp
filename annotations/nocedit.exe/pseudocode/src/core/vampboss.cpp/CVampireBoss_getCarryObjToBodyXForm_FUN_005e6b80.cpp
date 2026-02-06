@@ -25,7 +25,7 @@ core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss 
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;
+  iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
   local_30.x = 0.0;
   local_30.y = 0.128;
   local_30.z = 4.14;

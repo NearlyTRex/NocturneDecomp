@@ -60,8 +60,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);
       if (pSVar4->state_index != 0x28) {
-        if ((*(int *)((this_ptr->base).unk4 + 0x10) == 0) && (*(int *)(this_ptr->unk1 + 0x50) == 0))
-        {
+        if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
+           (*(int *)(this_ptr->unk1 + 0x50) == 0)) {
           if (in_stack_00000008->damage_type == 1) {
             desired_state_index = 0x27;
             iVar3 = 1;
@@ -75,10 +75,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
         else {
           iVar3 = 1;
           desired_state_index = 0xf;
-          (this_ptr->base).unk4[0x10] = '\0';
-          (this_ptr->base).unk4[0x11] = '\0';
-          (this_ptr->base).unk4[0x12] = '\0';
-          (this_ptr->base).unk4[0x13] = '\0';
+          (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
           this_ptr->unk1[0x50] = '\0';
           this_ptr->unk1[0x51] = '\0';
           this_ptr->unk1[0x52] = '\0';
@@ -114,7 +111,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
     goto LAB_005c4ae0;
   }
   if (in_stack_00000008->damage_amount <= 0.0) goto LAB_005c4ae0;
-  if (((in_stack_00000008->damage_type != 0x69) && (*(int *)((this_ptr->base).unk4 + 0x10) == 0)) &&
+  if (((in_stack_00000008->damage_type != 0x69) &&
+      ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
      ((*(int *)(this_ptr->unk1 + 0x50) == 0 && (this_ptr->action_pending == 0)))) {
     pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000008->attacker,g_CTommyGunClassInfo.name_hash);

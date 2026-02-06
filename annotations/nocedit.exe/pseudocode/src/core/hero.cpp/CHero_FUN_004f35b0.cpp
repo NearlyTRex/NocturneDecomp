@@ -23,17 +23,17 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
   CDemonActor *local_14;
   
   local_20 = &this_ptr->inventory;
-  this_ptr->unk4[0x18] = '\0';
-  this_ptr->unk4[0x19] = '\0';
-  this_ptr->unk4[0x1a] = '\0';
-  this_ptr->unk4[0x1b] = '\0';
+  this_ptr->unk3[4] = '\0';
+  this_ptr->unk3[5] = '\0';
+  this_ptr->unk3[6] = '\0';
+  this_ptr->unk3[7] = '\0';
   iVar4 = 0;
   local_18 = 0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= local_18) {
       iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(local_20->selected_item,"CTrap");
       if (iVar4 != 0) {
-        *(CDemonActor **)(this_ptr->unk4 + 0x18) = local_20->selected_item;
+        *(CDemonActor **)(this_ptr->unk3 + 4) = local_20->selected_item;
       }
       return 0;
     }
@@ -54,17 +54,17 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
           pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_48,&local_3c);
           if ((ABS(pCVar3->y) <= (float)60) &&
-             (iVar2 = *(int *)pCVar1[1].actor_name, *(int *)(this_ptr->unk4 + 0x18) = iVar2,
-             iVar2 != 0)) {
-            if ((CLocation *)(this_ptr->unk4 + 0x1c) != local_1c) {
-              *(float *)(this_ptr->unk4 + 0x1c) = (local_1c->position).x;
-              *(float *)(this_ptr->unk4 + 0x20) = (local_1c->position).y;
-              *(float *)(this_ptr->unk4 + 0x24) = (local_1c->position).z;
+             (iVar2 = *(int *)pCVar1[1].actor_name, *(int *)(this_ptr->unk3 + 4) = iVar2, iVar2 != 0
+             )) {
+            if ((CLocation *)(this_ptr->unk3 + 8) != local_1c) {
+              *(float *)(this_ptr->unk3 + 8) = (local_1c->position).x;
+              *(float *)(this_ptr->unk3 + 0xc) = (local_1c->position).y;
+              *(float *)(this_ptr->unk3 + 0x10) = (local_1c->position).z;
             }
-            if ((COrientation *)(this_ptr->unk4 + 0x28) != &local_14->orient) {
-              *(float *)(this_ptr->unk4 + 0x28) = (local_14->orient).pitch;
-              *(float *)(this_ptr->unk4 + 0x2c) = (local_14->orient).bank;
-              *(float *)(this_ptr->unk4 + 0x30) = (local_14->orient).heading;
+            if ((COrientation *)(this_ptr->unk3 + 0x14) != &local_14->orient) {
+              *(float *)(this_ptr->unk3 + 0x14) = (local_14->orient).pitch;
+              *(float *)(this_ptr->unk3 + 0x18) = (local_14->orient).bank;
+              *(float *)(this_ptr->unk3 + 0x1c) = (local_14->orient).heading;
             }
             return 1;
           }

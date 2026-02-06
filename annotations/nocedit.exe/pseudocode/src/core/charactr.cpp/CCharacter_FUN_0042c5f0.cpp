@@ -85,32 +85,29 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
   pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_44,&local_50);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar1);
-  *(float *)(this_ptr->unk1 + 0xc) = pCVar1->y;
+  this_ptr->turn_angle_accumulator = pCVar1->y;
   if (*in_stack_00000014 == 0) {
-    if ((float)0.17453292519444399 < ABS(*(float *)(this_ptr->unk1 + 0xc))) goto LAB_0042c771;
+    if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;
     if (*in_stack_00000014 != 1) goto LAB_0042c80e;
   }
   else {
-    if (ABS(*(float *)(this_ptr->unk1 + 0xc)) < (float)0.034906585038888903) {
+    if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {
       *in_stack_00000014 = 0;
 LAB_0042c80e:
-      this_ptr->unk1[0xc] = '\0';
-      this_ptr->unk1[0xd] = '\0';
-      this_ptr->unk1[0xe] = '\0';
-      this_ptr->unk1[0xf] = '\0';
+      this_ptr->turn_angle_accumulator = 0.0;
       goto LAB_0042c7cc;
     }
 LAB_0042c771:
     *in_stack_00000014 = 1;
   }
-  local_1c = *(float *)(this_ptr->unk1 + 0xc);
-  local_18 = *(float *)(this_ptr->unk1 + 0x2c);
+  local_1c = this_ptr->turn_angle_accumulator;
+  local_18 = this_ptr->turn_speed;
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c);
   fVar3 = -local_18;
   if ((fVar3 <= fVar2) && (fVar3 = fVar2, local_18 < fVar2)) {
     fVar3 = local_18;
   }
-  *(float *)(this_ptr->unk1 + 0xc) = fVar3;
+  this_ptr->turn_angle_accumulator = fVar3;
 LAB_0042c7cc:
   (this_ptr->model).accumulated_root_motion.z = 0.0;
   (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;

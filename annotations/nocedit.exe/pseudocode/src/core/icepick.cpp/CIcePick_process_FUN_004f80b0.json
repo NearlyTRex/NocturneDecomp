@@ -16,115 +16,115 @@
       {
         "category": "other",
         "column": 22,
-        "line": 164,
+        "line": 163,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 180,
+        "line": 178,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 251,
+        "line": 249,
         "message": "invalid cast from type 'float' to type 'CDeformableModelInstance*'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 254,
+        "line": 252,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 255,
+        "line": 253,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 257,
+        "line": 255,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 258,
+        "line": 256,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 260,
+        "line": 258,
         "message": "invalid cast from type 'float' to type 'CDeformableModelInstance*'"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 261,
+        "line": 259,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 262,
+        "line": 260,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 262,
+        "line": 260,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 265,
+        "line": 263,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 265,
+        "line": 263,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 268,
+        "line": 266,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "pointer_precision",
         "column": 36,
-        "line": 275,
+        "line": 273,
         "message": "cast from 'CDeformableModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 275,
+        "line": 273,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 309,
+        "line": 307,
         "message": "request for member '_0_4_' in 'auStack_80', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "pointer_precision",
         "column": 7,
-        "line": 315,
+        "line": 313,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 12,
-        "line": 317,
+        "line": 315,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -139,42 +139,42 @@
       {
         "category": "other",
         "column": 60,
-        "line": 180,
+        "line": 178,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 217,
+        "line": 215,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 275,
+        "line": 273,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 314,
+        "line": 312,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 316,
+        "line": 314,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 374,
+    "complexity_score": 372,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
-    "pseudocode_lines": 314,
+    "pseudocode_lines": 312,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
@@ -182,7 +182,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 996
+    "total_lines": 994
   },
   "cross_references": [],
   "function": {
@@ -662,14 +662,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 268,
+      "line": 266,
       "match": "(CCharacter_vtable *)((int)",
       "text": "iVar3 = (*((CCharacter_vtable *)((int)local_14 + 0xec))->cfunc15)();",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 302,
+      "line": 300,
       "match": "._0_4_",
       "text": "auStack_80._0_4_ = CStack_90.w;",
       "type": "unknown_field"

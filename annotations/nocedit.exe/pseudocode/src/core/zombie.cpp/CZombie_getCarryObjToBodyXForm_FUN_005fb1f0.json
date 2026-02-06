@@ -3,21 +3,33 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 66,
+        "column": 24,
+        "line": 65,
         "message": "'stack0xfffffe94' was not declared in this scope"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 32,
+        "line": 68,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 87,
+        "line": 86,
         "message": "'stack0xfffffe94' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 127,
+        "line": 126,
         "message": "'stack0xfffffe94' was not declared in this scope"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 30,
+        "line": 133,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
@@ -28,13 +40,7 @@
       {
         "category": "pointer_precision",
         "column": 30,
-        "line": 135,
-        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 30,
-        "line": 147,
+        "line": 146,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -48,6 +54,18 @@
       },
       {
         "category": "other",
+        "column": 16,
+        "line": 68,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 133,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 14,
         "line": 134,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -55,32 +73,26 @@
       {
         "category": "other",
         "column": 14,
-        "line": 135,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 147,
+        "line": 146,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 301,
+    "complexity_score": 310,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 141,
-    "suspect_count": 14,
+    "pseudocode_lines": 140,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 429
+    "total_lines": 428
   },
   "cross_references": [],
   "function": {
@@ -555,93 +567,100 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000008",
-      "text": "local_10 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;",
+      "text": "local_10 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_00000008",
-      "text": "pcVar6 = (this_ptr->base).base.carry_hands[in_stack_00000008].unk2;",
+      "text": "pCVar5 = &(this_ptr->base).base.carry_hands[in_stack_00000008].initial_carry_transform;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 58,
       "match": "&stack0xfffffe94",
-      "text": "puVar8 = (uint *)&stack0xfffffe94;",
+      "text": "pfVar7 = (float *)&stack0xfffffe94;",
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 79,
       "match": "&stack0xfffffe94",
       "text": "((CMatrix3x4f *)&stack0xfffffe94,&g_ZeroVector,&local_94);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 119,
       "match": "&stack0xfffffe94",
       "text": "((CMatrix3x4f *)&stack0xfffffe94,",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 126,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 127,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 139,
+      "line": 138,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = pCVar5->m[0].w;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 139,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 141,
+      "line": 140,
       "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar9 * -2 + 1;",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar8 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 141,
+      "line": 140,
       "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar9 * -2 + 1;",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar8 * -2 + 1;",
       "type": "unaffected_reg"
     }
   ],

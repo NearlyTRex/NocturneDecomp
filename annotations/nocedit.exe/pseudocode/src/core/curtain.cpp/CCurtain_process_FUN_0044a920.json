@@ -1,0 +1,548 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 119,
+        "message": "'code' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 28,
+        "line": 119,
+        "message": "expected primary-expression before ')' token"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 113,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 114,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 115,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 116,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 119,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 120,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 121,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 122,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 123,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 124,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 125,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 651,
+    "complexity_score": 505,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 19,
+    "pseudocode_lines": 290,
+    "suspect_count": 20,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 941
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044a920",
+    "address_range": [
+      [
+        "0044a920",
+        "0044b05e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_curtain.cpp_CCurtain_process_FUN_0044a920",
+    "signature": "void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00449f10",
+      "is_variadic": false,
+      "name": "core_curtain.cpp_CCurtain_FUN_00449f10"
+    },
+    {
+      "addr": "00449fc0",
+      "is_variadic": false,
+      "name": "core_curtain.cpp_CCurtain_FUN_00449fc0"
+    },
+    {
+      "addr": "004adca0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "005fef20",
+      "is_variadic": false,
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619c1a",
+      "name": "s_none_00619c1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619c22",
+      "name": "DOUBLE_00619c22",
+      "type": "double",
+      "value": "0.850000000000000"
+    },
+    {
+      "addr": "00619c2a",
+      "name": "DOUBLE_00619c2a",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "00619c32",
+      "name": "DOUBLE_00619c32",
+      "type": "double",
+      "value": "0.03125"
+    },
+    {
+      "addr": "00619c3a",
+      "name": "FLOAT_00619c3a",
+      "type": "float",
+      "value": "0.05000000"
+    },
+    {
+      "addr": "00619c42",
+      "name": "DOUBLE_00619c42",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "008879bc",
+      "name": "DAT_008879bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "008879c0",
+      "name": "DAT_008879c0",
+      "type": "CVector3f[100]",
+      "value": null
+    },
+    {
+      "addr": "008879c4",
+      "name": "DAT_008879c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "008879c8",
+      "name": "DAT_008879c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00887e70",
+      "name": "DAT_00887e70",
+      "type": "SCollisionInfo[100]",
+      "value": null
+    },
+    {
+      "addr": "00887e88",
+      "name": "DAT_00887e88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00887e8c",
+      "name": "DAT_00887e8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.damage_listener_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.damage_listeners",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263318",
+      "name": "DAT_03263318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.381918819188192,
+    "instruction_count": 542,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 31,
+      "BRANCH": 6,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 52,
+      "COPY": 1519,
+      "FLOAT2FLOAT": 145,
+      "FLOAT_ADD": 16,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 15,
+      "FLOAT_LESS": 15,
+      "FLOAT_MULT": 32,
+      "FLOAT_NAN": 30,
+      "FLOAT_NEG": 3,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 271,
+      "INT_AND": 249,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 159,
+      "INT_LEFT": 60,
+      "INT_LESS": 23,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 92,
+      "INT_OR": 75,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 31,
+      "INT_SEXT": 6,
+      "INT_SLESS": 79,
+      "INT_SUB": 48,
+      "INT_XOR": 9,
+      "INT_ZEXT": 60,
+      "LOAD": 158,
+      "POPCOUNT": 79,
+      "RETURN": 1,
+      "STORE": 114,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 3459
+  },
+  "stack_frame": {
+    "frame_size": 184,
+    "local_size": 176,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCurtain *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0044a92c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_008879bc",
+      "text": "for (iStack_14 = 0; iVar4 = DAT_008879bc, iStack_14 < g_CDemonSetPtr->damage_listener_count;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_00887e70",
+      "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_008879bc",
+      "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_008879c0",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_008879bc",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar4].y = *(float *)(iVar9 + 0x24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar4].z = *(float *)(iVar9 + 0x28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 112,
+      "match": "code *",
+      "text": "iVar6 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x34))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_00887e70",
+      "text": "((fStack_9c <= *(float *)(iVar9 + 0x24) + DAT_00887e70[iVar4].cylinder_top_y &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_00887e70",
+      "text": "((((fStack_a0 <= *(float *)(iVar9 + 0x20) + DAT_00887e70[iVar4].cylinder_radius &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar9 + 0x20) - DAT_00887e70[iVar4].cylinder_radius <= fStack_70)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_00887e70",
+      "text": "(fStack_98 <= *(float *)(iVar9 + 0x28) + DAT_00887e70[iVar4].cylinder_radius)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar9 + 0x28) - DAT_00887e70[iVar4].cylinder_radius <= fStack_68)))))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = DAT_008879bc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = DAT_008879bc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "SQRT",
+      "text": "SQRT(*(float *)(pSVar8->unk + 0x34) * *(float *)(pSVar8->unk + 0x34) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 152,
+      "match": "SQRT",
+      "text": "SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCurtain",
+        "offset": 4,
+        "vtable_addr": "0065c4e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

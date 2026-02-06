@@ -1,0 +1,92 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043e3d0",
+    "address_range": [
+      [
+        "0043e3d0",
+        "0043e3f2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_scaleVector_FUN_0043e3d0",
+    "signature": "CVector3f * __cdecl core_cloth_cpp_scaleVector_FUN_0043e3d0(CVector3f *out,float *scale,CVector3f *v)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.230769230769231,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "COPY": 60,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 8,
+      "LOAD": 10,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 94
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "out",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "scale",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "v",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

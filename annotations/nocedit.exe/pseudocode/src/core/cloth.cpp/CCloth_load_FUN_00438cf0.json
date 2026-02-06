@@ -1,7 +1,32 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "pointer_precision",
+        "column": 32,
+        "line": 134,
+        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 32,
+        "line": 137,
+        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 25,
+        "line": 149,
+        "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 31,
+        "line": 154,
+        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -12,63 +37,83 @@
       {
         "category": "other",
         "column": 50,
-        "line": 39,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 39,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
         "line": 41,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 43,
+        "column": 68,
+        "line": 41,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 49,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 45,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 51,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 52,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
+        "column": 18,
+        "line": 134,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 137,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 61,
-        "line": 145,
+        "line": 144,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 150,
+        "line": 149,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 154,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 151,
+    "complexity_score": 195,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 28,
-    "pseudocode_lines": 151,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 539
+    "pseudocode_lines": 150,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 538
   },
   "cross_references": [
     {
@@ -80,7 +125,7 @@
     {
       "addr": "0043ddf0",
       "from_addr": "0043df01",
-      "name": "core_cloth.cpp_FUN_0043ddf0",
+      "name": "core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +180,7 @@
     {
       "addr": "004394e0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0"
+      "name": "core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0"
     },
     {
       "addr": "00478190",
@@ -476,5 +521,34 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(CVector3f *)((int)",
+      "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(CVector3f *)((int)",
+      "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(int *)((int)",
+      "text": "piVar10 = (int *)((int)(this_ptr->model).vertex_list + iVar14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
 }

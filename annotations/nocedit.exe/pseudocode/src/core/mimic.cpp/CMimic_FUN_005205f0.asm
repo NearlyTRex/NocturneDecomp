@@ -47,7 +47,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_FUN_0042a420
-;   core_cloth.cpp_FUN_0043bae0
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -169,8 +169,8 @@ section .text
     PUSH 0x0                            ; 005206ff
     LEA EAX,[EBX + 0xbf84]              ; 00520701
     PUSH EAX                            ; 00520707
-    CALL core_cloth.cpp_FUN_0043bae0    ; 00520708
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
+    CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 00520708
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
     ADD ESP,0x8                         ; 0052070d
     MOV ESI,dword ptr [0x03f6bb60]      ; 00520710 | g_CStrangerClassInfo.name_hash
     MOV EAX,[0x02db87d0]                ; 00520716 | g_LocalHeroIndex

@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 15,
-        "line": 28,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 29,
-        "line": 29,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -25,43 +12,27 @@
       {
         "category": "other",
         "column": 25,
-        "line": 17,
+        "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 19,
+        "line": 18,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 119,
+    "complexity_score": 23,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 24,
-    "suspect_count": 8,
-    "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "stack_param"
-    ],
-    "total_lines": 74
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -87,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CClothList_add_FUN_0043c0f0",
-    "signature": "void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr)"
+    "signature": "void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -144,8 +115,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -179,10 +150,10 @@
     "pcode_op_count": 202
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -191,69 +162,15 @@
         "offset": 4,
         "size": 4,
         "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "cVar1 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "text": "cVar1 = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pCVar2->unk + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(CClothList *)((int)",
-      "text": "pCVar2 = (CClothList *)((int)&pCVar2->unk + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[98]:
-;   core_cloth.cpp_FUN_0043ddf0 at 0043df12
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043dcb0
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043dcb0
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043df12
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443147
 ;   core_course.cpp_FUN_00443bc0 at 004440a6
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004794d0

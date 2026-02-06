@@ -216,14 +216,14 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
       if (pCVar3 == (CCharacter *)0x0) {
         if (pCVar6 == (CGlass *)0x0) {
           if (pCStack_14 == (CDemonActor *)0x0) {
-            if ((CDemonActor *)CStack_34.y == (CDemonActor *)0x0) {
+            if ((CCrate *)CStack_34.y == (CCrate *)0x0) {
               if (this_ptr_00 == (CFlameCan *)0x0) {
                 return 0;
               }
               core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_00);
             }
             else {
-              core_crate_cpp_FUN_00448a70();
+              core_crate_cpp_CCrate_FUN_00448a70((CCrate *)CStack_34.y);
             }
           }
           else {

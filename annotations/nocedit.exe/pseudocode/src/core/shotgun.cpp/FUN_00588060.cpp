@@ -51,7 +51,7 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
   float fStack_38;
   CDemonActor *pCStack_34;
   CFlameCan *pCStack_30;
-  CDemonActor *pCStack_2c;
+  CCrate *pCStack_2c;
   float fStack_28;
   int iStack_24;
   CGlass *pCStack_20;
@@ -125,7 +125,8 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
         pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
         pCStack_34 = pCVar3;
-        pCStack_2c = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCStack_2c = (CCrate *)
+                     core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
         pCStack_30 = (CFlameCan *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
@@ -136,7 +137,7 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
         if (this_ptr == (CCharacter *)0x0) {
           if (pCStack_20 == (CGlass *)0x0) {
             if (pCVar3 == (CDemonActor *)0x0) {
-              if (pCStack_2c == (CDemonActor *)0x0) {
+              if (pCStack_2c == (CCrate *)0x0) {
                 if (pCStack_30 == (CFlameCan *)0x0) {
                   core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
                   break;
@@ -144,7 +145,7 @@ int __cdecl core_shotgun_cpp_FUN_00588060(void)
                 core_flamecan_cpp_CFlameCan_FUN_004cb340(pCStack_30);
               }
               else {
-                core_crate_cpp_FUN_00448a70();
+                core_crate_cpp_CCrate_FUN_00448a70(pCStack_2c);
               }
             }
             else {

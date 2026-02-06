@@ -21,7 +21,9 @@ void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr)
   
   bVar6 = 0;
   this_ptr->attack_mode = 2;
-  core_cloth_cpp_FUN_00439710();
+  core_cloth_cpp_CCloth_setup_FUN_00439710
+            ((CCloth *)this_ptr->unk3,&(this_ptr->base).base.base.location.position,
+             (CVector3f *)&(this_ptr->base).base.base.orient,&(this_ptr->base).base.model);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],g_CGabriellaClassInfo.name_hash)
   ;

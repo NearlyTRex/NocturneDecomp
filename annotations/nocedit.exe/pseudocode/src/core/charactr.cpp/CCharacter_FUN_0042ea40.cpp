@@ -24,16 +24,15 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
   CVector3f local_28;
   CVector3f local_1c;
   
-  if ((*(int *)this_ptr->unk3 != 0) &&
+  if ((this_ptr->field43_0x2620 != 0) &&
      (*(float *)(g_CDemonSetPtr->unk4 + 0xbbd4) < (float)32)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->model).motion_controller);
     if (pSVar2->state_index == 0) {
-      if ((*(int *)(this_ptr->cloth_data + 0x1c0) == 0) &&
-         (fVar1 = *(float *)(this_ptr->cloth_data + 0x1b8) - in_stack_00000008,
-         *(float *)(this_ptr->cloth_data + 0x1b8) = fVar1, fVar1 < 0.0)) {
-        *(float *)(this_ptr->cloth_data + 0x1b8) =
-             *(float *)(this_ptr->cloth_data + 0x1b8) + 0.2f;
+      if (((this_ptr->field50_0x2c50).z == 0.0) &&
+         (fVar1 = (this_ptr->field50_0x2c50).x - in_stack_00000008,
+         (this_ptr->field50_0x2c50).x = fVar1, fVar1 < 0.0)) {
+        (this_ptr->field50_0x2c50).x = (this_ptr->field50_0x2c50).x + 0.2f;
         local_4c.y = -0.5;
         local_4c.x = 0.0;
         local_4c.z = 1.0;
@@ -55,11 +54,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
                     (g_CFireEffectPtr,&local_34,0.5,&local_1c,0x8000);
         }
       }
-      fVar1 = *(float *)(this_ptr->cloth_data + 0x1bc) - in_stack_00000008;
-      *(float *)(this_ptr->cloth_data + 0x1bc) = fVar1;
+      fVar1 = (this_ptr->field50_0x2c50).y - in_stack_00000008;
+      (this_ptr->field50_0x2c50).y = fVar1;
       if (fVar1 < 0.0) {
-        *(float *)(this_ptr->cloth_data + 0x1bc) =
-             *(float *)(this_ptr->cloth_data + 0x1bc) + 1.5f;
+        (this_ptr->field50_0x2c50).y = (this_ptr->field50_0x2c50).y + 1.5f;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
         iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
@@ -74,8 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
                     (&this_ptr->base,&local_28,pCVar5);
           iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
           if (iVar4 == 0) {
-            *(uint *)(this_ptr->cloth_data + 0x1c0) =
-                 (uint)(*(int *)(this_ptr->cloth_data + 0x1c0) == 0);
+            (this_ptr->field50_0x2c50).z = (float)(uint)((this_ptr->field50_0x2c50).z == 0.0);
             return;
           }
         }

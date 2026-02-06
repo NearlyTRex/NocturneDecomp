@@ -56,6 +56,6 @@ void __cdecl core_scat_cpp_CScat_setup_FUN_00556f90(CScat *this_ptr)
   this_ptr->unk[1] = '\0';
   this_ptr->unk[2] = '\0';
   this_ptr->unk[3] = '\0';
-  *(int *)((this_ptr->base).base.unk2 + 0x24) = iVar1;
+  (this_ptr->base).base.gesture_branch_root = iVar1;
   return;
 }

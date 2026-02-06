@@ -11,6 +11,8 @@
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
 
 {
+  COrientation *euler;
+  CLocation *position;
   CDeformableModelInstance *pCVar1;
   CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
@@ -33,8 +35,14 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   this_ptr_00 = (CDeformableModelInstance *)(this_ptr->unk + 8);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   core_cloth_cpp_CClothList_load_FUN_0043bfa0((CClothList *)(this_ptr->unk + 0x22bc));
-  core_cloth_cpp_FUN_0043c290();
-  core_cloth_cpp_FUN_0043c2d0();
+  euler = &(this_ptr->base).base.base.orient;
+  position = &(this_ptr->base).base.base.location;
+  core_cloth_cpp_CClothList_setup_FUN_0043c290
+            ((CClothList *)(this_ptr->unk + 0x22bc),&position->position,(CVector3f *)euler,
+             this_ptr_00);
+  core_cloth_cpp_CClothList_process_FUN_0043c2d0
+            (&(this_ptr->base).base.cloth_list,&position->position,(CVector3f *)euler,0.05,
+             (this_ptr->base).base.closest_distance_threshold,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   INT_03f6bb68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Head");

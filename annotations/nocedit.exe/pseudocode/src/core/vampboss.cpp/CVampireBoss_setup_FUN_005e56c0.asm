@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
-;   core_cloth.cpp_FUN_00439710
+;   core_cloth.cpp_CCloth_setup_FUN_00439710
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
@@ -72,8 +72,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005e5713
     MOV EAX,dword ptr [ESP + 0x14]      ; 005e5717
     PUSH EAX                            ; 005e571b
-    CALL core_cloth.cpp_FUN_00439710    ; 005e571c
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
+    CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 005e571c
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005e5721
     PUSH 0x656ae8                       ; 005e5724 | = "noscape.cth"
     LEA EAX,[EBX + 0x4dfe0]             ; 005e5729
@@ -88,8 +88,8 @@ section .text
     PUSH ESI                            ; 005e5742
     MOV EAX,dword ptr [ESP + 0x18]      ; 005e5743
     PUSH EAX                            ; 005e5747
-    CALL core_cloth.cpp_FUN_00439710    ; 005e5748
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
+    CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 005e5748
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005e574d
     PUSH 0x656af4                       ; 005e5750 | = "nosskirt.cth"
     LEA EAX,[EBX + 0x8de50]             ; 005e5755
@@ -104,8 +104,8 @@ section .text
     PUSH ESI                            ; 005e576e
     MOV ESI,dword ptr [ESP + 0x10]      ; 005e576f
     PUSH ESI                            ; 005e5773
-    CALL core_cloth.cpp_FUN_00439710    ; 005e5774
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
+    CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 005e5774
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005e5779
     PUSH EDI                            ; 005e577c
     CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 ; 005e577d

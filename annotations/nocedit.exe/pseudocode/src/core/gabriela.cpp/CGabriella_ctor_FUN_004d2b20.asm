@@ -16,7 +16,7 @@
 ;   CDemonActor_vtable g_CGabriellaVTable
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_00438ba0
+;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -36,8 +36,8 @@ section .text
     ADD ESP,0x4                         ; 004d2b2d
     ADD EAX,0x1fc14                     ; 004d2b30
     PUSH EAX                            ; 004d2b35
-    CALL core_cloth.cpp_FUN_00438ba0    ; 004d2b36
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_00438ba0 ; 004d2b36
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00438ba0(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d2b3b
     MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | g_CGabriellaVTable
     MOV dword ptr [EBX + 0x1fbd4],0x0   ; 004d2b4b

@@ -4,14 +4,44 @@
       {
         "category": "pointer_precision",
         "column": 30,
-        "line": 65,
+        "line": 64,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 30,
-        "line": 66,
+        "line": 65,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 114,
+        "message": "cast from 'SFire*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 22,
+        "line": 120,
+        "message": "cast from 'SFire*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 21,
+        "line": 122,
+        "message": "cast from 'SFire*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 22,
+        "line": 124,
+        "message": "cast from 'SFire*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 20,
+        "line": 127,
+        "message": "cast from 'SFire*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -25,19 +55,25 @@
       {
         "category": "other",
         "column": 14,
-        "line": 51,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 62,
+        "column": 25,
+        "line": 61,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -48,26 +84,50 @@
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 66,
+        "column": 12,
+        "line": 114,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 120,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 122,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 124,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 127,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 297,
+    "complexity_score": 342,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 132,
-    "suspect_count": 15,
+    "pseudocode_lines": 127,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 379
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -363,108 +423,143 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_0000000c",
       "text": "if (-1 < in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_00000008",
-      "text": "iVar7 = in_stack_00000008;",
+      "text": "iVar6 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000008",
       "text": "if (0 < *(int *)(in_stack_00000008 + 0x28558)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_0000000c",
+      "text": "if ((in_stack_0000000c == *(int *)(iVar6 + 0x2857c)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 46,
-      "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == *(int *)(iVar7 + 0x2857c)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
       "match": "SQRT",
-      "text": "(local_20 = SQRT(pCVar5->z * pCVar5->z + pCVar5->x * pCVar5->x + pCVar5->y * pCVar5->y),",
+      "text": "(local_20 = SQRT(pCVar4->z * pCVar4->z + pCVar4->x * pCVar4->x + pCVar4->y * pCVar4->y),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000008",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000008 + 0x28558));",
+      "text": "} while (iVar9 < *(int *)(in_stack_00000008 + 0x28558));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_0000000c",
-      "text": "pCVar8 = (CVector3f *)((int)local_44 + in_stack_0000000c * 0xc);",
+      "text": "pCVar7 = (CVector3f *)((int)local_44 + in_stack_0000000c * 0xc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar7 = (CVector3f *)((int)local_44 + in_stack_0000000c * 0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(CVector3f *)((int)",
-      "text": "pCVar8 = (CVector3f *)((int)local_44 + in_stack_0000000c * 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar5 = (CVector3f *)((int)local_44 + iVar6 * 0xc);",
+      "text": "pCVar4 = (CVector3f *)((int)local_44 + iVar5 * 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "SQRT",
-      "text": "((double)(SQRT(local_6c.x * local_6c.x + fVar2 * fVar2 + fVar3 * fVar3) *",
+      "text": "((double)(SQRT(local_6c.x * local_6c.x + fVar1 * fVar1 + fVar2 * fVar2) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 65,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar11);",
+      "text": "local_1c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_0000000c",
       "text": "(this_ptr_00,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_0000000c",
-      "text": "*(int *)(pcVar9 + 4) = in_stack_0000000c;",
+      "text": "*(int *)(pSVar8->unk + 4) = in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x364) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x368) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x36c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x3b4) =",
+      "type": "pointer_cast"
     }
   ]
 }

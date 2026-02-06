@@ -24,7 +24,7 @@
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
 ;   core_charactr.cpp_CCharacter_FUN_0042d090
 ;   core_charactr.cpp_CCharacter_FUN_0042d530
-;   core_cloth.cpp_FUN_0043c2d0
+;   core_cloth.cpp_CClothList_process_FUN_0043c2d0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH EAX                            ; 0042e035
     ADD EBX,0x2a94                      ; 0042e036
     PUSH EBX                            ; 0042e03c
-    CALL core_cloth.cpp_FUN_0043c2d0    ; 0042e03d
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
+    CALL core_cloth.cpp_CClothList_process_FUN_0043c2d0 ; 0042e03d
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_process_FUN_0043c2d0(CClothList * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 0042e042
     POP EBX                             ; 0042e045
     RET                                 ; 0042e046

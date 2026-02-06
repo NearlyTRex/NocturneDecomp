@@ -9,13 +9,7 @@
 void __cdecl core_hiram_cpp_CHiram_setup_FUN_004f4530(CHiram *this_ptr)
 
 {
-  CNPC *pCVar1;
-  
   core_npc_cpp_CNPC_setup_FUN_00544870(&this_ptr->base);
-  pCVar1 = &this_ptr->base;
-  (pCVar1->base).unk2[0x24] = '\0';
-  (pCVar1->base).unk2[0x25] = '\0';
-  (pCVar1->base).unk2[0x26] = '\0';
-  (pCVar1->base).unk2[0x27] = '\0';
+  (this_ptr->base).base.gesture_branch_root = 0;
   return;
 }

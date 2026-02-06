@@ -9,9 +9,9 @@
 ;
 ; XREF[12]:
 ;   core_bugs.cpp_FUN_00425340 at 0042543c
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cc4b
-;   core_cloth.cpp_FUN_0043b790 at 0043b7a4
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d769
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cc4b
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d769
+;   core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043b790 at 0043b7a4
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 00482997
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 at 00497235
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 005839ae

@@ -107,7 +107,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042b9e0
 ;   core_charactr.cpp_CCharacter_FUN_0042c5f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_cloth.cpp_FUN_0043ab80
+;   core_cloth.cpp_CCloth_process_FUN_0043ab80
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     PUSH EAX                            ; 005e59ea
     LEA EAX,[EBX + 0xe170]              ; 005e59eb
     PUSH EAX                            ; 005e59f1
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e59f2
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e59f2
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     FLD float ptr [EBX + 0x243c]        ; 005e59f7
     ADD ESP,0x18                        ; 005e59fd
     FCOMP double ptr [0x00656b7b]       ; 005e5a00 | DOUBLE_00656b7b
@@ -725,8 +725,8 @@ section .text
     PUSH EAX                            ; 005e610b
     LEA EAX,[EBX + 0xe170]              ; 005e610c
     PUSH EAX                            ; 005e6112
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e6113
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e6113
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e6118
     LEA ESI,[EBX + 0x158]               ; 005e611b
     MOV EAX,dword ptr [EBP + 0x18]      ; 005e6121
@@ -767,8 +767,8 @@ section .text
     MOV dword ptr [ESP + 0x24c],EAX     ; 005e617b
     LEA EAX,[EBX + 0x4dfe0]             ; 005e6182
     PUSH EAX                            ; 005e6188
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e6189
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e6189
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e618e
     PUSH ESI                            ; 005e6191
     PUSH dword ptr [EBX + 0x2414]       ; 005e6192
@@ -778,8 +778,8 @@ section .text
     PUSH EDI                            ; 005e61a3
     LEA EAX,[EBX + 0x8de50]             ; 005e61a4
     PUSH EAX                            ; 005e61aa
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e61ab
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e61ab
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e61b0
     LEA EAX,[ESP + 0xfc]                ; 005e61b3
     PUSH EAX                            ; 005e61ba
@@ -886,8 +886,8 @@ section .text
     PUSH EAX                            ; 005e62ef
     LEA EAX,[EBX + 0xe170]              ; 005e62f0
     PUSH EAX                            ; 005e62f6
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e62f7
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e62f7
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e62fc
     LEA ESI,[EBX + 0x158]               ; 005e62ff
     MOV EAX,dword ptr [EBP + 0x18]      ; 005e6305
@@ -928,8 +928,8 @@ section .text
     MOV dword ptr [ESP + 0x24c],EAX     ; 005e635b
     LEA EAX,[EBX + 0x4dfe0]             ; 005e6362
     PUSH EAX                            ; 005e6368
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e6369
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e6369
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e636e
     PUSH ESI                            ; 005e6371
     PUSH dword ptr [EBX + 0x2414]       ; 005e6372
@@ -939,8 +939,8 @@ section .text
     PUSH ECX                            ; 005e6383
     LEA EAX,[EBX + 0x8de50]             ; 005e6384
     PUSH EAX                            ; 005e638a
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e638b
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e638b
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e6390
     LEA EAX,[ESP + 0x9c]                ; 005e6393
     PUSH EAX                            ; 005e639a
@@ -1184,8 +1184,8 @@ section .text
     MOV dword ptr [ESP + 0x24c],EAX     ; 005e6649
     LEA EAX,[EBX + 0x4dfe0]             ; 005e6650
     PUSH EAX                            ; 005e6656
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e6657
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e6657
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e665c
     PUSH ESI                            ; 005e665f
     PUSH dword ptr [EBX + 0x2414]       ; 005e6660
@@ -1195,8 +1195,8 @@ section .text
     PUSH EDI                            ; 005e6671
     LEA EAX,[EBX + 0x8de50]             ; 005e6672
     PUSH EAX                            ; 005e6678
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005e6679
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005e6679
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005e667e
     JMP 0x005e5f5f                      ; 005e6681
         ;   XREF to: 005e5f5f (UNCONDITIONAL_JUMP)  ; LAB_005e5f5f

@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428e30(CCharacter *this_ptr)
   if (0 < iVar1) {
     return;
   }
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&iStack_40);
   if ((in_stack_0000000c != (float *)0x0) && (&fStack_34 != in_stack_0000000c)) {
     fStack_34 = *in_stack_0000000c;

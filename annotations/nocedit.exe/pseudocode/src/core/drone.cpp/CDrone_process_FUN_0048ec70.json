@@ -4,49 +4,49 @@
       {
         "category": "other",
         "column": 10,
-        "line": 85,
+        "line": 84,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 97,
+        "line": 96,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 116,
+        "line": 115,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 116,
+        "line": 115,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 135,
+        "line": 134,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 230,
+        "line": 229,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 243,
+        "line": 242,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 40,
-        "line": 243,
+        "line": 242,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -61,55 +61,55 @@
       {
         "category": "other",
         "column": 23,
-        "line": 116,
+        "line": 115,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 120,
+        "line": 119,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 135,
+        "line": 134,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 206,
+        "line": 205,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 230,
+        "line": 229,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 243,
+        "line": 242,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 594,
-    "complexity_score": 355,
+    "complexity_score": 349,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 18,
-    "pseudocode_lines": 270,
+    "pseudocode_lines": 264,
     "suspect_count": 7,
     "suspect_types": [
       "extra_output",
       "suspect_float",
       "unresolved_funcptr"
     ],
-    "total_lines": 864
+    "total_lines": 858
   },
   "cross_references": [],
   "function": {
@@ -662,51 +662,51 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 17,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
+      "line": 76,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
+      "line": 93,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
+      "line": 108,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 225,
+      "line": 224,
       "match": "6.699263e-39",
       "text": "local_dc.damage_amount = 6.699263e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 236,
+      "line": 235,
       "match": "code *",
-      "text": "(pCVar11 = (CDrone *)(**(code **)(*(int *)(iVar8 + 0x154) + 0x108))(), pCVar11 == this_ptr))",
+      "text": "(pCVar10 = (CDrone *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(), pCVar10 == this_ptr))",
       "type": "unresolved_funcptr"
     }
   ],

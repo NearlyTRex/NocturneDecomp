@@ -8,27 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 43,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output"
+      "negative_offset"
     ],
-    "total_lines": 65
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -47,7 +41,7 @@
     {
       "addr": "00438c00",
       "is_variadic": false,
-      "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00"
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_00438c00"
     },
     {
       "addr": "004f2470",
@@ -132,18 +126,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX",
-      "text": "core_hero_cpp_CHero_dtor_FUN_004f2470((CHero *)(extraout_EAX + -0x1fc14),1);",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar1[-1].",
+      "text": "((CHero *)(pCVar1[-1].vertices[0x181].connected_indices + 10),1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

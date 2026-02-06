@@ -12,30 +12,27 @@
       {
         "category": "other",
         "column": 25,
-        "line": 29,
+        "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 31,
+        "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 100,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 30,
-    "suspect_count": 6,
-    "suspect_types": [
-      "format_string_mismatch",
-      "stack_param"
-    ],
-    "total_lines": 90
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -55,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0",
-    "signature": "void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr)"
+    "signature": "void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)"
   },
   "function_calls": [
     {
@@ -127,10 +124,10 @@
     "pcode_op_count": 232
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -139,55 +136,22 @@
         "offset": 4,
         "size": 4,
         "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = strcmp(in_stack_00000008,pcVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000c",
-      "text": "pcVar3 = this_ptr->unk + in_stack_0000000c * 0x11c + 0x574c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "text": "*(int *)(this_ptr->unk + in_stack_0000000c * 0x11c + 0x57b0) = iVar2;",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CCloth::grabCloth - Can't find bone %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "CCloth::grabCloth - Can't find bone %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 24,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CCloth::grabCloth - Can't find bone %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

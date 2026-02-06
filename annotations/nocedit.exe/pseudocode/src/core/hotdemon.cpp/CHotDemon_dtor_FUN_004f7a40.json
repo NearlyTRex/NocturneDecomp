@@ -8,27 +8,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 55,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 29,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [],
   "function": {
@@ -67,7 +61,7 @@
     {
       "addr": "0043bf80",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043bf80"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043bf80"
     },
     {
       "addr": "0059de40",
@@ -155,14 +149,14 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 19,
       "match": "pCVar1[-2].",
       "text": "pSVar2 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar1[-2].base.create_event + 0x20));",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 26,
       "match": "pCVar5[-1].",
       "text": "((CDemonActor *)(pCVar5[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"

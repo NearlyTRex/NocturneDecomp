@@ -4,73 +4,73 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 26,
+        "line": 25,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 26,
+        "line": 25,
         "message": "'blend_callback' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 200,
+        "line": 194,
         "message": "invalid cast from type 'float' to type 'CDeformableModelInstance*'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 202,
+        "line": 196,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 203,
+        "line": 197,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 204,
+        "line": 198,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 204,
+        "line": 198,
         "message": "unable to find numeric literal operator 'operator\"\"._0_4_'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 223,
+        "line": 217,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "syntax_error",
         "column": 23,
-        "line": 223,
+        "line": 217,
         "message": "expected ')' before 'local_14'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 249,
+        "line": 243,
         "message": "request for member '_0_4_' in 'auStack_80', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
       },
       {
         "category": "pointer_precision",
         "column": 7,
-        "line": 255,
+        "line": 249,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 12,
-        "line": 257,
+        "line": 251,
         "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -85,36 +85,36 @@
       {
         "category": "other",
         "column": 36,
-        "line": 152,
+        "line": 150,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 254,
+        "line": 248,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 256,
+        "line": 250,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 305,
+    "complexity_score": 299,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
-    "pseudocode_lines": 255,
+    "pseudocode_lines": 249,
     "suspect_count": 4,
     "suspect_types": [
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 739
+    "total_lines": 733
   },
   "cross_references": [],
   "function": {
@@ -538,28 +538,28 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 18,
       "match": "code *",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 197,
+      "line": 191,
       "match": "._0_4_",
-      "text": "fVar12 = (float)local_14 + 5.3286462644388174e-315._0_4_;",
+      "text": "fVar11 = (float)local_14 + 5.3286462644388174e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 216,
+      "line": 210,
       "match": "code *",
-      "text": "iVar6 = (*(code *)local_14->transformed_vertices[0x11].x)();",
+      "text": "iVar5 = (*(code *)local_14->transformed_vertices[0x11].x)();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 242,
+      "line": 236,
       "match": "._0_4_",
       "text": "auStack_80._0_4_ = CStack_90.w;",
       "type": "unknown_field"

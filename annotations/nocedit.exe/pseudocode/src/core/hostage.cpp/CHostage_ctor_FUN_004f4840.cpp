@@ -21,15 +21,9 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
   pCVar2->follow_state = 0;
   pCVar2->hostage_state = 0;
   pcVar3 = "true";
-  pCVar2->unk3[0] = '\0';
-  pCVar2->unk3[1] = '\0';
-  pCVar2->unk3[2] = '\0';
-  pCVar2->unk3[3] = '\0';
-  pCVar2->unk3[4] = '\0';
-  pCVar2->unk3[5] = '\0';
-  pCVar2->unk3[6] = '\0';
-  pCVar2->unk3[7] = '\0';
-  pcVar4 = pCVar2->unk1;
+  pCVar2->goal_way_point = (CDemonActor *)0x0;
+  pCVar2->sit_down_way_point = (CDemonActor *)0x0;
+  pcVar4 = pCVar2->rescue_condition;
   pCVar2->rescue_distance = 5.0;
   do {
     cVar1 = *pcVar3;
@@ -40,10 +34,10 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pCVar2->unk3[8] = '\0';
-  pCVar2->unk3[9] = '\0';
-  pCVar2->unk3[10] = '\0';
-  pCVar2->unk3[0xb] = '\0';
+  pCVar2->unk3[0] = '\0';
+  pCVar2->unk3[1] = '\0';
+  pCVar2->unk3[2] = '\0';
+  pCVar2->unk3[3] = '\0';
   (pCVar2->base).base.grabbed_by = (CDemonActor *)0x0;
   pCVar2->unk4[0] = '\0';
   pCVar2->unk4[1] = '\0';
@@ -53,13 +47,13 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
   pCVar2->unk4[5] = '\0';
   pCVar2->unk4[6] = '\0';
   pCVar2->unk4[7] = '\0';
-  pCVar2->unk1[100] = '\0';
-  pCVar2->unk1[0x84] = '\0';
-  pCVar2->unk1[0xe8] = '\0';
-  pCVar2->unk1[0x14c] = '\0';
-  pCVar2->unk1[0x1b0] = '\0';
-  pCVar2->unk1[0x214] = '\0';
-  pCVar2->unk1[0x278] = '\0';
+  pCVar2->rescue_event[0] = '\0';
+  pCVar2->hero_found_me_event[0] = '\0';
+  pCVar2->hero_left_me_event[0] = '\0';
+  pCVar2->hero_came_back_event[0] = '\0';
+  pCVar2->get_eaten_event[0] = '\0';
+  pCVar2->going_to_sit_down_event[0] = '\0';
+  pCVar2->sit_down_event[0] = '\0';
   pCVar2->unk4[8] = '\0';
   pCVar2->unk4[9] = '\0';
   pCVar2->unk4[10] = '\0';
@@ -70,8 +64,8 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
   pCVar2->unk4[0xf] = '\0';
   pCVar2->no_shadows_when_saved = 0;
   (pCVar2->base).base.descriptive_name[0] = '\0';
-  pCVar2->unk1[0x2dc] = '\0';
-  pCVar2->unk1[0x340] = '\0';
+  pCVar2->damage_sound[0] = '\0';
+  pCVar2->die_sound[0] = '\0';
   (pCVar2->base).base.health_bar_mode = 1;
   return pCVar2;
 }

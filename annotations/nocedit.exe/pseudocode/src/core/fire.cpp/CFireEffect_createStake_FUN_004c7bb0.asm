@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 0044952e
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 0044952e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004c7b78 = 004c7bd1

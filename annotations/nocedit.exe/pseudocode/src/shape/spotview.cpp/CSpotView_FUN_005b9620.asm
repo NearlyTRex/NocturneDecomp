@@ -7,8 +7,8 @@
 ; CSpotView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043c8f5
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d5c8
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043c8f5
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d5c8
 ;   core_morph.cpp_FUN_0052bcb0 at 0052bdf3
 ;   core_morph.cpp_FUN_0052ca90 at 0052caae
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00596a02

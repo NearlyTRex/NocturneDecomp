@@ -44,10 +44,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
   
   pCVar1 = g_CDemonSetPtr;
   bVar8 = 0;
-  iVar2 = *(int *)(this_ptr->cloth_data + 0x35c);
+  iVar2 = this_ptr->field60_0x2df4;
   if ((iVar2 < 5) && (-1 < g_CDemonSetPtr->unk1)) {
-    *(int *)(this_ptr->cloth_data + 0x35c) = *(int *)(this_ptr->cloth_data + 0x35c) + 1;
-    local_18 = this_ptr->cloth_data + iVar2 * 0x38 + 0x360;
+    this_ptr->field60_0x2df4 = this_ptr->field60_0x2df4 + 1;
+    local_18 = this_ptr->field61_0x2df8 + iVar2 * 0x38;
     *(int *)local_18 = pCVar1->unk1;
     iVar2 = pCVar1->unk2;
     *(int *)(local_18 + 4) = iVar2;

@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_CGabriellaTypeInfo
 ;
 ; Called Functions:
-;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00
+;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 004d766c
     ADD EBX,0x1fc14                     ; 004d766e
     PUSH EBX                            ; 004d7674
-    CALL core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 ; 004d7675
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()
+    CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 004d7675
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
     ADD ESP,0x8                         ; 004d767a
     PUSH 0x1                            ; 004d767d
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d767f

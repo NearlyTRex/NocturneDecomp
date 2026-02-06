@@ -54,7 +54,7 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_00412cb0(CBaron *this_ptr)
   this_ptr->unk[0xd9] = '\0';
   this_ptr->unk[0xda] = '\0';
   this_ptr->unk[0xdb] = '\0';
-  *(int *)((this_ptr->base).base.unk2 + 0x24) = iVar1;
+  (this_ptr->base).base.gesture_branch_root = iVar1;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&g_CKeyFramedModelInstanceInstance);
   return;
 }

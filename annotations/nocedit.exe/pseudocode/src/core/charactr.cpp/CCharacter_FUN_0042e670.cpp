@@ -17,6 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042e670(CCharacter *this_ptr)
   CCharacter *pCVar5;
   CCharacter *pCVar6;
   int iVar7;
+  SLayerAction *pSVar8;
   CCharacter *local_20;
   CCharacter *local_18;
   
@@ -36,34 +37,30 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042e670(CCharacter *this_ptr)
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&(this_ptr->model).motion_controller);
     iVar7 = 0;
-    if (0 < *(int *)(this_ptr->unk3 + 8)) {
+    if (0 < this_ptr->layer_action_count) {
       do {
-        pcVar4 = this_ptr->unk3 + iVar7 * 0x38 + 0xc;
+        pSVar8 = this_ptr->layer_actions + iVar7;
         iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
-        *(int *)(pcVar4 + 0x2c) = iVar3;
-        *(int *)(pcVar4 + 0x30) = this_ptr_00->motions[iVar3].frame_count;
-        *(float *)(pcVar4 + 0x34) =
-             (float)*(int *)(pcVar4 + 0x30) / this_ptr_00->motions[*(int *)(pcVar4 + 0x2c)].fps;
-        if (-1 < *(int *)(pcVar4 + 0x28)) {
-          *(int *)(this_ptr->cloth_data + *(int *)(pcVar4 + 4) * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c)
-               = *(int *)(pcVar4 + 0x34);
+        pSVar8->motion_index = iVar3;
+        pSVar8->frame_count = this_ptr_00->motions[iVar3].frame_count;
+        pSVar8->duration =
+             (float)pSVar8->frame_count / this_ptr_00->motions[pSVar8->motion_index].fps;
+        if (-1 < pSVar8->direction) {
+          this_ptr->motion_transition_costs[pSVar8->from_bone_index][pSVar8->to_bone_index] =
+               pSVar8->duration;
         }
-        if (*(int *)(pcVar4 + 0x28) < 1) {
-          *(int *)(this_ptr->cloth_data + *(int *)pcVar4 * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c)
-               = *(int *)(pcVar4 + 0x34);
+        if (pSVar8->direction < 1) {
+          this_ptr->motion_transition_costs[pSVar8->to_bone_index][pSVar8->from_bone_index] =
+               pSVar8->duration;
         }
         iVar7 = iVar7 + 1;
-      } while (iVar7 < *(int *)(this_ptr->unk3 + 8));
+      } while (iVar7 < this_ptr->layer_action_count);
     }
     iVar7 = 0;
     pCVar5 = this_ptr;
     do {
       iVar3 = iVar7 + 4;
-      pcVar4 = pCVar5->cloth_data + iVar7 + 0x8d4c;
-      pcVar4[0] = '\0';
-      pcVar4[1] = '\0';
-      pcVar4[2] = '\0';
-      pcVar4[3] = '\0';
+      *(uint *)((int)pCVar5->motion_transition_costs[0] + iVar7) = 0;
       iVar7 = iVar3;
       pCVar5 = (CCharacter *)&(pCVar5->base).orient_matrix.m[1].z;
     } while (iVar3 != 0x50);
@@ -77,9 +74,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042e670(CCharacter *this_ptr)
         pcVar4 = (this_ptr->base).actor_name + iVar7 * 0x50;
         pCVar6 = local_20;
         do {
-          fVar1 = *(float *)(local_18->cloth_data + 0x8d4c) + *(float *)((int)pcVar4 + 0xb7e4);
-          if (fVar1 < *(float *)(pCVar6->cloth_data + 0x8d4c)) {
-            *(float *)(pCVar6->cloth_data + 0x8d4c) = fVar1;
+          fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar4 + 0xb7e4);
+          if (fVar1 < pCVar6->motion_transition_costs[0][0]) {
+            pCVar6->motion_transition_costs[0][0] = fVar1;
           }
           pcVar4 = pcVar4 + 4;
           pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 4);

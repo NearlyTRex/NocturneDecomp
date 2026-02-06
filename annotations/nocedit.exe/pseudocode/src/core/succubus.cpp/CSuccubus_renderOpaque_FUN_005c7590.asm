@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_FUN_00429aa0
-;   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320
+;   core_cloth.cpp_CClothList_render_FUN_0043c320
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
 ;   core_morph.cpp_FUN_0052b600
 ;   core_morph.cpp_FUN_0052b640
@@ -86,8 +86,8 @@ section .text
     PUSH EDI                            ; 005c7616
     LEA EAX,[EBX + 0xe170]              ; 005c7617
     PUSH EAX                            ; 005c761d
-    CALL core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 ; 005c761e
-        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320()
+    CALL core_cloth.cpp_CClothList_render_FUN_0043c320 ; 005c761e
+        ;   XREF to: 0043c320 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_0043c320(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 005c7623
         ;   Label: LAB_005c7623
     CMP dword ptr [0x02f43978],0x0      ; 005c7626 | DAT_02f43978

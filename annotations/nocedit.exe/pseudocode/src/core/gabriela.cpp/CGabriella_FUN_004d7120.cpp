@@ -50,7 +50,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   
   bVar6 = 0;
   actor_ptr = (this_ptr->base).base.carry_hands[(int)in_stack_00000008].carry_actor;
-  local_10 = *(float *)(this_ptr->base).base.carry_hands[(int)in_stack_00000008].unk1;
+  local_10 = (float)(this_ptr->base).base.carry_hands[(int)in_stack_00000008].bone_index;
   local_50.x = 0.0;
   local_5c.z = 0.0;
   local_5c.y = 0.0;

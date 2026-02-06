@@ -46,10 +46,10 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
                   (&this_ptr->motion_controller,8,1);
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base);
         sound_sndmain_cpp_killSfx_FUN_005a9c40
-                  (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
+                  (*(uint *)(in_stack_00000004[0xd].field66_0x33cc[0xb].base.actor_name + 0x10));
         uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                           (&in_stack_00000004->base,"svet-die.wav");
-        *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
+        *(uint *)(in_stack_00000004[0xd].field66_0x33cc[0xb].base.actor_name + 0x10) = uVar3;
         core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(in_stack_00000004,in_stack_00000008)
         ;
         return;
@@ -57,7 +57,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
     }
   }
   else if (0.0 < in_stack_00000008->damage_amount) {
-    if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
+    if (*(int *)(in_stack_00000004[2].field66_0x33cc[0x1c].on_event + 0x18) == 0) {
       iVar4 = 4;
     }
     else {
@@ -66,11 +66,12 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr->motion_controller,iVar4,1);
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                      (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
+                      (*(uint *)(in_stack_00000004[0xd].field66_0x33cc[0xb].base.actor_name + 0x10))
+    ;
     if (iVar4 == 0) {
       uVar3 = (*((in_stack_00000004->base).vtable._ub)->playSound)
                         (&in_stack_00000004->base,"svet-hurt?.wav");
-      *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
+      *(uint *)(in_stack_00000004[0xd].field66_0x33cc[0xb].base.actor_name + 0x10) = uVar3;
       core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(in_stack_00000004,in_stack_00000008);
       return;
     }

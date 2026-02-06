@@ -40,7 +40,7 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr)
   }
   if ((5 < g_CZombieClassVersion) && (g_CZombieClassVersion < 9)) {
     core_actor_cpp_archiveClothList_FUN_0040be60
-              ((CClothList *)&(this_ptr->base).base.cloth_count,"clothList");
+              (&(this_ptr->base).base.cloth_list,"clothList");
   }
   if (7 < g_CZombieClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->is_miner_zombie,"isMinerZombie");

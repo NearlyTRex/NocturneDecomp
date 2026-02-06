@@ -17,15 +17,15 @@ float __cdecl FUN_004d2a30(void);
 
 // Original: core_gabriela.cpp_FUN_004d2a80
 // Address: 004d2a80
-float __cdecl FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *instance);
+float __cdecl FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *model_ptr);
 
 // Original: core_gabriela.cpp_factoryFunc_FUN_004d2ae0
 // Address: 004d2ae0
 CGabriella * __cdecl factoryFunc(void);
 
-// Original: core_gabriela.cpp_FUN_004d2b10
+// Original: core_gabriela.cpp_CGabriella_getActorType_FUN_004d2b10
 // Address: 004d2b10
-CDemonActorType * __cdecl FUN_004d2b10(void);
+CDemonActorType * __cdecl CGabriella::getActorType(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
 // Address: 004d2b20
@@ -39,57 +39,57 @@ void __cdecl CGabriella::setup(CGabriella *this_ptr);
 // Address: 004d2ea0
 void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004d4190
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4190
 // Address: 004d4190
-void __cdecl FUN_004d4190(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_FUN_004d4890
 // Address: 004d4890
 void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d4c90
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4c90
 // Address: 004d4c90
-int __cdecl FUN_004d4c90(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d4ce0
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4ce0
 // Address: 004d4ce0
-int __cdecl FUN_004d4ce0(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d4cf0
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4cf0
 // Address: 004d4cf0
-float * __cdecl FUN_004d4cf0(void);
+float * __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d4d80
+// Original: core_gabriela.cpp_CGabriella_FUN_004d4d80
 // Address: 004d4d80
-void __cdecl FUN_004d4d80(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d5550
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5550
 // Address: 004d5550
-void __cdecl FUN_004d5550(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_PickupSomething_FUN_004d5870
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5870
 // Address: 004d5870
-int __cdecl PickupSomething(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_FUN_004d5c10
 // Address: 004d5c10
 void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d5c60
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5c60
 // Address: 004d5c60
-int __cdecl FUN_004d5c60(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d5f70
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5f70
 // Address: 004d5f70
-int __cdecl FUN_004d5f70(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d5fe0
+// Original: core_gabriela.cpp_CGabriella_FUN_004d5fe0
 // Address: 004d5fe0
-void __cdecl FUN_004d5fe0(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6050
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6050
 // Address: 004d6050
-int __cdecl FUN_004d6050(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_archive_FUN_004d6090
 // Address: 004d6090

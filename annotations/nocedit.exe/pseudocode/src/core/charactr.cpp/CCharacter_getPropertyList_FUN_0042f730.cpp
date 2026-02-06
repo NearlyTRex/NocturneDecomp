@@ -17,14 +17,14 @@ core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500
-            (property_list,"cloth",(CClothList *)&this_ptr->cloth_count,-1);
+            (property_list,"cloth",&this_ptr->cloth_list,-1);
   iVar3 = 0;
-  iVar1 = *(int *)this_ptr->carry_hands[0].unk1;
+  iVar1 = this_ptr->carry_hands[0].bone_index;
   pCVar2 = this_ptr;
   while (iVar1 < 0) {
     iVar3 = iVar3 + 1;
     if (1 < iVar3) goto LAB_0042f793;
-    iVar1 = *(int *)pCVar2->carry_hands[1].unk1;
+    iVar1 = pCVar2->carry_hands[1].bone_index;
     pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
   }
   core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
@@ -35,7 +35,7 @@ LAB_0042f793:
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
             (property_list,"talkToMeEvent",this_ptr->talk_to_me_event);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
-            (property_list,"Etheral",(int *)(this_ptr->unk2 + 0x74));
+            (property_list,"Etheral",&this_ptr->is_ethereal);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"Descriptive name",this_ptr->descriptive_name,100,
              (CDemonActor_CActorPropertyValidatorFunc *)0x0);

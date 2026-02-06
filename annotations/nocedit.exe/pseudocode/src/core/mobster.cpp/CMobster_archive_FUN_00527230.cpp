@@ -21,7 +21,7 @@ void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr)
             (&(this_ptr->base).base.model.motion_controller,"motion state");
   if (g_CMobsterClassVersion == 2) {
     core_actor_cpp_archiveClothList_FUN_0040be60
-              ((CClothList *)&(this_ptr->base).base.cloth_count,"clothList");
+              (&(this_ptr->base).base.cloth_list,"clothList");
   }
   if (4 < g_CMobsterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->post_mode,"postMode");

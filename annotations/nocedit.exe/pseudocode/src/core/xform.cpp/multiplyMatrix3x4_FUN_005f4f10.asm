@@ -30,7 +30,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d2e0
 ;   core_charactr.cpp_CCharacter_FUN_0042d300 at 0042d344
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf41
-;   core_cloth.cpp_FUN_0043a2b0 at 0043a32a
+;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a32a
 ;   ... and 35 more
 ;
 ; *****************************************************************************

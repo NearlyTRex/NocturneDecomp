@@ -9,21 +9,23 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042d530(CCharacter *this_ptr)
 
 {
-  CBoundingBox3D *pCVar1;
+  CVector3f *pCVar1;
+  CBoundingBox3D *pCVar2;
   CBoundingBox3D CStack_1c;
   
   if ((this_ptr->model).model_name[0] != '\0') {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
                        (&this_ptr->model,&CStack_1c);
-    if ((CBoundingBox3D *)(this_ptr->unk2 + 0x58) != pCVar1) {
-      (((CBoundingBox3D *)(this_ptr->unk2 + 0x58))->min).x = (pCVar1->min).x;
-      *(float *)(this_ptr->unk2 + 0x5c) = (pCVar1->min).y;
-      *(float *)(this_ptr->unk2 + 0x60) = (pCVar1->min).z;
+    if (&this_ptr->cached_bounding_box != pCVar2) {
+      (this_ptr->cached_bounding_box).min.x = (pCVar2->min).x;
+      (this_ptr->cached_bounding_box).min.y = (pCVar2->min).y;
+      (this_ptr->cached_bounding_box).min.z = (pCVar2->min).z;
     }
-    if ((CVector3f *)(this_ptr->unk2 + 100) != &pCVar1->max) {
-      *(float *)(this_ptr->unk2 + 100) = (pCVar1->max).x;
-      *(float *)(this_ptr->unk2 + 0x68) = (pCVar1->max).y;
-      *(float *)(this_ptr->unk2 + 0x6c) = (pCVar1->max).z;
+    pCVar1 = &(this_ptr->cached_bounding_box).max;
+    if (pCVar1 != &pCVar2->max) {
+      pCVar1->x = (pCVar2->max).x;
+      (this_ptr->cached_bounding_box).max.y = (pCVar2->max).y;
+      (this_ptr->cached_bounding_box).max.z = (pCVar2->max).z;
       return;
     }
   }

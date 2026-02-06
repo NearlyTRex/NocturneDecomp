@@ -60,8 +60,8 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
   g_CDemonSetPtr->unk5 = 0;
   if (iVar4 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    core_cloth_cpp_FUN_0043bae0();
-    core_cloth_cpp_FUN_0043bae0();
+    core_cloth_cpp_CCloth_render_FUN_0043bae0((CCloth *)(this_ptr->unk + 8),0);
+    core_cloth_cpp_CCloth_render_FUN_0043bae0((CCloth *)(this_ptr->unk + 0x3fe78),0);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     return iVar4;
   }

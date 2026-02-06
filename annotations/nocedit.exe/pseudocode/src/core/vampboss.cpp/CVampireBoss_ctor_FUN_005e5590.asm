@@ -15,7 +15,7 @@
 ;   CDemonActor_vtable g_CVampireBossVTable
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_00438ba0
+;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_morph.cpp_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
@@ -39,18 +39,18 @@ section .text
     ADD ESP,0x4                         ; 005e55a9
     ADD EAX,0x22b4                      ; 005e55ac
     PUSH EAX                            ; 005e55b1
-    CALL core_cloth.cpp_FUN_00438ba0    ; 005e55b2
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_00438ba0 ; 005e55b2
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00438ba0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005e55b7
     ADD EAX,0x3fe70                     ; 005e55ba
     PUSH EAX                            ; 005e55bf
-    CALL core_cloth.cpp_FUN_00438ba0    ; 005e55c0
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_00438ba0 ; 005e55c0
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00438ba0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005e55c5
     ADD EAX,0x3fe70                     ; 005e55c8
     PUSH EAX                            ; 005e55cd
-    CALL core_cloth.cpp_FUN_00438ba0    ; 005e55ce
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_00438ba0()
+    CALL core_cloth.cpp_CCloth_ctor_FUN_00438ba0 ; 005e55ce
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00438ba0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005e55d3
     ADD EAX,0x3fe74                     ; 005e55d6
     PUSH EAX                            ; 005e55db

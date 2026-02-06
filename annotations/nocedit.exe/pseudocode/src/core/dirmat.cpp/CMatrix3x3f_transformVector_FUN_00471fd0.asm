@@ -17,8 +17,8 @@
 ;   core_bugs.cpp_CBugs_FUN_00425cc0 at 00425e80
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 00426316
 ;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042f26a
-;   core_cloth.cpp_FUN_0043a420 at 0043a9d3
-;   core_cloth.cpp_FUN_0043abb0 at 0043ae36
+;   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 at 0043a9d3
+;   core_cloth.cpp_CCloth_step_FUN_0043abb0 at 0043ae36
 ;   ... and 34 more
 ;
 ; *****************************************************************************

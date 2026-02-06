@@ -7,7 +7,7 @@
 ; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[15]:
-;   core_cloth.cpp_FUN_0043ddf0 at 0043deb3
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043deb3
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d64e
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004ddbb3
 ;   core_msnedit.cpp_CDemonMission_FUN_00537680 at 00537883

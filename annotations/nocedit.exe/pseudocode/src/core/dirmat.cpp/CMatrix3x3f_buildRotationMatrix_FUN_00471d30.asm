@@ -23,7 +23,7 @@
 ;   core_bugs.cpp_CBugs_FUN_00425cc0 at 00425e41
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004262c8
 ;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042efa5
-;   core_cloth.cpp_FUN_0043abb0 at 0043aebc
+;   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 at 0043e1f8
 ;   ... and 36 more
 ;
 ; *****************************************************************************

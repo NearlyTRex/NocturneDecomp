@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
-;   core_cloth.cpp_FUN_0043e170
+;   core_cloth.cpp_CCloth_resetState_FUN_0043e170
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;
 ; *****************************************************************************
@@ -169,73 +169,73 @@ section .text
     PUSH 0x653e84                       ; 005c6374 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c6379
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c637a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c637f
     PUSH 0x33                           ; 005c6382
     PUSH 0x653e94                       ; 005c6384 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c6389
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c638a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c638f
     PUSH 0x34                           ; 005c6392
     PUSH 0x653ea4                       ; 005c6394 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c6399
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c639a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c639f
     PUSH 0x35                           ; 005c63a2
     PUSH 0x653eb4                       ; 005c63a4 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c63a9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63aa
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63af
     PUSH 0x36                           ; 005c63b2
     PUSH 0x653ec4                       ; 005c63b4 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c63b9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63ba
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63bf
     PUSH 0x37                           ; 005c63c2
     PUSH 0x653ed4                       ; 005c63c4 | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c63c9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63ca
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63cf
     PUSH 0x20                           ; 005c63d2
     PUSH 0x653ee4                       ; 005c63d4 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c63d9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63da
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63df
     PUSH 0x21                           ; 005c63e2
     PUSH 0x653ef4                       ; 005c63e4 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c63e9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63ea
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63ef
     PUSH 0x22                           ; 005c63f2
     PUSH 0x653f04                       ; 005c63f4 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c63f9
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c63fa
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c63ff
     PUSH 0x23                           ; 005c6402
     PUSH 0x653f14                       ; 005c6404 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c6409
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c640a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c640f
     PUSH 0x24                           ; 005c6412
     PUSH 0x653f24                       ; 005c6414 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c6419
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c641a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c641f
     PUSH 0x25                           ; 005c6422
     PUSH 0x653f34                       ; 005c6424 | = "Bip01 R Forearm"
     PUSH EBX                            ; 005c6429
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c642a
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c642f
     TEST EDI,EDI                        ; 005c6432
         ;   Label: LAB_005c6432
@@ -245,13 +245,13 @@ section .text
     PUSH 0x653f44                       ; 005c643c | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c6441
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c6442
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c6447
     PUSH 0x32                           ; 005c644a
     PUSH 0x653f54                       ; 005c644c | = "Bip01 L Forearm"
     PUSH EBX                            ; 005c6451
     CALL core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 ; 005c6452
-        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)
+        ;   XREF to: 0043e0d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr, char * bone_name, int vertex_index)
     ADD ESP,0xc                         ; 005c6457
     ADD ESI,0x158                       ; 005c645a
         ;   Label: LAB_005c645a
@@ -286,76 +286,76 @@ section .text
     PUSH 0x32                           ; 005c64ad
         ;   Label: LAB_005c64ad
     PUSH EBX                            ; 005c64af
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64b0
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64b0
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64b5
     PUSH 0x33                           ; 005c64b8
     PUSH EBX                            ; 005c64ba
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64bb
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64bb
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64c0
     PUSH 0x34                           ; 005c64c3
     PUSH EBX                            ; 005c64c5
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64c6
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64c6
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64cb
     PUSH 0x35                           ; 005c64ce
     PUSH EBX                            ; 005c64d0
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64d1
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64d1
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64d6
     PUSH 0x36                           ; 005c64d9
     PUSH EBX                            ; 005c64db
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64dc
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64dc
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64e1
     PUSH 0x37                           ; 005c64e4
     PUSH EBX                            ; 005c64e6
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64e7
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64e7
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64ec
     PUSH 0x20                           ; 005c64ef
     PUSH EBX                            ; 005c64f1
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64f2
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64f2
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c64f7
     PUSH 0x21                           ; 005c64fa
     PUSH EBX                            ; 005c64fc
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c64fd
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c64fd
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c6502
     PUSH 0x22                           ; 005c6505
     PUSH EBX                            ; 005c6507
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c6508
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c6508
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c650d
     PUSH 0x23                           ; 005c6510
     PUSH EBX                            ; 005c6512
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c6513
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c6513
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c6518
     PUSH 0x24                           ; 005c651b
     PUSH EBX                            ; 005c651d
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c651e
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c651e
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c6523
     PUSH 0x25                           ; 005c6526
     PUSH EBX                            ; 005c6528
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c6529
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c6529
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c652e
     JMP 0x005c6432                      ; 005c6531
         ;   XREF to: 005c6432 (UNCONDITIONAL_JUMP)  ; LAB_005c6432
     PUSH 0x2f                           ; 005c6536
         ;   Label: LAB_005c6536
     PUSH EBX                            ; 005c6538
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c6539
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c6539
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c653e
     PUSH 0x32                           ; 005c6541
     PUSH EBX                            ; 005c6543
-    CALL core_cloth.cpp_FUN_0043e170    ; 005c6544
-        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043e170()
+    CALL core_cloth.cpp_CCloth_resetState_FUN_0043e170 ; 005c6544
+        ;   XREF to: 0043e170 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_resetState_FUN_0043e170(CCloth * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 005c6549
     JMP 0x005c645a                      ; 005c654c
         ;   XREF to: 005c645a (UNCONDITIONAL_JUMP)  ; LAB_005c645a

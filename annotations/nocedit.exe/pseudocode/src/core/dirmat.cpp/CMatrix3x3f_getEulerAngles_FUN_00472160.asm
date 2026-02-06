@@ -29,7 +29,7 @@
 ; XREF[13]:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041e8af
 ;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426f84
-;   core_cloth.cpp_FUN_0043b7e0 at 0043b806
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b806
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 at 004736f1
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 at 00475b03
 ;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 at 0047524e

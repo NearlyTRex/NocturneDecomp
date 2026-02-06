@@ -9,28 +9,19 @@
 CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00418220(CBeast *this_ptr)
 
 {
-  CEnemy *pCVar1;
+  float fVar1;
   float fVar2;
-  float fVar3;
-  CBeast *pCVar4;
+  CBeast *pCVar3;
   
-  pCVar4 = (CBeast *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CBeastVTable;
+  pCVar3 = (CBeast *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CBeastVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar4->base).base.model,"beast.dfm");
-  fVar3 = 100.0f;
+            (&(pCVar3->base).base.model,"beast.dfm");
   fVar2 = 100.0f;
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x344] = '\0';
-  (pCVar1->base).cloth_data[0x345] = '\0';
-  (pCVar1->base).cloth_data[0x346] = ' ';
-  (pCVar1->base).cloth_data[0x347] = 'A';
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x348] = '\0';
-  (pCVar1->base).cloth_data[0x349] = '\0';
-  (pCVar1->base).cloth_data[0x34a] = ' ';
-  (pCVar1->base).cloth_data[0x34b] = 'A';
-  *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
-  *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
-  return pCVar4;
+  fVar1 = 100.0f;
+  (pCVar3->base).base.field54_0x2ddc = 10.0;
+  (pCVar3->base).base.collision_cylinder_radius = 10.0;
+  (pCVar3->base).base.field56_0x2de4 = fVar1;
+  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  return pCVar3;
 }

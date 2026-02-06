@@ -1,32 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 27,
-        "line": 45,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 33,
-        "line": 46,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 19,
-        "line": 47,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 33,
-        "line": 48,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -37,60 +12,33 @@
       {
         "category": "other",
         "column": 25,
-        "line": 23,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 25,
+        "line": 24,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 28,
+        "line": 27,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 45,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 46,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 152,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 52,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param"
-    ],
-    "total_lines": 161
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -110,13 +58,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CClothList_remove_FUN_0043c170",
-    "signature": "void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr)"
+    "signature": "void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr,int index)"
   },
   "function_calls": [
     {
       "addr": "00438c00",
       "is_variadic": false,
-      "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00"
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_00438c00"
     },
     {
       "addr": "00506f10",
@@ -203,10 +151,10 @@
     "pcode_op_count": 492
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -215,72 +163,15 @@
         "offset": 4,
         "size": 4,
         "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (this_ptr->unk <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 < 0) || (this_ptr->unk <= in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "if (this_ptr[in_stack_00000008 + 0x65].unk != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "iVar5 = in_stack_00000008 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)&pCVar6->unk + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(CClothList *)((int)",
-      "text": "pCVar6 = (CClothList *)((int)&pCVar6->unk + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pCVar7->unk + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(CClothList *)((int)",
-      "text": "pCVar7 = (CClothList *)((int)&pCVar7->unk + 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 8,
-        "line": 163,
+        "line": 161,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 195,
+        "line": 193,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 214,
+        "line": 212,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 214,
+        "line": 212,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 302,
+        "line": 300,
         "message": "'f2xm1' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 303,
+        "line": 301,
         "message": "'fscale' was not declared in this scope; did you mean 'scalb'?"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 310,
+        "line": 308,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "undeclared_identifier",
-        "column": 33,
-        "line": 321,
+        "column": 32,
+        "line": 319,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
-        "column": 40,
-        "line": 321,
+        "column": 39,
+        "line": 319,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -63,6 +63,12 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 99,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -78,15 +84,21 @@
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 102,
+        "column": 44,
+        "line": 145,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 171,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 146,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 24,
+        "line": 172,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -96,27 +108,27 @@
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 174,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 175,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 214,
+        "line": 212,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 218,
+        "line": 216,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 222,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 223,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -126,37 +138,25 @@
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 225,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 226,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 30,
-        "line": 284,
+        "line": 282,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 321,
+        "column": 42,
+        "line": 319,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 602,
+    "complexity_score": 594,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
-    "pseudocode_lines": 347,
+    "pseudocode_lines": 339,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -165,7 +165,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 984
+    "total_lines": 976
   },
   "cross_references": [],
   "function": {
@@ -899,156 +899,156 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 24,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
+      "line": 25,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 27,
       "match": "extraout_ST3",
       "text": "unkbyte10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 28,
+      "line": 27,
       "match": "unkbyte10",
       "text": "unkbyte10 extraout_ST3;",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 104,
       "match": "fsin",
       "text": "fsin((float10)-0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 105,
       "match": "fptan",
       "text": "fptan((float10)0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 109,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 111,
+      "line": 110,
       "match": "extraout_ST3",
-      "text": "fVar13 = (float10)fcos(extraout_ST3);",
+      "text": "fVar12 = (float10)fcos(extraout_ST3);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 110,
       "match": "fcos",
-      "text": "fVar13 = (float10)fcos(extraout_ST3);",
+      "text": "fVar12 = (float10)fcos(extraout_ST3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 111,
+      "match": "fsin",
+      "text": "fVar13 = (float10)fsin(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 112,
-      "match": "fsin",
-      "text": "fVar14 = (float10)fsin(fVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
       "match": "fcos",
-      "text": "fVar15 = (float10)fcos(fVar15);",
+      "text": "fVar14 = (float10)fcos(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 117,
+      "line": 116,
       "match": "extraout_ST1",
       "text": "(extraout_ST1 * (float10)fVar3 - (float10)local_e8);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 118,
+      "line": 117,
       "match": "extraout_ST2",
       "text": "local_ac = (float)-extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 122,
       "match": "SQRT",
       "text": "local_1c = SQRT(local_24 / local_20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 160,
+      "line": 158,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
+      "line": 173,
       "match": "ABS",
       "text": "if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < local_2c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 192,
+      "line": 190,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 207,
+      "line": 205,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 235,
+      "line": 233,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 314,
+      "line": 312,
       "match": "code *",
-      "text": "(pCVar10 = (CLarva *)(**(code **)(*(int *)(iVar8 + 0x154) + 0x108))(), pCVar10 == this_ptr))",
+      "text": "(pCVar9 = (CLarva *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(), pCVar9 == this_ptr)) {",
       "type": "unresolved_funcptr"
     }
   ],

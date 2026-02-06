@@ -7,8 +7,8 @@
 ; CCloth *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 at 0043dd71
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0 at 00438f4a
-;   core_cloth.cpp_FUN_0043dcc0 at 0043dd71
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_00618162
@@ -18,7 +18,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0
+;   core_cloth.cpp_CCloth_free_FUN_00438cb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 ;
@@ -30,8 +30,8 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
     MOV EBX,dword ptr [ESP + 0x8]       ; 00438c51
     PUSH EBX                            ; 00438c55
-    CALL core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0 ; 00438c56
-        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0()
+    CALL core_cloth.cpp_CCloth_free_FUN_00438cb0 ; 00438c56
+        ;   XREF to: 00438cb0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_free_FUN_00438cb0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00438c5b
     PUSH 0x76                           ; 00438c5e
     MOV EAX,dword ptr [EBX + 0x104]     ; 00438c60

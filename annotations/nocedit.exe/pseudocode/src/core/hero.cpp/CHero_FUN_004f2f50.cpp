@@ -23,10 +23,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
   local_1c = &(this_ptr->base).base.location;
   iVar3 = 0;
   local_18 = 1e+30;
-  this_ptr->unk4[0xc] = '\0';
-  this_ptr->unk4[0xd] = '\0';
-  this_ptr->unk4[0xe] = '\0';
-  this_ptr->unk4[0xf] = '\0';
+  this_ptr->lever_to_pull = (CDemonActor *)0x0;
   for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
     this_ptr_00 = (CLever *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
@@ -45,7 +42,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
             local_14 = SQRT((local_3c.z + -2.0f) * (local_3c.z + -2.0f) +
                             (local_3c.x + -0.5f) * (local_3c.x + -0.5f));
             if (local_14 <= local_18) {
-              *(CLever **)(this_ptr->unk4 + 0xc) = this_ptr_00;
+              this_ptr->lever_to_pull = (CDemonActor *)this_ptr_00;
               local_18 = local_14;
             }
           }
@@ -54,8 +51,8 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
     }
     iVar3 = iVar3 + 4;
   }
-  if (*(int *)(this_ptr->unk4 + 0xc) != 0) {
-    iVar3 = core_event_cpp_FUN_004b18e0((int *)(*(int *)(this_ptr->unk4 + 0xc) + 0x420));
+  if (this_ptr->lever_to_pull != (CDemonActor *)0x0) {
+    iVar3 = core_event_cpp_FUN_004b18e0((int *)(this_ptr->lever_to_pull[3].actor_name + 0x18));
     if (iVar3 == 0) {
       (this_ptr->action_bindings).fire_key = 0;
       return 1;

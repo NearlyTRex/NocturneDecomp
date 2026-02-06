@@ -13,7 +13,7 @@
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd2b
-;   core_gabriela.cpp_FUN_004d4d80 at 004d5250
+;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d5250
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 00526a4b
 ;   core_scat.cpp_CScat_FUN_005584a0 at 00558562
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 at 0059fe94

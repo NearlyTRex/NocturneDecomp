@@ -57,8 +57,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_0041bd90(CBoneGuy *this_ptr)
     g_CurrentLineNumber = 0x12f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
   }
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = DAT_00822948;
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = DAT_0082294c;
+  (this_ptr->base).base.carry_hands[0].bone_index = DAT_00822948;
+  (this_ptr->base).base.carry_hands[1].bone_index = DAT_0082294c;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->sfx_handle = 0;
   return;

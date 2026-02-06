@@ -29,7 +29,7 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
   CVector3f local_1c;
   
   bVar5 = 0;
-  if ((*(int *)(this_ptr->base).base.unk3 != 0) && (this_ptr->is_miner_zombie != 0)) {
+  if (((this_ptr->base).base.field43_0x2620 != 0) && (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
               (&(this_ptr->base).base.model,*(int *)(this_ptr->unk4 + 4),&local_c4);
     local_70.y = 0.5;
@@ -63,9 +63,9 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_64);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(&local_88,(CVector3i *)&local_7c,56.0,6.0);
   }
-  if (*(int *)(this_ptr->base).base.unk3 == 0) {
-    return *(int *)(this_ptr->base).base.unk3;
+  if ((this_ptr->base).base.field43_0x2620 == 0) {
+    return (this_ptr->base).base.field43_0x2620;
   }
   core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
-  return *(int *)(this_ptr->base).base.unk3;
+  return (this_ptr->base).base.field43_0x2620;
 }

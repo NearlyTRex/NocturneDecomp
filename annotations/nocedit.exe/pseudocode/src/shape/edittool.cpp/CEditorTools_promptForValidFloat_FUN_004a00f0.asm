@@ -22,7 +22,7 @@
 ; XREF[15]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040efc4
 ;   core_boxactor.cpp_CLightActor_propertyActionFOVCallback_FUN_00423440 at 004234ac
-;   core_cloth.cpp_FUN_0043ddf0 at 0043dffc
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043dffc
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044346c
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dcfa
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de364

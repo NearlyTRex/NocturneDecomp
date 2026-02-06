@@ -39,7 +39,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_crate.cpp_FUN_00448a70
+;   core_crate.cpp_CCrate_FUN_00448a70
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
@@ -814,8 +814,8 @@ section .text
         ;   XREF to: 0040a876 (UNCONDITIONAL_JUMP)  ; LAB_0040a876
     PUSH EDX                            ; 0040aba9
         ;   Label: LAB_0040aba9
-    CALL core_crate.cpp_FUN_00448a70    ; 0040abaa
-        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_FUN_00448a70()
+    CALL core_crate.cpp_CCrate_FUN_00448a70 ; 0040abaa
+        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_FUN_00448a70(CCrate * this_ptr)
     ADD ESP,0x4                         ; 0040abaf
     JMP 0x0040a876                      ; 0040abb2
         ;   XREF to: 0040a876 (UNCONDITIONAL_JUMP)  ; LAB_0040a876

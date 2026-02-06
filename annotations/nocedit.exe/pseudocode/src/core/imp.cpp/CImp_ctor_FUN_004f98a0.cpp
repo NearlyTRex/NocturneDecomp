@@ -9,33 +9,20 @@
 CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr)
 
 {
-  CEnemy *pCVar1;
+  float fVar1;
   float fVar2;
-  float fVar3;
-  CImp *pCVar4;
+  CImp *pCVar3;
   
-  pCVar4 = (CImp *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CImpVTable;
+  pCVar3 = (CImp *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CImpVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar4->base).base.model,"imp.dfm");
-  fVar2 = 50.0f;
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x344] = -0x66;
-  fVar3 = 100.0f;
-  (pCVar1->base).cloth_data[0x345] = -0x67;
-  (pCVar1->base).cloth_data[0x346] = '\x19';
-  (pCVar1->base).cloth_data[0x347] = '?';
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x348] = '\0';
-  (pCVar1->base).cloth_data[0x349] = '\0';
-  (pCVar1->base).cloth_data[0x34a] = '\0';
-  (pCVar1->base).cloth_data[0x34b] = '?';
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).unk3[4] = '\0';
-  (pCVar1->base).unk3[5] = '\0';
-  (pCVar1->base).unk3[6] = '\0';
-  (pCVar1->base).unk3[7] = '\0';
-  *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
-  *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
-  return pCVar4;
+            (&(pCVar3->base).base.model,"imp.dfm");
+  fVar1 = 50.0f;
+  (pCVar3->base).base.field54_0x2ddc = 0.6;
+  fVar2 = 100.0f;
+  (pCVar3->base).base.collision_cylinder_radius = 0.5;
+  (pCVar3->base).base.field44_0x2624 = 0;
+  (pCVar3->base).base.field56_0x2de4 = fVar1;
+  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  return pCVar3;
 }

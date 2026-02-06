@@ -9,7 +9,6 @@
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr)
 
 {
-  CHero *pCVar1;
   CDeformableModelInstance *this_ptr_00;
   
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -23,16 +22,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr)
   this_ptr->unk1[0x56] = '\0';
   this_ptr->unk1[0x57] = '\0';
   this_ptr->action_pending = 0;
-  pCVar1 = &this_ptr->base;
-  (pCVar1->base).unk3[0x46c] = '\0';
-  (pCVar1->base).unk3[0x46d] = '\0';
-  (pCVar1->base).unk3[0x46e] = '\0';
-  (pCVar1->base).unk3[0x46f] = '\0';
-  pCVar1 = &this_ptr->base;
-  (pCVar1->base).unk3[0x470] = '\0';
-  (pCVar1->base).unk3[0x471] = '\0';
-  (pCVar1->base).unk3[0x472] = '\0';
-  (pCVar1->base).unk3[0x473] = '\0';
+  (this_ptr->base).base.field47_0x2a8c = 0;
+  (this_ptr->base).base.field48_0x2a90 = 0;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             (&this_ptr_00->motion_controller,"stand",0.0);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

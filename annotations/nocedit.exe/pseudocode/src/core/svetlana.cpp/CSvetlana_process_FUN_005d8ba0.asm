@@ -51,7 +51,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_00429870
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_FUN_0042ea40
-;   core_cloth.cpp_FUN_0043ab80
+;   core_cloth.cpp_CCloth_process_FUN_0043ab80
 ;   core_hero.cpp_CHero_FUN_004f2af0
 ;   core_hero.cpp_CHero_FUN_004f2c40
 ;   core_hero.cpp_CHero_FUN_004f2d70
@@ -355,8 +355,8 @@ section .text
     MOV dword ptr [ESP + 0x98],EAX      ; 005d8ec4
     LEA EAX,[EBX + 0x1fbdc]             ; 005d8ecb
     PUSH EAX                            ; 005d8ed1
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005d8ed2
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005d8ed2
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005d8ed7
     PUSH ESI                            ; 005d8eda
     PUSH dword ptr [EBX + 0x2414]       ; 005d8edb
@@ -366,8 +366,8 @@ section .text
     PUSH EDX                            ; 005d8eec
     ADD EBX,0x5fa4c                     ; 005d8eed
     PUSH EBX                            ; 005d8ef3
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005d8ef4
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005d8ef4
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005d8ef9
     MOV ESP,EBP                         ; 005d8efc
     POP EBP                             ; 005d8efe

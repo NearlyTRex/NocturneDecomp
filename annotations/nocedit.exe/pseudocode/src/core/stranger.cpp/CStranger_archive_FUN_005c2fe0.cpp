@@ -12,13 +12,13 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_pt
   core_hero_cpp_CHero_archive_FUN_004f2610(&this_ptr->base);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk4 + 4),"objectToPickUp");
+              ((CDemonActor *)&(this_ptr->base).object_to_pick_up,"objectToPickUp");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->base).unk4,"doorToOpen");
+              ((CDemonActor *)&(this_ptr->base).door_to_open,"doorToOpen");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk4 + 0xc),"leverToPull");
+              ((CDemonActor *)&(this_ptr->base).lever_to_pull,"leverToPull");
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)((this_ptr->base).unk4 + 0x10),"ladderToClimb");
+              ((CDemonActor *)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CStrangerClassVersion == 2) {
     core_actor_cpp_archiveActor_FUN_0040b870
@@ -46,8 +46,8 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_pt
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b7f0
-            ((int *)((this_ptr->base).base.unk3 + 0x46c),"layerActionIndex");
+            (&(this_ptr->base).base.field47_0x2a8c,"layerActionIndex");
   core_actor_cpp_archiveFloat_FUN_0040b770
-            ((float *)((this_ptr->base).base.unk3 + 0x470),"layerActionT");
+            ((float *)&(this_ptr->base).base.field48_0x2a90,"layerActionT");
   return;
 }

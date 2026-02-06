@@ -22,7 +22,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421f3d
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 0042525c
 ;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a4e7
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cac5
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cac5
 ;   ... and 52 more
 ;
 ; Referenced Globals:

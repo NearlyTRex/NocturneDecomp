@@ -16,43 +16,43 @@
       {
         "category": "other",
         "column": 18,
-        "line": 108,
+        "line": 103,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 22,
+        "line": 127,
+        "message": "invalid cast from type 'CPathMap*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 13,
         "line": 132,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 137,
-        "message": "invalid cast from type 'CPathMap*' to type 'float'"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 174,
+        "line": 168,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 193,
+        "line": 187,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 198,
+        "line": 192,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 219,
+        "line": 209,
         "message": "invalid cast from type 'CPathMap*' to type 'float'"
       }
     ],
@@ -68,11 +68,11 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 376,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 256,
+    "pseudocode_lines": 242,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -80,7 +80,7 @@
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 803
+    "total_lines": 789
   },
   "cross_references": [
     {
@@ -380,35 +380,35 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 116,
+      "line": 111,
       "match": "extraout_EAX",
       "text": "pCStack_20 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 250,
+      "line": 236,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 237,
       "match": "in_stack_00000008",
       "text": "fStack_98 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 253,
+      "line": 239,
       "match": "in_stack_00000008",
       "text": "if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 240,
       "match": "in_stack_00000008",
       "text": "fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

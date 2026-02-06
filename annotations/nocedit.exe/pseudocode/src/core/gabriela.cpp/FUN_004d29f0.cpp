@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_hero_gabriella.cpp_FUN_004d29f0(byte param_1, byte
-   param_2, uint param_3, uint param_4) */
-
 float __cdecl core_gabriela_cpp_FUN_004d29f0(void)
 
 {

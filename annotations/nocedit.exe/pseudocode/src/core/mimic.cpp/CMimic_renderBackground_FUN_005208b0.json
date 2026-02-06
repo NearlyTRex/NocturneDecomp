@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 73,
-        "line": 24,
+        "line": 21,
         "message": "'stack0xffffffe4' was not declared in this scope"
       }
     ],
@@ -20,16 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 39,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 77
+    "total_lines": 74
   },
   "cross_references": [],
   "function": {
@@ -63,7 +63,7 @@
     {
       "addr": "0043bae0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043bae0"
+      "name": "core_cloth.cpp_CCloth_render_FUN_0043bae0"
     },
     {
       "addr": "005a0150",
@@ -129,7 +129,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 14,
       "match": "&stack0xffffffe4",
       "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);",
       "type": "stack_ref"

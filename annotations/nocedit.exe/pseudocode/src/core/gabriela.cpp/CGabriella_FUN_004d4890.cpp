@@ -18,14 +18,15 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
   CVector3f *pCVar4;
   double dVar5;
   float in_stack_00000008;
-  float in_stack_ffffff44;
+  char *in_stack_ffffff58;
   ulonglong local_a0;
   float fStack_94;
   CVector3f local_84 [2];
   CGabriella *local_6c;
-  byte local_68 [12];
-  byte auStack_5c [28];
-  CVector3f local_40;
+  CGabriella *local_68;
+  CVector3f local_64;
+  byte local_58 [16];
+  byte auStack_48 [20];
   CVector3f local_34;
   CVector3f local_28;
   CCharacter *local_1c;
@@ -43,15 +44,15 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
         bone_index = INT_02d7b868;
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                (this_ptr_00,(CVector3f *)(auStack_5c + 4),bone_index);
-      iVar2 = *(int *)((this_ptr->base).unk4 + 0x10);
-      if (iVar2 == 0) {
-        if (*(int *)((this_ptr->base).base.unk1 + 4) != 0) {
+                (this_ptr_00,(CVector3f *)local_58,bone_index);
+      pCVar3 = (this_ptr->base).ladder_to_climb;
+      if (pCVar3 == (CDemonActor *)0x0) {
+        if ((this_ptr->base).base.field3_0x2410 != 0) {
           local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                (&this_ptr_00->motion_controller,2);
           if ((float)0.40000000000000002 < local_18) {
             (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                      ((CDemonActor *)this_ptr,(CVector3f *)(auStack_5c + 4),1.7);
+                      ((CDemonActor *)this_ptr,(CVector3f *)local_58,1.7);
           }
           else {
             local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -61,38 +62,35 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
                                    (&this_ptr_00->motion_controller,3);
               if ((float)0.40000000000000002 < local_18) {
                 (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                          ((CDemonActor *)this_ptr,(CVector3f *)(auStack_5c + 4),1.0);
+                          ((CDemonActor *)this_ptr,(CVector3f *)local_58,1.0);
               }
             }
             else {
               (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                        ((CDemonActor *)this_ptr,(CVector3f *)(auStack_5c + 4),1.0);
+                        ((CDemonActor *)this_ptr,(CVector3f *)local_58,1.0);
             }
           }
         }
       }
       else {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
-        iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x3c))();
+        iVar2 = (*((pCVar3->vtable)._ub)->getGroundType)(pCVar3);
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           ((CDemonActor *)this_ptr,(CVector3f *)auStack_5c,(CVector3f *)local_68);
-        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar4,iVar2,in_stack_ffffff44);
+                           ((CDemonActor *)this_ptr,(CVector3f *)auStack_48,
+                            (CVector3f *)(local_58 + 4));
+        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar4,iVar2,(float)in_stack_ffffff58);
       }
       break;
     case 2:
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)((this_ptr->base).unk4 + 4),
-                          g_CLightActorClassInfo.name_hash);
+                         ((this_ptr->base).object_to_pick_up,g_CLightActorClassInfo.name_hash);
       if (pCVar3 != (CDemonActor *)0x0) {
         if (pCVar3[4].scale.y != 1) {
-          this_ptr->unk[0x14] = -0x6e;
-          this_ptr->unk[0x15] = '\n';
-          this_ptr->unk[0x16] = '\x06';
-          this_ptr->unk[0x17] = -0x41;
+          this_ptr->flashlight_angle = -0.5235988;
           core_hero_cpp_CHero_FUN_004f3890(&this_ptr->base);
           break;
         }
-        builtin_strncpy(this_ptr->unk + 0x14,"|\u0660>",4);
+        this_ptr->flashlight_angle = 0.31415927;
       }
     case 0x14:
       core_hero_cpp_CHero_FUN_004f3890(&this_ptr->base);
@@ -112,28 +110,28 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       local_1c = this_ptr_01;
       if (this_ptr_01 != (CCharacter *)0x0) {
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (this_ptr_00,&local_40,INT_02d7b878);
+                           (this_ptr_00,(CVector3f *)(auStack_48 + 8),INT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)this_ptr,(CVector3f *)(local_68 + 4),pCVar4);
+                  ((CDemonActor *)this_ptr,&local_64,pCVar4);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a0);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
         local_a0._4_4_ = local_18;
         pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                           ((CDemonActor *)this_ptr_01,&local_34,(CVector3f *)(local_68 + 4));
+                           ((CDemonActor *)this_ptr_01,&local_34,&local_64);
         if (local_84 != pCVar4) {
           local_84[0].x = pCVar4->x;
           local_84[0].y = pCVar4->y;
           local_84[0].z = pCVar4->z;
         }
         local_6c = this_ptr;
-        local_68._0_4_ = this_ptr;
+        local_68 = this_ptr;
         (*(((local_1c->base).vtable._uc)->_uc).processDamage)(local_1c,(SDamageInfo *)&local_a0);
         local_a0 = (double)fStack_94;
         if (0.0 < local_a0) {
           dVar5 = round(local_a0 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar5);
-          in_stack_ffffff44 = 7.098521e-39;
           core_gore_cpp_FUN_004edbb0();
+          in_stack_ffffff58 = "kick1.wav";
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");
           (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;

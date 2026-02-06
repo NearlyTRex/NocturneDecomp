@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[31]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043ca97
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d6d1
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca97
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d6d1
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cc6c
 ;   core_game.cpp_CGame_FUN_004e0aa0 at 004e0b78
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d8378

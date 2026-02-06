@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 33,
+        "line": 30,
         "message": "'register0x00000010' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 80,
+        "line": 74,
         "message": "request for member '_0_4_' in 'dStack_30', which is of non-class type 'double'"
       }
     ],
@@ -26,11 +26,11 @@
   },
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 135,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 69,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
@@ -38,7 +38,7 @@
       "unknown_field",
       "unresolved_register"
     ],
-    "total_lines": 270
+    "total_lines": 264
   },
   "cross_references": [],
   "function": {
@@ -237,28 +237,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 23,
       "match": "(CBoundingBox3D *)((int)",
       "text": "(CBoundingBox3D *)((int)register0x00000010 + -0x2c));",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved register reference",
-      "line": 26,
+      "line": 23,
       "match": "register0x00000010",
       "text": "(CBoundingBox3D *)((int)register0x00000010 + -0x2c));",
       "type": "unresolved_register"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 59,
       "match": "DAT_02f43978",
       "text": "if ((DAT_02f43978 != 0) &&",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 67,
       "match": "._0_4_",
       "text": "dStack_30._0_4_ = this_ptr;",
       "type": "unknown_field"

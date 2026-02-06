@@ -17,8 +17,10 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,"gabriela.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
-  core_cloth_cpp_CCloth_load_FUN_00438cf0((CCloth *)(this_ptr->unk + 0x40),"gabcoat.cth");
-  core_cloth_cpp_FUN_00439710();
+  core_cloth_cpp_CCloth_load_FUN_00438cf0(&this_ptr->coat,"gabcoat.cth");
+  core_cloth_cpp_CCloth_setup_FUN_00439710
+            (&this_ptr->coat,&(this_ptr->base).base.base.location.position,
+             (CVector3f *)&(this_ptr->base).base.base.orient,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_02d7b848 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 head");
@@ -63,18 +65,9 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   INT_02d7b880 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
-  (this_ptr->base).unk4[8] = '\0';
-  (this_ptr->base).unk4[9] = '\0';
-  (this_ptr->base).unk4[10] = '\0';
-  (this_ptr->base).unk4[0xb] = '\0';
-  (this_ptr->base).unk4[0xc] = '\0';
-  (this_ptr->base).unk4[0xd] = '\0';
-  (this_ptr->base).unk4[0xe] = '\0';
-  (this_ptr->base).unk4[0xf] = '\0';
-  (this_ptr->base).unk4[0x10] = '\0';
-  (this_ptr->base).unk4[0x11] = '\0';
-  (this_ptr->base).unk4[0x12] = '\0';
-  (this_ptr->base).unk4[0x13] = '\0';
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_02d7b888;
+  (this_ptr->base).pushed_object = (CDemonActor *)0x0;
+  (this_ptr->base).lever_to_pull = (CDemonActor *)0x0;
+  (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
+  (this_ptr->base).base.carry_hands[0].bone_index = INT_02d7b888;
   return;
 }

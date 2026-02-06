@@ -71,6 +71,7 @@
 #include "types/structs/SKFMBinaryHeader.h"
 #include "types/structs/SKFMBinaryTexture.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SLayerAction.h"
 #include "types/structs/SLineStrip.h"
 #include "types/structs/SLod.h"
 #include "types/structs/SLodSamplePoint.h"

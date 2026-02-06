@@ -22,8 +22,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[7]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043ca73
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d6f6
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca73
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d6f6
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c041
 ;   core_morph.cpp_FUN_0052ca90 at 0052cb13
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00596bb2

@@ -9,32 +9,23 @@
 CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr)
 
 {
-  CEnemy *pCVar1;
+  float fVar1;
   float fVar2;
-  float fVar3;
-  CBride *pCVar4;
+  CBride *pCVar3;
   
-  pCVar4 = (CBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CBrideVTable;
+  pCVar3 = (CBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CBrideVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar4->base).base.model,"bride.dfm");
-  fVar2 = 50.0f;
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x344] = '\0';
-  fVar3 = 100.0f;
-  (pCVar1->base).cloth_data[0x345] = '\0';
-  (pCVar1->base).cloth_data[0x346] = '@';
-  (pCVar1->base).cloth_data[0x347] = '?';
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x348] = '\0';
-  (pCVar1->base).cloth_data[0x349] = '\0';
-  (pCVar1->base).cloth_data[0x34a] = -0x40;
-  (pCVar1->base).cloth_data[0x34b] = '?';
-  pCVar4->unk[0x2c] = '\0';
-  pCVar4->unk[0x2d] = '\0';
-  pCVar4->unk[0x2e] = '\0';
-  pCVar4->unk[0x2f] = '\0';
-  *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
-  *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
-  return pCVar4;
+            (&(pCVar3->base).base.model,"bride.dfm");
+  fVar1 = 50.0f;
+  (pCVar3->base).base.field54_0x2ddc = 0.75;
+  fVar2 = 100.0f;
+  (pCVar3->base).base.collision_cylinder_radius = 1.5;
+  pCVar3->unk[0x2c] = '\0';
+  pCVar3->unk[0x2d] = '\0';
+  pCVar3->unk[0x2e] = '\0';
+  pCVar3->unk[0x2f] = '\0';
+  (pCVar3->base).base.field56_0x2de4 = fVar1;
+  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  return pCVar3;
 }

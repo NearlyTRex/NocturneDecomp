@@ -11,10 +11,11 @@ int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBos
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
+  CCloth *this_ptr_01;
   CBoundingBox3D local_2c;
   int iStack_c;
   
-  if (*(int *)(this_ptr->base).base.unk1 != 0) {
+  if ((this_ptr->base).base.field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
@@ -22,14 +23,16 @@ int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBos
                           ((CDemonActor *)this_ptr,&local_2c);
   iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iStack_c == 0) goto LAB_005e6e6c;
+  this_ptr_01 = (CCloth *)(this_ptr->unk2 + 0x7fce0);
   if (this_ptr->form == 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
               (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-    core_cloth_cpp_FUN_0043bae0();
+    core_cloth_cpp_CCloth_render_FUN_0043bae0((CCloth *)(this_ptr->unk2 + 0x3fe70),0);
 LAB_005e6e2e:
-    core_cloth_cpp_FUN_0043bae0();
+    core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr_01,0);
   }
   else {
+    this_ptr_01 = (CCloth *)this_ptr->unk2;
     if (this_ptr->form == 2) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&this_ptr->model,-1,0xffffffff,1,0);

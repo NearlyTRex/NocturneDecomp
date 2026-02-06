@@ -4,25 +4,31 @@
       {
         "category": "other",
         "column": 8,
-        "line": 52,
+        "line": 46,
         "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 53,
+        "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 72,
+        "line": 66,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 72,
+        "line": 66,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 106,
+        "line": 87,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -37,18 +43,42 @@
       {
         "category": "other",
         "column": 45,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 35,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 36,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
         "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 45,
+        "column": 24,
         "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 45,
+        "column": 39,
         "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -60,61 +90,50 @@
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 49,
+        "column": 7,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 64,
+        "line": 58,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 72,
+        "column": 52,
+        "line": 65,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 90,
+        "column": 17,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 147,
+    "complexity_score": 213,
     "cross_reference_count": 31,
     "function_call_count": 9,
     "global_count": 6,
-    "pseudocode_lines": 107,
-    "suspect_count": 3,
+    "pseudocode_lines": 88,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 378
+    "total_lines": 359
   },
   "cross_references": [
     {
@@ -475,14 +494,70 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
-      "text": "(fVar6 = *(float *)(this_ptr->unk2 + 0xc) - in_stack_00000008,",
+      "text": "(fVar6 = this_ptr->field21_0x25ac - in_stack_00000008, this_ptr->field21_0x25ac = fVar6,",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(float *)((int)",
+      "text": "(this_ptr->base).location.position.x = *(float *)((int)fVar6 + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(float *)((int)",
+      "text": "(this_ptr->base).location.position.y = *(float *)((int)fVar6 + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(float *)((int)",
+      "text": "(this_ptr->base).location.position.z = *(float *)((int)fVar6 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)",
+      "text": "(this_ptr->base).location.area_id = *(int *)((int)fVar6 + 0x2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(COrientation *)((int)",
+      "text": "if (pCVar1 != (COrientation *)((int)fVar6 + 0x30)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(float *)((int)",
+      "text": "pCVar1->pitch = *(float *)((int)fVar6 + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(float *)((int)",
+      "text": "(this_ptr->base).orient.bank = *(float *)((int)fVar6 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(float *)((int)",
+      "text": "(this_ptr->base).orient.heading = *(float *)((int)fVar6 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
+      "line": 59,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x14) + 0x154) + 0xbc))();",
+      "text": "(**(code **)(*(int *)(this_ptr->field23_0x25b4 + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     }
   ]

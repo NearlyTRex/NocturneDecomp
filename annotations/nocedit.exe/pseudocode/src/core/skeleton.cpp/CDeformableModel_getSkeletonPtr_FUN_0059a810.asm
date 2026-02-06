@@ -7,7 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[14]:
-;   core_cloth.cpp_FUN_00439710 at 00439a1f
+;   core_cloth.cpp_CCloth_setup_FUN_00439710 at 00439a1f
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005968f5
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e6a6
 ;   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 at 0058f136

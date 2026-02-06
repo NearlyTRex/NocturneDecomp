@@ -20,8 +20,8 @@
 ;
 ; XREF[7]:
 ;   core_bugs.cpp_FUN_00425340 at 0042546d
-;   core_cloth.cpp_FUN_0043b7e0 at 0043b982
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d7bf
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d7bf
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b982
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 005839c1
 ;   core_setedit.cpp_FUN_00582930 at 00582bec
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 at 0059b607

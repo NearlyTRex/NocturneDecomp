@@ -48,10 +48,7 @@ LAB_0042c50c:
       }
       if (uVar1 != 0x6a) goto LAB_0042c429;
     }
-    this_ptr->cloth_data[0x8d48] = '\0';
-    this_ptr->cloth_data[0x8d49] = '\0';
-    this_ptr->cloth_data[0x8d4a] = '\0';
-    this_ptr->cloth_data[0x8d4b] = '@';
+    this_ptr->stagger_amount = 2.0;
   }
 LAB_0042c429:
   if (damage_info->ammo_type == 5) {

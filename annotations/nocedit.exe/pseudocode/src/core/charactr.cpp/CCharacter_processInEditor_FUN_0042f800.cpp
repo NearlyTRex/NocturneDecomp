@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacte
   CCharacter *pCVar3;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  if (*(float *)(this_ptr->unk1 + 8) == 9999.0f) {
+  if (this_ptr->closest_distance_threshold == 9999.0f) {
     iVar2 = 0;
     pCVar3 = this_ptr;
     do {
@@ -25,8 +25,8 @@ void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacte
       pCVar3 = (CCharacter *)&(pCVar3->base).orient_matrix.m[0].z;
     } while (iVar2 < 2);
     fVar1 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),(CVector3f *)0x0);
-    *(float *)(this_ptr->unk1 + 8) = fVar1;
+                      (&this_ptr->base,this_ptr->field54_0x2ddc,(CVector3f *)0x0);
+    this_ptr->closest_distance_threshold = fVar1;
   }
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);

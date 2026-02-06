@@ -9,7 +9,7 @@
 ;
 ; XREF[61]:
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f639
-;   core_cloth.cpp_FUN_0043c430 at 0043c523
+;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c523
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7a6
 ;   core_mission.cpp_FUN_00524c20 at 00524cb6
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c9f3

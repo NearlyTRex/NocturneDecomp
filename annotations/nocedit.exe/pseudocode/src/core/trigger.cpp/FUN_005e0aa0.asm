@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[5]:
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 0044926d
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 0044926d
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a62
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 005061f3
 ;   core_tommygun.cpp_FUN_005ddb30 at 005de27b

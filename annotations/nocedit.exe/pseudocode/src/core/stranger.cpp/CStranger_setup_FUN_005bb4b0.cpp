@@ -61,8 +61,8 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
                            (this_ptr_01,"Bip01 Spine");
   INT_03f6bb18 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Pelvis");
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_03f6bb00;
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = INT_03f6bb04;
+  (this_ptr->base).base.carry_hands[0].bone_index = INT_03f6bb00;
+  (this_ptr->base).base.carry_hands[1].bone_index = INT_03f6bb04;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   DAT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);

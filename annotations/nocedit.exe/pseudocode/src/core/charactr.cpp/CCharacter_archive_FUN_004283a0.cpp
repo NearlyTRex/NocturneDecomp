@@ -61,8 +61,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_
     core_actor_cpp_archiveActor_FUN_0040b870
               ((CDemonActor *)&this_ptr->grabbed_by,"grabbedBy");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->grabbed_type,"grabbedType");
-    core_actor_cpp_archiveClothList_FUN_0040be60
-              ((CClothList *)&this_ptr->cloth_count,"clothList");
+    core_actor_cpp_archiveClothList_FUN_0040be60(&this_ptr->cloth_list,"clothList");
   }
   if (4 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->size_scale,"sizeScale");

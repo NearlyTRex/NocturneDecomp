@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 672
-Signature accuracy rate: 63.9%
+Parameter mismatches detected: 660
+Signature accuracy rate: 64.5%
 
 Mismatches by confidence:
-  High confidence:   62 (multiple call sites agree)
-  Medium confidence: 90 (some agreement)
-  Low confidence:    520 (limited data)
+  High confidence:   60 (multiple call sites agree)
+  Medium confidence: 85 (some agreement)
+  Low confidence:    515 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -113,7 +113,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/box.cpp
     Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0 (CBoundingBox3D *this_ptr,int param1,int param2,int param3)
     Sample call sites:
-      core_curtain.cpp_FUN_0044b060 at 0044b22a: 0 reg [], 1 stack
+      core_curtain.cpp_CCurtain_FUN_ at 0044b22a: 0 reg [], 1 stack
       core_door.cpp_CDoor_renderOpaq at 00480852: 0 reg [], 1 stack
       core_platfrm.cpp_CPlatform_ren at 0054d7fa: 0 reg [], 1 stack
 
@@ -194,7 +194,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
     Sample call sites:
       core_stranger.cpp_CStranger_FU at 005c088e: 2 reg [EAX, EDX], 3 stack
-      core_gabriela.cpp_FUN_004d5550 at 004d5610: 2 reg [EAX, EDX], 3 stack
+      core_gabriela.cpp_CGabriella_F at 004d5610: 2 reg [EAX, EDX], 3 stack
       core_stranger.cpp_CStranger_FU at 005c0edc: 2 reg [EAX, EDX], 3 stack
 
   engine_colquant.c_FUN_00441110
@@ -287,26 +287,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dtrace.cpp_CDemonRaytrace at 0049598d: 0 reg [], 2 stack
       core_dtrace.cpp_CDemonRaytrace at 004958b2: 0 reg [], 2 stack
 
-  core_cloth.cpp_FUN_0043bf80
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 38, Confidence: high
-    File: core/cloth.cpp
-    Signature: int __cdecl core_cloth_cpp_FUN_0043bf80(void)
-    Sample call sites:
-      core_hiram.cpp_CHiram_dtor_FUN at 004f44c3: 0 reg [], 2 stack
-      core_beast.cpp_CBeast_dtor_FUN at 004184e9: 0 reg [], 2 stack
-      core_boneguy.cpp_CBoneGuy_dtor at 0041daa9: 0 reg [], 2 stack
-
-  core_cloth.cpp_FUN_0043e170
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 14, Confidence: high
-    File: core/cloth.cpp
-    Signature: void __cdecl core_cloth_cpp_FUN_0043e170(void)
-    Sample call sites:
-      core_stranger.cpp_CStranger_FU at 005c6544: 0 reg [], 2 stack
-      core_stranger.cpp_CStranger_FU at 005c64c6: 0 reg [], 2 stack
-      core_stranger.cpp_CStranger_FU at 005c64e7: 0 reg [], 2 stack
-
   core_dracbrid.cpp_FUN_00486e30
     Declared: 0 params, Estimated: 2 params (+2)
     Call sites: 3, Confidence: high
@@ -397,6 +377,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_bride.cpp_CBride_FUN_0042 at 00424725: 0 reg [], 2 stack
       core_batcreat.cpp_CBatCreature at 00415fee: 0 reg [], 2 stack
 
+  core_cloth.cpp_CClothList_dtor_FUN_0043bf80
+    Declared: 1 params, Estimated: 2 params (+1)
+    Call sites: 38, Confidence: high
+    File: core/cloth.cpp
+    Signature: CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr)
+    Sample call sites:
+      core_hiram.cpp_CHiram_dtor_FUN at 004f44c3: 0 reg [], 2 stack
+      core_beast.cpp_CBeast_dtor_FUN at 004184e9: 0 reg [], 2 stack
+      core_boneguy.cpp_CBoneGuy_dtor at 0041daa9: 0 reg [], 2 stack
+
   core_cloth.cpp_freeVectors_FUN_0043e460
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 6, Confidence: high
@@ -406,16 +396,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_fire.cpp_CCrater_dtor_FUN at 004c95aa: 0 reg [], 2 stack
       core_fire.cpp_CGlassParticle_d at 004c966a: 0 reg [], 2 stack
       shape_meshlod.cpp_CLodFace_dto at 0051efca: 0 reg [], 2 stack
-
-  core_crate.cpp_FUN_00448a70
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 4, Confidence: high
-    File: core/crate.cpp
-    Signature: void __cdecl core_crate_cpp_FUN_00448a70(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_pro at 0040abaa: 0 reg [], 1 stack
-      core_turret.cpp_CTurret_fire_F at 005e3c2a: 0 reg [], 1 stack
-      core_tommygun.cpp_FUN_005ddb30 at 005de2d7: 0 reg [], 1 stack
 
   core_curtain.cpp_freeVectors_FUN_0044baf0
     Declared: 1 params, Estimated: 2 params (+1)
@@ -676,11 +656,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU declared:4 est:6 (+2) [2 calls]
   core_actor.cpp_CDemonActor_getPropertyList_FUN_004 declared:2 est:4 (+2) [46 calls]
   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU declared:3 est:1 (-2) [2 calls]
-  core_cloth.cpp_FUN_0043a420                        declared:0 est:2 (+2) [2 calls]
-  core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_004 declared:0 est:2 (+2) [2 calls]
-  core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_0043 declared:0 est:2 (+2) [2 calls]
   core_course.cpp_CCourse_importMatrices_FUN_00442ea declared:1 est:3 (+2) [2 calls]
-  core_curtain.cpp_FUN_00449fc0                      declared:0 est:2 (+2) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_FUN_004c8ea0             declared:1 est:3 (+2) [2 calls]
   core_gore.cpp_FUN_004ed830                         declared:1 est:3 (+2) [4 calls]
@@ -701,14 +677,18 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:6 est:5 (-1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:4 (-1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
+  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma declared:7 est:6 (-1) [2 calls]
+  core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
+  core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
+  core_curtain.cpp_CCurtain_FUN_00449fc0             declared:1 est:2 (+1) [2 calls]
 
-  ... and 40 more
+  ... and 35 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  520 functions with low-confidence mismatches
+  515 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -728,7 +708,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 91
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 581
+Functions where declaration has FEWER params than estimated: 569
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -740,13 +720,13 @@ Distribution of differences (estimated - declared):
   -3 params: 9 functions
   -2 params: 15 functions
   -1 params: 58 functions
-  +1 params: 262 functions
-  +2 params: 127 functions
+  +1 params: 261 functions
+  +2 params: 118 functions
   +3 params: 68 functions
-  +4 params: 81 functions
+  +4 params: 80 functions
   +5 params: 11 functions
   +6 params: 17 functions
   +7 params: 7 functions
-  +8 params: 4 functions
+  +8 params: 3 functions
   +9 params: 3 functions
   +13 params: 1 functions

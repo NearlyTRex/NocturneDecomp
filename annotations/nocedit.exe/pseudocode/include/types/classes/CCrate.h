@@ -10,7 +10,7 @@
 typedef struct CCrate {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk1; // 0x2d4
+    struct CDemonActor* carrier; // 0x2d4
     int unk2; // 0x2d8
     struct CDemonActor* last_platform; // 0x2dc
     char unk3[28]; // 0x2e0

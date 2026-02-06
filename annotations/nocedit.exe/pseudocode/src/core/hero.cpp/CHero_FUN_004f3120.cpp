@@ -37,7 +37,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(&this_ptr->base);
   if (iVar1 == 0) {
-    if (*(int *)(this_ptr->unk4 + 8) == 0) {
+    if (this_ptr->pushed_object == (CDemonActor *)0x0) {
       iVar6 = 0;
       iVar1 = 0;
       while( true ) {
@@ -69,7 +69,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
                                (&CStack_24,&CStack_30);
             fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y);
             if (ABS(fVar5) <= (float)0.61086523818055505) {
-              *(CDemonActor **)(this_ptr->unk4 + 8) = pCVar2;
+              this_ptr->pushed_object = pCVar2;
               break;
             }
           }
@@ -77,9 +77,9 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
         iVar6 = iVar6 + 1;
         iVar1 = iVar1 + 4;
       }
-      if (*(CDemonActor **)(this_ptr->unk4 + 8) == (CDemonActor *)0x0) goto LAB_004f31b0;
+      if (this_ptr->pushed_object == (CDemonActor *)0x0) goto LAB_004f31b0;
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(this_ptr->unk4 + 8),g_CBoxActorClassInfo.name_hash);
+                         (this_ptr->pushed_object,g_CBoxActorClassInfo.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         pCVar2[2].was_created = (int)this_ptr;
         uVar3 = (*((pCVar2->vtable)._ub)->playAmbientSound)(pCVar2,pCVar2[2].create_event + 4);

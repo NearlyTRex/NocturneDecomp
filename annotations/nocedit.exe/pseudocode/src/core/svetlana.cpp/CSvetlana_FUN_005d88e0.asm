@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
-;   core_cloth.cpp_FUN_00439710
+;   core_cloth.cpp_CCloth_setup_FUN_00439710
 ;   core_hero.cpp_CHero_setup_FUN_004f2540
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -217,8 +217,8 @@ section .text
     PUSH EBX                            ; 005d8ae3
     MOV EAX,dword ptr [ESP + 0xc]       ; 005d8ae4
     PUSH EAX                            ; 005d8ae8
-    CALL core_cloth.cpp_FUN_00439710    ; 005d8ae9
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
+    CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 005d8ae9
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005d8aee
     PUSH 0x654a32                       ; 005d8af1 | = "svethair.cth"
     LEA EAX,[ESI + 0x5fa4c]             ; 005d8af6
@@ -232,8 +232,8 @@ section .text
     PUSH EBX                            ; 005d8b0b
     MOV ECX,dword ptr [ESP + 0xc]       ; 005d8b0c
     PUSH ECX                            ; 005d8b10
-    CALL core_cloth.cpp_FUN_00439710    ; 005d8b11
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00439710()
+    CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 005d8b11
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_00439710(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005d8b16
     PUSH EDI                            ; 005d8b19
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005d8b1a

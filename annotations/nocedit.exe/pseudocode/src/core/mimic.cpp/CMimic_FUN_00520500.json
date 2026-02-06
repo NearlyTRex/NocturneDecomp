@@ -4,7 +4,7 @@
       {
         "category": "pointer_precision",
         "column": 24,
-        "line": 39,
+        "line": 41,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,29 +19,29 @@
       {
         "category": "other",
         "column": 16,
-        "line": 39,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 53,
+        "line": 55,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 60,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 47,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 127
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -72,7 +72,7 @@
     {
       "addr": "00439710",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00439710"
+      "name": "core_cloth.cpp_CCloth_setup_FUN_00439710"
     },
     {
       "addr": "0052dab0",
@@ -192,7 +192,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(int *)((int)",
       "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"

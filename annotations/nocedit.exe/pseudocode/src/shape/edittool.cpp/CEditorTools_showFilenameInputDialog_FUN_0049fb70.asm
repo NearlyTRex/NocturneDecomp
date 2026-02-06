@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:
-;   core_cloth.cpp_FUN_0043ddf0 at 0043df42
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043df42
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044321f
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d85d
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdac7

@@ -18,7 +18,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_FUN_0042a420
-;   core_cloth.cpp_FUN_0043bae0
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
 ;   core_morph.cpp_FUN_0052b600
 ;   core_morph.cpp_FUN_0052b640
@@ -82,14 +82,14 @@ section .text
     ADD ESP,0x14                        ; 005e6e19
     PUSH 0x0                            ; 005e6e1c
     PUSH EDI                            ; 005e6e1e
-    CALL core_cloth.cpp_FUN_0043bae0    ; 005e6e1f
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
+    CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 005e6e1f
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
     ADD ESP,0x8                         ; 005e6e24
     PUSH 0x0                            ; 005e6e27
     MOV ESI,dword ptr [ESP + 0x2c]      ; 005e6e29
     PUSH ESI                            ; 005e6e2d
-    CALL core_cloth.cpp_FUN_0043bae0    ; 005e6e2e
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
+    CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 005e6e2e
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
         ;   Label: LAB_005e6e2e
     ADD ESP,0x8                         ; 005e6e33
         ;   Label: LAB_005e6e33

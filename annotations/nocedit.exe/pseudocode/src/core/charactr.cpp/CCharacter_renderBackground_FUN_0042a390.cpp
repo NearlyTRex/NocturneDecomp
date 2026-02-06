@@ -14,7 +14,7 @@ core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,
   int iVar1;
   float fStack_1c;
   
-  if (*(int *)this_ptr->unk1 == 0) {
+  if (this_ptr->field2_0x240c == 0) {
     return;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

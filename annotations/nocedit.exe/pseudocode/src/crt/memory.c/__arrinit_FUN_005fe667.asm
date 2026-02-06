@@ -22,7 +22,7 @@
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424cb0 at 00424ce5
 ;   core_chain.cpp_CChain_ctor_FUN_0042fb80 at 0042fb9c
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20 at 00427e83
-;   core_cloth.cpp_FUN_00438ba0 at 00438bd2
+;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0 at 00438bd2
 ;   ... and 75 more
 ;
 ; *****************************************************************************

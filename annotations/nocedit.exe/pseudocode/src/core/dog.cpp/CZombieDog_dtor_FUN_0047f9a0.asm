@@ -15,7 +15,7 @@
 ;   core_armour.cpp_freeFires_FUN_00412700
 ;   core_armour.cpp_freeFlames_FUN_00412720
 ;   core_armour.cpp_freeVectors_FUN_004126e0
-;   core_cloth.cpp_FUN_0043bf80
+;   core_cloth.cpp_CClothList_dtor_FUN_0043bf80
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -58,8 +58,8 @@ section .text
     PUSH 0x0                            ; 0047f9f1
     SUB EAX,0x1c8                       ; 0047f9f3
     PUSH EAX                            ; 0047f9f8
-    CALL core_cloth.cpp_FUN_0043bf80    ; 0047f9f9
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_FUN_0043bf80()
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043bf80 ; 0047f9f9
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr)
     ADD ESP,0x8                         ; 0047f9fe
     PUSH 0x0                            ; 0047fa01
     SUB EAX,0x293c                      ; 0047fa03

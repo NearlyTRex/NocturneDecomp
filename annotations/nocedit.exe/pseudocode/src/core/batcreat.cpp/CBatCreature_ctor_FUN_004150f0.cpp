@@ -9,28 +9,19 @@
 CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCreature *this_ptr)
 
 {
-  CEnemy *pCVar1;
+  float fVar1;
   float fVar2;
-  float fVar3;
-  CBatCreature *pCVar4;
+  CBatCreature *pCVar3;
   
-  pCVar4 = (CBatCreature *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CBatCreatureVTable;
+  pCVar3 = (CBatCreature *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CBatCreatureVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(pCVar4->base).base.model,"batcreat.dfm");
-  fVar3 = 100.0f;
-  fVar2 = 50.0f;
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x344] = -0x66;
-  (pCVar1->base).cloth_data[0x345] = -0x67;
-  (pCVar1->base).cloth_data[0x346] = '\x19';
-  (pCVar1->base).cloth_data[0x347] = '?';
-  pCVar1 = &pCVar4->base;
-  (pCVar1->base).cloth_data[0x348] = '\0';
-  (pCVar1->base).cloth_data[0x349] = '\0';
-  (pCVar1->base).cloth_data[0x34a] = -0x40;
-  (pCVar1->base).cloth_data[0x34b] = '?';
-  *(float *)((pCVar4->base).base.cloth_data + 0x34c) = fVar2;
-  *(float *)((pCVar4->base).base.cloth_data + 0x350) = fVar3;
-  return pCVar4;
+            (&(pCVar3->base).base.model,"batcreat.dfm");
+  fVar2 = 100.0f;
+  fVar1 = 50.0f;
+  (pCVar3->base).base.field54_0x2ddc = 0.6;
+  (pCVar3->base).base.collision_cylinder_radius = 1.5;
+  (pCVar3->base).base.field56_0x2de4 = fVar1;
+  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  return pCVar3;
 }

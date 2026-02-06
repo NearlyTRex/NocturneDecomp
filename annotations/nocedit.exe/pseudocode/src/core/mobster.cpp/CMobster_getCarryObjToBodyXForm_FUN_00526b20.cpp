@@ -29,7 +29,7 @@ void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobs
   CVector3f local_18;
   
   bVar4 = 0;
-  iVar2 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;
+  iVar2 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
   if (in_stack_00000008 == 1) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                        ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor,

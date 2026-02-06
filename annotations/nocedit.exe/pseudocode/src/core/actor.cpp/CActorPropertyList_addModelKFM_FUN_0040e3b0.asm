@@ -18,7 +18,7 @@
 ;   core_battery.cpp_CBattery_getPropertyList_FUN_004180b0 at 004180d3
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422704
 ;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427869
-;   core_crate.cpp_FUN_00448b20 at 00448b49
+;   core_crate.cpp_CCrate_getPropertyList_FUN_00448b20 at 00448b49
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481344
 ;   ... and 21 more
 ;

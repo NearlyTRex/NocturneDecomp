@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_load_FUN_0043bfa0
-;   core_cloth.cpp_FUN_0043c290
-;   core_cloth.cpp_FUN_0043c2d0
+;   core_cloth.cpp_CClothList_process_FUN_0043c2d0
+;   core_cloth.cpp_CClothList_setup_FUN_0043c290
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_FUN_0052b430
@@ -99,8 +99,8 @@ section .text
     PUSH EAX                            ; 005c6be6
     PUSH ESI                            ; 005c6be7
     MOV dword ptr [ESP + 0x14],EAX      ; 005c6be8
-    CALL core_cloth.cpp_FUN_0043c290    ; 005c6bec
-        ;   XREF to: 0043c290 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c290()
+    CALL core_cloth.cpp_CClothList_setup_FUN_0043c290 ; 005c6bec
+        ;   XREF to: 0043c290 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_setup_FUN_0043c290(CClothList * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 005c6bf1
     PUSH EDI                            ; 005c6bf4
     PUSH dword ptr [EBX + 0x2414]       ; 005c6bf5
@@ -111,8 +111,8 @@ section .text
     PUSH ECX                            ; 005c6c09
     LEA EAX,[EBX + 0x2a94]              ; 005c6c0a
     PUSH EAX                            ; 005c6c10
-    CALL core_cloth.cpp_FUN_0043c2d0    ; 005c6c11
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
+    CALL core_cloth.cpp_CClothList_process_FUN_0043c2d0 ; 005c6c11
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_process_FUN_0043c2d0(CClothList * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005c6c16
     PUSH EBP                            ; 005c6c19
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005c6c1a

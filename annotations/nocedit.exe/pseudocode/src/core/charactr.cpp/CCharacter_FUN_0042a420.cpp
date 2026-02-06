@@ -24,9 +24,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
   
   bVar6 = 0;
   iVar3 = 0;
-  if (0 < *(int *)(this_ptr->cloth_data + 0x35c)) {
+  if (0 < this_ptr->field60_0x2df4) {
     local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
-    pcVar2 = this_ptr->cloth_data + 0x360;
+    pcVar2 = this_ptr->field61_0x2df8;
     do {
       if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -50,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
       }
       iVar3 = iVar3 + 1;
       pcVar2 = pcVar2 + 0x38;
-    } while (iVar3 < *(int *)(this_ptr->cloth_data + 0x35c));
+    } while (iVar3 < this_ptr->field60_0x2df4);
   }
   return;
 }

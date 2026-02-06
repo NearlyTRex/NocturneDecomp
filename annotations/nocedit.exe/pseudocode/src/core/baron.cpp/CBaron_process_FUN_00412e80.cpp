@@ -75,10 +75,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     core_baron_cpp_CBaron_FUN_004135e0(this_ptr);
   }
   pCVar2 = g_CGamePtr;
-  *(float *)((this_ptr->base).base.unk1 + 0x2c) = delta_time * (float)12.566370614;
+  (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
   if (pCVar2->letterbox_mode != 0) {
-    *(float *)((this_ptr->base).base.unk1 + 0x2c) =
-         *(float *)((this_ptr->base).base.unk1 + 0x2c) * (float)0.33333333333333298;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
   fVar10 = (float)(this_ptr->base).unk1 - delta_time;
   (this_ptr->base).unk1 = (uint)fVar10;
@@ -124,8 +123,8 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         iVar3 = 4;
         (this_ptr->base).action_bindings.fire_key = 0;
       }
-      *(float *)((this_ptr->base).base.unk1 + 0xc) =
-           *(float *)((this_ptr->base).unk2 + 4) * *(float *)((this_ptr->base).base.unk1 + 0x2c);
+      (this_ptr->base).base.turn_angle_accumulator =
+           *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (iVar3 == pSVar5->state_index) break;
@@ -176,7 +175,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     }
     goto switchD_0041345d_default;
   }
-  uVar1 = *(uint *)((this_ptr->base).base.unk2 + 0x10);
+  uVar1 = (this_ptr->base).base.field22_0x25b0;
   if (uVar1 < 2) {
     if (uVar1 != 1) goto LAB_00413237;
     iVar3 = 1;
@@ -208,11 +207,11 @@ switchD_0041345d_default:
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  *(float *)((this_ptr->base).base.unk1 + 0x20) =
-       *(float *)((this_ptr->base).base.unk1 + 0x20) - delta_time * fVar10;
-  local_3c = *(float *)((this_ptr->base).base.unk1 + 0x1c) * delta_time;
-  local_38 = *(float *)((this_ptr->base).base.unk1 + 0x20) * delta_time;
-  local_34 = *(float *)((this_ptr->base).base.unk1 + 0x24) * delta_time;
+  (this_ptr->base).base.field7_0x2428.y =
+       (this_ptr->base).base.field7_0x2428.y - delta_time * fVar10;
+  local_3c = (this_ptr->base).base.field7_0x2428.x * delta_time;
+  local_38 = (this_ptr->base).base.field7_0x2428.y * delta_time;
+  local_34 = (this_ptr->base).base.field7_0x2428.z * delta_time;
   local_6c = local_6c + local_3c;
   local_68 = local_68 + local_38;
   local_64 = local_64 + local_34;

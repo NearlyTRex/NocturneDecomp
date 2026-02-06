@@ -9,8 +9,8 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042cd50(CCharacter *this_ptr)
 
 {
-  uint in_stack_00000008;
+  int in_stack_00000008;
   
-  *(uint *)(this_ptr->unk2 + 0x14) = in_stack_00000008;
+  this_ptr->field23_0x25b4 = in_stack_00000008;
   return;
 }

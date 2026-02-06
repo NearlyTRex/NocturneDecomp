@@ -81,7 +81,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
           }
           goto LAB_005e3ae2;
         }
-        if (local_5c.attacker == (CDemonActor *)0x0) {
+        if ((CCrate *)local_5c.attacker == (CCrate *)0x0) {
           if (this_ptr_01 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
             break;
@@ -89,7 +89,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
           core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_01);
         }
         else {
-          core_crate_cpp_FUN_00448a70();
+          core_crate_cpp_CCrate_FUN_00448a70((CCrate *)local_5c.attacker);
         }
       }
       else {

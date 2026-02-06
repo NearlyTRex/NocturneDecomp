@@ -4,19 +4,19 @@
       {
         "category": "pointer_precision",
         "column": 20,
-        "line": 90,
+        "line": 72,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 131,
+        "line": 113,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 131,
+        "line": 113,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -31,49 +31,49 @@
       {
         "category": "other",
         "column": 16,
-        "line": 49,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 50,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 51,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 90,
+        "line": 72,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 131,
+        "line": 113,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 239,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 113,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 396
+    "total_lines": 375
   },
   "cross_references": [
     {
@@ -308,37 +308,37 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 28,
       "match": "in_stack_00000008",
-      "text": "fVar5 = *(float *)(this_ptr->unk2 + 0x54) - in_stack_00000008;",
+      "text": "fVar5 = (float)this_ptr->field37_0x25f4 - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 36,
       "match": "SQRT",
       "text": "(float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 55,
       "match": "in_stack_0000000c",
       "text": "iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20(in_stack_0000000c,target_string,0)",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 62,
       "match": "SQRT",
       "text": "20.0f <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 124,
+      "line": 106,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x50) + 0x154) + 0xbc))();",
+      "text": "(**(code **)(*(int *)(this_ptr->field36_0x25f0 + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     }
   ]

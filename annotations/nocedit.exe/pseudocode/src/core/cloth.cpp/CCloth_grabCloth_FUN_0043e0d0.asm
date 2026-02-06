@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr)
+; __cdecl void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   vertex_index
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_FUN_005c6220 at 005c6442

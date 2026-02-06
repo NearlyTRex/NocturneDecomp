@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 26,
+        "line": 23,
         "message": "'stack0xffffffe0' was not declared in this scope"
       }
     ],
@@ -20,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 67,
+    "complexity_score": 61,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 3,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 31,
     "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 123
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -228,14 +228,14 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 16,
       "match": "&stack0xffffffe0",
       "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 21,
       "match": "DAT_02f43978",
       "text": "if (DAT_02f43978 != 0) {",
       "type": "undefined_data"

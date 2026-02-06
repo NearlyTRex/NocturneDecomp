@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 6,
-        "line": 113,
+        "line": 111,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 137,
+        "line": 135,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 169,
+        "line": 167,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 182,
+        "line": 180,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 182,
+        "line": 180,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 219,
+        "line": 217,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -49,8 +49,20 @@
       {
         "category": "other",
         "column": 32,
-        "line": 101,
+        "line": 99,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 114,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 115,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -60,38 +72,38 @@
       },
       {
         "category": "other",
-        "column": 21,
-        "line": 117,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 118,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 57,
-        "line": 137,
+        "line": 135,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 182,
+        "line": 180,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 186,
+        "line": 184,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 187,
+        "line": 185,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 199,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 200,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -102,38 +114,26 @@
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 202,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 203,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 59,
-        "line": 219,
+        "line": 217,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 675,
-    "complexity_score": 427,
+    "complexity_score": 420,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
-    "pseudocode_lines": 322,
+    "pseudocode_lines": 315,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unresolved_funcptr"
     ],
-    "total_lines": 997
+    "total_lines": 990
   },
   "cross_references": [],
   "function": {
@@ -733,63 +733,63 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 14,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 15,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 110,
       "match": "SQRT",
       "text": "local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 116,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 157,
+      "line": 155,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 175,
+      "line": 173,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 180,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_8c * local_8c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 200,
+      "line": 198,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 244,
+      "line": 242,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"

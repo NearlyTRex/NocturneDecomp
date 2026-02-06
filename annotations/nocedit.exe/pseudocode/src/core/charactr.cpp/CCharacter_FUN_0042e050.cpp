@@ -27,49 +27,31 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
   float local_14;
   
   if ((in_stack_0000000c == (char *)0x0) || (*in_stack_0000000c == '\0')) {
-    this_ptr->unk2[0x50] = '\0';
-    this_ptr->unk2[0x51] = '\0';
-    this_ptr->unk2[0x52] = '\0';
-    this_ptr->unk2[0x53] = '\0';
-    this_ptr->unk2[0x54] = '\0';
-    this_ptr->unk2[0x55] = '\0';
-    this_ptr->unk2[0x56] = '\0';
-    this_ptr->unk2[0x57] = '\0';
-    this_ptr->unk2[0x4c] = '\0';
-    this_ptr->unk2[0x4d] = '\0';
-    this_ptr->unk2[0x4e] = '\0';
-    this_ptr->unk2[0x4f] = '\0';
+    this_ptr->field36_0x25f0 = 0;
+    this_ptr->field37_0x25f4 = 0;
+    this_ptr->field35_0x25ec = 0;
     return 0;
   }
-  fVar5 = *(float *)(this_ptr->unk2 + 0x54) - in_stack_00000008;
-  *(float *)(this_ptr->unk2 + 0x54) = fVar5;
+  fVar5 = (float)this_ptr->field37_0x25f4 - in_stack_00000008;
+  this_ptr->field37_0x25f4 = (int)fVar5;
   if (0.0 < fVar5) goto LAB_0042e20c;
-  iVar4 = *(int *)(this_ptr->unk2 + 0x4c);
+  iVar4 = this_ptr->field35_0x25ec;
   if ((iVar4 == 0) ||
      (fVar5 = *(float *)(iVar4 + 0x20) - (this_ptr->base).location.position.x,
      fVar1 = *(float *)(iVar4 + 0x24) - (this_ptr->base).location.position.y,
      fVar6 = *(float *)(iVar4 + 0x28) - (this_ptr->base).location.position.z,
      (float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {
-    if (*(int *)(this_ptr->unk2 + 0x50) == 0) goto LAB_0042e0e4;
-    if (*(int *)(this_ptr->unk2 + 0x4c) == 0) goto LAB_0042e0ee;
+    if (this_ptr->field36_0x25f0 == 0) goto LAB_0042e0e4;
+    if (this_ptr->field35_0x25ec == 0) goto LAB_0042e0ee;
     iVar4 = core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
-    *(int *)(this_ptr->unk2 + 0x50) = iVar4;
+    this_ptr->field36_0x25f0 = iVar4;
   }
   else {
-    this_ptr->unk2[0x50] = '\0';
-    this_ptr->unk2[0x51] = '\0';
-    this_ptr->unk2[0x52] = '\0';
-    this_ptr->unk2[0x53] = '\0';
+    this_ptr->field36_0x25f0 = 0;
 LAB_0042e0e4:
-    this_ptr->unk2[0x4c] = '\0';
-    this_ptr->unk2[0x4d] = '\0';
-    this_ptr->unk2[0x4e] = '\0';
-    this_ptr->unk2[0x4f] = '\0';
+    this_ptr->field35_0x25ec = 0;
 LAB_0042e0ee:
-    this_ptr->unk2[0x50] = '\0';
-    this_ptr->unk2[0x51] = '\0';
-    this_ptr->unk2[0x52] = '\0';
-    this_ptr->unk2[0x53] = '\0';
+    this_ptr->field36_0x25f0 = 0;
     local_28 = 0;
     local_1c = &(this_ptr->base).location;
     local_24 = 0;
@@ -103,9 +85,9 @@ LAB_0042e0ee:
           if (9 < iVar4) goto LAB_0042e1d9;
         }
         iVar2 = core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
-        *(int *)(this_ptr->unk2 + 0x50) = iVar2;
+        this_ptr->field36_0x25f0 = iVar2;
         if (iVar2 != 0) {
-          *(int *)(this_ptr->unk2 + 0x4c) = local_1f80[iVar3];
+          this_ptr->field35_0x25ec = local_1f80[iVar3];
           break;
         }
         local_1f80[iVar3] = 0;
@@ -114,7 +96,7 @@ LAB_0042e0ee:
     }
   }
 LAB_0042e1d9:
-  if (*(int *)(this_ptr->unk2 + 0x50) == 0) {
+  if (this_ptr->field36_0x25f0 == 0) {
     fVar6 = 10.0;
     fVar5 = 4.0;
   }
@@ -123,21 +105,18 @@ LAB_0042e1d9:
     fVar5 = 1.0;
   }
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar5,fVar6);
-  *(float *)(this_ptr->unk2 + 0x54) = local_14;
+  this_ptr->field37_0x25f4 = (int)local_14;
 LAB_0042e20c:
-  if (*(int *)(this_ptr->unk2 + 0x50) == 0) {
+  if (this_ptr->field36_0x25f0 == 0) {
     return 0;
   }
-  (**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x50) + 0x154) + 0xbc))();
+  (**(code **)(*(int *)(this_ptr->field36_0x25f0 + 0x154) + 0xbc))();
   iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
   if (iVar4 == 0) {
     return 1;
   }
   if (iVar4 < 0) {
-    this_ptr->unk2[0x50] = '\0';
-    this_ptr->unk2[0x51] = '\0';
-    this_ptr->unk2[0x52] = '\0';
-    this_ptr->unk2[0x53] = '\0';
+    this_ptr->field36_0x25f0 = 0;
     return 0;
   }
   return 0;

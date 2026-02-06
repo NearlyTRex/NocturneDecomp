@@ -2,39 +2,34 @@
 // Address: 0043e0d0
 // Address Range: [[0043e0d0, 0043e164]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr)
+// Signature: void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr)
+void __cdecl
+core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)
 
 {
   int iVar1;
   int iVar2;
-  char *pcVar3;
-  char *in_stack_00000008;
-  int in_stack_0000000c;
+  SClothBone *str2;
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr->unk + 0x3ce8c)) {
-    pcVar3 = this_ptr->unk + 0x3ce90;
+  if (0 < this_ptr->collide_bone_count) {
+    str2 = this_ptr->collide_bones;
     do {
-      iVar1 = strcmp(in_stack_00000008,pcVar3);
+      iVar1 = strcmp(bone_name,str2->name);
       if (iVar1 == 0) break;
       iVar2 = iVar2 + 1;
-      pcVar3 = pcVar3 + 0xac;
-    } while (iVar2 < *(int *)(this_ptr->unk + 0x3ce8c));
+      str2 = str2 + 1;
+    } while (iVar2 < this_ptr->collide_bone_count);
   }
-  if (iVar2 == *(int *)(this_ptr->unk + 0x3ce8c)) {
+  if (iVar2 == this_ptr->collide_bone_count) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0xaa7;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::grabCloth - Can't find bone %s");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::grabCloth - Can't find bone %s",bone_name);
   }
-  pcVar3 = this_ptr->unk + in_stack_0000000c * 0x11c + 0x574c;
-  pcVar3[0] = '\x01';
-  pcVar3[1] = '\0';
-  pcVar3[2] = '\0';
-  pcVar3[3] = '\0';
-  *(int *)(this_ptr->unk + in_stack_0000000c * 0x11c + 0x57b0) = iVar2;
+  this_ptr->vertices[vertex_index].locked = 1;
+  *(int *)this_ptr->vertices[vertex_index].bone_indices = iVar2;
   return;
 }

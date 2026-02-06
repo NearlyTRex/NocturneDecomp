@@ -7,7 +7,7 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_cloth.cpp_FUN_00438ba0 at 00438ba5
+;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0 at 00438ba5
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 at 0047eecd
 ;   core_level.cpp_staticInit_FUN_00503d80 at 00503d92
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005077c2

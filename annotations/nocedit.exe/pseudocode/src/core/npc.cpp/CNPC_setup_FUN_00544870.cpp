@@ -17,9 +17,6 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00544870(CNPC *this_ptr)
   if (iVar1 != 0) {
     return;
   }
-  (this_ptr->base).unk2[0x70] = '\x02';
-  (this_ptr->base).unk2[0x71] = '\0';
-  (this_ptr->base).unk2[0x72] = '\0';
-  (this_ptr->base).unk2[0x73] = '\0';
+  (this_ptr->base).field39_0x2610 = 2;
   return;
 }

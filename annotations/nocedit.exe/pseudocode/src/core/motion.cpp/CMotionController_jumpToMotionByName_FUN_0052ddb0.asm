@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[9]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043d480
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d480
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0 at 00485e89
 ;   core_mimic.cpp_CMimic_FUN_00520500 at 0052057e
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 00529242

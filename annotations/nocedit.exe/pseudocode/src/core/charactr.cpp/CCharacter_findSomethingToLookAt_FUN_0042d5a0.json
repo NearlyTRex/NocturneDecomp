@@ -160,85 +160,85 @@
       {
         "category": "other",
         "column": 16,
-        "line": 159,
+        "line": 156,
         "message": "request for member '_8_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 176,
+        "line": 173,
         "message": "request for member '_8_4_' in 'auStack_74', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 188,
+        "line": 185,
         "message": "request for member '_8_4_' in 'auStack_74', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 193,
+        "line": 190,
         "message": "request for member '_8_4_' in 'auStack_74', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 201,
+        "line": 198,
         "message": "request for member '_0_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 202,
+        "line": 199,
         "message": "request for member '_4_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 203,
+        "line": 200,
         "message": "request for member '_8_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 205,
+        "line": 202,
         "message": "request for member '_4_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 205,
+        "line": 202,
         "message": "request for member '_4_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 205,
+        "line": 202,
         "message": "request for member '_4_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 211,
+        "line": 205,
         "message": "request for member '_0_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 211,
+        "line": 205,
         "message": "request for member '_0_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 211,
+        "line": 205,
         "message": "request for member '_0_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 229,
+        "line": 217,
         "message": "request for member '_0_4_' in 'auStack_cc', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       }
     ],
@@ -259,31 +259,43 @@
       {
         "category": "other",
         "column": 27,
-        "line": 168,
+        "line": 121,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 163,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 165,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 170,
+        "line": 167,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 692,
+    "complexity_score": 668,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 223,
     "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 823
+    "total_lines": 799
   },
   "cross_references": [
     {
@@ -614,7 +626,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == 0) &&",
+      "text": "if ((in_stack_0000000c == 0) && (iVar1 = this_ptr->field29_0x25d4, this_ptr->field29_0x25d4 == 0))",
       "type": "stack_param"
     },
     {
@@ -789,105 +801,105 @@
       "description": "Unresolved stack parameter",
       "line": 140,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk2 + 0x48) = *(float *)(this_ptr->unk2 + 0x48) - in_stack_00000008;",
+      "text": "this_ptr->field34_0x25e8 = (int)((float)this_ptr->field34_0x25e8 - in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 149,
       "match": "._8_4_",
       "text": "auStack_cc._8_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 166,
       "match": "._8_4_",
       "text": "auStack_74._8_4_ = (pCVar8->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 181,
+      "line": 178,
       "match": "._8_4_",
       "text": "auStack_74._8_4_ = pCVar6->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 183,
       "match": "._8_4_",
       "text": "CStack_f0.x = (float)auStack_74._8_4_ - fStack_84;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 194,
+      "line": 191,
       "match": "._0_4_",
       "text": "auStack_cc._0_4_ = pCVar6->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 195,
+      "line": 192,
       "match": "._4_4_",
       "text": "auStack_cc._4_4_ = pCVar6->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 196,
+      "line": 193,
       "match": "._8_4_",
       "text": "auStack_cc._8_4_ = pCVar6->z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 198,
+      "line": 195,
       "match": "._4_4_",
       "text": "if ((float)1.3962634015555599 < ABS((float)auStack_cc._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 195,
       "match": "ABS",
       "text": "if ((float)1.3962634015555599 < ABS((float)auStack_cc._4_4_)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 204,
+      "line": 198,
       "match": "._0_4_",
       "text": "if ((float)0.78539816337500001 < ABS((float)auStack_cc._0_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
+      "line": 198,
       "match": "ABS",
       "text": "if ((float)0.78539816337500001 < ABS((float)auStack_cc._0_4_)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 204,
       "match": "in_stack_00000008",
-      "text": "fVar7 = in_stack_00000008 / 0.5f + *(float *)(this_ptr->unk2 + 0x40);",
+      "text": "fVar7 = in_stack_00000008 / 0.5f + this_ptr->look_at_weight;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 222,
+      "line": 210,
       "match": "._0_4_",
-      "text": "((float)auStack_cc._0_4_ - *(float *)(this_ptr->unk2 + 0x38));",
+      "text": "((float)auStack_cc._0_4_ - this_ptr->look_at_yaw);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 232,
+      "line": 217,
       "match": "in_stack_00000008",
-      "text": "fVar7 = *(float *)(this_ptr->unk2 + 0x40) - in_stack_00000008 / 0.5f;",
+      "text": "fVar7 = this_ptr->look_at_weight - in_stack_00000008 / 0.5f;",
       "type": "stack_param"
     }
   ]

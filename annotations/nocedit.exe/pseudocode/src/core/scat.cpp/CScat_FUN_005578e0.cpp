@@ -95,7 +95,7 @@ LAB_00557a94:
   }
   else if (local_7c < (float)15) {
     if ((*(int *)this_ptr->unk != 0) && (iVar7 != 0)) {
-      if (((float)0.90000000000000002 < *(float *)((this_ptr->base).base.unk3 + 0x470)) &&
+      if (((float)0.90000000000000002 < (float)(this_ptr->base).base.field48_0x2a90) &&
          (*(int *)(this_ptr->unk + 0x28) != 0)) {
         (this_ptr->base).action_bindings.fire_key = 1;
       }

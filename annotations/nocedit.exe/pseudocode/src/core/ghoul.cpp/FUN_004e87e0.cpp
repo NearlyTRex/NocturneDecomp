@@ -87,7 +87,7 @@ void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
         *pfVar2 = (float)((int)*pfVar2 + -1);
       }
       iVar11 = 6;
-      if (*(int *)((in_stack_00000004->base).cloth_data + 0x35c) < 1) {
+      if ((in_stack_00000004->base).field60_0x2df4 < 1) {
         iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
         if (iVar8 != 0) {
           iVar11 = 7;
@@ -96,16 +96,16 @@ void __cdecl core_ghoul_cpp_FUN_004e87e0(void)
       else {
         iVar8 = 0;
         pCVar6 = in_stack_00000004;
-        if (0 < *(int *)((in_stack_00000004->base).cloth_data + 0x35c)) {
+        if (0 < (in_stack_00000004->base).field60_0x2df4) {
           do {
-            if (*(float *)((pCVar6->base).cloth_data + 0x360) ==
+            if (*(float *)(pCVar6->base).field61_0x2df8 ==
                 in_stack_00000004[1].base.base.orient_matrix.m[1].z) {
               iVar11 = 8;
               break;
             }
             iVar8 = iVar8 + 1;
             pCVar6 = (CEnemy *)&(pCVar6->base).base.orient.heading;
-          } while (iVar8 < *(int *)((in_stack_00000004->base).cloth_data + 0x35c));
+          } while (iVar8 < (in_stack_00000004->base).field60_0x2df4);
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

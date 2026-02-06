@@ -18,10 +18,7 @@ core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int l
     iVar1 = stricmp((char *)this_ptr,"ScatDazzle");
     if (iVar1 != 0) {
       if (in_stack_0000000c != 0) {
-        (this_ptr->base).base.unk1[0] = '\x01';
-        (this_ptr->base).base.unk1[1] = '\0';
-        (this_ptr->base).base.unk1[2] = '\0';
-        (this_ptr->base).base.unk1[3] = '\0';
+        (this_ptr->base).base.field2_0x240c = 1;
       }
       core_npc_cpp_CNPC_renderBackground_FUN_00544b70(&this_ptr->base,in_stack_0000000c);
       return;

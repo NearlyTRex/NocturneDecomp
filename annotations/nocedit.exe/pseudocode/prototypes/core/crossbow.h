@@ -35,13 +35,13 @@ int __cdecl CCrossbow::renderTransparent(CCrossbow *this_ptr);
 // Address: 00448eb0
 int __cdecl CCrossbow(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_CCrossbow_FUN_00448f20
+// Original: core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
 // Address: 00448f20
-int __cdecl CCrossbow(CCrossbow *this_ptr);
+int __cdecl CCrossbow::fire(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00449540
+// Original: core_crossbow.cpp_CCrossbow_FUN_00449540
 // Address: 00449540
-float __cdecl FUN_00449540(void);
+float __cdecl CCrossbow(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_FUN_00449570
 // Address: 00449570

@@ -16,25 +16,25 @@
       {
         "category": "pointer_precision",
         "column": 21,
-        "line": 228,
+        "line": 227,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 21,
-        "line": 229,
+        "line": 228,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 13,
-        "line": 230,
+        "line": 229,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 18,
-        "line": 231,
+        "line": 230,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,8 +49,14 @@
       {
         "category": "other",
         "column": 32,
-        "line": 192,
+        "line": 191,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 227,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -60,38 +66,32 @@
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 4,
         "line": 229,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 230,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 9,
-        "line": 231,
+        "line": 230,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 318,
+    "complexity_score": 317,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
-    "pseudocode_lines": 243,
+    "pseudocode_lines": 242,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 737
+    "total_lines": 736
   },
   "cross_references": [],
   "function": {
@@ -556,28 +556,28 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 220,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 221,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)&local_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 222,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_94 + (uint)bVar8 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 223,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"

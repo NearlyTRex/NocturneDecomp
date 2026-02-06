@@ -10,8 +10,8 @@
 ; XREF[12]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a6ed
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d91d
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 00449087
-;   core_gabriela.cpp_FUN_004d4190 at 004d4619
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449087
+;   core_gabriela.cpp_CGabriella_FUN_004d4190 at 004d4619
 ;   core_gabriela.cpp_FUN_004d6260 at 004d6495
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f04cb
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00505e1c

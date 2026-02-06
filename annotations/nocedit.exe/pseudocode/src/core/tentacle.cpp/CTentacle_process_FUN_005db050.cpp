@@ -215,13 +215,13 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
           fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                 (pCVar7->y - (this_ptr->base).base.base.orient.bank);
           fStack_2c = delta_time * (float)0.78539816337500001;
-          *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_18;
+          (this_ptr->base).base.turn_angle_accumulator = fStack_18;
           fStack_38 = -fStack_2c;
-          if (*(float *)((this_ptr->base).base.unk1 + 0xc) < fStack_38) {
-            *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_38;
+          if ((this_ptr->base).base.turn_angle_accumulator < fStack_38) {
+            (this_ptr->base).base.turn_angle_accumulator = fStack_38;
           }
-          if (fStack_2c < *(float *)((this_ptr->base).base.unk1 + 0xc)) {
-            *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_2c;
+          if (fStack_2c < (this_ptr->base).base.turn_angle_accumulator) {
+            (this_ptr->base).base.turn_angle_accumulator = fStack_2c;
           }
           if ((float)5 < *(float *)(this_ptr->unk + 0xc)) {
             iVar3 = *(int *)((this_ptr->base).unk2 + 4);
@@ -264,13 +264,13 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                             (pCVar7->y - (this_ptr->base).base.base.orient.bank);
       fStack_30 = delta_time * (float)1.04719755116667;
-      *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_18;
+      (this_ptr->base).base.turn_angle_accumulator = fStack_18;
       fStack_34 = -fStack_30;
       if (fStack_18 < fStack_34) {
-        *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_34;
+        (this_ptr->base).base.turn_angle_accumulator = fStack_34;
       }
-      if (fStack_30 < *(float *)((this_ptr->base).base.unk1 + 0xc)) {
-        *(float *)((this_ptr->base).base.unk1 + 0xc) = fStack_30;
+      if (fStack_30 < (this_ptr->base).base.turn_angle_accumulator) {
+        (this_ptr->base).base.turn_angle_accumulator = fStack_30;
       }
     }
     fVar1 = delta_time / 0.5f + *(float *)(this_ptr->unk + 0x14);

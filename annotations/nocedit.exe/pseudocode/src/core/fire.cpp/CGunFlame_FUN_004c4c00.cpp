@@ -25,7 +25,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
     local_20 = 0;
     do {
       this_ptr_00 = *(CCharacter **)((int)&DAT_02d13eb8 + local_20);
-      if (((*(int *)(this_ptr->unk + 0x20) == 2) || (*(int *)(this_ptr_00->unk3 + 4) != 0)) &&
+      if (((*(int *)(this_ptr->unk + 0x20) == 2) || (this_ptr_00->field44_0x2624 != 0)) &&
          (fVar1 = (this_ptr_00->base).location.position.x - ((CVector3f *)(this_ptr->unk + 4))->x,
          fVar3 = (this_ptr_00->base).location.position.y - *(float *)(this_ptr->unk + 8),
          fVar2 = (this_ptr_00->base).location.position.z - *(float *)(this_ptr->unk + 0xc),

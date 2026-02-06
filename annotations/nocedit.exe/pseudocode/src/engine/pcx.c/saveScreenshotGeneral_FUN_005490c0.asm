@@ -21,7 +21,7 @@
 ; undefined2       Stack[-0x40]:2  local_40
 ;
 ; XREF[4]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cb3a
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cb3a
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d57f
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da49b
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597394

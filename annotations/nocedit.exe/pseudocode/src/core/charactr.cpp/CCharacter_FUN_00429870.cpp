@@ -17,38 +17,32 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   CCharacter *pCVar5;
   float in_stack_00000008;
   
-  fVar3 = *(float *)(this_ptr->cloth_data + 0x340) - in_stack_00000008;
-  *(float *)(this_ptr->cloth_data + 0x340) = fVar3;
+  fVar3 = *(float *)(this_ptr->field53_0x2dc4 + 0x14) - in_stack_00000008;
+  *(float *)(this_ptr->field53_0x2dc4 + 0x14) = fVar3;
   if (fVar3 < 0.0) {
-    this_ptr->cloth_data[0x340] = '\0';
-    this_ptr->cloth_data[0x341] = '\0';
-    this_ptr->cloth_data[0x342] = '\0';
-    this_ptr->cloth_data[0x343] = '\0';
+    this_ptr->field53_0x2dc4[0x14] = '\0';
+    this_ptr->field53_0x2dc4[0x15] = '\0';
+    this_ptr->field53_0x2dc4[0x16] = '\0';
+    this_ptr->field53_0x2dc4[0x17] = '\0';
   }
   core_charactr_cpp_CCharacter_FUN_0042a830(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d4d0(this_ptr);
-  fVar3 = *(float *)(this_ptr->cloth_data + 0x8d48) - in_stack_00000008;
-  *(float *)(this_ptr->cloth_data + 0x8d48) = fVar3;
+  fVar3 = this_ptr->stagger_amount - in_stack_00000008;
+  this_ptr->stagger_amount = fVar3;
   if (fVar3 < 0.0) {
-    this_ptr->cloth_data[0x8d48] = '\0';
-    this_ptr->cloth_data[0x8d49] = '\0';
-    this_ptr->cloth_data[0x8d4a] = '\0';
-    this_ptr->cloth_data[0x8d4b] = '\0';
+    this_ptr->stagger_amount = 0.0;
   }
-  if ((0.0 < *(float *)(this_ptr->unk2 + 0x78)) &&
-     (fVar3 = *(float *)(this_ptr->unk2 + 0x78) - in_stack_00000008,
-     *(float *)(this_ptr->unk2 + 0x78) = fVar3, this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
-    this_ptr->unk2[0x78] = '\0';
-    this_ptr->unk2[0x79] = '\0';
-    this_ptr->unk2[0x7a] = '\0';
-    this_ptr->unk2[0x7b] = '\0';
+  if ((0.0 < (float)this_ptr->field41_0x2618) &&
+     (fVar3 = (float)this_ptr->field41_0x2618 - in_stack_00000008,
+     this_ptr->field41_0x2618 = (int)fVar3, this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
+    this_ptr->field41_0x2618 = 0;
     core_script_cpp_CScript_setSpeaker_FUN_00560140(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == 2) {
     core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);
   }
-  if (*(int *)this_ptr->unk1 == 0) {
-    if (*(float *)(this_ptr->unk1 + 8) == 9999.0f) {
+  if (this_ptr->field2_0x240c == 0) {
+    if (this_ptr->closest_distance_threshold == 9999.0f) {
       iVar4 = 0;
       pCVar5 = this_ptr;
       do {
@@ -61,30 +55,24 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     }
     fVar3 = (this_ptr->base).unk3.y;
     (this_ptr->base).unk3.y = 0.0;
-    fVar1 = *(float *)(this_ptr->unk1 + 8);
+    fVar1 = this_ptr->closest_distance_threshold;
     (this_ptr->base).location.position.y = fVar3 + (this_ptr->base).location.position.y;
     if ((fVar1 == 9999.0f) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
       fVar3 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,*(float *)(this_ptr->cloth_data + 0x344),(CVector3f *)0x0);
-      *(float *)(this_ptr->unk1 + 8) = fVar3;
+                        (&this_ptr->base,this_ptr->field54_0x2ddc,(CVector3f *)0x0);
+      this_ptr->closest_distance_threshold = fVar3;
     }
-    *(uint *)(this_ptr->unk1 + 4) =
+    this_ptr->field3_0x2410 =
          (uint)((this_ptr->base).location.position.y <
-               *(float *)(this_ptr->unk1 + 8) + (float)0.01);
-    this_ptr->unk1[0x18] = '\0';
-    this_ptr->unk1[0x19] = '\0';
-    this_ptr->unk1[0x1a] = '\0';
-    this_ptr->unk1[0x1b] = '\0';
-    *(uint *)(this_ptr->unk1 + 0x14) = *(uint *)(this_ptr->unk1 + 0x18);
-    *(uint *)(this_ptr->unk1 + 0x10) = *(uint *)(this_ptr->unk1 + 0x14);
+               this_ptr->closest_distance_threshold + (float)0.01);
+    (this_ptr->field6_0x241c).z = 0.0;
+    (this_ptr->field6_0x241c).y = (this_ptr->field6_0x241c).z;
+    (this_ptr->field6_0x241c).x = (this_ptr->field6_0x241c).y;
     pCVar2 = (this_ptr->base).standing_platform;
-    this_ptr->unk1[0xc] = '\0';
-    this_ptr->unk1[0xd] = '\0';
-    this_ptr->unk1[0xe] = '\0';
-    this_ptr->unk1[0xf] = '\0';
-    if (((pCVar2 == (CPlatform *)0x0) && (*(int *)this_ptr->unk2 == 0)) &&
+    this_ptr->turn_angle_accumulator = 0.0;
+    if (((pCVar2 == (CPlatform *)0x0) && (this_ptr->field18_0x25a0 == 0.0)) &&
        (iVar4 = core_hero_cpp_FUN_004f22a0(), iVar4 == 0)) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       return 0;
     }
     iVar4 = 1;

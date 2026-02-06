@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 8,
-        "line": 73,
+        "line": 72,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 94,
+        "line": 93,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 113,
+        "line": 112,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 113,
+        "line": 112,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "incompatible_types",
         "column": 29,
-        "line": 207,
+        "line": 200,
         "message": "invalid conversion from 'void*' to 'CHotDemon*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 271,
+        "line": 267,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -49,6 +49,12 @@
       {
         "category": "other",
         "column": 68,
+        "line": 82,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 67,
         "line": 83,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -60,19 +66,19 @@
       },
       {
         "category": "other",
-        "column": 67,
-        "line": 85,
+        "column": 23,
+        "line": 112,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 113,
+        "line": 116,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 23,
+        "column": 22,
         "line": 117,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -84,55 +90,49 @@
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 119,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 63,
-        "line": 137,
+        "line": 136,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 161,
+        "line": 160,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 207,
+        "line": 200,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 230,
+        "line": 223,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 262,
+        "line": 258,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 271,
+        "line": 267,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 368,
+    "complexity_score": 364,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
-    "pseudocode_lines": 268,
+    "pseudocode_lines": 264,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -140,7 +140,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 896
+    "total_lines": 892
   },
   "cross_references": [],
   "function": {
@@ -205,7 +205,7 @@
     {
       "addr": "0043c2d0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043c2d0"
+      "name": "core_cloth.cpp_CClothList_process_FUN_0043c2d0"
     },
     {
       "addr": "004a9fd0",
@@ -661,37 +661,37 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
+      "line": 69,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "SQRT",
-      "text": "if (SQRT(fVar6 * fVar6 + fVar11 * fVar11 + fVar5 * fVar5) < (this_ptr->base).guard_distance)",
+      "text": "if (SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) < (this_ptr->base).guard_distance)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 91,
+      "line": 90,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 106,
+      "line": 105,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 112,
       "match": "SQRT",
-      "text": "SQRT(fVar6 * fVar6 + fVar11 * fVar11 + fVar5 * fVar5) < 15.0f)) &&",
+      "text": "SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) < 15.0f)) &&",
       "type": "decompiler_intrinsic"
     }
   ],

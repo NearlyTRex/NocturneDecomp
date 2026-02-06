@@ -17,24 +17,26 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   float fVar6;
   float fVar7;
   _FILE *p_Var8;
-  int iVar9;
+  SClothBone *pSVar9;
   int *piVar10;
-  int iVar11;
-  char *pcVar12;
-  int iVar13;
-  char *pcVar14;
+  CVector3f *pCVar11;
+  int iVar12;
+  float *pfVar13;
+  int iVar14;
+  float *pfVar15;
+  int iVar16;
   char acStack_238 [256];
   char local_138 [256];
-  char *local_38;
-  char *local_34;
+  float *local_38;
+  SClothBone *local_34;
   _FILE *local_30;
-  char *local_2c;
-  char *local_28;
-  char *local_24;
-  char *local_20;
-  char *local_1c;
-  char *local_18;
-  char *local_14;
+  float *local_2c;
+  float *local_28;
+  CVector3f *local_24;
+  float *local_20;
+  float *local_1c;
+  CVector3f *local_18;
+  float *local_14;
   
   local_30 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
   if (local_30 == (_FILE *)0x0) {
@@ -54,108 +56,105 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,"%s\n",acStack_238);
-  core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0((CKeyFramedModel *)this_ptr,acStack_238);
-  core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190((CKeyFramedModel *)this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&this_ptr->model,acStack_238);
+  core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190(&this_ptr->model);
   _fgets(local_138,0xff,p_Var8);
-  local_38 = this_ptr->unk + 0x3ce6c;
+  local_38 = &this_ptr->floor_friction;
   if (this_ptr->version_num < 3) {
-    _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
-               this_ptr->unk + 0x3ce60,this_ptr->unk + 0x3ce64,this_ptr->unk + 0x3ce68,local_38);
+    _fscanf(local_30,"%f,%f,%f,%f,%f,%f\n",&this_ptr->weight,&this_ptr->gravity,
+               &this_ptr->dampen,&this_ptr->spring,&this_ptr->body_friction,local_38);
     fVar6 = 0.05f;
     fVar5 = 0.5f;
     fVar4 = 0.5f;
     fVar3 = 0.005f;
     fVar2 = 0.9f;
     fVar1 = 32.0f;
-    *(float *)(this_ptr->unk + 0x3ce58) = 0.125f;
+    this_ptr->weight = 0.125f;
     fVar7 = 0.15f;
-    *(float *)(this_ptr->unk + 0x3ce5c) = fVar1;
-    *(float *)(this_ptr->unk + 0x3ce60) = fVar2;
-    *(float *)(this_ptr->unk + 0x3ce64) = fVar3;
-    *(float *)(this_ptr->unk + 0x3ce68) = fVar4;
-    *(float *)(this_ptr->unk + 0x3ce6c) = fVar5;
-    *(float *)(this_ptr->unk + 0x3ce70) = fVar6;
-    *(float *)(this_ptr->unk + 0x3ce74) = fVar7;
+    this_ptr->gravity = fVar1;
+    this_ptr->dampen = fVar2;
+    this_ptr->spring = fVar3;
+    this_ptr->body_friction = fVar4;
+    this_ptr->floor_friction = fVar5;
+    this_ptr->wind_area = fVar6;
+    this_ptr->mom_inert = fVar7;
   }
   else {
-    _fscanf(local_30,"%f,%f,%f,%f,%f,%f,%f,%f\n",this_ptr->unk + 0x3ce58,this_ptr->unk + 0x3ce5c,
-               this_ptr->unk + 0x3ce60,this_ptr->unk + 0x3ce64,this_ptr->unk + 0x3ce68,local_38,
-               this_ptr->unk + 0x3ce70,this_ptr->unk + 0x3ce74);
+    _fscanf(local_30,"%f,%f,%f,%f,%f,%f,%f,%f\n",&this_ptr->weight,&this_ptr->gravity,
+               &this_ptr->dampen,&this_ptr->spring,&this_ptr->body_friction,local_38,
+               &this_ptr->wind_area,&this_ptr->mom_inert);
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,"%f\n",this_ptr->unk + 0x3ce88);
+  _fscanf(p_Var8,"%f\n",&this_ptr->transparency);
   if (this_ptr->version_num < 2) {
-    this_ptr->unk[0x3ce84] = '\0';
-    this_ptr->unk[0x3ce85] = '\0';
-    this_ptr->unk[0x3ce86] = '\0';
-    this_ptr->unk[0x3ce87] = '\0';
+    this_ptr->double_sided = 0;
   }
   else {
     _fgets(local_138,0xff,p_Var8);
-    _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3ce84);
+    _fscanf(p_Var8,"%d\n",&this_ptr->double_sided);
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3f028);
+  _fscanf(p_Var8,"%d\n",&this_ptr->locked_vertex_count);
   core_cloth_cpp_CCloth_allocMemory_FUN_00438c50(this_ptr);
-  iVar11 = 0;
+  iVar12 = 0;
   _fgets(local_138,0xff,p_Var8);
-  if (0 < *(int *)(this_ptr->unk + 0x3f028)) {
-    pcVar12 = this_ptr->unk + 0x3f02c;
+  if (0 < this_ptr->locked_vertex_count) {
+    piVar10 = this_ptr->locked_vertex_indices;
     do {
-      iVar11 = iVar11 + 1;
-      _fscanf(local_30,"%d\n",pcVar12);
-      pcVar12 = pcVar12 + 4;
-    } while (iVar11 < *(int *)(this_ptr->unk + 0x3f028));
+      iVar12 = iVar12 + 1;
+      _fscanf(local_30,"%d\n",piVar10);
+      piVar10 = piVar10 + 1;
+    } while (iVar12 < this_ptr->locked_vertex_count);
   }
-  core_cloth_cpp_ConnectingVerticesCheck_FUN_004394e0();
+  core_cloth_cpp_CCloth_initializeConnections_FUN_004394e0(this_ptr);
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
-  _fscanf(p_Var8,"%d\n",this_ptr->unk + 0x3ce8c);
-  iVar11 = 0;
-  if (0 < *(int *)(this_ptr->unk + 0x3ce8c)) {
-    local_34 = this_ptr->unk + 0x3ce90;
-    pcVar12 = this_ptr->unk + 0x3cea4;
-    local_14 = this_ptr->unk + 0x3cea8;
-    local_18 = this_ptr->unk + 0x3ceac;
-    local_20 = this_ptr->unk + 0x3ceb0;
-    local_1c = this_ptr->unk + 0x3ceb4;
-    local_24 = this_ptr->unk + 0x3ceb8;
-    local_2c = this_ptr->unk + 0x3cec0;
-    local_28 = this_ptr->unk + 0x3cec4;
-    pcVar14 = this_ptr->unk + 0x3cebc;
+  _fscanf(p_Var8,"%d\n",&this_ptr->collide_bone_count);
+  iVar12 = 0;
+  if (0 < this_ptr->collide_bone_count) {
+    local_34 = this_ptr->collide_bones;
+    pfVar13 = &this_ptr->collide_bones[0].radius1;
+    local_14 = &this_ptr->collide_bones[0].radius2;
+    local_18 = &this_ptr->collide_bones[0].euler1;
+    local_20 = &this_ptr->collide_bones[0].euler1.y;
+    local_1c = &this_ptr->collide_bones[0].euler1.z;
+    local_24 = &this_ptr->collide_bones[0].euler2;
+    local_2c = &this_ptr->collide_bones[0].euler2.z;
+    local_28 = &this_ptr->collide_bones[0].length;
+    pfVar15 = &this_ptr->collide_bones[0].euler2.y;
     do {
-      iVar9 = iVar11 * 0xac;
-      iVar11 = iVar11 + 1;
-      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",local_34 + iVar9,pcVar12,local_14,local_18,
-                 local_20,local_1c,local_24,local_2c,pcVar14,local_28);
-      pcVar12 = pcVar12 + 0xac;
-      local_14 = local_14 + 0xac;
-      local_18 = local_18 + 0xac;
-      local_20 = local_20 + 0xac;
-      local_1c = local_1c + 0xac;
-      local_24 = local_24 + 0xac;
-      local_2c = local_2c + 0xac;
-      local_28 = local_28 + 0xac;
-      pcVar14 = pcVar14 + 0xac;
-    } while (iVar11 < *(int *)(this_ptr->unk + 0x3ce8c));
+      pSVar9 = local_34 + iVar12;
+      iVar12 = iVar12 + 1;
+      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",pSVar9,pfVar13,local_14,local_18,local_20,
+                 local_1c,local_24,local_2c,pfVar15,local_28);
+      pfVar13 = pfVar13 + 0x2b;
+      local_14 = local_14 + 0x2b;
+      local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);
+      local_20 = local_20 + 0x2b;
+      local_1c = local_1c + 0x2b;
+      local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);
+      local_2c = local_2c + 0x2b;
+      local_28 = local_28 + 0x2b;
+      pfVar15 = pfVar15 + 0x2b;
+    } while (iVar12 < this_ptr->collide_bone_count);
   }
-  iVar9 = 0;
-  iVar11 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
-  if (0 < *(int *)(this_ptr->unk + 0x104)) {
-    pcVar12 = this_ptr->unk + 0x5798;
-    iVar13 = 0;
+  iVar16 = 0;
+  iVar12 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
+  if (0 < (this_ptr->model).vertex_count) {
+    pCVar11 = &this_ptr->vertices[0].offset_pos;
+    iVar14 = 0;
     do {
-      piVar10 = (int *)(*(int *)(this_ptr->unk + 0x10c) + iVar13);
-      iVar9 = iVar9 + 1;
-      *(float *)pcVar12 = (float)*piVar10 * 0.00390625f;
-      *(float *)(pcVar12 + 4) = (float)piVar10[1] * 0.00390625f;
-      *(float *)(pcVar12 + 8) = (float)piVar10[2] * 0.00390625f;
-      pcVar12 = pcVar12 + 0x11c;
-      iVar11 = *(int *)(this_ptr->unk + 0x104);
-      iVar13 = iVar13 + 0xc;
-    } while (iVar9 < iVar11);
+      piVar10 = (int *)((int)(this_ptr->model).vertex_list + iVar14);
+      iVar16 = iVar16 + 1;
+      pCVar11->x = (float)*piVar10 * 0.00390625f;
+      pCVar11->y = (float)piVar10[1] * 0.00390625f;
+      pCVar11->z = (float)piVar10[2] * 0.00390625f;
+      pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);
+      iVar12 = (this_ptr->model).vertex_count;
+      iVar14 = iVar14 + 0xc;
+    } while (iVar16 < iVar12);
   }
-  return iVar11;
+  return iVar12;
 }

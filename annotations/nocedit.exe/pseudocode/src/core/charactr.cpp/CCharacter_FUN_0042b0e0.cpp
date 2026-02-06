@@ -9,9 +9,9 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042b0e0(CCharacter *this_ptr)
 
 {
-  if ((0 < *(int *)(this_ptr->cloth_data + 0x478)) && (*(int *)this_ptr->unk3 != 0)) {
+  if ((0 < this_ptr->fire_count) && (this_ptr->field43_0x2620 != 0)) {
     core_charactr_cpp_CCharacter_FUN_0042b110(this_ptr);
-    return *(int *)this_ptr->unk3;
+    return this_ptr->field43_0x2620;
   }
-  return *(int *)this_ptr->unk3;
+  return this_ptr->field43_0x2620;
 }

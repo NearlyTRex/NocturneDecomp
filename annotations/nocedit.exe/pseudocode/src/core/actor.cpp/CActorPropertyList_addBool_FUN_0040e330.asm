@@ -18,7 +18,7 @@
 ;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 00431243
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f7b5
 ;   core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130 at 00442151
-;   core_curtain.cpp_FUN_0044b610 at 0044b728
+;   core_curtain.cpp_CCurtain_getPropertyList_FUN_0044b610 at 0044b728
 ;   ... and 24 more
 ;
 ; Called Functions:

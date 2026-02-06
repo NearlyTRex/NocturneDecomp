@@ -7,9 +7,9 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[14]:
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043cb57
-;   core_cloth.cpp_FUN_0043b7e0 at 0043b9c4
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d9f5
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cb57
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d9f5
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b9c4
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a8a4b
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60 at 00509d42
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 00509dcd

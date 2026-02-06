@@ -28,9 +28,8 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
     }
     fVar1 = (this_ptr->base).speed;
     fVar2 = (float)3.1415926535000001;
-    *(float *)((this_ptr->base).base.unk1 + 0x28) =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    *(float *)((this_ptr->base).base.unk1 + 0x2c) = delta_time * fVar2 * fVar1;
+    (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
+    (this_ptr->base).base.turn_speed = delta_time * fVar2 * fVar1;
     core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->motion_controller)
     ;
     iVar3 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[42]:
-;   core_cloth.cpp_FUN_0043c430 at 0043c579
+;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c579
 ;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057eacd
 ;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580cae
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0 at 004681c1

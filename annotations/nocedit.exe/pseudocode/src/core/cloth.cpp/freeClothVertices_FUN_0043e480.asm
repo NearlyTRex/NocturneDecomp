@@ -7,7 +7,7 @@
 ; SClothVertex *   Stack[0x4]:4   array
 ;
 ; XREF[1]:
-;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 at 00438c27
+;   core_cloth.cpp_CCloth_dtor_FUN_00438c00 at 00438c27
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SClothVertexTypeInfo

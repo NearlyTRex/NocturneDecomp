@@ -91,7 +91,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
-;   core_cloth.cpp_FUN_0043ab80
+;   core_cloth.cpp_CCloth_process_FUN_0043ab80
 ;   core_gore.cpp_FUN_004ede30
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -768,8 +768,8 @@ section .text
     PUSH EAX                            ; 005204ae
     ADD EBX,0xbf84                      ; 005204af
     PUSH EBX                            ; 005204b5
-    CALL core_cloth.cpp_FUN_0043ab80    ; 005204b6
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043ab80()
+    CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 005204b6
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005204bb
     LEA ESP,[EBP + 0x7a]                ; 005204be
     POP EBP                             ; 005204c1

@@ -8,7 +8,7 @@
 ;
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042afff
-;   core_cloth.cpp_FUN_0043bae0 at 0043bb77
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bb77
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 at 004716d9
 ;   core_flies.cpp_FUN_004cc300 at 004cc4a5
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407ba2

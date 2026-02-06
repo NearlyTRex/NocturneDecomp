@@ -21,7 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base,&local_20,&(this_ptr->model).accumulated_root_motion);
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base,&local_14,(CVector3f *)(this_ptr->unk1 + 0x10));
+            (&this_ptr->base,&local_14,&this_ptr->field6_0x241c);
   pCVar1 = &(this_ptr->base).orient;
   if (pCVar1 != (COrientation *)in_stack_00000008) {
     pCVar1->pitch = *in_stack_00000008;
@@ -39,11 +39,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   }
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_2c,&local_14);
-  if ((CVector3f *)(this_ptr->unk1 + 0x10) == pCVar3) {
+  if (&this_ptr->field6_0x241c == pCVar3) {
     return;
   }
-  ((CVector3f *)(this_ptr->unk1 + 0x10))->x = pCVar3->x;
-  *(float *)(this_ptr->unk1 + 0x14) = pCVar3->y;
-  *(float *)(this_ptr->unk1 + 0x18) = pCVar3->z;
+  (this_ptr->field6_0x241c).x = pCVar3->x;
+  (this_ptr->field6_0x241c).y = pCVar3->y;
+  (this_ptr->field6_0x241c).z = pCVar3->z;
   return;
 }

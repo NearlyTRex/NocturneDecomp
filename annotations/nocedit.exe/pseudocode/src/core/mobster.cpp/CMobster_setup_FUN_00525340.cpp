@@ -86,12 +86,10 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr)
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
   *(int *)(this_ptr->unk2 + 0x38) = iVar2;
-  *(int *)(this_ptr->base).base.carry_hands[0].unk1 = INT_02f37ecc;
-  *(uint *)((this_ptr->base).base.carry_hands[0].unk1 + 4) =
-       *(uint *)(this_ptr->unk2 + 0x14);
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = INT_02f37ed0;
-  *(uint *)((this_ptr->base).base.carry_hands[1].unk1 + 4) =
-       *(uint *)(this_ptr->unk2 + 0x1c);
+  (this_ptr->base).base.carry_hands[0].bone_index = INT_02f37ecc;
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = *(int *)(this_ptr->unk2 + 0x14);
+  (this_ptr->base).base.carry_hands[1].bone_index = INT_02f37ed0;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = *(int *)(this_ptr->unk2 + 0x1c);
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->unk2[0x3c] = '\0';
   this_ptr->unk2[0x3d] = '\0';

@@ -13,7 +13,7 @@ void __cdecl core_sentinel_cpp_FUN_00568030(void)
 
 {
   CDeformableModelInstance *pCVar1;
-  char *pcVar2;
+  CVector3f *pCVar2;
   float fVar3;
   uint uVar4;
   float fVar5;
@@ -149,9 +149,9 @@ LAB_00568089:
   }
   fVar3 = in_stack_00000004->speed;
   fVar5 = (float)3.1415926535000001;
-  *(float *)((in_stack_00000004->base).unk1 + 0x28) =
+  (in_stack_00000004->base).walk_step_speed =
        (in_stack_00000004->base).model.accumulated_root_motion.z;
-  *(float *)((in_stack_00000004->base).unk1 + 0x2c) = in_stack_00000008 * fVar5 * fVar3;
+  (in_stack_00000004->base).turn_speed = in_stack_00000008 * fVar5 * fVar3;
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   iVar7 = pSVar8->state_index;
@@ -159,16 +159,10 @@ LAB_00568089:
   iVar9 = core_charactr_cpp_CCharacter_FUN_0042ca70(&in_stack_00000004->base);
   if (iVar9 == 0) {
     if ((iVar7 == 10) || (iVar7 == 0xb)) {
-      (in_stack_00000004->base).cloth_data[0x348] = '\0';
-      (in_stack_00000004->base).cloth_data[0x349] = '\0';
-      (in_stack_00000004->base).cloth_data[0x34a] = '\0';
-      (in_stack_00000004->base).cloth_data[0x34b] = '?';
+      (in_stack_00000004->base).collision_cylinder_radius = 0.5;
     }
     else {
-      (in_stack_00000004->base).cloth_data[0x348] = '\0';
-      (in_stack_00000004->base).cloth_data[0x349] = '\0';
-      (in_stack_00000004->base).cloth_data[0x34a] = '\0';
-      (in_stack_00000004->base).cloth_data[0x34b] = '@';
+      (in_stack_00000004->base).collision_cylinder_radius = 2.0;
     }
     switch(local_1c) {
     case 0:
@@ -397,7 +391,7 @@ LAB_0056878f:
     }
     goto switchD_00568487_caseD_d;
   }
-  uVar4 = *(uint *)((in_stack_00000004->base).unk2 + 0x10);
+  uVar4 = (in_stack_00000004->base).field22_0x25b0;
   if (uVar4 < 2) {
     if (uVar4 == 1) {
 LAB_005680fd:
@@ -428,31 +422,26 @@ switchD_00568487_caseD_d:
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_004297e0(&in_stack_00000004->base);
   if (iVar7 != 0) {
-    *(float *)((in_stack_00000004->base).unk1 + 0x20) =
-         *(float *)((in_stack_00000004->base).unk1 + 0x20) -
-         in_stack_00000008 * (float)32;
-    local_104 = *(float *)((in_stack_00000004->base).unk1 + 0x1c) * in_stack_00000008;
-    local_100 = *(float *)((in_stack_00000004->base).unk1 + 0x20) * in_stack_00000008;
-    pcVar2 = (in_stack_00000004->base).unk1 + 0x10;
-    local_fc = in_stack_00000008 * *(float *)((in_stack_00000004->base).unk1 + 0x24);
-    pCVar10 = &(in_stack_00000004->base).model.accumulated_root_motion;
-    local_ec = local_104 + *(float *)pcVar2;
-    local_e8 = local_100 + *(float *)((in_stack_00000004->base).unk1 + 0x14);
-    local_e4 = local_fc + *(float *)((in_stack_00000004->base).unk1 + 0x18);
-    local_68 = local_ec + pCVar10->x;
+    (in_stack_00000004->base).field7_0x2428.y =
+         (in_stack_00000004->base).field7_0x2428.y - in_stack_00000008 * (float)32;
+    local_104 = (in_stack_00000004->base).field7_0x2428.x * in_stack_00000008;
+    local_100 = (in_stack_00000004->base).field7_0x2428.y * in_stack_00000008;
+    pCVar10 = &(in_stack_00000004->base).field6_0x241c;
+    local_fc = in_stack_00000008 * (in_stack_00000004->base).field7_0x2428.z;
+    pCVar2 = &(in_stack_00000004->base).model.accumulated_root_motion;
+    local_ec = local_104 + pCVar10->x;
+    local_e8 = local_100 + (in_stack_00000004->base).field6_0x241c.y;
+    local_e4 = local_fc + (in_stack_00000004->base).field6_0x241c.z;
+    local_68 = local_ec + pCVar2->x;
     local_64 = local_e8 + (in_stack_00000004->base).model.accumulated_root_motion.y;
     local_60 = local_e4 + (in_stack_00000004->base).model.accumulated_root_motion.z;
-    (in_stack_00000004->base).unk1[0x18] = '\0';
-    (in_stack_00000004->base).unk1[0x19] = '\0';
-    (in_stack_00000004->base).unk1[0x1a] = '\0';
-    (in_stack_00000004->base).unk1[0x1b] = '\0';
-    *(uint *)((in_stack_00000004->base).unk1 + 0x14) =
-         *(uint *)((in_stack_00000004->base).unk1 + 0x18);
-    *(float *)pcVar2 = *(float *)((in_stack_00000004->base).unk1 + 0x14);
+    (in_stack_00000004->base).field6_0x241c.z = 0.0;
+    (in_stack_00000004->base).field6_0x241c.y = (in_stack_00000004->base).field6_0x241c.z;
+    pCVar10->x = (in_stack_00000004->base).field6_0x241c.y;
     (in_stack_00000004->base).model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base).model.accumulated_root_motion.y =
          (in_stack_00000004->base).model.accumulated_root_motion.z;
-    pCVar10->x = (in_stack_00000004->base).model.accumulated_root_motion.y;
+    pCVar2->x = (in_stack_00000004->base).model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_FUN_00428f40(&in_stack_00000004->base);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base);

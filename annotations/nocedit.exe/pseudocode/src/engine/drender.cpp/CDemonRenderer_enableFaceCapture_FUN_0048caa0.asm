@@ -9,7 +9,7 @@
 ;
 ; XREF[19]:
 ;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 0041940e
-;   core_cloth.cpp_FUN_0043bae0 at 0043bcfc
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bcfc
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 at 00457687
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 at 00477a70
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 00482966

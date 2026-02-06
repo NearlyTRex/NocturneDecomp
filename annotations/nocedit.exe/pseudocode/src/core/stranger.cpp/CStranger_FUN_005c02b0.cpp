@@ -97,7 +97,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
   *(uint *)((int)&local_1bc + (uint)bVar7 * -8 + 4) = *puVar3;
   *puVar5 = *puVar4;
   puVar5[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
-  local_1e0 = *(float *)((this_ptr->base).base.unk3 + 0x470);
+  local_1e0 = (float)(this_ptr->base).base.field48_0x2a90;
   local_1e0 = (1.0 - (1.0 - *(float *)(local_20 + 0x14)) * local_1e0) * local_1e0;
   if (0.0 < local_1e0) {
     local_1c = &(this_ptr->base).base.model;
@@ -106,7 +106,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     this_ptr_00 = local_1c;
     local_34 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                          (&local_1c->motion_controller,iVar1,
-                          *(float *)((this_ptr->base).base.unk3 + 0x470));
+                          (float)(this_ptr->base).base.field48_0x2a90);
     local_18 = local_34;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_00,iVar1,local_34,local_1e0,local_24,

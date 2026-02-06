@@ -1,19 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_gabriela_cpp_FUN_004d2a80 (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *instance)
+; __cdecl float __cdecl core_gabriela_cpp_FUN_004d2a80 (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   current_bone_index
 ; int              Stack[0x8]:4   target_bone_index
 ; float            Stack[0xc]:4   blend_weight
 ; int              Stack[0x10]:4   hierarchy_distance
-; CDeformableModelInstance * Stack[0x14]:4   instance
+; CDeformableModelInstance * Stack[0x14]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d4d80 at 004d5462
+;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d5462
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062ac95 = 0.800000000000000

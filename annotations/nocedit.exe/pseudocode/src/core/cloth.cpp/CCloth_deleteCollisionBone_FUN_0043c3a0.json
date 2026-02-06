@@ -1,0 +1,113 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043c3a0",
+    "address_range": [
+      [
+        "0043c3a0",
+        "0043c3d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_deleteCollisionBone_FUN_0043c3a0(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e1a0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.346153846153846,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 11,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "(*(CCloth **)((pCVar2->model).texture_list[1].unknown + 0x10),in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
+}

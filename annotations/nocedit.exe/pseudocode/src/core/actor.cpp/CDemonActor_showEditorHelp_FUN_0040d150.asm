@@ -10,7 +10,7 @@
 ; XREF[17]:
 ;   core_barrier.cpp_CBarrier_FUN_00414610 at 0041461c
 ;   core_bat.cpp_CBat_showEditorHelp_FUN_00414fb0 at 00414fbb
-;   core_curtain.cpp_FUN_0044b8d0 at 0044b8dd
+;   core_curtain.cpp_CCurtain_showEditorHelp_FUN_0044b8d0 at 0044b8dd
 ;   core_emitter.cpp_CEmitter_showEditorHelp_FUN_004a9350 at 004a935d
 ;   core_flame.cpp_FUN_004cb0a0 at 004cb0ad
 ;   core_flies.cpp_FUN_004ccc70 at 004ccc7d

@@ -4,37 +4,37 @@
       {
         "category": "pointer_precision",
         "column": 23,
-        "line": 182,
+        "line": 150,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 212,
+        "line": 180,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 552,
+        "line": 514,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "incompatible_types",
-        "column": 49,
-        "line": 694,
+        "column": 47,
+        "line": 650,
         "message": "cannot convert 'float (*)(int, int, float, int, CDeformableModelInstance*)' to 'float (**)(int, int, float, int, CDeformableModelInstance*)'"
       },
       {
         "category": "incompatible_types",
-        "column": 50,
-        "line": 697,
+        "column": 47,
+        "line": 653,
         "message": "cannot convert 'float (*)(int, int, float, int, CDeformableModelInstance*)' to 'float (**)(int, int, float, int, CDeformableModelInstance*)'"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 729,
+        "line": 685,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -49,114 +49,90 @@
       {
         "category": "other",
         "column": 36,
-        "line": 158,
+        "line": 126,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 273,
+        "line": 240,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 280,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 281,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 316,
+        "line": 284,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 329,
+        "line": 296,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 365,
+        "line": 331,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 373,
+        "line": 339,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 380,
+        "line": 346,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 386,
+        "line": 352,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 412,
+        "line": 378,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 434,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 461,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 522,
+        "line": 484,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 571,
+        "column": 17,
+        "line": 533,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 747,
+        "line": 703,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 865,
+    "complexity_score": 821,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 745,
+    "pseudocode_lines": 701,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data"
     ],
-    "total_lines": 2401
+    "total_lines": 2357
   },
   "cross_references": [],
   "function": {
@@ -1237,77 +1213,77 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 188,
+      "line": 156,
       "match": "ABS",
       "text": "if ((float)5 < ABS(local_10c)) goto LAB_004f4dd2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
+      "line": 158,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_108 * local_108 + local_110 * local_110);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 260,
+      "line": 227,
       "match": "SQRT",
       "text": "SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 275,
+      "line": 243,
       "match": "SQRT",
-      "text": "SQRT(fVar3 * fVar3 + fVar8 * fVar8) < (float)40)) {",
+      "text": ", SQRT(fVar3 * fVar3 + fVar8 * fVar8) < (float)40)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 437,
+      "line": 402,
       "match": "SQRT",
       "text": "fVar8 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 465,
+      "line": 430,
       "match": "ABS",
-      "text": "(ABS(*(float *)((this_ptr->base).base.unk1 + 0xc)) < (float)0.017453292519444399)) {",
+      "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 628,
+      "line": 585,
       "match": "SQRT",
       "text": "SQRT((double)local_a8 * (double)local_a8 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 633,
+      "line": 590,
       "match": "SQRT",
       "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 681,
+      "line": 637,
       "match": "DAT_02db8888",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 686,
+      "line": 642,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 689,
+      "line": 645,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
       "type": "undefined_data"

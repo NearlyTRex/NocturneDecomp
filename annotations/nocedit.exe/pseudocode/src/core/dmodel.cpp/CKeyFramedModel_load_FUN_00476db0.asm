@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[9]:
+;   core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 at 0043dccd
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0 at 00438dc0
-;   core_cloth.cpp_FUN_0043dcc0 at 0043dccd
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d6b7
 ;   core_dmodel.cpp_loadModel_FUN_00478c00 at 00478c8a
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 at 0047ee97

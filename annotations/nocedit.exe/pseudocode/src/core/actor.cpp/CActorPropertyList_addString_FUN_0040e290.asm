@@ -18,7 +18,7 @@
 ;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 00431204
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f7ce
 ;   core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130 at 004421ab
-;   core_curtain.cpp_FUN_0044b610 at 0044b635
+;   core_curtain.cpp_CCurtain_getPropertyList_FUN_0044b610 at 0044b635
 ;   core_dest.cpp_FUN_0046fe80 at 0046fed8
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 at 004aa200
 ;   ... and 10 more

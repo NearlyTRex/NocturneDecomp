@@ -47,10 +47,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
   int local_18;
   float local_14;
   
-  (this_ptr->base).unk4[0x10] = '\0';
-  (this_ptr->base).unk4[0x11] = '\0';
-  (this_ptr->base).unk4[0x12] = '\0';
-  (this_ptr->base).unk4[0x13] = '\0';
+  (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
   local_14 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
   if ((((float)0.98999999999999999 <= local_14) &&
       ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) &&
@@ -113,7 +110,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
                                ((CDemonActor *)this_ptr,&CStack_90,&(this_ptr_01->location).position
                                );
             if (0.0 < pCVar1->z) {
-              *(CDemonActor **)((this_ptr->base).unk4 + 0x10) = this_ptr_01;
+              (this_ptr->base).ladder_to_climb = this_ptr_01;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,0x2a,1);
               (this_ptr->base).action_bindings.fire_key = 0;

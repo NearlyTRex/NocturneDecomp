@@ -16,8 +16,8 @@
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 004309d7
 ;   core_charactr.cpp_CCharacter_FUN_00429b40 at 0042a285
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042af8d
-;   core_cloth.cpp_FUN_0043bae0 at 0043bb28
-;   core_curtain.cpp_FUN_0044b060 at 0044b0da
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bb28
+;   core_curtain.cpp_CCurtain_FUN_0044b060 at 0044b0da
 ;   ... and 32 more
 ;
 ; Called Functions:

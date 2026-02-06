@@ -44,7 +44,7 @@
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_FUN_0042e570 at 0042e5b8
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 at 0042d495
-;   core_gabriela.cpp_FUN_004d4d80 at 004d5329
+;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d5329
 ;   core_gabriela.cpp_FUN_004d6d40 at 004d6f65
 ;   core_gabriela.cpp_FUN_004d6f80 at 004d7050
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e6906

@@ -4,13 +4,13 @@
       {
         "category": "pointer_precision",
         "column": 11,
-        "line": 33,
+        "line": 34,
         "message": "cast from 'CCloth*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 10,
-        "line": 48,
+        "line": 50,
         "message": "cast from 'CCloth*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,53 +25,51 @@
       {
         "category": "other",
         "column": 25,
-        "line": 21,
+        "line": 22,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 23,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 28,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 25,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 74,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 39,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 117
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 119
   },
   "cross_references": [
     {
       "addr": "0043c320",
       "from_addr": "0043c346",
-      "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320",
+      "name": "core_cloth.cpp_CClothList_render_FUN_0043c320",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -85,7 +83,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0",
-    "signature": "int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr)"
+    "signature": "int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0 (CCloth *this_ptr,CDeformableModelInstance *model_ptr)"
   },
   "function_calls": [
     {
@@ -178,10 +176,10 @@
     "pcode_op_count": 309
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -190,30 +188,15 @@
         "offset": 4,
         "size": 4,
         "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = *(int *)(in_stack_00000008 + 0x2230);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

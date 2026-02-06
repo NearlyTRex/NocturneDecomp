@@ -136,7 +136,7 @@ switchD_005c331f_caseD_3:
   local_14 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
   bVar2 = (float)0.94999999999999996 < local_14;
   if ((*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) == 1) &&
-     (*(int *)((this_ptr->base).base.unk3 + 0x46c) == 8)) {
+     ((this_ptr->base).base.field47_0x2a8c == 8)) {
     bVar2 = true;
 LAB_005c336f:
     (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x104))();
@@ -202,8 +202,8 @@ LAB_005c33d7:
   }
   if ((((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] == 0) &&
       (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-      iVar3 == 0)) && (0 < (this_ptr->base).base.cloth_count)) {
-    core_cloth_cpp_FUN_0043c070();
+      iVar3 == 0)) && (0 < (this_ptr->base).base.cloth_list.count)) {
+    core_cloth_cpp_CClothList_reset_FUN_0043c070(&(this_ptr->base).base.cloth_list);
   }
   return 1;
 }

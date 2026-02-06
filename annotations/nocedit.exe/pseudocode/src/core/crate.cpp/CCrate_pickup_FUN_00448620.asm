@@ -1,0 +1,19 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void __cdecl core_crate_cpp_CCrate_pickup_FUN_00448620(CCrate *this_ptr,CDemonActor *carrier)
+;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   carrier
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 00448620
+        ;   Label: core_crate.cpp_CCrate_pickup_FUN_00448620
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00448624
+    MOV dword ptr [EDX + 0x2d4],EAX     ; 00448628
+    RET                                 ; 0044862e
+

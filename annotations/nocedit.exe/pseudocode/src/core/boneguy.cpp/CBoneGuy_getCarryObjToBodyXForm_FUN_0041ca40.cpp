@@ -34,7 +34,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBone
   
   bVar5 = 0;
   this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;
-  iVar2 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;
+  iVar2 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
   local_60.z = 2.536;
   local_60.x = -0.771;
   local_60.y = -2.536;

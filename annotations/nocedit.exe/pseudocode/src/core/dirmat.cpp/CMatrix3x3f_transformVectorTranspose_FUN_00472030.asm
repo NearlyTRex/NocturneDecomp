@@ -15,9 +15,9 @@
 ;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a90e
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041ef23
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420180 at 004201b9
-;   core_cloth.cpp_FUN_0043abb0 at 0043b02f
-;   core_cloth.cpp_FUN_0043e1a0 at 0043e230
-;   core_curtain.cpp_FUN_00449f10 at 00449f7e
+;   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 at 0043e230
+;   core_cloth.cpp_CCloth_step_FUN_0043abb0 at 0043b02f
+;   core_curtain.cpp_CCurtain_FUN_00449f10 at 00449f7e
 ;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 at 004542b1
 ;   ... and 20 more
 ;

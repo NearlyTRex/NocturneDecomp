@@ -32,7 +32,7 @@
 ; XREF[13]:
 ;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d24b
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf63
-;   core_cloth.cpp_FUN_0043a2b0 at 0043a300
+;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a300
 ;   core_mirror.cpp_setupMirrorReflection_FUN_005214c0 at 005218a7
 ;   core_skeledit.cpp_FUN_0058ac80 at 0058acf9
 ;   core_skeledit.cpp_FUN_0058aeb0 at 0058aedd

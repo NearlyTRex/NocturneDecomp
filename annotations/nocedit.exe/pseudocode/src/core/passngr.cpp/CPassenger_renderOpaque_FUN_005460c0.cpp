@@ -13,7 +13,7 @@ int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *th
   int iVar1;
   CBoundingBox3D local_1c;
   
-  if ((this_ptr->morph_time <= 1.0) && (*(int *)(this_ptr->base).base.unk1 == 0)) {
+  if ((this_ptr->morph_time <= 1.0) && ((this_ptr->base).base.field2_0x240c == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,&local_1c);

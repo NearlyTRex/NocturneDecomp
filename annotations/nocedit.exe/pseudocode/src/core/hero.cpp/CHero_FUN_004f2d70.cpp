@@ -23,10 +23,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
   
   iVar7 = 0;
   local_14 = 0;
-  this_ptr->unk4[0] = '\0';
-  this_ptr->unk4[1] = '\0';
-  this_ptr->unk4[2] = '\0';
-  this_ptr->unk4[3] = '\0';
+  this_ptr->door_to_open = (CDemonActor *)0x0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar7) {
       return 0;
@@ -54,7 +51,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
             core_door_cpp_FUN_0047fcf0();
             return local_18;
           }
-          *(CDoor **)this_ptr->unk4 = this_ptr_00;
+          this_ptr->door_to_open = (CDemonActor *)this_ptr_00;
           return local_18;
         }
       }

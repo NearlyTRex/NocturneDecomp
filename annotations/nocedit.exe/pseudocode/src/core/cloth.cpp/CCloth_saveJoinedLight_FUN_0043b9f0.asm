@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr)
+; __cdecl int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0 (CCloth *this_ptr,CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
+; CDeformableModelInstance * Stack[0x8]:4   model_ptr
 ;
 ; XREF[1]:
-;   core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320 at 0043c346
+;   core_cloth.cpp_CClothList_render_FUN_0043c320 at 0043c346
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_006184ca

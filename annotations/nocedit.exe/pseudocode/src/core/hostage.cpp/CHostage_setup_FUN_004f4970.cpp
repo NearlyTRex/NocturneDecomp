@@ -70,30 +70,27 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004f4970(CHostage *this_ptr)
                           (&this_ptr_00->motion_controller);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm")
   ;
-  *(int *)(this_ptr->unk3 + 0x10) = iVar1;
+  *(int *)(this_ptr->unk3 + 8) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
-  *(int *)(this_ptr->unk3 + 0xc) = iVar1;
+  *(int *)(this_ptr->unk3 + 4) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot");
-  *(int *)(this_ptr->unk3 + 0x14) = iVar1;
+  *(int *)(this_ptr->unk3 + 0xc) = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot");
-  *(int *)(this_ptr->unk3 + 0x18) = iVar1;
+  *(int *)(this_ptr->unk3 + 0x10) = iVar1;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Hand");
   iVar1 = *(int *)this_ptr->unk2;
-  *(int *)(this_ptr->base).base.carry_hands[1].unk1 = iVar2;
+  (this_ptr->base).base.carry_hands[1].bone_index = iVar2;
   if (iVar1 != 1) {
     iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Hand");
-    *(int *)(this_ptr->base).base.carry_hands[0].unk1 = iVar1;
+    (this_ptr->base).base.carry_hands[0].bone_index = iVar1;
   }
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1");
   iVar1 = *(int *)this_ptr->unk2;
-  *(int *)((this_ptr->base).base.unk2 + 0x24) = iVar2;
+  (this_ptr->base).base.gesture_branch_root = iVar2;
   if (iVar1 == 1) {
     DAT_02db8888 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_02);
   }
   core_npc_cpp_CNPC_setup_FUN_00544870(&this_ptr->base);
-  this_ptr->unk1[0x3a4] = '\0';
-  this_ptr->unk1[0x3a5] = '\0';
-  this_ptr->unk1[0x3a6] = '\0';
-  this_ptr->unk1[0x3a7] = '\0';
+  this_ptr->unk1 = 0;
   return;
 }

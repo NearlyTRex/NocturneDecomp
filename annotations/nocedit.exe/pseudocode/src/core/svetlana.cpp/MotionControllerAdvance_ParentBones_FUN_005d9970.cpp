@@ -26,7 +26,7 @@ void __cdecl core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(
     else {
       if (uVar2 < 0x65) {
         core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10();
-        iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
+        iVar1 = *(int *)(in_stack_00000004[2].field66_0x33cc[0x1c].on_event + 0x1c);
       }
       else {
         if (uVar2 != 0x65) {
@@ -34,9 +34,9 @@ void __cdecl core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(
           goto LAB_005d99be;
         }
         core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10();
-        iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8);
+        iVar1 = *(int *)(in_stack_00000004[2].field66_0x33cc[0x1c].on_event + 0x1c);
       }
-      *(uint *)(in_stack_00000004[2].cloth_data + 0x54f8) = (uint)(iVar1 == 0);
+      *(uint *)(in_stack_00000004[2].field66_0x33cc[0x1c].on_event + 0x1c) = (uint)(iVar1 == 0);
     }
 LAB_005d99be:
     if (in_stack_00000008 <= 0.0) {

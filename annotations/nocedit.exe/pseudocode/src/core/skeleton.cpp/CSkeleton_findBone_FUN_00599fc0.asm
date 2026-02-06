@@ -15,7 +15,7 @@
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042383c
 ;   core_charactr.cpp_CCharacter_FUN_0042ea40 at 0042ebc4
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40 at 0042ec83
-;   core_cloth.cpp_OrientBoneCheck_FUN_0043a110 at 0043a156
+;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 at 0043a156
 ;   core_colonel.cpp_CColonel_setup_FUN_0043f850 at 0043f920
 ;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441ef
 ;   ... and 29 more

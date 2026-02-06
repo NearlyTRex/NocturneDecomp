@@ -27,7 +27,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
   
   iVar3 = core_charactr_cpp_CCharacter_FUN_0042d360(&this_ptr->base);
   if (iVar3 == 0) {
-    if (*(int *)(this_ptr->unk4 + 0x14) != 0) {
+    if (*(int *)this_ptr->unk3 != 0) {
       return 1;
     }
     input_world_point = &(this_ptr->base).base.location;
@@ -61,7 +61,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
               SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5)))))) &&
            (iVar3 = (*((this_ptr_00->base).base.vtable._ub)->startInteraction)
                               ((CDemonActor *)this_ptr_00,(CDemonActor *)this_ptr), iVar3 != 0)) {
-          *(CHero **)(this_ptr->unk4 + 0x14) = this_ptr_00;
+          *(CHero **)this_ptr->unk3 = this_ptr_00;
           return 1;
         }
       }

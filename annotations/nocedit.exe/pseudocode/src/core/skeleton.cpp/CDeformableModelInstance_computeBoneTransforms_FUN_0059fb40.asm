@@ -20,8 +20,8 @@
 ; XREF[17]:
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b02c
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfde
-;   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880 at 0043c9ec
-;   core_cloth.cpp_FUN_00439710 at 00439af5
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043c9ec
+;   core_cloth.cpp_CCloth_setup_FUN_00439710 at 00439af5
 ;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 00520492
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f700
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c46a

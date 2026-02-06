@@ -56,11 +56,7 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
       local_70.x = local_40;
       local_70.y = local_3c;
     }
-    pCVar4 = &this_ptr->base;
-    (pCVar4->base).unk1[0xc] = '\0';
-    (pCVar4->base).unk1[0xd] = '\0';
-    (pCVar4->base).unk1[0xe] = '\0';
-    (pCVar4->base).unk1[0xf] = '\0';
+    (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_70.y * local_70.y + local_74 * local_74 + local_70.x * local_70.x) <=
         (float)6) {
       iVar6 = (*(((g_HeroActors[iVar5]->base).base.vtable._ue)->_ue).enemyfunc3)();
@@ -95,29 +91,20 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
         }
         (this_ptr->base).action_bindings.walk_key = 1;
       }
-      pCVar4 = &this_ptr->base;
-      (pCVar4->base).cloth_data[0x32c] = '\0';
-      (pCVar4->base).cloth_data[0x32d] = '\0';
-      (pCVar4->base).cloth_data[0x32e] = '\0';
-      (pCVar4->base).cloth_data[0x32f] = '\0';
+      (this_ptr->base).base.field53_0x2dc4[0] = '\0';
+      (this_ptr->base).base.field53_0x2dc4[1] = '\0';
+      (this_ptr->base).base.field53_0x2dc4[2] = '\0';
+      (this_ptr->base).base.field53_0x2dc4[3] = '\0';
     }
-    fVar2 = *(float *)((this_ptr->base).base.unk1 + 0xc);
+    fVar2 = (this_ptr->base).base.turn_angle_accumulator;
     if (fVar2 <= 0.0) {
       if (fVar2 < 0.0) {
-        pCVar4 = &this_ptr->base;
-        (pCVar4->base).unk1[0xc] = '\0';
-        (pCVar4->base).unk1[0xd] = '\0';
-        (pCVar4->base).unk1[0xe] = '\0';
-        (pCVar4->base).unk1[0xf] = '\0';
+        (this_ptr->base).base.turn_angle_accumulator = 0.0;
         *(float *)((this_ptr->base).unk2 + 4) = -fStack_1c;
       }
     }
     else {
-      pCVar4 = &this_ptr->base;
-      (pCVar4->base).unk1[0xc] = '\0';
-      (pCVar4->base).unk1[0xd] = '\0';
-      (pCVar4->base).unk1[0xe] = '\0';
-      (pCVar4->base).unk1[0xf] = '\0';
+      (this_ptr->base).base.turn_angle_accumulator = 0.0;
       *(float *)((this_ptr->base).unk2 + 4) = fStack_1c;
     }
     CStack_34.x = (pCVar3->base).base.location.position.x -

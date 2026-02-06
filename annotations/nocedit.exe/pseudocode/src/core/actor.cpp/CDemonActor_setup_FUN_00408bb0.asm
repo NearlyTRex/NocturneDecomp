@@ -16,7 +16,7 @@
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830 at 0042183a
 ;   core_chain.cpp_CChain_setup_FUN_0042fd20 at 0042fd2c
 ;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 0042814c
-;   core_crate.cpp_FUN_00448530 at 00448539
+;   core_crate.cpp_CCrate_setup_FUN_00448530 at 00448539
 ;   ... and 32 more
 ;
 ; Referenced Globals:

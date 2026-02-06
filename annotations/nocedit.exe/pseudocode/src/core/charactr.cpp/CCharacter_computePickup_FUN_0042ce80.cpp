@@ -13,8 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   SCarryHand *pSVar2;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
-  char *pcVar5;
-  byte bVar6;
+  byte bVar5;
   int in_stack_00000008;
   float in_stack_0000000c;
   CMatrix3x4f local_160;
@@ -25,9 +24,9 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   CMatrix3x4f local_70;
   CMatrix3x4f local_40;
   
-  bVar6 = 0;
+  bVar5 = 0;
   pSVar2 = this_ptr->carry_hands + in_stack_00000008;
-  if (*(int *)pSVar2->unk1 < 0) {
+  if (pSVar2->bone_index < 0) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
     g_CurrentLineNumber = 0xc00;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::computePickup - invalid bone!");
@@ -42,42 +41,33 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   pCVar4 = &local_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar4->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((this_ptr->model).bone_transform.bone_world_matrices + *(int *)pSVar2->unk1,&local_a0,
+            ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,&local_a0,
              &local_40);
   pCVar3 = &local_40;
   pCVar4 = &local_70;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar4->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
   core_xform_cpp_inverse_FUN_005f6210(&local_70,&local_160);
   pCVar3 = &local_160;
-  pcVar5 = pSVar2->unk2;
+  pCVar4 = &pSVar2->initial_carry_transform;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(float *)pcVar5 = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-    pcVar5 = pcVar5 + ((uint)bVar6 * -2 + 1) * 4;
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
   }
   if (0.0 < in_stack_0000000c) {
-    pSVar2->unk2[0x34] = '\0';
-    pSVar2->unk2[0x35] = '\0';
-    pSVar2->unk2[0x36] = '\0';
-    pSVar2->unk2[0x37] = '\0';
-    *(float *)(pSVar2->unk2 + 0x30) = 1.0 / in_stack_0000000c;
+    pSVar2->blend_factor = 0.0;
+    pSVar2->blend_speed = 1.0 / in_stack_0000000c;
     return;
   }
-  pSVar2->unk2[0x34] = '\0';
-  pSVar2->unk2[0x35] = '\0';
-  pSVar2->unk2[0x36] = -0x80;
-  pSVar2->unk2[0x37] = '?';
-  pSVar2->unk2[0x30] = '\0';
-  pSVar2->unk2[0x31] = '\0';
-  pSVar2->unk2[0x32] = '\0';
-  pSVar2->unk2[0x33] = '\0';
+  pSVar2->blend_factor = 1.0;
+  pSVar2->blend_speed = 0.0;
   return;
 }

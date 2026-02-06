@@ -23,7 +23,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
   int iStack_c;
   char *pcStack_8;
   
-  if (*(int *)(this_ptr->base).base.unk1 == 0) {
+  if ((this_ptr->base).base.field2_0x240c == 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);

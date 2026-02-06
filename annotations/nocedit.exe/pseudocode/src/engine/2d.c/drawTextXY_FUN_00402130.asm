@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   text
 ;
 ; XREF[5]:
-;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d9ac
+;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d9ac
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da967
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00577eff
 ;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057ab7c

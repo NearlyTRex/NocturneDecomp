@@ -18,7 +18,7 @@
 ;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9ef
 ;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427886
 ;   core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130 at 00442166
-;   core_curtain.cpp_FUN_0044b610 at 0044b767
+;   core_curtain.cpp_CCurtain_getPropertyList_FUN_0044b610 at 0044b767
 ;   ... and 24 more
 ;
 ; Called Functions:

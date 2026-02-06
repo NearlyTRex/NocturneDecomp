@@ -86,8 +86,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
   local_cc = 1;
   local_c8 = 2;
   local_c4 = 3;
-  local_20 = (CVector3f *)(this_ptr->cloth_data + 0x1c4);
-  local_40 = (CVector3f *)(this_ptr->cloth_data + 0x278);
+  local_20 = this_ptr->field51_0x2c5c;
+  local_40 = this_ptr->field52_0x2d10;
   local_30 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_30 / 5)
@@ -121,8 +121,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     local_20 = local_20 + 3;
     local_30 = local_30 + -0x8000;
   } while (local_20 != local_40);
-  local_24 = (CVector3f *)(this_ptr->cloth_data + 0x278);
-  local_3c = (CVector3f *)(this_ptr->cloth_data + 0x32c);
+  local_24 = this_ptr->field52_0x2d10;
+  local_3c = (CVector3f *)this_ptr->field53_0x2dc4;
   local_28 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_28 / 5)
@@ -156,16 +156,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     local_24 = local_24 + 3;
     local_28 = local_28 + -0x8000;
   } while (local_24 != local_3c);
-  local_38 = *(float *)(this_ptr->cloth_data + 0x358) * this_ptr->size_scale;
-  if (local_38 < *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale) {
+  local_38 = this_ptr->collision_cylinder_top * this_ptr->size_scale;
+  if (local_38 < this_ptr->collision_cylinder_bottom * this_ptr->size_scale) {
     local_38 = (this_ptr->model).bounding_box.max.y;
   }
-  fVar1 = *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale;
+  fVar1 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
   if (local_38 < fVar1) {
     local_38 = this_ptr->size_scale * (float)0.5 + fVar1;
   }
-  local_44 = *(float *)(this_ptr->cloth_data + 0x354) * this_ptr->size_scale;
-  fVar1 = *(float *)(this_ptr->cloth_data + 0x348);
+  local_44 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+  fVar1 = this_ptr->collision_cylinder_radius;
   fVar2 = this_ptr->size_scale;
   iVar9 = 0x30;
   iVar6 = 0;
@@ -235,11 +235,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429b40(CCharacter *this_ptr)
     fVar12 = (float10)local_f0 * (float10)3.1415926535000001 * (float10)0.041666666666666699;
     fVar13 = (float10)fsin(fVar12);
     fVar12 = (float10)fcos(fVar12);
-    local_84.x = (float)((float10)this_ptr->size_scale *
-                        (float10)*(float *)(this_ptr->cloth_data + 0x344) * fVar13);
+    local_84.x = (float)((float10)this_ptr->size_scale * (float10)this_ptr->field54_0x2ddc * fVar13)
+    ;
     local_84.y = 0.0;
-    local_84.z = (float)(fVar12 * (float10)*(float *)(this_ptr->cloth_data + 0x344) *
-                        (float10)this_ptr->size_scale);
+    local_84.z = (float)(fVar12 * (float10)this_ptr->field54_0x2ddc * (float10)this_ptr->size_scale)
+    ;
     local_a8.x = (int)ROUND(local_84.x * 256.0f);
     local_a8.y = (int)ROUND(256.0f * 0.0);
     local_a8.z = (int)ROUND(local_84.z * 256.0f);

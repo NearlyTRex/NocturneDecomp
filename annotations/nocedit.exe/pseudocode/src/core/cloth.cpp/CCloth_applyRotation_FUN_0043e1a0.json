@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 44,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "0043c3a0",
+      "from_addr": "0043c3c2",
+      "name": "core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043e1a0",
+    "address_range": [
+      [
+        "0043e1a0",
+        "0043e297"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_0043e1a0(CCloth *this_ptr,CVector3f *euler)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "00472030",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7976190476190474,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 119,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 48,
+      "INT_AND": 33,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 26,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 27,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 403
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 96,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "euler",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

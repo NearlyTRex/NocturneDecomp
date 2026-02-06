@@ -22,8 +22,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d181
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cede
 ;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 at 004bf917
+;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d5724
 ;   core_gabriela.cpp_CGabriella_FUN_004d7120 at 004d722f
-;   core_gabriela.cpp_FUN_004d5550 at 004d5724
 ;   core_hostage.cpp_CHostage_FUN_004f6550 at 004f6728
 ;   ... and 25 more
 ;

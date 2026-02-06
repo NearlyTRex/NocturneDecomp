@@ -9,5 +9,5 @@
 int __cdecl core_charactr_cpp_CCharacter_FUN_0042f9c0(CCharacter *this_ptr)
 
 {
-  return *(int *)(this_ptr->cloth_data + 0x46a8);
+  return *(int *)(this_ptr->field66_0x33cc[0x17].base.create_event + 0x40);
 }

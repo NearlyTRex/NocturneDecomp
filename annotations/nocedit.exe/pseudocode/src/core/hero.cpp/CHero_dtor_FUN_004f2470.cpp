@@ -15,7 +15,8 @@ void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
   CFlame *pCVar4;
   SFire *pSVar5;
   CVector3f *pCVar6;
-  CDeformableModelInstance *pCVar7;
+  CClothList *pCVar7;
+  CDeformableModelInstance *pCVar8;
   
   (this_ptr->base).base.vtable._ub = &g_CHeroVTable;
   iVar1 = 0;
@@ -31,11 +32,11 @@ void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
                      ((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x2c));
   pSVar5 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar4[-2].base.create_event + 0x20));
   pCVar6 = core_armour_cpp_freeVectors_FUN_004126e0((CVector3f *)(pSVar5[-0x16].unk + 4));
-  core_armour_cpp_freeVectors_FUN_004126e0(pCVar6 + -0xf);
-  iVar1 = core_cloth_cpp_FUN_0043bf80();
-  pCVar7 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0);
+  pCVar6 = core_armour_cpp_freeVectors_FUN_004126e0(pCVar6 + -0xf);
+  pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar6 + -0x26));
+  pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
+                     ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
   core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-            ((CDemonActor *)(pCVar7[-1].part_visibility_flags + 7),1);
+            ((CDemonActor *)(pCVar8[-1].part_visibility_flags + 7),1);
   return;
 }

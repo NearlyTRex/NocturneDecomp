@@ -49,7 +49,7 @@
 ;
 ; XREF[8]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a6c3
-;   core_crossbow.cpp_CCrossbow_FUN_00448f20 at 004494e5
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 004494e5
 ;   core_glass.cpp_CGlass_process_FUN_004e98e0 at 004e9919
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0a57
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f4644

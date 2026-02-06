@@ -9,42 +9,42 @@
 void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
 
 {
-  CClothList *pCVar1;
-  void *pvVar2;
-  int iVar3;
-  void *ptr;
-  CClothList *pCVar4;
-  int iVar5;
-  CClothList *filename;
+  CCloth **ppCVar1;
+  CCloth *this_ptr_00;
+  CCloth *pCVar2;
+  CClothList *pCVar3;
+  int iVar4;
+  char (*filename) [40];
   
-  iVar5 = 0;
-  if (0 < this_ptr->unk) {
-    filename = this_ptr + 1;
-    pCVar4 = this_ptr;
+  iVar4 = 0;
+  if (0 < this_ptr->count) {
+    filename = this_ptr->filenames;
+    pCVar3 = this_ptr;
     do {
       g_CurrentDebugLine = 0x5a7;
       g_CurrentDebugFilename = "..\\core\\cloth.cpp";
-      if (pCVar4[0x65].unk != 0) {
-        core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
-        shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+      if (pCVar3->cloths[0] != (CCloth *)0x0) {
+        pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar3->cloths[0]);
+        shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
       }
-      pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x3fe70,"..\\core\\cloth.cpp",0x5a8);
-      iVar3 = 0;
-      if (pvVar2 != (void *)0x0) {
-        iVar3 = core_cloth_cpp_FUN_00438ba0();
+      this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+                              (0x3fe70,"..\\core\\cloth.cpp",0x5a8);
+      pCVar2 = (CCloth *)0x0;
+      if (this_ptr_00 != (CCloth *)0x0) {
+        pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(this_ptr_00);
       }
-      pCVar4[0x65].unk = iVar3;
-      if (iVar3 == 0) {
+      pCVar3->cloths[0] = pCVar2;
+      if (pCVar2 == (CCloth *)0x0) {
         g_CurrentFilename = "..\\core\\cloth.cpp";
         g_CurrentLineNumber = 0x5a9;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CClothList::load - out of memory for CCloth object.");
       }
-      pCVar1 = pCVar4 + 0x65;
-      pCVar4 = pCVar4 + 1;
-      iVar5 = iVar5 + 1;
-      core_cloth_cpp_CCloth_load_FUN_00438cf0((CCloth *)pCVar1->unk,(char *)filename);
-      filename = filename + 10;
-    } while (iVar5 < this_ptr->unk);
+      ppCVar1 = pCVar3->cloths;
+      pCVar3 = (CClothList *)pCVar3->filenames;
+      iVar4 = iVar4 + 1;
+      core_cloth_cpp_CCloth_load_FUN_00438cf0(*ppCVar1,*filename);
+      filename = filename + 1;
+    } while (iVar4 < this_ptr->count);
   }
   return;
 }

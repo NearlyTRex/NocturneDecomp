@@ -22,13 +22,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
                      (&this_ptr->base,&local_24,in_stack_00000008);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
   local_c = pCVar1->y;
-  local_10 = *(float *)(this_ptr->unk1 + 0x2c);
+  local_10 = this_ptr->turn_speed;
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_c);
   fVar3 = -local_10;
   if ((-local_10 <= fVar2) && (fVar3 = local_10, fVar2 <= local_10)) {
-    *(float *)(this_ptr->unk1 + 0xc) = fVar2;
+    this_ptr->turn_angle_accumulator = fVar2;
     return;
   }
-  *(float *)(this_ptr->unk1 + 0xc) = fVar3;
+  this_ptr->turn_angle_accumulator = fVar3;
   return;
 }

@@ -16,7 +16,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
-;   core_cloth.cpp_FUN_0043bae0
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     PUSH 0x0                            ; 004d617c
     LEA EAX,[EBX + 0x1fc14]             ; 004d617e
     PUSH EAX                            ; 004d6184
-    CALL core_cloth.cpp_FUN_0043bae0    ; 004d6185
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043bae0()
+    CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 004d6185
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
     ADD ESP,0x8                         ; 004d618a
     MOV EDX,dword ptr [0x006703ec]      ; 004d618d | g_CDemonRendererPtr2
     PUSH EDX                            ; 004d6193 | g_CDemonRendererInstance

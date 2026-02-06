@@ -13,8 +13,8 @@
 ; XREF[11]:
 ;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419360
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 at 0042111b
-;   core_cloth.cpp_FUN_0043bae0 at 0043bb04
-;   core_curtain.cpp_FUN_0044b060 at 0044b15f
+;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bb04
+;   core_curtain.cpp_CCurtain_FUN_0044b060 at 0044b15f
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 at 00477905
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 0048290f
 ;   core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 at 004e9f71

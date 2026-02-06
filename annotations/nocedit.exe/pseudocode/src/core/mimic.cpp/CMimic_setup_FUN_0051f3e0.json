@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 6,
-        "line": 90,
+        "line": 92,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 12,
-        "line": 90,
+        "line": 92,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 114,
+        "line": 116,
         "message": "'stack0xffffffe8' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 115,
+        "line": 117,
         "message": "'stack0xffffffec' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 120,
+        "line": 122,
         "message": "'stack0xffffffdc' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 121,
+        "line": 123,
         "message": "'stack0xffffffe0' was not declared in this scope"
       }
     ],
@@ -175,61 +175,55 @@
       {
         "category": "other",
         "column": 25,
-        "line": 86,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
         "line": 88,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 15,
+        "column": 50,
         "line": 90,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 92,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 101,
+        "line": 103,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 102,
+        "line": 104,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 111,
+        "line": 113,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 117,
+        "line": 119,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 123,
+        "line": 125,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 129,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 140,
+        "line": 131,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -241,24 +235,30 @@
       {
         "category": "other",
         "column": 14,
-        "line": 145,
+        "line": 144,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 147,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 238,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
-    "pseudocode_lines": 138,
+    "pseudocode_lines": 140,
     "suspect_count": 9,
     "suspect_types": [
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 467
+    "total_lines": 469
   },
   "cross_references": [],
   "function": {
@@ -292,7 +292,7 @@
     {
       "addr": "00439710",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00439710"
+      "name": "core_cloth.cpp_CCloth_setup_FUN_00439710"
     },
     {
       "addr": "004a9650",
@@ -719,63 +719,63 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 85,
       "match": "code *",
       "text": "(*(code *)**(uint **)(*(int *)(this_ptr->unk4 + 0xc54) + 0x154))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 109,
       "match": "&stack0xffffffe8",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 110,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 113,
+      "line": 115,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 116,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
+      "line": 121,
       "match": "&stack0xffffffe8",
       "text": "*puVar7 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 123,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 125,
+      "line": 127,
       "match": "&stack0xffffffdc",
       "text": "*puVar7 = *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 127,
+      "line": 129,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"

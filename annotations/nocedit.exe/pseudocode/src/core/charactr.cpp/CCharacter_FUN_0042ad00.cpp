@@ -28,12 +28,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   int local_1c;
   int local_18;
   
-  if (*(int *)(this_ptr->cloth_data + 0x478) == 0) {
+  if (this_ptr->fire_count == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0066e784);
   this_ptr_00 = &this_ptr->model;
-  if (*(int *)(this_ptr->cloth_data + 0x8d40) != 0) {
+  if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
               (this_ptr_00,-1,0xc9,0,1);
     return;
@@ -52,16 +52,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   }
   fVar3 = 3.0f;
   iVar6 = 0;
-  if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
+  if (0 < this_ptr->fire_count) {
     fVar2 = (float)65535;
     pCVar9 = this_ptr;
     do {
-      (&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] =
-           (float)(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] +
-           (*(float *)(pCVar9->cloth_data + 0x498) * fVar2) / fVar3;
+      iVar8 = *(int *)(pCVar9->field65_0x2f1c[0].unk + 4);
+      (&DAT_00823c54)[iVar8] =
+           (float)(&DAT_00823c54)[iVar8] +
+           (*(float *)(pCVar9->field65_0x2f1c[0].unk + 0x14) * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
       pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
-    } while (iVar6 < *(int *)(this_ptr->cloth_data + 0x478));
+    } while (iVar6 < this_ptr->fire_count);
   }
   iVar6 = 0;
   iVar8 = 0;
@@ -79,14 +80,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     } while (iVar6 < pCVar5->bone_count);
   }
   if (iVar8 == pCVar5->bone_count) {
-    this_ptr->cloth_data[0x8d44] = '\0';
-    this_ptr->cloth_data[0x8d45] = '\0';
-    this_ptr->cloth_data[0x8d46] = -0x80;
-    this_ptr->cloth_data[0x8d47] = '?';
-    this_ptr->cloth_data[0x8d40] = '\x01';
-    this_ptr->cloth_data[0x8d41] = '\0';
-    this_ptr->cloth_data[0x8d42] = '\0';
-    this_ptr->cloth_data[0x8d43] = '\0';
+    this_ptr->burn_alpha = 1.0;
+    this_ptr->is_fully_burned = 1;
   }
   local_1c = 0;
   local_18 = 0;

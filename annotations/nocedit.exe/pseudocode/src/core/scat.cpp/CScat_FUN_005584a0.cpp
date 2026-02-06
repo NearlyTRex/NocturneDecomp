@@ -80,7 +80,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
   *(uint *)((int)&local_13c + (uint)bVar6 * -8 + 4) = *puVar3;
   *puVar5 = *puVar4;
   puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
-  local_160 = *(float *)((this_ptr->base).base.unk3 + 0x470);
+  local_160 = (float)(this_ptr->base).base.field48_0x2a90;
   if (local_160 <= 0.0) {
     return;
   }

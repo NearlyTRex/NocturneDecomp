@@ -137,7 +137,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   CVector3f local_24;
   
   bVar14 = 0;
-  iVar6 = *(int *)(this_ptr->base).base.carry_hands[in_stack_0000000c].unk1;
+  iVar6 = (this_ptr->base).base.carry_hands[in_stack_0000000c].bone_index;
   local_180.x = (float)core_actor_cpp_castToClassHash_FUN_0040c790
                                  (in_stack_00000008,g_CWeaponClassInfo.name_hash);
   if ((CDemonActor *)local_180.x != (CDemonActor *)0x0) {
@@ -372,7 +372,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   local_84.x = local_180.x;
   local_84.y = local_180.x;
   local_84.z = local_180.x;
-  if (*(int *)((this_ptr->base).base.unk3 + 0x46c) == 0xe) {
+  if ((this_ptr->base).base.field47_0x2a8c == 0xe) {
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_d8,&g_ZeroVector,
                         (CMatrix3x4f *)

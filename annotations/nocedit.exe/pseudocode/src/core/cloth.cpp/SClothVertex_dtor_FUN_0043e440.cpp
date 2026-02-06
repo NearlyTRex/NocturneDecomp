@@ -11,6 +11,6 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVerte
 {
   CVector3f *pCVar1;
   
-  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460(this_ptr->unk2);
+  pCVar1 = core_cloth_cpp_freeVectors_FUN_0043e460(this_ptr->bone_positions);
   return (SClothVertex *)&pCVar1[-0x14].y;
 }

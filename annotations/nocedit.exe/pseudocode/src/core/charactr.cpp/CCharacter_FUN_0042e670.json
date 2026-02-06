@@ -4,13 +4,19 @@
       {
         "category": "pointer_precision",
         "column": 19,
-        "line": 31,
+        "line": 32,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
-        "column": 74,
-        "line": 80,
+        "column": 17,
+        "line": 63,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "pointer_precision",
+        "column": 72,
+        "line": 77,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,29 +31,35 @@
       {
         "category": "other",
         "column": 10,
-        "line": 31,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 64,
-        "line": 80,
+        "column": 8,
+        "line": 63,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 109,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 84,
-    "suspect_count": 2,
+    "pseudocode_lines": 81,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 249
+    "total_lines": 246
   },
   "cross_references": [],
   "function": {
@@ -184,16 +196,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pcVar4 + 0xb7e4) = 0x501502f9;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar5->motion_transition_costs[0] + iVar7) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
       "match": "(float *)((int)",
-      "text": "fVar1 = *(float *)(local_18->cloth_data + 0x8d4c) + *(float *)((int)pcVar4 + 0xb7e4);",
+      "text": "fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar4 + 0xb7e4);",
       "type": "pointer_cast"
     }
   ]

@@ -9,8 +9,8 @@
 void __cdecl core_baron_cpp_CBaron_FUN_00414090(CBaron *this_ptr)
 
 {
-  uint in_stack_00000008;
+  float in_stack_00000008;
   
-  *(uint *)((this_ptr->base).base.cloth_data + 0x8d48) = in_stack_00000008;
+  (this_ptr->base).base.stagger_amount = in_stack_00000008;
   return;
 }

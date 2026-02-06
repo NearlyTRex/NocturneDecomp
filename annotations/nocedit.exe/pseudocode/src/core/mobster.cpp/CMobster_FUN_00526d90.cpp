@@ -45,7 +45,7 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
       *(float *)(this_ptr->unk1 + 0xc) = local_14;
     }
     if (((this_ptr->base).base.model.part_visibility_flags
-         [*(int *)((this_ptr->base).base.carry_hands[1].unk1 + 4)] != 0) &&
+         [(this_ptr->base).base.carry_hands[1].secondary_bone_index] != 0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       if (0.0 < *(float *)(this_ptr->unk1 + 0x10)) {
         fVar9 = *(float *)(this_ptr->unk1 + 0x10) - in_stack_00000008;

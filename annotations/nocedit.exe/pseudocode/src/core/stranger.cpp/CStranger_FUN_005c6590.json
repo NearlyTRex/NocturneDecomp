@@ -4,31 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 17,
+        "line": 16,
         "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 20,
+        "line": 19,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 20,
+        "line": 19,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 27,
+        "line": 26,
         "message": "'extraout_var' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 34,
+        "line": 33,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -43,18 +43,18 @@
       {
         "category": "other",
         "column": 19,
-        "line": 20,
+        "line": 19,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 135,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 41,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -63,7 +63,7 @@
       "undefined_type",
       "unresolved_funcptr"
     ],
-    "total_lines": 112
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -173,37 +173,37 @@
   "suspects": [
     {
       "description": "Unresolved type",
-      "line": 10,
+      "line": 9,
       "match": "undefined3 extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "undefined_type"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
+      "line": 12,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_var",
-      "text": "if (CONCAT31(extraout_var,bVar4) != 0) {",
+      "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 19,
       "match": "CONCAT31",
-      "text": "if (CONCAT31(extraout_var,bVar4) != 0) {",
+      "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
       "type": "decompiler_intrinsic"
     },
     {

@@ -96,9 +96,6 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
     pCStack_88 = this_ptr;
   }
   (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,(SDamageInfo *)auStack_c0);
-  this_ptr_00->cloth_data[0x8d48] = '\0';
-  this_ptr_00->cloth_data[0x8d49] = '\0';
-  this_ptr_00->cloth_data[0x8d4a] = '@';
-  this_ptr_00->cloth_data[0x8d4b] = '@';
+  this_ptr_00->stagger_amount = 3.0;
   return;
 }

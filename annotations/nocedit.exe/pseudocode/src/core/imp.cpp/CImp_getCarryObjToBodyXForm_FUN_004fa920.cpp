@@ -26,7 +26,7 @@ void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_pt
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = *(int *)(this_ptr->base).base.carry_hands[in_stack_00000008].unk1;
+  iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
   if (in_stack_00000008 == 1) {
     local_60[0].y = -0.505;
     local_60[0].z = 0.389;

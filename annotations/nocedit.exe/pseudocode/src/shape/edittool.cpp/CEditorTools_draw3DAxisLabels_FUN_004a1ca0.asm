@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_cloth.cpp_FUN_0043b7e0 at 0043b9e0
+;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b9e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60 at 00509cff
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 00509de2
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581d79

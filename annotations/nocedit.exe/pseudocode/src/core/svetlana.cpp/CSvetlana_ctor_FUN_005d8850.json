@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 45,
+        "line": 20,
+        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -11,88 +18,24 @@
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 14,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 21,
+        "line": 25,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 17,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 17,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 54
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 68
   },
   "cross_references": [
     {
@@ -118,7 +61,7 @@
     {
       "addr": "00438ba0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00438ba0"
+      "name": "core_cloth.cpp_CCloth_ctor_FUN_00438ba0"
     },
     {
       "addr": "004f2340",
@@ -198,7 +141,43 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].vertices[0x182].offset_pos.x = (float)&g_CSvetlanaVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].last_position.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].last_euler.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar3[-2].",
+      "text": "((CDeformableModelInstance *)&pCVar3[-2].vertices[0x182].offset_pos.y,",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar3[-2].",
+      "text": "return (CSvetlana *)(pCVar3[-2].vertices[0x181].rest_lengths + 4);",
+      "type": "negative_offset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

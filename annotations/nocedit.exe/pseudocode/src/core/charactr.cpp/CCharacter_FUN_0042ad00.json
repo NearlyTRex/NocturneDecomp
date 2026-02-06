@@ -10,7 +10,7 @@
       {
         "category": "pointer_precision",
         "column": 14,
-        "line": 112,
+        "line": 107,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -31,24 +31,24 @@
       {
         "category": "other",
         "column": 16,
-        "line": 110,
+        "line": 105,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 112,
+        "line": 107,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 248,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 108,
+    "pseudocode_lines": 103,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -56,7 +56,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 340
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -298,63 +298,63 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_00823c54",
-      "text": "(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 53,
       "match": "DAT_00823c54",
-      "text": "(float)(&DAT_00823c54)[*(int *)(pCVar9->cloth_data + 0x488)] +",
+      "text": "(&DAT_00823c54)[iVar8] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 54,
+      "match": "DAT_00823c54",
+      "text": "(float)(&DAT_00823c54)[iVar8] +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
       "match": "DAT_00823c54",
       "text": "if ((float)65535 <= (float)(&DAT_00823c54)[iVar6]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 88,
       "match": "DAT_00823c54",
       "text": "((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00823c54)[puVar10[1]]));",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 89,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 97,
+      "line": 92,
       "match": "6.123774e-39",
       "text": "local_30 = (float)local_18 + 6.123774e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 100,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->w_recip + local_18) = (int)ROUND(dVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 100,
       "match": "ROUND",
       "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->w_recip + local_18) = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 101,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"

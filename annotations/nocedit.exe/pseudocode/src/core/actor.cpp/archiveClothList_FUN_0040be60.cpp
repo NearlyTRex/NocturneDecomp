@@ -12,21 +12,20 @@ core_actor_cpp_archiveClothList_FUN_0040be60(CClothList *cloth_list,char *proper
 {
   int iVar1;
   int iVar2;
-  CClothList *pCVar3;
+  char (*pacVar3) [40];
   
   if (g_ActorReadingMode != 1) {
     _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     iVar1 = 0;
-    _fprintf(g_ActorDataFile,"%s%d // clothCount\n",g_PropertyNamePrefix,cloth_list->unk);
-    if (0 < cloth_list->unk) {
-      pCVar3 = cloth_list + 1;
+    _fprintf(g_ActorDataFile,"%s%d // clothCount\n",g_PropertyNamePrefix,cloth_list->count);
+    if (0 < cloth_list->count) {
+      pacVar3 = cloth_list->filenames;
       do {
         iVar1 = iVar1 + 1;
-        _fprintf(g_ActorDataFile,"%s\"%s\"\n",g_PropertyNamePrefix,pCVar3)
-        ;
-        pCVar3 = pCVar3 + 10;
-      } while (iVar1 < cloth_list->unk);
+        _fprintf(g_ActorDataFile,"%s\"%s\"\n",g_PropertyNamePrefix,pacVar3);
+        pacVar3 = pacVar3 + 1;
+      } while (iVar1 < cloth_list->count);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
     _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
@@ -45,17 +44,17 @@ core_actor_cpp_archiveClothList_FUN_0040be60(CClothList *cloth_list,char *proper
   }
   iVar1 = 0;
   core_actor_cpp_archiveDescription_FUN_0040b290("clothCount",property_name);
-  if (0 < cloth_list->unk) {
-    pCVar3 = cloth_list + 1;
+  if (0 < cloth_list->count) {
+    pacVar3 = cloth_list->filenames;
     do {
-      iVar2 = _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pCVar3);
+      iVar2 = _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pacVar3);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
                   ("cloth filename entry",property_name);
       }
       iVar1 = iVar1 + 1;
-      pCVar3 = pCVar3 + 10;
-    } while (iVar1 < cloth_list->unk);
+      pacVar3 = pacVar3 + 1;
+    } while (iVar1 < cloth_list->count);
   }
   do {
     while (iVar1 = _fgetc(g_ActorDataFile), -1 < iVar1) {

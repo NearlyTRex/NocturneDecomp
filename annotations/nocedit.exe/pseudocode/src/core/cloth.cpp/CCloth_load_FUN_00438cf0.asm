@@ -21,7 +21,7 @@
 ;
 ; XREF[7]:
 ;   core_cloth.cpp_CClothList_load_FUN_0043bfa0 at 0043c03b
-;   core_cloth.cpp_FUN_0043ddf0 at 0043df01
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043df01
 ;   core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 at 004be1b8
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2c79
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f5b9
@@ -48,7 +48,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
-;   core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0
+;   core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -271,8 +271,8 @@ section .text
     MOV EAX,EAX                         ; 00438f9e
     PUSH ESI                            ; 00438fa0
         ;   Label: LAB_00438fa0
-    CALL core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0 ; 00438fa1
-        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_ConnectingVerticesCheck_FUN_004394e0()
+    CALL core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0 ; 00438fa1
+        ;   XREF to: 004394e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00438fa6
     MOV EBX,dword ptr [ESP + 0x208]     ; 00438fa9
     PUSH EBX                            ; 00438fb0

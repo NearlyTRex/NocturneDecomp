@@ -11,7 +11,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr)
 {
   int iVar1;
   
-  if (((*(int *)((this_ptr->base).unk4 + 4) == 0) && (*(int *)(this_ptr->base).unk4 == 0)) &&
+  if ((((this_ptr->base).object_to_pick_up == (CDemonActor *)0x0) &&
+      ((this_ptr->base).door_to_open == (CDemonActor *)0x0)) &&
      ((this_ptr->action_pending == 0 || (this_ptr->action_pending == 3)))) {
     iVar1 = core_hero_cpp_CHero_FUN_004f28d0(&this_ptr->base);
     if (iVar1 != 0) {

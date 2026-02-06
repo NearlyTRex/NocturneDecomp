@@ -7,7 +7,7 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00 at 00438c38
+;   core_cloth.cpp_CCloth_dtor_FUN_00438c00 at 00438c38
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 at 0047eeda
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050781c
 ;   core_moon.cpp_CMoon_dtor_FUN_00529ab0 at 00529ac4

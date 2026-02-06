@@ -4,86 +4,86 @@
       {
         "category": "incompatible_types",
         "column": 33,
-        "line": 83,
+        "line": 82,
         "message": "invalid conversion from 'CDemonActor*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 29,
-        "line": 106,
+        "line": 102,
         "message": "cast from 'SMotion*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 14,
-        "line": 118,
+        "line": 114,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "pointer_precision",
         "column": 26,
-        "line": 132,
+        "line": 125,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 189,
+        "line": 176,
         "message": "invalid cast from type 'float' to type 'void*'"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 191,
+        "line": 178,
         "message": "invalid cast from type 'float' to type 'void*'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 192,
+        "line": 179,
         "message": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 38,
-        "line": 193,
+        "line": 180,
         "message": "invalid conversion from 'CDemonActor*' to 'undefined4' {aka 'unsigned int'} [-fpermissive]"
       },
       {
         "category": "pointer_precision",
-        "column": 30,
-        "line": 229,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+        "column": 31,
+        "line": 216,
+        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 259,
+        "line": 246,
         "message": "invalid cast from type 'float' to type 'CLocation*'"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 260,
+        "line": 247,
         "message": "invalid cast from type 'CLocation*' to type 'float'"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 261,
+        "line": 248,
         "message": "invalid cast from type 'CLocation*' to type 'float'"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 262,
+        "line": 249,
         "message": "invalid cast from type 'CLocation*' to type 'float'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 294,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "line": 281,
+        "message": "invalid cast from type 'CVector3f*' to type 'float'"
       }
     ],
     "success": false,
@@ -97,30 +97,30 @@
       {
         "category": "other",
         "column": 17,
-        "line": 106,
+        "line": 102,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 108,
+        "line": 104,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 229,
+        "column": 17,
+        "line": 216,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 652,
-    "complexity_score": 468,
+    "complexity_score": 452,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 27,
-    "pseudocode_lines": 308,
+    "pseudocode_lines": 292,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -128,7 +128,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 960
+    "total_lines": 944
   },
   "cross_references": [
     {
@@ -910,98 +910,98 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000008",
       "text": "(&this_ptr->base,&local_a8,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 75,
       "match": "DAT_00823c50",
       "text": "DAT_00823c50 = (CDemonActor *)0x0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ABS",
       "text": "if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ABS",
       "text": "if ((((ABS(in_stack_00000008->z) == 0.0) && (ABS(in_stack_00000008->x) == 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008->y <= 0.0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 95,
       "match": "(SMotion *)((int)",
-      "text": "pSVar15 = (SMotion *)((int)pSVar15 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar14 = (SMotion *)((int)pSVar14 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 159,
+      "line": 146,
       "match": "in_stack_00000008",
       "text": "local_54 = in_stack_00000008->y;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
+      "line": 172,
       "match": "DAT_00823c50",
       "text": "if (DAT_00823c50 == (CDemonActor *)0x0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 173,
       "match": "DAT_00823c50",
       "text": "DAT_00823c50 = g_CDemonSetPtr->collision_actor;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 209,
       "match": "(CVector3f *)((int)",
-      "text": "pCVar6 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);",
+      "text": "pCVar10 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 244,
+      "line": 231,
       "match": "SQRT",
       "text": "fVar9 = SQRT(fStack_64 * fStack_64 + fStack_6c * fStack_6c);",
       "type": "decompiler_intrinsic"

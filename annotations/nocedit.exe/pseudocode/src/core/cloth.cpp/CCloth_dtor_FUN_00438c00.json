@@ -1,0 +1,149 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 14,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "0043bfa0",
+      "from_addr": "0043c059",
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043c170",
+      "from_addr": "0043c1d7",
+      "name": "core_cloth.cpp_CClothList_remove_FUN_0043c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043c070",
+      "from_addr": "0043c0a4",
+      "name": "core_cloth.cpp_CClothList_reset_FUN_0043c070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be150",
+      "from_addr": "004be214",
+      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7660",
+      "from_addr": "004d7675",
+      "name": "core_gabriela.cpp_CGabriella_dtor_FUN_004d7660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f2c0",
+      "from_addr": "0051f32f",
+      "name": "core_mimic.cpp_CMimic_dtor_FUN_0051f2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005d9f50",
+      "from_addr": "005d9f65",
+      "name": "core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e7700",
+      "from_addr": "005e7729",
+      "name": "core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00438c00",
+    "address_range": [
+      [
+        "00438c00",
+        "00438c41"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_dtor_FUN_00438c00",
+    "signature": "CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00438c00(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00438cb0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_free_FUN_00438cb0"
+    },
+    {
+      "addr": "0043e4a0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_freeClothBones_FUN_0043e4a0"
+    },
+    {
+      "addr": "0043e480",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_freeClothVertices_FUN_0043e480"
+    },
+    {
+      "addr": "00476d90",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.636363636363637,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 12,
+      "INT_ADD": 9,
+      "INT_AND": 12,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 6,
+      "INT_SUB": 13,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 102
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": []
+}

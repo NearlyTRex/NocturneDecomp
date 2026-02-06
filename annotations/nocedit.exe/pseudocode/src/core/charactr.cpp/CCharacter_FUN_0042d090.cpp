@@ -56,12 +56,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
         pfVar6 = pfVar6 + (uint)bVar9 * -2 + 1;
         pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
       }
-      if (*(float *)(pSVar5->unk2 + 0x34) < 1.0) {
-        fVar2 = *(float *)(pSVar5->unk2 + 0x30) * in_stack_00000008 +
-                *(float *)(pSVar5->unk2 + 0x34);
-        *(float *)(pSVar5->unk2 + 0x34) = fVar2;
+      if (pSVar5->blend_factor < 1.0) {
+        fVar2 = pSVar5->blend_speed * in_stack_00000008 + pSVar5->blend_factor;
+        pSVar5->blend_factor = fVar2;
         if (fVar2 <= 1.0) {
-          core_xform_cpp_inverse_FUN_005f6210(local_20 + *(int *)pSVar5->unk1,&CStack_250);
+          core_xform_cpp_inverse_FUN_005f6210(local_20 + pSVar5->bone_index,&CStack_250);
           pCVar7 = &CStack_250;
           pCVar8 = &CStack_70;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -78,8 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
             pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
           }
           core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-                    ((CMatrix3x4f *)pSVar5->unk2,&CStack_a0,*(float *)(pSVar5->unk2 + 0x34),
-                     &CStack_160);
+                    (&pSVar5->initial_carry_transform,&CStack_a0,pSVar5->blend_factor,&CStack_160);
           pCVar7 = &CStack_160;
           pCVar8 = &CStack_190;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -88,7 +86,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
             pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
           }
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                    (&CStack_190,local_20 + *(int *)pSVar5->unk1,&CStack_130);
+                    (&CStack_190,local_20 + pSVar5->bone_index,&CStack_130);
           pCVar7 = &CStack_130;
           pCVar8 = &CStack_220;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -98,10 +96,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
           }
         }
         else {
-          pSVar5->unk2[0x34] = '\0';
-          pSVar5->unk2[0x35] = '\0';
-          pSVar5->unk2[0x36] = -0x80;
-          pSVar5->unk2[0x37] = '?';
+          pSVar5->blend_factor = 1.0;
         }
       }
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0

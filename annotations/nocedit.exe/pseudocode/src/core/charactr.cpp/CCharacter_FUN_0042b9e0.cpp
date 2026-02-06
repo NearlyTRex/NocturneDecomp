@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   float local_1c;
   float local_18;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   if ((this_ptr->model).model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(&this_ptr->model);
     local_24 = (float)pCVar1->num_parts;
@@ -71,15 +71,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   fStack_44 = local_20 * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&CStack_58,(CVector3f *)auStack_4c);
-  if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
+  if (this_ptr->is_fully_burned == 0) {
     core_gore_cpp_FUN_004edbb0();
     (this_ptr->base).was_created = 2;
     return;
   }
-  this_ptr->cloth_data[0x478] = '\0';
-  this_ptr->cloth_data[0x479] = '\0';
-  this_ptr->cloth_data[0x47a] = '\0';
-  this_ptr->cloth_data[0x47b] = '\0';
+  this_ptr->fire_count = 0;
   (this_ptr->base).was_created = 2;
   return;
 }

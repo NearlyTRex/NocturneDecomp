@@ -48,14 +48,14 @@ core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_588);
     pCVar6 = this_ptr_00;
     do {
-      if (-1 < *(int *)pCVar6->carry_hands[0].unk1) {
+      if (-1 < pCVar6->carry_hands[0].bone_index) {
         aiStack_38[local_588.base.item_count] = iVar7;
         pCVar4 = pCVar6->carry_hands[0].carry_actor;
         pCVar1 = (CDemonActor *)"(nothing)";
         if (pCVar4 != (CDemonActor *)0x0) {
           pCVar1 = pCVar4;
         }
-        iVar8 = *(int *)pCVar6->carry_hands[0].unk1;
+        iVar8 = pCVar6->carry_hands[0].bone_index;
         pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(local_1c);
         sprintf
                   (local_1e0,"Hand %d\t%s\t%s\n",iVar7,pCVar2->bone_list + iVar8,pCVar1);
@@ -107,7 +107,7 @@ LAB_0042f571:
         shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6d0,iVar7);
         pCVar4 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
         pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (local_2c,&CStack_44,*(int *)local_18->unk1);
+                           (local_2c,&CStack_44,local_18->bone_index);
         pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr_00,&CStack_50,pCVar5);
         (pCVar4->location).position.x = pCVar5->x;

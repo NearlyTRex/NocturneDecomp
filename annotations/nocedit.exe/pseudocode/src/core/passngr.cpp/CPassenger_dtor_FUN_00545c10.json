@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 32,
+        "line": 33,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 32,
+        "line": 33,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -25,43 +25,37 @@
       {
         "category": "other",
         "column": 30,
-        "line": 31,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 32,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 43,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 117,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 43,
     "suspect_count": 6,
     "suspect_types": [
       "extra_output",
       "negative_offset",
       "unresolved_funcptr"
     ],
-    "total_lines": 153
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -100,7 +94,7 @@
     {
       "addr": "0043bf80",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043bf80"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043bf80"
     },
     {
       "addr": "0052b330",
@@ -223,44 +217,44 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
+      "line": 6,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 26,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x154) + 0xe4))();",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 29,
       "match": "extraout_EAX",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));",
+      "text": "pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));",
       "type": "extra_output"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
-      "match": "pCVar1[-1].",
-      "text": "((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39));",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
       "line": 31,
-      "match": "pCVar2[-2].",
-      "text": "pSVar3 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar2[-2].base.create_event + 0x20));",
+      "match": "pCVar2[-1].",
+      "text": "((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39));",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
-      "match": "pCVar6[-1].",
-      "text": "((CDemonActor *)(pCVar6[-1].part_visibility_flags + 7),1);",
+      "line": 32,
+      "match": "pCVar3[-2].",
+      "text": "pSVar4 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar3[-2].base.create_event + 0x20));",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar7[-1].",
+      "text": "((CDemonActor *)(pCVar7[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
     }
   ],

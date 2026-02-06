@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[34]:
-;   core_cloth.cpp_FUN_0043ddf0 at 0043e04f
+;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043e04f
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044368e
 ;   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 at 0047ca8c
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 at 0047a013

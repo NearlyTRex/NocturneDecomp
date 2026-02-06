@@ -59,7 +59,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
-;   core_cloth.cpp_FUN_0043c2d0
+;   core_cloth.cpp_CClothList_process_FUN_0043c2d0
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
@@ -433,8 +433,8 @@ section .text
     PUSH EAX                            ; 005c7289
     LEA EAX,[EBX + 0xe170]              ; 005c728a
     PUSH EAX                            ; 005c7290
-    CALL core_cloth.cpp_FUN_0043c2d0    ; 005c7291
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043c2d0()
+    CALL core_cloth.cpp_CClothList_process_FUN_0043c2d0 ; 005c7291
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_process_FUN_0043c2d0(CClothList * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 005c7296
     PUSH 0x654182                       ; 005c7299 | = "succubusShutUp"
         ;   Label: LAB_005c7299

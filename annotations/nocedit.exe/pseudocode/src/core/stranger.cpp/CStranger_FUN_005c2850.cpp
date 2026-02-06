@@ -50,13 +50,13 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   float local_18;
   float fStack_14;
   
-  if (*(int *)((this_ptr->base).unk4 + 4) != 0) {
+  if ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) {
     return 0;
   }
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
     return 0;
   }
-  if ((*(int *)((this_ptr->base).base.unk3 + 0x46c) != 0xe) &&
+  if (((this_ptr->base).base.field47_0x2a8c != 0xe) &&
      (local_18 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr),
      local_18 < (float)0.98999999999999999)) {
     return 0;
@@ -93,18 +93,18 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
         if ((((0.0 < fVar3) &&
              ((fVar3 < (float)3 && (ABS(fVar8) < (float)2)))) &&
             (dVar1 = (double)fVar2, 0.0 < dVar1)) && (dVar1 < 4)) {
-          pcVar9 = (this_ptr->base).unk4 + 0x1c;
+          pcVar9 = (this_ptr->base).unk3 + 8;
           this_ptr->action_pending = 2;
           if ((CLocation *)pcVar9 != input_world_point) {
             *(float *)pcVar9 = (input_world_point->position).x;
-            *(float *)((this_ptr->base).unk4 + 0x20) = (pCVar4->location).position.y;
-            *(float *)((this_ptr->base).unk4 + 0x24) = (pCVar4->location).position.z;
+            *(float *)((this_ptr->base).unk3 + 0xc) = (pCVar4->location).position.y;
+            *(float *)((this_ptr->base).unk3 + 0x10) = (pCVar4->location).position.z;
           }
-          pcVar9 = (this_ptr->base).unk4 + 0x28;
+          pcVar9 = (this_ptr->base).unk3 + 0x14;
           if ((COrientation *)pcVar9 != &local_30->orient) {
             *(float *)pcVar9 = (local_30->orient).pitch;
-            *(float *)((this_ptr->base).unk4 + 0x2c) = (local_30->orient).bank;
-            *(float *)((this_ptr->base).unk4 + 0x30) = (local_30->orient).heading;
+            *(float *)((this_ptr->base).unk3 + 0x18) = (local_30->orient).bank;
+            *(float *)((this_ptr->base).unk3 + 0x1c) = (local_30->orient).heading;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0x16,1);
@@ -153,18 +153,18 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar5,0xe78);
           }
-          pcVar9 = (this_ptr->base).unk4 + 0x1c;
+          pcVar9 = (this_ptr->base).unk3 + 8;
           this_ptr->action_pending = 2;
           if ((CLocation *)pcVar9 != &pCStack_2c->location) {
             *(float *)pcVar9 = (pCStack_2c->location).position.x;
-            *(float *)((this_ptr->base).unk4 + 0x20) = (pCStack_2c->location).position.y;
-            *(float *)((this_ptr->base).unk4 + 0x24) = (pCStack_2c->location).position.z;
+            *(float *)((this_ptr->base).unk3 + 0xc) = (pCStack_2c->location).position.y;
+            *(float *)((this_ptr->base).unk3 + 0x10) = (pCStack_2c->location).position.z;
           }
-          pcVar9 = (this_ptr->base).unk4 + 0x28;
+          pcVar9 = (this_ptr->base).unk3 + 0x14;
           if ((COrientation *)pcVar9 != &pCStack_2c->orient) {
             *(float *)pcVar9 = (pCStack_2c->orient).pitch;
-            *(float *)((this_ptr->base).unk4 + 0x2c) = (pCStack_2c->orient).bank;
-            *(float *)((this_ptr->base).unk4 + 0x30) = (pCStack_2c->orient).heading;
+            *(float *)((this_ptr->base).unk3 + 0x18) = (pCStack_2c->orient).bank;
+            *(float *)((this_ptr->base).unk3 + 0x1c) = (pCStack_2c->orient).heading;
           }
           return 1;
         }
