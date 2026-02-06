@@ -737,10 +737,6 @@
       "type":"struct"
     },
     {
-      "name":"CGame",
-      "type":"struct"
-    },
-    {
       "name":"CGore",
       "type":"struct"
     },
@@ -1658,6 +1654,10 @@
     },
     {
       "name":"CDemonTriangle",
+      "type":"struct"
+    },
+    {
+      "name":"CGame",
       "type":"struct"
     },
     {
@@ -29858,7 +29858,7 @@
         },
         {
           "len":100,
-          "name":"on_event_alt",
+          "name":"off_event",
           "offset":540,
           "type":"char[100]"
         },
@@ -30001,10 +30001,52 @@
           "type":"CDemonActor"
         },
         {
-          "len":10440,
-          "name":"unk",
+          "len":12,
+          "name":"box_size",
           "offset":344,
-          "type":"char[10440]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"count",
+          "offset":356,
+          "type":"int"
+        },
+        {
+          "len":10400,
+          "name":"unk1",
+          "offset":360,
+          "type":"char[10400]"
+        },
+        {
+          "len":4,
+          "name":"follow_actor",
+          "offset":10760,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"gather_count",
+          "offset":10764,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":10768,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"gather_time",
+          "offset":10772,
+          "type":"float"
+        },
+        {
+          "len":8,
+          "name":"unk3",
+          "offset":10776,
+          "type":"char[8]"
         }
       ],
       "importable":true,
@@ -30115,10 +30157,52 @@
           "type":"float"
         },
         {
-          "len":828,
-          "name":"unk",
+          "len":32,
+          "name":"course_filename",
           "offset":352,
-          "type":"char[828]"
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"unk1",
+          "offset":384,
+          "type":"float"
+        },
+        {
+          "len":380,
+          "name":"bed_model",
+          "offset":388,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":12,
+          "name":"course",
+          "offset":768,
+          "type":"CCourse"
+        },
+        {
+          "len":380,
+          "name":"body_model",
+          "offset":780,
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":1160,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":1164,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"unk4",
+          "offset":1168,
+          "type":"CVector3f"
         }
       ],
       "importable":true,
@@ -30554,19 +30638,19 @@
         },
         {
           "len":256,
-          "name":"unk1",
+          "name":"debug_info_string",
           "offset":208,
           "type":"char[256]"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"debug_flag_1",
           "offset":464,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"debug_flag_2",
           "offset":468,
           "type":"int"
         },
@@ -30596,7 +30680,7 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"debug_toggle_flag",
           "offset":488,
           "type":"int"
         },
@@ -30644,7 +30728,7 @@
         },
         {
           "len":4,
-          "name":"unk8",
+          "name":"skip_frame_render",
           "offset":520,
           "type":"int"
         },
@@ -30740,19 +30824,19 @@
         },
         {
           "len":4,
-          "name":"player_pos_y",
+          "name":"game_stat_1",
           "offset":584,
           "type":"float"
         },
         {
           "len":4,
-          "name":"player_pos_x",
+          "name":"game_stat_2",
           "offset":588,
           "type":"float"
         },
         {
           "len":4,
-          "name":"player_rotation",
+          "name":"total_play_time",
           "offset":592,
           "type":"float"
         },
@@ -30847,22 +30931,52 @@
           "type":"int"
         },
         {
-          "len":1584,
-          "name":"unk13",
+          "len":1280,
+          "name":"status_bar_names",
           "offset":908,
-          "type":"char[1584]"
+          "type":"char[5][256]"
+        },
+        {
+          "len":20,
+          "name":"status_bar_values",
+          "offset":2188,
+          "type":"float[5]"
+        },
+        {
+          "len":20,
+          "name":"status_bar_timers",
+          "offset":2208,
+          "type":"float[5]"
+        },
+        {
+          "len":256,
+          "name":"bitmap_filename",
+          "offset":2228,
+          "type":"char[256]"
         },
         {
           "len":4,
-          "name":"unk14",
+          "name":"bitmap_width",
+          "offset":2484,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bitmap_height",
+          "offset":2488,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"debug_fudge_target",
           "offset":2492,
-          "type":"int"
+          "type":"CVector3f*"
         },
         {
           "len":4,
-          "name":"unk15",
+          "name":"debug_fudge_step",
           "offset":2496,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -30871,16 +30985,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"save_version",
+          "len":256,
+          "name":"chapter_reload_filename",
           "offset":2504,
-          "type":"int"
-        },
-        {
-          "len":252,
-          "name":"unk16",
-          "offset":2508,
-          "type":"char[252]"
+          "type":"char[256]"
         },
         {
           "len":4,
@@ -30961,16 +31069,16 @@
           "type":"CDemonActor"
         },
         {
-          "len":4,
-          "name":"model_name",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char*"
+          "type":"CKeyFramedModelInstance"
         },
         {
-          "len":380,
+          "len":4,
           "name":"unk",
-          "offset":348,
-          "type":"char[380]"
+          "offset":724,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -47738,10 +47846,16 @@
       "desc":"",
       "fields":[
         {
-          "len":52,
-          "name":"unk",
+          "len":4,
+          "name":"unk1",
           "offset":0,
-          "type":"char[52]"
+          "type":"char[4]"
+        },
+        {
+          "len":48,
+          "name":"unk2",
+          "offset":4,
+          "type":"CVector3f[4]"
         }
       ],
       "importable":true,

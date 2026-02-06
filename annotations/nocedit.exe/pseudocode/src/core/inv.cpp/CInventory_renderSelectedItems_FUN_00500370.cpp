@@ -24,7 +24,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
      ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
     if (g_WindowHeight != g_InventoryScreenHeight) {
       iStack_40 = 0x5005f6;
-      core_inv_cpp_loadInventory_FUN_004fd220();
+      core_inv_cpp_loadAssets_FUN_004fd220();
     }
     if ((this_ptr->selected_weapon != (CWeapon *)0x0) && (0.0 < this_ptr->weapon_highlight_timer)) {
       iVar6 = 0x50;

@@ -8,8 +8,8 @@
 ;
 ; XREF[11]:
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0 at 00451233
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2aea
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab10
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2aea
 ;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057ac97
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464bdf
 ;   shape_design.c_polygonToolModeManager_FUN_00464c90 at 00464e7e

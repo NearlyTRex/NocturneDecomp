@@ -7,9 +7,9 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2eb5
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80 at 004dbda9
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db2f7
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2eb5
 ;   core_script.cpp_CScript_FUN_0055a6c0 at 0055a75d
 ;   core_script.cpp_CScript_process_FUN_00559960 at 005599e3
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e054

@@ -39,7 +39,9 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     core_script_cpp_CScript_setSpeaker_FUN_00560140(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == 2) {
-    core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);
+    core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
+              (g_CGamePtr,this_ptr->descriptive_name,
+               (int)(this_ptr->hit_points / this_ptr->max_hit_points),2.0);
   }
   if (this_ptr->field2_0x240c == 0) {
     if (this_ptr->closest_distance_threshold == 9999.0f) {

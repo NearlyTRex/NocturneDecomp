@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   reset_both
 ;
 ; XREF[5]:
-;   core_game.cpp_CGame_FUN_004e0bb0 at 004e0bc4
+;   core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0 at 004e0bc4
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10 at 004fed1e
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004feb10 at 004feb38
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_00501500 at 0050155a

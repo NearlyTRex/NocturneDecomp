@@ -37,7 +37,7 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
       *(float *)(this_ptr->unk3 + 0x38) = (this_ptr->base).orient.bank;
       *(float *)(this_ptr->unk3 + 0x3c) = (this_ptr->base).orient.heading;
     }
-    core_flame_cpp_FUN_004c9c00();
+    core_flame_cpp_CFlame_FUN_004c9c00((CFlame *)(this_ptr->unk3 + 4));
   }
   else if (this_ptr->visual_type == 0) {
     *(float *)(this_ptr->unk3 + 0x2a8) =

@@ -575,8 +575,8 @@ section .text
         ;   XREF to: 004d33f9 (CONDITIONAL_JUMP)  ; LAB_004d33f9
     MOV ECX,dword ptr [0x0067b654]      ; 004d33d8 | g_CGameInstance | g_CGamePtr
     PUSH ECX                            ; 004d33de | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004e0bb0 ; 004d33df
-        ;   XREF to: 004e0bb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0bb0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0 ; 004d33df
+        ;   XREF to: 004e0bb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d33e4
     PUSH 0x62ae4a                       ; 004d33e7 | = "draw-f.wav @ 1.5"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d33ec
@@ -630,8 +630,8 @@ section .text
         ;   Label: LAB_004d348b
     PUSH dword ptr [EBP + 0x92]         ; 004d348c
     PUSH EBX                            ; 004d3492
-    CALL core_gabriela.cpp_FUN_004d6540 ; 004d3493
-        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6540()
+    CALL core_gabriela.cpp_CGabriella_FUN_004d6540 ; 004d3493
+        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d6540(CGabriella * this_ptr)
     FLD float ptr [EBP + 0x92]          ; 004d3498
     FDIV float ptr [0x0065e7bc]         ; 004d349e | FLOAT_0065e7bc
     FSUBR float ptr [EBX + 0x1fc0c]     ; 004d34a4
@@ -658,8 +658,8 @@ section .text
     PUSH EAX                            ; 004d34e1
     PUSH dword ptr [EBP + 0x92]         ; 004d34e2
     PUSH EBX                            ; 004d34e8
-    CALL core_gabriela.cpp_FUN_004d6d40 ; 004d34e9
-        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004d6d40()
+    CALL core_gabriela.cpp_CGabriella_FUN_004d6d40 ; 004d34e9
+        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d6d40(CGabriella * this_ptr)
     ADD ESP,0xc                         ; 004d34ee
     PUSH dword ptr [EBP + 0x92]         ; 004d34f1
     PUSH EBX                            ; 004d34f7

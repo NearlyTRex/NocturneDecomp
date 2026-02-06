@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c89c1
 ;   core_gabriela.cpp_CGabriella_FUN_004d4190 at 004d4660
 ;   core_gabriela.cpp_CGabriella_FUN_004d5fe0 at 004d6036
-;   core_gabriela.cpp_FUN_004d6260 at 004d64e8
+;   core_gabriela.cpp_CGabriella_FUN_004d6260 at 004d64e8
 ;   ... and 21 more
 ;
 ; *****************************************************************************

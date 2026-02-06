@@ -3,10 +3,6 @@
 // Function prototypes for core/flamecan.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_flamecan.cpp_FUN_004cad90
-// Address: 004cad90
-void __cdecl FUN_004cad90(void);
-
 // Original: core_flamecan.cpp_staticInit_FUN_004cb0f0
 // Address: 004cb0f0
 void __cdecl staticInit(void);

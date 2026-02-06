@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[9]:
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2ad9
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da1d5
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2ad9
 ;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057aa96
 ;   engine_texture.cpp_renderTextureAtlas_FUN_005dd990 at 005dd99b
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464bfb

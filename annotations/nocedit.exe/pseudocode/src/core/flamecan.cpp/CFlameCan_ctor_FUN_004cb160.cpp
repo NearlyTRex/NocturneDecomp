@@ -26,15 +26,15 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan *thi
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(pCVar4[-1].base.create_event + 0x44),
              "question.kfm");
-  pCVar4[-0xffffffff00000001].on_event_alt[0x1c] = '\0';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x1d] = '\0';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x1e] = '\0';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x1f] = '\0';
-  pcVar6 = pCVar4[-1].on_event_alt + 0x24;
-  pCVar4[-0xffffffff00000001].on_event_alt[0x20] = '\0';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x21] = '\0';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x22] = ' ';
-  pCVar4[-0xffffffff00000001].on_event_alt[0x23] = 'A';
+  pCVar4[-0xffffffff00000001].off_event[0x1c] = '\0';
+  pCVar4[-0xffffffff00000001].off_event[0x1d] = '\0';
+  pCVar4[-0xffffffff00000001].off_event[0x1e] = '\0';
+  pCVar4[-0xffffffff00000001].off_event[0x1f] = '\0';
+  pcVar6 = pCVar4[-1].off_event + 0x24;
+  pCVar4[-0xffffffff00000001].off_event[0x20] = '\0';
+  pCVar4[-0xffffffff00000001].off_event[0x21] = '\0';
+  pCVar4[-0xffffffff00000001].off_event[0x22] = ' ';
+  pCVar4[-0xffffffff00000001].off_event[0x23] = 'A';
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

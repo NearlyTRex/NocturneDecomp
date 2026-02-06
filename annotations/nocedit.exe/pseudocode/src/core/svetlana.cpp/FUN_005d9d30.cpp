@@ -23,7 +23,7 @@ void __cdecl core_svetlana_cpp_FUN_005d9d30(void)
   if ((*(uint *)in_stack_00000004[1].base.actor_name & 0x7fffffff) != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {

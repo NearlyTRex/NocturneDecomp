@@ -29,7 +29,7 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_004c9aa0(CFlame *this_ptr)
   pCVar1->unk2[2] = '\0';
   pCVar1->unk2[3] = '\0';
   pCVar1->on_event[0] = '\0';
-  pCVar1->on_event_alt[0] = '\0';
+  pCVar1->off_event[0] = '\0';
   pCVar1->flame_state = 1;
   (pCVar1->base).is_transparent = 1;
   pCVar1->randomness = 0.05;

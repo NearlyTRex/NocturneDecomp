@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_FUN_004e07a0 at 004e07b7
+;   core_game.cpp_CGame_loadAssets_FUN_004e07a0 at 004e07b7
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

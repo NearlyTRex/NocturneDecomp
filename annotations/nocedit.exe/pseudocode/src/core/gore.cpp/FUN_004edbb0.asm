@@ -37,7 +37,7 @@
 ;   core_enemy.cpp_CEnemy_FUN_004a9880 at 004a9915
 ;   core_enemy.cpp_CEnemy_FUN_004a9930 at 004a99b4
 ;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d4bc5
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e6d05
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e6d05
 ;   core_imp.cpp_CImp_process_FUN_004f9c30 at 004f9ed8
 ;   ... and 5 more
 ;

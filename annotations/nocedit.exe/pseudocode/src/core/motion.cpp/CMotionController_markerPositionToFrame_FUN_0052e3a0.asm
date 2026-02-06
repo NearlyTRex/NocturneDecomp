@@ -17,7 +17,7 @@
 ;
 ; XREF[7]:
 ;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d51e0
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e68c0
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e68c0
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5eda
 ;   core_scat.cpp_CScat_FUN_005582c0 at 00558431
 ;   core_stranger.cpp_CStranger_FUN_005be520 at 005bf6cc

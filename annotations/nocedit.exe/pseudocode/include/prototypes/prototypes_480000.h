@@ -132,7 +132,7 @@ void __cdecl core_dracbrid_cpp_FUN_00486d00(void);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDraculaBride *this_ptr,uint flags);
-void __cdecl core_dracbrid_cpp_FUN_00486e30(void);
+CVector3f * __cdecl core_dracbrid_cpp_freeVectors_FUN_00486e30(CVector3f *objs);
 void __cdecl core_dracbrid_cpp_FUN_00486e50(void);
 CDrawSurface * __cdecl core_dracbrid_cpp_FUN_00486e70(void);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0 (CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);

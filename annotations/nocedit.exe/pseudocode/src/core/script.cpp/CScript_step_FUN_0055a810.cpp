@@ -11,6 +11,7 @@
 int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)
 
 {
+  CGabriella *this_ptr_00;
   double dVar1;
   char cVar2;
   SDialogEntry *pSVar3;
@@ -22,14 +23,14 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   char *extraout_EAX_01;
   float fVar7;
   CDemonActor_vtable *pCVar8;
-  CMotionList *this_ptr_00;
+  CMotionList *this_ptr_01;
   char *extraout_EAX_02;
   char *extraout_EAX_03;
   CCharacter *pCVar9;
   CPlatform *pCVar10;
   int *piVar11;
-  CHero *this_ptr_01;
-  CEnemy *this_ptr_02;
+  CHero *this_ptr_02;
+  CEnemy *this_ptr_03;
   CVector3f *pCVar12;
   char *extraout_EAX_04;
   CDemonActor *pCVar13;
@@ -1248,12 +1249,12 @@ LAB_0055cd52:
                                                   core_charactr_cpp_CCharacter_FUN_0042d390(pCVar9);
                                                   }
                                                   else {
-                                                    this_ptr_00 = 
+                                                    this_ptr_01 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             (&(pCVar9->model).motion_controller);
                                                   iVar6 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                                                            (this_ptr_00);
+                                                            (this_ptr_01);
                                                   uVar15 = (uint)(-1 < iVar6);
                                                   }
                                                   if (uVar15 == 0) {
@@ -2287,30 +2288,36 @@ LAB_0055e656:
                                                   if (pCVar13 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
+                                                    this_ptr_00 = (CGabriella *)
+                                                                  (pCVar13[0x176].create_event +
+                                                                  0x30);
                                                     local_80 = g_ScriptEventsEnabled;
-                                                    pCVar14 = (CDemonActor *)
-                                                              core_gabriela_cpp_FUN_004d7650();
-                                                    local_7c = pCVar14;
-                                                    if (pCVar14 != (CDemonActor *)0x0) {
-                                                      do {
-                                                        if (pCVar14 == (CDemonActor *)0x0) {
-                                                          g_CurrentFilename =
-                                                               "..\\core\\script.cpp";
-                                                          g_CurrentLineNumber = 0xad9;
-                                                                                                                    
-                                                  core_main_c_displayErrorAndQuit_FUN_00506f10
-                                                            ("script selectWeapon() command - hell froze.");
+                                                    pCVar13 = (CDemonActor *)
+                                                                                                                            
+                                                  core_gabriela_cpp_CGabriella_FUN_004d7650
+                                                            (this_ptr_00);
+                                                  local_7c = pCVar13;
+                                                  if (pCVar13 != (CDemonActor *)0x0) {
+                                                    do {
+                                                      if (pCVar13 == (CDemonActor *)0x0) {
+                                                        g_CurrentFilename =
+                                                             "..\\core\\script.cpp";
+                                                        g_CurrentLineNumber = 0xad9;
+                                                        core_main_c_displayErrorAndQuit_FUN_00506f10
+                                                                  (
+                                                  "script selectWeapon() command - hell froze.");
                                                   }
                                                   iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                                                                    (pCVar14,local_69c);
+                                                                    (pCVar13,local_69c);
                                                   if (iVar6 != 0) goto LAB_0055a8bb;
                                                   core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
-                                                            ((CInventory *)
-                                                             (pCVar13[0x176].create_event + 0x30),
+                                                            ((CInventory *)this_ptr_00,
                                                              (CDemonActor *)0x0,5,1);
-                                                  pCVar14 = (CDemonActor *)
-                                                            core_gabriela_cpp_FUN_004d7650();
-                                                  } while (pCVar14 != local_7c);
+                                                  pCVar13 = (CDemonActor *)
+                                                                                                                        
+                                                  core_gabriela_cpp_CGabriella_FUN_004d7650
+                                                            (this_ptr_00);
+                                                  } while (pCVar13 != local_7c);
                                                   }
                                                   if (local_80 == 0) {
                                                     engine_console_cpp_CConsole_printf_FUN_00441890
@@ -2524,11 +2531,11 @@ LAB_0055e656:
                                                   core_script_cpp_trimString_FUN_00559360(local_2b4)
                                                   ;
                                                   local_11c = local_11c + local_64;
-                                                  this_ptr_01 = (CHero *)
+                                                  this_ptr_02 = (CHero *)
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_638,g_CHeroClassInfo.name_hash,
                                                              &g_CHeroClassInfo);
-                                                  if (this_ptr_01 == (CHero *)0x0)
+                                                  if (this_ptr_02 == (CHero *)0x0)
                                                   goto joined_r0x0055c026;
                                                   iVar6 = stricmp
                                                                     (local_2b4,"stand");
@@ -2553,7 +2560,7 @@ LAB_0055e656:
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_hero_cpp_CHero_FUN_004f3930(this_ptr_01);
+                                                    core_hero_cpp_CHero_FUN_004f3930(this_ptr_02);
                                                   }
                                                   }
                                                   else {
@@ -2777,12 +2784,12 @@ LAB_0055f0a8:
                                                   local_11c = local_11c + local_44;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1cf4);
-                                                  this_ptr_02 = (CEnemy *)
+                                                  this_ptr_03 = (CEnemy *)
                                                                                                                                 
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_1cf4,g_CEnemyClassInfo.name_hash,
                                                              &g_CEnemyClassInfo);
-                                                  if (this_ptr_02 == (CEnemy *)0x0)
+                                                  if (this_ptr_03 == (CEnemy *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (*local_11c == ',') {
                                                     local_44 = -1;
@@ -2819,7 +2826,7 @@ LAB_0055f0a8:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_enemy_cpp_CEnemy_FUN_004a9ef0(this_ptr_02);
+                                                    core_enemy_cpp_CEnemy_FUN_004a9ef0(this_ptr_03);
                                                   }
                                                   }
                                                   else {

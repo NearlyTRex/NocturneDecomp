@@ -27,7 +27,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042a830 at 0042ab97
 ;   core_charactr.cpp_CCharacter_FUN_0042b930 at 0042b9cb
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c513
-;   core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0 at 004e58b4
+;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0 at 004e58b4
 ;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00 at 004f7c38
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e66f7
 ;

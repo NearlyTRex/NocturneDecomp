@@ -71,7 +71,7 @@
 ;   core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70
 ;   core_inv.cpp_getItemDisplayName_FUN_004fcf00
 ;   core_inv.cpp_getItemIconName_FUN_004fcf70
-;   core_inv.cpp_loadInventory_FUN_004fd220
+;   core_inv.cpp_loadAssets_FUN_004fd220
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -815,8 +815,8 @@ section .text
     POP ESI                             ; 00500ff0
     POP EBX                             ; 00500ff1
     RET                                 ; 00500ff2
-    CALL core_inv.cpp_loadInventory_FUN_004fd220 ; 00500ff3
-        ;   XREF to: 004fd220 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_loadInventory_FUN_004fd220()
+    CALL core_inv.cpp_loadAssets_FUN_004fd220 ; 00500ff3
+        ;   XREF to: 004fd220 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_loadAssets_FUN_004fd220()
         ;   Label: LAB_00500ff3
     JMP 0x005006dc                      ; 00500ff8
         ;   XREF to: 005006dc (UNCONDITIONAL_JUMP)  ; LAB_005006dc

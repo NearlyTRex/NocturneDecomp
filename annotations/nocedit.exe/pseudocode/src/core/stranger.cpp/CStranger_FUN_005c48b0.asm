@@ -33,7 +33,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
-;   core_game.cpp_CGame_FUN_004e0bd0
+;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
 ;   core_gore.cpp_CGore_FUN_004ee030
 ;   core_hero.cpp_CHero_FUN_004f3580
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570
@@ -239,8 +239,8 @@ section .text
         ;   XREF to: 005c4afb (CONDITIONAL_JUMP)  ; LAB_005c4afb
     MOV EDI,dword ptr [0x0067b654]      ; 005c4aec | g_CGamePtr
     PUSH EDI                            ; 005c4af2 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004e0bd0 ; 005c4af3
-        ;   XREF to: 004e0bd0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0bd0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0 ; 005c4af3
+        ;   XREF to: 004e0bd0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(CGame * this_ptr)
     ADD ESP,0x4                         ; 005c4af8
     PUSH ESI                            ; 005c4afb
         ;   Label: LAB_005c4afb

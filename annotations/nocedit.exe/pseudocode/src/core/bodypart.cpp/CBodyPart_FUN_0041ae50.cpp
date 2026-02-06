@@ -34,7 +34,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041ae50(CBodyPart *this_ptr)
     input_local_point[3].z = pCVar2->x;
     input_local_point[4].x = pCVar2->y;
     input_local_point[4].y = pCVar2->z;
-    core_flame_cpp_FUN_004c9b90();
+    core_flame_cpp_CFlame_setup_FUN_004c9b90((CFlame *)(input_local_point + 1));
     input_local_point[0x24].z = 0.0;
     input_local_point[0x1d].z = 1.5;
     input_local_point[0x1e].x = 3.0;

@@ -8,13 +8,13 @@
 ;
 ; XREF[40]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00481070 at 00481098
-;   core_game.cpp_CGame_FUN_004dcee0 at 004dd607
-;   core_game.cpp_CGame_FUN_004e36f0 at 004e3795
 ;   core_game.cpp_CGame_displayActStats_FUN_004e3800 at 004e3a20
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3da6
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e17e6
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004deb60
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004daa3f
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd607
+;   core_game.cpp_CGame_promptLoadGame_FUN_004e36f0 at 004e3795
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db7e4
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e120b
 ;   ... and 30 more

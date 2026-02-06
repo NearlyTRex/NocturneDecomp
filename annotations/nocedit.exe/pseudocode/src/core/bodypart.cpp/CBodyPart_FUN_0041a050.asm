@@ -39,8 +39,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042bcc0 at 0042bd1d
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444a4c
 ;   core_dracbrid.cpp_FUN_00485b20 at 00485b7c
-;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e56b6
-;   core_ghoul.cpp_FUN_004e8520 at 004e86bf
+;   core_gargoyle.cpp_CGargoyle_FUN_004e5530 at 004e56b6
+;   core_ghoul.cpp_CGhoul_FUN_004e8520 at 004e86bf
 ;   ... and 6 more
 ;
 ; Referenced Globals:

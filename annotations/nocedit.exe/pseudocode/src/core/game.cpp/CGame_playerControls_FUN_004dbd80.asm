@@ -28,9 +28,9 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_game.cpp_CGame_FUN_004dc230
-;   core_game.cpp_CGame_FUN_004dc3e0
-;   core_game.cpp_CGame_FUN_004dccc0
+;   core_game.cpp_CGame_processJoystickControls_FUN_004dc230
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0
+;   core_game.cpp_CGame_processMouseControls_FUN_004dccc0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0
@@ -67,8 +67,8 @@ section .text
     PUSH EDX                            ; 004dbdb4
         ;   Label: LAB_004dbdb4
     PUSH ESI                            ; 004dbdb5
-    CALL core_game.cpp_CGame_FUN_004dc3e0 ; 004dbdb6
-        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dc3e0(CGame * this_ptr, SPlayerControl * player_control)
+    CALL core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 ; 004dbdb6
+        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerControl * player_control)
     ADD ESP,0x8                         ; 004dbdbb
         ;   Label: LAB_004dbdbb
     MOV ECX,0x258                       ; 004dbdbe
@@ -95,15 +95,15 @@ section .text
     PUSH EDX                            ; 004dbdfb
         ;   Label: LAB_004dbdfb
     PUSH ESI                            ; 004dbdfc
-    CALL core_game.cpp_CGame_FUN_004dc230 ; 004dbdfd
-        ;   XREF to: 004dc230 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dc230(CGame * this_ptr, SPlayerControl * player_control)
+    CALL core_game.cpp_CGame_processJoystickControls_FUN_004dc230 ; 004dbdfd
+        ;   XREF to: 004dc230 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processJoystickControls_FUN_004dc230(CGame * this_ptr, SPlayerControl * player_control)
     JMP 0x004dbdbb                      ; 004dbe02
         ;   XREF to: 004dbdbb (UNCONDITIONAL_JUMP)  ; LAB_004dbdbb
     PUSH EDX                            ; 004dbe04
         ;   Label: LAB_004dbe04
     PUSH ESI                            ; 004dbe05
-    CALL core_game.cpp_CGame_FUN_004dccc0 ; 004dbe06
-        ;   XREF to: 004dccc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dccc0(CGame * this_ptr, SPlayerControl * player_control)
+    CALL core_game.cpp_CGame_processMouseControls_FUN_004dccc0 ; 004dbe06
+        ;   XREF to: 004dccc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processMouseControls_FUN_004dccc0(CGame * this_ptr, SPlayerControl * player_control)
     JMP 0x004dbdbb                      ; 004dbe0b
         ;   XREF to: 004dbdbb (UNCONDITIONAL_JUMP)  ; LAB_004dbdbb
     PUSH EDI                            ; 004dbe0d

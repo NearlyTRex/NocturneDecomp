@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 18,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ccaa0",
+    "address_range": [
+      [
+        "004ccaa0",
+        "004ccae0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flies.cpp_CFlies_getPropertyList_FUN_004ccaa0",
+    "signature": "void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0 (CFlies *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e220",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a472",
+      "name": "s_flyCount_0062a472",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9047619047619047,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlies",
+        "offset": 212,
+        "vtable_addr": "0065e524"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

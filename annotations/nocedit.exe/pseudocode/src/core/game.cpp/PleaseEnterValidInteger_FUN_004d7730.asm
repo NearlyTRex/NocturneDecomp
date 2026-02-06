@@ -12,8 +12,8 @@
 ;   TerminatedCString s_Press_CTRL_V_to_begin_re_0062b1e0
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   float g_MovieRecordingTargetFPS = 30
-;   undefined4 DAT_0067b664
-;   undefined4 DAT_0067b668
+;   int INT_0067b664 = 0x40
+;   int INT_0067b668 = 0x40
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_CheatFlags
 ;   int g_DebugRecording
@@ -76,7 +76,7 @@ section .text
     PUSH 0x270f                         ; 004d779c
     PUSH 0x1                            ; 004d77a1
     PUSH 0x1                            ; 004d77a3
-    PUSH 0x67b664                       ; 004d77a5 | DAT_0067b664
+    PUSH 0x67b664                       ; 004d77a5 | INT_0067b664
     PUSH 0x62b1bb                       ; 004d77aa | = "Enter image width"
     MOV EDI,dword ptr [0x00678a60]      ; 004d77af | g_CEditorToolsPtr
     PUSH EDI                            ; 004d77b5 | g_CEditorToolsInstance
@@ -90,7 +90,7 @@ section .text
     PUSH 0x270f                         ; 004d77c4
     PUSH 0x1                            ; 004d77c9
     PUSH 0x1                            ; 004d77cb
-    PUSH 0x67b668                       ; 004d77cd | DAT_0067b668
+    PUSH 0x67b668                       ; 004d77cd | INT_0067b668
     PUSH 0x62b1cd                       ; 004d77d2 | = "Enter image height"
     MOV EBP,dword ptr [0x00678a60]      ; 004d77d7 | g_CEditorToolsPtr
     PUSH EBP                            ; 004d77dd | g_CEditorToolsInstance

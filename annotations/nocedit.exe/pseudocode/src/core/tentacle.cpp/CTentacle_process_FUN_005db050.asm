@@ -35,7 +35,7 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_00429870
-;   core_grave.cpp_FUN_004ee790
+;   core_grave.cpp_CGrave_FUN_004ee790
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -139,8 +139,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbec4]    ; 005db14c
     PUSH EDX                            ; 005db152
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005db153
-    CALL core_grave.cpp_FUN_004ee790    ; 005db15d
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_FUN_004ee790()
+    CALL core_grave.cpp_CGrave_FUN_004ee790 ; 005db15d
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_FUN_004ee790(CGrave * this_ptr)
     ADD ESP,0x4                         ; 005db162
     MOV dword ptr [EBX + 0xbec4],0x0    ; 005db165
     FLD float ptr [EBP + 0x18]          ; 005db16f

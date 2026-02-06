@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-;   core_flame.cpp_FUN_004ca110
+;   core_flame.cpp_CFlame_FUN_004ca110
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -173,8 +173,8 @@ section .text
     LEA EAX,[EBX + 0x3c4]               ; 005e9a0a
         ;   Label: LAB_005e9a0a
     PUSH EAX                            ; 005e9a10
-    CALL core_flame.cpp_FUN_004ca110    ; 005e9a11
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
+    CALL core_flame.cpp_CFlame_FUN_004ca110 ; 005e9a11
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_CFlame_FUN_004ca110(CFlame * this_ptr)
     ADD ESP,0x4                         ; 005e9a16
     JMP 0x005e98d6                      ; 005e9a19
         ;   XREF to: 005e98d6 (UNCONDITIONAL_JUMP)  ; LAB_005e98d6

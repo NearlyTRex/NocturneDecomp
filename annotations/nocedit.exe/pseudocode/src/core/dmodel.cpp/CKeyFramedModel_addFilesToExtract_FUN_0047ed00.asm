@@ -21,7 +21,7 @@
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 at 0047eea7
 ;   core_filmreel.cpp_CFilmReel_addFilesToExtract_FUN_004be9b0 at 004be9ef
 ;   core_flamecan.cpp_CFlameCan_addFilesToExtract_FUN_004cb750 at 004cb78f
-;   core_gasmask.cpp_FUN_004e5ef0 at 004e5f2f
+;   core_gasmask.cpp_CGasMask_addFilesToExtract_FUN_004e5ef0 at 004e5f2f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ART_s_RAW_00620f0b

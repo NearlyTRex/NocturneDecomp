@@ -40,7 +40,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042b930
 ;   core_charactr.cpp_CCharacter_FUN_0042b9e0
 ;   core_charactr.cpp_CCharacter_FUN_0042d060
-;   core_game.cpp_CGame_FUN_004e0bf0
+;   core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
 ;   core_gore.cpp_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;
@@ -174,8 +174,8 @@ section .text
     PUSH EAX                            ; 0042c4e2
     MOV ESI,dword ptr [0x0067b654]      ; 0042c4e3 | g_CGamePtr
     PUSH ESI                            ; 0042c4e9 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004e0bf0 ; 0042c4ea
-        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0bf0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0 ; 0042c4ea
+        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, int value, float duration)
     ADD ESP,0x10                        ; 0042c4ef
     FLD float ptr [EBX + 0x243c]        ; 0042c4f2
         ;   Label: LAB_0042c4f2

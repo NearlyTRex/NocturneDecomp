@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_FUN_004dcee0 at 004dd448
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd448
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3662
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004dbba1
 ;

@@ -525,7 +525,7 @@ LAB_004d3cb4:
     }
     local_40 = 0.64f + (float)-0.14999999999999999;
     if ((local_44 <= local_40) && (local_40 < this_ptr->draw_blend)) {
-      core_game_cpp_CGame_FUN_004e0bb0(g_CGamePtr);
+      core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0(g_CGamePtr);
       sound_name = "draw-f.wav @ 1.5";
 LAB_004d33ec:
       (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
@@ -567,7 +567,7 @@ LAB_004d344b:
   if ((float)0.90000000000000002 < this_ptr->light_aim_blend) {
     this_ptr->light_aim_blend = 0.9;
   }
-  core_gabriela_cpp_FUN_004d6540();
+  core_gabriela_cpp_CGabriella_FUN_004d6540(this_ptr);
   fVar23 = this_ptr->fire_cooldown_timer - delta_time / 0.2f;
   this_ptr->fire_cooldown_timer = fVar23;
   if (((fVar23 <= 0.0) &&
@@ -614,7 +614,7 @@ LAB_004d344b:
     }
   }
   core_gabriela_cpp_CGabriella_FUN_004d4d80(this_ptr);
-  core_gabriela_cpp_FUN_004d6d40();
+  core_gabriela_cpp_CGabriella_FUN_004d6d40(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   pCVar2 = &(this_ptr->base).base.model;
   local_14 = (CCharacter_full_vtable *)

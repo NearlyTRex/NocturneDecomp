@@ -17,7 +17,7 @@ core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageI
   if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {

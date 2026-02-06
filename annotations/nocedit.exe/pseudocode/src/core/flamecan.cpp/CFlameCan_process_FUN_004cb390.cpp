@@ -35,7 +35,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
       return;
     }
   }
-  core_flame_cpp_FUN_004c9c00();
+  core_flame_cpp_CFlame_FUN_004c9c00((CFlame *)this_ptr->unk);
   fVar1 = this_ptr->time_to_explode - delta_time;
   this_ptr->time_to_explode = fVar1;
   if (0.0 < fVar1) {

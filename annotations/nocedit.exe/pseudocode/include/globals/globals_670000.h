@@ -446,6 +446,8 @@ extern int g_CFlashlightClassVersion;
 extern int g_CFliesClassVersion;
 extern int g_CFrankenstienMachineClassVersion;
 extern int g_CGabriellaClassVersion;
+extern int INT_0067b664;
+extern int INT_0067b668;
 extern int g_CGargoyleClassVersion;
 extern int g_CGasMaskClassVersion;
 extern int g_CGhoulClassVersion;

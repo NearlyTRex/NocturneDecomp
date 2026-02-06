@@ -45,9 +45,9 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
             ((CAlphaBitmap *)(auStack_58 + 0x10),0,0,0xffff);
-  this_ptr->player_pos_y = this_ptr->player_rotation + this_ptr->player_pos_y;
-  fVar1 = this_ptr->player_rotation;
-  fVar3 = this_ptr->player_pos_x;
+  this_ptr->game_stat_1 = this_ptr->total_play_time + this_ptr->game_stat_1;
+  fVar1 = this_ptr->total_play_time;
+  fVar3 = this_ptr->game_stat_2;
   iVar5 = this_ptr->game_state_flags;
   dVar12 = round((double)(fVar1 * (float)0.00027777777777777799));
   local_24 = (int)ROUND(dVar12);
@@ -56,12 +56,12 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   dVar12 = round((double)(fVar1 * (float)0.016666666666666701));
   iStack_34 = (int)ROUND(dVar12);
   fVar1 = fVar1 - (float)iStack_34 * (float)60;
-  this_ptr->player_rotation = fVar1;
+  this_ptr->total_play_time = fVar1;
   local_1c = iStack_34;
   dVar12 = round((double)fVar1);
   iStack_34 = (int)ROUND(dVar12);
-  fVar1 = this_ptr->player_rotation - (float)iStack_34;
-  this_ptr->player_rotation = fVar1;
+  fVar1 = this_ptr->total_play_time - (float)iStack_34;
+  this_ptr->total_play_time = fVar1;
   fVar4 = (float)100;
   this_ptr->game_state_flags = iVar5 + (int)fVar3;
   pcVar13 = (char *)0x4e3936;

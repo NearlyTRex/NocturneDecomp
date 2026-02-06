@@ -139,9 +139,9 @@ CBloodPool * __cdecl FUN_004edde0(void);
 // Address: 004ede30
 void __cdecl FUN_004ede30(void);
 
-// Original: core_gore.cpp_CGore_FUN_004ede60
+// Original: core_gore.cpp_CGore_loadAssets_FUN_004ede60
 // Address: 004ede60
-void __cdecl CGore(CGore *this_ptr);
+void __cdecl CGore::loadAssets(CGore *this_ptr);
 
 // Original: core_gore.cpp_CreateFlies_FUN_004edf30
 // Address: 004edf30

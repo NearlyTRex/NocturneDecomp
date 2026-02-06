@@ -12,15 +12,15 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr)
   char cVar1;
   char *pcVar2;
   char *in_stack_00000008;
-  uint in_stack_0000000c;
-  uint in_stack_00000010;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   
-  if (this_ptr->unk13[0x528] != '\0') {
+  if (this_ptr->bitmap_filename[0] != '\0') {
     g_CurrentFilename = "..\\core\\game.cpp";
     g_CurrentLineNumber = 0xfc6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::displayBitmap - tried to queue %s, but %s already queued!");
   }
-  pcVar2 = this_ptr->unk13 + 0x528;
+  pcVar2 = this_ptr->bitmap_filename;
   do {
     cVar1 = *in_stack_00000008;
     *pcVar2 = cVar1;
@@ -30,7 +30,7 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr)
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(this_ptr->unk13 + 0x628) = in_stack_0000000c;
-  *(uint *)(this_ptr->unk13 + 0x62c) = in_stack_00000010;
+  this_ptr->bitmap_width = in_stack_0000000c;
+  this_ptr->bitmap_height = in_stack_00000010;
   return;
 }

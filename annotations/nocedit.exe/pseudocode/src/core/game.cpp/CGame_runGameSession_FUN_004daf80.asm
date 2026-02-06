@@ -41,17 +41,17 @@
 ;   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004e0920
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004e0960
+;   core_game.cpp_CGame_clearOverlay_FUN_004d7f80
 ;   core_game.cpp_CGame_fadeIn_FUN_004e0b90
-;   core_game.cpp_CGame_FUN_004d7f80
-;   core_game.cpp_CGame_FUN_004d85a0
-;   core_game.cpp_CGame_FUN_004d8750
-;   core_game.cpp_CGame_FUN_004dcee0
-;   core_game.cpp_CGame_FUN_004e07a0
-;   core_game.cpp_CGame_FUN_004e2910
-;   core_game.cpp_CGame_FUN_004e36f0
+;   core_game.cpp_CGame_loadAssets_FUN_004e07a0
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80
 ;   core_game.cpp_CGame_processFrame_FUN_004da100
+;   core_game.cpp_CGame_processFudge_FUN_004d8750
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0
+;   core_game.cpp_CGame_promptLoadGame_FUN_004e36f0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
+;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
+;   core_game.cpp_CGame_saveGame_FUN_004e0cd0
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -238,8 +238,8 @@ section .text
     ADD ESP,0x8                         ; 004db256
     MOV ESI,dword ptr [EBP + 0x14]      ; 004db259
     PUSH ESI                            ; 004db25c
-    CALL core_game.cpp_CGame_FUN_004d7f80 ; 004db25d
-        ;   XREF to: 004d7f80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004d7f80(CGame * this_ptr)
+    CALL core_game.cpp_CGame_clearOverlay_FUN_004d7f80 ; 004db25d
+        ;   XREF to: 004d7f80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_clearOverlay_FUN_004d7f80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db262
     PUSH 0x2d828d4                      ; 004db265 | g_CPickList
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 004db26a
@@ -265,8 +265,8 @@ section .text
         ;   XREF to: 004e0920 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_beginFadeIn_FUN_004e0920(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db2a3
     PUSH EDI                            ; 004db2a6
-    CALL core_game.cpp_CGame_FUN_004e07a0 ; 004db2a7
-        ;   XREF to: 004e07a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e07a0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_loadAssets_FUN_004e07a0 ; 004db2a7
+        ;   XREF to: 004e07a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadAssets_FUN_004e07a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db2ac
     PUSH 0x3                            ; 004db2af
     MOV EDX,dword ptr [0x00680a00]      ; 004db2b1 | g_CNetGameInstance | g_CNetGamePtr
@@ -334,16 +334,16 @@ section .text
     ADD ESP,0x8                         ; 004db376
     MOV ESI,dword ptr [EBP + 0x14]      ; 004db379
     PUSH ESI                            ; 004db37c
-    CALL core_game.cpp_CGame_FUN_004dcee0 ; 004db37d
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dcee0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_processHotkeys_FUN_004dcee0 ; 004db37d
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processHotkeys_FUN_004dcee0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db382
     PUSH ESI                            ; 004db385
-    CALL core_game.cpp_CGame_FUN_004d85a0 ; 004db386
-        ;   XREF to: 004d85a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004d85a0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0 ; 004db386
+        ;   XREF to: 004d85a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db38b
     PUSH ESI                            ; 004db38e
-    CALL core_game.cpp_CGame_FUN_004d8750 ; 004db38f
-        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
+    CALL core_game.cpp_CGame_processFudge_FUN_004d8750 ; 004db38f
+        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_processFudge_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
     ADD ESP,0x4                         ; 004db394
     PUSH ESI                            ; 004db397
     CALL core_game.cpp_CGame_playerControls_FUN_004dbd80 ; 004db398
@@ -460,8 +460,8 @@ section .text
         ;   XREF to: 004dbbae (CONDITIONAL_JUMP)  ; LAB_004dbbae
     MOV ECX,dword ptr [EBP + 0x14]      ; 004db4dc
     PUSH ECX                            ; 004db4df
-    CALL core_game.cpp_CGame_FUN_004e36f0 ; 004db4e0
-        ;   XREF to: 004e36f0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e36f0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_promptLoadGame_FUN_004e36f0 ; 004db4e0
+        ;   XREF to: 004e36f0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_promptLoadGame_FUN_004e36f0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db4e5
     PUSH 0x0                            ; 004db4e8
         ;   Label: LAB_004db4e8
@@ -820,8 +820,8 @@ section .text
         ;   XREF to: 004db902 (CONDITIONAL_JUMP)  ; LAB_004db902
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db8f6
     PUSH EAX                            ; 004db8f9
-    CALL core_game.cpp_CGame_FUN_004e36f0 ; 004db8fa
-        ;   XREF to: 004e36f0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e36f0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_promptLoadGame_FUN_004e36f0 ; 004db8fa
+        ;   XREF to: 004e36f0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_promptLoadGame_FUN_004e36f0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db8ff
     CMP EBX,0x3                         ; 004db902
         ;   Label: LAB_004db902
@@ -1046,8 +1046,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004dbb58
         ;   Label: LAB_004dbb58
     PUSH ECX                            ; 004dbb5b
-    CALL core_game.cpp_CGame_FUN_004e2910 ; 004dbb5c
-        ;   XREF to: 004e2910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e2910(CGame * this_ptr)
+    CALL core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 ; 004dbb5c
+        ;   XREF to: 004e2910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 004dbb61
     MOV EBX,dword ptr [EAX + 0x200]     ; 004dbb64
     ADD ESP,0x4                         ; 004dbb6a

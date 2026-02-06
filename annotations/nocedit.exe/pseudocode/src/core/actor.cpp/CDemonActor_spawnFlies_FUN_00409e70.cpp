@@ -15,7 +15,7 @@ core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x510);
-  pCVar1 = core_flies_cpp_FUN_004cca50();
+  pCVar1 = core_flies_cpp_CFlies_FUN_004cca50((CFlies *)this_ptr);
   if (pCVar1 != (CDemonActor *)0x0) {
     return;
   }

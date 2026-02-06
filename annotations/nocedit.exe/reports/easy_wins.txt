@@ -173,6 +173,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dskybox.cpp_renderSkyDome_FUN_004901f0
       Suspects: decompiler_intrinsic, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, stack_ref, pointer_cast, stack_ref, unknown_field, decompiler_intrinsic
 
+  core/gasmask.cpp (2 remaining of 14)
+    - core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00
+      Suspects: negative_offset, negative_offset
+    - core_gasmask.cpp_CGasMask_renderOpaque_FUN_004e5da0
+      Suspects: stack_ref
+
   core/ammo.cpp (2 remaining of 18)
     - core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80
       Suspects: stack_ref
@@ -220,7 +226,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 246 more
 
-  [param_count_too_few] - 144 functions
+  [param_count_too_few] - 146 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -231,7 +237,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20      (  5 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
-    ... and 134 more
+    ... and 136 more
 
   [pointer_cast] - 68 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
@@ -239,14 +245,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
     core_cloth.cpp_SClothVertex_ctor_FUN_0043e420           (  6 lines)
     core_gore.cpp_FUN_004ee370                              (  6 lines)
-    core_flies.cpp_FUN_004ccd20                             (  6 lines)
+    core_flies.cpp_SFly_ctor_FUN_004ccd20                   (  6 lines)
     core_manpuz.cpp_SGem_ctor_FUN_0050b940                  (  6 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
     ... and 58 more
 
-  [stack_ref] - 60 functions
+  [stack_ref] - 63 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
@@ -257,9 +263,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
     shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 50 more
+    ... and 53 more
 
-  [decompiler_intrinsic] - 41 functions
+  [decompiler_intrinsic] - 44 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
     core_script.cpp_CScript_FUN_00559ac0                    (  8 lines)
@@ -270,9 +276,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
     wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
     core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
-    ... and 31 more
+    ... and 34 more
 
-  [negative_offset] - 33 functions
+  [negative_offset] - 37 functions
+    core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50             (  6 lines)
+    core_gore.cpp_FUN_004ee390                              (  6 lines)
+    core_flies.cpp_SFly_dtor_FUN_004ccd40                   (  6 lines)
     core_manpuz.cpp_SGem_dtor_FUN_0050b960                  (  6 lines)
     core_fire.cpp_CCrater_dtor_FUN_004c95a0                 (  6 lines)
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
@@ -280,10 +289,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CStake_ctor_FUN_004c9740                  (  6 lines)
     core_box.cpp_CBox_dtor_FUN_0041dd00                     (  6 lines)
     core_skeleton.cpp_SVert_dtor_FUN_005a1f90               (  6 lines)
-    core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620       (  6 lines)
-    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640       (  6 lines)
-    core_vehicle.cpp_CTire_ctor_FUN_005e8da0                (  7 lines)
-    ... and 23 more
+    ... and 27 more
 
   [param_count_too_many] - 26 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
@@ -342,18 +348,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e35 ( 26 lines)
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0  ( 34 lines)
 
+  [suspect_float] - 5 functions
+    core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
+    core_grave.cpp_CGrave_process_FUN_004ee5c0              ( 31 lines)
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
+    core_trigger.cpp_CTrigger_FUN_005df990                  ( 46 lines)
+
   [warning_unreachable] - 5 functions
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554 ( 21 lines)
     engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
     shape_design.c_convertWorldToScreenCoordinates_FUN_0045 ( 42 lines)
     shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
-
-  [suspect_float] - 4 functions
-    core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
-    core_trigger.cpp_CTrigger_FUN_005df990                  ( 46 lines)
 
   [unknown_field] - 4 functions
     core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)

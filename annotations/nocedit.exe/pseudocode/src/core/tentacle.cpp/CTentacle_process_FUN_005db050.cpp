@@ -13,6 +13,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
+  CGrave *this_ptr_01;
   float fVar2;
   int iVar3;
   SMotion *pSVar4;
@@ -186,11 +187,12 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             if (iVar3 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&this_ptr_00->motion_controller,2,1);
+              this_ptr_01 = *(CGrave **)(this_ptr->unk + 0x10);
               this_ptr->unk[8] = '\0';
               this_ptr->unk[9] = '\0';
               this_ptr->unk[10] = '\0';
               this_ptr->unk[0xb] = '\0';
-              core_grave_cpp_FUN_004ee790();
+              core_grave_cpp_CGrave_FUN_004ee790(this_ptr_01);
               this_ptr->unk[0x10] = '\0';
               this_ptr->unk[0x11] = '\0';
               this_ptr->unk[0x12] = '\0';

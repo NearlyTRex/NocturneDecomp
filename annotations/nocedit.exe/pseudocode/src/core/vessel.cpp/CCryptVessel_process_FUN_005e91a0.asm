@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_FUN_004c8c10
-;   core_flame.cpp_FUN_004c9c00
+;   core_flame.cpp_CFlame_FUN_004c9c00
 ;   core_vessel.cpp_FUN_005e9180
 ;
 ; *****************************************************************************
@@ -291,8 +291,8 @@ section .text
         ;   Label: LAB_005e9498
     PUSH dword ptr [ESP + 0x50]         ; 005e949e
     PUSH EAX                            ; 005e94a2
-    CALL core_flame.cpp_FUN_004c9c00    ; 005e94a3
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
+    CALL core_flame.cpp_CFlame_FUN_004c9c00 ; 005e94a3
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004c9c00(CFlame * this_ptr)
     ADD ESP,0x8                         ; 005e94a8
     JMP 0x005e91d8                      ; 005e94ab
         ;   XREF to: 005e91d8 (UNCONDITIONAL_JUMP)  ; LAB_005e91d8

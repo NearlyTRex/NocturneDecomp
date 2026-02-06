@@ -5742,8 +5742,8 @@ section .text
     LEA EDI,[EAX + 0x1f738]             ; 0055e872
     PUSH EDI                            ; 0055e878
     MOV dword ptr [ESP + 0x3f2c],EDX    ; 0055e879
-    CALL core_gabriela.cpp_FUN_004d7650 ; 0055e880
-        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d7650()
+    CALL core_gabriela.cpp_CGabriella_FUN_004d7650 ; 0055e880
+        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d7650(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 0055e885
     MOV dword ptr [ESP + 0x3f2c],EAX    ; 0055e888
     TEST EAX,EAX                        ; 0055e88f
@@ -5780,8 +5780,8 @@ section .text
         ;   XREF to: 004feb10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004feb10(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0055e8df
     PUSH EDI                            ; 0055e8e2
-    CALL core_gabriela.cpp_FUN_004d7650 ; 0055e8e3
-        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_FUN_004d7650()
+    CALL core_gabriela.cpp_CGabriella_FUN_004d7650 ; 0055e8e3
+        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d7650(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 0055e8e8
     MOV ECX,dword ptr [ESP + 0x3f2c]    ; 0055e8eb
     MOV ESI,EAX                         ; 0055e8f2

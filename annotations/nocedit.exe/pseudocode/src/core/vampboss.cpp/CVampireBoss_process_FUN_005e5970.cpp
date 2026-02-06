@@ -654,7 +654,9 @@ LAB_005e5f5f:
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->base).base.model.motion_controller);
   if ((pSVar9->state_index != 2) && (g_CGamePtr->letterbox_mode == 0)) {
-    core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);
+    core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
+              (g_CGamePtr,(this_ptr->base).base.descriptive_name,
+               (int)((this_ptr->base).base.hit_points / (this_ptr->base).base.max_hit_points),0.5);
     return;
   }
   return;

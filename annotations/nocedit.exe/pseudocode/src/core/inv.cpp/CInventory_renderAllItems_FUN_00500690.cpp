@@ -68,7 +68,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     return;
   }
   if (g_WindowHeight != g_InventoryScreenHeight) {
-    core_inv_cpp_loadInventory_FUN_004fd220();
+    core_inv_cpp_loadAssets_FUN_004fd220();
   }
   local_6c = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;

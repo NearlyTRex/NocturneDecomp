@@ -19,7 +19,7 @@ void __cdecl core_flame_cpp_CFlame_archive_FUN_004cac60(CFlame *this_ptr)
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->on_event,"onEvent");
   }
   if (3 < g_CFlameClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->on_event_alt,"onEvent");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->off_event,"onEvent");
   }
   if (4 < g_CFlameClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->flame_state,"flameState");

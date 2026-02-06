@@ -1,0 +1,338 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 266,
+    "complexity_score": 299,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 7,
+    "pseudocode_lines": 84,
+    "suspect_count": 21,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 350
+  },
+  "cross_references": [
+    {
+      "addr": "004e57d0",
+      "from_addr": "004e583d",
+      "name": "core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e5530",
+    "address_range": [
+      [
+        "004e5530",
+        "004e57c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gargoyle.cpp_CGargoyle_FUN_004e5530",
+    "signature": "void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5530(CGargoyle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bcc0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004e5518",
+      "name": "switchdataD_004e5518",
+      "type": "void*",
+      "value": "004e556d"
+    },
+    {
+      "addr": "0062da07",
+      "name": "DOUBLE_0062da07",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "0062da0f",
+      "name": "DOUBLE_0062da0f",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062da17",
+      "name": "DOUBLE_0062da17",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.unk4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.857142857142857,
+    "instruction_count": 203,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "BRANCHIND": 1,
+      "CALL": 12,
+      "CBRANCH": 20,
+      "COPY": 285,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 84,
+      "INT_AND": 88,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 71,
+      "INT_LEFT": 5,
+      "INT_LESS": 18,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 35,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 76,
+      "INT_ZEXT": 6,
+      "LOAD": 65,
+      "POPCOUNT": 35,
+      "RETURN": 3,
+      "STORE": 67,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 986
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGargoyle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000008",
+      "text": "local_14 = (float)in_stack_00000008[0xb];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk1 + 0x30) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk1 + 0x2c) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000008",
+      "text": "if (*in_stack_00000008 == *(int *)(this_ptr->unk1 + 8)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk1 + 0x10) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(this_ptr->unk1 + 0x2c) == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = 0x461c3c00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
+    }
+  ]
+}

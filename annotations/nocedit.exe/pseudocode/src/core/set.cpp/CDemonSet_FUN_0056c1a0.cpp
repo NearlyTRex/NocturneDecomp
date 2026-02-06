@@ -278,7 +278,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
                dVar3,(double)(iVar6 - iVar5) * 0.055555555555555601 * 1.52587890625e-05 * 1000 *
                      dVar3);
   }
-  if (g_CGamePtr->unk5 != 0) {
+  if (g_CGamePtr->debug_toggle_flag != 0) {
     core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(this_ptr);
   }
   iVar5 = 0;

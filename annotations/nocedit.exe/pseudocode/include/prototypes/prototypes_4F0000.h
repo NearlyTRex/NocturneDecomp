@@ -250,7 +250,7 @@ void __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_ptr);
-void __cdecl core_inv_cpp_loadInventory_FUN_004fd220(void);
+void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void);
 void __cdecl core_inv_cpp_freeInventory_FUN_004fd510(void);
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004fd5d0(CDemonActor *actor_ptr);
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600 (CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message);

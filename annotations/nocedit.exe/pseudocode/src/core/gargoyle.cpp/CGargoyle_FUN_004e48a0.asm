@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
+; __cdecl int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined8       Stack[-0x38]:8  local_38
@@ -16,7 +18,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 at 004e4df6
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00 at 004e4df6
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062d92f = -0.314159265350000

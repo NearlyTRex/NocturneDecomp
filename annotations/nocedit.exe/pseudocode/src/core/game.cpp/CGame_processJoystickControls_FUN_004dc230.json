@@ -1,0 +1,119 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "004dbd80",
+      "from_addr": "004dbdfd",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dc230",
+    "address_range": [
+      [
+        "004dc230",
+        "004dc260"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_processJoystickControls_FUN_004dc230",
+    "signature": "void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004dc230 (CGame *this_ptr,SPlayerControl *player_control)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dc3e0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0"
+    },
+    {
+      "addr": "004dbe60",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004dbdfd",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_playerControls_FUN_004dbd80",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4375,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 55
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_control",
+        "offset": 8,
+        "size": 4,
+        "type": "SPlayerControl *"
+      }
+    ]
+  },
+  "suspects": []
+}

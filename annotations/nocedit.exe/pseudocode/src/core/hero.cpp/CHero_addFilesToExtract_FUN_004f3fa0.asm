@@ -10,7 +10,7 @@
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_addFilesToExtract_FUN_00414070 at 0041407a
 ;   core_colonel.cpp_CColonel_addFilesToExtract_FUN_00440630 at 0044063a
-;   core_gabriela.cpp_FUN_004d7630 at 004d763a
+;   core_gabriela.cpp_CGabriella_addFilesToExtract_FUN_004d7630 at 004d763a
 ;   core_haystack.cpp_CHaystack_addFilesToExtract_FUN_004f1cf0 at 004f1cfa
 ;   core_icepick.cpp_CIcePick_addFilesToExtract_FUN_004f97c0 at 004f97ca
 ;   core_moloch.cpp_CMoloch_addFilesToExtract_FUN_005299b0 at 005299ba

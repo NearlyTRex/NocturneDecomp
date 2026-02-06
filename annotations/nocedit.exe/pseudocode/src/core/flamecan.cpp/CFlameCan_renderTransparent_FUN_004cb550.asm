@@ -7,7 +7,7 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_flame.cpp_FUN_004ca110
+;   core_flame.cpp_CFlame_FUN_004ca110
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     LEA EAX,[EBX + 0x340]               ; 004cb566
         ;   Label: LAB_004cb566
     PUSH EAX                            ; 004cb56c
-    CALL core_flame.cpp_FUN_004ca110    ; 004cb56d
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
+    CALL core_flame.cpp_CFlame_FUN_004ca110 ; 004cb56d
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_CFlame_FUN_004ca110(CFlame * this_ptr)
     ADD ESP,0x4                         ; 004cb572
     MOV EAX,dword ptr [EBX + 0x5e4]     ; 004cb575
     POP EBX                             ; 004cb57b

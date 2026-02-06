@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004e2f10 at 004e2f64
-;   core_game.cpp_FUN_004e2fc0 at 004e3031
+;   core_game.cpp_hostNetworkGame_FUN_004e2f10 at 004e2f64
+;   core_game.cpp_joinNetworkGame_FUN_004e2fc0 at 004e3031
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_have_been_disconnect_0063d983

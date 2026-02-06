@@ -4,61 +4,61 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 3427 functions
-  1 suspects: 814 functions
-  2 suspects: 574 functions
-  3 suspects: 289 functions
-  4 suspects: 245 functions
-  5 suspects: 224 functions
-  6 suspects: 188 functions
-  7 suspects: 121 functions
-  8 suspects: 134 functions
-  9 suspects: 102 functions
+  0 suspects: 3474 functions
+  1 suspects: 828 functions
+  2 suspects: 566 functions
+  3 suspects: 287 functions
+  4 suspects: 247 functions
+  5 suspects: 219 functions
+  6 suspects: 183 functions
+  7 suspects: 116 functions
+  8 suspects: 129 functions
+  9 suspects: 101 functions
   10 suspects: 88 functions
-  11 suspects: 77 functions
+  11 suspects: 74 functions
   12 suspects: 85 functions
-  13 suspects: 75 functions
-  14 suspects: 70 functions
-  15 suspects: 48 functions
+  13 suspects: 72 functions
+  14 suspects: 67 functions
+  15 suspects: 46 functions
   16 suspects: 44 functions
   17 suspects: 26 functions
-  18 suspects: 34 functions
+  18 suspects: 33 functions
   19 suspects: 32 functions
-  20 suspects: 40 functions
-  21 suspects: 34 functions
-  22 suspects: 16 functions
+  20 suspects: 39 functions
+  21 suspects: 35 functions
+  22 suspects: 15 functions
   23 suspects: 36 functions
-  24 suspects: 19 functions
+  24 suspects: 18 functions
   25 suspects: 16 functions
-  26 suspects: 21 functions
-  27 suspects: 11 functions
+  26 suspects: 17 functions
+  27 suspects: 9 functions
   28 suspects: 17 functions
-  29 suspects: 16 functions
+  29 suspects: 15 functions
   30 suspects: 16 functions
   31 suspects: 11 functions
   32 suspects: 8 functions
-  33 suspects: 5 functions
+  33 suspects: 7 functions
   34 suspects: 7 functions
-  35 suspects: 13 functions
+  35 suspects: 12 functions
   36 suspects: 8 functions
-  37 suspects: 8 functions
-  38 suspects: 2 functions
+  37 suspects: 6 functions
+  38 suspects: 1 functions
   39 suspects: 8 functions
-  40 suspects: 6 functions
+  40 suspects: 5 functions
   41 suspects: 6 functions
   42 suspects: 3 functions
-  43 suspects: 8 functions
+  43 suspects: 7 functions
   44 suspects: 4 functions
   45 suspects: 2 functions
   46 suspects: 6 functions
   47 suspects: 1 functions
-  48 suspects: 7 functions
+  48 suspects: 8 functions
   49 suspects: 1 functions
   51 suspects: 2 functions
   52 suspects: 3 functions
-  53 suspects: 2 functions
-  54 suspects: 7 functions
-  55 suspects: 2 functions
+  53 suspects: 1 functions
+  54 suspects: 6 functions
+  55 suspects: 1 functions
   56 suspects: 3 functions
   57 suspects: 1 functions
   58 suspects: 5 functions
@@ -66,15 +66,14 @@ SUSPECT COUNT DISTRIBUTION
   60 suspects: 2 functions
   61 suspects: 1 functions
   62 suspects: 1 functions
-  63 suspects: 2 functions
+  63 suspects: 1 functions
   64 suspects: 4 functions
   65 suspects: 1 functions
   66 suspects: 2 functions
   67 suspects: 1 functions
   68 suspects: 2 functions
-  69 suspects: 1 functions
   70 suspects: 1 functions
-  72 suspects: 1 functions
+  72 suspects: 2 functions
   73 suspects: 2 functions
   75 suspects: 2 functions
   76 suspects: 1 functions
@@ -88,14 +87,12 @@ SUSPECT COUNT DISTRIBUTION
   85 suspects: 1 functions
   87 suspects: 1 functions
   88 suspects: 1 functions
-  93 suspects: 1 functions
   94 suspects: 1 functions
   98 suspects: 1 functions
   99 suspects: 1 functions
   100 suspects: 3 functions
   104 suspects: 2 functions
   106 suspects: 1 functions
-  107 suspects: 1 functions
   112 suspects: 1 functions
   113 suspects: 1 functions
   115 suspects: 1 functions
@@ -108,7 +105,6 @@ SUSPECT COUNT DISTRIBUTION
   157 suspects: 1 functions
   159 suspects: 1 functions
   172 suspects: 1 functions
-  180 suspects: 1 functions
   192 suspects: 1 functions
   197 suspects: 1 functions
   211 suspects: 1 functions
@@ -118,7 +114,6 @@ SUSPECT COUNT DISTRIBUTION
   267 suspects: 1 functions
   308 suspects: 1 functions
   324 suspects: 1 functions
-  378 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
@@ -168,7 +163,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 0060a1bc...
     ... and 257 more
 
-  [param_count_too_few] (156 functions)
+  [param_count_too_few] (158 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -210,7 +205,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 1 params but call sites push 6 (5 missing)...
     core_crossbow.cpp_CCrossbow_FUN_00449540           (  5 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
-    ... and 136 more
+    ... and 138 more
 
   [pointer_cast] (98 functions)
   ------------------------------------------------------------
@@ -224,7 +219,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (SClothVertex *)((int)pvVar1 + -0xec);...
     core_gore.cpp_FUN_004ee370                         (  6 lines)
       return (CFootstep *)((int)pvVar1 + -8);...
-    core_flies.cpp_FUN_004ccd20                        (  6 lines)
+    core_flies.cpp_SFly_ctor_FUN_004ccd20              (  6 lines)
       return (SFly *)((int)pvVar1 + -4);...
     core_manpuz.cpp_SGem_ctor_FUN_0050b940             (  6 lines)
       return (SGem *)((int)pvVar1 + -0x3c);...
@@ -256,7 +251,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base)....
     ... and 78 more
 
-  [stack_ref] (70 functions)
+  [stack_ref] (74 functions)
   ------------------------------------------------------------
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_00 (  9 lines)
       local_14 = &stack0x00000018;...
@@ -298,9 +293,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);...
     core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80      ( 16 lines)
       (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);...
-    ... and 50 more
+    ... and 54 more
 
-  [decompiler_intrinsic] (57 functions)
+  [decompiler_intrinsic] (60 functions)
   ------------------------------------------------------------
     shape_design.c_floatEpsilonCompare_FUN_004676b0    (  6 lines)
       local_18 = (uint)(ABS(value1 - value2) < epsilon);...
@@ -334,18 +329,24 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;...
     core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0  ( 18 lines)
       if (ABS(this_ptr->atten_end) == 0.0) {...
+    core_frankgen.cpp_CFrankenstienMachine_getBounding ( 18 lines)
+      pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;...
     core_actor.cpp_getRandomInt_FUN_0040cc70           ( 22 lines)
       iVar2 = (int)ROUND(dVar4);...
     core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FU ( 22 lines)
       *(int *)(iVar2 + 4 + (int)model_ptr->vertex_list) + (int)ROU...
     shape_cramtex.cpp_calculateAtlasEfficiency_FUN_004 ( 22 lines)
       return (double)CONCAT44(g_CramTextureCount,...
-    shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_005 ( 23 lines)
-      (this_ptr,SQRT(local_8 * local_8 + local_10 * local_10 + loc...
-    ... and 37 more
+    ... and 40 more
 
-  [negative_offset] (33 functions)
+  [negative_offset] (37 functions)
   ------------------------------------------------------------
+    core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50        (  6 lines)
+      return (SFreaky *)&pCVar1[-3].y;...
+    core_gore.cpp_FUN_004ee390                         (  6 lines)
+      return (CFootstep *)&pCVar1[-1].y;...
+    core_flies.cpp_SFly_dtor_FUN_004ccd40              (  6 lines)
+      return (SFly *)&pCVar1[-1].z;...
     core_manpuz.cpp_SGem_dtor_FUN_0050b960             (  6 lines)
       return (SGem *)&pCVar1[-2].area;...
     core_fire.cpp_CCrater_dtor_FUN_004c95a0            (  6 lines)
@@ -380,13 +381,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (CDemonSet *)&pCVar4[-1].unk4;...
     core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
       shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_list[-1]...
-    support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490 ( 15 lines)
-      piVar3 = &pCVar2[-1].bit_state.accumulated_bits;...
-    core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004 ( 17 lines)
-      shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[...
-    core_curtain.cpp_CCurtain_dtor_FUN_0044ba30        ( 19 lines)
-      core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)...
-    ... and 13 more
+    ... and 17 more
 
   [param_count_too_many] (29 functions)
   ------------------------------------------------------------
@@ -551,6 +546,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_design.c_showPointEditor_FUN_0045c6c0        (103 lines)
       /* WARNING: Removing unreachable block (ram,0x0045c93b) */...
 
+  [suspect_float] (8 functions)
+  ------------------------------------------------------------
+    core_glass.cpp_CGlass_process_FUN_004e98e0         ( 16 lines)
+      (this_ptr->base).unk7 = 1.4013e-45;...
+    core_grave.cpp_CGrave_process_FUN_004ee5c0         ( 31 lines)
+      (this_ptr->base).unk7 = 1.4013e-45;...
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 45 lines)
+      pCVar3->fire_cooldown = 1.4013e-45;...
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 46 lines)
+      (pCVar2->base).fire_cooldown = 1.4013e-45;...
+    core_trigger.cpp_CTrigger_FUN_005df990             ( 46 lines)
+      (this_ptr->base).unk7 = 1.4013e-45;...
+    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 50 lines)
+      (pCVar3->base).fire_cooldown = 1.4013e-45;...
+    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 70 lines)
+      if (fVar2 == 2.8026e-45) {...
+    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
+      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
+
   [unnamed_param] (7 functions)
   ------------------------------------------------------------
     core_actor.cpp_CActorPropertyList_addGroundType_FU ( 10 lines)
@@ -567,23 +581,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar2->param1).v_int = default_index;...
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 34 lines)
       (pCVar2->param1).v_int = allow_none;...
-
-  [suspect_float] (7 functions)
-  ------------------------------------------------------------
-    core_glass.cpp_CGlass_process_FUN_004e98e0         ( 16 lines)
-      (this_ptr->base).unk7 = 1.4013e-45;...
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 45 lines)
-      pCVar3->fire_cooldown = 1.4013e-45;...
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 46 lines)
-      (pCVar2->base).fire_cooldown = 1.4013e-45;...
-    core_trigger.cpp_CTrigger_FUN_005df990             ( 46 lines)
-      (this_ptr->base).unk7 = 1.4013e-45;...
-    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 50 lines)
-      (pCVar3->base).fire_cooldown = 1.4013e-45;...
-    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 70 lines)
-      if (fVar2 == 2.8026e-45) {...
-    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
-      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
 
   [unknown_field] (7 functions)
   ------------------------------------------------------------
@@ -719,27 +716,27 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/trap.cpp, Lines: 6, Types: ['stack_param']
   core_trap.cpp_CTrap_FUN_005de740
     File: core/trap.cpp, Lines: 6, Types: ['stack_param']
-  core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50
-    File: core/dracbrid.cpp, Lines: 6, Types: ['extra_output']
   core_dracbrid.cpp_FUN_00486e50
     File: core/dracbrid.cpp, Lines: 6, Types: ['stack_param']
   core_icepick.cpp_CIcePick_FUN_004f9770
     File: core/icepick.cpp, Lines: 6, Types: ['stack_param']
-  core_gore.cpp_FUN_004ee390
-    File: core/gore.cpp, Lines: 6, Types: ['extra_output']
   core_gore.cpp_FUN_004ee420
     File: core/gore.cpp, Lines: 6, Types: ['stack_param']
   core_gore.cpp_FUN_004ee440
     File: core/gore.cpp, Lines: 6, Types: ['stack_param']
   core_gore.cpp_FUN_004ee460
     File: core/gore.cpp, Lines: 6, Types: ['stack_param']
-  core_flies.cpp_FUN_004ccd60
-    File: core/flies.cpp, Lines: 6, Types: ['stack_param']
-  core_flies.cpp_FUN_004ccd40
-    File: core/flies.cpp, Lines: 6, Types: ['extra_output']
   core_baron.cpp_CBaron_FUN_00414090
     File: core/baron.cpp, Lines: 6, Types: ['stack_param']
   core_door.cpp_CDoor_FUN_00480de0
     File: core/door.cpp, Lines: 6, Types: ['stack_param']
+  core_door.cpp_FUN_00481650
+    File: core/door.cpp, Lines: 6, Types: ['stack_param']
+  core_vehicle.cpp_CVehicle_FUN_005e8d00
+    File: core/vehicle.cpp, Lines: 6, Types: ['stack_param']
+  core_hero.cpp_CHero_FUN_004f3910
+    File: core/hero.cpp, Lines: 6, Types: ['stack_param']
+  core_succubus.cpp_CSuccubus_FUN_005c7790
+    File: core/succubus.cpp, Lines: 6, Types: ['stack_param']
 
-  ... and 813 more
+  ... and 803 more

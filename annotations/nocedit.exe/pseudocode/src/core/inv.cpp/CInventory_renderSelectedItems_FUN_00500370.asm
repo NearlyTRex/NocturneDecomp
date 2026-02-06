@@ -38,7 +38,7 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
 ;   core_inv.cpp_drawItemIconBackground_FUN_005001e0
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_00500050
-;   core_inv.cpp_loadInventory_FUN_004fd220
+;   core_inv.cpp_loadAssets_FUN_004fd220
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -256,8 +256,8 @@ section .text
     POP ESI                             ; 005005ee
     POP EBX                             ; 005005ef
     RET                                 ; 005005f0
-    CALL core_inv.cpp_loadInventory_FUN_004fd220 ; 005005f1
-        ;   XREF to: 004fd220 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_loadInventory_FUN_004fd220()
+    CALL core_inv.cpp_loadAssets_FUN_004fd220 ; 005005f1
+        ;   XREF to: 004fd220 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_loadAssets_FUN_004fd220()
         ;   Label: LAB_005005f1
     JMP 0x005003b5                      ; 005005f6
         ;   XREF to: 005003b5 (UNCONDITIONAL_JUMP)  ; LAB_005003b5

@@ -1,0 +1,374 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 20,
+        "line": 95,
+        "message": "request for member '_8_8_' in 'local_2c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 96,
+        "message": "request for member '_8_8_' in 'local_2c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 294,
+    "complexity_score": 281,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 116,
+    "suspect_count": 15,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "unknown_field"
+    ],
+    "total_lines": 410
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cbf00",
+    "address_range": [
+      [
+        "004cbf00",
+        "004cc221"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flies.cpp_CFlies_process_FUN_004cbf00",
+    "signature": "void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "004cc760",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_FUN_004cc760"
+    },
+    {
+      "addr": "004cc820",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_FUN_004cc820"
+    },
+    {
+      "addr": "005feb90",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005feb90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a422",
+      "name": "FLOAT_0062a422",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062a426",
+      "name": "DOUBLE_0062a426",
+      "type": "double",
+      "value": "2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.83984375,
+    "instruction_count": 256,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CBRANCH": 16,
+      "COPY": 726,
+      "FLOAT2FLOAT": 71,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 17,
+      "INT2FLOAT": 3,
+      "INT_ADD": 143,
+      "INT_AND": 77,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 12,
+      "INT_LESS": 11,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 15,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 29,
+      "INT_SUB": 30,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 84,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 68
+    },
+    "pcode_op_count": 1495
+  },
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cbf09",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EBX",
+      "text": "char *extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "SQRT",
+      "text": "if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._8_8_",
+      "text": "local_2c._8_8_ = floor(input_value);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 89,
+      "match": "extraout_EBX",
+      "text": "*(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 89,
+      "match": "extraout_EBX",
+      "text": "*(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._8_8_",
+      "text": "*(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EBX",
+      "text": "if (extraout_EBX + 4 != extraout_EBX + 0x10) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EBX",
+      "text": "if (extraout_EBX + 4 != extraout_EBX + 0x10) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 91,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 4) = *(float *)(extraout_EBX + 0x10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 91,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 4) = *(float *)(extraout_EBX + 0x10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 92,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 8) = *(float *)(extraout_EBX + 0x14);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 92,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 8) = *(float *)(extraout_EBX + 0x14);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 93,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0xc) = *(float *)(extraout_EBX + 0x18);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 93,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0xc) = *(float *)(extraout_EBX + 0x18);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 106,
+      "match": "extraout_EBX",
+      "text": "pcVar5 = extraout_EBX;",
+      "type": "extra_output"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlies",
+        "offset": 4,
+        "vtable_addr": "0065e524"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

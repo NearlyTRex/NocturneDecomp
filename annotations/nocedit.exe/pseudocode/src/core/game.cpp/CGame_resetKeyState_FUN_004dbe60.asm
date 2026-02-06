@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_game.cpp_CGame_FUN_004dc230 at 004dc236
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2ef3
+;   core_game.cpp_CGame_processJoystickControls_FUN_004dc230 at 004dc236
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2ef3
 ;   core_menu.cpp_calibrateGamepad_FUN_005104d0 at 005105a8
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 at 00514ac4
 ;   core_menu.cpp_getSinglePressedKey_FUN_00513860 at 00513896

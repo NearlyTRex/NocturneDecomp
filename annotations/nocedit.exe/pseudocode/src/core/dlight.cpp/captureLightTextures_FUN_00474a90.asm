@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056fb80 at 0056fb80
+;   core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80 at 0056fb80
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0066fef0

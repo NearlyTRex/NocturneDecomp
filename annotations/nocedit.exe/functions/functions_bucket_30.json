@@ -21997,8 +21997,38 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dracbrid.cpp_FUN_00486e30",
-    "ret":"void"
+    "name":"core_dracbrid.cpp_freeVectors_FUN_00486e30",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"objs",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"004873b0",
@@ -35522,10 +35552,9 @@
         "start":"004cc230"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_flies.cpp_FUN_004cc230(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flies.cpp_FUN_004cc230",
+    "name":"core_flies.cpp_CFlies_FUN_004cc230",
     "ret":"void",
     "vars":{
       "locals":[
@@ -35545,6 +35574,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFlies*"
+        }
       ]
     }
   },
@@ -35559,7 +35606,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flies.cpp_FUN_004cccb0",
+    "name":"core_flies.cpp_CFlies_dtor_FUN_004cccb0",
     "ret":"CFlies*",
     "vars":{
       "params":[
@@ -35580,7 +35627,7 @@
           "type":"CFlies*"
         },
         {
-          "name":"d1",
+          "name":"flags",
           "storage":{
             "offset":8,
             "size":4,
@@ -35589,38 +35636,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"d2",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"d3",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -36066,11 +36081,30 @@
         "start":"004d17b0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_frankgen.cpp_FUN_004d17b0(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_004d17b0",
-    "ret":"void"
+    "name":"core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFrankenstienMachine*"
+        }
+      ]
+    }
   },
   {
     "addr":"004d2330",
@@ -36081,12 +36115,29 @@
         "start":"004d2330"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_frankgen.cpp_CFrankenstienMachine_findLeader()",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330",
     "ret":"CDemonActor*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFrankenstienMachine*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -36108,7 +36159,6 @@
         "start":"004d2430"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_frankgen.cpp_CFrankenstienMachine_setCourseFrame(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430",
@@ -36162,6 +36212,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFrankenstienMachine*"
         }
       ]
     }
@@ -36357,11 +36425,30 @@
         "start":"004d75b0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_gabriella.cpp_FUN_004d75b0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d75b0",
-    "ret":"void"
+    "name":"core_gabriela.cpp_CGabriella_FUN_004d75b0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGabriella*"
+        }
+      ]
+    }
   },
   {
     "addr":"004d7630",
@@ -36372,11 +36459,46 @@
         "start":"004d7630"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_gabriella.cpp_FUN_004d7630(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d7630",
-    "ret":"void"
+    "name":"core_gabriela.cpp_CGabriella_addFilesToExtract_FUN_004d7630",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGabriella*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
+    }
   },
   {
     "addr":"004d7730",
@@ -36403,7 +36525,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_CGame_FUN_004d8730",
+    "name":"core_game.cpp_CGame_setFudgeTarget_FUN_004d8730",
     "ret":"void",
     "vars":{
       "params":[
@@ -36422,6 +36544,38 @@
             ]
           },
           "type":"CGame*"
+        },
+        {
+          "name":"fudge_target",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"fudge_step",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -36437,7 +36591,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_CGame_FUN_004dc230",
+    "name":"core_game.cpp_CGame_processJoystickControls_FUN_004dc230",
     "ret":"void",
     "vars":{
       "params":[
@@ -36537,7 +36691,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_CGame_FUN_004e0bb0",
+    "name":"core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0",
     "ret":"void",
     "vars":{
       "params":[
@@ -37055,7 +37209,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004e1c30",
+    "name":"core_game.cpp_disableUnavailableChapters_FUN_004e1c30",
     "ret":"void"
   },
   {
@@ -37375,10 +37529,9 @@
         "start":"004e5530"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_gargoyle.cpp_CGargoyle_unk4(CGargoyle* param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530",
+    "name":"core_gargoyle.cpp_CGargoyle_FUN_004e5530",
     "ret":"void",
     "vars":{
       "locals":[
@@ -37398,6 +37551,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGargoyle*"
+        }
       ]
     }
   },
@@ -37410,10 +37581,9 @@
         "start":"004e5930"
       }
     ],
-    "cmt":"Signature: undefined1 actors_enemy_gargoyle.cpp_CGargoyle_FUN_004e5930(CGargoyle* param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gargoyle.cpp_CGargoyle_FUN_004e5930",
+    "name":"core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_004e5930",
     "ret":"int",
     "vars":{
       "locals":[
@@ -37498,6 +37668,40 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGargoyle*"
+        },
+        {
+          "name":"out_points_array",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -37519,11 +37723,46 @@
         "start":"004e5eb0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_gasmask.cpp_CGasMask_FUN_004e5eb0(undefined4 param_1, CActorPropertyList* param_2)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gasmask.cpp_CGasMask_FUN_004e5eb0",
-    "ret":"void"
+    "name":"core_gasmask.cpp_CGasMask_getPropertyList_FUN_004e5eb0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGasMask*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
+        }
+      ]
+    }
   },
   {
     "addr":"004e6030",

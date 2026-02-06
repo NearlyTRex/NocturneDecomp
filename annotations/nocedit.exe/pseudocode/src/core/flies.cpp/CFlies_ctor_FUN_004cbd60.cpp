@@ -9,24 +9,24 @@
 CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_004cbd60(CFlies *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  void *pvVar2;
+  CFlies *pCVar1;
+  void *pvVar1;
   uint local_c [3];
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar2 = __arrinit(pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo);
-  *(CDemonActor_vtable **)((int)pvVar2 + -0x14) = &g_CFliesVTable;
-  *(uint *)((int)pvVar2 + -4) = 0x14;
-  if ((uint *)((int)pvVar2 + -0x10) != local_c) {
-    *(uint *)((int)pvVar2 + -0x10) = 0x40a00000;
-    *(uint *)((int)pvVar2 + -0xc) = 0x40a00000;
-    *(uint *)((int)pvVar2 + -8) = 0x40a00000;
+  pCVar1 = (CFlies *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pvVar1 = __arrinit(pCVar1->unk1,200,&g_SFlyTypeInfo);
+  *(CDemonActor_vtable **)((int)pvVar1 + -0x14) = &g_CFliesVTable;
+  *(uint *)((int)pvVar1 + -4) = 0x14;
+  if ((uint *)((int)pvVar1 + -0x10) != local_c) {
+    *(uint *)((int)pvVar1 + -0x10) = 0x40a00000;
+    *(uint *)((int)pvVar1 + -0xc) = 0x40a00000;
+    *(uint *)((int)pvVar1 + -8) = 0x40a00000;
   }
-  *(uint *)((int)pvVar2 + 0x28ac) = 0;
-  *(uint *)((int)pvVar2 + 0x28a8) = 0;
-  *(uint *)((int)pvVar2 + 0x28a0) = 0;
-  *(uint *)((int)pvVar2 + 0x28b0) = 0;
-  *(uint *)((int)pvVar2 + 0x28b4) = 1;
-  *(uint *)((int)pvVar2 + 0x28a4) = 0;
-  return (CFlies *)((int)pvVar2 + -0x168);
+  *(uint *)((int)pvVar1 + 0x28ac) = 0;
+  *(uint *)((int)pvVar1 + 0x28a8) = 0;
+  *(uint *)((int)pvVar1 + 0x28a0) = 0;
+  *(uint *)((int)pvVar1 + 0x28b0) = 0;
+  *(uint *)((int)pvVar1 + 0x28b4) = 1;
+  *(uint *)((int)pvVar1 + 0x28a4) = 0;
+  return (CFlies *)((int)pvVar1 + -0x168);
 }

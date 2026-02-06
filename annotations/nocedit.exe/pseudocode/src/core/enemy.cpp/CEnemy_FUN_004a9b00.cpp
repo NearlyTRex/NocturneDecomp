@@ -36,7 +36,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
   fVar1 = this_ptr->victim_height;
   fVar2 = *(float *)this_ptr[1].base.base.actor_name;
   if (fVar2 == 0.0) {
-    if (((g_CGamePtr->unk3 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
+    if (((g_CGamePtr->debug_flag_2 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar5 != 0)) {
       this_ptr->unk1 = 0;

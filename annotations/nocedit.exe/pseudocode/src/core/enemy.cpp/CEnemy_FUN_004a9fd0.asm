@@ -15,8 +15,8 @@
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f511
 ;   core_dracbrid.cpp_FUN_00484410 at 004851dd
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f0eb
-;   core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 at 004e5020
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e756a
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00 at 004e5020
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e756a
 ;   ... and 8 more
 ;
 ; Referenced Globals:

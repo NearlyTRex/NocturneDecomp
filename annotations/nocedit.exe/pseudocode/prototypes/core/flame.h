@@ -19,50 +19,54 @@ CDemonActorType * __cdecl CFlame::getActorType(CFlame *this_ptr);
 // Address: 004c9aa0
 CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004c9b90
+// Original: core_flame.cpp_CFlame_setup_FUN_004c9b90
 // Address: 004c9b90
-void __cdecl FUN_004c9b90(void);
+void __cdecl CFlame::setup(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004c9c00
+// Original: core_flame.cpp_CFlame_FUN_004c9c00
 // Address: 004c9c00
-void __cdecl FUN_004c9c00(void);
+void __cdecl CFlame(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004ca110
+// Original: core_flame.cpp_CFlame_FUN_004ca110
 // Address: 004ca110
-float __cdecl FUN_004ca110(void);
+float __cdecl CFlame(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004caa70
+// Original: core_flame.cpp_CFlame_FUN_004caa70
 // Address: 004caa70
-void __cdecl FUN_004caa70(void);
+void __cdecl CFlame(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004caa80
+// Original: core_flame.cpp_CFlame_renderBackground_FUN_004caa80
 // Address: 004caa80
-void __cdecl FUN_004caa80(void);
+void __cdecl CFlame::renderBackground(CFlame *this_ptr,int layer_flag);
 
-// Original: core_flame.cpp_FUN_004cac00
+// Original: core_flame.cpp_CFlame_getBoundingBox_FUN_004cac00
 // Address: 004cac00
-void __cdecl FUN_004cac00(void);
+CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flame.cpp_CFlame_archive_FUN_004cac60
 // Address: 004cac60
 void __cdecl CFlame::archive(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004cad80
+// Original: core_flame.cpp_CFlame_hasCollision_FUN_004cad80
 // Address: 004cad80
-int __cdecl FUN_004cad80(void);
+int __cdecl CFlame::hasCollision(CFlame *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flame.cpp_FUN_004cae70
+// Original: core_flame.cpp_CFlame_FUN_004cad90
+// Address: 004cad90
+void __cdecl CFlame(CFlame *this_ptr);
+
+// Original: core_flame.cpp_CFlame_getPropertyList_FUN_004cae70
 // Address: 004cae70
-void __cdecl FUN_004cae70(void);
+void __cdecl CFlame::getPropertyList(CFlame *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_flame.cpp_FUN_004caf60
+// Original: core_flame.cpp_CFlame_processInEditor_FUN_004caf60
 // Address: 004caf60
-void __cdecl FUN_004caf60(void);
+void __cdecl CFlame::processInEditor(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004cb0a0
+// Original: core_flame.cpp_CFlame_showEditorHelp_FUN_004cb0a0
 // Address: 004cb0a0
-void __cdecl FUN_004cb0a0(void);
+void __cdecl CFlame::showEditorHelp(CFlame *this_ptr,int *y_pos);
 
-// Original: core_flame.cpp_FUN_004cb0e0
+// Original: core_flame.cpp_CFlame_addFilesToExtract_FUN_004cb0e0
 // Address: 004cb0e0
-void __cdecl FUN_004cb0e0(void);
+void __cdecl CFlame::addFilesToExtract(CFlame *this_ptr,_FILE *file_handle);

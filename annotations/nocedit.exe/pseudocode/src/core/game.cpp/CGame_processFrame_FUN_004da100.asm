@@ -74,8 +74,8 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 ;   core_event.cpp_CEventList_FUN_004addf0
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50
-;   core_game.cpp_CGame_FUN_004e0aa0
 ;   core_game.cpp_CGame_process_FUN_004e3190
+;   core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0
 ;   core_game.cpp_CGame_slamDT_FUN_004e3080
@@ -479,8 +479,8 @@ section .text
     ADD ESP,0x4                         ; 004da572
     MOV ECX,dword ptr [EBP + 0x92]      ; 004da575
     PUSH ECX                            ; 004da57b
-    CALL core_game.cpp_CGame_FUN_004e0aa0 ; 004da57c
-        ;   XREF to: 004e0aa0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0aa0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 ; 004da57c
+        ;   XREF to: 004e0aa0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da581
     MOV EBX,dword ptr [EAX + 0x1e4]     ; 004da587
     ADD ESP,0x4                         ; 004da58d
@@ -1052,14 +1052,14 @@ section .text
     JZ 0x004da558                       ; 004dabef
         ;   XREF to: 004da558 (CONDITIONAL_JUMP)  ; LAB_004da558
     XOR ESI,ESI                         ; 004dabf5
-    MOV EDI,dword ptr [0x0067b668]      ; 004dabf7 | DAT_0067b668
+    MOV EDI,dword ptr [0x0067b668]      ; 004dabf7 | INT_0067b668
     MOV dword ptr [EBP + 0x56],ESI      ; 004dabfd
     TEST EDI,EDI                        ; 004dac00
     JLE 0x004dad81                      ; 004dac02
         ;   XREF to: 004dad81 (CONDITIONAL_JUMP)  ; LAB_004dad81
     XOR EDI,EDI                         ; 004dac08
         ;   Label: LAB_004dac08
-    MOV EAX,[0x0067b664]                ; 004dac0a | DAT_0067b664
+    MOV EAX,[0x0067b664]                ; 004dac0a | INT_0067b664
     MOV dword ptr [EBP + 0x5e],EDI      ; 004dac0f
     TEST EAX,EAX                        ; 004dac12
     JLE 0x004dad6c                      ; 004dac14
@@ -1070,7 +1070,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x5e]      ; 004dac21
         ;   Label: LAB_004dac21
     IMUL EDX,dword ptr [0x00679394]     ; 004dac24 | g_WindowWidth
-    MOV ECX,dword ptr [0x0067b664]      ; 004dac2b | DAT_0067b664
+    MOV ECX,dword ptr [0x0067b664]      ; 004dac2b | INT_0067b664
     MOV EAX,EDX                         ; 004dac31
     SAR EDX,0x1f                        ; 004dac33
     IDIV ECX                            ; 004dac36
@@ -1085,14 +1085,14 @@ section .text
     MOV EDI,dword ptr [0x00679398]      ; 004dac4f | g_WindowHeight
     MOV EDX,dword ptr [EBP + 0x56]      ; 004dac55
     IMUL EDX,EDI                        ; 004dac58
-    MOV ECX,dword ptr [0x0067b668]      ; 004dac5b | DAT_0067b668
+    MOV ECX,dword ptr [0x0067b668]      ; 004dac5b | INT_0067b668
     MOV dword ptr [EBP + 0x6e],EAX      ; 004dac61
     MOV EAX,EDX                         ; 004dac64
     SAR EDX,0x1f                        ; 004dac66
     IDIV ECX                            ; 004dac69
     MOV EDX,dword ptr [EBP + 0x52]      ; 004dac6b
     IMUL EDX,EDI                        ; 004dac6e
-    MOV ESI,dword ptr [0x0067b668]      ; 004dac71 | DAT_0067b668
+    MOV ESI,dword ptr [0x0067b668]      ; 004dac71 | INT_0067b668
     MOV ECX,EAX                         ; 004dac77
     MOV EAX,EDX                         ; 004dac79
     SAR EDX,0x1f                        ; 004dac7b
@@ -1188,7 +1188,7 @@ section .text
     CALL crt_stdio.c_fputc_FUN_006007a0 ; 004dad53
         ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, _FILE * file)
     MOV dword ptr [EBP + 0x5e],ESI      ; 004dad58
-    MOV EDI,dword ptr [0x0067b664]      ; 004dad5b | DAT_0067b664
+    MOV EDI,dword ptr [0x0067b664]      ; 004dad5b | INT_0067b664
     ADD ESP,0x8                         ; 004dad61
     CMP ESI,EDI                         ; 004dad64
     JL 0x004dac21                       ; 004dad66
@@ -1196,7 +1196,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x56]      ; 004dad6c
         ;   Label: LAB_004dad6c
     INC EDX                             ; 004dad6f
-    MOV ECX,dword ptr [0x0067b668]      ; 004dad70 | DAT_0067b668
+    MOV ECX,dword ptr [0x0067b668]      ; 004dad70 | INT_0067b668
     MOV dword ptr [EBP + 0x56],EDX      ; 004dad76
     CMP EDX,ECX                         ; 004dad79
     JL 0x004dac08                       ; 004dad7b

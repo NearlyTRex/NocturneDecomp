@@ -7,7 +7,7 @@
 ; CWater *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056fb80 at 0056fb8c
+;   core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80 at 0056fb8c
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

@@ -21,7 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
   SDamageInfo *in_stack_00000008;
   int desired_state_index;
   
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
@@ -132,7 +132,7 @@ LAB_005c4be2:
   }
 LAB_005c4ae0:
   if (0.0 < in_stack_00000008->damage_amount) {
-    core_game_cpp_CGame_FUN_004e0bd0(g_CGamePtr);
+    core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(g_CGamePtr);
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);
   return;

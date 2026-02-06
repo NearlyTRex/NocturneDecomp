@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_FUN_004dc3e0 at 004dc793
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dc793
 ;
 ; Referenced Globals:
 ;   undefined4 g_CWeaponClassInfo.name_hash

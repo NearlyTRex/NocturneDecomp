@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 16,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e5eb0",
+    "address_range": [
+      [
+        "004e5eb0",
+        "004e5ee2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gasmask.cpp_CGasMask_getPropertyList_FUN_004e5eb0",
+    "signature": "void __cdecl core_gasmask_cpp_CGasMask_getPropertyList_FUN_004e5eb0 (CGasMask *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e3b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062dac5",
+      "name": "s_Model_file_kfm_0062dac5",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.055555555555555,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 13,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 9,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 73
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGasMask *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGasMask",
+        "offset": 212,
+        "vtable_addr": "0065ebf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

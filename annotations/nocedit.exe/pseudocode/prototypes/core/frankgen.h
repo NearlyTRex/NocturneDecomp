@@ -11,81 +11,81 @@ void __cdecl staticInit(void);
 // Address: 004d16e0
 CFrankenstienMachine * __cdecl factoryFunc(void);
 
-// Original: core_frankgen.cpp_FUN_004d1710
+// Original: core_frankgen.cpp_CFrankenstienMachine_getActorType_FUN_004d1710
 // Address: 004d1710
-CDemonActorType * __cdecl FUN_004d1710(void);
+CDemonActorType * __cdecl CFrankenstienMachine::getActorType(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004d1720
 // Address: 004d1720
 CFrankenstienMachine * __cdecl CFrankenstienMachine::ctor(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d17b0
+// Original: core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0
 // Address: 004d17b0
-void __cdecl FUN_004d17b0(void);
+void __cdecl CFrankenstienMachine::setup(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_archive_FUN_004d19e0
 // Address: 004d19e0
 void __cdecl CFrankenstienMachine::archive(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_PlaySounds_FUN_004d1a40
+// Original: core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
 // Address: 004d1a40
-void __cdecl PlaySounds(void);
+void __cdecl CFrankenstienMachine::process(CFrankenstienMachine *this_ptr,float delta_time);
 
-// Original: core_frankgen.cpp_FUN_004d1ec0
+// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0
 // Address: 004d1ec0
-void __cdecl FUN_004d1ec0(void);
+void __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
+// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
 // Address: 004d1f20
-void __cdecl SoundPushPlayPopAgain(void);
+void __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d1f70
+// Original: core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
 // Address: 004d1f70
-int __cdecl FUN_004d1f70(void);
+int __cdecl CFrankenstienMachine::renderOpaque(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d20f0
+// Original: core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0
 // Address: 004d20f0
-float * __cdecl FUN_004d20f0(void);
+CBoundingBox3D * __cdecl CFrankenstienMachine::getBoundingBox(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_frankgen.cpp_LoadModel_FUN_004d2190
+// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190
 // Address: 004d2190
-void __cdecl LoadModel(void);
+CVector3f * __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
 // Address: 004d2330
-CDemonActor * __cdecl CFrankenstienMachine::findLeader(void);
+CDemonActor * __cdecl CFrankenstienMachine::findLeader(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d23a0
+// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d23a0
 // Address: 004d23a0
-void __cdecl FUN_004d23a0(void);
+void __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430
 // Address: 004d2430
-void __cdecl CFrankenstienMachine::setCourseFrame(void);
+void __cdecl CFrankenstienMachine::setCourseFrame(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d24f0
+// Original: core_frankgen.cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0
 // Address: 004d24f0
-int __cdecl FUN_004d24f0(void);
+int __cdecl CFrankenstienMachine::hasCollision(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_frankgen.cpp_FUN_004d2500
+// Original: core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
 // Address: 004d2500
-void __cdecl FUN_004d2500(void);
+void __cdecl CFrankenstienMachine::getPropertyList(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_frankgen.cpp_FUN_004d2560
+// Original: core_frankgen.cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560
 // Address: 004d2560
-void __cdecl FUN_004d2560(void);
+void __cdecl CFrankenstienMachine::addFilesToExtract(CFrankenstienMachine *this_ptr,_FILE *file_handle);
 
-// Original: core_frankgen.cpp_FUN_004d25f0
+// Original: core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
 // Address: 004d25f0
-void __cdecl FUN_004d25f0(void);
+void __cdecl CFrankenstienMachine::processInEditor(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004d2740
+// Original: core_frankgen.cpp_CFrankenstienMachine_showEditorHelp_FUN_004d2740
 // Address: 004d2740
-void __cdecl FUN_004d2740(void);
+void __cdecl CFrankenstienMachine::showEditorHelp(CFrankenstienMachine *this_ptr,int *y_pos);
 
-// Original: core_frankgen.cpp_FUN_004d2770
+// Original: core_frankgen.cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770
 // Address: 004d2770
-int __cdecl FUN_004d2770(void);
+int __cdecl CFrankenstienMachine::initializeInEditor(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_FUN_004d2880
 // Address: 004d2880

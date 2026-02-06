@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   dotted_decimal_string
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004e2fc0 at 004e3006
+;   core_game.cpp_joinNetworkGame_FUN_004e2fc0 at 004e3006
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_0065646a

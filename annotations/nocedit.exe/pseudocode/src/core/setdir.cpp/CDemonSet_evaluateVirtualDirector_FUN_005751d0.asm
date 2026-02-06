@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x40]:4  local_40
 ;
 ; XREF[8]:
-;   core_game.cpp_CGame_FUN_004dc3e0 at 004dc962
-;   core_game.cpp_CGame_FUN_004dcee0 at 004dd39d
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd39d
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dc962
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e367c
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db292
 ;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005393c6

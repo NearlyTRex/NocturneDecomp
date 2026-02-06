@@ -20,7 +20,7 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
   if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {

@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(void)
+; __cdecl CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_frankgen.cpp_FUN_004d1f70 at 004d1f8a
-;   core_frankgen.cpp_FUN_004d2500 at 004d2536
-;   core_frankgen.cpp_FUN_004d25f0 at 004d2653
-;   core_frankgen.cpp_PlaySounds_FUN_004d1a40 at 004d1a57
+;   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500 at 004d2536
+;   core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0 at 004d2653
+;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40 at 004d1a57
+;   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 at 004d1f8a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_0062ab4f

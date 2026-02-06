@@ -1,0 +1,225 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "004d2190",
+      "from_addr": "004d22c4",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d23a0",
+    "address_range": [
+      [
+        "004d23a0",
+        "004d2426"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d23a0",
+    "signature": "void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d23a0(CFrankenstienMachine *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004d22c4",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d2285",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d22af",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d2270",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d229a",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.204545454545454,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 149,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 3,
+      "INT_ADD": 21,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_ZEXT": 8,
+      "LOAD": 14,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 317
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "fVar2 = ((float)iVar1 * (this_ptr->master_frame - in_stack_00000008)) /",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "(in_stack_0000000c - in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_0000000c - in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

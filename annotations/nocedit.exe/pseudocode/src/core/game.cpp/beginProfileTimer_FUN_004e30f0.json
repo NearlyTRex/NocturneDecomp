@@ -1,0 +1,108 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e30f0",
+    "address_range": [
+      [
+        "004e30f0",
+        "004e3109"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_beginProfileTimer_FUN_004e30f0",
+    "signature": "void __cdecl core_game_cpp_beginProfileTimer_FUN_004e30f0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f2dc0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ca8",
+      "name": "DAT_02d81ca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831fc",
+      "name": "g_ProfileStartTime",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4285714285714284,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 3,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 24
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

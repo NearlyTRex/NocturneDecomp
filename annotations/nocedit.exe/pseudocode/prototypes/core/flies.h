@@ -19,74 +19,74 @@ CDemonActorType * __cdecl CFlies::getActorType(CFlies *this_ptr);
 // Address: 004cbd60
 CFlies * __cdecl CFlies::ctor(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cbe20
+// Original: core_flies.cpp_CFlies_setup_FUN_004cbe20
 // Address: 004cbe20
-void __cdecl FUN_004cbe20(void);
+void __cdecl CFlies::setup(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cbe60
+// Original: core_flies.cpp_CFlies_archive_FUN_004cbe60
 // Address: 004cbe60
-void __cdecl FUN_004cbe60(void);
+void __cdecl CFlies::archive(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cbf00
+// Original: core_flies.cpp_CFlies_process_FUN_004cbf00
 // Address: 004cbf00
-void __cdecl FUN_004cbf00(void);
+void __cdecl CFlies::process(CFlies *this_ptr,float delta_time);
 
-// Original: core_flies.cpp_FUN_004cc230
+// Original: core_flies.cpp_CFlies_FUN_004cc230
 // Address: 004cc230
-void __cdecl FUN_004cc230(void);
+void __cdecl CFlies(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cc2c0
+// Original: core_flies.cpp_CFlies_FUN_004cc2c0
 // Address: 004cc2c0
-void __cdecl FUN_004cc2c0(void);
+void __cdecl CFlies(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cc300
+// Original: core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
 // Address: 004cc300
-int __cdecl FUN_004cc300(void);
+int __cdecl CFlies::renderOpaque(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cc700
+// Original: core_flies.cpp_CFlies_getBoundingBox_FUN_004cc700
 // Address: 004cc700
-void __cdecl FUN_004cc700(void);
+CBoundingBox3D * __cdecl CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_flies.cpp_FUN_004cc750
+// Original: core_flies.cpp_CFlies_hasCollision_FUN_004cc750
 // Address: 004cc750
-int __cdecl FUN_004cc750(void);
+int __cdecl CFlies::hasCollision(CFlies *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flies.cpp_FUN_004cc760
+// Original: core_flies.cpp_CFlies_FUN_004cc760
 // Address: 004cc760
-void __cdecl FUN_004cc760(void);
+void __cdecl CFlies(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cc820
+// Original: core_flies.cpp_CFlies_FUN_004cc820
 // Address: 004cc820
-float * __cdecl FUN_004cc820(void);
+float * __cdecl CFlies(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004cca50
+// Original: core_flies.cpp_CFlies_FUN_004cca50
 // Address: 004cca50
-CDemonActor * __cdecl FUN_004cca50(void);
+CDemonActor * __cdecl CFlies(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ccaa0
+// Original: core_flies.cpp_CFlies_getPropertyList_FUN_004ccaa0
 // Address: 004ccaa0
-void __cdecl FUN_004ccaa0(void);
+void __cdecl CFlies::getPropertyList(CFlies *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_flies.cpp_FUN_004ccaf0
+// Original: core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0
 // Address: 004ccaf0
-void __cdecl FUN_004ccaf0(void);
+void __cdecl CFlies::processInEditor(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ccc70
+// Original: core_flies.cpp_CFlies_showEditorHelp_FUN_004ccc70
 // Address: 004ccc70
-void __cdecl FUN_004ccc70(void);
+void __cdecl CFlies::showEditorHelp(CFlies *this_ptr,int *y_pos);
 
-// Original: core_flies.cpp_FUN_004cccb0
+// Original: core_flies.cpp_CFlies_dtor_FUN_004cccb0
 // Address: 004cccb0
-CFlies * __cdecl FUN_004cccb0(CFlies *this_ptr,uint d1,uint d2,uint d3);
+CFlies * __cdecl CFlies::dtor(CFlies *this_ptr,uint flags);
 
-// Original: core_flies.cpp_FUN_004ccd20
+// Original: core_flies.cpp_SFly_ctor_FUN_004ccd20
 // Address: 004ccd20
-SFly * __cdecl FUN_004ccd20(SFly *this_ptr);
+SFly * __cdecl SFly::ctor(SFly *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ccd40
+// Original: core_flies.cpp_SFly_dtor_FUN_004ccd40
 // Address: 004ccd40
-SFly * __cdecl FUN_004ccd40(SFly *this_ptr);
+SFly * __cdecl SFly::dtor(SFly *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ccd60
+// Original: core_flies.cpp_freeFlies_FUN_004ccd60
 // Address: 004ccd60
-void __cdecl FUN_004ccd60(void);
+SFly * __cdecl freeFlies(SFly *objs);

@@ -12,9 +12,9 @@
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004794d0
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cbd6
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be288
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2eaf
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3fe5
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3306
+;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e43e0
 ;   ... and 88 more
 ;
 ; Referenced Globals:

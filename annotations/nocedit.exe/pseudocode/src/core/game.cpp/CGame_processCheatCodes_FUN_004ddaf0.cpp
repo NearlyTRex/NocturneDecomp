@@ -316,16 +316,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (local_294 == local_298) {
         g_InputHistory[1] = '\0';
-        if (this_ptr->unk8 == 0) {
+        if (this_ptr->skip_frame_render == 0) {
           iVar9 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-          this_ptr->unk8 = 1;
+          this_ptr->skip_frame_render = 1;
           this_ptr->timing_related_flag = iVar9;
           this_ptr->frame_counter = 0;
         }
         else {
           iVar9 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
           dVar6 = (double)(iVar9 - this_ptr->timing_related_flag) * 0.055555555555555601;
-          this_ptr->unk8 = 0;
+          this_ptr->skip_frame_render = 0;
           dVar6 = (double)this_ptr->frame_counter / (dVar6 * 1.52587890625e-05);
           local_2ac._4_4_ = (uint)((ulonglong)dVar6 >> 0x20);
           uVar7 = local_2ac._4_4_;
@@ -611,10 +611,10 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
                                   (g_CEditorToolsPtr,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
                                    &g_DebugRecordingParams,1,0,99999,1), iVar9 != 0)) &&
               (iVar9 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                                 (g_CEditorToolsPtr,"Enter image width",&0x00000040,1,1,
+                                 (g_CEditorToolsPtr,"Enter image width",&INT_0067b664,1,1,
                                   9999,1), iVar9 != 0)) &&
              (iVar9 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                                (g_CEditorToolsPtr,"Enter image height",&0x00000040,1,1,
+                                (g_CEditorToolsPtr,"Enter image height",&INT_0067b668,1,1,
                                  9999,1), iVar9 != 0)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Press CTRL+V to begin recording.");
@@ -731,8 +731,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (iStack_244 == iStack_248) {
         g_InputHistory[1] = '\0';
-        uVar11 = (uint)(this_ptr->unk2 == 0);
-        this_ptr->unk2 = uVar11;
+        uVar11 = (uint)(this_ptr->debug_flag_1 == 0);
+        this_ptr->debug_flag_1 = uVar11;
         if (uVar11 == 0) {
           fVar23 = 5.0;
           pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode disabled")
@@ -774,8 +774,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       }
       if (iVar9 == iStack_240) {
         g_InputHistory[1] = '\0';
-        uVar11 = (uint)(this_ptr->unk3 == 0);
-        this_ptr->unk3 = uVar11;
+        uVar11 = (uint)(this_ptr->debug_flag_2 == 0);
+        this_ptr->debug_flag_2 = uVar11;
         if (uVar11 == 0) {
           pcVar10 = "Enemies thawed";
         }
@@ -1107,7 +1107,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
                             ("You've got all the weapons");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar10,fVar23);
         iVar9 = g_LocalHeroIndex;
-        this_ptr->unk2 = 1;
+        this_ptr->debug_flag_1 = 1;
         this_ptr_00 = g_CSoundPtr;
         (g_HeroActors[iVar9]->base).hit_points = 100.0;
         core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,(void *)0x0,"cheat-1.wav")
@@ -1682,7 +1682,7 @@ LAB_004df408:
               if (0 < pCVar17->bone_count) {
                 do {
                   if (iStack_128 == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_130);
+                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_130);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
@@ -1702,7 +1702,7 @@ LAB_004df408:
               if (0 < pCStack_134->bone_count) {
                 do {
                   if (iStack_11c == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_124);
+                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_124);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
@@ -1722,7 +1722,7 @@ LAB_004df408:
               if (0 < pCStack_134->bone_count) {
                 do {
                   if (iStack_110 == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_FUN_004dda80((CGame *)pCStack_118);
+                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_118);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);

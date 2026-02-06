@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_flame.cpp_FUN_004c9b90
+;   core_flame.cpp_CFlame_setup_FUN_004c9b90
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     LEA EAX,[ESI + 0xc]                 ; 0041aeb8
     PUSH EAX                            ; 0041aebb
     FSTP float ptr [EDX + 0x8]          ; 0041aebc
-    CALL core_flame.cpp_FUN_004c9b90    ; 0041aebf
-        ;   XREF to: 004c9b90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9b90()
+    CALL core_flame.cpp_CFlame_setup_FUN_004c9b90 ; 0041aebf
+        ;   XREF to: 004c9b90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_setup_FUN_004c9b90(CFlame * this_ptr)
     MOV dword ptr [ESI + 0x1b8],0x0     ; 0041aec4
     MOV dword ptr [ESI + 0x164],0x3fc00000 ; 0041aece
     MOV dword ptr [ESI + 0x168],0x40400000 ; 0041aed8

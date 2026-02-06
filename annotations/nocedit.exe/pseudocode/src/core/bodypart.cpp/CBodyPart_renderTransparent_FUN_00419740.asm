@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_bodypart.cpp_CBodyPart_FUN_00419340
-;   core_flame.cpp_FUN_004ca110
+;   core_flame.cpp_CFlame_FUN_004ca110
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
     LEA ESI,[EDI + 0x75c]               ; 004197d6
     PUSH ESI                            ; 004197dc
         ;   Label: LAB_004197dc
-    CALL core_flame.cpp_FUN_004ca110    ; 004197dd
-        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_FUN_004ca110()
+    CALL core_flame.cpp_CFlame_FUN_004ca110 ; 004197dd
+        ;   XREF to: 004ca110 (UNCONDITIONAL_CALL)  ; float core_flame.cpp_CFlame_FUN_004ca110(CFlame * this_ptr)
     INC EBX                             ; 004197e2
     ADD ESP,0x4                         ; 004197e3
     MOV ECX,dword ptr [EDI + 0x74c]     ; 004197e6

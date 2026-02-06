@@ -15,8 +15,8 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044442d
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f274
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048edf1
-;   core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 at 004e4b4f
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e677f
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00 at 004e4b4f
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e677f
 ;   ... and 8 more
 ;
 ; *****************************************************************************

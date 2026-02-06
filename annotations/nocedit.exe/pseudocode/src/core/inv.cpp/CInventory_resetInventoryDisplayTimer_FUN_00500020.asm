@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_FUN_004e0bd0 at 004e0be2
+;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0 at 004e0be2
 ;
 ; Referenced Globals:
 ;   CHero*[4] g_HeroActors

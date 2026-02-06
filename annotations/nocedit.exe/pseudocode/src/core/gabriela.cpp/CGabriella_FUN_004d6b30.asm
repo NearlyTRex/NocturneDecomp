@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
-;   core_game.cpp_CGame_FUN_004e0bd0
+;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;
@@ -148,8 +148,8 @@ section .text
     MOV EAX,[0x0067b654]                ; 004d6d12 | g_CGamePtr
         ;   Label: LAB_004d6d12
     PUSH EAX                            ; 004d6d17 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004e0bd0 ; 004d6d18
-        ;   XREF to: 004e0bd0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0bd0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0 ; 004d6d18
+        ;   XREF to: 004e0bd0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d6d1d
     PUSH ESI                            ; 004d6d20
     PUSH EBX                            ; 004d6d21

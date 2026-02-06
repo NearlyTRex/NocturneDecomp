@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1b80
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2058
-;   core_game.cpp_FUN_004e2f10 at 004e2f77
-;   core_game.cpp_FUN_004e2fc0 at 004e3044
+;   core_game.cpp_hostNetworkGame_FUN_004e2f10 at 004e2f77
+;   core_game.cpp_joinNetworkGame_FUN_004e2fc0 at 004e3044
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_006392aa

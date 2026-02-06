@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_004dcee0 at 004dd6ee
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd6ee
 ;   core_script.cpp_CScript_FUN_005602e0 at 005602fd
 ;
 ; Called Functions:

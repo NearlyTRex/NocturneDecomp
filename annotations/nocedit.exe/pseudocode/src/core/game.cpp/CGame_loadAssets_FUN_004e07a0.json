@@ -1,0 +1,159 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "004daf80",
+      "from_addr": "004db2a7",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e07a0",
+    "address_range": [
+      [
+        "004e07a0",
+        "004e07d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_loadAssets_FUN_004e07a0",
+    "signature": "void __cdecl core_game_cpp_CGame_loadAssets_FUN_004e07a0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c7ab0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0"
+    },
+    {
+      "addr": "004ede60",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_loadAssets_FUN_004ede60"
+    },
+    {
+      "addr": "004fd220",
+      "is_variadic": false,
+      "name": "core_inv.cpp_loadAssets_FUN_004fd220"
+    },
+    {
+      "addr": "0056fb80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004db2a7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 9,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 8,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 61
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
+}

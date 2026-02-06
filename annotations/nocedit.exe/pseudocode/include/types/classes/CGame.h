@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CVector3f;
+
 // Dependencies
 #include "system/basetypes.h"
 
@@ -58,14 +61,14 @@ typedef struct CGame {
     int aim_mode; // 0xc4
     int auto_use_health; // 0xc8
     int cutscene_skippable; // 0xcc
-    char unk1[256]; // 0xd0
-    int unk2; // 0x1d0
-    int unk3; // 0x1d4
+    char debug_info_string[256]; // 0xd0
+    int debug_flag_1; // 0x1d0
+    int debug_flag_2; // 0x1d4
     int event_processing_enabled; // 0x1d8
     int subtitle_system_enabled; // 0x1dc
     int unk4; // 0x1e0
     int camera_debug_enabled; // 0x1e4
-    int unk5; // 0x1e8
+    int debug_toggle_flag; // 0x1e8
     float time_scale_factor; // 0x1ec
     int scripted_sequence_active; // 0x1f0
     int unk6; // 0x1f4
@@ -73,7 +76,7 @@ typedef struct CGame {
     int is_paused; // 0x1fc
     int wait_for_keypress; // 0x200
     int unk7; // 0x204
-    int unk8; // 0x208
+    int skip_frame_render; // 0x208
     int profile_mode; // 0x20c
     int velocity_debug_enabled; // 0x210
     int head_of_horror_cheat; // 0x214
@@ -89,9 +92,9 @@ typedef struct CGame {
     int is_processing; // 0x23c
     int block_auto_save; // 0x240
     int auto_save_blocked; // 0x244
-    float player_pos_y; // 0x248
-    float player_pos_x; // 0x24c
-    float player_rotation; // 0x250
+    float game_stat_1; // 0x248
+    float game_stat_2; // 0x24c
+    float total_play_time; // 0x250
     int game_state_flags; // 0x254
     int unk12; // 0x258
     int clocktime; // 0x25c
@@ -107,12 +110,16 @@ typedef struct CGame {
     char message_text[256]; // 0x284
     float message_timer; // 0x384
     int status_display_count; // 0x388
-    char unk13[1584]; // 0x38c
-    int unk14; // 0x9bc
-    int unk15; // 0x9c0
+    char status_bar_names[5][256]; // 0x38c
+    float status_bar_values[5]; // 0x88c
+    float status_bar_timers[5]; // 0x8a0
+    char bitmap_filename[256]; // 0x8b4
+    int bitmap_width; // 0x9b4
+    int bitmap_height; // 0x9b8
+    struct CVector3f* debug_fudge_target; // 0x9bc
+    float debug_fudge_step; // 0x9c0
     int need_chapter_reload; // 0x9c4
-    int save_version; // 0x9c8
-    char unk16[252]; // 0x9cc
+    char chapter_reload_filename[256]; // 0x9c8
     int show_customizable_keys; // 0xac8
 } CGame;
 

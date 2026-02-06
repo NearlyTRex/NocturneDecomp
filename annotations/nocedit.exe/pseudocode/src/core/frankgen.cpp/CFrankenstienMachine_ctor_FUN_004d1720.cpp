@@ -10,13 +10,12 @@ CFrankenstienMachine * __cdecl
 core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004d1720(CFrankenstienMachine *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  CFrankenstienMachine *pCVar1;
   CKeyFramedModelInstance *pCVar2;
   CCourse *pCVar3;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)&pCVar1[1].location.area_id);
+  pCVar1 = (CFrankenstienMachine *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->bed_model);
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)(pCVar2 + 1));
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar3 + 1));

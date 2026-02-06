@@ -22,10 +22,10 @@ void __cdecl core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void)
                        ,1,0,99999,1);
     if (iVar1 != 0) {
       iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                        (g_CEditorToolsPtr,"Enter image width",&0x00000040,1,1,9999,1);
+                        (g_CEditorToolsPtr,"Enter image width",&INT_0067b664,1,1,9999,1);
       if (iVar1 != 0) {
         iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                          (g_CEditorToolsPtr,"Enter image height",&0x00000040,1,1,9999,1)
+                          (g_CEditorToolsPtr,"Enter image height",&INT_0067b668,1,1,9999,1)
         ;
         if (iVar1 != 0) {
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0

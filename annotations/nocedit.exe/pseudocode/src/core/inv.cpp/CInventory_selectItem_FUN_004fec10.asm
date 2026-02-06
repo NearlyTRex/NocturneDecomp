@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   direction
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_FUN_004dc3e0 at 004dc729
+;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dc729
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CWeapon_00630822

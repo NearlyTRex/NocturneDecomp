@@ -140,7 +140,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"screen paint : %3.2f ms\n")
       ;
     }
-    if (this_ptr->unk8 == 0) {
+    if (this_ptr->skip_frame_render == 0) {
       wincore_windll_cpp_lockFrame_FUN_005b7210();
       if (this_ptr->block_auto_save != 0) {
         core_set_cpp_CDemonSet_FUN_0056c990(g_CDemonSetPtr);
@@ -179,16 +179,16 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
             ;
             if (local_34 != (_FILE *)0x0) {
               local_38 = 0;
-              if (0 < 0x00000040) {
+              if (0 < INT_0067b668) {
                 do {
                   local_30 = 0;
-                  if (0 < 0x00000040) {
+                  if (0 < INT_0067b664) {
                     local_3c = local_38 + 1;
                     do {
-                      local_28 = (local_30 * g_WindowWidth) / 0x00000040;
-                      local_20 = ((local_30 + 1) * g_WindowWidth) / 0x00000040;
-                      iVar5 = (local_38 * g_WindowHeight) / 0x00000040;
-                      iVar7 = (local_3c * g_WindowHeight) / 0x00000040;
+                      local_28 = (local_30 * g_WindowWidth) / INT_0067b664;
+                      local_20 = ((local_30 + 1) * g_WindowWidth) / INT_0067b664;
+                      iVar5 = (local_38 * g_WindowHeight) / INT_0067b668;
+                      iVar7 = (local_3c * g_WindowHeight) / INT_0067b668;
                       iVar13 = 0;
                       local_18 = 0;
                       local_1c = 0;
@@ -221,10 +221,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                       iVar5 = local_30 + 1;
                       _fputc(local_1c,local_34);
                       local_30 = iVar5;
-                    } while (iVar5 < 0x00000040);
+                    } while (iVar5 < INT_0067b664);
                   }
                   local_38 = local_38 + 1;
-                } while (local_38 < 0x00000040);
+                } while (local_38 < INT_0067b668);
               }
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\core\\game.cpp",0x110);
               engine_2d_c_drawText_FUN_00401fd0(local_1dc,0,0);
@@ -238,7 +238,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       core_script_cpp_CScript_FUN_00559b20(g_CScriptPtr);
       core_game_cpp_CGame_renderOverlay_FUN_004d8040(this_ptr);
-      core_game_cpp_CGame_FUN_004e0aa0(this_ptr);
+      core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(this_ptr);
       if (this_ptr->camera_debug_enabled == 0) {
         DOUBLE_02d7c2e0 = 0.0;
         FLOAT_02d7c2e8 = 0.0;
@@ -260,7 +260,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
         sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
-        if (this_ptr->unk14 != 0) {
+        if (this_ptr->debug_fudge_target != (CVector3f *)0x0) {
           sprintf(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
@@ -274,7 +274,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x37);
         core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x2c);
-        engine_2d_c_drawText_FUN_00401fd0(this_ptr->unk1,0,g_WindowHeight + -0x21);
+        engine_2d_c_drawText_FUN_00401fd0(this_ptr->debug_info_string,0,g_WindowHeight + -0x21);
         if (g_FullscreenMode != 0) {
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x400);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x200);

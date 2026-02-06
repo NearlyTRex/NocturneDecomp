@@ -33,7 +33,7 @@
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
 ;   core_charactr.cpp_CCharacter_FUN_0042a830
 ;   core_charactr.cpp_CCharacter_FUN_0042d4d0
-;   core_game.cpp_CGame_FUN_004e0bf0
+;   core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
 ;   core_hero.cpp_FUN_004f22a0
 ;   core_script.cpp_CScript_setSpeaker_FUN_00560140
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -116,8 +116,8 @@ section .text
     PUSH EAX                            ; 00429942
     MOV EBX,dword ptr [0x0067b654]      ; 00429943 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 00429949 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004e0bf0 ; 0042994a
-        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e0bf0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0 ; 0042994a
+        ;   XREF to: 004e0bf0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame * this_ptr, char * name, int value, float duration)
     ADD ESP,0x10                        ; 0042994f
     CMP dword ptr [ESI + 0x240c],0x0    ; 00429952
         ;   Label: LAB_00429952

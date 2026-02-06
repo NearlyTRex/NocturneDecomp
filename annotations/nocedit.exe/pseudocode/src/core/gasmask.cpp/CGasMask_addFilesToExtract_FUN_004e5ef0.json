@@ -1,0 +1,130 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e5ef0",
+    "address_range": [
+      [
+        "004e5ef0",
+        "004e5f39"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gasmask.cpp_CGasMask_addFilesToExtract_FUN_004e5ef0",
+    "signature": "void __cdecl core_gasmask_cpp_CGasMask_addFilesToExtract_FUN_004e5ef0(CGasMask *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0"
+    },
+    {
+      "addr": "0047ed00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062dad7",
+      "name": "s_MODELS_s_0062dad7",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.357142857142857,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 18,
+      "INT_ADD": 11,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 17,
+      "LOAD": 5,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 122
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGasMask *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGasMask",
+        "offset": 224,
+        "vtable_addr": "0065ebf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

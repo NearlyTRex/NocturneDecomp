@@ -12,7 +12,7 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a81a5
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0b99
 ;   core_fire.cpp_FUN_004c1940 at 004c1953
-;   core_flamecan.cpp_FUN_004cad90 at 004caddc
+;   core_flame.cpp_CFlame_FUN_004cad90 at 004caddc
 ;   core_keyactor.cpp_CKeyActor_process_FUN_00501710 at 00501740
 ;   core_weapon.cpp_CWeapon_FUN_005ee4a0 at 005ee5e0
 ;

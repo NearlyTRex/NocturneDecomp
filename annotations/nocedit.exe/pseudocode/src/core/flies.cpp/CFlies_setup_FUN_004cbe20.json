@@ -1,0 +1,94 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cbe20",
+    "address_range": [
+      [
+        "004cbe20",
+        "004cbe2b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flies.cpp_CFlies_setup_FUN_004cbe20",
+    "signature": "void __cdecl core_flies_cpp_CFlies_setup_FUN_004cbe20(CFlies *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408bb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 1,
+      "INT_SUB": 4,
+      "LOAD": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 15
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlies",
+        "offset": 0,
+        "vtable_addr": "0065e524"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

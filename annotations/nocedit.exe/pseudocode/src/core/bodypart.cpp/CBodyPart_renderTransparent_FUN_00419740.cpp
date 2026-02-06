@@ -10,6 +10,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart
 
 {
   int iVar1;
+  CFlame *this_ptr_00;
   
   if ((*(int *)(this_ptr->unk + 0xdd4) != 0) &&
      ((*(int *)this_ptr->unk < 2 || (*(int *)(this_ptr->unk + 0x5f4) != 0)))) {
@@ -24,9 +25,11 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart
     }
     iVar1 = 0;
     if (0 < *(int *)(this_ptr->unk + 0x5f4)) {
+      this_ptr_00 = (CFlame *)(this_ptr->unk + 0x604);
       do {
-        core_flame_cpp_FUN_004ca110();
+        core_flame_cpp_CFlame_FUN_004ca110(this_ptr_00);
         iVar1 = iVar1 + 1;
+        this_ptr_00 = (CFlame *)(this_ptr_00[1].base.actor_name + 0xc);
       } while (iVar1 < *(int *)(this_ptr->unk + 0x5f4));
     }
     return 1;

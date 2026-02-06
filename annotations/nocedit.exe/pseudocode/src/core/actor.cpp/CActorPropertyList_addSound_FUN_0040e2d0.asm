@@ -16,7 +16,7 @@
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 00481403
 ;   core_drip.cpp_CDrip_getPropertyList_FUN_0048e930 at 0048e9e9
 ;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8f6e
-;   core_grave.cpp_FUN_004ee9e0 at 004eea60
+;   core_grave.cpp_CGrave_getPropertyList_FUN_004ee9e0 at 004eea60
 ;   core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0 at 004f6b23
 ;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 005052d2
 ;   ... and 6 more

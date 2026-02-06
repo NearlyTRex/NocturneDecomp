@@ -54,7 +54,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419e10(CBodyPart *this_ptr)
         input_local_point[0x1d].z = local_18;
         input_local_point[0x1e].x = local_30 * fVar1;
         input_local_point[0x1e].y = local_18;
-        core_flame_cpp_FUN_004c9c00();
+        core_flame_cpp_CFlame_FUN_004c9c00((CFlame *)(input_local_point + 1));
         iVar4 = iVar4 + 1;
         pcVar3 = pcVar3 + 0x2b0;
       } while (iVar4 < *(int *)(this_ptr->unk + 0x5f4));

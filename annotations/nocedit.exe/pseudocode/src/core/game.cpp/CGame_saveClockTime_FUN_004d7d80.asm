@@ -11,11 +11,11 @@
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d5d6
 ;   core_course.cpp_FUN_00443bc0 at 00443c0b
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cc04
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2ebe
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3bd8
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3685
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e4156
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db64a
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2ebe
 ;   core_menu.cpp_configureCustomKeys_FUN_00511890 at 005118af
 ;   ... and 16 more
 ;

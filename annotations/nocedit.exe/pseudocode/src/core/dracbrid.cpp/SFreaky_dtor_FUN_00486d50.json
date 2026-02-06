@@ -8,25 +8,19 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 15,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 31,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output"
+      "negative_offset"
     ],
     "total_lines": 16
   },
@@ -47,7 +41,7 @@
     {
       "addr": "00486e30",
       "is_variadic": false,
-      "name": "core_dracbrid.cpp_FUN_00486e30"
+      "name": "core_dracbrid.cpp_freeVectors_FUN_00486e30"
     }
   ],
   "globals": [],
@@ -98,18 +92,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Negative struct offset (wrong base type)",
       "line": 8,
-      "match": "extraout_EAX",
-      "text": "return (SFreaky *)(extraout_EAX + -0x20);",
-      "type": "extra_output"
+      "match": "pCVar1[-3].",
+      "text": "return (SFreaky *)&pCVar1[-3].y;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

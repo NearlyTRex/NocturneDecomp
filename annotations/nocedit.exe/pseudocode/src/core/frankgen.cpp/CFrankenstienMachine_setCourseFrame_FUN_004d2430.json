@@ -11,50 +11,36 @@
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 25,
-        "line": 18,
+        "line": 14,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 20,
+        "line": 16,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 98,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 13,
-    "suspect_count": 7,
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param",
-      "unnamed_param"
+      "param_count_too_few"
     ],
-    "total_lines": 88
+    "total_lines": 86
   },
   "cross_references": [
     {
       "addr": "004d2190",
       "from_addr": "004d21ba",
-      "name": "core_frankgen.cpp_LoadModel_FUN_004d2190",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -69,7 +55,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430",
-    "signature": "void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(void)"
+    "signature": "void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)"
   },
   "function_calls": [
     {
@@ -115,7 +101,7 @@
       {
         "call_addr": "004d21ba",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_LoadModel_FUN_004d2190",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -123,7 +109,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -165,10 +151,10 @@
     "pcode_op_count": 380
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -191,6 +177,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
       }
     ]
   },
@@ -213,56 +206,14 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "param_1, uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_1, uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_1, uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x300) < 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "core_course_cpp_CCourse_FUN_00442710((CCourse *)(in_stack_00000004 + 0x300));",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 0,
+      "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -22,10 +22,10 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d69d
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bda51
 ;   core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930 at 004bd95b
-;   core_game.cpp_CGame_FUN_004e36f0 at 004e37a5
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e179c
+;   core_game.cpp_CGame_promptLoadGame_FUN_004e36f0 at 004e37a5
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2856
-;   core_game.cpp_FUN_004e2f10 at 004e2f49
+;   core_game.cpp_hostNetworkGame_FUN_004e2f10 at 004e2f49
 ;   ... and 9 more
 ;
 ; Referenced Globals:

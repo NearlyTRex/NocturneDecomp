@@ -39,9 +39,9 @@ void __cdecl CInventory::clear(CInventory *this_ptr);
 // Address: 004fd190
 void __cdecl CInventory::initialize(CInventory *this_ptr);
 
-// Original: core_inv.cpp_loadInventory_FUN_004fd220
+// Original: core_inv.cpp_loadAssets_FUN_004fd220
 // Address: 004fd220
-void __cdecl loadInventory(void);
+void __cdecl loadAssets(void);
 
 // Original: core_inv.cpp_freeInventory_FUN_004fd510
 // Address: 004fd510

@@ -14,7 +14,7 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b0bd
-;   core_gabriela.cpp_FUN_004d6f80 at 004d7035
+;   core_gabriela.cpp_CGabriella_FUN_004d6f80 at 004d7035
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005972fc
 ;   core_stranger.cpp_CStranger_FUN_005bf720 at 005bf7ed
 ;

@@ -27,8 +27,8 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042bcc0 at 0042bd14
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 0044497a
 ;   core_dracbrid.cpp_FUN_00485b20 at 00485b73
-;   core_gargoyle.cpp_CGargoyle_unk4_FUN_004e5530 at 004e5641
-;   core_ghoul.cpp_FUN_004e8520 at 004e8600
+;   core_gargoyle.cpp_CGargoyle_FUN_004e5530 at 004e5641
+;   core_ghoul.cpp_CGhoul_FUN_004e8520 at 004e8600
 ;   core_imp.cpp_CImp_FUN_004fab60 at 004fac81
 ;   core_mobster.cpp_CMobster_FUN_00527380 at 005274a0
 ;   ... and 3 more

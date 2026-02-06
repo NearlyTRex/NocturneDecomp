@@ -1,0 +1,142 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d8890",
+    "address_range": [
+      [
+        "004d8890",
+        "004d890f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_drawCreditsLine_FUN_004d8890",
+    "signature": "void __cdecl core_game_cpp_drawCreditsLine_FUN_004d8890(char *text_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cda80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "020a5720",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02d831c4",
+      "name": "INT_02d831c4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d831c8",
+      "name": "INT_02d831c8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d831cc",
+      "name": "INT_02d831cc",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.209302325581396,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 38,
+      "INT_ADD": 14,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 3,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 11,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 224
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

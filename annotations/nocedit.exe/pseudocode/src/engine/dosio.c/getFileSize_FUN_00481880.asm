@@ -16,9 +16,9 @@
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 at 00470335
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab444
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdedd
-;   core_game.cpp_CGame_FUN_004e2910 at 004e294b
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1510
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0f76
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e294b
 ;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 00538042
 ;   core_msnedit.cpp_FUN_00537dd0 at 00537dde
 ;   ... and 26 more

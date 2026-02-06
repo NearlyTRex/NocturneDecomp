@@ -12,7 +12,7 @@
 ;   core_fire.cpp_CRainDrop_render_FUN_004c6830 at 004c68bf
 ;   core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0 at 004bf251
 ;   core_fire.cpp_CSpark_initRender_FUN_004c0300 at 004c039b
-;   core_flame.cpp_FUN_004ca110 at 004ca219
+;   core_flame.cpp_CFlame_FUN_004ca110 at 004ca219
 ;   core_gore.cpp_FUN_004eb9d0 at 004eba31
 ;
 ; Called Functions:

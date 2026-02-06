@@ -14,7 +14,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004795a7
 ;   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 at 0047c5ff
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be283
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2ae3
+;   core_game.cpp_CGame_displayActStats_FUN_004e3800 at 004e3839
 ;   ... and 106 more
 ;
 ; Referenced Globals:

@@ -88,7 +88,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
     if (uVar9 == 0) {
       iVar8 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
-      if (((iVar8 == 0) && (g_CGamePtr->unk3 == 0)) &&
+      if (((iVar8 == 0) && (g_CGamePtr->debug_flag_2 == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
           (float)15)) {
@@ -129,7 +129,7 @@ LAB_0051fd7d:
     desired_state_index = (CLocation *)0x51fd96;
     iVar8 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
                       (&g_HeroActors[g_LocalHeroIndex]->base);
-    if ((iVar8 != 0) || (g_CGamePtr->unk3 != 0)) {
+    if ((iVar8 != 0) || (g_CGamePtr->debug_flag_2 != 0)) {
       force_immediate = (CPathMap *)0x0;
       goto LAB_0051fda5;
     }

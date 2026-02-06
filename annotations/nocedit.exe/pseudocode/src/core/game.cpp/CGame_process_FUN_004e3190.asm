@@ -35,9 +35,9 @@
 ;   core_dfilter.cpp_CFilterFX_process_FUN_004708e0
 ;   core_event.cpp_CEventList_process_FUN_004aaac0
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0
-;   core_game.cpp_CGame_FUN_004e09c0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
+;   core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0
 ;   core_gore.cpp_CGore_process_FUN_004ed9e0
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250
 ;   core_script.cpp_CScript_process_FUN_00559960
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_004e31c6
     ADD ESP,0x4                         ; 004e31cb
     PUSH EBX                            ; 004e31ce
-    CALL core_game.cpp_CGame_FUN_004e09c0 ; 004e31cf
-        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004e09c0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0 ; 004e31cf
+        ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e31d4 | g_CGameInstance | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x20c]     ; 004e31d9 | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e31df

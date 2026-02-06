@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   enable
 ;
 ; XREF[4]:
-;   core_game.cpp_CGame_FUN_004dcee0 at 004dd030
+;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd030
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 005126de
 ;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 0051322d
 ;   sound_sndmain.cpp_readIni_FUN_005abf20 at 005ac131

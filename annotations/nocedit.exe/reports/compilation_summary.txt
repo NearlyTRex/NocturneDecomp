@@ -5,22 +5,22 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6507
-Successful: 4192 (64.4%)
-Failed: 2315
+Successful: 4191 (64.4%)
+Failed: 2316
 
 ERROR CATEGORIES
 --------------------------------------------------
-  pointer_precision               7177
-  other                           3236
+  pointer_precision               7176
+  other                           3232
   incompatible_types              1542
-  undeclared_identifier           1235
-  syntax_error                     444
+  undeclared_identifier           1231
+  syntax_error                     438
   const_error                      145
   missing_member                    76
-  lvalue_required                   32
+  lvalue_required                   28
 
 ====================================================================================================
-CATEGORY: pointer_precision (7177 errors)
+CATEGORY: pointer_precision (7176 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -42,10 +42,10 @@ CATEGORY: pointer_precision (7177 errors)
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     Line 102: cast from 'int*' to 'int' loses precision [-fpermissive]...
 
-  ... and 7147 more errors
+  ... and 7146 more errors
 
 ====================================================================================================
-CATEGORY: other (3236 errors)
+CATEGORY: other (3232 errors)
 ====================================================================================================
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
@@ -73,7 +73,7 @@ CATEGORY: other (3236 errors)
   engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
     Line 75: request for member '_0_4_' in 'g_TextureShift1', which is of non-class type 'ulo...
 
-  ... and 3206 more errors
+  ... and 3202 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (1542 errors)
@@ -127,7 +127,7 @@ CATEGORY: incompatible_types (1542 errors)
   ... and 1512 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1235 errors)
+CATEGORY: undeclared_identifier (1231 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -175,10 +175,10 @@ CATEGORY: undeclared_identifier (1235 errors)
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Line 22: 'crt_wsock32_c_htons' was not declared in this scope...
 
-  ... and 1205 more errors
+  ... and 1201 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (444 errors)
+CATEGORY: syntax_error (438 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -216,7 +216,7 @@ CATEGORY: syntax_error (444 errors)
   core_zombie.cpp_CZombie_FUN_005fc970
     Line 20: expected primary-expression before ')' token...
 
-  ... and 414 more errors
+  ... and 408 more errors
 
 ====================================================================================================
 CATEGORY: const_error (145 errors)
@@ -238,7 +238,7 @@ CATEGORY: const_error (145 errors)
     Line 96: invalid conversion from 'const char*' to 'char*' [-fpermissive]...
   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
     Line 110: invalid conversion from 'const float*' to 'float*' [-fpermissive]...
-  core_inv.cpp_loadInventory_FUN_004fd220
+  core_inv.cpp_loadAssets_FUN_004fd220
     Line 65: invalid conversion from 'const char*' to 'char*' [-fpermissive]...
   core_bugs.cpp_CBugs_archive_FUN_004254f0
     Line 22: invalid conversion from 'const char*' to 'char*' [-fpermissive]...
@@ -273,7 +273,7 @@ CATEGORY: missing_member (76 errors)
   ... and 46 more errors
 
 ====================================================================================================
-CATEGORY: lvalue_required (32 errors)
+CATEGORY: lvalue_required (28 errors)
 ====================================================================================================
 
   core_gore.cpp_FUN_004ed240
@@ -304,15 +304,15 @@ CATEGORY: lvalue_required (32 errors)
     Line 17: lvalue required as unary '&' operand...
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
     Line 607: lvalue required as unary '&' operand...
-
-  ... and 2 more errors
+  shape_design.c_complexPolygonReduction_FUN_00463b30
+    Line 46: lvalue required as unary '&' operand...
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.16
-Average suspects in failed compilations: 10.49
+Average suspects in successfully compiled functions: 2.01
+Average suspects in failed compilations: 10.05
 
-Functions that compile but have suspect patterns: 1365
+Functions that compile but have suspect patterns: 1321
 (These may have runtime issues even though syntax is valid)

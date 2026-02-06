@@ -9,8 +9,8 @@
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr)
 
 {
-  int extraout_EAX;
+  CVector3f *pCVar1;
   
-  core_dracbrid_cpp_FUN_00486e30();
-  return (SFreaky *)(extraout_EAX + -0x20);
+  pCVar1 = core_dracbrid_cpp_freeVectors_FUN_00486e30(this_ptr->unk2);
+  return (SFreaky *)&pCVar1[-3].y;
 }

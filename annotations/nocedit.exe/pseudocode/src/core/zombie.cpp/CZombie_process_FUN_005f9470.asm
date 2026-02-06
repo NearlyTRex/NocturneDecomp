@@ -1604,8 +1604,8 @@ section .text
     JZ 0x005fa5df                       ; 005fa5ca
         ;   XREF to: 005fa5df (CONDITIONAL_JUMP)  ; LAB_005fa5df
     PUSH ECX                            ; 005fa5cc
-    CALL core_grave.cpp_FUN_004ee790    ; 005fa5cd
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_FUN_004ee790()
+    CALL core_grave.cpp_CGrave_FUN_004ee790 ; 005fa5cd
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_FUN_004ee790(CGrave * this_ptr)
     ADD ESP,0x4                         ; 005fa5d2
     MOV dword ptr [EBX + 0xbed4],0x0    ; 005fa5d5
     MOV dword ptr [EBX + 0xbe34],0x42c80000 ; 005fa5df

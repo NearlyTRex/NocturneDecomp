@@ -13,6 +13,6 @@ void __cdecl core_gore_cpp_CGore_FUN_004ee030(CGore *this_ptr,CDemonActor *actor
   
   pCVar1 = core_gore_cpp_CreateFlies_FUN_004edf30();
   (pCVar1->base).location.area_id = (actor->location).area_id;
-  *(CDemonActor **)(pCVar1->unk + 0x28b0) = actor;
+  pCVar1->follow_actor = actor;
   return;
 }

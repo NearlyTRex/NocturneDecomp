@@ -9,8 +9,8 @@
 CFootstep * __cdecl core_gore_cpp_FUN_004ee390(CFootstep *this_ptr)
 
 {
-  int extraout_EAX;
+  CVector3f *pCVar1;
   
-  core_dracbrid_cpp_FUN_00486e30();
-  return (CFootstep *)(extraout_EAX + -8);
+  pCVar1 = core_dracbrid_cpp_freeVectors_FUN_00486e30((CVector3f *)(this_ptr->unk + 8));
+  return (CFootstep *)&pCVar1[-1].y;
 }

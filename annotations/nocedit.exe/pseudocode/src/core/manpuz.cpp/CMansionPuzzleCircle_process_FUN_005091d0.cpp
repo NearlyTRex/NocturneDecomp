@@ -55,7 +55,8 @@ core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0
               ((CMatrix3x3f *)(this_ptr->unk3 + 0xd2c),(CVector3f *)(this_ptr->unk3 + 0xd20));
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               ((CMatrix3x3f *)(this_ptr->unk3 + 0xd8c),(CVector3f *)(this_ptr->unk3 + 0xd80));
-    core_game_cpp_CGame_FUN_004d8730(g_CGamePtr);
+    core_game_cpp_CGame_setFudgeTarget_FUN_004d8730
+              (g_CGamePtr,(CVector3f *)(this_ptr->unk3 + 0xd20),0.017453292);
   }
   return;
 }

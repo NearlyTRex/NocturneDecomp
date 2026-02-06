@@ -35,7 +35,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   int local_28;
   int local_24;
   char *local_20;
-  char *local_1c;
+  char (*local_1c) [256];
   CGame *local_18;
   int local_14;
   
@@ -118,7 +118,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar3 = local_64 - local_5c / 0x50;
     local_20 = (char *)0x0;
     if (0 < this_ptr->status_display_count) {
-      local_1c = this_ptr->unk13;
+      local_1c = this_ptr->status_bar_names;
       local_50 = ((int)local_44 * 3) / 2;
       local_18 = this_ptr;
       do {
@@ -126,7 +126,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         local_34 = iVar3 - (int)local_44;
         local_28 = local_58;
         iVar5 = 2;
-        fVar1 = *(float *)(local_18->unk13 + 0x500);
+        fVar1 = local_18->status_bar_values[0];
         if (fVar1 < (float)0.59999999999999998) {
           iVar5 = 0xfb;
         }
@@ -147,7 +147,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
                   (local_44,local_20,(int)local_40,local_34,0xf8,0);
         local_20 = pcVar2 + 0x100;
-        local_1c = local_1c + 4;
+        local_1c = (char (*) [256])(*local_1c + 4);
         iVar3 = iVar3 - local_54;
       } while (local_24 + 1 < this_ptr->status_display_count);
     }

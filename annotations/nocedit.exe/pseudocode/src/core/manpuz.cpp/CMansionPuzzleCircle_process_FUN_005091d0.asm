@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-;   core_game.cpp_CGame_FUN_004d8730
+;   core_game.cpp_CGame_setFudgeTarget_FUN_004d8730
 ;   core_hero.cpp_FUN_004f2220
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610
@@ -142,8 +142,8 @@ section .text
     PUSH ESI                            ; 005092cb
     MOV EDX,dword ptr [0x0067b654]      ; 005092cc | g_CGameInstance | g_CGamePtr
     PUSH EDX                            ; 005092d2 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004d8730 ; 005092d3
-        ;   XREF to: 004d8730 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004d8730(CGame * this_ptr)
+    CALL core_game.cpp_CGame_setFudgeTarget_FUN_004d8730 ; 005092d3
+        ;   XREF to: 004d8730 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setFudgeTarget_FUN_004d8730(CGame * this_ptr, CVector3f * fudge_target, float fudge_step)
     ADD ESP,0xc                         ; 005092d8
     POP ESI                             ; 005092db
     POP EBX                             ; 005092dc

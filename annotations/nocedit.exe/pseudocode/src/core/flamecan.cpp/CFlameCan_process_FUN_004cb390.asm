@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_FUN_004c8c10
-;   core_flame.cpp_FUN_004c9c00
+;   core_flame.cpp_CFlame_FUN_004c9c00
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_004cb3d7
     PUSH dword ptr [ESP + 0x48]         ; 004cb3dd
     PUSH EAX                            ; 004cb3e1
-    CALL core_flame.cpp_FUN_004c9c00    ; 004cb3e2
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_004c9c00()
+    CALL core_flame.cpp_CFlame_FUN_004c9c00 ; 004cb3e2
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004c9c00(CFlame * this_ptr)
     ADD ESP,0x8                         ; 004cb3e7
     FLD float ptr [EBX + 0x2d8]         ; 004cb3ea
     FSUB float ptr [ESP + 0x48]         ; 004cb3f0

@@ -15,8 +15,8 @@
 ;   core_door.cpp_CDoor_addFilesToExtract_FUN_00481630 at 0048163f
 ;   core_drip.cpp_CDrip_addFilesToExtract_FUN_0048ea60 at 0048ea82
 ;   core_emitter.cpp_CEmitter_addFilesToExtract_FUN_004a9390 at 004a93a9
-;   core_frankgen.cpp_FUN_004d2560 at 004d25ba
-;   core_grave.cpp_FUN_004eeb10 at 004eeb32
+;   core_frankgen.cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560 at 004d25ba
+;   core_grave.cpp_CGrave_addFilesToExtract_FUN_004eeb10 at 004eeb32
 ;   core_health.cpp_CHealthItem_addFilesToExtract_FUN_004f20b0 at 004f20bf
 ;   ... and 11 more
 ;

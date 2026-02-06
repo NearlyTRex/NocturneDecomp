@@ -11,7 +11,7 @@
 ; XREF[9]:
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac5e0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df4a0
-;   core_game.cpp_FUN_004dd9d0 at 004dda6b
+;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 at 004dda6b
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053eb7d
 ;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0056007a
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2ec5

@@ -103,53 +103,53 @@ int __cdecl CGabriella::renderOpaque(CGabriella *this_ptr);
 // Address: 004d6230
 int __cdecl CGabriella::renderTransparent(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6260
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6260
 // Address: 004d6260
-int __cdecl FUN_004d6260(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6540
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6540
 // Address: 004d6540
-void __cdecl FUN_004d6540(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_FUN_004d6b30
 // Address: 004d6b30
 void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6d40
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6d40
 // Address: 004d6d40
-void __cdecl FUN_004d6d40(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6f80
+// Original: core_gabriela.cpp_CGabriella_FUN_004d6f80
 // Address: 004d6f80
-void __cdecl FUN_004d6f80(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_FUN_004d7120
 // Address: 004d7120
 void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d7590
+// Original: core_gabriela.cpp_CGabriella_FUN_004d7590
 // Address: 004d7590
-bool __cdecl FUN_004d7590(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d75b0
+// Original: core_gabriela.cpp_CGabriella_FUN_004d75b0
 // Address: 004d75b0
-void __cdecl FUN_004d75b0(void);
+void __cdecl CGabriella(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d75e0
+// Original: core_gabriela.cpp_CGabriella_onActorDeleted_FUN_004d75e0
 // Address: 004d75e0
-void __cdecl FUN_004d75e0(void);
+void __cdecl CGabriella::onActorDeleted(CGabriella *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_gabriela.cpp_FUN_004d7610
+// Original: core_gabriela.cpp_CGabriella_getPropertyList_FUN_004d7610
 // Address: 004d7610
-void __cdecl FUN_004d7610(void);
+void __cdecl CGabriella::getPropertyList(CGabriella *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_gabriela.cpp_FUN_004d7630
+// Original: core_gabriela.cpp_CGabriella_addFilesToExtract_FUN_004d7630
 // Address: 004d7630
-void __cdecl FUN_004d7630(void);
+void __cdecl CGabriella::addFilesToExtract(CGabriella *this_ptr,_FILE *file_handle);
 
-// Original: core_gabriela.cpp_FUN_004d7650
+// Original: core_gabriela.cpp_CGabriella_FUN_004d7650
 // Address: 004d7650
-int __cdecl FUN_004d7650(void);
+int __cdecl CGabriella(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_dtor_FUN_004d7660
 // Address: 004d7660

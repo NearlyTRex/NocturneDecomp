@@ -10,7 +10,7 @@
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_getPropertyList_FUN_00414010 at 0041401c
 ;   core_colonel.cpp_CColonel_getPropertyList_FUN_00440610 at 0044061a
-;   core_gabriela.cpp_FUN_004d7610 at 004d761a
+;   core_gabriela.cpp_CGabriella_getPropertyList_FUN_004d7610 at 004d761a
 ;   core_haystack.cpp_CHaystack_getPropertyList_FUN_004f1cd0 at 004f1cda
 ;   core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0 at 004f97aa
 ;   core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950 at 0052995c

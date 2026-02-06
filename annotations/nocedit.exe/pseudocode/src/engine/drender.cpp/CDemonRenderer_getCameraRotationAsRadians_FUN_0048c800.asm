@@ -21,7 +21,7 @@
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 at 004c29eb
 ;   core_fire.cpp_CLightningBolt_render_FUN_004c5720 at 004c5893
 ;   core_fire.cpp_CTrail_render_FUN_004c5e90 at 004c5f37
-;   core_flame.cpp_FUN_004ca110 at 004ca6a5
+;   core_flame.cpp_CFlame_FUN_004ca110 at 004ca6a5
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 at 00570a2a
 ;   ... and 1 more
 ;

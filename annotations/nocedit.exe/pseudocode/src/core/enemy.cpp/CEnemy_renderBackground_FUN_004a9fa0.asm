@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_FUN_004e8190 at 004e81ae
+;   core_ghoul.cpp_CGhoul_renderBackground_FUN_004e8190 at 004e81ae
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390

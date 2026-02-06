@@ -18,8 +18,8 @@
 ; XREF[28]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d83a7
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0 at 004d9a00
-;   core_game.cpp_FUN_004d8890 at 004d88b1
 ;   core_game.cpp_FUN_004d8910 at 004d8963
+;   core_game.cpp_drawCreditsLine_FUN_004d8890 at 004d88b1
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 at 00500acd
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 005046e0
 ;   core_main.c_drawCenteredText_FUN_00508250 at 00508291

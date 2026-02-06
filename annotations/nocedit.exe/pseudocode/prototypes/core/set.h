@@ -159,9 +159,9 @@ void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 // Address: 0056fac0
 float __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_0056fb80
+// Original: core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80
 // Address: 0056fb80
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::loadAssets(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_FUN_0056fba0
 // Address: 0056fba0

@@ -12,7 +12,7 @@
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac559
 ;   core_event.cpp_CEventList_FUN_004b0f00 at 004b0f31
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c170a
-;   core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 at 004d1f43
+;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 at 004d1f43
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e438a
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506613
 ;   ... and 22 more

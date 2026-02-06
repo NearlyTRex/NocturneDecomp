@@ -21,8 +21,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047da85
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bde9a
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7fe
-;   core_game.cpp_CGame_FUN_004e2910 at 004e2991
-;   core_game.cpp_CGame_FUN_004e36f0 at 004e3724
+;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e12eb
+;   core_game.cpp_CGame_promptLoadGame_FUN_004e36f0 at 004e3724
 ;   ... and 24 more
 ;
 ; Called Functions:

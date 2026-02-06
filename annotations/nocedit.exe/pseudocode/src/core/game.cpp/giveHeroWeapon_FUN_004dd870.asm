@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004deec0
-;   core_game.cpp_FUN_004dd9d0 at 004dda3c
+;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 at 004dda3c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0062b995

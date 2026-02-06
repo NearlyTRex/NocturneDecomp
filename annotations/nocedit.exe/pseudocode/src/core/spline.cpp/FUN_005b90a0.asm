@@ -16,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_dracbrid.cpp_FUN_004869a0 at 00486bbb
-;   core_flies.cpp_FUN_004cc300 at 004cc3ad
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc3ad
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00652fc6 = 0.5

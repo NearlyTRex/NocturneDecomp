@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 21,
-        "line": 67,
-        "message": "invalid cast from type 'char*' to type 'float'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "pointer_arithmetic",
@@ -18,7 +11,7 @@
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 14,
         "line": 29,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -86,17 +79,17 @@
   },
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 100,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 69,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -166,14 +159,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "SQRT",
-      "text": "if (SQRT(fVar5 * fVar5 + fStack_8 * fStack_8 + fVar4 * fVar4) < (float)0.5) {",
+      "text": "if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)0.5) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 69,
+      "line": 68,
       "match": "8.68452e-39",
-      "text": "CStack_28.min.x = 8.68452e-39;",
+      "text": "fStack_28 = 8.68452e-39;",
       "type": "suspect_float"
     }
   ],

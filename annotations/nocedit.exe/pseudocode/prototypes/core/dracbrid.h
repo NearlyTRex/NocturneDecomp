@@ -95,9 +95,9 @@ SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr);
 // Address: 00486d70
 CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
-// Original: core_dracbrid.cpp_FUN_00486e30
+// Original: core_dracbrid.cpp_freeVectors_FUN_00486e30
 // Address: 00486e30
-void __cdecl FUN_00486e30(void);
+CVector3f * __cdecl freeVectors(CVector3f *objs);
 
 // Original: core_dracbrid.cpp_FUN_00486e50
 // Address: 00486e50

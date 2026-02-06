@@ -4,7 +4,7 @@
       {
         "category": "pointer_precision",
         "column": 9,
-        "line": 21,
+        "line": 20,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -19,13 +19,13 @@
       {
         "category": "other",
         "column": 27,
-        "line": 22,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 24,
+        "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
@@ -43,27 +43,27 @@
   },
   "cross_references": [
     {
-      "addr": "004d1f70",
-      "from_addr": "004d1f8a",
-      "name": "core_frankgen.cpp_FUN_004d1f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d2500",
       "from_addr": "004d2536",
-      "name": "core_frankgen.cpp_FUN_004d2500",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d25f0",
       "from_addr": "004d2653",
-      "name": "core_frankgen.cpp_FUN_004d25f0",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1a40",
       "from_addr": "004d1a57",
-      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1f70",
+      "from_addr": "004d1f8a",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -77,7 +77,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330",
-    "signature": "CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(void)"
+    "signature": "CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)"
   },
   "function_calls": [
     {
@@ -181,12 +181,20 @@
     "pcode_op_count": 145
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
+      }
+    ]
   },
   "suspects": []
 }

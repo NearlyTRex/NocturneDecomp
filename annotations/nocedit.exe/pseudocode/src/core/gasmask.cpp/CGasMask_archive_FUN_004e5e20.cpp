@@ -10,7 +10,6 @@ void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004e5e20(CGasMask *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0
-            ((CKeyFramedModelInstance *)&this_ptr->model_name,"modelName");
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
   return;
 }

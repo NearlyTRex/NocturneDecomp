@@ -20,7 +20,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c7620 at 004c7638
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0c1f
 ;   core_fire.cpp_CGunFlame_process_FUN_004c4f60 at 004c5047
-;   core_flame.cpp_FUN_004c9c00 at 004c9d09
+;   core_flame.cpp_CFlame_FUN_004c9c00 at 004c9d09
 ;   ... and 1 more
 ;
 ; Referenced Globals:

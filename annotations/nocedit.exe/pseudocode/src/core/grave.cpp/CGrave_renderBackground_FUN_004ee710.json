@@ -1,0 +1,145 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 65,
+        "line": 27,
+        "message": "'stack0xffffffe4' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "pointer_arithmetic",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ee710",
+    "address_range": [
+      [
+        "004ee710",
+        "004ee785"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grave.cpp_CGrave_renderBackground_FUN_004ee710",
+    "signature": "void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00478d20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 22,
+      "INT_ADD": 17,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 11,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 180
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffe4",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGrave",
+        "offset": 16,
+        "vtable_addr": "0065f124"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

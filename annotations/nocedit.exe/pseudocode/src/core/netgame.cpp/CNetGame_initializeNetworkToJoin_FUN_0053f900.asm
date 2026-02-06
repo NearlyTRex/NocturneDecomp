@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004e2fc0 at 004e3016
+;   core_game.cpp_joinNetworkGame_FUN_004e2fc0 at 004e3016
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_TheServer_0063d32e

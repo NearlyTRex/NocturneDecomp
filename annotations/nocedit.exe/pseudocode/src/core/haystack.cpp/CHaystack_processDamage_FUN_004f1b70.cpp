@@ -18,7 +18,7 @@ core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *this_ptr,SDama
   if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {

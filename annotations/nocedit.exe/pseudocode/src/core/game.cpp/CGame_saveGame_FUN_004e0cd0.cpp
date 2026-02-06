@@ -127,8 +127,8 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     } while (iVar3 <= DAT_02d82d84);
   }
   _fprintf(file,"Game stats\n");
-  _fprintf(file,"%f,%f,%d,%d\n",(double)this_ptr->player_rotation,
-             (double)this_ptr->player_pos_y,this_ptr->player_pos_x,this_ptr->game_state_flags);
+  _fprintf(file,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,(double)this_ptr->game_stat_1
+             ,this_ptr->game_stat_2,this_ptr->game_state_flags);
   core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(g_CDemonSetPtr);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",0xd50);
   g_IncludeCommentsWhenWriting = 0;

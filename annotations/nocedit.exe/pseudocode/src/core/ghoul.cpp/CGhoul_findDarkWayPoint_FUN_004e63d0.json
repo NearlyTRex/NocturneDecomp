@@ -4,32 +4,20 @@
       {
         "category": "other",
         "column": 19,
-        "line": 34,
+        "line": 30,
         "message": "invalid cast from type 'CLocation*' to type 'float'"
       },
       {
         "category": "pointer_precision",
         "column": 23,
-        "line": 39,
+        "line": 34,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 45,
+        "line": 40,
         "message": "'PTR_s_darkPoint_0062df3e_0067b930' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 54,
-        "message": "invalid cast from type 'float' to type 'CDemonActor*'"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 74,
-        "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       }
     ],
     "success": false,
@@ -43,37 +31,36 @@
       {
         "category": "other",
         "column": 33,
-        "line": 64,
+        "line": 60,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 66,
+        "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 237,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 72,
-    "suspect_count": 15,
+    "pseudocode_lines": 69,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 103
+    "total_lines": 100
   },
   "cross_references": [
     {
       "addr": "004e6600",
       "from_addr": "004e771d",
-      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +74,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0",
-    "signature": "void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)"
+    "signature": "void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr)"
   },
   "function_calls": [
     {
@@ -133,10 +120,10 @@
     "pcode_op_count": 154
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 44,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -173,114 +160,44 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGhoul *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "CPathMap *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[0x8e].orient_matrix.m[2].x == 0.0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "(fVar1 = in_stack_00000004[0x8e].orient_matrix.m[1].z - in_stack_00000008,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 20,
       "match": "in_stack_00000008",
-      "text": "(fVar1 = in_stack_00000004[0x8e].orient_matrix.m[1].z - in_stack_00000008,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8e].orient_matrix.m[1].z = fVar1, fVar1 <= 0.0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "CStack_2c.z = (float)&in_stack_00000004->location;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8e].orient_matrix.m[1].z =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "local_14 + in_stack_00000004[0x8e].orient_matrix.m[1].z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "if (((pCVar3 != (CDemonActor *)0x0) && (pCVar3 != in_stack_00000004)) &&",
+      "text": "(fVar1 = *(float *)(this_ptr->unk3 + 0x40) - in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 50,
       "match": "extraout_EAX",
-      "text": "this_ptr_00 = extraout_EAX;",
+      "text": "this_ptr_01 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "(this_ptr_00,local_20,&CStack_2c,in_stack_00000004->unk1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8e].orient_matrix.m[1].y = (float)this_ptr;",
-      "type": "stack_param"
     }
   ]
 }

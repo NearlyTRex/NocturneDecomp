@@ -78,7 +78,7 @@
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   core_event.cpp_CEventList_FUN_004add40
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
-;   core_game.cpp_CGame_FUN_004dda80
+;   core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930
 ;   ... and 24 more
@@ -859,7 +859,7 @@ section .text
     PUSH 0x270f                         ; 004de39c
     PUSH 0x1                            ; 004de3a1
     PUSH 0x1                            ; 004de3a3
-    PUSH 0x67b664                       ; 004de3a5 | DAT_0067b664
+    PUSH 0x67b664                       ; 004de3a5 | INT_0067b664
     PUSH 0x62b1bb                       ; 004de3aa | = "Enter image width"
     MOV EDX,dword ptr [0x00678a60]      ; 004de3af | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 004de3b5 | g_CEditorToolsInstance
@@ -873,7 +873,7 @@ section .text
     PUSH 0x270f                         ; 004de3c4
     PUSH 0x1                            ; 004de3c9
     PUSH 0x1                            ; 004de3cb
-    PUSH 0x67b668                       ; 004de3cd | DAT_0067b668
+    PUSH 0x67b668                       ; 004de3cd | INT_0067b668
     PUSH 0x62b1cd                       ; 004de3d2 | = "Enter image height"
     MOV ECX,dword ptr [0x00678a60]      ; 004de3d7 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 004de3dd | g_CEditorToolsInstance
@@ -3363,8 +3363,8 @@ section .text
     PUSH EDI                            ; 004e0010
     MOV ECX,dword ptr [ESP + 0x334]     ; 004e0011
     PUSH ECX                            ; 004e0018
-    CALL core_game.cpp_CGame_FUN_004dda80 ; 004e0019
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e0019
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
     ADD ESP,0x10                        ; 004e001e
     INC EBX                             ; 004e0021
         ;   Label: LAB_004e0021
@@ -3412,8 +3412,8 @@ section .text
     PUSH EDI                            ; 004e00bd
     MOV ECX,dword ptr [ESP + 0x340]     ; 004e00be
     PUSH ECX                            ; 004e00c5
-    CALL core_game.cpp_CGame_FUN_004dda80 ; 004e00c6
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e00c6
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
     ADD ESP,0x10                        ; 004e00cb
     INC EBX                             ; 004e00ce
         ;   Label: LAB_004e00ce
@@ -3461,8 +3461,8 @@ section .text
     PUSH EDI                            ; 004e016e
     MOV ECX,dword ptr [ESP + 0x34c]     ; 004e016f
     PUSH ECX                            ; 004e0176
-    CALL core_game.cpp_CGame_FUN_004dda80 ; 004e0177
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e0177
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
     ADD ESP,0x10                        ; 004e017c
     INC EBX                             ; 004e017f
         ;   Label: LAB_004e017f

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
+; __cdecl void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -11,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e771d
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e771d
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

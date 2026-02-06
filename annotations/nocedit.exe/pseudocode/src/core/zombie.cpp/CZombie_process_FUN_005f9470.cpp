@@ -731,8 +731,8 @@ LAB_005fac96:
                               (g_CConsolePtr,"%s rising from the grave\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                               (&(this_ptr->base).base.model.motion_controller,0xf,1);
-                    if (this_ptr->grave_actor != (CDemonActor *)0x0) {
-                      core_grave_cpp_FUN_004ee790();
+                    if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
+                      core_grave_cpp_CGrave_FUN_004ee790((CGrave *)this_ptr->grave_actor);
                       this_ptr->grave_actor = (CDemonActor *)0x0;
                     }
                     (this_ptr->base).guard_distance = 100.0;

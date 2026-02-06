@@ -28,13 +28,13 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
          (SPlayerControl *)core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGamePtr);
     uVar1 = this_ptr->game_control;
     if (uVar1 == 0) {
-      core_game_cpp_CGame_FUN_004dc3e0(this_ptr,player_control);
+      core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(this_ptr,player_control);
     }
     else if (uVar1 < 2) {
-      core_game_cpp_CGame_FUN_004dccc0(this_ptr,player_control);
+      core_game_cpp_CGame_processMouseControls_FUN_004dccc0(this_ptr,player_control);
     }
     else if (uVar1 == 2) {
-      core_game_cpp_CGame_FUN_004dc230(this_ptr,player_control);
+      core_game_cpp_CGame_processJoystickControls_FUN_004dc230(this_ptr,player_control);
     }
     else {
       g_CurrentFilename = "..\\core\\game.cpp";

@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db83d
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e27e1
-;   core_game.cpp_FUN_004e1c30 at 004e1c78
+;   core_game.cpp_disableUnavailableChapters_FUN_004e1c30 at 004e1c78
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00623ab6

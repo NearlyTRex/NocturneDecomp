@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 660
-Signature accuracy rate: 64.5%
+Parameter mismatches detected: 655
+Signature accuracy rate: 64.8%
 
 Mismatches by confidence:
-  High confidence:   60 (multiple call sites agree)
+  High confidence:   59 (multiple call sites agree)
   Medium confidence: 85 (some agreement)
-  Low confidence:    515 (limited data)
+  Low confidence:    511 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -124,28 +124,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
     Sample call sites:
       core_bride.cpp_CBride_process_ at 00424541: 0 reg [], 4 stack
-      core_ghoul.cpp_CGhoul_FUN_004e at 004e813c: 0 reg [], 4 stack
+      core_ghoul.cpp_CGhoul_process_ at 004e813c: 0 reg [], 4 stack
       core_zombie.cpp_CZombie_proces at 005fa015: 0 reg [], 4 stack
-
-  core_frankgen.cpp_FUN_004d23a0
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 5, Confidence: high
-    File: core/frankgen.cpp
-    Signature: void __cdecl core_frankgen_cpp_FUN_004d23a0(void)
-    Sample call sites:
-      core_frankgen.cpp_LoadModel_FU at 004d22c4: 0 reg [], 3 stack
-      core_frankgen.cpp_LoadModel_FU at 004d2285: 0 reg [], 3 stack
-      core_frankgen.cpp_LoadModel_FU at 004d22af: 0 reg [], 3 stack
-
-  core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 13, Confidence: high
-    File: core/frankgen.cpp
-    Signature: void __cdecl core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
-    Sample call sites:
-      core_frankgen.cpp_PlaySounds_F at 004d1d14: 0 reg [], 3 stack
-      core_frankgen.cpp_PlaySounds_F at 004d1d27: 0 reg [], 3 stack
-      core_frankgen.cpp_PlaySounds_F at 004d1d3a: 0 reg [], 3 stack
 
   core_gore.cpp_CGore_FUN_004ee030
     Declared: 2 params, Estimated: 5 params (+3)
@@ -287,16 +267,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dtrace.cpp_CDemonRaytrace at 0049598d: 0 reg [], 2 stack
       core_dtrace.cpp_CDemonRaytrace at 004958b2: 0 reg [], 2 stack
 
-  core_dracbrid.cpp_FUN_00486e30
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 3, Confidence: high
-    File: core/dracbrid.cpp
-    Signature: void __cdecl core_dracbrid_cpp_FUN_00486e30(void)
-    Sample call sites:
-      core_flies.cpp_FUN_004ccd40 at 004ccd4a: 0 reg [], 2 stack
-      core_dracbrid.cpp_SFreaky_dtor at 00486d5a: 0 reg [], 2 stack
-      core_gore.cpp_FUN_004ee390 at 004ee39a: 0 reg [], 2 stack
-
   core_fire.cpp_CFireEffect_FUN_004c9240
     Declared: 1 params, Estimated: 3 params (+2)
     Call sites: 4, Confidence: high
@@ -306,6 +276,26 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_emitter.cpp_CEmitter_proc at 004a8540: 0 reg [], 3 stack
       core_emitter.cpp_CEmitter_proc at 004a8552: 0 reg [], 3 stack
       core_emitter.cpp_CEmitter_proc at 004a8563: 0 reg [], 3 stack
+
+  core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
+    Declared: 1 params, Estimated: 3 params (+2)
+    Call sites: 13, Confidence: high
+    File: core/frankgen.cpp
+    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine *this_ptr)
+    Sample call sites:
+      core_frankgen.cpp_CFrankenstie at 004d1d14: 0 reg [], 3 stack
+      core_frankgen.cpp_CFrankenstie at 004d1d27: 0 reg [], 3 stack
+      core_frankgen.cpp_CFrankenstie at 004d1d3a: 0 reg [], 3 stack
+
+  core_frankgen.cpp_CFrankenstienMachine_FUN_004d23a0
+    Declared: 1 params, Estimated: 3 params (+2)
+    Call sites: 5, Confidence: high
+    File: core/frankgen.cpp
+    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d23a0(CFrankenstienMachine *this_ptr)
+    Sample call sites:
+      core_frankgen.cpp_CFrankenstie at 004d22c4: 0 reg [], 3 stack
+      core_frankgen.cpp_CFrankenstie at 004d2285: 0 reg [], 3 stack
+      core_frankgen.cpp_CFrankenstie at 004d22af: 0 reg [], 3 stack
 
   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
     Declared: 4 params, Estimated: 2 params (-2)
@@ -417,6 +407,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_set.cpp_CDemonSet_FUN_005 at 0056c131: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_initSce at 0056ab93: 0 reg [], 2 stack
 
+  core_dracbrid.cpp_freeVectors_FUN_00486e30
+    Declared: 1 params, Estimated: 2 params (+1)
+    Call sites: 3, Confidence: high
+    File: core/dracbrid.cpp
+    Signature: CVector3f * __cdecl core_dracbrid_cpp_freeVectors_FUN_00486e30(CVector3f *objs)
+    Sample call sites:
+      core_flies.cpp_SFly_dtor_FUN_0 at 004ccd4a: 0 reg [], 2 stack
+      core_dracbrid.cpp_SFreaky_dtor at 00486d5a: 0 reg [], 2 stack
+      core_gore.cpp_FUN_004ee390 at 004ee39a: 0 reg [], 2 stack
+
   core_enemy.cpp_CEnemy_FUN_004a9880
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 23, Confidence: high
@@ -426,16 +426,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
       core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
       core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
-
-  core_gargoyle.cpp_CGargoyle_FUN_004e48a0
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 3, Confidence: high
-    File: core/gargoyle.cpp
-    Signature: int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
-    Sample call sites:
-      core_gargoyle.cpp_CGargoyle_un at 004e4df6: 0 reg [], 1 stack
-      core_gargoyle.cpp_CGargoyle_un at 004e4e87: 0 reg [], 1 stack
-      core_gargoyle.cpp_CGargoyle_un at 004e5059: 0 reg [], 1 stack
 
   core_level.cpp_CLevelLoader_update_FUN_00504160
     Declared: 3 params, Estimated: 2 params (-1)
@@ -634,9 +624,9 @@ MEDIUM CONFIDENCE MISMATCHES
   core_fire.cpp_CLaserBeam_FUN_004c2420              declared:1 est:14 (+13) [2 calls]
   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0 declared:9 est:18 (+9) [5 calls]
   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80     declared:0 est:8 (+8) [7 calls]
-  core_gabriela.cpp_FUN_004d6f80                     declared:0 est:6 (+6) [2 calls]
   core_script.cpp_parseCommandWithDefaultTemplates_F declared:7 est:1 (-6) [2 calls]
   core_set.cpp_CDemonSet_FUN_00570040                declared:1 est:7 (+6) [2 calls]
+  core_gabriela.cpp_CGabriella_FUN_004d6f80          declared:1 est:6 (+5) [2 calls]
   core_morph.cpp_FUN_0052b640                        declared:0 est:5 (+5) [9 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   core_charactr.cpp_CCharacter_FUN_0042d360          declared:1 est:5 (+4) [2 calls]
@@ -688,7 +678,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  515 functions with low-confidence mismatches
+  511 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -708,7 +698,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 91
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 569
+Functions where declaration has FEWER params than estimated: 564
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -720,12 +710,12 @@ Distribution of differences (estimated - declared):
   -3 params: 9 functions
   -2 params: 15 functions
   -1 params: 58 functions
-  +1 params: 261 functions
-  +2 params: 118 functions
-  +3 params: 68 functions
+  +1 params: 259 functions
+  +2 params: 119 functions
+  +3 params: 64 functions
   +4 params: 80 functions
-  +5 params: 11 functions
-  +6 params: 17 functions
+  +5 params: 12 functions
+  +6 params: 16 functions
   +7 params: 7 functions
   +8 params: 3 functions
   +9 params: 3 functions

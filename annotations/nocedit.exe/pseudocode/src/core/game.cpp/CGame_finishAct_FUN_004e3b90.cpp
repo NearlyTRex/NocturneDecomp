@@ -57,29 +57,29 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     core_game_cpp_CGame_rollCredits_FUN_004e4010(this_ptr);
     return;
   }
-  this_ptr->player_pos_y = this_ptr->player_rotation + this_ptr->player_pos_y;
-  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->player_pos_x;
+  this_ptr->game_stat_1 = this_ptr->total_play_time + this_ptr->game_stat_1;
+  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->game_stat_2;
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)(auStack_5c + 0x10));
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
             ((CAlphaBitmap *)(auStack_5c + 0x10),"stats",0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
             ((CAlphaBitmap *)(auStack_5c + 0x10),0,0,0xffff);
-  fVar1 = this_ptr->player_pos_y;
+  fVar1 = this_ptr->game_stat_1;
   dVar13 = round((double)(fVar1 * (float)0.00027777777777777799));
   local_2c = (CBitFont *)(int)ROUND(dVar13);
   fVar1 = fVar1 - (float)(int)local_2c * (float)3600;
-  this_ptr->player_pos_y = fVar1;
+  this_ptr->game_stat_1 = fVar1;
   local_18 = (int)local_2c;
   dVar13 = round((double)(fVar1 * (float)0.016666666666666701));
   iStack_38 = (int)ROUND(dVar13);
   fVar1 = fVar1 - (float)iStack_38 * (float)60;
-  this_ptr->player_pos_y = fVar1;
+  this_ptr->game_stat_1 = fVar1;
   local_1c = iStack_38;
   dVar13 = round((double)fVar1);
   local_24 = (int)ROUND(dVar13);
-  fVar1 = this_ptr->player_pos_y - (float)local_24;
-  this_ptr->player_pos_y = fVar1;
+  fVar1 = this_ptr->game_stat_1 - (float)local_24;
+  this_ptr->game_stat_1 = fVar1;
   pcVar4 = (char *)0x4e3d9f;
   local_20 = local_24;
   dVar13 = round((double)(fVar1 * (float)100));

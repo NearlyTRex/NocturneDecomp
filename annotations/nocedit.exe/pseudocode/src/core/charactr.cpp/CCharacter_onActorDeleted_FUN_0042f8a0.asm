@@ -10,7 +10,7 @@
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_onActorDeleted_FUN_00413ff0 at 00413ffa
 ;   core_colonel.cpp_CColonel_onActorDeleted_FUN_004405f0 at 004405fa
-;   core_gabriela.cpp_FUN_004d75e0 at 004d75eb
+;   core_gabriela.cpp_CGabriella_onActorDeleted_FUN_004d75e0 at 004d75eb
 ;   core_haystack.cpp_CHaystack_onActorDeleted_FUN_004f1cb0 at 004f1cba
 ;   core_icepick.cpp_CIcePick_onActorDeleted_FUN_004f9780 at 004f978a
 ;   core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0 at 00520dbc

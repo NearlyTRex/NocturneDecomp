@@ -35,10 +35,10 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
   }
   local_14 = (uint)(p_Var2 == (_FILE *)0x0);
-  this_ptr->player_pos_x = 0.0;
+  this_ptr->game_stat_2 = 0.0;
   this_ptr->game_state_flags = 0;
-  this_ptr->player_pos_y = 0.0;
-  this_ptr->player_rotation = 0.0;
+  this_ptr->game_stat_1 = 0.0;
+  this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
   local_1c = g_EditorFont;
   g_EditorFont = g_ThemeFont;
@@ -412,7 +412,7 @@ LAB_004e2376:
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;
       core_game_cpp_CGame_loadGame_FUN_004e12b0
-                (this_ptr,(char *)&this_ptr->save_version,1,in_stack_fffff914);
+                (this_ptr,this_ptr->chapter_reload_filename,1,in_stack_fffff914);
     }
   }
   g_EditorFont = local_1c;

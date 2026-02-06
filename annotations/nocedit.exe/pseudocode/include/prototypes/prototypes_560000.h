@@ -147,7 +147,7 @@ void __cdecl core_set_cpp_FUN_0056e960(void);
 float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0 (CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr, int render_flags,int lighting_mode,int flags);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr);
 float __cdecl core_set_cpp_CDemonSet_FUN_0056fac0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056fb80(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0056fb80(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_FUN_0056fba0(void);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_0056ffe0(CDemonSet *this_ptr);

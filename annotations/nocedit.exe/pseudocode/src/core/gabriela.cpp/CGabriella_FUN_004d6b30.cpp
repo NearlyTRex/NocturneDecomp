@@ -19,7 +19,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
-  if (g_CGamePtr->unk2 != 0) {
+  if (g_CGamePtr->debug_flag_1 != 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
@@ -70,7 +70,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
               ((CCharacter *)this_ptr,in_stack_00000008);
     return;
   }
-  core_game_cpp_CGame_FUN_004e0bd0(g_CGamePtr);
+  core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(g_CGamePtr);
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,in_stack_00000008);
   return;
 }

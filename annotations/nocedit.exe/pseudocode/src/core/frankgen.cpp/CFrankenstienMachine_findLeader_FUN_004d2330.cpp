@@ -2,13 +2,12 @@
 // Address: 004d2330
 // Address Range: [[004d2330, 004d2393]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(void)
+// Signature: CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_frankgen.cpp_CFrankenstienMachine_findLeader() */
-
-CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(void)
+CDemonActor * __cdecl
+core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
 
 {
   CDemonActor *pCVar1;

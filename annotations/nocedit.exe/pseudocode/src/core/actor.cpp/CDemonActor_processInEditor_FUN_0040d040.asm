@@ -15,8 +15,8 @@
 ;   core_door.cpp_CDoor_processInEditor_FUN_00481590 at 00481596
 ;   core_drip.cpp_CDrip_processInEditor_FUN_0048ea30 at 0048ea54
 ;   core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0 at 004a9340
-;   core_flame.cpp_FUN_004caf60 at 004cb081
-;   core_flies.cpp_FUN_004ccaf0 at 004ccc61
+;   core_flame.cpp_CFlame_processInEditor_FUN_004caf60 at 004cb081
+;   core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 at 004ccc61
 ;   ... and 16 more
 ;
 ; Referenced Globals:

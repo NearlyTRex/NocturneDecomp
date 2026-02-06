@@ -28,7 +28,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     seed_value = *(uint *)(pCVar2->unk + 0x54);
   }
   core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
-  core_game_cpp_CGame_FUN_004e09c0(this_ptr);
+  core_game_cpp_CGame_updateFadeTransition_FUN_004e09c0(this_ptr);
   if (g_CGamePtr->profile_mode == 1) {
     g_ProfileStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
@@ -134,6 +134,6 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
                ((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                (double)g_CGamePtr->delta_time_float);
   }
-  this_ptr->player_rotation = this_ptr->delta_time_float + this_ptr->player_rotation;
+  this_ptr->total_play_time = this_ptr->delta_time_float + this_ptr->total_play_time;
   return;
 }

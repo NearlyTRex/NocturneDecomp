@@ -17,9 +17,9 @@ CFlies * __cdecl core_gore_cpp_CreateFlies_FUN_004edf30(void)
   CFlies *this_ptr;
   CFlies *this_ptr_00;
   float *in_stack_00000008;
-  uint in_stack_0000000c;
+  int in_stack_0000000c;
   float in_stack_00000010;
-  uint *in_stack_00000014;
+  float *in_stack_00000014;
   
   this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\gore.cpp",0x67c);
   this_ptr_00 = (CFlies *)0x0;
@@ -36,17 +36,15 @@ CFlies * __cdecl core_gore_cpp_CreateFlies_FUN_004edf30(void)
   (this_ptr_00->base).location.position.y = in_stack_00000008[1];
   (this_ptr_00->base).location.position.z = in_stack_00000008[2];
   iVar1 = *(int *)g_CDemonMissionPtr->unk1;
-  this_ptr_00->unk[0xc] = '\0';
-  this_ptr_00->unk[0xd] = '\0';
-  this_ptr_00->unk[0xe] = '\0';
-  this_ptr_00->unk[0xf] = '\0';
+  this_ptr_00->count = 0;
   (this_ptr_00->base).location.area_id = iVar1;
-  *(uint *)(this_ptr_00->unk + 0x28b4) = in_stack_0000000c;
-  *(float *)(this_ptr_00->unk + 0x28bc) = fVar2 / in_stack_00000010;
-  if ((in_stack_00000014 != (uint *)0x0) && (this_ptr_00->unk != (char *)in_stack_00000014)) {
-    *(uint *)this_ptr_00->unk = *in_stack_00000014;
-    *(uint *)(this_ptr_00->unk + 4) = in_stack_00000014[1];
-    *(uint *)(this_ptr_00->unk + 8) = in_stack_00000014[2];
+  this_ptr_00->gather_count = in_stack_0000000c;
+  this_ptr_00->gather_time = fVar2 / in_stack_00000010;
+  if ((in_stack_00000014 != (float *)0x0) &&
+     (&this_ptr_00->box_size != (CVector3f *)in_stack_00000014)) {
+    (this_ptr_00->box_size).x = *in_stack_00000014;
+    (this_ptr_00->box_size).y = in_stack_00000014[1];
+    (this_ptr_00->box_size).z = in_stack_00000014[2];
   }
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);

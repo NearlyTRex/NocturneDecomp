@@ -44,7 +44,7 @@ core_game_cpp_CGame_loadGame_FUN_004e12b0
   int *local_2c;
   float *local_28;
   float *local_24;
-  int *local_20;
+  char *local_20;
   float *local_1c;
   long local_18;
   int local_14;
@@ -76,11 +76,11 @@ core_game_cpp_CGame_loadGame_FUN_004e12b0
   if (load_mode != 0) {
     g_EditorFont = g_ThemeFont;
   }
-  local_20 = &this_ptr->save_version;
+  local_20 = this_ptr->chapter_reload_filename;
   local_2c = &this_ptr->game_state_flags;
-  local_24 = &this_ptr->player_pos_x;
-  local_1c = &this_ptr->player_pos_y;
-  local_28 = &this_ptr->player_rotation;
+  local_24 = &this_ptr->game_stat_2;
+  local_1c = &this_ptr->game_stat_1;
+  local_28 = &this_ptr->total_play_time;
   do {
     pcVar8 = save_filename;
     pcVar5 = local_638;
@@ -319,7 +319,7 @@ LAB_004e14f5:
         }
         core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
         if (this_ptr->need_chapter_reload == 0) goto LAB_004e17ac;
-        save_filename = (char *)local_20;
+        save_filename = local_20;
         this_ptr->need_chapter_reload = 0;
       }
     }

@@ -20,7 +20,7 @@
 ;
 ; XREF[3]:
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 0042454a
-;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e8145
+;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e8145
 ;   core_zombie.cpp_CZombie_process_FUN_005f9470 at 005fa02b
 ;
 ; Referenced Globals:
