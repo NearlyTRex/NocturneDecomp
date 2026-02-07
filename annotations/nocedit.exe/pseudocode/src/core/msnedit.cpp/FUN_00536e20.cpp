@@ -30,15 +30,15 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
   int local_14;
   
   DAT_02f7c538 = 0;
-  if ((((*(int *)(g_CDemonMissionPtr->unk2 + 0x1c) != 0) && (-1 < INT_02f7c52c)) &&
+  if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) && (-1 < INT_02f7c52c)) &&
       (INT_02f7c52c < INT_02f7a028)) &&
      ((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&
       (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),
       this_ptr != (CDeformableModelInstance *)0x0)))) {
     local_14 = 0x9b;
-    iVar3 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -0x38;
-    iVar1 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -1;
-    local_20 = *(int *)(g_CDemonMissionPtr->unk2 + 0x14) + -0x33;
+    iVar3 = g_CDemonMissionPtr->unk4 + -0x38;
+    iVar1 = g_CDemonMissionPtr->unk4 + -1;
+    local_20 = g_CDemonMissionPtr->unk4 + -0x33;
     local_24 = 4;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar3 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       DAT_02f7c538 = 1;
@@ -54,7 +54,7 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                 ((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),
-                 *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c));
+                 g_CDemonMissionPtr->selected_actor);
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0(" X ",local_14 + -0x11,local_20,1,0);
     if (iVar1 != 0) {

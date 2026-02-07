@@ -35,7 +35,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_FUN_0042ea40
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
-;   core_gore.cpp_FUN_004ede30
+;   core_gore.cpp_CGore_FUN_004ede30
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 0054497c
     MOV EAX,[0x0067b9a0]                ; 0054497d | g_CGoreInstance | g_CGorePtr
     PUSH EAX                            ; 00544982 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ede30     ; 00544983
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 00544983
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 00544988
     MOV dword ptr [EBX + 0x1f704],0x1   ; 0054498b
     FLD float ptr [EBP + 0x18]          ; 00544995

@@ -178,7 +178,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005760f5
     PUSH EAX                            ; 005760f9
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005760fa
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005760ff
     MOV EBP,dword ptr [ESP + 0x78]      ; 00576102
     PUSH EBP                            ; 00576106
@@ -189,7 +189,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0x6c]      ; 00576119
     PUSH EAX                            ; 0057611d
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057611e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [0x00679394]      ; 00576123 | g_WindowWidth
     LEA EAX,[EBX + 0x42]                ; 00576129
     ADD ESP,0xc                         ; 0057612c

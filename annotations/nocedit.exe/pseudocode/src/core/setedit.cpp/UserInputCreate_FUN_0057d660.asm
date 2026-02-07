@@ -819,7 +819,7 @@ section .text
     PUSH 0x0                            ; 0057e01e
     ADD EBX,0x4                         ; 0057e020
     CALL engine_2d.c_drawTextXY_FUN_00402130 ; 0057e023
-        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
+        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x, int y, char * text)
     ADD ESI,0xb                         ; 0057e028
     ADD ESP,0xc                         ; 0057e02b
     CMP EBX,EDI                         ; 0057e02e
@@ -837,7 +837,7 @@ section .text
     PUSH 0x0                            ; 0057e045
     PUSH 0x647edb                       ; 0057e047 | = "Move camera with slew keys.  Press SP..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e04c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x0067b654]                ; 0057e051 | g_CGamePtr
     FLD float ptr [EAX + 0x264]         ; 0057e056 | g_CGameInstance.delta_time_float
     FLD1                                ; 0057e05c
@@ -858,7 +858,7 @@ section .text
     LEA EAX,[ESP + 0xf98]               ; 0057e089
     PUSH EAX                            ; 0057e090
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e091
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057e096
     MOV EAX,dword ptr [ESP + 0x1150]    ; 0057e099
     CMP dword ptr [EAX + 0x144],0x0     ; 0057e0a0
@@ -886,7 +886,7 @@ section .text
     LEA EAX,[ESP + 0xf98]               ; 0057e0e5
     PUSH EAX                            ; 0057e0ec
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e0ed
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057e0f2
     JMP 0x0057db22                      ; 0057e0f5
         ;   XREF to: 0057db22 (UNCONDITIONAL_JUMP)  ; LAB_0057db22

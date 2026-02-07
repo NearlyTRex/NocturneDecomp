@@ -25,7 +25,7 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
   int *in_stack_00000024;
   int *in_stack_0000002c;
   char *pcVar8;
-  int x_pos;
+  int x;
   int color_mode;
   int iVar9;
   char **ppcVar10;
@@ -36,7 +36,7 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
   iVar6 = y_position;
   this_ptr_00 = g_ThemeFont;
   if (spacing_flag != 0) {
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_ThemeFont,(char *)spacing_flag,0xa0,y_position,7,0);
     iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0x58);
     iVar6 = y_position + iVar6 * 2;
@@ -47,7 +47,7 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
     do {
       engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,*ppcVar10);
       iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
-      x_pos = 0xa0;
+      x = 0xa0;
       color_mode = 0xf8;
       if (iVar9 == *selected_index_ptr) {
         iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance);
@@ -66,14 +66,13 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       ((uint)((longlong)iVar5 * 48000) >> 0x10 |
                        (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
             iVar2 = iVar2 + 1;
-            engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+            engine_font_cpp_CBitFont_drawText_FUN_004cda80
                       (this_ptr_00,*ppcVar11,(uVar3 & 3) + 0x9e,((uVar4 & 3) - 2) + iVar6,7,-1);
           } while (iVar2 < 5);
         }
       }
       engine_3d_c_setRenderAlpha_FUN_00406d80(48000);
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                (this_ptr_00,*ppcVar10,x_pos,iVar6,color_mode,-1);
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr_00,*ppcVar10,x,iVar6,color_mode,-1);
       iVar6 = iVar6 + iVar1;
       if (spacing_flag == 0) {
         iVar6 = iVar6 + iVar1;
@@ -97,15 +96,15 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar8 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,pcVar8,0x27f - iVar9,0x1df - iVar6,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"NON-RELEASE EDITOR BUILD",0,0,0xf8,0);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+D to access the editor menu",0,0x14,0xf8,0);
   pcVar8 = menu_text_array[*selected_index_ptr];
   do {

@@ -24,7 +24,7 @@ LAB_0043f37e:
       uVar1 = 0xffffffff;
     }
     else {
-      fgetc_outptr(input_file,local_14);
+      istream_get((istream *)input_file,(char *)local_14);
       if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)
       goto LAB_0043f37e;
       *(int *)byte_count = *(int *)byte_count + -1;

@@ -7,7 +7,7 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format_string
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_skeledit.cpp_FUN_00589b10 at 00589b53
@@ -32,7 +32,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -68,7 +68,7 @@ section .text
     PUSH ESI                            ; 0049e8b3
     PUSH 0x2cefd30                      ; 0049e8b4 | g_ConfirmationMessageBuffer
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e8b9
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e8be
     MOV EBP,dword ptr [ESP + 0x18]      ; 0049e8c1
     XOR EDI,EDI                         ; 0049e8c5
@@ -91,8 +91,8 @@ section .text
     PUSH 0x2cefd30                      ; 0049e8f7 | g_ConfirmationMessageBuffer
     MOV EBX,dword ptr [0x02cf1cd0]      ; 0049e8fc | g_EditorFont
     PUSH EBX                            ; 0049e902
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0049e903
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0049e903
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0049e908
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0049e90b
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

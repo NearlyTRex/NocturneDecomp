@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539917
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539917
 ;
 ; Referenced Globals:
 ;   CBitFont* g_EditorFont
@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00402c50
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70
@@ -92,8 +92,8 @@ section .text
     PUSH EAX                            ; 004a6c8a
     MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c8b | g_EditorFont
     PUSH EDX                            ; 004a6c91
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a6c92
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004a6c92
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a6c97
     MOV ECX,dword ptr [EBX + 0x20]      ; 004a6c9a
     PUSH ECX                            ; 004a6c9d

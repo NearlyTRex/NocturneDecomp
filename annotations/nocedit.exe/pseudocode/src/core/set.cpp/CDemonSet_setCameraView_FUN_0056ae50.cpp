@@ -227,7 +227,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
                 (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,(float)this_ptr->sky_type);
     }
     core_set_cpp_CDemonSet_FUN_0056aca0(this_ptr);
-    core_gore_cpp_FUN_004ed830(g_CGorePtr);
+    core_gore_cpp_CGore_FUN_004ed830(g_CGorePtr);
     core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,1,1);
     if (g_CWaterPtr->wave_animation_enabled == 0) {
       core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,0);

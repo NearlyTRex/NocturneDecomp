@@ -63,8 +63,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ae03
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c8a4
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ae03
 ;   core_msnedit.cpp_FUN_00536e20 at 00536f7b
 ;
 ; Referenced Globals:

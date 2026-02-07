@@ -3,47 +3,40 @@
     "errors": [
       {
         "category": "other",
-        "column": 21,
+        "column": 20,
         "line": 35,
-        "message": "request for member '_1_1_' in 'INT_0310fd40', which is of non-class type 'int'"
+        "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
         "line": 51,
-        "message": "'stack0xfffffdfc' was not declared in this scope; did you mean 'in_stack_fffffdfc'?"
+        "message": "use of undeclared identifier 'stack0xfffffdfc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 62,
+        "line": 54,
+        "message": "use of undeclared identifier 'stack0xfffffdfc'"
       },
       {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 56,
-        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 27,
-        "line": 56,
-        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'char*' [-fpermissive]"
+        "column": 3,
+        "line": 55,
+        "message": "no matching function for call to 'engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 229,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "pseudocode_lines": 49,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "stack_param",
       "stack_ref",
@@ -56,7 +49,7 @@
     {
       "addr": "005390f0",
       "from_addr": "0053994d",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,14 +97,14 @@
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
-      "addr": "004cdbf0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
-    },
-    {
       "addr": "004cdce0",
       "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0"
+    },
+    {
+      "addr": "004cdbf0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0"
     },
     {
       "addr": "0050e480",
@@ -417,21 +410,28 @@
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_03114200",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_031141f0",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_031141f4",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0310fdc0",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
       "type": "undefined_data"
     },
     {

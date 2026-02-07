@@ -2,27 +2,32 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 15,
+        "category": "incompatible_types",
+        "column": 23,
         "line": 17,
-        "message": "'stack0x00000014' was not declared in this scope"
+        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
-        "category": "incompatible_types",
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 17,
+        "message": "use of undeclared identifier 'stack0x00000014'"
+      },
+      {
+        "category": "other",
         "column": 37,
         "line": 18,
-        "message": "cannot convert 'char**' to '__va_list_tag*'"
+        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 19,
+        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 34,
@@ -48,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextCenteredFormatted_FUN_004023c0",
-    "signature": "void __cdecl engine_2d_c_drawTextCenteredFormatted_FUN_004023c0 (int left_x,int right_x,int y_pos,char *format_string,...)"
+    "signature": "void __cdecl engine_2d_c_drawTextCenteredFormatted_FUN_004023c0 (int left_x,int right_x,int y,char *format_string,...)"
   },
   "function_calls": [
     {
@@ -104,15 +109,15 @@
         "is_param": false,
         "name": "local_1010",
         "offset": -4112,
-        "size": 1,
-        "type": "undefined"
+        "size": 4096,
+        "type": "char[4096]"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "va_list_t"
       },
       {
         "is_param": true,
@@ -130,7 +135,7 @@
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -149,7 +154,7 @@
       "description": "Direct stack address reference",
       "line": 10,
       "match": "&stack0x00000014",
-      "text": "local_10 = &stack0x00000014;",
+      "text": "local_10.value[0] = (char * [1])&stack0x00000014;",
       "type": "stack_ref"
     }
   ]

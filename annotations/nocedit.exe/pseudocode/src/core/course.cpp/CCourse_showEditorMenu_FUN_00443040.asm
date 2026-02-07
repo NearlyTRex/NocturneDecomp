@@ -96,55 +96,55 @@ section .text
     PUSH 0x0                            ; 0044306b
     PUSH 0x619195                       ; 0044306d | = "Demon Course system menu"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443072
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00443077
     PUSH 0x16                           ; 0044307a
     PUSH 0x0                            ; 0044307c
     PUSH 0x6191ae                       ; 0044307e | = "1. Load course from .PTH file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443083
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00443088
     PUSH 0x21                           ; 0044308b
     PUSH 0x0                            ; 0044308d
     PUSH 0x6191cc                       ; 0044308f | = "2. Save course to .PTH file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443094
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00443099
     PUSH 0x37                           ; 0044309c
     PUSH 0x0                            ; 0044309e
     PUSH 0x6191e8                       ; 004430a0 | = "3. Import course from .CRS file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430a5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004430aa
     PUSH 0x42                           ; 004430ad
     PUSH 0x0                            ; 004430af
     PUSH 0x619208                       ; 004430b1 | = "4. Import course from .BON file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430b6
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004430bb
     PUSH 0x58                           ; 004430be
     PUSH 0x0                            ; 004430c0
     PUSH 0x619228                       ; 004430c2 | = "5. View course"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430c7
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004430cc
     PUSH 0x6e                           ; 004430cf
     PUSH 0x0                            ; 004430d1
     PUSH 0x619237                       ; 004430d3 | = "6. Rotate all course orientations on ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430d8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004430dd
     PUSH 0x79                           ; 004430e0
     PUSH 0x0                            ; 004430e2
     PUSH 0x619267                       ; 004430e4 | = "7. Scale course about its center"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430e9
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004430ee
     PUSH 0x8f                           ; 004430f1
     PUSH 0x0                            ; 004430f6
     PUSH 0x619288                       ; 004430f8 | = "8. Remove bank"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004430fd
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBP + 0x8]       ; 00443102
     ADD ESP,0xc                         ; 00443105
     TEST EDX,EDX                        ; 00443108
@@ -164,7 +164,7 @@ section .text
     LEA EAX,[ESP + 0x418]               ; 00443132
     PUSH EAX                            ; 00443139
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044313a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0044313f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00443142
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

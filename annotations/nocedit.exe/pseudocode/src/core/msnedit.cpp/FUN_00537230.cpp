@@ -23,7 +23,7 @@ void __cdecl core_msnedit_cpp_FUN_00537230(void)
       core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_124.filename,0);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Saving %s...");
-      core_mission_cpp_CDemonMission_save_FUN_00522e30(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_save_FUN_00522e30(g_CDemonMissionPtr,local_124.filename);
     }
     else {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0

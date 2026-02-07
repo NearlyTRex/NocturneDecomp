@@ -27,7 +27,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dcfa
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de364
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d7761
-;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537b4a
+;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 at 00537b4a
 ;   core_msnedit.cpp_FUN_00536e20 at 00537027
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00562a1e
 ;   ... and 5 more

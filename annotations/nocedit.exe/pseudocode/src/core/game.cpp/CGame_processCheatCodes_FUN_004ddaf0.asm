@@ -3630,8 +3630,8 @@ section .text
     PUSH EBX                            ; 004e033c
     MOV ESI,dword ptr [0x0067d550]      ; 004e033d | g_CDemonMissionPtr
     PUSH ESI                            ; 004e0343 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 004e0344
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 004e0344
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004e0349
     MOV EAX,dword ptr [EBX + 0x154]     ; 004e034c
     PUSH EBX                            ; 004e0352

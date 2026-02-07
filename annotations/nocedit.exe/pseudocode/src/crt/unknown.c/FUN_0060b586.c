@@ -8,7 +8,7 @@
 
 /* Signature: void FUN_0060b586(uint param_1, ulonglong* param_2, char* param_3) */
 
-void crt_unknown_c_FUN_0060b586(byte *param_1,ulonglong *param_2)
+void FUN_0060b586(byte *param_1,ulonglong *param_2)
 
 {
   uint uVar1;
@@ -53,7 +53,7 @@ void crt_unknown_c_FUN_0060b586(byte *param_1,ulonglong *param_2)
              (uint)(bVar15 || CARRY4(uVar8,uVar2))) * 2 +
              (uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);
   }
-  uVar16 = crt_unknown_c_FUN_0060b5e8(uVar6,iVar11);
+  uVar16 = FUN_0060b5e8(uVar6,iVar11);
   *param_2 = uVar16;
   *(short *)(param_2 + 1) = (short)param_1;
   return;

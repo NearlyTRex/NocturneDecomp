@@ -141,7 +141,7 @@ section .text
     MOV EAX,0x61c93c                    ; 00467330 | = "Model turned inside out.  Hit a key..."
     PUSH EAX                            ; 00467335 | = "Model turned inside out.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00467336
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046733b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046733e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

@@ -11,7 +11,7 @@ scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
 
 {
   byte bVar1;
-  va_list_t pcVar2;
+  char *pcVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
@@ -137,19 +137,19 @@ LAB_00605798:
       if ((bVar9 & 1) != 0) {
         if ((bVar9 & 4) == 0) {
           if ((bVar9 & 8) == 0) {
-            pcVar2 = *args;
-            *args = pcVar2 + 4;
+            pcVar2 = args->value[0];
+            args->value[0] = pcVar2 + 4;
             piVar6 = *(int **)pcVar2;
           }
           else {
-            pcVar2 = *args;
-            *args = pcVar2 + 4;
+            pcVar2 = args->value[0];
+            args->value[0] = pcVar2 + 4;
             piVar6 = *(int **)pcVar2;
           }
         }
         else {
-          pcVar2 = *args;
-          *args = pcVar2 + 8;
+          pcVar2 = args->value[0];
+          args->value[0] = pcVar2 + 8;
           piVar6 = (int *)*(undefined6 *)pcVar2;
         }
         if ((state->flags & 0x10) != 0) {
@@ -170,20 +170,20 @@ LAB_00605798:
       if ((bVar1 & 1) != 0) {
         if ((bVar1 & 4) == 0) {
           if ((bVar1 & 8) != 0) {
-            pcVar2 = *args;
-            *args = pcVar2 + 4;
+            pcVar2 = args->value[0];
+            args->value[0] = pcVar2 + 4;
             puVar8 = *(uint **)pcVar2;
             *puVar8 = (uint)local_3c;
             puVar8[(uint)bVar9 * -2 + 1] = *(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);
             return iVar7;
           }
-          pcVar2 = *args;
-          *args = pcVar2 + 4;
+          pcVar2 = args->value[0];
+          args->value[0] = pcVar2 + 4;
           puVar8 = *(uint **)pcVar2;
         }
         else {
-          pcVar2 = *args;
-          *args = pcVar2 + 8;
+          pcVar2 = args->value[0];
+          args->value[0] = pcVar2 + 8;
           puVar8 = *(uint **)pcVar2;
         }
         *puVar8 = (uint)local_3c;

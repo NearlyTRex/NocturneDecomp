@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a3e1
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a3e1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBarrier_0063c862

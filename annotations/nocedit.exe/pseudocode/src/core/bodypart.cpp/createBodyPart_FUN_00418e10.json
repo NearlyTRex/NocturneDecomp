@@ -3,70 +3,27 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 54,
+        "column": 14,
         "line": 30,
-        "message": "invalid conversion from 'void*' to 'CBodyPart*' [-fpermissive]"
+        "message": "assigning to 'CBodyPart *' from incompatible type 'void *'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 70,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 71,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 72,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 389,
+    "complexity_score": 390,
     "cross_reference_count": 14,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 70,
     "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 189
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -194,12 +151,12 @@
     {
       "addr": "00523b70",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
     },
     {
       "addr": "00524700",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
     },
     {
       "addr": "0050f1b0",
@@ -463,56 +420,56 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 63,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 64,
       "match": "in_stack_00000010",
       "text": "(this_ptr_00->base).scale.x = *(int *)(in_stack_00000010 + 0x108);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 65,
       "match": "in_stack_00000010",
       "text": "(this_ptr_00->base).scale.y = *(int *)(in_stack_00000010 + 0x10c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 66,
       "match": "in_stack_00000010",
       "text": "(this_ptr_00->base).scale.z = *(int *)(in_stack_00000010 + 0x110);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 68,
       "match": "in_stack_00000014",
       "text": "*(uint *)(this_ptr_00->unk + 0xb58) = in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 69,
       "match": "in_stack_00000018",
       "text": "(this_ptr_00->base).is_transparent = in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 70,
       "match": "in_stack_00000018",
       "text": "*(int *)(this_ptr_00->unk + 0xb5c) = in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 71,
       "match": "in_stack_0000001c",
       "text": "*(uint *)(this_ptr_00->unk + 0xb60) = in_stack_0000001c;",
       "type": "stack_param"

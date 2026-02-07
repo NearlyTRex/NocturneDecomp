@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730 (int left_x,int right_x,int y_pos,char *format_string,...)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730 (int left_x,int right_x,int y,char *format_string,...)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left_x
 ; int              Stack[0x8]:4   right_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0xc]:4   y
 ; char *           Stack[0x10]:4   format_string
 ; Local Variables:
-; undefined        Stack[-0x1010]:1  local_1010
-; undefined4       Stack[-0x10]:4  local_10
+; char[4096]       Stack[-0x1010]:4096  local_1010
+; va_list_t        Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
@@ -34,7 +34,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00402757
     PUSH EAX                            ; 0040275b
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0040275c
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00402761
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00402764
     PUSH EBX                            ; 0040276b
@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 00402782
     MOV dword ptr [ESP + 0x1010],ECX    ; 00402783
     CALL engine_2d.c_drawTextCenteredColor_FUN_004026c0 ; 0040278a
-        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)
+        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y)
     ADD ESP,0x10                        ; 0040278f
     ADD ESP,0x1004                      ; 00402792
     POP EDI                             ; 00402798

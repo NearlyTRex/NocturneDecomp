@@ -63,73 +63,73 @@ void __cdecl CDemonMission::readIni(CDemonMission *this_ptr,CIniFile *ini_file);
 // Address: 005375d0
 void __cdecl CDemonMission::writeIni(CDemonMission *this_ptr,CIniFile *ini_file);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00537680
+// Original: core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680
 // Address: 00537680
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::showOptionsMenu(CDemonMission *this_ptr);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_005379e0
+// Original: core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 // Address: 005379e0
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::enemyRandomizer(CDemonMission *this_ptr);
 
 // Original: core_msnedit.cpp_FUN_00537dd0
 // Address: 00537dd0
 void __cdecl FUN_00537dd0(char *param_1,char *param_2,char *param_3);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00537f60
+// Original: core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60
 // Address: 00537f60
-void __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::saveWithNewName(CDemonMission *this_ptr,char *name);
 
 // Original: core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
 // Address: 005381e0
 void __cdecl CDemonMission::showEditorMenu(CDemonMission *this_ptr);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00538ba0
+// Original: core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
 // Address: 00538ba0
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::playMission(CDemonMission *this_ptr);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00538d60
+// Original: core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
 // Address: 00538d60
-void __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::addSet(CDemonMission *this_ptr,char *param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00538df0
+// Original: core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0
 // Address: 00538df0
-void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::removeSet(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00538ea0
+// Original: core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 // Address: 00538ea0
-void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::deleteActor(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00538f40
+// Original: core_msnedit.cpp_CDemonMission_findSetByName_FUN_00538f40
 // Address: 00538f40
-int __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+int __cdecl CDemonMission::findSetByName(CDemonMission *this_ptr,char *set_name);
 
 // Original: core_msnedit.cpp_CDemonMission_FUN_00538f90
 // Address: 00538f90
 int __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2,int param_3);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_00539060
+// Original: core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060
 // Address: 00539060
-void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorProperties(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_005390f0
+// Original: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
 // Address: 005390f0
-int __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+int __cdecl CDemonMission::editActorsInSet(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053af50
+// Original: core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50
 // Address: 0053af50
-void __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::pasteActorProperty(CDemonMission *this_ptr,char *property);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053b030
+// Original: core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
 // Address: 0053b030
-void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorAtIndex(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053b510
+// Original: core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
 // Address: 0053b510
-void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorDetailed(CDemonMission *this_ptr,int param_2);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053b9f0
+// Original: core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
 // Address: 0053b9f0
-void __cdecl CDemonMission(CDemonMission *this_ptr,CDemonMission *param_2);
+void __cdecl CDemonMission::importActorsFrom(CDemonMission *this_ptr,CDemonMission *other);
 
 // Original: core_msnedit.cpp_CDemonMission_FUN_0053bc80
 // Address: 0053bc80
@@ -203,13 +203,13 @@ void __cdecl CDemonMission(CDemonMission *this_ptr,CStrList *param_2,uint param_
 // Address: 0053ccc0
 void __cdecl CDemonMission::makeOptimizedPalette(CDemonMission *this_ptr);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053ccf0
+// Original: core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0
 // Address: 0053ccf0
-void __cdecl CDemonMission(CDemonMission *this_ptr);
+void __cdecl CDemonMission::importActors(CDemonMission *this_ptr);
 
-// Original: core_msnedit.cpp_CDemonMission_FUN_0053d190
+// Original: core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190
 // Address: 0053d190
-void __cdecl CDemonMission(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::saveMissionAndScript(CDemonMission *this_ptr,char *filename);
 
 // Original: core_msnedit.cpp_CDemonMission_FUN_0053d220
 // Address: 0053d220

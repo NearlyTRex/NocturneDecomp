@@ -60,7 +60,7 @@ section .text
     MOV EAX,0x61b391                    ; 0045cc90 | = "Enter in point list going CW, ie 1,2,3"
     PUSH EAX                            ; 0045cc95 | = "Enter in point list going CW, ie 1,2,3"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045cc96
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045cc9b
     PUSH 0x0                            ; 0045cc9e
     PUSH 0xb                            ; 0045cca0

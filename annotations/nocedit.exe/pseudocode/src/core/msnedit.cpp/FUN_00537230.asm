@@ -96,7 +96,7 @@ section .text
     MOV EBP,dword ptr [0x0067d550]      ; 005372cb | g_CDemonMissionPtr
     PUSH EBP                            ; 005372d1 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_save_FUN_00522e30 ; 005372d2
-        ;   XREF to: 00522e30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_save_FUN_00522e30(CDemonMission * this_ptr)
+        ;   XREF to: 00522e30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_save_FUN_00522e30(CDemonMission * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005372d7
     MOV EAX,ESP                         ; 005372da
         ;   Label: LAB_005372da

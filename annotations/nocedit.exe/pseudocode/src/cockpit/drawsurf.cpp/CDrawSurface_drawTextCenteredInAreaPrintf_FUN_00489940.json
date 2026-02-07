@@ -2,39 +2,32 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 17,
-        "message": "'stack0x00000018' was not declared in this scope"
-      },
-      {
         "category": "incompatible_types",
-        "column": 30,
-        "line": 18,
-        "message": "cannot convert 'char**' to '__va_list_tag*'"
+        "column": 23,
+        "line": 17,
+        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
-        "category": "pointer_precision",
-        "column": 23,
-        "line": 21,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 17,
+        "message": "use of undeclared identifier 'stack0x00000018'"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "column": 30,
+        "line": 18,
+        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 19,
+        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 38,
@@ -143,15 +136,15 @@
         "is_param": false,
         "name": "local_1014",
         "offset": -4116,
-        "size": 1,
-        "type": "undefined"
+        "size": 4096,
+        "type": "char[4096]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "va_list_t"
       },
       {
         "is_param": true,
@@ -195,7 +188,7 @@
       "description": "Direct stack address reference",
       "line": 10,
       "match": "&stack0x00000018",
-      "text": "local_14 = &stack0x00000018;",
+      "text": "local_14.value[0] = (char * [1])&stack0x00000018;",
       "type": "stack_ref"
     },
     {

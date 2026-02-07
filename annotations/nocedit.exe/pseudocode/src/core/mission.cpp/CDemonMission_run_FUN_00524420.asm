@@ -39,11 +39,11 @@
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
-;   core_mission.cpp_CDemonMission_FUN_00523f20
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
-;   core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   ... and 5 more
@@ -82,12 +82,12 @@ section .text
     MOV ECX,dword ptr [EAX + 0x2c]      ; 00524476
     PUSH ECX                            ; 00524479
     PUSH EBX                            ; 0052447a
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 0052447b
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 0052447b
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 00524480
     XOR AH,AH                           ; 00524483
     PUSH EBX                            ; 00524485
-    MOV byte ptr [0x02f35f10],AH        ; 00524486 | DAT_02f35f10
+    MOV byte ptr [0x02f35f10],AH        ; 00524486 | g_PendingMissionName
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120 ; 0052448c
         ;   XREF to: 00524120 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00524491
@@ -101,8 +101,8 @@ section .text
     PUSH ESI                            ; 005244b0
     PUSH EBX                            ; 005244b1
     MOV EDI,EAX                         ; 005244b2
-    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 005244b4
-        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0 ; 005244b4
+        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 005244b9
     MOV EAX,dword ptr [ESI + 0x154]     ; 005244bc
     PUSH ESI                            ; 005244c2
@@ -115,15 +115,15 @@ section .text
     TEST EDI,EDI                        ; 005244d5
     JZ 0x005244e2                       ; 005244d7
         ;   XREF to: 005244e2 (CONDITIONAL_JUMP)  ; LAB_005244e2
-    CMP byte ptr [0x02f35f10],0x0       ; 005244d9 | DAT_02f35f10
+    CMP byte ptr [0x02f35f10],0x0       ; 005244d9 | g_PendingMissionName
     JNZ 0x0052452d                      ; 005244e0
         ;   XREF to: 0052452d (CONDITIONAL_JUMP)  ; LAB_0052452d
     PUSH 0x1                            ; 005244e2
         ;   Label: LAB_005244e2
     PUSH ESI                            ; 005244e4
     PUSH EBX                            ; 005244e5
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 005244e6
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 005244e6
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 005244eb
     MOV EAX,[0x0067b654]                ; 005244ee | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_005244ee
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_0052455c
     ADD ESP,0x10                        ; 00524561
     PUSH 0x0                            ; 00524564
-    PUSH 0x2f35f10                      ; 00524566 | DAT_02f35f10
+    PUSH 0x2f35f10                      ; 00524566 | g_PendingMissionName
     PUSH EBX                            ; 0052456b
     CALL core_mission.cpp_CDemonMission_load_FUN_00522d90 ; 0052456c
         ;   XREF to: 00522d90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_00522d90(CDemonMission * this_ptr, char * mission_filename, int load_flags)
@@ -213,7 +213,7 @@ section .text
     MOV EDI,dword ptr [0x020a5720]      ; 005245d4 | g_ThemeFont
     PUSH EDI                            ; 005245da
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0 ; 005245db
-        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int right_edge_x, int y_pos, int color_mode, ...)
+        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 005245e0
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005245e3
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

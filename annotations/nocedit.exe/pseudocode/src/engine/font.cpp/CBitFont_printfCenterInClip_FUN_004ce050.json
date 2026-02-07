@@ -2,34 +2,39 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 15,
+        "category": "incompatible_types",
+        "column": 23,
         "line": 16,
-        "message": "'stack0x00000018' was not declared in this scope"
+        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 16,
+        "message": "use of undeclared identifier 'stack0x00000018'"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 18,
+        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 24,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 10,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 40
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -42,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce050",
-    "signature": "void __cdecl engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050 (CBitFont *this_ptr,int x,int y,int color,char *format,...)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *format,...)"
   },
   "function_calls": [
     {
@@ -94,7 +99,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "va_list_t"
       },
       {
         "is_param": true,
@@ -105,21 +110,21 @@
       },
       {
         "is_param": true,
-        "name": "x",
+        "name": "y",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y",
+        "name": "color_mode",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "color",
+        "name": "color_value",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -138,7 +143,7 @@
       "description": "Direct stack address reference",
       "line": 9,
       "match": "&stack0x00000018",
-      "text": "local_14 = &stack0x00000018;",
+      "text": "local_14.value[0] = (char * [1])&stack0x00000018;",
       "type": "stack_ref"
     }
   ]

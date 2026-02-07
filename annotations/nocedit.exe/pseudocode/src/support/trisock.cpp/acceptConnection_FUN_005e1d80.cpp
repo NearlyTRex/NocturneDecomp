@@ -19,7 +19,7 @@ support_trisock_cpp_acceptConnection_FUN_005e1d80
   
   bVar3 = 0;
   local_8 = 0x10;
-  SVar1 = crt_wsock32_c_accept(*listen_socket,&local_20,&local_8);
+  SVar1 = accept(*listen_socket,&local_20,&local_8);
   client_addr->ip_address = SVar1;
   if (SVar1 == 0xffffffff) {
     return 0;

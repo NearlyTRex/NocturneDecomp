@@ -1,11 +1,14 @@
 # Header compilation verification module
-# Verifies that generated headers are compilable by running them through g++/clang++
+# Verifies that generated headers are compilable by running them through the compiler
 
 import os
 import subprocess
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.compiler_config import (
+    DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
+)
 
 def find_header_files(include_dir, skip_dirs=None, skip_files=None):
     """Find all .h files in the include directory.
@@ -39,13 +42,13 @@ def find_header_files(include_dir, skip_dirs=None, skip_files=None):
                 headers.append(os.path.join(root, f))
     return sorted(headers)
 
-def compile_header(header_path, include_dir, compiler='g++'):
+def compile_header(header_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single header file.
 
     Args:
         header_path: Path to the header file
         include_dir: Base include directory for -I flag
-        compiler: Compiler to use (g++ or clang++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
 
     Returns:
         Tuple of (success, error_message)
@@ -68,14 +71,7 @@ def compile_header(header_path, include_dir, compiler='g++'):
         f.write('int main(void) { return 0; }\n')
         temp_file = f.name
     try:
-        cmd = [
-            compiler,
-            '-fsyntax-only',
-            '-I', include_dir,
-            '-Wno-incompatible-pointer-types',
-            '-Wno-int-conversion',
-            temp_file
-        ]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, temp_file]
         result = subprocess.run(
             cmd,
             capture_output=True,
@@ -96,12 +92,12 @@ def compile_header(header_path, include_dir, compiler='g++'):
         except:
             pass
 
-def verify_headers(include_dir, compiler='g++', max_workers=4, skip_dirs=None, skip_files=None):
+def verify_headers(include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
     """Verify all headers in the include directory compile successfully.
 
     Args:
         include_dir: Path to include directory
-        compiler: Compiler to use (g++ or clang++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
         max_workers: Number of parallel compilation jobs
         skip_dirs: List of directories to skip
         skip_files: List of files to skip
@@ -157,7 +153,7 @@ def strip_paths_from_error(error_text, base_dir):
     return error_text.replace(base_with_slash, '').replace(base_dir, '')
 
 
-def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None, repo_dir=None):
+def verify_headers_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4, reports_dir=None, repo_dir=None):
     """Verify headers after export, called from the export process.
 
     This is the main entry point for integration with export_pseudocode.
@@ -251,7 +247,7 @@ def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
             log_info("    ... and %d more (see report for full list)" % (len(failed_headers) - 10))
     return failed == 0
 
-def get_failed_headers_report(pseudocode_dir, compiler='g++', max_workers=4):
+def get_failed_headers_report(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4):
     """Get a detailed report of failed header compilations.
 
     Args:
@@ -315,24 +311,19 @@ def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
                 cpp_files.append(os.path.join(root, f))
     return sorted(cpp_files)
 
-def compile_cpp_file(cpp_path, include_dir, compiler='g++'):
+def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single cpp file.
 
     Args:
         cpp_path: Path to the cpp file
         include_dir: Include directory for -I flag
-        compiler: Compiler to use (g++ or clang++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
 
     Returns:
         Tuple of (success, error_message)
     """
     try:
-        cmd = [
-            compiler,
-            '-fsyntax-only',
-            '-I', include_dir,
-            cpp_path
-        ]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, cpp_path]
         result = subprocess.run(
             cmd,
             capture_output=True,
@@ -374,13 +365,13 @@ def extract_error_lines(error_output, max_lines=5):
                 break
     return error_lines if error_lines else [lines[0].strip()] if lines else []
 
-def verify_cpp_files(src_dir, include_dir, compiler='g++', max_workers=4, skip_dirs=None, skip_files=None):
+def verify_cpp_files(src_dir, include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
     """Verify all cpp files in the source directory compile successfully.
 
     Args:
         src_dir: Path to source directory
         include_dir: Path to include directory for -I flag
-        compiler: Compiler to use (g++ or clang++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
         max_workers: Number of parallel compilation jobs
         skip_dirs: List of directories to skip
         skip_files: List of files to skip
@@ -418,7 +409,7 @@ def verify_cpp_files(src_dir, include_dir, compiler='g++', max_workers=4, skip_d
                 failed_files.append((rel_path, error))
     return (passed, failed, failed_files)
 
-def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None, repo_dir=None):
+def verify_globals_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4, reports_dir=None, repo_dir=None):
     """Verify globals cpp files after export.
 
     Args:

@@ -25,7 +25,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -101,7 +101,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 004f45db | g_CDemonMissionPtr
     PUSH EDI                            ; 004f45e1 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0 ; 004f45e2
-        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr)
+        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004f45e7
     JMP 0x004f45b1                      ; 004f45ea
         ;   XREF to: 004f45b1 (UNCONDITIONAL_JUMP)  ; LAB_004f45b1
@@ -127,8 +127,8 @@ section .text
     PUSH 0x62edfc                       ; 004f461a | = "GlassHiram"
     MOV ESI,dword ptr [0x0067d550]      ; 004f461f | g_CDemonMissionPtr
     PUSH ESI                            ; 004f4625 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 004f4626
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 004f4626
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004f462b
     PUSH EAX                            ; 004f462e
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f462f

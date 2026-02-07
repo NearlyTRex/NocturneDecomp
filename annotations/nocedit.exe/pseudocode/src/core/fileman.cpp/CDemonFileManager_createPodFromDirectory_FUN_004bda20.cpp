@@ -32,7 +32,7 @@ core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFil
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select response file.",&s_EmptyStr_006295ce,
-                     "*.vox",(int)local_598);
+                     "*.vox",(int)local_598,0);
   if (iVar2 != 0) {
     splitpath(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
     makepath(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");
@@ -167,7 +167,7 @@ LAB_004bdb2c:
                         (g_CEditorToolsPtr,"Loading %s");
               core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_3a5 + 1,0);
               core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
-              core_mission_cpp_CDemonMission_FUN_00523cf0(g_CDemonMissionPtr);
+              core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(g_CDemonMissionPtr);
               _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
               splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_dc,(char *)0x0);
@@ -225,7 +225,8 @@ LAB_004bdb2c:
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Adding to file list.");
-              core_mission_cpp_CDemonMission_FUN_00524e60(g_CDemonMissionPtr);
+              core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60
+                        (g_CDemonMissionPtr,(this_ptr->base).file_ptr,0);
             }
             else {
               iVar2 = stricmp(local_2a5 + 1,"kfm");

@@ -152,7 +152,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
                             (this_ptr_00,&local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_84,pCVar10);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
     }

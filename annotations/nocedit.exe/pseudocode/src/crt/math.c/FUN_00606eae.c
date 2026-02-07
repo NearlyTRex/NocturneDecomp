@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-unkbyte10 crt_math_c_FUN_00606eae(void)
+unkbyte10 FUN_00606eae(void)
 
 {
   code *pcVar1;

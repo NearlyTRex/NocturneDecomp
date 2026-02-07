@@ -1,40 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 23,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 23,
-        "message": "expected primary-expression before ')' token"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 19,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
     "total_lines": 79
   },
@@ -42,7 +21,7 @@
     {
       "addr": "005390f0",
       "from_addr": "0053a384",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -254,21 +233,14 @@
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_02d833d4",
-      "text": "pCVar2 = DAT_02d833d4;",
+      "text": "this_ptr_00 = DAT_02d833d4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(pCVar2->unk + 0x34) + 8))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_02d873d4",
-      "text": "} while (pCVar2 != (CBloodParticle *)&DAT_02d873d4);",
+      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_02d873d4);",
       "type": "undefined_data"
     }
   ]

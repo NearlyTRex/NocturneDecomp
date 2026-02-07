@@ -47,7 +47,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_gabriela.cpp_CGabriella_FUN_004d5c10
-;   core_gore.cpp_FUN_004edbb0
+;   core_gore.cpp_CGore_FUN_004edbb0
 ;   core_hero.cpp_CHero_FUN_004f2ed0
 ;   core_hero.cpp_CHero_FUN_004f3890
 ;   core_hero.cpp_CHero_FUN_004f38d0
@@ -361,8 +361,8 @@ section .text
     PUSH EAX                            ; 004d4bbd
     MOV ECX,dword ptr [0x0067b9a0]      ; 004d4bbe | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 004d4bc4 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 004d4bc5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
+    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 004d4bc5
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
     ADD ESP,0x14                        ; 004d4bca
     PUSH 0x62af35                       ; 004d4bcd | = "kick1.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d4bd2

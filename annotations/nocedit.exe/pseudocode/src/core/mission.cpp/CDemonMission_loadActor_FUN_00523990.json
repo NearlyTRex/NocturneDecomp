@@ -2,51 +2,20 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 44,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 64,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 159,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 66,
     "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 211
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -77,7 +46,7 @@
     {
       "addr": "00524030",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
     },
     {
       "addr": "005fe840",
@@ -281,26 +250,19 @@
       "description": "Unaffected register variable",
       "line": 34,
       "match": "unaff_ESI",
-      "text": "unaff_ESI = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(this_ptr);",
+      "text": "unaff_ESI = (CDemonActor *)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 37,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI == (CDemonActor *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "pCVar1 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
+      "line": 44,
       "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
       "type": "unaffected_reg"
@@ -309,19 +271,26 @@
       "description": "Unaffected register variable",
       "line": 60,
       "match": "unaff_ESI",
+      "text": "pCVar1 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_ESI",
       "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 63,
       "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 65,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

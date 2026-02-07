@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00609fc8(void)
+void FUN_00609fc8(void)
 
 {
   CRITICAL_SECTION *lpCriticalSection;

@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x204]:1  local_204
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053994d
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053994d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Ln_d_Col_d_00643d74
@@ -36,8 +36,8 @@
 ;   engine_2d.c_drawHLine_FUN_00402ee0
 ;   engine_2d.c_drawVLine_FUN_00402ff0
 ;   engine_2d.c_fillRectColor_FUN_00403170
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0
 ;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
 ;   engine_matrix.c_popViewport_FUN_0050e480
 ;   engine_matrix.c_pushViewport_FUN_0050e320
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10
@@ -185,7 +185,7 @@ section .text
     MOV EDX,dword ptr [0x03114200]      ; 00564761 | DAT_03114200
     PUSH EDX                            ; 00564767
     CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0 ; 00564768
-        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int right_edge_x, int y_pos, int color_mode, ...)
+        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 0056476d
     PUSH 0x310fdc0                      ; 00564770 | DAT_0310fdc0
     PUSH -0x1                           ; 00564775
@@ -196,8 +196,8 @@ section .text
     PUSH EBX                            ; 00564789
     MOV ESI,dword ptr [0x03114200]      ; 0056478a | DAT_03114200
     PUSH ESI                            ; 00564790
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 00564791
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 ; 00564791
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00564796
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 00564799
         ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)

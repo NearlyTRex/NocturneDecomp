@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005398c0
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005398c0
 ;   core_msnedit.cpp_FUN_00536e20 at 00537081
 ;
 ; Referenced Globals:
@@ -91,7 +91,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00536d49
     PUSH EAX                            ; 00536d4c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00536d4d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00536d52
     MOV EDX,dword ptr [ESP + 0xc]       ; 00536d55
     TEST EDX,EDX                        ; 00536d59

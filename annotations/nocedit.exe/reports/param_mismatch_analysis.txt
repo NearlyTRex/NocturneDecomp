@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 655
+Parameter mismatches detected: 654
 Signature accuracy rate: 64.8%
 
 Mismatches by confidence:
-  High confidence:   59 (multiple call sites agree)
-  Medium confidence: 85 (some agreement)
-  Low confidence:    511 (limited data)
+  High confidence:   58 (multiple call sites agree)
+  Medium confidence: 87 (some agreement)
+  Low confidence:    509 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -136,16 +136,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_scat.cpp_CScat_processDam at 00557f86: 0 reg [], 5 stack
       core_actor.cpp_CDemonActor_spa at 00409ea9: 0 reg [], 5 stack
       core_svetlana.cpp_FUN_005d9d30 at 005d9e4f: 0 reg [], 5 stack
-
-  core_gore.cpp_FUN_004ede30
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 19, Confidence: high
-    File: core/gore.cpp
-    Signature: void __cdecl core_gore_cpp_FUN_004ede30(void)
-    Sample call sites:
-      core_npc.cpp_CNPC_process_FUN_ at 00544983: 0 reg [], 3 stack
-      core_msnedit.cpp_CDemonMission at 0053e896: 0 reg [], 3 stack
-      core_dog.cpp_CZombieDog_proces at 0047f4f3: 0 reg [], 3 stack
 
   core_morph.cpp_FUN_0052b430
     Declared: 0 params, Estimated: 3 params (+3)
@@ -297,6 +287,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_frankgen.cpp_CFrankenstie at 004d2285: 0 reg [], 3 stack
       core_frankgen.cpp_CFrankenstie at 004d22af: 0 reg [], 3 stack
 
+  core_gore.cpp_CGore_FUN_004ede30
+    Declared: 1 params, Estimated: 3 params (+2)
+    Call sites: 19, Confidence: high
+    File: core/gore.cpp
+    Signature: void __cdecl core_gore_cpp_CGore_FUN_004ede30(CGore *this_ptr)
+    Sample call sites:
+      core_npc.cpp_CNPC_process_FUN_ at 00544983: 0 reg [], 3 stack
+      core_msnedit.cpp_CDemonMission at 0053e896: 0 reg [], 3 stack
+      core_dog.cpp_CZombieDog_proces at 0047f4f3: 0 reg [], 3 stack
+
   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
     Declared: 4 params, Estimated: 2 params (-2)
     Call sites: 3, Confidence: high
@@ -415,7 +415,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_flies.cpp_SFly_dtor_FUN_0 at 004ccd4a: 0 reg [], 2 stack
       core_dracbrid.cpp_SFreaky_dtor at 00486d5a: 0 reg [], 2 stack
-      core_gore.cpp_FUN_004ee390 at 004ee39a: 0 reg [], 2 stack
+      core_gore.cpp_CFootstep_dtor_F at 004ee39a: 0 reg [], 2 stack
 
   core_enemy.cpp_CEnemy_FUN_004a9880
     Declared: 1 params, Estimated: 2 params (+1)
@@ -436,16 +436,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_mission.cpp_CDemonMission at 00523d21: 0 reg [], 2 stack
       core_mission.cpp_CDemonMission at 00524801: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_load_FU at 00569d63: 0 reg [], 2 stack
-
-  core_mission.cpp_CDemonMission_FUN_00523fb0
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 9, Confidence: high
-    File: core/mission.cpp
-    Signature: void __cdecl core_mission_cpp_CDemonMission_FUN_00523fb0(CDemonMission *this_ptr)
-    Sample call sites:
-      core_mission.cpp_CDemonMission at 005247e2: 0 reg [], 2 stack
-      core_mission.cpp_CDemonMission at 00524405: 0 reg [], 2 stack
-      core_mission.cpp_CDemonMission at 00524366: 0 reg [], 2 stack
 
   core_mission.cpp_FUN_005248e0
     Declared: 0 params, Estimated: 1 params (+1)
@@ -649,7 +639,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_course.cpp_CCourse_importMatrices_FUN_00442ea declared:1 est:3 (+2) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_FUN_004c8ea0             declared:1 est:3 (+2) [2 calls]
-  core_gore.cpp_FUN_004ed830                         declared:1 est:3 (+2) [4 calls]
+  core_gore.cpp_CGore_FUN_004ed830                   declared:1 est:3 (+2) [4 calls]
   core_set.cpp_CDemonSet_FUN_00570ea0                declared:1 est:3 (+2) [2 calls]
   core_setedit.cpp_FUN_0057b500                      declared:0 est:2 (+2) [2 calls]
   core_setedit.cpp_FUN_00581320                      declared:0 est:2 (+2) [2 calls]
@@ -661,44 +651,44 @@ MEDIUM CONFIDENCE MISMATCHES
   engine_drender.cpp_CDemonRenderer_updateTexture_FU declared:3 est:5 (+2) [2 calls]
   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt declared:5 est:3 (-2) [2 calls]
   shape_edittool.cpp_showTextInputDialog_FUN_0049db1 declared:5 est:7 (+2) [2 calls]
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:6 est:7 (+1) [2 calls]
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:6 est:5 (-1) [2 calls]
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:4 (-1) [2 calls]
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma declared:7 est:6 (-1) [2 calls]
-  core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
-  core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
-  core_curtain.cpp_CCurtain_FUN_00449fc0             declared:1 est:2 (+1) [2 calls]
 
-  ... and 35 more
+  ... and 37 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  511 functions with low-confidence mismatches
+  509 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBG declared:6 est:5 (-1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:5 est:6 (+1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:5 est:6 (+1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:5 est:6 (+1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:6 est:8 (+2)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:5 est:6 (+1)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:4 est:6 (+2)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:3 est:4 (+1)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:4 est:6 (+2)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:4 est:6 (+2)
     cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:5 est:8 (+3)
-    cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00 declared:6 est:10 (+4)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:4 est:6 (+2)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:3 est:4 (+1)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 91
+Functions where declaration has MORE params than estimated: 88
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 564
+Functions where declaration has FEWER params than estimated: 566
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -709,14 +699,14 @@ Distribution of differences (estimated - declared):
   -4 params: 3 functions
   -3 params: 9 functions
   -2 params: 15 functions
-  -1 params: 58 functions
-  +1 params: 259 functions
-  +2 params: 119 functions
+  -1 params: 55 functions
+  +1 params: 258 functions
+  +2 params: 122 functions
   +3 params: 64 functions
-  +4 params: 80 functions
+  +4 params: 82 functions
   +5 params: 12 functions
-  +6 params: 16 functions
-  +7 params: 7 functions
+  +6 params: 15 functions
+  +7 params: 6 functions
   +8 params: 3 functions
   +9 params: 3 functions
   +13 params: 1 functions

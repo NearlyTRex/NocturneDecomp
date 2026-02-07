@@ -106,10 +106,10 @@ LAB_00605c23:
   else {
     local_40[iVar5] = 0;
     uStack_44 = 0x605d00;
-    crt_unknown_c_FUN_0060b586(local_40,&local_2c);
+    FUN_0060b586(local_40,&local_2c);
     if (iVar6 != 0) {
       uStack_44 = iVar6;
-      crt_unknown_c_FUN_00603d60();
+      FUN_00603d60();
     }
     if ((local_14 & 1) != 0) {
       local_24 = local_24 | 0x8000;

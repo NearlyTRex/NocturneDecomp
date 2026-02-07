@@ -104,7 +104,7 @@ section .text
     MOV EAX,0x61c980                    ; 004673b9 | = "ERROR! Bad texture name!"
     PUSH EAX                            ; 004673be | = "ERROR! Bad texture name!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004673bf
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004673c4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004673c7
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -130,7 +130,7 @@ section .text
     MOV EAX,0x61c9ab                    ; 004673fb | = "Face map on Z axis (Y/N) ?"
     PUSH EAX                            ; 00467400 | = "Face map on Z axis (Y/N) ?"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00467401
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00467406
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00467409
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

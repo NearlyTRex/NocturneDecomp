@@ -33,7 +33,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004f3de0
     MOV EAX,[0x0067d550]                ; 004f3de1 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EAX                            ; 004f3de6 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 004f3de7
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 004f3de7
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f3dec
     MOV EAX,dword ptr [ESP + 0x14]      ; 004f3def
     LEA EDX,[EBX + 0x20]                ; 004f3df3

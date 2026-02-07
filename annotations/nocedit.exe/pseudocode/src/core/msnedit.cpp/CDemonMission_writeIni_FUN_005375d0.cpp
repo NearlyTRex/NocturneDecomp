@@ -11,11 +11,11 @@ core_msnedit_cpp_CDemonMission_writeIni_FUN_005375d0(CDemonMission *this_ptr,CIn
 
 {
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (ini_file,"renderSkyInEditor",*(int *)(this_ptr->unk2 + 0x24));
+            (ini_file,"renderSkyInEditor",this_ptr->render_sky_in_editor);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (ini_file,"renderWaterInEditor",*(int *)(this_ptr->unk2 + 0x28));
+            (ini_file,"renderWaterInEditor",this_ptr->render_water_in_editor);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (ini_file,"fullLightInEditor",*(int *)(this_ptr->unk2 + 0x2c));
+            (ini_file,"fullLightInEditor",this_ptr->full_light_in_editor);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (ini_file,"disableMouseHitOnBarriers",g_DisableMouseHitOnBarrier);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90

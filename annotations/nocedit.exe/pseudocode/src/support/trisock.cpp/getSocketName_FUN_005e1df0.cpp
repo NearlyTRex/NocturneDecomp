@@ -20,7 +20,7 @@ support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAdd
   
   bVar5 = 0;
   local_4 = 0x10;
-  iVar3 = crt_wsock32_c_getsockname(*socket_handle,&local_1c,&local_4);
+  iVar3 = getsockname(*socket_handle,&local_1c,&local_4);
   if (iVar3 != 0) {
     return 0;
   }

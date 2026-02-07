@@ -29,14 +29,16 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
        ((fVar3 = delta_time / 2.0f + this_ptr->morph_time, this_ptr->morph_time = fVar3,
-        1.0 <= fVar3 && (*(int *)(this_ptr->unk + 0x60) != 0)))) {
-      core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+        1.0 <= fVar3 && (*(CDemonActor **)(this_ptr->unk + 0x60) != (CDemonActor *)0x0)))) {
+      core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
+                (g_CDemonMissionPtr,*(CDemonActor **)(this_ptr->unk + 0x60));
       this_ptr_01 = g_CDemonMissionPtr;
       this_ptr->unk[0x60] = '\0';
       this_ptr->unk[0x61] = '\0';
       this_ptr->unk[0x62] = '\0';
       this_ptr->unk[99] = '\0';
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(this_ptr_01);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                (this_ptr_01,(CDemonActor *)this_ptr,1);
     }
   }
   else {

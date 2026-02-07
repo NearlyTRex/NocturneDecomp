@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CActorProperty_FUN_0040ea50
 ;   core_actor.cpp_FUN_0040e130
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_script.cpp_CScript_FUN_00567bc0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053ecbc
     PUSH EDI                            ; 0053ecbf
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0053ecc0
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 0053ecc0
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053ecc5
     PUSH 0x63d094                       ; 0053ecc8 | = "Finding sound files in mission..."
         ;   Label: LAB_0053ecc8

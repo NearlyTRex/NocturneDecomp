@@ -169,7 +169,7 @@ section .text
     MOV EAX,0x61b59e                    ; 0045e620 | = "I)nside, O)utside, B)oth ?"
     PUSH EAX                            ; 0045e625 | = "I)nside, O)utside, B)oth ?"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e626
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045e62b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e62e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

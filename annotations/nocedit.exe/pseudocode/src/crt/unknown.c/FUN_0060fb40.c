@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_unknown_c_FUN_0060fb40(void)
+int FUN_0060fb40(void)
 
 {
   SIZE_T SVar1;
@@ -18,7 +18,7 @@ int crt_unknown_c_FUN_0060fb40(void)
   char *dest_01;
   LPWSTR in_stack_00000004;
   
-  pWVar2 = (LPWSTR)crt_unknown_c_FUN_006107c0();
+  pWVar2 = (LPWSTR)FUN_006107c0();
   if (pWVar2 == (LPWSTR)0x0) {
     iVar3 = -1;
   }
@@ -47,16 +47,16 @@ int crt_unknown_c_FUN_0060fb40(void)
       memcpy(dest_00,pWVar2 + 1,SVar1);
       *(ushort *)((int)dest_00 + SVar1) = 0;
     }
-    iVar3 = crt_unknown_c_FUN_006107f0();
+    iVar3 = FUN_006107f0();
     free(dest);
     free(dest_00);
     if (iVar3 == 0) {
       return -1;
     }
     if (g_EnvironInitialized == 0) {
-      crt_unknown_c_FUN_00610900();
+      FUN_00610900();
     }
-    iVar3 = crt_unknown_c_FUN_0060fcf4();
+    iVar3 = FUN_0060fcf4();
     if (iVar3 != 0) {
       return -1;
     }

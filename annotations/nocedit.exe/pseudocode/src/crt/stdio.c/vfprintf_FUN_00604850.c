@@ -38,7 +38,8 @@ int __watcallStack vfprintf(_FILE *file,char *format,va_list_t args)
     *(byte *)((int)&file->_flag + 1) = bVar4 | 1;
   }
   iVar3 = FormatEngine
-                    (file,args,in_stack_00000010,OutputCallback);
+                    (file,(char *)args.value[0],in_stack_00000010,
+                     OutputCallback);
   if (bVar5) {
     bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;
     *(byte *)((int)&file->_flag + 1) = bVar4;

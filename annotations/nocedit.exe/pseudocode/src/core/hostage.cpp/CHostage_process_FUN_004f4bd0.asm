@@ -506,8 +506,8 @@ section .text
     PUSH EAX                            ; 004f508c
     MOV EAX,[0x0067b9a0]                ; 004f508d | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 004f5092 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edaa0     ; 004f5093
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
+    CALL core_gore.cpp_CGore_FUN_004edaa0 ; 004f5093
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edaa0(CGore * this_ptr)
     ADD ESP,0x10                        ; 004f5098
     PUSH EBX                            ; 004f509b
         ;   Label: LAB_004f509b

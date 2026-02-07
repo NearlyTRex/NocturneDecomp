@@ -42,7 +42,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)&local_74);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  if ((iVar1 != 0) && (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0)) {
+  if ((iVar1 != 0) && (g_CDemonMissionPtr->is_in_editor != 0)) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       g_ActiveRenderColor = 0xfb;

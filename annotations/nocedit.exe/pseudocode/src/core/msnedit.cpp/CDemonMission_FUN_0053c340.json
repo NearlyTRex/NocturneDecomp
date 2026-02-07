@@ -3,70 +3,57 @@
     "errors": [
       {
         "category": "other",
-        "column": 41,
+        "column": 40,
+        "line": 36,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 36,
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 37,
-        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 68,
+        "column": 42,
         "line": 37,
-        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 38,
-        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 38,
-        "message": "request for member '_16_4_' in 'auStack_5c', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
+        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 55,
-        "message": "ISO C++ forbids casting to an array type 'byte [8]' {aka 'unsigned char [8]'}"
+        "line": 54,
+        "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 57,
-        "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
+        "line": 56,
+        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 57,
-        "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'double'"
+        "line": 56,
+        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 237,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 56,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -74,13 +61,13 @@
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 232
+    "total_lines": 231
   },
   "cross_references": [
     {
       "addr": "005390f0",
       "from_addr": "0053a3e1",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -345,54 +332,61 @@
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_2",
-      "text": "if ((((*(int *)(this_ptr->unk2 + 8) < param_2) && (*(int *)(this_ptr->unk2 + 0xc) < param_3)) &&",
+      "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_3",
-      "text": "if ((((*(int *)(this_ptr->unk2 + 8) < param_2) && (*(int *)(this_ptr->unk2 + 0xc) < param_3)) &&",
+      "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 21,
-      "match": "param_2",
-      "text": "(param_2 < *(int *)(this_ptr->unk2 + 0x10) + -1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
       "match": "param_3",
-      "text": "(param_3 < *(int *)(this_ptr->unk2 + 0x14) + -1)) {",
+      "text": ") && (param_3 < this_ptr->unk4 + -1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_2",
       "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_3",
       "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 28,
       "match": "SQRT",
       "text": "SQRT(local_44.x * local_44.x +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
+      "line": 29,
+      "match": "._16_4_",
+      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
       "match": "._16_4_",
       "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
       "type": "unknown_field"
@@ -400,34 +394,27 @@
     {
       "description": "Unknown/mangled field access",
       "line": 30,
-      "match": "._16_4_",
-      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
       "match": "._16_4_",
       "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 30,
       "match": "._16_4_",
       "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 49,
       "match": "unaff_EDI",
       "text": "if (((0.0 < (double)auStack_68) && (fStack_60 <= unaff_EDI)) && ((double)auStack_68 <= 1.0))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_EDI",
       "text": "unaff_EDI = fStack_60;",
       "type": "unaffected_reg"

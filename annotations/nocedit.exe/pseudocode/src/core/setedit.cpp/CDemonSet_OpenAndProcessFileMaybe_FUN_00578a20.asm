@@ -212,7 +212,7 @@ section .text
     LEA EAX,[ESP + 0x408]               ; 00578bca
     PUSH EAX                            ; 00578bd1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00578bd2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00578bd7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00578bda
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -255,7 +255,7 @@ section .text
     PUSH 0x0                            ; 00578c31
     PUSH 0x646b36                       ; 00578c33 | = "Can't decide how to process file base..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00578c38
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00578c3d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00578c40
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

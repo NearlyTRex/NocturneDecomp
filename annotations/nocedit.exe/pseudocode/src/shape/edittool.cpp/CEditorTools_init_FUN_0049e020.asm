@@ -10,20 +10,20 @@
 ;   shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80 at 0049dfa1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02cf2a78
+;   int INT_02cf2a78
 ;   int g_WindowBorderColor1
 ;   int g_WindowBorderColor2
 ;   int g_TitleBarColor
 ;   int g_WindowFillColor
 ;   int g_WindowFontColor
 ;   HWND g_DialogParentWindow
-;   CEditorTools* g_CUserInterfacePtr
+;   int INT_02cf2a94
 ;   int g_SelectionColor
 ;   int g_TextColor
 ;   int g_CursorColor
 ;   int g_StatusTextColor
 ;   int g_WindowStatusTextColor
-;   undefined4 DAT_02cf2aac
+;   int INT_02cf2aac
 ;   int g_ButtonColor
 ;   ... and 17 more
 ;
@@ -44,17 +44,17 @@ section .text
     MOV dword ptr [0x02cf2a7c],ECX      ; 0049e03a | g_WindowBorderColor1
     MOV dword ptr [0x02cf2a80],ECX      ; 0049e040 | g_WindowBorderColor2
     MOV dword ptr [0x02cf2a88],EDX      ; 0049e046 | g_WindowFillColor
-    MOV dword ptr [0x02cf2a78],EDX      ; 0049e04c | DAT_02cf2a78
+    MOV dword ptr [0x02cf2a78],EDX      ; 0049e04c | INT_02cf2a78
     MOV dword ptr [0x02cf2a84],ESI      ; 0049e052 | g_TitleBarColor
     MOV dword ptr [0x02cf2a8c],EBP      ; 0049e058 | g_WindowFontColor
     MOV dword ptr [0x02cf2a90],EBP      ; 0049e05e | g_DialogParentWindow
-    MOV dword ptr [0x02cf2a94],EBP      ; 0049e064 | g_CUserInterfacePtr
+    MOV dword ptr [0x02cf2a94],EBP      ; 0049e064 | INT_02cf2a94
     MOV dword ptr [0x02cf2a9c],EBP      ; 0049e06a | g_TextColor
     MOV dword ptr [0x02cf2aa0],EBP      ; 0049e070 | g_CursorColor
     MOV EDI,EBP                         ; 0049e076
     MOV dword ptr [0x02cf2aa4],EBP      ; 0049e078 | g_StatusTextColor
     MOV dword ptr [0x02cf2aa8],EBP      ; 0049e07e | g_WindowStatusTextColor
-    MOV dword ptr [0x02cf2aac],EBP      ; 0049e084 | DAT_02cf2aac
+    MOV dword ptr [0x02cf2aac],EBP      ; 0049e084 | INT_02cf2aac
     MOV dword ptr [0x02cf2ab8],EBX      ; 0049e08a | g_ProgressBarFillColor
     MOV dword ptr [0x02cf2abc],EBP      ; 0049e090 | g_ProgressBarBorderColor
     MOV dword ptr [0x02cf2ac0],EBP      ; 0049e096 | g_ProgressBarTextColor

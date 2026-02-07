@@ -123,10 +123,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
       dVar15 = round((double)(local_14 * (float)0.25));
       local_34 = (int)ROUND(dVar15);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
     }
     else if (uVar8 == 0x29a) {
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
@@ -460,7 +461,7 @@ LAB_005f092a:
                                (pCVar1,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&local_1b8,pCVar9);
-            core_gore_cpp_FUN_004ede30();
+            core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
             (this_ptr->base).pool_me = 1;
           }
           goto LAB_005f0010;

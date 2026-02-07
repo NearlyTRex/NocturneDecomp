@@ -250,7 +250,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x40]      ; 004735a4
     PUSH EDI                            ; 004735a8
     CALL engine_2d.c_drawTextCenteredXYColor_FUN_00402700 ; 004735a9
-        ;   XREF to: 00402700 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredXYColor_FUN_00402700(int left_x, int right_x, int y_pos, char * text)
+        ;   XREF to: 00402700 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredXYColor_FUN_00402700(int left_x, int right_x, int y, char * text)
     ADD ESP,0x10                        ; 004735ae
     ADD ESP,0x1c                        ; 004735b1
     POP EBP                             ; 004735b4

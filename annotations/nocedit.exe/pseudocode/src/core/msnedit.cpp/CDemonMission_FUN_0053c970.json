@@ -2,47 +2,22 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 195,
+    "complexity_score": 194,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -244,61 +219,61 @@
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_3",
-      "text": "(((*(int *)(this_ptr->unk2 + 8) < param_3 && (param_3 < *(int *)(this_ptr->unk2 + 0x10))) &&",
+      "text": "(((this_ptr->unk1 < param_3 && (param_3 < this_ptr->unk3)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_3",
-      "text": "(((*(int *)(this_ptr->unk2 + 8) < param_3 && (param_3 < *(int *)(this_ptr->unk2 + 0x10))) &&",
+      "text": "(((this_ptr->unk1 < param_3 && (param_3 < this_ptr->unk3)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_4",
-      "text": "((*(int *)(this_ptr->unk2 + 0xc) < param_4 && (param_4 < *(int *)(this_ptr->unk2 + 0x14)))))))",
+      "text": "((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_4",
-      "text": "((*(int *)(this_ptr->unk2 + 0xc) < param_4 && (param_4 < *(int *)(this_ptr->unk2 + 0x14)))))))",
+      "text": "((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_3",
       "text": "pfVar1 = core_msnedit_cpp_FUN_00535c60(local_14,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_4",
       "text": "pfVar1 = core_msnedit_cpp_FUN_00535c60(local_14,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x20) = *pfVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x24) = pfVar1[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x28) = pfVar1[2];",
       "type": "unnamed_param"

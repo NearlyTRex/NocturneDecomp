@@ -21,11 +21,11 @@ support_trisock_cpp_receiveSocketData_FUN_005e1c20
   
   bVar5 = 0;
   if (source_addr == (SNetworkAddr *)0x0) {
-    iVar3 = crt_wsock32_c_recv(socket_ctx->socket,buffer,length,0);
+    iVar3 = recv(socket_ctx->socket,buffer,length,0);
   }
   else {
     local_14 = 0x10;
-    iVar3 = crt_wsock32_c_recvfrom(socket_ctx->socket,buffer,length,0,&local_2c,&local_14);
+    iVar3 = recvfrom(socket_ctx->socket,buffer,length,0,&local_2c,&local_14);
     if (0 < iVar3) {
       pSVar4 = support_trisock_cpp_convertSockAddr_FUN_005e1960
                          ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);

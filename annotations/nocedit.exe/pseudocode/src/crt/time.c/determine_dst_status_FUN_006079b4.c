@@ -22,7 +22,7 @@ int __cdecl determine_dst_status(_tm *timeptr)
   
   uVar8 = 0;
   if (*(char *)PTR_s_EDT_006851c4 == '\0') goto LAB_00607c7b;
-  uVar1 = crt_unknown_c_FUN_00607958();
+  uVar1 = FUN_00607958();
   if (uVar1 == 0) {
     piVar7 = &g_DstStartRule.seconds;
     pdVar9 = (dst_rule *)&g_DstTransitionSecond;
@@ -54,7 +54,7 @@ int __cdecl determine_dst_status(_tm *timeptr)
         iVar3 = iVar2 + -7;
         if ((iVar3 < iVar4) && (uVar8 = 1, iVar6 <= iVar3)) {
 LAB_00607b55:
-          iVar4 = crt_unknown_c_FUN_00607c88();
+          iVar4 = FUN_00607c88();
           uVar8 = (uint)(iVar4 == 0);
         }
       }
@@ -95,7 +95,7 @@ LAB_00607b55:
         if (iVar2 < iVar4) {
           if (iVar5 <= iVar2) {
 LAB_00607c63:
-            uVar8 = crt_unknown_c_FUN_00607c88();
+            uVar8 = FUN_00607c88();
           }
         }
         else {

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_unknown_c_FUN_0060fe94(void)
+int FUN_0060fe94(void)
 
 {
   char **ppcVar1;
@@ -33,8 +33,8 @@ int crt_unknown_c_FUN_0060fe94(void)
     sVar4 = *in_stack_00000004;
     psVar9 = in_stack_00000004;
     while (sVar4 != 0) {
-      sVar4 = crt_unknown_c_FUN_00610970();
-      sVar5 = crt_unknown_c_FUN_00610970();
+      sVar4 = FUN_00610970();
+      sVar5 = FUN_00610970();
       if (sVar4 != sVar5) break;
       if (*psVar7 == 0x3d) {
         iVar8 = (int)dest - g_EnvironInitialized >> 2;

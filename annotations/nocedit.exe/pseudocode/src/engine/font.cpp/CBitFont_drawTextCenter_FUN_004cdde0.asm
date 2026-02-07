@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0 (CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value, char *text_string)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   center_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   color_mode
 ; int              Stack[0x14]:4   color_value
-; char *           Stack[0x18]:4   text_string
+; char *           Stack[0x18]:4   text
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 0048924e
@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 at 0049e82a
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     SUB EDX,EAX                         ; 004cde11
     PUSH EDX                            ; 004cde13
     PUSH ESI                            ; 004cde14
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004cde15
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 ; 004cde15
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004cde1a
     POP ESI                             ; 004cde1d
     POP EBX                             ; 004cde1e

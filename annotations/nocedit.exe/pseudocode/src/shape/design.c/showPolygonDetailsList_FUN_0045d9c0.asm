@@ -240,7 +240,7 @@ section .text
     LEA ESI,[EBP + 0xfffffef4]          ; 0045dbaa
     PUSH ESI                            ; 0045dbb0
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045dbb1
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045dbb6
     ADD dword ptr [EBP + -0x10],0xb     ; 0045dbb9
     JMP 0x0045da15                      ; 0045dbbd

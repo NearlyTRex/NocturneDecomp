@@ -25,6 +25,7 @@
 #include "types/classes/CVector2i.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ETextAlignment.h"
 #include "types/funcdefs/FileSearchHandler.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SCameraViewportState.h"
@@ -189,37 +190,37 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(CDra
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90 (CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0 (CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_00489090 (CDrawSurface *this_ptr,int point_count,CVector2i *points);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text,int alignment_mode);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 (CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 (CDrawSurface *this_ptr,char *text,int x,int width,int y,int height, ETextAlignment alignment_mode);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 (CDrawSurface *this_ptr,char *text,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420 (CDrawSurface *this_ptr,int x,int y,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 (CDrawSurface *this_ptr,int x,int y,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantWrapper_FUN_004894f0 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00489590 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredWrapper_FUN_00489690 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothWrapper_FUN_00489760 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,char *text,int x,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantWrapper_FUN_004894f0 (CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 (CDrawSurface *this_ptr,int x,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00489590 (CDrawSurface *this_ptr,char *text,int x,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0 (CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 (CDrawSurface *this_ptr,int x,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660 (CDrawSurface *this_ptr,char *text,int x,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredWrapper_FUN_00489690 (CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 (CDrawSurface *this_ptr,int x,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (CDrawSurface *this_ptr,char *text,int x,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothWrapper_FUN_00489760 (CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (CDrawSurface *this_ptr,int x,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (CDrawSurface *this_ptr,char *text,int x,int width,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830 (CDrawSurface *this_ptr,int x,int y,int width,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (CDrawSurface *this_ptr,int x,int y,int width,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0 (CDrawSurface *this_ptr,char *text,int x,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWrapper_FUN_00489910 (CDrawSurface *this_ptr,int x,int y,int height,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0 (CDrawSurface *this_ptr,char *text,int x,int width,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthWrapper_FUN_00489a00 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (CDrawSurface *this_ptr,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0 (CDrawSurface *this_ptr,int y,int height,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0 (CDrawSurface *this_ptr,int y,int height,char *format,...);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60 (CDrawSurface *this_ptr,int x,int y,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90 (CDrawSurface *this_ptr,int x,int y,char *text);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0 (CDrawSurface *this_ptr,int x,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 (CDrawSurface *this_ptr,int x,int width,int y,int height,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (CDrawSurface *this_ptr,char *text,int y);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0 (CDrawSurface *this_ptr,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0 (CDrawSurface *this_ptr,int y,char *format,...);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60 (CDrawSurface *this_ptr,char *text,int x);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90 (CDrawSurface *this_ptr,int x,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0 (CDrawSurface *this_ptr,int x,char *format,...);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20 (CDrawSurface *this_ptr,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 (CDrawSurface *this_ptr,char *format,...);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_ptr,int char_code);

@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 31,
@@ -113,7 +106,7 @@
       "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_2",
-      "text": "(this_ptr,param_2,(*(int *)(this_ptr->unk2 + 8) + *(int *)(this_ptr->unk2 + 0x10)) / 2,",
+      "text": "(this_ptr,param_2,(this_ptr->unk1 + this_ptr->unk3) / 2,",
       "type": "unnamed_param"
     }
   ]

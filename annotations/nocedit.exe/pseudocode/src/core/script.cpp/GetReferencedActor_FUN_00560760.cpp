@@ -27,7 +27,7 @@ void __cdecl core_script_cpp_GetReferencedActor_FUN_00560760(_FILE *param_1,int 
     *param_2 = 0;
     return;
   }
-  pcVar1 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+  pcVar1 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(g_CDemonMissionPtr,local_d0);
   *param_2 = (int)pcVar1;
   return;
 }

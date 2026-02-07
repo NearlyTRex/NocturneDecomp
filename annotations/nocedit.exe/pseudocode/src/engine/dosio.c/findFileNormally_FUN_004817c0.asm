@@ -26,7 +26,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   crt_io.c_stat_thunk_00600c18
+;   crt_io.c_stat_00600c18
 ;   engine_dosio.c_getFullPath_FUN_004820c0
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 004817fa
     LEA EAX,[ESP + 0x4]                 ; 004817fb
     PUSH EAX                            ; 004817ff
-    CALL crt_io.c_stat_thunk_00600c18   ; 00481800
-        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_thunk_00600c18(char * filename, _stat * file_info)
+    CALL crt_io.c_stat_00600c18         ; 00481800
+        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_00600c18(char * filename, _stat * file_info)
     ADD ESP,0x8                         ; 00481805
     TEST EAX,EAX                        ; 00481808
     JNZ 0x004817d7                      ; 0048180a

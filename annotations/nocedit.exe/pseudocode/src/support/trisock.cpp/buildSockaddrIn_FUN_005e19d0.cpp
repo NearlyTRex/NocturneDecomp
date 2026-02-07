@@ -19,7 +19,7 @@ support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR
   uint auStack_10 [2];
   
   bVar4 = 0;
-  uVar1 = crt_wsock32_c_htons(net_addr->port);
+  uVar1 = htons(net_addr->port);
   support_trisock_cpp_getIPAddress_FUN_005e1930(net_addr);
   memset(auStack_10,0,8);
   puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);

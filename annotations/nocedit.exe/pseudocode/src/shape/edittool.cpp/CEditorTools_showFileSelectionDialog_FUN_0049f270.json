@@ -1,95 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 36,
-        "line": 41,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 36,
-        "line": 43,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 16,
-        "line": 50,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 59,
-        "line": 53,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 9,
-        "line": 54,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 75,
-        "line": 58,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 75,
-        "line": 59,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 45,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 61,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 82,
+    "complexity_score": 55,
     "cross_reference_count": 19,
     "function_call_count": 10,
     "global_count": 1,
-    "pseudocode_lines": 57,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 225
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -161,7 +85,7 @@
     {
       "addr": "0053ccf0",
       "from_addr": "0053cd6f",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ccf0",
+      "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -217,7 +141,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270",
-    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag)"
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown)"
   },
   "function_calls": [
     {
@@ -308,10 +232,10 @@
     "pcode_op_count": 529
   },
   "stack_frame": {
-    "frame_size": 2260,
+    "frame_size": 2264,
     "local_size": 2240,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -376,23 +300,15 @@
         "offset": 20,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "unknown",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000018",
-      "text": "byte in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000018",
-      "text": "if (((in_stack_00000018 & 1) != 0) &&",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

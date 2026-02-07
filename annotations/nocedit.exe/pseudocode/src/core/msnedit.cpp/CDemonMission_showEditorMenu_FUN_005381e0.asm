@@ -40,19 +40,19 @@
 ; Called Functions:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
-;   core_mission.cpp_CDemonMission_FUN_005235b0
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
-;   core_mission.cpp_CDemonMission_FUN_005243a0
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
+;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
 ;   core_mission.cpp_FUN_005248e0
-;   core_msnedit.cpp_CDemonMission_FUN_005379e0
-;   core_msnedit.cpp_CDemonMission_FUN_00537f60
-;   core_msnedit.cpp_CDemonMission_FUN_00538ba0
-;   core_msnedit.cpp_CDemonMission_FUN_00538d60
-;   core_msnedit.cpp_CDemonMission_FUN_00538df0
+;   core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
+;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 ;   core_msnedit.cpp_CDemonMission_FUN_00538f90
+;   core_msnedit.cpp_CDemonMission_FUN_0053d3b0
+;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -102,7 +102,7 @@ section .text
     PUSH 0x0                            ; 00538264
     PUSH 0x63bd87                       ; 00538266 | = "Demented(R) Mission editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053826b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV AH,byte ptr [EBP + 0x44]        ; 00538270
     ADD ESP,0xc                         ; 00538273
     TEST AH,AH                          ; 00538276
@@ -132,115 +132,115 @@ section .text
     LEA EAX,[ESP + 0x5c8]               ; 005382a8
     PUSH EAX                            ; 005382af
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005382b0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005382b5
     PUSH 0x2c                           ; 005382b8
     PUSH 0x0                            ; 005382ba
     PUSH 0x63bdcc                       ; 005382bc | = "1. Load mission"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005382c1
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005382c6
     PUSH 0x37                           ; 005382c9
     PUSH 0x0                            ; 005382cb
     PUSH 0x63bddc                       ; 005382cd | = "2. Save mission"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005382d2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005382d7
     PUSH 0x42                           ; 005382da
     PUSH 0x0                            ; 005382dc
     PUSH 0x63bdec                       ; 005382de | = "3. Create mission from single set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005382e3
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005382e8
     PUSH 0x4d                           ; 005382eb
     PUSH 0x0                            ; 005382ed
     PUSH 0x63be0e                       ; 005382ef | = "4. Add set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005382f4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005382f9
     PUSH 0x58                           ; 005382fc
     PUSH 0x0                            ; 005382fe
     PUSH 0x63be19                       ; 00538300 | = "5. Remove set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538305
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053830a
     PUSH 0x63                           ; 0053830d
     PUSH 0x0                            ; 0053830f
     PUSH 0x63be27                       ; 00538311 | = "6. Edit actors in a set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538316
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053831b
     PUSH 0x6e                           ; 0053831e
     PUSH 0x0                            ; 00538320
     PUSH 0x63be3f                       ; 00538322 | = "7. Precompute lights for rooms with m..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538327
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053832c
     PUSH 0x79                           ; 0053832f
     PUSH 0x0                            ; 00538331
     PUSH 0x63be6b                       ; 00538333 | = "8. Save mission with a different name"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538338
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053833d
     PUSH 0x8f                           ; 00538340
     PUSH 0x0                            ; 00538345
     PUSH 0x63be91                       ; 00538347 | = "A. Play mission."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053834c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00538351
     PUSH 0x9a                           ; 00538354
     PUSH 0x0                            ; 00538359
     PUSH 0x63bea2                       ; 0053835b | = "B. Enemy randomizer"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538360
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00538365
     PUSH 0xa5                           ; 00538368
     PUSH 0x0                            ; 0053836d
     PUSH 0x63beb6                       ; 0053836f | = "C. Import actors from another mission"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538374
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00538379
     PUSH 0xb0                           ; 0053837c
     PUSH 0x0                            ; 00538381
     PUSH 0x63bedc                       ; 00538383 | = "D. Difficulty statistics"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538388
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053838d
     PUSH 0xbb                           ; 00538390
     PUSH 0x0                            ; 00538395
     PUSH 0x63bef5                       ; 00538397 | = "G. Gore editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053839c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005383a1
     PUSH 0xc6                           ; 005383a4
     PUSH 0x0                            ; 005383a9
     PUSH 0x63bf04                       ; 005383ab | = "H. Display actor class heirarchy"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005383b0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005383b5
     PUSH 0xd1                           ; 005383b8
     PUSH 0x0                            ; 005383bd
     PUSH 0x63bf25                       ; 005383bf | = "U. Update all mission files to latest..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005383c4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005383c9
     PUSH 0xdc                           ; 005383cc
     PUSH 0x0                            ; 005383d1
     PUSH 0x63bf63                       ; 005383d3 | = "S. Show sound files needed"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005383d8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005383dd
     PUSH 0xe7                           ; 005383e0
     PUSH 0x0                            ; 005383e5
     PUSH 0x63bf7e                       ; 005383e7 | = "W. Rebuild waypoint connectivity"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005383ec
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005383f1
     PUSH 0xf2                           ; 005383f4
     PUSH 0x0                            ; 005383f9
     PUSH 0x63bf9f                       ; 005383fb | = "Z. Display memory usage info"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538400
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ESI,dword ptr [EBP + 0x144]     ; 00538405
     ADD ESP,0xc                         ; 0053840b
     TEST ESI,ESI                        ; 0053840e
@@ -252,7 +252,7 @@ section .text
     MOV EBX,0x113                       ; 00538422
     XOR EDI,EDI                         ; 00538427
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538429
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,dword ptr [EBP + 0x144]     ; 0053842e
     ADD ESP,0xc                         ; 00538434
     TEST EAX,EAX                        ; 00538437
@@ -266,7 +266,7 @@ section .text
     INC EDI                             ; 00538446
     ADD EBX,0xb                         ; 00538447
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053844a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053844f
     MOV EDX,dword ptr [EBP + 0x144]     ; 00538452
     ADD ESI,0x100                       ; 00538458
@@ -323,8 +323,8 @@ section .text
     ADD ESP,0xc                         ; 005384de
     PUSH 0x1                            ; 005384e1
     PUSH EBP                            ; 005384e3
-    CALL core_mission.cpp_CDemonMission_FUN_005235b0 ; 005384e4
-        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005235b0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 ; 005384e4
+        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005384e9
         ;   Label: LAB_005384e9
     CMP ESI,0x1b                        ; 005384ec
@@ -385,7 +385,7 @@ section .text
     PUSH 0x0                            ; 0053858f
     PUSH 0x63bfcd                       ; 00538591 | = "No sets defined in mission"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538596
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053859b
     JMP 0x00538462                      ; 0053859e
         ;   XREF to: 00538462 (UNCONDITIONAL_JUMP)  ; LAB_00538462
@@ -426,8 +426,8 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 00538602
     PUSH EAX                            ; 00538609
     PUSH EBP                            ; 0053860a
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d190 ; 0053860b
-        ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053d190(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 ; 0053860b
+        ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission * this_ptr, char * filename)
     JMP 0x005384e9                      ; 00538610
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     PUSH 0x0                            ; 00538615
@@ -451,8 +451,8 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 00538647
     PUSH EAX                            ; 0053864e
     PUSH EBP                            ; 0053864f
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538d60 ; 00538650
-        ;   XREF to: 00538d60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00538d60(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60 ; 00538650
+        ;   XREF to: 00538d60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission * this_ptr, char * param_2)
     JMP 0x005384e9                      ; 00538655
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     MOV EDX,dword ptr [EBP]             ; 0053865a
@@ -484,8 +484,8 @@ section .text
         ;   XREF to: 005384ec (CONDITIONAL_JUMP)  ; LAB_005384ec
     PUSH EBX                            ; 005386a1
     PUSH EBP                            ; 005386a2
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538df0 ; 005386a3
-        ;   XREF to: 00538df0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00538df0(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0 ; 005386a3
+        ;   XREF to: 00538df0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission * this_ptr, int param_2)
     JMP 0x005384e9                      ; 005386a8
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     MOV EBX,dword ptr [EBP]             ; 005386ad
@@ -509,8 +509,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 005386dc
     PUSH EBP                            ; 005386df
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 005386e0
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 005386e0
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005386e5
     MOV EAX,0x63c118                    ; 005386e8 | = "Loading set."
     PUSH EAX                            ; 005386ed | = "Loading set."
@@ -521,15 +521,15 @@ section .text
     ADD ESP,0x8                         ; 005386f9
     PUSH EBX                            ; 005386fc
     PUSH EBP                            ; 005386fd
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 005386fe
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 005386fe
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     MOV EAX,0x1                         ; 00538703
     ADD ESP,0x8                         ; 00538708
     PUSH EAX                            ; 0053870b
         ;   Label: LAB_0053870b
     PUSH EBP                            ; 0053870c
-    CALL core_msnedit.cpp_CDemonMission_FUN_005390f0 ; 0053870d
-        ;   XREF to: 005390f0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_005390f0(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 ; 0053870d
+        ;   XREF to: 005390f0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00538712
     CMP EAX,0x2                         ; 00538715
     JNZ 0x005384ec                      ; 00538718
@@ -537,12 +537,12 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 0053871e
     PUSH EAX                            ; 00538725
     PUSH EBP                            ; 00538726
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d190 ; 00538727
-        ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053d190(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 ; 00538727
+        ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0053872c
     PUSH EBP                            ; 0053872f
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538ba0 ; 00538730
-        ;   XREF to: 00538ba0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00538ba0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 ; 00538730
+        ;   XREF to: 00538ba0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538735
     XOR EAX,EAX                         ; 00538738
     JMP 0x0053870b                      ; 0053873a
@@ -571,7 +571,7 @@ section .text
     MOV EAX,0x63c138                    ; 00538773 | = "You must now go into set editor and s..."
     PUSH EAX                            ; 00538778 | = "You must now go into set editor and s..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00538779
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053877e
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00538781
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -619,28 +619,28 @@ section .text
     LEA EAX,[ESP + 0x6c0]               ; 005387fe
     PUSH EAX                            ; 00538805
     PUSH EBP                            ; 00538806
-    CALL core_msnedit.cpp_CDemonMission_FUN_00537f60 ; 00538807
-        ;   XREF to: 00537f60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00537f60(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60 ; 00538807
+        ;   XREF to: 00537f60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonMission * this_ptr, char * name)
     JMP 0x005384e9                      ; 0053880c
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     PUSH EBP                            ; 00538811
         ;   Label: LAB_00538811
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538ba0 ; 00538812
-        ;   XREF to: 00538ba0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00538ba0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 ; 00538812
+        ;   XREF to: 00538ba0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538817
     JMP 0x005384ec                      ; 0053881a
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
     PUSH EBP                            ; 0053881f
         ;   Label: LAB_0053881f
-    CALL core_msnedit.cpp_CDemonMission_FUN_005379e0 ; 00538820
-        ;   XREF to: 005379e0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_005379e0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 ; 00538820
+        ;   XREF to: 005379e0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538825
     JMP 0x005384ec                      ; 00538828
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
     PUSH EBP                            ; 0053882d
         ;   Label: LAB_0053882d
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ccf0 ; 0053882e
-        ;   XREF to: 0053ccf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ccf0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 ; 0053882e
+        ;   XREF to: 0053ccf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538833
     JMP 0x005384ec                      ; 00538836
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
@@ -670,8 +670,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538876
     PUSH EBP                            ; 00538879
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0053887a
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 0053887a
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053887f
     PUSH 0x63c1b6                       ; 00538882 | = "Loading set."
     MOV EDI,dword ptr [0x00678a60]      ; 00538887 | g_CEditorToolsPtr
@@ -681,8 +681,8 @@ section .text
     ADD ESP,0x8                         ; 00538893
     PUSH EBX                            ; 00538896
     PUSH EBP                            ; 00538897
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 00538898
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 00538898
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0053889d
     PUSH EBP                            ; 005388a0
     CALL core_msnedit.cpp_CDemonMission_FUN_0053e220 ; 005388a1
@@ -803,7 +803,7 @@ section .text
     MOV EBX,dword ptr [0x0067d550]      ; 005389e9 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 005389ef | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_save_FUN_00522e30 ; 005389f0
-        ;   XREF to: 00522e30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_save_FUN_00522e30(CDemonMission * this_ptr)
+        ;   XREF to: 00522e30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_save_FUN_00522e30(CDemonMission * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005389f5
     LEA EAX,[ESP + 0x3a8]               ; 005389f8
         ;   Label: LAB_005389f8
@@ -952,8 +952,8 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 00538b81
     PUSH EAX                            ; 00538b88
     PUSH EBP                            ; 00538b89
-    CALL core_mission.cpp_CDemonMission_FUN_005243a0 ; 00538b8a
-        ;   XREF to: 005243a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005243a0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 ; 00538b8a
+        ;   XREF to: 005243a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0(CDemonMission * this_ptr, char * set_name)
     JMP 0x005384e9                      ; 00538b8f
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
 

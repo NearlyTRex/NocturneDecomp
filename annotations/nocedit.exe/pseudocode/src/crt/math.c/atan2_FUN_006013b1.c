@@ -15,7 +15,7 @@ float10 __fpustack atan2(float10 y,float10 x)
     fVar1 = (float10)fpatan(y,x);
   }
   else {
-    fVar1 = (float10)crt_unknown_c_FUN_00608e14();
+    fVar1 = (float10)FUN_00608e14();
   }
   return fVar1;
 }

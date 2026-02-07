@@ -66,7 +66,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
   int iStack_8;
   
   bVar13 = 0;
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+  if ((g_CDemonMissionPtr->is_in_editor != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(param_1);
@@ -167,7 +167,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2.color = (int)local_114.light;
           vertex2.fog = (float)local_114.color;
           vertex2.w_recip = local_114.fog;
-          unique0x1000148d = auVar2;
+          unique0x10001489 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);
@@ -196,7 +196,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2_00.color = (int)local_114.light;
           vertex2_00.fog = (float)local_114.color;
           vertex2_00.w_recip = local_114.fog;
-          unique0x100014a9 = auVar2;
+          unique0x100014a5 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_00);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);
@@ -225,7 +225,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2_01.color = (int)local_114.light;
           vertex2_01.fog = (float)local_114.color;
           vertex2_01.w_recip = local_114.fog;
-          unique0x100014c5 = auVar2;
+          unique0x100014c1 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_01);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);
@@ -254,7 +254,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2_02.color = (int)local_114.light;
           vertex2_02.fog = (float)local_114.color;
           vertex2_02.w_recip = local_114.fog;
-          unique0x100014e1 = auVar2;
+          unique0x100014dd = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_02);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_24);
@@ -283,7 +283,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2_03.color = (int)local_114.light;
           vertex2_03.fog = (float)local_114.color;
           vertex2_03.w_recip = local_114.fog;
-          unique0x100014fd = auVar2;
+          unique0x100014f9 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_03);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_18);
@@ -313,7 +313,7 @@ int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemo
           vertex2_04.color = (int)local_114.light;
           vertex2_04.fog = (float)local_114.color;
           vertex2_04.w_recip = local_114.fog;
-          unique0x10001519 = auVar2;
+          unique0x10001515 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_04);
           iVar5 = iVar5 + 0xc0;
           iStack_18 = iStack_18 + 0xc0;

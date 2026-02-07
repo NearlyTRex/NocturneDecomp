@@ -1,39 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 22,
-        "line": 21,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 13,
+    "complexity_score": 12,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 12,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -53,13 +33,13 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 (CBitFont *this_ptr,int y_pos,int color_mode,int color_value,char *text_string)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *text)"
   },
   "function_calls": [
     {
       "addr": "004cdbf0",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0"
     },
     {
       "addr": "004cfe80",
@@ -140,7 +120,7 @@
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -161,7 +141,7 @@
       },
       {
         "is_param": true,
-        "name": "text_string",
+        "name": "text",
         "offset": 20,
         "size": 4,
         "type": "char *"

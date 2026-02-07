@@ -11,7 +11,7 @@
 ; char *           Stack[0x14]:4   extension
 ;
 ; XREF[29]:
-;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 0053801a
+;   core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60 at 0053801a
 ;   core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0 at 0057a104
 ;   core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20 at 00578b81
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005796dd

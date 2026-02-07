@@ -18,7 +18,7 @@ int __cdecl doscan(scanf_state_t *state,char **format_ptr,va_list_t *args)
   int chars_consumed;
   va_list_t local_14;
   
-  local_14 = *args;
+  local_14 = (va_list_t)args->value[0];
   iVar4 = 0;
   chars_consumed = 0;
   state->flags = state->flags & 0xfd;

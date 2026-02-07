@@ -186,7 +186,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0 (CStrList *str
 int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 (CEditorTools *this_ptr,char *format_string,...);
 int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 (CEditorTools *this_ptr,char *format_string,...);
 int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180 (CEditorTools *this_ptr,char *format,...);
-int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag);
+int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown);
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory);
 

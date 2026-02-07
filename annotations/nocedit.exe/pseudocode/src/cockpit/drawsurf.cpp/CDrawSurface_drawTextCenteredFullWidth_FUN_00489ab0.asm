@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (CDrawSurface *this_ptr,int y,int height,char *text)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (CDrawSurface *this_ptr,char *text,int y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   y
-; int              Stack[0xc]:4   height
-; char *           Stack[0x10]:4   text
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0 at 00489b41
@@ -33,7 +32,7 @@ section .text
     PUSH EBX                            ; 00489ac4
     PUSH EDX                            ; 00489ac5
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 ; 00489ac6
-        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, int x, int y, int width, ...)
+        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x14                        ; 00489acb
     POP EBX                             ; 00489ace
     RET                                 ; 00489acf

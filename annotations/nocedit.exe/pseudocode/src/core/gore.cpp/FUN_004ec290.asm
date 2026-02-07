@@ -10,8 +10,8 @@
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004edb40
-;   core_gore.cpp_FUN_004edb70
+;   core_gore.cpp_CGore_FUN_004edb40
+;   core_gore.cpp_CGore_FUN_004edb70
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 004ec2ac
     MOV EBP,dword ptr [0x0067b9a0]      ; 004ec2ad | g_CGorePtr
     PUSH EBP                            ; 004ec2b3 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edb40     ; 004ec2b4
-        ;   XREF to: 004edb40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edb40()
+    CALL core_gore.cpp_CGore_FUN_004edb40 ; 004ec2b4
+        ;   XREF to: 004edb40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edb40(CGore * this_ptr)
     ADD ESP,0xc                         ; 004ec2b9
     MOV EAX,0x1                         ; 004ec2bc
     POP EBP                             ; 004ec2c1
@@ -49,8 +49,8 @@ section .text
     PUSH EDX                            ; 004ec2cb
     MOV ESI,dword ptr [0x0067b9a0]      ; 004ec2cc | g_CGorePtr
     PUSH ESI                            ; 004ec2d2 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edb70     ; 004ec2d3
-        ;   XREF to: 004edb70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edb70()
+    CALL core_gore.cpp_CGore_FUN_004edb70 ; 004ec2d3
+        ;   XREF to: 004edb70 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edb70(CGore * this_ptr)
     ADD ESP,0x10                        ; 004ec2d8
     POP EBX                             ; 004ec2db
     POP ESI                             ; 004ec2dc

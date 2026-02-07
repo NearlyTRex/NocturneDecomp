@@ -28,14 +28,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00596883
     PUSH EDX                            ; 00596887
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00596888
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0059688d
     PUSH EBX                            ; 00596890
     PUSH 0x69                           ; 00596891
     MOV ECX,dword ptr [ESP + 0x18]      ; 00596893
     PUSH ECX                            ; 00596897
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00596898
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0059689d
     POP EBX                             ; 005968a0
     RET                                 ; 005968a1

@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -128,8 +128,8 @@ section .text
     PUSH EAX                            ; 00510b23
     MOV EBX,dword ptr [0x020a5724]      ; 00510b24 | g_SmallEditorFont
     PUSH EBX                            ; 00510b2a
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510b2b
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510b2b
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00510b30
     PUSH 0x636674                       ; 00510b33 | = "Monitor calibration"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00510b38
@@ -156,8 +156,8 @@ section .text
     PUSH ESI                            ; 00510b6d
     MOV EAX,[0x020a5724]                ; 00510b6e | g_SmallEditorFont
     PUSH EAX                            ; 00510b73
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510b74
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510b74
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00510b79
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00510b7c
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

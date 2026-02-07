@@ -193,7 +193,7 @@ section .text
     PUSH EAX                            ; 0057c751
     ADD EBX,EDI                         ; 0057c752
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c754
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [0x00679394]      ; 0057c759 | g_WindowWidth
     LEA EAX,[EBX + EDI*0x1]             ; 0057c75f
     ADD ESP,0xc                         ; 0057c762
@@ -221,7 +221,7 @@ section .text
     XOR EBX,EBX                         ; 0057c7a9
     XOR EDI,EDI                         ; 0057c7ab
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c7ad
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x03276dac]                ; 0057c7b2 | g_MasterLightCount
     ADD ESP,0xc                         ; 0057c7b7
     TEST EAX,EAX                        ; 0057c7ba
@@ -245,7 +245,7 @@ section .text
     LEA EAX,[ESP + 0xeac]               ; 0057c7f2
     PUSH EAX                            ; 0057c7f9
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c7fa
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679398]                ; 0057c7ff | g_WindowHeight
     MOV EDX,EAX                         ; 0057c804
     MOV ECX,0x3                         ; 0057c806
@@ -289,7 +289,7 @@ section .text
     PUSH 0x0                            ; 0057c87c
     PUSH 0x647b61                       ; 0057c87e | = "1.  Add spot light"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c883
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057c888
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057c88b
         ;   Label: LAB_0057c88b
@@ -301,7 +301,7 @@ section .text
     PUSH 0x0                            ; 0057c89b
     PUSH 0x647b74                       ; 0057c89d | = "2.  Position spot light"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c8a2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057c8a7
     MOV EAX,[0x00679394]                ; 0057c8aa | g_WindowWidth
         ;   Label: LAB_0057c8aa
@@ -315,7 +315,7 @@ section .text
     PUSH EAX                            ; 0057c8c0
     PUSH 0x647b8c                       ; 0057c8c1 | = "3.  Delete light"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c8c6
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057c8cb | g_WindowWidth
     MOV EDX,EAX                         ; 0057c8d0
     SAR EDX,0x1f                        ; 0057c8d2
@@ -328,7 +328,7 @@ section .text
     PUSH EAX                            ; 0057c8e4
     PUSH 0x647b9d                       ; 0057c8e5 | = "4.  Precompute visiblity"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c8ea
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057c8ef | g_WindowWidth
     MOV EDX,EAX                         ; 0057c8f4
     SAR EDX,0x1f                        ; 0057c8f6
@@ -339,7 +339,7 @@ section .text
     PUSH EAX                            ; 0057c901
     PUSH 0x647bb6                       ; 0057c902 | = "5.  Set ambient light"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c907
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057c90c | g_WindowWidth
     MOV EDX,EAX                         ; 0057c911
     SAR EDX,0x1f                        ; 0057c913
@@ -350,7 +350,7 @@ section .text
     PUSH EAX                            ; 0057c91e
     PUSH 0x647bcc                       ; 0057c91f | = "6.  Edit properties"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c924
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057c929 | g_WindowWidth
     MOV EDX,EAX                         ; 0057c92e
     SAR EDX,0x1f                        ; 0057c930
@@ -369,7 +369,7 @@ section .text
     PUSH EAX                            ; 0057c951
     PUSH 0x647be0                       ; 0057c952 | = "7.  Clone a light"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c957
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057c95c | g_WindowWidth
     MOV EDX,EAX                         ; 0057c961
     SAR EDX,0x1f                        ; 0057c963
@@ -388,7 +388,7 @@ section .text
     PUSH EAX                            ; 0057c984
     PUSH 0x647bf2                       ; 0057c985 | = "S.  Save set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057c98a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057c98f
     CALL wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0 ; 0057c992
         ;   XREF to: 005f2fd0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0()

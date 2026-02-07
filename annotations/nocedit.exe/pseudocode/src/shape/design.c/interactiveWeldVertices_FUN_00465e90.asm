@@ -121,7 +121,7 @@ section .text
     MOV EAX,0x61c6c1                    ; 00465f21 | = "Invalid point."
     PUSH EAX                            ; 00465f26 | = "Invalid point."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00465f27
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00465f2c
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00465f2f
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -167,7 +167,7 @@ section .text
     MOV EAX,0x61c6d0                    ; 00465f94 | = "Point not on polygon."
     PUSH EAX                            ; 00465f99 | = "Point not on polygon."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00465f9a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00465f9f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00465fa2
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

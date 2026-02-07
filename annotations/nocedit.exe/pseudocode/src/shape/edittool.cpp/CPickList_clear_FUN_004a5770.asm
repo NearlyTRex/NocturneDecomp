@@ -9,7 +9,7 @@
 ; XREF[10]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db26a
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2253
-;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cfa4
+;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053cfa4
 ;   core_script.cpp_CScript_FUN_00559870 at 005598ac
 ;   core_script.cpp_CScript_FUN_00559f80 at 0055a157
 ;   core_script.cpp_CScript_FUN_0055a4b0 at 0055a4d3

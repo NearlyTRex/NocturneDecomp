@@ -64,8 +64,9 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     *(uint *)(this_ptr_00->unk + 300) = in_stack_0000000c[1];
     *(uint *)(this_ptr_00->unk + 0x130) = in_stack_0000000c[2];
   }
-  core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-  core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+            (g_CDemonMissionPtr,&this_ptr_00->base);
+  core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(g_CDemonMissionPtr,&this_ptr_00->base);
   if (in_stack_00000010 != 0) {
     (this_ptr_00->base).scale.x = *(int *)(in_stack_00000010 + 0x108);
     (this_ptr_00->base).scale.y = *(int *)(in_stack_00000010 + 0x10c);

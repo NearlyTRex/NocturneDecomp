@@ -15,15 +15,15 @@
   },
   "cross_references": [
     {
-      "addr": "00601b14",
-      "from_addr": "00601b27",
-      "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00601a20",
       "from_addr": "00601a2e",
       "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00601b14",
+      "from_addr": "00601b27",
+      "name": "crt_stdio.c_freopen_FUN_00601b14",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -66,7 +66,7 @@
       {
         "call_addr": "00601b27",
         "call_type": "direct",
-        "caller": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
+        "caller": "crt_stdio.c_freopen_FUN_00601b14",
         "estimated_params": 6,
         "instructions_analyzed": 10,
         "reg_params": [],

@@ -1,176 +1,103 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 37,
-        "line": 31,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 36,
-        "line": 33,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 37,
-        "line": 50,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 36,
-        "line": 52,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 24,
-        "line": 80,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
       {
         "category": "other",
         "column": 37,
         "line": 20,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 46,
         "line": 24,
-        "message": "format '%d' expects a matching 'int' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
-        "category": "other",
-        "column": 48,
-        "line": 24,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+        "category": "format_error",
+        "column": 59,
+        "line": 30,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
       },
       {
-        "category": "other",
-        "column": 28,
-        "line": 31,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
+        "category": "format_error",
         "column": 27,
+        "line": 31,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 32,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 30,
-        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 30,
-        "message": "format '%lg' expects argument of type 'double', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 30,
-        "message": "format '%lg' expects argument of type 'double', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 30,
-        "message": "too many arguments for format [-Wformat-extra-args]"
+        "message": "data argument not used by format string [-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 52,
         "line": 38,
-        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 53,
         "line": 42,
-        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
-        "category": "other",
-        "column": 28,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "category": "format_error",
+        "column": 59,
+        "line": 49,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
       },
       {
-        "category": "other",
+        "category": "format_error",
         "column": 27,
+        "line": 50,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 51,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 52,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 49,
-        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 49,
-        "message": "format '%lg' expects argument of type 'double', but argument 4 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 49,
-        "message": "format '%lg' expects argument of type 'double', but argument 5 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 49,
-        "message": "too many arguments for format [-Wformat-extra-args]"
+        "message": "data argument not used by format string [-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 52,
         "line": 57,
-        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 53,
         "line": 61,
-        "message": "format '%p' expects a matching 'void*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 41,
+        "line": 79,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
       },
       {
         "category": "other",
-        "column": 15,
+        "column": 14,
         "line": 80,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 79,
-        "message": "format '%lg' expects argument of type 'double', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 79,
-        "message": "too many arguments for format [-Wformat-extra-args]"
+        "message": "data argument not used by format string [-Wformat-extra-args]"
       }
     ]
   },

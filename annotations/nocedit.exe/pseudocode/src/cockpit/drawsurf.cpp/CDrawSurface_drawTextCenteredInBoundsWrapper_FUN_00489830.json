@@ -2,28 +2,18 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 49,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_many",
-      "unaffected_reg"
-    ],
-    "total_lines": 30
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
   },
   "cross_references": [
     {
@@ -43,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830 (CDrawSurface *this_ptr,int x,int y,int width,char *text)"
   },
   "function_calls": [
     {
@@ -75,8 +65,8 @@
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 6,
+    "confidence": "high",
+    "declared_params": 5,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -100,10 +90,10 @@
     "pcode_op_count": 66
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -136,45 +126,12 @@
       },
       {
         "is_param": true,
-        "name": "height",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "text",
-        "offset": 24,
+        "offset": 20,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EDI",
-      "text": "char *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "(this_ptr,height,x,y,width,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 6,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 5,
-      "fix_type": "remove_params",
-      "match": "declared:6 vs estimated:5",
-      "param_delta": -1,
-      "text": "Function declares 6 params but call sites push 5 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

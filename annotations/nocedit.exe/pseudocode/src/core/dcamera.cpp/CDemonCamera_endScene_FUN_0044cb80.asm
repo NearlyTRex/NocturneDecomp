@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_zbuffer_copy
 ;
 ; XREF[11]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539702
-;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053bb1c
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c970 at 0053c9ec
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539702
+;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053bb1c
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c6b9
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a79c
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b4a2

@@ -26,8 +26,8 @@ typedef struct CBitFont {
     int current_max_width; // 0x3170
     int char_spacing; // 0x3174
     int line_spacing; // 0x3178
-    int font_type; // 0x317c
-    int font_enabled; // 0x3180
+    int shadow_offset_x; // 0x317c
+    int shadow_offset_y; // 0x3180
     int rendering_ready; // 0x3184
     int load_flags; // 0x3188
     int unk; // 0x318c

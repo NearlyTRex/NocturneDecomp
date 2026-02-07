@@ -11,6 +11,6 @@ int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle)
 {
   int iVar1;
   
-  iVar1 = crt_wsock32_c_listen(*socket_handle,1);
+  iVar1 = listen(*socket_handle,1);
   return (uint)(iVar1 == 0);
 }

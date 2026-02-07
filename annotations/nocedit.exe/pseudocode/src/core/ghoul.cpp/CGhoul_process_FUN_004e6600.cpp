@@ -202,7 +202,7 @@ switchD_004e6f9a_caseD_e:
             if (0.0 < local_ac) {
               dVar22 = round(local_ac * 2.5 * 0.25);
               local_70 = (int)ROUND(dVar22);
-              core_gore_cpp_FUN_004edbb0();
+              core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
             }
             iVar10 = *(int *)((this_ptr->base).unk2 + 4);
             if (*(float *)(iVar10 + 0x243c) <= 0.0) {
@@ -239,7 +239,7 @@ switchD_004e6f9a_caseD_e:
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
       dVar22 = round((double)(local_14 * (float)0.25));
       local_58 = (int)ROUND(dVar22);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"ghoul-dig-?.wav @1.3");
       break;
@@ -252,7 +252,7 @@ switchD_004e6f9a_caseD_e:
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
       dVar22 = round((double)(local_14 * (float)0.25));
       local_54 = (int)ROUND(dVar22);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"ghoul-eat-?.wav @1.3");
       break;
@@ -269,7 +269,7 @@ switchD_004e6f9a_caseD_e:
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
       dVar22 = round((double)(local_14 * (float)0.25));
       local_84 = (int)ROUND(dVar22);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
       iVar10 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       if (iVar10 == 0) {
         pcVar17 = "ghoul-dig-?.wav @1.3";
@@ -615,7 +615,7 @@ LAB_004e7576:
                             (pCVar2,&local_12c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_108,pCVar14);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
       iVar12 = this_ptr->spasm_count;

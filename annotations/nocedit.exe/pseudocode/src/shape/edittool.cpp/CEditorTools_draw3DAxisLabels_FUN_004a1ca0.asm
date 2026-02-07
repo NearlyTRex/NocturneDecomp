@@ -50,7 +50,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_matrix.c_transformToCache_FUN_0050cd70
 ;
@@ -223,8 +223,8 @@ section .text
     PUSH EAX                            ; 004a1e79
     MOV EDX,dword ptr [0x02cf1cd0]      ; 004a1e7a | g_EditorFont
     PUSH EDX                            ; 004a1e80
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a1e81
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004a1e81
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a1e86
     JMP 0x004a1dfe                      ; 004a1e89
         ;   XREF to: 004a1dfe (UNCONDITIONAL_JUMP)  ; LAB_004a1dfe

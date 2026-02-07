@@ -21,7 +21,7 @@
 ;   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0
 ;   core_ammo.cpp_CAmmo_FUN_00410fd0
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_004dd965
     MOV EDX,dword ptr [0x0067d550]      ; 004dd966 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 004dd96c | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 004dd96d
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 004dd96d
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004dd972
     MOV EAX,dword ptr [EBX + 0x154]     ; 004dd975
     PUSH EBX                            ; 004dd97b

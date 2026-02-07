@@ -14,7 +14,7 @@
 ;   core_fire.cpp_CRock_ctor_FUN_004c96b0 at 004c96b5
 ;   core_fire.cpp_CShell_ctor_FUN_004c94f0 at 004c94f5
 ;   core_fire.cpp_CSpark_ctor_FUN_004c9710 at 004c9715
-;   core_gore.cpp_FUN_004ee3f0 at 004ee3f5
+;   core_gore.cpp_CBloodParticle_ctor_FUN_004ee3f0 at 004ee3f5
 ;
 ; Referenced Globals:
 ;   CParticle_vtable g_CParticleVTable

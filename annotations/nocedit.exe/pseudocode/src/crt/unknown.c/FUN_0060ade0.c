@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * crt_unknown_c_FUN_0060ade0(void)
+char * FUN_0060ade0(void)
 
 {
   char *buffer;

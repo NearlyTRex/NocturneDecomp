@@ -13,7 +13,7 @@ CreateFileVariadic(char *filename,int access_mode,int share_mode,...)
   HANDLE pvVar1;
   va_list_t variadic_args;
   
-  variadic_args = &stack0x00000010;
+  variadic_args.value[0] = (char * [1])&stack0x00000010;
   pvVar1 = CreateFileImpl(filename,access_mode,share_mode,&variadic_args);
   return (int)pvVar1;
 }

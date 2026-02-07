@@ -38,12 +38,12 @@
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0
-;   core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80
+;   core_mission.cpp_CDemonMission_reset_FUN_00522c80
 ;   core_mmx.c_detectCPUFeatures_FUN_00524f10
 ;   core_netgame.cpp_CNetGame_FUN_0053f780
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_stdio.c_fopenThreadSafe_FUN_00601b14
+;   crt_stdio.c_freopen_FUN_00601b14
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
@@ -114,8 +114,8 @@ section .text
     PUSH 0x63530e                       ; 00507b1f | = "wt"
     PUSH 0x635311                       ; 00507b24 | = "stderr.txt"
     MOV EBX,0x4                         ; 00507b29
-    CALL crt_stdio.c_fopenThreadSafe_FUN_00601b14 ; 00507b2e
-        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopenThreadSafe_FUN_00601b14(char * filename, char * mode, _FILE * * output_file_ptr)
+    CALL crt_stdio.c_freopen_FUN_00601b14 ; 00507b2e
+        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_00601b14(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 00507b33
     MOV dword ptr [0x00772628],EBX      ; 00507b36 | g_RenderingMode
     CALL core_flattn.cpp_doNothing_FUN_004cbce0 ; 00507b3c
@@ -760,8 +760,8 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 00508114 | g_CDemonMissionPtr
     PUSH ESI                            ; 0050811a | g_CDemonMissionInstance
     XOR EBX,EBX                         ; 0050811b
-    CALL core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80 ; 0050811d
-        ;   XREF to: 00522c80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_reset_FUN_00522c80 ; 0050811d
+        ;   XREF to: 00522c80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_reset_FUN_00522c80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00508122
     XOR ESI,ESI                         ; 00508125
     MOV dword ptr [ESP + 0x714],EBX     ; 00508127

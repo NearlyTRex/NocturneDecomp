@@ -20,8 +20,8 @@ ScanFormatSpec(char *format,va_list_t *args,FormatSpec *spec_info)
   pbVar4 = (byte *)ParseFormatFlags(format,spec_info);
   spec_info->width = 0;
   if (*pbVar4 == 0x2a) {
-    piVar2 = (int *)*args;
-    *args = (va_list_t)(piVar2 + 1);
+    piVar2 = (int *)args->value[0];
+    args->value[0] = (char *)(piVar2 + 1);
     iVar3 = *piVar2;
     spec_info->width = iVar3;
     if (iVar3 < 0) {
@@ -39,8 +39,8 @@ ScanFormatSpec(char *format,va_list_t *args,FormatSpec *spec_info)
   if (*pbVar4 == 0x2e) {
     spec_info->precision = 0;
     if (pbVar4[1] == 0x2a) {
-      piVar2 = (int *)*args;
-      *args = (va_list_t)(piVar2 + 1);
+      piVar2 = (int *)args->value[0];
+      args->value[0] = (char *)(piVar2 + 1);
       iVar3 = *piVar2;
       spec_info->precision = iVar3;
       if (iVar3 < 0) {

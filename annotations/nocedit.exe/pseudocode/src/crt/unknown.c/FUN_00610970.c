@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_unknown_c_FUN_00610970(void)
+int FUN_00610970(void)
 
 {
   int in_stack_00000004;

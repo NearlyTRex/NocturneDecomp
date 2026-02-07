@@ -356,7 +356,8 @@ LAB_004db434:
     } while (iVar3 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4c8,0);
   }
-  fVar5 = (float)core_mission_cpp_CDemonMission_FUN_00524e00(g_CDemonMissionPtr);
+  fVar5 = (float)core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00
+                           (g_CDemonMissionPtr);
   this_ptr->game_stat_2 = fVar5;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x683);
   engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);

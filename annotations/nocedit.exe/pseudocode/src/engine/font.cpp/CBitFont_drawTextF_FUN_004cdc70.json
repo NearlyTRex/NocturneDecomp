@@ -3,46 +3,26 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 37,
-        "line": 19,
-        "message": "cannot convert 'char**' to '__va_list_tag*'"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 74,
-        "line": 21,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+        "column": 3,
+        "line": 18,
+        "message": "no matching function for call to 'vsprintf'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 53,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
+      "param_count_too_few"
     ],
-    "total_lines": 49
+    "total_lines": 48
   },
   "cross_references": [
     {
@@ -62,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004cdc70 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,...)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004cdc70 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,va_list_t args)"
   },
   "function_calls": [
     {
@@ -73,7 +53,7 @@
     {
       "addr": "004cdbf0",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0"
     }
   ],
   "globals": [],
@@ -91,7 +71,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 6,
+    "declared_params": 7,
     "estimated_params": 11
   },
   "pcode_summary": {
@@ -117,10 +97,10 @@
     "pcode_op_count": 124
   },
   "stack_frame": {
-    "frame_size": 4140,
+    "frame_size": 4144,
     "local_size": 4116,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -171,33 +151,26 @@
         "offset": 24,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 28,
+        "size": 4,
+        "type": "va_list_t"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000001c",
-      "text": "va_list_t *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000001c",
-      "text": "vsprintf(local_1010,format_string,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 6,
+      "declared_params": 7,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 11,
       "fix_type": "add_params",
-      "match": "declared:6 vs estimated:11",
-      "param_delta": 5,
-      "text": "Function declares 6 params but call sites push 11 (5 missing)",
+      "match": "declared:7 vs estimated:11",
+      "param_delta": 4,
+      "text": "Function declares 7 params but call sites push 11 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

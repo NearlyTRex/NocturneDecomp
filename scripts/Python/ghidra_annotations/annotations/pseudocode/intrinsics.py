@@ -118,6 +118,8 @@ def get_subpiece_intrinsics():
     """
     return [
         # (input_size, output_size, result_type, mask)
+        (4, 1, "uint8_t", None),          # SUB41 - truncate 4-byte to 1-byte
+        (4, 2, "uint16_t", None),         # SUB42 - truncate 4-byte to 2-byte
         (8, 2, "uint16_t", None),         # SUB82 - truncate 8-byte to 2-byte
         (8, 4, "uint32_t", None),         # SUB84 - truncate 8-byte to 4-byte
         (8, 6, "uint64_t", "0xFFFFFFFFFFFFULL"),  # SUB86 - truncate 8-byte to 6-byte
@@ -140,7 +142,22 @@ def get_fpu_intrinsics():
         "fabs": ("fabs", 1),
         # Two-argument FPU intrinsics
         "fpatan": ("atan2", 2),  # FPATAN computes atan2(ST(1), ST(0))
+        # Expression-based FPU intrinsics (num_args=-1 means raw expression with x)
+        "f2xm1": ("(pow(2.0, (x)) - 1.0)", -1),  # F2XM1 computes 2^x - 1
     }
+
+
+def get_zext_intrinsics():
+    """Return list of ZEXT (zero-extension) intrinsics.
+
+    ZEXTxy(val) zero-extends an x-byte value to a y-byte value.
+    Returns tuple of (input_size, output_size, input_type, output_type).
+    """
+    return [
+        # (input_size, output_size, input_type, output_type)
+        (1, 4, "uint8_t", "uint32_t"),   # ZEXT14 - zero-extend 1-byte to 4-byte
+        (4, 8, "uint32_t", "uint64_t"),  # ZEXT48 - zero-extend 4-byte to 8-byte
+    ]
 
 
 def get_cpuid_intrinsics():
@@ -251,6 +268,10 @@ def get_all_intrinsic_names():
     # Subpiece intrinsics
     for inp, out, _, _ in get_subpiece_intrinsics():
         names.add(f"SUB{inp}{out}")
+
+    # ZEXT intrinsics
+    for inp, out, _, _ in get_zext_intrinsics():
+        names.add(f"ZEXT{inp}{out}")
 
     # FPU intrinsics
     names.update(get_fpu_intrinsics().keys())
@@ -379,6 +400,17 @@ def generate_intrinsics_header():
         lines.append(f"#define {name}(...) _SUB_GET_MACRO(__VA_ARGS__, _{name}_2, _{name}_1)(__VA_ARGS__)")
     lines.append("")
 
+    # ZEXT - zero extension
+    lines.append("// =============================================================================")
+    lines.append("// ZEXT - Zero Extension (widen value to larger type)")
+    lines.append("// =============================================================================")
+    lines.append("// ZEXTxy(val) zero-extends an x-byte value to a y-byte value")
+    lines.append("")
+    for inp_size, out_size, inp_type, out_type in get_zext_intrinsics():
+        name = f"ZEXT{inp_size}{out_size}"
+        lines.append(f"#define {name}(x) (({out_type})({inp_type})(x))")
+    lines.append("")
+
     # FPU intrinsics
     lines.append("// =============================================================================")
     lines.append("// FPU Intrinsics (x87 floating-point operations)")
@@ -387,7 +419,10 @@ def generate_intrinsics_header():
     lines.append("")
     for fpu_name, (c_func, num_args) in sorted(get_fpu_intrinsics().items()):
         lines.append(f"#ifndef {fpu_name}")
-        if num_args == 1:
+        if num_args == -1:
+            # Expression mode: c_func is the full macro body with x as parameter
+            lines.append(f"#define {fpu_name}(x) {c_func}")
+        elif num_args == 1:
             lines.append(f"#define {fpu_name}(x) {c_func}(x)")
         elif num_args == 2:
             lines.append(f"#define {fpu_name}(y, x) {c_func}(y, x)")

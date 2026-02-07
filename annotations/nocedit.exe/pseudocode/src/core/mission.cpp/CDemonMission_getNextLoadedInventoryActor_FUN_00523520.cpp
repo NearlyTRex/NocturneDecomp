@@ -2,31 +2,29 @@
 // Address: 00523520
 // Address Range: [[00523520, 005235ae]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520 (CDemonMission *this_ptr,char *actor_name)
 
 #include "nocturne.h"
 
 void __cdecl
-core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr)
+core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
+          (CDemonMission *this_ptr,char *actor_name)
 
 {
   int iVar1;
-  char *in_stack_00000008;
   
-  if (*(int *)(this_ptr->unk4 + 0x33c) == 0) {
+  if (this_ptr->next_inventory_actor == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x186;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::getNextLoadedInventoryActor - no more!");
   }
-  iVar1 = stricmp(*(char **)(this_ptr->unk4 + 0x33c),in_stack_00000008);
+  iVar1 = stricmp(this_ptr->next_inventory_actor->actor_name,actor_name);
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x18b;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",in_stack_00000008,
-               *(uint *)(this_ptr->unk4 + 0x33c));
+              ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",actor_name,this_ptr->next_inventory_actor);
   }
-  *(uint *)(this_ptr->unk4 + 0x33c) =
-       *(uint *)(*(int *)(this_ptr->unk4 + 0x33c) + 0x14c);
+  this_ptr->next_inventory_actor = this_ptr->next_inventory_actor->next_actor;
   return;
 }

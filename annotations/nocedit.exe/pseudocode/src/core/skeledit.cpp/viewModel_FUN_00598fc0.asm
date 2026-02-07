@@ -235,13 +235,13 @@ section .text
     PUSH EBP                            ; 00599145
     PUSH 0x64e137                       ; 00599146 | = "Nocturne(R) Skeleton system editor menu"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0059914b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00599150
     PUSH 0x2c                           ; 00599153
     PUSH EBP                            ; 00599155
     PUSH 0x64e15f                       ; 00599156 | = "3.  View a deformable model in action!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0059915b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00599160
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00599163
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

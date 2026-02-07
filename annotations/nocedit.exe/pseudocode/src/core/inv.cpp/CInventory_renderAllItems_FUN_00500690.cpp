@@ -174,7 +174,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     pcVar6 = (char *)((g_WindowWidth - local_50) - iVar3);
     pCVar11 = (CBitFont *)acStack_480;
 LAB_00500870:
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (pCVar11,pcVar6,iVar7,iVar12,(int)lVar13,(int)((ulonglong)lVar13 >> 0x20));
   }
   if (this_ptr->render_mode_flag == 0) goto LAB_005009c0;
@@ -239,7 +239,7 @@ LAB_005008cd:
     pcVar6 = DAT_02db8c70;
     do {
       iVar3 = iVar3 + 1;
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(local_2c,pcVar6,local_30,iVar12,0xf8,0);
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_2c,pcVar6,local_30,iVar12,0xf8,0);
       pcVar6 = pcVar6 + 0x100;
       iVar12 = iVar12 + local_38;
     } while (iVar3 < local_34);
@@ -264,7 +264,7 @@ LAB_005009c0:
                  (double)pCVar2[2].location.position.z);
       iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_48,0x58);
       iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_48,acStack_37c);
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 ((CBitFont *)local_48,acStack_37c,(g_WindowWidth - local_50) - iVar5,
                  (g_WindowHeight - local_50) - iVar3,0xf8,0);
     }
@@ -275,7 +275,7 @@ LAB_005009c0:
       sprintf(acStack_27c,"%s");
       iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_48,0x58);
       iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_48,acStack_27c);
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 ((CBitFont *)local_48,acStack_27c,(g_WindowWidth - local_50) - iVar5,
                  (g_WindowHeight - local_50) - iVar3,0xf8,0);
     }
@@ -296,8 +296,7 @@ LAB_005009c0:
         pcVar6 = DAT_02db9670;
         do {
           iVar7 = iVar7 + 1;
-          engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(local_28,pcVar6,local_3c,iVar12,0xf8,0)
-          ;
+          engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_28,pcVar6,local_3c,iVar12,0xf8,0);
           pcVar6 = pcVar6 + 0x100;
           iVar12 = iVar12 + local_40;
         } while (iVar7 < local_44);
@@ -378,7 +377,7 @@ LAB_005009c0:
       pcVar6 = DAT_02dba070;
       do {
         iVar12 = iVar12 + 1;
-        engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(local_1c,pcVar6,4,iVar7,0xf8,0);
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_1c,pcVar6,4,iVar7,0xf8,0);
         pcVar6 = pcVar6 + 0x100;
         iVar7 = iVar7 + local_24;
       } while (iVar12 < local_20);

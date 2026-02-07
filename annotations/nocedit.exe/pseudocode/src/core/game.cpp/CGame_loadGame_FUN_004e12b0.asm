@@ -38,7 +38,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2087
 ;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 005133ff
-;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053ce34
+;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053ce34
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noc_0062ca88
@@ -64,11 +64,11 @@
 ;   core_event.cpp_CEventList_loadState_FUN_004b0fc0
 ;   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 ;   core_fire.cpp_CFireEffect_load_FUN_004c9300
-;   core_gore.cpp_FUN_004ed760
-;   core_gore.cpp_FUN_004ee1e0
+;   core_gore.cpp_CGore_FUN_004ed760
+;   core_gore.cpp_CGore_FUN_004ee1e0
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
@@ -637,7 +637,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 004e190c | g_CDemonMissionPtr
     PUSH EDI                            ; 004e1912 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 ; 004e1913
-        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr)
+        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0xc                         ; 004e1918
     PUSH EBX                            ; 004e191b
     PUSH 0xff                           ; 004e191c
@@ -677,8 +677,8 @@ section .text
     PUSH EAX                            ; 004e1996
     MOV ECX,dword ptr [0x0067d550]      ; 004e1997 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 004e199d | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 004e199e
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 004e199e
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004e19a3
     PUSH EAX                            ; 004e19a6
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004e19a7
@@ -741,8 +741,8 @@ section .text
     PUSH EBX                            ; 004e1a50
     MOV EDI,dword ptr [0x0067b9a0]      ; 004e1a51 | g_CGorePtr
     PUSH EDI                            ; 004e1a57 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ee1e0     ; 004e1a58
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004ee1e0()
+    CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 004e1a58
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr)
     ADD ESP,0x8                         ; 004e1a5d
     CMP dword ptr [ESP + 0x604],0x7     ; 004e1a60
         ;   Label: LAB_004e1a60
@@ -871,8 +871,8 @@ section .text
     MOV EBP,dword ptr [0x0067b9a0]      ; 004e1bef | g_CGorePtr
         ;   Label: LAB_004e1bef
     PUSH EBP                            ; 004e1bf5 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ed760     ; 004e1bf6
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed760()
+    CALL core_gore.cpp_CGore_FUN_004ed760 ; 004e1bf6
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
     ADD ESP,0x4                         ; 004e1bfb
     JMP 0x004e1a60                      ; 004e1bfe
         ;   XREF to: 004e1a60 (UNCONDITIONAL_JUMP)  ; LAB_004e1a60

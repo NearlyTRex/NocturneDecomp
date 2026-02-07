@@ -12,6 +12,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CFileBitStream.h"
+#include "types/classes/CLocation.h"
 #include "types/classes/CMP3Decoder.h"
 #include "types/classes/CMimic.h"
 #include "types/classes/CMineCar.h"
@@ -94,43 +95,43 @@ SClipPlane * __cdecl core_mirror_cpp_freeClipPlanes_FUN_00522c10(SClipPlane *obj
 CVector3f * __cdecl core_mirror_cpp_freeVectors_FUN_00522c30(CVector3f *objs);
 void __cdecl core_mission_cpp_staticInit_FUN_00522c50(void);
 void __cdecl core_mission_cpp_FUN_00522c60(_FILE *file_handle);
-void __cdecl core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_reset_FUN_00522c80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_checkMemory_FUN_00522d20(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_00522d90 (CDemonMission *this_ptr,char *mission_filename,int load_flags);
-void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_005235b0(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename);
+void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0 (CDemonMission *this_ptr,_FILE *file_handle);
+void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520 (CDemonMission *this_ptr,char *actor_name);
+void __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission *this_ptr,int param_2);
+void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0 (CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor, char *description);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00523b70(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0 (CDemonMission *this_ptr,CDemonActor *actor_ptr);
-int __cdecl core_mission_cpp_CDemonMission_FUN_00523cc0(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00523cf0(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70 (CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0 (CDemonMission *this_ptr,CDemonActor *actor_ptr);
+int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00523f20(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_00523f20 (CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 void __cdecl core_mission_cpp_CDemonMission_FUN_00523f50(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00523fb0(CDemonMission *this_ptr);
-char * __cdecl core_mission_cpp_CDemonMission_FUN_00524030(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00524070(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index);
+char * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name);
+void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070 (CDemonMission *this_ptr,CLocation *teleport_target);
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0 (CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_005243a0(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0 (CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00524630(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00524660(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_00524630(CDemonMission *this_ptr,char *name);
+void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660 (CDemonMission *this_ptr,char *out_buf,char *base_name);
+void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_00524700 (CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_005248a0(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0 (CDemonMission *this_ptr,uint *checksum);
 void __cdecl core_mission_cpp_FUN_005248e0(void);
-int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr);
+int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920 (CDemonMission *this_ptr,int index,int param_3,void *param_4);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags);
-void __cdecl core_mission_cpp_FUN_00524c20(void);
-int __cdecl core_mission_cpp_CDemonMission_FUN_00524e00(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_FUN_00524e60(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr);
+int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag);
 CDemonMission * __cdecl core_mission_cpp_CDemonMission_ctor_FUN_00524ef0(CDemonMission *this_ptr);
 CDemonMission * __cdecl core_mission_cpp_CDemonMission_dtor_FUN_00524f00(CDemonMission *this_ptr);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void);

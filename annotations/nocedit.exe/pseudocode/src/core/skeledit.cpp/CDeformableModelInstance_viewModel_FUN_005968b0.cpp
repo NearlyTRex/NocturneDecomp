@@ -30,7 +30,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   CMatrix3x4f *pCVar16;
   SBone *string_data;
   char *pcVar17;
-  int x_pos;
+  int x;
   CMatrix3x4f *pCVar18;
   char *pcVar19;
   byte bVar20;
@@ -485,10 +485,10 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
         pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar14 + 3) & 0x80) == 0) {
           local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar14) >> 0x10;
-          x_pos = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar14) >> 0x10;
-          if (x_pos < 0) goto LAB_0059722b;
+          x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar14) >> 0x10;
+          if (x < 0) goto LAB_0059722b;
           sprintf(local_598,"%d");
-          engine_2d_c_drawText_FUN_00401fd0(local_598,x_pos,local_68);
+          engine_2d_c_drawText_FUN_00401fd0(local_598,x,local_68);
           iVar6 = iVar6 + 1;
           iVar14 = iVar14 + 0x30;
         }
@@ -962,7 +962,7 @@ LAB_005975b4:
         if (local_2c == 0) {
           iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                             (g_CEditorToolsPtr,"Select model to position","models"
-                             ,"*.kfm",(int)local_408);
+                             ,"*.kfm",(int)local_408,0);
           if (iVar6 == 0) {
             if (DAT_03665f74.poly_count < 1) break;
           }

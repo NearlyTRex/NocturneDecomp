@@ -5,90 +5,59 @@
         "category": "other",
         "column": 18,
         "line": 152,
-        "message": "invalid cast from type 'float' to type 'CCharacter_full_vtable*'"
+        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 15,
         "line": 154,
-        "message": "invalid cast from type 'CCharacter_full_vtable*' to type 'float'"
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 11,
         "line": 155,
-        "message": "invalid cast from type 'CCharacter_full_vtable*' to type 'float'"
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 17,
         "line": 156,
-        "message": "invalid cast from type 'CCharacter_full_vtable*' to type 'float'"
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 18,
         "line": 162,
-        "message": "invalid cast from type 'float' to type 'char*'"
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "other",
         "column": 19,
         "line": 163,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 17,
         "line": 164,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 14,
         "line": 175,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 175,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 108,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 220,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 222,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 225,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 227,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 582,

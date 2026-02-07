@@ -21,7 +21,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   int iVar10;
   char *pcVar11;
   uint *puVar12;
-  int x_pos;
+  int x;
   char *pcVar13;
   CKeyFramedModel *pCVar14;
   byte bVar15;
@@ -200,10 +200,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
           pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {
             local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;
-            x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;
-            if (-1 < x_pos) {
+            x = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;
+            if (-1 < x) {
               sprintf(local_2dc,"%d",iVar8,uVar17);
-              engine_2d_c_drawText_FUN_00401fd0(local_2dc,x_pos,local_4c);
+              engine_2d_c_drawText_FUN_00401fd0(local_2dc,x,local_4c);
             }
           }
           iVar8 = iVar8 + 1;
@@ -468,8 +468,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               if ((local_84 == 0x31) &&
                  (iVar8 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                     (g_CEditorToolsPtr,"Load Keyframed model",
-                                     "models","*.kfm",(int)local_408), iVar8 != 0))
-              {
+                                     "models","*.kfm",(int)local_408,0), iVar8 != 0)
+                 ) {
                 core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                 local_64 = 1;
               }
@@ -735,7 +735,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
           if (local_84 < 0x44) {
             iVar8 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                               (g_CEditorToolsPtr,"Reorient using course","data",
-                               "*.pth",(int)local_340);
+                               "*.pth",(int)local_340,0);
             if (iVar8 != 0) {
               core_course_cpp_CCourse_ctor_FUN_004424c0(&local_f0);
               core_course_cpp_CCourse_load_FUN_00442580(&local_f0,local_340);

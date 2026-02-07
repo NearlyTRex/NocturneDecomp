@@ -1,0 +1,465 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 38,
+        "line": 82,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 82,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 82,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 107,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 81,
+        "line": 107,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 108,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 108,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 123,
+        "message": "member reference base type 'char[44]' is not a structure or union"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 254,
+    "complexity_score": 268,
+    "cross_reference_count": 1,
+    "function_call_count": 17,
+    "global_count": 17,
+    "pseudocode_lines": 123,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_param",
+      "unknown_field"
+    ],
+    "total_lines": 377
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053a6b3",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053b9f0",
+    "address_range": [
+      [
+        "0053b9f0",
+        "0053bc79"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (CDemonMission *this_ptr,CDemonMission *other)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c430",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430"
+    },
+    {
+      "addr": "0044c430",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430"
+    },
+    {
+      "addr": "0044cb80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80"
+    },
+    {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
+    },
+    {
+      "addr": "00523e60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
+    },
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
+    },
+    {
+      "addr": "0053c140",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c140"
+    },
+    {
+      "addr": "0053d220",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053d220"
+    },
+    {
+      "addr": "00535c60",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_FUN_00535c60"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a03d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a2ec0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063b7b6",
+      "name": "s_Confirm_new_actor_name_0063b7b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c6d0",
+      "name": "s_Choose_type_of_actor_to__0063c6d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c6ef",
+      "name": "s_C_s_0063c6ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c6f3",
+      "name": "s_core_msnedit_cpp_0063c6f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c707",
+      "name": "s_core_msnedit_cpp_0063c707",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00680648",
+      "name": "INT_00680648",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "00680814",
+      "name": "g_ConfirmNewActorNames",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "00822044",
+      "name": "g_NumActorClassTypes",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822048",
+      "name": "g_ActorClassRegistrations",
+      "type": "CDemonActorType*[200]",
+      "value": null
+    },
+    {
+      "addr": "0082204c",
+      "name": "g_ActorClassRegistrations[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.471153846153846,
+    "instruction_count": 208,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CALLIND": 4,
+      "CBRANCH": 13,
+      "COPY": 170,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 74,
+      "INT_AND": 133,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 104,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 8,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 51,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 82,
+      "INT_XOR": 2,
+      "LOAD": 33,
+      "POPCOUNT": 51,
+      "RETURN": 1,
+      "STORE": 79
+    },
+    "pcode_op_count": 930
+  },
+  "stack_frame": {
+    "frame_size": 1108,
+    "local_size": 1100,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_448",
+        "offset": -1096,
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3b",
+        "offset": -59,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "other",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "CDemonMission *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 0x2c) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)",
+      "text": "(&local_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._0_4_",
+      "text": "local_448.unk1._0_4_,local_448.unk1._4_4_,local_448.unk1._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._4_4_",
+      "text": "local_448.unk1._0_4_,local_448.unk1._4_4_,local_448.unk1._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._8_4_",
+      "text": "local_448.unk1._0_4_,local_448.unk1._4_4_,local_448.unk1._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._0_4_",
+      "text": "(uint)local_448.base.vtable,local_448.unk1._0_4_,local_448.unk1._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._4_4_",
+      "text": "(uint)local_448.base.vtable,local_448.unk1._0_4_,local_448.unk1._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._8_4_",
+      "text": "local_448.unk1._8_4_,local_448.unk1._12_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._12_4_",
+      "text": "local_448.unk1._8_4_,local_448.unk1._12_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_0000000c",
+      "text": "local_448.base.item_count = (int)in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_0000000c",
+      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000000c,(int)actor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._16_4_",
+      "text": "local_448.unk1._16_4_ = local_448.unk1 + 0x18;",
+      "type": "unknown_field"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_004025f0(char *text,int center_x,int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_004025f0(char *text,int x,int y)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   center_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 00489363
@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00402616
     PUSH EBX                            ; 0040261a
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0040261b
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402620
     POP EBX                             ; 00402623
     RET                                 ; 00402624

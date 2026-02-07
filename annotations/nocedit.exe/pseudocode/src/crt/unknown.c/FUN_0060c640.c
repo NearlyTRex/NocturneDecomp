@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060c640(void)
+void FUN_0060c640(void)
 
 {
   ulong in_stack_00000004;

@@ -2,14 +2,16 @@
 // Address: 004ce2d0
 // Address Range: [[004ce2d0, 004ce79b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int z_pos,int width,int height, int color_mode)
+// Signature: void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode )
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_54 */
+
 void __cdecl
 engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-          (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int z_pos,int width,int height,
-          int color_mode)
+          (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode
+          )
 
 {
   char cVar1;
@@ -27,7 +29,7 @@ engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
   int iVar13;
   int iVar14;
   byte bVar15;
-  int in_stack_ffffffac;
+  SMRGLHeaderPrimitive local_54;
   
   bVar15 = 0;
   pcVar11 = g_FontTextureInfo.texture_name;
@@ -45,14 +47,14 @@ engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
   uVar4 = g_ShadowColorBlue;
   uVar2 = g_ShadowColorRed;
   uVar3 = g_ShadowColorGreen;
-  if (height != -2) {
-    if (height < 0) {
+  if (color_mode != -2) {
+    if (color_mode < 0) {
       g_QuadVertex0.color = 0xffff;
       g_QuadVertex0.fog = 9.18341e-41;
       g_QuadVertex0.light = 9.18341e-41;
       goto LAB_004ce397;
     }
-    iVar6 = height * 3;
+    iVar6 = color_mode * 3;
     uVar4 = (uint)(byte)g_SourcePaletteData[iVar6 + 2];
     uVar2 = (uint)(byte)g_SourcePaletteData[iVar6];
     uVar3 = (uint)(byte)g_SourcePaletteData[iVar6 + 1];
@@ -84,11 +86,11 @@ LAB_004ce397:
     pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar15 * -2 + 1) * 4);
     pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);
   }
-  iVar6 = x_pos * 0x10000 + -0x1000;
-  iVar9 = (z_pos + 1) * 0x10000;
+  iVar6 = x * 0x10000 + -0x1000;
+  iVar9 = (right_x + 1) * 0x10000;
   iVar10 = iVar9 + 0x1000;
-  iVar13 = (width + 1) * 0x10000;
-  iVar5 = y_pos * 0x10000 + -0x1000;
+  iVar13 = (bottom_y + 1) * 0x10000;
+  iVar5 = y * 0x10000 + -0x1000;
   iVar14 = iVar13 + 0x1000;
   if (g_UseExternalRenderer == 0) {
     iVar14 = iVar13 + 0x9000;
@@ -136,19 +138,23 @@ LAB_004ce397:
     g_QuadVertex2.v = (float)((int)g_QuadVertex2.v + 0x8000);
     g_QuadVertex2.u = (float)((int)g_QuadVertex2.u + 0x8000);
   }
-  iVar6 = 4;
+  local_54.surface_normal.D = 0;
+  local_54.base.count = 4;
+  local_54.surface_normal.C = 0;
+  local_54.surface_normal.B = 0;
+  local_54.surface_normal.A = 0;
   g_QuadVertex1.u = g_QuadVertex2.u;
   g_QuadVertex1.v = g_QuadVertex0.v;
   g_QuadVertex3.u = g_QuadVertex0.u;
   g_QuadVertex3.v = g_QuadVertex2.v;
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   if (g_CurrentTextureOpacityData == (void *)0x0) {
-    iVar5 = 0x207;
+    iVar6 = 0x207;
   }
   else {
-    iVar5 = 0x227;
+    iVar6 = 0x227;
   }
   engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
-            ((SMRGLHeaderPrimitive *)&stack0xffffffac,iVar5,0,in_stack_ffffffac,iVar6);
+            (&local_54,iVar6,0,local_54.base.type,local_54.base.count);
   return;
 }

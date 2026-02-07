@@ -54,11 +54,11 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont,local_110);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_CalibrationBitmap,0,0,0xffff);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,local_110,0x140 - iVar3 / 2,iVar4 * -3 + 0x1e0,0xf8,-1);
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Monitor calibration");
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont,pcVar5);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();

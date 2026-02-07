@@ -72,7 +72,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&CStack_58,(CVector3f *)auStack_4c);
   if (this_ptr->is_fully_burned == 0) {
-    core_gore_cpp_FUN_004edbb0();
+    core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
     (this_ptr->base).was_created = 2;
     return;
   }

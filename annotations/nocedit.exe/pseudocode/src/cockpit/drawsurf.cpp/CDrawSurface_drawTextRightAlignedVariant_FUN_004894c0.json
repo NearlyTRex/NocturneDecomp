@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 20,
@@ -48,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,int x,int y,int height,char *text)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,char *text,int x,int y)"
   },
   "function_calls": [
     {
@@ -81,7 +74,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 5,
+    "declared_params": 4,
     "estimated_params": 6
   },
   "pcode_summary": {
@@ -105,10 +98,10 @@
     "pcode_op_count": 62
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -120,44 +113,37 @@
       },
       {
         "is_param": true,
-        "name": "x",
+        "name": "text",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "y",
+        "name": "x",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "height",
+        "name": "y",
         "offset": 16,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "text",
-        "offset": 20,
-        "size": 4,
-        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
       "call_site_count": 2,
-      "declared_params": 5,
+      "declared_params": 4,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 6,
       "fix_type": "add_params",
-      "match": "declared:5 vs estimated:6",
-      "param_delta": 1,
-      "text": "Function declares 5 params but call sites push 6 (1 missing)",
+      "match": "declared:4 vs estimated:6",
+      "param_delta": 2,
+      "text": "Function declares 4 params but call sites push 6 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

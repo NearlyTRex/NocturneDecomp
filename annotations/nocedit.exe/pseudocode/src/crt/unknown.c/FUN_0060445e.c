@@ -8,7 +8,7 @@
 
 /* Signature: byte unk_DoNothingAgain1() */
 
-void crt_unknown_c_FUN_0060445e(void)
+void FUN_0060445e(void)
 
 {
   return;

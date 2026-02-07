@@ -7,8 +7,8 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined        Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x8]:4  local_8
+; CStrList         Stack[-0x18]:16  local_18
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 at 004b70a0
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 0049f195
     PUSH 0x2cf0930                      ; 0049f196 | g_DialogMessageBuffer_02cf0930
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f19b
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f1a0
     MOV EAX,ESP                         ; 0049f1a3
     XOR ECX,ECX                         ; 0049f1a5

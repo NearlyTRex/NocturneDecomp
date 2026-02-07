@@ -2,22 +2,15 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 784,
+    "complexity_score": 783,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
-    "pseudocode_lines": 194,
+    "pseudocode_lines": 193,
     "suspect_count": 57,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -25,13 +18,13 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 645
+    "total_lines": 644
   },
   "cross_references": [
     {
       "addr": "004ed830",
       "from_addr": "004ed952",
-      "name": "core_gore.cpp_FUN_004ed830",
+      "name": "core_gore.cpp_CGore_FUN_004ed830",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -495,399 +488,399 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "uint *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "((double)((float)in_stack_00000004[9] * (float)8 +",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000008",
       "text": "else if ((0xf < local_18) && (local_18 = 0xf, in_stack_00000008 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "(g_CDemonRendererPtr2,(CVector3f *)(in_stack_00000004 + 1));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[4] == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.A = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.C = 0xffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.B = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 43,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.D = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "(g_CDemonRendererPtr2,&DAT_0067ba28 + in_stack_00000004[10] * 0x10 + local_18);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_0067ba28",
       "text": "(g_CDemonRendererPtr2,&DAT_0067ba28 + in_stack_00000004[10] * 0x10 + local_18);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "(g_CDemonRendererPtr2,(CVector3i *)(in_stack_00000004 + 6),(CVector3i *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 51,
       "match": "ROUND",
       "text": "local_6c.x = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 52,
       "match": "ROUND",
       "text": "local_6c.y = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 53,
       "match": "ROUND",
       "text": "local_6c.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "local_54.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "ROUND",
       "text": "local_54.y = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 61,
       "match": "ROUND",
       "text": "local_54.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "local_3c.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 68,
       "match": "ROUND",
       "text": "local_3c.y = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
       "text": "local_3c.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 75,
       "match": "ROUND",
       "text": "local_84.x = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 76,
       "match": "ROUND",
       "text": "local_84.y = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 77,
       "match": "ROUND",
       "text": "local_84.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 81,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 82,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = 1;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 84,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.B = 0xffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 85,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.A = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 86,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.C = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 87,
       "match": "DAT_02d83368",
       "text": "DAT_02d83368.surface_normal.D = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 89,
       "match": "in_stack_00000004",
       "text": "(g_CDemonRendererPtr2,&DAT_0067b9c8 + in_stack_00000004[10]);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 89,
       "match": "DAT_0067b9c8",
       "text": "(g_CDemonRendererPtr2,&DAT_0067b9c8 + in_stack_00000004[10]);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 93,
       "match": "ROUND",
       "text": "local_24.x = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 94,
       "match": "ROUND",
       "text": "local_24.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 95,
       "match": "ROUND",
       "text": "local_24.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 101,
       "match": "ROUND",
       "text": "CStack_90.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 102,
       "match": "ROUND",
       "text": "CStack_90.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 103,
       "match": "ROUND",
       "text": "CStack_90.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 109,
       "match": "ROUND",
       "text": "local_60.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 110,
       "match": "ROUND",
       "text": "local_60.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 111,
       "match": "ROUND",
       "text": "local_60.z = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 117,
       "match": "ROUND",
       "text": "local_30.x = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 118,
       "match": "ROUND",
       "text": "local_30.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 119,
       "match": "ROUND",
       "text": "local_30.z = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 124,
       "match": "in_stack_00000004",
       "text": "uVar1 = in_stack_00000004[5];",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 129,
+      "line": 127,
       "match": "1.14794e-41",
       "text": "g_RenderVertexBuffer[0].light = 1.14794e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 140,
       "match": "in_stack_00000004",
       "text": "uVar1 = in_stack_00000004[5];",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 143,
       "match": "1.14794e-41",
       "text": "g_RenderVertexBuffer[1].light = 1.14794e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 158,
+      "line": 156,
       "match": "in_stack_00000004",
       "text": "uVar1 = in_stack_00000004[5];",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 161,
+      "line": 159,
       "match": "1.14794e-41",
       "text": "g_RenderVertexBuffer[2].light = 1.14794e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 172,
       "match": "in_stack_00000004",
       "text": "uVar1 = in_stack_00000004[5];",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 187,
+      "line": 185,
       "match": "1.14794e-41",
       "text": "g_RenderVertexBuffer[3].light = 1.14794e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 190,
       "match": "DAT_02d83368",
       "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 191,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[4] == 1) {",
       "type": "stack_param"

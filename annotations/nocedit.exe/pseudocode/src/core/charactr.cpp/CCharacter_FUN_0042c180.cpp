@@ -71,7 +71,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
       fStack_28 = fStack_64 * 10.0f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base,(CVector3f *)&stack0xffffffe8,(CVector3f *)local_54);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
     }
     fStack_24 = (fStack_3c + local_48.x) * 0.5f;
     fStack_20 = (fStack_38 + local_48.y) * 0.5f;

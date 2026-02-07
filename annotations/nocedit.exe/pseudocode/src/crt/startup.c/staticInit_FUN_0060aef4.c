@@ -9,6 +9,6 @@
 void __cdecl staticInit(void)
 
 {
-  crt_startup_c_FUN_0060d230(0);
+  FUN_0060d230(0);
   return;
 }

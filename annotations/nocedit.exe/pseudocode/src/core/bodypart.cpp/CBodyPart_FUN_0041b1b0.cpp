@@ -15,6 +15,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b1b0(CBodyPart *this_ptr)
   if (iVar1 == 0) {
     return;
   }
-  core_gore_cpp_FUN_004edaa0();
+  core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
   return;
 }

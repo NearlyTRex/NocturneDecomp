@@ -97,7 +97,7 @@ section .text
     MOV EAX,0x61c815                    ; 00466cf2 | = "Need distance and two points."
     PUSH EAX                            ; 00466cf7 | = "Need distance and two points."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00466cf8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00466cfd
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00466d00
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -136,7 +136,7 @@ section .text
     MOV EAX,0x61c833                    ; 00466d39 | = "Invalid point."
     PUSH EAX                            ; 00466d3e | = "Invalid point."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00466d3f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00466d44
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00466d47
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

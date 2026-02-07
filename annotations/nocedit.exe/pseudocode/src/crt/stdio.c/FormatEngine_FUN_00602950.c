@@ -70,9 +70,9 @@ LAB_00602d41:
         return iVar12;
       }
     }
-    local_28 = *(va_list_t *)args;
+    local_28.value[0] = *(char *(*) [1])args.value[0];
     pcVar5 = ScanFormatSpec(format,&local_28,&local_88);
-    *(va_list_t *)args = local_28;
+    *(char *(*) [1])args.value[0] = local_28.value[0];
     local_88.conversion_char = *pcVar5;
     format = pcVar5 + 1;
     if (local_88.conversion_char == '\0') {
@@ -83,12 +83,12 @@ LAB_00602d41:
       return uVar13;
     }
     if (local_88.conversion_char != 'n') {
-      local_24 = *(va_list_t *)args;
+      local_24.value[0] = *(char *(*) [1])args.value[0];
       wide_string_offset =
            (wchar_t *)
            ConvertFormatSpec
                      ((char *)&local_88.length_modifier_flags,&local_24,&local_88);
-      *(va_list_t *)args = local_24;
+      *(char *(*) [1])args.value[0] = local_24.value[0];
       local_88.width =
            local_88.width -
            (local_88.output_length + local_88.padding_needed + local_88.content_length +
@@ -162,8 +162,8 @@ LAB_00602d41:
       if ((local_88._30_2_ & 0x10) == 0) {
         if ((local_88._30_2_ & 0x80) == 0) {
           if ((local_88._30_2_ & 0x40) == 0) {
-            puVar3 = *(uint **)args;
-            *(uint **)args = puVar3 + 1;
+            puVar3 = *(uint **)args.value[0];
+            *(uint **)args.value[0] = puVar3 + 1;
             *(uint *)*puVar3 = local_88._16_4_;
             if (*format == 0) {
               iVar11._0_1_ = local_88.padding1;
@@ -174,8 +174,8 @@ LAB_00602d41:
             }
           }
           else {
-            puVar3 = *(uint **)args;
-            *(uint **)args = puVar3 + 1;
+            puVar3 = *(uint **)args.value[0];
+            *(uint **)args.value[0] = puVar3 + 1;
             *(uint *)*puVar3 = local_88._16_4_;
             if (*format == 0) {
               iVar10._0_1_ = local_88.padding1;
@@ -187,8 +187,8 @@ LAB_00602d41:
           }
         }
         else {
-          puVar2 = *(undefined6 **)args;
-          *(undefined6 **)args = puVar2 + 1;
+          puVar2 = *(undefined6 **)args.value[0];
+          *(undefined6 **)args.value[0] = puVar2 + 1;
           *(int *)*puVar2 = local_88._16_4_;
           if (*format == 0) {
             iVar9._0_1_ = local_88.padding1;
@@ -203,8 +203,8 @@ LAB_00602d41:
         uVar4 = local_88._16_2_;
         if ((local_88._30_2_ & 0x80) == 0) {
           if ((local_88._30_2_ & 0x40) == 0) {
-            puVar3 = *(uint **)args;
-            *(uint **)args = puVar3 + 1;
+            puVar3 = *(uint **)args.value[0];
+            *(uint **)args.value[0] = puVar3 + 1;
             *(ushort *)*puVar3 = uVar4;
             if (*format == 0) {
               iVar8._0_1_ = local_88.padding1;
@@ -215,8 +215,8 @@ LAB_00602d41:
             }
           }
           else {
-            puVar3 = *(uint **)args;
-            *(uint **)args = puVar3 + 1;
+            puVar3 = *(uint **)args.value[0];
+            *(uint **)args.value[0] = puVar3 + 1;
             *(ushort *)*puVar3 = uVar4;
             if (*format == 0) {
               iVar7._0_1_ = local_88.padding1;
@@ -228,8 +228,8 @@ LAB_00602d41:
           }
         }
         else {
-          puVar2 = *(undefined6 **)args;
-          *(undefined6 **)args = puVar2 + 1;
+          puVar2 = *(undefined6 **)args.value[0];
+          *(undefined6 **)args.value[0] = puVar2 + 1;
           *(ushort *)*puVar2 = uVar4;
           if (*format == 0) {
             iVar6._0_1_ = local_88.padding1;
@@ -244,21 +244,21 @@ LAB_00602d41:
     }
     if ((local_88._30_2_ & 0x80) == 0) {
       if ((local_88._30_2_ & 0x40) == 0) {
-        puVar3 = *(uint **)args;
-        *(uint **)args = puVar3 + 1;
+        puVar3 = *(uint **)args.value[0];
+        *(uint **)args.value[0] = puVar3 + 1;
         *(uint *)*puVar3 = local_88._16_4_;
         bVar1 = *format;
       }
       else {
-        puVar3 = *(uint **)args;
-        *(uint **)args = puVar3 + 1;
+        puVar3 = *(uint **)args.value[0];
+        *(uint **)args.value[0] = puVar3 + 1;
         *(uint *)*puVar3 = local_88._16_4_;
         bVar1 = *format;
       }
     }
     else {
-      puVar2 = *(undefined6 **)args;
-      *(undefined6 **)args = puVar2 + 1;
+      puVar2 = *(undefined6 **)args.value[0];
+      *(undefined6 **)args.value[0] = puVar2 + 1;
       *(int *)*puVar2 = local_88._16_4_;
       bVar1 = *format;
     }

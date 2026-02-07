@@ -18,6 +18,6 @@ int __cdecl vsscanf(char *str,char *format,va_list_t args)
   local_1c = string_getc;
   local_18 = string_ungetc;
   iVar1 = doscan
-                    ((scanf_state_t *)&local_1c,(char **)format,(va_list_t *)args);
+                    ((scanf_state_t *)&local_1c,(char **)format,(va_list_t *)args.value[0]);
   return iVar1;
 }

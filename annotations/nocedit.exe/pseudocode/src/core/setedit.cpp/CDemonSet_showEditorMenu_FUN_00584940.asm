@@ -80,55 +80,55 @@ section .text
     PUSH 0x0                            ; 00584982
     PUSH 0x648e6d                       ; 00584984 | = "Demon(R) Set Editor(TM)"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584989
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0058498e
     PUSH 0x16                           ; 00584991
     PUSH 0x0                            ; 00584993
     PUSH 0x648e85                       ; 00584995 | = "1.  Load set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0058499a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0058499f
     PUSH 0x21                           ; 005849a2
     PUSH 0x0                            ; 005849a4
     PUSH 0x648e92                       ; 005849a6 | = "2.  Save set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005849ab
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005849b0
     PUSH 0x2c                           ; 005849b3
     PUSH 0x0                            ; 005849b5
     PUSH 0x648e9f                       ; 005849b7 | = "3.  Import set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005849bc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005849c1
     PUSH 0x42                           ; 005849c4
     PUSH 0x0                            ; 005849c6
     PUSH 0x648eae                       ; 005849c8 | = "4.  View set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005849cd
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005849d2
     PUSH 0x58                           ; 005849d5
     PUSH 0x0                            ; 005849d7
     PUSH 0x648ebb                       ; 005849d9 | = "7.  Light editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005849de
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005849e3
     PUSH 0x6e                           ; 005849e6
     PUSH 0x0                            ; 005849e8
     PUSH 0x648ecc                       ; 005849ea | = "9.  Camera editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005849ef
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005849f4
     PUSH 0x79                           ; 005849f7
     PUSH 0x0                            ; 005849f9
     PUSH 0x648ede                       ; 005849fb | = "A.  Fog editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584a00
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584a05
     PUSH 0x8f                           ; 00584a08
     PUSH 0x0                            ; 00584a0d
     PUSH 0x648eed                       ; 00584a0f | = "C.  Rebuild thumbs"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584a14
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584a19
     MOV EBX,dword ptr [EBP + 0x15f67c]  ; 00584a1c
     PUSH EBX                            ; 00584a22
@@ -147,19 +147,19 @@ section .text
     LEA EAX,[ESP + 0x6b4]               ; 00584a48
     PUSH EAX                            ; 00584a4f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584a50
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584a55
     PUSH 0xb0                           ; 00584a58
     PUSH 0x0                            ; 00584a5d
     PUSH 0x648f1c                       ; 00584a5f | = "F.  Export lights/cameras to .LC file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584a64
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584a69
     PUSH 0xbb                           ; 00584a6c
     PUSH 0x0                            ; 00584a71
     PUSH 0x648f42                       ; 00584a73 | = "G.  Virtual director box editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584a78
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,dword ptr [EBP + 0x161668]  ; 00584a7d
     ADD ESP,0xc                         ; 00584a83
     MOV ESI,dword ptr [EAX*0x4 + 0x6817f0] ; 00584a86 | PTR_s_None_006817f0
@@ -175,13 +175,13 @@ section .text
     LEA EAX,[ESP + 0x6b4]               ; 00584aaa
     PUSH EAX                            ; 00584ab1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584ab2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584ab7
     PUSH 0xd1                           ; 00584aba
     PUSH 0x0                            ; 00584abf
     PUSH 0x648f72                       ; 00584ac1 | = "I.  Edit ground types"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00584ac6
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00584acb
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00584ace
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

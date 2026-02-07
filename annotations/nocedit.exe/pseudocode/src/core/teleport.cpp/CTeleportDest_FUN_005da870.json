@@ -1,57 +1,26 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 52,
-        "line": 21,
-        "message": "cast from 'CTeleportDest*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 72,
-        "line": 33,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
+        "category": "format_error",
+        "column": 55,
         "line": 27,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'CTeleportDest*' [-Wformat=]"
+        "message": "format specifies type 'char *' but the argument has type 'CTeleportDest *' [-Wformat]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 31,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 131
+    "total_lines": 132
   },
   "cross_references": [],
   "function": {
@@ -75,7 +44,7 @@
     {
       "addr": "00524030",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
     },
     {
       "addr": "0053c140",

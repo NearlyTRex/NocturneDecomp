@@ -2,64 +2,53 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 10,
-        "line": 58,
-        "message": "'void*' is not a pointer-to-object type"
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 50,
+        "message": "assigning to 'CHero *' from incompatible type 'void *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 51,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 20,
+        "line": 51,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 55,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 20,
+        "line": 55,
+        "message": "expected expression"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 20,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 22,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 36,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 200,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 55,
-    "suspect_count": 14,
+    "pseudocode_lines": 53,
+    "suspect_count": 15,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast",
+      "unnamed_param",
+      "unresolved_funcptr"
     ],
-    "total_lines": 193
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -79,7 +68,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920",
-    "signature": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr)"
+    "signature": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920 (CDemonMission *this_ptr,int index,int param_3,void *param_4)"
   },
   "function_calls": [
     {
@@ -100,7 +89,7 @@
     {
       "addr": "00523b70",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
     },
     {
       "addr": "0052dde0",
@@ -228,10 +217,10 @@
     "pcode_op_count": 431
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -247,107 +236,135 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "CDemonActor *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "if (g_HeroCount <= in_stack_00000008) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "if (g_HeroActors[in_stack_00000008] != (CHero *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "text": "g_HeroActors[in_stack_00000008] = pCVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 38,
-      "match": "in_stack_00000008",
-      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->index)) {",
-      "type": "stack_param"
+      "match": "param_4",
+      "text": "if (param_4 == (void *)0x0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000010",
-      "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_3",
+      "text": "(this_ptr_00,param_3);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr_00,in_stack_0000000c);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "text": "local_14 = param_4;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 44,
-      "match": "in_stack_00000010",
-      "text": "(*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)",
-      "type": "stack_param"
+      "match": "(int *)((int)",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 44,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_4",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 45,
-      "match": "in_stack_00000010",
-      "text": "(in_stack_00000010,&(this_ptr_00->base).location.position,",
-      "type": "stack_param"
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_4",
+      "text": "*(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 47,
-      "match": "in_stack_00000010",
-      "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base).location.area_id;",
-      "type": "stack_param"
+      "match": "(CMotionController *)((int)",
+      "text": "((CMotionController *)((int)param_4 + 0x158),0,0.0);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000010",
-      "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_4",
+      "text": "((CMotionController *)((int)param_4 + 0x158),0,0.0);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000010",
-      "text": "(*(((in_stack_00000010->vtable)._uc)->_uc).cfunc23)();",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 48,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_4",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "type": "unnamed_param"
     }
   ]
 }

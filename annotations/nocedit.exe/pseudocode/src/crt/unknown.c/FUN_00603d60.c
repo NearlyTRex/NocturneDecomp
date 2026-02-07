@@ -8,7 +8,7 @@
 
 /* Signature: byte FUN_00603d60(uint param_1, uint param_2) */
 
-void crt_unknown_c_FUN_00603d60(void)
+void FUN_00603d60(void)
 
 {
   int in_stack_00000008;

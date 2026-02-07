@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-short * crt_unknown_c_FUN_006107c0(void)
+short * FUN_006107c0(void)
 
 {
   short sVar1;

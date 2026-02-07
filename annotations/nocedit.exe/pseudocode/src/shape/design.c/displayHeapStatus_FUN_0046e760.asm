@@ -42,7 +42,7 @@ section .text
     MOV EAX,0x61ded0                    ; 0046e780 | = "OK - heap is good"
     PUSH EAX                            ; 0046e785 | = "OK - heap is good"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e786
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e78b
     JMP 0x0046e7fa                      ; 0046e78e
         ;   XREF to: 0046e7fa (UNCONDITIONAL_JUMP)  ; default
@@ -53,7 +53,7 @@ section .text
     MOV EAX,0x61dee2                    ; 0046e797 | = "OK - heap is empty"
     PUSH EAX                            ; 0046e79c | = "OK - heap is empty"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e79d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e7a2
     JMP 0x0046e7fa                      ; 0046e7a5
         ;   XREF to: 0046e7fa (UNCONDITIONAL_JUMP)  ; default
@@ -64,7 +64,7 @@ section .text
     MOV EAX,0x61def5                    ; 0046e7ae | = "ERROR - heap is damaged"
     PUSH EAX                            ; 0046e7b3 | = "ERROR - heap is damaged"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e7b4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e7b9
     JMP 0x0046e7fa                      ; 0046e7bc
         ;   XREF to: 0046e7fa (UNCONDITIONAL_JUMP)  ; default
@@ -75,7 +75,7 @@ section .text
     MOV EAX,0x61df0d                    ; 0046e7c5 | = "ERROR - bad node in heap"
     PUSH EAX                            ; 0046e7ca | = "ERROR - bad node in heap"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e7cb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e7d0
     JMP 0x0046e7fa                      ; 0046e7d3
         ;   XREF to: 0046e7fa (UNCONDITIONAL_JUMP)  ; default

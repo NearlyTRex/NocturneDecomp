@@ -21,7 +21,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 005607be
     MOV ECX,dword ptr [0x0067d550]      ; 005607bf | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 005607c5 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 005607c6
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 005607c6
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 005607cb
     MOV EDX,dword ptr [ESP + 0xd8]      ; 005607ce
     MOV dword ptr [EDX],EAX             ; 005607d5

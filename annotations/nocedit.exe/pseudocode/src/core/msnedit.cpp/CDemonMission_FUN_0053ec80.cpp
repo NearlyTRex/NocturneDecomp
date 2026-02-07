@@ -19,10 +19,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ec80(CDemonMission *this_ptr
   char acStack_d0 [192];
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5ac);
-  if (*(int *)(this_ptr->unk4 + 0x338) == 0) {
+  if (this_ptr->actors_prepared == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Setting up actors...");
-    core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
+    core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Finding sound files in mission...");

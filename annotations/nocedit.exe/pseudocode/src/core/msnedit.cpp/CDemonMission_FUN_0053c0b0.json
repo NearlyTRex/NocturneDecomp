@@ -1,83 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 6,
-        "line": 28,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 12,
-        "line": 28,
-        "message": "expected primary-expression before ')' token"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 29,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 36,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 77
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
   },
   "cross_references": [
     {
       "addr": "005390f0",
       "from_addr": "00539cb3",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -205,13 +147,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
-      "text": "(*(code *)**(uint **)(*(int *)(this_ptr->unk2 + 0x1c) + 0x154))();",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

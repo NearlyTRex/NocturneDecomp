@@ -8,15 +8,15 @@
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f749
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ac1a
-;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b273
-;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b753
-;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053ba3f
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c210 at 0053c28f
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053d951
 ;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053dda4
 ;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e05f
 ;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053edc1
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b273
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b753
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ac1a
+;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053ba3f
 ;   ... and 5 more
 ;
 ; *****************************************************************************

@@ -63,8 +63,8 @@
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
-;   core_mission.cpp_CDemonMission_FUN_00523b70
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -336,8 +336,8 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 005c7162 | g_CDemonMissionPtr
     PUSH EDI                            ; 005c7168 | g_CDemonMissionInstance
     MOV dword ptr [EBX + 0x70],0x2      ; 005c7169
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 005c7170
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 005c7170
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     LEA EAX,[EBX + 0x20]                ; 005c7175
     LEA EDI,[ESI + 0x20]                ; 005c7178
     MOV EDX,dword ptr [EAX]             ; 005c717b
@@ -410,8 +410,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x110]     ; 005c7236
     PUSH EDI                            ; 005c723c | g_CDemonMissionInstance
     MOV dword ptr [ESI + 0x110],EAX     ; 005c723d
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 005c7243
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 005c7243
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     MOV EAX,dword ptr [EBP + -0x8]      ; 005c7248
     MOV EAX,dword ptr [EAX + 0x2c28]    ; 005c724b
     MOV ESI,dword ptr [EBX + 0xe304]    ; 005c7251

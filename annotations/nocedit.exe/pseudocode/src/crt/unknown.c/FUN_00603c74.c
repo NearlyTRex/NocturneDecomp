@@ -8,7 +8,7 @@
 
 /* Signature: byte FUN_00603c74(uint param_1, uint param_2) */
 
-void crt_unknown_c_FUN_00603c74(void)
+void FUN_00603c74(void)
 
 {
   int *piVar1;
@@ -25,6 +25,6 @@ void crt_unknown_c_FUN_00603c74(void)
     }
     piVar1 = (int *)((int)piVar1 + 10);
   }
-  crt_unknown_c_FUN_0060445e();
+  FUN_0060445e();
   return;
 }

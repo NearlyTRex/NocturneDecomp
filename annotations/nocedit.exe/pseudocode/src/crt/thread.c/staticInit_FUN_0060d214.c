@@ -9,7 +9,7 @@
 void __cdecl staticInit(void)
 
 {
-  PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24 = crt_unknown_c_FUN_0060d1a8;
-  PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f28 = crt_unknown_c_FUN_0060d1ec;
+  PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24 = FUN_0060d1a8;
+  PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f28 = FUN_0060d1ec;
   return;
 }

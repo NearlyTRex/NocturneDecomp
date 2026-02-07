@@ -14,7 +14,7 @@ core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_00412860
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) && (layer_flag != 0)) {
+  if ((g_CDemonMissionPtr->is_in_editor == 0) && (layer_flag != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                             (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);

@@ -32,7 +32,7 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   iVar5 = this_ptr->coord_unk;
   iVar3 = ((this_ptr->y_position + this_ptr->right_boundary) - iVar3) / 2;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004a6be0(this_ptr);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_EditorFont,this_ptr->checkbox_text,iVar4 + iVar2,iVar3,iVar5,color_value);
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0
             (left,iVar1,iVar2,local_14,this_ptr->border_style_flag);

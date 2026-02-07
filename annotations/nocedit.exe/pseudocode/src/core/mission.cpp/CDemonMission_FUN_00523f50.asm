@@ -7,8 +7,8 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_mission.cpp_CDemonMission_FUN_005243a0 at 005243dc
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30 at 00522d48
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 at 005243dc
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
-;   core_mission.cpp_CDemonMission_FUN_00523f20
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
 ;   core_setcolid.cpp_CDemonSet_FUN_00574560
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x548]     ; 00523f63
     PUSH ECX                            ; 00523f69
     PUSH EBX                            ; 00523f6a
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 00523f6b
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 00523f6b
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     MOV ESI,dword ptr [EBX + 0x548]     ; 00523f70
     ADD ESP,0xc                         ; 00523f76
     TEST ESI,ESI                        ; 00523f79

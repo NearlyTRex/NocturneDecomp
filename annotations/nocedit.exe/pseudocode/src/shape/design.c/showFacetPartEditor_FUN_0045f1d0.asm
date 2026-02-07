@@ -564,7 +564,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045f863
     PUSH EAX                            ; 0045f869
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f86a
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f86f
     MOV EAX,[0x01e528c8]                ; 0045f872 | g_EditorTextureMode
         ;   Label: LAB_0045f872
@@ -593,7 +593,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045f8ba
     PUSH EAX                            ; 0045f8c0
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f8c1
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f8c6
     CMP dword ptr [0x01e528c0],0x1      ; 0045f8c9 | g_GouraudShadingEnabled
     JNZ 0x0045f905                      ; 0045f8d0
@@ -612,7 +612,7 @@ section .text
     MOV EAX,0x61b751                    ; 0045f8f5 | = "Gouraud : on"
     PUSH EAX                            ; 0045f8fa | = "Gouraud : on"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f8fb
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f900
     JMP 0x0045f936                      ; 0045f903
         ;   XREF to: 0045f936 (UNCONDITIONAL_JUMP)  ; LAB_0045f936
@@ -631,7 +631,7 @@ section .text
     MOV EAX,0x61b75e                    ; 0045f928 | = "Gouraud : off"
     PUSH EAX                            ; 0045f92d | = "Gouraud : off"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f92e
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f933
     MOV EAX,0x61b76c                    ; 0045f936 | = "Gouraud : off   "
         ;   Label: LAB_0045f936
@@ -658,7 +658,7 @@ section .text
     MOV EAX,0x61b77d                    ; 0045f976 | = "Z-buffer : on"
     PUSH EAX                            ; 0045f97b | = "Z-buffer : on"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f97c
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f981
     JMP 0x0045f9ba                      ; 0045f984
         ;   XREF to: 0045f9ba (UNCONDITIONAL_JUMP)  ; LAB_0045f9ba
@@ -678,7 +678,7 @@ section .text
     MOV EAX,0x61b78b                    ; 0045f9ac | = "Z-buffer : off"
     PUSH EAX                            ; 0045f9b1 | = "Z-buffer : off"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045f9b2
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045f9b7
     CMP dword ptr [0x01e6614c],-0x1     ; 0045f9ba | g_CurrentPartIndex
         ;   Label: LAB_0045f9ba
@@ -711,7 +711,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fa02
     PUSH EAX                            ; 0045fa08
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fa09
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fa0e
     MOV EAX,0x61b7ad                    ; 0045fa11 | = "Polygons"
     PUSH EAX                            ; 0045fa16 | = "Polygons"
@@ -737,7 +737,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fa4f
     PUSH EAX                            ; 0045fa55
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fa56
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fa5b
     PUSH dword ptr [0x01626408]         ; 0045fa5e | g_VertexCount
     MOV EAX,0x61b7bd                    ; 0045fa64 | = " : %d"
@@ -759,7 +759,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fa94
     PUSH EAX                            ; 0045fa9a
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fa9b
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045faa0
     MOV EAX,0x61b7c3                    ; 0045faa3 | = "Polygons"
     PUSH EAX                            ; 0045faa8 | = "Polygons"
@@ -779,7 +779,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fad0
     PUSH EAX                            ; 0045fad6
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fad7
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fadc
     PUSH dword ptr [0x016e990c]         ; 0045fadf | g_PolygonCount
     MOV EAX,0x61b7cc                    ; 0045fae5 | = " : %d"
@@ -801,7 +801,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fb15
     PUSH EAX                            ; 0045fb1b
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fb1c
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fb21
     MOV EAX,0x61b7d2                    ; 0045fb24 | = "Parts"
     PUSH EAX                            ; 0045fb29 | = "Parts"
@@ -821,7 +821,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fb51
     PUSH EAX                            ; 0045fb57
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fb58
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fb5d
     PUSH dword ptr [0x01e528a0]         ; 0045fb60 | g_PartsCount
     MOV EAX,0x61b7d8                    ; 0045fb66 | = " : %d"
@@ -843,7 +843,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fb96
     PUSH EAX                            ; 0045fb9c
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fb9d
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fba2
     CMP dword ptr [0x015c4834],0x0      ; 0045fba5 | g_WireframeMode
     JZ 0x0045fbb9                       ; 0045fbac
@@ -880,7 +880,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fc18
     PUSH EAX                            ; 0045fc1e
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fc1f
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fc24
     CMP byte ptr [0x02d03eab],0x0       ; 0045fc27 | CHAR_ARRAY_02d03eab
     JZ 0x0045fc39                       ; 0045fc2e
@@ -1095,7 +1095,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045fea3
     PUSH EAX                            ; 0045fea9
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045feaa
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045feaf
     FILD dword ptr [EBP + -0x30]        ; 0045feb2
     FMUL double ptr [0x0061b846]        ; 0045feb5 | g_CoordinateDisplayScale
@@ -1130,7 +1130,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045ff17
     PUSH EAX                            ; 0045ff1d
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045ff1e
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ff23
     MOV EAX,dword ptr [EBP + -0x28]     ; 0045ff26
     AND EAX,0xffff                      ; 0045ff29
@@ -1155,7 +1155,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045ff61
     PUSH EAX                            ; 0045ff67
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045ff68
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ff6d
     CMP dword ptr [0x01e528b8],-0x1     ; 0045ff70 | g_SelectedPolygonIndex
     JNZ 0x0045ff90                      ; 0045ff77
@@ -1186,7 +1186,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0045ffb6
     PUSH EAX                            ; 0045ffbc
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045ffbd
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ffc2
     CMP dword ptr [0x01e528b8],-0x1     ; 0045ffc5 | g_SelectedPolygonIndex
     JZ 0x0046059b                       ; 0045ffcc
@@ -1245,7 +1245,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0046008a
     PUSH EAX                            ; 00460090
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 00460091
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460096
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460099 | g_SelectedPolygonIndex
     FLD float ptr [EAX + 0x16e99c0]     ; 004600a3 | DAT_016e983c
@@ -1279,7 +1279,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 0046010f
     PUSH EAX                            ; 00460115
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 00460116
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046011b
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 0046011e | g_SelectedPolygonIndex
     MOV EDX,0x16e9910                   ; 00460128 | g_ModelPolygonData
@@ -1313,7 +1313,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 00460184
     PUSH EAX                            ; 0046018a
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046018b
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460190
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460193 | g_SelectedPolygonIndex
     IMUL EAX,dword ptr [EAX + 0x16e9a88],0x14 ; 0046019d | DAT_016e9904
@@ -1353,7 +1353,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 00460221
     PUSH EAX                            ; 00460227
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 00460228
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046022d
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460230 | g_SelectedPolygonIndex
     CMP byte ptr [EAX + 0x16e9964],0x0  ; 0046023a | DAT_016e97e0
@@ -1415,7 +1415,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 004602f7
     PUSH EAX                            ; 004602fd
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 004602fe
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460303
     CMP dword ptr [0x015c4838],0x0      ; 00460306 | g_ShowUVCoordinates
     JZ 0x0046045b                       ; 0046030d
@@ -1433,7 +1433,7 @@ section .text
     MOV EAX,0x61b908                    ; 00460334 | = "UVs :"
     PUSH EAX                            ; 00460339 | = "UVs :"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046033a
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046033f
     MOV dword ptr [EBP + -0x34],0x0     ; 00460342
     JMP 0x00460351                      ; 00460349
@@ -1506,7 +1506,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 00460447
     PUSH EAX                            ; 0046044d
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046044e
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460453
     JMP 0x0046034b                      ; 00460456
         ;   XREF to: 0046034b (UNCONDITIONAL_JUMP)  ; LAB_0046034b
@@ -1527,7 +1527,7 @@ section .text
     MOV EAX,0x61b93e                    ; 00460489 | = "Vertices :"
     PUSH EAX                            ; 0046048e | = "Vertices :"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046048f
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460494
     MOV dword ptr [EBP + -0x34],0x0     ; 00460497
     JMP 0x004604a6                      ; 0046049e
@@ -1594,7 +1594,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 00460587
     PUSH EAX                            ; 0046058d
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046058e
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460593
     JMP 0x004604a0                      ; 00460596
         ;   XREF to: 004604a0 (UNCONDITIONAL_JUMP)  ; LAB_004604a0

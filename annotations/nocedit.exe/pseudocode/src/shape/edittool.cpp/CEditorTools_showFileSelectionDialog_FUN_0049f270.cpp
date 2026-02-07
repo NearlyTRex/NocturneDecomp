@@ -2,21 +2,20 @@
 // Address: 0049f270
 // Address Range: [[0049f270, 0049f41a]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown)
 
 #include "nocturne.h"
 
 int __cdecl
 shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
           (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,
-          int auto_select_flag)
+          int auto_select_flag,uint unknown)
 
 {
   int iVar1;
   char *pcVar2;
   char *output_buffer;
   char *pcVar3;
-  byte in_stack_00000018;
   CPickList local_8bc;
   char local_514 [512];
   char local_314 [512];
@@ -34,8 +33,7 @@ shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_8bc.base);
     pcVar3 = (char *)0xffffffff;
     pcVar2 = pcVar3;
-    if (((in_stack_00000018 & 1) != 0) &&
-       (output_buffer = (char *)0x0, 0 < local_8bc.base.item_count)) {
+    if (((unknown & 1) != 0) && (output_buffer = (char *)0x0, 0 < local_8bc.base.item_count)) {
       do {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_8bc.base,(int)local_314,output_buffer,0);

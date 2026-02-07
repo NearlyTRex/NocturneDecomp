@@ -165,7 +165,7 @@ LAB_0060e0a5:
         uVar6 = CONCAT22((short)(uVar6 >> 0x10),sVar4);
         if (sVar4 == 0x7ff) {
 LAB_0060e0af:
-          dVar17 = (double)crt_unknown_c_FUN_0060eb57(uVar6,uVar13,uVar5);
+          dVar17 = (double)FUN_0060eb57(uVar6,uVar13,uVar5);
           return dVar17;
         }
       }

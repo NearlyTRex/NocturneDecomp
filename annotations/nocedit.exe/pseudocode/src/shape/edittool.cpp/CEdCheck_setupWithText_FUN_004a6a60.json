@@ -2,33 +2,14 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "const_error",
+        "category": "other",
         "column": 21,
         "line": 22,
-        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 37,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 39,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 92,
@@ -45,7 +26,7 @@
     {
       "addr": "005390f0",
       "from_addr": "005398fd",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],

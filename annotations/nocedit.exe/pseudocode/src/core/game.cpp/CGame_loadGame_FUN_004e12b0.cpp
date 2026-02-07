@@ -26,12 +26,12 @@ core_game_cpp_CGame_loadGame_FUN_004e12b0
   byte bVar12;
   char *directory;
   char *target_filename;
-  uint class_name_hash;
+  uint uVar13;
   char local_638 [260];
   char local_534 [260];
   char local_430 [256];
   char local_330 [256];
-  uint local_230 [50];
+  char local_230 [200];
   byte local_168 [100];
   int local_104;
   byte local_e8 [96];
@@ -85,12 +85,13 @@ core_game_cpp_CGame_loadGame_FUN_004e12b0
     pcVar8 = save_filename;
     pcVar5 = local_638;
     if (save_filename == (char *)0x0) {
+      uVar13 = 1;
       target_filename = "*.noc";
       directory = "save";
       pcVar8 = local_638;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select file to load");
       iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                        (g_CEditorToolsPtr,pcVar5,directory,target_filename,(int)pcVar8);
+                        (g_CEditorToolsPtr,pcVar5,directory,target_filename,(int)pcVar8,uVar13);
       if (iVar2 == 0) {
 LAB_004e17ac:
         g_EditorFont = local_3c;
@@ -158,7 +159,7 @@ LAB_004e14f5:
       iVar2 = g_DefaultStreamBufferSize;
       crt_fstream_cpp_openFile_FUN_00600e85
                 ((ifstream *)local_168,local_534,0x121,g_DefaultStreamBufferSize);
-      crt_unknown_c_FUN_00600ee4();
+      FUN_00600ee4();
       if (local_104 != 0) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Can't open saved game file.");
@@ -245,7 +246,7 @@ LAB_004e14f5:
                   (g_CEditorToolsPtr,"Can't load old save game file %s.  Sorry.",local_638);
       }
       else {
-        core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(g_CDemonMissionPtr);
+        core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(g_CDemonMissionPtr,file_handle);
         _fgets(local_330,0xff,file_handle);
         iVar2 = 0;
         _fscanf(file_handle,"%d, %d\n",&g_HeroCount,&g_LocalHeroIndex);
@@ -253,16 +254,18 @@ LAB_004e14f5:
         if (0 < g_HeroCount) {
           do {
             pcVar8 = "(file corrupt)";
-            puVar7 = local_230;
+            pcVar5 = local_230;
             for (iVar4 = 0x32; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar7 = *(uint *)pcVar8;
+              *(uint *)pcVar5 = *(uint *)pcVar8;
               pcVar8 = pcVar8 + ((uint)bVar12 * -2 + 1) * 4;
-              puVar7 = puVar7 + (uint)bVar12 * -2 + 1;
+              pcVar5 = pcVar5 + ((uint)bVar12 * -2 + 1) * 4;
             }
             _fscanf(file_handle,"%[^\n]\n",local_230);
-            class_name_hash = g_CHeroClassInfo.name_hash;
-            pCVar3 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-            pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,class_name_hash);
+            uVar13 = g_CHeroClassInfo.name_hash;
+            pCVar3 = (CDemonActor *)
+                     core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                               (g_CDemonMissionPtr,local_230);
+            pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,uVar13);
             *(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;
             if (pCVar3 == (CDemonActor *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe4a);
@@ -278,10 +281,10 @@ LAB_004e14f5:
         core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr);
         core_script_cpp_CScript_loadState_FUN_00560820(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
-          core_gore_cpp_FUN_004ed760();
+          core_gore_cpp_CGore_FUN_004ed760(g_CGorePtr);
         }
         else if (local_34 == 4) {
-          core_gore_cpp_FUN_004ee1e0();
+          core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr);
         }
         if (local_34 < 7) {
           core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);

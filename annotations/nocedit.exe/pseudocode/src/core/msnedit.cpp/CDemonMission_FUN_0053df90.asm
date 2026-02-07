@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a6ed
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a6ed
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Delete_actors_using_list_0063ce65
@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bc80
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -148,8 +148,8 @@ section .text
     ADD ESP,0x8                         ; 0053e08e
     PUSH EAX                            ; 0053e091
     PUSH EBX                            ; 0053e092
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 0053e093
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053e093
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053e098
     MOV EDI,EAX                         ; 0053e09b
     TEST EAX,EAX                        ; 0053e09d

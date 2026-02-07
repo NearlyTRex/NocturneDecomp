@@ -2,102 +2,35 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "pointer_precision",
-        "column": 31,
-        "line": 57,
-        "message": "cast from 'CHero**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 31,
-        "line": 158,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 160,
-        "message": "'code' was not declared in this scope"
+        "line": 161,
+        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 160,
-        "message": "expected primary-expression before ')' token"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 31,
-        "line": 178,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+        "line": 161,
+        "message": "expected expression"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 57,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 74,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 76,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 77,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 78,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 79,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 160,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 301,
+    "complexity_score": 302,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 236,
+    "pseudocode_lines": 237,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 745
+    "total_lines": 746
   },
   "cross_references": [],
   "function": {
@@ -147,7 +80,7 @@
     {
       "addr": "00524030",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
     },
     {
       "addr": "0056db80",
@@ -458,28 +391,28 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 102,
       "match": "ROUND",
       "text": "CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 103,
       "match": "ROUND",
       "text": "CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 104,
       "match": "ROUND",
       "text": "CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 154,
       "match": "code *",
       "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
       "type": "unresolved_funcptr"

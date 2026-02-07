@@ -554,3 +554,10 @@ typedef struct tWAVEFORMAT {
     WORD nBlockAlign;
 } tWAVEFORMAT;
 
+// =============================================================================
+// DIRECTSOUND API FUNCTIONS
+// =============================================================================
+
+extern HRESULT DirectSoundCreate(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
+extern HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
+

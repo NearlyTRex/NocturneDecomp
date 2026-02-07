@@ -39,7 +39,7 @@
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_004a6970
 ;   shape_edittool.cpp_calculateGridHeight_FUN_004a64b0
 ;   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0
@@ -351,8 +351,8 @@ section .text
     PUSH ECX                            ; 004a513e
     MOV EDI,ESI                         ; 004a513f
     ADD EBP,0x4                         ; 004a5141
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a5144
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004a5144
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a5149
     MOV EAX,dword ptr [EBP + 0xc]       ; 004a514c
     MOV ECX,dword ptr [ESP + 0x144]     ; 004a514f

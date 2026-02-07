@@ -16,7 +16,7 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
   int x2;
   int iVar3;
   CBitFont *this_ptr_00;
-  char *text_string;
+  char *text;
   
   y2 = g_FontCharacterWidth + y_pos;
   if (this_ptr->selection_start != this_ptr->cursor_position) {
@@ -33,7 +33,7 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   this_ptr_00 = g_EditorFont;
-  text_string = this_ptr->string_data;
+  text = this_ptr->string_data;
   iVar3 = g_TextColor;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
@@ -44,10 +44,10 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
     memset(g_TempStringBuffer,0x2a,this_ptr->current_length);
     iVar3 = g_TextColor;
     this_ptr_00 = g_EditorFont;
-    text_string = g_TempStringBuffer;
+    text = g_TempStringBuffer;
     g_TempStringBuffer[this_ptr->current_length] = '\0';
   }
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr_00,text_string,x_pos,y_pos,iVar3,-1);
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr_00,text,x_pos,y_pos,iVar3,-1);
   uVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   if ((uVar1 & 0x40000) != 0) {
     g_ActiveRenderColor = g_CursorColor;

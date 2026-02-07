@@ -12,7 +12,7 @@ This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the
 
 ![Overall Progress](annotations/nocedit.exe/reports/overall_progress.svg)
 
-*"Complete" = function has clean decompilation (no suspect patterns) AND compiles successfully with g++.*
+*"Complete" = function has clean decompilation (no suspect patterns) AND compiles successfully with clang++.*
 
 ### Decompilation Details
 
@@ -26,7 +26,7 @@ This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the
 
 [![Compilation Status](annotations/nocedit.exe/reports/compilation_progress.svg)](annotations/nocedit.exe/reports/all_files_compilation.svg)
 
-*Click chart to see per-file breakdown. Compiled with g++ -fsyntax-only.*
+*Click chart to see per-file breakdown. Compiled with clang++ -m32 -fsyntax-only.*
 
 ## Project Structure
 

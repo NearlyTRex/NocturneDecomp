@@ -18,6 +18,12 @@ Example:
 import os
 import sys
 import subprocess
+
+# Add script directory to path for package imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ghidra_annotations.annotations.pseudocode.compiler_config import (
+    DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
+)
 import argparse
 import tempfile
 from pathlib import Path
@@ -75,13 +81,13 @@ def find_header_files(include_dir, skip_dirs=None, skip_files=None, only_dirs=No
     return sorted(headers)
 
 
-def compile_header(header_path, include_dir, compiler='g++'):
+def compile_header(header_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single header file.
 
     Args:
         header_path: Path to the header file
         include_dir: Base include directory for -I flag
-        compiler: Compiler to use (gcc or clang)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
 
     Returns:
         Tuple of (success, error_message)
@@ -95,15 +101,7 @@ def compile_header(header_path, include_dir, compiler='g++'):
         temp_file = f.name
 
     try:
-        # Try to compile
-        cmd = [
-            compiler,
-            '-fsyntax-only',  # Only check syntax, don't generate output
-            '-I', include_dir,
-            '-Wno-incompatible-pointer-types',  # Suppress some warnings
-            '-Wno-int-conversion',
-            temp_file
-        ]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, temp_file]
 
         result = subprocess.run(
             cmd,
@@ -157,7 +155,7 @@ def parse_error_message(error_msg, header_path):
     return issues if issues else [error_msg[:200]]
 
 
-def verify_headers(include_dir, verbose=False, stop_on_error=False, compiler='g++', max_workers=4, skip_dirs=None, skip_files=None, only_dirs=None):
+def verify_headers(include_dir, verbose=False, stop_on_error=False, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None, only_dirs=None):
     """Verify all headers in the include directory.
 
     Args:
@@ -264,8 +262,8 @@ def main():
     )
     parser.add_argument(
         '-c', '--compiler',
-        default='g++',
-        help='Compiler to use (default: g++)'
+        default=DEFAULT_COMPILER,
+        help='Compiler to use (default: %s)' % DEFAULT_COMPILER
     )
     parser.add_argument(
         '-j', '--jobs',

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulonglong crt_unknown_c_FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
+ulonglong FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
 
 {
   int iVar1;

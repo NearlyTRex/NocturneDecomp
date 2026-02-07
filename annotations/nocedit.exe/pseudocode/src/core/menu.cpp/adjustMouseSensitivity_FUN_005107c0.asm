@@ -214,7 +214,7 @@ section .text
     MOV ECX,dword ptr [0x02cf1cd0]      ; 00510997 | g_EditorFont
     PUSH ECX                            ; 0051099d
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 ; 0051099e
-        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y_pos, ...)
+        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x24                        ; 005109a3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005109a6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

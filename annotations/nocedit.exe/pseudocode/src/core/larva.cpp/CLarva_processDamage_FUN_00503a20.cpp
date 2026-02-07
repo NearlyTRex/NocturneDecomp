@@ -74,7 +74,7 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,(CVector3f *)(local_84 + 0x6c),&damage_info->impact_direction);
-  core_gore_cpp_FUN_004edbb0();
+  core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

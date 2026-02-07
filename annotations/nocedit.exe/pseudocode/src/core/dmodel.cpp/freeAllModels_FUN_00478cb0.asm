@@ -9,7 +9,7 @@
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be3d6
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 005087e6
 ;   core_mission.cpp_FUN_005248e0 at 005248f7
-;   core_msnedit.cpp_CDemonMission_FUN_0053af50 at 0053afb0
+;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afb0
 ;
 ; Referenced Globals:
 ;   int g_KeyframeModelCount

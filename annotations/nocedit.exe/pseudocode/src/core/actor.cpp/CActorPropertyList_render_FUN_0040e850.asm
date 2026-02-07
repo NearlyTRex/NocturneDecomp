@@ -108,14 +108,14 @@ section .text
     ADD EAX,0x4                         ; 0040e928
     PUSH EAX                            ; 0040e92b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e92c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0040e931
     PUSH EDI                            ; 0040e934
     MOV EAX,dword ptr [EBX + 0x24f0]    ; 0040e935
     PUSH EAX                            ; 0040e93b
     PUSH 0x6144bf                       ; 0040e93c | = ": "
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e941
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0040e946
     PUSH EDI                            ; 0040e949
     MOV EDX,dword ptr [EBX + 0x24f4]    ; 0040e94a
@@ -126,7 +126,7 @@ section .text
     INC EBP                             ; 0040e95c
     ADD EDI,0xe                         ; 0040e95d
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e960
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0040e965
     MOV EDX,dword ptr [EBX + 0x4]       ; 0040e968
     MOV ECX,dword ptr [ESP + 0xd4]      ; 0040e96b

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredReordered_FUN_00402390(int left_x,int right_x,int y_pos,char *text)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredReordered_FUN_00402390(int left_x,int right_x,int y,char *text)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left_x
 ; int              Stack[0x8]:4   right_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0xc]:4   y
 ; char *           Stack[0x10]:4   text
 ;
 ; Called Functions:
@@ -28,7 +28,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 004023a1
     PUSH ESI                            ; 004023a5
     CALL engine_2d.c_drawTextCentered_FUN_00402350 ; 004023a6
-        ;   XREF to: 00402350 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCentered_FUN_00402350(char * text, int left_x, int right_x, int y_pos)
+        ;   XREF to: 00402350 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCentered_FUN_00402350(char * text, int left_x, int right_x, int y)
     ADD ESP,0x10                        ; 004023ab
     POP ESI                             ; 004023ae
     POP EBX                             ; 004023af

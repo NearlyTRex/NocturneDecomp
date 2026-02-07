@@ -1901,6 +1901,13 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
             base_type, full_var_name = format_variable_declaration(const['type'], const['name'])
             if const['is_initialized'] and const['initializer'] and const['initializer'] != "None":
                 initializer = const['initializer']
+                # Fix void* arithmetic: (void*)(char*)(...)+N -> (void*)((char*)(...)+N)
+                # Clang treats void* arithmetic as a hard error in C++ mode
+                initializer = re.sub(
+                    r'\(void\s*\*\)\s*(\(char\s*\*\)\([^)]*\))\s*([+\-]\s*\d+)',
+                    r'(void *)(\1\2)',
+                    initializer
+                )
                 # For char arrays initialized with string literals, omit array size
                 # to let compiler determine correct size (including null terminator)
                 if ('char' in base_type.lower() and '[' in full_var_name and
@@ -2518,6 +2525,14 @@ def generate_crt_header(functions_to_process):
     lines.append("#define strnicmp strncasecmp")
     lines.append("#define _strnicmp strncasecmp")
     lines.append("#endif // _MSC_VER")
+    lines.append("")
+
+    # Ghidra compiler builtins for string functions
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Compiler Builtins")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("#define builtin_strncpy(dst, src, n) strncpy(dst, src, n)")
     lines.append("")
 
     # Add string conversion wrapper functions

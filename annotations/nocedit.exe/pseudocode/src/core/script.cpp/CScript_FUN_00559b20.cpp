@@ -69,7 +69,7 @@ void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr)
       do {
         iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,text);
         iVar8 = iVar8 + 1;
-        engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80
                   (this_ptr_00,text,(iVar1 - iVar7) / 2,iVar4,0xf8,0);
         text = text + 0x400;
         iVar4 = iVar4 + iVar6;

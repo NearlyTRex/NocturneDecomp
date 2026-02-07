@@ -20,7 +20,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bcf0(CDemonMission *this_ptr
   local_10 = 1e+30;
   pCVar6 = (CDemonActor *)0x0;
   for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
-    pCVar2 = *(CDemonActor **)(this_ptr->unk2 + 0x1c);
+    pCVar2 = this_ptr->selected_actor;
     if ((((pCVar1 != pCVar2) && ((pCVar1->location).area_id == (pCVar2->location).area_id)) &&
         (pCVar1->unk14 == 0)) &&
        (fVar3 = (pCVar1->location).position.x - (pCVar2->location).position.x,

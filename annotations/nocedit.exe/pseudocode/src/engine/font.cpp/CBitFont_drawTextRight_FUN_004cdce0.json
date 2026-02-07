@@ -1,39 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 22,
-        "line": 20,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 12,
+    "complexity_score": 10,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 40
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -57,7 +37,7 @@
     {
       "addr": "004cdd70",
       "from_addr": "004cddc2",
-      "name": "engine_font.cpp_CBitFont_printfRight_FUN_004cdd70",
+      "name": "engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,13 +51,13 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0 (CBitFont *this_ptr,int right_edge_x,int y_pos,int color_mode,int color_value, char *text_string)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)"
   },
   "function_calls": [
     {
       "addr": "004cdbf0",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0"
     },
     {
       "addr": "004cfe80",
@@ -119,7 +99,7 @@
       {
         "call_addr": "004cddc2",
         "call_type": "direct",
-        "caller": "engine_font.cpp_CBitFont_printfRight_FUN_004cdd70",
+        "caller": "engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70",
         "estimated_params": 6,
         "instructions_analyzed": 14,
         "reg_params": [],
@@ -168,14 +148,14 @@
       },
       {
         "is_param": true,
-        "name": "right_edge_x",
+        "name": "x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -196,7 +176,7 @@
       },
       {
         "is_param": true,
-        "name": "text_string",
+        "name": "text",
         "offset": 24,
         "size": 4,
         "type": "char *"

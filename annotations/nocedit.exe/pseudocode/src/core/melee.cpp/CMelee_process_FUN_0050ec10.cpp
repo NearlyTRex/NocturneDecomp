@@ -26,7 +26,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float d
     input_local_point = (CVector3f *)(*(pCVar1->_uc).cfunc3)();
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_18,input_local_point);
-    core_gore_cpp_FUN_004edaa0();
+    core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
     return;
   }
   return;

@@ -15,9 +15,9 @@ shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
   CStrList local_18;
   va_list_t local_8;
   
-  local_8 = &stack0x0000000c;
-  vsprintf(g_DialogMessageBuffer_02cf0930,format,&local_8);
-  local_8 = (va_list_t)0x0;
+  local_8.value[0] = (char * [1])&stack0x0000000c;
+  vsprintf(g_DialogMessageBuffer_02cf0930,format,(va_list_t)&local_8);
+  local_8.value[0] = (char * [1])(char *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_18);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"^Yes");
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"Yes to ^All");

@@ -2,22 +2,22 @@
 // Address: 00489790
 // Address Range: [[00489790, 004897fb]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (CDrawSurface *this_ptr,int x,int y,int height,char *format,...)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (CDrawSurface *this_ptr,int x,int y,char *format,...)
 
 #include "nocturne.h"
 
 void __cdecl
 cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-          (CDrawSurface *this_ptr,int x,int y,int height,char *format,...)
+          (CDrawSurface *this_ptr,int x,int y,char *format,...)
 
 {
-  char *in_stack_ffffeff0;
-  char **local_10;
+  char *in_stack_00000010;
+  char local_1010 [4096];
+  va_list_t local_10;
   
-  local_10 = &format;
-  vsprintf(&stack0xffffeff0,(char *)height,(va_list_t *)&local_10);
-  local_10 = (char **)0x0;
-  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730
-            (this_ptr,(int)&stack0xffffeff0,x,y,in_stack_ffffeff0);
+  local_10.value[0] = (char * [1])&format;
+  vsprintf(local_1010,in_stack_00000010,(va_list_t)&local_10);
+  local_10.value[0] = (char * [1])(char *)0x0;
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730(this_ptr,local_1010,x,y);
   return;
 }

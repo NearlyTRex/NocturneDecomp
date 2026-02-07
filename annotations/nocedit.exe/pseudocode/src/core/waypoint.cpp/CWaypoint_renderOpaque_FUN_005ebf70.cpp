@@ -31,12 +31,12 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
   float fStack_1c;
   CDemonActor *local_14;
   
-  if (((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+  if (((g_CDemonMissionPtr->is_in_editor != 0) &&
       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar1 == 0)) &&
      (local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c),
-                            g_CWayPointClassInfo.name_hash), local_14 != (CDemonActor *)0x0)) {
+                           (g_CDemonMissionPtr->selected_actor,g_CWayPointClassInfo.name_hash),
+     local_14 != (CDemonActor *)0x0)) {
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     pCVar2 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
@@ -93,8 +93,8 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
       } while (iVar1 < this_ptr->num_adjacent_waypoints);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-    if ((unaff_EDI != (CWayPoint *)0x0) && (*(int *)(g_CDemonMissionPtr->unk2 + 0x34) != 0)) {
-      if ((this_ptr != unaff_EDI) && (*(int *)(g_CDemonMissionPtr->unk2 + 0x34) != 2)) {
+    if ((unaff_EDI != (CWayPoint *)0x0) && (g_CDemonMissionPtr->show_waypoint_coverage != 0)) {
+      if ((this_ptr != unaff_EDI) && (g_CDemonMissionPtr->show_waypoint_coverage != 2)) {
         return 0;
       }
       local_14 = (CDemonActor *)0xff;

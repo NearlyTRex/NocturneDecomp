@@ -8,7 +8,7 @@
 
 /* Signature: byte FUN_0060b670(uint param_1, uint param_2, uint param_3) */
 
-char * crt_unknown_c_FUN_0060b670(void)
+char * FUN_0060b670(void)
 
 {
   char *dest;

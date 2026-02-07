@@ -1,0 +1,504 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 46,
+        "message": "assigning to 'CDemonMission *' from incompatible type 'void *'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 12,
+        "line": 67,
+        "message": "cannot take the address of an rvalue of type 'int'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 433,
+    "complexity_score": 185,
+    "cross_reference_count": 1,
+    "function_call_count": 26,
+    "global_count": 34,
+    "pseudocode_lines": 160,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 593
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "0053882e",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053ccf0",
+    "address_range": [
+      [
+        "0053ccf0",
+        "0053d183"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e12b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_loadGame_FUN_004e12b0"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
+    },
+    {
+      "addr": "00522d20",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20"
+    },
+    {
+      "addr": "00523cc0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_countActors_FUN_00523cc0"
+    },
+    {
+      "addr": "00524030",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
+    },
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
+    },
+    {
+      "addr": "00522d90",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90"
+    },
+    {
+      "addr": "00523cf0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0"
+    },
+    {
+      "addr": "00523be0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0"
+    },
+    {
+      "addr": "00522c80",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_reset_FUN_00522c80"
+    },
+    {
+      "addr": "00538ea0",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0"
+    },
+    {
+      "addr": "0049e790",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "0049f270",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270"
+    },
+    {
+      "addr": "0049e6a0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "004a03d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "0049f0f0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
+    },
+    {
+      "addr": "004a5770",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_004a5770"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    },
+    {
+      "addr": "0050f210",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063c8ea",
+      "name": "s_Use_a_saved_game_file_in_0063c8ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c916",
+      "name": "s_noc_0063c916",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c91c",
+      "name": "s_save_0063c91c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c921",
+      "name": "s_Select_mission_file_to_i_0063c921",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c94b",
+      "name": "s_msn_0063c94b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c951",
+      "name": "s_world_0063c951",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c957",
+      "name": "s_Select_mission_file_to_i_0063c957",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c981",
+      "name": "s_Creating_temp_mission_0063c981",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c997",
+      "name": "s_core_msnedit_cpp_0063c997",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c9ab",
+      "name": "s_core_msnedit_cpp_0063c9ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c9bf",
+      "name": "s_Can_t_create_temp_missio_0063c9bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c9da",
+      "name": "s_Loading_s_0063c9da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063c9e5",
+      "name": "s_No_more_actors_to_import_0063c9e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca11",
+      "name": "s_Import_by_choosing_from__0063ca11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca35",
+      "name": "s_Import_using_wildcard_on_0063ca35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca5a",
+      "name": "s_Import_actors_0063ca5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca69",
+      "name": "s_Import_actor_0063ca69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca76",
+      "name": "s_core_msnedit_cpp_0063ca76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ca8a",
+      "name": "s_Hell_froze_finding_actor_0063ca8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cab4",
+      "name": "s_Enter_actor_name_wildcar_0063cab4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cad6",
+      "name": "s_Imported_d_actors_from_s_0063cad6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063caf2",
+      "name": "s_Cleaning_up_0063caf2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063caff",
+      "name": "s_core_msnedit_cpp_0063caff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00680970",
+      "name": "DAT_00680970",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680974",
+      "name": "DAT_00680974",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053882e",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8828828828828827,
+    "instruction_count": 333,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 8,
+      "CALL": 42,
+      "CBRANCH": 24,
+      "COPY": 245,
+      "INT_ADD": 102,
+      "INT_AND": 155,
+      "INT_CARRY": 42,
+      "INT_EQUAL": 138,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 43,
+      "INT_SLESS": 68,
+      "INT_SUB": 149,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 31,
+      "POPCOUNT": 68,
+      "RETURN": 2,
+      "STORE": 149
+    },
+    "pcode_op_count": 1293
+  },
+  "stack_frame": {
+    "frame_size": 1104,
+    "local_size": 1100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_448",
+        "offset": -1096,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "text": "char *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EDI",
+      "text": "core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,local_3c,0,unaff_EDI);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

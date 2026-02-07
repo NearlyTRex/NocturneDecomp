@@ -412,7 +412,7 @@ section .text
     LEA EAX,[EBP + 0xfffffefa]          ; 00581dff
     PUSH EAX                            ; 00581e05
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00581e06
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00581e0b
     PUSH 0x0                            ; 00581e0e
     PUSH 0x32758e4                      ; 00581e10 | g_CDemonCameraInstance
@@ -812,7 +812,7 @@ section .text
     PUSH 0x648a50                       ; 00582285 | = "F1"
     MOV EBX,EAX                         ; 0058228a
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0058228c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 00582291 | g_WindowWidth
     MOV EDX,EAX                         ; 00582296
     MOV ESI,0xa                         ; 00582298
@@ -824,7 +824,7 @@ section .text
     PUSH EAX                            ; 005822a9
     PUSH 0x648a3a                       ; 005822aa | = "Show this help screen"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005822af
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 005822b4 | g_WindowWidth
     IMUL EDX,EAX,0x0                    ; 005822b9
     MOV EAX,EDX                         ; 005822bc
@@ -837,7 +837,7 @@ section .text
     PUSH 0x648a71                       ; 005822cb | = "S"
     MOV EBX,EAX                         ; 005822d0
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005822d2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 005822d7 | g_WindowWidth
     MOV EDX,EAX                         ; 005822dc
     SAR EDX,0x1f                        ; 005822de
@@ -848,7 +848,7 @@ section .text
     PUSH EAX                            ; 005822ea
     PUSH 0x648a53                       ; 005822eb | = "Set default room size for set"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005822f0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [0x00679394]      ; 005822f5 | g_WindowWidth
     IMUL EDX,ECX,0x0                    ; 005822fb
     MOV EAX,EDX                         ; 005822fe
@@ -861,7 +861,7 @@ section .text
     PUSH 0x648a7d                       ; 0058230d | = "TAB"
     MOV EBX,EAX                         ; 00582312
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582314
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 00582319 | g_WindowWidth
     MOV EDX,EAX                         ; 0058231e
     SAR EDX,0x1f                        ; 00582320
@@ -872,7 +872,7 @@ section .text
     PUSH EAX                            ; 0058232c
     PUSH 0x648a73                       ; 0058232d | = "Next room"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582332
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00582337
     MOV EBX,dword ptr [0x00679394]      ; 0058233a | g_WindowWidth
     IMUL EDX,EBX,0x0                    ; 00582340
@@ -885,7 +885,7 @@ section .text
     PUSH 0x648a8f                       ; 0058234f | = "SHIFT+TAB"
     MOV EBX,EAX                         ; 00582354
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582356
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0058235b | g_WindowWidth
     MOV EDX,EAX                         ; 00582360
     SAR EDX,0x1f                        ; 00582362
@@ -896,7 +896,7 @@ section .text
     PUSH EAX                            ; 0058236e
     PUSH 0x648a81                       ; 0058236f | = "Previous room"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582374
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ESI,dword ptr [0x00679394]      ; 00582379 | g_WindowWidth
     IMUL EDX,ESI,0x0                    ; 0058237f
     MOV EAX,EDX                         ; 00582382
@@ -909,7 +909,7 @@ section .text
     PUSH 0x648aa5                       ; 00582391 | = "I"
     MOV EBX,EAX                         ; 00582396
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582398
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0058239d | g_WindowWidth
     MOV EDX,EAX                         ; 005823a2
     MOV ESI,0xa                         ; 005823a4
@@ -921,7 +921,7 @@ section .text
     PUSH EAX                            ; 005823b5
     PUSH 0x648a99                       ; 005823b6 | = "Insert room"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005823bb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [0x00679394]      ; 005823c0 | g_WindowWidth
     IMUL EDX,EDI,0x0                    ; 005823c6
     MOV EAX,EDX                         ; 005823c9
@@ -934,7 +934,7 @@ section .text
     PUSH 0x648ab3                       ; 005823d8 | = "D"
     MOV EBX,EAX                         ; 005823dd
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005823df
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 005823e4 | g_WindowWidth
     MOV EDX,EAX                         ; 005823e9
     SAR EDX,0x1f                        ; 005823eb
@@ -945,7 +945,7 @@ section .text
     PUSH EAX                            ; 005823f7
     PUSH 0x648aa7                       ; 005823f8 | = "Delete room"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005823fd
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 00582402 | g_WindowWidth
     IMUL EDX,EAX,0x0                    ; 00582407
     MOV EAX,EDX                         ; 0058240a
@@ -958,7 +958,7 @@ section .text
     PUSH 0x648ac3                       ; 00582419 | = "N"
     MOV EBX,EAX                         ; 0058241e
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582420
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 00582425 | g_WindowWidth
     MOV EDX,EAX                         ; 0058242a
     SAR EDX,0x1f                        ; 0058242c
@@ -969,19 +969,19 @@ section .text
     PUSH EAX                            ; 00582438
     PUSH 0x648ab5                       ; 00582439 | = "Deselect room"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0058243e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00582443
     PUSH 0x58                           ; 00582446
     PUSH 0x0                            ; 00582448
     PUSH 0x648ac5                       ; 0058244a | = "To position the selected box, use the..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0058244f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00582454
     PUSH 0x63                           ; 00582457
     PUSH 0x0                            ; 00582459
     PUSH 0x648afd                       ; 0058245b | = "To size the selected box, use arrow k..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00582460
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00582465
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00582468
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

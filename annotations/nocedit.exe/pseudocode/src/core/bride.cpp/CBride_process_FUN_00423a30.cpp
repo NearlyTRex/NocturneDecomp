@@ -291,7 +291,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                          (pCVar1,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_d4,pCVar8);
-      core_gore_cpp_FUN_004ede30();
+      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
       (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       (this_ptr->base).pool_me = 1;
     }

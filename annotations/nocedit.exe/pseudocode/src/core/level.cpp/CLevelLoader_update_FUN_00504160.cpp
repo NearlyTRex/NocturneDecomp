@@ -162,7 +162,7 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
                 (iVar5 + -1,local_14 + -1,iVar3 + 1 + iVar5,local_14 + iVar7 + 1,0);
       if (text != (char *)0x0) {
         iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_10,text);
-        engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80
                   (local_10,text,(iVar5 + iVar3 / 2) - iVar6 / 2,
                    (local_14 + iVar7 / 2) - local_10->max_char_width / 2,0xf8,-1);
       }

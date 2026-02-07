@@ -3,20 +3,13 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 22,
-        "line": 55,
-        "message": "invalid conversion from 'undefined4' {aka 'unsigned int'} to 'CBitFont*' [-fpermissive]"
+        "column": 11,
+        "line": 54,
+        "message": "no matching function for call to 'engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 168,
@@ -302,21 +295,21 @@
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_031141e8",
-      "text": "if (x_pos < DAT_031141e8) {",
+      "text": "if (x < DAT_031141e8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_03114200",
-      "text": "(DAT_03114200,character_code,x_pos,iVar2,color_mode,-1);",
+      "text": "(DAT_03114200,character_code,x,iVar2,color_mode,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 54,
       "match": "DAT_031141e8",
-      "text": "if (DAT_031141e8 <= x_pos) {",
+      "text": "if (DAT_031141e8 <= x) {",
       "type": "undefined_data"
     }
   ]

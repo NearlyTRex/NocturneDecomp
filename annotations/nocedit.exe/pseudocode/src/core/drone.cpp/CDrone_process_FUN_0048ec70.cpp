@@ -171,7 +171,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
                             (this_ptr_00,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_94,pCVar11);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
       break;

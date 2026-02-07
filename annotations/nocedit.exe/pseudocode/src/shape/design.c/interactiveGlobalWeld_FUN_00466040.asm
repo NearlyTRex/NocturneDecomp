@@ -94,7 +94,7 @@ section .text
     MOV EAX,0x61c6fa                    ; 004660a3 | = "Invalid point."
     PUSH EAX                            ; 004660a8 | = "Invalid point."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004660a9
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004660ae
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004660b1
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

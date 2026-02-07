@@ -30,7 +30,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCir
       core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(this_ptr);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
-    if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+    if ((g_CDemonMissionPtr->is_in_editor != 0) &&
        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 == 0)) {
       iVar2 = 0;

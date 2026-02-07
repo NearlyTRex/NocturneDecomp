@@ -13,7 +13,7 @@ CFont * __cdecl CFont::dtor(CFont *this_ptr);
 
 // Original: engine_palette.cpp_CFont_drawText_FUN_00544ed0
 // Address: 00544ed0
-void __cdecl CFont::drawText(CFont *this_ptr,int param1,int param2,int param3,int param4,int param5);
+int __cdecl CFont::drawText(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
 
 // Original: engine_palette.cpp_CFont_getLineSpacing_FUN_00544f00
 // Address: 00544f00

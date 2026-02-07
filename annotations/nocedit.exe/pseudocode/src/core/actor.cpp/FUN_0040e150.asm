@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_actor.cpp_FUN_0040e130 at 0040e13c
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053911e
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c505
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c744
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053911e
 ;
 ; *****************************************************************************
 

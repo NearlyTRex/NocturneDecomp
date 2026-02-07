@@ -3,20 +3,13 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 39,
+        "column": 14,
         "line": 25,
-        "message": "invalid conversion from 'void*' to 'double*' [-fpermissive]"
+        "message": "assigning to 'double *' from incompatible type 'void *'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 43,
@@ -193,27 +186,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00537680",
-      "from_addr": "005376a5",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_00537680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005390f0",
-      "from_addr": "005394a6",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053e220",
       "from_addr": "0053e318",
       "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005390f0",
+      "from_addr": "005394a6",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005381e0",
       "from_addr": "0053876a",
       "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537680",
+      "from_addr": "005376a5",
+      "name": "core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680",
       "type": "UNCONDITIONAL_CALL"
     },
     {

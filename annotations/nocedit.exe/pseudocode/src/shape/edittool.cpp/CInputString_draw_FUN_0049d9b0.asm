@@ -33,7 +33,7 @@
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   shape_edittool.cpp_CInputString_calcX_FUN_0049d8f0
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
@@ -97,8 +97,8 @@ section .text
     XOR DL,DL                           ; 0049da5c
     PUSH ESI                            ; 0049da5e
     MOV byte ptr [EAX + 0x2cf2678],DL   ; 0049da5f | g_TempStringBuffer
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0049da65
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0049da65
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
         ;   Label: LAB_0049da65
     ADD ESP,0x18                        ; 0049da6a
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0049da6d

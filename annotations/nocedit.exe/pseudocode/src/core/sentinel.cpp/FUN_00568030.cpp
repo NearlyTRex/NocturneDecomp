@@ -361,7 +361,7 @@ LAB_0056878f:
                             (&(in_stack_00000004->base).model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)in_stack_00000004,&local_128,pCVar10);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         in_stack_00000004->pool_me = 1;
       }
       break;

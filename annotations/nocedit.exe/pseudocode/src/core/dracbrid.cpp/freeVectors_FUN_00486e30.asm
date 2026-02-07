@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50 at 00486d5a
 ;   core_flies.cpp_SFly_dtor_FUN_004ccd40 at 004ccd4a
-;   core_gore.cpp_FUN_004ee390 at 004ee39a
+;   core_gore.cpp_CFootstep_dtor_FUN_004ee390 at 004ee39a
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539193
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e2a4
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539193
 ;   core_setedit.cpp_CDemonSet_FUN_00584e70 at 00584ec2
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584bae
 ;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f200

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-unkbyte10 crt_math_c_FUN_00606c23(void)
+unkbyte10 FUN_00606c23(void)
 
 {
   unkbyte10 in_ST0;

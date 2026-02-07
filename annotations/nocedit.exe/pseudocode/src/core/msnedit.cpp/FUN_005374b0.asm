@@ -16,7 +16,7 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_msnedit.cpp_CDemonMission_FUN_00539060
+;   core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060
 ;   core_script.cpp_CScript_FUN_00566660
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;
@@ -51,8 +51,8 @@ section .text
     MOV dword ptr [0x02f7c634],EBX      ; 005374e2 | DAT_02f7c634
     MOV EBX,dword ptr [0x0067d550]      ; 005374e8 | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH EBX                            ; 005374ee | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_00539060 ; 005374ef
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00539060(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 005374ef
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005374f4
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005374f7
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

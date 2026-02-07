@@ -21,7 +21,7 @@ core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMa
   float fVar6;
   double input_value;
   
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffffc8);
     this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
     core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(this_ptr);

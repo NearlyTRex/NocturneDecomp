@@ -144,7 +144,7 @@ section .text
     MOV EAX,0x61bf19                    ; 00461878 | = "Separation Method : (P)oint list (X) ..."
     PUSH EAX                            ; 0046187d | = "Separation Method : (P)oint list (X) ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046187e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00461883
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00461886
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

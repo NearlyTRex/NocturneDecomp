@@ -9,24 +9,24 @@
 void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca80(CDemonMission *this_ptr,int param_2)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   
-  iVar1 = param_2;
+  pCVar1 = (CDemonActor *)param_2;
   if (param_2 == 0) {
-    iVar1 = *(int *)this_ptr->unk4;
+    pCVar1 = this_ptr->last_actor;
   }
-  if (iVar1 != 0) {
+  if (pCVar1 != (CDemonActor *)0x0) {
     iVar2 = 0;
     do {
-      iVar1 = *(int *)(iVar1 + 0x150);
-      if (iVar1 == 0) {
-        iVar1 = *(int *)this_ptr->unk4;
+      pCVar1 = pCVar1->prev_actor;
+      if (pCVar1 == (CDemonActor *)0x0) {
+        pCVar1 = this_ptr->last_actor;
       }
-      if (iVar1 == param_2) {
+      if (pCVar1 == (CDemonActor *)param_2) {
         return;
       }
-      if ((*(int *)this_ptr->unk1 == *(int *)(iVar1 + 0x2c)) && (*(int *)(iVar1 + 0x148) == 0)) {
+      if ((this_ptr->current_set_index == (pCVar1->location).area_id) && (pCVar1->unk14 == 0)) {
         return;
       }
       iVar2 = iVar2 + 1;

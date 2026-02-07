@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ee1e0 at 004ee267
+;   core_gore.cpp_CGore_FUN_004ee1e0 at 004ee267
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_0062e322

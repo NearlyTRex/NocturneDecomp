@@ -1,0 +1,243 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 71,
+    "complexity_score": 161,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 26,
+    "suspect_count": 12,
+    "suspect_types": [
+      "extra_output",
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [
+    {
+      "addr": "00523600",
+      "from_addr": "0052393c",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ee290",
+    "address_range": [
+      [
+        "004ee290",
+        "004ee334"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_FUN_004ee290",
+    "signature": "int __cdecl core_gore_cpp_CGore_FUN_004ee290(CGore *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ecb90",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004ecb90"
+    },
+    {
+      "addr": "004ed1c0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004ed1c0"
+    },
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e452",
+      "name": "s_Gore_0062e452",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e460",
+      "name": "s_d_0062e460",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e464",
+      "name": "s_d_0062e464",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d873d8",
+      "name": "DAT_02d873d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "DAT_02d873dc",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d87420",
+      "name": "DAT_02d87420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "DAT_02da8720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "DAT_02da8724",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da874c",
+      "name": "DAT_02da874c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.228070175438597,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 46,
+      "INT_ADD": 15,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 15,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 241
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "_FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "_fprintf(in_stack_00000008,\"--- Gore ---\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "_fprintf(in_stack_00000008,\"%d\\n\",DAT_02da8720);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02da8720",
+      "text": "_fprintf(in_stack_00000008,\"%d\\n\",DAT_02da8720);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02da8720",
+      "text": "if (0 < DAT_02da8720) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02da8720",
+      "text": "} while (iVar2 < DAT_02da8720);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = _fprintf(in_stack_00000008,\"%d\\n\",DAT_02d873d8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02d873d8",
+      "text": "iVar2 = _fprintf(in_stack_00000008,\"%d\\n\",DAT_02d873d8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02d873d8",
+      "text": "if (0 < DAT_02d873d8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "text": "iVar2 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_02d873d8",
+      "text": "} while (iVar1 < DAT_02d873d8);",
+      "type": "undefined_data"
+    }
+  ]
+}

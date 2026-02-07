@@ -1,0 +1,480 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 14,
+        "line": 49,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 49,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 68,
+        "message": "use of undeclared identifier 'DAT_00680580'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 73,
+        "line": 75,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 75,
+        "line": 83,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 74,
+        "line": 99,
+        "message": "use of undeclared identifier 'stack0xfffff300'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 109,
+        "message": "use of undeclared identifier 'DAT_00680580'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 130,
+        "message": "use of undeclared identifier 'stack0xfffff300'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 74,
+        "line": 132,
+        "message": "use of undeclared identifier 'stack0xfffff300'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "format_error",
+        "column": 52,
+        "line": 116,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 66,
+        "line": 128,
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Wformat]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 333,
+    "complexity_score": 309,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 20,
+    "pseudocode_lines": 134,
+    "suspect_count": 16,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 467
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "00538820",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005379e0",
+    "address_range": [
+      [
+        "005379e0",
+        "00537cff"
+      ],
+      [
+        "00537d5f",
+        "00537dc1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a00f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
+    },
+    {
+      "addr": "0049e6a0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "004a03d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a6e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ba9d",
+      "name": "s_Randomize_all_enemies_wi_0063ba9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bace",
+      "name": "s_Randomize_enemy_speeds_f_0063bace",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bafb",
+      "name": "s_Enemy_randomizer_0063bafb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bb0c",
+      "name": "s_Enter_enemy_types_to_pro_0063bb0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bb29",
+      "name": "s_Enter_actor_name_wildcar_0063bb29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bb43",
+      "name": "s_Enter_minimum_random_spe_0063bb43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bb5e",
+      "name": "s_Enter_maximum_random_spe_0063bb5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bb79",
+      "name": "s_Randomize_speed_for_spec_0063bb79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bbb9",
+      "name": "s_Randomize_speed_for_all__0063bbb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bbe3",
+      "name": "s_Randomize_speeds_0063bbe3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bbfd",
+      "name": "s_No_enemies_matched_crite_0063bbfd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063bc30",
+      "name": "s_d_enemy_speeds_randomize_0063bc30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "006804b0",
+      "name": "FLOAT_006804b0",
+      "type": "float",
+      "value": "0.9000000"
+    },
+    {
+      "addr": "006804b4",
+      "name": "FLOAT_006804b4",
+      "type": "float",
+      "value": "1.100000"
+    },
+    {
+      "addr": "006804b8",
+      "name": "s_CEnemy_006804b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680580",
+      "name": "DAT_00680580",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f797e0",
+      "name": "DAT_02f797e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00538820",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.984126984126984,
+    "instruction_count": 252,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BRANCH": 9,
+      "CALL": 31,
+      "CALLIND": 2,
+      "CBRANCH": 20,
+      "COPY": 176,
+      "INT_ADD": 69,
+      "INT_AND": 122,
+      "INT_CARRY": 33,
+      "INT_EQUAL": 109,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 33,
+      "INT_SLESS": 54,
+      "INT_SUB": 128,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 54,
+      "RETURN": 1,
+      "STORE": 122
+    },
+    "pcode_op_count": 1004
+  },
+  "stack_frame": {
+    "frame_size": 1464,
+    "local_size": 1460,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5b0",
+        "offset": -1456,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_fffff2fc",
+      "text": "ulonglong in_stack_fffff2fc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_fffff2fc",
+      "text": "string_data = (char *)(in_stack_fffff2fc >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00680580",
+      "text": "(g_CEditorToolsPtr,\"Enter actor name wildcard\",&DAT_00680580,200,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_02f797e0",
+      "text": "(&CStack_958,\"Randomize speeds\",DAT_02f797e0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_02f797e0",
+      "text": "DAT_02f797e0 = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 92,
+      "match": "&stack0xfffff300",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_02f797e0",
+      "text": "(((DAT_02f797e0 != 0 || (*(int *)(pCVar3[0x8d].create_event + 0x3c) != 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_00680580",
+      "text": "(&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 123,
+      "match": "&stack0xfffff300",
+      "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 125,
+      "match": "&stack0xfffff300",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_fffff2fc",
+      "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
+      "type": "stack_param"
+    }
+  ]
+}

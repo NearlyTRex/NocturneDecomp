@@ -456,20 +456,20 @@ section .text
     PUSH 0x0                            ; 0043d9a8
     PUSH 0x0                            ; 0043d9aa
     CALL engine_2d.c_drawTextXY_FUN_00402130 ; 0043d9ac
-        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
+        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x, int y, char * text)
         ;   Label: LAB_0043d9ac
     ADD ESP,0xc                         ; 0043d9b1
     PUSH 0x618931                       ; 0043d9b4 | = "L Toggle locking/unlocking vertices."
     PUSH 0xb                            ; 0043d9b9
     PUSH 0x0                            ; 0043d9bb
     CALL engine_2d.c_drawTextXY_FUN_00402130 ; 0043d9bd
-        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
+        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x, int y, char * text)
     ADD ESP,0xc                         ; 0043d9c2
     PUSH 0x618956                       ; 0043d9c5 | = "N Toggle vertex numbers."
     PUSH 0x16                           ; 0043d9ca
     PUSH 0x0                            ; 0043d9cc
     CALL engine_2d.c_drawTextXY_FUN_00402130 ; 0043d9ce
-        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
+        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x, int y, char * text)
     ADD ESP,0xc                         ; 0043d9d3
     PUSH 0x0                            ; 0043d9d6
     MOV EDX,dword ptr [0x00678a60]      ; 0043d9d8 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -655,7 +655,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 0043dbcd
     PUSH EAX                            ; 0043dbd1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043dbd2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043dbd7
     JMP 0x0043d8c3                      ; 0043dbda
         ;   XREF to: 0043d8c3 (UNCONDITIONAL_JUMP)  ; LAB_0043d8c3

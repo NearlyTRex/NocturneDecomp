@@ -1,24 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int z_pos,int width,int height, int color_mode)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode )
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   character_code
-; int              Stack[0xc]:4   x_pos
-; int              Stack[0x10]:4   y_pos
-; int              Stack[0x14]:4   z_pos
-; int              Stack[0x18]:4   width
-; int              Stack[0x1c]:4   height
-; int              Stack[0x20]:4   color_mode
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   right_x
+; int              Stack[0x18]:4   bottom_y
+; int              Stack[0x1c]:4   color_mode
 ; Local Variables:
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
+; SMRGLHeaderPrimitive Stack[-0x54]:24  local_54
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

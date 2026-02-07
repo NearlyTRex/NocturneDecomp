@@ -2,51 +2,38 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
+        "category": "type_error",
         "column": 3,
         "line": 16,
-        "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
+        "message": "unknown type name 'undefined3'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
         "line": 19,
-        "message": "'code' was not declared in this scope"
+        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
         "line": 19,
-        "message": "expected primary-expression before ')' token"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 26,
-        "message": "'extraout_var' was not declared in this scope"
+        "message": "expected expression"
       },
       {
         "category": "other",
         "column": 10,
         "line": 33,
-        "message": "'void*' is not a pointer-to-object type"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+        "column": 63,
+        "line": 33,
+        "message": "called object type 'void' is not a function or function pointer"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 62,

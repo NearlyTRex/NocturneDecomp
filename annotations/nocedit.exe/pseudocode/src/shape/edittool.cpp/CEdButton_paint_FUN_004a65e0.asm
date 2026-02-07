@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   engine_2d.c_drawHLine_FUN_00402ee0
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
@@ -114,8 +114,8 @@ section .text
     MOV dword ptr [ESP + 0xdc],EDX      ; 004a6691
     MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6698 | g_EditorFont
     PUSH EDX                            ; 004a669e
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a669f
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004a669f
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a66a4
     MOV EAX,[0x02cf2ae8]                ; 004a66a7 | g_UITextColor
     MOV ECX,dword ptr [ESP + 0xe4]      ; 004a66ac

@@ -177,7 +177,7 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 004e0dd9 | g_CDemonMissionPtr
     PUSH ESI                            ; 004e0ddf | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_writeFile_FUN_00523600 ; 004e0de0
-        ;   XREF to: 00523600 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission * this_ptr)
+        ;   XREF to: 00523600 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e0de5
     PUSH 0x62c9e4                       ; 004e0de8 | = "// Hero count, local hero index, hero..."
     PUSH EBX                            ; 004e0ded

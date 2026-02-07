@@ -147,7 +147,7 @@ section .text
     MOV EDI,0x40                        ; 00440804
     XOR EBX,EBX                         ; 00440809
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044080b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00440810
     MOV EAX,dword ptr [EBP + 0x14]      ; 00440813
         ;   Label: LAB_00440813
@@ -168,7 +168,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 00440838
     PUSH EAX                            ; 0044083c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044083d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00440842
     TEST BL,0x7                         ; 00440845
     JNZ 0x0044084f                      ; 00440848

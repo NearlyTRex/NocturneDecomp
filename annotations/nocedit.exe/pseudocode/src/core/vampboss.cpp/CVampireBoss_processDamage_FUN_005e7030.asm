@@ -35,7 +35,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
-;   core_mission.cpp_CDemonMission_FUN_00523b70
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_sound.cpp_CSound_playSound_FUN_005b3a20
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -235,8 +235,8 @@ section .text
     PUSH EBX                            ; 005e71f6
     MOV EBX,dword ptr [0x0067d550]      ; 005e71f7 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 005e71fd | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 005e71fe
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 005e71fe
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005e7203
     PUSH 0x3e4ccccd                     ; 005e7206
         ;   Label: LAB_005e7206

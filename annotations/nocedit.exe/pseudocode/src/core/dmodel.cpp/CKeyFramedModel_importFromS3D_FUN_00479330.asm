@@ -374,7 +374,7 @@ section .text
     PUSH 0x0                            ; 004795ae
     PUSH 0x61fd8b                       ; 004795b0 | = "Importing textures"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004795b5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004795ba
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004795bd
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -447,7 +447,7 @@ section .text
     PUSH 0x0                            ; 00479673
     PUSH 0x61fee4                       ; 00479675 | = "Importing polygons"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0047967a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0047967f
     MOV ESI,dword ptr [EBP + 0x6a]      ; 00479682
     MOV EBX,0x1                         ; 00479685
@@ -903,7 +903,7 @@ section .text
     PUSH 0x0                            ; 00479b15
     PUSH 0x61ff19                       ; 00479b17 | = "Importing vertices"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00479b1c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00479b21
     MOV ESI,dword ptr [EBP + 0x6a]      ; 00479b24
     MOV EBX,0x1                         ; 00479b27

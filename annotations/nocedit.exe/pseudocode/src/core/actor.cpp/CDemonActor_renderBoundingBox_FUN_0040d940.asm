@@ -15,7 +15,7 @@
 ; XREF[9]:
 ;   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 at 004808cc
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a89fb
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a408
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a408
 ;   core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 at 0054d8ca
 ;   core_teleport.cpp_CTeleportDest_FUN_005da7d0 at 005da837
 ;   core_teleport.cpp_CTeleport_FUN_005dae10 at 005dae3c

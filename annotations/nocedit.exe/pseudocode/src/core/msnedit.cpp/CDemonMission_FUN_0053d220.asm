@@ -8,8 +8,8 @@
 ;
 ; XREF[4]:
 ;   core_actor.cpp_CDemonActor_FUN_0040d270 at 0040d282
-;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053bb8a
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053c077
+;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053bb8a
 ;   core_msnedit.cpp_FUN_00537410 at 00537479
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
@@ -260,8 +260,8 @@ section .text
         ;   Label: LAB_0053d36d
     MOV ECX,dword ptr [ESP + 0x10]      ; 0053d36e
     PUSH ECX                            ; 0053d372
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 0053d373
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053d373
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053d378
     TEST EAX,EAX                        ; 0053d37b
     JZ 0x0053d34c                       ; 0053d37d

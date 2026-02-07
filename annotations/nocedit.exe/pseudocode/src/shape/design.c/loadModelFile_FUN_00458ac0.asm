@@ -77,7 +77,7 @@ section .text
     MOV ESI,0x61a9d1                    ; 00458ad5 | = "Loading model..."
     PUSH ESI                            ; 00458ada | = "Loading model..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00458adb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458ae0
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00458ae3
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -264,7 +264,7 @@ section .text
     MOV EAX,0x61a9f6                    ; 00458c75 | = "FILE ERROR! Nothing changed!"
     PUSH EAX                            ; 00458c7a | = "FILE ERROR! Nothing changed!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00458c7b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458c80
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00458c83
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -323,7 +323,7 @@ section .text
     LEA ESI,[EBP + 0xffffff44]          ; 00458d22
     PUSH ESI                            ; 00458d28
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00458d29
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458d2e
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00458d31
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -426,7 +426,7 @@ section .text
     LEA ESI,[EBP + 0xfffffef4]          ; 00458e52
     PUSH ESI                            ; 00458e58
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00458e59
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458e5e
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00458e61
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

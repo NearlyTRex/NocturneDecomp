@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 24,
@@ -48,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextCenteredAt_FUN_00402280",
-    "signature": "void __cdecl engine_2d_c_drawTextCenteredAt_FUN_00402280(char *text,int x_pos,int y_pos)"
+    "signature": "void __cdecl engine_2d_c_drawTextCenteredAt_FUN_00402280(char *text,int x,int y)"
   },
   "function_calls": [
     {
@@ -131,14 +124,14 @@
       },
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"

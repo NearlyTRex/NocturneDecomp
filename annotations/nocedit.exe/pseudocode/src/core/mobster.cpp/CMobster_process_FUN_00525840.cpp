@@ -466,7 +466,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                             (pCVar2,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_c4,pCVar12);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
       break;

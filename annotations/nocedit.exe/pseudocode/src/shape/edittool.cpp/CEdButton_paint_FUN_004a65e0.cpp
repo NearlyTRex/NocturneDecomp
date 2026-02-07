@@ -37,7 +37,7 @@ shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr,int draw_bor
   iVar4 = engine_font_cpp_CBitFont_getCharXAdvance_FUN_004d0200(g_EditorFont,0x41);
   iVar2 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_EditorFont,pcVar7,iVar2,local_14,g_UITextColor,-1);
   g_ActiveRenderColor = g_UITextColor;
   if (draw_border_flag != 0) {

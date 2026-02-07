@@ -1,41 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 21,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 21,
-        "message": "expected primary-expression before ')' token"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 158,
+    "complexity_score": 143,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
     "pseudocode_lines": 33,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "extra_output",
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
     "total_lines": 114
   },
@@ -47,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005390f0",
-      "from_addr": "00539934",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053e220",
       "from_addr": "0053e525",
       "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "00539934",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -193,7 +172,7 @@
       {
         "call_addr": "00539934",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -293,21 +272,14 @@
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_02d833d4",
-      "text": "pCVar1 = DAT_02d833d4;",
+      "text": "this_ptr_00 = DAT_02d833d4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(pCVar1->unk + 0x34) + 4))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_02d873d4",
-      "text": "} while (pCVar1 != (CBloodParticle *)&DAT_02d873d4);",
+      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_02d873d4);",
       "type": "undefined_data"
     },
     {
@@ -321,14 +293,14 @@
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_02d873d8",
-      "text": "} while (iVar2 < DAT_02d873d8);",
+      "text": "} while (iVar1 < DAT_02d873d8);",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 27,
       "match": "extraout_EAX",
-      "text": "iVar2 = extraout_EAX;",
+      "text": "iVar1 = extraout_EAX;",
       "type": "extra_output"
     },
     {
@@ -342,14 +314,14 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 32,
       "match": "extraout_EAX_00",
-      "text": "iVar2 = extraout_EAX_00;",
+      "text": "iVar1 = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_02da8720",
-      "text": "} while (iVar3 < DAT_02da8720);",
+      "text": "} while (iVar2 < DAT_02da8720);",
       "type": "undefined_data"
     }
   ]

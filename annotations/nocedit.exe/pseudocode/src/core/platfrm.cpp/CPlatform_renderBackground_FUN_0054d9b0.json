@@ -5,24 +5,23 @@
         "category": "undeclared_identifier",
         "column": 63,
         "line": 53,
-        "message": "'stack0xffffffd4' was not declared in this scope"
+        "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "other",
         "column": 32,
         "line": 65,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 65,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 164,

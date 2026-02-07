@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-char * crt_unknown_c_FUN_0060b0c8(void)
+char * FUN_0060b0c8(void)
 
 {
   char *pcVar1;

@@ -7,11 +7,11 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[12]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00508022
-;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 005380f5
+;   core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60 at 005380f5
 ;   core_msnedit.cpp_FUN_00537dd0 at 00537e7b
 ;   core_script.cpp_CScript_loadState_FUN_00560820 at 00560b34
 ;   core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230 at 005712a0
@@ -46,7 +46,7 @@ section .text
     PUSH EDX                            ; 0049e702
     PUSH 0x2cef130                      ; 0049e703 | g_DialogMessageBuffer_02cef130
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e708
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e70d
     MOV EBX,dword ptr [0x02cf2a90]      ; 0049e710 | g_DialogParentWindow
     PUSH EBX                            ; 0049e716

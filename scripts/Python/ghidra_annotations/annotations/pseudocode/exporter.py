@@ -46,6 +46,7 @@ from ghidra_annotations.annotations.pseudocode.header_compile import (
 from ghidra_annotations.annotations.pseudocode.function_compile import (
     compile_functions_after_export
 )
+from ghidra_annotations.annotations.pseudocode.compiler_config import DEFAULT_COMPILER
 
 # Python-heavy processing imports (for main thread)
 from ghidra_annotations.annotations.pseudocode.functions import (
@@ -1118,7 +1119,7 @@ def export_pseudocode(currentProgram, path, strict=False):
     timer.start_phase("Function compilation verification")
     compile_result = compile_functions_after_export(
         pseudocode_dir,
-        compiler='g++',
+        compiler=DEFAULT_COMPILER,
         num_threads=num_threads,
         reports_dir=reports_dir,
         repo_dir=repo_dir

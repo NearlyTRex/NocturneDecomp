@@ -11,7 +11,7 @@
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bddd6
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2036
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524576
-;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c05
+;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538c05
 ;   core_netgame.cpp_CNetGame_FUN_00541390 at 005419bd
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
-;   core_mission.cpp_CDemonMission_FUN_00523f20
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
 ;
 ; *****************************************************************************
 
@@ -83,7 +83,7 @@ section .text
     PUSH EDI                            ; 00524ad5
     PUSH EBP                            ; 00524ad6
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 ; 00524ad7
-        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr)
+        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int param_3, void * param_4)
     ADD ESP,0x10                        ; 00524adc
     TEST EAX,EAX                        ; 00524adf
     JZ 0x00524b88                       ; 00524ae1
@@ -126,8 +126,8 @@ section .text
     PUSH 0x1                            ; 00524b64
     PUSH EBX                            ; 00524b66
     PUSH EBP                            ; 00524b67
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 00524b68
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 00524b68
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 00524b6d
     MOV EBX,dword ptr [EBP + 0x548]     ; 00524b70
     TEST EBX,EBX                        ; 00524b76
@@ -158,7 +158,7 @@ section .text
     MOV dword ptr [0x02db87d0],ECX      ; 00524ba5 | g_LocalHeroIndex
     MOV dword ptr [0x02db87bc],EDX      ; 00524bab | g_HeroCount
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 ; 00524bb1
-        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr)
+        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int param_3, void * param_4)
     ADD ESP,0x10                        ; 00524bb6
     TEST EAX,EAX                        ; 00524bb9
     JZ 0x00524b88                       ; 00524bbb

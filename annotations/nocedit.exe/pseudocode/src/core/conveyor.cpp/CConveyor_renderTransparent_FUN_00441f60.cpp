@@ -13,7 +13,7 @@ int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor
   CBoundingBox3D *this_ptr_00;
   float fStack_20;
   
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
@@ -24,7 +24,7 @@ int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor
       fStack_20 = 6.256194e-39;
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
       if (iVar1 != 0) {
-        if (this_ptr == *(CConveyor **)(g_CDemonMissionPtr->unk2 + 0x1c)) {
+        if (this_ptr == (CConveyor *)g_CDemonMissionPtr->selected_actor) {
           fStack_20 = 1.79366e-43;
         }
         else {

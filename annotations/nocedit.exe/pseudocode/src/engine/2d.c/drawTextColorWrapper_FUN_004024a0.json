@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 13,
@@ -33,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextColorWrapper_FUN_004024a0",
-    "signature": "void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x_pos,int y_pos,char *text)"
+    "signature": "void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x,int y,char *text)"
   },
   "function_calls": [
     {
@@ -79,14 +72,14 @@
     "variables": [
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "x",
         "offset": 4,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 8,
         "size": 4,
         "type": "int"

@@ -120,6 +120,12 @@
 // Helper macros for optional offset argument
 #define _SUB_GET_MACRO(_1, _2, NAME, ...) NAME
 
+#define _SUB41_1(x) ((uint8_t)(x))
+#define _SUB41_2(x, off) ((uint8_t)((x) >> ((off) * 8)))
+#define SUB41(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB41_2, _SUB41_1)(__VA_ARGS__)
+#define _SUB42_1(x) ((uint16_t)(x))
+#define _SUB42_2(x, off) ((uint16_t)((x) >> ((off) * 8)))
+#define SUB42(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB42_2, _SUB42_1)(__VA_ARGS__)
 #define _SUB82_1(x) ((uint16_t)(x))
 #define _SUB82_2(x, off) ((uint16_t)((x) >> ((off) * 8)))
 #define SUB82(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB82_2, _SUB82_1)(__VA_ARGS__)
@@ -134,10 +140,21 @@
 #define SUB104(...) _SUB_GET_MACRO(__VA_ARGS__, _SUB104_2, _SUB104_1)(__VA_ARGS__)
 
 // =============================================================================
+// ZEXT - Zero Extension (widen value to larger type)
+// =============================================================================
+// ZEXTxy(val) zero-extends an x-byte value to a y-byte value
+
+#define ZEXT14(x) ((uint32_t)(uint8_t)(x))
+#define ZEXT48(x) ((uint64_t)(uint32_t)(x))
+
+// =============================================================================
 // FPU Intrinsics (x87 floating-point operations)
 // =============================================================================
 // These map x87 FPU instructions to standard C math functions
 
+#ifndef f2xm1
+#define f2xm1(x) (pow(2.0, (x)) - 1.0)
+#endif
 #ifndef fabs
 #define fabs(x) fabs(x)
 #endif

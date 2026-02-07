@@ -16,7 +16,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a9930(CEnemy *this_ptr)
     if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {
       round
                 ((double)*(float *)(in_stack_00000010 + 4) * 1.2 * 0.25);
-      core_gore_cpp_FUN_004edbb0();
+      core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
       return 1;
     }
   }

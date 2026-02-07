@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_00608e14(void)
+uint FUN_00608e14(void)
 
 {
   float10 in_ST0;

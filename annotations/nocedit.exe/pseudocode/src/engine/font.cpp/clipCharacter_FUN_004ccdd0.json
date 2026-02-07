@@ -1,0 +1,164 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
+  },
+  "cross_references": [
+    {
+      "addr": "004ce7a0",
+      "from_addr": "004cea20",
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ccdd0",
+    "address_range": [
+      [
+        "004ccdd0",
+        "004cce82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_clipCharacter_FUN_004ccdd0",
+    "signature": "int __cdecl engine_font_cpp_clipCharacter_FUN_004ccdd0 (int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cea20",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0",
+        "estimated_params": 6,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.292307692307692,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 8,
+      "COPY": 60,
+      "INT_ADD": 20,
+      "INT_AND": 26,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 30,
+      "INT_LESS": 10,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 3,
+      "INT_SLESS": 13,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 44,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 279
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bitmap_offset",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "top_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "bottom_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_width",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

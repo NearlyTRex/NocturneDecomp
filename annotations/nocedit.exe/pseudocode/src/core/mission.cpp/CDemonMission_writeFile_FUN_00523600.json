@@ -1,94 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 11,
-        "line": 36,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 22,
-        "line": 42,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 24,
-        "line": 51,
-        "message": "cast from 'CDemonActorType**' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 24,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 51,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 54,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 79,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 90,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 92,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 334,
-    "complexity_score": 319,
+    "complexity_score": 114,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 33,
     "pseudocode_lines": 99,
-    "suspect_count": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
     "total_lines": 433
   },
@@ -116,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -142,7 +67,7 @@
     {
       "addr": "004ee290",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ee290"
+      "name": "core_gore.cpp_CGore_FUN_004ee290"
     },
     {
       "addr": "004ff3b0",
@@ -157,12 +82,12 @@
     {
       "addr": "00523cc0",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523cc0"
+      "name": "core_mission.cpp_CDemonMission_countActors_FUN_00523cc0"
     },
     {
       "addr": "00523cf0",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0"
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0"
     },
     {
       "addr": "005fe6d0",
@@ -410,10 +335,10 @@
     "pcode_op_count": 1098
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -429,156 +354,23 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// mission version, actor version\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%d,%d\\n\",this_ptr->mission_version_num,4)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// Root name of mission\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%s\\n\",this_ptr->unk2 + 0x38);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// setList\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%d\\n\",this_ptr->set_list);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%s\\n\",pcVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// actorTypeList\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%d\\n\",g_NumActorClassTypes);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(int *)((int)",
-      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar7);",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%s %d\\n\",*piVar1,*(uint *)(*piVar1 + 0x34));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// actor count\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%d\\n\",iVar5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// inventory actor count\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%d\\n\",iVar5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// actor name list\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"%s \\\"%s\\\"\\n\",pcVar4,pCVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000008",
-      "text": "((CInventory *)(pCVar3[0x176].create_event + 0x30),in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_00000008",
-      "text": "_fprintf(in_stack_00000008,\"// actor data list\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2,in_stack_00000008);",
-      "type": "stack_param"
     }
   ]
 }

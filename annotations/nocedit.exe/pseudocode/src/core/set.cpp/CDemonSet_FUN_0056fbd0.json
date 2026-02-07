@@ -5,60 +5,23 @@
         "category": "undeclared_identifier",
         "column": 75,
         "line": 108,
-        "message": "'stack0xffffff78' was not declared in this scope"
+        "message": "use of undeclared identifier 'stack0xffffff78'"
       },
       {
         "category": "other",
         "column": 61,
         "line": 118,
-        "message": "invalid cast from type 'CHero*' to type 'float'"
+        "message": "C-style cast from 'CHero *' to 'float' is not allowed"
       },
       {
         "category": "incompatible_types",
-        "column": 38,
+        "column": 3,
         "line": 130,
-        "message": "invalid conversion from 'int (*)()' to '__compar_fn_t' {aka 'int (*)(const void*, const void*)'} [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 51,
-        "line": 140,
-        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 51,
-        "line": 155,
-        "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "message": "no matching function for call to 'qsort'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 140,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 155,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 169,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 365,
@@ -81,7 +44,7 @@
     {
       "addr": "005390f0",
       "from_addr": "0053a349",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -334,7 +297,7 @@
       {
         "call_addr": "0053a349",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],

@@ -101,7 +101,7 @@ section .text
     MOV EAX,0x61e07d                    ; 0046ec64 | = "Ran out of verticies!"
     PUSH EAX                            ; 0046ec69 | = "Ran out of verticies!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046ec6a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046ec6f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046ec72
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -153,7 +153,7 @@ section .text
     MOV EAX,0x61e093                    ; 0046ecd8 | = "Faces detached."
     PUSH EAX                            ; 0046ecdd | = "Faces detached."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046ecde
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046ece3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046ece6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

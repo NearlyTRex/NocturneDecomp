@@ -18,6 +18,12 @@ import os
 import sys
 import subprocess
 import argparse
+
+# Add script directory to path for package imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ghidra_annotations.annotations.pseudocode.compiler_config import (
+    DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
+)
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -56,24 +62,19 @@ def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
     return sorted(cpp_files)
 
 
-def compile_cpp_file(cpp_path, include_dir, compiler='g++'):
+def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single cpp file.
 
     Args:
         cpp_path: Path to the cpp file
         include_dir: Include directory for -I flag
-        compiler: Compiler to use (g++ or clang++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
 
     Returns:
         Tuple of (success, error_message)
     """
     try:
-        cmd = [
-            compiler,
-            '-fsyntax-only',  # Only check syntax, don't generate output
-            '-I', include_dir,
-            cpp_path
-        ]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, cpp_path]
 
         result = subprocess.run(
             cmd,
@@ -122,7 +123,7 @@ def parse_error_message(error_msg):
     return issues if issues else [error_msg[:200]]
 
 
-def verify_globals(src_dir, include_dir, verbose=False, stop_on_error=False, compiler='g++', max_workers=4, skip_dirs=None, skip_files=None):
+def verify_globals(src_dir, include_dir, verbose=False, stop_on_error=False, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
     """Verify all globals cpp files in the source directory.
 
     Args:
@@ -230,8 +231,8 @@ def main():
     )
     parser.add_argument(
         '-c', '--compiler',
-        default='g++',
-        help='Compiler to use (default: g++)'
+        default=DEFAULT_COMPILER,
+        help='Compiler to use (default: %s)' % DEFAULT_COMPILER
     )
     parser.add_argument(
         '-j', '--jobs',

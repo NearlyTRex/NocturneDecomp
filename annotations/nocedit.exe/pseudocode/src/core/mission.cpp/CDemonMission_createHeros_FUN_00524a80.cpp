@@ -25,7 +25,8 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
   if (g_CNetGamePtr->connection_type == 0) {
     g_HeroCount = 1;
     g_LocalHeroIndex = g_CNetGamePtr->connection_type;
-    iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(this_ptr);
+    iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
+                      (this_ptr,0,g_CGamePtr->hero_number,(void *)creation_flags);
     if (iVar4 == 0) {
       return 0;
     }
@@ -43,7 +44,9 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
       iVar3 = 0;
       iVar2 = 0;
       do {
-        iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(this_ptr);
+        iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
+                          (this_ptr,iVar4,*(int *)(g_CNetGamePtr->players[0].name + iVar3 + 0x14),
+                           (void *)0x0);
         if (iVar1 == 0) {
           return 0;
         }
@@ -65,7 +68,7 @@ core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,
       actor_ptr = actor_ptr->next_actor;
     }
     else {
-      core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);
+      core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,actor_ptr,1);
       actor_ptr = this_ptr->first_actor;
     }
   }

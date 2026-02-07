@@ -123,7 +123,7 @@ section .text
     MOV EAX,0x61b68c                    ; 0045ed3e | = "Invalid point."
     PUSH EAX                            ; 0045ed43 | = "Invalid point."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ed44
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ed49
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045ed4c
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -142,7 +142,7 @@ section .text
     MOV EAX,0x61b69b                    ; 0045ed6f | = "Which axis to use - X, Y, or Z? : "
     PUSH EAX                            ; 0045ed74 | = "Which axis to use - X, Y, or Z? : "
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ed75
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ed7a
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045ed7d
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

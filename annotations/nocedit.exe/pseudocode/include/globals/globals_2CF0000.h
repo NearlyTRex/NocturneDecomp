@@ -28,9 +28,6 @@ extern CEdButton* g_ActiveButton;
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
 
-// CEditorTools*
-extern CEditorTools* g_CUserInterfacePtr;
-
 // CVector3f
 extern CVector3f CVector3f_02cf2b60;
 
@@ -56,16 +53,19 @@ extern int g_WindowStackCount;
 extern int g_FontCharacterHeight;
 extern int g_FontCharacterWidth;
 extern int g_MouseCursorType;
+extern int INT_02cf2a78;
 extern int g_WindowBorderColor1;
 extern int g_WindowBorderColor2;
 extern int g_TitleBarColor;
 extern int g_WindowFillColor;
 extern int g_WindowFontColor;
+extern int INT_02cf2a94;
 extern int g_SelectionColor;
 extern int g_TextColor;
 extern int g_CursorColor;
 extern int g_StatusTextColor;
 extern int g_WindowStatusTextColor;
+extern int INT_02cf2aac;
 extern int g_ButtonColor;
 extern int g_ProgressBarBackgroundColor;
 extern int g_ProgressBarFillColor;
@@ -109,8 +109,6 @@ extern uint g_MouseButtonFlags;
 extern uint* g_ZBufferScanlineArray[1200];
 
 // undefined4
-extern undefined4 DAT_02cf2a78;
-extern undefined4 DAT_02cf2aac;
 extern undefined4 DAT_02cf2b6c;
 extern undefined4 DAT_02cf2b70;
 extern undefined4 DAT_02cf2b74;

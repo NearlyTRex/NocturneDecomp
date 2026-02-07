@@ -8,7 +8,7 @@
 
 /* Signature: void FUN_006040d7(uint param_1) */
 
-void crt_unknown_c_FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)
+void FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)
 
 {
   ushort uVar1;
@@ -19,13 +19,13 @@ void crt_unknown_c_FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)
     uVar2 = param_1 / 10000;
     param_1 = param_1 % 10000;
   }
-  crt_unknown_c_FUN_006040ed(uVar2);
+  FUN_006040ed(uVar2);
   uVar2 = 0;
   if (99 < param_1) {
     uVar2 = (param_1 & 0xffff) / 100;
     param_1 = (param_1 & 0xffff) % 100;
   }
-  crt_unknown_c_FUN_00604104(uVar2);
+  FUN_00604104(uVar2);
   uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));
   if (9 < (byte)param_1) {
     uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));

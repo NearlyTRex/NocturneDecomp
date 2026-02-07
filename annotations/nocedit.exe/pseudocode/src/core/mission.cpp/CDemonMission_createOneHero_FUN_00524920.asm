@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr)
+; __cdecl int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920 (CDemonMission *this_ptr,int index,int param_3,void *param_4)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
+; int              Stack[0xc]:4   param_3
+; void *           Stack[0x10]:4   param_4
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -31,7 +34,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00523b70
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
@@ -147,8 +150,8 @@ section .text
     PUSH ECX                            ; 00524a38
     MOV EBX,dword ptr [0x0067d550]      ; 00524a39 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 00524a3f | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00524a40
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00524a40
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00524a45
     JMP 0x0052499a                      ; 00524a48
         ;   XREF to: 0052499a (UNCONDITIONAL_JUMP)  ; LAB_0052499a

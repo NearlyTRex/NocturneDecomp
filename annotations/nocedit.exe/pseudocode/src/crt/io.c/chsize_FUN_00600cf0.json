@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 125,
+    "complexity_score": 145,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 45,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "special_crt_function",
       "unaffected_reg"
@@ -211,6 +211,20 @@
       "line": 33,
       "match": "unaff_EDI",
       "text": "if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "text": "FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "text": "FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);",
       "type": "unaffected_reg"
     },
     {

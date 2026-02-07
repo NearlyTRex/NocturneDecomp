@@ -15,6 +15,7 @@ core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
   CDemonActor *pCVar1;
   CSkeleton *pCVar2;
   int iVar3;
+  char *name;
   CDemonActor *pCVar4;
   CVector3f *pCVar5;
   CCharacter *pCVar6;
@@ -104,8 +105,11 @@ LAB_0042f571:
     if (-1 < iVar7) {
       (*(((this_ptr_00->base).vtable._uc)->_uc).cfunc21)();
       if (0 < iVar7) {
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6d0,iVar7);
-        pCVar4 = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+        name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                         ((CStrList *)&stack0xfffff6d0,iVar7);
+        pCVar4 = (CDemonActor *)
+                 core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                           (g_CDemonMissionPtr,name);
         pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (local_2c,&CStack_44,local_18->bone_index);
         pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

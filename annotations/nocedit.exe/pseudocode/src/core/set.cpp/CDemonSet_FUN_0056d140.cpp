@@ -14,7 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d140(CDemonSet *this_ptr)
   uint in_stack_00000008;
   
   this_ptr_00 = g_CDemonRendererPtr2;
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) && (DAT_0327785c < 100)) {
+  if ((g_CDemonMissionPtr->is_in_editor == 0) && (DAT_0327785c < 100)) {
     (&DAT_03277860)[DAT_0327785c] = in_stack_00000008;
     iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(this_ptr_00);
     (&DAT_032779f0)[DAT_0327785c] = iVar1;

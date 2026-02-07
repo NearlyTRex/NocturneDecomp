@@ -2,20 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 64,
@@ -36,15 +23,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005390f0",
-      "from_addr": "00539e1b",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053e220",
       "from_addr": "0053e99e",
       "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "00539e1b",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -209,7 +196,7 @@
       {
         "call_addr": "00539e1b",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],

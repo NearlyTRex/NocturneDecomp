@@ -8,7 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x00600ac1) */
 
-uint crt_unknown_c_FUN_00600a64(void)
+uint FUN_00600a64(void)
 
 {
   int iVar1;

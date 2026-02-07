@@ -10,8 +10,8 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db886
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539e1b
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e99e
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539e1b
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580701
 ;   core_setedit.cpp_FUN_00581320 at 00581435
 ;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057ca39

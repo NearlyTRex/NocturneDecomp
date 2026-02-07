@@ -27,7 +27,7 @@ engine_dosio_c_reopenFileStream_FUN_00481b50
       crt_fstream_cpp_openFile_FUN_00600e85
                 (file_stream,local_220.target_path,_file_mode_flags,g_DefaultStreamBufferSize);
       if (local_220.file_offset != 0) {
-        crt_unknown_c_FUN_00600ee4();
+        FUN_00600ee4();
         return;
       }
     }

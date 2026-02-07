@@ -25,7 +25,7 @@
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340 at 0060c3b4
-;   crt_io.c_stat_thunk_00600c18 at 00600c18
+;   crt_io.c_stat_00600c18 at 00600c18
 ;
 ; Referenced Globals:
 ;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78

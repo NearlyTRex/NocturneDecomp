@@ -7,5 +7,5 @@
 struct CFont;
 
 // Function Definition: CFont_drawText
-typedef void (*CFont_drawText)(struct CFont* this_ptr, int x, int y, char* text, int foreground_color, int background_color);
+typedef int (*CFont_drawText)(struct CFont* this_ptr, char* text, int x, int y, int foreground_color, int background_color);
 

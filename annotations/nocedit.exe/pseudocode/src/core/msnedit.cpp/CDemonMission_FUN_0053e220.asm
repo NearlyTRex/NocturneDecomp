@@ -44,9 +44,9 @@
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-;   core_gore.cpp_CGore_process_FUN_004ed9e0
-;   core_gore.cpp_FUN_004ed760
-;   core_gore.cpp_FUN_004edaa0
+;   core_gore.cpp_CGore_FUN_004ed760
+;   core_gore.cpp_CGore_FUN_004edaa0
+;   core_gore.cpp_CGore_FUN_004ede30
 ;   ... and 28 more
 ;
 ; *****************************************************************************
@@ -111,8 +111,8 @@ section .text
     ADD ESP,0x8                         ; 0053e2cc
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053e2cf
     PUSH EAX                            ; 0053e2d2
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0053e2d3
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 0053e2d3
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053e2d8
     PUSH 0x63cf85                       ; 0053e2db | = "Setting initial camera view."
     MOV EDX,dword ptr [0x00678a60]      ; 0053e2e0 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -181,8 +181,8 @@ section .text
     PUSH EBX                            ; 0053e3a7
     MOV ESI,dword ptr [EBP + 0x14]      ; 0053e3a8
     PUSH ESI                            ; 0053e3ab
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 0053e3ac
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 0053e3ac
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     MOV dword ptr [EBX + 0x28],0x0      ; 0053e3b1
     ADD ESP,0x8                         ; 0053e3b8
     FLD float ptr [EBX + 0x28]          ; 0053e3bb
@@ -204,8 +204,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0053e3f9
     PUSH EDX                            ; 0053e3fc
     ADD EBX,0x20                        ; 0053e3fd
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 0053e400
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 0053e400
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053e405
     ADD ESI,0x30                        ; 0053e408
     MOV dword ptr [ESP + 0xac],EBX      ; 0053e40b
@@ -429,8 +429,8 @@ section .text
     FADD float ptr [0x0063d01c]         ; 0053e6c3 | FLOAT_0063d01c
     PUSH EDX                            ; 0053e6c9 | g_CGoreInstance
     FSTP float ptr [ESP + 0x18]         ; 0053e6ca
-    CALL core_gore.cpp_FUN_004edaa0     ; 0053e6ce
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
+    CALL core_gore.cpp_CGore_FUN_004edaa0 ; 0053e6ce
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edaa0(CGore * this_ptr)
     ADD ESP,0x10                        ; 0053e6d3
     PUSH 0x1c                           ; 0053e6d6
         ;   Label: LAB_0053e6d6
@@ -472,8 +472,8 @@ section .text
     FSTP float ptr [ESP + 0x1c]         ; 0053e747
     PUSH EBX                            ; 0053e74b | g_CGoreInstance
     FSTP float ptr [ESP + 0x84]         ; 0053e74c
-    CALL core_gore.cpp_FUN_004edaa0     ; 0053e753
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
+    CALL core_gore.cpp_CGore_FUN_004edaa0 ; 0053e753
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edaa0(CGore * this_ptr)
     ADD ESP,0x10                        ; 0053e758
     PUSH 0x19                           ; 0053e75b
         ;   Label: LAB_0053e75b
@@ -572,8 +572,8 @@ section .text
     FSTP float ptr [ESP + 0x54]         ; 0053e88a
     FSTP float ptr [ESP + 0x58]         ; 0053e88e
     FSTP float ptr [ESP + 0x5c]         ; 0053e892
-    CALL core_gore.cpp_FUN_004ede30     ; 0053e896
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 0053e896
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 0053e89b
     PUSH 0x13                           ; 0053e89e
         ;   Label: LAB_0053e89e
@@ -596,8 +596,8 @@ section .text
         ;   XREF to: 0053e419 (CONDITIONAL_JUMP)  ; LAB_0053e419
     MOV ECX,dword ptr [0x0067b9a0]      ; 0053e8d2 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0053e8d8 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ed760     ; 0053e8d9
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed760()
+    CALL core_gore.cpp_CGore_FUN_004ed760 ; 0053e8d9
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
     MOV EAX,[0x006810c8]                ; 0053e8de | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0x4                         ; 0053e8e3
     MOV EBX,dword ptr [EAX + 0x15aea4]  ; 0053e8e6 | g_CDemonSetInstance.selected_camera_index
@@ -648,8 +648,8 @@ section .text
     PUSH EBX                            ; 0053e96e
     MOV ESI,dword ptr [EBP + 0x14]      ; 0053e96f
     PUSH ESI                            ; 0053e972
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 0053e973
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 0053e973
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 0053e978
     PUSH ESI                            ; 0053e97b
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 0053e97c

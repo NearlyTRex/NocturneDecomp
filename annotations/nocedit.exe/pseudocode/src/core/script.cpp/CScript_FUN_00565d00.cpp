@@ -26,7 +26,8 @@ void __cdecl core_script_cpp_CScript_FUN_00565d00(CScript *this_ptr,int param_2,
       if (-1 < iVar1) {
         switch(*(uint *)(&DAT_0310ad74 + iVar1 * 0x328)) {
         case 3:
-          pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+          pcVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                             (g_CDemonMissionPtr,(char *)(iVar1 * 0x328 + 0x310ab80));
           if (pcVar2 == (char *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No such actor %s",iVar1 * 0x328 + 0x310ab80);

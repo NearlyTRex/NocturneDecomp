@@ -137,7 +137,7 @@ LAB_004f9c99:
                            ((double)(local_164.damage_amount * (float)2.5 *
                                     (float)0.25));
         local_3c = (int)ROUND(dVar13);
-        core_gore_cpp_FUN_004edbb0();
+        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
         iVar6 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x120))();
         if (iVar6 < 1) {
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -403,7 +403,7 @@ LAB_004f9c99:
                            (pCVar1,&local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_c8,pCVar8);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
       break;

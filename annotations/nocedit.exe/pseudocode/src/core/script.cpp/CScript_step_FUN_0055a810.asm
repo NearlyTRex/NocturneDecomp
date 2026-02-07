@@ -2730,8 +2730,8 @@ section .text
     PUSH EAX                            ; 0055c329
     MOV EAX,[0x0067d550]                ; 0055c32a | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH EAX                            ; 0055c32f | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524630 ; 0055c330
-        ;   XREF to: 00524630 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00524630(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_setMissionName_FUN_00524630 ; 0055c330
+        ;   XREF to: 00524630 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setMissionName_FUN_00524630(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0055c335
     MOV dword ptr [EBX],0x1             ; 0055c338
     MOV dword ptr [ESP + 0x3e94],EDI    ; 0055c33e

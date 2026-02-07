@@ -1,0 +1,239 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 23,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "00489120",
+      "from_addr": "004891eb",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005645d0",
+      "from_addr": "00564791",
+      "name": "core_script.cpp_CScript_FUN_005645d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdee0",
+      "from_addr": "004cdf1f",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdff0",
+      "from_addr": "004ce034",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdde0",
+      "from_addr": "004cde15",
+      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdc70",
+      "from_addr": "004cdcc2",
+      "name": "engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdce0",
+      "from_addr": "004cdd0f",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cdbf0",
+    "address_range": [
+      [
+        "004cdbf0",
+        "004cdc1e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cda80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004cda80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004cdcc2",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70",
+        "estimated_params": 6,
+        "instructions_analyzed": 14,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004891eb",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+        "estimated_params": 6,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004cdd0f",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00564791",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_005645d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 11,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004ce034",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cde15",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cdf1f",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 6,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4347826086956523,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 11,
+      "LOAD": 11,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 7,
+      "declared_params": 6,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:6 vs estimated:2",
+      "param_delta": -4,
+      "text": "Function declares 6 params but call sites push 2 (4 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

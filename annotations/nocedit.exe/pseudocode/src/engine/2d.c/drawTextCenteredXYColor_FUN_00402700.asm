@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredXYColor_FUN_00402700(int left_x,int right_x,int y_pos,char *text)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredXYColor_FUN_00402700(int left_x,int right_x,int y,char *text)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left_x
 ; int              Stack[0x8]:4   right_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0xc]:4   y
 ; char *           Stack[0x10]:4   text
 ;
 ; XREF[1]:
@@ -31,7 +31,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 00402711
     PUSH ESI                            ; 00402715
     CALL engine_2d.c_drawTextCenteredColor_FUN_004026c0 ; 00402716
-        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)
+        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y)
     ADD ESP,0x10                        ; 0040271b
     POP ESI                             ; 0040271e
     POP EBX                             ; 0040271f

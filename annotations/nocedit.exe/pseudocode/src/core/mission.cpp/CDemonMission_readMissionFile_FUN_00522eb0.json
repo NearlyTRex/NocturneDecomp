@@ -1,175 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 11,
-        "line": 72,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 22,
-        "line": 78,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 29,
-        "line": 96,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 46,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 49,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 52,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 54,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 57,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 59,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 91,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 96,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 103,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 106,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 185,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 187,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 202,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 204,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 217,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 219,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 236,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 238,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 241,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 243,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 246,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 534,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
-    "pseudocode_lines": 259,
-    "suspect_count": 26,
+    "pseudocode_lines": 248,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 838
+    "total_lines": 827
   },
   "cross_references": [
     {
@@ -195,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0 (CDemonMission *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -226,12 +74,12 @@
     {
       "addr": "004ed760",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ed760"
+      "name": "core_gore.cpp_CGore_FUN_004ed760"
     },
     {
       "addr": "004ee1e0",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ee1e0"
+      "name": "core_gore.cpp_CGore_FUN_004ee1e0"
     },
     {
       "addr": "004ff740",
@@ -244,14 +92,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
+    },
+    {
       "addr": "00522d30",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30"
-    },
-    {
-      "addr": "00523b70",
-      "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
     },
     {
       "addr": "005248e0",
@@ -542,10 +390,10 @@
     "pcode_op_count": 1860
   },
   "stack_frame": {
-    "frame_size": 352,
+    "frame_size": 356,
     "local_size": 348,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -631,191 +479,51 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 19,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 33,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d,%d\\n\",&this_ptr->mission_version_num,&local_2c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%s\\n\",this_ptr->unk2 + 0x38);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->set_list);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%s\\n\",pcVar8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_20);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 92,
       "match": "(char *)((int)",
-      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%s %d\\n\",local_158,&local_1c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 126,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 133,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 137,
       "match": "DAT_0067d5c0",
-      "text": "puVar7 = &DAT_0067d5c0;",
+      "text": "puVar8 = &DAT_0067d5c0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 144,
       "match": "DAT_0067d628",
-      "text": "puVar7 = &DAT_0067d628;",
+      "text": "puVar8 = &DAT_0067d628;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%s \\\"%[^\\\"]\\\"\\n\",local_90,local_f4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 187,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 199,
-      "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar6,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 243,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 247,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
     }
   ]
 }

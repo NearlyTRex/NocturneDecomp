@@ -8,7 +8,7 @@
 
 /* Signature: void FUN_0060b5e8(uint param_1, uint param_2, uint param_3) */
 
-ulonglong crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
+ulonglong FUN_0060b5e8(uint param_1,uint param_2)
 
 {
   uint uVar1;

@@ -181,56 +181,56 @@ section .text
     MOV EAX,0x61af64                    ; 0045a892 | = "N) No reset depth"
     PUSH EAX                            ; 0045a897 | = "N) No reset depth"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a898
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a89d
     PUSH 0x21                           ; 0045a8a0
     PUSH 0x0                            ; 0045a8a2
     MOV EAX,0x61af76                    ; 0045a8a4 | = "T) Transparent"
     PUSH EAX                            ; 0045a8a9 | = "T) Transparent"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a8aa
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a8af
     PUSH 0x2c                           ; 0045a8b2
     PUSH 0x0                            ; 0045a8b4
     MOV EAX,0x61af85                    ; 0045a8b6 | = "Y) Reset depth"
     PUSH EAX                            ; 0045a8bb | = "Y) Reset depth"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a8bc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a8c1
     PUSH 0x37                           ; 0045a8c4
     PUSH 0x0                            ; 0045a8c6
     MOV EAX,0x61af94                    ; 0045a8c8 | = "X) No sort"
     PUSH EAX                            ; 0045a8cd | = "X) No sort"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a8ce
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a8d3
     PUSH 0x42                           ; 0045a8d6
     PUSH 0x0                            ; 0045a8d8
     MOV EAX,0x61af9f                    ; 0045a8da | = "Z) Perspective reset depth for big ob..."
     PUSH EAX                            ; 0045a8df | = "Z) Perspective reset depth for big ob..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a8e0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a8e5
     PUSH 0x4d                           ; 0045a8e8
     PUSH 0x0                            ; 0045a8ea
     MOV EAX,0x61afca                    ; 0045a8ec | = "R) Z buffered Tree"
     PUSH EAX                            ; 0045a8f1 | = "R) Z buffered Tree"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a8f2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a8f7
     PUSH 0x58                           ; 0045a8fa
     PUSH 0x0                            ; 0045a8fc
     MOV EAX,0x61afdd                    ; 0045a8fe | = "G) Giant (bigger than 255 feet wide) ..."
     PUSH EAX                            ; 0045a903 | = "G) Giant (bigger than 255 feet wide) ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a904
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a909
     PUSH 0x63                           ; 0045a90c
     PUSH 0x0                            ; 0045a90e
     MOV EAX,0x61b009                    ; 0045a910 | = "H) Huge flat track"
     PUSH EAX                            ; 0045a915 | = "H) Huge flat track"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a916
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a91b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045a91e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -302,42 +302,42 @@ section .text
     MOV EAX,0x61b01c                    ; 0045a980 | = "1. Scale to fit"
     PUSH EAX                            ; 0045a985 | = "1. Scale to fit"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a986
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a98b
     PUSH 0x84                           ; 0045a98e
     PUSH 0x0                            ; 0045a993
     MOV EAX,0x61b02c                    ; 0045a995 | = "2. Normalize X"
     PUSH EAX                            ; 0045a99a | = "2. Normalize X"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a99b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a9a0
     PUSH 0x8f                           ; 0045a9a3
     PUSH 0x0                            ; 0045a9a8
     MOV EAX,0x61b03b                    ; 0045a9aa | = "3. Normalize Y"
     PUSH EAX                            ; 0045a9af | = "3. Normalize Y"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a9b0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a9b5
     PUSH 0x9a                           ; 0045a9b8
     PUSH 0x0                            ; 0045a9bd
     MOV EAX,0x61b04a                    ; 0045a9bf | = "4. Normalize Z"
     PUSH EAX                            ; 0045a9c4 | = "4. Normalize Z"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a9c5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a9ca
     PUSH 0xa5                           ; 0045a9cd
     PUSH 0x0                            ; 0045a9d2
     MOV EAX,0x61b059                    ; 0045a9d4 | = "5. Do not scale"
     PUSH EAX                            ; 0045a9d9 | = "5. Do not scale"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a9da
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a9df
     PUSH 0xb0                           ; 0045a9e2
     PUSH 0x0                            ; 0045a9e7
     MOV EAX,0x61b069                    ; 0045a9e9 | = "6. Animated model scale"
     PUSH EAX                            ; 0045a9ee | = "6. Animated model scale"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045a9ef
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045a9f4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045a9f7
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -364,7 +364,7 @@ section .text
     MOV EAX,0x61b081                    ; 0045aa2a | = "Include texture maps? (Y/N) "
     PUSH EAX                            ; 0045aa2f | = "Include texture maps? (Y/N) "
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045aa30
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045aa35
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045aa38
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

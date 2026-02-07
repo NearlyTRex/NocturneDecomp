@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ede30 at 004ede52
+;   core_gore.cpp_CGore_FUN_004ede30 at 004ede52
 ;
 ; Referenced Globals:
 ;   float FLOAT_0062e39a = 0.1000000

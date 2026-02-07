@@ -280,7 +280,8 @@ LAB_005c53f2:
       pCVar8 = *(CDemonActor **)((this_ptr->base).unk3 + 4);
       if ((pCVar8 != (CDemonActor *)0x0) && (iVar2 == 3)) {
         core_inv_cpp_CInventory_removeItem_FUN_004fea70(local_1c,pCVar8,0);
-        core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+        core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
+                  (g_CDemonMissionPtr,*(CDemonActor **)((this_ptr->base).unk3 + 4));
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr);
         iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
                           (*(CDemonActor **)((this_ptr->base).unk3 + 4),"CTrap");

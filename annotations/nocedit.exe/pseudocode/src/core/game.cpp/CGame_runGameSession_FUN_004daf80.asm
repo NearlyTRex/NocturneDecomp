@@ -16,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 0052449b
-;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538cb8
+;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538cb8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Nocturne_is_alive_and_ki_0062b641
@@ -473,8 +473,8 @@ section .text
     MOV EBX,dword ptr [0x0067d550]      ; 004db4f9 | g_CDemonMissionInstance | g_CDemonMissionPtr
         ;   Label: LAB_004db4f9
     PUSH EBX                            ; 004db4ff | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524e00 ; 004db500
-        ;   XREF to: 00524e00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524e00(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_00524e00 ; 004db500
+        ;   XREF to: 00524e00 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004db505
     PUSH 0x683                          ; 004db508
     MOV EDX,dword ptr [EBP + 0x14]      ; 004db50d

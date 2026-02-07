@@ -120,7 +120,7 @@ section .text
     MOV EAX,0x61c0fa                    ; 00463bd2 | = "The wheel polygon reducer only handle..."
     PUSH EAX                            ; 00463bd7 | = "The wheel polygon reducer only handle..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463bd8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463bdd
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463be0
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -409,7 +409,7 @@ section .text
     MOV EAX,0x61c13a                    ; 00463e98 | = "Invalid polygon selected in wheel pol..."
     PUSH EAX                            ; 00463e9d | = "Invalid polygon selected in wheel pol..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463e9e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463ea3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463ea6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -437,7 +437,7 @@ section .text
     MOV EAX,0x61c16d                    ; 00463ed6 | = "Invalid polygon selected in wheel pol..."
     PUSH EAX                            ; 00463edb | = "Invalid polygon selected in wheel pol..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463edc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463ee1
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463ee4
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -467,7 +467,7 @@ section .text
     MOV EAX,0x61c1a0                    ; 00463f14 | = "Invalid polygon selected in wheel pol..."
     PUSH EAX                            ; 00463f19 | = "Invalid polygon selected in wheel pol..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463f1a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463f1f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463f22
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -513,7 +513,7 @@ section .text
     MOV EAX,0x61c1d3                    ; 00463f8b | = "Max points exceeded in wheel polygon ..."
     PUSH EAX                            ; 00463f90 | = "Max points exceeded in wheel polygon ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463f91
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463f96
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463f99
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -940,7 +940,7 @@ section .text
     MOV EAX,0x61c20e                    ; 004645a4 | = "All polys on selected plane must form..."
     PUSH EAX                            ; 004645a9 | = "All polys on selected plane must form..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004645aa
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004645af
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004645b2
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

@@ -37,7 +37,8 @@ CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param
   else {
     iVar2 = stricmp(param_1,"$");
     if (iVar2 != 0) {
-      actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+      actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                                     (g_CDemonMissionPtr,param_1);
       if (actor_ptr == (CHero *)0x0) {
         sprintf(&DAT_02d0a460,"Actor \"%s\" does not exist.",param_1);
         return (CHero *)0x0;

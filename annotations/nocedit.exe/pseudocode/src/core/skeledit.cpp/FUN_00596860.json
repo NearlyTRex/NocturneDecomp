@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 27,
@@ -119,21 +112,21 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "y_pos = (in_stack_00000004 + 1) * 0xb;",
+      "text": "y = (in_stack_00000004 + 1) * 0xb;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_00000008,7,y_pos);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_00000008,7,y);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_0000000c,0x69,y_pos);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_0000000c,0x69,y);",
       "type": "stack_param"
     }
   ]

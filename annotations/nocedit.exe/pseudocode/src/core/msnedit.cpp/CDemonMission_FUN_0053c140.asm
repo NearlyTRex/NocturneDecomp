@@ -8,14 +8,14 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; XREF[12]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005392ad
-;   core_msnedit.cpp_CDemonMission_FUN_0053af50 at 0053af7b
-;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b2f0
-;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b7d0
-;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053bc07
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bcf0 at 0053bd20
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053bfa7
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053dbae
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b2f0
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b7d0
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005392ad
+;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053bc07
+;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053af7b
 ;   core_script.cpp_CScript_FUN_00565d00 at 00565dc3
 ;   core_script.cpp_CScript_FUN_005677a0 at 00567bae
 ;   ... and 2 more
@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 0053c1cf
         ;   Label: LAB_0053c1cf
     PUSH EBX                            ; 0053c1d0
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 0053c1d1
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 0053c1d1
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0053c1d6
     JMP 0x0053c180                      ; 0053c1d9
         ;   XREF to: 0053c180 (UNCONDITIONAL_JUMP)  ; LAB_0053c180

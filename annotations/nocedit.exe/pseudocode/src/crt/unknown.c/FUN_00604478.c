@@ -9,7 +9,7 @@
 /* Signature: byte FUN_00604478(uint param_1, uint param_2, uint param_3,
    uint param_4, uint param_5) */
 
-void crt_unknown_c_FUN_00604478(void)
+void FUN_00604478(void)
 
 {
   byte *puVar1;

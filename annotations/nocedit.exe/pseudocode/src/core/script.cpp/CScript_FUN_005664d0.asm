@@ -173,7 +173,7 @@ section .text
     MOV EDX,dword ptr [0x03114200]      ; 0056660f | DAT_03114200
     PUSH EDX                            ; 00566615
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 ; 00566616
-        ;   XREF to: 004ce7a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, ...)
+        ;   XREF to: 004ce7a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x18                        ; 0056661b
     CMP EBX,0x9                         ; 0056661e
     JZ 0x00566645                       ; 00566621

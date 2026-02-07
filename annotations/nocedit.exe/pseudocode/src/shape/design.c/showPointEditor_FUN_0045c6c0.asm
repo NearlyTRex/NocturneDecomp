@@ -123,7 +123,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c794
     PUSH EAX                            ; 0045c797
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c798
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c79d
     JMP 0x0045c844                      ; 0045c7a0
         ;   XREF to: 0045c844 (UNCONDITIONAL_JUMP)  ; LAB_0045c844
@@ -141,7 +141,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c7c1
     PUSH EAX                            ; 0045c7c4
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c7c5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c7ca
     IMUL EAX,dword ptr [0x01e528b4],0x14 ; 0045c7cd | g_SelectedPointIndex
     FLD float ptr [EAX + 0x1626414]     ; 0045c7d4 | g_LoadedVertices[0].vertex.z
@@ -167,7 +167,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c81c
     PUSH EAX                            ; 0045c81f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c820
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c825
     JMP 0x0045c844                      ; 0045c828
         ;   XREF to: 0045c844 (UNCONDITIONAL_JUMP)  ; LAB_0045c844
@@ -304,7 +304,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c96d
     PUSH EAX                            ; 0045c970
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c971
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c976
     XOR EAX,EAX                         ; 0045c979
     MOV AL,byte ptr [EBP + -0x8]        ; 0045c97b
@@ -329,7 +329,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c9b0
     PUSH EAX                            ; 0045c9b3
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c9b4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c9b9
     XOR EAX,EAX                         ; 0045c9bc
     MOV AL,byte ptr [EBP + -0xc]        ; 0045c9be
@@ -346,7 +346,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045c9d8
     PUSH EAX                            ; 0045c9db
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045c9dc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c9e1
     PUSH dword ptr [0x02cf6a94]         ; 0045c9e4 | g_MouseButtonFlags
     PUSH dword ptr [0x02cf6a90]         ; 0045c9ea | g_MouseY
@@ -365,7 +365,7 @@ section .text
     LEA EAX,[EBP + -0x74]               ; 0045ca13
     PUSH EAX                            ; 0045ca16
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ca17
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ca1c
     MOV EAX,[0x01e528b0]                ; 0045ca1f | g_PointEditorMode
     MOV dword ptr [EBP + -0x80],EAX     ; 0045ca24

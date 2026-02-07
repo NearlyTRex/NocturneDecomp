@@ -7,19 +7,19 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[35]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1be2
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de3fb
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d77f5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005079b8
-;   core_mission.cpp_FUN_00524c20 at 00524d83
-;   core_msnedit.cpp_CDemonMission_FUN_005379e0 at 00537c5d
-;   core_msnedit.cpp_CDemonMission_FUN_00537f60 at 005381cc
-;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b4fe
-;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b9de
-;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053ce9a
+;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d83
+;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053deaa
+;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e166
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b4fe
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b9de
+;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 at 00537c5d
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -46,7 +46,7 @@ section .text
     PUSH EDX                            ; 0049e6b2
     PUSH 0x2ceed30                      ; 0049e6b3 | g_MessageFormatBuffer
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e6b8
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e6bd
     MOV EBX,dword ptr [0x02cf2a8c]      ; 0049e6c0 | g_WindowFontColor
     PUSH EBX                            ; 0049e6c6

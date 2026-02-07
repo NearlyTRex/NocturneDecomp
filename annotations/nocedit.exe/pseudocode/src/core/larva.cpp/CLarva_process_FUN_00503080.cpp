@@ -255,7 +255,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                           (this_ptr_00,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_e0,pCVar10);
-      core_gore_cpp_FUN_004ede30();
+      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
       (this_ptr->base).pool_me = 1;
     }
     goto LAB_00503184;

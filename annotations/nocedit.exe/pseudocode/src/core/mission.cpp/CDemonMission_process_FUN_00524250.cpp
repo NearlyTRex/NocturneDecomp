@@ -15,50 +15,43 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
   CDemonMission *pCVar2;
   int iVar3;
   
-  if (*(int *)(this_ptr->unk4 + 0x14) != 0) {
+  if (this_ptr->delete_queue_count != 0) {
     iVar3 = 0;
     pCVar2 = this_ptr;
-    if (0 < *(int *)(this_ptr->unk4 + 0x14)) {
+    if (0 < this_ptr->delete_queue_count) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (*(CDemonActor **)(pCVar2->unk4 + 0x18),"..\\core\\mission.cpp",0x46b);
+                  (pCVar2->delete_queue_actors[0],"..\\core\\mission.cpp",0x46b);
         iVar3 = iVar3 + 1;
-        core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);
-        pCVar2 = (CDemonMission *)(pCVar2->unk1 + 4);
-      } while (iVar3 < *(int *)(this_ptr->unk4 + 0x14));
+        core_mission_cpp_CDemonMission_removeActor_FUN_00523f20
+                  (this_ptr,pCVar2->delete_queue_actors[0],pCVar2->delete_queue_flags[0]);
+        pCVar2 = (CDemonMission *)&pCVar2->is_in_editor;
+      } while (iVar3 < this_ptr->delete_queue_count);
     }
-    this_ptr->unk4[0x14] = '\0';
-    this_ptr->unk4[0x15] = '\0';
-    this_ptr->unk4[0x16] = '\0';
-    this_ptr->unk4[0x17] = '\0';
+    this_ptr->delete_queue_count = 0;
   }
   core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
-  if (-1 < *(int *)(this_ptr->unk4 + 0x10)) {
+  if (-1 < (this_ptr->pending_teleport).area_id) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
-    (pCVar1->base).base.location.position.x = *(float *)(this_ptr->unk4 + 4);
-    (pCVar1->base).base.location.position.y = *(float *)(this_ptr->unk4 + 8);
-    (pCVar1->base).base.location.position.z = *(float *)(this_ptr->unk4 + 0xc);
-    (pCVar1->base).base.location.area_id = *(int *)(this_ptr->unk4 + 0x10);
-    if (*(int *)(this_ptr->unk4 + 0x10) != *(int *)this_ptr->unk1) {
+    (pCVar1->base).base.location.position.x = (this_ptr->pending_teleport).position.x;
+    (pCVar1->base).base.location.position.y = (this_ptr->pending_teleport).position.y;
+    (pCVar1->base).base.location.position.z = (this_ptr->pending_teleport).position.z;
+    (pCVar1->base).base.location.area_id = (this_ptr->pending_teleport).area_id;
+    if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Changing sets...",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Insert wipe here...",0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);
+      core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0
+                (this_ptr,(this_ptr->pending_teleport).area_id);
       core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
       g_CScriptPtr->unk2 = 2;
     }
-    this_ptr->unk4[0x10] = -1;
-    this_ptr->unk4[0x11] = -1;
-    this_ptr->unk4[0x12] = -1;
-    this_ptr->unk4[0x13] = -1;
-    this_ptr->unk4[0xc] = '\0';
-    this_ptr->unk4[0xd] = '\0';
-    this_ptr->unk4[0xe] = '\0';
-    this_ptr->unk4[0xf] = '\0';
-    *(uint *)(this_ptr->unk4 + 8) = *(uint *)(this_ptr->unk4 + 0xc);
-    *(uint *)(this_ptr->unk4 + 4) = *(uint *)(this_ptr->unk4 + 8);
+    (this_ptr->pending_teleport).area_id = -1;
+    (this_ptr->pending_teleport).position.z = 0.0;
+    (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
+    (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
   }
   return;
 }

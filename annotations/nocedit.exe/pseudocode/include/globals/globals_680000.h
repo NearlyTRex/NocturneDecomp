@@ -250,14 +250,16 @@ extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 // WatcomStaticDestructorNode*
 extern WatcomStaticDestructorNode* g_AtexitListHead;
 
+// _FILE
+extern _FILE g_StdoutLogFile;
+extern _FILE g_StderrLogFile;
+
 // _FILE*
 extern _FILE* g_StaticFilePoolStart;
-extern _FILE* g_StderrLogFile;
 
 // byte
 extern byte BYTE_00684acc;
 extern byte BYTE_00684acd;
-extern byte BYTE_00684d05;
 extern byte g_WindowsMajorVersion;
 extern byte g_UseSoftwareMath;
 extern byte g_TimezoneInitFlags;

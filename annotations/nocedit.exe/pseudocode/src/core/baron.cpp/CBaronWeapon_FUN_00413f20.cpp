@@ -28,9 +28,10 @@ void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon *this_ptr)
       pCVar1 = core_actor_cpp_createActorByName_FUN_0040c430("CBaron");
       this_ptr_00 = g_CDemonMissionPtr;
       this_ptr->unk = (int)pCVar1;
-      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(this_ptr_00);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr_00,pCVar1);
       (*(code *)**(uint **)(this_ptr->unk + 0x154))();
-      core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
+                (g_CDemonMissionPtr,(CDemonActor *)this_ptr->unk);
       (**(code **)(*(int *)(this_ptr->unk + 0x154) + 0x60))();
       return;
     }

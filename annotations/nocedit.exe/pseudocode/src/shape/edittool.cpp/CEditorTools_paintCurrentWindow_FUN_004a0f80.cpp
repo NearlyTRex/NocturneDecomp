@@ -12,7 +12,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   char *text;
   int iVar1;
   int iVar2;
-  int y_pos;
+  int y;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -42,7 +42,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
              (g_WindowStack[iVar2].bottom - g_WindowStack[iVar2].top) + 1);
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (pSVar6->left + 1,g_WindowStack[iVar2].top + 1,g_WindowStack[iVar2].right + -2,
-             g_WindowStack[iVar2].bottom + -2,DAT_02cf2a78,g_WindowBorderColor1);
+             g_WindowStack[iVar2].bottom + -2,INT_02cf2a78,g_WindowBorderColor1);
   g_ActiveRenderColor = g_WindowBorderColor2;
   engine_2d_c_drawHLine_FUN_00402ee0
             (pSVar6->left,g_WindowStack[iVar2].bottom + -1,g_WindowStack[iVar2].right + -1);
@@ -64,14 +64,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
              + -1,g_WindowFillColor);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
-  y_pos = g_FontCharacterWidth / 2 + g_WindowStack[iVar2].top;
+  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar2].top;
   text = g_WindowStack[iVar2].text_buffer;
   iVar4 = pSVar6->left;
   iVar5 = g_WindowStack[iVar2].right;
   color_mode = g_TitleBarColor;
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,color_value);
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
+            (g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y,color_mode,color_value);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text);
   iVar4 = g_FontCharacterWidth + iVar4;
   iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,"j");

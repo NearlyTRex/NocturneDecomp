@@ -66,8 +66,8 @@ LAB_0060330e:
       if ((spec_info->flags & LONG_MODIFIER) ==
           ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
            ALTERNATE_FORM)) {
-        puVar2 = (uint *)*args;
-        *args = (va_list_t)(puVar2 + 1);
+        puVar2 = (uint *)args->value[0];
+        args->value[0] = (char *)(puVar2 + 1);
         integer_value = *puVar2;
         if ((spec_info->flags & SHORT_MODIFIER) !=
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
@@ -76,17 +76,17 @@ LAB_0060330e:
         }
       }
       else {
-        puVar2 = (uint *)*args;
-        *args = (va_list_t)(puVar2 + 1);
+        puVar2 = (uint *)args->value[0];
+        args->value[0] = (char *)(puVar2 + 1);
         integer_value = *puVar2;
       }
     }
     else {
-      puVar2 = (uint *)*args;
-      *args = (va_list_t)(puVar2 + 1);
+      puVar2 = (uint *)args->value[0];
+      args->value[0] = (char *)(puVar2 + 1);
       value_64bit._0_4_ = *puVar2;
-      puVar2 = (uint *)*args;
-      *args = (va_list_t)(puVar2 + 1);
+      puVar2 = (uint *)args->value[0];
+      args->value[0] = (char *)(puVar2 + 1);
       value_64bit._4_4_ = *puVar2;
     }
     if ((spec_info->length_flags & BASIC_I64_FLAG) ==
@@ -141,8 +141,8 @@ LAB_006032b4:
       if ((spec_info->flags & LONG_MODIFIER) ==
           ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
            ALTERNATE_FORM)) {
-        puVar2 = (uint *)*args;
-        *args = (va_list_t)(puVar2 + 1);
+        puVar2 = (uint *)args->value[0];
+        args->value[0] = (char *)(puVar2 + 1);
         integer_value = *puVar2;
         if ((spec_info->flags & SHORT_MODIFIER) !=
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
@@ -151,17 +151,17 @@ LAB_006032b4:
         }
       }
       else {
-        puVar2 = (uint *)*args;
-        *args = (va_list_t)(puVar2 + 1);
+        puVar2 = (uint *)args->value[0];
+        args->value[0] = (char *)(puVar2 + 1);
         integer_value = *puVar2;
       }
     }
     else {
-      puVar2 = (uint *)*args;
-      *args = (va_list_t)(puVar2 + 1);
+      puVar2 = (uint *)args->value[0];
+      args->value[0] = (char *)(puVar2 + 1);
       value_64bit._0_4_ = *puVar2;
-      puVar2 = (uint *)*args;
-      *args = (va_list_t)(puVar2 + 1);
+      puVar2 = (uint *)args->value[0];
+      args->value[0] = (char *)(puVar2 + 1);
       value_64bit._4_4_ = *puVar2;
     }
   }
@@ -172,8 +172,8 @@ LAB_006033d5:
     if (bVar1 < 0x47) {
       if (bVar1 < 0x45) {
         if (bVar1 == 0x43) {
-          puVar5 = (ushort *)*args;
-          *args = (va_list_t)(puVar5 + 2);
+          puVar5 = (ushort *)args->value[0];
+          args->value[0] = (char *)(puVar5 + 2);
           iVar9 = WideCharToSingleByte
                             ((wchar_t)output_buffer,(char *)(uint)*puVar5);
           if (iVar9 != -1) {
@@ -190,8 +190,8 @@ LAB_00603493:
       if ((spec_info->flags & SHORT_MODIFIER) !=
           ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
            ALTERNATE_FORM)) {
-        piVar3 = (int *)*args;
-        *args = (va_list_t)(piVar3 + 1);
+        piVar3 = (int *)args->value[0];
+        args->value[0] = (char *)(piVar3 + 1);
         FormatFixedPoint(output_buffer,*piVar3,spec_info);
         iVar9 = strlen_far(output_buffer,segment_ds,-1);
         spec_info->content_length = iVar9;
@@ -219,14 +219,14 @@ LAB_00603702:
         spec_info->flags =
              spec_info->flags &
              (FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|ALTERNATE_FORM);
-        piVar3 = (int *)*args;
-        *args = (va_list_t)(piVar3 + 1);
+        piVar3 = (int *)args->value[0];
+        args->value[0] = (char *)(piVar3 + 1);
         iVar9 = *piVar3;
         pcVar7 = output_buffer;
         if ((spec_info->flags & FAR_PTR) !=
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
-          *args = (va_list_t)(piVar3 + 2);
+          args->value[0] = (char *)(piVar3 + 2);
           FormatHexWithPadding(piVar3[1] & 0xffff,output_buffer,4);
           output_buffer[4] = ':';
           pcVar7 = output_buffer + 5;
@@ -250,13 +250,13 @@ LAB_006034f3:
         if ((spec_info->flags & NEAR_PTR) ==
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
-          piVar3 = (int *)*args;
-          *args = (va_list_t)(piVar3 + 1);
+          piVar3 = (int *)args->value[0];
+          args->value[0] = (char *)(piVar3 + 1);
           pwVar4 = (wchar_t *)*piVar3;
         }
         else {
-          piVar3 = (int *)*args;
-          *args = (va_list_t)(piVar3 + 1);
+          piVar3 = (int *)args->value[0];
+          args->value[0] = (char *)(piVar3 + 1);
           pwVar4 = (wchar_t *)*piVar3;
         }
         segment_storage = segment_ds;
@@ -265,8 +265,8 @@ LAB_006034f3:
         }
       }
       else {
-        piVar3 = (int *)*args;
-        *args = (va_list_t)(piVar3 + 2);
+        piVar3 = (int *)args->value[0];
+        args->value[0] = (char *)(piVar3 + 2);
         if (((wchar_t *)*piVar3 != (wchar_t *)0x0) ||
            (segment_storage = segment_ds, *(ushort *)(piVar3 + 1) != 0)) {
           output_buffer = (char *)*piVar3;
@@ -319,13 +319,13 @@ LAB_0060387a:
         if ((spec_info->flags & LONG_MODIFIER) ==
             ~(FAR_PTR|NEAR_PTR|LONG_MODIFIER|SHORT_MODIFIER|LEFT_ALIGN|FORCE_SIGN|SPACE_SIGN|
              ALTERNATE_FORM)) {
-          pcVar7 = *args;
-          *args = pcVar7 + 4;
+          pcVar7 = args->value[0];
+          args->value[0] = pcVar7 + 4;
           *output_buffer = *pcVar7;
           return output_buffer;
         }
-        puVar5 = (ushort *)*args;
-        *args = (va_list_t)(puVar5 + 2);
+        puVar5 = (ushort *)args->value[0];
+        args->value[0] = (char *)(puVar5 + 2);
         iVar8 = WideCharToSingleByte
                           ((wchar_t)mb_char_buffer,(char *)(uint)*puVar5);
         iVar9 = g_MultibyteLocaleActive;

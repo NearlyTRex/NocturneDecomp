@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060a1dc(void)
+void FUN_0060a1dc(void)
 
 {
   enter_reentrant_critical_section(&g_GlobalRuntimeCriticalSection);

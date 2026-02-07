@@ -229,10 +229,6 @@
       "type":"struct"
     },
     {
-      "name":"CBloodParticle",
-      "type":"struct"
-    },
-    {
       "name":"CBloodPool",
       "type":"struct"
     },
@@ -730,10 +726,6 @@
     },
     {
       "name":"CFont",
-      "type":"struct"
-    },
-    {
-      "name":"CFootstep",
       "type":"struct"
     },
     {
@@ -1657,6 +1649,10 @@
       "type":"struct"
     },
     {
+      "name":"CFootstep",
+      "type":"struct"
+    },
+    {
       "name":"CGame",
       "type":"struct"
     },
@@ -1678,6 +1674,10 @@
     },
     {
       "name":"CParticle",
+      "type":"struct"
+    },
+    {
+      "name":"CBloodParticle",
       "type":"struct"
     },
     {
@@ -1938,6 +1938,10 @@
     },
     {
       "name":"EPlatformType",
+      "type":"enum"
+    },
+    {
+      "name":"ETextAlignment",
       "type":"enum"
     },
     {
@@ -6066,7 +6070,7 @@
     },
     {
       "name":"va_list_t",
-      "type":"typedef"
+      "type":"struct"
     },
     {
       "name":"FORMAT_OUTPUT_CONTEXT",
@@ -6631,6 +6635,46 @@
         {
           "name":"PLATFORM_TYPE_BOTH",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ETextAlignment",
+      "type":"enum",
+      "values":[
+        {
+          "name":"TEXT_ALIGN_LEFT",
+          "val":0
+        },
+        {
+          "name":"TEXT_ALIGN_RIGHT",
+          "val":1
+        },
+        {
+          "name":"TEXT_ALIGN_CENTER",
+          "val":2
+        },
+        {
+          "name":"TEXT_ALIGN_LEFT_VCENTER",
+          "val":3
+        },
+        {
+          "name":"TEXT_ALIGN_CENTER_BOTH",
+          "val":4
+        },
+        {
+          "name":"TEXT_ALIGN_CENTER_IN_BOUNDS",
+          "val":5
+        },
+        {
+          "name":"TEXT_ALIGN_LEFT_IN_AREA",
+          "val":6
+        },
+        {
+          "name":"TEXT_ALIGN_CENTER_IN_AREA",
+          "val":7
         }
       ]
     },
@@ -9210,16 +9254,16 @@
           "type":"CFont*"
         },
         {
+          "name":"text",
+          "type":"char*"
+        },
+        {
           "name":"x",
           "type":"int"
         },
         {
           "name":"y",
           "type":"int"
-        },
-        {
-          "name":"text",
-          "type":"char*"
         },
         {
           "name":"foreground_color",
@@ -9230,7 +9274,7 @@
           "type":"int"
         }
       ],
-      "return_type":"void",
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -21972,13 +22016,13 @@
         },
         {
           "len":4,
-          "name":"font_type",
+          "name":"shadow_offset_x",
           "offset":12668,
           "type":"int"
         },
         {
           "len":4,
-          "name":"font_enabled",
+          "name":"shadow_offset_y",
           "offset":12672,
           "type":"int"
         },
@@ -22091,10 +22135,16 @@
       "desc":"",
       "fields":[
         {
-          "len":64,
-          "name":"unk",
+          "len":56,
+          "name":"base",
           "offset":0,
-          "type":"char[64]"
+          "type":"CParticle"
+        },
+        {
+          "len":8,
+          "name":"field_56",
+          "offset":56,
+          "type":"char[8]"
         }
       ],
       "importable":true,
@@ -26479,10 +26529,16 @@
       "desc":"",
       "fields":[
         {
-          "len":8,
-          "name":"unk1",
+          "len":4,
+          "name":"current_set_index",
           "offset":0,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_in_editor",
+          "offset":4,
+          "type":"int"
         },
         {
           "len":4,
@@ -26491,22 +26547,106 @@
           "type":"int"
         },
         {
-          "len":312,
-          "name":"unk2",
+          "len":4,
+          "name":"has_inventory_actors",
           "offset":12,
-          "type":"char[312]"
+          "type":"int"
         },
         {
           "len":4,
-          "name":"set_list",
+          "name":"current_camera_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk1",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk4",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"show_3d_viewport",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"selected_actor",
+          "offset":40,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"hovered_actor",
+          "offset":44,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"render_sky_in_editor",
+          "offset":48,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"render_water_in_editor",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"full_light_in_editor",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"skip_gore_load_flag",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"show_waypoint_coverage",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":256,
+          "name":"mission_name",
+          "offset":68,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"num_sets",
           "offset":324,
-          "type":"void*"
+          "type":"int"
         },
         {
           "len":1024,
-          "name":"unk3",
+          "name":"set_names",
           "offset":328,
-          "type":"char[1024]"
+          "type":"char[4][256]"
         },
         {
           "len":4,
@@ -26515,22 +26655,58 @@
           "type":"CDemonActor*"
         },
         {
-          "len":832,
-          "name":"unk4",
+          "len":4,
+          "name":"last_actor",
           "offset":1356,
-          "type":"char[832]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":16,
+          "name":"pending_teleport",
+          "offset":1360,
+          "type":"CLocation"
         },
         {
           "len":4,
-          "name":"actorCountMaybe",
+          "name":"delete_queue_count",
+          "offset":1376,
+          "type":"int"
+        },
+        {
+          "len":400,
+          "name":"delete_queue_actors",
+          "offset":1380,
+          "type":"CDemonActor*[100]"
+        },
+        {
+          "len":400,
+          "name":"delete_queue_flags",
+          "offset":1780,
+          "type":"uint[100]"
+        },
+        {
+          "len":4,
+          "name":"actors_prepared",
+          "offset":2180,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"next_inventory_actor",
+          "offset":2184,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"actor_lookup_count",
           "offset":2188,
           "type":"int"
         },
         {
           "len":8000,
-          "name":"unk5",
+          "name":"actor_lookup_table",
           "offset":2192,
-          "type":"char[8000]"
+          "type":"CDemonActor*[2000]"
         }
       ],
       "importable":true,
@@ -30121,10 +30297,22 @@
       "desc":"",
       "fields":[
         {
-          "len":64,
-          "name":"unk",
+          "len":8,
+          "name":"unk1",
           "offset":0,
-          "type":"char[64]"
+          "type":"char[8]"
+        },
+        {
+          "len":48,
+          "name":"unk2",
+          "offset":8,
+          "type":"CVector3f[4]"
+        },
+        {
+          "len":8,
+          "name":"field_56",
+          "offset":56,
+          "type":"char[8]"
         }
       ],
       "importable":true,
@@ -54898,6 +55086,24 @@
     },
     {
       "alig":1,
+      "cat":"/Nocturne/Typedef/System/stdarg.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"value",
+          "offset":0,
+          "type":"char*[1]"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"va_list_t",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
       "cat":"/PE",
       "desc":"",
       "fields":[
@@ -55844,7 +56050,7 @@
       "type":"typedef"
     },
     {
-      "base":"long",
+      "base":"int",
       "cat":"/Nocturne/Typedef/System/stdint.h",
       "importable":true,
       "name":"intptr_t",
@@ -56668,7 +56874,7 @@
       "type":"typedef"
     },
     {
-      "base":"ulong",
+      "base":"uint",
       "cat":"/Nocturne/Typedef/System/stdint.h",
       "importable":true,
       "name":"uintptr_t",
@@ -56679,13 +56885,6 @@
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"ULONG_PTR",
-      "type":"typedef"
-    },
-    {
-      "base":"char*",
-      "cat":"/Nocturne/Typedef/System/stdarg.h",
-      "importable":true,
-      "name":"va_list_t",
       "type":"typedef"
     },
     {

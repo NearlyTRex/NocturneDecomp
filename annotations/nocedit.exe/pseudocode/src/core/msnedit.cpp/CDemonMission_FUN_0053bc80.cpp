@@ -20,11 +20,11 @@ core_msnedit_cpp_CDemonMission_FUN_0053bc80(CDemonMission *this_ptr,int param_2,
         return;
       }
     }
-    if (param_2 == *(int *)(this_ptr->unk2 + 0x1c)) {
+    if ((CDemonActor *)param_2 == this_ptr->selected_actor) {
       core_msnedit_cpp_CDemonMission_FUN_0053bcf0(this_ptr);
     }
-    core_msnedit_cpp_CDemonMission_FUN_00538ea0(this_ptr,param_2);
-    core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);
+    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,param_2);
+    core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,(CDemonActor *)param_2,1);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
   }
   return;

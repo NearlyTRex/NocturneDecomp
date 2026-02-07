@@ -45,8 +45,8 @@ core_msnedit_cpp_CDemonMission_FUN_0053cad0
   iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_3b8,param_3,config_param1,0);
   if (-1 < iVar3) {
-    shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar3);
-    pcVar1 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr);
+    pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar3);
+    pcVar1 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar1);
     *param_4 = (int)pcVar1;
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b8,0);

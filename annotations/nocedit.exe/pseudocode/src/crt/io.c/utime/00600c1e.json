@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "00481910",
+      "from_addr": "00481945",
+      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600c1e",
+    "address_range": [
+      [
+        "00600c1e",
+        "00600c22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_utime_00600c1e",
+    "signature": "int __cdecl crt_io_c_utime_00600c1e(char *filename,utimbuf *timestamps)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCH": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "timestamps",
+        "offset": 8,
+        "size": 4,
+        "type": "utimbuf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "address": "00600c1e",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_utime_00600c1e",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600c1e",
+      "type": "special_crt_function"
+    }
+  ]
+}

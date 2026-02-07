@@ -53,8 +53,8 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_course.cpp_CCourse_FUN_00442710
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00523b70
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   core_mobster.cpp_CMobster_ctor_FUN_00525200
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -570,14 +570,14 @@ section .text
         ;   Label: LAB_005e84d3
     MOV EAX,[0x0067d550]                ; 005e84d4 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EAX                            ; 005e84d9 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 005e84da
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 005e84da
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005e84df
     PUSH EDI                            ; 005e84e2
     MOV EDX,dword ptr [0x0067d550]      ; 005e84e3 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 005e84e9 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 005e84ea
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 005e84ea
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     LEA EAX,[EBX + 0x20]                ; 005e84ef
     LEA EDX,[ESI + 0x20]                ; 005e84f2
     MOV ECX,dword ptr [EAX]             ; 005e84f5
@@ -641,14 +641,14 @@ section .text
     PUSH ESI                            ; 005e8584
     MOV ECX,dword ptr [0x0067d550]      ; 005e8585 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 005e858b | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 005e858c
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 005e858c
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005e8591
     PUSH EDI                            ; 005e8594
     MOV ESI,dword ptr [0x0067d550]      ; 005e8595 | g_CDemonMissionPtr
     PUSH ESI                            ; 005e859b | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 005e859c
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 005e859c
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005e85a1
     JMP 0x005e82f4                      ; 005e85a4
         ;   XREF to: 005e82f4 (UNCONDITIONAL_JUMP)  ; LAB_005e82f4

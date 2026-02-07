@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x_pos,int y_pos,char *text)
+; __cdecl void __cdecl engine_2d_c_drawTextColorWrapper_FUN_004024a0(int x,int y,char *text)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   x_pos
-; int              Stack[0x8]:4   y_pos
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ; char *           Stack[0xc]:4   text
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004024ab
     PUSH EBX                            ; 004024af
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 004024b0
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 004024b5
     POP EBX                             ; 004024b8
     RET                                 ; 004024b9

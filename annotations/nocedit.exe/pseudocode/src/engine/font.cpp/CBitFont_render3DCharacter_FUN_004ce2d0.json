@@ -1,117 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 32,
-        "line": 70,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 33,
-        "line": 71,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 32,
-        "line": 77,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 33,
-        "line": 78,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 32,
-        "line": 84,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 33,
-        "line": 85,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 11,
-        "line": 126,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 152,
-        "message": "'stack0xffffffac' was not declared in this scope; did you mean 'in_stack_ffffffac'?"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 70,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 71,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 77,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 78,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 84,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 85,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 289,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 38,
-    "pseudocode_lines": 144,
-    "suspect_count": 12,
+    "pseudocode_lines": 149,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_many",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 497
+    "total_lines": 502
   },
   "cross_references": [
     {
@@ -131,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0",
-    "signature": "void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int z_pos,int width,int height, int color_mode)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode )"
   },
   "function_calls": [
     {
@@ -398,8 +303,8 @@
         "stack_params": 7
       }
     ],
-    "confidence": "low",
-    "declared_params": 8,
+    "confidence": "medium",
+    "declared_params": 7,
     "estimated_params": 7
   },
   "pcode_summary": {
@@ -439,53 +344,18 @@
     "pcode_op_count": 2382
   },
   "stack_frame": {
-    "frame_size": 120,
+    "frame_size": 116,
     "local_size": 88,
     "param_offset": 4,
-    "param_size": 32,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
@@ -580,43 +450,36 @@
       },
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "x",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "z_pos",
+        "name": "right_x",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "width",
+        "name": "bottom_y",
         "offset": 24,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "height",
-        "offset": 28,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "color_mode",
-        "offset": 32,
+        "offset": 28,
         "size": 4,
         "type": "int"
       }
@@ -624,92 +487,60 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffffac",
-      "text": "int in_stack_ffffffac;",
-      "type": "stack_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 44,
+      "line": 46,
       "match": "9.18341e-41",
       "text": "g_QuadVertex0.fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 45,
+      "line": 47,
       "match": "9.18341e-41",
       "text": "g_QuadVertex0.light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 65,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 72,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 73,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 79,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 80,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 145,
-      "match": "in_stack_ffffffac",
-      "text": "((SMRGLHeaderPrimitive *)&stack0xffffffac,iVar5,0,in_stack_ffffffac,iVar6);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0xffffffac",
-      "text": "((SMRGLHeaderPrimitive *)&stack0xffffffac,iVar5,0,in_stack_ffffffac,iVar6);",
-      "type": "stack_ref"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 8,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 7,
-      "fix_type": "remove_params",
-      "match": "declared:8 vs estimated:7",
-      "param_delta": -1,
-      "text": "Function declares 8 params but call sites push 7 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

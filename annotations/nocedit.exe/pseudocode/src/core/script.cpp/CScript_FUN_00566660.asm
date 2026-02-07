@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   param_5
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053aa0a
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053aa0a
 ;   core_msnedit.cpp_FUN_005374b0 at 005374d8
 ;
 ; Referenced Globals:

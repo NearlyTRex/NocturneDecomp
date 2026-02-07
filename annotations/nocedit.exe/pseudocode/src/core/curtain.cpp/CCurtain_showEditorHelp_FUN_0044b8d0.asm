@@ -41,7 +41,7 @@ section .text
     PUSH 0x619dea                       ; 0044b8f2 | = "With CTRL held down, use slew keys to..."
     MOV dword ptr [EBX],ECX             ; 0044b8f7
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044b8f9
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [EBX]             ; 0044b8fe
     ADD ESP,0xc                         ; 0044b900
     ADD EBP,0xb                         ; 0044b903
@@ -51,7 +51,7 @@ section .text
     PUSH 0x619e1a                       ; 0044b90e | = "  Left/Right changes width (x-size)"
     MOV dword ptr [EBX],EBP             ; 0044b913
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044b915
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [EBX]             ; 0044b91a
     ADD ESP,0xc                         ; 0044b91c
     ADD ECX,0xb                         ; 0044b91f
@@ -61,7 +61,7 @@ section .text
     PUSH 0x619e3e                       ; 0044b92a | = "  Up/Down changes height (y-size)"
     MOV dword ptr [EBX],ECX             ; 0044b92f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044b931
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [EBX]             ; 0044b936
     ADD ESP,0xc                         ; 0044b938
     ADD EBP,0xb                         ; 0044b93b
@@ -71,7 +71,7 @@ section .text
     PUSH 0x619e60                       ; 0044b946 | = "  You cannot change the thickness (z-..."
     MOV dword ptr [EBX],EBP             ; 0044b94b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044b94d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [EBX]             ; 0044b952
     ADD ECX,0xb                         ; 0044b954
     ADD ESP,0xc                         ; 0044b957

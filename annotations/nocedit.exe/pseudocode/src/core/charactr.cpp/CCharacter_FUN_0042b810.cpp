@@ -31,7 +31,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b810(CCharacter *this_ptr)
       local_10 = 0;
       local_c = 0x40e00000;
       local_8 = 0;
-      core_gore_cpp_FUN_004edaa0();
+      core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
       return;
     }
   }

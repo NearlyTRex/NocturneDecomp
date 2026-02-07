@@ -231,7 +231,7 @@ section .text
     PUSH 0x19e                          ; 004e4211
     PUSH EDI                            ; 004e4216
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 ; 004e4217
-        ;   XREF to: 004cdee0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y_pos, ...)
+        ;   XREF to: 004cdee0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x1c                        ; 004e421c
     MOV EAX,dword ptr [ESP + 0x1130]    ; 004e421f
         ;   Label: LAB_004e421f

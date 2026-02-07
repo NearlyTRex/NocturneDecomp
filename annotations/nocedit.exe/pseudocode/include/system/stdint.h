@@ -8,8 +8,8 @@
 // =============================================================================
 
 // Typedef: intptr_t
-// Signed Long Integer (compiler-specific size)
-typedef long intptr_t;
+// Signed Integer (compiler-specific size)
+typedef int intptr_t;
 
 // Typedef: uint16_t
 // Unsigned Short Integer (compiler-specific size)
@@ -24,6 +24,6 @@ typedef uint uint32_t;
 typedef uchar uint8_t;
 
 // Typedef: uintptr_t
-// Unsigned Long Integer (compiler-specific size)
-typedef ulong uintptr_t;
+// Unsigned Integer (compiler-specific size)
+typedef uint uintptr_t;
 

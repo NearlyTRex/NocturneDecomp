@@ -59,7 +59,7 @@ LAB_004f3db9:
     g_CurrentLineNumber = 0x57d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CHeroPlaceholder::createHero - failed.");
   }
-  core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar2);
   (pCVar2->location).position.x = (this_ptr->base).location.position.x;
   (pCVar2->location).position.y = (this_ptr->base).location.position.y;
   (pCVar2->location).position.z = (this_ptr->base).location.position.z;

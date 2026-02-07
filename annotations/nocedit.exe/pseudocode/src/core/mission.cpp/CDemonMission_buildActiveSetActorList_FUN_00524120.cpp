@@ -24,7 +24,7 @@ core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMissio
     }
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (this_ptr_00,"..\\core\\mission.cpp",0x423);
-    if ((this_ptr_00->location).area_id == *(int *)this_ptr->unk1) {
+    if ((this_ptr_00->location).area_id == this_ptr->current_set_index) {
       if (this_ptr_00->was_created == 0) {
         if (this_ptr_00->create_event[0] != '\0') {
           iVar2 = stricmp(this_ptr_00->create_event,"none");

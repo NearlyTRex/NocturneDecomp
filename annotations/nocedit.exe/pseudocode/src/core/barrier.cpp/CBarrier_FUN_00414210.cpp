@@ -12,7 +12,7 @@ void __cdecl core_barrier_cpp_CBarrier_FUN_00414210(CBarrier *this_ptr)
   int iVar1;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  iVar1 = *(int *)(g_CDemonMissionPtr->unk1 + 4);
+  iVar1 = g_CDemonMissionPtr->is_in_editor;
   (this_ptr->base).is_renderable = 0;
   (this_ptr->base).is_transparent = iVar1;
   return;

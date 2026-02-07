@@ -90,7 +90,7 @@ section .text
     INC EBX                             ; 00547ca3
     ADD ESI,0xe                         ; 00547ca4
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00547ca7
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00547cac
     CMP EBX,0x64                        ; 00547caf
     JL 0x00547c38                       ; 00547cb2

@@ -9,7 +9,7 @@
 void __cdecl staticInit(void)
 
 {
-  PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c = crt_unknown_c_FUN_0060af5d;
-  PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_00685410 = crt_unknown_c_FUN_00603bc9;
+  PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c = FUN_0060af5d;
+  PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_00685410 = FUN_00603bc9;
   return;
 }

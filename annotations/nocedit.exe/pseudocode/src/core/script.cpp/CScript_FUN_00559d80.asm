@@ -154,7 +154,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 00559ebe
     PUSH EAX                            ; 00559ec2
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 ; 00559ec3
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, int x, int y, char * text)
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, char * text, int x, int y)
     ADD ESP,0x10                        ; 00559ec8
     PUSH ESI                            ; 00559ecb
     PUSH 0x1e                           ; 00559ecc
@@ -168,7 +168,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 00559ee0
     PUSH EAX                            ; 00559ee4
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 ; 00559ee5
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, int x, int y, char * text)
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, char * text, int x, int y)
     ADD ESP,0x10                        ; 00559eea
     MOV EDX,dword ptr [ESP + 0x88]      ; 00559eed
     MOV ECX,dword ptr [ESP + 0x8c]      ; 00559ef4

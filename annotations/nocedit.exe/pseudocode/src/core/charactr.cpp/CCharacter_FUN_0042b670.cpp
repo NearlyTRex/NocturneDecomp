@@ -44,7 +44,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
           local_38.x = 3.0;
           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                     (&this_ptr->base,&local_5c,&local_38);
-          core_gore_cpp_FUN_004edaa0();
+          core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
         }
       }
       iVar3 = iVar3 + 1;

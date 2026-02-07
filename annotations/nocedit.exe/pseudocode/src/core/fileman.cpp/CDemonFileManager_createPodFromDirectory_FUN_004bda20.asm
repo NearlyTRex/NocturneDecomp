@@ -51,10 +51,10 @@
 ;   core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230
 ;   core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0
 ;   core_fileman.cpp_refreshSoundDirectory_FUN_004be590
+;   core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
-;   core_mission.cpp_CDemonMission_FUN_00524e60
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   crt_file.c_makepath_FUN_005febfc
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -454,8 +454,8 @@ section .text
     ADD ESP,0x8                         ; 004bdddb
     MOV ESI,dword ptr [0x0067d550]      ; 004bddde | g_CDemonMissionPtr
     PUSH ESI                            ; 004bdde4 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 004bdde5
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 004bdde5
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004bddea
     LEA EAX,[ESP + 0x3f4]               ; 004bdded
     PUSH EAX                            ; 004bddf4
@@ -578,8 +578,8 @@ section .text
     PUSH EBX                            ; 004bdf1b
     MOV ESI,dword ptr [0x0067d550]      ; 004bdf1c | g_CDemonMissionPtr
     PUSH ESI                            ; 004bdf22 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524e60 ; 004bdf23
-        ;   XREF to: 00524e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00524e60(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60 ; 004bdf23
+        ;   XREF to: 00524e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission * this_ptr, _FILE * file_handle, int unknown_flag)
     ADD ESP,0xc                         ; 004bdf28
     JMP 0x004bdb2c                      ; 004bdf2b
         ;   XREF to: 004bdb2c (UNCONDITIONAL_JUMP)  ; LAB_004bdb2c

@@ -70,7 +70,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_enemy.cpp_CEnemy_FUN_004a9880
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_gore.cpp_FUN_004ede30
+;   core_gore.cpp_CGore_FUN_004ede30
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   ... and 13 more
 ;
@@ -483,8 +483,8 @@ section .text
     PUSH EAX                            ; 0048f0c5
     MOV EDX,dword ptr [0x0067b9a0]      ; 0048f0c6 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 0048f0cc | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ede30     ; 0048f0cd
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 0048f0cd
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 0048f0d2
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0048f0d5
     JMP 0x0048ed7c                      ; 0048f0df

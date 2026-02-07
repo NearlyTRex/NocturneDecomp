@@ -1,0 +1,190 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 116,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 7,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053ad6a",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053af50",
+    "address_range": [
+      [
+        "0053af50",
+        "0053b02c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50 (CDemonMission *this_ptr,char *property)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047cbc0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "00478cb0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_freeAllModels_FUN_00478cb0"
+    },
+    {
+      "addr": "00523cf0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0"
+    },
+    {
+      "addr": "0053b030",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030"
+    },
+    {
+      "addr": "0053b510",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510"
+    },
+    {
+      "addr": "0053c140",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c140"
+    },
+    {
+      "addr": "0053eb40",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053eb40"
+    },
+    {
+      "addr": "0049e790",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0053af24",
+      "name": "switchdataD_0053af24",
+      "type": "void*",
+      "value": "0053af6c"
+    },
+    {
+      "addr": "0063c5bc",
+      "name": "s_Reloading_keyframed_mode_0063c5bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f7a02c",
+      "name": "DAT_02f7a02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c52c",
+      "name": "INT_02f7c52c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c530",
+      "name": "INT_02f7c530",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.408602150537634,
+    "instruction_count": 93,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 88,
+      "INT_ADD": 47,
+      "INT_AND": 42,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 1,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 15,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 41,
+      "POPCOUNT": 15,
+      "RETURN": 8,
+      "STORE": 26,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 410
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "property",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

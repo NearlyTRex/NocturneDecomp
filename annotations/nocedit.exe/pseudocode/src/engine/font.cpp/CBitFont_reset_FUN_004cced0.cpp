@@ -39,8 +39,8 @@ void __cdecl engine_font_cpp_CBitFont_reset_FUN_004cced0(CBitFont *this_ptr)
   this_ptr->char_spacing = 1;
   this_ptr->line_spacing = 2;
   this_ptr->char_widths[0x20] = 8;
-  this_ptr->font_type = 2;
-  this_ptr->font_enabled = 1;
+  this_ptr->shadow_offset_x = 2;
+  this_ptr->shadow_offset_y = 1;
   this_ptr->rendering_ready = 0;
   this_ptr->is_initialized = 0;
   this_ptr->unk = 0;

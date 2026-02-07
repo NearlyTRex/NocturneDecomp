@@ -20,7 +20,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da3a2
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539534
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539534
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c1e8
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b04c
 ;

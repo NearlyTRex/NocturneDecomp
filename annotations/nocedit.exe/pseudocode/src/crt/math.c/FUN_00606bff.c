@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-float10 crt_math_c_FUN_00606bff(void)
+float10 FUN_00606bff(void)
 
 {
   code *pcVar1;

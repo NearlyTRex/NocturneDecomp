@@ -9,8 +9,8 @@
 ;
 ; XREF[22]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd874
-;   core_msnedit.cpp_CDemonMission_FUN_0053b030 at 0053b489
-;   core_msnedit.cpp_CDemonMission_FUN_0053b510 at 0053b969
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b489
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b969
 ;   core_script.cpp_CScript_FUN_005671a0 at 0056720e
 ;   core_script.cpp_CScript_dtor_FUN_00559840 at 00559854
 ;   core_script.cpp_parseConditionExpression_FUN_00561a30 at 00561bd6

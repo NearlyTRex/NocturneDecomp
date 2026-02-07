@@ -37,7 +37,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ed830 at 004ed952
+;   core_gore.cpp_CGore_FUN_004ed830 at 004ed952
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062e30a = 8

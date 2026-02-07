@@ -353,7 +353,7 @@ section .text
     MOV EDI,dword ptr [ESI + 0x66ec50]  ; 00443b13 | PTR_s_x_0066ec54 | PTR_s_y_0066ec58
     PUSH EDI                            ; 00443b19 | = "x" | s_y_00619451
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443b1a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00443b1f
     ADD ESI,0x4                         ; 00443b22
         ;   Label: LAB_00443b22

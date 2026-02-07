@@ -8,7 +8,7 @@
 
 /* Signature: byte FUN_0060cf80() */
 
-uint crt_unknown_c_FUN_0060cf80(void)
+uint FUN_0060cf80(void)
 
 {
   SIGNAL_HANDLER_TYPE SVar1;

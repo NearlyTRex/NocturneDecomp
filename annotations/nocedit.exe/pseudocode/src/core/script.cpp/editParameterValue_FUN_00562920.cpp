@@ -318,7 +318,7 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0xd:
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_7cc,"sound","*.wav",(int)value_buffer
-                      );
+                       ,1);
     if (iVar6 != 0) {
       return 1;
     }
@@ -377,7 +377,7 @@ core_script_cpp_editParameterValue_FUN_00562920
               (param_info->modifier_string,(char *)0x0,local_370,local_470,local_270);
     makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                      (g_CEditorToolsPtr,local_7cc,local_370,local_574,(int)value_buffer);
+                      (g_CEditorToolsPtr,local_7cc,local_370,local_574,(int)value_buffer,1);
     if (iVar6 != 0) {
       return 1;
     }

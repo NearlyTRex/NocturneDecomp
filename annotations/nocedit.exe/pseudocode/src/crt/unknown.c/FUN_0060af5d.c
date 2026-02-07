@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulonglong crt_unknown_c_FUN_0060af5d(void)
+ulonglong FUN_0060af5d(void)
 
 {
   int iVar1;
@@ -23,7 +23,7 @@ ulonglong crt_unknown_c_FUN_0060af5d(void)
   uint local_28;
   
   *in_stack_00000008 = *in_stack_00000008 + 8;
-  crt_unknown_c_FUN_00603dc8();
+  FUN_00603dc8();
   *(uint *)(in_stack_0000000c + 0x28) = local_34;
   *(uint *)(in_stack_0000000c + 0x2c) = local_30;
   *(uint *)(in_stack_0000000c + 0x30) = local_2c;

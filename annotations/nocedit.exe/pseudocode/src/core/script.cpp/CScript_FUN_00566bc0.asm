@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053997a
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053997a
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4

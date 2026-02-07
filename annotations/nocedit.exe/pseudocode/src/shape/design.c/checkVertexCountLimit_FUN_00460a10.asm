@@ -57,7 +57,7 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 00460a56
     PUSH EAX                            ; 00460a59
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00460a5a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460a5f
     MOV EAX,dword ptr [EBP + -0x4]      ; 00460a62
     PUSH EAX                            ; 00460a65
@@ -73,14 +73,14 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 00460a7c
     PUSH EAX                            ; 00460a7f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00460a80
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460a85
     PUSH 0x2c                           ; 00460a88
     PUSH 0x0                            ; 00460a8a
     MOV EAX,0x61b9c6                    ; 00460a8c | = "You won't be able to view the model, ..."
     PUSH EAX                            ; 00460a91 | = "You won't be able to view the model, ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00460a92
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460a97
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00460a9a
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

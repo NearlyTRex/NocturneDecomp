@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_006093e8(void)
+void FUN_006093e8(void)
 
 {
   uint *puVar1;

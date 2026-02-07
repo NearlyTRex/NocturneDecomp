@@ -97,7 +97,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   }
   _fprintf(file,"// .NOC file version\n");
   _fprintf(file,"%d\n",9);
-  core_mission_cpp_CDemonMission_writeFile_FUN_00523600(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_writeFile_FUN_00523600(g_CDemonMissionPtr,file);
   _fprintf(file,"// Hero count, local hero index, hero list\n");
   iVar3 = 0;
   _fprintf(file,"%d, %d\n",g_HeroCount,g_LocalHeroIndex);

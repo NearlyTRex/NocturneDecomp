@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053adc4
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053adc4
 ;
 ; Referenced Globals:
 ;   char*[141] g_CommandTemplates

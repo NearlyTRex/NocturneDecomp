@@ -110,7 +110,7 @@ CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00544e30(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(CNPC *this_ptr,CActorPropertyList *property_list);
 CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00544eb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr);
-void __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0 (CFont *this_ptr,int param1,int param2,int param3,int param4,int param5);
+int __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0 (CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
 int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00544f00(void);
 CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr);
 CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr);
@@ -221,7 +221,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitm
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_0054bd00(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 (CPackedBitmapSet *this_ptr,int bitmap_count);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *extension,char *base_path);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *extension,char *base_path,int stride,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 (CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height, int total_bitmaps,int unknown_param);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *base_path);

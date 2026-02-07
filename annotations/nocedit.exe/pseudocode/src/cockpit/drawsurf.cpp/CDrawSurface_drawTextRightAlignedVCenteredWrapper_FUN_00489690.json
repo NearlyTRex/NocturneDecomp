@@ -2,27 +2,18 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 34,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 26
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [],
   "function": {
@@ -35,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredWrapper_FUN_00489690",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredWrapper_FUN_00489690 (CDrawSurface *this_ptr,int x,int y,int height,char *text)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredWrapper_FUN_00489690 (CDrawSurface *this_ptr,int x,int y,char *text)"
   },
   "function_calls": [
     {
@@ -49,8 +40,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 5,
-    "estimated_params": 5
+    "declared_params": 4,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.533333333333333,
@@ -73,10 +64,10 @@
     "pcode_op_count": 53
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -102,34 +93,12 @@
       },
       {
         "is_param": true,
-        "name": "height",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "text",
-        "offset": 20,
+        "offset": 16,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "char *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "(this_ptr,height,x,y,unaff_ESI);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

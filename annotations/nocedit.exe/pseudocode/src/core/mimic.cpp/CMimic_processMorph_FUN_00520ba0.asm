@@ -23,8 +23,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00523b70
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;   core_morph.cpp_FUN_0052b600
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
@@ -91,15 +91,15 @@ section .text
     PUSH EDI                            ; 00520c2b
     MOV EAX,[0x0067d550]                ; 00520c2c | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EAX                            ; 00520c31 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00520c32
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 00520c32
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00520c37
     MOV EDX,dword ptr [EBX + 0x4ca54]   ; 00520c3a
     PUSH EDX                            ; 00520c40
     MOV ECX,dword ptr [0x0067d550]      ; 00520c41 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 00520c47 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00520c48
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00520c48
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00520c4d
     PUSH 0x1                            ; 00520c50
     PUSH EBX                            ; 00520c52
@@ -107,7 +107,7 @@ section .text
     MOV EBX,dword ptr [0x0067d550]      ; 00520c5d | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 00520c63 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0 ; 00520c64
-        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr)
+        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 00520c69
     LEA EAX,[EAX]                       ; 00520c6c
     MOV ESP,EBP                         ; 00520c70

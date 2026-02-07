@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1a0f
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2049
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524587
-;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538c88
+;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538c88
 ;   core_netgame.cpp_CNetGame_FUN_00541390 at 005419cf
 ;
 ; Referenced Globals:
@@ -34,9 +34,9 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_FUN_004aaa70
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
-;   core_mission.cpp_CDemonMission_FUN_005235b0
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_script.cpp_CScript_FUN_0055a540
 ;   core_script.cpp_CScript_FUN_0055a6c0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
@@ -61,8 +61,8 @@ section .text
     JZ 0x00524842                       ; 00524782
         ;   XREF to: 00524842 (CONDITIONAL_JUMP)  ; LAB_00524842
     PUSH EBX                            ; 00524788
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 00524789
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 00524789
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0052478e
     LEA EAX,[EBX + 0x550]               ; 00524791
     MOV dword ptr [EBX + 0x55c],0xffffffff ; 00524797
@@ -83,8 +83,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x2c]      ; 005247dd
     PUSH EDI                            ; 005247e0
     PUSH EBX                            ; 005247e1
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 005247e2
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 005247e2
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 005247e7
     PUSH 0x0                            ; 005247ea
     PUSH 0x639385                       ; 005247ec | = "Loading script"
@@ -101,8 +101,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x234]     ; 0052480e | DAT_02d81cd0
     PUSH EDX                            ; 00524814
     PUSH EBX                            ; 00524815
-    CALL core_mission.cpp_CDemonMission_FUN_005235b0 ; 00524816
-        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005235b0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 ; 00524816
+        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0052481b
     TEST EAX,EAX                        ; 0052481e
     JNZ 0x0052485d                      ; 00524820

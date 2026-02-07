@@ -46,7 +46,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_charactr.cpp_CCharacter_FUN_0042d090
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -266,8 +266,8 @@ section .text
     PUSH EAX                            ; 0042f641
     MOV EDI,dword ptr [0x0067d550]      ; 0042f642 | g_CDemonMissionPtr
     PUSH EDI                            ; 0042f648 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 0042f649
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0042f649
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     MOV EBX,EAX                         ; 0042f64e
     ADD ESP,0x8                         ; 0042f650
     MOV EDI,EAX                         ; 0042f653

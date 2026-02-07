@@ -261,7 +261,7 @@ section .text
     MOV EAX,0x61c3c9                    ; 00464b62 | = "Wheel polygon reducer on"
     PUSH EAX                            ; 00464b67 | = "Wheel polygon reducer on"
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 00464b68
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00464b6d
     PUSH 0x1                            ; 00464b70
     CALL shape_design.c_detectMouseButtonClick_FUN_00464870 ; 00464b72

@@ -8,8 +8,8 @@
 ;
 ; XREF[5]:
 ;   core_mission.cpp_CDemonMission_FUN_00524760 at 00524882
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005391a2
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e2b3
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005391a2
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054cdc1
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c176
 ;

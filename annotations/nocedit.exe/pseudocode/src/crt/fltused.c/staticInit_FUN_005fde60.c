@@ -10,11 +10,11 @@ void __cdecl staticInit(void)
 
 {
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fbc =
-       crt_unknown_c_FUN_00603bc9;
+       FUN_00603bc9;
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc0 =
-       crt_unknown_c_FUN_00603bf5;
+       FUN_00603bf5;
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc4 =
-       crt_unknown_c_FUN_00603dc8;
+       FUN_00603dc8;
   PTR_crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc8 =
        thunk;
   return;

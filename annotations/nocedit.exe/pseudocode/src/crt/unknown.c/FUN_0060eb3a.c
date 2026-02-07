@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-ulonglong crt_unknown_c_FUN_0060eb3a(void)
+ulonglong FUN_0060eb3a(void)
 
 {
   return 0;

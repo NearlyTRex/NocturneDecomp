@@ -15,7 +15,7 @@ int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketCont
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = crt_wsock32_c_closesocket(socket_ctx->socket);
+  iVar1 = closesocket(socket_ctx->socket);
   socket_ctx->socket = 0xffffffff;
   return (uint)(iVar1 == 0);
 }

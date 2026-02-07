@@ -3,90 +3,24 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 27,
-        "line": 50,
-        "message": "invalid conversion from 'void*' to 'uchar*' {aka 'unsigned char*'} [-fpermissive]"
+        "column": 17,
+        "line": 49,
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
     "success": false,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 31,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 43,
+        "category": "format_error",
+        "column": 130,
         "line": 39,
-        "message": "format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Wformat=]"
+        "message": "format specifies type 'unsigned long' but the argument has type 'int' [-Wformat]"
       },
       {
-        "category": "other",
-        "column": 25,
-        "line": 42,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 50,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 39,
+        "category": "format_error",
+        "column": 98,
         "line": 52,
-        "message": "format '%u' expects argument of type 'unsigned int', but argument 3 has type 'SIZE_T' {aka 'long unsigned int'} [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 53,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 64,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 75,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 76,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "message": "format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Wformat]"
       }
     ]
   },

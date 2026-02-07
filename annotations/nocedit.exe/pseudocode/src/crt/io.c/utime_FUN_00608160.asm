@@ -8,7 +8,7 @@
 ; utimbuf *        Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
-;   crt_io.c_utime_thunk_00600c1e at 00600c1e
+;   crt_io.c_utime_00600c1e at 00600c1e
 ;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38

@@ -26,7 +26,7 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 004dd888 | g_CDemonMissionInstance
     MOV EBX,EAX                         ; 004dd889
     MOV ESI,EAX                         ; 004dd88b
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 004dd88d
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 004dd88d
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004dd892
     MOV EAX,dword ptr [EBX + 0x154]     ; 004dd895
     PUSH EBX                            ; 004dd89b

@@ -141,7 +141,7 @@ int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *fo
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270
-int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag);
+int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown);
 
 // Original: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 // Address: 0049f420

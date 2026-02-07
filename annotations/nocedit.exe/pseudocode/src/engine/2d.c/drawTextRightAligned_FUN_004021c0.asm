@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x_pos,int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x,int y)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   y_pos
-; int              Stack[0xc]:4   x_pos
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   x
 ;
 ; XREF[2]:
 ;   engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210 at 00402261
@@ -36,7 +36,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004021dd
     PUSH EBX                            ; 004021e1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004021e2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004021e7
     POP EBX                             ; 004021ea
     RET                                 ; 004021eb

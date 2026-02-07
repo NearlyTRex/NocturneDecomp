@@ -37,7 +37,7 @@
 ;
 ; XREF[3]:
 ;   core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 at 004bd909
-;   core_mission.cpp_CDemonMission_FUN_00523fb0 at 00523fd8
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 at 00523fd8
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584b55
 ;
 ; Referenced Globals:
@@ -1235,7 +1235,7 @@ section .text
     PUSH 0x0                            ; 0056a157
     PUSH 0x645a8a                       ; 0056a159 | = "Warning!  No .GEO file.  Press any key"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0056a15e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0056a163
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0056a166
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

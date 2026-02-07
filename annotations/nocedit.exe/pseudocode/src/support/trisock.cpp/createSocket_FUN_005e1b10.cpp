@@ -12,7 +12,7 @@ int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SSocketContext *socket
   SOCKET SVar1;
   
   support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(socket_ctx);
-  SVar1 = crt_wsock32_c_shutdown(2,1);
+  SVar1 = shutdown(2,1);
   socket_ctx->socket = SVar1;
   return (uint)(SVar1 != 0xffffffff);
 }

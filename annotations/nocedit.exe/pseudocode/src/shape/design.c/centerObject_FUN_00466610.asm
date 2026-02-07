@@ -198,7 +198,7 @@ section .text
     MOV EAX,0x61c754                    ; 004667a2 | = "Need two points."
     PUSH EAX                            ; 004667a7 | = "Need two points."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004667a8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004667ad
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004667b0
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -237,7 +237,7 @@ section .text
     MOV EAX,0x61c765                    ; 004667e9 | = "Invalid point."
     PUSH EAX                            ; 004667ee | = "Invalid point."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004667ef
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004667f4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004667f7
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -251,7 +251,7 @@ section .text
     MOV EAX,0x61c774                    ; 0046680a | = "Which axis to center - X, Y, or Z? : "
     PUSH EAX                            ; 0046680f | = "Which axis to center - X, Y, or Z? : "
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00466810
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00466815
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00466818
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

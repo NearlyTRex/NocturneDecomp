@@ -22,6 +22,7 @@ const TerminatedCString s_CDoor_00670380 = "$CDoor$$";
 const TerminatedCString s_CFileFinder_0067038d = "$CFileFinder$$";
 const TerminatedCString s_CDraculaBride_006703b8 = "$CDraculaBride$$";
 const TerminatedCString s_SFreaky_006703d0 = "$SFreaky$$";
+const TerminatedCString s_A_A_006703e4 = "A+A";
 const TerminatedCString s_CDrip_0067233c = "$CDrip$$";
 const TerminatedCString s_CDrone_00672350 = "$CDrone$$";
 const TerminatedCString s_CCC_00676afc = "CCC";

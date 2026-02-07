@@ -34,11 +34,11 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr)
               (&this_ptr->model,*(float *)(this_ptr->unk1 + 8),-1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
     iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if ((iVar4 == 0) && (this_ptr == *(CTVBat **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
+    if ((iVar4 == 0) && (this_ptr == (CTVBat *)g_CDemonMissionPtr->selected_actor)) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr2,&(*(CTVBat **)(g_CDemonMissionPtr->unk2 + 0x1c))->home_pos);
+                (g_CDemonRendererPtr2,&((CTVBat *)g_CDemonMissionPtr->selected_actor)->home_pos);
       iVar4 = 0;
       engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,1);
       do {

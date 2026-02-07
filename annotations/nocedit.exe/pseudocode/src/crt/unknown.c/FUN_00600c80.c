@@ -1,33 +1,29 @@
 // Name: crt_unknown.c_FUN_00600c80
 // Address: 00600c80
 // Address Range: [[00600c80, 00600ced]]
-// Convention: unknown
-// Signature: void crt_unknown_c_FUN_00600c80(void)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3)
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00600c80(void)
+void __cdecl FUN_00600c80(int param_1,int param_2,SIZE_T param_3)
 
 {
   int iVar1;
   SIZE_T SVar2;
   SIZE_T count;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  SIZE_T in_stack_0000000c;
   byte local_20c [512];
   
-  iVar1 = lseek(in_stack_00000004,in_stack_00000008,0);
-  if (iVar1 == in_stack_00000008) {
+  iVar1 = lseek(param_1,param_2,0);
+  if (iVar1 == param_2) {
     memset(local_20c,0,0x200);
     do {
       count = 0x200;
-      if ((int)in_stack_0000000c < 0x200) {
-        count = in_stack_0000000c;
+      if ((int)param_3 < 0x200) {
+        count = param_3;
       }
-      SVar2 = write(in_stack_00000004,local_20c,count);
-    } while ((SVar2 == count) &&
-            (in_stack_0000000c = in_stack_0000000c - count, in_stack_0000000c != 0));
+      SVar2 = write(param_1,local_20c,count);
+    } while ((SVar2 == count) && (param_3 = param_3 - count, param_3 != 0));
   }
   return;
 }

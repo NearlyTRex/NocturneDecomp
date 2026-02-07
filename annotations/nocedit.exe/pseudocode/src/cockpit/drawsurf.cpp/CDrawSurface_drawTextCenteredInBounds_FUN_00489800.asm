@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *text)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (CDrawSurface *this_ptr,char *text,int x,int width,int y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   x
-; int              Stack[0xc]:4   y
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   x
 ; int              Stack[0x10]:4   width
-; int              Stack[0x14]:4   height
-; char *           Stack[0x18]:4   text
+; int              Stack[0x14]:4   y
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 at 00489ac6
@@ -40,7 +39,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 0048981b
     PUSH EDI                            ; 0048981f
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 ; 00489820
-        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, int x, int y, int width, ...)
+        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x1c                        ; 00489825
     POP EDI                             ; 00489828
     POP ESI                             ; 00489829

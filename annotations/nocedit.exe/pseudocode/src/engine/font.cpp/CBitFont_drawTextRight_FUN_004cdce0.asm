@@ -1,24 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0 (CBitFont *this_ptr,int right_edge_x,int y_pos,int color_mode,int color_value, char *text_string)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   right_edge_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   color_mode
 ; int              Stack[0x14]:4   color_value
-; char *           Stack[0x18]:4   text_string
+; char *           Stack[0x18]:4   text
 ;
 ; XREF[4]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 00489239
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 005245db
 ;   core_script.cpp_CScript_FUN_005645d0 at 00564768
-;   engine_font.cpp_CBitFont_printfRight_FUN_004cdd70 at 004cddc2
+;   engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70 at 004cddc2
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     LEA EAX,[EDX + 0x1]                 ; 004cdd0a
     PUSH EAX                            ; 004cdd0d
     PUSH ESI                            ; 004cdd0e
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004cdd0f
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 ; 004cdd0f
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004cdd14
     POP ESI                             ; 004cdd17
     POP EBX                             ; 004cdd18

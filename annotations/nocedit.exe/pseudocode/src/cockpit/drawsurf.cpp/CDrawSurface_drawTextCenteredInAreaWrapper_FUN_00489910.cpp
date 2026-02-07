@@ -11,7 +11,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWrapper_FUN_00489910
           (CDrawSurface *this_ptr,int x,int y,int height,char *text)
 
 {
-  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0
-            (this_ptr,(int)text,x,y,(char *)height);
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0(this_ptr,text,x,y,height);
   return;
 }

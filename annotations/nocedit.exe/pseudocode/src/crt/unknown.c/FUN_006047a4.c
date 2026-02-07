@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_006047a4(void)
+void FUN_006047a4(void)
 
 {
   if (BYTE_00684acd != 0) {
@@ -15,6 +15,6 @@ void crt_unknown_c_FUN_006047a4(void)
     PTR_crt_thread_c_ExitCriticalSection_FUN_0060b180_00685468 =
          (EXIT_CRITICAL_SECTION_FUNC *)&LAB_0060479c;
   }
-  crt_unknown_c_FUN_0060b190(0x127F);
+  FUN_0060b190(0x127F);
   return;
 }

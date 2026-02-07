@@ -199,31 +199,31 @@ section .text
     PUSH 0x0                            ; 005ed430
     PUSH 0x6577da                       ; 005ed432 | = "You have hit a kludge in the program."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005ed437
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005ed43c
     PUSH 0x16                           ; 005ed43f
     PUSH 0x0                            ; 005ed441
     PUSH 0x657800                       ; 005ed443 | = "You are setting acceleration mode wit..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005ed448
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005ed44d
     PUSH 0x21                           ; 005ed450
     PUSH 0x0                            ; 005ed452
     PUSH 0x657832                       ; 005ed454 | = "the appropriate bit depth first."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005ed459
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005ed45e
     PUSH 0x2c                           ; 005ed461
     PUSH 0x0                            ; 005ed463
     PUSH 0x657853                       ; 005ed465 | = "I am forcing the screen to switch to ..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005ed46a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005ed46f
     PUSH 0x42                           ; 005ed472
     PUSH 0x0                            ; 005ed474
     PUSH 0x657884                       ; 005ed476 | = "Press any key to continue."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005ed47b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005ed480
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005ed483
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

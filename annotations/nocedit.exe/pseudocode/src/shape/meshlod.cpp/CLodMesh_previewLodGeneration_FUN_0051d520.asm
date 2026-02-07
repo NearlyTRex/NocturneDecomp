@@ -125,7 +125,7 @@ section .text
     PUSH EDI                            ; 0051d5cc
     PUSH 0x63823f                       ; 0051d5cd | = "Press and hold P to pause and spin, E..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051d5d2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
         ;   Label: LAB_0051d5d2
     ADD ESP,0xc                         ; 0051d5d7
     PUSH ESI                            ; 0051d5da
@@ -230,13 +230,13 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0051d6ca
     PUSH EAX                            ; 0051d6ce
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051d6cf
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051d6d4
     PUSH 0xb                            ; 0051d6d7
     PUSH 0x0                            ; 0051d6d9
     PUSH 0x2f31258                      ; 0051d6db | g_LodMeshProgressBuffer
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051d6e0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051d6e5
     LEA EAX,[ESP + 0x64]                ; 0051d6e8
     PUSH EAX                            ; 0051d6ec
@@ -307,7 +307,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0051d7a3
     PUSH EAX                            ; 0051d7a7
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051d7a8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051d7ad
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0051d7b0
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

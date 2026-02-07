@@ -1,0 +1,168 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "005386a3",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00538df0",
+    "address_range": [
+      [
+        "00538df0",
+        "00538e9d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523f20",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_00523f20"
+    },
+    {
+      "addr": "00538ea0",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0"
+    },
+    {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.403225806451613,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 52,
+      "INT_ADD": 23,
+      "INT_AND": 61,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 21,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 335
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "if ((-1 < param_2) && (param_2 < this_ptr->num_sets)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "if ((-1 < param_2) && (param_2 < this_ptr->num_sets)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "text": "if (param_2 == (actor->location).area_id) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "(*((pCVar1->vtable)._ub)->onAreaDeleted)(pCVar1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "text": "(this_ptr->set_names + param_2,this_ptr->set_names + param_2,(iVar2 - param_2) * 0x100",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "text": "(this_ptr->set_names + param_2,this_ptr->set_names + param_2,(iVar2 - param_2) * 0x100",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "text": "(this_ptr->set_names + param_2,this_ptr->set_names + param_2,(iVar2 - param_2) * 0x100",
+      "type": "unnamed_param"
+    }
+  ]
+}

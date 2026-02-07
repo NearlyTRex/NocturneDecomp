@@ -2,96 +2,23 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 19,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 33,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 88,
+    "complexity_score": 89,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 9,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 29,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 111
+    "total_lines": 112
   },
   "cross_references": [
-    {
-      "addr": "005390f0",
-      "from_addr": "005392ad",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053af50",
-      "from_addr": "0053af7b",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053af50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b030",
-      "from_addr": "0053b2f0",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b030",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b510",
-      "from_addr": "0053b7d0",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b9f0",
-      "from_addr": "0053bc07",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b9f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0053bcf0",
       "from_addr": "0053bd20",
@@ -108,6 +35,36 @@
       "addr": "0053d8b0",
       "from_addr": "0053dbae",
       "name": "core_msnedit.cpp_CDemonMission_FUN_0053d8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b030",
+      "from_addr": "0053b2f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b510",
+      "from_addr": "0053b7d0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "005392ad",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b9f0",
+      "from_addr": "0053bc07",
+      "name": "core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053af50",
+      "from_addr": "0053af7b",
+      "name": "core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -161,7 +118,7 @@
     {
       "addr": "00523fb0",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0"
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0"
     },
     {
       "addr": "005751d0",
@@ -298,28 +255,28 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "text": "*(int *)(this_ptr->unk2 + 0x1c) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_2",
-      "text": "if (param_2 != 0) {",
+      "text": "this_ptr->selected_actor = (CDemonActor *)param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_2",
+      "text": "if (param_2 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
       "text": "*(uint *)(param_2 + 0x148) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 17,
       "match": "DAT_02f7c53c",
       "text": "if ((DAT_02f7c53c == 0) && (g_CEdCheckInstance.checked_state != 0)) {",
       "type": "undefined_data"

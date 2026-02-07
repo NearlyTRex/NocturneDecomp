@@ -134,7 +134,7 @@ section .text
     LEA EAX,[EBP + -0x60]               ; 0045bcf8
     PUSH EAX                            ; 0045bcfb
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045bcfc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045bd01
     MOV ESP,EBP                         ; 0045bd04
     POP EBP                             ; 0045bd06

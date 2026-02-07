@@ -22,7 +22,7 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_mission.cpp_CDemonMission_FUN_00523b70
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -151,8 +151,8 @@ section .text
     PUSH EDX                            ; 0054600e
     MOV ESI,dword ptr [0x0067d550]      ; 0054600f | g_CDemonMissionPtr
     PUSH ESI                            ; 00546015 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00546016
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00546016
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0054601b
     PUSH 0x1                            ; 0054601e
     PUSH EBX                            ; 00546020
@@ -160,7 +160,7 @@ section .text
     PUSH EAX                            ; 00546026 | g_CDemonMissionInstance
     MOV dword ptr [EBX + 0x1f810],0x0   ; 00546027
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0 ; 00546031
-        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr)
+        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 00546036
     JMP 0x00545f55                      ; 00546039
         ;   XREF to: 00545f55 (UNCONDITIONAL_JUMP)  ; LAB_00545f55

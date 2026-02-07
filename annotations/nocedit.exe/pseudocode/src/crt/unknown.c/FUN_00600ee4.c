@@ -8,7 +8,7 @@
 
 /* Signature: int* FUN_00600ee4(FILE* param_1, int param_2) */
 
-_FILE * crt_unknown_c_FUN_00600ee4(void)
+_FILE * FUN_00600ee4(void)
 
 {
   int iVar1;

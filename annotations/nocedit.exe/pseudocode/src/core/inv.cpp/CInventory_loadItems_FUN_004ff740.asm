@@ -14,7 +14,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 004ff75d | g_CDemonMissionInstance
     ADD ESI,0x4                         ; 004ff75e
     INC EBX                             ; 004ff761
-    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 004ff762
-        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0 ; 004ff762
+        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     MOV EAX,dword ptr [EDI + 0x8]       ; 004ff767
     ADD ESP,0x8                         ; 004ff76a
     CMP EBX,EAX                         ; 004ff76d

@@ -1,0 +1,94 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 10,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "00523600",
+      "from_addr": "00523773",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b030",
+      "from_addr": "0053b0e7",
+      "name": "core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b510",
+      "from_addr": "0053b5c7",
+      "name": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ccf0",
+      "from_addr": "0053ce7d",
+      "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00523cc0",
+    "address_range": [
+      [
+        "00523cc0",
+        "00523ce2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_countActors_FUN_00523cc0",
+    "signature": "int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.076923076923077,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 12,
+      "INT_ADD": 5,
+      "INT_AND": 10,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1
+    },
+    "pcode_op_count": 53
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
+}

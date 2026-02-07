@@ -100,13 +100,13 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   __arrinit(&stack0xffffb248,2,&g_CDeformableModelInstanceTypeInfo);
   iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select 1st model file","models",
-                     "*.dfm",(int)local_228);
+                     "*.dfm",(int)local_228,0);
   if (iVar3 != 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
               ((CDeformableModelInstance *)&stack0xffffb248,local_228);
     iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select 2nd model file","models",
-                       "*.dfm",(int)local_228);
+                       "*.dfm",(int)local_228,0);
     if (iVar3 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                 ((CDeformableModelInstance *)(auStack_4da8 + 0x22a4),local_228);

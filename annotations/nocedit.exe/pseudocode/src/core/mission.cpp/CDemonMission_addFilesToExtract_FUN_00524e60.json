@@ -1,0 +1,143 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 19,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 85
+  },
+  "cross_references": [
+    {
+      "addr": "004bda20",
+      "from_addr": "004bdf23",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00524e60",
+    "address_range": [
+      [
+        "00524e60",
+        "00524ee5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063966c",
+      "name": "s_CHero_0063966c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639672",
+      "name": "s_CEnemy_00639672",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639679",
+      "name": "s_CNPC_00639679",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063967e",
+      "name": "s_CWeapon_0063967e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bdf23",
+        "call_type": "direct",
+        "caller": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.395833333333333,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 40,
+      "INT_ADD": 16,
+      "INT_AND": 31,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 24,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 18,
+      "LOAD": 11,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 211
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "unknown_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

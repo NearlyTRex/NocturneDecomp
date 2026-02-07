@@ -7,10 +7,6 @@
 // Address: 00401000
 void BaseStart(void);
 
-// Original: crt_unknown.c_FUN_005ff0d0
-// Address: 005ff0d0
-void FUN_005ff0d0(void);
-
 // Original: crt_unknown.c_FUN_00600990
 // Address: 00600990
 undefined4 FUN_00600990(void);
@@ -21,7 +17,7 @@ uint FUN_00600a64(void);
 
 // Original: crt_unknown.c_FUN_00600c80
 // Address: 00600c80
-void FUN_00600c80(void);
+void __cdecl FUN_00600c80(int param_1,int param_2,SIZE_T param_3);
 
 // Original: crt_unknown.c_FUN_00600ee4
 // Address: 00600ee4

@@ -358,7 +358,7 @@ section .text
     PUSH EBP                            ; 004e3b35
     INC EBX                             ; 004e3b36
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 ; 004e3b37
-        ;   XREF to: 004cdee0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y_pos, ...)
+        ;   XREF to: 004cdee0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x1c                        ; 004e3b3c
     ADD EDI,0x100                       ; 004e3b3f
     MOV EAX,dword ptr [ESP + 0x52c]     ; 004e3b45

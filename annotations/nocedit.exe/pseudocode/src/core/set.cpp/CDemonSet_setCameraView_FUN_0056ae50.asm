@@ -34,8 +34,8 @@
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd416
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dcca5
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db5e4
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a9a9
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e304
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a9a9
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055da68
 ;   core_set.cpp_CDemonSet_FUN_0056b7e0 at 0056b7fe
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 at 00570c84
@@ -767,8 +767,8 @@ section .text
     PUSH 0x1                            ; 0056b71b
     MOV ESI,dword ptr [0x0067b9a0]      ; 0056b71d | g_CGorePtr
     PUSH ESI                            ; 0056b723 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ed830     ; 0056b724
-        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed830(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_FUN_004ed830 ; 0056b724
+        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed830(CGore * this_ptr)
     ADD ESP,0xc                         ; 0056b729
     PUSH 0x1                            ; 0056b72c
     PUSH 0x1                            ; 0056b72e

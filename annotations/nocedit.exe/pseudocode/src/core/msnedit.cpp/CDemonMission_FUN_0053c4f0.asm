@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053972b
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053972b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Selected_s_0063c874
@@ -234,7 +234,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0053c701
     PUSH EAX                            ; 0053c705
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053c706
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053c70b
     PUSH 0x2f797e4                      ; 0053c70e | DAT_02f797e4
     CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 ; 0053c713

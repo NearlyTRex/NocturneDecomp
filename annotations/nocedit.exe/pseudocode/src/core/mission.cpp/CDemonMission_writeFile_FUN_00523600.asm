@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -35,11 +36,11 @@
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
-;   core_gore.cpp_FUN_004ee290
+;   core_gore.cpp_CGore_FUN_004ee290
 ;   core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00523cc0
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
+;   core_mission.cpp_CDemonMission_countActors_FUN_00523cc0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
@@ -71,8 +72,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00523638
     PUSH EBX                            ; 0052363b
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0052363c
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 0052363c
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00523641
     PUSH 0x638e78                       ; 00523644 | = "// mission version, actor version\n"
         ;   Label: LAB_00523644
@@ -187,8 +188,8 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0052376f
     PUSH EBX                            ; 00523772
-    CALL core_mission.cpp_CDemonMission_FUN_00523cc0 ; 00523773
-        ;   XREF to: 00523cc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00523cc0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_countActors_FUN_00523cc0 ; 00523773
+        ;   XREF to: 00523cc0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_countActors_FUN_00523cc0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00523778
     PUSH EAX                            ; 0052377b
     PUSH 0x638f00                       ; 0052377c | = "%d\n"
@@ -352,8 +353,8 @@ section .text
     PUSH ECX                            ; 00523934
     MOV ESI,dword ptr [0x0067b9a0]      ; 00523935 | g_CGorePtr
     PUSH ESI                            ; 0052393b | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ee290     ; 0052393c
-        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004ee290(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_FUN_004ee290 ; 0052393c
+        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee290(CGore * this_ptr)
     ADD ESP,0x8                         ; 00523941
     MOV dword ptr [EBX + 0x88c],0x0     ; 00523944
     ADD ESP,0x4                         ; 0052394e

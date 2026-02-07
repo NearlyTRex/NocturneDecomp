@@ -2,16 +2,16 @@
 // Address: 004021c0
 // Address Range: [[004021c0, 004021eb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x_pos,int y_pos)
+// Signature: void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x,int y)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x_pos,int y_pos)
+void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x,int y)
 
 {
   int iVar1;
   
   iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(text);
-  engine_2d_c_drawText_FUN_00401fd0(text,(y_pos - iVar1) + 2,x_pos);
+  engine_2d_c_drawText_FUN_00401fd0(text,(y - iVar1) + 2,x);
   return;
 }

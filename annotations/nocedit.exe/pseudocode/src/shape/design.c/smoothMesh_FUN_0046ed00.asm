@@ -47,7 +47,7 @@ section .text
     MOV EAX,0x61e0a3                    ; 0046ed33 | = "Mesh smoothed."
     PUSH EAX                            ; 0046ed38 | = "Mesh smoothed."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046ed39
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046ed3e
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046ed41
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

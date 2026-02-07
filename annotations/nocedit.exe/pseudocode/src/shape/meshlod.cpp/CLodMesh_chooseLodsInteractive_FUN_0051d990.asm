@@ -389,7 +389,7 @@ section .text
     PUSH ESI                            ; 0051ddb5
     PUSH 0x63838f                       ; 0051ddb6 | = "Viewing LOD 0.  This LOD cannot be ed..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051ddbb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
         ;   Label: LAB_0051ddbb
     ADD ESP,0xc                         ; 0051ddc0
     PUSH 0x2b                           ; 0051ddc3
@@ -490,7 +490,7 @@ section .text
     LEA EAX,[ESP + 0x540]               ; 0051dee4
     PUSH EAX                            ; 0051deeb
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051deec
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051def1
     INC EBX                             ; 0051def4
     MOV EDI,dword ptr [ESP + 0x754]     ; 0051def5
@@ -583,7 +583,7 @@ section .text
     LEA EAX,[ESP + 0x540]               ; 0051dff5
     PUSH EAX                            ; 0051dffc
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051dffd
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051e002
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0051e005
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -986,7 +986,7 @@ section .text
     PUSH 0x0                            ; 0051e493
     PUSH 0x63833d                       ; 0051e495 | = "TEST MODE: Adjust view to test LODs."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051e49a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051e49f
     PUSH 0xb                            ; 0051e4a2
     PUSH 0x0                            ; 0051e4a4
@@ -1008,19 +1008,19 @@ section .text
     LEA EAX,[ESP + 0x540]               ; 0051e4d2
     PUSH EAX                            ; 0051e4d9
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051e4da
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051e4df
     PUSH 0xb                            ; 0051e4e2
     PUSH 0x0                            ; 0051e4e4
     PUSH 0x6383d0                       ; 0051e4e6 | = "Use LEFT/RIGHT to adjust face count."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051e4eb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051e4f0
     PUSH 0x16                           ; 0051e4f3
     PUSH 0x0                            ; 0051e4f5
     PUSH 0x6383f5                       ; 0051e4f7 | = "Press T to go to test mode."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051e4fc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051e501
     PUSH 0x21                           ; 0051e504
     PUSH 0x0                            ; 0051e506

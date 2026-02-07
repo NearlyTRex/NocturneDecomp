@@ -185,7 +185,7 @@ section .text
     LEA EAX,[EBP + 0xffffff74]          ; 00469824
     PUSH EAX                            ; 0046982a
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046982b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00469830
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00469833
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

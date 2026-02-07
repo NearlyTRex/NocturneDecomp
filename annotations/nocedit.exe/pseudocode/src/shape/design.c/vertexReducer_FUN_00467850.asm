@@ -212,7 +212,7 @@ section .text
     MOV EAX,0x61ca5b                    ; 004679b8 | = "Scanning vertices..."
     PUSH EAX                            ; 004679bd | = "Scanning vertices..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004679be
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004679c3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004679c6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -239,7 +239,7 @@ section .text
     MOV EAX,0x61ca82                    ; 00467a01 | = "ERROR: Can't allocate memory for vert..."
     PUSH EAX                            ; 00467a06 | = "ERROR: Can't allocate memory for vert..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00467a07
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00467a0c
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00467a0f
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -313,7 +313,7 @@ section .text
     MOV EAX,0x61cadd                    ; 00467ac1 | = "ERROR: Can't allocate memory for vert..."
     PUSH EAX                            ; 00467ac6 | = "ERROR: Can't allocate memory for vert..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00467ac7
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00467acc
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00467acf
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -676,7 +676,7 @@ section .text
     LEA EAX,[EBP + 0xfffffedc]          ; 00467e3f
     PUSH EAX                            ; 00467e45
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00467e46
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00467e4b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00467e4e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

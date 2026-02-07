@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
+int __cdecl FUN_0060d230(UINT cp)
 
 {
   int iVar1;

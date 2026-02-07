@@ -10,7 +10,7 @@ int __cdecl scanf_char(scanf_state_t *state,va_list_t *args)
 
 {
   byte bVar1;
-  va_list_t pcVar2;
+  char *pcVar2;
   char cVar3;
   uint uVar4;
   int iVar5;
@@ -25,19 +25,19 @@ int __cdecl scanf_char(scanf_state_t *state,va_list_t *args)
   if ((bVar1 & 1) != 0) {
     if ((bVar1 & 4) == 0) {
       if ((bVar1 & 8) == 0) {
-        pcVar2 = *args;
-        *args = pcVar2 + 4;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
         unaff_EBX = *(char **)pcVar2;
       }
       else {
-        pcVar2 = *args;
-        *args = pcVar2 + 4;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
         unaff_EBX = *(char **)pcVar2;
       }
     }
     else {
-      pcVar2 = *args;
-      *args = pcVar2 + 8;
+      pcVar2 = args->value[0];
+      args->value[0] = pcVar2 + 8;
       unaff_EBX = (char *)*(undefined6 *)pcVar2;
     }
   }

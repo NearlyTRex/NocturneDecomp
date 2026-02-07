@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060403f(uint param_1,float10 *param_2)
+void FUN_0060403f(uint param_1,float10 *param_2)
 
 {
   char *pcVar1;
@@ -36,9 +36,9 @@ void crt_unknown_c_FUN_0060403f(uint param_1,float10 *param_2)
         *(float10 *)(unaff_EBP + -0x48) = *param_2 * *(float10 *)(unaff_EBP + -0x48);
       }
     }
-    crt_unknown_c_FUN_006040d7
+    FUN_006040d7
               (unaff_EDI,param_2,*(uint *)(unaff_EBP + -0x1c),iVar2,param_2,iVar2);
-    crt_unknown_c_FUN_0060411c();
+    FUN_0060411c();
     return;
   }
 LAB_00604135:
@@ -109,11 +109,11 @@ LAB_00604135:
      (((*(byte *)(unaff_ESI + 2) & 4) == 0 ||
       (((*(int *)(unaff_EBP + -0x20) < -4 || (*unaff_ESI <= *(int *)(unaff_EBP + -0x20))) &&
        ((*(byte *)(unaff_ESI + 2) & 8) == 0)))))) {
-    crt_unknown_c_FUN_00604478();
+    FUN_00604478();
   }
   else {
-    crt_unknown_c_FUN_00604267();
+    FUN_00604267();
   }
-  crt_unknown_c_FUN_0060445e(*(ushort *)(unaff_EBP + -0x14));
+  FUN_0060445e(*(ushort *)(unaff_EBP + -0x14));
   return;
 }

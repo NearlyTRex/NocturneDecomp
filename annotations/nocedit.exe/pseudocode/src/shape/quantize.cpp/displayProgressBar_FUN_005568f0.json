@@ -4,28 +4,16 @@
     "success": true,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 49,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
+        "category": "format_error",
+        "column": 61,
         "line": 52,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 3,
+        "line": 52,
+        "message": "'sprintf' will always overflow; destination buffer has size 4, but format string expands to at least 25 [-Wformat-overflow]"
       }
     ]
   },

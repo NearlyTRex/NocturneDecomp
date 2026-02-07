@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_00600990(void)
+uint FUN_00600990(void)
 
 {
   byte *pbVar1;

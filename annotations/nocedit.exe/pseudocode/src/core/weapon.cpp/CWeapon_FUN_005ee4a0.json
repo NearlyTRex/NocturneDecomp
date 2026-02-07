@@ -5,48 +5,59 @@
         "category": "other",
         "column": 37,
         "line": 21,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 21,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
         "line": 26,
-        "message": "'stack0x00000000' was not declared in this scope"
+        "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 60,
         "line": 27,
-        "message": "request for member '_0_4_' in 'auStack_20', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 60,
         "line": 28,
-        "message": "request for member '_4_4_' in 'auStack_20', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
         "line": 51,
-        "message": "'DAT_03f95d7c' was not declared in this scope; did you mean 'DAT_03f95df8'?"
+        "message": "use of undeclared identifier 'DAT_03f95d7c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
         "line": 53,
-        "message": "'DAT_03f95d98' was not declared in this scope; did you mean 'DAT_03f95df8'?"
+        "message": "use of undeclared identifier 'DAT_03f95d98'; did you mean 'DAT_03f95df8'?"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 53,
+        "message": "array type 'CVector3f[200]' is not assignable"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 82,
+        "line": 54,
+        "message": "use of undeclared identifier 'DAT_03f95d7c'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 129,

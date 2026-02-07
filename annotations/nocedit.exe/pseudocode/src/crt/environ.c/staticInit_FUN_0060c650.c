@@ -28,10 +28,10 @@ void __cdecl staticInit(void)
       } while (cVar1 != '\0');
       cVar1 = *pcVar2;
     }
-    pcVar2 = (char *)crt_unknown_c_FUN_0060c640();
+    pcVar2 = (char *)FUN_0060c640();
     if (pcVar2 != (char *)0x0) {
       INT_03f9c150 = (int)pcVar2;
-      ppcVar3 = (char **)crt_unknown_c_FUN_0060c640();
+      ppcVar3 = (char **)FUN_0060c640();
       if (ppcVar3 == (char **)0x0) {
         free(pcVar2);
       }

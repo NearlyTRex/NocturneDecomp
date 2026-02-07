@@ -2,34 +2,27 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 118,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data"
     ],
-    "total_lines": 43
+    "total_lines": 42
   },
   "cross_references": [
     {
       "addr": "004ede30",
       "from_addr": "004ede3f",
-      "name": "core_gore.cpp_FUN_004ede30",
+      "name": "core_gore.cpp_CGore_FUN_004ede30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +65,7 @@
       {
         "call_addr": "004ede3f",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004ede30",
+        "caller": "core_gore.cpp_CGore_FUN_004ede30",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -122,56 +115,56 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 8,
       "match": "DAT_02da871c",
       "text": "iVar2 = DAT_02da871c + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_02da8724",
       "text": "pCVar1 = DAT_02da8724 + DAT_02da871c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_02da871c",
       "text": "pCVar1 = DAT_02da8724 + DAT_02da871c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_02da8720",
       "text": "if (0x1f < DAT_02da8720) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_02da871c",
       "text": "DAT_02da871c = iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_02da8720",
       "text": "DAT_02da8720 = DAT_02da8720 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_02da8720",
       "text": "DAT_02da8720 = DAT_02da8720 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 18,
       "match": "DAT_02da871c",
       "text": "DAT_02da871c = iVar2;",
       "type": "undefined_data"

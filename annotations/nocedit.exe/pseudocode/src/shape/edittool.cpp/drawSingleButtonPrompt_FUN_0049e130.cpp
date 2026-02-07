@@ -61,7 +61,7 @@ shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,message,((g_ClipLeft + g_ClipRight) - iVar3) / 2,
                (((g_ClipTop + g_ClipBottom) - iVar1) - iVar2) / 2,color,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_108,1);

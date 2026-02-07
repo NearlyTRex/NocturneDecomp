@@ -2,39 +2,32 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 15,
-        "message": "'stack0x0000000c' was not declared in this scope"
-      },
-      {
         "category": "incompatible_types",
-        "column": 49,
-        "line": 16,
-        "message": "cannot convert 'char**' to '__va_list_tag*'"
+        "column": 22,
+        "line": 15,
+        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
-        "category": "pointer_precision",
-        "column": 52,
-        "line": 19,
-        "message": "cast from 'CEditorTools*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 15,
+        "message": "use of undeclared identifier 'stack0x0000000c'"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 19,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 49,
+        "line": 16,
+        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 17,
+        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 25,
@@ -183,27 +176,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00538ba0",
-      "from_addr": "00538d4c",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_00538ba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00538d60",
-      "from_addr": "00538daa",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_00538d60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00538f90",
       "from_addr": "0053903e",
       "name": "core_msnedit.cpp_CDemonMission_FUN_00538f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005390f0",
-      "from_addr": "0053ac06",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,6 +209,24 @@
       "addr": "0053eb40",
       "from_addr": "0053ec69",
       "name": "core_msnedit.cpp_CDemonMission_FUN_0053eb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538d60",
+      "from_addr": "00538daa",
+      "name": "core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "0053ac06",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538ba0",
+      "from_addr": "00538d4c",
+      "name": "core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -708,8 +701,8 @@
     },
     {
       "addr": "02cf2a94",
-      "name": "g_CUserInterfacePtr",
-      "type": "CEditorTools*",
+      "name": "INT_02cf2a94",
+      "type": "int",
       "value": null
     }
   ],
@@ -748,7 +741,7 @@
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "va_list_t"
       },
       {
         "is_param": true,
@@ -771,7 +764,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0x0000000c",
-      "text": "local_8 = &stack0x0000000c;",
+      "text": "local_8.value[0] = (char * [1])&stack0x0000000c;",
       "type": "stack_ref"
     }
   ]

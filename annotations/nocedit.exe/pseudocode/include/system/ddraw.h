@@ -352,3 +352,9 @@ typedef struct RGB_ENTRY {
     BYTE blue;
 } RGB_ENTRY;
 
+// =============================================================================
+// DIRECTDRAW API FUNCTIONS
+// =============================================================================
+
+extern HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);
+

@@ -74,7 +74,7 @@ section .text
     PUSH 0x0                            ; 0047c606
     PUSH 0x620583                       ; 0047c608 | = "Realign object"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0047c60d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0047c612
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0047c615
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

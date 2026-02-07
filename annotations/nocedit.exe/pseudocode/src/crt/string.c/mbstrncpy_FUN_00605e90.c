@@ -10,6 +10,6 @@ char * __watcallStack mbstrncpy(char *dest,char *src,int char_count)
 
 {
   mbstrnbytes(src,char_count);
-  crt_unknown_c_FUN_0060b670();
+  FUN_0060b670();
   return dest;
 }

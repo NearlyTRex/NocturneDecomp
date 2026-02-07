@@ -77,7 +77,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   if (bVar8 || p_Var2 != (_FILE *)0x0) {
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission to play","world",
-                       "*.msn",(int)local_144);
+                       "*.msn",(int)local_144,0);
     if (iVar6 == 0) {
       g_EditorFont = local_1c;
       return;

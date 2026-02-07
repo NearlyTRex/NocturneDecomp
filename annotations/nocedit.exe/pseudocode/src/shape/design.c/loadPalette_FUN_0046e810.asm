@@ -62,21 +62,21 @@ section .text
     MOV EAX,0x61df26                    ; 0046e825 | = "  1) Load model palette"
     PUSH EAX                            ; 0046e82a | = "  1) Load model palette"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e82b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e830
     PUSH 0x21                           ; 0046e833
     PUSH 0x0                            ; 0046e835
     MOV EAX,0x61df3e                    ; 0046e837 | = "  2) Load .ACT file palette"
     PUSH EAX                            ; 0046e83c | = "  2) Load .ACT file palette"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e83d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e842
     PUSH 0x2c                           ; 0046e845
     PUSH 0x0                            ; 0046e847
     MOV EAX,0x61df5a                    ; 0046e849 | = "  3) Load default editor palette"
     PUSH EAX                            ; 0046e84e | = "  3) Load default editor palette"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e84f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e854
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046e857
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -125,7 +125,7 @@ section .text
     MOV EAX,0x61df8f                    ; 0046e8c5 | = "No model loaded.  Hit a key..."
     PUSH EAX                            ; 0046e8ca | = "No model loaded.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e8cb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e8d0
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046e8d3
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -250,7 +250,7 @@ section .text
     MOV EAX,0x61dfbc                    ; 0046e9ad | = "File not found.  Hit a key..."
     PUSH EAX                            ; 0046e9b2 | = "File not found.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e9b3
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e9b8
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046e9bb
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -393,7 +393,7 @@ section .text
     MOV EAX,0x61dfff                    ; 0046eaca | = "File not found.  Hit a key..."
     PUSH EAX                            ; 0046eacf | = "File not found.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046ead0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046ead5
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046ead8
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -438,7 +438,7 @@ section .text
     MOV EAX,0x61e03d                    ; 0046eb32 | = "Invalid option.  Hit a key..."
     PUSH EAX                            ; 0046eb37 | = "Invalid option.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046eb38
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046eb3d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046eb40
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -456,7 +456,7 @@ section .text
     MOV EAX,0x61e05b                    ; 0046eb5a | = "New palette loaded.  Hit a key..."
     PUSH EAX                            ; 0046eb5f | = "New palette loaded.  Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046eb60
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046eb65
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046eb68
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

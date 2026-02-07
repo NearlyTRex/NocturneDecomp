@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 0054f09b
     PUSH 0x63fca8                       ; 0054f09c | = "You are using a manual course for thi..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f0a1
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBX]             ; 0054f0a6
     ADD ESP,0xc                         ; 0054f0a8
     ADD EDX,0x16                        ; 0054f0ab
@@ -68,7 +68,7 @@ section .text
     PUSH 0x63fcd9                       ; 0054f0b6 | = "For a manual course, you specify the ..."
     MOV dword ptr [EBX],EDX             ; 0054f0bb
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f0bd
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f0c2
     ADD ESP,0xc                         ; 0054f0c4
     ADD EDI,0xb                         ; 0054f0c7
@@ -78,7 +78,7 @@ section .text
     PUSH 0x63fd16                       ; 0054f0d1 | = "and the game will do its best to inte..."
     MOV dword ptr [EBX],EDI             ; 0054f0d6
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f0d8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBX]             ; 0054f0dd
     ADD ESP,0xc                         ; 0054f0df
     ADD EDX,0xb                         ; 0054f0e2
@@ -88,7 +88,7 @@ section .text
     PUSH 0x63fd5d                       ; 0054f0ed | = "Manual courses can only be used in ve..."
     MOV dword ptr [EBX],EDX             ; 0054f0f2
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f0f4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f0f9
     ADD ESP,0xc                         ; 0054f0fb
     ADD EDI,0xb                         ; 0054f0fe
@@ -98,7 +98,7 @@ section .text
     PUSH 0x63fda4                       ; 0054f108 | = "translation or rotation.  For finer c..."
     MOV dword ptr [EBX],EDI             ; 0054f10d
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f10f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBX]             ; 0054f114
     ADD ESP,0xc                         ; 0054f116
     ADD EDX,0x16                        ; 0054f119
@@ -108,7 +108,7 @@ section .text
     PUSH 0x63fdf9                       ; 0054f124 | = "In the editor, a green box graphicall..."
     MOV dword ptr [EBX],EDX             ; 0054f129
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f12b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f130
     ADD ESP,0xc                         ; 0054f132
     ADD EDI,0xb                         ; 0054f135
@@ -118,7 +118,7 @@ section .text
     PUSH 0x63fe50                       ; 0054f13f | = "the ending position."
     MOV dword ptr [EBX],EDI             ; 0054f144
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f146
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBX]             ; 0054f14b
     ADD ESP,0xc                         ; 0054f14d
     ADD EDX,0x16                        ; 0054f150
@@ -128,7 +128,7 @@ section .text
     PUSH 0x63fe65                       ; 0054f15b | = "To move the start or end positions, y..."
     MOV dword ptr [EBX],EDX             ; 0054f160
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f162
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f167
     ADD ESP,0xc                         ; 0054f169
     ADD EDI,0xb                         ; 0054f16c
@@ -138,7 +138,7 @@ section .text
     PUSH 0x63fead                       ; 0054f176 | = "to slew, either by pressing Y, or cli..."
     MOV dword ptr [EBX],EDI             ; 0054f17b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f17d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0054f182
     PUSH 0x63fefc                       ; 0054f185 | = "Slam the start and end position to th..."
     MOV EDX,dword ptr [EBX]             ; 0054f18a
@@ -157,7 +157,7 @@ section .text
     PUSH 0x63ff4e                       ; 0054f1ac | = "After creating a platform, the easies..."
     MOV dword ptr [EBX],ECX             ; 0054f1b1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f1b3
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0054f1b8
     MOV EBP,dword ptr [EBX]             ; 0054f1bb
     ADD EBP,0xb                         ; 0054f1bd
@@ -167,7 +167,7 @@ section .text
     PUSH 0x63ff8e                       ; 0054f1c8 | = "is to switch the slew mode to \"Start..."
     MOV dword ptr [EBX],EBP             ; 0054f1cd
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f1cf
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [EBX]             ; 0054f1d4
     ADD ESP,0xc                         ; 0054f1d6
     ADD ECX,0xb                         ; 0054f1d9
@@ -177,7 +177,7 @@ section .text
     PUSH 0x63ffd6                       ; 0054f1e4 | = "it to start out (not worrying about t..."
     MOV dword ptr [EBX],ECX             ; 0054f1e9
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f1eb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [EBX]             ; 0054f1f0
     ADD ESP,0xc                         ; 0054f1f2
     ADD EBP,0xb                         ; 0054f1f5
@@ -187,7 +187,7 @@ section .text
     PUSH 0x64001c                       ; 0054f200 | = "press CTRL+HOME to snap the end posit..."
     MOV dword ptr [EBX],EBP             ; 0054f205
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f207
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV ECX,dword ptr [EBX]             ; 0054f20c
     ADD ESP,0xc                         ; 0054f20e
     ADD ECX,0xb                         ; 0054f211
@@ -197,7 +197,7 @@ section .text
     PUSH 0x64005e                       ; 0054f21c | = "Finally, switch the slew mode to \"En..."
     MOV dword ptr [EBX],ECX             ; 0054f221
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f223
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [EBX]             ; 0054f228
     ADD EBP,0xb                         ; 0054f22a
     ADD ESP,0xc                         ; 0054f22d
@@ -214,7 +214,7 @@ section .text
     PUSH ESI                            ; 0054f240
     PUSH 0x6400ac                       ; 0054f241 | = "You are using an explicit .PTH course..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f246
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f24b
     ADD ESP,0xc                         ; 0054f24d
     ADD EDI,0x16                        ; 0054f250
@@ -224,7 +224,7 @@ section .text
     PUSH 0x6400ea                       ; 0054f25a | = "Since you are using a .PTH file, you ..."
     MOV dword ptr [EBX],EDI             ; 0054f25f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f261
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [EBX]             ; 0054f266
     ADD ESP,0xc                         ; 0054f268
     ADD EDX,0xb                         ; 0054f26b
@@ -234,7 +234,7 @@ section .text
     PUSH 0x640137                       ; 0054f276 | = "is hardwired into the course."
     MOV dword ptr [EBX],EDX             ; 0054f27b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0054f27d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDI,dword ptr [EBX]             ; 0054f282
     ADD EDI,0xb                         ; 0054f284
     ADD ESP,0xc                         ; 0054f287

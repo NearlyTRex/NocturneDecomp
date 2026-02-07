@@ -2,69 +2,26 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
+        "category": "other",
         "column": 14,
         "line": 27,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
-        "category": "pointer_precision",
-        "column": 25,
-        "line": 34,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 24,
-        "line": 35,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "incompatible_types",
+        "category": "other",
         "column": 14,
         "line": 44,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
         "category": "incompatible_types",
-        "column": 11,
+        "column": 3,
         "line": 59,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
+        "message": "no matching function for call to 'sprintf'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 43,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 61,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 114,
@@ -84,7 +41,7 @@
     {
       "addr": "005390f0",
       "from_addr": "0053aa39",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -233,7 +190,7 @@
       {
         "call_addr": "0053aa39",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],

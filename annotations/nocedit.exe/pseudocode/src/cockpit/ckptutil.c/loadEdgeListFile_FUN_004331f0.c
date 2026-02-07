@@ -60,7 +60,7 @@ cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0
                            (SVar1,"..\\cockpit\\ckptutil.c",0x4d2);
         edge_lists->edge_data = pvVar2;
         if (pvVar2 == (void *)0x0) {
-          crt_unknown_c_FUN_005ff0d0();
+          printf("\nUnable to allocate memory for edge list.\n");
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x4d6;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);

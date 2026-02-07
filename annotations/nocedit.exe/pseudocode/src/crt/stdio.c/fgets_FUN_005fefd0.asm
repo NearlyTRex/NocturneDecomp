@@ -17,7 +17,7 @@
 ;   core_fire.cpp_CFireEffect_load_FUN_004c9300 at 004c9334
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1707
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e40bc
-;   core_gore.cpp_FUN_004ee1e0 at 004ee1fc
+;   core_gore.cpp_CGore_FUN_004ee1e0 at 004ee1fc
 ;   core_inv.cpp_CInventory_load_FUN_004ff400 at 004ff5a3
 ;   ... and 22 more
 ;

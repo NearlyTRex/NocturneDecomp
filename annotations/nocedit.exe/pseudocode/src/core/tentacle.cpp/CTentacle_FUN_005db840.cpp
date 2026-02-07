@@ -14,7 +14,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
   iVar1 = (*((this_ptr->base).base.base.vtable._ub)->shouldIgnoreForTargeting)
                     ((CDemonActor *)this_ptr);
   if (iVar1 != 0) {
-    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
+    if (g_CDemonMissionPtr->is_in_editor == 0) {
       return 0;
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);

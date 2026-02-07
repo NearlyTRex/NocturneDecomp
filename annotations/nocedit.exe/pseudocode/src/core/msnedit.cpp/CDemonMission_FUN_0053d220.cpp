@@ -113,8 +113,8 @@ LAB_0053d336:
                 if (pcVar2 == (char *)0x0) {
                   iVar1 = stricmp(in_stack_00000008,in_stack_0000000c);
                   if ((iVar1 != 0) &&
-                     (pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr),
-                     pcVar3 != (char *)0x0)) {
+                     (pcVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                                         (this_ptr,in_stack_0000000c), pcVar3 != (char *)0x0)) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Already an actor named %s in this mission!");
                     return 0;

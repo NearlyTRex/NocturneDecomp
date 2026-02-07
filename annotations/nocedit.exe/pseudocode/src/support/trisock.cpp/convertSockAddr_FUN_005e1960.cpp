@@ -20,7 +20,7 @@ support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR
     g_CurrentLineNumber = 0xa5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("sockaddr is not of AF_INET family!");
   }
-  uVar2 = crt_wsock32_c_ntohs(*(ushort *)src_addr->sa_data);
+  uVar2 = ntohs(*(ushort *)src_addr->sa_data);
   *(ushort *)&dest_addr->sin_addr = uVar2;
   puVar3 = support_trisock_cpp_copyIPAddress_FUN_005e16f0(&uStack_c,(uint *)(src_addr->sa_data + 2))
   ;

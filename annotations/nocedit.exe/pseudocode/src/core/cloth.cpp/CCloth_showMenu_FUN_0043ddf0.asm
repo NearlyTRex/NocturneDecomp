@@ -71,49 +71,49 @@ section .text
     PUSH 0x0                            ; 0043de21
     PUSH 0x618976                       ; 0043de23 | = "Demented(R) Cloth Editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de28
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de2d
     PUSH 0x16                           ; 0043de30
     PUSH 0x0                            ; 0043de32
     PUSH 0x61898f                       ; 0043de34 | = "1.  Load cloth file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de39
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de3e
     PUSH 0x21                           ; 0043de41
     PUSH 0x0                            ; 0043de43
     PUSH 0x6189a3                       ; 0043de45 | = "2.  Save cloth file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de4a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de4f
     PUSH 0x2c                           ; 0043de52
     PUSH 0x0                            ; 0043de54
     PUSH 0x6189b7                       ; 0043de56 | = "3.  Locked vertex editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de5b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de60
     PUSH 0x37                           ; 0043de63
     PUSH 0x0                            ; 0043de65
     PUSH 0x6189d0                       ; 0043de67 | = "4.  Load skeleton"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de6c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de71
     PUSH 0x42                           ; 0043de74
     PUSH 0x0                            ; 0043de76
     PUSH 0x6189e2                       ; 0043de78 | = "5.  Bone editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de7d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de82
     PUSH 0x4d                           ; 0043de85
     PUSH 0x0                            ; 0043de87
     PUSH 0x6189f2                       ; 0043de89 | = "6.  Edit transparency"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de8e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043de93
     PUSH 0x58                           ; 0043de96
     PUSH 0x0                            ; 0043de98
     PUSH 0x618a08                       ; 0043de9a | = "7.  Create cloth from .KFM"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0043de9f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0043dea4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0043dea7
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

@@ -127,7 +127,7 @@ section .text
     LEA EAX,[EBP + 0xfffffeb0]          ; 004581cb
     PUSH EAX                            ; 004581d1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004581d2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004581d7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004581da
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -560,7 +560,7 @@ section .text
     LEA EAX,[EBP + 0xfffffeb0]          ; 004586b5
     PUSH EAX                            ; 004586bb
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004586bc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004586c1
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004586c4
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -759,7 +759,7 @@ section .text
     LEA EAX,[EBP + 0xfffffeb0]          ; 0045893a
     PUSH EAX                            ; 00458940
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00458941
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458946
     MOV EAX,dword ptr [EBP + 0xffffff10] ; 00458949
     SUB EAX,dword ptr [EBP + 0xffffff04] ; 0045894f
@@ -780,7 +780,7 @@ section .text
     LEA EAX,[EBP + 0xfffffeb0]          ; 00458986
     PUSH EAX                            ; 0045898c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045898d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00458992
     MOV EAX,dword ptr [EBP + 0xffffff14] ; 00458995
     SUB EAX,dword ptr [EBP + 0xffffff08] ; 0045899b
@@ -801,14 +801,14 @@ section .text
     LEA EAX,[EBP + 0xfffffeb0]          ; 004589d2
     PUSH EAX                            ; 004589d8
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004589d9
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004589de
     PUSH 0x2c                           ; 004589e1
     PUSH 0x0                            ; 004589e3
     MOV EAX,0x61a99a                    ; 004589e5 | = "Hit a key..."
     PUSH EAX                            ; 004589ea | = "Hit a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004589eb
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004589f0
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004589f3
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

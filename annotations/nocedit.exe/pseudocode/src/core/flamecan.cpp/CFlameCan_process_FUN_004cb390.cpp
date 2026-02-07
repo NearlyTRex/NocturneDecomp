@@ -41,7 +41,8 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
   if (0.0 < fVar1) {
     return;
   }
-  core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+            (g_CDemonMissionPtr,&this_ptr->base,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_40);
   fStack_8 = local_40.max.z - local_40.min.z;
   fStack_14 = fStack_8 * 0.5f;

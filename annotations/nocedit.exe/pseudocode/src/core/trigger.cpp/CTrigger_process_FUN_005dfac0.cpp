@@ -66,7 +66,8 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
     break;
   case 1:
     if (*(int *)(this_ptr->unk + 0x210) == 0) {
-      pcVar5 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+      pcVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                         (g_CDemonMissionPtr,this_ptr->unk + 0x20);
       *(char **)(this_ptr->unk + 0x210) = pcVar5;
     }
     if (*(CDemonActor **)(this_ptr->unk + 0x210) != (CDemonActor *)0x0) {

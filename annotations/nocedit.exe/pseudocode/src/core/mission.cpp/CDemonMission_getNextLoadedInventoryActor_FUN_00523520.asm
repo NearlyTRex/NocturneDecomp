@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520 (CDemonMission *this_ptr,char *actor_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   actor_name
 ;
 ; XREF[1]:
 ;   core_inv.cpp_CInventory_load_FUN_004ff400 at 004ff570

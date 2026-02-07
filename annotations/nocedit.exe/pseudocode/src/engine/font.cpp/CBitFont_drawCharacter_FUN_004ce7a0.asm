@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0 (CBitFont *this_ptr,int character_code,int x_pos,int y_pos,int color_mode,int color_value)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0 (CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   character_code
-; int              Stack[0xc]:4   x_pos
-; int              Stack[0x10]:4   y_pos
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
 ; int              Stack[0x14]:4   color_mode
 ; int              Stack[0x18]:4   color_value
 ; Local Variables:
@@ -64,7 +64,7 @@
 ;
 ; XREF[4]:
 ;   core_script.cpp_CScript_FUN_005664d0 at 00566616
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 at 004cdbca
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80 at 004cdbca
 ;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850 at 004d08d0
 ;   engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0 at 004d050d
 ;
@@ -87,8 +87,8 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_clipCharacter_FUN_004ccdd0
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
+;   engine_font.cpp_clipCharacter_FUN_004ccdd0
 ;   engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
 ;
 ; *****************************************************************************
@@ -283,7 +283,7 @@ section .text
     PUSH EDI                            ; 004ce9f1
     PUSH EBX                            ; 004ce9f2
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 ; 004ce9f3
-        ;   XREF to: 004ce7a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, ...)
+        ;   XREF to: 004ce7a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x18                        ; 004ce9f8
     JMP 0x004ce7fb                      ; 004ce9fb
         ;   XREF to: 004ce7fb (UNCONDITIONAL_JUMP)  ; LAB_004ce7fb
@@ -299,8 +299,8 @@ section .text
     PUSH EAX                            ; 004cea1a
     LEA EAX,[ESP + 0x18]                ; 004cea1b
     PUSH EAX                            ; 004cea1f
-    CALL engine_font.cpp_CBitFont_clipCharacter_FUN_004ccdd0 ; 004cea20
-        ;   XREF to: 004ccdd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_clipCharacter_FUN_004ccdd0(int * bitmap_offset, int * left_x, int * top_y, int * right_x, ...)
+    CALL engine_font.cpp_clipCharacter_FUN_004ccdd0 ; 004cea20
+        ;   XREF to: 004ccdd0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_clipCharacter_FUN_004ccdd0(int * bitmap_offset, int * left_x, int * top_y, int * right_x, ...)
     ADD ESP,0x18                        ; 004cea25
     TEST EAX,EAX                        ; 004cea28
     JZ 0x004ce8c5                       ; 004cea2a
@@ -327,7 +327,7 @@ section .text
     PUSH EDI                            ; 004cea62
     PUSH EBX                            ; 004cea63
     CALL engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 ; 004cea64
-        ;   XREF to: 004ce2d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, ...)
+        ;   XREF to: 004ce2d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x1c                        ; 004cea69
     MOV EBX,dword ptr [ESP]             ; 004cea6c
     MOV EAX,EBX                         ; 004cea6f

@@ -17,9 +17,11 @@ support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
   if (-1 < iVar1) {
     iVar1 = support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
                       (this_ptr,iVar1,output_file);
-    _fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);
+    ostream_put
+              ((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);
     return iVar1;
   }
-  _fputc(output_file,(uint)(byte)this_ptr->node_table[code].code);
+  ostream_put
+            ((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);
   return this_ptr->node_table[code].code;
 }

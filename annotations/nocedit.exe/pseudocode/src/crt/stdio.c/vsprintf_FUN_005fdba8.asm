@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t *args)
+; __cdecl int __cdecl crt_stdio_c_vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
 ; char *           Stack[0x8]:4   format
-; va_list_t *      Stack[0xc]:4   args
+; va_list_t        Stack[0xc]:4   args
 ;
 ; XREF[38]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 at 004897bc

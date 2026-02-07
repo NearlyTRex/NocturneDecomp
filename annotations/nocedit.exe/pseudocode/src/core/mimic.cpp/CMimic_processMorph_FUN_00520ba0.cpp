@@ -22,13 +22,16 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
   fVar1 = in_stack_00000008 / 1.0f + *(float *)(this_ptr->unk4 + 0xc50);
   *(float *)(this_ptr->unk4 + 0xc50) = fVar1;
   if (1.0 <= fVar1) {
-    core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-    core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+    core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+              (g_CDemonMissionPtr,*(CDemonActor **)(this_ptr->unk4 + 0xc54));
+    core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
+              (g_CDemonMissionPtr,*(CDemonActor **)(this_ptr->unk4 + 0xc54));
     this_ptr->unk4[0xc54] = '\0';
     this_ptr->unk4[0xc55] = '\0';
     this_ptr->unk4[0xc56] = '\0';
     this_ptr->unk4[0xc57] = '\0';
-    core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+              (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);
   }
   else {
     while (0.0 < in_stack_00000008) {

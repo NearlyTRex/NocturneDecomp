@@ -14,10 +14,10 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
   char local_1014 [4096];
   va_list_t local_14;
   
-  local_14 = &stack0x00000018;
-  vsprintf(local_1014,format,&local_14);
-  local_14 = (va_list_t)0x0;
+  local_14.value[0] = (char * [1])&stack0x00000018;
+  vsprintf(local_1014,format,(va_list_t)&local_14);
+  local_14.value[0] = (char * [1])(char *)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0
-            (this_ptr,(int)local_1014,x,y,(char *)height);
+            (this_ptr,local_1014,x,y,height);
   return;
 }

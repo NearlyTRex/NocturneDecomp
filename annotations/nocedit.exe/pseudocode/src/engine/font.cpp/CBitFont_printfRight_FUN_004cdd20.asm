@@ -1,19 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20 (CBitFont *font_ptr,int x,int y,int color,char *format,...)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20 (CBitFont *this_ptr,int x,int y,int color,char *format,...)
 ;
 ; Parameters:
-; CBitFont *       Stack[0x4]:4   font_ptr
+; CBitFont *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   color
 ; char *           Stack[0x14]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_printfRight_FUN_004cdd70
+;   engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 004cdd49
     MOV EBP,dword ptr [ESP + 0x30]      ; 004cdd4a
     PUSH EBP                            ; 004cdd4e
-    CALL engine_font.cpp_CBitFont_printfRight_FUN_004cdd70 ; 004cdd4f
-        ;   XREF to: 004cdd70 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_printfRight_FUN_004cdd70(CBitFont * font_ptr, int x, int y, int color, ...)
+    CALL engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70 ; 004cdd4f
+        ;   XREF to: 004cdd70 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x1c                        ; 004cdd54
     XOR EDX,EDX                         ; 004cdd57
     MOV dword ptr [ESP],EDX             ; 004cdd59

@@ -97,7 +97,7 @@ section .text
     MOV EAX,0x61ada5                    ; 00459ed6 | = "FILE ERROR! Nothing changed!"
     PUSH EAX                            ; 00459edb | = "FILE ERROR! Nothing changed!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00459edc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00459ee1
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00459ee4
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

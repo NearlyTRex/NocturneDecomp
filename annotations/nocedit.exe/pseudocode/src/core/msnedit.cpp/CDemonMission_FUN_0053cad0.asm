@@ -22,7 +22,7 @@
 ;   TerminatedCString s_none_0063c89a
 ;
 ; Called Functions:
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_msnedit.cpp_CDemonMission_FUN_0053cc30
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -95,8 +95,8 @@ section .text
     PUSH EAX                            ; 0053cb6e
     MOV EBX,dword ptr [ESP + 0x3c0]     ; 0053cb6f
     PUSH EBX                            ; 0053cb76
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 0053cb77
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053cb77
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053cb7c
     PUSH 0x0                            ; 0053cb7f
     MOV dword ptr [ESI],EAX             ; 0053cb81

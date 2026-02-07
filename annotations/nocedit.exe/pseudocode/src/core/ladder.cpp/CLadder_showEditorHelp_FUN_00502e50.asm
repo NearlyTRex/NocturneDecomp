@@ -38,7 +38,7 @@ section .text
     PUSH 0x630e90                       ; 00502e72 | = "With CTRL held down, use slew keys to..."
     MOV dword ptr [EBX],ECX             ; 00502e77
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00502e79
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EBP,dword ptr [EBX]             ; 00502e7e
     ADD EBP,0xb                         ; 00502e80
     ADD ESP,0xc                         ; 00502e83

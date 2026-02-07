@@ -44,15 +44,15 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
   }
 LAB_0048085a:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-  if ((iVar3 != 0) && (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0)) {
+  if ((iVar3 != 0) && (g_CDemonMissionPtr->is_in_editor != 0)) {
     iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar4 == 0) &&
-       (this_ptr_00 = *(CDoor **)(g_CDemonMissionPtr->unk2 + 0x1c), this_ptr == this_ptr_00)) {
+       (this_ptr_00 = (CDoor *)g_CDemonMissionPtr->selected_actor, this_ptr == this_ptr_00)) {
       fVar1 = this_ptr_00->param;
       if (0.0 < fVar1) {
         this_ptr_00->param = 0.0;
         core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr_00);
-        core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr_00->base,2);
+        core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr_00,2);
       }
       if (fVar1 < this_ptr->max_param) {
         this_ptr->param = this_ptr->max_param;

@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   param_3
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053ab64
 ;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e0a5
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ab64
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Really_delete_actor_s_0063c71b
@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
-;   core_mission.cpp_CDemonMission_FUN_00523f20
-;   core_msnedit.cpp_CDemonMission_FUN_00538ea0
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
+;   core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bcf0
 ;   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 ;
@@ -50,14 +50,14 @@ section .text
     PUSH ESI                            ; 0053bca3
         ;   Label: LAB_0053bca3
     PUSH EBX                            ; 0053bca4
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538ea0 ; 0053bca5
-        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_00538ea0(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0 ; 0053bca5
+        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0053bcaa
     PUSH 0x1                            ; 0053bcad
     PUSH ESI                            ; 0053bcaf
     PUSH EBX                            ; 0053bcb0
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 0053bcb1
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 0053bcb1
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 0053bcb6
     PUSH EBX                            ; 0053bcb9
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 0053bcba

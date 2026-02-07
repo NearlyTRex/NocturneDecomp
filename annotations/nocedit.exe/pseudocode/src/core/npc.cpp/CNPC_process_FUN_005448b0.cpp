@@ -49,7 +49,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
                        (pCVar1,&CStack_44,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_2c,pCVar5);
-    core_gore_cpp_FUN_004ede30();
+    core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
     this_ptr->pool_me = 1;
   }
   fVar3 = (float)3.1415926535000001;

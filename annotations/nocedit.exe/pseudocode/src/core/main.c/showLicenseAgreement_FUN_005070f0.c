@@ -63,7 +63,7 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
     }
     iVar3 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_210);
     if (iVar3 != 0) break;
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,text_string,0x1e,-local_48.scroll_position,0xff,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_12c,0);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_210,0);

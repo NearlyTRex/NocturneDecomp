@@ -5,48 +5,47 @@
         "category": "other",
         "column": 18,
         "line": 104,
-        "message": "invalid cast from type 'float' to type 'char*'"
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "other",
         "column": 26,
         "line": 106,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 42,
         "line": 130,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 44,
         "line": 131,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 21,
         "line": 132,
-        "message": "invalid cast from type 'char*' to type 'float'"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
         "line": 178,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 178,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 817,

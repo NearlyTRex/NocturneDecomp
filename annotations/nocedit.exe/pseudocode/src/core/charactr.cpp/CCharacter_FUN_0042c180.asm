@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_gore.cpp_FUN_004edbb0
+;   core_gore.cpp_CGore_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -154,8 +154,8 @@ section .text
     PUSH EAX                            ; 0042c2cd
     MOV ECX,dword ptr [0x0067b9a0]      ; 0042c2ce | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0042c2d4 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 0042c2d5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
+    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 0042c2d5
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
     ADD ESP,0x14                        ; 0042c2da
     FLD float ptr [ESP + 0x48]          ; 0042c2dd
         ;   Label: LAB_0042c2dd

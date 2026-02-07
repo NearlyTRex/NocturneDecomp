@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_00603bf5(void)
+uint FUN_00603bf5(void)
 
 {
   double *in_stack_00000004;

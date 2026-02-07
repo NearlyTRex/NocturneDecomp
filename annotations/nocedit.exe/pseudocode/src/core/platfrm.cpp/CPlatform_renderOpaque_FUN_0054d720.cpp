@@ -38,7 +38,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
     return 0;
   }
   if (((((this_ptr->render_in_background_when_not_moving_flag != 0) &&
-        (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0)) &&
+        (g_CDemonMissionPtr->is_in_editor == 0)) &&
        (this_ptr->state != (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END))) &&
       ((this_ptr->state != 4 && (this_ptr->unk3 != 0)))) &&
      (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
@@ -66,10 +66,10 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   }
 LAB_0054d802:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-  if (((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+  if (((g_CDemonMissionPtr->is_in_editor != 0) &&
       (iVar7 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar7 == 0)) &&
-     ((pCVar2 = *(CPlatform **)(g_CDemonMissionPtr->unk2 + 0x1c), this_ptr == pCVar2 &&
+     ((pCVar2 = (CPlatform *)g_CDemonMissionPtr->selected_actor, this_ptr == pCVar2 &&
       (pCVar2->course_filename[0] == '\0')))) {
     pCVar1 = &(pCVar2->base).location;
     fStack_10 = (pCVar1->position).x;

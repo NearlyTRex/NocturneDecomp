@@ -44,6 +44,9 @@ SMRGLTextureBasic g_TempTextureDescriptor = {};
 // char[400]
 char g_LodMeshProgressBuffer[400] = {};
 
+// char[8100]
+char g_PendingMissionName[8100] = {};
+
 // double[400]
 double g_SampleDistances[400] = {};
 
@@ -98,12 +101,6 @@ int g_MoonCloudScrollY = {};
 
 // uchar
 uchar g_TempFacesInitGuard = {};
-
-// undefined1
-undefined1 DAT_02f35f10 = {};
-undefined1 DAT_02f35f11 = {};
-undefined1 DAT_02f35f12 = {};
-undefined1 DAT_02f35f13 = {};
 
 // undefined4
 undefined4 DAT_02f313e8 = {};

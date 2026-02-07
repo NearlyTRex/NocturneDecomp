@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00600c80(void)
+; __cdecl void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; SIZE_T           Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined        Stack[-0x20c]:1  local_20c
 ;

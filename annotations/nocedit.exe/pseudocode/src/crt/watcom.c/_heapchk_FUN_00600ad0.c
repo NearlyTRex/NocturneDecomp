@@ -18,7 +18,7 @@ int __cdecl _heapchk(void)
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
     return 0;
   }
-  iVar1 = crt_unknown_c_FUN_00600990();
+  iVar1 = FUN_00600990();
   if (iVar1 == 0) {
     HStack_18.segment_selector = 0;
     HStack_18.current_block_ptr = (void *)0x0;
@@ -26,7 +26,7 @@ int __cdecl _heapchk(void)
       iVar1 = heapWalk(&HStack_18,g_MainHeap);
       if (iVar1 != 0) break;
       if (HStack_18.allocation_status == 1) {
-        iVar1 = crt_unknown_c_FUN_00600a64();
+        iVar1 = FUN_00600a64();
         if (iVar1 != 0) break;
         iStack_8 = iStack_8 - HStack_18.block_size;
       }

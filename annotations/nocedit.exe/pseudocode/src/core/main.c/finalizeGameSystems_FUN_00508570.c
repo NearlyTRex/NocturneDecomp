@@ -32,11 +32,11 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_LoadingScreenBitmap1,0,0,0xffff);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_MediumFont,"In stores 10/26/99");
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,"In stores 10/26/99",0x140 - iVar3 / 2,0xdc,7,0);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_MediumFont,"www.nocturnegame.com");
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,"www.nocturnegame.com",0x140 - iVar3 / 2,0x1e0 - iVar1,7,0);
     iVar5 = 0xa0000;
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -61,7 +61,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     } while (0 < iVar5);
     text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...");
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,text,0x140 - iVar3 / 2,iVar1 * -2 + 0x1e0,7,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();

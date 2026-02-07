@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ed830 at 004ed85a
+;   core_gore.cpp_CGore_FUN_004ed830 at 004ed85a
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

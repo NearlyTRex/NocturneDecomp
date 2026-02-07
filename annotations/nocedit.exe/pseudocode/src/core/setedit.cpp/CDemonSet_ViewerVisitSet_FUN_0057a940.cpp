@@ -14,7 +14,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
   C3DSCamera *ptr;
   int iVar2;
   int iVar3;
-  int y_pos;
+  int y;
   int unaff_EDI;
   char acStack_134 [256];
   float fStack_34;
@@ -88,13 +88,13 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
       core_setedit_cpp_CDemonSet_FUN_0057ff70(this_ptr);
       iVar2 = core_setedit_cpp_CDemonSet_FUN_005800d0(this_ptr);
       if (0 < iVar2) {
-        y_pos = 0x21;
+        y = 0x21;
         iVar3 = 0;
         do {
           piVar1 = (int *)(&stack0xfffffae4 + iVar3);
           iVar3 = iVar3 + 4;
-          engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(*piVar1 * 0x1a4 + unaff_EDI));
-          y_pos = y_pos + 0xb;
+          engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + unaff_EDI));
+          y = y + 0xb;
         } while (iVar3 < iVar2 * 4);
       }
       shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);

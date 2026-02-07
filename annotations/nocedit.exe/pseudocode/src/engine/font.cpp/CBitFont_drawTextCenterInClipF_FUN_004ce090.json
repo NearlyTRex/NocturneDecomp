@@ -3,20 +3,13 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 37,
+        "column": 3,
         "line": 18,
-        "message": "cannot convert 'char**' to '__va_list_tag*'"
+        "message": "no matching function for call to 'vsprintf'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 34,
@@ -49,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 (CBitFont *this_ptr,int y_pos,int color_mode,int color_value,char *format_string, va_list_t *args)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string, va_list_t args)"
   },
   "function_calls": [
     {
@@ -126,7 +119,7 @@
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -157,7 +150,7 @@
         "name": "args",
         "offset": 24,
         "size": 4,
-        "type": "va_list_t *"
+        "type": "va_list_t"
       }
     ]
   },

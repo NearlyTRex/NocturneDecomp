@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050 (CBitFont *this_ptr,int x,int y,int color,char *format,...)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *format,...)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   x
-; int              Stack[0xc]:4   y
-; int              Stack[0x10]:4   color
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   color_mode
+; int              Stack[0x10]:4   color_value
 ; char *           Stack[0x14]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090
@@ -41,7 +41,7 @@ section .text
     PUSH EDI                            ; 004ce079
     XOR EBP,EBP                         ; 004ce07a
     CALL engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 ; 004ce07c
-        ;   XREF to: 004ce090 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090(CBitFont * this_ptr, int y_pos, int color_mode, int color_value, ...)
+        ;   XREF to: 004ce090 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090(CBitFont * this_ptr, int y, int color_mode, int color_value, ...)
     ADD ESP,0x18                        ; 004ce081
     MOV dword ptr [ESP],EBP             ; 004ce084
     ADD ESP,0x4                         ; 004ce087

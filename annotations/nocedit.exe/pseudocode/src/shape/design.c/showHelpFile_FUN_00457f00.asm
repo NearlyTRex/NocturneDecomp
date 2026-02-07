@@ -77,7 +77,7 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 00457f5e
     PUSH EAX                            ; 00457f61
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00457f62
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00457f67
     ADD dword ptr [EBP + -0x4],0xb      ; 00457f6a
     MOV EAX,[0x00679398]                ; 00457f6e | g_WindowHeight

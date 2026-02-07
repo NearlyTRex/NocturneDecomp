@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_unknown_c_FUN_00608fdc(void)
+int FUN_00608fdc(void)
 
 {
   FileListNode *pFVar1;

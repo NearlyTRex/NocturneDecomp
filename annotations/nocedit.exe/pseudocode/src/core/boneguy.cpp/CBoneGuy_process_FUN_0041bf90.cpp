@@ -167,7 +167,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     pCVar8 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
-        core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                  (g_CDemonMissionPtr,*(CDemonActor **)pCVar8->unk2,1);
         pCVar8->unk2[0] = '\0';
         pCVar8->unk2[1] = '\0';
         pCVar8->unk2[2] = '\0';

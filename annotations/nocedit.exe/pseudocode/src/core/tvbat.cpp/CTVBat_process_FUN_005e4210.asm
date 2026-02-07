@@ -84,7 +84,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-;   core_gore.cpp_FUN_004edbb0
+;   core_gore.cpp_CGore_FUN_004edbb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   crt_math.c_atan2_FUN_006013b1
@@ -435,8 +435,8 @@ section .text
     PUSH EAX                            ; 005e46c8
     MOV ECX,dword ptr [0x0067b9a0]      ; 005e46c9 | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 005e46cf | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 005e46d0
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
+    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 005e46d0
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
     ADD ESP,0x14                        ; 005e46d5
     FLD float ptr [EBX + 0x30]          ; 005e46d8
         ;   Label: LAB_005e46d8

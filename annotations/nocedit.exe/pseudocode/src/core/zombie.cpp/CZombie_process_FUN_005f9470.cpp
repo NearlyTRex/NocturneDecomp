@@ -278,7 +278,7 @@ LAB_005f9541:
         if (0.0 < local_98) {
           dVar26 = round(local_98 * 2.5 * 0.25);
           local_80 = (int)ROUND(dVar26);
-          core_gore_cpp_FUN_004edbb0();
+          core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
         }
         iVar8 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x120))();
         if (0 < iVar8) {
@@ -391,7 +391,7 @@ LAB_005f9541:
                             (pCVar2,&local_11c,*(int *)(this_ptr->unk4 + 4));
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_104,pCVar11);
-        core_gore_cpp_FUN_004edbb0();
+        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
         iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
         if (iVar8 == 0) {
           pcVar20 = "ghoul-dig-?.wav";
@@ -698,7 +698,7 @@ LAB_005fac96:
                             (pCVar2,&local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_1c4,pCVar11);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
     }

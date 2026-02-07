@@ -28,7 +28,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
       if (g_DirectSoundDevices[device_id].device_id_part == 0) {
         lpGuid = (LPGUID)g_DirectSoundDevices[device_id].field_4;
       }
-      uVar2 = crt_dsound_c_DirectSoundCreate(lpGuid,&g_DirectSound,(LPUNKNOWN)0x0);
+      uVar2 = DirectSoundCreate(lpGuid,&g_DirectSound,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
         uVar2 = (*g_DirectSound->vtable->SetCooperativeLevel)(g_DirectSound,g_MainWindowHandle,2);
         if (uVar2 == 0) {

@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b41
-;   core_msnedit.cpp_CDemonMission_FUN_00537680 at 00537691
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538224
+;   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680 at 00537691
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inivar_cpp_0062fd91

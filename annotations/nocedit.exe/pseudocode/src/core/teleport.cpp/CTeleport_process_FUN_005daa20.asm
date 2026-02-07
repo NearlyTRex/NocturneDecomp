@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_mission.cpp_CDemonMission_FUN_00524070
+;   core_mission.cpp_CDemonMission_setTeleportTarget_FUN_00524070
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH EDX                            ; 005daab3
     MOV ECX,dword ptr [0x0067d550]      ; 005daab4 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 005daaba | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524070 ; 005daabb
-        ;   XREF to: 00524070 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00524070(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_setTeleportTarget_FUN_00524070 ; 005daabb
+        ;   XREF to: 00524070 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setTeleportTarget_FUN_00524070(CDemonMission * this_ptr, CLocation * teleport_target)
     ADD ESP,0x8                         ; 005daac0
     ADD ESP,0x24                        ; 005daac3
     POP ESI                             ; 005daac6

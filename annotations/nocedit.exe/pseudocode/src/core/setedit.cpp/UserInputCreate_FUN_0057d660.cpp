@@ -26,7 +26,7 @@ int __cdecl core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
   uint uVar12;
   byte *pbVar13;
   byte *pbVar14;
-  int y_pos;
+  int y;
   char *pcVar15;
   int iVar16;
   bool bVar17;
@@ -292,13 +292,13 @@ LAB_0057db4e:
         core_setedit_cpp_CDemonSet_FUN_0057ff70(in_stack_00000004);
         iVar16 = core_setedit_cpp_CDemonSet_FUN_005800d0(in_stack_00000004);
         if (0 < iVar16) {
-          y_pos = 0x21;
+          y = 0x21;
           iVar9 = 0;
           do {
             piVar1 = (int *)((int)auStack_968 + iVar9);
             iVar9 = iVar9 + 4;
-            engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(p_Stack_1c + *piVar1 * 0xf));
-            y_pos = y_pos + 0xb;
+            engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(p_Stack_1c + *piVar1 * 0xf));
+            y = y + 0xb;
           } while (iVar9 < iVar16 * 4);
         }
         shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);

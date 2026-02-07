@@ -1,18 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (CDrawSurface *this_ptr,int x,int y,int width,int height,char *format,...)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (CDrawSurface *this_ptr,int x,int y,int width,char *format,...)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   width
-; int              Stack[0x14]:4   height
 ; char *           Stack[0x18]:4   format
 ; Local Variables:
-; undefined        Stack[-0x1014]:1  local_1014
-; undefined4       Stack[-0x14]:4  local_14
+; char[4096]       Stack[-0x1014]:4096  local_1014
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 0048a291
@@ -40,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00489888
     PUSH EAX                            ; 0048988c
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0048988d
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00489892
     MOV EBX,dword ptr [ESP + 0x1024]    ; 00489895
     PUSH EBX                            ; 0048989c
@@ -55,7 +54,7 @@ section .text
     PUSH EBP                            ; 004898bb
     MOV dword ptr [ESP + 0x1014],ECX    ; 004898bc
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 ; 004898c3
-        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, int x, int y, int width, ...)
+        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x14                        ; 004898c8
     ADD ESP,0x1004                      ; 004898cb
     POP EBP                             ; 004898d1

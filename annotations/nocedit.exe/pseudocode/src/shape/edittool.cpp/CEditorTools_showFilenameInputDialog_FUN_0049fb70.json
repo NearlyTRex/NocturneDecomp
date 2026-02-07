@@ -2,176 +2,48 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "const_error",
+        "category": "other",
         "column": 23,
         "line": 35,
-        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
         "line": 60,
-        "message": "'stack0xfffffca0' was not declared in this scope; did you mean 'in_stack_fffffca0'?"
+        "message": "use of undeclared identifier 'stack0xfffffca0'"
       },
       {
-        "category": "pointer_precision",
-        "column": 41,
-        "line": 143,
-        "message": "cast from 'CInputString*' to 'int' loses precision [-fpermissive]"
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 71,
+        "message": "use of undeclared identifier 'stack0xfffffca0'"
       },
       {
-        "category": "pointer_precision",
-        "column": 31,
-        "line": 147,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 39,
-        "line": 164,
-        "message": "cast from 'CInputString*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 29,
-        "line": 168,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 39,
-        "line": 185,
-        "message": "cast from 'CInputString*' to 'int' loses precision [-fpermissive]"
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 93,
+        "message": "use of undeclared identifier 'stack0xfffffca0'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 38,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 40,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 46,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 59,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 103,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 106,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 115,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 135,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 136,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 143,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 147,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 164,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 168,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 169,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 185,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 210,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 214,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 415,
+    "complexity_score": 389,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
-    "pseudocode_lines": 210,
-    "suspect_count": 18,
+    "pseudocode_lines": 209,
+    "suspect_count": 16,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 648
+    "total_lines": 647
   },
   "cross_references": [
     {
@@ -283,7 +155,7 @@
     {
       "addr": "004cda80",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004cda80"
     },
     {
       "addr": "004d01d0",
@@ -465,8 +337,8 @@
     },
     {
       "addr": "02cf2aac",
-      "name": "DAT_02cf2aac",
-      "type": "undefined4",
+      "name": "INT_02cf2aac",
+      "type": "int",
       "value": null
     },
     {
@@ -723,68 +595,54 @@
       "description": "Direct stack address reference",
       "line": 86,
       "match": "&stack0xfffffca0",
-      "text": "(g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,DAT_02cf2aac,-1);",
+      "text": "(g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,INT_02cf2aac,-1);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_02cf2aac",
-      "text": "(g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,DAT_02cf2aac,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_02cf2aac",
-      "text": "iVar3 = DAT_02cf2aac;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 135,
       "match": "(CInputString *)((int)",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 140,
+      "line": 139,
       "match": "pCVar7[-1].",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 139,
       "match": "(char *)((int)",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 156,
       "match": "(CInputString *)((int)",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 161,
+      "line": 160,
       "match": "pCVar7[-1].",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(char *)((int)",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(CInputString *)((int)",
       "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"

@@ -536,7 +536,7 @@ LAB_004852f8:
                         (&(in_stack_00000004->base).model,&local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)in_stack_00000004,&local_1cc,pCVar16);
-    core_gore_cpp_FUN_004ede30();
+    core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
     goto switchD_004858cd_caseD_10;
   case 0x12:
     iVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)

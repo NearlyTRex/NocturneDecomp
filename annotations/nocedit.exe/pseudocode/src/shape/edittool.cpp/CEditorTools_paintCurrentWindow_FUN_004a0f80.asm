@@ -33,7 +33,7 @@
 ;   undefined4 DAT_02cf1d18
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
-;   undefined4 DAT_02cf2a78
+;   int INT_02cf2a78
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0x10                        ; 004a1025
     MOV EBP,dword ptr [0x02cf2a7c]      ; 004a1028 | g_WindowBorderColor1
     PUSH EBP                            ; 004a102e
-    MOV EAX,[0x02cf2a78]                ; 004a102f | DAT_02cf2a78
+    MOV EAX,[0x02cf2a78]                ; 004a102f | INT_02cf2a78
     PUSH EAX                            ; 004a1034
     MOV EAX,dword ptr [EBX + 0xc]       ; 004a1035 | DAT_02cf1cec
     SUB EAX,0x2                         ; 004a1038
@@ -251,8 +251,8 @@ section .text
     PUSH ESI                            ; 004a1177
     MOV EDX,dword ptr [0x02cf1cd0]      ; 004a1178 | g_EditorFont
     PUSH EDX                            ; 004a117e
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a117f
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004a117f
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004a1184
     PUSH ESI                            ; 004a1187
     MOV ECX,dword ptr [0x02cf1cd0]      ; 004a1188 | g_EditorFont

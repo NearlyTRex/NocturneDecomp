@@ -9,7 +9,7 @@
 void __cdecl staticFinal(void)
 
 {
-  crt_unknown_c_FUN_00608fdc();
-  crt_unknown_c_FUN_006093e8();
+  FUN_00608fdc();
+  FUN_006093e8();
   return;
 }

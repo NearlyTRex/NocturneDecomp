@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_gore.cpp_FUN_004edbb0
+;   core_gore.cpp_CGore_FUN_004edbb0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 005e516b | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 005e5171 | g_CGoreInstance
     MOV dword ptr [EBX + 0x243c],0x0    ; 005e5172
-    CALL core_gore.cpp_FUN_004edbb0     ; 005e517c
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
+    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 005e517c
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
     ADD ESP,0x14                        ; 005e5181
     MOV dword ptr [EBX + 0xc078],0x1    ; 005e5184
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e518e

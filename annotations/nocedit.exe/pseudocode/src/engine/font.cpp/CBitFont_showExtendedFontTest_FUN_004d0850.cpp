@@ -92,7 +92,7 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     local_1c = local_1c + iVar6 + 1;
   } while (iVar1 < 0x90);
   iVar5 = iVar5 + iVar4;
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (this_ptr,s_A_a_0062a86f,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar5) < (uint)screen_height) {
     g_ActiveRenderColor = 4;
@@ -116,7 +116,7 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     local_20 = local_20 + iVar6 + 1;
   } while (iVar1 < 0xa0);
   iVar5 = iVar5 + iVar4;
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (this_ptr,s__0062a87d,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar5) < (uint)screen_height) {
     iVar3 = screen_width + -1;
@@ -140,7 +140,7 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     local_24 = local_24 + iVar6 + 1;
   } while (iVar1 < 0xb0);
   iVar5 = iVar5 + iVar4;
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (this_ptr,s__0062a892,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar5) < (uint)screen_height) {
     iVar3 = screen_width + -1;

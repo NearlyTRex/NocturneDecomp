@@ -141,7 +141,7 @@ section .text
     MOV EAX,0x61c54e                    ; 0046561b | = "Scanning polygons..."
     PUSH EAX                            ; 00465620 | = "Scanning polygons..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00465621
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00465626
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00465629
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -324,7 +324,7 @@ section .text
     LEA EAX,[EBP + -0x64]               ; 004657ec
     PUSH EAX                            ; 004657ef
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004657f0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004657f5
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004657f8
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

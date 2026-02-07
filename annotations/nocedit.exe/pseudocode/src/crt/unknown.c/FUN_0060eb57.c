@@ -6,10 +6,10 @@
 
 #include "nocturne.h"
 
-ulonglong crt_unknown_c_FUN_0060eb57(uint param_1)
+ulonglong FUN_0060eb57(uint param_1)
 
 {
   set_range_error_errno();
-  crt_unknown_c_FUN_0060fa80(0x84);
+  FUN_0060fa80(0x84);
   return (ulonglong)(param_1 & 0x80000000) << 0x20 | 0x7ff0000000000000;
 }

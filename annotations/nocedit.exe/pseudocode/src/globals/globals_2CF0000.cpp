@@ -18,9 +18,6 @@ CEdButton* g_ActiveButton = {};
 // CEditorTools
 CEditorTools g_CEditorToolsInstance = {};
 
-// CEditorTools*
-CEditorTools* g_CUserInterfacePtr = {};
-
 // CVector3f
 CVector3f CVector3f_02cf2b60 = {};
 
@@ -46,16 +43,19 @@ int g_WindowStackCount = {};
 int g_FontCharacterHeight = {};
 int g_FontCharacterWidth = {};
 int g_MouseCursorType = {};
+int INT_02cf2a78 = {};
 int g_WindowBorderColor1 = {};
 int g_WindowBorderColor2 = {};
 int g_TitleBarColor = {};
 int g_WindowFillColor = {};
 int g_WindowFontColor = {};
+int INT_02cf2a94 = {};
 int g_SelectionColor = {};
 int g_TextColor = {};
 int g_CursorColor = {};
 int g_StatusTextColor = {};
 int g_WindowStatusTextColor = {};
+int INT_02cf2aac = {};
 int g_ButtonColor = {};
 int g_ProgressBarBackgroundColor = {};
 int g_ProgressBarFillColor = {};
@@ -99,8 +99,6 @@ uint g_MouseButtonFlags = {};
 uint* g_ZBufferScanlineArray[1200] = {};
 
 // undefined4
-undefined4 DAT_02cf2a78 = {};
-undefined4 DAT_02cf2aac = {};
 undefined4 DAT_02cf2b6c = {};
 undefined4 DAT_02cf2b70 = {};
 undefined4 DAT_02cf2b74 = {};

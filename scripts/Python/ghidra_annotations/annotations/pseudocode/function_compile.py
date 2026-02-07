@@ -12,6 +12,9 @@ from ghidra_annotations.annotations.pseudocode.analysis import (
     create_compilation_overview_svg,
     create_all_files_compilation_svg
 )
+from ghidra_annotations.annotations.pseudocode.compiler_config import (
+    DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
+)
 
 # =============================================================================
 # Path Normalization
@@ -50,7 +53,7 @@ def normalize_path_in_message(message, repo_dir):
 # Error Categorization
 # =============================================================================
 
-# Error category patterns (regex patterns for g++ error messages)
+# Error category patterns (regex patterns for clang++/g++ error messages)
 # Categories are checked in order - more specific patterns should come before general ones
 ERROR_CATEGORIES = {
     # Pointer precision issues (32-bit to 64-bit portability)
@@ -181,9 +184,22 @@ ERROR_CATEGORIES = {
     # Array-related errors
     'array_error': [
         r"array.*bounds",
+        r"past the end of the array",
         r"subscript.*is.*out of range",
         r"size of array",
         r"variable length array",
+    ],
+    # Format string type mismatches (wrong Ghidra type annotations)
+    'format_error': [
+        r"format.*expects.*argument of type",
+        r"format specifies type",
+        r"format.*expects.*but.*has type",
+    ],
+    # Return type mismatches (wrong return type annotation in Ghidra)
+    'return_type_error': [
+        r"non-void function does not return",
+        r"control reaches end of non-void",
+        r"return-type",
     ],
 }
 
@@ -215,10 +231,10 @@ def categorize_error(error_msg):
 # =============================================================================
 
 def parse_error_output(stderr, cpp_path):
-    """Parse g++ error output into structured format.
+    """Parse compiler error output into structured format.
 
     Args:
-        stderr: Standard error output from g++
+        stderr: Standard error output from compiler
         cpp_path: Path to the compiled file (for path normalization)
 
     Returns:
@@ -234,7 +250,7 @@ def parse_error_output(stderr, cpp_path):
     cpp_basename = os.path.basename(cpp_path)
     cpp_dir = os.path.dirname(cpp_path)
 
-    # Regex to match g++ error/warning format:
+    # Regex to match clang++/g++ error/warning format:
     # file:line:col: error: message
     # file:line:col: warning: message
     # file:line: error: message
@@ -296,13 +312,18 @@ def parse_error_output(stderr, cpp_path):
 # Single File Compilation
 # =============================================================================
 
-def compile_function_cpp(cpp_path, include_dir, compiler='g++', timeout=60, repo_dir=None):
-    """Compile a single function .cpp file with g++ -fsyntax-only.
+def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER, timeout=60, repo_dir=None):
+    """Compile a single function .cpp file for syntax verification.
+
+    Uses the default compiler targeting 32-bit x86 to match the original binary.
+    This gives us array bounds warnings that help verify struct and array sizes
+    in Ghidra annotations, while suppressing all other warnings since the code
+    is decompiler output, not hand-written.
 
     Args:
         cpp_path: Path to the .cpp file
         include_dir: Path to include directory for -I flag
-        compiler: Compiler to use (default: g++)
+        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
         timeout: Compilation timeout in seconds
         repo_dir: Optional repo root for normalizing paths in error messages
 
@@ -319,17 +340,10 @@ def compile_function_cpp(cpp_path, include_dir, compiler='g++', timeout=60, repo
     }
 
     try:
-        cmd = [
-            compiler,
-            '-fsyntax-only',
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + [
             '-fno-diagnostics-color',  # Prevent ANSI color codes in output
-            '-std=c++11',
             '-I', include_dir,
-            '-Wno-incompatible-pointer-types',
-            '-Wno-int-conversion',
-            '-Wno-unused-value',
-            '-Wno-unused-variable',
-            cpp_path
+            cpp_path,
         ]
 
         proc_result = subprocess.run(
@@ -427,7 +441,7 @@ def load_function_info_from_json(json_path):
         return None
 
 
-def compile_all_functions(src_dir, include_dir, compiler='g++', num_threads=8,
+def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_threads=8,
                           skip_dirs=None, progress_callback=None, repo_dir=None):
     """Compile all function .cpp files in parallel.
 
@@ -635,7 +649,7 @@ def update_all_function_jsons(src_dir, compilation_results):
 # Main Entry Point for Exporter Integration
 # =============================================================================
 
-def compile_functions_after_export(pseudocode_dir, compiler='g++', num_threads=8, reports_dir=None, repo_dir=None):
+def compile_functions_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, num_threads=8, reports_dir=None, repo_dir=None):
     """Main entry point for function compilation after export.
 
     This function should be called from export_pseudocode() after all

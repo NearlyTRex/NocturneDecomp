@@ -11,7 +11,7 @@
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_0043f440 at 0043f456
 ;
 ; Called Functions:
-;   crt_stdio.c_fputc_FUN_005ff2d7
+;   crt_stdio.c_ostream_put_FUN_005ff2d7
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV AL,byte ptr [EBX + 0x4]         ; 0043e7f4
     PUSH EAX                            ; 0043e7f7
     PUSH ESI                            ; 0043e7f8
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e7f9
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(_FILE * stream, int character)
+    CALL crt_stdio.c_ostream_put_FUN_005ff2d7 ; 0043e7f9
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_stdio.c_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
     MOV ECX,dword ptr [EBX + 0x4]       ; 0043e7fe
     MOV EDI,dword ptr [EBX]             ; 0043e801
     SHR ECX,0x8                         ; 0043e803
@@ -57,8 +57,8 @@ section .text
     MOV AL,byte ptr [EBX + 0x4]         ; 0043e821
     PUSH EAX                            ; 0043e824
     PUSH ESI                            ; 0043e825
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e826
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(_FILE * stream, int character)
+    CALL crt_stdio.c_ostream_put_FUN_005ff2d7 ; 0043e826
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_stdio.c_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
     MOV dword ptr [EBX + 0x4],0x0       ; 0043e82b
     ADD ESP,0x8                         ; 0043e832
     MOV dword ptr [EBX],0x0             ; 0043e835

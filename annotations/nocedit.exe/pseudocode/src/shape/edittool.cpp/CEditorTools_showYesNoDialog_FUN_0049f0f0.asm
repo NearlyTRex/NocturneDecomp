@@ -7,14 +7,14 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format_string
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x8]:4  local_8
+; CStrList         Stack[-0x18]:16  local_18
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[20]:
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 at 00494e91
-;   core_msnedit.cpp_CDemonMission_FUN_0053ccf0 at 0053cd0c
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053da09
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e8c2
+;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053cd0c
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00578e74
 ;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f427
 ;   core_setedit.cpp_FUN_0057b410 at 0057b4b9
@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 0049f105
     PUSH 0x2cf0530                      ; 0049f106 | g_YesNoDialogBuffer
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f10b
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f110
     MOV EAX,ESP                         ; 0049f113
     XOR ECX,ECX                         ; 0049f115

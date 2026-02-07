@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ed830 at 004ed901
+;   core_gore.cpp_CGore_FUN_004ed830 at 004ed901
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065f024 = 256

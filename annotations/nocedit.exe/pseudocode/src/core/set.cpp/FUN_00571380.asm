@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
-;   core_gore.cpp_FUN_004ed830
+;   core_gore.cpp_CGore_FUN_004ed830
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x0                            ; 00571387
     MOV ECX,dword ptr [0x0067b9a0]      ; 00571389 | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 0057138f | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ed830     ; 00571390
-        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed830(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_FUN_004ed830 ; 00571390
+        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed830(CGore * this_ptr)
     ADD ESP,0xc                         ; 00571395
     MOV EBX,dword ptr [ESP + 0x10]      ; 00571398
     PUSH EBX                            ; 0057139c

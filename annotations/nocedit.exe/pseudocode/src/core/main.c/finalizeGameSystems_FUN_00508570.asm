@@ -128,8 +128,8 @@ section .text
     PUSH 0x6355ed                       ; 0050864b | = "In stores 10/26/99"
     MOV EBX,dword ptr [0x020a5718]      ; 00508650 | g_MediumFont
     PUSH EBX                            ; 00508656
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00508657
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00508657
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0050865c
     MOV EBX,0x1e0                       ; 0050865f
     PUSH 0x635600                       ; 00508664 | = "www.nocturnegame.com"
@@ -152,8 +152,8 @@ section .text
     PUSH 0x635600                       ; 00508690 | = "www.nocturnegame.com"
     MOV EBP,dword ptr [0x020a5718]      ; 00508695 | g_MediumFont
     PUSH EBP                            ; 0050869b
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0050869c
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0050869c
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005086a1
     MOV EBX,0xa0000                     ; 005086a4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005086a9
@@ -239,8 +239,8 @@ section .text
     PUSH EBX                            ; 0050876c
     MOV ECX,dword ptr [0x020a5718]      ; 0050876d | g_MediumFont
     PUSH ECX                            ; 00508773
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00508774
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00508774
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00508779
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0050877c
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

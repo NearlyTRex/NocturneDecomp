@@ -60,7 +60,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
         pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
       }
       _fscanf(in_stack_00000008," %s \"%[^\"]\"\n",local_dc,local_78);
-      if (*(int *)g_CDemonMissionPtr->unk2 == 0) {
+      if (g_CDemonMissionPtr->has_inventory_actors == 0) {
         pcVar8 = local_78;
         pCVar2 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
         pCVar9 = pCVar2;
@@ -76,7 +76,8 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
         pCVar5->items[0] = pCVar2;
       }
       else {
-        core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(g_CDemonMissionPtr);
+        core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
+                  (g_CDemonMissionPtr,local_78);
         pCVar5->items[0] = extraout_EAX;
       }
       iVar6 = iVar6 + 1;
@@ -96,7 +97,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
   if (1 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,in_stack_00000008);
   }
-  iVar6 = *(int *)g_CDemonMissionPtr->unk2;
+  iVar6 = g_CDemonMissionPtr->has_inventory_actors;
   this_ptr->selected_weapon = (CWeapon *)0x0;
   this_ptr->preserve_items = iVar6;
   if (-1 < local_14) {

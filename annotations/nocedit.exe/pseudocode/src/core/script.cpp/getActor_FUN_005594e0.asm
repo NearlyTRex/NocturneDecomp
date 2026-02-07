@@ -35,7 +35,7 @@
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_actor.cpp_isOfClassHash_FUN_0040c760
 ;   core_event.cpp_CEventList_FUN_004b0b80
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_script.cpp_validateActorVariableName_FUN_00559220
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
@@ -188,8 +188,8 @@ section .text
         ;   Label: LAB_00559601
     MOV ECX,dword ptr [0x0067d550]      ; 00559602 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 00559608 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 00559609
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 00559609
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0055960e
     MOV ESI,EAX                         ; 00559611
     TEST EAX,EAX                        ; 00559613

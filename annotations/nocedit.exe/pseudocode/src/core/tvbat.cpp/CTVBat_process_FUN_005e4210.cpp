@@ -245,7 +245,7 @@ LAB_005e4342:
       local_16c.wielder = (CDemonActor *)this_ptr;
       (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x11c))();
       if (0.0 < local_16c.damage_amount) {
-        core_gore_cpp_FUN_004edbb0();
+        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
       }
     }
   }

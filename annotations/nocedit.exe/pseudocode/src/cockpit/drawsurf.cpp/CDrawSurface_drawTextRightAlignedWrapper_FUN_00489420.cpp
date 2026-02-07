@@ -11,7 +11,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420
           (CDrawSurface *this_ptr,int x,int y,char *text)
 
 {
-  cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-            (this_ptr,(int)text,x,(char *)y);
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(this_ptr,text,x,y);
   return;
 }

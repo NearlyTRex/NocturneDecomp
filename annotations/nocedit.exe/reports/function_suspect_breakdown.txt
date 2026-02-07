@@ -4,63 +4,62 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 3474 functions
-  1 suspects: 828 functions
-  2 suspects: 566 functions
-  3 suspects: 287 functions
-  4 suspects: 247 functions
-  5 suspects: 219 functions
-  6 suspects: 183 functions
-  7 suspects: 116 functions
-  8 suspects: 129 functions
-  9 suspects: 101 functions
-  10 suspects: 88 functions
-  11 suspects: 74 functions
-  12 suspects: 85 functions
-  13 suspects: 72 functions
-  14 suspects: 67 functions
-  15 suspects: 46 functions
-  16 suspects: 44 functions
-  17 suspects: 26 functions
-  18 suspects: 33 functions
-  19 suspects: 32 functions
+  0 suspects: 3509 functions
+  1 suspects: 834 functions
+  2 suspects: 559 functions
+  3 suspects: 281 functions
+  4 suspects: 238 functions
+  5 suspects: 212 functions
+  6 suspects: 181 functions
+  7 suspects: 112 functions
+  8 suspects: 130 functions
+  9 suspects: 99 functions
+  10 suspects: 89 functions
+  11 suspects: 72 functions
+  12 suspects: 82 functions
+  13 suspects: 75 functions
+  14 suspects: 65 functions
+  15 suspects: 48 functions
+  16 suspects: 43 functions
+  17 suspects: 28 functions
+  18 suspects: 31 functions
+  19 suspects: 31 functions
   20 suspects: 39 functions
-  21 suspects: 35 functions
+  21 suspects: 34 functions
   22 suspects: 15 functions
   23 suspects: 36 functions
   24 suspects: 18 functions
-  25 suspects: 16 functions
-  26 suspects: 17 functions
+  25 suspects: 17 functions
+  26 suspects: 16 functions
   27 suspects: 9 functions
-  28 suspects: 17 functions
+  28 suspects: 16 functions
   29 suspects: 15 functions
   30 suspects: 16 functions
-  31 suspects: 11 functions
+  31 suspects: 12 functions
   32 suspects: 8 functions
   33 suspects: 7 functions
-  34 suspects: 7 functions
+  34 suspects: 6 functions
   35 suspects: 12 functions
-  36 suspects: 8 functions
+  36 suspects: 7 functions
   37 suspects: 6 functions
   38 suspects: 1 functions
   39 suspects: 8 functions
   40 suspects: 5 functions
-  41 suspects: 6 functions
+  41 suspects: 7 functions
   42 suspects: 3 functions
   43 suspects: 7 functions
   44 suspects: 4 functions
   45 suspects: 2 functions
-  46 suspects: 6 functions
-  47 suspects: 1 functions
-  48 suspects: 8 functions
-  49 suspects: 1 functions
+  46 suspects: 5 functions
+  47 suspects: 2 functions
+  48 suspects: 9 functions
   51 suspects: 2 functions
-  52 suspects: 3 functions
+  52 suspects: 2 functions
   53 suspects: 1 functions
   54 suspects: 6 functions
   55 suspects: 1 functions
   56 suspects: 3 functions
-  57 suspects: 1 functions
+  57 suspects: 2 functions
   58 suspects: 5 functions
   59 suspects: 4 functions
   60 suspects: 2 functions
@@ -97,7 +96,7 @@ SUSPECT COUNT DISTRIBUTION
   113 suspects: 1 functions
   115 suspects: 1 functions
   116 suspects: 1 functions
-  141 suspects: 1 functions
+  136 suspects: 1 functions
   142 suspects: 1 functions
   145 suspects: 1 functions
   153 suspects: 1 functions
@@ -163,7 +162,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 0060a1bc...
     ... and 257 more
 
-  [param_count_too_few] (158 functions)
+  [param_count_too_few] (163 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -205,9 +204,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 1 params but call sites push 6 (5 missing)...
     core_crossbow.cpp_CCrossbow_FUN_00449540           (  5 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
-    ... and 138 more
+    ... and 143 more
 
-  [pointer_cast] (98 functions)
+  [pointer_cast] (99 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -217,7 +216,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (SFreaky *)((int)pvVar1 + -0x20);...
     core_cloth.cpp_SClothVertex_ctor_FUN_0043e420      (  6 lines)
       return (SClothVertex *)((int)pvVar1 + -0xec);...
-    core_gore.cpp_FUN_004ee370                         (  6 lines)
+    core_gore.cpp_CFootstep_ctor_FUN_004ee370          (  6 lines)
       return (CFootstep *)((int)pvVar1 + -8);...
     core_flies.cpp_SFly_ctor_FUN_004ccd20              (  6 lines)
       return (SFly *)((int)pvVar1 + -4);...
@@ -249,40 +248,42 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + ...
     shape_design.c_getVertexCountFromModel_FUN_0046808 ( 14 lines)
       model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base)....
-    ... and 78 more
+    ... and 79 more
 
-  [stack_ref] (74 functions)
+  [stack_ref] (75 functions)
   ------------------------------------------------------------
-    engine_font.cpp_CBitFont_printfCenterInClip_FUN_00 (  9 lines)
-      local_14 = &stack0x00000018;...
+    engine_2d.c_drawTextColorFormatted_FUN_004024c0    ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
     engine_2d.c_drawTextFormatted_FUN_00402150         ( 10 lines)
-      local_c = &stack0x00000010;...
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_font.cpp_CBitFont_printfCenterInClip_FUN_00 ( 10 lines)
+      local_14.value[0] = (char * [1])&stack0x00000018;...
     engine_2d.c_drawTextRightAlignedFormatted_FUN_0040 ( 11 lines)
-      local_c = &stack0x00000010;...
-    engine_2d.c_drawTextColorFormatted_FUN_004024c0    ( 11 lines)
-      local_c = &stack0x00000010;...
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextRightAlignedColorFormatted_FUN ( 11 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
     engine_2d.c_drawTextCenteredAtFormatted_FUN_004022 ( 11 lines)
-      local_c = &stack0x00000010;...
+      local_c.value[0] = (char * [1])&stack0x00000010;...
     engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
       local_4 = &stack0x00000008;...
+    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_0 ( 11 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c ( 11 lines)
+      local_14 = &stack0x0000001c;...
+    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20   ( 11 lines)
+      local_14.value[0] = (char * [1])&stack0x0000001c;...
     shape_edittool.cpp_CEditorTools_showMessage_FUN_00 ( 11 lines)
-      local_8 = &stack0x0000000c;...
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
     shape_edittool.cpp_CEditorTools_showWarning_FUN_00 ( 11 lines)
-      local_8 = &stack0x0000000c;...
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
     shape_edittool.cpp_CEditorTools_showError_FUN_0049 ( 11 lines)
-      local_8 = &stack0x0000000c;...
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered ( 12 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
     engine_2d.c_drawTextCenteredFormatted_FUN_004023c0 ( 12 lines)
-      local_10 = &stack0x00000014;...
+      local_10.value[0] = (char * [1])&stack0x00000014;...
     engine_2d.c_drawTextCenteredColorFormatted_FUN_004 ( 12 lines)
-      local_10 = &stack0x00000014;...
-    engine_2d.c_drawTextRightAlignedColorFormatted_FUN ( 12 lines)
-      local_c = &stack0x00000010;...
-    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_0 ( 12 lines)
-      local_c = &stack0x00000010;...
-    engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c ( 12 lines)
-      local_14 = &stack0x0000001c;...
-    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20   ( 12 lines)
-      local_14 = &stack0x0000001c;...
+      local_10.value[0] = (char * [1])&stack0x00000014;...
     core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
       if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
     core_health.cpp_CHealthItem_renderOpaque_FUN_004f1 ( 16 lines)
@@ -291,9 +292,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);...
     core_keyactor.cpp_CKeyActor_renderOpaque_FUN_00501 ( 16 lines)
       (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);...
-    core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80      ( 16 lines)
-      (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);...
-    ... and 54 more
+    ... and 55 more
 
   [decompiler_intrinsic] (60 functions)
   ------------------------------------------------------------
@@ -343,7 +342,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50        (  6 lines)
       return (SFreaky *)&pCVar1[-3].y;...
-    core_gore.cpp_FUN_004ee390                         (  6 lines)
+    core_gore.cpp_CFootstep_dtor_FUN_004ee390          (  6 lines)
       return (CFootstep *)&pCVar1[-1].y;...
     core_flies.cpp_SFly_dtor_FUN_004ccd40              (  6 lines)
       return (SFly *)&pCVar1[-1].z;...
@@ -389,14 +388,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 1 params but call sites push 0 (1 extra)...
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0    (  7 lines)
       Function declares 2 params but call sites push 0 (2 extra)...
+    engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cd (  8 lines)
+      Function declares 6 params but call sites push 2 (4 extra)...
     core_skeleton.cpp_CDeformableModel_rotateVertices_ (  8 lines)
       Function declares 3 params but call sites push 1 (2 extra)...
     engine_texture.cpp_loadAndUpdateTexture_FUN_005dd9 (  9 lines)
       Function declares 3 params but call sites push 2 (1 extra)...
     engine_texture.cpp_updateTextureWithPalette_FUN_00 (  9 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
-    engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf (  9 lines)
-      Function declares 6 params but call sites push 2 (4 extra)...
     engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 (  9 lines)
       Function declares 3 params but call sites push 2 (1 extra)...
     core_skeleton.cpp_CDeformableModel_lightVertices_F (  9 lines)
@@ -427,7 +426,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 2 params but call sites push 1 (1 extra)...
     ... and 9 more
 
-  [undefined_data] (28 functions)
+  [undefined_data] (26 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_FUN_0053d3a0                      (  4 lines)
       return (int *)&DAT_0063cbe7;...
@@ -469,7 +468,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar2 = DAT_00821ff4;...
     core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0 ( 45 lines)
       DAT_00680a04 = 1;...
-    ... and 8 more
+    ... and 6 more
 
   [warning_type_propagation] (12 functions)
   ------------------------------------------------------------
@@ -491,9 +490,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_hostage.cpp_CHostage_FUN_004f5ff0             ( 43 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 46 lines)
+    core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_mission.cpp_CDemonMission_process_FUN_0052425 ( 53 lines)
+    core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_zombie.cpp_CZombie_setup_FUN_005f9140         (117 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -510,8 +509,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if (search_code == pCVar2->code) break;...
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890    ( 21 lines)
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
-    core_msnedit.cpp_CDemonMission_FUN_0053c0b0        ( 21 lines)
-      (*(code *)**(uint **)(*(int *)(this_ptr->unk2 + 0x1c) + 0x15...
+    core_mission.cpp_CDemonMission_loadSet_FUN_00523fb ( 22 lines)
+      (**(code **)(*(int *)(*(int *)pcVar1 + 0x154) + 0x48))();...
     engine_dosio.c_findFile_FUN_00481760               ( 23 lines)
       iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))();...
     core_boxactor.cpp_CBoxActor_FUN_00422590           ( 31 lines)
@@ -565,6 +564,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
       if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
 
+  [unknown_field] (8 functions)
+  ------------------------------------------------------------
+    core_fire.cpp_CFireEffect_FUN_004c93d0             ( 16 lines)
+      iVar1 = g_MuzzleFlashPool[0].unk._0_4_;...
+    cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSe ( 27 lines)
+      end_index,stride,apply_palette_flag,local_74._0_4_);...
+    engine_2d.c_getInputWithPrompt_FUN_004032c0        ( 40 lines)
+      local_14._0_1_ = (char)uVar2;...
+    core_actor.cpp_CDemonActor_testLineIntersection_FU ( 42 lines)
+      auStack_70._4_4_ = 0;...
+    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80  ( 43 lines)
+      (double)g_PerformanceFrequency._0_4_ +...
+    shape_edittool.cpp_CPickList_handleDialogInput_FUN ( 84 lines)
+      g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;...
+    core_dcamera.cpp_processCoronaScanline_FUN_004514b ( 87 lines)
+      g_CameraDownscaleIterations._0_1_ = bVar1;...
+    core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_ (105 lines)
+      if ((g_RenderStateFlags._1_1_ & 2) != 0) {...
+
   [unnamed_param] (7 functions)
   ------------------------------------------------------------
     core_actor.cpp_CActorPropertyList_addGroundType_FU ( 10 lines)
@@ -581,23 +599,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar2->param1).v_int = default_index;...
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 34 lines)
       (pCVar2->param1).v_int = allow_none;...
-
-  [unknown_field] (7 functions)
-  ------------------------------------------------------------
-    core_fire.cpp_CFireEffect_FUN_004c93d0             ( 16 lines)
-      iVar1 = g_MuzzleFlashPool[0].unk._0_4_;...
-    engine_2d.c_getInputWithPrompt_FUN_004032c0        ( 40 lines)
-      local_14._0_1_ = (char)uVar2;...
-    core_actor.cpp_CDemonActor_testLineIntersection_FU ( 42 lines)
-      auStack_70._4_4_ = 0;...
-    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80  ( 43 lines)
-      (double)g_PerformanceFrequency._0_4_ +...
-    shape_edittool.cpp_CPickList_handleDialogInput_FUN ( 84 lines)
-      g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;...
-    core_dcamera.cpp_processCoronaScanline_FUN_004514b ( 87 lines)
-      g_CameraDownscaleIterations._0_1_ = bVar1;...
-    core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_ (105 lines)
-      if ((g_RenderStateFlags._1_1_ & 2) != 0) {...
 
   [special_math_intrinsic] (3 functions)
   ------------------------------------------------------------
@@ -720,12 +721,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dracbrid.cpp, Lines: 6, Types: ['stack_param']
   core_icepick.cpp_CIcePick_FUN_004f9770
     File: core/icepick.cpp, Lines: 6, Types: ['stack_param']
-  core_gore.cpp_FUN_004ee420
-    File: core/gore.cpp, Lines: 6, Types: ['stack_param']
-  core_gore.cpp_FUN_004ee440
-    File: core/gore.cpp, Lines: 6, Types: ['stack_param']
-  core_gore.cpp_FUN_004ee460
-    File: core/gore.cpp, Lines: 6, Types: ['stack_param']
   core_baron.cpp_CBaron_FUN_00414090
     File: core/baron.cpp, Lines: 6, Types: ['stack_param']
   core_door.cpp_CDoor_FUN_00480de0
@@ -738,5 +733,11 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hero.cpp, Lines: 6, Types: ['stack_param']
   core_succubus.cpp_CSuccubus_FUN_005c7790
     File: core/succubus.cpp, Lines: 6, Types: ['stack_param']
+  core_vessel.cpp_FUN_005e9180
+    File: core/vessel.cpp, Lines: 6, Types: ['stack_param']
+  core_vessel.cpp_CCryptVessel_FUN_005e9d10
+    File: core/vessel.cpp, Lines: 6, Types: ['stack_param']
+  core_vessel.cpp_CCryptVessel_FUN_005e9140
+    File: core/vessel.cpp, Lines: 6, Types: ['stack_param']
 
-  ... and 803 more
+  ... and 790 more

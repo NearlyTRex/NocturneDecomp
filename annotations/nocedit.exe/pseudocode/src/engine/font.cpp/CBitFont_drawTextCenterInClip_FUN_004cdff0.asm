@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 (CBitFont *this_ptr,int y_pos,int color_mode,int color_value,char *text_string)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   y_pos
+; int              Stack[0x8]:4   y
 ; int              Stack[0xc]:4   color_mode
 ; int              Stack[0x10]:4   color_value
-; char *           Stack[0x14]:4   text_string
+; char *           Stack[0x14]:4   text
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 at 004ce0da
@@ -18,7 +18,7 @@
 ;   int g_ClipRight
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     ADD ESP,0x8                         ; 004ce02f
     PUSH EAX                            ; 004ce032
     PUSH EBP                            ; 004ce033
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004ce034
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 ; 004ce034
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004ce039
     POP EBP                             ; 004ce03c
     POP EDI                             ; 004ce03d

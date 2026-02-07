@@ -144,7 +144,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
                 fStack_78 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
                 iVar3 = iVar3 + 1;
                 fStack_18 = fStack_78;
-                core_gore_cpp_FUN_004edaa0();
+                core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
               } while (iVar3 < 0x46);
             }
           }

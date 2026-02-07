@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060d1ec(void)
+void FUN_0060d1ec(void)
 
 {
   int iVar1;
   
-  iVar1 = crt_unknown_c_FUN_0060cf80();
+  iVar1 = FUN_0060cf80();
   if (iVar1 != 0) {
     unregisterConsoleHandler();
     setSignalHandler(4,2);

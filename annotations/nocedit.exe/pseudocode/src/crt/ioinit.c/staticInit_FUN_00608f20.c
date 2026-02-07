@@ -14,7 +14,7 @@ void __cdecl staticInit(void)
   streambuf *psVar3;
   _FILE **pp_Var4;
   
-  BYTE_00684d05 = BYTE_00684d05 & 0xf8 | 4;
+  g_StderrLogFile._flag._1_1_ = g_StderrLogFile._flag._1_1_ & 0xf8 | 4;
   pp_Var4 = &g_StaticFilePoolStart;
   iVar1 = INT_00684cd0;
   while (iVar1 != 0) {

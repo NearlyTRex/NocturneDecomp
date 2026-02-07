@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_createActorByName_FUN_0040c430
-;   core_mission.cpp_CDemonMission_FUN_00523b70
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;
 ; *****************************************************************************
 
@@ -83,8 +83,8 @@ section .text
     MOV EBP,dword ptr [0x0067d550]      ; 00413f85 | g_CDemonMissionPtr
     PUSH EBP                            ; 00413f8b | g_CDemonMissionInstance
     MOV dword ptr [EDI + 0x578],EAX     ; 00413f8c
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00413f92
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 00413f92
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00413f97
     MOV EAX,dword ptr [EDI + 0x578]     ; 00413f9a
     PUSH EAX                            ; 00413fa0
@@ -96,8 +96,8 @@ section .text
     MOV EDX,dword ptr [0x0067d550]      ; 00413fb3 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 00413fb9 | g_CDemonMissionInstance
     LEA ESI,[EDI + 0x30]                ; 00413fba
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00413fbd
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00413fbd
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00413fc2
     ADD EDI,0x20                        ; 00413fc5
     PUSH ESI                            ; 00413fc8

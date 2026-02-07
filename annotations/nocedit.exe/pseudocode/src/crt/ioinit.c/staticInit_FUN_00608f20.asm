@@ -10,7 +10,7 @@
 ;   int INT_00684ccc = 0x0
 ;   int INT_00684cd0 = 0x1
 ;   undefined4 DAT_00684cea
-;   byte BYTE_00684d05 = 0x0
+;   undefined4 g_StderrLogFile._flag+1
 ;   FileListNode* g_AllocatedListHead
 ;   undefined4 g_FreeListHeadPointer
 ;
@@ -26,12 +26,12 @@ section .text
     PUSH EBX                            ; 00608f20
         ;   Label: crt_ioinit.c_staticInit_FUN_00608f20
     PUSH ESI                            ; 00608f21
-    MOV AH,byte ptr [0x00684d05]        ; 00608f22 | BYTE_00684d05
+    MOV AH,byte ptr [0x00684d05]        ; 00608f22 | g_StderrLogFile._flag+1
     AND AH,0xf8                         ; 00608f28
     MOV DL,AH                           ; 00608f2b
-    MOV byte ptr [0x00684d05],AH        ; 00608f2d | BYTE_00684d05
+    MOV byte ptr [0x00684d05],AH        ; 00608f2d | g_StderrLogFile._flag+1
     OR DL,0x4                           ; 00608f33
-    MOV byte ptr [0x00684d05],DL        ; 00608f36 | BYTE_00684d05
+    MOV byte ptr [0x00684d05],DL        ; 00608f36 | g_StderrLogFile._flag+1
     MOV EDX,dword ptr [0x00684cd0]      ; 00608f3c | INT_00684cd0
     MOV EBX,0x684cc4                    ; 00608f42 | g_StaticFilePoolStart
     TEST EDX,EDX                        ; 00608f47

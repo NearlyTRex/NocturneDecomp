@@ -13,12 +13,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - crt_fpemu.c_staticInit_FUN_0060be80
       Suspects: decompiler_intrinsic, decompiler_intrinsic, special_crt_function
 
-  crt/io.c/stat/thunk (1 remaining of 1)
-    - crt_io.c_stat_thunk_00600c18
+  crt/io.c/stat (1 remaining of 1)
+    - crt_io.c_stat_00600c18
       Suspects: special_crt_function
 
-  crt/io.c/utime/thunk (1 remaining of 1)
-    - crt_io.c_utime_thunk_00600c1e
+  crt/io.c/utime (1 remaining of 1)
+    - crt_io.c_utime_00600c1e
       Suspects: special_crt_function
 
   crt/windows.c (1 remaining of 1)
@@ -43,7 +43,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   crt/ioinit.c (1 remaining of 1)
     - crt_ioinit.c_staticInit_FUN_00608f20
-      Suspects: pointer_cast, pointer_cast, special_crt_function
+      Suspects: unknown_field, unknown_field, pointer_cast, pointer_cast, special_crt_function
 
   crt/init.c (1 remaining of 1)
     - crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
@@ -226,7 +226,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 246 more
 
-  [param_count_too_few] - 146 functions
+  [param_count_too_few] - 151 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -237,14 +237,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20      (  5 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
-    ... and 136 more
+    ... and 141 more
 
   [pointer_cast] - 68 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
     core_cloth.cpp_SClothVertex_ctor_FUN_0043e420           (  6 lines)
-    core_gore.cpp_FUN_004ee370                              (  6 lines)
+    core_gore.cpp_CFootstep_ctor_FUN_004ee370               (  6 lines)
     core_flies.cpp_SFly_ctor_FUN_004ccd20                   (  6 lines)
     core_manpuz.cpp_SGem_ctor_FUN_0050b940                  (  6 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
@@ -252,18 +252,18 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
     ... and 58 more
 
-  [stack_ref] - 63 functions
-    engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
+  [stack_ref] - 64 functions
+    engine_2d.c_drawTextColorFormatted_FUN_004024c0         ( 10 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
+    engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 ( 10 lines)
     engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210  ( 11 lines)
-    engine_2d.c_drawTextColorFormatted_FUN_004024c0         ( 11 lines)
+    engine_2d.c_drawTextRightAlignedColorFormatted_FUN_0040 ( 11 lines)
     engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0    ( 11 lines)
     engine_2d.c_getStringWidthFormatted_FUN_004027a0        ( 11 lines)
-    shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a ( 11 lines)
-    shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
-    shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
-    engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
-    ... and 53 more
+    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_004026 ( 11 lines)
+    engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20  ( 11 lines)
+    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20        ( 11 lines)
+    ... and 54 more
 
   [decompiler_intrinsic] - 44 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
@@ -280,7 +280,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 
   [negative_offset] - 37 functions
     core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50             (  6 lines)
-    core_gore.cpp_FUN_004ee390                              (  6 lines)
+    core_gore.cpp_CFootstep_dtor_FUN_004ee390               (  6 lines)
     core_flies.cpp_SFly_dtor_FUN_004ccd40                   (  6 lines)
     core_manpuz.cpp_SGem_dtor_FUN_0050b960                  (  6 lines)
     core_fire.cpp_CCrater_dtor_FUN_004c95a0                 (  6 lines)
@@ -294,10 +294,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [param_count_too_many] - 26 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
+    engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0   (  8 lines)
     core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0 (  8 lines)
     engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930    (  9 lines)
     engine_texture.cpp_updateTextureWithPalette_FUN_005dd90 (  9 lines)
-    engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0     (  9 lines)
     engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30      (  9 lines)
     core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00 (  9 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
@@ -317,7 +317,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_boxactor.cpp_staticInit_FUN_00421650               ( 13 lines)
     ... and 11 more
 
-  [warning_type_propagation] - 10 functions
+  [warning_type_propagation] - 11 functions
     core_crate.cpp_CCrate_getTargetPoints_FUN_004489d0      ( 19 lines)
     core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004cb58 ( 20 lines)
     core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005e ( 21 lines)
@@ -327,7 +327,8 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mimic.cpp_CMimic_beginMorph_FUN_00520a80           ( 40 lines)
     core_mobster.cpp_CMobster_FUN_00525720                  ( 42 lines)
     core_hostage.cpp_CHostage_FUN_004f5ff0                  ( 43 lines)
-    core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_0 ( 46 lines)
+    core_mission.cpp_CDemonMission_process_FUN_00524250     ( 46 lines)
+    ... and 1 more
 
   [unresolved_funcptr] - 8 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)
@@ -335,7 +336,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
     support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
-    core_msnedit.cpp_CDemonMission_FUN_0053c0b0             ( 21 lines)
+    core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0     ( 22 lines)
     engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
     core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
 
@@ -355,18 +356,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
     core_trigger.cpp_CTrigger_FUN_005df990                  ( 46 lines)
 
+  [unknown_field] - 5 functions
+    core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
+    cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFrom ( 27 lines)
+    engine_2d.c_getInputWithPrompt_FUN_004032c0             ( 40 lines)
+    core_actor.cpp_CDemonActor_testLineIntersection_FUN_004 ( 42 lines)
+    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
+
   [warning_unreachable] - 5 functions
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554 ( 21 lines)
     engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
     shape_design.c_convertWorldToScreenCoordinates_FUN_0045 ( 42 lines)
     shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
-
-  [unknown_field] - 4 functions
-    core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
-    engine_2d.c_getInputWithPrompt_FUN_004032c0             ( 40 lines)
-    core_actor.cpp_CDemonActor_testLineIntersection_FUN_004 ( 42 lines)
-    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
 
   [special_math_intrinsic] - 3 functions
     crt_math.c_ceil_FUN_006001b2                            (  6 lines)

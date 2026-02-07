@@ -14,6 +14,6 @@ support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blo
   uint local_4;
   
   local_4 = (uint)(blocking_mode == 0);
-  iVar1 = crt_wsock32_c_ioctlsocket(*socket_handle,-0x7ffb9982,&local_4);
+  iVar1 = ioctlsocket(*socket_handle,-0x7ffb9982,&local_4);
   return (uint)(iVar1 == 0);
 }

@@ -56,6 +56,9 @@ extern SMRGLTextureBasic g_TempTextureDescriptor;
 // char[400]
 extern char g_LodMeshProgressBuffer[400];
 
+// char[8100]
+extern char g_PendingMissionName[8100];
+
 // double[400]
 extern double g_SampleDistances[400];
 
@@ -110,12 +113,6 @@ extern int g_MoonCloudScrollY;
 
 // uchar
 extern uchar g_TempFacesInitGuard;
-
-// undefined1
-extern undefined1 DAT_02f35f10;
-extern undefined1 DAT_02f35f11;
-extern undefined1 DAT_02f35f12;
-extern undefined1 DAT_02f35f13;
 
 // undefined4
 extern undefined4 DAT_02f313e8;

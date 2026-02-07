@@ -15,10 +15,10 @@ int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char
   
   local_8.actime = (time_t)dest_file;
   local_8.modtime = (time_t)dest_file;
-  iVar1 = crt_io_c_stat_thunk_00600c18(source_file,&_Stack_50);
+  iVar1 = stat_00600c18(source_file,&_Stack_50);
   if (iVar1 == 0) {
     local_8.actime = _Stack_50._st_atime;
   }
-  iVar1 = crt_io_c_utime_thunk_00600c1e(source_file,&local_8);
+  iVar1 = utime_00600c1e(source_file,&local_8);
   return (uint)(iVar1 == 0);
 }

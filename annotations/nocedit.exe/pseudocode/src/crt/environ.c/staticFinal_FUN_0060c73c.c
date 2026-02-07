@@ -9,7 +9,7 @@
 void __cdecl staticFinal(void)
 
 {
-  crt_unknown_c_FUN_0060e4f0();
+  FUN_0060e4f0();
   if (g_EnvironmentBlock != (char **)0x0) {
     free(g_EnvironmentBlock);
     g_EnvironmentBlock = (char **)0x0;

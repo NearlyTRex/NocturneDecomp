@@ -90,7 +90,7 @@ section .text
     LEA EAX,[EBP + -0x6c]               ; 004615fa
     PUSH EAX                            ; 004615fd
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 004615fe
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00461603
     MOV EAX,dword ptr [EBP + -0x1c]     ; 00461606
     PUSH EAX                            ; 00461609
@@ -149,7 +149,7 @@ section .text
     LEA ESI,[EBP + -0x6c]               ; 00461677
     PUSH ESI                            ; 0046167a
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046167b
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00461680
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00461683
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

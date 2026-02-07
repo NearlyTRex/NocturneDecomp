@@ -69,103 +69,103 @@ section .text
     PUSH EBP                            ; 004be28e
     PUSH 0x629821                       ; 004be28f | = "Demon File Manager"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be294
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be299
     PUSH 0x16                           ; 004be29c
     PUSH EBP                            ; 004be29e
     PUSH 0x629834                       ; 004be29f | = "Advanced option list"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2a4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2a9
     PUSH 0x2c                           ; 004be2ac
     PUSH EBP                            ; 004be2ae
     PUSH 0x629849                       ; 004be2af | = "1. Rebuild last .POD"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2b4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2b9
     PUSH 0x37                           ; 004be2bc
     PUSH EBP                            ; 004be2be
     PUSH 0x62985e                       ; 004be2bf | = "2. Extract all files from .POD"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2c4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2c9
     PUSH 0x4d                           ; 004be2cc
     PUSH EBP                            ; 004be2ce
     PUSH 0x62987d                       ; 004be2cf | = "4. Build a .POD from an old-school re..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2d4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2d9
     PUSH 0x58                           ; 004be2dc
     PUSH EBP                            ; 004be2de
     PUSH 0x6298ae                       ; 004be2df | = "5. Catalog a .POD file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2e4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2e9
     PUSH 0x6e                           ; 004be2ec
     PUSH EBP                            ; 004be2ee
     PUSH 0x6298c5                       ; 004be2ef | = "7. Move a set into .POD file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be2f4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be2f9
     PUSH 0x84                           ; 004be2fc
     PUSH EBP                            ; 004be301
     PUSH 0x6298e2                       ; 004be302 | = "9. Extract files from .POD interactively"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be307
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be30c
     PUSH 0x9a                           ; 004be30f
     PUSH EBP                            ; 004be314
     PUSH 0x62990b                       ; 004be315 | = "A. Create .POD file from extended res..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be31a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be31f
     PUSH 0xa5                           ; 004be322
     PUSH EBP                            ; 004be327
     PUSH 0x62993b                       ; 004be328 | = "C. Mount/dismount PODs"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be32d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be332
     PUSH 0x129                          ; 004be335
     PUSH EBP                            ; 004be33a
     PUSH 0x629952                       ; 004be33b | = "Q. Test sound files"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be340
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be345
     PUSH 0x134                          ; 004be348
     PUSH EBP                            ; 004be34d
     PUSH 0x629966                       ; 004be34e | = "R. Refresh sound directory"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be353
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be358
     PUSH 0xfd                           ; 004be35b
     PUSH EBP                            ; 004be360
     PUSH 0x629981                       ; 004be361 | = "L. Compare files in pod vs. local files"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be366
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be36b
     PUSH 0x108                          ; 004be36e
     PUSH EBP                            ; 004be373
     PUSH 0x6299a9                       ; 004be374 | = "T. View audit trail for a pod"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be379
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be37e
     PUSH 0x113                          ; 004be381
     PUSH EBP                            ; 004be386
     PUSH 0x6299c7                       ; 004be387 | = "V. Verify .POD CRC"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be38c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be391
     PUSH 0x129                          ; 004be394
     PUSH EBP                            ; 004be399
     PUSH 0x6299da                       ; 004be39a | = "X. Cross reference PODs for duplicates"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be39f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be3a4
     PUSH 0x134                          ; 004be3a7
     PUSH EBP                            ; 004be3ac
     PUSH 0x629a01                       ; 004be3ad | = "S. Search for files in mounted PODs"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004be3b2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004be3b7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004be3ba
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

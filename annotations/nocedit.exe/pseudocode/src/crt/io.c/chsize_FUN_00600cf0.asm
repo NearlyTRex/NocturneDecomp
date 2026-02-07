@@ -132,7 +132,7 @@ section .text
     PUSH EDI                            ; 00600dc8
     PUSH EBX                            ; 00600dc9
     CALL crt_unknown.c_FUN_00600c80     ; 00600dca
-        ;   XREF to: 00600c80 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00600c80()
+        ;   XREF to: 00600c80 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00600c80(int param_1, int param_2, SIZE_T param_3)
     ADD ESP,0xc                         ; 00600dcf
     CMP ESI,EBP                         ; 00600dd2
         ;   Label: LAB_00600dd2

@@ -41,9 +41,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
-;   core_mission.cpp_CDemonMission_FUN_00523cf0 at 00523d21
 ;   core_mission.cpp_CDemonMission_FUN_00524760 at 00524801
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90 at 00522dc7
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 at 00523d21
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aa32
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 00569d63
 ;
@@ -78,7 +78,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   engine_matrix.c_interpolatedCos_FUN_0050c600
 ;   ... and 3 more
@@ -524,8 +524,8 @@ section .text
     PUSH ESI                            ; 005046d7
     MOV ECX,dword ptr [ESP + 0x90]      ; 005046d8
     PUSH ECX                            ; 005046df
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005046e0
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005046e0
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005046e5
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005046e8
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

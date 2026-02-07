@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004edb40 at 004edb62
+;   core_gore.cpp_CGore_FUN_004edb40 at 004edb62
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065f024 = 256

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int crt_unknown_c_FUN_0060fa90(void)
+int FUN_0060fa90(void)
 
 {
   int iVar1;

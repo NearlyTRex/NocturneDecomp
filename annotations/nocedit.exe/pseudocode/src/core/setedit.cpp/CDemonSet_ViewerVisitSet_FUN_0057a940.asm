@@ -230,7 +230,7 @@ section .text
     PUSH 0x0                            ; 0057ab77
     ADD EBX,0x4                         ; 0057ab79
     CALL engine_2d.c_drawTextXY_FUN_00402130 ; 0057ab7c
-        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
+        ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x, int y, char * text)
     ADD ESI,0xb                         ; 0057ab81
     ADD ESP,0xc                         ; 0057ab84
     CMP EBX,EDI                         ; 0057ab87
@@ -263,7 +263,7 @@ section .text
     LEA EAX,[ESP + 0x3f4]               ; 0057abd0
     PUSH EAX                            ; 0057abd7
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057abd8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057abdd
     MOV EAX,[0x00681ab8]                ; 0057abe0 | PTR_DAT_00681ab8
     SUB ESP,0x8                         ; 0057abe5
@@ -297,7 +297,7 @@ section .text
     LEA EAX,[ESP + 0x3f4]               ; 0057ac3a
     PUSH EAX                            ; 0057ac41
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057ac42
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x0067b654]                ; 0057ac47 | g_CGamePtr
     ADD ESP,0xc                         ; 0057ac4c
     MOV EAX,dword ptr [EAX + 0x264]     ; 0057ac4f | g_CGameInstance.delta_time_float
@@ -320,7 +320,7 @@ section .text
     LEA EAX,[ESP + 0x3f4]               ; 0057ac85
     PUSH EAX                            ; 0057ac8c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057ac8d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057ac92
     PUSH 0x0                            ; 0057ac95
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 0057ac97

@@ -377,7 +377,7 @@
     "vars":{
       "params":[
         {
-          "name":"x_pos",
+          "name":"x",
           "storage":{
             "offset":4,
             "size":4,
@@ -393,7 +393,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":8,
             "size":4,
@@ -459,7 +459,7 @@
           "type":"char*"
         },
         {
-          "name":"x_pos",
+          "name":"x",
           "storage":{
             "offset":8,
             "size":4,
@@ -475,7 +475,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -525,7 +525,7 @@
           "type":"char*"
         },
         {
-          "name":"y_pos",
+          "name":"x",
           "storage":{
             "offset":8,
             "size":4,
@@ -541,7 +541,7 @@
           "type":"int"
         },
         {
-          "name":"right_x",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -575,7 +575,7 @@
     "vars":{
       "params":[
         {
-          "name":"center_x",
+          "name":"x",
           "storage":{
             "offset":4,
             "size":4,
@@ -591,7 +591,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":8,
             "size":4,
@@ -655,23 +655,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1010",
-          "storage":{
-            "offset":-4112,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1010]",
-                "offset":-4112,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -708,7 +696,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -739,6 +727,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1010"
       ]
     }
   },
@@ -22962,7 +22953,7 @@
           "type":"CDrawSurface*"
         },
         {
-          "name":"x",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -22975,10 +22966,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"y",
+          "name":"x",
           "storage":{
             "offset":12,
             "size":4,
@@ -22994,7 +22985,7 @@
           "type":"int"
         },
         {
-          "name":"height",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -23008,22 +22999,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"text",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
         }
       ]
     }
@@ -23108,7 +23083,7 @@
           "type":"int"
         },
         {
-          "name":"height",
+          "name":"text",
           "storage":{
             "offset":20,
             "size":4,
@@ -23117,22 +23092,6 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"text",
-          "storage":{
-            "offset":24,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x18]",
-                "offset":24,
                 "size":4
               }
             ]
@@ -23172,23 +23131,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1014",
-          "storage":{
-            "offset":-4116,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1014]",
-                "offset":-4116,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -23225,7 +23172,7 @@
           "type":"int"
         },
         {
-          "name":"y",
+          "name":"width",
           "storage":{
             "offset":12,
             "size":4,
@@ -23241,7 +23188,7 @@
           "type":"int"
         },
         {
-          "name":"width",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -23288,6 +23235,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1014"
       ]
     }
   },
@@ -23323,7 +23273,7 @@
           "type":"CDrawSurface*"
         },
         {
-          "name":"y",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -23336,10 +23286,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"height",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -23353,22 +23303,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"text",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
         }
       ]
     }
@@ -23403,23 +23337,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_100c",
-          "storage":{
-            "offset":-4108,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x100c]",
-                "offset":-4108,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -23456,7 +23378,7 @@
           "type":"int"
         },
         {
-          "name":"y",
+          "name":"format",
           "storage":{
             "offset":12,
             "size":4,
@@ -23469,24 +23391,11 @@
               }
             ]
           },
-          "type":"int"
-        },
-        {
-          "name":"format",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_100c"
       ]
     }
   },
@@ -35729,7 +35638,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         }
       ],
       "params":[
@@ -35782,7 +35691,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -38081,7 +37990,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ed830",
+    "name":"core_gore.cpp_CGore_FUN_004ed830",
     "ret":"void",
     "vars":{
       "params":[
@@ -38118,10 +38027,9 @@
         "start":"004eddc2"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004edbb0(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004edbb0",
+    "name":"core_gore.cpp_CGore_FUN_004edbb0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -38493,6 +38401,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGore*"
+        }
       ]
     }
   },
@@ -38505,11 +38431,30 @@
         "start":"004ede30"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004ede30(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ede30",
-    "ret":"void"
+    "name":"core_gore.cpp_CGore_FUN_004ede30",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGore*"
+        }
+      ]
+    }
   },
   {
     "addr":"004edf30",
@@ -38520,12 +38465,29 @@
         "start":"004edf30"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_CreateFlies(undefined1 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CreateFlies_FUN_004edf30",
+    "name":"core_gore.cpp_CGore_FUN_004edf30",
     "ret":"CFlies*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGore*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -38599,7 +38561,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ee3b0",
+    "name":"core_gore.cpp_CBloodPool_ctor_FUN_004ee3b0",
     "ret":"CBloodPool*",
     "vars":{
       "params":[
@@ -48588,6 +48550,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -48800,6 +48778,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -48815,7 +48809,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_005235b0",
+    "name":"core_mission.cpp_CDemonMission_loadScript_FUN_005235b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -48852,6 +48846,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -48867,7 +48877,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_00523fb0",
+    "name":"core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0",
     "ret":"void",
     "vars":{
       "params":[
@@ -48886,6 +48896,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"set_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -48901,7 +48927,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_00524030",
+    "name":"core_mission.cpp_CDemonMission_findActorByName_FUN_00524030",
     "ret":"char*",
     "vars":{
       "params":[
@@ -48920,6 +48946,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -48945,7 +48987,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_00524630",
+    "name":"core_mission.cpp_CDemonMission_setMissionName_FUN_00524630",
     "ret":"void",
     "vars":{
       "params":[
@@ -48964,6 +49006,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -52179,7 +52237,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053b030",
+    "name":"core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030",
     "ret":"void",
     "vars":{
       "locals":[

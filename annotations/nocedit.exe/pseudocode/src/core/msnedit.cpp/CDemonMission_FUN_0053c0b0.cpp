@@ -11,7 +11,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c0b0(CDemonMission *this_ptr
 {
   _FILE *file_handle;
   
-  if (*(int *)(this_ptr->unk2 + 0x1c) == 0) {
+  if (this_ptr->selected_actor == (CDemonActor *)0x0) {
     return;
   }
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
@@ -23,9 +23,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c0b0(CDemonMission *this_ptr
               (g_CEditorToolsPtr,"Can't open %s.","$$UNDO$$.TMP");
     return;
   }
-  core_actor_cpp_CDemonActor_load_FUN_0040b050(*(CDemonActor **)(this_ptr->unk2 + 0x1c),file_handle)
-  ;
-  (*(code *)**(uint **)(*(int *)(this_ptr->unk2 + 0x1c) + 0x154))();
+  core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr->selected_actor,file_handle);
+  (*((this_ptr->selected_actor->vtable)._ub)->setup)(this_ptr->selected_actor);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",0x9d1);
   return;
 }

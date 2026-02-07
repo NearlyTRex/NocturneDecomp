@@ -45,7 +45,7 @@ section .text
     LEA EAX,[EBP + -0x50]               ; 0046e71b
     PUSH EAX                            ; 0046e71e
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e71f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e724
     CALL crt_watcom.c__memmax_FUN_00600940 ; 0046e727
         ;   XREF to: 00600940 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memmax_FUN_00600940()
@@ -65,7 +65,7 @@ section .text
     LEA EAX,[EBP + -0x50]               ; 0046e749
     PUSH EAX                            ; 0046e74c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046e74d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046e752
     MOV ESP,EBP                         ; 0046e755
     POP EBP                             ; 0046e757

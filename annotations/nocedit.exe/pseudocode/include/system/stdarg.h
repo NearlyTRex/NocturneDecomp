@@ -7,7 +7,8 @@
 // STDARG - System Header
 // =============================================================================
 
-// Typedef: va_list_t
-// pointer to char
-typedef char* va_list_t;
+// Structure: va_list_t
+typedef struct va_list_t {
+    char* value[1];
+} va_list_t;
 

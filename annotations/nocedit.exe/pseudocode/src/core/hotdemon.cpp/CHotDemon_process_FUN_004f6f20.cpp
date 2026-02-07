@@ -285,7 +285,7 @@ LAB_004f73d5:
                          (&(this_ptr->base).base.model,&local_ac,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_b8,pCVar9);
-      core_gore_cpp_FUN_004ede30();
+      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
       (this_ptr->base).pool_me = 1;
     }
   }

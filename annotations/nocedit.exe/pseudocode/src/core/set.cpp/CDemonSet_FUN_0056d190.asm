@@ -115,7 +115,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0056d267
     PUSH ESI                            ; 0056d26b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0056d26c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0056d271
     MOV EAX,[0x03276f30]                ; 0056d274 | g_ActiveLightCount
     PUSH EAX                            ; 0056d279
@@ -133,7 +133,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 0056d29f
     PUSH EBX                            ; 0056d2a3
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0056d2a4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0056d2a9
     ADD ESP,0x100                       ; 0056d2ac
     POP EBP                             ; 0056d2b2

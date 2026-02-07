@@ -176,7 +176,7 @@ section .text
     MOV EAX,0x61b13f                    ; 0045ab52 | = "Unable to write binary file!"
     PUSH EAX                            ; 0045ab57 | = "Unable to write binary file!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ab58
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045ab5d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045ab60
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

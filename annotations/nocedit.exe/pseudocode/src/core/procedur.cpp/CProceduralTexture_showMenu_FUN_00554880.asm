@@ -39,19 +39,19 @@ section .text
     PUSH EDI                            ; 0055488f
     PUSH 0x640a38                       ; 00554890 | = "Procedural texture menu"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00554895
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0055489a
     PUSH 0x16                           ; 0055489d
     PUSH EDI                            ; 0055489f
     PUSH 0x640a50                       ; 005548a0 | = "1. Water"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005548a5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005548aa
     PUSH 0x2c                           ; 005548ad
     PUSH EDI                            ; 005548af
     PUSH 0x640a59                       ; 005548b0 | = "Well, what's it gonna be?"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005548b5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005548ba
     XOR EBX,EBX                         ; 005548bd
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005548bf

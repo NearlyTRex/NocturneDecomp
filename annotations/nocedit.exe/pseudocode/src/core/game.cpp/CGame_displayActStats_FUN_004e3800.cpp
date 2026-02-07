@@ -18,7 +18,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   uint uVar6;
   int iVar7;
   uint uVar8;
-  int y_pos;
+  int y;
   int unaff_EDI;
   char *pcVar9;
   char *pcVar10;
@@ -210,15 +210,15 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   iVar7 = 0;
   local_28 = iVar5;
   local_2c = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
-  y_pos = 0xf0;
+  y = 0xf0;
   if (0 < iVar5) {
     pcVar13 = &DAT_02d7c2f0;
     do {
       iVar7 = iVar7 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                (this_ptr_00,0x1c0,0x27f,y_pos,0xf8,0,pcVar13);
+                (this_ptr_00,0x1c0,0x27f,y,0xf8,0,pcVar13);
       pcVar13 = pcVar13 + 0x100;
-      y_pos = y_pos + local_2c;
+      y = y + local_2c;
     } while (iVar7 < local_28);
   }
   *(uint *)(unaff_EDI + 0x250) = 0;

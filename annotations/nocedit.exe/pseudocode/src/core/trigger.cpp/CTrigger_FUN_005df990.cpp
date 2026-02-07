@@ -17,7 +17,7 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005df990(CTrigger *this_ptr)
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   pCVar3 = g_CDemonMissionPtr;
   (this_ptr->base).is_renderable = 0;
-  iVar4 = *(int *)(pCVar3->unk1 + 4);
+  iVar4 = pCVar3->is_in_editor;
   (this_ptr->base).unk6 = 1;
   iVar2 = *(int *)(this_ptr->unk + 0x1c);
   (this_ptr->base).is_transparent = iVar4;

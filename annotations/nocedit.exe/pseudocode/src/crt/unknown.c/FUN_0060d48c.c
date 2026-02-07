@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_0060d48c(void)
+uint FUN_0060d48c(void)
 
 {
   uint *in_stack_00000010;
@@ -15,7 +15,7 @@ uint crt_unknown_c_FUN_0060d48c(void)
   uint local_3c;
   uint local_38;
   
-  crt_unknown_c_FUN_00603dc8();
+  FUN_00603dc8();
   *in_stack_00000010 = local_38;
   *in_stack_00000014 = local_3c;
   return in_stack_0000001c;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004cdc70 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,...)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004cdc70 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,va_list_t args)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -10,6 +10,7 @@
 ; int              Stack[0x10]:4   color_mode
 ; int              Stack[0x14]:4   color_value
 ; char *           Stack[0x18]:4   format_string
+; va_list_t        Stack[0x1c]:4   args
 ; Local Variables:
 ; undefined        Stack[-0x1010]:1  local_1010
 ;
@@ -18,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
 ;
 ; *****************************************************************************
 
@@ -37,7 +38,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004cdc8a
     PUSH EAX                            ; 004cdc8e
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004cdc8f
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004cdc94
     MOV EAX,ESP                         ; 004cdc97
     PUSH EAX                            ; 004cdc99
@@ -51,8 +52,8 @@ section .text
     PUSH EBP                            ; 004cdcb9
     MOV EAX,dword ptr [ESP + 0x1028]    ; 004cdcba
     PUSH EAX                            ; 004cdcc1
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004cdcc2
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 ; 004cdcc2
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004cdcc7
     ADD ESP,0x1000                      ; 004cdcca
     POP EBP                             ; 004cdcd0

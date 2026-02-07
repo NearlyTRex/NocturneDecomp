@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053aa39
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053aa39
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_sound_files_missing_00643f0e

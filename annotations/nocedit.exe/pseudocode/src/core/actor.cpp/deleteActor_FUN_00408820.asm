@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe601
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70 at 004feafa
-;   core_mission.cpp_CDemonMission_FUN_00523f20 at 00523f41
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 at 00523f41
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613554

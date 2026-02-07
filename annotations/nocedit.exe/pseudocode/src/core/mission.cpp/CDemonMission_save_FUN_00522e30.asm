@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[4]:
-;   core_msnedit.cpp_CDemonMission_FUN_00538ba0 at 00538bf3
-;   core_msnedit.cpp_CDemonMission_FUN_0053d190 at 0053d1c3
+;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538bf3
+;   core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 at 0053d1c3
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005389f0
 ;   core_msnedit.cpp_FUN_00537230 at 005372d2
 ;
@@ -57,7 +58,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00522e62
     PUSH EDI                            ; 00522e66
     CALL core_mission.cpp_CDemonMission_writeFile_FUN_00523600 ; 00522e67
-        ;   XREF to: 00523600 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission * this_ptr)
+        ;   XREF to: 00523600 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00522e6c
     PUSH 0xb8                           ; 00522e6f
     PUSH 0x638a8b                       ; 00522e74 | = "..\\core\\mission.cpp"

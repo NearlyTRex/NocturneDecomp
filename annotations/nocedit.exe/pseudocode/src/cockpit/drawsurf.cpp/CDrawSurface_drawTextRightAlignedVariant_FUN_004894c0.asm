@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,int x,int y,int height,char *text)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (CDrawSurface *this_ptr,char *text,int x,int y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   x
-; int              Stack[0xc]:4   y
-; int              Stack[0x10]:4   height
-; char *           Stack[0x14]:4   text
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 at 0048957a
@@ -36,7 +35,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 004894d7
     PUSH ESI                            ; 004894db
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 ; 004894dc
-        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, int x, int y, int width, ...)
+        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x1c                        ; 004894e1
     POP ESI                             ; 004894e4
     POP EBX                             ; 004894e5

@@ -42,7 +42,7 @@
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_FUN_004c8c90
 ;   core_hero.cpp_FUN_004f2220
-;   core_mission.cpp_CDemonMission_FUN_00524030
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 ;   core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
@@ -157,8 +157,8 @@ section .text
     PUSH EAX                            ; 005dfbdd
     MOV EDI,dword ptr [0x0067d550]      ; 005dfbde | g_CDemonMissionPtr
     PUSH EDI                            ; 005dfbe4 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524030 ; 005dfbe5
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 005dfbe5
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 005dfbea
     MOV dword ptr [ESI + 0x368],EAX     ; 005dfbed
     MOV EAX,dword ptr [ESI + 0x368]     ; 005dfbf3

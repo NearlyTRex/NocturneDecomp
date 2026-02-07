@@ -12,6 +12,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0
-            (this_ptr,(int)text,0,this_ptr->width + -1,0,(char *)(this_ptr->height + -1));
+            (this_ptr,text,0,this_ptr->width + -1,0,this_ptr->height + -1);
   return;
 }

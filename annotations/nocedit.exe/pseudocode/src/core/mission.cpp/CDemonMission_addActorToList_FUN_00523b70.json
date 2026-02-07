@@ -1,0 +1,191 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 24,
+    "cross_reference_count": 17,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "00413f20",
+      "from_addr": "00413fbd",
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00418e10",
+      "from_addr": "00418eda",
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004edf30",
+      "from_addr": "004ee006",
+      "name": "core_gore.cpp_CGore_FUN_004edf30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520ba0",
+      "from_addr": "00520c48",
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524c20",
+      "from_addr": "00524d6f",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524920",
+      "from_addr": "00524a40",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522eb0",
+      "from_addr": "00523475",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bd80",
+      "from_addr": "0053bf32",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053bd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053d8b0",
+      "from_addr": "0053dbd5",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053d8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e220",
+      "from_addr": "0053e400",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b9f0",
+      "from_addr": "0053bbda",
+      "name": "core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ccf0",
+      "from_addr": "0053d16d",
+      "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545ef0",
+      "from_addr": "00546016",
+      "name": "core_passngr.cpp_CPassenger_process_FUN_00545ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c5270",
+      "from_addr": "005c546d",
+      "name": "core_stranger.cpp_CStranger_FUN_005c5270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c6e90",
+      "from_addr": "005c7243",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e7030",
+      "from_addr": "005e71fe",
+      "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e7e80",
+      "from_addr": "005e858c",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00523b70",
+    "address_range": [
+      [
+        "00523b70",
+        "00523bd8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70 (CDemonMission *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7419354838709675,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 19,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "LOAD": 11,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 116
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

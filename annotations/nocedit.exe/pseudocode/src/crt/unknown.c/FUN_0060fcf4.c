@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_0060fcf4(short *param_1)
+uint FUN_0060fcf4(short *param_1)
 
 {
   short sVar1;
@@ -48,7 +48,7 @@ uint crt_unknown_c_FUN_0060fcf4(short *param_1)
     n = 0;
   }
   else {
-    iVar3 = crt_unknown_c_FUN_0060fe94();
+    iVar3 = FUN_0060fe94();
     if (sVar1 == 0) {
       return 0;
     }

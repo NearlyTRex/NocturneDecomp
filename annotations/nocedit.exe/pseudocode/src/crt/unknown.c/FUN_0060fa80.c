@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060fa80(void)
+void FUN_0060fa80(void)
 
 {
   (*PTR_FUN_0068502b)();

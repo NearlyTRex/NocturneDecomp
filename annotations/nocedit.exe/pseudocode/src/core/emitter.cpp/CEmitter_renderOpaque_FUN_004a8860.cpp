@@ -47,12 +47,12 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       return 1;
     }
-    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+    if (g_CDemonMissionPtr->is_in_editor != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar1 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
         if ((((this_ptr->emitter_type == 3) && (INT_02cf2b5c != 0)) && (this_ptr == DAT_02cf2b78))
-           && (DAT_02cf2b78 == *(CEmitter **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
+           && (DAT_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
           param5 = &DAT_02cf2b6c;
           label_offset = &CVector3f_02cf2b60;
           world_position =

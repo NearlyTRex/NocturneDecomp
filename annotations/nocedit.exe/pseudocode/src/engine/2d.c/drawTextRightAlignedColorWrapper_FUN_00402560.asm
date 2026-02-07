@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorWrapper_FUN_00402560(int y_pos,int right_x,char *text)
+; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorWrapper_FUN_00402560(int x,int y,char *text)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   y_pos
-; int              Stack[0x8]:4   right_x
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ; char *           Stack[0xc]:4   text
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040256b
     PUSH EBX                            ; 0040256f
     CALL engine_2d.c_drawTextRightAlignedColor_FUN_00402530 ; 00402570
-        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int y_pos, int right_x)
+        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402575
     POP EBX                             ; 00402578
     RET                                 ; 00402579

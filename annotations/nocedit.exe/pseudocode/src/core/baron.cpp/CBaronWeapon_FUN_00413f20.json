@@ -2,82 +2,45 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "pointer_precision",
-        "column": 29,
-        "line": 19,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 23,
-        "line": 23,
-        "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 23,
-        "line": 30,
-        "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 10,
         "line": 32,
-        "message": "'code' was not declared in this scope"
+        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
         "line": 32,
-        "message": "expected primary-expression before ')' token"
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 35,
+        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 34,
-        "message": "expected primary-expression before ')' token"
+        "line": 35,
+        "message": "expected expression"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 54,
+    "complexity_score": 55,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 30,
     "suspect_count": 2,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 109
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -131,12 +94,12 @@
     {
       "addr": "00523b70",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
     },
     {
       "addr": "00524700",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
     }
   ],
   "globals": [
@@ -288,7 +251,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 28,
       "match": "code *",
       "text": "(**(code **)(*(int *)(this_ptr->unk + 0x154) + 0x60))();",
       "type": "unresolved_funcptr"

@@ -2,13 +2,13 @@
 // Address: 00402130
 // Address Range: [[00402130, 00402149]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x_pos,int y_pos,char *text)
+// Signature: void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x,int y,char *text)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x_pos,int y_pos,char *text)
+void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x,int y,char *text)
 
 {
-  engine_2d_c_drawText_FUN_00401fd0(text,x_pos,y_pos);
+  engine_2d_c_drawText_FUN_00401fd0(text,x,y);
   return;
 }

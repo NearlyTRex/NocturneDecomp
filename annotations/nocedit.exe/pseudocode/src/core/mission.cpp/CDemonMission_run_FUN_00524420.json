@@ -4,74 +4,29 @@
       {
         "category": "other",
         "column": 6,
-        "line": 36,
-        "message": "'void*' is not a pointer-to-object type"
+        "line": 38,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "incompatible_types",
-        "column": 63,
-        "line": 50,
-        "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 78,
-        "line": 51,
-        "message": "cast from 'CHero*' to 'int' loses precision [-fpermissive]"
+        "category": "other",
+        "column": 60,
+        "line": 38,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 21,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 23,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 26,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 28,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 57,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 99,
+    "complexity_score": 66,
     "cross_reference_count": 4,
     "function_call_count": 20,
     "global_count": 20,
-    "pseudocode_lines": 64,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 258
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -153,16 +108,6 @@
       "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80"
     },
     {
-      "addr": "00523f20",
-      "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
-    },
-    {
-      "addr": "00523fb0",
-      "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0"
-    },
-    {
       "addr": "00524760",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00524760"
@@ -173,9 +118,19 @@
       "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90"
     },
     {
+      "addr": "00523fb0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0"
+    },
+    {
+      "addr": "00523f20",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_00523f20"
+    },
+    {
       "addr": "00523be0",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0"
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0"
     },
     {
       "addr": "006020fc",
@@ -324,8 +279,8 @@
     },
     {
       "addr": "02f35f10",
-      "name": "DAT_02f35f10",
-      "type": "undefined1",
+      "name": "g_PendingMissionName",
+      "type": "char[8100]",
       "value": null
     },
     {
@@ -380,27 +335,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02f35f10",
-      "text": "DAT_02f35f10 = '\\0';",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_02f35f10",
-      "text": "if ((iVar1 == 0) || (DAT_02f35f10 == '\\0')) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_02f35f10",
-      "text": "core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,&DAT_02f35f10,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

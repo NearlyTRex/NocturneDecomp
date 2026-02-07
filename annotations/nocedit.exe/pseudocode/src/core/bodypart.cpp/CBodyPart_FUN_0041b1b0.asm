@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_gore.cpp_FUN_004edaa0
+;   core_gore.cpp_CGore_FUN_004edaa0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 0041b1d5
     MOV ECX,dword ptr [0x0067b9a0]      ; 0041b1d6 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0041b1dc | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edaa0     ; 0041b1dd
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
+    CALL core_gore.cpp_CGore_FUN_004edaa0 ; 0041b1dd
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edaa0(CGore * this_ptr)
     ADD ESP,0x10                        ; 0041b1e2
     RET                                 ; 0041b1e5
 

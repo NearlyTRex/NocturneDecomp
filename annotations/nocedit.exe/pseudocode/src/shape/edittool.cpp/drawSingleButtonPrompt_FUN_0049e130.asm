@@ -42,7 +42,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
@@ -249,8 +249,8 @@ section .text
     PUSH EBP                            ; 0049e369
     MOV EDX,dword ptr [0x02cf1cd0]      ; 0049e36a | g_EditorFont
     PUSH EDX                            ; 0049e370
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0049e371
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0049e371
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0049e376
     PUSH 0x1                            ; 0049e379
     LEA EAX,[ESP + 0x4]                 ; 0049e37b

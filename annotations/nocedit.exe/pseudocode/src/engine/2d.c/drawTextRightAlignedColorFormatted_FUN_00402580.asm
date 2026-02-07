@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorFormatted_FUN_00402580 (int y_pos,int right_x,char *format_string,...)
+; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorFormatted_FUN_00402580(int x,int y,char *format_string,...)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   y_pos
-; int              Stack[0x8]:4   right_x
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ; char *           Stack[0xc]:4   format_string
 ; Local Variables:
-; undefined        Stack[-0x100c]:1  local_100c
-; undefined4       Stack[-0xc]:4  local_c
+; char[4096]       Stack[-0x100c]:4096  local_100c
+; va_list_t        Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_texlist.cpp_CTextureList_renderTexture_FUN_005dca30 at 005dca76
@@ -35,7 +35,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004025a6
     PUSH EAX                            ; 004025aa
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004025ab
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004025b0
     MOV EBX,dword ptr [ESP + 0x1014]    ; 004025b3
     PUSH EBX                            ; 004025ba
@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 004025c9
     MOV dword ptr [ESP + 0x100c],ECX    ; 004025ca
     CALL engine_2d.c_drawTextRightAlignedColor_FUN_00402530 ; 004025d1
-        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int y_pos, int right_x)
+        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int x, int y)
     ADD ESP,0xc                         ; 004025d6
     ADD ESP,0x1004                      ; 004025d9
     POP ESI                             ; 004025df

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawText_FUN_00401fd0(char *text,int x_pos,int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawText_FUN_00401fd0(char *text,int x,int y)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   x_pos
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[133]:
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e960

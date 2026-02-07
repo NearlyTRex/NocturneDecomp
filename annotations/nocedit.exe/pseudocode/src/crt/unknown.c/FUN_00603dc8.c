@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00603dc8(void)
+void FUN_00603dc8(void)
 
 {
   ushort uVar1;
@@ -60,7 +60,7 @@ void crt_unknown_c_FUN_00603dc8(void)
   in_stack_00000008[10] = 0;
   iVar11 = 0;
   in_stack_00000008[6] = 0;
-  uVar2 = crt_unknown_c_FUN_0060b07a();
+  uVar2 = FUN_0060b07a();
   switch(uVar2) {
   case 0:
   case 4:
@@ -79,7 +79,7 @@ void crt_unknown_c_FUN_00603dc8(void)
         uVar6 = local_24;
         local_24 = uVar9;
 LAB_00603fc8:
-        crt_unknown_c_FUN_00603d60(&local_4c,iVar4,uVar9,uVar6,&local_4c,uVar3);
+        FUN_00603d60(&local_4c,iVar4,uVar9,uVar6,&local_4c,uVar3);
       }
       else {
         uVar1 = CONCAT11(bStack_43,uStack_44);
@@ -157,8 +157,8 @@ LAB_00603e7d:
     local_1c = local_1c + -8;
     if (iVar11 != 0) {
 LAB_006040c9:
-      crt_unknown_c_FUN_006040d7(iVar11,puVar8,local_97,puVar7,puVar8,puVar7);
-      crt_unknown_c_FUN_0060411c();
+      FUN_006040d7(iVar11,puVar8,local_97,puVar7,puVar8,puVar7);
+      FUN_0060411c();
       return;
     }
     if ((CONCAT11(bStack_43,uStack_44) & 0x7fff) != 0) {
@@ -245,12 +245,12 @@ LAB_006040c9:
      (((*(byte *)(in_stack_00000008 + 2) & 4) == 0 ||
       ((((int)local_24 < -4 || (*in_stack_00000008 <= (int)local_24)) &&
        ((*(byte *)(in_stack_00000008 + 2) & 8) == 0)))))) {
-    crt_unknown_c_FUN_00604478();
+    FUN_00604478();
   }
   else {
-    crt_unknown_c_FUN_00604267();
+    FUN_00604267();
   }
 LAB_00603d56:
-  crt_unknown_c_FUN_0060445e(local_18 & 0xffff);
+  FUN_0060445e(local_18 & 0xffff);
   return;
 }

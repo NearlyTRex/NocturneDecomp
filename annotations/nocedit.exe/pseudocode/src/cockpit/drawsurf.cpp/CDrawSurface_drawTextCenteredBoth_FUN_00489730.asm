@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (CDrawSurface *this_ptr,int x,int y,int height,char *text)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (CDrawSurface *this_ptr,char *text,int x,int y)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   x
-; int              Stack[0xc]:4   y
-; int              Stack[0x10]:4   height
-; char *           Stack[0x14]:4   text
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 at 004897ea
@@ -36,7 +35,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 00489747
     PUSH ESI                            ; 0048974b
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 ; 0048974c
-        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, int x, int y, int width, ...)
+        ;   XREF to: 00489120 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x1c                        ; 00489751
     POP ESI                             ; 00489754
     POP EBX                             ; 00489755

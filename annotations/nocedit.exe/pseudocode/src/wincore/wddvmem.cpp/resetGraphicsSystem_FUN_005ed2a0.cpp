@@ -65,7 +65,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
         (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
         g_DirectDrawObject = (IDirectDraw *)0x0;
       }
-      HVar2 = crt_ddraw_c_DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
+      HVar2 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
       if (HVar2 == 0) {
         (*g_DirectDrawObject->vtable->SetCooperativeLevel)
                   (g_DirectDrawObject,g_MainWindowHandle,0x11);

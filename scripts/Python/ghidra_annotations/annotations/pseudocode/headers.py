@@ -2353,6 +2353,47 @@ def generate_winsock_runtime_inlines():
     return lines
 
 
+def generate_ddraw_api_functions():
+    """Generate DirectDraw API function declarations.
+
+    These are appended to ddraw.h after the struct/typedef definitions from Ghidra.
+    Ghidra emits direct calls to these in decompiled code, but at runtime they
+    are loaded dynamically via GetProcAddress from ddraw.dll.
+
+    Returns:
+        List of content lines to append to ddraw.h
+    """
+    lines = []
+    lines.append("// =============================================================================")
+    lines.append("// DIRECTDRAW API FUNCTIONS")
+    lines.append("// =============================================================================")
+    lines.append("")
+    lines.append("extern HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, struct IUnknown* pUnkOuter);")
+    lines.append("")
+    return lines
+
+
+def generate_dsound_api_functions():
+    """Generate DirectSound API function declarations.
+
+    These are appended to dsound.h after the struct/typedef definitions from Ghidra.
+    Ghidra emits direct calls to these in decompiled code, but at runtime they
+    are loaded dynamically via GetProcAddress from dsound.dll.
+
+    Returns:
+        List of content lines to append to dsound.h
+    """
+    lines = []
+    lines.append("// =============================================================================")
+    lines.append("// DIRECTSOUND API FUNCTIONS")
+    lines.append("// =============================================================================")
+    lines.append("")
+    lines.append("extern HRESULT DirectSoundCreate(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);")
+    lines.append("extern HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);")
+    lines.append("")
+    return lines
+
+
 def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map=None):
     """Export grouped header files for system types as single files.
 
@@ -2481,6 +2522,14 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         # Special case: append Winsock inline function stubs to winsock.h
         if header_name == "winsock":
             content.extend(generate_winsock_runtime_inlines())
+
+        # Special case: append DirectDraw API function declarations to ddraw.h
+        if header_name == "ddraw":
+            content.extend(generate_ddraw_api_functions())
+
+        # Special case: append DirectSound API function declarations to dsound.h
+        if header_name == "dsound":
+            content.extend(generate_dsound_api_functions())
 
         # Write header file
         header_path = os.path.join(system_dir, "%s.h" % header_name)

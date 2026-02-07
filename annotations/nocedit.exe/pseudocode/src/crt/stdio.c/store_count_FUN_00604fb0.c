@@ -11,26 +11,26 @@ store_count(scanf_state_t *state,va_list_t *args,int chars_consumed)
 
 {
   byte bVar1;
-  va_list_t pcVar2;
+  char *pcVar2;
   int *piVar3;
   
   bVar1 = state->flags;
   if ((bVar1 & 1) != 0) {
     if ((bVar1 & 4) == 0) {
       if ((bVar1 & 8) == 0) {
-        pcVar2 = *args;
-        *args = pcVar2 + 4;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
         piVar3 = *(int **)pcVar2;
       }
       else {
-        pcVar2 = *args;
-        *args = pcVar2 + 4;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
         piVar3 = *(int **)pcVar2;
       }
     }
     else {
-      pcVar2 = *args;
-      *args = pcVar2 + 8;
+      pcVar2 = args->value[0];
+      args->value[0] = pcVar2 + 8;
       piVar3 = (int *)*(undefined6 *)pcVar2;
     }
     if ((state->flags & 0x10) != 0) {

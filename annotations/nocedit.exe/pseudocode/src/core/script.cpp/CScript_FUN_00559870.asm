@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_mission.cpp_CDemonMission_FUN_005243a0 at 005243eb
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 at 005243eb
 ;   core_script.cpp_CScript_FUN_00559f80 at 0055a2f1
 ;   core_script.cpp_CScript_dtor_FUN_00559840 at 00559846
 ;

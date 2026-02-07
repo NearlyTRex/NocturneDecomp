@@ -76,7 +76,7 @@ void __cdecl core_dracbrid_cpp_FUN_004858f0(void)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (in_stack_00000004,&CStack_58,(CVector3f *)auStack_4c);
   if (in_stack_00000004[0x88].unk9 == 0) {
-    core_gore_cpp_FUN_004edbb0();
+    core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
     return;
   }
   in_stack_00000004[0x23].actor_name[8] = '\0';

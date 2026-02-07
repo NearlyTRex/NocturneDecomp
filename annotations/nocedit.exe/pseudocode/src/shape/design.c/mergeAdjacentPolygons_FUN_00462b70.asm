@@ -122,7 +122,7 @@ section .text
     MOV EAX,0x61bfee                    ; 00462c2e | = "ERROR: Polygons share more than 2 ver..."
     PUSH EAX                            ; 00462c33 | = "ERROR: Polygons share more than 2 ver..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00462c34
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00462c39
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00462c3c
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -676,7 +676,7 @@ section .text
     MOV EAX,0x61c01a                    ; 0046330e | = "ERROR: More than 3 vertices to delete!"
     PUSH EAX                            ; 00463313 | = "ERROR: More than 3 vertices to delete!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00463314
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00463319
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046331c
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

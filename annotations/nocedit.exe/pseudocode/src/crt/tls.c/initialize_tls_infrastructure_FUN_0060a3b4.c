@@ -45,7 +45,7 @@ void __cdecl initialize_tls_infrastructure(void)
        leave_global_runtime_critical_section;
   PTR_crt_sync_c_CriticalSectionCleanup_FUN_00602434_00684f20 =
        shutdown_tls_infrastructure;
-  PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f18 = crt_unknown_c_FUN_0060a1dc;
+  PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f18 = FUN_0060a1dc;
   register_thread_data
             (*(void **)((int)g_CurrentThreadTlsBlock + 0xda),g_CurrentThreadTlsBlock);
   (*g_TlsSetValueFunc)(g_TLSIndex,g_CurrentThreadTlsBlock);

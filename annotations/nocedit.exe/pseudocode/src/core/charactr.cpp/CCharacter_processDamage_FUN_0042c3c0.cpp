@@ -64,7 +64,7 @@ LAB_0042c429:
     local_1c.z = (float)(int)ROUND(dVar2);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,output_world_point,input_local_point);
-    core_gore_cpp_FUN_004edbb0();
+    core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0

@@ -75,7 +75,7 @@ section .text
     MOV EAX,0x61b4af                    ; 0045e085 | = "Sweep around X) Y) Z) axis : "
     PUSH EAX                            ; 0045e08a | = "Sweep around X) Y) Z) axis : "
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e08b
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045e090
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e093
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -142,7 +142,7 @@ section .text
     MOV EAX,0x61b516                    ; 0045e132 | = "I)nside, O)utside, B)oth ?"
     PUSH EAX                            ; 0045e137 | = "I)nside, O)utside, B)oth ?"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e138
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045e13d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e140
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

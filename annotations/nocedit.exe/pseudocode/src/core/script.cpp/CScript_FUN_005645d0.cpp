@@ -52,8 +52,8 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
              g_CurrentEditingColumn + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
             (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);
-  engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0
-            (DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);
+  engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
+            (DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);
   engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
   return;
 }

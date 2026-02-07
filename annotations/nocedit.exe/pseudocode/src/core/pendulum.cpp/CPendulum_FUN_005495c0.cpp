@@ -125,7 +125,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_005495c0(CPendulum *this_ptr)
           CStack_98.y = (float)auStack_44._4_4_;
           CStack_98.z = fStack_3c;
         }
-        core_gore_cpp_FUN_004edbb0();
+        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
         return;
       }
     }

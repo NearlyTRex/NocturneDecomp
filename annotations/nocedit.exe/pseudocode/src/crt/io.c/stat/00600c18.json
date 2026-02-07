@@ -1,0 +1,190 @@
+{
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 21,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "00481910",
+      "from_addr": "00481927",
+      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004817c0",
+      "from_addr": "00481800",
+      "name": "engine_dosio.c_findFileNormally_FUN_004817c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600c18",
+    "address_range": [
+      [
+        "00600c18",
+        "00600c1c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_stat_00600c18",
+    "signature": "int __cdecl crt_io_c_stat_00600c18(char *filename,_stat *file_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCH": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 884,
+    "local_size": 876,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_368",
+        "offset": -872,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_364",
+        "offset": -868,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_35c",
+        "offset": -860,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_354",
+        "offset": -852,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_348",
+        "offset": -840,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_33c",
+        "offset": -828,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_228",
+        "offset": -552,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_227",
+        "offset": -551,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_226",
+        "offset": -550,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_225",
+        "offset": -549,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_info",
+        "offset": 8,
+        "size": 4,
+        "type": "_stat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "address": "00600c18",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_stat_00600c18",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600c18",
+      "type": "special_crt_function"
+    }
+  ]
+}

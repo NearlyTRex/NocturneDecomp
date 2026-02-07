@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00603bc9(void)
+void FUN_00603bc9(void)
 
 {
   double dVar1;

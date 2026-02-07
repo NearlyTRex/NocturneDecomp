@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_CScript_FUN_005664d0(CScript *this_ptr,int param_2)
   int color_mode;
   uint character_code;
   uint uVar4;
-  int x_pos;
+  int x;
   int local_1c;
   int local_18;
   
@@ -35,9 +35,9 @@ void __cdecl core_script_cpp_CScript_FUN_005664d0(CScript *this_ptr,int param_2)
                    INT_031141e0 + -1,iVar2 + DAT_03114208 + -1,4);
       }
       bVar1 = false;
-      x_pos = INT_031141e0 + -g_ScriptEditorHScrollBar.scroll_position * INT_03114204;
+      x = INT_031141e0 + -g_ScriptEditorHScrollBar.scroll_position * INT_03114204;
       uVar4 = 0;
-      if (x_pos < DAT_031141e8) {
+      if (x < DAT_031141e8) {
         while( true ) {
           character_code = (uint)*pbVar3;
           if (character_code == 0) break;
@@ -52,13 +52,13 @@ void __cdecl core_script_cpp_CScript_FUN_005664d0(CScript *this_ptr,int param_2)
             color_mode = 2;
           }
           engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
-                    (DAT_03114200,character_code,x_pos,iVar2,color_mode,-1);
+                    (DAT_03114200,character_code,x,iVar2,color_mode,-1);
           if ((character_code != 9) || ((uVar4 & 7) == 7)) {
             pbVar3 = pbVar3 + 1;
           }
-          x_pos = x_pos + INT_03114204;
+          x = x + INT_03114204;
           uVar4 = uVar4 + 1;
-          if (DAT_031141e8 <= x_pos) {
+          if (DAT_031141e8 <= x) {
             return;
           }
         }

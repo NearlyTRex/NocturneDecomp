@@ -2,171 +2,122 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
+        "category": "type_error",
         "column": 3,
         "line": 27,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 27,
-        "message": "'blend_callback' was not declared in this scope"
+        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 22,
         "line": 163,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 35,
-        "line": 178,
-        "message": "void value not ignored as it ought to be"
+        "column": 60,
+        "line": 163,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 177,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 16,
         "line": 249,
-        "message": "invalid cast from type 'float' to type 'CDeformableModelInstance*'"
+        "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
       },
       {
         "category": "other",
         "column": 9,
         "line": 252,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 46,
         "line": 253,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 32,
         "line": 255,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 46,
         "line": 256,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
         "line": 258,
-        "message": "invalid cast from type 'float' to type 'CDeformableModelInstance*'"
+        "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
       },
       {
         "category": "other",
         "column": 45,
         "line": 259,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 9,
         "line": 260,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 26,
         "line": 260,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 9,
         "line": 263,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 27,
         "line": 263,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 87,
         "line": 266,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 36,
-        "line": 273,
-        "message": "cast from 'CDeformableModelInstance*' to 'int' loses precision [-fpermissive]"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
         "line": 273,
-        "message": "'void*' is not a pointer-to-object type"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 68,
+        "line": 273,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 307,
-        "message": "request for member '_0_4_' in 'auStack_80', which is of non-class type 'byte [24]' {aka 'unsigned char [24]'}"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 7,
-        "line": 313,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 12,
-        "line": 315,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 178,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 215,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 273,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 312,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 314,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 682,

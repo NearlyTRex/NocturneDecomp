@@ -14,7 +14,7 @@
 ;
 ; XREF[14]:
 ;   core_course.cpp_FUN_00443bc0 at 00443d1d
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a338
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a338
 ;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056bfae
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056caf7
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab84

@@ -212,7 +212,7 @@ LAB_0051fd7d:
                            ((CDeformableModelInstance *)local_18,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_7c,pCVar6);
-        core_gore_cpp_FUN_004ede30();
+        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
         (this_ptr->base).pool_me = 1;
       }
       goto LAB_0051fdb4;

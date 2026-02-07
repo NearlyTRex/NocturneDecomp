@@ -15,7 +15,7 @@ core_grave_cpp_CGrave_getBoundingBox_FUN_004ee8f0(CGrave *this_ptr,CBoundingBox3
   double dVar3;
   int iVar4;
   
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
+  if (g_CDemonMissionPtr->is_in_editor == 0) {
     dVar3 = round((double)this_ptr->cur_frame);
     iVar4 = (int)ROUND(dVar3);
     pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);

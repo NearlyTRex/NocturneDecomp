@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_gore.cpp_FUN_004ecad0(uint param_1) */
-
 void __cdecl core_gore_cpp_FUN_004ecad0(void)
 
 {

@@ -632,8 +632,8 @@ section .text
     PUSH EAX                            ; 00416e34
     MOV EDI,dword ptr [0x0067b9a0]      ; 00416e35 | g_CGorePtr
     PUSH EDI                            ; 00416e3b | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ede30     ; 00416e3c
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 00416e3c
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 00416e41
     MOV dword ptr [EBX + 0xbe28],0x1    ; 00416e44
     JMP 0x00416970                      ; 00416e4e

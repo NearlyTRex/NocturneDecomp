@@ -3,65 +3,64 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 24,
-        "message": "'code' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 24,
-        "message": "expected primary-expression before ')' token"
+        "column": 86,
+        "line": 25,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
         "line": 36,
-        "message": "'DAT_02f7a024' was not declared in this scope; did you mean 'INT_02f7a028'?"
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 44,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 56,
+        "line": 48,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 51,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
       }
     ],
     "success": false,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
+        "category": "format_error",
         "column": 38,
-        "line": 62,
-        "message": "format '%s' expects argument of type 'char*', but argument 3 has type 'uint' {aka 'unsigned int'} [-Wformat=]"
+        "line": 60,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Wformat]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 312,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 55,
     "suspect_count": 24,
     "suspect_types": [
       "unaffected_reg",
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 256
+    "total_lines": 254
   },
   "cross_references": [
     {
       "addr": "005390f0",
       "from_addr": "0053972b",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -280,7 +279,7 @@
       {
         "call_addr": "0053972b",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -348,49 +347,42 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 8,
       "match": "unaff_EDI",
       "text": "CDemonRenderer *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_02f7c528",
       "text": "DAT_02f7c528 = -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 0x1c) + 0x154) + 0xd4))();",
-      "type": "unresolved_funcptr"
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_02f7a024",
+      "text": "(*((this_ptr_00->vtable)._ub)->getPropertyList)(this_ptr_00,(CActorPropertyList *)&DAT_02f7a024);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_02f79818",
       "text": "if ((DAT_02f79818 & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02f79818",
-      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_02f79818",
       "text": "DAT_02f79818 = DAT_02f79818 | 1;",
       "type": "undefined_data"
@@ -398,13 +390,20 @@
     {
       "description": "Undefined global data reference",
       "line": 20,
+      "match": "DAT_02f79818",
+      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_0068064c",
       "text": "_atexit(&DAT_0068064c);",
       "type": "undefined_data"
@@ -413,7 +412,7 @@
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_02f7a024",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,0,iVar2);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,0,width);",
       "type": "undefined_data"
     },
     {
@@ -455,14 +454,14 @@
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_02f7a024",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,width);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_02f797e4",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,width);",
       "type": "undefined_data"
     },
     {
@@ -509,7 +508,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(&DAT_02f797e4);",
       "type": "undefined_data"

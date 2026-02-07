@@ -288,14 +288,14 @@ section .text
     PUSH 0x0                            ; 0057b102
     PUSH 0x6476d7                       ; 0057b104 | = "Position light.  Press SPACE when done"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b109
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057b10e
     PUSH 0xb                            ; 0057b111
     PUSH 0x0                            ; 0057b113
     LEA EAX,[ESP + 0x10c]               ; 0057b115
     PUSH EAX                            ; 0057b11c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b11d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x0067b654]                ; 0057b122 | g_CGamePtr
     ADD ESP,0xc                         ; 0057b127
     MOV EAX,dword ptr [EAX + 0x264]     ; 0057b12a | g_CGameInstance.delta_time_float
@@ -318,7 +318,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0057b15d
     PUSH EAX                            ; 0057b161
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b162
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057b167
     MOV EAX,[0x00681ab8]                ; 0057b16a | PTR_DAT_00681ab8
     SUB ESP,0x8                         ; 0057b16f
@@ -362,7 +362,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0057b1dd
     PUSH EAX                            ; 0057b1e1
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b1e2
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057b1e7
     CALL wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0 ; 0057b1ea
         ;   XREF to: 005f2fd0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0()
@@ -399,7 +399,7 @@ section .text
     PUSH 0x0                            ; 0057b240
     PUSH 0x64773f                       ; 0057b242 | = "Too many visible lights in view!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b247
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057b24c
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0057b24f
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

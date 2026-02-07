@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 004d895b
     MOV EDI,dword ptr [0x020a5720]      ; 004d895c | g_ThemeFont
     PUSH EDI                            ; 004d8962
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004d8963
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004d8963
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x02d831cc]                ; 004d8968 | INT_02d831cc
     MOV EBP,dword ptr [0x02d831c8]      ; 004d896d | INT_02d831c8
     MOV EDX,dword ptr [0x00679398]      ; 004d8973 | g_WindowHeight

@@ -82,11 +82,11 @@ double dmul(double a,double b)
   uVar9 = ((short)uVar11 + sVar17) - 0x3ff;
   uVar18 = CONCAT22((short)(uVar11 >> 0x10),uVar9);
   if ((-1 < (short)uVar9) && (0x7fe < uVar9)) {
-    dVar21 = (double)crt_unknown_c_FUN_0060eb57(uVar18);
+    dVar21 = (double)FUN_0060eb57(uVar18);
     return dVar21;
   }
   if ((short)uVar9 < -0x35) {
-    dVar21 = (double)crt_unknown_c_FUN_0060eb3a();
+    dVar21 = (double)FUN_0060eb3a();
     return dVar21;
   }
   uVar13 = (uVar13 | 0x100000) << 0xb | uVar15 >> 0x15;
@@ -149,6 +149,6 @@ double dmul(double a,double b)
     sVar17 = (short)uVar18 + 1;
     uVar18 = CONCAT22(uVar12,sVar17);
   } while (sVar17 != 0x7ff);
-  dVar21 = (double)crt_unknown_c_FUN_0060eb57(uVar18);
+  dVar21 = (double)FUN_0060eb57(uVar18);
   return dVar21;
 }

@@ -153,7 +153,7 @@ section .text
     LEA EAX,[EBP + -0x76]               ; 00448028
     PUSH EAX                            ; 0044802b
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0044802c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,dword ptr [EBP + 0x92]      ; 00448031
     ADD ESP,0xc                         ; 00448037
     TEST EAX,EAX                        ; 0044803a
@@ -163,7 +163,7 @@ section .text
     PUSH 0x0                            ; 00448040
     PUSH 0x619a96                       ; 00448042 | = "Done.  Press a key..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00448047
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
         ;   Label: LAB_00448047
     ADD ESP,0xc                         ; 0044804c
     MOV EDI,dword ptr [EBP + 0x8e]      ; 0044804f

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
+uint FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
 
 {
   ulonglong uVar1;
@@ -34,7 +34,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
   
   if (unaff_EBX == 0) {
     if ((param_4 & 0x7fffffff) == 0) {
-      uVar4 = crt_unknown_c_FUN_0060eb4b();
+      uVar4 = FUN_0060eb4b();
       return uVar4;
     }
     param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;
@@ -77,7 +77,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
     sVar14 = uVar15 - (short)uVar7;
     uVar15 = sVar14 + 0x3ff;
     if ((-1 < (short)uVar15) && (0x7fe < uVar15)) {
-      uVar4 = crt_unknown_c_FUN_0060eb57(uVar7);
+      uVar4 = FUN_0060eb57(uVar7);
       return uVar4;
     }
     if (-0x35 < (short)uVar15) {
@@ -171,7 +171,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
       }
       return uVar10;
     }
-    uVar4 = crt_unknown_c_FUN_0060eb3a();
+    uVar4 = FUN_0060eb3a();
     return uVar4;
   }
   if ((g_UseSoftwareMath & 1) == 0) {

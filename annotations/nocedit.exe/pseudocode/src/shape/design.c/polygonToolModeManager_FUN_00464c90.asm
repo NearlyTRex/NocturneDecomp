@@ -474,7 +474,7 @@ section .text
     LEA ESI,[EBP + 0xffffff58]          ; 004650b4
     PUSH ESI                            ; 004650ba
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 004650bb
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 004650c0
     CMP dword ptr [0x015c48b8],0x1      ; 004650c3 | g_PolygonToolMode
     JNZ 0x004650d5                      ; 004650ca
@@ -516,7 +516,7 @@ section .text
     LEA EAX,[EBP + 0xffffff58]          ; 00465138
     PUSH EAX                            ; 0046513e
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0046513f
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00465144
     MOV EAX,dword ptr [EBP + 0x14]      ; 00465147
         ;   Label: LAB_00465147

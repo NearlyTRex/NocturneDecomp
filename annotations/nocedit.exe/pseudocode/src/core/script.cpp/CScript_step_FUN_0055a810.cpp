@@ -653,7 +653,8 @@ LAB_0055bb9d:
                                   core_script_cpp_trimString_FUN_00559360(local_2e24);
                                   iVar6 = g_ScriptEventsEnabled;
                                   if (g_ScriptEventsEnabled == 0) {
-                                    core_mission_cpp_CDemonMission_FUN_00524630(g_CDemonMissionPtr);
+                                    core_mission_cpp_CDemonMission_setMissionName_FUN_00524630
+                                              (g_CDemonMissionPtr,local_2e24);
                                     this_ptr->script_pause_flag = 1;
                                     local_114 = iVar6;
                                   }

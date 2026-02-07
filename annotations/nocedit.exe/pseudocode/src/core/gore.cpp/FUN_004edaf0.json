@@ -2,40 +2,33 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 118,
+    "complexity_score": 117,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data"
     ],
-    "total_lines": 44
+    "total_lines": 43
   },
   "cross_references": [
     {
       "addr": "004edb40",
       "from_addr": "004edb4f",
-      "name": "core_gore.cpp_FUN_004edb40",
+      "name": "core_gore.cpp_CGore_FUN_004edb40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004edb70",
       "from_addr": "004edb80",
-      "name": "core_gore.cpp_FUN_004edb70",
+      "name": "core_gore.cpp_CGore_FUN_004edb70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -78,7 +71,7 @@
       {
         "call_addr": "004edb80",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004edb70",
+        "caller": "core_gore.cpp_CGore_FUN_004edb70",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -87,7 +80,7 @@
       {
         "call_addr": "004edb4f",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004edb40",
+        "caller": "core_gore.cpp_CGore_FUN_004edb40",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -136,56 +129,56 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 8,
       "match": "DAT_02d873d4",
       "text": "iVar2 = DAT_02d873d4 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_02d873dc",
       "text": "pCVar1 = DAT_02d873dc + DAT_02d873d4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_02d873d4",
       "text": "pCVar1 = DAT_02d873dc + DAT_02d873d4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_02d873d8",
       "text": "if (1999 < DAT_02d873d8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_02d873d4",
       "text": "DAT_02d873d4 = iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_02d873d8",
       "text": "DAT_02d873d8 = DAT_02d873d8 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_02d873d8",
       "text": "DAT_02d873d8 = DAT_02d873d8 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 18,
       "match": "DAT_02d873d4",
       "text": "DAT_02d873d4 = iVar2;",
       "type": "undefined_data"

@@ -42,7 +42,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
   int iStack_14;
   
   bVar9 = 0;
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+  if ((g_CDemonMissionPtr->is_in_editor != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
@@ -88,7 +88,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         iVar4 = 0x100;
         iVar3 = 0;
       }
-      if (this_ptr == *(CTrigger **)(g_CDemonMissionPtr->unk2 + 0x1c)) {
+      if (this_ptr == (CTrigger *)g_CDemonMissionPtr->selected_actor) {
         iVar6 = 0x80;
       }
       else {

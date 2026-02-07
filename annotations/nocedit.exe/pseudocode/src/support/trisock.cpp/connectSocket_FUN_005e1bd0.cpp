@@ -31,6 +31,6 @@ support_trisock_cpp_connectSocket_FUN_005e1bd0(SOCKET *socket_handle,SNetworkAdd
        *(uint *)((int)&local_18 + (uint)bVar3 * -8 + 4);
   *puVar2 = *puVar1;
   puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
-  iVar4 = crt_wsock32_c_connect(*socket_handle,(SOCKADDR *)name,iVar4);
+  iVar4 = connect(*socket_handle,(SOCKADDR *)name,iVar4);
   return (uint)(iVar4 == 0);
 }

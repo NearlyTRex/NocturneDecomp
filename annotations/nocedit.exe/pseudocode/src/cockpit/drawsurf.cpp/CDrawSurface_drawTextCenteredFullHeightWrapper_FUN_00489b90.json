@@ -2,27 +2,18 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 33,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 21
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -35,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90 (CDrawSurface *this_ptr,int x,int y,char *text)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90 (CDrawSurface *this_ptr,int x,char *text)"
   },
   "function_calls": [
     {
@@ -49,8 +40,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 4,
-    "estimated_params": 4
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6363636363636362,
@@ -73,10 +64,10 @@
     "pcode_op_count": 40
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -95,34 +86,12 @@
       },
       {
         "is_param": true,
-        "name": "y",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "text",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "char *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60(this_ptr,y,x,unaff_EBX);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

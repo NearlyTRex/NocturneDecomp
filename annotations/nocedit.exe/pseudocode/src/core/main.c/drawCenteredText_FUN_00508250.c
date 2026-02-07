@@ -13,7 +13,7 @@ void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int y_pos,int 
   int in_stack_00000010;
   
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
-  engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+  engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_MediumFont,text,0x140 - iVar1 / 2,color,in_stack_00000010,0);
   return;
 }

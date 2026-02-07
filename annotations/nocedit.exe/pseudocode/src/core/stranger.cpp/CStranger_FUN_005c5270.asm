@@ -54,7 +54,7 @@
 ;   core_hero.cpp_CHero_FUN_004f38d0
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004ffab0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
-;   core_mission.cpp_CDemonMission_FUN_00523b70
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   ... and 2 more
@@ -245,8 +245,8 @@ section .text
     PUSH EDX                            ; 005c5465
     MOV ECX,dword ptr [0x0067d550]      ; 005c5466 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 005c546c | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 005c546d
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 005c546d
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005c5472
     MOV EAX,dword ptr [EBX + 0x1fbb4]   ; 005c5475
     PUSH 0x0                            ; 005c547b

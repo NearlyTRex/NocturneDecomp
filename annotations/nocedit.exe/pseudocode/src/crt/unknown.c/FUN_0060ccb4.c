@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060ccb4(void)
+void FUN_0060ccb4(void)
 
 {
   ThreadRegistryEntry *pTVar1;

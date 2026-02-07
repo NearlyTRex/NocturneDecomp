@@ -5,24 +5,17 @@
         "category": "other",
         "column": 26,
         "line": 62,
-        "message": "invalid cast from type 'float' to type 'int*'"
+        "message": "cannot cast from type 'float' to pointer type 'int *'"
       },
       {
         "category": "other",
         "column": 25,
         "line": 65,
-        "message": "invalid cast from type 'int*' to type 'float'"
+        "message": "C-style cast from 'int *' to 'float' is not allowed"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 174,

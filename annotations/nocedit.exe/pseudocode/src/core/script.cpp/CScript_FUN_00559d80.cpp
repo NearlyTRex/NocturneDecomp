@@ -11,11 +11,11 @@ core_script_cpp_CScript_FUN_00559d80
           (CScript *this_ptr,int param_2,int param_3,int param_4,int param_5)
 
 {
-  char *x;
-  int index;
   char *text;
+  int index;
+  int y;
   int iVar1;
-  char *text_00;
+  int x;
   char local_a4 [100];
   CDrawSurface local_40;
   int local_20;
@@ -41,7 +41,7 @@ core_script_cpp_CScript_FUN_00559d80
     if (index < 0) {
       index = 0;
     }
-    text = (char *)0x2;
+    y = 2;
     local_14 = &this_ptr->script_text;
     local_18 = iVar1 - local_1c;
     if (2 < local_18) {
@@ -64,16 +64,14 @@ core_script_cpp_CScript_FUN_00559d80
         }
         cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(iVar1);
         sprintf(local_a4,"%d",index + 1);
-        cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-                  (&local_40,(int)local_a4,2,text);
-        iVar1 = 0x1e;
-        text_00 = text;
-        x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(local_14,index);
-        cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-                  (&local_40,(int)x,iVar1,text_00);
-        text = text + local_1c;
+        cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(&local_40,local_a4,2,y);
+        x = 0x1e;
+        iVar1 = y;
+        text = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(local_14,index);
+        cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(&local_40,text,x,iVar1);
+        y = y + local_1c;
         index = index + 1;
-      } while ((int)text < local_18);
+      } while (y < local_18);
     }
   }
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xff);

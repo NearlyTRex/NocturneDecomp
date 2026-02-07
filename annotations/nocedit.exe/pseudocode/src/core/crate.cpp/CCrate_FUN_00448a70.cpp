@@ -23,7 +23,8 @@ void __cdecl core_crate_cpp_CCrate_FUN_00448a70(CCrate *this_ptr)
     fStack_8 = (pCVar1->position).x;
   }
   core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
-  core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+            (g_CDemonMissionPtr,&this_ptr->base,1);
   (this_ptr->base).was_created = 2;
   return;
 }

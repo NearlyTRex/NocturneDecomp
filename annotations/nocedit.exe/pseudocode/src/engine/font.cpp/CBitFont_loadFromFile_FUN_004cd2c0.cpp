@@ -48,7 +48,7 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_p
               (this_ptr,local_22c,local_2c,local_28,local_24,local_20,local_1c,unaff_EDI);
   }
   this_ptr->char_widths[0x20] = local_18;
-  this_ptr->font_type = local_14;
-  this_ptr->font_enabled = local_10;
+  this_ptr->shadow_offset_x = local_14;
+  this_ptr->shadow_offset_y = local_10;
   return;
 }

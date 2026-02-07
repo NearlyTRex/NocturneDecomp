@@ -157,7 +157,7 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
     engine_2d_c_drawText_FUN_00401fd0("F7",g_ClipLeft,local_14);
     engine_2d_c_drawText_FUN_00401fd0
               ("Syntax check",g_WindowWidth / 8 + g_ClipLeft,local_14);
-    this_ptr = *(CDemonActor **)(g_CDemonMissionPtr->unk2 + 0x1c);
+    this_ptr = g_CDemonMissionPtr->selected_actor;
     uVar1 = local_14 + 0x16;
     if (this_ptr != (CDemonActor *)0x0) {
       local_14 = local_14 + 0x21;

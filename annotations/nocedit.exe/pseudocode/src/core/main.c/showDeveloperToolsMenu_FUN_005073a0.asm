@@ -105,73 +105,73 @@ section .text
     PUSH 0x0                            ; 00507415
     PUSH 0x635060                       ; 00507417 | = "Nocturne(R) Debug/editor Menu"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0050741c
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507421
     PUSH 0x16                           ; 00507424
     PUSH 0x0                            ; 00507426
     PUSH 0x63507e                       ; 00507428 | = "1. Play a mission"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0050742d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507432
     PUSH 0x21                           ; 00507435
     PUSH 0x0                            ; 00507437
     PUSH 0x635090                       ; 00507439 | = "2. Enter the Demented(R) Shape Editor..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0050743e
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507443
     PUSH 0x37                           ; 00507446
     PUSH 0x0                            ; 00507448
     PUSH 0x6350ba                       ; 0050744a | = "4. Enter the Demon Set System"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0050744f
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507454
     PUSH 0x42                           ; 00507457
     PUSH 0x0                            ; 00507459
     PUSH 0x6350d8                       ; 0050745b | = "5. Enter the Demon Keyframed Model Sy..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00507460
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507465
     PUSH 0x4d                           ; 00507468
     PUSH 0x0                            ; 0050746a
     PUSH 0x635102                       ; 0050746c | = "6. Procedural texture system"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00507471
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507476
     PUSH 0x58                           ; 00507479
     PUSH 0x0                            ; 0050747b
     PUSH 0x63511f                       ; 0050747d | = "7. Enter the Demon course system"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00507482
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507487
     PUSH 0x6e                           ; 0050748a
     PUSH 0x0                            ; 0050748c
     PUSH 0x635140                       ; 0050748e | = "A. File Manager"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00507493
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00507498
     PUSH 0x79                           ; 0050749b
     PUSH 0x0                            ; 0050749d
     PUSH 0x635150                       ; 0050749f | = "B. Enter the Demon Morph System"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005074a4
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005074a9
     PUSH 0x84                           ; 005074ac
     PUSH 0x0                            ; 005074b1
     PUSH 0x635170                       ; 005074b3 | = "M. Enter the Demon Mission System"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005074b8
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005074bd
     PUSH 0x8f                           ; 005074c0
     PUSH 0x0                            ; 005074c5
     PUSH 0x635192                       ; 005074c7 | = "S. Enter the Demon Skeletal System"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005074cc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005074d1
     PUSH 0xbb                           ; 005074d4
     PUSH 0x0                            ; 005074d9
     PUSH 0x6351b5                       ; 005074db | = "Z. Display memory usage info"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005074e0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005074e5
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005074e8
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -346,8 +346,8 @@ section .text
     PUSH EBP                            ; 005076d4
     MOV EAX,[0x02cf1cd0]                ; 005076d5 | g_EditorFont
     PUSH EAX                            ; 005076da
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005076db
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005076db
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005076e0
     PUSH EDI                            ; 005076e3
     LEA EAX,[ESP + 0x304]               ; 005076e4

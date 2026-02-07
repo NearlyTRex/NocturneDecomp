@@ -34,8 +34,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00419010
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00523b70
-;   core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -114,14 +114,14 @@ section .text
         ;   Label: LAB_00418ec2
     MOV ESI,dword ptr [0x0067d550]      ; 00418ec3 | g_CDemonMissionPtr
     PUSH ESI                            ; 00418ec9 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00418eca
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 ; 00418eca
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_00524700(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00418ecf
     PUSH EBX                            ; 00418ed2
     MOV EBP,dword ptr [0x0067d550]      ; 00418ed3 | g_CDemonMissionPtr
     PUSH EBP                            ; 00418ed9 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00418eda
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00418eda
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00418edf
     TEST EDI,EDI                        ; 00418ee2
     JNZ 0x00418fa2                      ; 00418ee4

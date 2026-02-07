@@ -2,77 +2,40 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "const_error",
+        "category": "incompatible_types",
         "column": 19,
         "line": 22,
-        "message": "invalid conversion from 'const char**' to 'char**' [-fpermissive]"
+        "message": "assigning to 'char **' from incompatible type 'const char *[141]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
         "line": 25,
-        "message": "'DAT_0310aa4c' was not declared in this scope; did you mean 'DAT_0310fd4c'?"
+        "message": "use of undeclared identifier 'DAT_0310aa4c'; did you mean 'DAT_0310fd4c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
         "line": 27,
-        "message": "'DAT_0310ad74' was not declared in this scope; did you mean 'DAT_03FBAD74'?"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 74,
-        "line": 35,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+        "message": "use of undeclared identifier 'DAT_0310ad74'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 40,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 50,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 55,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 152,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 13,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 53,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 219
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -98,7 +61,7 @@
     {
       "addr": "00524030",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
     },
     {
       "addr": "0053c140",

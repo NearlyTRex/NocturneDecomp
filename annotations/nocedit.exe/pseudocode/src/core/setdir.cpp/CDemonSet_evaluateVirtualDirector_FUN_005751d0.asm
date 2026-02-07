@@ -21,9 +21,9 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dc962
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e367c
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db292
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 005393c6
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c19f
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e48a
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005393c6
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055da35
 ;
 ; Referenced Globals:

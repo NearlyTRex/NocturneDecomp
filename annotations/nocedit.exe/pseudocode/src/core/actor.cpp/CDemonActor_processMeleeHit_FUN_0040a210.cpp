@@ -173,7 +173,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
           if (0.0 < uStack_26c) {
             round(uStack_26c * 0.5 + 1.0);
             in_stack_fffffd70 = (CVector3f *)0x40a511;
-            core_gore_cpp_FUN_004edbb0();
+            core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                       (this_ptr,hit_type,(SDamageInfo *)(auStack_184 + 0xc),(CDemonActor *)pCVar3);
           }

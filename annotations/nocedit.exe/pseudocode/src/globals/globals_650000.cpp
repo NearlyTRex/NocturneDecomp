@@ -4929,12 +4929,12 @@ WatcomDestructorCall WatcomDestructorCall_0065f000 = {
 };
 WatcomDestructorCall WatcomDestructorCall_0065f00c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_gore_cpp_cleanupBloodParticles_FUN_004ee480,
+    .destructor_func = (void *)core_gore_cpp_freeBloodParticles_FUN_004ee480,
     .object_instance = (void *)0x02D833D4
 };
 WatcomDestructorCall WatcomDestructorCall_0065f018 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_gore_cpp_FUN_004ee420,
+    .destructor_func = (void *)core_gore_cpp_freeFootsteps_FUN_004ee420,
     .object_instance = (void *)0x02DA8C2C
 };
 WatcomDestructorCall WatcomDestructorCall_0065f230 = {
@@ -5930,33 +5930,33 @@ WatcomTypeInfo g_CGoreTypeInfo = {
 };
 WatcomTypeInfo g_CBloodParticleTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee3f0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_CBloodParticle_ctor_FUN_004ee3f0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee410,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_CBloodParticle_dtor_FUN_004ee410,
     .instance_size = 0x00000040,
     .class_name = (char *)s_CBloodParticle_0067cb80
 };
 WatcomTypeInfo g_CBloodSplatTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee3d0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_CBloodSplat_ctor_FUN_004ee3d0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee3e0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_CBloodSplat_dtor_FUN_004ee3e0,
     .instance_size = 0x00000044,
     .class_name = (char *)s_CBloodSplat_0067cb6c
 };
 WatcomTypeInfo g_CBloodPoolTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee3b0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_CBloodPool_ctor_FUN_004ee3b0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee3c0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_CBloodPool_dtor_FUN_004ee3c0,
     .instance_size = 0x00000028,
     .class_name = (char *)s_CBloodPool_0067cb58
 };
 WatcomTypeInfo g_CFootstepTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee370,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_gore_cpp_CFootstep_ctor_FUN_004ee370,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_FUN_004ee390,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_gore_cpp_CFootstep_dtor_FUN_004ee390,
     .instance_size = 0x00000040,
     .class_name = (char *)s_CFootstep_0067cb44
 };

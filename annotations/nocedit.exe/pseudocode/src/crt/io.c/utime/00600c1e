@@ -1,0 +1,16 @@
+// Name: crt_io.c_utime_00600c1e
+// Address: 00600c1e
+// Address Range: [[00600c1e, 00600c22]]
+// Convention: __cdecl
+// Signature: int __cdecl crt_io_c_utime_00600c1e(char *filename,utimbuf *timestamps)
+
+#include "nocturne.h"
+
+int __cdecl utime_00600c1e(char *filename,utimbuf *timestamps)
+
+{
+  int iVar1;
+  
+  iVar1 = utime(filename,timestamps);
+  return iVar1;
+}

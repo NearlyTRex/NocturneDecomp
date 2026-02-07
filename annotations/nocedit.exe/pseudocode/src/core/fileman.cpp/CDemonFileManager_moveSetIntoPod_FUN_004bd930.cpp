@@ -15,7 +15,7 @@ core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager
   
   iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select set to build pod.","models",
-                     "*.set",(int)local_104);
+                     "*.set",(int)local_104,0);
   if (iVar1 == 0) {
     return;
   }

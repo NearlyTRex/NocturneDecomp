@@ -41,7 +41,7 @@ switchD_0060d141_caseD_c:
     setSignalHandler(signal_number,2);
     (*pcVar1)();
   }
-  iVar2 = crt_unknown_c_FUN_0060cf80();
+  iVar2 = FUN_0060cf80();
   if (iVar2 != 0) {
     return 0;
   }

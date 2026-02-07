@@ -9,7 +9,7 @@
 void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *this_ptr)
 
 {
-  int x_pos;
+  int x;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -37,11 +37,11 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
       if ((iVar1 == g_PathfindingDestX) && (iVar2 == g_PathfindingDestZ)) {
         local_11c[0] = 'd';
       }
-      x_pos = g_WindowWidth / 2 + iVar3;
+      x = g_WindowWidth / 2 + iVar3;
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 0xe;
-      engine_2d_c_drawText_FUN_00401fd0(local_11c,x_pos,local_1c);
+      engine_2d_c_drawText_FUN_00401fd0(local_11c,x,local_1c);
     } while (iVar1 < 100);
     iVar2 = iVar2 + 1;
     local_14 = local_14 + -0xb;

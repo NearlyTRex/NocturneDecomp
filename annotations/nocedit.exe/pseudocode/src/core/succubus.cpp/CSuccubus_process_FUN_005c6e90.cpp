@@ -22,7 +22,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   int iVar9;
   SMotion *pSVar10;
   CHotDemon *this_ptr_00;
-  CHotDemon *this_ptr_01;
+  CHotDemon *actor;
   int extraout_EAX;
   int extraout_EAX_00;
   float fVar11;
@@ -198,31 +198,28 @@ LAB_005c6fd0:
      *(float *)(this_ptr->unk + 0x2484) = fVar6, 4.0f < fVar6)) {
     this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
-    this_ptr_01 = (CHotDemon *)0x0;
+    actor = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
-      this_ptr_01 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);
+      actor = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);
     }
     pCVar8 = g_CDemonMissionPtr;
-    if (this_ptr_01 != (CHotDemon *)0x0) {
+    if (actor != (CHotDemon *)0x0) {
       (this_ptr->base).base.base.was_created = 2;
-      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(pCVar8);
-      (this_ptr_01->base).base.base.location.position.x =
-           (this_ptr->base).base.base.location.position.x;
-      (this_ptr_01->base).base.base.location.position.y =
-           (this_ptr->base).base.base.location.position.y;
-      (this_ptr_01->base).base.base.location.position.z =
-           (this_ptr->base).base.base.location.position.z;
-      pCVar13 = &(this_ptr_01->base).base.base.orient;
-      (this_ptr_01->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
+      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(pCVar8,(CDemonActor *)actor);
+      (actor->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;
+      (actor->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
+      (actor->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
+      pCVar13 = &(actor->base).base.base.orient;
+      (actor->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
       pCVar1 = &(this_ptr->base).base.base.orient;
       if (pCVar13 != pCVar1) {
         pCVar13->pitch = pCVar1->pitch;
-        (this_ptr_01->base).base.base.orient.bank = (this_ptr->base).base.base.orient.bank;
-        (this_ptr_01->base).base.base.orient.heading = (this_ptr->base).base.base.orient.heading;
+        (actor->base).base.base.orient.bank = (this_ptr->base).base.base.orient.bank;
+        (actor->base).base.base.orient.heading = (this_ptr->base).base.base.orient.heading;
       }
       pcVar14 = "hdwing.cth";
-      pacVar16 = (this_ptr_01->base).base.cloth_list.filenames;
-      (this_ptr_01->base).base.cloth_list.count = 1;
+      pacVar16 = (actor->base).base.cloth_list.filenames;
+      (actor->base).base.cloth_list.count = 1;
       do {
         cVar2 = *pcVar14;
         (*pacVar16)[0] = cVar2;
@@ -232,19 +229,19 @@ LAB_005c6fd0:
         (*pacVar16)[1] = cVar2;
         pacVar16 = (char (*) [40])(*pacVar16 + 2);
       } while (cVar2 != '\0');
-      (*((this_ptr_01->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr_01);
-      pCVar15 = &(this_ptr_01->base).base.model;
+      (*((actor->base).base.base.vtable._ub)->setup)((CDemonActor *)actor);
+      pCVar15 = &(actor->base).base.model;
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
                 (&pCVar15->motion_controller,pSVar10->motion_name,fVar11);
       core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar15);
-      (this_ptr_01->base).base.base.scale.x = (this_ptr->base).base.base.scale.x;
-      (this_ptr_01->base).base.base.scale.y = (this_ptr->base).base.base.scale.y;
+      (actor->base).base.base.scale.x = (this_ptr->base).base.base.scale.x;
+      (actor->base).base.base.scale.y = (this_ptr->base).base.base.scale.y;
       pCVar8 = g_CDemonMissionPtr;
-      (this_ptr_01->base).base.base.scale.z = (this_ptr->base).base.base.scale.z;
-      core_mission_cpp_CDemonMission_FUN_00523b70(pCVar8);
+      (actor->base).base.base.scale.z = (this_ptr->base).base.base.scale.z;
+      core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(pCVar8,(CDemonActor *)actor);
       pCVar4 = *(CCloth **)(this_ptr->unk + 0x2450);
-      *(CCloth **)(this_ptr->unk + 0x2450) = (this_ptr_01->base).base.cloth_list.cloths[0];
-      (this_ptr_01->base).base.cloth_list.cloths[0] = pCVar4;
+      *(CCloth **)(this_ptr->unk + 0x2450) = (actor->base).base.cloth_list.cloths[0];
+      (actor->base).base.cloth_list.cloths[0] = pCVar4;
     }
   }
   if ((this_ptr->base).base.field43_0x2620 != 0) {

@@ -77,7 +77,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             }
             *pcVar9 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-            engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+            engine_font_cpp_CBitFont_drawText_FUN_004cda80
                       (g_EditorFont,local_15c,local_14,local_1c,local_20,-1);
             local_18 = local_18 + 1;
             local_14 = local_14 + *(int *)(pcVar10 + 0x10);

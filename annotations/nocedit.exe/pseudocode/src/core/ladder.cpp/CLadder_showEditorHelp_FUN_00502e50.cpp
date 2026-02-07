@@ -10,13 +10,13 @@ void __cdecl core_ladder_cpp_CLadder_showEditorHelp_FUN_00502e50(CLadder *this_p
 
 {
   int iVar1;
-  int x_pos;
+  int x;
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base,y_pos);
-  x_pos = g_ClipLeft;
+  x = g_ClipLeft;
   iVar1 = *y_pos;
   *y_pos = iVar1 + 0xb;
-  engine_2d_c_drawText_FUN_00401fd0("With CTRL held down, use slew keys to size ladder.",x_pos,iVar1 + 0xb);
+  engine_2d_c_drawText_FUN_00401fd0("With CTRL held down, use slew keys to size ladder.",x,iVar1 + 0xb);
   *y_pos = *y_pos + 0xb;
   return;
 }

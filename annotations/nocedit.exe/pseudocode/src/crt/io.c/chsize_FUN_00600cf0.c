@@ -38,7 +38,7 @@ int __cdecl chsize(int file_handle,long new_size)
       return DVar2;
     }
     if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {
-      crt_unknown_c_FUN_00600c80();
+      FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);
     }
     if (new_size < iVar1) {
       iVar1 = new_size;

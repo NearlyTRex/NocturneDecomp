@@ -4,68 +4,74 @@
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 82,
-        "message": "'stack0xfffff6d0' was not declared in this scope"
+        "line": 83,
+        "message": "use of undeclared identifier 'stack0xfffff6d0'"
       },
       {
-        "category": "pointer_precision",
-        "column": 20,
-        "line": 87,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 85,
+        "message": "use of undeclared identifier 'stack0xfffff6d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 104,
+        "message": "use of undeclared identifier 'stack0xfffff6d0'"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 105,
-        "message": "'void*' is not a pointer-to-object type"
+        "line": 106,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 106,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 109,
+        "message": "use of undeclared identifier 'stack0xfffff6d0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 66,
+        "line": 129,
+        "message": "use of undeclared identifier 'stack0xfffff6d0'"
       }
     ],
     "success": false,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+        "category": "format_error",
+        "column": 56,
+        "line": 62,
+        "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Wformat]"
       },
       {
-        "category": "other",
-        "column": 41,
-        "line": 61,
-        "message": "format '%s' expects argument of type 'char*', but argument 4 has type 'SBone*' [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 61,
-        "message": "format '%s' expects argument of type 'char*', but argument 5 has type 'CDemonActor*' [-Wformat=]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 69,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 74,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "category": "format_error",
+        "column": 82,
+        "line": 62,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Wformat]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 173,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 16,
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 122,
     "suspect_count": 5,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 411
+    "total_lines": 415
   },
   "cross_references": [
     {
@@ -116,7 +122,7 @@
     {
       "addr": "00524030",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
     },
     {
       "addr": "0059fa20",
@@ -405,35 +411,35 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 75,
+      "line": 76,
       "match": "&stack0xfffff6d0",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff6d0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 78,
       "match": "&stack0xfffff6d0",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6d0,\"(nothing)\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 97,
       "match": "&stack0xfffff6d0",
       "text": "((CPickList *)&stack0xfffff6d0,\"Select actor to carry.\",local_14,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 102,
       "match": "&stack0xfffff6d0",
-      "text": "shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff6d0,iVar7);",
+      "text": "((CStrList *)&stack0xfffff6d0,iVar7);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 118,
+      "line": 122,
       "match": "&stack0xfffff6d0",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff6d0,0);",
       "type": "stack_ref"

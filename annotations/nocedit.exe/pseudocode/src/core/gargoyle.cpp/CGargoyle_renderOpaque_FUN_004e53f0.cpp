@@ -13,7 +13,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_renderOpaque_FUN_004e53f0(CGargoyle *th
   CDemonSet *pCVar2;
   
   pCVar2 = g_CDemonSetPtr;
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
     iVar1 = g_CDemonSetPtr->lighting_quality_mode;
     g_CDemonSetPtr->lighting_quality_mode = 3;
     pCVar2->light_scale_factor = this_ptr->stone_red << 8;

@@ -17,7 +17,7 @@ int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
   CDemonActor *in_stack_00000004;
   CBoundingBox3D local_24;
   
-  if (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) {
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       if (*(CDemonActor **)in_stack_00000004[1].actor_name != (CDemonActor *)0x0) {

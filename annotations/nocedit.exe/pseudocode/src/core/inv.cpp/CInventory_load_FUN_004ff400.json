@@ -2,41 +2,22 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 108,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 110,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 310,
+    "complexity_score": 311,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 17,
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 106,
     "suspect_count": 19,
     "suspect_types": [
       "extra_output",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 375
+    "total_lines": 376
   },
   "cross_references": [
     {
@@ -403,28 +384,28 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 74,
       "match": "extraout_EAX",
       "text": "pCVar5->items[0] = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 80,
       "match": "in_stack_00000008",
       "text": "_fgets(local_1dc,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 85,
       "match": "in_stack_00000008",
       "text": "core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar5->items[0],in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 91,
       "match": "in_stack_00000008",
       "text": "_fgets(local_1dc,0xff,in_stack_00000008);",
       "type": "stack_param"

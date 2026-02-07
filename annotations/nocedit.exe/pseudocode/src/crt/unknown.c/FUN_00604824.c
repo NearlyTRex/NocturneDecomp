@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00604824(void)
+void FUN_00604824(void)
 
 {
   return;

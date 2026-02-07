@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0 (CDemonMission *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0x158]:1  local_158
 ; undefined1       Stack[-0xf4]:1  local_f4
@@ -46,12 +47,12 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_actor.cpp_getActorClassByName_FUN_0040c3c0
 ;   core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0
-;   core_gore.cpp_FUN_004ed760
-;   core_gore.cpp_FUN_004ee1e0
+;   core_gore.cpp_CGore_FUN_004ed760
+;   core_gore.cpp_CGore_FUN_004ee1e0
 ;   core_inv.cpp_CInventory_loadItems_FUN_004ff740
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
-;   core_mission.cpp_CDemonMission_FUN_00523b70
 ;   core_mission.cpp_FUN_005248e0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -512,8 +513,8 @@ section .text
         ;   Label: LAB_0052338c
     PUSH EDI                            ; 00523392 | g_CGoreInstance
     MOV dword ptr [EBX],0xffffffff      ; 00523393
-    CALL core_gore.cpp_FUN_004ed760     ; 00523399
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed760()
+    CALL core_gore.cpp_CGore_FUN_004ed760 ; 00523399
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
     MOV EBP,dword ptr [EBX + 0x8]       ; 0052339e
     ADD ESP,0x4                         ; 005233a1
     CMP EBP,0x7                         ; 005233a4
@@ -594,8 +595,8 @@ section .text
         ;   Label: LAB_00523472
     PUSH EBP                            ; 00523473
     PUSH EBX                            ; 00523474
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00523475
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 ; 00523475
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0052347a
     MOV EAX,dword ptr [ESP + 0x144]     ; 0052347d
     CMP EAX,dword ptr [ESP + 0x130]     ; 00523484
@@ -631,8 +632,8 @@ section .text
     PUSH EAX                            ; 005234fe
     MOV EDX,dword ptr [0x0067b9a0]      ; 005234ff | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 00523505 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ee1e0     ; 00523506
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004ee1e0()
+    CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 00523506
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr)
     ADD ESP,0x8                         ; 0052350b
     ADD ESP,0x148                       ; 0052350e
     POP EBP                             ; 00523514

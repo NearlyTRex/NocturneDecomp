@@ -451,7 +451,7 @@ section .text
     LEA EAX,[EBP + 0xffffff5a]          ; 00443f86
     PUSH EAX                            ; 00443f8c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443f8d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00443f92
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00443f95
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

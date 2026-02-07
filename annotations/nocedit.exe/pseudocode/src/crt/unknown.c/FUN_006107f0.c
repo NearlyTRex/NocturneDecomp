@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-BOOL crt_unknown_c_FUN_006107f0(void)
+BOOL FUN_006107f0(void)
 
 {
   BOOL BVar1;

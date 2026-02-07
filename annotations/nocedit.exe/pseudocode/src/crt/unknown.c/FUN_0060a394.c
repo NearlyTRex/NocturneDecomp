@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060a394(void)
+void FUN_0060a394(void)
 
 {
   if (g_TLSIndex != 0xffffffff) {

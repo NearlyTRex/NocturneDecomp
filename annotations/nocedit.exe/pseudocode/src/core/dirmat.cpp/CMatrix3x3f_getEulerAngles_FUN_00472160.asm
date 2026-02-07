@@ -34,7 +34,7 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 at 00475b03
 ;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 at 0047524e
 ;   core_fire.cpp_FUN_004c1940 at 004c19bc
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539457
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539457
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b128
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581bbc
 ;   ... and 3 more

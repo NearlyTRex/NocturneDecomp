@@ -3645,14 +3645,32 @@ WatcomStaticDestructorNode g_CWaterDestructorNode = {
 // WatcomStaticDestructorNode*
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 
+// _FILE
+_FILE g_StdoutLogFile = {
+    ._ptr = nullptr,
+    ._cnt = 0x00000000,
+    ._link = nullptr,
+    ._flag = 0x00000002,
+    ._handle = 0x00000001,
+    ._bufsize = 0x00000000,
+    ._ungotten = 0x0000
+};
+_FILE g_StderrLogFile = {
+    ._ptr = nullptr,
+    ._cnt = 0x00000000,
+    ._link = nullptr,
+    ._flag = 0x00000002,
+    ._handle = 0x00000002,
+    ._bufsize = 0x00000000,
+    ._ungotten = 0x0000
+};
+
 // _FILE*
 _FILE* g_StaticFilePoolStart = nullptr;
-_FILE* g_StderrLogFile = nullptr;
 
 // byte
 byte BYTE_00684acc = 0x0;
 byte BYTE_00684acd = 0x0;
-byte BYTE_00684d05 = 0x0;
 byte g_WindowsMajorVersion = 0x0;
 byte g_UseSoftwareMath = 0x0;
 byte g_TimezoneInitFlags = 0x1;

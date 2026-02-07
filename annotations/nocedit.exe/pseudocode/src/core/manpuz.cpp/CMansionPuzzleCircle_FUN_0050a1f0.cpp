@@ -15,8 +15,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a1f0(CMansionPuzzleCir
   int render_flags;
   
   iVar1 = in_stack_00000008 * 0x60;
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) &&
-     (*(float *)(this_ptr->unk3 + iVar1 + 0xd10) <= 0.0)) {
+  if ((g_CDemonMissionPtr->is_in_editor == 0) && (*(float *)(this_ptr->unk3 + iVar1 + 0xd10) <= 0.0)
+     ) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

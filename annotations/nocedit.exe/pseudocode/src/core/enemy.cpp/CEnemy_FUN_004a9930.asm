@@ -18,7 +18,7 @@
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004edbb0
+;   core_gore.cpp_CGore_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     PUSH EAX                            ; 004a99ad
     MOV EAX,[0x0067b9a0]                ; 004a99ae | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 004a99b3 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 004a99b4
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edbb0()
+    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 004a99b4
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
     MOV EAX,0x1                         ; 004a99b9
     ADD ESP,0x14                        ; 004a99be
     MOV ESP,EBP                         ; 004a99c1

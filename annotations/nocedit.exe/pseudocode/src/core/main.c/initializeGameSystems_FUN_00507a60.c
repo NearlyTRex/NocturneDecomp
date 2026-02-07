@@ -54,7 +54,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     }
   }
   pcVar6 = &stack0xfffff8d8;
-  fopenThreadSafe("stderr.txt","wt",&g_StderrLogFile);
+  freopen("stderr.txt","wt",&g_StderrLogFile);
   g_RenderingMode = 4;
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
@@ -491,7 +491,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);
   iVar9 = 0;
-  core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_reset_FUN_00522c80(g_CDemonMissionPtr);
   iVar11 = 0;
   do {
     fVar3 = (float)iVar9;

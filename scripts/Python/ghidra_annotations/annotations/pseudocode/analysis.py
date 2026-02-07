@@ -1942,6 +1942,99 @@ def generate_compilation_summary_report(functions, output_path):
     return report_text
 
 
+def generate_compilation_detailed_report(functions, output_path):
+    """Generate detailed report with all compilation errors, untruncated.
+
+    Args:
+        functions: List of function data dicts (with compilation_status)
+        output_path: Directory to write report
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("FUNCTION COMPILATION DETAILED ERRORS")
+    lines.append("=" * 100)
+    lines.append("")
+
+    funcs_with_status = [f for f in functions if f.get('compilation_status')]
+    if not funcs_with_status:
+        lines.append("No compilation status data available.")
+        lines.append("Run export with compilation verification enabled to generate this data.")
+        report_text = "\n".join(lines)
+        report_path = os.path.join(output_path, "compilation_detailed.txt")
+        try:
+            with open(report_path, 'w') as f:
+                f.write(report_text)
+            log_info("Wrote compilation detailed report: %s" % report_path)
+        except Exception as e:
+            log_info("Failed to write compilation detailed report: %s" % str(e))
+        return report_text
+
+    total = len(funcs_with_status)
+    successful = sum(1 for f in funcs_with_status
+                     if f['compilation_status'].get('success', False))
+    failed = total - successful
+    success_rate = (successful * 100.0 / total) if total > 0 else 0
+
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Total functions compiled: %d" % total)
+    lines.append("Successful: %d (%.1f%%)" % (successful, success_rate))
+    lines.append("Failed: %d" % failed)
+    lines.append("")
+
+    # Collect errors by category
+    error_categories = defaultdict(list)
+    for func in funcs_with_status:
+        status = func.get('compilation_status', {})
+        if not status.get('success'):
+            for error in status.get('errors', []):
+                category = error.get('category', 'other')
+                func_name = func.get('function', {}).get('name', 'unknown')
+                error_categories[category].append({
+                    'func': func_name,
+                    'message': error.get('message', ''),
+                    'line': error.get('line', 0),
+                })
+
+    if error_categories:
+        lines.append("ERROR CATEGORIES")
+        lines.append("-" * 50)
+        for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
+            count = len(error_categories[category])
+            lines.append("  %-30s %5d" % (category, count))
+        lines.append("")
+
+        # Show ALL errors for each category (no truncation)
+        for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
+            errors = error_categories[category]
+            lines.append("=" * 100)
+            lines.append("CATEGORY: %s (%d errors)" % (category, len(errors)))
+            lines.append("=" * 100)
+            lines.append("")
+
+            seen_funcs = set()
+            for error in errors:
+                if error['func'] not in seen_funcs:
+                    seen_funcs.add(error['func'])
+                    lines.append("  %s" % error['func'])
+                    if error['message']:
+                        lines.append("    Line %d: %s" % (error['line'], error['message']))
+
+            lines.append("")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "compilation_detailed.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote compilation detailed report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write compilation detailed report: %s" % str(e))
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
@@ -2186,6 +2279,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_stack_pattern_report(functions, output_path)
     generate_param_mismatch_report(functions, output_path)
     generate_compilation_summary_report(functions, output_path)
+    generate_compilation_detailed_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate SVG graphs for README

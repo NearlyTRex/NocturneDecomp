@@ -34,7 +34,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
   pcVar4 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)(pcVar4 + 0x30),(CVector3i *)(pcVar4 + 0x24));
-  if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
+  if ((g_CDemonMissionPtr->is_in_editor != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     if (DAT_02f0cb1c == 2) {

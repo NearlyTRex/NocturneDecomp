@@ -23,7 +23,8 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
         ((pCVar2->min).z <= pCVar1->z)) &&
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&
         (pCVar1->z <= (pCVar2->max).z)))) {
-      core_mission_cpp_CDemonMission_FUN_00524070(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070
+                (g_CDemonMissionPtr,(CLocation *)(*(int *)(this_ptr->unk + 0xc) + 0x20));
       return;
     }
   }

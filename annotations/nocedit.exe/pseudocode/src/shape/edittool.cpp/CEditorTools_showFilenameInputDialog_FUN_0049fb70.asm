@@ -55,7 +55,7 @@
 ;   crt_string.c_strupr_FUN_00600770
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
@@ -204,7 +204,7 @@ section .text
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0049fce2
     PUSH -0x1                           ; 0049fce5
-    MOV EDX,dword ptr [0x02cf2aac]      ; 0049fce7 | DAT_02cf2aac
+    MOV EDX,dword ptr [0x02cf2aac]      ; 0049fce7 | INT_02cf2aac
     PUSH EDX                            ; 0049fced
     MOV ECX,dword ptr [0x02d0255c]      ; 0049fcee | g_ClipTop
     PUSH ECX                            ; 0049fcf4
@@ -214,8 +214,8 @@ section .text
     PUSH EAX                            ; 0049fd00
     MOV ESI,dword ptr [0x02cf1cd0]      ; 0049fd01 | g_EditorFont
     PUSH ESI                            ; 0049fd07
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0049fd08
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0049fd08
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0049fd0d
     CMP dword ptr [ESP + 0x34c],0x0     ; 0049fd10
         ;   Label: LAB_0049fd10
@@ -242,8 +242,8 @@ section .text
     PUSH EAX                            ; 0049fd56
     MOV EBX,dword ptr [0x02cf1cd0]      ; 0049fd57 | g_EditorFont
     PUSH EBX                            ; 0049fd5d
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0049fd5e
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0049fd5e
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0049fd63
     PUSH 0x6231a4                       ; 0049fd66 | = "Filename: "
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 0049fd6b
@@ -295,7 +295,7 @@ section .text
     PUSH 0x0                            ; 0049fdef
     JMP 0x0049fc22                      ; 0049fdf1
         ;   XREF to: 0049fc22 (UNCONDITIONAL_JUMP)  ; LAB_0049fc22
-    MOV EBX,dword ptr [0x02cf2aac]      ; 0049fdf6 | DAT_02cf2aac
+    MOV EBX,dword ptr [0x02cf2aac]      ; 0049fdf6 | INT_02cf2aac
         ;   Label: LAB_0049fdf6
     JMP 0x0049fd24                      ; 0049fdfc
         ;   XREF to: 0049fd24 (UNCONDITIONAL_JUMP)  ; LAB_0049fd24

@@ -36,7 +36,7 @@
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -99,8 +99,8 @@ section .text
     PUSH EBX                            ; 0051055a
     MOV ECX,dword ptr [0x020a5718]      ; 0051055b | g_MediumFont
     PUSH ECX                            ; 00510561
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510562
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510562
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00510567
     MOV EBX,dword ptr [0x02d05208]      ; 0051056a | g_JoyButtons
     PUSH EBX                            ; 00510570
@@ -119,7 +119,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00510594
     PUSH EAX                            ; 00510598
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00510599
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051059e
     MOV ECX,dword ptr [0x0067b654]      ; 005105a1 | g_CGamePtr | g_CGameInstance
     PUSH ECX                            ; 005105a7 | g_CGameInstance
@@ -180,8 +180,8 @@ section .text
     PUSH EBX                            ; 0051063d
     MOV EBX,dword ptr [0x020a5718]      ; 0051063e | g_MediumFont
     PUSH EBX                            ; 00510644
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510645
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510645
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0051064a
     MOV EAX,[0x02d05208]                ; 0051064d | g_JoyButtons
     PUSH EAX                            ; 00510652
@@ -200,7 +200,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 0051067a
     PUSH EAX                            ; 00510681
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00510682
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00510687
     MOV EBX,dword ptr [0x0067b654]      ; 0051068a | g_CGamePtr | g_CGameInstance
     PUSH EBX                            ; 00510690 | g_CGameInstance

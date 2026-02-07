@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053abc5
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bc9b
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053abc5
 ;
 ; Called Functions:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140

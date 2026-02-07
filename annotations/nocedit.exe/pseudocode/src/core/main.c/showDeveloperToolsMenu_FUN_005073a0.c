@@ -208,7 +208,7 @@ LAB_0050740e:
     }
     iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_144);
     if (iVar1 != 0) break;
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,pcVar3,0x1e,-local_60.scroll_position,0xff,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_228,0);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_144,0);

@@ -21,7 +21,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
   CAmmo *this_ptr_01;
   int iVar7;
   CDemonActor *pCVar8;
-  CDemonActor *this_ptr_02;
+  CDemonActor *actor;
   int iVar9;
   CInventory *pCVar10;
   int unaff_EDI;
@@ -976,7 +976,8 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
           pCVar5[2].health = pCVar5[2].health + this_ptr_01->ammo_count;
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (this_ptr_00,"Found existing ammo, but no weapon\n");
-          core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+          core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                    (g_CDemonMissionPtr,in_stack_0000001c,1);
           return 1;
         }
         iVar9 = iVar9 + 1;
@@ -1024,7 +1025,8 @@ LAB_004fe2af:
                 pCVar5[4].actor_name[10] = '\0';
                 pCVar5[4].actor_name[0xb] = '\0';
               }
-              core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+              core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                        (g_CDemonMissionPtr,in_stack_0000001c,1);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"Found weapon to put this ammo into\n");
               return 1;
@@ -1035,7 +1037,7 @@ LAB_004fe2af:
         } while (iVar9 < this_ptr->item_count);
       }
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430(pcStack_14);
-      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5);
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
       *(uint *)(pCVar5[4].actor_name + 8) = *(uint *)(unaff_EDI + 0x314);
       *(uint *)(pCVar5[4].actor_name + 0xc) = *(uint *)(unaff_EDI + 0x318);
@@ -1043,7 +1045,7 @@ LAB_004fe2af:
       this_ptr->items[this_ptr->item_count] = pCVar5;
       pCVar3 = g_CDemonMissionPtr;
       this_ptr->item_count = this_ptr->item_count + 1;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3,in_stack_00000028,1);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
       return 1;
@@ -1051,7 +1053,7 @@ LAB_004fe2af:
     iVar9 = strcmp(this_ptr_01->weapon_class_name,"CDynamite");
     if (iVar9 == 0) {
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430("CDynamite");
-      core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5);
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
       *(uint *)(pCVar5[4].actor_name + 8) = *(uint *)(unaff_EDI + 0x314);
       (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
@@ -1070,7 +1072,7 @@ LAB_004fe2af:
       this_ptr->items[this_ptr->item_count] = in_stack_0000001c;
       pCVar3 = g_CDemonMissionPtr;
       this_ptr->item_count = this_ptr->item_count + 1;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3,in_stack_0000001c,0);
       (*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);
       return 1;
     }
@@ -1098,7 +1100,8 @@ LAB_004fe2af:
             }
             engine_console_cpp_CConsole_printf_FUN_00441890
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+                      (g_CDemonMissionPtr,in_stack_0000001c,1);
             return 1;
           }
         }
@@ -1118,15 +1121,15 @@ LAB_004fe2af:
           iVar7 = strcmp((char *)&pCVar8[2].location.position.y,pcVar11);
           if (iVar7 == 0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
-            this_ptr_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar11);
-            core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-            (*((this_ptr_02->vtable)._ub)->setup)(this_ptr_02);
-            *(int *)(this_ptr_02[4].actor_name + 8) = pCVar8[2].health;
-            *(uintptr_t *)(this_ptr_02[4].actor_name + 0xc) = pCVar8[2].validation_magic;
-            (*((this_ptr_02->vtable)._ub)->pickup)(this_ptr_02,this_ptr->owner);
-            (*((this_ptr_02->vtable)._ub)->onPickup)(this_ptr_02,(CDemonActor *)this_ptr);
+            actor = core_actor_cpp_createActorByName_FUN_0040c430(pcVar11);
+            core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,actor);
+            (*((actor->vtable)._ub)->setup)(actor);
+            *(int *)(actor[4].actor_name + 8) = pCVar8[2].health;
+            *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar8[2].validation_magic;
+            (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
+            (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);
             core_actor_cpp_deleteActor_FUN_00408820(*(CDemonActor **)(in_stack_00000010 + 0xc));
-            *(CDemonActor **)(in_stack_00000010 + 0xc) = this_ptr_02;
+            *(CDemonActor **)(in_stack_00000010 + 0xc) = actor;
             core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
             bVar2 = true;
             engine_console_cpp_CConsole_printf_FUN_00441890
@@ -1138,14 +1141,14 @@ LAB_004fe2af:
       } while (iVar9 < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr,pCVar5,1);
       return 1;
     }
   }
   this_ptr->items[this_ptr->item_count] = in_stack_0000001c;
   pCVar3 = g_CDemonMissionPtr;
   this_ptr->item_count = this_ptr->item_count + 1;
-  core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(pCVar3,in_stack_0000001c);
+  core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(pCVar3,in_stack_0000001c);
   (*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);
   if ((pCVar5 != (CDemonActor *)0x0) && (this_ptr->selected_weapon == (CWeapon *)0x0)) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(this_ptr,pCVar5,5,1);

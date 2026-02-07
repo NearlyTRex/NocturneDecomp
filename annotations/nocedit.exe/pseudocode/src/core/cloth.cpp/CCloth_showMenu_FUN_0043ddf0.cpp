@@ -41,7 +41,7 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
     case 0x31:
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Load cloth file","models",
-                         "*.cth",(int)local_178);
+                         "*.cth",(int)local_178,0);
       if (iVar3 != 0) {
         core_cloth_cpp_CCloth_load_FUN_00438cf0(this_ptr,local_178);
       }
@@ -60,7 +60,7 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
     case 0x34:
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Select deformable model","models",
-                         "*.dfm",(int)local_278);
+                         "*.dfm",(int)local_278,0);
       if (iVar3 != 0) {
         core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                   (&g_CDeformableModelInstanceInstance,local_278);
@@ -80,7 +80,7 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
     case 0x37:
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Create cloth file from KFM","models",
-                         "*.kfm",(int)local_78);
+                         "*.kfm",(int)local_78,0);
       if (iVar3 != 0) {
         splitpath(local_78,(char *)0x0,(char *)0x0,local_178,(char *)0x0);
         pcVar4 = ".cth";

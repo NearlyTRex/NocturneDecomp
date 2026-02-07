@@ -2,24 +2,23 @@
 // Address: 005240a0
 // Address Range: [[005240a0, 0052411b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0 (CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr)
+void __cdecl
+core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
+          (CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 
 {
   int iVar1;
-  CDemonActor *in_stack_00000008;
-  uint in_stack_0000000c;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (in_stack_00000008,"..\\core\\mission.cpp",0x403);
-  *(CDemonActor **)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x14) * 4 + 0x18) = in_stack_00000008
-  ;
-  *(uint *)(this_ptr->unk4 + *(int *)(this_ptr->unk4 + 0x14) * 4 + 0x1a8) = in_stack_0000000c;
-  iVar1 = *(int *)(this_ptr->unk4 + 0x14) + 1;
-  *(int *)(this_ptr->unk4 + 0x14) = iVar1;
+            (actor,"..\\core\\mission.cpp",0x403);
+  this_ptr->delete_queue_actors[this_ptr->delete_queue_count] = actor;
+  this_ptr->delete_queue_flags[this_ptr->delete_queue_count] = flags;
+  iVar1 = this_ptr->delete_queue_count + 1;
+  this_ptr->delete_queue_count = iVar1;
   if (iVar1 < 100) {
     return;
   }

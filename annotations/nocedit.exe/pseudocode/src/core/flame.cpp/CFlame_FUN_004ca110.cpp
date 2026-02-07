@@ -55,13 +55,13 @@ float __cdecl core_flame_cpp_CFlame_FUN_004ca110(CFlame *this_ptr)
   int iStack_10;
   
   bVar7 = 0;
-  if (((this_ptr->flame_state != 0) || (*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0)) &&
+  if (((this_ptr->flame_state != 0) || (g_CDemonMissionPtr->is_in_editor != 0)) &&
      (iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar6 == 0)) {
-    if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) != 0) &&
-       (this_ptr == *(CFlame **)(g_CDemonMissionPtr->unk2 + 0x1c))) {
+    if ((g_CDemonMissionPtr->is_in_editor != 0) &&
+       (this_ptr == (CFlame *)g_CDemonMissionPtr->selected_actor)) {
       core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
-                ((CDemonGlobe *)((*(CFlame **)(g_CDemonMissionPtr->unk2 + 0x1c))->unk1 + 4));
+                ((CDemonGlobe *)(((CFlame *)g_CDemonMissionPtr->selected_actor)->unk1 + 4));
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     if (*(int *)(this_ptr->unk4 + 8) != 0) {

@@ -216,7 +216,7 @@ LAB_005bde44:
             dVar6 = round((double)fStack_a4 * 0.20000000000000001);
             unaff_EBP = (int)ROUND(dVar6);
             in_stack_ffffff34 = 8.438212e-39;
-            core_gore_cpp_FUN_004edbb0();
+            core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
             in_stack_ffffff48 = "kick1.wav";
             (*((in_stack_00000004->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)in_stack_00000004,"kick1.wav");

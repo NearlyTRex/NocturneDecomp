@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
@@ -196,8 +196,8 @@ section .text
     PUSH EDI                            ; 00507299
     MOV EAX,[0x02cf1cd0]                ; 0050729a | g_EditorFont
     PUSH EAX                            ; 0050729f
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005072a0
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005072a0
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005072a5
     PUSH EBP                            ; 005072a8
     LEA EAX,[ESP + 0x2e8]               ; 005072a9

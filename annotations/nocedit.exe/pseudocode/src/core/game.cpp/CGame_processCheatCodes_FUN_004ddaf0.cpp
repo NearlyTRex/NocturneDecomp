@@ -28,14 +28,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   CSkeleton *pCVar17;
   CStranger *pCVar15;
   CGasMask *this_ptr_02;
-  CGasMask *this_ptr_03;
+  CGasMask *actor;
   CStranger *pCVar14;
   int iVar18;
   int iVar19;
   CSkeleton *pCVar20;
   byte *pbVar21;
   byte bVar22;
-  CDemonSet *this_ptr_04;
+  CDemonSet *this_ptr_03;
   float fVar23;
   byte abStack_358 [100];
   SDamageInfo SStack_2f4;
@@ -446,7 +446,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Script debug off");
             core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar10,fVar23);
-            this_ptr_04 = g_CDemonSetPtr;
+            this_ptr_03 = g_CDemonSetPtr;
             iVar9 = g_WindowHeight;
             this_ptr->screen_clear_enabled = 0;
           }
@@ -455,11 +455,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Script debug on")
             ;
             core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar10,fVar23);
-            this_ptr_04 = g_CDemonSetPtr;
+            this_ptr_03 = g_CDemonSetPtr;
             iVar9 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
           }
-          core_set_cpp_CDemonSet_FUN_0056b7e0(this_ptr_04,0,0,iVar9);
+          core_set_cpp_CDemonSet_FUN_0056b7e0(this_ptr_03,0,0,iVar9);
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
@@ -1806,14 +1806,15 @@ LAB_004df408:
         g_InputHistory[1] = '\0';
         this_ptr_02 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\game.cpp",0xbb0)
         ;
-        this_ptr_03 = (CGasMask *)0x0;
+        actor = (CGasMask *)0x0;
         if (this_ptr_02 != (CGasMask *)0x0) {
-          this_ptr_03 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
+          actor = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
         }
-        core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-        (*((this_ptr_03->base).vtable._ub)->setup)(&this_ptr_03->base);
+        core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+                  (g_CDemonMissionPtr,&actor->base);
+        (*((actor->base).vtable._ub)->setup)(&actor->base);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
-                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base,1);
+                  (&g_HeroActors[g_LocalHeroIndex]->inventory,&actor->base,1);
         fVar23 = 5.0;
         pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You've got a gasmask!");

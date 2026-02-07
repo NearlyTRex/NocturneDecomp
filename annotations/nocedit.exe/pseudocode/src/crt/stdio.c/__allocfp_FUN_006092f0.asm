@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   _FILE* g_StaticFilePoolStart = 00000000
 ;   int INT_00684cd0 = 0x1
-;   undefined4 DAT_00684cde
+;   _FILE g_StdoutLogFile
 ;   undefined4 DAT_00684cea
 ;   undefined4 g_StaticFilePoolEnd
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8 = 00602434
@@ -67,7 +67,7 @@ section .text
     MOV EDI,0x3                         ; 0060933f
     JMP 0x00609369                      ; 00609344
         ;   XREF to: 00609369 (UNCONDITIONAL_JUMP)  ; LAB_00609369
-    ADD EBX,0x1a                        ; 00609346 | DAT_00684cde
+    ADD EBX,0x1a                        ; 00609346 | g_StdoutLogFile
         ;   Label: LAB_00609346
     CMP EBX,0x684ecc                    ; 00609349 | g_StaticFilePoolEnd
     JC 0x00609329                       ; 0060934f
@@ -86,7 +86,7 @@ section .text
     PUSH 0x1a                           ; 00609369
         ;   Label: LAB_00609369
     PUSH 0x0                            ; 0060936b
-    PUSH EBX                            ; 0060936d | g_StaticFilePoolStart | DAT_00684cde
+    PUSH EBX                            ; 0060936d | g_StaticFilePoolStart | g_StdoutLogFile
     CALL crt_memory.c_memset_FUN_005fde40 ; 0060936e
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xc],EDI       ; 00609373

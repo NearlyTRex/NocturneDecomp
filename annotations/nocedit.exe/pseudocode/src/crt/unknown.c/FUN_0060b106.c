@@ -6,11 +6,11 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_0060b106(void)
+void FUN_0060b106(void)
 
 {
-  crt_unknown_c_FUN_0060d480();
-  crt_unknown_c_FUN_0060d48c();
-  crt_unknown_c_FUN_0060b0c8();
+  FUN_0060d480();
+  FUN_0060d48c();
+  FUN_0060b0c8();
   return;
 }

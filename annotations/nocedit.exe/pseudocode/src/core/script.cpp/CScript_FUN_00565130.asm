@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a4d6
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a4d6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_line_number_00643e4f

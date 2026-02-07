@@ -245,7 +245,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 005eff21 | g_CDemonMissionPtr
     PUSH EDI                            ; 005eff27 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0 ; 005eff28
-        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr)
+        ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 005eff2d
     JMP 0x005efe3e                      ; 005eff30
         ;   XREF to: 005efe3e (UNCONDITIONAL_JUMP)  ; LAB_005efe3e
@@ -722,8 +722,8 @@ section .text
     PUSH EAX                            ; 005f080c
     MOV ECX,dword ptr [0x0067b9a0]      ; 005f080d | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 005f0813 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ede30     ; 005f0814
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 005f0814
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 005f0819
     MOV dword ptr [EBX + 0xbe28],0x1    ; 005f081c
     JMP 0x005f0010                      ; 005f0826

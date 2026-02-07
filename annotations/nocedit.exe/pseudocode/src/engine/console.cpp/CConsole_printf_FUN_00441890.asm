@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 004418c3
     LEA EDI,[ESP + 0xc]                 ; 004418c4
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004418c8
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004418cd
     XOR ECX,ECX                         ; 004418d0
     XOR EBX,EBX                         ; 004418d2

@@ -12,6 +12,6 @@ support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested,LPWSADATA
 {
   int iVar1;
   
-  iVar1 = crt_wsock32_c_WSACleanup();
+  iVar1 = WSACleanup();
   return iVar1;
 }

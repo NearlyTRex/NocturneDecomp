@@ -3,44 +3,25 @@
     "errors": [
       {
         "category": "other",
-        "column": 20,
+        "column": 19,
         "line": 17,
-        "message": "request for member '_0_2_' in 'local_10.SOCKADDR::sa_data', which is of non-class type 'char [14]'"
+        "message": "member reference base type 'char[14]' is not a structure or union"
       },
       {
-        "category": "pointer_precision",
-        "column": 48,
+        "category": "other",
+        "column": 34,
         "line": 17,
-        "message": "cast from 'SOCKET*' {aka 'unsigned int*'} to 'ushort' {aka 'short unsigned int'} loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 17,
-        "message": "'crt_wsock32_c_htons' was not declared in this scope"
+        "message": "cast from pointer to smaller type 'ushort' (aka 'unsigned short') loses information"
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
+        "column": 17,
         "line": 22,
-        "message": "'_port' was not declared in this scope; did you mean 'port'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 22,
-        "message": "'crt_wsock32_c_bind' was not declared in this scope"
+        "message": "use of undeclared identifier '_port'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 25,
@@ -154,7 +135,7 @@
       "description": "Unknown/mangled field access",
       "line": 10,
       "match": "._0_2_",
-      "text": "local_10.sa_data._0_2_ = crt_wsock32_c_htons((ushort)socket_handle);",
+      "text": "local_10.sa_data._0_2_ = htons((ushort)socket_handle);",
       "type": "unknown_field"
     }
   ]

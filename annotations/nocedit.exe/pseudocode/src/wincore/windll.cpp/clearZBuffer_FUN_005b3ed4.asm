@@ -14,7 +14,7 @@
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 00529ee6
 ;   core_morph.cpp_FUN_0052bcb0 at 0052bfb7
 ;   core_morph.cpp_FUN_0052ca90 at 0052cb07
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a316
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a316
 ;   ... and 9 more
 ;
 ; Referenced Globals:

@@ -4,32 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 18,
-        "message": "'stack0x0000001c' was not declared in this scope"
+        "line": 17,
+        "message": "use of undeclared identifier 'stack0x0000001c'"
+      },
+      {
+        "category": "other",
+        "column": 72,
+        "line": 19,
+        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 27,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 45
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -42,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004cde20 (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,...)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004cde20 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string,...)"
   },
   "function_calls": [
     {
@@ -105,14 +104,14 @@
       },
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "y_pos",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -143,7 +142,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 11,
+      "line": 10,
       "match": "&stack0x0000001c",
       "text": "local_14 = &stack0x0000001c;",
       "type": "stack_ref"

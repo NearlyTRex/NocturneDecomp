@@ -1,0 +1,263 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 140,
+    "complexity_score": 73,
+    "cross_reference_count": 13,
+    "function_call_count": 4,
+    "global_count": 9,
+    "pseudocode_lines": 48,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 188
+  },
+  "cross_references": [
+    {
+      "addr": "004bda20",
+      "from_addr": "004bdde5",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524760",
+      "from_addr": "00524789",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005243a0",
+      "from_addr": "005243f4",
+      "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523fb0",
+      "from_addr": "0052401f",
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523600",
+      "from_addr": "0052363c",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053d7b0",
+      "from_addr": "0053d7d2",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053d7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e220",
+      "from_addr": "0053e2d3",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ec80",
+      "from_addr": "0053ecc0",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ec80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "005391c5",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ccf0",
+      "from_addr": "0053ce4b",
+      "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053af50",
+      "from_addr": "0053afb6",
+      "name": "core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538ba0",
+      "from_addr": "00538c2a",
+      "name": "core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005381e0",
+      "from_addr": "005386e0",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00523cf0",
+    "address_range": [
+      [
+        "00523cf0",
+        "00523e5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00504160",
+      "is_variadic": false,
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160"
+    },
+    {
+      "addr": "0050efe0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0"
+    },
+    {
+      "addr": "005441f0",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006390af",
+      "name": "s_core_mission_cpp_006390af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006390c3",
+      "name": "s_Setting_up_actors_006390c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006390d5",
+      "name": "s_core_mission_cpp_006390d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006390e9",
+      "name": "s_Setting_up_actors_006390e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006390fb",
+      "name": "s_Setting_up_actors_006390fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063910d",
+      "name": "s_Setting_up_actors_0063910d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063911f",
+      "name": "s_core_mission_cpp_0063911f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067cf80",
+      "name": "g_CLevelLoaderPtr",
+      "type": "CLevelLoader*",
+      "value": "02dcd850"
+    },
+    {
+      "addr": "02dcd850",
+      "name": "g_CLevelLoaderInstance",
+      "type": "CLevelLoader",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.385964912280702,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 40,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "CALL": 11,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 85,
+      "INT_ADD": 30,
+      "INT_AND": 156,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 81,
+      "INT_LEFT": 4,
+      "INT_LESS": 10,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 30,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 41,
+      "INT_SRIGHT": 11,
+      "INT_SUB": 57,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 37,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 728
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBP",
+      "text": "if (iVar5 == unaff_EBP) {",
+      "type": "unaffected_reg"
+    }
+  ]
+}

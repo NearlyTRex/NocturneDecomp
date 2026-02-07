@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
-;   core_mission.cpp_CDemonMission_FUN_00523f20
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -65,8 +65,8 @@ section .text
     PUSH EDI                            ; 00524291
     ADD EBX,0x4                         ; 00524292
     INC ESI                             ; 00524295
-    CALL core_mission.cpp_CDemonMission_FUN_00523f20 ; 00524296
-        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeActor_FUN_00523f20 ; 00524296
+        ;   XREF to: 00523f20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     MOV ECX,dword ptr [EDI + 0x560]     ; 0052429b
     ADD ESP,0xc                         ; 005242a1
     CMP ESI,ECX                         ; 005242a4
@@ -120,21 +120,21 @@ section .text
     PUSH 0x0                            ; 00524339
     PUSH 0x639285                       ; 0052433b | = "Changing sets..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00524340
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00524345
     PUSH 0xb                            ; 00524348
     PUSH 0x0                            ; 0052434a
     PUSH 0x639296                       ; 0052434c | = "Insert wipe here..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00524351
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00524356
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00524359
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBP,dword ptr [EDI + 0x55c]     ; 0052435e
     PUSH EBP                            ; 00524364
     PUSH EDI                            ; 00524365
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 00524366
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 00524366
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0052436b
     MOV EAX,[0x006810c8]                ; 0052436e | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 00524373 | g_CDemonSetInstance

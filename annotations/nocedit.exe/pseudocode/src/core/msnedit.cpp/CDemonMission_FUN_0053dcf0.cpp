@@ -41,8 +41,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr
       while (iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_3b8,"Hide actors.  Press ESC When done.",iVar4,0), -1 < iVar4)
       {
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar4);
-        pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr);
+        pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar4);
+        pcVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar2);
         if (pcVar2 == (char *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
           g_CurrentLineNumber = 0xdd9;

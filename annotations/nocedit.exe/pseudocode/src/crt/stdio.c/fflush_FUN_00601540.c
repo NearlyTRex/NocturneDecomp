@@ -12,7 +12,7 @@ int __cdecl _fflush(_FILE *stream)
   int iVar1;
   
   if (stream == (_FILE *)0x0) {
-    crt_unknown_c_FUN_00605950();
+    FUN_00605950();
     return 0;
   }
   iVar1 = fflushInternal(stream);

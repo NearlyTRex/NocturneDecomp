@@ -5,118 +5,64 @@
         "category": "other",
         "column": 16,
         "line": 57,
-        "message": "invalid cast from type 'float' to type 'int*'"
+        "message": "cannot cast from type 'float' to pointer type 'int *'"
       },
       {
         "category": "other",
         "column": 16,
         "line": 58,
-        "message": "invalid cast from type 'float' to type 'LPDIRECTSOUNDBUFFER' {aka 'IDirectSoundBuffer*'}"
+        "message": "cannot cast from type 'float' to pointer type 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *')"
       },
       {
         "category": "other",
         "column": 26,
         "line": 63,
-        "message": "invalid cast from type 'int*' to type 'float'"
+        "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 40,
         "line": 64,
-        "message": "invalid cast from type 'LPDIRECTSOUNDBUFFER' {aka 'IDirectSoundBuffer*'} to type 'float'"
+        "message": "C-style cast from 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *') to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
         "line": 134,
-        "message": "'code' was not declared in this scope"
+        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
         "line": 134,
-        "message": "expected primary-expression before ')' token"
+        "message": "expected expression"
       },
       {
         "category": "other",
-        "column": 74,
+        "column": 73,
         "line": 164,
-        "message": "request for member '_4_4_' in 'uStack_38', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 27,
-        "line": 177,
-        "message": "cast from 'ulonglong*' {aka 'long long unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 61,
-        "line": 180,
-        "message": "cast from 'ulonglong*' {aka 'long long unsigned int*'} to 'int' loses precision [-fpermissive]"
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
     "warnings": [
       {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 45,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 47,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
         "category": "other",
         "column": 59,
         "line": 74,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 59,
         "line": 88,
-        "message": "format '%s' expects a matching 'char*' argument [-Wformat=]"
+        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 177,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 180,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 184,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 186,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 202,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+        "column": 7,
+        "line": 176,
+        "message": "'sprintf' will always overflow; destination buffer has size 4, but format string expands to at least 27 [-Wformat-overflow]"
       }
     ]
   },

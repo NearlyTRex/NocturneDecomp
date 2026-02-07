@@ -12,7 +12,7 @@
 ;   CBitFont* g_MediumFont
 ;
 ; Called Functions:
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH EDI                            ; 00508289
     MOV EBP,dword ptr [0x020a5718]      ; 0050828a | g_MediumFont
     PUSH EBP                            ; 00508290
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00508291
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00508291
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00508296
     POP EBP                             ; 00508299
     POP EDI                             ; 0050829a

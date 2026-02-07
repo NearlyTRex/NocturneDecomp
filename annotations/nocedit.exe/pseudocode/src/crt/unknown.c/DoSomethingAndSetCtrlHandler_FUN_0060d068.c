@@ -19,14 +19,14 @@ SIGNAL_HANDLER_TYPE DoSomethingAndSetCtrlHandler(void)
   if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {
     PTR_crt_startup_c_reportAbnormalTermination_FUN_00684c84 = (VOID_FUNC *)&LAB_0060d01c;
     if ((in_stack_00000008 != 2) && (in_stack_00000008 != 3)) {
-      iVar1 = crt_unknown_c_FUN_0060ced8();
+      iVar1 = FUN_0060ced8();
       if ((iVar1 != 0) && (in_stack_00000004 == 2)) {
         SomethingFPUControlWord();
       }
     }
     SVar2 = getSignalHandler(in_stack_00000004);
     setSignalHandler(in_stack_00000004,in_stack_00000008);
-    iVar1 = crt_unknown_c_FUN_0060cf80();
+    iVar1 = FUN_0060cf80();
     if (iVar1 == 0) {
       unregisterConsoleHandler();
     }

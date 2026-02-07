@@ -14,7 +14,7 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 {
   char cVar1;
   char *pcVar2;
-  int y_pos;
+  int y;
   int iVar3;
   int iVar4;
   uint uVar5;
@@ -89,20 +89,19 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
         pcVar2 = pcVar2 + 2;
       } while (cVar1 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                (g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,DAT_02cf2aac,-1);
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80
+                (g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,INT_02cf2aac,-1);
     }
-    iVar3 = DAT_02cf2aac;
+    iVar3 = INT_02cf2aac;
     if (local_14 != 0) {
       iVar3 = g_ButtonColor;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     color_value = -1;
-    y_pos = g_ClipTop + g_FontCharacterWidth;
+    y = g_ClipTop + g_FontCharacterWidth;
     iVar4 = g_ClipLeft;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
-    engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (g_EditorFont,pcVar8,iVar4,y_pos,iVar3,color_value);
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,pcVar8,iVar4,y,iVar3,color_value);
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar8);
     shape_edittool_cpp_CInputString_draw_FUN_0049d9b0

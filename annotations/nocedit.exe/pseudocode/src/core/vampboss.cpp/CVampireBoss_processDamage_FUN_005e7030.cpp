@@ -47,7 +47,8 @@ core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030
           if (pCVar5 == this_ptr_00) {
             core_inv_cpp_CInventory_removeItem_FUN_004fea70
                       ((CInventory *)(pCVar4[0x176].create_event + 0x30),this_ptr_00,0);
-            core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
+            core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
+                      (g_CDemonMissionPtr,this_ptr_00);
           }
         }
       }

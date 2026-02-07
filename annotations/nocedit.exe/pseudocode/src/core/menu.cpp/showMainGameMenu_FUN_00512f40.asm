@@ -387,13 +387,13 @@ section .text
     PUSH 0x0                            ; 00513282
     PUSH 0x636dfe                       ; 00513284 | = "3D acceleration has been turned off!"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00513289
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051328e
     PUSH 0xb                            ; 00513291
     PUSH 0x0                            ; 00513293
     PUSH 0x636e23                       ; 00513295 | = "Press any key to continue..."
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0051329a
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0051329f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005132a2
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

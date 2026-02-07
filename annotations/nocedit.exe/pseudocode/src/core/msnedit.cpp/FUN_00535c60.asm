@@ -25,8 +25,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053b9f0 at 0053baf8
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c970 at 0053c9c8
+;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053baf8
 ;
 ; Referenced Globals:
 ;   float FLOAT_0063b2ec = 10000

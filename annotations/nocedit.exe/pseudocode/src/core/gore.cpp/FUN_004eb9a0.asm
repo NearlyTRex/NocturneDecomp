@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004edaa0 at 004edae3
+;   core_gore.cpp_CGore_FUN_004edaa0 at 004edae3
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70

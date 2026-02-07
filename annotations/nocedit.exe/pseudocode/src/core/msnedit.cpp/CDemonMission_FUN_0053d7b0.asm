@@ -23,8 +23,8 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
-;   core_mission.cpp_CDemonMission_FUN_00523cf0
-;   core_mission.cpp_CDemonMission_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_waypoint.cpp_CWayPoint_FUN_005ec4f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x8                         ; 0053d7cc
     PUSH EBP                            ; 0053d7cf
     XOR EDI,EDI                         ; 0053d7d0
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0053d7d2
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 ; 0053d7d2
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     MOV ECX,dword ptr [EBP + 0x144]     ; 0053d7d7
     ADD ESP,0x4                         ; 0053d7dd
     TEST ECX,ECX                        ; 0053d7e0
@@ -67,8 +67,8 @@ section .text
     ADD ESP,0xc                         ; 0053d802
     PUSH EDI                            ; 0053d805
     PUSH EBP                            ; 0053d806
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 0053d807
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 ; 0053d807
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0053d80c
     PUSH EBP                            ; 0053d80f
     XOR ESI,ESI                         ; 0053d810

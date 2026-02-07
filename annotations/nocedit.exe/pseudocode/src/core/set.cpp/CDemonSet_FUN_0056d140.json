@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 28,
@@ -156,7 +149,7 @@
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_0327785c",
-      "text": "if ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) && (DAT_0327785c < 100)) {",
+      "text": "if ((g_CDemonMissionPtr->is_in_editor == 0) && (DAT_0327785c < 100)) {",
       "type": "undefined_data"
     },
     {

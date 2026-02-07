@@ -7,8 +7,8 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format_string
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x8]:4  local_8
+; CStrList         Stack[-0x18]:16  local_18
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[18]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044352e
@@ -16,8 +16,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d891
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd5b9
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db92f
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 0053a622
 ;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bcd2
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a622
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538928
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00582109
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583cac
@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 0049f075
     PUSH 0x2cf0130                      ; 0049f076 | DAT_02cf0130
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f07b
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f080
     MOV EAX,ESP                         ; 0049f083
     XOR ECX,ECX                         ; 0049f085

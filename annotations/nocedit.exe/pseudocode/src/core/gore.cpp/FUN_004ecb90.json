@@ -2,111 +2,26 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 17,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 18,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 20,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 212,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 19,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 87
+    "total_lines": 86
   },
   "cross_references": [
     {
       "addr": "004ee290",
       "from_addr": "004ee318",
-      "name": "core_gore.cpp_FUN_004ee290",
+      "name": "core_gore.cpp_CGore_FUN_004ee290",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -211,133 +126,133 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "_fprintf(in_stack_00000008,\"%f,%f,%f\\n\",(double)*(float *)(in_stack_00000004 + 4),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "_fprintf(in_stack_00000008,\"%f,%f,%f\\n\",(double)*(float *)(in_stack_00000004 + 4),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "(double)*(float *)(in_stack_00000004 + 8),(double)*(float *)(in_stack_00000004 + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "(double)*(float *)(in_stack_00000004 + 8),(double)*(float *)(in_stack_00000004 + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "_fprintf(in_stack_00000008,\"%d,%d,%d\\n\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "_fprintf(in_stack_00000008,\"%f,%f,%f\\n\",(double)*(float *)(in_stack_00000004 + 0x18),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "_fprintf(in_stack_00000008,\"%f,%f,%f\\n\",(double)*(float *)(in_stack_00000004 + 0x18),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "(double)*(float *)(in_stack_00000004 + 0x20),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "(double)*(float *)(in_stack_00000004 + 0x1c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "_fprintf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",*(uint *)(in_stack_00000004 + 0x28),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "_fprintf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",*(uint *)(in_stack_00000004 + 0x28),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x2c),*(uint *)(in_stack_00000004 + 0x30),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x2c),*(uint *)(in_stack_00000004 + 0x30),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x34),*(uint *)(in_stack_00000004 + 0x38),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x34),*(uint *)(in_stack_00000004 + 0x38),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x3c),*(uint *)(in_stack_00000004 + 0x40));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x3c),*(uint *)(in_stack_00000004 + 0x40));",
       "type": "stack_param"

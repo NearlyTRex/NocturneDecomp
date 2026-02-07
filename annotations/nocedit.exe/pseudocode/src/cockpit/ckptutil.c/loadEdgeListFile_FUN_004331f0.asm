@@ -36,8 +36,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
+;   crt_stdio.c_printf_FUN_005ff0d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   crt_unknown.c_FUN_005ff0d0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
@@ -251,8 +251,8 @@ section .text
     RET                                 ; 0043340b
     PUSH 0x617c8e                       ; 0043340c | = "\nUnable to allocate memory for edge ..."
         ;   Label: LAB_0043340c
-    CALL crt_unknown.c_FUN_005ff0d0     ; 00433411
-        ;   XREF to: 005ff0d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ff0d0()
+    CALL crt_stdio.c_printf_FUN_005ff0d0 ; 00433411
+        ;   XREF to: 005ff0d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_printf_FUN_005ff0d0(char * format)
     MOV EAX,0x617cb9                    ; 00433416 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x4                         ; 0043341b
     MOV [0x02f0ca48],EAX                ; 0043341e | g_CurrentFilename

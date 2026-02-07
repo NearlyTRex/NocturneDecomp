@@ -279,7 +279,7 @@
           "type":"char*"
         },
         {
-          "name":"x_pos",
+          "name":"x",
           "storage":{
             "offset":12,
             "size":4,
@@ -295,7 +295,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":8,
             "size":4,
@@ -329,7 +329,7 @@
     "vars":{
       "params":[
         {
-          "name":"x_pos",
+          "name":"x",
           "storage":{
             "offset":4,
             "size":4,
@@ -345,7 +345,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":8,
             "size":4,
@@ -409,23 +409,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1010",
-          "storage":{
-            "offset":-4112,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1010]",
-                "offset":-4112,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -462,7 +450,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -493,6 +481,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1010"
       ]
     }
   },
@@ -526,28 +517,16 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_100c",
-          "storage":{
-            "offset":-4108,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x100c]",
-                "offset":-4108,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
         {
-          "name":"x_pos",
+          "name":"x",
           "storage":{
             "offset":4,
             "size":4,
@@ -563,7 +542,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":8,
             "size":4,
@@ -594,6 +573,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_100c"
       ]
     }
   },
@@ -661,7 +643,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -28035,7 +28017,7 @@
           "type":"CDrawSurface*"
         },
         {
-          "name":"x",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -28048,10 +28030,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"y",
+          "name":"x",
           "storage":{
             "offset":12,
             "size":4,
@@ -28067,7 +28049,7 @@
           "type":"int"
         },
         {
-          "name":"height",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -28081,22 +28063,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"text",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
         }
       ]
     }
@@ -28165,7 +28131,7 @@
           "type":"int"
         },
         {
-          "name":"height",
+          "name":"text",
           "storage":{
             "offset":16,
             "size":4,
@@ -28174,22 +28140,6 @@
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"text",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
                 "size":4
               }
             ]
@@ -28229,23 +28179,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1010",
-          "storage":{
-            "offset":-4112,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1010]",
-                "offset":-4112,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -28298,22 +28236,6 @@
           "type":"int"
         },
         {
-          "name":"height",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
           "name":"format",
           "storage":{
             "offset":20,
@@ -28329,6 +28251,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1010"
       ]
     }
   },
@@ -28362,23 +28287,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1014",
-          "storage":{
-            "offset":-4116,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1014]",
-                "offset":-4116,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -28462,6 +28375,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1014"
       ]
     }
   },
@@ -28497,7 +28413,7 @@
           "type":"CDrawSurface*"
         },
         {
-          "name":"x",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -28510,10 +28426,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"y",
+          "name":"x",
           "storage":{
             "offset":12,
             "size":4,
@@ -28545,7 +28461,7 @@
           "type":"int"
         },
         {
-          "name":"height",
+          "name":"y",
           "storage":{
             "offset":20,
             "size":4,
@@ -28561,7 +28477,7 @@
           "type":"int"
         },
         {
-          "name":"text",
+          "name":"height",
           "storage":{
             "offset":24,
             "size":4,
@@ -28574,7 +28490,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         }
       ]
     }
@@ -28609,23 +28525,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1008",
-          "storage":{
-            "offset":-4104,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1008]",
-                "offset":-4104,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -28661,6 +28565,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1008"
       ]
     }
   },
@@ -30427,7 +30334,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         }
       ],
       "params":[
@@ -47889,7 +47796,6 @@
         "start":"004ec23c"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004ebac0(undefined4 param_1)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_gore.cpp_FUN_004ebac0",
@@ -48306,7 +48212,6 @@
         "start":"004ed1c0"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004ed1c0(undefined4 param_1, undefined4 param_2)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_gore.cpp_FUN_004ed1c0",
@@ -48373,7 +48278,6 @@
         "start":"004ed240"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004ed240(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5, undefined4 param_6)",
     "conv":"__cdecl",
     "importable":true,
     "name":"core_gore.cpp_FUN_004ed240",
@@ -48570,11 +48474,30 @@
         "start":"004edb40"
       }
     ],
-    "cmt":"Signature: undefined1 core_gore.cpp_FUN_004edb40(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004edb40",
-    "ret":"void"
+    "name":"core_gore.cpp_CGore_FUN_004edb40",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGore*"
+        }
+      ]
+    }
   },
   {
     "addr":"004ee340",
@@ -48601,7 +48524,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ee3c0",
+    "name":"core_gore.cpp_CBloodPool_dtor_FUN_004ee3c0",
     "ret":"CBloodPool*",
     "vars":{
       "params":[
@@ -48645,8 +48568,38 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ee440",
-    "ret":"void"
+    "name":"core_gore.cpp_freeBloodPools_FUN_004ee440",
+    "ret":"CBloodPool*",
+    "vars":{
+      "params":[
+        {
+          "name":"objs",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBloodPool*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"004ee5c0",
@@ -57593,7 +57546,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_FUN_00523cc0",
+    "name":"core_mission.cpp_CDemonMission_countActors_FUN_00523cc0",
     "ret":"int",
     "vars":{
       "params":[
@@ -61799,7 +61752,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_00538f40",
+    "name":"core_msnedit.cpp_CDemonMission_findSetByName_FUN_00538f40",
     "ret":"int",
     "vars":{
       "params":[
@@ -61820,7 +61773,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"set_name",
           "storage":{
             "offset":8,
             "size":4,

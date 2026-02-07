@@ -130,7 +130,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
         if (0.0 < local_a0) {
           dVar5 = round(local_a0 * 0.20000000000000001);
           iStack_14 = (int)ROUND(dVar5);
-          core_gore_cpp_FUN_004edbb0();
+          core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
           in_stack_ffffff58 = "kick1.wav";
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");

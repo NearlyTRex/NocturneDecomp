@@ -28,8 +28,8 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da211
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539525
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e508
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539525
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580680
 ;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b033
 ;   core_setedit.cpp_FUN_00581320 at 005813b7
@@ -485,8 +485,8 @@ section .text
     PUSH 0x0                            ; 0056c5c0
     MOV ECX,dword ptr [0x0067b9a0]      ; 0056c5c2 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0056c5c8 | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ed830     ; 0056c5c9
-        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed830(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_FUN_004ed830 ; 0056c5c9
+        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed830(CGore * this_ptr)
     ADD ESP,0xc                         ; 0056c5ce
     PUSH 0x1                            ; 0056c5d1
     PUSH 0x0                            ; 0056c5d3

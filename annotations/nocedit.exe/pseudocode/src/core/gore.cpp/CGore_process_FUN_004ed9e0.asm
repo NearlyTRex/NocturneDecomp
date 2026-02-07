@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e33b4
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539934
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e525
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539934
 ;
 ; Referenced Globals:
 ;   CBloodParticle[256] DAT_02d833d4

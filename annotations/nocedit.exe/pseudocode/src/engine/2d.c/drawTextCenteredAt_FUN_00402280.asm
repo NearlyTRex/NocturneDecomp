@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredAt_FUN_00402280(char *text,int x_pos,int y_pos)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredAt_FUN_00402280(char *text,int x,int y)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   x_pos
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
 ;   engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0 at 00402331
@@ -40,7 +40,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004022a6
     PUSH EBX                            ; 004022aa
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004022ab
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004022b0
     POP EBX                             ; 004022b3
     RET                                 ; 004022b4

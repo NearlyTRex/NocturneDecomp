@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00605950(void)
+void FUN_00605950(void)
 
 {
   FlushFilesByMask(0xffffffff);

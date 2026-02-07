@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-byte * crt_unknown_c_FUN_0060d480(void)
+byte * FUN_0060d480(void)
 
 {
   ThreadData *pTVar1;

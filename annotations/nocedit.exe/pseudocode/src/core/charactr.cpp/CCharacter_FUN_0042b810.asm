@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_gore.cpp_FUN_004edaa0
+;   core_gore.cpp_CGore_FUN_004edaa0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 ;
 ; *****************************************************************************
@@ -82,8 +82,8 @@ section .text
     PUSH EAX                            ; 0042b888
     MOV EDX,dword ptr [0x0067b9a0]      ; 0042b889 | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 0042b88f | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edaa0     ; 0042b890
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004edaa0()
+    CALL core_gore.cpp_CGore_FUN_004edaa0 ; 0042b890
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edaa0(CGore * this_ptr)
     ADD ESP,0x10                        ; 0042b895
     POP ESI                             ; 0042b898
     POP EDI                             ; 0042b899

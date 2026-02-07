@@ -33,7 +33,7 @@ sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
     return 0;
   }
   local_10 = (LPDIRECTSOUND)0x0;
-  uVar3 = crt_dsound_c_DirectSoundCreate(device_guid,&local_10,(LPUNKNOWN)0x0);
+  uVar3 = DirectSoundCreate(device_guid,&local_10,(LPUNKNOWN)0x0);
   if (uVar3 != 0) {
     pcVar9 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
     sprintf

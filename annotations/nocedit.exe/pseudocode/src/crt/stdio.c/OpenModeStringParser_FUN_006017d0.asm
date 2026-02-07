@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   crt_stdio.c_fopenThreadSafe_FUN_00601b14 at 00601b27
 ;   crt_stdio.c_fopenWithFlags_FUN_00601a20 at 00601a2e
+;   crt_stdio.c_freopen_FUN_00601b14 at 00601b27
 ;
 ; Referenced Globals:
 ;   int INT_00684ed0 = 0x100

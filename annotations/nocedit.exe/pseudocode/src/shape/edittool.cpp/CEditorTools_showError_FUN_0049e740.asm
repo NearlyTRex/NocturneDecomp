@@ -7,7 +7,7 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; va_list_t        Stack[-0x8]:4  local_8
 ;
 ; XREF[103]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ff25
@@ -25,7 +25,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Error_00623018
 ;   char[256] g_ErrorMessageBuffer_02cef530
-;   CEditorTools* g_CUserInterfacePtr
+;   int INT_02cf2a94
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
@@ -46,9 +46,9 @@ section .text
     PUSH EDX                            ; 0049e752
     PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer_02cef530
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e75d
-    MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | g_CUserInterfacePtr
+    MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | INT_02cf2a94
     PUSH EBX                            ; 0049e766
     PUSH 0x2cef530                      ; 0049e767 | g_ErrorMessageBuffer_02cef530
     XOR ECX,ECX                         ; 0049e76c

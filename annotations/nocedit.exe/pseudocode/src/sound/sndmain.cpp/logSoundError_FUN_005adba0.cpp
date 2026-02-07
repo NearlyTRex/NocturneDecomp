@@ -16,12 +16,12 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   SSoundDeviceInfo *device_info;
   char local_528 [1024];
   SSoundDeviceInfo local_128;
-  va_list_t local_10;
+  byte *local_10;
   time_t local_c;
   
   local_10 = &stack0x00000008;
-  vsprintf(local_528,format,&local_10);
-  local_10 = (va_list_t)0x0;
+  vsprintf(local_528,format,(va_list_t)&local_10);
+  local_10 = (byte *)0x0;
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_528);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("\\\\q\\xfer\\fletch\\sounderr.txt",(char *)0x0,"at",

@@ -44,7 +44,7 @@
 ;   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80
+;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
@@ -144,8 +144,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 005100f1
     PUSH ECX                            ; 005100f5
     INC EBX                             ; 005100f6
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005100f7
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005100f7
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005100fc
     CMP EBX,0x5                         ; 005100ff
     JL 0x005100ac                       ; 00510102
@@ -166,8 +166,8 @@ section .text
     PUSH EDI                            ; 00510124
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00510125
     PUSH EAX                            ; 00510129
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0051012a
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0051012a
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0051012f
     MOV EDX,dword ptr [ESP + 0x4]       ; 00510132
     MOV ECX,dword ptr [ESP + 0x40]      ; 00510136
@@ -220,8 +220,8 @@ section .text
     PUSH 0x636547                       ; 005101be | = "Nocturne (c) 1999 Terminal Reality In..."
     MOV EBX,dword ptr [0x020a5724]      ; 005101c3 | g_SmallEditorFont
     PUSH EBX                            ; 005101c9
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005101ca
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005101ca
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
         ;   Label: LAB_005101ca
     ADD ESP,0x18                        ; 005101cf
     PUSH 0x8000                         ; 005101d2
@@ -235,8 +235,8 @@ section .text
     PUSH 0x6365b6                       ; 005101ed | g_MenuVersionText
     MOV ESI,dword ptr [0x020a5724]      ; 005101f2 | g_SmallEditorFont
     PUSH ESI                            ; 005101f8
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 005101f9
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 005101f9
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 005101fe
     PUSH 0xffff                         ; 00510201
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00510206
@@ -249,8 +249,8 @@ section .text
     PUSH 0x6365b8                       ; 00510219 | = "NON-RELEASE EDITOR BUILD"
     MOV EDI,dword ptr [0x020a5724]      ; 0051021e | g_SmallEditorFont
     PUSH EDI                            ; 00510224
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510225
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510225
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0051022a
     PUSH 0x0                            ; 0051022d
     PUSH 0xf8                           ; 0051022f
@@ -259,8 +259,8 @@ section .text
     PUSH 0x6365d1                       ; 00510238 | = "Press CTRL+D to access the editor menu"
     MOV EBP,dword ptr [0x020a5724]      ; 0051023d | g_SmallEditorFont
     PUSH EBP                            ; 00510243
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 00510244
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00510244
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00510249
     MOV EAX,dword ptr [ESP + 0x38]      ; 0051024c
     MOV EAX,dword ptr [EAX]             ; 00510250
@@ -386,8 +386,8 @@ section .text
     PUSH EDX                            ; 00510358
     PUSH EAX                            ; 00510359
     MOV EBX,EAX                         ; 0051035a
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 0051035c
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
+    CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 0051035c
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00510361
     PUSH 0x58                           ; 00510364
     MOV ESI,EBX                         ; 00510366

@@ -29,7 +29,7 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args)
   p_Stack_18 = file;
   pcStack_20 = getc_helper;
   iVar2 = doscan
-                    ((scanf_state_t *)&pcStack_20,(char **)args,in_stack_00000010);
+                    ((scanf_state_t *)&pcStack_20,(char **)args.value[0],in_stack_00000010);
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
   return iVar2;
 }

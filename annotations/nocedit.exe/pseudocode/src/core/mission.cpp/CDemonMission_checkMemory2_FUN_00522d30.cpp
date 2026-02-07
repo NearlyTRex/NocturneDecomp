@@ -11,17 +11,11 @@ void __cdecl core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMiss
 {
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x84);
   core_mission_cpp_CDemonMission_FUN_00523f50(this_ptr);
-  this_ptr->set_list = (void *)0x0;
-  this_ptr->unk2[0x38] = '\0';
-  this_ptr->unk2[0] = '\0';
-  this_ptr->unk2[1] = '\0';
-  this_ptr->unk2[2] = '\0';
-  this_ptr->unk2[3] = '\0';
-  this_ptr->unk4[0x33c] = '\0';
-  this_ptr->unk4[0x33d] = '\0';
-  this_ptr->unk4[0x33e] = '\0';
-  this_ptr->unk4[0x33f] = '\0';
-  this_ptr->actorCountMaybe = 0;
+  this_ptr->num_sets = 0;
+  this_ptr->mission_name[0] = '\0';
+  this_ptr->has_inventory_actors = 0;
+  this_ptr->next_inventory_actor = (CDemonActor *)0x0;
+  this_ptr->actor_lookup_count = 0;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x8f);
   return;
 }

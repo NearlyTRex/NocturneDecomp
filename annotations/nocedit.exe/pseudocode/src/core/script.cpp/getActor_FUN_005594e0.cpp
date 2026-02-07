@@ -62,7 +62,8 @@ core_script_cpp_getActor_FUN_005594e0
       }
     }
     else {
-      actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+      actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                                     (g_CDemonMissionPtr,actor_specifier);
       if (actor_ptr == (CHero *)0x0) {
         sprintf
                   (g_ScriptErrorBuffer,"Actor \"%s\" does not exist.",actor_specifier);

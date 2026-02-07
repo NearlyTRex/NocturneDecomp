@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0 (CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; uint             Stack[0xc]:4   flags
 ;
 ; XREF[8]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c27d

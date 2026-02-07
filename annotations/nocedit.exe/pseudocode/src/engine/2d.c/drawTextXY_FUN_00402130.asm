@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x_pos,int y_pos,char *text)
+; __cdecl void __cdecl engine_2d_c_drawTextXY_FUN_00402130(int x,int y,char *text)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   x_pos
-; int              Stack[0x8]:4   y_pos
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ; char *           Stack[0xc]:4   text
 ;
 ; XREF[5]:
@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040213b
     PUSH EBX                            ; 0040213f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00402140
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402145
     POP EBX                             ; 00402148
     RET                                 ; 00402149

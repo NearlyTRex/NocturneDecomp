@@ -179,7 +179,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
       local_64.projected_vertex.screen_y = (int)g_EditorFont;
       local_64.projected_vertex.screen_x = 0x4a1e86;
       local_64.u = (float)&local_64.w_recip;
-      engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (g_EditorFont,(char *)&local_64.w_recip,(int)local_64.v,(int)local_64.light,
                  g_AxisLabelTextColor,-1);
     }

@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   crt_stdio.c_fprintf_FUN_005fe6d0 at 005fe6e8
 ;   crt_stdio.c_fprintf_FUN_006021c0 at 006021d0
-;   crt_unknown.c_FUN_005ff0d0 at 005ff0e7
+;   crt_stdio.c_printf_FUN_005ff0d0 at 005ff0e7
 ;
 ; Referenced Globals:
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

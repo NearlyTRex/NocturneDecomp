@@ -418,9 +418,11 @@ def transform_crt_functions(code):
     Returns:
         Transformed code with CRT wrappers replaced by clean names
     """
-    # Pattern matches: crt_{category}_c_{funcname}_FUN_{hexaddr}
-    # Captures the function name to use as replacement
-    pattern = r'\bcrt_[a-z]+_c_([a-zA-Z_][a-zA-Z0-9_]*)_FUN_[0-9a-fA-F]+\b'
+    # Pattern matches: crt_{category}_c_{funcname} with optional _FUN_{hexaddr} suffix
+    # Categories may contain digits (e.g., wsock32, ddraw) and the _FUN_ suffix
+    # is absent on DLL import functions (wsock32, ddraw, dsound, etc.)
+    # The funcname capture uses *? (non-greedy) so _FUN_ suffix is matched separately
+    pattern = r'\bcrt_[a-z0-9]+_c_([a-zA-Z_][a-zA-Z0-9_]*?)(?:_FUN_[0-9a-fA-F]+)?\b'
 
     def replace_crt_call(match):
         func_name = match.group(1)

@@ -80,7 +80,7 @@ section .text
     XOR ESI,ESI                         ; 00506f3c
     MOV dword ptr [0x02f0ca50],ECX      ; 00506f3e | g_RecursiveCallFlag
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 00506f44
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00506f49
     MOV DH,0x5c                         ; 00506f4c
     MOV dword ptr [ESP],ESI             ; 00506f4e

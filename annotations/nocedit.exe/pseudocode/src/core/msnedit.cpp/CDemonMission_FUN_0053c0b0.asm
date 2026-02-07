@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_005390f0 at 00539cb3
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539cb3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_msnedit_cpp_0063c7eb

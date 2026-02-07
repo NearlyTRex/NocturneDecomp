@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_gore.cpp_FUN_004edaf0() */
-
 CBloodSplat * __cdecl core_gore_cpp_FUN_004edaf0(void)
 
 {

@@ -28,8 +28,9 @@ void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_pt
       iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&CStack_46c,acStack_c4,-1,0);
       if (-1 < iVar1) {
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_46c.base,iVar1);
-        pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+        pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_46c.base,iVar1);
+        pcVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                           (g_CDemonMissionPtr,pcVar2);
         core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,(int)pcVar2);
       }
     }

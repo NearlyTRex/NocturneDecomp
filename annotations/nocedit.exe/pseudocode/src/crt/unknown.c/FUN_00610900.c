@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void crt_unknown_c_FUN_00610900(void)
+void FUN_00610900(void)
 
 {
   char *pcVar1;
@@ -20,15 +20,15 @@ void crt_unknown_c_FUN_00610900(void)
       pcVar1 = *ppcVar3;
       ppcVar3 = ppcVar3 + 1;
       if (pcVar1 == (char *)0x0) break;
-      iVar2 = crt_unknown_c_FUN_0060fa90();
+      iVar2 = FUN_0060fa90();
       ptr = malloc((iVar2 + 1) * 2);
       if (ptr != (void *)0x0) {
-        iVar2 = crt_unknown_c_FUN_0060fac0();
+        iVar2 = FUN_0060fac0();
         if (iVar2 == -1) {
           free(ptr);
         }
         else {
-          crt_unknown_c_FUN_0060fcf4();
+          FUN_0060fcf4();
         }
       }
     }

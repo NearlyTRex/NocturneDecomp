@@ -108,12 +108,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_stdio.c_fgetc_outptr_FUN_005ff245",
-    "ret":"int",
+    "name":"crt_stdio.c_istream_get_FUN_005ff245",
+    "ret":"istream*",
     "vars":{
       "params":[
         {
-          "name":"stream",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -126,10 +126,10 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"istream*"
         },
         {
-          "name":"output_byte",
+          "name":"c",
           "storage":{
             "offset":8,
             "size":4,
@@ -142,7 +142,7 @@
               }
             ]
           },
-          "type":"uchar*"
+          "type":"char*"
         }
       ],
       "ret_storage":{

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 69,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function"
+      "special_crt_function",
+      "unknown_field"
     ],
     "total_lines": 90
   },
@@ -76,9 +77,9 @@
     },
     {
       "addr": "00684d05",
-      "name": "BYTE_00684d05",
-      "type": "byte",
-      "value": "0x0"
+      "name": "g_StderrLogFile._flag+1",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "03f9b200",
@@ -134,6 +135,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 10,
+      "match": "._1_1_",
+      "text": "g_StderrLogFile._flag._1_1_ = g_StderrLogFile._flag._1_1_ & 0xf8 | 4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 10,
+      "match": "._1_1_",
+      "text": "g_StderrLogFile._flag._1_1_ = g_StderrLogFile._flag._1_1_ & 0xf8 | 4;",
+      "type": "unknown_field"
+    },
     {
       "description": "Complex pointer cast",
       "line": 25,

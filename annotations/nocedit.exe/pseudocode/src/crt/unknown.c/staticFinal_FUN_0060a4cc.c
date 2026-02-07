@@ -19,13 +19,13 @@ void __cdecl staticFinal(void)
   } while ((ReentrantCriticalSection *)ppvVar1 != &g_GlobalMemoryCriticalSection);
   (*PTR_crt_sync_c_ResetCriticalSection_FUN_006853ec)();
   DeleteCritcalSectionsMaybe();
-  crt_unknown_c_FUN_0060ccb4();
+  FUN_0060ccb4();
   CompactHeapBlocks();
   (*PTR_crt_sync_c_ResetCriticalSection_FUN_006853ec)();
   (*PTR_crt_sync_c_ResetCriticalSection_FUN_006853ec)();
   (*PTR_crt_sync_c_ResetCriticalSection_FUN_006853ec)();
   (*PTR_crt_sync_c_ResetCriticalSection_FUN_006853ec)();
-  crt_unknown_c_FUN_00609fc8();
-  crt_unknown_c_FUN_0060a394();
+  FUN_00609fc8();
+  FUN_0060a394();
   return;
 }

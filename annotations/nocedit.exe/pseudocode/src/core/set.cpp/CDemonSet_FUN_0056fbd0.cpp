@@ -57,7 +57,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
     do {
       this_ptr_00 = *(CHero **)(pCVar12->unk4 + 0x9c50);
       if ((this_ptr_00 != g_HeroActors[g_LocalHeroIndex]) &&
-         ((*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0 || ((this_ptr_00->base).base.unk14 == 0)))) {
+         ((g_CDemonMissionPtr->is_in_editor == 0 || ((this_ptr_00->base).base.unk14 == 0)))) {
         if (in_stack_00000008 == 0xffffffff) {
           (this_ptr_00->base).base.previous_transform_state.dirty_flags = -1;
         }

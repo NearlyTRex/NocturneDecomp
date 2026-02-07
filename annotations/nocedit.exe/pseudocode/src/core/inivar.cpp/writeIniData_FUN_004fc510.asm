@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 00508821
 ;   core_menu.cpp_showOptionsScreen_FUN_00512d30 at 00512e85
-;   core_msnedit.cpp_CDemonMission_FUN_00537680 at 005378b4
+;   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680 at 005378b4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gamePIXX_00630069

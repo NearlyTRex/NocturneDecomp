@@ -16,7 +16,7 @@ void __cdecl core_lever_cpp_CLever_FUN_00504b20(CLever *this_ptr)
   float in_stack_00000010;
   
   if (this_ptr->param != in_stack_00000008) {
-    if (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0) {
+    if (g_CDemonMissionPtr->is_in_editor == 0) {
       if ((in_stack_00000008 <= 0.0) && (0.0 < this_ptr->param)) {
         core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       }

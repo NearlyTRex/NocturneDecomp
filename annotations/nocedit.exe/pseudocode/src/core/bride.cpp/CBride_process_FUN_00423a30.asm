@@ -90,7 +90,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042ec40
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_gore.cpp_FUN_004ede30
+;   core_gore.cpp_CGore_FUN_004ede30
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -246,8 +246,8 @@ section .text
     PUSH EAX                            ; 00423c08
     MOV ESI,dword ptr [0x0067b9a0]      ; 00423c09 | g_CGorePtr
     PUSH ESI                            ; 00423c0f | g_CGoreInstance
-    CALL core_gore.cpp_FUN_004ede30     ; 00423c10
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ede30()
+    CALL core_gore.cpp_CGore_FUN_004ede30 ; 00423c10
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
     ADD ESP,0xc                         ; 00423c15
     PUSH 0x41c80000                     ; 00423c18
     PUSH 0x32                           ; 00423c1d

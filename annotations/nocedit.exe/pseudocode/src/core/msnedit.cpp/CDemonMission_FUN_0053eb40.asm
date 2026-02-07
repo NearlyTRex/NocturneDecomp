@@ -12,7 +12,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053af50 at 0053afe4
+;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afe4
 ;   core_script.cpp_CScript_FUN_00565d00 at 00565e63
 ;
 ; Referenced Globals:

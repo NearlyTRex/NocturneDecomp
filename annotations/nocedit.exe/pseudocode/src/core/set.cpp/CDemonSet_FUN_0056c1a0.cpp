@@ -204,7 +204,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
     } while (local_2c < g_DynamicLightCount);
   }
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(&g_CDemonCameraInstance);
-  core_gore_cpp_FUN_004ed830(g_CGorePtr);
+  core_gore_cpp_CGore_FUN_004ed830(g_CGorePtr);
   core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,0,1);
   if (g_CWaterPtr->wave_animation_enabled == 0) {
     core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,0);
@@ -250,8 +250,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
       local_30 = local_30 + 1;
     } while (local_30 < g_DynamicLightCount);
   }
-  if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
-     (*(int *)(g_CDemonMissionPtr->unk1 + 4) == 0)) {
+  if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) && (g_CDemonMissionPtr->is_in_editor == 0)) {
     core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370
               (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }

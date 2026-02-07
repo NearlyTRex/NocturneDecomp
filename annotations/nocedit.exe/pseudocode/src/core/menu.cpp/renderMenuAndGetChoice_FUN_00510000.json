@@ -2,106 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "const_error",
-        "column": 32,
-        "line": 104,
-        "message": "invalid conversion from 'const char*' to 'char*' [-fpermissive]"
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 102,
+        "message": "no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 40,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 88,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 90,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 91,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 95,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 97,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 98,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 107,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 109,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 124,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 126,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 128,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 403,
-    "complexity_score": 251,
+    "complexity_score": 250,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 145,
     "suspect_count": 10,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 549
+    "total_lines": 548
   },
   "cross_references": [
     {
@@ -166,7 +87,7 @@
     {
       "addr": "004cda80",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004cda80"
     },
     {
       "addr": "004cff40",
@@ -423,42 +344,42 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 126,
       "match": "in_stack_0000001c",
       "text": "iVar6 = *in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 127,
       "match": "in_stack_0000001c",
       "text": "*in_stack_0000001c = iVar6 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 128,
       "match": "in_stack_00000018",
       "text": "if (in_stack_00000018 <= iVar6 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 129,
       "match": "in_stack_0000001c",
       "text": "*in_stack_0000001c = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 137,
       "match": "in_stack_00000024",
       "text": "return *in_stack_00000024;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 147,
       "match": "in_stack_0000002c",
       "text": "return *in_stack_0000002c;",
       "type": "stack_param"

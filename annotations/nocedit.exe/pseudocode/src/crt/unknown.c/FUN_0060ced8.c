@@ -7,7 +7,7 @@
 #include "nocturne.h"
 
 SIGNAL_HANDLER_TYPE
-crt_unknown_c_FUN_0060ced8
+FUN_0060ced8
           (uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5
           )
 

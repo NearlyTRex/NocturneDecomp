@@ -8,7 +8,7 @@
 
 /* Signature: byte FUN_00607958(uint param_1, uint param_2, uint param_3) */
 
-uint crt_unknown_c_FUN_00607958(void)
+uint FUN_00607958(void)
 
 {
   int iVar1;
@@ -24,8 +24,8 @@ uint crt_unknown_c_FUN_00607958(void)
       return 0;
     }
   }
-  iVar1 = crt_unknown_c_FUN_00607858();
-  iVar2 = crt_unknown_c_FUN_00607858();
+  iVar1 = FUN_00607858();
+  iVar2 = FUN_00607858();
   if (iVar1 <= iVar2) {
     return 0;
   }

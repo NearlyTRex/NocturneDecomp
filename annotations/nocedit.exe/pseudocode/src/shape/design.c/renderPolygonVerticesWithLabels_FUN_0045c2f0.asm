@@ -230,7 +230,7 @@ section .text
     LEA EAX,[EBP + -0x6c]               ; 0045c4ce
     PUSH EAX                            ; 0045c4d1
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045c4d2
-        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045c4d7
     JMP 0x0045c3e1                      ; 0045c4da
         ;   XREF to: 0045c3e1 (UNCONDITIONAL_JUMP)  ; LAB_0045c3e1

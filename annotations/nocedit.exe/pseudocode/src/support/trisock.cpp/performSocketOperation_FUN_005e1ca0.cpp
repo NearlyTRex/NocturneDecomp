@@ -21,7 +21,7 @@ support_trisock_cpp_performSocketOperation_FUN_005e1ca0
   
   bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
-    iVar1 = crt_wsock32_c_send(socket_ctx->socket,buffer,length,0);
+    iVar1 = send(socket_ctx->socket,buffer,length,0);
     return iVar1;
   }
   support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,&local_2c);
@@ -33,6 +33,6 @@ support_trisock_cpp_performSocketOperation_FUN_005e1ca0
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  iVar1 = crt_wsock32_c_sendto(socket_ctx->socket,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
+  iVar1 = sendto(socket_ctx->socket,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
   return iVar1;
 }

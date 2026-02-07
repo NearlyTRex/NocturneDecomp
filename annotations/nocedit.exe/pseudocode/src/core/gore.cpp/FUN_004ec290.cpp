@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_gore.cpp_FUN_004ec290(uint param_1, uint param_2) */
-
 int __cdecl core_gore_cpp_FUN_004ec290(void)
 
 {
   int in_stack_00000008;
   
   if ((float)0.90000000000000002 < *(float *)(in_stack_00000008 + 4)) {
-    core_gore_cpp_FUN_004edb40();
+    core_gore_cpp_CGore_FUN_004edb40(g_CGorePtr);
     return 1;
   }
-  core_gore_cpp_FUN_004edb70();
+  core_gore_cpp_CGore_FUN_004edb70(g_CGorePtr);
   return 1;
 }

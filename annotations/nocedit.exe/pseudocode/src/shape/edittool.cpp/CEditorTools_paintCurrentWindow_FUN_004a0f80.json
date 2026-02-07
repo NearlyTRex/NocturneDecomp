@@ -1,76 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_precision",
-        "column": 27,
-        "line": 55,
-        "message": "cast from 'CDemonRenderer*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "pointer_precision",
-        "column": 25,
-        "line": 89,
-        "message": "cast from 'CDemonRenderer*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "pointer_arithmetic",
-        "column": 88,
-        "line": 25,
-        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 25,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 27,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 32,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 34,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 75,
-        "line": 77,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 260,
-    "complexity_score": 96,
+    "complexity_score": 81,
     "cross_reference_count": 8,
     "function_call_count": 13,
     "global_count": 23,
     "pseudocode_lines": 81,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 341
   },
   "cross_references": [
@@ -169,7 +111,7 @@
     {
       "addr": "004cda80",
       "is_variadic": false,
-      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004cda80"
     },
     {
       "addr": "004cff40",
@@ -289,8 +231,8 @@
     },
     {
       "addr": "02cf2a78",
-      "name": "DAT_02cf2a78",
-      "type": "undefined4",
+      "name": "INT_02cf2a78",
+      "type": "int",
       "value": null
     },
     {
@@ -399,13 +341,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_02cf2a78",
-      "text": "g_WindowStack[iVar2].bottom + -2,DAT_02cf2a78,g_WindowBorderColor1);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

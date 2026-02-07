@@ -533,7 +533,7 @@
     {
       "addr": "00524660",
       "from_addr": "005246ba",
-      "name": "core_mission.cpp_CDemonMission_FUN_00524660",
+      "name": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -546,48 +546,6 @@
       "addr": "0052e700",
       "from_addr": "0052e874",
       "name": "core_motion.cpp_CMotionController_render_FUN_0052e700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00537680",
-      "from_addr": "00537823",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_00537680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005379e0",
-      "from_addr": "00537d7f",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005379e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00538ba0",
-      "from_addr": "00538d12",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_00538ba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005390f0",
-      "from_addr": "00539f80",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_005390f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b030",
-      "from_addr": "0053b1a3",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b030",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b510",
-      "from_addr": "0053b683",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053b9f0",
-      "from_addr": "0053ba8b",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053b9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -627,9 +585,51 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0053b030",
+      "from_addr": "0053b1a3",
+      "name": "core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b510",
+      "from_addr": "0053b683",
+      "name": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "00539f80",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005379e0",
+      "from_addr": "00537d7f",
+      "name": "core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b9f0",
+      "from_addr": "0053ba8b",
+      "name": "core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538ba0",
+      "from_addr": "00538d12",
+      "name": "core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005381e0",
       "from_addr": "005385d6",
       "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537680",
+      "from_addr": "00537823",
+      "name": "core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1982,7 +1982,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0x0000000c",
-      "text": "args = &stack0x0000000c;",
+      "text": "args.value[0] = (char * [1])&stack0x0000000c;",
       "type": "stack_ref"
     },
     {

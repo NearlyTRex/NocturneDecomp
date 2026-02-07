@@ -82,7 +82,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         if ((local_1c == 0x31) &&
            (iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                               (g_CEditorToolsPtr,"Load course","data",
-                               "*.pth",(int)local_1f0), iVar6 != 0)) {
+                               "*.pth",(int)local_1f0,0), iVar6 != 0)) {
           core_course_cpp_CCourse_load_FUN_00442580(this_ptr,local_1f0);
         }
       }
@@ -185,7 +185,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
       else {
         iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Select model to fly around","models",
-                           "*.kfm",(int)local_2f4);
+                           "*.kfm",(int)local_2f4,0);
         if (iVar6 != 0) {
           pCVar5 = core_dmodel_cpp_loadModel_FUN_00478c00(local_2f4);
           core_course_cpp_FUN_00443bc0(this_ptr,pCVar5);

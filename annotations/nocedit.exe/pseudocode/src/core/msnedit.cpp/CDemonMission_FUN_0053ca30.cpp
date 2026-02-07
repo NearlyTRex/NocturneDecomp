@@ -26,7 +26,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca30(CDemonMission *this_ptr
       if (pCVar1 == (CDemonActor *)param_2) {
         return;
       }
-      if ((*(int *)this_ptr->unk1 == (pCVar1->location).area_id) && (pCVar1->unk14 == 0)) {
+      if ((this_ptr->current_set_index == (pCVar1->location).area_id) && (pCVar1->unk14 == 0)) {
         return;
       }
       iVar2 = iVar2 + 1;

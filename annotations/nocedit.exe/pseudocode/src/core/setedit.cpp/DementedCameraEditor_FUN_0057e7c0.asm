@@ -150,7 +150,7 @@ section .text
     PUSH 0x0                            ; 0057e846
     PUSH 0x6480b5                       ; 0057e848 | = "Demented Camera Editor"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e84d
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057e852
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057e855
     MOV EDI,0x16                        ; 0057e858
@@ -176,7 +176,7 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057e898
     PUSH EAX                            ; 0057e89f
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e8a0
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679398]                ; 0057e8a5 | g_WindowHeight
     MOV EDX,EAX                         ; 0057e8aa
     SAR EDX,0x1f                        ; 0057e8ac
@@ -213,21 +213,21 @@ section .text
     PUSH 0x6480cf                       ; 0057e8fc | = "1.  Add new camera"
     MOV EBX,EAX                         ; 0057e901
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e903
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057e908
     LEA ESI,[EBX + 0xb]                 ; 0057e90b
     PUSH ESI                            ; 0057e90e
     PUSH 0x0                            ; 0057e90f
     PUSH 0x6480e2                       ; 0057e911 | = "2.  Delete existing camera"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e916
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057e91b
     LEA EDI,[EBX + 0x16]                ; 0057e91e
     PUSH EDI                            ; 0057e921
     PUSH 0x0                            ; 0057e922
     PUSH 0x6480fd                       ; 0057e924 | = "3.  Edit existing camera"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e929
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,EBX                         ; 0057e92e
     ADD ESP,0xc                         ; 0057e930
     ADD EAX,0x21                        ; 0057e933
@@ -236,7 +236,7 @@ section .text
     PUSH 0x648116                       ; 0057e939 | = "4.  Save set"
     MOV dword ptr [ESP + 0x4780],EAX    ; 0057e93e
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e945
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057e94a | g_WindowWidth
     MOV EDX,EAX                         ; 0057e94f
     MOV ECX,0x3                         ; 0057e951
@@ -247,7 +247,7 @@ section .text
     PUSH EAX                            ; 0057e95f
     PUSH 0x648123                       ; 0057e960 | = "5.  Rename all cameras"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e965
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057e96a | g_WindowWidth
     MOV EDX,EAX                         ; 0057e96f
     MOV ECX,0x3                         ; 0057e971
@@ -258,7 +258,7 @@ section .text
     PUSH EAX                            ; 0057e97f
     PUSH 0x64813a                       ; 0057e980 | = "6.  Clone a camera"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e985
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057e98a | g_WindowWidth
     MOV EDX,EAX                         ; 0057e98f
     MOV ECX,0x3                         ; 0057e991
@@ -269,7 +269,7 @@ section .text
     PUSH EAX                            ; 0057e99f
     PUSH 0x64814d                       ; 0057e9a0 | = "7.  Merge .LC file"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e9a5
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,[0x00679394]                ; 0057e9aa | g_WindowWidth
     MOV EDX,EAX                         ; 0057e9af
     MOV ECX,0x3                         ; 0057e9b1
@@ -281,7 +281,7 @@ section .text
     PUSH EAX                            ; 0057e9c6
     PUSH 0x648160                       ; 0057e9c7 | = "8.  Precompute all PVS"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e9cc
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [0x00679394]      ; 0057e9d1 | g_WindowWidth
     ADD EDX,EDX                         ; 0057e9d7
     MOV ECX,0x3                         ; 0057e9d9
@@ -293,7 +293,7 @@ section .text
     PUSH EAX                            ; 0057e9e9
     PUSH 0x648177                       ; 0057e9ea | = "9.  Merge2"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057e9ef
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EDX,dword ptr [0x00679394]      ; 0057e9f4 | g_WindowWidth
     ADD EDX,EDX                         ; 0057e9fa
     MOV ECX,0x3                         ; 0057e9fc
@@ -305,7 +305,7 @@ section .text
     PUSH EAX                            ; 0057ea0c
     PUSH 0x648182                       ; 0057ea0d | = "A.  Rename2"
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057ea12
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057ea17
     PUSH 0x0                            ; 0057ea1a
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057ea1c

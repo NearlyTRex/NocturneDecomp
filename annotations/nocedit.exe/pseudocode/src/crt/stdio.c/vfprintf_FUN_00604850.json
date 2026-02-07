@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 164,
+    "complexity_score": 165,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 45,
     "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
@@ -13,7 +13,7 @@
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 145
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -31,7 +31,7 @@
     {
       "addr": "005ff0d0",
       "from_addr": "005ff0e7",
-      "name": "crt_unknown.c_FUN_005ff0d0",
+      "name": "crt_stdio.c_printf_FUN_005ff0d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +89,7 @@
       {
         "call_addr": "005ff0e7",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005ff0d0",
+        "caller": "crt_stdio.c_printf_FUN_005ff0d0",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "reg_params": [],
@@ -208,26 +208,26 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000010",
-      "text": "(file,args,in_stack_00000010,OutputCallback);",
+      "text": "(file,(char *)args.value[0],in_stack_00000010,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 37,
       "match": "(byte *)((int)",
       "text": "bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 4;",
       "type": "pointer_cast"
