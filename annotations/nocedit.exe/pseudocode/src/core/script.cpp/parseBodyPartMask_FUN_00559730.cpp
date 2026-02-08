@@ -38,7 +38,7 @@ core_script_cpp_parseBodyPartMask_FUN_00559730
     part_mask[iVar2] = 1;
   }
   pcVar3 = core_script_cpp_CDeformableModel_getModelFilename_FUN_00567d30(this_ptr);
-  sprintf
+  _sprintf
             (g_ScriptErrorBuffer,"Character %s model %s does not have a part '%s'",character,pcVar3,pcVar4);
   return 0;
 }

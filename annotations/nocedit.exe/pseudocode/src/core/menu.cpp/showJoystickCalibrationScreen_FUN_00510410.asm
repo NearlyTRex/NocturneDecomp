@@ -17,7 +17,7 @@
 ;   DWORD g_JoyButtons
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
@@ -78,8 +78,8 @@ section .text
     PUSH 0x6365f8                       ; 00510493 | = "%d,%d,%x"
     LEA EAX,[ESP + 0x10]                ; 00510498
     PUSH EAX                            ; 0051049c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051049d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051049d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005104a2
     PUSH 0x0                            ; 005104a5
     PUSH 0x0                            ; 005104a7

@@ -95,13 +95,13 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
            (((pCVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
              pCVar5 != (CLightGun *)0x0 || ((this_ptr->base).is_wearing_gas_mask != 1)) &&
             (local_3c < 0)))) {
-          pCVar8 = *(CDemonActor **)(this_ptr->unk1 + 0x54);
+          pCVar8 = *(CDemonActor **)(this_ptr->unk5 + 8);
           if (pCVar8 == local_18) {
-            if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
+            if (*(int *)(this_ptr->unk5 + 8) == 0) {
 switchD_005c56f5_caseD_8:
             }
             else {
-              switch(*(uint *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0)) {
+              switch(*(uint *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0)) {
               case 0:
               case 5:
                 break;
@@ -143,8 +143,7 @@ switchD_005c56f5_caseD_8:
     case 6:
       local_24 = (CDynamite *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)(this_ptr->unk1 + 0x54),g_CDynamiteClassInfo.name_hash)
-      ;
+                           (*(CDemonActor **)(this_ptr->unk5 + 8),g_CDynamiteClassInfo.name_hash);
       if (((local_24 != (CDynamite *)0x0) &&
           (iVar4 = core_dynamite_cpp_CDynamite_FUN_0049cf70(local_24), iVar4 == 0)) &&
          (fStack_14 = (float)(0xb / (longlong)*(int *)(local_38 + 100)),
@@ -158,8 +157,7 @@ switchD_005c56f5_caseD_8:
          (float)(int)fStack_14 <= (float)(this_ptr->base).base.field48_0x2a90)) {
         core_stranger_cpp_CStranger_FUN_005c51c0(this_ptr);
         local_34 = core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)(this_ptr->unk1 + 0x54),
-                              g_CDynamiteClassInfo.name_hash);
+                             (*(CDemonActor **)(this_ptr->unk5 + 8),g_CDynamiteClassInfo.name_hash);
         local_28 = local_34;
         if (local_34 != (CDemonActor *)0x0) {
           pCVar7 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
@@ -170,10 +168,10 @@ switchD_005c56f5_caseD_8:
             local_28[4].location.position.y = pCVar7->z;
           }
           (*(((local_34->vtable)._uc)->_uc).cfunc4)();
-          this_ptr->unk1[0x54] = '\0';
-          this_ptr->unk1[0x55] = '\0';
-          this_ptr->unk1[0x56] = '\0';
-          this_ptr->unk1[0x57] = '\0';
+          this_ptr->unk5[8] = '\0';
+          this_ptr->unk5[9] = '\0';
+          this_ptr->unk5[10] = '\0';
+          this_ptr->unk5[0xb] = '\0';
         }
         if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
           (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
@@ -189,25 +187,25 @@ switchD_005c56f5_caseD_8:
     case 8:
       if (((local_20 < 0x3f19999a) && (0x3f199999 < (this_ptr->base).base.field48_0x2a90)) &&
          (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                            (*(CDemonActor **)(this_ptr->unk1 + 0x54),"CShotgun"),
-         iVar4 != 0)) {
-        (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xec))();
+                            (*(CDemonActor **)(this_ptr->unk5 + 8),"CShotgun"), iVar4 != 0)
+         ) {
+        (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xec))();
       }
       break;
     case 0xc:
       if (((local_20 < 0x3ebd70a4) && (0x3ebd70a3 < (this_ptr->base).base.field48_0x2a90)) &&
-         (*(int *)(this_ptr->unk1 + 0x54) != 0)) {
-        (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();
+         (*(int *)(this_ptr->unk5 + 8) != 0)) {
+        (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x70))();
       }
       break;
     case 0xd:
       if (((local_20 < 0x3f28f5c3) && (0x3f28f5c2 < (this_ptr->base).base.field48_0x2a90)) &&
-         (*(int *)(this_ptr->unk1 + 0x54) != 0)) {
-        (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();
+         (*(int *)(this_ptr->unk5 + 8) != 0)) {
+        (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x70))();
       }
     }
     if (-1 < iVar2) {
-      pCVar8 = *(CDemonActor **)(this_ptr->unk1 + 0x54);
+      pCVar8 = *(CDemonActor **)(this_ptr->unk5 + 8);
       if (pCVar8 != local_18) {
         if (pCVar8 != (CDemonActor *)0x0) {
           fVar1 = pCVar8[2].orient.pitch;
@@ -233,11 +231,11 @@ switchD_005c56f5_caseD_8:
             iVar4 = 3;
           }
           if (iVar2 == iVar4) {
-            (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xf0))();
-            this_ptr->unk1[0x54] = '\0';
-            this_ptr->unk1[0x55] = '\0';
-            this_ptr->unk1[0x56] = '\0';
-            this_ptr->unk1[0x57] = '\0';
+            (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf0))();
+            this_ptr->unk5[8] = '\0';
+            this_ptr->unk5[9] = '\0';
+            this_ptr->unk5[10] = '\0';
+            this_ptr->unk5[0xb] = '\0';
           }
         }
         if (this_ptr->guns_drawn != 0) {
@@ -267,8 +265,7 @@ LAB_005c53f2:
             }
           }
           if ((iVar2 == iVar4) &&
-             (*(CDemonActor **)(this_ptr->unk1 + 0x54) = local_18, local_18 != (CDemonActor *)0x0))
-          {
+             (*(CDemonActor **)(this_ptr->unk5 + 8) = local_18, local_18 != (CDemonActor *)0x0)) {
             (*(((local_18->vtable)._uc)->_uc).cfunc2)();
           }
         }

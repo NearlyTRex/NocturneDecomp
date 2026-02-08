@@ -118,7 +118,7 @@ LAB_0055a34a:
     shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
     if (piVar8 == (int *)0x0) goto LAB_0055a34a;
     while( true ) {
-      sprintf
+      _sprintf
                 (&DAT_031089e8,"Syntax error on %s line %d:\n%s",param_2,local_1c + 1,piVar8);
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_790);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -142,7 +142,7 @@ LAB_0055a34a:
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"Note: This only works in NT.\nWhen you are done editing the script, close notepad\nand ALT-TAB back to Nocturne.\nThen you can try to reload the script.");
-      sprintf(local_e4,"start notepad world\\%s",param_2);
+      _sprintf(local_e4,"start notepad world\\%s",param_2);
       system(local_e4);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_790,0);

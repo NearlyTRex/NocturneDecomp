@@ -58,7 +58,7 @@ core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
         }
         iVar8 = pCVar6->carry_hands[0].bone_index;
         pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(local_1c);
-        sprintf
+        _sprintf
                   (local_1e0,"Hand %d\t%s\t%s\n",iVar7,pCVar2->bone_list + iVar8,pCVar1);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_588.base,local_1e0);
       }

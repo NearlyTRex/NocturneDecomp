@@ -51,7 +51,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr_00,"Reloading mission from %s");
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_18,1);
-    sprintf(local_11c,"world\\%s",local_18);
+    _sprintf(local_11c,"world\\%s",local_18);
     remove(local_11c);
     core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
     return;

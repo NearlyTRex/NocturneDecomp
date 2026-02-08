@@ -85,7 +85,7 @@ core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralT
       pCVar13 = (CProceduralTexture *)(pCVar13->texture + 0xf8);
       pCVar12 = pCVar7;
     } while (pCVar7 != local_20);
-    sprintf(local_130,"water%d.raw",local_1c);
+    _sprintf(local_130,"water%d.raw",local_1c);
     p_Var6 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
     if (p_Var6 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\procedur.cpp";
@@ -94,7 +94,7 @@ core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralT
     }
     _fwrite(local_28,0x100,0x100,p_Var6);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\procedur.cpp",0x66);
-    sprintf(local_130,"water%d.act",local_1c);
+    _sprintf(local_130,"water%d.act",local_1c);
     p_Var6 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"wb");
     if (p_Var6 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\procedur.cpp";

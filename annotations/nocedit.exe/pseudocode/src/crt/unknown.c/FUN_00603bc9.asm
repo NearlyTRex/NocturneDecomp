@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00603bc9(void)
+; __cdecl void __cdecl crt_unknown_c_FUN_00603bc9(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

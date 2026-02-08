@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -53,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback)"
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CActorPropertyValidatorFunc *callback)"
   },
   "function_calls": [
     {
@@ -174,7 +181,7 @@
         "name": "callback",
         "offset": 24,
         "size": 4,
-        "type": "CDemonActor_CActorPropertyValidatorFunc *"
+        "type": "CActorPropertyValidatorFunc *"
       }
     ]
   },

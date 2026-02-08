@@ -72,7 +72,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 at 005c890d
+;   shape_superopt.cpp_FUN_005c84c0 at 005c890d
 ;   shape_superopt.cpp_FUN_005c8b50 at 005c8cb0
 ;   shape_superopt.cpp_FUN_005c8e70 at 005c8fcf
 ;   shape_superopt.cpp_FUN_005c9500 at 005c976c

@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_setutil.cpp_C3DSLight_process_FUN_00586cb0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     PUSH 0x645fdb                       ; 0056f9eb | = "%son"
     LEA EAX,[ESP + 0x8]                 ; 0056f9f0
     PUSH EAX                            ; 0056f9f4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056f9f5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056f9f5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056f9fa
     MOV EAX,ESP                         ; 0056f9fd
     PUSH EAX                            ; 0056f9ff
@@ -120,8 +120,8 @@ section .text
     PUSH 0x645fe0                       ; 0056fa21 | = "%soff"
     LEA EAX,[ESP + 0x8]                 ; 0056fa26
     PUSH EAX                            ; 0056fa2a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056fa2b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056fa2b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056fa30
     MOV EAX,ESP                         ; 0056fa33
     PUSH EAX                            ; 0056fa35

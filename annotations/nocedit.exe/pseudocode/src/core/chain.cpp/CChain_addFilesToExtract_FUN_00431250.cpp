@@ -48,7 +48,7 @@ LAB_004312d1:
     g_CurrentLineNumber = 600;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CChain::addFilesToExtractList - invalid texture");
   }
-  sprintf(pcVar4,".ACT");
+  _sprintf(pcVar4,".ACT");
   _fprintf(file_handle,"ART\\%s\n",local_104);
   return;
 }

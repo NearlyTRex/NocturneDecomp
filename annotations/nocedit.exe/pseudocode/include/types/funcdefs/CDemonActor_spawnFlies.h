@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_spawnFlies
-typedef void (*CDemonActor_spawnFlies)(struct CDemonActor* this_ptr, int fly_count, float spawn_radius);
+typedef void CDemonActor_spawnFlies(struct CDemonActor* this_ptr, int fly_count, float spawn_radius);
 

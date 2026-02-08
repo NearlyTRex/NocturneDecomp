@@ -7,7 +7,7 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_trigger.cpp_CTrigger_FUN_005e1180
+;   core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180
 ;   core_waypoint.cpp_CWayPoint_FUN_005ec4f0
 ;
 ; *****************************************************************************
@@ -22,8 +22,8 @@ section .text
         ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec4f0(CWayPoint * this_ptr)
     ADD ESP,0x4                         ; 005ec5eb
     PUSH EBX                            ; 005ec5ee
-    CALL core_trigger.cpp_CTrigger_FUN_005e1180 ; 005ec5ef
-        ;   XREF to: 005e1180 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e1180(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180 ; 005ec5ef
+        ;   XREF to: 005e1180 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 005ec5f4
     MOV EAX,dword ptr [EBX + 0x154]     ; 005ec5f7
     PUSH EBX                            ; 005ec5fd

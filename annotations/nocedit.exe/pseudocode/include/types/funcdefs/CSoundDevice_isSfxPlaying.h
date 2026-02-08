@@ -8,5 +8,5 @@ struct CSfxSlot;
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_isSfxPlaying
-typedef int (*CSoundDevice_isSfxPlaying)(struct CSoundDevice* this_ptr, struct CSfxSlot* slot);
+typedef int CSoundDevice_isSfxPlaying(struct CSoundDevice* this_ptr, struct CSfxSlot* slot);
 

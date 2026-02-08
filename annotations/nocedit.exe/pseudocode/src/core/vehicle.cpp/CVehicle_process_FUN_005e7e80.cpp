@@ -88,10 +88,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   local_34 = *(float *)(this_ptr->unk1 + 0x76c) * 2.0f;
   local_30 = *(float *)(this_ptr->unk1 + 0x770) * 2.0f;
   local_2c = 2.0f * *(float *)(this_ptr->unk1 + 0x774);
-  if ((float *)(this_ptr->unk3 + 0x2c) != &local_34) {
-    *(float *)(this_ptr->unk3 + 0x2c) = local_34;
-    *(float *)(this_ptr->unk3 + 0x30) = local_30;
-    *(float *)(this_ptr->unk3 + 0x34) = local_2c;
+  if ((float *)(this_ptr->unk3 + 0xc) != &local_34) {
+    *(float *)(this_ptr->unk3 + 0xc) = local_34;
+    *(float *)(this_ptr->unk3 + 0x10) = local_30;
+    *(float *)(this_ptr->unk3 + 0x14) = local_2c;
   }
   pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_4c,(CVector3f *)(this_ptr->unk1 + 0x76c));
@@ -147,16 +147,16 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
                     (this_ptr_00,(SDamageInfo *)auStack_f4);
         }
         else if ((local_4c.x - local_a0.min.y < local_7c + (float)30) &&
-                (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                                    (*(uint *)(this_ptr->unk3 + 0x20)), iVar10 == 0)) {
-          uVar11 = core_vehicle_cpp_FUN_005e8b50();
-          *(uint *)(this_ptr->unk3 + 0x20) = uVar11;
+                (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk3),
+                iVar10 == 0)) {
+          uVar11 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
+          *(uint *)this_ptr->unk3 = uVar11;
         }
       }
     }
     iVar12 = iVar12 + 4;
   }
-  if (*(int *)(this_ptr->unk3 + 0x38) != 0) goto LAB_005e82f4;
+  if (*(int *)(this_ptr->unk3 + 0x18) != 0) goto LAB_005e82f4;
   pCVar6 = g_HeroActors[g_LocalHeroIndex];
   fStack_38 = (this_ptr->base).location.position.x - (pCVar6->base).base.location.position.x;
   local_34 = (this_ptr->base).location.position.y - (pCVar6->base).base.location.position.y;
@@ -173,11 +173,11 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     if ((pCVar9 != (CDemonActor *)0x0) &&
        (pCVar8 = *(CVehicle **)(pCVar9[0x8e].actor_name + 0x10), this_ptr == pCVar8)) {
       if (*(int *)(pCVar9[0x8e].actor_name + 0x14) == 0) {
-        *(CDemonActor **)(pCVar8->unk3 + 0x3c) = pCVar9;
+        *(CDemonActor **)(pCVar8->unk3 + 0x1c) = pCVar9;
         local_14 = 1;
       }
       else {
-        *(CDemonActor **)(pCVar8->unk3 + 0x40) = pCVar9;
+        *(CDemonActor **)(pCVar8->unk3 + 0x20) = pCVar9;
         iStack_18 = 1;
       }
     }
@@ -185,14 +185,14 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   }
   if ((local_14 != 0) && (iStack_18 != 0)) goto LAB_005e82f4;
   if (local_14 == 0) {
-    if (*(int *)(this_ptr->unk3 + 0x3c) != 0) {
-      iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x3c) + 0x154) + 0x120))();
+    if (*(int *)(this_ptr->unk3 + 0x1c) != 0) {
+      iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x1c) + 0x154) + 0x120))();
 joined_r0x005e8664:
       if (iVar12 == 0) goto LAB_005e82f4;
     }
   }
-  else if ((iStack_18 == 0) && (*(int *)(this_ptr->unk3 + 0x40) != 0)) {
-    iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x40) + 0x154) + 0x120))();
+  else if ((iStack_18 == 0) && (*(int *)(this_ptr->unk3 + 0x20) != 0)) {
+    iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x20) + 0x154) + 0x120))();
     goto joined_r0x005e8664;
   }
   this_ptr_01 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\vehicle.cpp",0x15d);
@@ -222,11 +222,11 @@ joined_r0x005e8664:
   this_ptr_02->vehicle = &this_ptr->base;
   if (local_14 == 0) {
     this_ptr_02->side_of_car = 0;
-    *(CMobster **)(this_ptr->unk3 + 0x3c) = this_ptr_02;
+    *(CMobster **)(this_ptr->unk3 + 0x1c) = this_ptr_02;
   }
   else {
     this_ptr_02->side_of_car = 1;
-    *(CMobster **)(this_ptr->unk3 + 0x40) = this_ptr_02;
+    *(CMobster **)(this_ptr->unk3 + 0x20) = this_ptr_02;
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
             (g_CDemonMissionPtr,(CDemonActor *)this_ptr_02);
@@ -259,17 +259,17 @@ joined_r0x005e8664:
             (g_CDemonMissionPtr,(CDemonActor *)this_ptr_02);
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(g_CDemonMissionPtr,pCVar9);
 LAB_005e82f4:
-  iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x24));
+  iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 4));
   if (iVar12 == 0) {
-    uVar11 = core_vehicle_cpp_FUN_005e8b50();
-    *(uint *)(this_ptr->unk3 + 0x24) = uVar11;
+    uVar11 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
+    *(uint *)(this_ptr->unk3 + 4) = uVar11;
   }
-  sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(*(uint *)(this_ptr->unk3 + 0x24),1.0);
+  sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(*(uint *)(this_ptr->unk3 + 4),1.0);
   if (((float)0.20000000000000001 < ABS(*(float *)(this_ptr->unk1 + 0x778))) &&
-     (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x28)),
+     (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 8)),
      iVar12 == 0)) {
-    uVar11 = core_vehicle_cpp_FUN_005e8b50();
-    *(uint *)(this_ptr->unk3 + 0x28) = uVar11;
+    uVar11 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
+    *(uint *)(this_ptr->unk3 + 8) = uVar11;
     return;
   }
   return;

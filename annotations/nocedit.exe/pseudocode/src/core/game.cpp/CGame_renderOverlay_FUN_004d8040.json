@@ -1,15 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 33,
+        "column": 34,
         "line": 97,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Wformat]"
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 405,
@@ -60,7 +60,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403170",
@@ -497,7 +497,7 @@
       "description": "Undefined global data reference",
       "line": 90,
       "match": "DAT_02d830a8",
-      "text": "sprintf(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
+      "text": "_sprintf(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
       "type": "undefined_data"
     },
     {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_CallReturnZero6(uint param_1) */
-
 void CallReturnZero6(void)
 
 {

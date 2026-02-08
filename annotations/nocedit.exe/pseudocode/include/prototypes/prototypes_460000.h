@@ -4,10 +4,13 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorDestination.h"
+#include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCramConfig.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLKeyframeModel.h"
@@ -132,17 +135,17 @@ void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void);
 void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void);
 void __cdecl core_dest_cpp_staticInit_FUN_0046f890(void);
 CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0046f8c0(void);
-CDemonActorType * __cdecl core_dest_cpp_FUN_0046f8f0(void);
+CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0046f8f0(CActorDestination *this_ptr);
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination *this_ptr);
-void __cdecl core_dest_cpp_FUN_0046f970(void);
-void __cdecl core_dest_cpp_FUN_0046f9b0(void);
-int __cdecl core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void);
-int __cdecl core_dest_cpp_FUN_0046fcc0(void);
-int __cdecl core_dest_cpp_FUN_0046fd50(void);
+void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0046f970(CActorDestination *this_ptr);
+void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time);
+int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActorDestination *this_ptr);
+CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0 (CActorDestination *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0046fdb0(CActorDestination *this_ptr);
-int __cdecl core_dest_cpp_FUN_0046fe70(void);
-void __cdecl core_dest_cpp_FUN_0046fe80(void);
-CActorDestination * __cdecl core_dest_cpp_FUN_0046ff00(CActorDestination *this_ptr,uint d1,uint d2);
+int __cdecl core_dest_cpp_CActorDestination_hasCollision_FUN_0046fe70 (CActorDestination *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80 (CActorDestination *this_ptr,CActorPropertyList *property_list);
+CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags);
 void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void);
 CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0046ffd0(CFilterCache *this_ptr);
 CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr);

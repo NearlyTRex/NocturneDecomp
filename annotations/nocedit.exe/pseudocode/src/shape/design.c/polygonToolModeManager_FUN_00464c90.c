@@ -133,22 +133,22 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         } while (cVar1 != '\0');
         switch(g_PolygonToolMode) {
         case 1:
-          sprintf
+          _sprintf
                     (local_68," - Polygon merger (tol = %4.2f degs)",(double)local_14);
           break;
         case 2:
-          sprintf
+          _sprintf
                     (local_68," - Polygon attacher (tol = %4.2f units)",(double)local_14);
           break;
         case 3:
-          sprintf(local_68," - Polygon detacher");
+          _sprintf(local_68," - Polygon detacher");
           break;
         case 4:
-          sprintf
+          _sprintf
                     (local_68," - Polygon vertex welder (tol = %4.2f units)",(double)local_14);
           break;
         case 5:
-          sprintf
+          _sprintf
                     (local_68," - Vertex welder (tol = %4.2f units)",(double)local_14);
         }
         pcVar5 = local_68;
@@ -179,7 +179,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         if ((g_PolygonToolMode == 1) && (g_SecondaryPolygonIndex != -1)) {
           dVar8 = shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
                             (g_ModelPolygonData + iVar2,normal2_ptr);
-          sprintf(local_b8,"Angle between polygon normals : %8.6lf",dVar8);
+          _sprintf(local_b8,"Angle between polygon normals : %8.6lf",dVar8);
           engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x58);
         }
       }

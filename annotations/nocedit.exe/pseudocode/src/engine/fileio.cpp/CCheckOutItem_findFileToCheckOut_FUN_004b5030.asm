@@ -32,7 +32,7 @@
 ;   SVersionControlSession g_VersionControlSession
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
@@ -160,8 +160,8 @@ section .text
     PUSH 0x627529                       ; 004b514d | = "%s\t"
     LEA EAX,[ESP + 0x3b0]               ; 004b5152
     PUSH EAX                            ; 004b5159
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b515a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b515a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EDX,[ESP + 0x3b4]               ; 004b515f
     ADD ESP,0xc                         ; 004b5166
     LEA EBX,[EDX + EAX*0x1]             ; 004b5169
@@ -181,8 +181,8 @@ section .text
     PUSH EAX                            ; 004b519a
     PUSH 0x62752d                       ; 004b519b | = "Checked out by %s"
     PUSH EBX                            ; 004b51a0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b51a1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b51a1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b51a6
     LEA EAX,[ESP + 0x3a8]               ; 004b51a9
         ;   Label: LAB_004b51a9

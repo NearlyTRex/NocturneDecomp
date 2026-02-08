@@ -29,6 +29,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWeapon_vtable.h"
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
+#include "types/structs/SEnumPair.h"
 #include "types/structs/SFontGlyph.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -200,6 +201,12 @@ extern CWeapon_vtable DAT_006656A0;
 
 // MRGLBlockHandlerFunc*[67]
 extern MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67];
+
+// SEnumPair[3]
+extern SEnumPair g_CharacterHealthBarTypePairs[3];
+
+// SEnumPair[5]
+extern SEnumPair g_BoxActorPickupTypePairs[5];
 
 // SFontGlyph[224]
 extern SFontGlyph g_FontTable[224];

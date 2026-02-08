@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_saveVertexPositionsWithFlag
-typedef void (*CPoly_saveVertexPositionsWithFlag)(struct CPoly* this_ptr, uint flag_mask);
+typedef void CPoly_saveVertexPositionsWithFlag(struct CPoly* this_ptr, uint flag_mask);
 

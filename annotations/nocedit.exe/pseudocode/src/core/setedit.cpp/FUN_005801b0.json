@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 159,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 49,
-    "suspect_count": 9,
+    "pseudocode_lines": 47,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 186
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -135,57 +134,50 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_0000000c",
       "text": "piVar2 = (int *)(DAT_03659384 + in_stack_0000000c * 0x4b030);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 15,
       "match": "DAT_03659384",
       "text": "piVar2 = (int *)(DAT_03659384 + in_stack_0000000c * 0x4b030);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "iVar1 = in_stack_00000008[1] - piVar2[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "iVar3 = *in_stack_00000008 - *piVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "iVar6 = in_stack_00000008[2] - piVar2[2];",
       "type": "stack_param"

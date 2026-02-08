@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_unlockHoldBuffer
-typedef int (*APIDLL_unlockHoldBuffer)(void);
+typedef int APIDLL_unlockHoldBuffer(void);
 

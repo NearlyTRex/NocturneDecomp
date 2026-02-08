@@ -15,7 +15,8 @@
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[8]:
+; XREF[9]:
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ef34
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047db95
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de38e
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d778e
@@ -32,7 +33,7 @@
 ;   TerminatedCString s_Please_enter_a_valid_int_006231d5
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -82,8 +83,8 @@ section .text
     PUSH 0x6231b1                       ; 004a0069 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004a006e
     PUSH EAX                            ; 004a0072
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a0073
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a0073
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a0078
     JMP 0x004a0043                      ; 004a007b
         ;   XREF to: 004a0043 (UNCONDITIONAL_JUMP)  ; LAB_004a0043

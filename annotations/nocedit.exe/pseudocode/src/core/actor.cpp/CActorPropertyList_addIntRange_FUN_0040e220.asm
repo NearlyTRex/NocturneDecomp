@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   data_ptr
 ; int              Stack[0x10]:4   min_value
 ; int              Stack[0x14]:4   max_value
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x18]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x18]:4   callback
 ;
 ; XREF[4]:
 ;   core_bugs.cpp_CBugs_getPropertyList_FUN_004277e0 at 00427811

@@ -2,6 +2,24 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "format_error",
+        "column": 33,
+        "line": 29,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 30,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 37,
+        "line": 43,
+        "message": "format specifies type 'double *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
+      },
+      {
         "category": "other",
         "column": 104,
         "line": 54,
@@ -15,26 +33,7 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 29,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 30,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 43,
-        "message": "format specifies type 'double *' but the argument has type 'uint *' (aka 'unsigned int *') [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 121,
@@ -69,7 +68,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",

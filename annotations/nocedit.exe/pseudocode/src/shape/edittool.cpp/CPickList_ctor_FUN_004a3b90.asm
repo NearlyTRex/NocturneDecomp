@@ -7,7 +7,7 @@
 ; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[76]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f64a
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f2cc
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b345
 ;   core_boxactor.cpp_FUN_00423110 at 00423138
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f449

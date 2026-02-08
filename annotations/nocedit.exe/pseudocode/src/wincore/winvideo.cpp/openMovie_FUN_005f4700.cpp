@@ -21,7 +21,7 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char
   if (g_MoviePlaying != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(parent_window);
   }
-  sprintf
+  _sprintf
             (local_1b4,"open \"%s\" alias mov style child parent %d",movie_filename,parent_window);
   MVar2 = (*g_mciSendStringAFunc)(local_1b4,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar2 != 0) {

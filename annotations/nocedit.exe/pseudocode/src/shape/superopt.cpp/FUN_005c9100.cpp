@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte shape_superopt.cpp_FUN_005c9100(byte param_1, uint param_2,
-   uint param_3) */
-
 int __cdecl shape_superopt_cpp_FUN_005c9100(void)
 
 {

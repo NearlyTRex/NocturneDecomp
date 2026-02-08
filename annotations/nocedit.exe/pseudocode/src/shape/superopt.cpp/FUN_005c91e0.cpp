@@ -55,7 +55,7 @@ uint __cdecl shape_superopt_cpp_FUN_005c91e0(void)
       uVar8 = uVar8 + iVar4;
     }
     else {
-      shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20();
+      shape_superopt_cpp_FUN_005cbe20();
       if (extraout_EAX == 0) {
         return 0;
       }

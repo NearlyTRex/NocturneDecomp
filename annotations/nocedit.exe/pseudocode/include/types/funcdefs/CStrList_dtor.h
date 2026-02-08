@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_dtor
-typedef void (*CStrList_dtor)(struct CStrList* this_ptr);
+typedef void CStrList_dtor(struct CStrList* this_ptr);
 

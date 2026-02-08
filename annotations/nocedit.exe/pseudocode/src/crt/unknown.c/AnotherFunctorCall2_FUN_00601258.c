@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_AnotherFunctorCall2(uint param_1, uint param_2, uint
-   param_3) */
-
 void AnotherFunctorCall2(void)
 
 {

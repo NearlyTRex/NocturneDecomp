@@ -41,47 +41,47 @@ void __cdecl staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00603bc9
 // Address: 00603bc9
-void FUN_00603bc9(void);
+void __cdecl FUN_00603bc9(void);
 
 // Original: crt_unknown.c_FUN_00603bf5
 // Address: 00603bf5
-undefined4 FUN_00603bf5(void);
+int __cdecl FUN_00603bf5(void);
 
 // Original: crt_unknown.c_FUN_00603c74
 // Address: 00603c74
-void FUN_00603c74(void);
+void __cdecl FUN_00603c74(void);
 
 // Original: crt_unknown.c_CondCallDoNothing_FUN_00603ccc
 // Address: 00603ccc
-void CondCallDoNothing(void);
+void __cdecl CondCallDoNothing(void);
 
 // Original: crt_unknown.c_FUN_00603d60
 // Address: 00603d60
-void FUN_00603d60(void);
+void __cdecl FUN_00603d60(void);
 
 // Original: crt_unknown.c_FUN_00603dc8
 // Address: 00603dc8
-void FUN_00603dc8(void);
+void __cdecl FUN_00603dc8(void);
 
 // Original: crt_unknown.c_FUN_0060403f
 // Address: 0060403f
-void FUN_0060403f(undefined4 param_1,float10 *param_2);
+void __cdecl FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5, char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10,char *param_11);
 
 // Original: crt_unknown.c_FUN_006040d7
 // Address: 006040d7
-void FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX);
+void __cdecl FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6, char *param_7,uint param_8,undefined4 param_9,char *param_10);
 
 // Original: crt_unknown.c_FUN_006040ed
 // Address: 006040ed
-void FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX);
+void __cdecl FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5);
 
 // Original: crt_unknown.c_FUN_00604104
 // Address: 00604104
-void FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX);
+void __cdecl FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX);
 
 // Original: crt_unknown.c_FUN_0060411c
 // Address: 0060411c
-void FUN_0060411c(undefined4 param_1,undefined4 param_2,undefined1 *unaff_EBX,undefined4 param_4, undefined4 param_5);
+void FUN_0060411c(undefined4 param_1,undefined4 param_2,undefined1 *unaff_EBX);
 
 // Original: crt_unknown.c_FUN_00604267
 // Address: 00604267
@@ -213,11 +213,11 @@ ushort FUN_0060b190(void);
 
 // Original: crt_unknown.c_FUN_0060b586
 // Address: 0060b586
-void FUN_0060b586(byte *param_1,undefined8 *param_2);
+void __cdecl FUN_0060b586(byte *param_1,undefined8 *param_2);
 
 // Original: crt_unknown.c_FUN_0060b5e8
 // Address: 0060b5e8
-undefined8 FUN_0060b5e8(uint param_1,uint param_2);
+double FUN_0060b5e8(uint param_1,uint param_2);
 
 // Original: crt_unknown.c_FUN_0060b670
 // Address: 0060b670
@@ -287,6 +287,10 @@ char * SomethingWithUppercaseCharacterConvert(void);
 // Address: 0060e850
 undefined4 ReturnZero6(void);
 
+// Original: crt_unknown.c_FUN_0060e854
+// Address: 0060e854
+void FUN_0060e854(void);
+
 // Original: crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878
 // Address: 0060e878
 void SomethingThatCallsExitThreadAfterCommunicate(void);
@@ -294,6 +298,10 @@ void SomethingThatCallsExitThreadAfterCommunicate(void);
 // Original: crt_unknown.c_CallReturnZero6_FUN_0060e880
 // Address: 0060e880
 void CallReturnZero6(void);
+
+// Original: crt_unknown.c_FUN_0060e890
+// Address: 0060e890
+void FUN_0060e890(void);
 
 // Original: crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0
 // Address: 0060e8e0

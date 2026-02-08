@@ -43,14 +43,14 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005e8720(CVehicle *this_ptr)
   else {
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->cur_time,"curTime");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->total_time,"totalTime");
-    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk3,"courseName");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->course_name,"courseName");
     if (g_CVehicleClassVersion < 3) {
       return;
     }
   }
   core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)(this_ptr->unk3 + 0x3c),"lastMobsterLeft");
+            ((CDemonActor *)(this_ptr->unk3 + 0x1c),"lastMobsterLeft");
   core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)(this_ptr->unk3 + 0x3c),"lastMobsterRight");
+            ((CDemonActor *)(this_ptr->unk3 + 0x1c),"lastMobsterRight");
   return;
 }

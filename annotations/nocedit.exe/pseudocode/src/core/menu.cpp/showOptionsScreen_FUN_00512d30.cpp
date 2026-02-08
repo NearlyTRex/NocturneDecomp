@@ -33,13 +33,13 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic options");
-    sprintf(g_OptionsMenuTextBuffers[0],pcVar2);
+    _sprintf(g_OptionsMenuTextBuffers[0],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound options");
-    sprintf(g_OptionsMenuTextBuffers[1],pcVar2);
+    _sprintf(g_OptionsMenuTextBuffers[1],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control options");
-    sprintf(g_OptionsMenuTextBuffers[2],pcVar2);
+    _sprintf(g_OptionsMenuTextBuffers[2],pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Credits");
-    sprintf(g_OptionsMenuTextBuffers[3],pcVar2);
+    _sprintf(g_OptionsMenuTextBuffers[3],pcVar2);
     g_CGamePtr->hero_number = 2;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
     iVar1 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000

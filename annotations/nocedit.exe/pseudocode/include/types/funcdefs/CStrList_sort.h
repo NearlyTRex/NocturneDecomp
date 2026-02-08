@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_sort
-typedef void (*CStrList_sort)(struct CStrList* this_ptr, int sort_type, int sort_order);
+typedef void CStrList_sort(struct CStrList* this_ptr, int sort_type, int sort_order);
 

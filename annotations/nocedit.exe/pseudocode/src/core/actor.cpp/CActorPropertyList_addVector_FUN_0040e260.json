@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -63,7 +70,7 @@
     {
       "addr": "005e8ba0",
       "from_addr": "005e8c61",
-      "name": "core_vehicle.cpp_CVehicle_FUN_005e8ba0",
+      "name": "core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -77,7 +84,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260 (CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback)"
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260 (CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CActorPropertyValidatorFunc *callback)"
   },
   "function_calls": [
     {
@@ -140,7 +147,7 @@
         "name": "callback",
         "offset": 16,
         "size": 4,
-        "type": "CDemonActor_CActorPropertyValidatorFunc *"
+        "type": "CActorPropertyValidatorFunc *"
       }
     ]
   },

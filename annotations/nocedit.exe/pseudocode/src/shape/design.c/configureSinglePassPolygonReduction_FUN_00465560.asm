@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -286,8 +286,8 @@ section .text
     PUSH EAX                            ; 004657a5 | = "Original polygons: %d    New total: %..."
     LEA EAX,[EBP + -0x64]               ; 004657a6
     PUSH EAX                            ; 004657a9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004657aa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004657aa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004657af
     CMP dword ptr [EBP + 0x14],0x0      ; 004657b2
     JLE 0x004657e2                      ; 004657b6

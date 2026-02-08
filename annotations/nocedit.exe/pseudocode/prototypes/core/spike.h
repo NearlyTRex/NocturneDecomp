@@ -19,45 +19,45 @@ CDemonActorType * __cdecl CSpike::getActorType(CSpike *this_ptr);
 // Address: 005b8220
 CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005b8360
+// Original: core_spike.cpp_CSpike_setup_FUN_005b8360
 // Address: 005b8360
-void __cdecl FUN_005b8360(void);
+void __cdecl CSpike::setup(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005b8410
+// Original: core_spike.cpp_CSpike_process_FUN_005b8410
 // Address: 005b8410
-void __cdecl FUN_005b8410(void);
+void __cdecl CSpike::process(CSpike *this_ptr,float delta_time);
 
-// Original: core_spike.cpp_FUN_005b8730
+// Original: core_spike.cpp_CSpike_renderOpaque_FUN_005b8730
 // Address: 005b8730
-int __cdecl FUN_005b8730(void);
+int __cdecl CSpike::renderOpaque(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005b87a0
+// Original: core_spike.cpp_CSpike_getBoundingBox_FUN_005b87a0
 // Address: 005b87a0
-float * __cdecl FUN_005b87a0(void);
+CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_spike.cpp_CSpike_archive_FUN_005b87f0
 // Address: 005b87f0
 void __cdecl CSpike::archive(CSpike *this_ptr);
 
-// Original: core_spike.cpp_CSpike_FUN_005b8940
+// Original: core_spike.cpp_CSpike_hasCollision_FUN_005b8940
 // Address: 005b8940
-int __cdecl CSpike(CSpike *this_ptr);
+int __cdecl CSpike::hasCollision(CSpike *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_spike.cpp_FUN_005b8950
+// Original: core_spike.cpp_CSpike_FUN_005b8950
 // Address: 005b8950
-void __cdecl FUN_005b8950(void);
+void __cdecl CSpike(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005b8e90
+// Original: core_spike.cpp_CSpike_getPropertyList_FUN_005b8e90
 // Address: 005b8e90
-void __cdecl FUN_005b8e90(void);
+void __cdecl CSpike::getPropertyList(CSpike *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_spike.cpp_CSpike_FUN_005b9020
+// Original: core_spike.cpp_CSpike_processInEditor_FUN_005b9020
 // Address: 005b9020
-void __cdecl CSpike(CSpike *this_ptr);
+void __cdecl CSpike::processInEditor(CSpike *this_ptr);
 
-// Original: core_spike.cpp_CSpike_FUN_005b9030
+// Original: core_spike.cpp_CSpike_addFilesToExtract_FUN_005b9030
 // Address: 005b9030
-void __cdecl CSpike(CSpike *this_ptr);
+void __cdecl CSpike::addFilesToExtract(CSpike *this_ptr,_FILE *file_handle);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005b9050
 // Address: 005b9050

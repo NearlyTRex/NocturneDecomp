@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Welding_vertices_d_remov_00654468
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;
@@ -120,8 +120,8 @@ section .text
     PUSH 0x654468                       ; 005d4273 | = "Welding vertices (%d removed so far)"
     LEA EAX,[ESP + 0x10]                ; 005d4278
     PUSH EAX                            ; 005d427c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005d427d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005d427d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005d4282
     JMP 0x005d41e6                      ; 005d4285
         ;   XREF to: 005d41e6 (UNCONDITIONAL_JUMP)  ; LAB_005d41e6

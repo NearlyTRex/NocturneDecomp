@@ -115,7 +115,6 @@ extern int g_MoonCloudScrollY;
 extern uchar g_TempFacesInitGuard;
 
 // undefined4
-extern undefined4 DAT_02f313e8;
 extern undefined4 DAT_02f3dbb4;
 extern undefined4 DAT_02f3dbb8;
 extern undefined4 DAT_02f3dbbc;

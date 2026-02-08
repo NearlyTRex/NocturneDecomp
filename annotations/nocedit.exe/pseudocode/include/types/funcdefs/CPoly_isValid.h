@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_isValid
-typedef int (*CPoly_isValid)(struct CPoly* this_ptr);
+typedef int CPoly_isValid(struct CPoly* this_ptr);
 

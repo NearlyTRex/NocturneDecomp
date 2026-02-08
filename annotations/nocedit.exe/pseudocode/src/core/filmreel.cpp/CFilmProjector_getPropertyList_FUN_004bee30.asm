@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
 ;   core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460
-;   core_dest.cpp_FUN_0046fe80
+;   core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 004bee36
     PUSH ESI                            ; 004bee3a
     PUSH EBX                            ; 004bee3b
-    CALL core_dest.cpp_FUN_0046fe80     ; 004bee3c
-        ;   XREF to: 0046fe80 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046fe80()
+    CALL core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80 ; 004bee3c
+        ;   XREF to: 0046fe80 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80(CActorDestination * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004bee41
     PUSH 0x0                            ; 004bee44
     PUSH 0x629bde                       ; 004bee46 | = "CFilmReel"
@@ -39,7 +39,7 @@ section .text
     PUSH 0x629be8                       ; 004bee54 | = "Key reel"
     PUSH ESI                            ; 004bee59
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 004bee5a
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 004bee5f
     LEA EAX,[EBX + 0x374]               ; 004bee62
     PUSH EAX                            ; 004bee68

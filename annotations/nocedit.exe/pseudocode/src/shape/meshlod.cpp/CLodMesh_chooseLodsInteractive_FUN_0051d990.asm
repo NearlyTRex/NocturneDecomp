@@ -89,7 +89,7 @@
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -440,8 +440,8 @@ section .text
     PUSH 0x638438                       ; 0051de5b | = "LOD%d: P=%d F=%d"
     LEA EAX,[ESP + 0x548]               ; 0051de60
     PUSH EAX                            ; 0051de67
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051de68
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051de68
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0051de6d
     MOV EDX,dword ptr [ESP + 0x754]     ; 0051de70
         ;   Label: LAB_0051de70
@@ -573,8 +573,8 @@ section .text
     PUSH 0x638455                       ; 0051dfd5 | = "Current: %d pixelHeight, %d faces"
     LEA EAX,[ESP + 0x544]               ; 0051dfda
     PUSH EAX                            ; 0051dfe1
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051dfe2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051dfe2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0051dfe7 | g_WindowHeight
     ADD ESP,0x10                        ; 0051dfec
     SUB EAX,0xb                         ; 0051dfef
@@ -723,8 +723,8 @@ section .text
     PUSH 0x6384a6                       ; 0051e171 | = "Delete LOD %d?"
     LEA EAX,[ESP + 0x540]               ; 0051e176
     PUSH EAX                            ; 0051e17d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051e17e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051e17e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051e183
     LEA EAX,[ESP + 0x538]               ; 0051e186
     PUSH EAX                            ; 0051e18d
@@ -1000,8 +1000,8 @@ section .text
     PUSH 0x6383ba                       ; 0051e4b9 | = "Editing LOD %d of %d."
     LEA EAX,[ESP + 0x544]               ; 0051e4be
     PUSH EAX                            ; 0051e4c5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051e4c6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051e4c6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0051e4cb
     PUSH 0x0                            ; 0051e4ce
     PUSH 0x0                            ; 0051e4d0
@@ -1035,8 +1035,8 @@ section .text
     PUSH 0x638449                       ; 0051e51d | = "LOD%d: F=%d"
     LEA EAX,[ESP + 0x544]               ; 0051e522
     PUSH EAX                            ; 0051e529
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051e52a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051e52a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0051e52f
     JMP 0x0051de70                      ; 0051e532
         ;   XREF to: 0051de70 (UNCONDITIONAL_JUMP)  ; LAB_0051de70

@@ -23,7 +23,7 @@ shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh *this_ptr,ch
   makepath(local_410,(char *)0x0,local_110,local_310,local_210);
   local_10 = 0;
   shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(this_ptr,&local_10);
-  sprintf(local_310,"%08X",local_10);
+  _sprintf(local_310,"%08X",local_10);
   makepath(local_514,local_c,local_410,local_310,"lod");
   p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_514,(char *)0x0,mode,"..\\shape\\meshlod.cpp",0x1239);

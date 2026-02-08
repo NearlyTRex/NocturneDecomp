@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_dracbrid.cpp_FUN_00484410 at 00484cfe
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 at 00484cfe
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a849e
 ;   core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920 at 004cb971
 ;

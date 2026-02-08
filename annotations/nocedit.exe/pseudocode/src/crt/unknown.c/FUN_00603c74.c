@@ -1,14 +1,12 @@
 // Name: crt_unknown.c_FUN_00603c74
 // Address: 00603c74
 // Address Range: [[00603c74, 00603ccb]]
-// Convention: unknown
-// Signature: void crt_unknown_c_FUN_00603c74(void)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_FUN_00603c74(void)
 
 #include "nocturne.h"
 
-/* Signature: byte FUN_00603c74(uint param_1, uint param_2) */
-
-void FUN_00603c74(void)
+void __cdecl FUN_00603c74(void)
 
 {
   int *piVar1;

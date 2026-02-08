@@ -39,6 +39,7 @@ char* g_CurrentFilename = {};
 
 // int
 int g_CurrentLineNumber = {};
+int g_MansionPuzzleSlewType = {};
 int g_PixelAspectCorrection = {};
 int g_MatrixStackIndex = {};
 int g_ViewportStackIndex = {};
@@ -89,9 +90,6 @@ int g_CosTable[257] = {};
 uint g_SavedRotationX = {};
 uint g_SavedRotationY = {};
 uint g_SavedRotationZ = {};
-
-// undefined4
-undefined4 DAT_02f0cb1c = {};
 
 // void*
 void* g_DebugContext = {};

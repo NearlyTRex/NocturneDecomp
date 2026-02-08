@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_barrier.cpp_CBarrier_FUN_004143e0 at 004143f6
+;   core_barrier.cpp_CBarrier_updateCollisionData_FUN_004143e0 at 004143f6
 ;   core_door.cpp_CDoor_process_FUN_004800c0 at 00480403
 ;   core_door.cpp_CDoor_updateCollisionData_FUN_00481020 at 0048104c
 ;

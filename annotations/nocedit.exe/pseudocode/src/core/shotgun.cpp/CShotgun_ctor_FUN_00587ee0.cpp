@@ -43,6 +43,6 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_00587ee0(CShotgun *this_pt
   pCVar2->unk[5] = '\0';
   pCVar2->unk[6] = '\0';
   pCVar2->unk[7] = '\0';
-  *(float *)((pCVar2->base).unk3 + 0x25f) = fVar1;
+  *(float *)((pCVar2->base).unk3 + 0x25c) = fVar1;
   return pCVar2;
 }

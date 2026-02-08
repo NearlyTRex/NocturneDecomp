@@ -1,0 +1,609 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 30,
+        "line": 28,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 40,
+        "line": 170,
+        "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 47,
+        "line": 170,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 35,
+        "line": 206,
+        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
+      },
+      {
+        "category": "format_error",
+        "column": 43,
+        "line": 233,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 71,
+        "line": 233,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 250,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 14,
+        "line": 250,
+        "message": "expected expression"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 58,
+        "line": 267,
+        "message": "cannot take the address of an rvalue of type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 272,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 555,
+    "complexity_score": 425,
+    "cross_reference_count": 6,
+    "function_call_count": 5,
+    "global_count": 44,
+    "pseudocode_lines": 275,
+    "suspect_count": 13,
+    "suspect_types": [
+      "format_string_mismatch",
+      "pointer_cast",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 830
+  },
+  "cross_references": [
+    {
+      "addr": "0040e850",
+      "from_addr": "0040e8b2",
+      "name": "core_actor.cpp_CActorPropertyList_render_FUN_0040e850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040ee50",
+      "from_addr": "0040ee69",
+      "name": "core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c730",
+      "from_addr": "0053c7c8",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ea30",
+      "from_addr": "0053ea8c",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ea30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ec80",
+      "from_addr": "0053ed25",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ec80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "0053adaf",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040ea50",
+    "address_range": [
+      [
+        "0040ea50",
+        "0040ee2b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50",
+    "signature": "void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50 (CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "004eed80",
+      "is_variadic": false,
+      "name": "core_ground.cpp_getGroundTypeName_FUN_004eed80"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0040ea00",
+      "name": "switchdataD_0040ea00",
+      "type": "void*",
+      "value": "0040ea6e"
+    },
+    {
+      "addr": "006144c2",
+      "name": "s_d_006144c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144c5",
+      "name": "s_g_006144c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144c8",
+      "name": "s_g_g_g_006144c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144d1",
+      "name": "s_TRUE_006144d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144d2",
+      "name": "DAT_006144d2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144d3",
+      "name": "DAT_006144d3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144d4",
+      "name": "DAT_006144d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144d6",
+      "name": "s_FALSE_006144d6",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "006144d7",
+      "name": "s_ALSE_006144d7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144dc",
+      "name": "s_none_006144dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144dd",
+      "name": "DAT_006144dd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144de",
+      "name": "DAT_006144de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144df",
+      "name": "s_ne)_006144df",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144e3",
+      "name": "s_none_006144e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144e4",
+      "name": "DAT_006144e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144e5",
+      "name": "DAT_006144e5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144e6",
+      "name": "s_ne)_006144e6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144ea",
+      "name": "s_s_s_006144ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144f2",
+      "name": "s_add_a_new_cloth_006144f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144f3",
+      "name": "s_add_a_new_cloth)_006144f3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144f4",
+      "name": "s_dd_a_new_cloth)_006144f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006144f5",
+      "name": "s_d_a_new_cloth)_006144f5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614504",
+      "name": "s_add_a_rule_00614504",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614505",
+      "name": "s_add_a_rule)_00614505",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614506",
+      "name": "s_dd_a_rule)_00614506",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614507",
+      "name": "s_d_a_rule)_00614507",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614511",
+      "name": "s_s_s_00614511",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061451a",
+      "name": "s_anon_0061451a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061451b",
+      "name": "s_?????_0061451b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614521",
+      "name": "s_none_00614521",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614522",
+      "name": "DAT_00614522",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614523",
+      "name": "DAT_00614523",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614524",
+      "name": "s_ne)_00614524",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614528",
+      "name": "s_anon_00614528",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061452b",
+      "name": "s_s_0061452b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061452e",
+      "name": "s_core_actor_cpp_0061452e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614540",
+      "name": "s_Unknown_CActorProperty_t_00614540",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e30c",
+      "name": "DAT_0066e30c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066e310",
+      "name": "PTR_s_thrust_0066e310",
+      "type": "void*",
+      "value": "006146f5"
+    },
+    {
+      "addr": "0066e314",
+      "name": "DAT_0066e314",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066e318",
+      "name": "PTR_s_swing_0066e318",
+      "type": "void*",
+      "value": "006146fc"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.813483146067416,
+    "instruction_count": 445,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 47,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "BRANCHIND": 1,
+      "CALL": 11,
+      "CALLIND": 1,
+      "CBRANCH": 38,
+      "COPY": 446,
+      "FLOAT2FLOAT": 8,
+      "INT_ADD": 222,
+      "INT_AND": 279,
+      "INT_CARRY": 52,
+      "INT_EQUAL": 216,
+      "INT_LEFT": 12,
+      "INT_LESS": 41,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 30,
+      "INT_SBORROW": 41,
+      "INT_SCARRY": 53,
+      "INT_SLESS": 117,
+      "INT_SUB": 104,
+      "INT_XOR": 8,
+      "LOAD": 180,
+      "POPCOUNT": 105,
+      "RETURN": 19,
+      "STORE": 87
+    },
+    "pcode_op_count": 2142
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorProperty *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)&pCVar4->state_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(CMotionList *)((int)",
+      "text": "pCVar4 = (CMotionList *)((int)&pCVar4->state_count + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 166,
+      "match": "param1",
+      "text": "if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 168,
+      "match": "param1",
+      "text": "(this_ptr->param1).v_int * 10 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 175,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)piVar7 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)piVar7 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 198,
+      "match": "param1",
+      "text": "if (0 < (this_ptr->param1).v_int) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 199,
+      "match": "param2",
+      "text": "puVar8 = (this_ptr->param2).v_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 207,
+      "match": "param1",
+      "text": "} while (iVar11 < (this_ptr->param1).v_int);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 223,
+      "match": "param1",
+      "text": "iVar11 = (this_ptr->param1).v_int;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 243,
+      "match": "code *",
+      "text": "(*(code *)this_ptr->data)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 260,
+      "match": "(uint *)((int)",
+      "text": "if ((*(this_ptr->data).v_uint_ptr & *(uint *)((int)&0x00000001 + iVar11)) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unknown CActorProperty type: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unknown CActorProperty type: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 274,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ]
+}

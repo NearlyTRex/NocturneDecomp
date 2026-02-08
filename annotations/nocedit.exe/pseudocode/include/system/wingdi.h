@@ -9,7 +9,7 @@
 // =============================================================================
 
 // Function Definition: CREATE_FONT_A_FUNC
-typedef HFONT (*CREATE_FONT_A_FUNC)(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
+typedef HFONT CREATE_FONT_A_FUNC(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
 
 // Typedef: HDC
 // pointer to HDC__
@@ -21,20 +21,20 @@ typedef struct HDC__ {
 } HDC__;
 
 // Function Definition: CREATE_COMPATIBLE_DC_FUNC
-typedef HDC (*CREATE_COMPATIBLE_DC_FUNC)(HDC hdc);
+typedef HDC CREATE_COMPATIBLE_DC_FUNC(HDC hdc);
 
 // Function Definition: DELETE_DC_FUNC
-typedef BOOL (*DELETE_DC_FUNC)(HDC hdc);
+typedef BOOL DELETE_DC_FUNC(HDC hdc);
 
 // Typedef: HGDIOBJ
 // pointer to void
 typedef void* HGDIOBJ;
 
 // Function Definition: DELETE_OBJECT_FUNC
-typedef BOOL (*DELETE_OBJECT_FUNC)(HGDIOBJ ho);
+typedef BOOL DELETE_OBJECT_FUNC(HGDIOBJ ho);
 
 // Function Definition: GET_STOCK_OBJECT_FUNC
-typedef HGDIOBJ (*GET_STOCK_OBJECT_FUNC)(int i);
+typedef HGDIOBJ GET_STOCK_OBJECT_FUNC(int i);
 
 // Typedef: HGLOBAL
 // pointer to void
@@ -49,22 +49,22 @@ typedef struct tagRECT* LPRECT;
 typedef struct tagSIZE* LPSIZE;
 
 // Function Definition: RECTANGLE_FUNC
-typedef BOOL (*RECTANGLE_FUNC)(HDC hdc, int left, int top, int right, int bottom);
+typedef BOOL RECTANGLE_FUNC(HDC hdc, int left, int top, int right, int bottom);
 
 // Function Definition: SELECT_OBJECT_FUNC
-typedef HGDIOBJ (*SELECT_OBJECT_FUNC)(HDC hdc, HGDIOBJ h);
+typedef HGDIOBJ SELECT_OBJECT_FUNC(HDC hdc, HGDIOBJ h);
 
 // Function Definition: SET_BK_COLOR_FUNC
-typedef COLORREF (*SET_BK_COLOR_FUNC)(HDC hdc, COLORREF color);
+typedef COLORREF SET_BK_COLOR_FUNC(HDC hdc, COLORREF color);
 
 // Function Definition: SET_BK_MODE_FUNC
-typedef int (*SET_BK_MODE_FUNC)(HDC hdc, int mode);
+typedef int SET_BK_MODE_FUNC(HDC hdc, int mode);
 
 // Function Definition: SET_TEXT_COLOR_FUNC
-typedef COLORREF (*SET_TEXT_COLOR_FUNC)(HDC hdc, COLORREF color);
+typedef COLORREF SET_TEXT_COLOR_FUNC(HDC hdc, COLORREF color);
 
 // Function Definition: TEXT_OUT_A_FUNC
-typedef BOOL (*TEXT_OUT_A_FUNC)(HDC hdc, int x, int y, LPCSTR lpString, int c);
+typedef BOOL TEXT_OUT_A_FUNC(HDC hdc, int x, int y, LPCSTR lpString, int c);
 
 // Structure: tagBITMAPINFOHEADER
 typedef struct tagBITMAPINFOHEADER {
@@ -95,7 +95,7 @@ typedef struct tagLOGBRUSH {
 typedef tagLOGBRUSH LOGBRUSH;
 
 // Function Definition: CREATE_BRUSH_INDIRECT_FUNC
-typedef HBRUSH (*CREATE_BRUSH_INDIRECT_FUNC)(LOGBRUSH* plbrush);
+typedef HBRUSH CREATE_BRUSH_INDIRECT_FUNC(LOGBRUSH* plbrush);
 
 // Structure: tagRECT
 typedef struct tagRECT {
@@ -129,7 +129,7 @@ typedef struct tagBITMAPINFO {
 typedef tagBITMAPINFO BITMAPINFO;
 
 // Function Definition: CREATE_DIB_SECTION_FUNC
-typedef HBITMAP (*CREATE_DIB_SECTION_FUNC)(HDC hdc, BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset);
+typedef HBITMAP CREATE_DIB_SECTION_FUNC(HDC hdc, BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset);
 
 // Structure: tagSIZE
 typedef struct tagSIZE {
@@ -138,5 +138,5 @@ typedef struct tagSIZE {
 } tagSIZE;
 
 // Function Definition: GET_TEXT_EXTENT_POINT32_A_FUNC
-typedef BOOL (*GET_TEXT_EXTENT_POINT32_A_FUNC)(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl);
+typedef BOOL GET_TEXT_EXTENT_POINT32_A_FUNC(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl);
 

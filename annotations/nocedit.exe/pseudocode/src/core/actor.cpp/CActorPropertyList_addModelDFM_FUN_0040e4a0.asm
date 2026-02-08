@@ -19,7 +19,7 @@
 ;   core_bride.cpp_CBride_getPropertyList_FUN_00424b10 at 00424b39
 ;   core_cow.cpp_CZombieCow_getPropertyList_FUN_00444c50 at 00444c73
 ;   core_dog.cpp_CZombieDog_getPropertyList_FUN_0047f920 at 0047f943
-;   core_dracbrid.cpp_FUN_00486c90 at 00486cb4
+;   core_dracbrid.cpp_CDraculaBride_getPropertyList_FUN_00486c90 at 00486cb4
 ;   ... and 14 more
 ;
 ; Called Functions:

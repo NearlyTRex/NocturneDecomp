@@ -48,7 +48,7 @@ section .text
     PUSH 0x630e66                       ; 00502cd8 | = "Master actor"
     PUSH ESI                            ; 00502cdd
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00502cde
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00502ce3
     ADD EBX,0x2fc                       ; 00502ce6
     PUSH EBX                            ; 00502cec

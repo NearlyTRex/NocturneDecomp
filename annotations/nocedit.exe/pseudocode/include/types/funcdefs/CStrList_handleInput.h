@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_handleInput
-typedef int (*CStrList_handleInput)(struct CStrList* this_ptr);
+typedef int CStrList_handleInput(struct CStrList* this_ptr);
 

@@ -141,7 +141,7 @@ void __cdecl CSound::setVolumeFade(CSound *this_ptr,float target_volume,float fa
 
 // Original: core_sound.cpp_editSoundName_FUN_005b3de0
 // Address: 005b3de0
-void __cdecl editSoundName(char *prompt_text,char *output_buffer);
+int __cdecl editSoundName(char *prompt_text,char *output_buffer);
 
 // Original: core_sound.cpp_STrainNoise_ctor_FUN_005b3e00
 // Address: 005b3e00

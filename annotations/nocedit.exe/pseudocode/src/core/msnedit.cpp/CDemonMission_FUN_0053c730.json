@@ -3,75 +3,98 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 88,
+        "line": 27,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 41,
         "line": 39,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "undeclared_identifier",
+        "column": 66,
+        "line": 41,
+        "message": "use of undeclared identifier 'DAT_02f7a024'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 19,
-        "line": 43,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_02f7a030'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 46,
+        "column": 42,
+        "line": 48,
+        "message": "use of undeclared identifier 'DAT_02f7a02c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_02f79820'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_02f79c20'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 50,
-        "line": 46,
+        "column": 51,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_02f79820'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 49,
+        "line": 53,
         "message": "use of undeclared identifier 'DAT_02f79c20'"
+      },
+      {
+        "category": "format_error",
+        "column": 51,
+        "line": 57,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 62,
+        "line": 66,
         "message": "use of undeclared identifier 'DAT_02f7a030'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 72,
+        "line": 76,
         "message": "use of undeclared identifier 'DAT_02f7a080'"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 74,
+        "line": 78,
         "message": "use of undeclared identifier 'DAT_02f7a02c'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 51,
-        "line": 53,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 166,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
-    "pseudocode_lines": 71,
-    "suspect_count": 9,
+    "pseudocode_lines": 75,
+    "suspect_count": 13,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 227
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -102,17 +125,17 @@
     {
       "addr": "0040ea50",
       "is_variadic": false,
-      "name": "core_actor.cpp_CActorProperty_FUN_0040ea50"
+      "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50"
     },
     {
       "addr": "0040e150",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040e150"
+      "name": "core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150"
     },
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a3b90",
@@ -291,7 +314,14 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
+      "match": "DAT_02f7a024",
+      "text": "core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
       "match": "DAT_00680908",
       "text": "puVar3 = &DAT_00680908;",
       "type": "undefined_data"
@@ -300,54 +330,75 @@
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_02f7a024",
+      "text": "((CActorPropertyList *)&DAT_02f7a024);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02f7a024",
       "text": "(this_ptr->selected_actor,(CActorPropertyList *)&DAT_02f7a024);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 38,
       "match": "DAT_02f7a030",
       "text": "puVar6 = &DAT_02f7a030;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_02f79c20",
-      "text": "sprintf(&DAT_02f79c20,\"%s\\t%s\",puVar6,&DAT_02f79820);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_02f79820",
-      "text": "sprintf(&DAT_02f79c20,\"%s\\t%s\",puVar6,&DAT_02f79820);",
+      "line": 41,
+      "match": "DAT_02f7a02c",
+      "text": "((CActorProperty *)(&DAT_02f7a02c + iVar2 * 0xec),this_ptr->selected_actor,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 42,
+      "match": "DAT_02f79820",
+      "text": "&DAT_02f79820);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02f79c20",
+      "text": "_sprintf(&DAT_02f79c20,\"%s\\t%s\",puVar6,&DAT_02f79820);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02f79820",
+      "text": "_sprintf(&DAT_02f79c20,\"%s\\t%s\",puVar6,&DAT_02f79820);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
       "match": "DAT_02f79c20",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_538.base,&DAT_02f79c20);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 59,
       "match": "DAT_02f7a030",
       "text": "pcVar4 = &DAT_02f7a030 + iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 69,
       "match": "DAT_02f7a080",
       "text": "if (*(int *)(&DAT_02f7a080 + iVar2) != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 71,
       "match": "DAT_02f7a02c",
       "text": "((CActorProperty *)(&DAT_02f7a02c + iVar2),this_ptr->selected_actor);",
       "type": "undefined_data"

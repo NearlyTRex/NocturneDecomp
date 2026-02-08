@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: int* FUN_00600ee4(FILE* param_1, int param_2) */
-
 _FILE * FUN_00600ee4(void)
 
 {

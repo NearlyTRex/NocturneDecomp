@@ -35,9 +35,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_printf_FUN_005ff0d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
@@ -71,8 +71,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00433224
     PUSH EAX                            ; 00433228
     MOV ESI,0x617b90                    ; 00433229 | = "..\\cockpit\\ckptutil.c"
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043322e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043322e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00433233
     MOV EAX,ESP                         ; 00433236
     MOV EDI,0x4a7                       ; 00433238
@@ -100,8 +100,8 @@ section .text
     PUSH 0x617ba6                       ; 00433272 | = "Unable to read number of edge lists (..."
     LEA EAX,[ESP + 0x8]                 ; 00433277
     PUSH EAX                            ; 0043327b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043327c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043327c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x617bd0                    ; 00433281 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00433286
     MOV EAX,ESP                         ; 00433289
@@ -122,8 +122,8 @@ section .text
     PUSH 0x617be6                       ; 004332b4 | = "Invalid number of edge lists in file ..."
     LEA EAX,[ESP + 0x8]                 ; 004332b9
     PUSH EAX                            ; 004332bd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004332be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004332be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x4b7                       ; 004332c3
     ADD ESP,0xc                         ; 004332c8
     MOV [0x02f0ca4c],EAX                ; 004332cb | g_CurrentLineNumber
@@ -158,8 +158,8 @@ section .text
     PUSH 0x617c27                       ; 00433313 | = "Unable to read number of edges (%s)."
     LEA EAX,[ESP + 0x8]                 ; 00433318
     PUSH EAX                            ; 0043331c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043331d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043331d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x617c4c                    ; 00433322 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00433327
     MOV EAX,ESP                         ; 0043332a
@@ -215,8 +215,8 @@ section .text
     PUSH 0x617ccf                       ; 004333a7 | = "Unable to read edge list (%s)."
     LEA EAX,[ESP + 0x8]                 ; 004333ac
     PUSH EAX                            ; 004333b0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004333b1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004333b1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x617cee                    ; 004333b6 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 004333bb
     MOV EAX,ESP                         ; 004333be

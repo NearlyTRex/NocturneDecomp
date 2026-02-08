@@ -65,10 +65,10 @@ engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
   engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_334);
   engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_334,local_220);
   while (local_334.filename[0] != '\0') {
-    iVar2 = sprintf(local_4c4,"%s\t",&local_334);
+    iVar2 = _sprintf(local_4c4,"%s\t",&local_334);
     iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,local_334.filename);
     if (-1 < iVar3) {
-      sprintf
+      _sprintf
                 (local_4c4 + iVar2,"Checked out by %s",local_1c.items[iVar3].value);
     }
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_86c.base,local_4c4);

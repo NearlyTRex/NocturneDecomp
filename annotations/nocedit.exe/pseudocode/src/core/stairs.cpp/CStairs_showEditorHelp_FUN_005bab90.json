@@ -1,0 +1,131 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005bab90",
+    "address_range": [
+      [
+        "005bab90",
+        "005babe3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stairs.cpp_CStairs_showEditorHelp_FUN_005bab90",
+    "signature": "void __cdecl core_stairs_cpp_CStairs_showEditorHelp_FUN_005bab90(CStairs *this_ptr,int *y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d150",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
+    },
+    {
+      "addr": "0040d240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_drawTextLine_FUN_0040d240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006530e2",
+      "name": "s_With_CTRL_held_down_006530e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006530f7",
+      "name": "s_Left_right_adjusts_width_006530f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653112",
+      "name": "s_Q_A_adjusts_rise_00653112",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653125",
+      "name": "s_Up_Down_adjusts_run_00653125",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.25,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 17,
+      "INT_ADD": 10,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 16,
+      "LOAD": 5,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStairs *"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStairs",
+        "offset": 220,
+        "vtable_addr": "006634d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

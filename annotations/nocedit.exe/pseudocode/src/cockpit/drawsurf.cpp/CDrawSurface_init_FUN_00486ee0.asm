@@ -12,8 +12,8 @@
 ; CDrawSurface *   Stack[0x18]:4   parent_surface
 ;
 ; XREF[2]:
+;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486e70 at 00486e8a
 ;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 at 00486ec2
-;   core_dracbrid.cpp_FUN_00486e70 at 00486e8a
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_FUN_004c8dd0
-;   core_weapon.cpp_CWeapon_FUN_005ee6e0
+;   core_weapon.cpp_CWeapon_fire_FUN_005ee6e0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dynamite.cpp_CDynamite_fire_FUN_0049ce70
     MOV EBX,dword ptr [ESP + 0x8]       ; 0049ce71
     PUSH EBX                            ; 0049ce75
-    CALL core_weapon.cpp_CWeapon_FUN_005ee6e0 ; 0049ce76
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_FUN_005ee6e0(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_fire_FUN_005ee6e0 ; 0049ce76
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_fire_FUN_005ee6e0(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0049ce7b
     TEST EAX,EAX                        ; 0049ce7e
     JNZ 0x0049ce84                      ; 0049ce80

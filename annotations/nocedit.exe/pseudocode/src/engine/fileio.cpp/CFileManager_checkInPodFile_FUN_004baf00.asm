@@ -89,13 +89,13 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_errno.c__errno_FUN_00601450
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fflush_FUN_00601540
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_rename_FUN_006015d0
 ;   crt_stdio.c_setvbuf_FUN_00601490
-;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   crt_time.c_localtime_FUN_00600288
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_time_FUN_006001f0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
@@ -465,8 +465,8 @@ section .text
     PUSH EAX                            ; 004bb30c
     MOV ESI,0x1                         ; 004bb30d
     XOR EBX,EBX                         ; 004bb312
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bb314
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bb314
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bb319
     PUSH EBX                            ; 004bb31c
         ;   Label: LAB_004bb31c
@@ -742,8 +742,8 @@ section .text
     PUSH 0x6260d9                       ; 004bb5f2 | = "history\\%s.%s"
     LEA EAX,[ESP + 0x1a80]              ; 004bb5f7
     PUSH EAX                            ; 004bb5fe
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bb5ff
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bb5ff
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bb604
     LEA EAX,[ESP + 0x2490]              ; 004bb607
     PUSH EAX                            ; 004bb60e
@@ -845,8 +845,8 @@ section .text
     PUSH 0x626c39                       ; 004bb72b | = "$$$.%s.$$$"
     LEA EAX,[ESP + 0x2094]              ; 004bb730
     PUSH EAX                            ; 004bb737
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bb738
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bb738
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bb73d
     LEA EAX,[ESP + 0x2390]              ; 004bb740
     PUSH EAX                            ; 004bb747
@@ -1429,8 +1429,8 @@ section .text
     PUSH 0x626e66                       ; 004bbdd8 | = "Waiting for %s to become available.\n..."
     LEA EAX,[ESP + 0x18ec]              ; 004bbddd
     PUSH EAX                            ; 004bbde4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bbde5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bbde5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bbdea
     LEA EAX,[ESP + 0x18e4]              ; 004bbded
     PUSH EAX                            ; 004bbdf4
@@ -1549,8 +1549,8 @@ section .text
     MOV dword ptr [ESP + 0x25a8],EAX    ; 004bbf3c
     LEA EAX,[ESP + 0x25a8]              ; 004bbf43
     PUSH EAX                            ; 004bbf4a
-    CALL crt_time.c_localtime_FUN_00600288 ; 004bbf4b
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 004bbf4b
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004bbf50
     PUSH 0x2d12bd0                      ; 004bbf53 | g_VersionControlSession
     MOV ECX,dword ptr [EAX]             ; 004bbf58
@@ -1748,8 +1748,8 @@ section .text
     PUSH 0x628f97                       ; 004bc169 | = "%s checked in"
     LEA EAX,[ESP + 0x1568]              ; 004bc16e
     PUSH EAX                            ; 004bc175
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bc176
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bc176
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bc17b
     PUSH 0x0                            ; 004bc17e
     PUSH -0x1                           ; 004bc180

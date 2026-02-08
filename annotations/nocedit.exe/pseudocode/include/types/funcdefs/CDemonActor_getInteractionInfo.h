@@ -8,5 +8,5 @@ struct CDemonActor;
 struct SInteractionInfo;
 
 // Function Definition: CDemonActor_getInteractionInfo
-typedef void (*CDemonActor_getInteractionInfo)(struct CDemonActor* this_ptr, struct SInteractionInfo* out_info);
+typedef void CDemonActor_getInteractionInfo(struct CDemonActor* this_ptr, struct SInteractionInfo* out_info);
 

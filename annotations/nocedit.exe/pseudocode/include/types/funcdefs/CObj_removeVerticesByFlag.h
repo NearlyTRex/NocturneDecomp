@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_removeVerticesByFlag
-typedef void (*CObj_removeVerticesByFlag)(struct CObj* this_ptr, uint flag_mask);
+typedef void CObj_removeVerticesByFlag(struct CObj* this_ptr, uint flag_mask);
 

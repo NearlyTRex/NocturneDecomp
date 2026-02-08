@@ -17,7 +17,7 @@
 ;   core_bride.cpp_CBride_addFilesToExtract_FUN_00424b50 at 00424b72
 ;   core_cow.cpp_CZombieCow_addFilesToExtract_FUN_00444ca0 at 00444cc2
 ;   core_dog.cpp_CZombieDog_addFilesToExtract_FUN_0047f970 at 0047f992
-;   core_dracbrid.cpp_FUN_00486d00 at 00486d22
+;   core_dracbrid.cpp_CDraculaBride_addFilesToExtract_FUN_00486d00 at 00486d22
 ;   ... and 15 more
 ;
 ; Referenced Globals:

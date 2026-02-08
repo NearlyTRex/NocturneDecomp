@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_string.c_strnicmp_FUN_005ff070
 ;
@@ -74,8 +74,8 @@ section .text
     PUSH 0x639341                       ; 005246b0 | = "%s%d"
     MOV ECX,dword ptr [ESP + 0x28]      ; 005246b5
     PUSH ECX                            ; 005246b9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005246ba
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005246ba
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005246bf
     PUSH EBX                            ; 005246c2
     PUSH EDI                            ; 005246c3

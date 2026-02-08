@@ -8,5 +8,5 @@ struct CObj;
 struct CVert;
 
 // Function Definition: CObj_findAndRemoveVertex
-typedef int (*CObj_findAndRemoveVertex)(struct CObj* this_ptr, struct CVert* vertex_ptr);
+typedef int CObj_findAndRemoveVertex(struct CObj* this_ptr, struct CVert* vertex_ptr);
 

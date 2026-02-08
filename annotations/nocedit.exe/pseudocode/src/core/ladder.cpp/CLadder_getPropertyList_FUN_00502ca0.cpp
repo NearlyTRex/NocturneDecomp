@@ -15,8 +15,8 @@ core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
             (property_list,"Model",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Master actor",this_ptr->master_actor,1,(char *)0x0,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Master actor",(CDemonActor **)this_ptr->master_actor,1,
+             (char *)0x0,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
             (property_list,"ground type",&this_ptr->ground_type);
   return;

@@ -55,7 +55,7 @@ section .text
     PUSH 0x63e85b                       ; 005462bb | = "Wolf size scale"
     PUSH ESI                            ; 005462c0
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 005462c1
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005462c6
     PUSH 0x0                            ; 005462c9
     PUSH 0x1d                           ; 005462cb

@@ -137,14 +137,14 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                 if (iVar4 < local_1c) break;
                 if (local_18 != 0) {
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,&DAT_00628c6a);
-                  sprintf
+                  _sprintf
                             (local_154,"%s\t%s\t%08X",pcVar7,local_30,
                              *(uint *)((int)&local_24->directory_entries->checksum + local_2c)
                             );
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
                   local_18 = 0;
                 }
-                sprintf
+                _sprintf
                           (local_154,"\t%s\t%08X",pCVar5->filename,
                            pCVar5->directory_entries[local_20].checksum);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);

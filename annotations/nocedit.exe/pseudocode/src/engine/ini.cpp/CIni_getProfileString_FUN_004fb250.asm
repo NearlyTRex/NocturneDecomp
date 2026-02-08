@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -69,8 +69,8 @@ section .text
     PUSH 0x62faf6                       ; 004fb28b | = "[%s]\n"
     LEA EAX,[ESP + 0x108]               ; 004fb290
     PUSH EAX                            ; 004fb297
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fb298
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004fb298
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fb29d
     TEST EDI,EDI                        ; 004fb2a0
         ;   Label: LAB_004fb2a0

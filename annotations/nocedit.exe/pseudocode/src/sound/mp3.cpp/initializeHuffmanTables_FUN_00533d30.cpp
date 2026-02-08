@@ -29,7 +29,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
   local_14 = 0;
   do {
     str = local_18;
-    sprintf(local_18->table_id,"%d",iVar4);
+    _sprintf(local_18->table_id,"%d",iVar4);
     *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =
          *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_14);
     *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 4) =

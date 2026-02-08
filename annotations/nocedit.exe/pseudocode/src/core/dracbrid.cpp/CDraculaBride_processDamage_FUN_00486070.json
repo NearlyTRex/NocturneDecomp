@@ -1,0 +1,228 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 287,
+    "complexity_score": 101,
+    "cross_reference_count": 0,
+    "function_call_count": 11,
+    "global_count": 6,
+    "pseudocode_lines": 101,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 388
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00486070",
+    "address_range": [
+      [
+        "00486070",
+        "004862ec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070",
+    "signature": "void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070 (CDraculaBride *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0042b5b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b5b0"
+    },
+    {
+      "addr": "00486020",
+      "is_variadic": false,
+      "name": "core_dracbrid.cpp_CDraculaBride_FUN_00486020"
+    },
+    {
+      "addr": "004864c0",
+      "is_variadic": false,
+      "name": "core_dracbrid.cpp_CDraculaBride_FUN_004864c0"
+    },
+    {
+      "addr": "004a9f10",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10"
+    },
+    {
+      "addr": "004c79d0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621bf6",
+      "name": "s_bride_launch_wav_00621bf6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621c07",
+      "name": "s_bride_die_wav_00621c07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621c16",
+      "name": "s_bride_hurt_wav_00621c16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621c26",
+      "name": "DOUBLE_00621c26",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7110091743119265,
+    "instruction_count": 218,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 21,
+      "CALLIND": 1,
+      "CBRANCH": 25,
+      "COPY": 220,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 67,
+      "INT_AND": 116,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 106,
+      "INT_LEFT": 4,
+      "INT_LESS": 20,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 53,
+      "INT_SUB": 107,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 27,
+      "POPCOUNT": 53,
+      "RETURN": 3,
+      "STORE": 90
+    },
+    "pcode_op_count": 1027
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDraculaBride *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDraculaBride",
+        "offset": 284,
+        "vtable_addr": "0065cd94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

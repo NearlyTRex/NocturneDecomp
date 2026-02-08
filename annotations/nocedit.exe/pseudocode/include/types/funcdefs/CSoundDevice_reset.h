@@ -7,5 +7,5 @@
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_reset
-typedef int (*CSoundDevice_reset)(struct CSoundDevice* this_ptr);
+typedef int CSoundDevice_reset(struct CSoundDevice* this_ptr);
 

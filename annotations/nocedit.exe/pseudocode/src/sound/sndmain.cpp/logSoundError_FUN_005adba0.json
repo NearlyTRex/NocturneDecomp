@@ -9,21 +9,21 @@
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 30,
         "line": 23,
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 35,
-        "message": "incompatible pointer types assigning to '_tm *' from 'struct tm *'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
         "line": 36,
         "message": "no matching function for call to 'asctime'"
+      },
+      {
+        "category": "format_error",
+        "column": 35,
+        "line": 56,
+        "message": "format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -297,24 +297,24 @@
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
+      "addr": "005fdba8",
+      "is_variadic": false,
+      "name": "crt_stdio.c__vsprintf_FUN_005fdba8"
+    },
+    {
       "addr": "005fe6d0",
       "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
     },
     {
-      "addr": "005fdba8",
+      "addr": "00600288",
       "is_variadic": false,
-      "name": "crt_stdio.c_vsprintf_FUN_005fdba8"
+      "name": "crt_time.c__localtime_FUN_00600288"
     },
     {
       "addr": "00601768",
       "is_variadic": false,
       "name": "crt_time.c_asctime_FUN_00601768"
-    },
-    {
-      "addr": "00600288",
-      "is_variadic": false,
-      "name": "crt_time.c_localtime_FUN_00600288"
     },
     {
       "addr": "006001f0",

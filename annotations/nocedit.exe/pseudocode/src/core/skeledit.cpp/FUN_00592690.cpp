@@ -380,7 +380,7 @@ LAB_00592a67:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&local_2ca8.base,"(Dump this list to the clipboard)");
           while( true ) {
-            sprintf(local_2360,"The following motions do not have the same skeleton\nheirarchy as the home pose file\n%s\nPress Enter to view heirarchy, or ESC when done viewing list.\n");
+            _sprintf(local_2360,"The following motions do not have the same skeleton\nheirarchy as the home pose file\n%s\nPress Enter to view heirarchy, or ESC when done viewing list.\n");
             iVar13 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_2ca8,local_2360,iVar13,0);
             if (iVar13 < 0) break;
@@ -388,7 +388,7 @@ LAB_00592a67:
               pcVar11 = &DAT_0366b650;
               for (iVar3 = 0; iVar3 < local_2ca8.base.item_count + -1; iVar3 = iVar3 + 1) {
                 shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2ca8.base,iVar3);
-                iVar4 = sprintf(pcVar11,"%s\r\n");
+                iVar4 = _sprintf(pcVar11,"%s\r\n");
                 pcVar11 = pcVar11 + iVar4;
               }
               shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0

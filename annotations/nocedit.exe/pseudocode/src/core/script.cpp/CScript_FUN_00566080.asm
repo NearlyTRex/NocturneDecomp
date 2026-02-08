@@ -30,7 +30,7 @@
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
 ;   core_script.cpp_FUN_005644e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
@@ -73,8 +73,8 @@ section .text
     PUSH EAX                            ; 005660c7
     PUSH 0x643f0e                       ; 005660c8 | = "%d sound files missing."
     PUSH 0x310fdc0                      ; 005660cd | DAT_0310fdc0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005660d2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005660d2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005660d7
     PUSH ESI                            ; 005660da
     PUSH -0x1                           ; 005660db

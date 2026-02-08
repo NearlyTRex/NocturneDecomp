@@ -7,5 +7,5 @@
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_hasHardware3D
-typedef int (*CSoundDevice_hasHardware3D)(struct CSoundDevice* this_ptr);
+typedef int CSoundDevice_hasHardware3D(struct CSoundDevice* this_ptr);
 

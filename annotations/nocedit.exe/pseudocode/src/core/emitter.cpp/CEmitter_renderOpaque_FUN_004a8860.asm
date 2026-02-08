@@ -62,10 +62,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
-;   int INT_02cf2b5c
-;   CVector3f CVector3f_02cf2b60
+;   int g_SlewTargetMode
+;   CVector3f g_EmitterTarget
 ;   undefined4 DAT_02cf2b6c
-;   undefined4 DAT_02cf2b78
+;   CEmitter* PTR_02cf2b78
 ;   CFireEffect g_CFireEffectInstance
 ;   undefined4 DAT_02f33744
 ;   undefined4 DAT_02f33768
@@ -246,10 +246,10 @@ section .text
     CMP EDX,0x3                         ; 004a8a09
     JNZ 0x004a88a9                      ; 004a8a0c
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
-    CMP dword ptr [0x02cf2b5c],0x0      ; 004a8a12 | INT_02cf2b5c
+    CMP dword ptr [0x02cf2b5c],0x0      ; 004a8a12 | g_SlewTargetMode
     JZ 0x004a88a9                       ; 004a8a19
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
-    MOV ESI,dword ptr [0x02cf2b78]      ; 004a8a1f | DAT_02cf2b78
+    MOV ESI,dword ptr [0x02cf2b78]      ; 004a8a1f | PTR_02cf2b78
     CMP EBX,ESI                         ; 004a8a25
     JNZ 0x004a88a9                      ; 004a8a27
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
@@ -258,7 +258,7 @@ section .text
     JNZ 0x004a88a9                      ; 004a8a35
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
     PUSH 0x2cf2b6c                      ; 004a8a3b | DAT_02cf2b6c
-    PUSH 0x2cf2b60                      ; 004a8a40 | CVector3f_02cf2b60
+    PUSH 0x2cf2b60                      ; 004a8a40 | g_EmitterTarget
     MOV EAX,[0x00678a60]                ; 004a8a45 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 004a8a4a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 004a8a4b

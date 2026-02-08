@@ -54,7 +54,7 @@
 ;   undefined4 DAT_01000000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_02f0cb1c
+;   int g_MansionPuzzleSlewType
 ;   undefined4 DAT_02f33744
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -114,7 +114,7 @@ section .text
     TEST EAX,EAX                        ; 00509db3
     JNZ 0x00509dea                      ; 00509db5
         ;   XREF to: 00509dea (CONDITIONAL_JUMP)  ; LAB_00509dea
-    MOV EBP,dword ptr [0x02f0cb1c]      ; 00509db7 | DAT_02f0cb1c
+    MOV EBP,dword ptr [0x02f0cb1c]      ; 00509db7 | g_MansionPuzzleSlewType
     MOV EBX,0xfb                        ; 00509dbd
     CMP EBP,0x2                         ; 00509dc2
     JNZ 0x00509dd5                      ; 00509dc5

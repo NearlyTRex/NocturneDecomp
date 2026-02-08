@@ -7,8 +7,8 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[36]:
-;   core_course.cpp_OpeningCourseFile2_FUN_00442d70 at 00442e54
-;   core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0 at 00442ce2
+;   core_course.cpp_CCourse_FUN_00442bc0 at 00442ce2
+;   core_course.cpp_CCourse_FUN_00442d70 at 00442e54
 ;   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 at 0047b4c3
 ;   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 at 0047b04c
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450 at 004945e9

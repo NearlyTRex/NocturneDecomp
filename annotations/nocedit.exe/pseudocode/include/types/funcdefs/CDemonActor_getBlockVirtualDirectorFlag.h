@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_getBlockVirtualDirectorFlag
-typedef int (*CDemonActor_getBlockVirtualDirectorFlag)(struct CDemonActor* this_ptr);
+typedef int CDemonActor_getBlockVirtualDirectorFlag(struct CDemonActor* this_ptr);
 

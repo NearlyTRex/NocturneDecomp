@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr)
+; __cdecl float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740 (CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined1       Stack[-0x50]:1  local_50
+; undefined        Stack[-0x50]:1  local_50
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940

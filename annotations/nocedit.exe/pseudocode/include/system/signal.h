@@ -8,7 +8,7 @@
 // =============================================================================
 
 // Function Definition: SIGNAL_HANDLER_FUNC
-typedef void (*SIGNAL_HANDLER_FUNC)(int param0);
+typedef void SIGNAL_HANDLER_FUNC(int param0);
 
 // Typedef: SIGNAL_HANDLER
 // pointer to SIGNAL_HANDLER_FUNC

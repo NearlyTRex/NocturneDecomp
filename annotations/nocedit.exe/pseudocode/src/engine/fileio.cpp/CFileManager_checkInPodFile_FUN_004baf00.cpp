@@ -119,7 +119,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
               (&local_1e2c.base,"Oops.  Don't check the POD in.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
               (&local_1e2c.base,"Show local file differences.");
-    sprintf(local_eac,"WARNING!\n\nYou are about to check in %s, which is not in sync\nwith your extracted files.  (Perhaps you forget to rebuild the\npod after making changes?)",local_77c);
+    _sprintf(local_eac,"WARNING!\n\nYou are about to check in %s, which is not in sync\nwith your extracted files.  (Perhaps you forget to rebuild the\npod after making changes?)",local_77c);
     while( true ) {
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1e2c,local_eac,1,0);
@@ -236,7 +236,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  sprintf(local_b8c,"history\\%s.%s",pcVar8,"history");
+  _sprintf(local_b8c,"history\\%s.%s",pcVar8,"history");
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_24,local_170);
   engine_dosio_c_makePath_FUN_00481f50(local_984,local_24,local_170,(char *)0x0,(char *)0x0);
   pcVar8 = local_b8c;
@@ -282,7 +282,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     goto LAB_004bb847;
   }
 LAB_004bb723:
-  sprintf(local_574,"$$$.%s.$$$",&local_12b4);
+  _sprintf(local_574,"$$$.%s.$$$",&local_12b4);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(local_50,local_1c,local_270);
   engine_dosio_c_makePath_FUN_00481f50(local_880,local_1c,local_270,(char *)0x0,(char *)0x0);
   pcVar8 = local_574;
@@ -431,7 +431,7 @@ LAB_004bba53:
         }
         iVar2 = iVar2 + 1;
         if (iVar2 == 1) {
-          sprintf
+          _sprintf
                     (local_d1c,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_16dc);
           shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                     (g_CEditorToolsPtr,local_d1c);
@@ -490,7 +490,7 @@ LAB_004bbb45:
           local_34 = p_Var3;
           if (p_Var3 != (_FILE *)0x0) {
             local_58 = time((time_t *)0x0);
-            p_Var5 = localtime(&local_58);
+            p_Var5 = _localtime(&local_58);
             _fprintf(p_Var3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_4c + 1,
                        p_Var5->tm_year + 0x76c,p_Var5->tm_mon + 1,p_Var5->tm_mday,p_Var5->tm_hour,
                        p_Var5->tm_min,p_Var5->tm_sec,&g_VersionControlSession);
@@ -548,7 +548,7 @@ LAB_004bb492:
                               (&local_21d4.base,"Delete local files but don't mount");
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
                               (&local_21d4.base,"Keep files extracted and pod dismounted");
-                    sprintf(local_10a0,"%s checked in",local_77c);
+                    _sprintf(local_10a0,"%s checked in",local_77c);
                     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                       (&local_21d4,local_10a0,-1,0);
                     if (iVar2 == 0) {

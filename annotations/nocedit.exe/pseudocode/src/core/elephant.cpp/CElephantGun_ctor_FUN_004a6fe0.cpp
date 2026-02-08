@@ -43,6 +43,6 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephan
   pCVar2->unk[5] = '\0';
   pCVar2->unk[6] = '\0';
   pCVar2->unk[7] = '\0';
-  *(float *)((pCVar2->base).unk3 + 0x25f) = fVar1;
+  *(float *)((pCVar2->base).unk3 + 0x25c) = fVar1;
   return pCVar2;
 }

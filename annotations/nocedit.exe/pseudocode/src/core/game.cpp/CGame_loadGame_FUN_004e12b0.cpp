@@ -155,7 +155,7 @@ LAB_004e14f5:
       local_30 = local_30 + -4;
       crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0((ifstream *)local_168,0);
       crt_fstream_cpp_ofstream_ctor_FUN_005ff95c((ofstream *)local_e8,0);
-      sprintf(local_534,"%s\\%s","save",local_638);
+      _sprintf(local_534,"%s\\%s","save",local_638);
       iVar2 = g_DefaultStreamBufferSize;
       crt_fstream_cpp_openFile_FUN_00600e85
                 ((ifstream *)local_168,local_534,0x121,g_DefaultStreamBufferSize);

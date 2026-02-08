@@ -33,7 +33,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0
 ;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
@@ -144,8 +144,8 @@ section .text
     PUSH 0x641798                       ; 00559ea4 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00559ea9
     PUSH EAX                            ; 00559ead
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00559eae
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00559eae
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00559eb3
     PUSH ESI                            ; 00559eb6
     PUSH 0x2                            ; 00559eb7

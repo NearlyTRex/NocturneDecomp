@@ -1,0 +1,258 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 66,
+        "line": 26,
+        "message": "use of undeclared identifier 'stack0xffffffc4'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 139,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 11,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 185
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046fb70",
+    "address_range": [
+      [
+        "0046fb70",
+        "0046fcb8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dest.cpp_CActorDestination_renderTransparent_FUN_0046fb70",
+    "signature": "int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActorDestination *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040dec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0"
+    },
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00478d20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061e3b2",
+      "name": "s_CBoxActor_0061e3b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e3bc",
+      "name": "s_core_dest_cpp_0061e3bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e3cd",
+      "name": "s_CDestActor_renderTranspa_0061e3cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "008229e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.276785714285714,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 13,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 87,
+      "INT_ADD": 41,
+      "INT_AND": 60,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 54,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 27,
+      "INT_SUB": 47,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 27,
+      "RETURN": 3,
+      "STORE": 45
+    },
+    "pcode_op_count": 479
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorDestination *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0046fc1c",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffffc4",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFilmProjector",
+        "offset": 12,
+        "vtable_addr": "0065db04"
+      },
+      {
+        "class_name": "CActorDestination",
+        "offset": 12,
+        "vtable_addr": "0065c724"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

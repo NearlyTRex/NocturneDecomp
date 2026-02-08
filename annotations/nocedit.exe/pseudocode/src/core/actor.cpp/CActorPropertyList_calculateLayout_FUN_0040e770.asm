@@ -19,8 +19,8 @@
 ;   TerminatedCString s_anon_006144bc
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ee30
-;   core_actor.cpp_FUN_0040ee50
+;   core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30
+;   core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50
 ;   engine_2d.c_getStringWidth_FUN_004018a0
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     LEA EBX,[EDI + 0x8]                 ; 0040e789
     PUSH EBX                            ; 0040e78c
         ;   Label: LAB_0040e78c
-    CALL core_actor.cpp_FUN_0040ee30    ; 0040e78d
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee30()
+    CALL core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30 ; 0040e78d
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30(CActorProperty * this_ptr)
     ADD ESP,0x4                         ; 0040e792
     CMP EAX,EBP                         ; 0040e795
     JLE 0x0040e79b                      ; 0040e797
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_0040e79b
     PUSH EDX                            ; 0040e79d
     PUSH EBX                            ; 0040e79e
-    CALL core_actor.cpp_FUN_0040ee50    ; 0040e79f
-        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee50()
+    CALL core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50 ; 0040e79f
+        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty * this_ptr, int index)
     ADD ESP,0x8                         ; 0040e7a4
     CMP EAX,dword ptr [ESP]             ; 0040e7a7
     JLE 0x0040e7af                      ; 0040e7aa

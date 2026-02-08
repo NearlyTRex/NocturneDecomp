@@ -967,7 +967,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                   }
                   core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
                   if (local_4c == 0) {
-                    sprintf
+                    _sprintf
                               (local_a84,"Spotlight %s doesn't exist.",local_218);
                     pcVar14 = local_a84;
                     pcVar15 = &DAT_02d0a460;

@@ -77,7 +77,7 @@ core_inv_cpp_CInventory_addItem_FUN_004fd600
       pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
     if (pCVar5 != (CDemonActor *)0x0) {
-      sprintf(acStack_120,"%d ",pCVar5[2].health);
+      _sprintf(acStack_120,"%d ",pCVar5[2].health);
       pcVar11 = acStack_120;
       iVar9 = -1;
       pcVar6 = &stack0xfffffce0;

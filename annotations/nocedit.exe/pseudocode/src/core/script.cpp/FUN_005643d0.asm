@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 0056444f
     PUSH 0x643d6f                       ; 00564450 | = "<%s>"
     PUSH EBX                            ; 00564455
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00564456
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00564456
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056445b
     ADD ESI,EAX                         ; 0056445e
     JMP 0x005643f3                      ; 00564460

@@ -35,10 +35,10 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_strupr_FUN_00600770
-;   crt_time.c_localtime_FUN_00600288
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_strftime_FUN_006002d4
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
@@ -140,8 +140,8 @@ section .text
     ADD EAX,EBX                         ; 004b752a
     ADD EAX,0xc                         ; 004b752c
     PUSH EAX                            ; 004b752f
-    CALL crt_time.c_localtime_FUN_00600288 ; 004b7530
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 004b7530
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004b7535
     PUSH EAX                            ; 004b7538
     PUSH 0x627dd9                       ; 004b7539 | = "%m/%d/%y %I:%M:%S %p"
@@ -197,8 +197,8 @@ section .text
     PUSH 0x627dee                       ; 004b75dd | = "%s\t%s\t%s\t%d\t%s"
     LEA EAX,[ESP + 0x7f0]               ; 004b75e2
     PUSH EAX                            ; 004b75e9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b75ea
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b75ea
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004b75ef
     LEA EAX,[ESP + 0x7d8]               ; 004b75f2
     PUSH EAX                            ; 004b75f9
@@ -224,8 +224,8 @@ section .text
     PUSH 0x627dfd                       ; 004b7632 | = "Contents of pod file:\n%s"
     LEA EAX,[ESP + 0x7e0]               ; 004b7637
     PUSH EAX                            ; 004b763e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b763f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b763f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b7644
     PUSH 0x0                            ; 004b7647
     PUSH -0x1                           ; 004b7649

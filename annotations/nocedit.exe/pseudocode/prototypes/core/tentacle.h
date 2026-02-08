@@ -19,45 +19,45 @@ CDemonActorType * __cdecl CTentacle::getActorType(CTentacle *this_ptr);
 // Address: 005daf60
 CTentacle * __cdecl CTentacle::ctor(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005dafc0
+// Original: core_tentacle.cpp_CTentacle_setup_FUN_005dafc0
 // Address: 005dafc0
-void __cdecl CTentacle(CTentacle *this_ptr);
+void __cdecl CTentacle::setup(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_process_FUN_005db050
 // Address: 005db050
 void __cdecl CTentacle::process(CTentacle *this_ptr,float delta_time);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005db840
+// Original: core_tentacle.cpp_CTentacle_renderOpaque_FUN_005db840
 // Address: 005db840
-int __cdecl CTentacle(CTentacle *this_ptr);
+int __cdecl CTentacle::renderOpaque(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_archive_FUN_005db880
 // Address: 005db880
 void __cdecl CTentacle::archive(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_005db900
+// Original: core_tentacle.cpp_CTentacle_FUN_005db900
 // Address: 005db900
-int __cdecl FUN_005db900(void);
-
-// Original: core_tentacle.cpp_FUN_005db9d0
-// Address: 005db9d0
-int __cdecl FUN_005db9d0(void);
-
-// Original: core_tentacle.cpp_CTentacle_FUN_005dbb30
-// Address: 005dbb30
 int __cdecl CTentacle(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_005dbb70
+// Original: core_tentacle.cpp_CTentacle_FUN_005db9d0
+// Address: 005db9d0
+int __cdecl CTentacle(CTentacle *this_ptr);
+
+// Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30
+// Address: 005dbb30
+int __cdecl CTentacle::shouldIgnoreForTargeting(CTentacle *this_ptr);
+
+// Original: core_tentacle.cpp_CTentacle_FUN_005dbb70
 // Address: 005dbb70
-void __cdecl FUN_005dbb70(void);
+void __cdecl CTentacle(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60
 // Address: 005dbc60
 void __cdecl CTentacle::getPropertyList(CTentacle *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005dbcc0
+// Original: core_tentacle.cpp_CTentacle_addFilesToExtract_FUN_005dbcc0
 // Address: 005dbcc0
-void __cdecl CTentacle(CTentacle *this_ptr);
+void __cdecl CTentacle::addFilesToExtract(CTentacle *this_ptr,_FILE *file_handle);
 
 // Original: core_tentacle.cpp_CTentacle_dtor_FUN_005dbcf0
 // Address: 005dbcf0

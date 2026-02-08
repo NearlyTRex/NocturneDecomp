@@ -1,57 +1,57 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "other",
-        "column": 29,
+        "column": 30,
         "line": 146,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 32,
+        "column": 33,
         "line": 150,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 32,
+        "column": 33,
         "line": 167,
-        "message": "format specifies type 'int' but the argument has type 'CBitFont *' [-Wformat]"
+        "message": "format specifies type 'int' but the argument has type 'CBitFont *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 46,
+        "column": 47,
         "line": 199,
-        "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 37,
         "line": 199,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 44,
         "line": 263,
-        "message": "format specifies type 'int' but the argument has type 'float' [-Wformat]"
+        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 30,
         "line": 275,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 35,
+        "column": 36,
         "line": 285,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 1078,
@@ -127,7 +127,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403170",

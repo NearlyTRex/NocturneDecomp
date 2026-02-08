@@ -17,7 +17,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
   
   core_dfilter_cpp_CFilterFX_free_FUN_00470700(this_ptr);
   if (filename != (char *)0x0) {
-    sprintf(local_10c,"%s.txt",filename);
+    _sprintf(local_10c,"%s.txt",filename);
     p_Var1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rt");
     if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
@@ -29,7 +29,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
     pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->frame_count << 0xd,"..\\core\\dfilter.cpp",0x160);
     this_ptr->movie_data = pvVar2;
-    sprintf(local_10c,"%s.mov",filename);
+    _sprintf(local_10c,"%s.mov",filename);
     p_Var1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rb");
     if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";

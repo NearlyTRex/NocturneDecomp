@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407890
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_3d.c_processVertexLighting_FUN_00403a20
@@ -250,8 +250,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00407c8c
     PUSH EAX                            ; 00407c90
     MOV EBX,0xcf1                       ; 00407c91
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00407c96
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00407c96
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00407c9b
     MOV EAX,ESP                         ; 00407c9e
     MOV ECX,0x613539                    ; 00407ca0 | = "..\\engine\\3d.c"

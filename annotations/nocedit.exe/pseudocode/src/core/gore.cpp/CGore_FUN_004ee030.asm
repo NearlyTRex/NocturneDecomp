@@ -14,7 +14,7 @@
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0 at 004f96f6
 ;   core_scat.cpp_CScat_processDamage_FUN_00557ea0 at 00557f86
 ;   core_stranger.cpp_CStranger_FUN_005c48b0 at 005c4a7e
-;   core_svetlana.cpp_FUN_005d9d30 at 005d9e4f
+;   core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30 at 005d9e4f
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_FUN_004edf30

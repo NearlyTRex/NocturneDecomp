@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   string_data
 ;
 ; XREF[91]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f665
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f3b9
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b3c6
 ;   core_boxactor.cpp_FUN_00423110 at 00423156
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f544

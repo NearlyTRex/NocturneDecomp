@@ -168,7 +168,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
       iVar2 = *(int *)(iVar4 + 0x14);
       local_64.v = 6.806708e-39;
       local_64.light = (float)&local_64.w_recip;
-      sprintf((char *)&local_64.w_recip,"%c");
+      _sprintf((char *)&local_64.w_recip,"%c");
       local_64.fog = 9.18341e-41;
       local_64.color = 0x4a1e62;
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);

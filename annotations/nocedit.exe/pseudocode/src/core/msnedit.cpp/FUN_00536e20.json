@@ -14,6 +14,12 @@
         "message": "use of undeclared identifier 'DAT_02f7a094'"
       },
       {
+        "category": "format_error",
+        "column": 33,
+        "line": 52,
+        "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 38,
         "line": 56,
@@ -24,6 +30,18 @@
         "column": 33,
         "line": 64,
         "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "format_error",
+        "column": 33,
+        "line": 64,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 65,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "undeclared_identifier",
@@ -75,26 +93,7 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 32,
-        "line": 52,
-        "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 64,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 65,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 359,
@@ -176,7 +175,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403200",

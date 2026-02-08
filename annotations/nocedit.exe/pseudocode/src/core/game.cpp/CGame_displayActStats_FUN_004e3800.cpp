@@ -101,7 +101,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
   uVar8 = 0;
-  sprintf
+  _sprintf
             (acStack_158,"%2d:%2d:%2d.%2d\n\n",uStack_30,uStack_3c,uStack_38,iStack_34);
   do {
     uVar6 = 0xffffffff;
@@ -181,7 +181,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
+  _sprintf(acStack_158,"%d\n\n",*(uint *)(unaff_EDI + 0x24c));
   this_ptr_00 = g_ThemeFont;
   pcVar13 = acStack_158;
   iVar5 = -1;

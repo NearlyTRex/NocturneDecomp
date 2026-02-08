@@ -50,9 +50,9 @@ int __cdecl core_netgame_cpp_CNetGame_FUN_00541390(CNetGame *this_ptr)
     }
     while (this_ptr->connection_type != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      sprintf(&stack0xfffffed0,"Mission: %s",this_ptr->unk);
+      _sprintf(&stack0xfffffed0,"Mission: %s",this_ptr->unk);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0xb);
-      sprintf(&stack0xfffffed0,"MyGameSettigsId: %d",DAT_02f7c8c4);
+      _sprintf(&stack0xfffffed0,"MyGameSettigsId: %d",DAT_02f7c8c4);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Player",0,0x21);
       engine_2d_c_drawText_FUN_00401fd0("IP",100,0x21);
@@ -107,7 +107,7 @@ LAB_005415cb:
           dVar10 = round
                              ((double)(*(float *)(local_1c + 0x28) * 1000.0f));
           local_1c = (char *)(int)ROUND(dVar10);
-          sprintf(&stack0xfffffecc,"%dms",local_1c,uVar11);
+          _sprintf(&stack0xfffffecc,"%dms",local_1c,uVar11);
         }
         engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,200,iVar5);
         if (*(int *)(local_1c + 0x44) == 0) {
@@ -127,11 +127,12 @@ LAB_005415cb:
           pcVar7 = pcVar7 + 2;
         } while (cVar1 != '\0');
         engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,300,iVar5);
-        sprintf
+        _sprintf
                   (&stack0xfffffed0,"%d",*(uint *)(local_1c + 0x14));
         engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,iVar5);
         if (this_ptr->connection_type == 1) {
-          sprintf(&stack0xfffffed0,"%d",*(int *)(local_1c + 0x34));
+          _sprintf(&stack0xfffffed0,"%d",*(int *)(local_1c + 0x34))
+          ;
           engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,500,iVar5);
         }
         iVar5 = iVar5 + 0xb;

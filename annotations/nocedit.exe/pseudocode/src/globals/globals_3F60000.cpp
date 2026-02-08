@@ -426,6 +426,10 @@ int INT_03f6cbcc = {};
 int INT_03f6cbd0 = {};
 int INT_03f6cbd4 = {};
 int INT_03f6cbd8 = {};
+int INT_03f6cd08 = {};
+int INT_03f6cd0c = {};
+int INT_03f6cd10 = {};
+int INT_03f6cd14 = {};
 
 // int[32]
 int g_SfxChannelEnabled[32] = {};
@@ -449,10 +453,6 @@ undefined4 DAT_03f6bb20 = {};
 undefined4 DAT_03f6bb24 = {};
 undefined4 DAT_03f6bbe4 = {};
 undefined4 DAT_03f6bbe8 = {};
-undefined4 DAT_03f6cd08 = {};
-undefined4 DAT_03f6cd0c = {};
-undefined4 DAT_03f6cd10 = {};
-undefined4 DAT_03f6cd14 = {};
 
 // void*
 void* g_PrimaryMixBuffer = {};

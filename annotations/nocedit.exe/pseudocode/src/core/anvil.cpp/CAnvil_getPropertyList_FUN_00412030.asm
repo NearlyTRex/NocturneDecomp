@@ -53,7 +53,7 @@ section .text
     PUSH 0x614d89                       ; 00412079 | = "Drop height"
     PUSH ESI                            ; 0041207e
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0041207f
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00412084
     POP ESI                             ; 00412087
     POP EBX                             ; 00412088

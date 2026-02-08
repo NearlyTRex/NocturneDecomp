@@ -48,6 +48,7 @@
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SEdgeTableEntry.h"
 #include "types/structs/SEncryptedMessage.h"
+#include "types/structs/SEnumPair.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SFly.h"

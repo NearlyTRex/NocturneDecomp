@@ -177,7 +177,6 @@ extern undefined1 DAT_00823a82;
 extern undefined1 DAT_00823a83;
 
 // undefined4
-extern undefined4 DAT_00821ff4;
 extern undefined4 DAT_00822754;
 extern undefined4 DAT_00822944;
 extern undefined4 DAT_00822948;

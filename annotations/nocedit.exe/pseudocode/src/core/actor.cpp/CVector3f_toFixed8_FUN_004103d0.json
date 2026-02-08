@@ -1,0 +1,174 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0040d940",
+      "from_addr": "0040dc84",
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004103d0",
+    "address_range": [
+      [
+        "004103d0",
+        "004103fc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CVector3f_toFixed8_FUN_004103d0",
+    "signature": "void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f *this_ptr,CVector3f *other)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006597b0",
+      "name": "FLOAT_006597b0",
+      "type": "float",
+      "value": "256"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0040dc84",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 21,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040de4b",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040daed",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040dcaf",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040de1d",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 20,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040dabf",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 21,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.0,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "COPY": 62,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 8,
+      "INT_SUB": 1,
+      "LOAD": 7,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 4,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 98
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "other",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 5,
+      "match": "ROUND",
+      "text": "other->x = (float)(int)ROUND(this_ptr->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 6,
+      "match": "ROUND",
+      "text": "other->y = (float)(int)ROUND(this_ptr->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "text": "other->z = (float)(int)ROUND(this_ptr->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

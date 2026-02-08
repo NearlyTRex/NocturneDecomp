@@ -80,7 +80,7 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
         local_10 = local_10 + 1;
       } while (local_10 < (uint)this_ptr->poly_count);
     }
-    sprintf(local_7c,"Deleting %d disjoing vertices",iVar8);
+    _sprintf(local_7c,"Deleting %d disjoing vertices",iVar8);
     local_1c = this_ptr->vertex_count - iVar8;
     local_14 = 0;
     if (local_1c != 0) {

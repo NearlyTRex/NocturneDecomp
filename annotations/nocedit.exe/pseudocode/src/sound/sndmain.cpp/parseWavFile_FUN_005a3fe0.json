@@ -39,20 +39,7 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 19,
-        "line": 64,
-        "message": "'sprintf' will always overflow; destination buffer has size 1, but format string expands to at least 71 [-Wformat-overflow]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 86,
-        "message": "'sprintf' will always overflow; destination buffer has size 1, but format string expands to at least 35 [-Wformat-overflow]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 371,
@@ -107,6 +94,11 @@
   },
   "function_calls": [
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fd990",
       "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005fd990"
@@ -115,11 +107,6 @@
       "addr": "005ffacc",
       "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0050f9b0",

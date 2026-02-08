@@ -125,7 +125,7 @@ LAB_005bfd3a:
   local_18 = local_24;
   if ((((this_ptr->base).base.field47_0x2a8c == 9) &&
       (1.0 <= (float)(this_ptr->base).base.field48_0x2a90)) &&
-     (*(int *)(this_ptr->unk1 + 0x5c) != 0)) {
+     (*(int *)(this_ptr->unk5 + 0x10) != 0)) {
     pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar12);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&pCVar4->motion_list);
     local_20 = iVar5;
@@ -168,7 +168,7 @@ LAB_005bfd3a:
     puVar8[(uint)bVar10 * -2 + 1] = puVar6[(uint)bVar10 * -2 + 1];
   }
   if ((this_ptr->base).base.field47_0x2a8c == 1) {
-    fVar2 = (*(float *)(this_ptr->unk1 + 0x18) + *(float *)(this_ptr->unk1 + 0x38)) *
+    fVar2 = (*(float *)(this_ptr->unk1 + 0x18) + *(float *)(this_ptr->unk3 + 0xc)) *
             (float)0.5;
     local_100 = 0.0;
     local_28 = 0x3e860a92;
@@ -259,7 +259,7 @@ LAB_005bfd3a:
   else if ((this_ptr->base).base.field47_0x2a8c != 0xe) {
     return;
   }
-  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk2 + 0x74) / (float10)2.7f,
+  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk6 + 0x74) / (float10)2.7f,
                            (float10)1);
   local_34 = (float)fVar11;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,&local_d0);

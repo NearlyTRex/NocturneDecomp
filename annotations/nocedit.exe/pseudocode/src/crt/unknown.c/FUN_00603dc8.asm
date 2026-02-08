@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00603dc8(void)
+; __cdecl void __cdecl crt_unknown_c_FUN_00603dc8(void)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0xa4]:2  local_a4
@@ -228,7 +228,7 @@ section .text
     LEA EAX,[EBP + -0x48]               ; 00603fc4
     PUSH EAX                            ; 00603fc7
     CALL crt_unknown.c_FUN_00603d60     ; 00603fc8
-        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603d60()
+        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603d60()
         ;   Label: LAB_00603fc8
     ADD ESP,0x8                         ; 00603fcd
     TEST byte ptr [ESI + 0x8],0x2       ; 00603fd0

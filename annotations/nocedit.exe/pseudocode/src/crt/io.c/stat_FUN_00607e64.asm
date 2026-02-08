@@ -42,8 +42,8 @@
 ;   crt_io.c_getcwd_FUN_00608d20
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdlib.c__fullpath_FUN_00601140
+;   crt_string.c__strncpy_FUN_00600f40
 ;   crt_string.c_mbtowc_next_FUN_00605a70
-;   crt_string.c_strncpy_FUN_00600f40
 ;   crt_string.c_strpbrk_FUN_0060c190
 ;   crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0
 ;   crt_time.c_filetime_to_dos_datetime_FUN_00609cb0
@@ -331,8 +331,8 @@ section .text
     MOV word ptr [EBX + -0x3],0x0       ; 00608140
     PUSH EBX                            ; 00608146
     MOV byte ptr [EBX + -0x1],0x0       ; 00608147
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0060814b
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0060814b
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00608150
     XOR EAX,EAX                         ; 00608153
     ADD ESP,0x358                       ; 00608155

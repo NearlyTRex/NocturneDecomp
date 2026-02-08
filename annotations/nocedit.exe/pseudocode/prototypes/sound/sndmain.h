@@ -657,7 +657,7 @@ int __cdecl stopRecordingDevice(void);
 
 // Original: sound_sndmain.cpp_audioThreadProc_FUN_005abba0
 // Address: 005abba0
-DWORD __cdecl audioThreadProc(LPVOID lpThreadParam);
+DWORD __stdcall audioThreadProc(LPVOID lpThreadParam);
 
 // Original: sound_sndmain.cpp_startSoundThread_FUN_005abc00
 // Address: 005abc00

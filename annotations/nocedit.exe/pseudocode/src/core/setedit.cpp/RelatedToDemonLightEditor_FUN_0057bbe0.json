@@ -1,39 +1,39 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
+      {
+        "category": "other",
+        "column": 42,
+        "line": 58,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 74,
+        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 82,
+        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
       {
         "category": "other",
         "column": 41,
-        "line": 58,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 74,
-        "message": "format string is not a string literal (potentially insecure) [-Wformat-security]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 82,
-        "message": "format string is not a string literal (potentially insecure) [-Wformat-security]"
-      },
-      {
-        "category": "other",
-        "column": 40,
         "line": 97,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 64,
         "line": 107,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 732,
@@ -95,7 +95,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",

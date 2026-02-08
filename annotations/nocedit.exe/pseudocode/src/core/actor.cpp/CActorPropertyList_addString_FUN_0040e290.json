@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -69,7 +76,7 @@
     {
       "addr": "0046fe80",
       "from_addr": "0046fed8",
-      "name": "core_dest.cpp_FUN_0046fe80",
+      "name": "core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,7 +130,7 @@
     {
       "addr": "005e0f70",
       "from_addr": "005e1142",
-      "name": "core_trigger.cpp_CTrigger_FUN_005e0f70",
+      "name": "core_trigger.cpp_CTrigger_getPropertyList_FUN_005e0f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +142,7 @@
     {
       "addr": "005e8ba0",
       "from_addr": "005e8cd7",
-      "name": "core_vehicle.cpp_CVehicle_FUN_005e8ba0",
+      "name": "core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -149,7 +156,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addString_FUN_0040e290",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CDemonActor_CActorPropertyValidatorFunc *callback)"
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CActorPropertyValidatorFunc *callback)"
   },
   "function_calls": [
     {
@@ -219,7 +226,7 @@
         "name": "callback",
         "offset": 20,
         "size": 4,
-        "type": "CDemonActor_CActorPropertyValidatorFunc *"
+        "type": "CActorPropertyValidatorFunc *"
       }
     ]
   },

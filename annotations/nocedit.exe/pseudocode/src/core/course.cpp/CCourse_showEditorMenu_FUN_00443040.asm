@@ -58,17 +58,17 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
+;   core_course.cpp_CCourse_FUN_00442bc0
+;   core_course.cpp_CCourse_FUN_00442d70
 ;   core_course.cpp_CCourse_load_FUN_00442580
 ;   core_course.cpp_CCourse_save_FUN_00442a90
 ;   core_course.cpp_FUN_00443bc0
-;   core_course.cpp_OpeningCourseFile2_FUN_00442d70
-;   core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0
 ;   core_dmodel.cpp_loadModel_FUN_00478c00
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;   core_xform.cpp_multiplyQuaternion_FUN_005f7640
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -156,8 +156,8 @@ section .text
     PUSH 0x61929e                       ; 00443116 | = "L. Loop flag is now %s"
     LEA EAX,[ESP + 0x418]               ; 0044311b
     PUSH EAX                            ; 00443122
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00443123
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00443123
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00443128
     PUSH 0xa5                           ; 0044312b
     PUSH 0x0                            ; 00443130
@@ -285,8 +285,8 @@ section .text
     MOV EAX,ESP                         ; 00443274
     PUSH EAX                            ; 00443276
     PUSH EBP                            ; 00443277
-    CALL core_course.cpp_OpeningCourseFile2_FUN_00442d70 ; 00443278
-        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_OpeningCourseFile2_FUN_00442d70()
+    CALL core_course.cpp_CCourse_FUN_00442d70 ; 00443278
+        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442d70(CCourse * this_ptr)
     ADD ESP,0x8                         ; 0044327d
     TEST EAX,EAX                        ; 00443280
     JZ 0x0044324c                       ; 00443282
@@ -639,8 +639,8 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 00443663
     PUSH EAX                            ; 0044366a
     PUSH EBP                            ; 0044366b
-    CALL core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0 ; 0044366c
-        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0()
+    CALL core_course.cpp_CCourse_FUN_00442bc0 ; 0044366c
+        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442bc0(CCourse * this_ptr)
     ADD ESP,0x8                         ; 00443671
     TEST EAX,EAX                        ; 00443674
     JZ 0x00443639                       ; 00443676

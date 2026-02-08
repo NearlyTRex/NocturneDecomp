@@ -1,63 +1,63 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 41,
-        "line": 35,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Wformat]"
-      },
+    "errors": [
       {
         "category": "format_error",
         "column": 42,
+        "line": 35,
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 43,
         "line": 48,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 89,
         "line": 62,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 27,
         "line": 87,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 27,
         "line": 98,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 41,
         "line": 113,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 50,
         "line": 113,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 57,
         "line": 113,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 18,
         "line": 114,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 266,
@@ -99,7 +99,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",

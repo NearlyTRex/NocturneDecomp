@@ -8,5 +8,5 @@ struct CDemonActor;
 struct SCollisionInfo;
 
 // Function Definition: CDemonActor_hasCollision
-typedef int (*CDemonActor_hasCollision)(struct CDemonActor* this_ptr, struct SCollisionInfo* collision_info);
+typedef int CDemonActor_hasCollision(struct CDemonActor* this_ptr, struct SCollisionInfo* collision_info);
 

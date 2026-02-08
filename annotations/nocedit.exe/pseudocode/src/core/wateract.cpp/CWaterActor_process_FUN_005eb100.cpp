@@ -34,13 +34,13 @@ core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float d
   }
   this_ptr_00 = g_CEventListPtr;
   *(float *)(this_ptr->unk5 + 0x7d04) = 1.0 / (float)this_ptr;
-  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                    (this_ptr_00,(char *)&this_ptr->move_event);
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(this_ptr_00,this_ptr->move_event)
+  ;
   if (iVar2 != 0) {
     this_ptr->state = 1;
   }
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                    (g_CEventListPtr,(char *)&this_ptr->move_down_event);
+                    (g_CEventListPtr,this_ptr->move_down_event);
   if (iVar2 != 0) {
     this_ptr->state = 3;
   }

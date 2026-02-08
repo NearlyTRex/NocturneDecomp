@@ -63,7 +63,7 @@ core_script_cpp_CScript_FUN_00559d80
           iVar1 = 0xff;
         }
         cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(iVar1);
-        sprintf(local_a4,"%d",index + 1);
+        _sprintf(local_a4,"%d",index + 1);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(&local_40,local_a4,2,y);
         x = 0x1e;
         iVar1 = y;

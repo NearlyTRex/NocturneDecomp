@@ -68,7 +68,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   local_48 = toupper(uVar2 & 0xff);
   if ((0x57 < (int)local_48) && ((int)local_48 < 0x5b)) {
-    sprintf(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
+    _sprintf(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,local_f4);
     iVar3 = -1;
     pcVar4 = local_a4;

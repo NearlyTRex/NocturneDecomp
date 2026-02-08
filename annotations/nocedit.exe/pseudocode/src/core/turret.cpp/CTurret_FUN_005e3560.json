@@ -3,26 +3,20 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 13,
+        "column": 72,
         "line": 34,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 34,
-        "message": "expected expression"
+        "message": "use of undeclared identifier 'stack0xffffffac'"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 70,
+        "line": 68,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 70,
+        "line": 68,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -31,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 93,
+    "complexity_score": 91,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 137
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -178,11 +172,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Direct stack address reference",
       "line": 27,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk3 + 0x154) + 0x14))();",
-      "type": "unresolved_funcptr"
+      "match": "&stack0xffffffac",
+      "text": "(this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)&stack0xffffffac);",
+      "type": "stack_ref"
     },
     {
       "call_site_count": 2,

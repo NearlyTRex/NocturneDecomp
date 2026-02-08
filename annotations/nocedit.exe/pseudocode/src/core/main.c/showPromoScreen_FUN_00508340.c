@@ -20,7 +20,7 @@ void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
   wincore_winrun_cpp_getTime_FUN_005f2dc0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   uVar2 = rand();
-  sprintf(&stack0xfffffef0,"load%d",(uVar2 & 3) + 1);
+  _sprintf(&stack0xfffffef0,"load%d",(uVar2 & 3) + 1);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
             (&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

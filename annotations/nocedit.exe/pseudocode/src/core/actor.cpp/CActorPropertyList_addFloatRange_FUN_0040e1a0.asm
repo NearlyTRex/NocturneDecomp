@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 (CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 (CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; float *          Stack[0xc]:4   data_ptr
 ; float            Stack[0x10]:4   min_value
 ; float            Stack[0x14]:4   max_value
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x18]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x18]:4   callback
 ;
 ; XREF[11]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d31d
@@ -20,7 +20,7 @@
 ;   core_health.cpp_CHealthItem_getPropertyList_FUN_004f2040 at 004f2098
 ;   core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0 at 0050ed72
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e92b
-;   core_trigger.cpp_CTrigger_FUN_005e0f70 at 005e108a
+;   core_trigger.cpp_CTrigger_getPropertyList_FUN_005e0f70 at 005e108a
 ;   core_turret.cpp_CTurret_getPropertyList_FUN_005e3ca0 at 005e3d73
 ;   ... and 1 more
 ;

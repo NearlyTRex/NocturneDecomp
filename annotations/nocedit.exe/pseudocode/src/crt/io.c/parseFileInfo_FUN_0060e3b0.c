@@ -30,7 +30,7 @@ void __cdecl parseFileInfo(void)
       } while (*pcVar2 != '\0');
       pcVar2 = (char *)0x0;
 LAB_0060e3f3:
-      strncpy(local_20,pcVar1,(int)pcVar2 - (int)pcVar1);
+      _strncpy(local_20,pcVar1,(int)pcVar2 - (int)pcVar1);
       local_20[(int)pcVar2 - (int)pcVar1] = '\0';
       pcVar2 = pcVar2 + 1;
       file_handle_index = strtol(local_20,(char **)0x0,0x10);
@@ -45,7 +45,7 @@ LAB_0060e3f3:
       } while (*pcVar3 != '\0');
       pcVar3 = (char *)0x0;
 LAB_0060e43e:
-      strncpy(local_20,pcVar2,(int)pcVar3 - (int)pcVar2);
+      _strncpy(local_20,pcVar2,(int)pcVar3 - (int)pcVar2);
       local_20[(int)pcVar3 - (int)pcVar2] = '\0';
       pcVar3 = pcVar3 + 1;
       local_14 = strtol(local_20,(char **)0x0,0x10);
@@ -60,7 +60,7 @@ LAB_0060e43e:
       } while (*pcVar1 != '\0');
       pcVar1 = (char *)0x0;
 LAB_0060e48b:
-      strncpy(local_20,pcVar3,(int)pcVar1 - (int)pcVar3);
+      _strncpy(local_20,pcVar3,(int)pcVar1 - (int)pcVar3);
       local_20[(int)pcVar1 - (int)pcVar3] = '\0';
       flags = strtol(local_20,(char **)0x0,0x10);
       SetStdHandleToSomething();

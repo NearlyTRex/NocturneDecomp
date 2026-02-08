@@ -6,24 +6,23 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 95,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 10,
-    "suspect_count": 7,
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 30
+    "total_lines": 28
   },
   "cross_references": [
     {
       "addr": "005c6b60",
       "from_addr": "005c6e0d",
-      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,7 +67,7 @@
       {
         "call_addr": "005c6e0d",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_CSuccubus_FUN_005c6b60",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
         "estimated_params": 4,
         "instructions_analyzed": 9,
         "reg_params": [],
@@ -77,7 +76,7 @@
       {
         "call_addr": "005c6def",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_CSuccubus_FUN_005c6b60",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
         "estimated_params": 4,
         "instructions_analyzed": 9,
         "reg_params": [],
@@ -171,43 +170,29 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3, uint param_4) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "uint param_3, uint param_4) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 5,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));",
       "type": "stack_param"

@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_setStateFlagFromAttrib
-typedef void (*CObj_setStateFlagFromAttrib)(struct CObj* this_ptr, uint flag_to_set, uint attrib_mask);
+typedef void CObj_setStateFlagFromAttrib(struct CObj* this_ptr, uint flag_to_set, uint attrib_mask);
 

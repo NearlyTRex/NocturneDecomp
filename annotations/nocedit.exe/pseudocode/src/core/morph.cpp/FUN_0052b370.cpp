@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_morph.cpp_FUN_0052b370(uint param_1, uint param_2,
-   uint param_3, uint param_4, uint param_5, uint param_6, uint
-   param_7, uint param_8) */
-
 void __cdecl core_morph_cpp_FUN_0052b370(void)
 
 {

@@ -37,7 +37,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
       } while (cVar1 != '\0');
     }
     else {
-      sprintf(local_114,"Current mission: %s.msn",local_14);
+      _sprintf(local_114,"Current mission: %s.msn",local_14);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x16);
     if (this_ptr->render_sky_in_editor == 0) {
@@ -46,7 +46,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
     else {
       pcVar5 = "ON";
     }
-    sprintf(local_114,"1. Draw sky in dynamic views: %s",pcVar5);
+    _sprintf(local_114,"1. Draw sky in dynamic views: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x2c);
     if (this_ptr->render_water_in_editor == 0) {
       pcVar5 = "OFF";
@@ -54,7 +54,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
     else {
       pcVar5 = "ON";
     }
-    sprintf(local_114,"2. Draw water in dynamic views: %s",pcVar5);
+    _sprintf(local_114,"2. Draw water in dynamic views: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x37);
     if (this_ptr->full_light_in_editor == 0) {
       pcVar5 = "OFF";
@@ -62,7 +62,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
     else {
       pcVar5 = "ON";
     }
-    sprintf(local_114,"3. Force full lighting in static view: %s",pcVar5);
+    _sprintf(local_114,"3. Force full lighting in static view: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x42);
     if (g_DisableMouseHitOnBarrier == 0) {
       pcVar5 = "OFF";
@@ -70,7 +70,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
     else {
       pcVar5 = "ON";
     }
-    sprintf(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
+    _sprintf(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x4d);
     if ((uint)g_DynamicRenderMode < 2) {
 LAB_005377d8:
@@ -84,7 +84,7 @@ LAB_005377d8:
       if (g_DynamicRenderMode != 3) goto LAB_005377d8;
       pcVar5 = "5. Dynamic render mode: ground types";
     }
-    sprintf(local_114,pcVar5);
+    _sprintf(local_114,pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x58);
     if (g_ConfirmNewActorNames == 0) {
       pcVar5 = "OFF";
@@ -92,7 +92,7 @@ LAB_005377d8:
     else {
       pcVar5 = "ON";
     }
-    sprintf(local_114,"6. Confirm new actor names: %s",pcVar5);
+    _sprintf(local_114,"6. Confirm new actor names: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,99);
     uVar2 = this_ptr->show_waypoint_coverage;
     if (uVar2 == 0) {
@@ -107,7 +107,7 @@ LAB_00537848:
       if (uVar2 != 2) goto LAB_00537848;
       pcVar5 = "7. Show waypoint coverage: all";
     }
-    sprintf(local_114,pcVar5);
+    _sprintf(local_114,pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x6e);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();

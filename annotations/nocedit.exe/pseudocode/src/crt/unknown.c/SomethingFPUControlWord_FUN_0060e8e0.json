@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 93,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 12,
     "suspect_count": 7,
     "suspect_types": [
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -117,42 +117,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "uint in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "if ((BYTE_00684acc != 0) && (local_c = (uint)in_FPUControlWord, in_stack_00000008 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;",
       "type": "stack_param"

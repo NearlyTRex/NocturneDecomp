@@ -171,7 +171,7 @@ LAB_0046a6ad:
         if (pcVar5 != (char *)0x0) {
           *pcVar5 = '\0';
         }
-        sprintf(local_1ac,"Model name to save [%s] : ",local_e4);
+        _sprintf(local_1ac,"Model name to save [%s] : ",local_e4);
         iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0(g_LoadedModelName,0x27,0,0,local_1ac);
         if (iVar2 == 0x1b) {
           pcVar4 = local_e4;

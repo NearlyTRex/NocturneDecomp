@@ -21,7 +21,7 @@
 ;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   MessageBoxA
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EBX                            ; 005f3935
     PUSH 0x657f84                       ; 005f3936 | = "%s\n\nFile: %s\nLine: %d"
     PUSH 0x3f96c30                      ; 005f393b | g_ErrorMessageBuffer_03f96c30
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f3940
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f3940
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005f3945
     PUSH 0x30                           ; 005f3948
     MOV ESI,dword ptr [0x0068499c]      ; 005f394a | g_ApplicationTitle

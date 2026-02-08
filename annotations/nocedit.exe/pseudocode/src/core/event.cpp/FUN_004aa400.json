@@ -8,18 +8,6 @@
         "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 43,
-        "message": "no matching function for call to 'sprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 49,
-        "message": "no matching function for call to 'sprintf'"
-      },
-      {
         "category": "other",
         "column": 12,
         "line": 55,
@@ -32,10 +20,10 @@
         "message": "cannot initialize return object of type 'CHero *' with an rvalue of type 'int'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 66,
-        "message": "no matching function for call to 'sprintf'"
+        "category": "format_error",
+        "column": 116,
+        "line": 67,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -111,7 +99,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
@@ -371,21 +359,21 @@
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
-      "text": "sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "text": "_sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_02d0a460",
-      "text": "sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "text": "_sprintf(&DAT_02d0a460,\"Actor \\\"%s\\\" does not exist.\",param_1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_02d0a460",
-      "text": "sprintf(&DAT_02d0a460,\"Can't use '$' actor specifier in multi-player\");",
+      "text": "_sprintf(&DAT_02d0a460,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {

@@ -66,14 +66,14 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
-;   core_dest.cpp_FUN_0046fd50
+;   core_dest.cpp_CActorDestination_FUN_0046fd50
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 ;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
-;   core_stranger.cpp_FUN_005bb010
+;   core_stranger.cpp_CStranger_FUN_005bb010
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
 ;
@@ -210,8 +210,8 @@ section .text
         ;   Label: LAB_005c29ef
     PUSH EDI                            ; 005c29f5
     PUSH EAX                            ; 005c29f6
-    CALL core_dest.cpp_FUN_0046fd50     ; 005c29f7
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
+    CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 005c29f7
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
     ADD ESP,0x8                         ; 005c29fc
     TEST EAX,EAX                        ; 005c29ff
     JZ 0x005c29d4                       ; 005c2a01
@@ -308,8 +308,8 @@ section .text
     FSUB float ptr [EBX + 0x1fca8]      ; 005c2afb
     PUSH EAX                            ; 005c2b01
     FSTP float ptr [ESP + 0xd8]         ; 005c2b02
-    CALL core_stranger.cpp_FUN_005bb010 ; 005c2b09
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
+    CALL core_stranger.cpp_CStranger_FUN_005bb010 ; 005c2b09
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_CStranger_FUN_005bb010(CStranger * this_ptr)
     MOV dword ptr [ESP + 0xdc],EAX      ; 005c2b0e
     FLD float ptr [ESP + 0xdc]          ; 005c2b15
     ADD ESP,0x4                         ; 005c2b1c
@@ -367,8 +367,8 @@ section .text
         ;   Label: LAB_005c2bb4
     PUSH EAX                            ; 005c2bba
     PUSH ESI                            ; 005c2bbb
-    CALL core_dest.cpp_FUN_0046fd50     ; 005c2bbc
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
+    CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 005c2bbc
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
     ADD ESP,0x8                         ; 005c2bc1
     TEST EAX,EAX                        ; 005c2bc4
     JZ 0x005c293f                       ; 005c2bc6

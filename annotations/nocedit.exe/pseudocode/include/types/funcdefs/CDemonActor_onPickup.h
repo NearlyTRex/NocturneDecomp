@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_onPickup
-typedef void (*CDemonActor_onPickup)(struct CDemonActor* this_ptr, struct CDemonActor* owner);
+typedef void CDemonActor_onPickup(struct CDemonActor* this_ptr, struct CDemonActor* owner);
 

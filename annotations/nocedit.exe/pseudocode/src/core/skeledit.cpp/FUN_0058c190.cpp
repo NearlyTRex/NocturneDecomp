@@ -109,7 +109,7 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
                       "..\\core\\skeledit.cpp",0x60a);
   local_24 = pCVar6;
   if (pCVar6 == (CBoneStructure *)0x0) {
-    sprintf(&DAT_03670650,"Can't open %s",in_stack_00000008);
+    _sprintf(&DAT_03670650,"Can't open %s",in_stack_00000008);
     return 0;
   }
   iVar14 = 1;
@@ -128,16 +128,16 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
   core_skeledit_cpp_FUN_0058b160();
   iVar14 = core_skeledit_cpp_FUN_0058b200();
   if (iVar14 == 0) {
-    sprintf
+    _sprintf
               (&DAT_03670650,"Heirarchy in %s does not match that in skeleton %s",in_stack_00000008,
                in_stack_00000004->model_name);
     if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name != 2
        ) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
-      sprintf(local_418,"Display %s",in_stack_00000008);
+      _sprintf(local_418,"Display %s",in_stack_00000008);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
-      sprintf(local_418,"Display %s",in_stack_00000004->model_name)
-      ;
+      _sprintf
+                (local_418,"Display %s",in_stack_00000004->model_name);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
       iVar14 = 0;
       while( true ) {
@@ -163,7 +163,7 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
   iVar14 = _fscanf((_FILE *)local_24,"%d,%d,%d\n",local_b4 + 4,local_b4 + 8,local_b4 + 0xc);
   if (iVar14 != 3) {
 LAB_0058c613:
-    sprintf(&DAT_03670650,"%s is corrupt!",in_stack_00000008);
+    _sprintf(&DAT_03670650,"%s is corrupt!",in_stack_00000008);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
     return 0;
   }
@@ -247,7 +247,7 @@ LAB_0058c613:
             if (file == (_FILE *)0x0) {
               if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].
                           texture_name != 2) {
-                sprintf
+                _sprintf
                           (local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
                 iVar14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                                    (g_CEditorToolsPtr,local_eb8);
@@ -673,7 +673,7 @@ LAB_0058c601:
     if (1 < in_stack_00000004->num_texture_sets) {
       local_3c = in_stack_00000004->texture_sets + 1;
       do {
-        sprintf(local_180,"%s%d",local_b20,local_38);
+        _sprintf(local_180,"%s%d",local_b20,local_38);
         core_skeledit_cpp_FUN_0058de70();
         uVar9 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
         if (uVar9 != local_b4._20_4_) {

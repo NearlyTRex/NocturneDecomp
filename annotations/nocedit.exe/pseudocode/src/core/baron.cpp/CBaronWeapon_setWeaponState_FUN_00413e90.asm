@@ -17,7 +17,7 @@
 ;   core_baron.cpp_CBaronWeapon_FUN_00413f20
 ;   core_baron.cpp_FUN_00413470
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_weapon.cpp_CWeapon_FUN_005ee640
+;   core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00413e97
     PUSH EDX                            ; 00413e9b
     PUSH EBX                            ; 00413e9c
-    CALL core_weapon.cpp_CWeapon_FUN_005ee640 ; 00413e9d
-        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_FUN_005ee640(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640 ; 00413e9d
+        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon * this_ptr)
     ADD ESP,0x8                         ; 00413ea2
     MOV EAX,dword ptr [EBX + 0x154]     ; 00413ea5
     PUSH EBX                            ; 00413eab

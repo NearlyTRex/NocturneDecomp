@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_flipNormal
-typedef void (*CPoly_flipNormal)(struct CPoly* this_ptr);
+typedef void CPoly_flipNormal(struct CPoly* this_ptr);
 

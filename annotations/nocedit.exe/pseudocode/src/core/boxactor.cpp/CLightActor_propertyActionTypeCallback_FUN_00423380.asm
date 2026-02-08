@@ -20,7 +20,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_boxactor.cpp_CLightActor_FUN_00422d60
 ;   core_boxactor.cpp_FUN_00423110
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EBX,EAX                         ; 004233ad
     LEA EAX,[ESP + 0x8]                 ; 004233af
     PUSH EAX                            ; 004233b3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004233b4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004233b4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004233b9
     MOV EDI,dword ptr [EBX + 0x66c]     ; 004233bc
     PUSH EDI                            ; 004233c2

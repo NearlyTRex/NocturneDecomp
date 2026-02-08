@@ -16,7 +16,7 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
   void *pvVar5;
   char *pcVar6;
   char *pcVar7;
-  byte auStack_2c40 [9464];
+  CActorPropertyList CStack_2c4c;
   CPickList local_748;
   char local_3a0 [500];
   char local_1ac [200];
@@ -91,17 +91,17 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
       if (*(int *)(local_14 + 0x104) == 0) {
-        sprintf
+        _sprintf
                   (local_e4,"Script\tLn %d",*(uint *)(local_14 + 0x10c));
       }
       else {
-        core_actor_cpp_FUN_0040e130();
+        core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2c4c);
         (**(code **)(*(int *)(*(int *)(local_14 + 0x104) + 0x154) + 0xd4))();
-        sprintf
+        _sprintf
                   (local_e4,"%s\t%s",*(uint *)(local_14 + 0x104),
-                   auStack_2c40 + *(int *)(local_14 + 0x108) * 0xec);
+                   CStack_2c4c.properties[*(int *)(local_14 + 0x108)].name);
       }
-      sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
+      _sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
       shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar3,(int)local_3a0);
       *(int *)(local_14 + 0x110) = iVar3;
       if (0 < local_18) {

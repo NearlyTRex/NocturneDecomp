@@ -8,8 +8,7 @@
 // Ghidra size: 0x1bc (444 bytes)
 typedef struct CMarquee {
     CDemonActor base; // 0x0
-    char* course_name; // 0x158
-    char unk1[28]; // 0x15c
+    char course_name[32]; // 0x158
     float total_time; // 0x178
     float param; // 0x17c
     int phase; // 0x180

@@ -32,7 +32,7 @@ void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(vo
   local_20 = (float)g_StoredWorldYCoordinate;
   g_ActiveRenderColor = 0x1f;
   engine_2d_c_drawLine_FUN_004011b0(0,g_MouseReferenceY,6,g_MouseReferenceY);
-  sprintf
+  _sprintf
             (local_70,"%f,%f,%f",(double)local_14,(double)local_1c,(double)local_20);
   engine_2d_c_drawText_FUN_00401fd0(local_70,g_WindowWidth / 2 + 2,g_WindowHeight + -0xb);
   return;

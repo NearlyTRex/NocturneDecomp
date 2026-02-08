@@ -11,9 +11,9 @@ time_t __cdecl time(time_t *optional_output);
 // Address: 00600230
 _tm * __cdecl localtime::r(time_t *timer,_tm *result);
 
-// Original: crt_time.c_localtime_FUN_00600288
+// Original: crt_time.c__localtime_FUN_00600288
 // Address: 00600288
-_tm * __cdecl localtime(time_t *timer);
+_tm * __cdecl ::localtime(time_t *timer);
 
 // Original: crt_time.c_strftime_FUN_006002d4
 // Address: 006002d4

@@ -41,7 +41,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
       if ((0.0 < pCVar5->z) &&
          ((ABS(fVar1 - fVar2) <= (float)5 &&
           (SQRT(fVar4 * fVar4 + fVar3 * fVar3) < (float)4)))) {
-        iVar6 = core_event_cpp_FUN_004b18e0(&this_ptr_00->open_rules);
+        iVar6 = core_event_cpp_FUN_004b18e0(&(this_ptr_00->open_rule).list_size);
         if (iVar6 != 0) {
           return 1;
         }

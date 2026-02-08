@@ -13,6 +13,7 @@ typedef struct CVehicle {
     char unk2[1776]; // 0x93c
     float cur_time; // 0x102c
     float total_time; // 0x1030
-    char unk3[68]; // 0x1034
+    char course_name[32]; // 0x1034
+    char unk3[36]; // 0x1054
 } CVehicle;
 

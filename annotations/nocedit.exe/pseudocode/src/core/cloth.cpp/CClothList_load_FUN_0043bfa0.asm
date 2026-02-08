@@ -7,7 +7,7 @@
 ; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6bd2
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6bd2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_00618562

@@ -20,7 +20,7 @@ shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
     local_40[0] = '\0';
   }
   else {
-    sprintf
+    _sprintf
               (local_40,"%g,%g,%g",(double)result_ptr->x,(double)result_ptr->y,
                (double)result_ptr->z);
   }

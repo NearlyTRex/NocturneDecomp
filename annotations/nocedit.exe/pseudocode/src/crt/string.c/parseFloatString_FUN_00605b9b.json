@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 199,
+    "complexity_score": 282,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 124,
-    "suspect_count": 6,
+    "pseudocode_lines": 127,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "special_crt_function"
+      "special_crt_function",
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 371
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -194,29 +196,78 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffc0",
+      "text": "byte *in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffffc4",
+      "text": "ulonglong *in_stack_ffffffc4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xffffffc0",
+      "text": "(&stack0xffffffc0)[iVar9] = bVar1;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
+      "match": "(char *)((int)",
+      "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)result + 8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 98,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result + 4) = 0;",
       "type": "pointer_cast"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 103,
+      "match": "&stack0xffffffc0",
+      "text": "(&stack0xffffffc0)[iVar9] = 0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_ffffffc0",
+      "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_ffffffc4",
+      "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 113,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)result + 8) = local_24;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 114,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result + 4) = local_28;",
       "type": "pointer_cast"

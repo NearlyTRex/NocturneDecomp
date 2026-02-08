@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_lockTexture
-typedef int (*APIDLL_lockTexture)(int texture_id);
+typedef int APIDLL_lockTexture(int texture_id);
 

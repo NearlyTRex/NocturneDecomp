@@ -1,15 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 76,
+        "column": 77,
         "line": 42,
-        "message": "format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Wformat]"
+        "message": "format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 347,
@@ -46,7 +46,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffef0",

@@ -35,13 +35,13 @@ void __cdecl CCourse(void);
 // Address: 00442a90
 void __cdecl CCourse::save(CCourse *this_ptr);
 
-// Original: core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0
+// Original: core_course.cpp_CCourse_FUN_00442bc0
 // Address: 00442bc0
-int __cdecl OpeningCourseFileMaybe(void);
+int __cdecl CCourse(CCourse *this_ptr);
 
-// Original: core_course.cpp_OpeningCourseFile2_FUN_00442d70
+// Original: core_course.cpp_CCourse_FUN_00442d70
 // Address: 00442d70
-int __cdecl OpeningCourseFile2(void);
+int __cdecl CCourse(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_importMatrices_FUN_00442ea0
 // Address: 00442ea0

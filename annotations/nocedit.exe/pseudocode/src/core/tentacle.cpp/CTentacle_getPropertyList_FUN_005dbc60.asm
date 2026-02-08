@@ -56,7 +56,7 @@ section .text
     PUSH 0x654eac                       ; 005dbcab | = "Grave actor"
     PUSH ESI                            ; 005dbcb0
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005dbcb1
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005dbcb6
     POP EDI                             ; 005dbcb9
     POP ESI                             ; 005dbcba

@@ -7,5 +7,5 @@
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_unlockSample
-typedef int (*CSoundDevice_unlockSample)(struct CSoundDevice* this_ptr, int buffer_id);
+typedef int CSoundDevice_unlockSample(struct CSoundDevice* this_ptr, int buffer_id);
 

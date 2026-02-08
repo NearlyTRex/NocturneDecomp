@@ -2,17 +2,14 @@
 // Address: 005887a0
 // Address Range: [[005887a0, 005887e3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
+// Signature: void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(CShotgun *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_weapon_shotgun.cpp_CShotgun_FUN_005887a0(uint param_1) */
-
-void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
+void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(CShotgun *this_ptr)
 
 {
   CVector3f *pCVar1;
-  CDemonActor *in_stack_00000004;
   CMatrix3x3f local_64;
   CVector3f local_3c;
   CVector3f local_30;
@@ -20,7 +17,7 @@ void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   CVector3f local_18;
   float local_c;
   
-  if (*(int *)(in_stack_00000004[4].actor_name + 8) < 1) {
+  if ((this_ptr->base).ammo_count < 1) {
     return;
   }
   local_30.x = 5.0;
@@ -34,7 +31,7 @@ void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_64,&local_24);
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_64,&local_18,&local_30);
   pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                     (in_stack_00000004,&local_3c,pCVar1);
+                     ((CDemonActor *)this_ptr,&local_3c,pCVar1);
   if (&local_30 != pCVar1) {
     local_30.x = pCVar1->x;
     local_30.y = pCVar1->y;
@@ -42,6 +39,7 @@ void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   }
   core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
   core_fire_cpp_CFireEffect_FUN_004c91e0(g_CFireEffectPtr);
-  (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,"shotgun-cock.wav");
+  (*((this_ptr->base).base.vtable._ub)->playSound)
+            ((CDemonActor *)this_ptr,"shotgun-cock.wav");
   return;
 }

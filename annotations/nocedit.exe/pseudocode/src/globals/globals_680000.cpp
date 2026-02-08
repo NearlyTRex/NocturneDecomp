@@ -2569,6 +2569,73 @@ SAudioFormatDescriptor g_WaveInFormatTable[12] = {
     }
 };
 
+// SEnumPair[10]
+SEnumPair g_TriggerCauseTypePairs[10] = {
+    {.name = (char *)s_Hero_triggers_me_0065589e, .value = 0x00000000},
+    {.name = (char *)s_An_actor_triggers_me_006558af, .value = 0x00000001},
+    {.name = (char *)s_Light_triggers_me_006558c4, .value = 0x00000002},
+    {.name = (char *)s_The_action_button_trigge_006558d6, .value = 0x00000003},
+    {.name = (char *)s_Bullet_triggers_me_006558f4, .value = 0x00000004},
+    {.name = (char *)s_Laser_triggers_me_00655907, .value = 0x00000005},
+    {.name = (char *)s_Explosion_triggers_me_00655919, .value = 0x00000006},
+    {.name = (char *)s_Damage_triggers_me_0065592f, .value = 0x00000007},
+    {.name = (char *)s_Motion_triggers_me_00655942, .value = 0x00000008},
+    {.name = (char *)s_Matched_actors_trigger_m_00655955, .value = 0x00000009}
+};
+
+// SEnumPair[2]
+SEnumPair g_TriggerShapeTypePairs[2] = {
+    {.name = (char *)s_Box_00655980, .value = 0x00000000},
+    {.name = (char *)s_Cylinder_00655984, .value = 0x00000001}
+};
+
+// SEnumPair[3]
+SEnumPair g_SpikeTypeTypePairs[3] = {
+    {.name = (char *)s_Periodic_00652ede, .value = 0x00000000},
+    {.name = (char *)s_Random_00652ee7, .value = 0x00000001},
+    {.name = (char *)s_One_shot_00652eee, .value = 0x00000002}
+};
+SEnumPair g_CryptVesselVisualTypePairs[3] = {
+    {.name = (char *)s_Air_00657194, .value = 0x00000000},
+    {.name = (char *)s_Fire_00657198, .value = 0x00000001},
+    {.name = (char *)s_Water_0065719d, .value = 0x00000002}
+};
+
+// SEnumPair[4]
+SEnumPair g_SpikeStateTypePairs[4] = {
+    {.name = (char *)s_Retracted_00652efc, .value = 0x00000000},
+    {.name = (char *)s_Extending_00652f06, .value = 0x00000001},
+    {.name = (char *)s_Extended_00652f10, .value = 0x00000002},
+    {.name = (char *)s_Retracting_00652f19, .value = 0x00000003}
+};
+SEnumPair g_TriggerEventTypePairs[4] = {
+    {.name = (char *)s_Momentary_00655867, .value = 0x00000000},
+    {.name = (char *)s_One_shot_00655871, .value = 0x00000001},
+    {.name = (char *)s_Rising_edge_0065587a, .value = 0x00000002},
+    {.name = (char *)s_Falling_edge_00655886, .value = 0x00000003}
+};
+SEnumPair g_WaterActorStateTypePairs[4] = {
+    {.name = (char *)s_Lowered_0065745d, .value = 0x00000000},
+    {.name = (char *)s_Rising_00657465, .value = 0x00000001},
+    {.name = (char *)s_Raised_0065746c, .value = 0x00000002},
+    {.name = (char *)s_Lowering_00657473, .value = 0x00000003}
+};
+SEnumPair g_WeaponStateTypePairs[4] = {
+    {.name = (char *)s_Lying_Around_00657b43, .value = 0x00000000},
+    {.name = (char *)s_In_Inventory_00657b50, .value = 0x00000001},
+    {.name = (char *)s_In_Hand_00657b5d, .value = 0x00000002},
+    {.name = (char *)s_On_Hook_00657b65, .value = 0x00000003}
+};
+
+// SEnumPair[5]
+SEnumPair g_TurretStateTypePairs[5] = {
+    {.name = (char *)s_Inactive_006567b0, .value = 0x00000000},
+    {.name = (char *)s_Charging_006567b9, .value = 0x00000001},
+    {.name = (char *)s_Active_006567c2, .value = 0x00000002},
+    {.name = (char *)s_Patrol_006567c9, .value = 0x00000003},
+    {.name = (char *)s_PowerDown_006567d0, .value = 0x00000004}
+};
+
 // SHuffmanTableSource[34]
 SHuffmanTableSource g_HuffmanTableSources[34] = {
     {

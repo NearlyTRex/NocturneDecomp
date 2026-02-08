@@ -20,9 +20,9 @@ core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130
             (property_list,"Stop condition",this_ptr->stop_event);
   core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
             (property_list,"Direction",&this_ptr->direction,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"Actor class to effect",this_ptr->actor_class,0x4f,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

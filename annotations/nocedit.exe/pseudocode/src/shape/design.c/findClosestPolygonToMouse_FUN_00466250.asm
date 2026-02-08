@@ -52,7 +52,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_matrix.c_transformToCache_FUN_0050cd70
@@ -335,8 +335,8 @@ section .text
     PUSH EAX                            ; 004665d3 | = "mX: %d  mY: %d"
     LEA EAX,[EBP + 0xffffff70]          ; 004665d4
     PUSH EAX                            ; 004665da
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004665db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004665db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004665e0
     MOV EAX,[0x00679398]                ; 004665e3 | g_WindowHeight
     SUB EAX,0x37                        ; 004665e8

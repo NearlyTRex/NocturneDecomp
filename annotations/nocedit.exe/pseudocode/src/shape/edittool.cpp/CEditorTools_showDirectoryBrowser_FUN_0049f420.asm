@@ -80,12 +80,12 @@
 ; Called Functions:
 ;   crt_io.c_chdir_FUN_006012a0
 ;   crt_io.c_getcwd_wrapper_FUN_00608d20
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strupr_FUN_00600770
-;   crt_time.c_localtime_FUN_00600288
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_strftime_FUN_006002d4
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
@@ -144,8 +144,8 @@ section .text
     PUSH 0x623112                       ; 0049f4b2 | = "%s\n%s"
     LEA EAX,[ESP + 0x3bc]               ; 0049f4b7
     PUSH EAX                            ; 0049f4be
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049f4bf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0049f4bf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0049f4c4
     LEA EAX,[ESP + 0x8]                 ; 0049f4c7
     PUSH EAX                            ; 0049f4cb
@@ -446,8 +446,8 @@ section .text
     LEA EAX,[ESP + 0x6e8]               ; 0049f829
         ;   Label: LAB_0049f829
     PUSH EAX                            ; 0049f830
-    CALL crt_time.c_localtime_FUN_00600288 ; 0049f831
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 0049f831
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 0049f836
     PUSH EAX                            ; 0049f839
     PUSH 0x62311c                       ; 0049f83a | = "\t%m/%d/%y %I:%M:%S %p"
@@ -468,8 +468,8 @@ section .text
     PUSH 0x623132                       ; 0049f871 | = "%s\t%s\t%d%s"
     LEA EAX,[ESP + 0x1de8]              ; 0049f876
     PUSH EAX                            ; 0049f87d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049f87e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0049f87e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0049f883
     LEA EAX,[ESP + 0x1dd4]              ; 0049f886
     PUSH EAX                            ; 0049f88d
@@ -540,8 +540,8 @@ section .text
     PUSH 0x623150                       ; 0049f947 | = "%s\t%s\t(DIR)"
     LEA EAX,[ESP + 0x1d18]              ; 0049f94c
     PUSH EAX                            ; 0049f953
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049f954
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0049f954
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0049f959
     LEA EAX,[ESP + 0x1d0c]              ; 0049f95c
     PUSH EAX                            ; 0049f963

@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 149,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 11,
     "suspect_types": [
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 103
+    "total_lines": 102
   },
   "cross_references": [],
   "function": {
@@ -121,21 +121,28 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {",
       "type": "stack_param"
@@ -143,13 +150,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000004",
-      "text": "if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {",
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008 != 2) && (in_stack_00000008 != 3)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != 2) && (in_stack_00000008 != 3)) {",
       "type": "stack_param"
@@ -157,34 +164,27 @@
     {
       "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 != 2) && (in_stack_00000008 != 3)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
       "match": "in_stack_00000004",
       "text": "if ((iVar1 != 0) && (in_stack_00000004 == 2)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "SVar2 = getSignalHandler(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "setSignalHandler(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "setSignalHandler(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"

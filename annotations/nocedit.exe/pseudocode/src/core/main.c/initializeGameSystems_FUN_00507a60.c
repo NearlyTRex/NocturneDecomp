@@ -54,7 +54,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     }
   }
   pcVar6 = &stack0xfffff8d8;
-  freopen("stderr.txt","wt",&g_StderrLogFile);
+  _freopen("stderr.txt","wt",&g_StderrLogFile);
   g_RenderingMode = 4;
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
@@ -96,7 +96,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    sprintf
+    _sprintf
               (memory_amount_str,"%.1f",
                (double)((float)g_TotalPhysicalMemory * 9.536743e-07f));
     pcVar8 = memory_amount_str;
@@ -326,7 +326,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar6[1] = cVar2;
       pcVar6 = pcVar6 + 2;
     } while (cVar2 != '\0');
-    sprintf
+    _sprintf
               (temp_buffer,"%.1f",
                (double)((float)g_MessageFlags[0] * 9.536743e-07f));
     pcVar6 = temp_buffer;

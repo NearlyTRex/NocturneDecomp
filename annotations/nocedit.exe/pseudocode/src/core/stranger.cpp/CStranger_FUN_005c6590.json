@@ -22,13 +22,13 @@
       {
         "category": "other",
         "column": 10,
-        "line": 33,
+        "line": 32,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 33,
+        "line": 32,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -37,11 +37,11 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 126,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 40,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -50,7 +50,7 @@
       "undefined_type",
       "unresolved_funcptr"
     ],
-    "total_lines": 103
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -176,19 +176,19 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 4))();",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_var",
       "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 18,
       "match": "CONCAT31",
       "text": "if (CONCAT31(extraout_var,bVar3) != 0) {",
       "type": "decompiler_intrinsic"

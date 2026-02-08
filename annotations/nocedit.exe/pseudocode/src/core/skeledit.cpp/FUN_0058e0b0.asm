@@ -23,7 +23,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_file.c_makepath_FUN_005febfc
 ;   crt_stack.c___STK_FUN_005ff9f3
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;
@@ -82,8 +82,8 @@ section .text
     PUSH EAX                            ; 0058e15b
     LEA EAX,[ESP + 0x10c]               ; 0058e15c
     PUSH EAX                            ; 0058e163
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058e164
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058e164
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058e169
     PUSH 0x64aef6                       ; 0058e16c | = ".tga"
     LEA EAX,[ESP + 0x108]               ; 0058e171

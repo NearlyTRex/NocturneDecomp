@@ -23,16 +23,16 @@ core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Moving",&this_ptr->moving);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Parameter",&this_ptr->param,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Parameter",&this_ptr->param,(CActorPropertyValidatorFunc *)0x0)
+  ;
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Max angle",&this_ptr->max_angle,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"SwooshSound",this_ptr->swoosh_sound);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"SwooshPhaseBias",&this_ptr->swoosh_phase_bias,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"creak1Sound",this_ptr->creak_1_sound);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
@@ -48,10 +48,10 @@ core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0
             (property_list,"Kill enemies",&this_ptr->kill_enemy);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Decay of exp(-1.0 * decay * decayTimer)",&this_ptr->decay,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Decay timer (should be 0.0)",&this_ptr->decay_timer,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
             (property_list,"groundType",&this_ptr->ground_type);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330

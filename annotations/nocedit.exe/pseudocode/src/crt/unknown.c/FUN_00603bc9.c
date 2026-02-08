@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_FUN_00603bc9
 // Address: 00603bc9
 // Address Range: [[00603bc9, 00603bf4]]
-// Convention: unknown
-// Signature: void crt_unknown_c_FUN_00603bc9(void)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_FUN_00603bc9(void)
 
 #include "nocturne.h"
 
-void FUN_00603bc9(void)
+void __cdecl FUN_00603bc9(void)
 
 {
   double dVar1;

@@ -11,5 +11,5 @@ struct CCodec;
 struct _FILE;
 
 // Function Definition: CCodec_process
-typedef int (*CCodec_process)(struct CCodec* this_ptr, struct _FILE* param, int param1, struct _FILE* param2);
+typedef int CCodec_process(struct CCodec* this_ptr, struct _FILE* param, int param1, struct _FILE* param2);
 

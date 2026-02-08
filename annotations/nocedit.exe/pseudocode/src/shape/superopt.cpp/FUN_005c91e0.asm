@@ -8,17 +8,17 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 at 005c8729
+;   shape_superopt.cpp_FUN_005c84c0 at 005c8729
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0065422a = 1.00000000000000E-10
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
 ;   shape_superopt.cpp_FUN_005c8280
 ;   shape_superopt.cpp_FUN_005c9340
 ;   shape_superopt.cpp_FUN_005cb3a0
+;   shape_superopt.cpp_FUN_005cbe20
 ;   shape_superopt.cpp_FUN_005cbf90
 ;
 ; *****************************************************************************
@@ -186,8 +186,8 @@ section .text
     PUSH EAX                            ; 005c92ff
     MOV EDX,dword ptr [EBP + 0x14]      ; 005c9300
     PUSH EDX                            ; 005c9303
-    CALL shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20 ; 005c9304
-        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()
+    CALL shape_superopt.cpp_FUN_005cbe20 ; 005c9304
+        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_FUN_005cbe20()
     ADD ESP,0xc                         ; 005c9309
     TEST EAX,EAX                        ; 005c930c
     JZ 0x005c9206                       ; 005c930e

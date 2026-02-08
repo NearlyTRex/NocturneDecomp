@@ -16,7 +16,7 @@ core_pendulum_cpp_CPendulum_propertyDisplayCallback_FUN_0054a5a0
   pCVar1 = (CPendulum *)
            core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->base,g_CPendulumClassInfo.name_hash);
-  sprintf
+  _sprintf
             (output_buffer,"%f",(double)(*(float *)pCVar1->unk3 * (float)0.5));
   return;
 }

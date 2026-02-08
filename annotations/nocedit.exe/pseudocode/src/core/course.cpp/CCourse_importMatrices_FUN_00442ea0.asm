@@ -27,8 +27,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_course.cpp_OpeningCourseFile2_FUN_00442d70 at 00442e45
-;   core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0 at 00442cd3
+;   core_course.cpp_CCourse_FUN_00442bc0 at 00442cd3
+;   core_course.cpp_CCourse_FUN_00442d70 at 00442e45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_00619123

@@ -255,8 +255,8 @@ section .text
     PUSH 0x647660                       ; 0057abb7 | = "Visit %d, rotate: %d, zcheck %d, rend..."
     LEA EAX,[ESP + 0x400]               ; 0057abbc
     PUSH EAX                            ; 0057abc3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057abc4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057abc4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0057abc9
     PUSH 0x16                           ; 0057abcc
     PUSH 0x0                            ; 0057abce
@@ -287,8 +287,8 @@ section .text
     PUSH 0x64768b                       ; 0057ac1a | = "Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6..."
     LEA EAX,[ESP + 0x420]               ; 0057ac1f
     PUSH EAX                            ; 0057ac26
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057ac27
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057ac27
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0057ac2c | g_WindowHeight
     ADD ESP,0x38                        ; 0057ac31
     SUB EAX,0x2c                        ; 0057ac34
@@ -310,8 +310,8 @@ section .text
     PUSH 0x6476c0                       ; 0057ac65 | = "%f"
     LEA EAX,[ESP + 0x3f8]               ; 0057ac6a
     PUSH EAX                            ; 0057ac71
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057ac72
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057ac72
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0057ac77 | g_WindowHeight
     ADD ESP,0x10                        ; 0057ac7c
     SUB EAX,0xb                         ; 0057ac7f

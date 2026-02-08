@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 340,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
-    "pseudocode_lines": 240,
+    "pseudocode_lines": 251,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 866
+    "total_lines": 877
   },
   "cross_references": [
     {
@@ -63,7 +63,7 @@
     {
       "addr": "0046fd50",
       "is_variadic": false,
-      "name": "core_dest.cpp_FUN_0046fd50"
+      "name": "core_dest.cpp_CActorDestination_FUN_0046fd50"
     },
     {
       "addr": "0052dd20",
@@ -98,7 +98,7 @@
     {
       "addr": "005bb010",
       "is_variadic": false,
-      "name": "core_stranger.cpp_FUN_005bb010"
+      "name": "core_stranger.cpp_CStranger_FUN_005bb010"
     },
     {
       "addr": "00441890",
@@ -542,63 +542,63 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 18,
       "match": "in_stack_ffffff18",
       "text": "double in_stack_ffffff18;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 91,
       "match": "ABS",
-      "text": "((fVar3 < (float)3 && (ABS(fVar8) < (float)2)))) &&",
+      "text": "((fVar3 < (float)3 && (ABS(fVar9) < (float)2)))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 136,
       "match": "ABS",
       "text": "((((fStack_88 < (float)3 && (ABS(fStack_90) < (float)2)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 137,
       "match": "in_stack_ffffff18",
       "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 137,
       "match": "in_stack_ffffff18",
       "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 138,
       "match": "in_stack_ffffff18",
       "text": "(in_stack_ffffff18 < 4)))) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 201,
+      "line": 212,
       "match": "ABS",
       "text": "if (ABS(local_28 - (this_ptr->base).base.base.location.position.y) <= 1.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
+      "line": 216,
       "match": "in_stack_ffffff18",
       "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 244,
       "match": "SQRT",
       "text": "if (SQRT(fStack_40 * fStack_40 + local_48 * local_48 + fStack_44 * fStack_44) <",
       "type": "decompiler_intrinsic"

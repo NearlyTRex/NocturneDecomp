@@ -58,7 +58,7 @@ sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
       }
       else {
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-        sprintf
+        _sprintf
                   (acStack_1c8,"DirectSux: Unable to %s.  (%s)","Create secondary buffer"
                    ,pcVar3);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1c8);

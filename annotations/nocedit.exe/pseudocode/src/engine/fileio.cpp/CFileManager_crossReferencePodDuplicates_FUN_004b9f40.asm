@@ -52,7 +52,7 @@
 ;   crt_io.c_getcwd_wrapper_FUN_00608d20
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_memory.c___vec_new_FUN_00601272
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -458,8 +458,8 @@ section .text
     PUSH 0x628c6b                       ; 004ba414 | = "%s\t%s\t%08X"
     LEA EAX,[ESP + 0x3b8]               ; 004ba419
     PUSH EAX                            ; 004ba420
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ba421
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ba421
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004ba426
     LEA EAX,[ESP + 0x3a8]               ; 004ba429
     PUSH EAX                            ; 004ba430
@@ -480,8 +480,8 @@ section .text
     PUSH 0x628c76                       ; 004ba45e | = "\t%s\t%08X"
     LEA EAX,[ESP + 0x3b4]               ; 004ba463
     PUSH EAX                            ; 004ba46a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ba46b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ba46b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ba470
     LEA EAX,[ESP + 0x3a8]               ; 004ba473
     PUSH EAX                            ; 004ba47a

@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 004234ec
-;   core_stone.cpp_FUN_005badd0 at 005baddb
+;   core_stone.cpp_CTempleStone_getPropertyList_FUN_005badd0 at 005baddb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Model_file_kfm_006167a5
@@ -91,7 +91,7 @@ section .text
     PUSH 0x6167d2                       ; 0042274b | = "PHB RPM"
     PUSH ESI                            ; 00422750
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 00422751
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00422756
     LEA EAX,[EBX + 0x2d4]               ; 00422759
     PUSH EAX                            ; 0042275f
@@ -109,12 +109,12 @@ section .text
     ADD ESP,0xc                         ; 00422780
     LEA EAX,[EBX + 0x314]               ; 00422783
     PUSH EAX                            ; 00422789
-    PUSH 0x66e5dc                       ; 0042278a | PTR_s_Cant_0066e5dc
+    PUSH 0x66e5dc                       ; 0042278a | g_BoxActorPickupTypePairs
     PUSH 0x5                            ; 0042278f
     PUSH 0x616814                       ; 00422791 | = "Pickup type"
     PUSH ESI                            ; 00422796
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 00422797
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 0042279c
     LEA EAX,[EBX + 0x31c]               ; 0042279f
     PUSH EAX                            ; 004227a5
@@ -135,7 +135,7 @@ section .text
     PUSH 0x616838                       ; 004227ce | = "Constrain to this actor's box"
     PUSH ESI                            ; 004227d3
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 004227d4
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 004227d9
     LEA EAX,[EBX + 0x32c]               ; 004227dc
     PUSH EAX                            ; 004227e2

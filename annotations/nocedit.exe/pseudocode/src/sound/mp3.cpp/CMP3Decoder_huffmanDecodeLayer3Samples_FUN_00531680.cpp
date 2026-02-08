@@ -48,7 +48,7 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
     local_1c = g_HuffmanTables;
     do {
       pSVar4 = local_1c;
-      sprintf(local_1c->table_id,"%d",iVar6);
+      _sprintf(local_1c->table_id,"%d",iVar6);
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8) =
            *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 4) =

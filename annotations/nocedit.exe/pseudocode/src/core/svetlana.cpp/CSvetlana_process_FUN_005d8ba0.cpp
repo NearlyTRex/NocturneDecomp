@@ -69,12 +69,12 @@ switchD_005d8f77_caseD_9:
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970();
+  core_svetlana_cpp_CSvetlana_FUN_005d9970(this_ptr);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     if ((this_ptr->base).control_type == 2) {
-      core_svetlana_cpp_FUN_005d9260();
+      core_svetlana_cpp_CSvetlana_FUN_005d9260(this_ptr);
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
@@ -86,7 +86,7 @@ switchD_005d8f77_caseD_9:
     case 10:
       if ((this_ptr->base).base.field3_0x2410 != 0) {
         iVar4 = 0;
-        if (*(int *)this_ptr->unk != 0) {
+        if (this_ptr->unk1 != 0) {
           iVar4 = 10;
         }
         if ((this_ptr->base).action_bindings.walk_key != 0) {
@@ -101,10 +101,10 @@ switchD_005d8f77_caseD_9:
           iVar4 = 3;
         }
         if ((this_ptr->base).action_bindings.draw_key != 0) {
-          iVar4 = *(int *)this_ptr->unk;
+          iVar4 = this_ptr->unk1;
           (this_ptr->base).action_bindings.draw_key = 0;
           uVar7 = (uint)(iVar4 == 0);
-          *(uint *)this_ptr->unk = uVar7;
+          this_ptr->unk1 = uVar7;
           if (uVar7 == 0) {
             iVar4 = 0;
           }
@@ -114,7 +114,7 @@ switchD_005d8f77_caseD_9:
         }
         if ((this_ptr->base).action_bindings.fire_key != 0) {
           bVar2 = true;
-          if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->unk1 == 0) && ((this_ptr->base).control_type != 2)) {
             iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
             bVar2 = false;
             if (iVar8 != 0) goto LAB_005d9011;
@@ -135,7 +135,7 @@ switchD_005d8f77_caseD_9:
 LAB_005d9011:
             if (!bVar2) goto LAB_005d9032;
           }
-          iVar4 = *(int *)(this_ptr->unk + 4);
+          iVar4 = this_ptr->unk2;
           (this_ptr->base).action_bindings.fire_key = 0;
           if (iVar4 == 0) {
             iVar4 = 0xf;
@@ -276,10 +276,9 @@ LAB_005d8e27:
   iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar12 = *(float *)(this_ptr->unk + 0x7fcf8);
+    fVar12 = *(float *)(this_ptr->unk6 + 0xc);
     iVar4 = INT_03f6cb90;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 0x7fcec),&CStack_80)
-    ;
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk6,&CStack_80);
     CStack_90.w = CStack_80.w;
     puVar10 = (uint *)((int)&CStack_90 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     puVar9 = (uint *)((int)&CStack_80 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
@@ -295,10 +294,10 @@ LAB_005d8e27:
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CCloth_process_FUN_0043ab80
-            ((CCloth *)(this_ptr->unk + 8),&position->position,(CVector3f *)euler,delta_time,
+            (&this_ptr->cape_cloth,&position->position,(CVector3f *)euler,delta_time,
              (this_ptr->base).base.closest_distance_threshold,pCVar13);
   core_cloth_cpp_CCloth_process_FUN_0043ab80
-            ((CCloth *)(this_ptr->unk + 0x3fe78),&position->position,(CVector3f *)euler,delta_time,
+            (&this_ptr->hair_cloth,&position->position,(CVector3f *)euler,delta_time,
              (this_ptr->base).base.closest_distance_threshold,pCVar13);
   return;
 }

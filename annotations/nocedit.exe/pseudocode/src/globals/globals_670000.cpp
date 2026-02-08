@@ -35,6 +35,93 @@ CKeys* g_CKeysPtr = (CKeys*)&g_CKeysInstance;
 // CLevelLoader*
 CLevelLoader* g_CLevelLoaderPtr = (CLevelLoader*)&g_CLevelLoaderInstance;
 
+// SEnumPair[11]
+SEnumPair g_EmitterTypePairs[11] = {
+    {.name = (char *)s_Spark_00624185, .value = 0x00000000},
+    {.name = (char *)s_Smoke_0062418b, .value = 0x00000001},
+    {.name = (char *)s_Fireball_00624191, .value = 0x00000002},
+    {.name = (char *)s_Laser_0062419a, .value = 0x00000003},
+    {.name = (char *)s_Rock_006241a0, .value = 0x00000004},
+    {.name = (char *)s_Flame_006241a5, .value = 0x00000005},
+    {.name = (char *)s_Popcorn_006241ab, .value = 0x00000006},
+    {.name = (char *)s_Lightning_006241b3, .value = 0x00000007},
+    {.name = (char *)s_Blue_Spark_006241bd, .value = 0x00000008},
+    {.name = (char *)s_Point_to_point_lightning_006241c8, .value = 0x00000009},
+    {.name = (char *)s_Sound_006241e1, .value = 0x0000000A}
+};
+
+// SEnumPair[2]
+SEnumPair g_DoorSideTypePairs[2] = {
+    {.name = (char *)s_Left_0062139b, .value = 0x00000000},
+    {.name = (char *)s_Right_006213a0, .value = 0x00000001}
+};
+SEnumPair g_DoorSwingTypePairs[2] = {
+    {.name = (char *)s_Clockwise_006213bb, .value = 0x00000000},
+    {.name = (char *)s_Counter_Clockwise_006213c5, .value = 0x00000001}
+};
+SEnumPair g_EmitterSoundTypePairs[2] = {
+    {.name = (char *)s_Normal_006242ab, .value = 0x00000000},
+    {.name = (char *)s_One_Shot_006242b2, .value = 0x00000001}
+};
+SEnumPair g_MarqueeDisplayTypePairs[2] = {
+    {.name = (char *)s_Ring_006359fc, .value = 0x00000000},
+    {.name = (char *)s_Cursive_00635a01, .value = 0x00000001}
+};
+
+// SEnumPair[3]
+SEnumPair g_DoorOneShotTypePairs[3] = {
+    {.name = (char *)s_No_006214d9, .value = 0x00000000},
+    {.name = (char *)s_Yes_006214dc, .value = 0x00000001},
+    {.name = (char *)s_Done_006214e0, .value = 0x00000002}
+};
+SEnumPair g_LeverOpenFromSideTypePairs[3] = {
+    {.name = (char *)s_Both_00631204, .value = 0x00000002},
+    {.name = (char *)s_Pos_Z_only_00631209, .value = 0x00000000},
+    {.name = (char *)s_Neg_Z_only_00631214, .value = 0x00000001}
+};
+
+// SEnumPair[4]
+SEnumPair g_DoorTypePairs[4] = {
+    {.name = (char *)s_Normal_00621366, .value = 0x00000000},
+    {.name = (char *)s_Gate_0062136d, .value = 0x00000001},
+    {.name = (char *)s_Elevator_00621372, .value = 0x00000002},
+    {.name = (char *)s_Coffin_Lid_vertical_0062137b, .value = 0x00000003}
+};
+SEnumPair g_DoorOpenFromSideTypePairs[4] = {
+    {.name = (char *)s_Both_00621504, .value = 0x00000003},
+    {.name = (char *)s_Pos_Z_only_00621509, .value = 0x00000001},
+    {.name = (char *)s_Neg_Z_only_00621514, .value = 0x00000002},
+    {.name = (char *)s_Neither_cannot_manual_op_0062151f, .value = 0x00000000}
+};
+SEnumPair g_FlameTypePairs[4] = {
+    {.name = (char *)s_Torch_0062a1d6, .value = 0x00000000},
+    {.name = (char *)s_Candle_0062a1dc, .value = 0x00000001},
+    {.name = (char *)s_Blue_flame_0062a1e3, .value = 0x00000002},
+    {.name = (char *)s_No_flame_0062a1ee, .value = 0x00000003}
+};
+
+// SEnumPair[5]
+SEnumPair g_MansionPuzzleSlewTypePairs[5] = {
+    {.name = (char *)s_Normal_0063595b, .value = 0x00000000},
+    {.name = (char *)s_Emitter_00635962, .value = 0x00000001},
+    {.name = (char *)s_Gem_0063596a, .value = 0x00000002},
+    {.name = (char *)s_Reflector_0_start_0063596e, .value = 0x00000003},
+    {.name = (char *)s_Reflector_0_end_00635980, .value = 0x00000004}
+};
+
+// SEnumPair[9]
+SEnumPair g_MeleeDamageTypePairs[9] = {
+    {.name = (char *)s_Generic_00635d67, .value = 0x00000000},
+    {.name = (char *)s_Holy_00635d6f, .value = 0x00000001},
+    {.name = (char *)s_Wood_00635d74, .value = 0x00000002},
+    {.name = (char *)s_Silver_00635d79, .value = 0x00000003},
+    {.name = (char *)s_Gold_00635d80, .value = 0x00000004},
+    {.name = (char *)s_Flaming_00635d85, .value = 0x00000005},
+    {.name = (char *)s_Blanks_00635d8d, .value = 0x00000006},
+    {.name = (char *)s_Lithium_00635d94, .value = 0x00000007},
+    {.name = (char *)s_Mercury_00635d9c, .value = 0x00000008}
+};
+
 // SInputFace*[2000]
 SInputFace* g_VisibleFacePointers[2000] = {};
 

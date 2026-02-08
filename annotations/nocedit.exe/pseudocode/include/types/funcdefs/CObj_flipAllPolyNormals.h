@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_flipAllPolyNormals
-typedef void (*CObj_flipAllPolyNormals)(struct CObj* this_ptr);
+typedef void CObj_flipAllPolyNormals(struct CObj* this_ptr);
 

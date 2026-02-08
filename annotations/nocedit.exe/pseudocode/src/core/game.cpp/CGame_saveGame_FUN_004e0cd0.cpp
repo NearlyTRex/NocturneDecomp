@@ -72,7 +72,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
       return;
     }
     splitpath(local_558,(char *)0x0,(char *)0x0,local_454,(char *)0x0);
-    sprintf(local_558,"%s.noc",local_454);
+    _sprintf(local_558,"%s.noc",local_454);
   }
   else {
     do {
@@ -147,7 +147,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
       crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)local_14c,0);
       return;
     }
-    sprintf(local_350,"%s\\%s","save",local_558);
+    _sprintf(local_350,"%s\\%s","save",local_558);
     crt_fstream_cpp_openFile_FUN_00600e85((ifstream *)local_cc,local_350,0x112,iVar3);
     if (local_6c != 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar5);

@@ -76,42 +76,42 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
             (this_ptr_00,motion_index,22.0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (this_ptr_00,&local_18,INT_03f6bb04);
-  if ((CVector3f *)(this_ptr->unk2 + 0x80) != pCVar2) {
-    ((CVector3f *)(this_ptr->unk2 + 0x80))->x = pCVar2->x;
-    *(float *)(this_ptr->unk2 + 0x84) = pCVar2->y;
-    *(float *)(this_ptr->unk2 + 0x88) = pCVar2->z;
+  if ((CVector3f *)(this_ptr->unk6 + 0x80) != pCVar2) {
+    ((CVector3f *)(this_ptr->unk6 + 0x80))->x = pCVar2->x;
+    *(float *)(this_ptr->unk6 + 0x84) = pCVar2->y;
+    *(float *)(this_ptr->unk6 + 0x88) = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&local_24,INT_03f6badc);
-  if ((CVector3f *)(this_ptr->unk2 + 0x8c) != pCVar2) {
-    ((CVector3f *)(this_ptr->unk2 + 0x8c))->x = pCVar2->x;
-    *(float *)(this_ptr->unk2 + 0x90) = pCVar2->y;
-    *(float *)(this_ptr->unk2 + 0x94) = pCVar2->z;
+  if ((CVector3f *)(this_ptr->unk6 + 0x8c) != pCVar2) {
+    ((CVector3f *)(this_ptr->unk6 + 0x8c))->x = pCVar2->x;
+    *(float *)(this_ptr->unk6 + 0x90) = pCVar2->y;
+    *(float *)(this_ptr->unk6 + 0x94) = pCVar2->z;
   }
   core_stranger_cpp_CStranger_FUN_005be520(this_ptr);
-  this_ptr->unk2[0x98] = '\0';
-  this_ptr->unk2[0x99] = '\0';
-  this_ptr->unk2[0x9a] = '\0';
-  this_ptr->unk2[0x9b] = '\0';
-  this_ptr->unk3[0x10] = '\0';
-  this_ptr->unk3[0x11] = '\0';
-  this_ptr->unk3[0x12] = '\0';
-  this_ptr->unk3[0x13] = '\0';
+  this_ptr->unk6[0x98] = '\0';
+  this_ptr->unk6[0x99] = '\0';
+  this_ptr->unk6[0x9a] = '\0';
+  this_ptr->unk6[0x9b] = '\0';
+  this_ptr->unk7[0x10] = '\0';
+  this_ptr->unk7[0x11] = '\0';
+  this_ptr->unk7[0x12] = '\0';
+  this_ptr->unk7[0x13] = '\0';
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&this_ptr->model,"stranger-hat.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
-  this_ptr->unk3[0x18] = '\0';
-  this_ptr->unk3[0x19] = '\0';
-  this_ptr->unk3[0x1a] = '\0';
-  this_ptr->unk3[0x1b] = '\0';
-  this_ptr->unk2[0xc] = '\0';
-  this_ptr->unk2[0xd] = '\0';
-  this_ptr->unk2[0xe] = '\0';
-  this_ptr->unk2[0xf] = '\0';
-  this_ptr->unk2[0x10] = '\0';
-  this_ptr->unk2[0x11] = '\0';
-  this_ptr->unk2[0x12] = '\0';
-  this_ptr->unk2[0x13] = '\0';
+  this_ptr->unk7[0x18] = '\0';
+  this_ptr->unk7[0x19] = '\0';
+  this_ptr->unk7[0x1a] = '\0';
+  this_ptr->unk7[0x1b] = '\0';
+  this_ptr->unk6[0xc] = '\0';
+  this_ptr->unk6[0xd] = '\0';
+  this_ptr->unk6[0xe] = '\0';
+  this_ptr->unk6[0xf] = '\0';
+  this_ptr->unk6[0x10] = '\0';
+  this_ptr->unk6[0x11] = '\0';
+  this_ptr->unk6[0x12] = '\0';
+  this_ptr->unk6[0x13] = '\0';
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                           (&(this_ptr->base).base.model);
   DAT_03f6bb24 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240

@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -308,8 +308,8 @@ section .text
     PUSH 0x627678                       ; 004b58ac | = "%s is not the same size as %s"
     LEA EAX,[ESP + 0x410]               ; 004b58b1
     PUSH EAX                            ; 004b58b8
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b58b9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b58b9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x627696                    ; 004b58be | = "..\\engine\\fileio.cpp"
     ADD ESP,0x10                        ; 004b58c3
     LEA EAX,[ESP + 0x404]               ; 004b58c6

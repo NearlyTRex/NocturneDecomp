@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_SomethingFPUControlWord(uint param_1, uint param_2) */
-
 uint SomethingFPUControlWord(void)
 
 {

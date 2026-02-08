@@ -19,7 +19,7 @@ CEdButton* g_ActiveButton = {};
 CEditorTools g_CEditorToolsInstance = {};
 
 // CVector3f
-CVector3f CVector3f_02cf2b60 = {};
+CVector3f g_EmitterTarget = {};
 
 // HWND
 HWND g_DialogParentWindow = {};
@@ -83,7 +83,7 @@ int g_DragStartMouseX = {};
 int g_DragStartMouseY = {};
 int g_DragStartScrollPos = {};
 int g_DragStartThumbPos = {};
-int INT_02cf2b5c = {};
+int g_SlewTargetMode = {};
 int g_GlobalDeltaTimeInt = {};
 int g_AnimationTimerValue = {};
 int g_MouseX = {};
@@ -102,7 +102,6 @@ uint* g_ZBufferScanlineArray[1200] = {};
 undefined4 DAT_02cf2b6c = {};
 undefined4 DAT_02cf2b70 = {};
 undefined4 DAT_02cf2b74 = {};
-undefined4 DAT_02cf2b78 = {};
 undefined4 DAT_02cf2bf4 = {};
 undefined4 DAT_02cf2bf8 = {};
 undefined4 DAT_02cf4b30 = {};

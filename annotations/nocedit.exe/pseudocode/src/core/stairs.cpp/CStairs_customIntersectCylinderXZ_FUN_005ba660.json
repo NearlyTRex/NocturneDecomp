@@ -1,0 +1,107 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ba660",
+    "address_range": [
+      [
+        "005ba660",
+        "005ba694"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660",
+    "signature": "void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660 (CStairs *this_ptr,SIntersectXZCylinder *cylinder)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049ad80",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 21,
+      "INT_ADD": 13,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStairs *"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStairs",
+        "offset": 180,
+        "vtable_addr": "006634d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

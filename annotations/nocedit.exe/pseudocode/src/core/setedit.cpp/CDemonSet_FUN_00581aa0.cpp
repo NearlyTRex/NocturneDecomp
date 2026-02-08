@@ -179,7 +179,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       } while (cVar1 != '\0');
     }
     else {
-      sprintf(local_194,"Room size: %d");
+      _sprintf(local_194,"Room size: %d");
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);

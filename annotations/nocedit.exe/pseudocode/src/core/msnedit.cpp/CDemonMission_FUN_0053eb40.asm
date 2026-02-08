@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_playSound_FUN_005b3a20
 ;   core_sound.cpp_CSound_shutdown_FUN_005b2f70
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -87,8 +87,8 @@ section .text
     PUSH 0x63d060                       ; 0053eba0 | = "Playing %s"
     LEA EAX,[ESP + 0xc]                 ; 0053eba5
     PUSH EAX                            ; 0053eba9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053ebaa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053ebaa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053ebaf
     LEA EAX,[ESP + 0x4]                 ; 0053ebb2
     PUSH EAX                            ; 0053ebb6

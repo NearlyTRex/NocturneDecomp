@@ -10,10 +10,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ec80(CDemonMission *this_ptr
 
 {
   CDemonActor *this_ptr_00;
-  int *piVar1;
-  int iVar2;
+  CActorProperty *this_ptr_01;
+  int iVar1;
   int iStack_2aa4;
-  int aiStack_2aa0 [2365];
+  CActorProperty aCStack_2aa0 [40];
   CPickList local_5ac;
   char acStack_1fc [300];
   char acStack_d0 [192];
@@ -28,22 +28,23 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ec80(CDemonMission *this_ptr
             (g_CEditorToolsPtr,"Finding sound files in mission...");
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {
-    core_actor_cpp_FUN_0040e130();
+    core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd550);
     (*((this_ptr_00->vtable)._ub)->getPropertyList)
               (this_ptr_00,(CActorPropertyList *)&stack0xffffd550);
-    iVar2 = 0;
+    iVar1 = 0;
     if (0 < iStack_2aa4) {
-      piVar1 = aiStack_2aa0;
+      this_ptr_01 = aCStack_2aa0;
       do {
-        if ((*piVar1 == 8) && (core_actor_cpp_CActorProperty_FUN_0040ea50(), acStack_d0[0] != '\0'))
-        {
-          sprintf(acStack_1fc,"%s\t%s %s",acStack_d0);
+        if ((this_ptr_01->type == PROP_SOUND) &&
+           (core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
+                      (this_ptr_01,this_ptr_00,acStack_d0), acStack_d0[0] != '\0')) {
+          _sprintf(acStack_1fc,"%s\t%s %s",acStack_d0);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     ((CStrList *)&local_5ac.base.data_array,acStack_1fc);
         }
-        iVar2 = iVar2 + 1;
-        piVar1 = piVar1 + 0x3b;
-      } while (iVar2 < iStack_2aa4);
+        iVar1 = iVar1 + 1;
+        this_ptr_01 = this_ptr_01 + 1;
+      } while (iVar1 < iStack_2aa4);
     }
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

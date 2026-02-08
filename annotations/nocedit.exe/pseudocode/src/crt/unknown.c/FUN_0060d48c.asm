@@ -69,7 +69,7 @@ section .text
     LEA EAX,[EBP + -0x20]               ; 0060d4e9
     PUSH EAX                            ; 0060d4ec
     CALL crt_unknown.c_FUN_00603dc8     ; 0060d4ed
-        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603dc8()
+        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603dc8()
     MOV EDX,dword ptr [EBP + 0x14]      ; 0060d4f2
     MOV EAX,dword ptr [EBP + -0x34]     ; 0060d4f5
     MOV dword ptr [EDX],EAX             ; 0060d4f8

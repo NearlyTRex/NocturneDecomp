@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Randomness_0062a238
 ;   TerminatedCString s_Catch_hero_on_fire_0062a243
 ;   TerminatedCString s_Catch_enemies_on_fire_0062a256
-;   void* PTR_s_Torch_0067b0e0 = 0062a1d6
+;   SEnumPair[4] g_FlameTypePairs
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
@@ -42,12 +42,12 @@ section .text
     ADD ESP,0x8                         ; 004cae81
     LEA EAX,[EBX + 0x1a8]               ; 004cae84
     PUSH EAX                            ; 004cae8a
-    PUSH 0x67b0e0                       ; 004cae8b | PTR_s_Torch_0067b0e0
+    PUSH 0x67b0e0                       ; 004cae8b | g_FlameTypePairs
     PUSH 0x4                            ; 004cae90
     PUSH 0x62a1f7                       ; 004cae92 | = "Flame type"
     PUSH ESI                            ; 004cae97
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 004cae98
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 004cae9d
     PUSH 0x0                            ; 004caea0
     LEA EAX,[EBX + 0x1ac]               ; 004caea2
@@ -55,7 +55,7 @@ section .text
     PUSH 0x62a202                       ; 004caea9 | = "Globe scalar"
     PUSH ESI                            ; 004caeae
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004caeaf
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004caeb4
     LEA EAX,[EBX + 0x1b8]               ; 004caeb7
     PUSH EAX                            ; 004caebd
@@ -84,7 +84,7 @@ section .text
     PUSH 0x62a22e                       ; 004caeff | = "Intensity"
     PUSH ESI                            ; 004caf04
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004caf05
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004caf0a
     PUSH 0x0                            ; 004caf0d
     LEA EAX,[EBX + 0x284]               ; 004caf0f
@@ -92,7 +92,7 @@ section .text
     PUSH 0x62a238                       ; 004caf16 | = "Randomness"
     PUSH ESI                            ; 004caf1b
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004caf1c
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004caf21
     LEA EAX,[EBX + 0x288]               ; 004caf24
     PUSH EAX                            ; 004caf2a

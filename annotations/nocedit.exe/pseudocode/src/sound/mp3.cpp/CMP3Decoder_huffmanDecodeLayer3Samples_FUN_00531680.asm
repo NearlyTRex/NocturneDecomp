@@ -50,7 +50,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160
 ;   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
@@ -268,8 +268,8 @@ section .text
     PUSH 0x63af26                       ; 005318f2 | = "%d"
     MOV EDI,dword ptr [ESP + 0x34]      ; 005318f7
     PUSH EDI                            ; 005318fb | g_HuffmanTables | DAT_02f68ab0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005318fc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005318fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00531901
     MOV EAX,dword ptr [ESP + 0x30]      ; 00531904
     MOV EAX,dword ptr [EAX + 0x680170]  ; 00531908 | g_HuffmanTableSources

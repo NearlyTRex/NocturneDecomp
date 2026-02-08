@@ -15,10 +15,10 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar1->base).model,"dynamitestick.kfm");
-  (pCVar1->base).unk3[0x25f] = '\0';
-  (pCVar1->base).unk3[0x260] = '\0';
-  (pCVar1->base).unk3[0x261] = -0x80;
-  (pCVar1->base).unk3[0x262] = '?';
+  (pCVar1->base).unk3[0x25c] = '\0';
+  (pCVar1->base).unk3[0x25d] = '\0';
+  (pCVar1->base).unk3[0x25e] = -0x80;
+  (pCVar1->base).unk3[0x25f] = '?';
   pCVar1->unk[0xc] = '\0';
   pCVar1->unk[0xd] = '\0';
   pCVar1->unk[0xe] = '\0';

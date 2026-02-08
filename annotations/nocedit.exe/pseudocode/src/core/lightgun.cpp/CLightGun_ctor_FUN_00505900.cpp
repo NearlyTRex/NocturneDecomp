@@ -54,7 +54,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *thi
   pCVar3->unk[0xd] = '\0';
   pCVar3->unk[0xe] = -0x80;
   pCVar3->unk[0xf] = '?';
-  *(float *)((pCVar3->base).unk3 + 0x25f) = fVar1;
+  *(float *)((pCVar3->base).unk3 + 0x25c) = fVar1;
   *(float *)(pCVar3->unk + 8) = fVar2;
   return pCVar3;
 }

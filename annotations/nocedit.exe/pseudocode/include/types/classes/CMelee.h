@@ -14,7 +14,7 @@ typedef struct CMelee {
     float dismember_prob; // 0x584
     int can_go_in_inventory; // 0x588
     char unk1[16]; // 0x58c
-    int ammo_type; // 0x59c
+    int damage_type; // 0x59c
     char* thrust_hit_character_sound; // 0x5a0
     char unk2[96]; // 0x5a4
     char* swing_hit_character_sound; // 0x604

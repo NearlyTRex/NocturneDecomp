@@ -28,7 +28,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
   pCVar1 = __vec_new(array_memory,element_count,type_info);
   this_ptr->bitmap_array = pCVar1;
   if (pCVar1 == (CPackedBitmap *)0x0) {
-    sprintf
+    _sprintf
               (local_d0,"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc",bitmap_count * 0x24,bitmap_count);
     g_CurrentLineNumber = 0x6c;
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";

@@ -25,7 +25,7 @@
 ;   core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 at 004be1b8
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2c79
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f5b9
-;   core_svetlana.cpp_CSvetlana_FUN_005d88e0 at 005d8b01
+;   core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0 at 005d8b01
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e5760
 ;
 ; Referenced Globals:

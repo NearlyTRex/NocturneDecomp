@@ -13,18 +13,18 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005ebe70(CWayPoint *thi
   
   pCVar1 = (CWayPoint *)core_trigger_cpp_CTrigger_ctor_FUN_005df840(&this_ptr->base);
   (pCVar1->base).base.vtable._ub = &g_CWayPointVTable;
-  (pCVar1->base).unk[8] = '\0';
-  (pCVar1->base).unk[9] = '\0';
-  (pCVar1->base).unk[10] = '\0';
-  (pCVar1->base).unk[0xb] = '?';
-  (pCVar1->base).unk[0xc] = '\0';
-  (pCVar1->base).unk[0xd] = '\0';
-  (pCVar1->base).unk[0xe] = -0x80;
-  (pCVar1->base).unk[0xf] = '?';
-  (pCVar1->base).unk[0x10] = '\0';
-  (pCVar1->base).unk[0x11] = '\0';
-  (pCVar1->base).unk[0x12] = '\0';
-  (pCVar1->base).unk[0x13] = '?';
+  (pCVar1->base).unk1[0] = '\0';
+  (pCVar1->base).unk1[1] = '\0';
+  (pCVar1->base).unk1[2] = '\0';
+  (pCVar1->base).unk1[3] = '?';
+  (pCVar1->base).unk1[4] = '\0';
+  (pCVar1->base).unk1[5] = '\0';
+  (pCVar1->base).unk1[6] = -0x80;
+  (pCVar1->base).unk1[7] = '?';
+  (pCVar1->base).unk1[8] = '\0';
+  (pCVar1->base).unk1[9] = '\0';
+  (pCVar1->base).unk1[10] = '\0';
+  (pCVar1->base).unk1[0xb] = '?';
   pCVar1->num_adjacent_waypoints = 0;
   return pCVar1;
 }

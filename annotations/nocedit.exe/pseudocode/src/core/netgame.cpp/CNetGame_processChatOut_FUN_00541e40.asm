@@ -27,7 +27,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_netgame.cpp_CNetGame_FUN_00542370
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -115,8 +115,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00541f39
     PUSH EAX                            ; 00541f3d
     PUSH EBX                            ; 00541f3e
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 00541f3f
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 00541f3f
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00541f44
     PUSH EBX                            ; 00541f47
     LEA EAX,[ESI + 0x8]                 ; 00541f48

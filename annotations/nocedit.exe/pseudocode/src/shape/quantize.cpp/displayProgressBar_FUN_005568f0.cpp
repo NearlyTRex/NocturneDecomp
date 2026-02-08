@@ -32,7 +32,7 @@ shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,i
   dVar3 = round
                     (((double)current_index / (double)total_count) * 20);
   uStack_18 = (ulong)ROUND(dVar3);
-  sprintf(buffer,pcVar1,pcVar4);
+  _sprintf(buffer,pcVar1,pcVar4);
   do {
     pcVar1 = pcVar2;
     if (*pcVar2 == '[') goto LAB_0055695d;
@@ -49,7 +49,7 @@ LAB_0055695d:
   if (label + -1 != (char *)total_count) {
     return 0;
   }
-  sprintf((char *)&pcStack_7c,"%s [....................]\n",unaff_retaddr);
+  _sprintf((char *)&pcStack_7c,"%s [....................]\n",unaff_retaddr);
   engine_2d_c_drawText_FUN_00401fd0((char *)&pcStack_7c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   return 0;

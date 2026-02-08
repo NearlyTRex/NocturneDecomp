@@ -15,8 +15,8 @@
 ;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545de8
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 0059715e
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 at 005a059d
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6e55
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c70fc
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6e55
 ;   ... and 2 more
 ;
 ; Called Functions:

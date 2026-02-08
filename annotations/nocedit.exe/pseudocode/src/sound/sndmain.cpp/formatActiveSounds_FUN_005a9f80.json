@@ -1,33 +1,33 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
         "column": 83,
         "line": 23,
-        "message": "format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 26,
         "line": 24,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 26,
         "line": 25,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
         "line": 26,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 54,
@@ -59,7 +59,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005a80e0",

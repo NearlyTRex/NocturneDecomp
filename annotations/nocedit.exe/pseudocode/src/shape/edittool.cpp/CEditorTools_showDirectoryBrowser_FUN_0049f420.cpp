@@ -87,7 +87,7 @@ LAB_0049f47a:
       pcVar8 = pcVar8 + ((uint)bVar7 * -2 + 1) * 4;
     }
     getcwd_wrapper(local_17dc,0x104);
-    sprintf(local_1b20,"%s\n%s",file_pattern,local_17dc);
+    _sprintf(local_1b20,"%s\n%s",file_pattern,local_17dc);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1ec8);
     engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_18f0);
     if (include_files == 0) {
@@ -109,9 +109,9 @@ LAB_0049f47a:
           } while (cVar1 != '\0');
           memmove(&local_4c4,local_4c3,~uVar5 - 1);
         }
-        time_ptr = localtime((time_t *)&local_18f0.attributes);
+        time_ptr = _localtime((time_t *)&local_18f0.attributes);
         strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
-        sprintf
+        _sprintf
                   (local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
         strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,local_fc);
@@ -164,7 +164,7 @@ LAB_0049f47a:
             } while (cVar1 != '\0');
             memmove(&local_6c4,local_6c3,~uVar5 - 1);
           }
-          sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
+          _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
           strupr(local_1c4);
           pcVar8 = local_1c4;
         }

@@ -409,7 +409,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                              (local_290,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x866
                              );
         if (local_20 != (_FILE *)0x0) {
-          sprintf(local_aa8,"Building %s...",local_290);
+          _sprintf(local_aa8,"Building %s...",local_290);
           shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                     (g_CEditorToolsPtr,local_aa8);
           local_34 = 0;
@@ -593,7 +593,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
             engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
             (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
           }
-          sprintf
+          _sprintf
                     (acStack_aa4,"Successfully built %s\n\n%d files totaling %d bytes\n\n%d files added\n%d files removed\n%d files changed\n\nTotal pod size %d bytes",local_290 + 4,
                      *(uint *)(pod_filename + 4),local_34 - (int)local_5c,local_4c,local_48,
                      local_44);
@@ -635,7 +635,7 @@ LAB_004b629d:
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar13,pacVar8);
       }
       else {
-        sprintf(local_190,"Couldn't build %s because the following files don't exist on the hard disk",local_290);
+        _sprintf(local_190,"Couldn't build %s because the following files don't exist on the hard disk",local_290);
         shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                   ((CPickList *)local_140c,local_190,-1,0);
       }

@@ -56,7 +56,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       } while (cVar1 != '\0');
     }
     else {
-      sprintf(local_21c,"Current mission: %s.msn",local_14);
+      _sprintf(local_21c,"Current mission: %s.msn",local_14);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_21c,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("1. Load mission",0,0x2c);
@@ -114,7 +114,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                       (g_CEditorToolsPtr,"No mission loaded.");
           }
           else {
-            sprintf(local_320,"%s.msn",local_14);
+            _sprintf(local_320,"%s.msn",local_14);
             iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Save mission to %s",local_320);
             if (iVar4 != 0) {
@@ -188,7 +188,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                                   "world",0x63c162,(int)local_320), iVar4 != 0)) {
         splitpath(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
         ;
-        sprintf(local_320,"%s.msn",local_11c);
+        _sprintf(local_320,"%s.msn",local_11c);
         core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(this_ptr,local_11c);
       }
     }

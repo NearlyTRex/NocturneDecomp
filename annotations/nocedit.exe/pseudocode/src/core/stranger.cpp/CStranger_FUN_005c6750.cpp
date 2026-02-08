@@ -13,14 +13,14 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr)
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_hero_cpp_CHero_FUN_004f3b20(&this_ptr->base);
-  this_ptr->unk1[0x50] = '\0';
-  this_ptr->unk1[0x51] = '\0';
-  this_ptr->unk1[0x52] = '\0';
-  this_ptr->unk1[0x53] = '\0';
-  this_ptr->unk1[0x54] = '\0';
-  this_ptr->unk1[0x55] = '\0';
-  this_ptr->unk1[0x56] = '\0';
-  this_ptr->unk1[0x57] = '\0';
+  this_ptr->unk5[4] = '\0';
+  this_ptr->unk5[5] = '\0';
+  this_ptr->unk5[6] = '\0';
+  this_ptr->unk5[7] = '\0';
+  this_ptr->unk5[8] = '\0';
+  this_ptr->unk5[9] = '\0';
+  this_ptr->unk5[10] = '\0';
+  this_ptr->unk5[0xb] = '\0';
   this_ptr->action_pending = 0;
   (this_ptr->base).base.field47_0x2a8c = 0;
   (this_ptr->base).base.field48_0x2a90 = 0;

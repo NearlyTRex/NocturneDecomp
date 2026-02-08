@@ -9,8 +9,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0 at 0042f8ac
-;   core_stairs.cpp_FUN_005babf0 at 005babfa
-;   core_teleport.cpp_CTeleport_FUN_005dab70 at 005dab7b
+;   core_stairs.cpp_CStairs_onActorDeleted_FUN_005babf0 at 005babfa
+;   core_teleport.cpp_CTeleport_onActorDeleted_FUN_005dab70 at 005dab7b
 ;
 ; *****************************************************************************
 

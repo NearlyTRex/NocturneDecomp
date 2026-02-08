@@ -20,7 +20,7 @@ core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Recombine time",&this_ptr->recombine_time,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Death condition",this_ptr->death_event);
   return;

@@ -8,5 +8,5 @@ struct CParticle;
 struct CVector3f;
 
 // Function Definition: CParticle_setup
-typedef void (*CParticle_setup)(struct CParticle* this_ptr, struct CVector3f* position, struct CVector3f* velocity);
+typedef void CParticle_setup(struct CParticle* this_ptr, struct CVector3f* position, struct CVector3f* velocity);
 

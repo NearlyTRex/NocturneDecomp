@@ -22,7 +22,7 @@ typedef struct CTurret {
     float fire_delay_time; // 0x774
     float rotate_deg_per_sec; // 0x778
     float timer; // 0x77c
-    int unk3; // 0x780
+    struct CDemonActor* guard_zone_box_trigger; // 0x780
     char allowed_victim_types[200]; // 0x784
     char unk4[12]; // 0x84c
     int can_manual_aim; // 0x858

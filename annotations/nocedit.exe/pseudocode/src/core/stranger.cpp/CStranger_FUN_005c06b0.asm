@@ -16,8 +16,8 @@
 ;
 ; XREF[3]:
 ;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc387
-;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c3397
 ;   core_stranger.cpp_CStranger_FUN_005c5f10 at 005c61b2
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c3397
 ;
 ; Called Functions:
 ;   core_stranger.cpp_CStranger_FUN_005c07b0

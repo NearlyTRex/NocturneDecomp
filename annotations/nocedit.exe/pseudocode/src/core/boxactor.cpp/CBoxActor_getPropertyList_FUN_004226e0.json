@@ -1,32 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 35,
-        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 36,
-        "message": "use of undeclared identifier 'PTR_s_Cant_0066e5dc'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 56,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 20,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 57,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 235
+    "total_lines": 236
   },
   "cross_references": [
     {
@@ -38,7 +25,7 @@
     {
       "addr": "005badd0",
       "from_addr": "005baddb",
-      "name": "core_stone.cpp_FUN_005badd0",
+      "name": "core_stone.cpp_CTempleStone_getPropertyList_FUN_005badd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -233,9 +220,9 @@
     },
     {
       "addr": "0066e5dc",
-      "name": "PTR_s_Cant_0066e5dc",
-      "type": "void*",
-      "value": "006167f1"
+      "name": "g_BoxActorPickupTypePairs",
+      "type": "SEnumPair[5]",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -253,7 +240,7 @@
       {
         "call_addr": "005baddb",
         "call_type": "direct",
-        "caller": "core_stone.cpp_FUN_005badd0",
+        "caller": "core_stone.cpp_CTempleStone_getPropertyList_FUN_005badd0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "reg_params": [],

@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 12,
+        "column": 13,
         "line": 15,
-        "message": "use of undeclared identifier 'stack0xffffff98'"
+        "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       },
       {
         "category": "undeclared_identifier",
@@ -61,7 +61,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -193,7 +193,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0xffffff98",
-      "text": "sprintf(&stack0xffffff98,\"%g\",(double)*output);",
+      "text": "_sprintf(&stack0xffffff98,\"%g\",(double)*output);",
       "type": "stack_ref"
     },
     {

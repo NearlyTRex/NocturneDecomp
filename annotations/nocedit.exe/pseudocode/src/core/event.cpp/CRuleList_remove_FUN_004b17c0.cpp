@@ -20,11 +20,10 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
   iVar1 = this_ptr->list_size + -1;
   this_ptr->list_size = iVar1;
   memmove
-            (this_ptr + in_stack_00000008 * 0x19 + 1,this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,
+            (this_ptr->conditions + in_stack_00000008,this_ptr->conditions + in_stack_00000008 + 1,
              (iVar1 - in_stack_00000008) * 100);
   memmove
-            (this_ptr + in_stack_00000008 * 0x19 + 0x7e,
-             this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,
+            (this_ptr->events + in_stack_00000008,this_ptr->events + in_stack_00000008 + 1,
              (this_ptr->list_size - in_stack_00000008) * 100);
   return;
 }

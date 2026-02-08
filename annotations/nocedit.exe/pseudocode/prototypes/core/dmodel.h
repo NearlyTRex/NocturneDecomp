@@ -263,17 +263,17 @@ int __cdecl CDemonTriangle::copy(CDemonTriangle *this_ptr,CDemonTriangle *other)
 // Address: 0047ef60
 void __cdecl SRA4HQPoint::copy(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
 
-// Original: core_dmodel.cpp_copyModels_FUN_0047ef90
+// Original: core_dmodel.cpp_copyFloat_FUN_0047ef90
 // Address: 0047ef90
-CKeyFramedModel ** __cdecl copyModels(CKeyFramedModel **first,CKeyFramedModel **second);
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_dmodel.cpp_copyModels_FUN_0047efa0
+// Original: core_dmodel.cpp_copyFloat_FUN_0047efa0
 // Address: 0047efa0
-CKeyFramedModel * __cdecl copyModels(CKeyFramedModel **first,CKeyFramedModel **second);
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_dmodel.cpp_copyModels_FUN_0047efb0
+// Original: core_dmodel.cpp_copyFloat_FUN_0047efb0
 // Address: 0047efb0
-CKeyFramedModel * __cdecl copyModels(CKeyFramedModel **first,CKeyFramedModel **second);
+float * __cdecl copyFloat(float *dst,float *src);
 
 // Original: core_dmodel.cpp_freeModels_FUN_0047efc0
 // Address: 0047efc0

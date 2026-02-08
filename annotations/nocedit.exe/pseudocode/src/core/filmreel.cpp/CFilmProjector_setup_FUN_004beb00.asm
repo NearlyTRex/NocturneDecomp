@@ -7,7 +7,7 @@
 ; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_dest.cpp_FUN_0046f970
+;   core_dest.cpp_CActorDestination_setup_FUN_0046f970
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;
 ; *****************************************************************************
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_filmreel.cpp_CFilmProjector_setup_FUN_004beb00
     MOV EBX,dword ptr [ESP + 0x8]       ; 004beb01
     PUSH EBX                            ; 004beb05
-    CALL core_dest.cpp_FUN_0046f970     ; 004beb06
-        ;   XREF to: 0046f970 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046f970()
+    CALL core_dest.cpp_CActorDestination_setup_FUN_0046f970 ; 004beb06
+        ;   XREF to: 0046f970 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_setup_FUN_0046f970(CActorDestination * this_ptr)
     ADD ESP,0x4                         ; 004beb0b
     LEA EAX,[EBX + 0x1f4]               ; 004beb0e
     PUSH EAX                            ; 004beb14

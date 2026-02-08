@@ -39,8 +39,8 @@ void __cdecl core_setedit_cpp_OpenSomethingBackdropThumbs_FUN_005769a0(void)
     g_CurrentLineNumber = 0xd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many thumbs!");
   }
-  sprintf(local_5c,"%s%s.raw");
-  sprintf(local_4c,"%s%s.act");
+  _sprintf(local_5c,"%s%s.raw");
+  _sprintf(local_4c,"%s%s.act");
   local_3c = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_5c,"rb");
   if (local_3c == (_FILE *)0x0) {
     local_3c = engine_dosio_c_getFile_FUN_00481a50("art",local_5c,"rb");

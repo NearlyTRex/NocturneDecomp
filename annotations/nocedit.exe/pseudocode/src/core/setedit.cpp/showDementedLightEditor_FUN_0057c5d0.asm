@@ -58,7 +58,7 @@
 ;   core_setedit.cpp_FUN_0057b910
 ;   core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
 ;   core_setedit.cpp_ResolveMasterLights_FUN_0057c550
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -237,8 +237,8 @@ section .text
     PUSH 0x647b59                       ; 0057c7db | = "%2d. %s"
     LEA EAX,[ESP + 0xeb0]               ; 0057c7e0
     PUSH EAX                            ; 0057c7e7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057c7e8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057c7e8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0057c7ed
     PUSH ESI                            ; 0057c7f0
     PUSH EBX                            ; 0057c7f1

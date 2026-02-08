@@ -26,6 +26,8 @@
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SBoneTransformData.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SMixBuffer.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SSoundDeviceInfo.h"
@@ -92,17 +94,17 @@ void __cdecl core_smiley_cpp_staticInit_FUN_005a23c0(void);
 CSmiley * __cdecl core_smiley_cpp_factorFunc_FUN_005a23f0(void);
 CDemonActorType * __cdecl core_smiley_cpp_CSmiley_getActorType_FUN_005a2420(CSmiley *this_ptr);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr);
-void __cdecl core_smiley_cpp_FUN_005a24d0(void);
-void __cdecl core_smiley_cpp_FUN_005a2800(void);
-int __cdecl core_smiley_cpp_FUN_005a3160(void);
+void __cdecl core_smiley_cpp_CSmiley_FUN_005a24d0(CSmiley *this_ptr);
+void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,float delta_time);
+int __cdecl core_smiley_cpp_CSmiley_FUN_005a3160(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_archive_FUN_005a3220(CSmiley *this_ptr);
-int __cdecl core_smiley_cpp_FUN_005a3280(void);
-void __cdecl core_smiley_cpp_FUN_005a32a0(void);
-void __cdecl core_smiley_cpp_FUN_005a3580(void);
-int __cdecl core_smiley_cpp_FUN_005a3690(void);
-void __cdecl core_smiley_cpp_FUN_005a37f0(void);
+int __cdecl core_smiley_cpp_CSmiley_FUN_005a3280(CSmiley *this_ptr);
+void __cdecl core_smiley_cpp_CSmiley_FUN_005a32a0(CSmiley *this_ptr);
+void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array);
+void __cdecl core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810 (CSmiley *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_smiley_cpp_FUN_005a3850(void);
+void __cdecl core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850(CSmiley *this_ptr,_FILE *file_handle);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880(CSmiley *this_ptr,uint flags);
 void __cdecl sound_sndmain_cpp_staticInit_FUN_005a3940(void);
 void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0 (float *input_real,float *input_imag,float *output_real,float *output_imag,int size);
@@ -267,7 +269,7 @@ void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_005aba40 (int *out_bits_pe
 int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void);
 HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps);
 int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void);
-DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam);
+DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam);
 HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds);
 int __cdecl sound_sndmain_cpp_killSoundThread_FUN_005abcb0(void);
 void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void);

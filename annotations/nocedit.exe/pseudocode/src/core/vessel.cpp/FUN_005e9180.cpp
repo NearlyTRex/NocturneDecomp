@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_vessel.cpp_FUN_005e9180(uint param_1) */
-
 int __cdecl core_vessel_cpp_FUN_005e9180(void)
 
 {

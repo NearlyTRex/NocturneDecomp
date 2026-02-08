@@ -15,7 +15,7 @@
 ;   core_pendulum.cpp_CPendulum_FUN_00549b90 at 0054a0a2
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b3762
 ;   core_sound.cpp_processTrainSounds_FUN_005b2770 at 005b2bc9
-;   core_vehicle.cpp_FUN_005e8b50 at 005e8b84
+;   core_vehicle.cpp_CVehicle_FUN_005e8b50 at 005e8b84
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0

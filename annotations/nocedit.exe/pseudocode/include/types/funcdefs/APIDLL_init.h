@@ -8,5 +8,5 @@
 struct CExternalRendererBridge;
 
 // Function Definition: APIDLL_init
-typedef int (*APIDLL_init)(HWND windowHandle, struct CExternalRendererBridge* interface);
+typedef int APIDLL_init(HWND windowHandle, struct CExternalRendererBridge* interface);
 

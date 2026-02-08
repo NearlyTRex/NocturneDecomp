@@ -14,7 +14,7 @@ engine_font_cpp_CBitFont_printfRightF_FUN_004cdd70
 {
   char local_1010 [4096];
   
-  vsprintf(local_1010,format,args);
+  _vsprintf(local_1010,format,args);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
             (this_ptr,x,y,color_mode,color_value,local_1010);
   return;

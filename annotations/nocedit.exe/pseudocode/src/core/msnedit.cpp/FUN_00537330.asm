@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;
 ; *****************************************************************************
@@ -92,8 +92,8 @@ section .text
     PUSH 0x63b7a4                       ; 005373a7 | = "%s\t%d"
     MOV ECX,dword ptr [ESP + 0x70]      ; 005373ac
     PUSH ECX                            ; 005373b0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005373b1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005373b1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV ESI,dword ptr [EBX + 0x2c]      ; 005373b6
     ADD ESP,0x10                        ; 005373b9
     TEST ESI,ESI                        ; 005373bc

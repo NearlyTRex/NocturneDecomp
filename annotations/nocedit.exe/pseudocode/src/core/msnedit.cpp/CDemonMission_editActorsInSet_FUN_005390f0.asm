@@ -107,11 +107,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-;   core_actor.cpp_CActorProperty_FUN_0040ea50
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+;   core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_FUN_0040e150
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860
@@ -142,8 +142,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053910c
     PUSH 0x2f7a024                      ; 00539112 | DAT_02f7a024
     MOV dword ptr [EAX + 0x4],0x1       ; 00539117
-    CALL core_actor.cpp_FUN_0040e150    ; 0053911e
-        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e150()
+    CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053911e
+        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 00539123
     ADD ESP,0x4                         ; 00539129
     MOV EDX,dword ptr [0x0067b654]      ; 0053912c | g_CGameInstance | g_CGamePtr
@@ -353,8 +353,8 @@ section .text
     PUSH 0x63c38a                       ; 005393d3 | = "Static cam: %s"
     LEA EAX,[EBP + 0xfffffdde]          ; 005393d8
     PUSH EAX                            ; 005393de
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005393df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005393df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x032758e8]                ; 005393e4 | DAT_032758e8
     MOV dword ptr [EBP + -0x7e],EAX     ; 005393e9
     MOV EAX,dword ptr [EBP + 0x3a]      ; 005393ec
@@ -1368,8 +1368,8 @@ section .text
         ;   Label: caseD_1
     LEA EAX,[EBP + 0xfffffdde]          ; 00539ead
     PUSH EAX                            ; 00539eb3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00539eb4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00539eb4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[EBP + 0xffffff1e]          ; 00539eb9
     ADD ESP,0x8                         ; 00539ebf
     CMP EAX,0x32758e8                   ; 00539ec2 | DAT_032758e8
@@ -1396,8 +1396,8 @@ section .text
         ;   Label: caseD_2
     LEA EAX,[EBP + 0xfffffdde]          ; 00539f13
     PUSH EAX                            ; 00539f19
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00539f1a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00539f1a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[EBP + 0xffffff1e]          ; 00539f1f
     ADD ESP,0x8                         ; 00539f25
     CMP EAX,0x32758e8                   ; 00539f28 | DAT_032758e8
@@ -1424,8 +1424,8 @@ section .text
         ;   Label: caseD_3
     LEA EAX,[EBP + 0xfffffdde]          ; 00539f79
     PUSH EAX                            ; 00539f7f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00539f80
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00539f80
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,dword ptr [EBP + 0x92]      ; 00539f85
     MOV EDI,dword ptr [EAX + 0x28]      ; 00539f8b
     ADD ESP,0x8                         ; 00539f8e
@@ -1526,8 +1526,8 @@ section .text
         ;   Label: caseD_4
     LEA EAX,[EBP + 0xfffffdde]          ; 0053a0c9
     PUSH EAX                            ; 0053a0cf
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053a0d0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053a0d0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053a0d5
     MOV EBX,dword ptr [EAX + 0x28]      ; 0053a0db
     ADD ESP,0x8                         ; 0053a0de
@@ -1973,8 +1973,8 @@ section .text
     PUSH 0x63c4ce                       ; 0053a5fe | = "%s.msn"
     LEA EAX,[EBP + 0xfffffcda]          ; 0053a603
     PUSH EAX                            ; 0053a609
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053a60a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053a60a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053a60f
     MOV ECX,dword ptr [EBP + 0x42]      ; 0053a612
     PUSH ECX                            ; 0053a615
@@ -2701,8 +2701,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x28]      ; 0053adaa
     PUSH EDI                            ; 0053adad
     PUSH EBX                            ; 0053adae
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0053adaf
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
+    CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053adaf
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053adb4
     LEA EAX,[EBP + 0xfffffa82]          ; 0053adb7
     PUSH EAX                            ; 0053adbd
@@ -2748,8 +2748,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x28]      ; 0053ae31
     PUSH EDX                            ; 0053ae34
     PUSH EBX                            ; 0053ae35
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0053ae36
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
+    CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053ae36
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053ae3b
     LEA EAX,[EBP + 0xfffffbae]          ; 0053ae3e
     PUSH EAX                            ; 0053ae44

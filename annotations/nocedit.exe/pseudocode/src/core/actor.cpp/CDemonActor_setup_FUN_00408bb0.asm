@@ -9,7 +9,7 @@
 ; XREF[42]:
 ;   core_ammo.cpp_CAmmo_setup_FUN_00410e50 at 00410e67
 ;   core_anvil.cpp_CAnvil_setup_FUN_00411d70 at 00411d75
-;   core_barrier.cpp_CBarrier_FUN_00414210 at 00414216
+;   core_barrier.cpp_CBarrier_setup_FUN_00414210 at 00414216
 ;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148ce
 ;   core_battery.cpp_CBattery_setup_FUN_00417ef0 at 00417ef6
 ;   core_bodypart.cpp_CBodyPart_setup_FUN_00419810 at 00419818

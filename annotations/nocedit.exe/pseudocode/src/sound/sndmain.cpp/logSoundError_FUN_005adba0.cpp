@@ -20,7 +20,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   time_t local_c;
   
   local_10 = &stack0x00000008;
-  vsprintf(local_528,format,(va_list_t)&local_10);
+  _vsprintf(local_528,format,(va_list_t)&local_10);
   local_10 = (byte *)0x0;
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_528);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -32,7 +32,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   _fprintf(file,"----------------------------------------------------------------\n");
   time(&local_c);
   _fprintf(file,"Msg: %s\n",local_528);
-  timeptr = localtime(&local_c);
+  timeptr = _localtime(&local_c);
   pcVar1 = asctime(timeptr);
   _fprintf(file,"Time: %s",pcVar1);
   pcVar1 = getenv("USERNAME");

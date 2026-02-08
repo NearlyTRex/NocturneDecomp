@@ -63,7 +63,7 @@ LAB_0045c20a:
           }
           if (((local_1c + 8 < (uint)g_WindowWidth) && (local_18 + 0xc < (uint)g_WindowHeight)) &&
              (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-            sprintf(local_88,"%d",local_20);
+            _sprintf(local_88,"%d",local_20);
             engine_2d_c_drawTextColor_FUN_00402430(local_88,local_1c + 1,local_18 + 1);
           }
         }

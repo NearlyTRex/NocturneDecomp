@@ -130,18 +130,18 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     if (iVar10 == 0) {
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : Off");
       iVar4 = local_34;
-      sprintf(*pacVar11,pcVar5);
+      _sprintf(*pacVar11,pcVar5);
     }
     else {
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : ");
-      sprintf(*pacVar11,pcVar5);
+      _sprintf(*pacVar11,pcVar5);
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
       uVar22 = CONCAT44(uVar24,0x511fbd);
       dVar21 = round
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar21);
-      sprintf(acStack_34c,"%d",local_18,uVar22);
+      _sprintf(acStack_34c,"%d",local_18,uVar22);
       uVar24 = (uint)((ulonglong)uVar22 >> 0x20);
       pcVar5 = acStack_34c;
       iVar4 = -1;
@@ -192,7 +192,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     local_30 = iVar10;
     if (iVar16 == 0) {
       pcVar15 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Dialog : Off");
-      sprintf(pcVar5,pcVar15);
+      _sprintf(pcVar5,pcVar15);
     }
     else {
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Dialog : ");
@@ -212,7 +212,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
                          ((double)((local_14 * 100.0f) / 1.0f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar21);
-      sprintf(acStack_14c,"%d",local_18,uVar22);
+      _sprintf(acStack_14c,"%d",local_18,uVar22);
       uVar24 = (uint)((ulonglong)uVar22 >> 0x20);
       pcVar15 = acStack_14c;
       iVar4 = -1;
@@ -263,7 +263,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     if (iVar4 == 0) {
       pcVar15 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Music Vol : Off");
       local_24 = iVar10 + 1;
-      sprintf(pcVar5,pcVar15);
+      _sprintf(pcVar5,pcVar15);
     }
     else {
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Music Vol : ");
@@ -283,7 +283,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar21);
-      sprintf
+      _sprintf
                 ((char *)&local_560.device_value2,"%d",local_18,uVar22);
       uVar24 = (uint)((ulonglong)uVar22 >> 0x20);
       pDVar12 = &local_560.device_value2;
@@ -342,7 +342,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       pcVar15 = pcVar15 + 2;
     } while (cVar2 != '\0');
     iVar4 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
-    sprintf(local_248,"%d",iVar4);
+    _sprintf(local_248,"%d",iVar4);
     pcVar15 = local_248;
     iVar4 = -1;
     pcVar6 = pcVar5;
@@ -400,7 +400,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     } while (cVar2 != '\0');
     local_24 = iVar10;
     iVar10 = sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
-    sprintf(local_248,"%d",iVar10);
+    _sprintf(local_248,"%d",iVar10);
     pcVar15 = local_248;
     iVar10 = -1;
     pcVar6 = pcVar5;
@@ -455,7 +455,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       iVar4 = iVar4 + 3;
     }
     local_24 = iVar4;
-    sprintf(g_SoundMenuTextBuffers[iVar10],pcVar5);
+    _sprintf(g_SoundMenuTextBuffers[iVar10],pcVar5);
     iVar4 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
     if ((iVar4 < 0) ||
        (iVar10 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar10 <= iVar4)) {

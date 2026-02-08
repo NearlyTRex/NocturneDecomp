@@ -125,7 +125,7 @@ LAB_004b5706:
   }
   iVar2 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,local_64);
   if (iVar4 != iVar2) {
-    sprintf
+    _sprintf
               (local_17c,"%s is not the same size as %s",local_580,local_64);
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0x786;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_SetStdHandleToSomething(byte param_1, uint param_2) */
-
 void SetStdHandleToSomething(void)
 
 {

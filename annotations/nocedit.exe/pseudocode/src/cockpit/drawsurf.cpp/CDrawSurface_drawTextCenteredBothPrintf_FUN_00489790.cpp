@@ -16,7 +16,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
   va_list_t local_10;
   
   local_10.value[0] = (char * [1])&format;
-  vsprintf(local_1010,in_stack_00000010,(va_list_t)&local_10);
+  _vsprintf(local_1010,in_stack_00000010,(va_list_t)&local_10);
   local_10.value[0] = (char * [1])(char *)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730(this_ptr,local_1010,x,y);
   return;

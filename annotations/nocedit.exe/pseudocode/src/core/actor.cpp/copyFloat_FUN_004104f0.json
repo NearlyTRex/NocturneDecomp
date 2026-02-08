@@ -1,0 +1,111 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "0040d940",
+      "from_addr": "0040d9d1",
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004104f0",
+    "address_range": [
+      [
+        "004104f0",
+        "004104fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_copyFloat_FUN_004104f0",
+    "signature": "float * __cdecl core_actor_cpp_copyFloat_FUN_004104f0(float *dst,float *src)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0040d9d1",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040db76",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040dd3b",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "COPY": 5,
+      "INT_ADD": 3,
+      "LOAD": 4,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dst",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": []
+}

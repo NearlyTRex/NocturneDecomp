@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_getMaterialId
-typedef int (*CPoly_getMaterialId)(struct CPoly* this_ptr);
+typedef int CPoly_getMaterialId(struct CPoly* this_ptr);
 

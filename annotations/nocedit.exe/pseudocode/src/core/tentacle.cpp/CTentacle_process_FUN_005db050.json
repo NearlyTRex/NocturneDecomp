@@ -40,37 +40,37 @@
       {
         "category": "other",
         "column": 10,
-        "line": 209,
+        "line": 206,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 209,
+        "line": 206,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 257,
+        "line": 254,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 257,
+        "line": 254,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 258,
+        "line": 255,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 33,
-        "line": 258,
+        "line": 255,
         "message": "expected expression"
       }
     ],
@@ -79,11 +79,11 @@
   },
   "complexity": {
     "assembly_lines": 572,
-    "complexity_score": 451,
+    "complexity_score": 448,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
-    "pseudocode_lines": 281,
+    "pseudocode_lines": 278,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -91,7 +91,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 853
+    "total_lines": 850
   },
   "cross_references": [],
   "function": {
@@ -175,12 +175,12 @@
     {
       "addr": "005db900",
       "is_variadic": false,
-      "name": "core_tentacle.cpp_FUN_005db900"
+      "name": "core_tentacle.cpp_CTentacle_FUN_005db900"
     },
     {
       "addr": "005dbb70",
       "is_variadic": false,
-      "name": "core_tentacle.cpp_FUN_005dbb70"
+      "name": "core_tentacle.cpp_CTentacle_FUN_005dbb70"
     },
     {
       "addr": "005e7830",
@@ -506,28 +506,28 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 225,
+      "line": 222,
       "match": "SQRT",
       "text": "fVar1 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 227,
+      "line": 224,
       "match": "ABS",
       "text": "(ABS((this_ptr->base).base.base.location.position.y - *(float *)(iVar3 + 0x24)) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 250,
+      "line": 247,
       "match": "code *",
       "text": "(iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x120))(), iVar3 < 1)) &&",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 251,
+      "line": 248,
       "match": "code *",
       "text": "(iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x108))(),",
       "type": "unresolved_funcptr"

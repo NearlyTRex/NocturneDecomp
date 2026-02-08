@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: void core_skeledit.cpp_FUN_0058af40(int* param_1, int param_2, uint param_3) */
-
 void __cdecl core_skeledit_cpp_FUN_0058af40(void)
 
 {

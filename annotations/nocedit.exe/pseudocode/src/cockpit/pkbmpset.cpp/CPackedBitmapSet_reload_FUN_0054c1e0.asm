@@ -35,9 +35,9 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
@@ -82,8 +82,8 @@ section .text
     PUSH 0x63f669                       ; 0054c23c | = "Can't allocate %u bytes for RAW buffe..."
     LEA EAX,[ESP + 0x8]                 ; 0054c241
     PUSH EAX                            ; 0054c245
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c246
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c246
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x115                       ; 0054c24b
     ADD ESP,0xc                         ; 0054c250
     MOV [0x02f0ca4c],EAX                ; 0054c253 | g_CurrentLineNumber
@@ -154,8 +154,8 @@ section .text
     PUSH 0x63f602                       ; 0054c304 | = "Unable to open %s in CPackedBitmapSet..."
     LEA EAX,[ESP + 0x6c]                ; 0054c309
     PUSH EAX                            ; 0054c30d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c30e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c30e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x63f639                    ; 0054c313 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 0054c318
     LEA EAX,[ESP + 0x64]                ; 0054c31b
@@ -186,8 +186,8 @@ section .text
     PUSH 0x63f6cb                       ; 0054c366 | = "Error reading from %s in CPackedBitma..."
     LEA EAX,[ESP + 0xd0]                ; 0054c36b
     PUSH EAX                            ; 0054c372
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c373
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c373
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x128                       ; 0054c378
     ADD ESP,0xc                         ; 0054c37d
     MOV [0x02f0ca4c],EAX                ; 0054c380 | g_CurrentLineNumber

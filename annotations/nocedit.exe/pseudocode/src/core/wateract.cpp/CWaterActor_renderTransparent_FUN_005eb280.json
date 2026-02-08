@@ -1,0 +1,363 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 65,
+        "line": 26,
+        "message": "use of undeclared identifier 'stack0xffffffdc'"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 36,
+        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 48,
+        "message": "no matching function for call to 'core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 200,
+    "complexity_score": 232,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 13,
+    "pseudocode_lines": 82,
+    "suspect_count": 13,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 282
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005eb280",
+    "address_range": [
+      [
+        "005eb280",
+        "005eb4a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280",
+    "signature": "int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "0056e3e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056e3e0"
+    },
+    {
+      "addr": "00570770",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770"
+    },
+    {
+      "addr": "0056e7c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048aeb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0"
+    },
+    {
+      "addr": "0048ca50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "0048ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665310",
+      "name": "FLOAT_00665310",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "006846f0",
+      "name": "DAT_006846f0",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "03f90a88",
+      "name": "DAT_03f90a88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f90a8c",
+      "name": "DAT_03f90a8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f90a90",
+      "name": "DAT_03f90a90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f90a94",
+      "name": "DAT_03f90a94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f90a98",
+      "name": "DAT_03f90a98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f90a9c",
+      "name": "DAT_03f90a9c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.2023809523809526,
+    "instruction_count": 168,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 35,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CALLIND": 1,
+      "CBRANCH": 9,
+      "COPY": 182,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 71,
+      "INT_AND": 179,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 101,
+      "INT_LEFT": 11,
+      "INT_LESS": 6,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 27,
+      "INT_OR": 38,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 24,
+      "INT_SEXT": 9,
+      "INT_SLESS": 61,
+      "INT_SUB": 61,
+      "INT_XOR": 12,
+      "LOAD": 33,
+      "POPCOUNT": 47,
+      "RETURN": 2,
+      "ROUND": 3,
+      "STORE": 52,
+      "SUBPIECE": 6,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 1042
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffffdc",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffdc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_006846f0",
+      "text": "(g_CDemonRendererPtr2,&DAT_006846f0 + *(int *)(this_ptr->unk5 + 0x2af90));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_03f90a88",
+      "text": "piVar4 = &DAT_03f90a88;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "*piVar4 = (int)ROUND(*(float *)pcVar5 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "piVar4[1] = (int)ROUND(*(float *)(pcVar5 + 4) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "piVar4[2] = (int)ROUND(*(float *)(pcVar5 + 8) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_03f90a88",
+      "text": "(g_CDemonSetPtr,*(int *)this_ptr->unk5,&DAT_03f90a88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)(this_ptr->col_r << 8) * (longlong)*(int *)((int)&pSVar1->light + iVar7)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar1->light + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)(this_ptr->col_g << 8) * (longlong)*(int *)((int)&pSVar1->color + iVar7)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar1->color + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)(this_ptr->col_b << 8) * (longlong)*(int *)((int)&pSVar1->fog + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar1->fog + iVar7) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWaterActor",
+        "offset": 12,
+        "vtable_addr": "00665334"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

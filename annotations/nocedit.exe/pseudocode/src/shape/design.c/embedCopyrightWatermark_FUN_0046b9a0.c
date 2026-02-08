@@ -54,9 +54,9 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
                (byte *)0xffffffff,(int)output_filename,"All rights reserved");
   }
   time(&local_14);
-  time_ptr = localtime(&local_14);
+  time_ptr = _localtime(&local_14);
   strftime(local_dc,200,"%m%d%y",time_ptr);
-  sprintf(local_4dc,"%s%s",local_dc,"Jan 10 2000");
+  _sprintf(local_4dc,"%s%s",local_dc,"Jan 10 2000");
   shape_design_c_quantizePaletteColors_FUN_0046b770
             ((byte *)((texture_size + -1) * texture_size + (int)image_buffer),texture_size,1,
              (byte *)-texture_size,(int)output_filename,local_4dc);

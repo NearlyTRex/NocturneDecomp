@@ -19,7 +19,7 @@
 ;   undefined4 DAT_03f5dc44
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30
 ;   sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -76,8 +76,8 @@ section .text
     PUSH ESI                            ; 005a9fda
     PUSH 0x650b33                       ; 005a9fdb | = "sfx slot %d: %s, pos %7.1f/%7.1f\n"
     PUSH EDI                            ; 005a9fe0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005a9fe1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005a9fe1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 005a9fe6
     ADD EDI,EAX                         ; 005a9fe9
     JMP 0x005a9f9a                      ; 005a9feb

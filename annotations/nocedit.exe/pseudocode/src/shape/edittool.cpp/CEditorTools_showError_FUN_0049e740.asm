@@ -9,18 +9,18 @@
 ; Local Variables:
 ; va_list_t        Stack[-0x8]:4  local_8
 ;
-; XREF[103]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ff25
-;   core_actor.cpp_FUN_0040fffe at 00410059
+; XREF[102]:
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f92e
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f583
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d928
+;   core_course.cpp_CCourse_FUN_00442bc0 at 00442d1a
+;   core_course.cpp_CCourse_FUN_00442d70 at 00442e8c
 ;   core_course.cpp_CCourse_save_FUN_00442a90 at 00442ba5
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443440
-;   core_course.cpp_OpeningCourseFile2_FUN_00442d70 at 00442e8c
-;   core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0 at 00442d1a
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 at 0047a352
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047decc
-;   ... and 93 more
+;   core_dmodel.cpp_copyFile_FUN_0047c930 at 0047c980
+;   ... and 92 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_00623018
@@ -28,7 +28,7 @@
 ;   int INT_02cf2a94
 ;
 ; Called Functions:
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e74e
     PUSH EDX                            ; 0049e752
     PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer_02cef530
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e758
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e75d
     MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | INT_02cf2a94
     PUSH EBX                            ; 0049e766

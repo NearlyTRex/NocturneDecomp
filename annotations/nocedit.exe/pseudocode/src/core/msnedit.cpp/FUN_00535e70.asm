@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -888,8 +888,8 @@ section .text
     PUSH 0x63b6ab                       ; 005369ac | = "Actor-specific help for selected acto..."
     LEA EAX,[ESP + 0xc]                 ; 005369b1
     PUSH EAX                            ; 005369b5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005369b6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005369b6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005369bb
     MOV EAX,dword ptr [ESP + 0xfc]      ; 005369be
     PUSH EAX                            ; 005369c5

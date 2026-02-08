@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
+;   crt_string.c__strncpy_FUN_00600f40
 ;   crt_string.c_strcmp_FUN_005fef20
-;   crt_string.c_strncpy_FUN_00600f40
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;
 ; *****************************************************************************
@@ -194,8 +194,8 @@ section .text
     PUSH EBP                            ; 00550e44
     MOV EBP,dword ptr [ESP + 0x3c]      ; 00550e45
     PUSH EBP                            ; 00550e49
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 00550e4a
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 00550e4a
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00550e4f
     MOV EAX,dword ptr [ESP + 0x28]      ; 00550e52
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00550e56

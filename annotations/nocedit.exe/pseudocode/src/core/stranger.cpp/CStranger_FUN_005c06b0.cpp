@@ -24,7 +24,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr)
   CVector3f local_18;
   
   bVar6 = 0;
-  pCVar1 = *(CDemonActor **)(this_ptr->unk1 + 0x54);
+  pCVar1 = *(CDemonActor **)(this_ptr->unk5 + 8);
   if (((pCVar1 != (CDemonActor *)0x0) &&
       (pCVar1 != (this_ptr->base).base.carry_hands[0].carry_actor)) &&
      (pCVar1 != (this_ptr->base).base.carry_hands[1].carry_actor)) {
@@ -47,7 +47,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr)
       pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    iVar2 = *(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154);
+    iVar2 = *(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_e4,&local_24);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_e4,&local_18);
     (**(code **)(iVar2 + 0x60))();

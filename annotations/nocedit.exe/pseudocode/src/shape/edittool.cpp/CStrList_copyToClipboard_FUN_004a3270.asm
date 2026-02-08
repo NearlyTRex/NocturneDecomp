@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
@@ -111,8 +111,8 @@ section .text
     PUSH 0x623995                       ; 004a3308 | = "%s\n"
     PUSH EDI                            ; 004a330d
     INC ESI                             ; 004a330e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a330f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a330f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a3314
     MOV EDX,dword ptr [EBX]             ; 004a3317
     ADD EDI,EAX                         ; 004a3319

@@ -55,11 +55,11 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
   local_28 = local_4c;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    sprintf(local_154,"Current light : %s");
+    _sprintf(local_154,"Current light : %s");
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0);
-    sprintf(local_154,"A.  On time : %f",(double)local_18->on_time);
+    _sprintf(local_154,"A.  On time : %f",(double)local_18->on_time);
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x16);
-    sprintf
+    _sprintf
               (local_154,"B.  Total time : %f",(double)local_18->cycle_time);
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("C.  Add filter",0,0x2c);
@@ -71,7 +71,7 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
     else {
       pcVar10 = "F.  Blend filter : Yes";
     }
-    sprintf(local_154,pcVar10);
+    _sprintf(local_154,pcVar10);
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x58);
     if (local_18->move_filter == 0) {
       pcVar10 = "G. Move filter : No";
@@ -79,22 +79,22 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
     else {
       pcVar10 = "G. Move filter : Yes";
     }
-    sprintf(local_154,pcVar10);
+    _sprintf(local_154,pcVar10);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x16);
-    sprintf
+    _sprintf
               (local_154,"H. Velocity X : %f",
                (double)(local_18->filter_vel).x * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x21);
-    sprintf
+    _sprintf
               (local_154,"I. Velocity Y : %f",
                (double)(local_18->filter_vel).y * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x2c);
-    sprintf(local_154,"J. Aspect (Y/X) : %f",(double)local_18->aspect);
+    _sprintf(local_154,"J. Aspect (Y/X) : %f",(double)local_18->aspect);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x37);
-    sprintf(local_154,"K. Intensity : %f",(double)local_18->intensity)
-    ;
+    _sprintf
+              (local_154,"K. Intensity : %f",(double)local_18->intensity);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x37);
-    sprintf(local_154,"Filter count = %d");
+    _sprintf(local_154,"Filter count = %d");
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,99);
     iVar7 = 0;
     if (0 < local_18->filter_count) {
@@ -103,7 +103,7 @@ void __cdecl core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       local_24 = 0x6e;
       pCVar4 = local_18;
       do {
-        sprintf
+        _sprintf
                   (local_154,"%c.  %s for %1.3f seconds",iVar5,local_20,
                    (double)pCVar4->filter_durations[0]);
         pCVar4 = (C3DSLight *)pCVar4->name;

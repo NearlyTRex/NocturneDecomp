@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH ESI                            ; 0049d439
     PUSH ECX                            ; 0049d43a
     PUSH EBX                            ; 0049d43b
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0049d43c
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0049d43c
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0049d441
     MOV EDI,EBX                         ; 0049d444
     SUB ECX,ECX                         ; 0049d446

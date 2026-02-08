@@ -274,13 +274,13 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         } while (pvVar3 < (void *)(local_24 * 0x60 + (int)local_14));
       }
       if ((bVar1) || (bVar2)) {
-        iVar7 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
+        iVar7 = shape_superopt_cpp_FUN_005ca590();
         if (iVar7 == 0) {
           shape_memdbg_cpp_free_FUN_005fe659(pvVar4);
           shape_memdbg_cpp_free_FUN_005fe659(local_14);
           return 0;
         }
-        iVar7 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
+        iVar7 = shape_superopt_cpp_FUN_005ca590();
         if (iVar7 == 0) {
           shape_memdbg_cpp_free_FUN_005fe659(pvVar4);
           shape_memdbg_cpp_free_FUN_005fe659(local_14);

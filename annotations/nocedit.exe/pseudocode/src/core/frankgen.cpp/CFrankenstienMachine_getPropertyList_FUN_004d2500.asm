@@ -18,7 +18,7 @@
 ;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH 0x62abdf                       ; 004d2522 | = "Master frame (%0..%g)"
     LEA EAX,[ESP + 0xc]                 ; 004d2527
     PUSH EAX                            ; 004d252b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d252c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d252c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d2531
     PUSH 0x0                            ; 004d2534
     CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d2536
@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x7c]      ; 004d2546
     PUSH EBX                            ; 004d254a
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004d254b
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004d2550
     ADD ESP,0x64                        ; 004d2553
     POP EBX                             ; 004d2556

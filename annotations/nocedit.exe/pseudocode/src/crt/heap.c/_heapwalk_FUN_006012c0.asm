@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c__heapwalk_FUN_006012c0(void *heap_state_ptr)
+; __cdecl int __cdecl crt_heap_c__heapwalk_FUN_006012c0(_heapinfo *heap_info)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   heap_state_ptr
+; _heapinfo *      Stack[0x4]:4   heap_info
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 at 004a25af

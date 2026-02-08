@@ -16,13 +16,13 @@ typedef struct IKsPropertySet {
 } IKsPropertySet;
 
 // Function Definition: IKsPropertySet_Get
-typedef HRESULT (*IKsPropertySet_Get)(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength, PULONG pulBytesReturned);
+typedef HRESULT IKsPropertySet_Get(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength, PULONG pulBytesReturned);
 
 // Function Definition: IKsPropertySet_QuerySupport
-typedef HRESULT (*IKsPropertySet_QuerySupport)(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, PULONG pulTypeSupport);
+typedef HRESULT IKsPropertySet_QuerySupport(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, PULONG pulTypeSupport);
 
 // Function Definition: IKsPropertySet_Set
-typedef HRESULT (*IKsPropertySet_Set)(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength);
+typedef HRESULT IKsPropertySet_Set(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength);
 
 // Structure: IKsPropertySet_vtable
 typedef struct IKsPropertySet_vtable {

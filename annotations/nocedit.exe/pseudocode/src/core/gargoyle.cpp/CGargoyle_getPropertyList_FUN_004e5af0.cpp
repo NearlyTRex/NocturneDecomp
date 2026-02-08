@@ -20,15 +20,15 @@ core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Stone red",&this_ptr->stone_red,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Stone green",&this_ptr->stone_green,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Stone blue",&this_ptr->stone_blue,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (property_list,"Home waypoint",&this_ptr->home_base,1,"CWayPoint",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

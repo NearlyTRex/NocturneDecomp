@@ -71,7 +71,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
     else {
       pcVar3 = "ON";
     }
-    sprintf(local_ec,"L. Loop flag is now %s",pcVar3);
+    _sprintf(local_ec,"L. Loop flag is now %s",pcVar3);
     engine_2d_c_drawText_FUN_00401fd0(local_ec,0,0xa5);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -112,7 +112,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                             (g_CEditorToolsPtr,"Import .CRS file",0x6192f4,local_4fc);
           if (iVar6 == 0) goto LAB_004431bd;
-          iVar6 = core_course_cpp_OpeningCourseFile2_FUN_00442d70();
+          iVar6 = core_course_cpp_CCourse_FUN_00442d70(this_ptr);
         } while (iVar6 == 0);
         splitpath(local_4fc,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
@@ -150,7 +150,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                             (g_CEditorToolsPtr,"Import .BON file",0x619310,local_3f8);
           if (iVar6 == 0) goto LAB_004431bd;
-          iVar6 = core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0();
+          iVar6 = core_course_cpp_CCourse_FUN_00442bc0(this_ptr);
         } while (iVar6 == 0);
         splitpath(local_3f8,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;

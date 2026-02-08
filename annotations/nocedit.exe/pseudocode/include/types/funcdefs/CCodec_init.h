@@ -7,5 +7,5 @@
 struct CCodec;
 
 // Function Definition: CCodec_init
-typedef void (*CCodec_init)(struct CCodec* this_ptr);
+typedef void CCodec_init(struct CCodec* this_ptr);
 

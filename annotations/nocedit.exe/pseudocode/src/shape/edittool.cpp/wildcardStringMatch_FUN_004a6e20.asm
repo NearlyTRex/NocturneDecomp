@@ -16,8 +16,8 @@
 ;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053d135
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0 at 005b1f16
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0 at 005b1802
+;   core_trigger.cpp_CTrigger_FUN_005e0ac0 at 005e0af0
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfff3
-;   core_trigger.cpp_FUN_005e0ac0 at 005e0af0
 ;   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 at 004b40db
 ;   ... and 1 more
 ;

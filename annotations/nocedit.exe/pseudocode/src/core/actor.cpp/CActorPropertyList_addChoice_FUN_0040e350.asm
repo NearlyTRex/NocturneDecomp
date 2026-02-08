@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,int default_index, char *choices,CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   property_name
-; void *           Stack[0xc]:4   data_ptr
+; CDemonActor * *  Stack[0xc]:4   data_ptr
 ; int              Stack[0x10]:4   default_index
 ; char *           Stack[0x14]:4   choices
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x18]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x18]:4   callback
 ;
 ; XREF[20]:
 ;   core_ammobox.cpp_CAmmoBox_getPropertyList_FUN_00411b30 at 00411b7b
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 004227d4
 ;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 00431178
-;   core_dest.cpp_FUN_0046fe80 at 0046feaa
+;   core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80 at 0046feaa
 ;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8fcf
 ;   core_filmreel.cpp_CFilmProjector_getPropertyList_FUN_004bee30 at 004bee5a
 ;   core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0 at 004e5b86

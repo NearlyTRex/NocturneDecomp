@@ -25,7 +25,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCir
             (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_28);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,(CVector3i *)&this_ptr->emitter_pos);
-  if (DAT_02f0cb1c == 1) {
+  if (g_MansionPuzzleSlewType == 1) {
     shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
   }
   shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);

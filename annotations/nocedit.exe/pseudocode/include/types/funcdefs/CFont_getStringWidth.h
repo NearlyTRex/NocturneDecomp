@@ -7,5 +7,5 @@
 struct CFont;
 
 // Function Definition: CFont_getStringWidth
-typedef int (*CFont_getStringWidth)(struct CFont* this_ptr, char* text);
+typedef int CFont_getStringWidth(struct CFont* this_ptr, char* text);
 

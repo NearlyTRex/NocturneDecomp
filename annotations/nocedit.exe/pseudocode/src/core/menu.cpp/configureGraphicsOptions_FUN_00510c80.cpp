@@ -162,13 +162,13 @@ LAB_00510e1f:
       pcVar8 = "Resolution : 320x240";
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-    sprintf(g_GraphicsMenuTextBuffers[0],pcVar8);
+    _sprintf(g_GraphicsMenuTextBuffers[0],pcVar8);
     uVar7 = g_CGamePtr->halo_mode;
     if (uVar7 == 0) {
       pcVar8 = "Flashlight halo : Off";
 LAB_00510f71:
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-      sprintf(g_GraphicsMenuTextBuffers[1],pcVar8);
+      _sprintf(g_GraphicsMenuTextBuffers[1],pcVar8);
     }
     else {
       if (uVar7 < 2) {
@@ -183,7 +183,7 @@ LAB_00510f71:
     g_FullscreenMode = 0;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Acceleration disabled in editor")
     ;
-    sprintf(g_GraphicsMenuTextBuffers[2],pcVar8);
+    _sprintf(g_GraphicsMenuTextBuffers[2],pcVar8);
     if (g_RendererDllName[0] == '\0') {
       pcVar8 = "3D API : None";
     }
@@ -215,11 +215,11 @@ LAB_00510f71:
       }
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-    sprintf(g_GraphicsMenuTextBuffers[3],pcVar8);
+    _sprintf(g_GraphicsMenuTextBuffers[3],pcVar8);
     if (g_GraphicsCardCount == 0) {
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("No 3D Hardware detected");
-      sprintf(g_GraphicsMenuTextBuffers[4],pcVar8);
+      _sprintf(g_GraphicsMenuTextBuffers[4],pcVar8);
     }
     else {
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("3D Card : ");
@@ -254,7 +254,7 @@ LAB_00510f71:
         pcVar10[1] = cVar1;
         pcVar10 = pcVar10 + 2;
       } while (cVar1 != '\0');
-      sprintf(local_40," (%d)",g_GraphicsCardHandle);
+      _sprintf(local_40," (%d)",g_GraphicsCardHandle);
       pcVar8 = local_40;
       iVar4 = -1;
       pacVar6 = g_GraphicsMenuTextBuffers + 4;
@@ -288,7 +288,7 @@ LAB_00510f71:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    sprintf(local_140,"%d",g_CGamePtr->game_bpp);
+    _sprintf(local_140,"%d",g_CGamePtr->game_bpp);
     iVar4 = -1;
     pacVar6 = g_GraphicsMenuTextBuffers + 5;
     do {
@@ -310,7 +310,7 @@ LAB_00510f71:
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Monitor calibration");
-    sprintf(g_GraphicsMenuTextBuffers[6],pcVar9);
+    _sprintf(g_GraphicsMenuTextBuffers[6],pcVar9);
     if (g_CGamePtr->subtitle_mode == 0) {
       pcVar9 = "Subtitles : Off";
     }

@@ -12,6 +12,6 @@ int __cdecl core_event_cpp_FUN_004aa2a0(char *param_1)
   byte *local_4;
   
   local_4 = &stack0x00000008;
-  vsprintf(&DAT_02d0a460,param_1,(va_list_t)&local_4);
+  _vsprintf(&DAT_02d0a460,param_1,(va_list_t)&local_4);
   return 0;
 }

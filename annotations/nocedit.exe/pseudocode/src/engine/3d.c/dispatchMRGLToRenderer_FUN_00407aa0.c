@@ -55,7 +55,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
         }
         else {
 LAB_00407c82:
-          sprintf
+          _sprintf
                     (&stack0xfffffef0,"Unknown primitive : %d",(uint)(byte)cmd->primitive_type
                     );
           g_CurrentLineNumber = 0xcf1;

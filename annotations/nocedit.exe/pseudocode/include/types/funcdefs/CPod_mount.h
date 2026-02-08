@@ -7,5 +7,5 @@
 struct CPod;
 
 // Function Definition: CPod_mount
-typedef void (*CPod_mount)(struct CPod* this_ptr, char* filename);
+typedef void CPod_mount(struct CPod* this_ptr, char* filename);
 

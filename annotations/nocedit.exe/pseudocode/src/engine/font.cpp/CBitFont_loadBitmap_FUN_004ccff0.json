@@ -3,26 +3,26 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 14,
+        "column": 15,
         "line": 49,
-        "message": "use of undeclared identifier 'stack0xfffffbc4'"
+        "message": "use of undeclared identifier 'stack0xfffffbc4'; did you mean 'in_stack_fffffbc4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 52,
+        "line": 53,
         "message": "use of undeclared identifier 'stack0xfffffbc4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 14,
-        "line": 57,
-        "message": "use of undeclared identifier 'stack0xfffffbc4'"
+        "column": 15,
+        "line": 58,
+        "message": "use of undeclared identifier 'stack0xfffffbc4'; did you mean 'in_stack_fffffbc4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 60,
+        "line": 62,
         "message": "use of undeclared identifier 'stack0xfffffbc4'"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 167,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 79,
     "suspect_count": 8,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 304
+    "total_lines": 306
   },
   "cross_references": [
     {
@@ -75,14 +75,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00600770",
@@ -356,40 +356,40 @@
       "description": "Direct stack address reference",
       "line": 42,
       "match": "&stack0xfffffbc4",
-      "text": "sprintf(&stack0xfffffbc4,\"Invalid font file size (%s).\",filename);",
+      "text": "_sprintf(&stack0xfffffbc4,\"Invalid font file size (%s).\",filename)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 46,
       "match": "&stack0xfffffbc4",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 51,
       "match": "&stack0xfffffbc4",
-      "text": "sprintf(&stack0xfffffbc4,\"Unable to allocate memory for font bitmap (%s).\",filename);",
+      "text": "_sprintf(&stack0xfffffbc4,\"Unable to allocate memory for font bitmap (%s).\",filename)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 55,
       "match": "&stack0xfffffbc4",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 77,
       "match": "in_stack_fffffbc4",
       "text": "(this_ptr,this_ptr->bitmap_count,width,height,first_char,in_stack_fffffbc4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 78,
       "match": "in_stack_fffffbc8",
       "text": "in_stack_fffffbc8);",
       "type": "stack_param"

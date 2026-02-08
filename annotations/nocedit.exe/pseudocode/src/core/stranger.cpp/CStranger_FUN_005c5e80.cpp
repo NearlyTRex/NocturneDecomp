@@ -17,8 +17,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr)
   if (((this_ptr_00 == (CDemonActor *)0x0) ||
       (uVar2 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00),
       (uVar2 & 4) == 0)) &&
-     ((*(int *)(this_ptr->unk1 + 0x54) == 0 ||
-      (*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) != 3)))) {
+     ((*(int *)(this_ptr->unk5 + 8) == 0 || (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0) != 3))))
+  {
     return 0;
   }
   fVar1 = 10.0f;

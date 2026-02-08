@@ -15,7 +15,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7690(COptimize *this_ptr)
   uVar2 = 0;
   if (this_ptr->unk5 != 0) {
     do {
-      iVar1 = shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0();
+      iVar1 = shape_superopt_cpp_FUN_005c84c0();
       if (iVar1 == 0) {
         shape_superopt_cpp_logToFile_FUN_005c7910("Unable to split polygon to convex... continuing anyway");
         return 0;

@@ -56,9 +56,9 @@ LAB_00511c13:
       }
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
     }
-    sprintf(g_ControlsMenuTextBuffers[0],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[0],pcVar5);
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Customize Keys");
-    sprintf(g_ControlsMenuTextBuffers[1],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[1],pcVar5);
     if (g_CGamePtr->always_run == 0) {
       pcVar5 = "Always run : OFF";
     }
@@ -66,7 +66,7 @@ LAB_00511c13:
       pcVar5 = "Always run : ON";
     }
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
-    sprintf(g_ControlsMenuTextBuffers[2],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[2],pcVar5);
     uVar2 = g_CGamePtr->aim_mode;
     if (uVar2 == 0) {
 LAB_005119ab:
@@ -80,7 +80,7 @@ LAB_005119ab:
       if (uVar2 != 2) goto LAB_005119ab;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Manual");
     }
-    sprintf(g_ControlsMenuTextBuffers[3],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[3],pcVar5);
     if (g_CGamePtr->auto_use_health == 0) {
       pcVar5 = "Auto use health : Off";
     }
@@ -88,7 +88,7 @@ LAB_005119ab:
       pcVar5 = "Auto use health : On";
     }
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
-    sprintf(g_ControlsMenuTextBuffers[4],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[4],pcVar5);
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("X-axis sensitivity : ");
     pcVar10 = g_ControlsMenuTextBuffers[5];
     do {
@@ -100,7 +100,7 @@ LAB_005119ab:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    sprintf
+    _sprintf
               (local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
               );
     iVar4 = -1;
@@ -135,7 +135,7 @@ LAB_005119ab:
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
     iVar4 = 7;
-    sprintf
+    _sprintf
               (local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
               );
     iVar6 = -1;
@@ -167,7 +167,7 @@ LAB_005119ab:
       }
 LAB_00511b4c:
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-      sprintf(g_ControlsMenuTextBuffers[7],pcVar8);
+      _sprintf(g_ControlsMenuTextBuffers[7],pcVar8);
       iVar4 = 8;
     }
     else if (g_CGamePtr->game_control == 2) {

@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CRuleList.h"
 #include "types/enums/ELeverType.h"
 
 // Structure: CLever
@@ -22,8 +23,7 @@ typedef struct CLever {
     undefined4 end_vertex_index; // 0x414
     undefined4 moving; // 0x418
     float move_to_pct; // 0x41c
-    int rules; // 0x420
-    char unk6[1000]; // 0x424
+    CRuleList rule; // 0x420
     int allowed_sides; // 0x80c
     int enable_collision; // 0x810
 } CLever;

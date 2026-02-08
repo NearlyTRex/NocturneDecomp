@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dracbrid.cpp_FUN_004869a0 at 00486c63
+;   core_dracbrid.cpp_CDraculaBride_FUN_004869a0 at 00486c63
 ;
 ; *****************************************************************************
 

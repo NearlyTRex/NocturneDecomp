@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640 (CActorPropertyList *this_ptr,void *pairs,int num_pairs,int *data_ptr)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640 (CActorPropertyList *this_ptr,char *property_name,int num_pairs,SEnumPair *pairs, int *data_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   pairs
+; char *           Stack[0x8]:4   property_name
 ; int              Stack[0xc]:4   num_pairs
-; int *            Stack[0x10]:4   data_ptr
+; SEnumPair *      Stack[0x10]:4   pairs
+; int *            Stack[0x14]:4   data_ptr
 ;
 ; XREF[15]:
 ;   core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0 at 00422797
@@ -19,7 +20,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0 at 0050b434
 ;   core_marquee.cpp_CMarquee_getPropertyList_FUN_0050c3e0 at 0050c438
 ;   core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0 at 0050eda3
-;   core_spike.cpp_FUN_005b8e90 at 005b8eeb
+;   core_spike.cpp_CSpike_getPropertyList_FUN_005b8e90 at 005b8eeb
 ;   ... and 5 more
 ;
 ; Called Functions:

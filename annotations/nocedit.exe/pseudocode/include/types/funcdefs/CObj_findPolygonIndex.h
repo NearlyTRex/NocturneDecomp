@@ -8,5 +8,5 @@ struct CObj;
 struct CPoly;
 
 // Function Definition: CObj_findPolygonIndex
-typedef int (*CObj_findPolygonIndex)(struct CObj* this_ptr, struct CPoly* poly_ptr);
+typedef int CObj_findPolygonIndex(struct CObj* this_ptr, struct CPoly* poly_ptr);
 

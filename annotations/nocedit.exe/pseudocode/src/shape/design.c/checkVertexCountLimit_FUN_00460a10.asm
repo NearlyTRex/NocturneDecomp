@@ -18,7 +18,7 @@
 ;   int g_VertexCount
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 00460a45 | = "ERROR: Too many vertices! (npoints:%d..."
     LEA EAX,[EBP + -0x58]               ; 00460a46
     PUSH EAX                            ; 00460a49
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00460a4a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00460a4a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00460a4f
     PUSH 0x0                            ; 00460a52
     PUSH 0x0                            ; 00460a54
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 00460a6b | = "vertexList[] in 2d.c only supports %d..."
     LEA EAX,[EBP + -0x58]               ; 00460a6c
     PUSH EAX                            ; 00460a6f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00460a70
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00460a70
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00460a75
     PUSH 0x16                           ; 00460a78
     PUSH 0x0                            ; 00460a7a

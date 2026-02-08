@@ -61,7 +61,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
                          (&this_ptr_00->motion_controller);
       if (pSVar4->state_index != 0x28) {
         if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
-           (*(int *)(this_ptr->unk1 + 0x50) == 0)) {
+           (*(int *)(this_ptr->unk5 + 4) == 0)) {
           if (in_stack_00000008->damage_type == 1) {
             desired_state_index = 0x27;
             iVar3 = 1;
@@ -76,36 +76,34 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
           iVar3 = 1;
           desired_state_index = 0xf;
           (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
-          this_ptr->unk1[0x50] = '\0';
-          this_ptr->unk1[0x51] = '\0';
-          this_ptr->unk1[0x52] = '\0';
-          this_ptr->unk1[0x53] = '\0';
+          this_ptr->unk5[4] = '\0';
+          this_ptr->unk5[5] = '\0';
+          this_ptr->unk5[6] = '\0';
+          this_ptr->unk5[7] = '\0';
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,desired_state_index,iVar3);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk3 + 0x14));
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk7 + 0x14));
         if (in_stack_00000008->damage_type != 1) {
           uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
-          *(uint *)(this_ptr->unk3 + 0x14) = uVar5;
+          *(uint *)(this_ptr->unk7 + 0x14) = uVar5;
         }
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
       }
     }
-    if (*(CDemonActor **)(this_ptr->unk1 + 0x54) == (this_ptr->base).base.carry_hands[0].carry_actor
-       ) {
-      this_ptr->unk1[0x54] = '\0';
-      this_ptr->unk1[0x55] = '\0';
-      this_ptr->unk1[0x56] = '\0';
-      this_ptr->unk1[0x57] = '\0';
+    if (*(CDemonActor **)(this_ptr->unk5 + 8) == (this_ptr->base).base.carry_hands[0].carry_actor) {
+      this_ptr->unk5[8] = '\0';
+      this_ptr->unk5[9] = '\0';
+      this_ptr->unk5[10] = '\0';
+      this_ptr->unk5[0xb] = '\0';
     }
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
-    if ((this_ptr->base).base.carry_hands[1].carry_actor == *(CDemonActor **)(this_ptr->unk1 + 0x54)
-       ) {
-      this_ptr->unk1[0x54] = '\0';
-      this_ptr->unk1[0x55] = '\0';
-      this_ptr->unk1[0x56] = '\0';
-      this_ptr->unk1[0x57] = '\0';
+    if ((this_ptr->base).base.carry_hands[1].carry_actor == *(CDemonActor **)(this_ptr->unk5 + 8)) {
+      this_ptr->unk5[8] = '\0';
+      this_ptr->unk5[9] = '\0';
+      this_ptr->unk5[10] = '\0';
+      this_ptr->unk5[0xb] = '\0';
     }
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
     goto LAB_005c4ae0;
@@ -113,7 +111,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
   if (in_stack_00000008->damage_amount <= 0.0) goto LAB_005c4ae0;
   if (((in_stack_00000008->damage_type != 0x69) &&
       ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
-     ((*(int *)(this_ptr->unk1 + 0x50) == 0 && (this_ptr->action_pending == 0)))) {
+     ((*(int *)(this_ptr->unk5 + 4) == 0 && (this_ptr->action_pending == 0)))) {
     pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000008->attacker,g_CTommyGunClassInfo.name_hash);
     if (pCVar7 != (CDemonActor *)0x0) {
@@ -124,11 +122,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr)
               (&this_ptr_00->motion_controller,0x24,1);
   }
 LAB_005c4be2:
-  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x14));
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk7 + 0x14));
   if (iVar3 == 0) {
     uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"stranger_hit??.wav");
-    *(uint *)(this_ptr->unk3 + 0x14) = uVar5;
+    *(uint *)(this_ptr->unk7 + 0x14) = uVar5;
   }
 LAB_005c4ae0:
   if (0.0 < in_stack_00000008->damage_amount) {

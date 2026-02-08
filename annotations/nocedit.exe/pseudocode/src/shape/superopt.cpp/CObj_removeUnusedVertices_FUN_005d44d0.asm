@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_memory.c_realloc_FUN_00601df0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
@@ -142,8 +142,8 @@ section .text
     PUSH 0x6544b0                       ; 005d45d1 | = "Deleting %d disjoing vertices"
     LEA EAX,[ESP + 0xc]                 ; 005d45d6
     PUSH EAX                            ; 005d45da
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005d45db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005d45db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,dword ptr [ESI]             ; 005d45e0
     ADD ESP,0xc                         ; 005d45e2
     SUB EAX,EDI                         ; 005d45e5

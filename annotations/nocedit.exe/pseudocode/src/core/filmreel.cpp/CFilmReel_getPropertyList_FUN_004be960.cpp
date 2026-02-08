@@ -16,6 +16,6 @@ core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"Movie name",this_ptr->movie_name,0x1f,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

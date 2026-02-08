@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Etheral_00617750
 ;   TerminatedCString s_Descriptive_name_00617758
 ;   TerminatedCString s_Health_bar_0061777f
-;   void* PTR_s_None_0066e758 = 00617769
+;   SEnumPair[3] g_CharacterHealthBarTypePairs
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670
@@ -73,7 +73,7 @@ section .text
     PUSH 0x617734                       ; 0042f785 | = "Items Carried"
     PUSH ESI                            ; 0042f78a
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 0042f78b
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 0042f790
     LEA EAX,[EBX + 0x2534]              ; 0042f793
         ;   Label: LAB_0042f793
@@ -101,12 +101,12 @@ section .text
     ADD ESP,0x14                        ; 0042f7d3
     ADD EBX,0x2444                      ; 0042f7d6
     PUSH EBX                            ; 0042f7dc
-    PUSH 0x66e758                       ; 0042f7dd | PTR_s_None_0066e758
+    PUSH 0x66e758                       ; 0042f7dd | g_CharacterHealthBarTypePairs
     PUSH 0x3                            ; 0042f7e2
     PUSH 0x61777f                       ; 0042f7e4 | = "Health bar"
     PUSH ESI                            ; 0042f7e9
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0042f7ea
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 0042f7ef
     POP ESI                             ; 0042f7f2
     POP EBX                             ; 0042f7f3

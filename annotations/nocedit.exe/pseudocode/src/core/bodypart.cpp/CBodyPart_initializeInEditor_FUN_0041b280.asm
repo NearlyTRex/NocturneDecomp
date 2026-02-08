@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -149,8 +149,8 @@ section .text
     PUSH 0x615ece                       ; 0041b380 | = "%s\t%s"
     LEA EAX,[ESP + 0x276c]              ; 0041b385
     PUSH EAX                            ; 0041b38c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0041b38d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0041b38d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0041b392
     LEA EAX,[ESP + 0x2760]              ; 0041b395
     PUSH EAX                            ; 0041b39c

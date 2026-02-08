@@ -45,7 +45,7 @@ core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
   if (-1 < iVar4) {
     INT_00680648 = iVar4;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_448.base,iVar4);
-    sprintf(local_a0,"C%s",pcVar2);
+    _sprintf(local_a0,"C%s",pcVar2);
     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);

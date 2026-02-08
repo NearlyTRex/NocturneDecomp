@@ -36,7 +36,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
-;   undefined4 DAT_00821ff4
+;   CDemonActor* PTR_00821ff4
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_ConsolePtr
 ;   CFireEffect g_CFireEffectInstance
@@ -54,7 +54,7 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 ;   core_setcolid.cpp_CDemonSet_FUN_005743e0
-;   core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00
+;   core_trigger.cpp_CTrigger_FUN_005e0b00
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
@@ -192,7 +192,7 @@ section .text
     CMP EDX,ECX                         ; 0056b97f
     JNZ 0x0056baa0                      ; 0056b981
         ;   XREF to: 0056baa0 (CONDITIONAL_JUMP)  ; LAB_0056baa0
-    MOV [0x00821ff4],EAX                ; 0056b987 | DAT_00821ff4
+    MOV [0x00821ff4],EAX                ; 0056b987 | PTR_00821ff4
     LEA EDX,[EAX + 0x30]                ; 0056b98c
     MOV EAX,dword ptr [EDX]             ; 0056b98f
     MOV dword ptr [ESP + 0x40],EAX      ; 0056b991
@@ -209,7 +209,7 @@ section .text
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0056b9b5
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     MOV dword ptr [ESP + 0x64],EAX      ; 0056b9ba
-    MOV EAX,[0x00821ff4]                ; 0056b9be | DAT_00821ff4
+    MOV EAX,[0x00821ff4]                ; 0056b9be | PTR_00821ff4
         ;   Label: LAB_0056b9be
     PUSH dword ptr [ESP]                ; 0056b9c3
     PUSH EAX                            ; 0056b9c6
@@ -226,7 +226,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x64]      ; 0056b9e8
     SUB EAX,EDX                         ; 0056b9ec
     MOV dword ptr [EBX + 0x32bd794],EAX ; 0056b9ee | DAT_032bd794
-    MOV EAX,[0x00821ff4]                ; 0056b9f4 | DAT_00821ff4
+    MOV EAX,[0x00821ff4]                ; 0056b9f4 | PTR_00821ff4
     MOV dword ptr [EBX + 0x32bf6d4],EAX ; 0056b9f9 | DAT_032bf6d4
     MOV EAX,[0x0067b654]                ; 0056b9ff | g_CGamePtr
         ;   Label: LAB_0056b9ff
@@ -237,7 +237,7 @@ section .text
     INC EAX                             ; 0056ba14
     ADD EBX,0x4                         ; 0056ba15
     MOV dword ptr [ESP + 0x88],EAX      ; 0056ba18
-    MOV EAX,[0x00821ff4]                ; 0056ba1f | DAT_00821ff4
+    MOV EAX,[0x00821ff4]                ; 0056ba1f | PTR_00821ff4
         ;   Label: LAB_0056ba1f
     PUSH EAX                            ; 0056ba24
     MOV EDX,dword ptr [EAX + 0x154]     ; 0056ba25
@@ -246,7 +246,7 @@ section .text
     TEST EAX,EAX                        ; 0056ba34
     JZ 0x0056ba4d                       ; 0056ba36
         ;   XREF to: 0056ba4d (CONDITIONAL_JUMP)  ; LAB_0056ba4d
-    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba38 | DAT_00821ff4
+    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba38 | PTR_00821ff4
     PUSH 0x0                            ; 0056ba3e
     ADD EDX,0x20                        ; 0056ba40
     PUSH EDX                            ; 0056ba43
@@ -254,7 +254,7 @@ section .text
     CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 ; 0056ba45
         ;   XREF to: 00546a60 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 0056ba4a
-    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba4d | DAT_00821ff4
+    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba4d | PTR_00821ff4
         ;   Label: LAB_0056ba4d
     FLD float ptr [ESP + 0x44]          ; 0056ba53
     FCOMP float ptr [EDX + 0x34]        ; 0056ba57
@@ -262,14 +262,14 @@ section .text
     SAHF                                ; 0056ba5c
     JZ 0x0056ba7b                       ; 0056ba5d
         ;   XREF to: 0056ba7b (CONDITIONAL_JUMP)  ; LAB_0056ba7b
-    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba5f | DAT_00821ff4
+    MOV EDX,dword ptr [0x00821ff4]      ; 0056ba5f | PTR_00821ff4
         ;   Label: LAB_0056ba5f
     PUSH EDX                            ; 0056ba65
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0056ba66
         ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0056ba6b
     XOR ECX,ECX                         ; 0056ba6e
-    MOV dword ptr [0x00821ff4],ECX      ; 0056ba70 | DAT_00821ff4
+    MOV dword ptr [0x00821ff4],ECX      ; 0056ba70 | PTR_00821ff4
     JMP 0x0056b931                      ; 0056ba76
         ;   XREF to: 0056b931 (UNCONDITIONAL_JUMP)  ; LAB_0056b931
     FLD float ptr [ESP + 0x40]          ; 0056ba7b
@@ -286,7 +286,7 @@ section .text
     JNZ 0x0056ba5f                      ; 0056ba91
         ;   XREF to: 0056ba5f (CONDITIONAL_JUMP)  ; LAB_0056ba5f
     XOR ECX,ECX                         ; 0056ba93
-    MOV dword ptr [0x00821ff4],ECX      ; 0056ba95 | DAT_00821ff4
+    MOV dword ptr [0x00821ff4],ECX      ; 0056ba95 | PTR_00821ff4
     JMP 0x0056b931                      ; 0056ba9b
         ;   XREF to: 0056b931 (UNCONDITIONAL_JUMP)  ; LAB_0056b931
     JLE 0x0056b931                      ; 0056baa0
@@ -446,8 +446,8 @@ section .text
         ;   XREF to: 0056bc4f (CONDITIONAL_JUMP)  ; LAB_0056bc4f
     PUSH dword ptr [ESP + 0x60]         ; 0056bc42
     PUSH EBX                            ; 0056bc46
-    CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 0056bc47
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 0056bc47
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 0056bc4c
     MOV EBX,dword ptr [0x02d7a738]      ; 0056bc4f | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_0056bc4f

@@ -44,7 +44,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d220
 ;   core_msnedit.cpp_FUN_00535c60
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -121,8 +121,8 @@ section .text
     PUSH 0x63c6ef                       ; 0053ba7e | = "C%s"
     LEA EAX,[ESP + 0x3b0]               ; 0053ba83
     PUSH EAX                            ; 0053ba8a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053ba8b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053ba8b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053ba90
     LEA EAX,[ESP + 0x3a8]               ; 0053ba93
     PUSH EAX                            ; 0053ba9a

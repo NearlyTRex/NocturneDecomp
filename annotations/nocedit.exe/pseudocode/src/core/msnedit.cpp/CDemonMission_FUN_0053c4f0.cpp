@@ -15,7 +15,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr
   CDemonRenderer *unaff_EDI;
   char acStack_134 [296];
   
-  core_actor_cpp_FUN_0040e150();
+  core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)
+  ;
   this_ptr_00 = this_ptr->selected_actor;
   DAT_02f7c528 = -1;
   DAT_02f7c538 = 0;
@@ -57,7 +58,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr
     core_msnedit_cpp_FUN_00536e20();
     return;
   }
-  sprintf(acStack_134,"Selected: %s",this_ptr->selected_actor);
+  _sprintf(acStack_134,"Selected: %s",this_ptr->selected_actor);
   engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,g_WindowHeight + -0xb);
   shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(&DAT_02f797e4);
   core_msnedit_cpp_FUN_00536e20();

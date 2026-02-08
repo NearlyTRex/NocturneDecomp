@@ -43,8 +43,8 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -110,8 +110,8 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0054bfe4
     PUSH EAX                            ; 0054bfe8
     MOV ESI,0xc7                        ; 0054bfe9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054bfee
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054bfee
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0054bff3
     LEA EAX,[ESP + 0x64]                ; 0054bff6
     MOV ECX,0x63f4e8                    ; 0054bffa | = "..\\cockpit\\pkbmpset.cpp"
@@ -145,8 +145,8 @@ section .text
     PUSH 0x63f518                       ; 0054c04c | = "Can't allocate %u bytes for RAW buffe..."
     LEA EAX,[ESP + 0xd0]                ; 0054c051
     PUSH EAX                            ; 0054c058
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c059
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c059
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x63f562                    ; 0054c05e | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 0054c063
     LEA EAX,[ESP + 0xc8]                ; 0054c066
@@ -182,8 +182,8 @@ section .text
     PUSH 0x63f57a                       ; 0054c0bd | = "Error reading from %s in CPackedBitma..."
     LEA EAX,[ESP + 0x134]               ; 0054c0c2
     PUSH EAX                            ; 0054c0c9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c0ca
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c0ca
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x63f5b3                    ; 0054c0cf | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 0054c0d4
     MOV [0x02f0ca48],EAX                ; 0054c0d7 | g_CurrentFilename
@@ -251,8 +251,8 @@ section .text
     PUSH 0x63f43e                       ; 0054c187 | = "Unable to open %s in CPackedBitmapSet..."
     LEA EAX,[ESP + 0x8]                 ; 0054c18c
     PUSH EAX                            ; 0054c190
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c191
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c191
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x63f473                    ; 0054c196 | = "..\\cockpit\\pkbmpset.cpp"
     ADD ESP,0xc                         ; 0054c19b
     MOV [0x02f0ca48],EAX                ; 0054c19e | g_CurrentFilename

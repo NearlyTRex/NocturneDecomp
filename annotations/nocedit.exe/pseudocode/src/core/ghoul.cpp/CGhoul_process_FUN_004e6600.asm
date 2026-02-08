@@ -2427,8 +2427,8 @@ section .text
     PUSH 0x62dd43                       ; 004e8050 | = "ghoul-walk-?.wav *%f"
     LEA EAX,[EBP + 0xfffffd12]          ; 004e8055
     PUSH EAX                            ; 004e805b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e805c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e805c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004e8061
     LEA EAX,[EBP + 0xfffffd12]          ; 004e8064
     PUSH EAX                            ; 004e806a

@@ -42,7 +42,7 @@ LAB_00402972:
     g_CurrentLineNumber = 0x770;
     core_main_c_displayErrorAndQuit_FUN_00506f10("hose!");
   }
-  sprintf(pcVar4,".map");
+  _sprintf(pcVar4,".map");
   p_Var2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"rb");
   if (p_Var2 != (_FILE *)0x0) {
     _fread(g_ColorCubeLookup,1,0x8000,p_Var2);

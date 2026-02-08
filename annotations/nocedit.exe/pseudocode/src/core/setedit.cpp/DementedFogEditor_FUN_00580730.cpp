@@ -54,26 +54,26 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Demented(R) Fog Editor",0,0);
       if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
-        sprintf(local_240,"1.  Fog settings for camera %s");
+        _sprintf(local_240,"1.  Fog settings for camera %s");
         pcVar4 = local_240;
       }
       else {
         pcVar4 = "1.  Use global fog";
       }
       engine_2d_c_drawText_FUN_00401fd0(pcVar4,0,0x16);
-      sprintf(local_140,"2.  Fog color : %d,%d,%d");
+      _sprintf(local_140,"2.  Fog color : %d,%d,%d");
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x2c);
-      sprintf
+      _sprintf
                 (local_140,"3.  Fog velocity : %f,%f,%f",(double)(float)puVar7[3],
                  (double)(float)puVar7[4],(double)(float)puVar7[5]);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x37);
-      sprintf
+      _sprintf
                 (local_140,"4.  Fog taper : %f",(double)(float)puVar7[6]);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x42);
-      sprintf
+      _sprintf
                 (local_140,"5.  Fog density : %f",(double)(float)puVar7[7]);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x4d);
-      sprintf
+      _sprintf
                 (local_140,"T.  Temperature (F) : %3.2f",(double)(float)puVar7[8]);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x58);
       engine_2d_c_drawText_FUN_00401fd0("6.  Reset all cameras to master fog setting",0,99);
@@ -84,14 +84,14 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
         core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
                   (g_CSoundPtr,*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c));
-        sprintf
+        _sprintf
                   (local_140,"R.  Reverb for camera %s : %s",
                    *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28);
       }
       else {
         core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
                   (g_CSoundPtr,*(int *)((int)unk + 0x15ac7c));
-        sprintf(local_140,"R.  Default set reverb : %s");
+        _sprintf(local_140,"R.  Default set reverb : %s");
       }
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0xa5);
       engine_2d_c_drawText_FUN_00401fd0("V.  Test reverb",0,0xb0);
@@ -263,7 +263,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
     }
     else if (local_2c < 0x53) {
       if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
-        sprintf(local_140,"Edit reverb for camera %s");
+        _sprintf(local_140,"Edit reverb for camera %s");
         core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
                   (g_CSoundPtr,local_140,
                    (int *)(*(int *)((int)unk + 0x15aea4) * 0x1a4 + iVar2 + 0x178));

@@ -16,7 +16,7 @@ shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
   va_list_t local_8;
   
   local_8.value[0] = (char * [1])&stack0x0000000c;
-  vsprintf
+  _vsprintf
             (g_ConfirmationMessageBuffer + 0x400,format_string,(va_list_t)&local_8);
   local_8.value[0] = (char * [1])(char *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_18);

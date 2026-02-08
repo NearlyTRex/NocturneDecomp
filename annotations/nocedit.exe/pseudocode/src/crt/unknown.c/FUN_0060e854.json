@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0060e854",
+    "address_range": [
+      [
+        "0060e854",
+        "0060e875"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060e854",
+    "signature": "void crt_unknown_c_FUN_0060e854(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060f960",
+      "is_variadic": false,
+      "name": "crt_thread.c_create_thread_with_sync_FUN_0060f960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685594",
+      "name": "PTR_crt_thread.c_create_thread_with_sync_FUN_0060f960_00685594",
+      "type": "void*",
+      "value": "0060f960"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 15,
+      "INT_ADD": 8,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "address": "0060e854",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_0060e854",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060e854",
+      "type": "special_crt_function"
+    }
+  ]
+}

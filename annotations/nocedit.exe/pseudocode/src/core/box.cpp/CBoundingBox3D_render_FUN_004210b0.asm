@@ -36,7 +36,7 @@
 ;   core_curtain.cpp_CCurtain_FUN_0044b060 at 0044b22a
 ;   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 at 00480852
 ;   core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 at 0054d7fa
-;   core_vehicle.cpp_CVehicle_FUN_005e88c0 at 005e894c
+;   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0 at 005e894c
 ;
 ; Referenced Globals:
 ;   float g_BoundingBoxWorldToIntegerScale = 256

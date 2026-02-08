@@ -143,7 +143,7 @@ joined_r0x005ad2dc:
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\sound\\sndmain.cpp",0x17a2);
   }
-  sprintf(local_45c,"length = %d",local_1c);
+  _sprintf(local_45c,"length = %d",local_1c);
   if (iVar2 < 0) {
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c,local_45c);
   }

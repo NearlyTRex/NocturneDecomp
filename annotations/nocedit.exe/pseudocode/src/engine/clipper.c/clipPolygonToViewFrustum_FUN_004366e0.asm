@@ -51,7 +51,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
 ;   engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
 ;   engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
@@ -82,8 +82,8 @@ section .text
     PUSH 0x618131                       ; 004366fb | = "Too many poly verticies : %d"
     LEA EAX,[ESP + 0x8]                 ; 00436700
     PUSH EAX                            ; 00436704
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00436705
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00436705
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x61814e                    ; 0043670a | = "..\\engine\\clipper.c"
     ADD ESP,0xc                         ; 0043670f
     MOV EAX,ESP                         ; 00436712

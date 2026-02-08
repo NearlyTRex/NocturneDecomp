@@ -8,5 +8,5 @@ struct CPoly;
 struct CPolyIntersectResult;
 
 // Function Definition: CPoly_intersectPoly
-typedef int (*CPoly_intersectPoly)(struct CPoly* this_ptr, struct CPoly* other_poly, struct CPolyIntersectResult* out_result);
+typedef int CPoly_intersectPoly(struct CPoly* this_ptr, struct CPoly* other_poly, struct CPolyIntersectResult* out_result);
 

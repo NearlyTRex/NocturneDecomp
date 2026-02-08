@@ -10,7 +10,7 @@
 typedef struct CTrap {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk; // 0x2d4
+    struct CDemonActor* carrier; // 0x2d4
     int wolf_in_trap; // 0x2d8
 } CTrap;
 

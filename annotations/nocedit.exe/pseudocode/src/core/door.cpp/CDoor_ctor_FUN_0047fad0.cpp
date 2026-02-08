@@ -33,7 +33,7 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
     (ADJ(this_ptr_00)->orig_pos).z = ADJ(this_ptr_00).base.location.position.z;
   }
   pcVar3 = "defaultDoorOpen";
-  pcVar4 = ADJ(this_ptr_00)->unk1;
+  pcVar4 = ADJ(this_ptr_00)->open_condition;
   do {
     cVar2 = *pcVar3;
     *pcVar4 = cVar2;
@@ -44,7 +44,7 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
   pcVar3 = "defaultDoorClose";
-  pcVar4 = ADJ(this_ptr_00)->unk1 + 100;
+  pcVar4 = ADJ(this_ptr_00)->close_condition;
   do {
     cVar2 = *pcVar3;
     *pcVar4 = cVar2;
@@ -55,9 +55,9 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
   pcVar3 = "door-locked.wav";
-  ADJ(this_ptr_00)->unk2[1000] = '\0';
-  pcVar4 = ADJ(this_ptr_00)->unk2 + 0x4b0;
-  ADJ(this_ptr_00)->unk2[0x44c] = '\0';
+  ADJ(this_ptr_00)->open_sound[0] = '\0';
+  pcVar4 = ADJ(this_ptr_00)->locked_sound;
+  ADJ(this_ptr_00)->close_sound[0] = '\0';
   do {
     cVar2 = *pcVar3;
     *pcVar4 = cVar2;
@@ -73,8 +73,8 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   ADJ(this_ptr_00)->open_speed = 1.0;
   ADJ(this_ptr_00)->close_speed = 1.0;
   ADJ(this_ptr_00)->ground_type = 0;
-  ADJ(this_ptr_00)->unk1[200] = '\0';
-  ADJ(this_ptr_00)->unk1[300] = '\0';
+  ADJ(this_ptr_00)->on_open_trigger_event[0] = '\0';
+  ADJ(this_ptr_00)->on_close_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->one_shot = 0;
   this_ptr_00[5].animation_state[0x2c] = '\0';
   this_ptr_00[5].animation_state[0x2d] = '\0';

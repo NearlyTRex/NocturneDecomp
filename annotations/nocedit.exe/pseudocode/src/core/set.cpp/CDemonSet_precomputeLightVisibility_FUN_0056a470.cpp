@@ -83,7 +83,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
           (this_ptr_00->box_max).y = pCVar4[1].y;
           (this_ptr_00->box_max).z = pCVar4[1].z;
         }
-        sprintf
+        _sprintf
                   (&stack0xfffffe8c,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
                    (double)local_3c->cameras[0].box_min.x,(double)local_3c->cameras[0].box_min.y,
                    (double)local_3c->cameras[0].box_min.z,(double)local_3c->cameras[0].box_max.x,
@@ -142,7 +142,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               *puVar10 = *puVar8;
               puVar10[(uint)bVar12 * -2 + 1] = puVar8[(uint)bVar12 * -2 + 1];
               if (*(char *)(local_18 + 0x19b58) != '\0') {
-                sprintf(&stack0xfffffe8c,"Light %d, Box : %d,%d,%d,%d");
+                _sprintf(&stack0xfffffe8c,"Light %d, Box : %d,%d,%d,%d");
                 iVar5 = local_1c + 0xb;
                 engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,local_1c);
                 local_1c = iVar5;
@@ -184,7 +184,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
         } while (local_14 < local_24);
       }
       iVar6 = local_20;
-      sprintf(&stack0xfffffe8c,"Precomputing lights from camera : %d");
+      _sprintf(&stack0xfffffe8c,"Precomputing lights from camera : %d");
       engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0);
       iVar6 = iVar6 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

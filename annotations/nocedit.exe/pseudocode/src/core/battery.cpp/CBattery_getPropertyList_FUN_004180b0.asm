@@ -45,7 +45,7 @@ section .text
     PUSH 0x615a23                       ; 004180e4 | = "Discharge time (sec)"
     PUSH ESI                            ; 004180e9
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 004180ea
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004180ef
     PUSH 0x0                            ; 004180f2
     ADD EBX,0x2d8                       ; 004180f4
@@ -53,7 +53,7 @@ section .text
     PUSH 0x615a38                       ; 004180fb | = "Charge time (sec)"
     PUSH ESI                            ; 00418100
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00418101
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00418106
     POP ESI                             ; 00418109
     POP EBX                             ; 0041810a

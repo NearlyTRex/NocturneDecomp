@@ -67,7 +67,7 @@ typedef struct HWND__ {
 } HWND__;
 
 // Function Definition: IS_SPECIAL_DEVICE_FUNC
-typedef int (*IS_SPECIAL_DEVICE_FUNC)(int file_handle_index);
+typedef int IS_SPECIAL_DEVICE_FUNC(int file_handle_index);
 
 // Typedef: LPISSPECIALDEVICE
 // pointer to IS_SPECIAL_DEVICE_FUNC
@@ -81,33 +81,33 @@ typedef struct tagMSG* LPMSG;
 typedef tagPOINT POINT;
 
 // Function Definition: SPECIAL_CONSOLE_INPUT_HANDLER_FUNC
-typedef int (*SPECIAL_CONSOLE_INPUT_HANDLER_FUNC)(int device_type);
+typedef int SPECIAL_CONSOLE_INPUT_HANDLER_FUNC(int device_type);
 
 // Function Definition: SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC
-typedef int (*SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC)(int device_type, int character);
+typedef int SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC(int device_type, int character);
 
 // Function Definition: SPECIAL_DEVICE_CLEANUP_FUNC
-typedef int (*SPECIAL_DEVICE_CLEANUP_FUNC)(int fd);
+typedef int SPECIAL_DEVICE_CLEANUP_FUNC(int fd);
 
 // Function Definition: SPECIAL_DEVICE_CLOSE_FUNC
-typedef void (*SPECIAL_DEVICE_CLOSE_FUNC)(int cleanup_result);
+typedef void SPECIAL_DEVICE_CLOSE_FUNC(int cleanup_result);
 
 // Function Definition: SPECIAL_DEVICE_READ_FUNC
-typedef int (*SPECIAL_DEVICE_READ_FUNC)(int device_type, void* buffer, int bytes_to_read);
+typedef int SPECIAL_DEVICE_READ_FUNC(int device_type, void* buffer, int bytes_to_read);
 
 // Typedef: LPSPECIALDEVICEREAD
 // pointer to SPECIAL_DEVICE_READ_FUNC
 typedef SPECIAL_DEVICE_READ_FUNC* LPSPECIALDEVICEREAD;
 
 // Function Definition: SPECIAL_DEVICE_WRITE_FUNC
-typedef int (*SPECIAL_DEVICE_WRITE_FUNC)(int device_id, void* buffer, int bytes_to_write);
+typedef int SPECIAL_DEVICE_WRITE_FUNC(int device_id, void* buffer, int bytes_to_write);
 
 // Typedef: LPSPECIALDEVICEWRITE
 // pointer to SPECIAL_DEVICE_WRITE_FUNC
 typedef SPECIAL_DEVICE_WRITE_FUNC* LPSPECIALDEVICEWRITE;
 
 // Function Definition: WNDPROC_FUNC
-typedef LRESULT (*WNDPROC_FUNC)(HWND param0, UINT param1, WPARAM param2, LPARAM param3);
+typedef LRESULT WNDPROC_FUNC(HWND param0, UINT param1, WPARAM param2, LPARAM param3);
 
 // Typedef: WNDPROC
 // pointer to WNDPROC_FUNC

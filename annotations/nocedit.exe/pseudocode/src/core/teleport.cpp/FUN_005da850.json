@@ -21,7 +21,7 @@
     {
       "addr": "005da870",
       "from_addr": "005da8a4",
-      "name": "core_teleport.cpp_CTeleportDest_FUN_005da870",
+      "name": "core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870",
       "type": "DATA"
     }
   ],
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_teleport.cpp_FUN_005da850",
-    "signature": "bool __cdecl core_teleport_cpp_FUN_005da850(void)"
+    "signature": "int __cdecl core_teleport_cpp_FUN_005da850(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -91,14 +91,14 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "return *(int *)(in_stack_00000008 + 0x164) == in_stack_00000004;",
+      "text": "return (uint)(*(int *)(in_stack_00000008 + 0x164) == in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
-      "text": "return *(int *)(in_stack_00000008 + 0x164) == in_stack_00000004;",
+      "text": "return (uint)(*(int *)(in_stack_00000008 + 0x164) == in_stack_00000004);",
       "type": "stack_param"
     }
   ]

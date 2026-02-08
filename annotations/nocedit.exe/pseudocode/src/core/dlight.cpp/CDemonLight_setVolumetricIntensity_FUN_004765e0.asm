@@ -15,7 +15,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056ca95
 ;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b00f
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 at 00586c56
-;   core_shotgun.cpp_FUN_00587f70 at 00588030
+;   core_shotgun.cpp_CShotgun_process_FUN_00587f70 at 00588030
 ;   core_weapon.cpp_CWeapon_FUN_005ee4a0 at 005ee5b7
 ;
 ; Referenced Globals:

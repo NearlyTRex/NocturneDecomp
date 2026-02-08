@@ -19,7 +19,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860
   file_handle = engine_dosio_c_getFile_FUN_00481a50("art",this_ptr->filename,"rb")
   ;
   if (file_handle == (_FILE *)0x0) {
-    sprintf(local_6c,"Unable to open PBM file %s",this_ptr);
+    _sprintf(local_6c,"Unable to open PBM file %s",this_ptr);
     g_CurrentLineNumber = 0x4fc;
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);

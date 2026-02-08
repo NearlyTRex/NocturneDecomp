@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "format_error",
+        "column": 46,
+        "line": 108,
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 122,
@@ -79,6 +85,11 @@
       "name": "core_script.cpp_CScript_FUN_0055a540"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -92,11 +103,6 @@
       "addr": "00601560",
       "is_variadic": false,
       "name": "crt_stdio.c_ftell_FUN_00601560"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00602130",
@@ -555,7 +561,7 @@
       "description": "Unnamed function parameter",
       "line": 138,
       "match": "param_2",
-      "text": "sprintf(local_e4,\"start notepad world\\\\%s\",param_2);",
+      "text": "_sprintf(local_e4,\"start notepad world\\\\%s\",param_2);",
       "type": "unnamed_param"
     }
   ]

@@ -7,5 +7,5 @@
 struct CSound;
 
 // Function Definition: CSound_releaseBufferId
-typedef void (*CSound_releaseBufferId)(struct CSound* this_ptr, void* buffer_id);
+typedef void CSound_releaseBufferId(struct CSound* this_ptr, void* buffer_id);
 

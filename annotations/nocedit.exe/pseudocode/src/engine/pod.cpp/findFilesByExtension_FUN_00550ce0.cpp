@@ -105,7 +105,7 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
           }
           pcVar7 = local_1c;
           if (iVar3 == local_38) {
-            strncpy(local_1c,pcVar9,local_30);
+            _strncpy(local_1c,pcVar9,local_30);
             local_1c = pcVar7 + local_28;
             local_14 = local_14 + 1;
             if (max_results <= local_14) {

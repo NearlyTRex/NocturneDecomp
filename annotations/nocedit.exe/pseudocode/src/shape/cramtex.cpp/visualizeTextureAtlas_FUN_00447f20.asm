@@ -48,7 +48,7 @@
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_plotPixel_FUN_00401140
@@ -143,8 +143,8 @@ section .text
     PUSH 0x619a42                       ; 0044800e | = "CramTex II %s:  N=%d  Map %d/%d  Cove..."
     LEA EAX,[EBP + -0x76]               ; 00448013
     PUSH EAX                            ; 00448016
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00448017
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00448017
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x30                        ; 0044801c
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0044801f
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

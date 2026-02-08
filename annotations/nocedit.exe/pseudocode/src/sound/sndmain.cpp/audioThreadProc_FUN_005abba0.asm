@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
+; __stdcall DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
 ;
 ; Parameters:
 ; LPVOID           Stack[0x4]:4   lpThreadParam

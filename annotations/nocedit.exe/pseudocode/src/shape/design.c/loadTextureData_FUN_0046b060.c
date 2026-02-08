@@ -87,7 +87,7 @@ shape_design_c_loadTextureData_FUN_0046b060
     }
   }
   if ((local_1c->_flag & 0x20) != 0) {
-    sprintf(local_148,"Unable to read file (%s).",config_ptr);
+    _sprintf(local_148,"Unable to read file (%s).",config_ptr);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c2);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x27c3;

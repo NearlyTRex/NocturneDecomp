@@ -24,7 +24,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPri
     pSVar2 = (*g_MRGLBlockHandlerTable[iVar1])((SMRGLHeaderExtended *)primitive);
     return pSVar2;
   }
-  sprintf(local_104,"Bad prim : %d",iVar1);
+  _sprintf(local_104,"Bad prim : %d",iVar1);
   g_CurrentFilename = "..\\engine\\3d.c";
   g_CurrentLineNumber = 0xc8b;
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_104);

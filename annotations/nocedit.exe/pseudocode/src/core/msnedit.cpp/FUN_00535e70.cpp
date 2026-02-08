@@ -167,7 +167,7 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
       }
       local_14 = local_14 + 0xb;
       pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);
-      sprintf
+      _sprintf
                 (&stack0xfffffef0,"Actor-specific help for selected actor %s (type %s):",this_ptr,pcVar2);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef0,g_ClipLeft,local_14);
       local_14 = local_14 + 0x16;

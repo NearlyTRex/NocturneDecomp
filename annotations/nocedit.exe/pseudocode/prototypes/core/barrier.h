@@ -19,41 +19,41 @@ CDemonActorType * __cdecl CBarrier::getActorType(CBarrier *this_ptr);
 // Address: 004141c0
 CBarrier * __cdecl CBarrier::ctor(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_00414210
+// Original: core_barrier.cpp_CBarrier_setup_FUN_00414210
 // Address: 00414210
-void __cdecl CBarrier(CBarrier *this_ptr);
+void __cdecl CBarrier::setup(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_00414240
+// Original: core_barrier.cpp_CBarrier_renderTransparent_FUN_00414240
 // Address: 00414240
-int __cdecl CBarrier(CBarrier *this_ptr);
+int __cdecl CBarrier::renderTransparent(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_004142e0
+// Original: core_barrier.cpp_CBarrier_getBoundingBox_FUN_004142e0
 // Address: 004142e0
-void __cdecl CBarrier(CBarrier *this_ptr);
+CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_barrier.cpp_CBarrier_archive_FUN_00414340
 // Address: 00414340
 void __cdecl CBarrier::archive(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_004143a0
+// Original: core_barrier.cpp_CBarrier_hasCollision_FUN_004143a0
 // Address: 004143a0
-int __cdecl CBarrier(CBarrier *this_ptr);
+int __cdecl CBarrier::hasCollision(CBarrier *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_barrier.cpp_CBarrier_FUN_004143e0
+// Original: core_barrier.cpp_CBarrier_updateCollisionData_FUN_004143e0
 // Address: 004143e0
-void __cdecl CBarrier(CBarrier *this_ptr);
+void __cdecl CBarrier::updateCollisionData(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_getPropertyList_FUN_00414400
 // Address: 00414400
 void __cdecl CBarrier::getPropertyList(CBarrier *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_barrier.cpp_CBarrier_FUN_00414460
+// Original: core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
 // Address: 00414460
-void __cdecl CBarrier(CBarrier *this_ptr);
+void __cdecl CBarrier::processInEditor(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_FUN_00414610
+// Original: core_barrier.cpp_CBarrier_showEditorHelp_FUN_00414610
 // Address: 00414610
-void __cdecl CBarrier(CBarrier *this_ptr);
+void __cdecl CBarrier::showEditorHelp(CBarrier *this_ptr,int *y_pos);
 
 // Original: core_barrier.cpp_CBarrier_dtor_FUN_00414670
 // Address: 00414670

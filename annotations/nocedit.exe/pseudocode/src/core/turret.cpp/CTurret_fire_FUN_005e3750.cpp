@@ -13,9 +13,10 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
   CVector3f *pCVar2;
   CCharacter *this_ptr_00;
   int iVar3;
-  CDemonActor *pCVar4;
-  CFlameCan *this_ptr_01;
+  CTrigger *this_ptr_01;
+  CFlameCan *this_ptr_02;
   int extraout_EAX;
+  CTrigger *actor;
   ulonglong uStack_e8;
   SDamageInfo SStack_e0;
   CVector3f CStack_a4;
@@ -59,34 +60,35 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
     pCStack_20 = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
-    pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
-    local_5c.damage_type = (int)pCVar4;
+    this_ptr_01 = (CTrigger *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+    local_5c.damage_type = (int)this_ptr_01;
     local_5c.attacker =
          core_actor_cpp_castToClassHash_FUN_0040c790
                    (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
-    this_ptr_01 = (CFlameCan *)
+    this_ptr_02 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
     if (this_ptr_00 == (CCharacter *)0x0) {
       if (pCStack_20 == (CGlass *)0x0) {
-        if (pCVar4 != (CDemonActor *)0x0) {
-          core_trigger_cpp_FUN_005e0aa0();
-          iVar3 = core_trigger_cpp_FUN_005e0ac0();
-          pCVar4 = (CDemonActor *)local_5c.damage_type;
+        if (this_ptr_01 != (CTrigger *)0x0) {
+          core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_01);
+          iVar3 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_01);
+          actor = (CTrigger *)local_5c.damage_type;
           if (iVar3 != 0) {
             fStack_18 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
-            core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
-            pCVar4 = (CDemonActor *)local_5c.damage_type;
+            core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_01);
+            actor = (CTrigger *)local_5c.damage_type;
           }
           goto LAB_005e3ae2;
         }
         if ((CCrate *)local_5c.attacker == (CCrate *)0x0) {
-          if (this_ptr_01 == (CFlameCan *)0x0) {
+          if (this_ptr_02 == (CFlameCan *)0x0) {
             core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
             break;
           }
-          core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_01);
+          core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_02);
         }
         else {
           core_crate_cpp_CCrate_FUN_00448a70((CCrate *)local_5c.attacker);
@@ -138,9 +140,9 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
       (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_00,(SDamageInfo *)&uStack_e8);
       if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) break;
-      pCVar4 = g_CDemonSetPtr->collision_actor;
+      actor = (CTrigger *)g_CDemonSetPtr->collision_actor;
 LAB_005e3ae2:
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar4);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&actor->base);
     }
     local_5c.wielder = (CDemonActor *)((local_5c.wielder)->actor_name + 1);
   } while ((int)local_5c.wielder < 4);

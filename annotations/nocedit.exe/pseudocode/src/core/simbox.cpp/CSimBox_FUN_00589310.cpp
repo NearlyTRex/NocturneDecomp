@@ -17,7 +17,7 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00589310(CSimBox *this_ptr)
   ;
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (in_stack_00000008,"Weight (lbs)",(float *)(this_ptr->unk + 0x180),
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
             (in_stack_00000008,"Type",core_simbox_cpp_FUN_00589270,
              core_simbox_cpp_FUN_005892d0);
@@ -28,9 +28,9 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00589310(CSimBox *this_ptr)
             (in_stack_00000008,"Event condition : ",this_ptr->unk + 0x184);
   core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
             (in_stack_00000008,"Initial velocity",(CVector3f *)(this_ptr->unk + 0x1e8),
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
             (in_stack_00000008,"Initial rotation velocity",
-             (CVector3f *)(this_ptr->unk + 500),(CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CVector3f *)(this_ptr->unk + 500),(CActorPropertyValidatorFunc *)0x0);
   return;
 }

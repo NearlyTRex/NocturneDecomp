@@ -19,7 +19,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,ui
     return this_ptr;
   }
   (this_ptr->base).vtable._ub = &g_CWeaponVTable;
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->unk3 + 3));
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)this_ptr->unk3);
   ptr = (CWeapon *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);

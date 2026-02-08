@@ -44,11 +44,11 @@
 ;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
 ;   crt_errno.c__errno_FUN_00601450
 ;   crt_startup.c_notifyAbnormalTermination_FUN_00601620
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   crt_string.c_strerror_FUN_00601470
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_asctime_FUN_00601768
-;   crt_time.c_localtime_FUN_00600288
 ;   crt_time.c_time_FUN_006001f0
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -79,8 +79,8 @@ section .text
     PUSH 0x2dd3130                      ; 00506f37 | g_ErrorMessageBuffer_02dd3130
     XOR ESI,ESI                         ; 00506f3c
     MOV dword ptr [0x02f0ca50],ECX      ; 00506f3e | g_RecursiveCallFlag
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 00506f44
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 00506f44
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00506f49
     MOV DH,0x5c                         ; 00506f4c
     MOV dword ptr [ESP],ESI             ; 00506f4e
@@ -219,8 +219,8 @@ section .text
     ADD ESP,0x10                        ; 00507083
     LEA EAX,[ESP + 0x8]                 ; 00507086
     PUSH EAX                            ; 0050708a
-    CALL crt_time.c_localtime_FUN_00600288 ; 0050708b
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 0050708b
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 00507090
     PUSH EAX                            ; 00507093
     CALL crt_time.c_asctime_FUN_00601768 ; 00507094

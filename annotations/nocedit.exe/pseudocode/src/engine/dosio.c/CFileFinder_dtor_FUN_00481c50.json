@@ -87,7 +87,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.c_CFileFinder_dtor_FUN_00481c50",
-    "signature": "CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr)"
+    "signature": "CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -118,10 +118,10 @@
     "pcode_op_count": 29
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -130,6 +130,13 @@
         "offset": 4,
         "size": 4,
         "type": "CFileFinder *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

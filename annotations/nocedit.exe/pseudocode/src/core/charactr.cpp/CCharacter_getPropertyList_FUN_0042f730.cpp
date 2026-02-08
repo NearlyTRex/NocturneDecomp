@@ -38,8 +38,9 @@ LAB_0042f793:
             (property_list,"Etheral",&this_ptr->is_ethereal);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"Descriptive name",this_ptr->descriptive_name,100,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Health bar",3,(int *)&PTR_s_None_0066e758);
+            (property_list,"Health bar",3,g_CharacterHealthBarTypePairs,
+             &this_ptr->health_bar_mode);
   return;
 }

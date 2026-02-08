@@ -175,13 +175,52 @@
         "start":"0060b5e8"
       }
     ],
-    "cmt":"Signature: void FUN_0060b5e8(undefined4 param_1, uint param_2, uint param_3)",
+    "conv":"__watcallRegister",
     "importable":true,
     "name":"crt_unknown.c_FUN_0060b5e8",
-    "ret":"undefined1",
+    "ret":"double",
     "vars":{
+      "params":[
+        {
+          "name":"param_1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "reg":"EDX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },
@@ -194,7 +233,6 @@
         "start":"0060d068"
       }
     ],
-    "cmt":"Signature: undefined1 unk_DoSomethingAndSetCtrlHandler(undefined4 param_1, undefined4 param_2)",
     "importable":true,
     "name":"crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068",
     "ret":"undefined1",

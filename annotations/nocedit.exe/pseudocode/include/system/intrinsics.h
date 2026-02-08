@@ -167,6 +167,9 @@
 #ifndef fptan
 #define fptan(x) tan(x)
 #endif
+#ifndef fscale
+#define fscale(y, x) ldexp(y, x)
+#endif
 #ifndef fsin
 #define fsin(x) sin(x)
 #endif

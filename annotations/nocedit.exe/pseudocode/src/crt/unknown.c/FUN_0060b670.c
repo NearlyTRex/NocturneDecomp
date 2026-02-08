@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte FUN_0060b670(uint param_1, uint param_2, uint param_3) */
-
 char * FUN_0060b670(void)
 
 {

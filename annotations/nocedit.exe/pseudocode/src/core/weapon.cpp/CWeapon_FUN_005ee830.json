@@ -16,6 +16,12 @@
       {
         "category": "other",
         "column": 15,
+        "line": 41,
+        "message": "member reference base type 'char[84]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 42,
         "message": "member reference base type 'char[84]' is not a structure or union"
       },
@@ -28,13 +34,7 @@
       {
         "category": "other",
         "column": 15,
-        "line": 44,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 51,
+        "line": 50,
         "message": "member reference base type 'char[84]' is not a structure or union"
       }
     ],
@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 94,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 4,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 212
+    "total_lines": 211
   },
   "cross_references": [],
   "function": {
@@ -553,28 +553,28 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 34,
       "match": "._12_4_",
       "text": "local_94.unk._12_4_ = *(uint *)this_ptr->unk2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._16_4_",
       "text": "local_94.unk._16_4_ = *(uint *)(this_ptr->unk2 + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 36,
       "match": "._20_4_",
       "text": "local_94.unk._20_4_ = *(uint *)(this_ptr->unk2 + 8);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 44,
+      "line": 43,
       "match": "._24_4_",
       "text": "local_94.unk._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);",
       "type": "unknown_field"

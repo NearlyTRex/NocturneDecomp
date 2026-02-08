@@ -68,7 +68,7 @@ void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
     g_LoadedVertices[g_VertexCount].vertex.y = local_20 / (float)local_18;
     g_LoadedVertices[g_VertexCount].vertex.z = local_1c / (float)local_18;
     local_28 = local_28 + 0xb;
-    sprintf(local_9c,"New vertex created : %d.  Press a key...",g_VertexCount);
+    _sprintf(local_9c,"New vertex created : %d.  Press a key...",g_VertexCount);
     engine_2d_c_drawText_FUN_00401fd0(local_9c,0,local_28);
     engine_2d_c_clearInputAndWait_FUN_00403260();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

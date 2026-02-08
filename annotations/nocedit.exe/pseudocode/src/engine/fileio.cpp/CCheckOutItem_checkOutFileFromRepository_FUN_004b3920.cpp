@@ -74,8 +74,8 @@ engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
     iVar2 = 1;
   }
   else {
-    sprintf((char *)local_584,"A writable copy of %s exists.  Replace it?",filename)
-    ;
+    _sprintf
+              ((char *)local_584,"A writable copy of %s exists.  Replace it?",filename);
     iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
                       (local_584,g_VersionControlSession.unk1 + 4);
   }

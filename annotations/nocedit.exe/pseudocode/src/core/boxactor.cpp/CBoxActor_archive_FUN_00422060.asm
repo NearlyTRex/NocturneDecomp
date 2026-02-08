@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CLightActor_archive_FUN_00422c80 at 00422c8a
-;   core_stone.cpp_FUN_005bad40 at 005bad45
+;   core_stone.cpp_CTempleStone_archive_FUN_005bad40 at 005bad45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0061665b

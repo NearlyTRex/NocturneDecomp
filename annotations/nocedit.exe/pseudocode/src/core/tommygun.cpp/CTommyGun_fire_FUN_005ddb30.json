@@ -1,0 +1,719 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 26,
+        "line": 55,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 55,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 63,
+        "message": "use of undeclared identifier 'stack0xfffffeb4'"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 78,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 79,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 80,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 81,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 81,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 82,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 82,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 83,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 83,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 95,
+        "message": "use of undeclared identifier '_pCStack_150'; did you mean 'pCStack_150'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 95,
+        "message": "assigning to 'CCrate *' from incompatible type 'double'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 10,
+        "line": 96,
+        "message": "use of undeclared identifier '_pCStack_150'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 96,
+        "message": "use of undeclared identifier '_pCStack_150'"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 135,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 135,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 149,
+        "message": "indirection not permitted on operand of type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 544,
+    "complexity_score": 526,
+    "cross_reference_count": 0,
+    "function_call_count": 21,
+    "global_count": 26,
+    "pseudocode_lines": 226,
+    "suspect_count": 28,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "suspect_float",
+      "unknown_field"
+    ],
+    "total_lines": 770
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ddb30",
+    "address_range": [
+      [
+        "005ddb30",
+        "005ddded"
+      ],
+      [
+        "005ddebf",
+        "005de32f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30",
+    "signature": "int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408e80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "00448a70",
+      "is_variadic": false,
+      "name": "core_crate.cpp_CCrate_FUN_00448a70"
+    },
+    {
+      "addr": "004c76a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0"
+    },
+    {
+      "addr": "004c7a60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7a60"
+    },
+    {
+      "addr": "004cb340",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+    },
+    {
+      "addr": "004eb3a0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0"
+    },
+    {
+      "addr": "004eaef0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004eaef0"
+    },
+    {
+      "addr": "005741b0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0"
+    },
+    {
+      "addr": "00574180",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
+    },
+    {
+      "addr": "00572530",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_00572530"
+    },
+    {
+      "addr": "00574230",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230"
+    },
+    {
+      "addr": "005e0aa0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0aa0"
+    },
+    {
+      "addr": "005e0ac0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0ac0"
+    },
+    {
+      "addr": "005e0b00",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0b00"
+    },
+    {
+      "addr": "005ee6e0",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_005ee6e0"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006554ad",
+      "name": "s_s_45_dry_wav_2_0_006554ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006554cd",
+      "name": "FLOAT_006554cd",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "006554d1",
+      "name": "DOUBLE_006554d1",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "006554d9",
+      "name": "FLOAT_006554d9",
+      "type": "float",
+      "value": "-0.125"
+    },
+    {
+      "addr": "006554e1",
+      "name": "DOUBLE_006554e1",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "00823c4c",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0088797c",
+      "name": "g_CCrateClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d7a738",
+      "name": "g_CFlameCanClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83360",
+      "name": "g_CGlassClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db880c",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03261388",
+      "name": "DAT_03261388",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326138c",
+      "name": "DAT_0326138c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261390",
+      "name": "DAT_03261390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261394",
+      "name": "DAT_03261394",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261398",
+      "name": "DAT_03261398",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326139c",
+      "name": "DAT_0326139c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613a0",
+      "name": "DAT_032613a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613ac",
+      "name": "DAT_032613ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613b0",
+      "name": "DAT_032613b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613bc",
+      "name": "DAT_032613bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613c0",
+      "name": "DAT_032613c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87490",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.920258620689655,
+    "instruction_count": 464,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 31,
+      "CALLIND": 8,
+      "CBRANCH": 22,
+      "COPY": 857,
+      "FLOAT2FLOAT": 68,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 220,
+      "INT_AND": 173,
+      "INT_CARRY": 41,
+      "INT_EQUAL": 142,
+      "INT_LEFT": 12,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 43,
+      "INT_SLESS": 71,
+      "INT_SUB": 119,
+      "INT_XOR": 6,
+      "INT_ZEXT": 12,
+      "LOAD": 111,
+      "POPCOUNT": 71,
+      "RETURN": 4,
+      "STORE": 169
+    },
+    "pcode_op_count": 2283
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTommyGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ddb3c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._48_4_",
+      "text": "auStack_78._48_4_ = CStack_cc.x * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._0_4_",
+      "text": "auStack_78._0_4_ = CStack_84.x - (float)auStack_78._48_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._48_4_",
+      "text": "auStack_78._0_4_ = CStack_84.x - (float)auStack_78._48_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._4_4_",
+      "text": "auStack_78._4_4_ = CStack_84.y - (float)pCStack_44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._8_4_",
+      "text": "auStack_78._8_4_ = CStack_84.z - (float)pCStack_40;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 136,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX == 0) goto LAB_005ddd4e;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 157,
+      "match": "CONCAT44",
+      "text": "_pCStack_150 = (double)CONCAT44(0x3ecccccd,pCStack_24);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 158,
+      "match": "._24_4_",
+      "text": "auStack_78._24_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._28_4_",
+      "text": "auStack_78._28_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._32_4_",
+      "text": "auStack_78._32_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._32_4_",
+      "text": "SQRT((float)auStack_78._32_4_ * (float)auStack_78._32_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._32_4_",
+      "text": "SQRT((float)auStack_78._32_4_ * (float)auStack_78._32_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 165,
+      "match": "SQRT",
+      "text": "SQRT((float)auStack_78._32_4_ * (float)auStack_78._32_4_ +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._24_4_",
+      "text": "(float)auStack_78._24_4_ * (float)auStack_78._24_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._24_4_",
+      "text": "(float)auStack_78._24_4_ * (float)auStack_78._24_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._28_4_",
+      "text": "(float)auStack_78._28_4_ * (float)auStack_78._28_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._28_4_",
+      "text": "(float)auStack_78._28_4_ * (float)auStack_78._28_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._0_4_",
+      "text": "auStack_78._0_4_ = (float)auStack_78._24_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._24_4_",
+      "text": "auStack_78._0_4_ = (float)auStack_78._24_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._4_4_",
+      "text": "auStack_78._4_4_ = (float)auStack_78._28_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 169,
+      "match": "._28_4_",
+      "text": "auStack_78._4_4_ = (float)auStack_78._28_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 170,
+      "match": "._8_4_",
+      "text": "auStack_78._8_4_ = (float)auStack_78._32_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 170,
+      "match": "._32_4_",
+      "text": "auStack_78._8_4_ = (float)auStack_78._32_4_ * fStack_3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._0_4_",
+      "text": "SStack_148.unknown = auStack_78._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 173,
+      "match": "._4_4_",
+      "text": "SStack_148.damage_amount = (float)auStack_78._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 174,
+      "match": "._8_4_",
+      "text": "SStack_148.damage_flags = auStack_78._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 185,
+      "match": "1.41531e-43",
+      "text": "SStack_148.impact_direction.z = 1.41531e-43;",
+      "type": "suspect_float"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 248,
+        "vtable_addr": "00664674"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

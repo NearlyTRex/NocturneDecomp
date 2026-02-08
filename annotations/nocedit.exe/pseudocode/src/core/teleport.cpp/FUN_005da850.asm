@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool __cdecl core_teleport_cpp_FUN_005da850(void)
+; __cdecl int __cdecl core_teleport_cpp_FUN_005da850(void)
 ;
 ;
 ; XREF[1]:
-;   core_teleport.cpp_CTeleportDest_FUN_005da870 at 005da8a4
+;   core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870 at 005da8a4
 ;
 ; *****************************************************************************
 

@@ -2,6 +2,18 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "format_error",
+        "column": 59,
+        "line": 63,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 82,
+        "line": 76,
+        "message": "use of undeclared identifier 'stack0xffffafd8'"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 75,
         "line": 79,
@@ -21,23 +33,16 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 63,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 613,
+    "complexity_score": 623,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
     "pseudocode_lines": 173,
-    "suspect_count": 41,
+    "suspect_count": 42,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
@@ -70,6 +75,11 @@
   },
   "function_calls": [
     {
+      "addr": "0040e130",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_init_FUN_0040e130"
+    },
+    {
       "addr": "00408b90",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
@@ -78,11 +88,6 @@
       "addr": "0040c430",
       "is_variadic": false,
       "name": "core_actor.cpp_createActorByName_FUN_0040c430"
-    },
-    {
-      "addr": "0040e130",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040e130"
     },
     {
       "addr": "00478dd0",
@@ -122,7 +127,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
@@ -380,6 +385,13 @@
       "match": "(int *)((int)",
       "text": "(char *)(*(int *)((int)g_ActorClassRegistrations + iVar7) + 1));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 69,
+      "match": "&stack0xffffafd8",
+      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffafd8);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",

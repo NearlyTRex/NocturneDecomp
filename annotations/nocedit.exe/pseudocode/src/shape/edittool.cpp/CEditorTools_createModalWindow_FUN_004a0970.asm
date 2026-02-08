@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401800
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
@@ -173,8 +173,8 @@ section .text
     PUSH 0x6233cf                       ; 004a0acd | = "%s\n"
     PUSH EBP                            ; 004a0ad2
     INC ESI                             ; 004a0ad3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a0ad4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a0ad4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a0ad9
     ADD EBP,EAX                         ; 004a0adc
     MOV EAX,dword ptr [ESP + 0xc]       ; 004a0ade

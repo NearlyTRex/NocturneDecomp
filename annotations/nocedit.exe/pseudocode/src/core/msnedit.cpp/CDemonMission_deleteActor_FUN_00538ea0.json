@@ -3,6 +3,12 @@
     "errors": [
       {
         "category": "undeclared_identifier",
+        "column": 82,
+        "line": 24,
+        "message": "use of undeclared identifier 'stack0xffffdaf8'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 53,
         "line": 26,
         "message": "use of undeclared identifier 'stack0xffffdaf8'"
@@ -13,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 107,
+    "complexity_score": 117,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 32,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
@@ -68,7 +74,7 @@
     {
       "addr": "0040e130",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040e130"
+      "name": "core_actor.cpp_CActorPropertyList_init_FUN_0040e130"
     }
   ],
   "globals": [],
@@ -146,6 +152,13 @@
       "match": "param_2",
       "text": "(*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffdaf8",
+      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffdaf8);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",

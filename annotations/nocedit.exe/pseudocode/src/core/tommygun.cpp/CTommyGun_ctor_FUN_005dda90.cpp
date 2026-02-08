@@ -50,6 +50,6 @@ int __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr)
   pCVar3[1].base.actor_name[1] = '\0';
   pCVar3[1].base.actor_name[2] = '\0';
   pCVar3[1].base.actor_name[3] = '\0';
-  *(float *)(pCVar3->unk3 + 0x25f) = fVar2;
+  *(float *)(pCVar3->unk3 + 0x25c) = fVar2;
   return (int)pCVar3;
 }

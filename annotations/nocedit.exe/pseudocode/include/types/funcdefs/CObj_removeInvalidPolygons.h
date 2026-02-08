@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_removeInvalidPolygons
-typedef int (*CObj_removeInvalidPolygons)(struct CObj* this_ptr);
+typedef int CObj_removeInvalidPolygons(struct CObj* this_ptr);
 

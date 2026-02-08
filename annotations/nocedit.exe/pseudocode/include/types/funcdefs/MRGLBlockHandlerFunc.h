@@ -7,5 +7,5 @@
 struct SMRGLHeaderExtended;
 
 // Function Definition: MRGLBlockHandlerFunc
-typedef struct SMRGLHeaderExtended* (*MRGLBlockHandlerFunc)(struct SMRGLHeaderExtended* block);
+typedef struct SMRGLHeaderExtended* MRGLBlockHandlerFunc(struct SMRGLHeaderExtended* block);
 

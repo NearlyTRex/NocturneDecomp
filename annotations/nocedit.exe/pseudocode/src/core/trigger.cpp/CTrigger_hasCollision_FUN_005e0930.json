@@ -1,0 +1,102 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005e0930",
+    "address_range": [
+      [
+        "005e0930",
+        "005e0977"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_hasCollision_FUN_005e0930",
+    "signature": "int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930 (CTrigger *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.592592592592593,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CBRANCH": 6,
+      "COPY": 22,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_EQUAL": 14,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 1
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 52,
+        "vtable_addr": "00664a24"
+      },
+      {
+        "class_name": "CWaypoint",
+        "offset": 52,
+        "vtable_addr": "00665484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

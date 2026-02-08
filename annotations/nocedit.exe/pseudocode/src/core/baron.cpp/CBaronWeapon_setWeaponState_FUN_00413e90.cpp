@@ -11,7 +11,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
 {
   CDemonActor *pCVar1;
   
-  core_weapon_cpp_CWeapon_FUN_005ee640(&this_ptr->base);
+  core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(&this_ptr->base);
   pCVar1 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
   if ((this_ptr->base).weapon_state == 2) {
     if (pCVar1 == (CDemonActor *)0x0) {

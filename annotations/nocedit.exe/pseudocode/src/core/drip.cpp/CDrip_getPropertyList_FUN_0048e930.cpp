@@ -22,16 +22,15 @@ core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyL
             (property_list,"Auto drop",&this_ptr->auto_drop);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Auto drop min time",&this_ptr->min_auto_drip_time,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Auto drop max time",&this_ptr->max_auto_drip_time,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Drip radius",&this_ptr->drip_radius,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Damage",&this_ptr->damage,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Damage",&this_ptr->damage,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Hit sound",this_ptr->hit_sound);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330

@@ -18,6 +18,6 @@ core_anvil_cpp_CAnvil_getPropertyList_FUN_00412030
             (property_list,"Drop cond",this_ptr->drop_condition);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Drop height",&this_ptr->drop_height,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

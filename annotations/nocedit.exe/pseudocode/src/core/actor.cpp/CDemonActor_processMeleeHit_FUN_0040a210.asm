@@ -285,8 +285,8 @@ section .text
         ;   XREF to: 0040a60f (CONDITIONAL_JUMP)  ; LAB_0040a60f
     PUSH EBX                            ; 0040a551
     PUSH EAX                            ; 0040a552
-    CALL core_trigger.cpp_FUN_005e0ac0  ; 0040a553
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 0040a553
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 0040a558
     TEST EAX,EAX                        ; 0040a55b
     JZ 0x0040a3e0                       ; 0040a55d
@@ -340,8 +340,8 @@ section .text
     ADD ESP,0x18                        ; 0040a5e6
     PUSH dword ptr [ESP + 0x14]         ; 0040a5e9
     PUSH EDI                            ; 0040a5ed
-    CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 0040a5ee
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 0040a5ee
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 0040a5f3
     PUSH EDI                            ; 0040a5f6
     LEA EAX,[ESP + 0x14]                ; 0040a5f7
@@ -758,8 +758,8 @@ section .text
     PUSH EBX                            ; 0040ab07
         ;   Label: LAB_0040ab07
     PUSH EDI                            ; 0040ab08
-    CALL core_trigger.cpp_FUN_005e0ac0  ; 0040ab09
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 0040ab09
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 0040ab0e
     TEST EAX,EAX                        ; 0040ab11
     JZ 0x0040ab8d                       ; 0040ab13
@@ -790,8 +790,8 @@ section .text
     ADD ESP,0x18                        ; 0040ab5c
     PUSH dword ptr [ESP + 0x140]        ; 0040ab5f
     PUSH EDI                            ; 0040ab66
-    CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 0040ab67
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 0040ab67
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 0040ab6c
     MOV EAX,dword ptr [ESP + 0x284]     ; 0040ab6f
     PUSH EAX                            ; 0040ab76

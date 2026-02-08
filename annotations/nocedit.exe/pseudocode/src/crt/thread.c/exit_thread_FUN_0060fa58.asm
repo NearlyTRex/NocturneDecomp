@@ -4,7 +4,8 @@
 ; __cdecl void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   crt_unknown.c_FUN_0060e890 at 0060e8c2
 ;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878 at 0060e878
 ;
 ; Referenced Globals:

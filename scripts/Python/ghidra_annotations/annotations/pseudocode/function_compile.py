@@ -418,12 +418,16 @@ def load_function_info_from_json(json_path):
         if not func_name:
             return None
 
-        # Derive source path from json path - prefer .keep.cpp over .cpp/.c
+        # Derive source path from json path - prefer .keep > .mmx > .cpp/.c
         base_path = json_path[:-5]  # Remove '.json'
         if os.path.exists(base_path + '.keep.cpp'):
             src_path = base_path + '.keep.cpp'
         elif os.path.exists(base_path + '.keep.c'):
             src_path = base_path + '.keep.c'
+        elif os.path.exists(base_path + '.mmx.cpp'):
+            src_path = base_path + '.mmx.cpp'
+        elif os.path.exists(base_path + '.mmx.c'):
+            src_path = base_path + '.mmx.c'
         elif os.path.exists(base_path + '.cpp'):
             src_path = base_path + '.cpp'
         elif os.path.exists(base_path + '.c'):
@@ -631,8 +635,8 @@ def update_all_function_jsons(src_dir, compilation_results):
         if not cpp_path:
             continue
 
-        # Derive JSON path from cpp path (handle .keep.cpp -> .json)
-        json_path = cpp_path.replace('.keep.cpp', '.json').replace('.cpp', '.json')
+        # Derive JSON path from cpp path (handle .keep.cpp/.mmx.cpp -> .json)
+        json_path = cpp_path.replace('.keep.cpp', '.json').replace('.keep.c', '.json').replace('.mmx.cpp', '.json').replace('.mmx.c', '.json').replace('.cpp', '.json').replace('.c', '.json')
         if not os.path.exists(json_path):
             continue
 

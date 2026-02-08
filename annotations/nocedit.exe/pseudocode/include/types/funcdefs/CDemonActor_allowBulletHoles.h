@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_allowBulletHoles
-typedef int (*CDemonActor_allowBulletHoles)(struct CDemonActor* this_ptr);
+typedef int CDemonActor_allowBulletHoles(struct CDemonActor* this_ptr);
 

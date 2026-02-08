@@ -21,7 +21,7 @@ shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh *this_ptr,
   }
   iVar2 = pSVar1[vertex_index].projected_vertex.screen_x;
   iVar3 = pSVar1[vertex_index].projected_vertex.screen_y;
-  sprintf(local_28,"%d",vertex_index);
+  _sprintf(local_28,"%d",vertex_index);
   engine_2d_c_drawText_FUN_00401fd0(local_28,iVar2 >> 0x10,iVar3 >> 0x10);
   return;
 }

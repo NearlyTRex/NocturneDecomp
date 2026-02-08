@@ -16,7 +16,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
   
   iVar1 = bit_buffer->bits_available;
   while (7 < iVar1) {
-    ostream_put
+    crt_iostream_cpp_ostream_put_FUN_005ff2d7
               ((ostream *)output_stream,(uint)(byte)bit_buffer->accumulated_bits);
     iVar1 = bit_buffer->bits_available + -8;
     bit_buffer->accumulated_bits = (uint)bit_buffer->accumulated_bits >> 8;
@@ -32,7 +32,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
     }
     else {
       if (bit_count != iVar1) {
-        ostream_put
+        crt_iostream_cpp_ostream_put_FUN_005ff2d7
                   ((ostream *)output_stream,
                    (uint)(byte)((char)bit_value << ((byte)bit_buffer->bits_available & 0x1f) |
                                (byte)bit_buffer->accumulated_bits));
@@ -45,7 +45,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
       }
       bit_buffer->accumulated_bits =
            bit_buffer->accumulated_bits | bit_value << ((byte)bit_buffer->bits_available & 0x1f);
-      ostream_put
+      crt_iostream_cpp_ostream_put_FUN_005ff2d7
                 ((ostream *)output_stream,(uint)(byte)bit_buffer->accumulated_bits);
       bit_buffer->bits_available = 0;
       bit_buffer->accumulated_bits = 0;
@@ -54,7 +54,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
   }
 LAB_0043e753:
   for (; 7 < bit_count; bit_count = bit_count + -8) {
-    ostream_put((ostream *)output_stream,bit_value & 0xff);
+    crt_iostream_cpp_ostream_put_FUN_005ff2d7((ostream *)output_stream,bit_value & 0xff);
     bit_value = (uint)bit_value >> 8;
   }
   bit_buffer->bits_available = bit_count;

@@ -35,9 +35,9 @@
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0
 ;   core_dfilter.cpp_CFilterFX_free_FUN_00470700
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -65,8 +65,8 @@ section .text
     PUSH 0x61e7a2                       ; 0047075a | = "%s.txt"
     LEA EAX,[ESP + 0xc]                 ; 0047075f
     PUSH EAX                            ; 00470763
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00470764
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00470764
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00470769
     PUSH 0x61e7a9                       ; 0047076c | = "rt"
     LEA EAX,[ESP + 0x8]                 ; 00470771
@@ -114,8 +114,8 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 004707e9
     LEA EAX,[ESP + 0xc]                 ; 004707ec
     PUSH EAX                            ; 004707f0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004707f1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004707f1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004707f6
     PUSH 0x61e80b                       ; 004707f9 | = "rb"
     LEA EAX,[ESP + 0x8]                 ; 004707fe

@@ -15,7 +15,7 @@
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00596c67
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 at 0059c38b
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 at 0059d52e
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6d8a
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6d8a
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e578f
 ;
 ; Called Functions:

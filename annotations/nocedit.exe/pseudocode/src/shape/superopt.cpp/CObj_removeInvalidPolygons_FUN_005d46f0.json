@@ -3,8 +3,8 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 18,
-        "line": 27,
+        "column": 21,
+        "line": 28,
         "message": "use of undeclared identifier 'stack0xffffff94'"
       }
     ],
@@ -48,7 +48,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0050f1d0",
@@ -127,9 +127,9 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 21,
       "match": "&stack0xffffff94",
-      "text": "sprintf(&stack0xffffff94,\"Deleting invalid polygons (%d deleted so far)\",iVar3)",
+      "text": "(&stack0xffffff94,\"Deleting invalid polygons (%d deleted so far)\",iVar3);",
       "type": "stack_ref"
     }
   ]

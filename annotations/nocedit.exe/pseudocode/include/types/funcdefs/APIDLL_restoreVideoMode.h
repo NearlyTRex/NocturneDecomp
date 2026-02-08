@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_restoreVideoMode
-typedef int (*APIDLL_restoreVideoMode)(void);
+typedef int APIDLL_restoreVideoMode(void);
 

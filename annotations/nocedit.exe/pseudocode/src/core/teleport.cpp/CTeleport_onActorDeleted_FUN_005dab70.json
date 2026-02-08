@@ -1,0 +1,104 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005dab70",
+    "address_range": [
+      [
+        "005dab70",
+        "005dab9c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_teleport.cpp_CTeleport_onActorDeleted_FUN_005dab70",
+    "signature": "void __cdecl core_teleport_cpp_CTeleport_onActorDeleted_FUN_005dab70 (CTeleport *this_ptr,CDemonActor *deleted_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d000",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 12,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 60
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTeleport *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 204,
+        "vtable_addr": "00664324"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -17,35 +17,33 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e3560(CTurret *this_ptr)
   float fVar5;
   int iVar6;
   CVector3f *pCVar7;
-  float fStack_54;
-  uint uStack_50;
   float fStack_4c;
   float fStack_48;
+  float fStack_44;
   float fStack_40;
-  CVector3f CStack_30;
-  float fStack_24;
-  float fStack_14;
+  float fStack_38;
+  CVector3f CStack_28;
+  float fStack_1c;
   
   if (*(float *)(this_ptr->unk5 + 0xc) <= 0.0) {
-    if (this_ptr->unk3 != 0) {
+    if (this_ptr->guard_zone_box_trigger != (CDemonActor *)0x0) {
       input_local_point = this_ptr->unk4;
       iVar6 = core_turret_cpp_CTurret_FUN_005e3280(this_ptr);
       if (iVar6 != 0) {
-        (**(code **)(*(int *)(this_ptr->unk3 + 0x154) + 0x14))();
+        (*((this_ptr->guard_zone_box_trigger->vtable)._ub)->getBoundingBox)
+                  (this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)&stack0xffffffac);
         fVar1 = *(float *)input_local_point;
         fVar2 = *(float *)(this_ptr->unk4 + 4);
         iVar6 = 0;
         fVar3 = *(float *)(this_ptr->unk4 + 8);
         while( true ) {
-          fStack_24 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
-          *(float *)this_ptr->unk4 = fStack_54 * fStack_24 + (1.0 - fStack_24) * fStack_48;
-          fStack_14 = fStack_24;
-          fStack_24 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
-          *(float *)(this_ptr->unk4 + 8) = fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;
-          *(uint *)(this_ptr->unk4 + 4) = uStack_50;
-          fStack_14 = fStack_24;
+          fStack_1c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          *(float *)this_ptr->unk4 = fStack_4c * fStack_1c + (1.0 - fStack_1c) * fStack_40;
+          fStack_1c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          *(float *)(this_ptr->unk4 + 8) = fStack_44 * fStack_1c + (1.0 - fStack_1c) * fStack_38;
+          *(float *)(this_ptr->unk4 + 4) = fStack_48;
           pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             ((CDemonActor *)this_ptr->unk3,&CStack_30,
+                             (this_ptr->guard_zone_box_trigger,&CStack_28,
                               (CVector3f *)input_local_point);
           if ((CVector3f *)input_local_point != pCVar7) {
             *(float *)input_local_point = pCVar7->x;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_DoNothing16() */
-
 void __cdecl ExitHookStub(void)
 
 {

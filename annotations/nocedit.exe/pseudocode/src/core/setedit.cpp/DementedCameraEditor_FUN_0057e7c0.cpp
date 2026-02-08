@@ -107,7 +107,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     if (0 < this_ptr->camera_count) {
       local_30 = local_80;
       do {
-        sprintf((char *)(abStack_4be + 2),"%s",local_30);
+        _sprintf((char *)(abStack_4be + 2),"%s",local_30);
         engine_2d_c_drawText_FUN_00401fd0((char *)(abStack_4be + 2),iVar13,iVar15);
         iVar15 = iVar15 + 0xb;
         if (g_WindowHeight / 2 + -0xb < iVar15) {
@@ -266,7 +266,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         pCVar10 = local_70;
         if (0 < this_ptr->camera_count) {
           do {
-            sprintf(pCVar10->name,"%s%d",local_bc,iVar9);
+            _sprintf(pCVar10->name,"%s%d",local_bc,iVar9);
             core_setedit_cpp_FUN_0057d340();
             iVar9 = iVar9 + 1;
             pCVar10 = pCVar10 + 1;
@@ -320,7 +320,7 @@ LAB_0057eb3b:
             } while (0 < iVar9);
           }
           iVar13 = atoi((char *)(abStack_4be + iVar9 + 3));
-          sprintf
+          _sprintf
                     ((char *)(abStack_4be + iVar9 + 3),"%d",iVar13 + 1);
           iVar9 = 0;
           if (0 < this_ptr->camera_count) {
@@ -340,7 +340,8 @@ LAB_0057eb3b:
                   pbVar17 = pbVar17 + 2;
                 } while (bVar3 != 0);
                 iVar9 = -1;
-                sprintf((char *)(abStack_4be + 2),"%s1",local_7bc);
+                _sprintf((char *)(abStack_4be + 2),"%s1",local_7bc)
+                ;
               }
               iVar9 = iVar9 + 1;
             } while (iVar9 < this_ptr->camera_count);
@@ -470,7 +471,7 @@ LAB_0057eb3b:
         for (; (iVar9 < 0xfa && (0 < local_64)); local_64 = local_64 + -1) {
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0
                     (local_60 + this_ptr->camera_count,p_Var4);
-          sprintf
+          _sprintf
                     (local_60[this_ptr->camera_count].name,"ncam%d",this_ptr->camera_count)
           ;
           core_setedit_cpp_FUN_0057d340();
@@ -498,7 +499,7 @@ LAB_0057eb3b:
         local_2c = local_5c;
         pCVar12 = this_ptr;
         do {
-          sprintf(local_3bc,"backdrop\\%s.pvs",local_2c);
+          _sprintf(local_3bc,"backdrop\\%s.pvs",local_2c);
           remove(local_3bc);
           ptr = pCVar12->cameras[0].pvs_list;
           pCVar12->cameras[0].pvs_count = 0;
@@ -575,10 +576,10 @@ LAB_0057f7c1:
             if ((float)0.10000000000000001 <=
                 SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98))
             goto LAB_0057fa69;
-            sprintf(local_6bc,"%s.raw",&local_b60);
+            _sprintf(local_6bc,"%s.raw",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            sprintf(local_5bc,"%s.raw",pCVar10);
+            _sprintf(local_5bc,"%s.raw",pCVar10);
             iVar13 = 0;
             p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_5bc,"wb");
@@ -590,10 +591,10 @@ LAB_0057f7c1:
             } while (iVar13 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xece);
-            sprintf(local_6bc,"%s.act",&local_b60);
+            _sprintf(local_6bc,"%s.act",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            sprintf(local_5bc,"%s.act",local_44 + iVar9);
+            _sprintf(local_5bc,"%s.act",local_44 + iVar9);
             iVar9 = 0;
             p_Var5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_5bc,"wb");
@@ -634,8 +635,8 @@ LAB_0057fa1d:
           local_24 = local_3c;
           local_20 = local_38;
           do {
-            sprintf(local_8bc,"%s.raw",local_28);
-            sprintf(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
+            _sprintf(local_8bc,"%s.raw",local_28);
+            _sprintf(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
             p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
             iVar9 = 0;
@@ -649,8 +650,8 @@ LAB_0057fa1d:
             } while (iVar9 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xef5);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xef6);
-            sprintf(local_8bc,"%s.act",local_24);
-            sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
+            _sprintf(local_8bc,"%s.act",local_24);
+            _sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
             p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
             iVar9 = 0;
@@ -666,7 +667,7 @@ LAB_0057fa1d:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xeff);
             pCVar10 = local_20;
             iVar9 = local_18 + 1;
-            sprintf(local_20->name,"%s%d",local_ac,iVar9);
+            _sprintf(local_20->name,"%s%d",local_ac,iVar9);
             local_20 = pCVar10 + 1;
             local_24 = local_24 + 1;
             local_28 = local_28 + 1;

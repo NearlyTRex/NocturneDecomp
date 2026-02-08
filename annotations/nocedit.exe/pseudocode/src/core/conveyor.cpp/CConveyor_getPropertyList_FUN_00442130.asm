@@ -62,7 +62,7 @@ section .text
     PUSH 0x618eb1                       ; 0044218c | = "Direction"
     PUSH ESI                            ; 00442191
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 00442192
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00442197
     PUSH 0x0                            ; 0044219a
     PUSH 0x4f                           ; 0044219c

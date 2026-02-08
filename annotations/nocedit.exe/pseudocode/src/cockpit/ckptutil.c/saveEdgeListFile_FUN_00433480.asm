@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -64,8 +64,8 @@ section .text
     PUSH 0x617d51                       ; 004334b4 | = "Could not create output file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 004334b9
     PUSH EAX                            ; 004334bd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004334be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004334be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x507                       ; 004334c3
     ADD ESP,0xc                         ; 004334c8
     MOV [0x02f0ca4c],EAX                ; 004334cb | g_CurrentLineNumber

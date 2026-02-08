@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_evaluateTriggerCondition
-typedef float (*CDemonActor_evaluateTriggerCondition)(struct CDemonActor* this_ptr);
+typedef float CDemonActor_evaluateTriggerCondition(struct CDemonActor* this_ptr);
 

@@ -43,9 +43,9 @@ void __cdecl FUN_005c8160(void);
 // Address: 005c8280
 int __cdecl FUN_005c8280(void);
 
-// Original: shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
+// Original: shape_superopt.cpp_FUN_005c84c0
 // Address: 005c84c0
-int __cdecl EdgeListCheckPlusFreesLarge(void);
+int __cdecl FUN_005c84c0(void);
 
 // Original: shape_superopt.cpp_FUN_005c8b50
 // Address: 005c8b50
@@ -75,9 +75,9 @@ int __cdecl FUN_005c9500(void);
 // Address: 005c9aa0
 void __cdecl FUN_005c9aa0(void);
 
-// Original: shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
+// Original: shape_superopt.cpp_FUN_005ca590
 // Address: 005ca590
-int __cdecl ComplexEdgeListSplit::UnevenCheck(void);
+int __cdecl FUN_005ca590(void);
 
 // Original: shape_superopt.cpp_FUN_005cb3a0
 // Address: 005cb3a0
@@ -87,9 +87,9 @@ int __cdecl FUN_005cb3a0(void);
 // Address: 005cbb40
 double * __cdecl FUN_005cbb40(void);
 
-// Original: shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
+// Original: shape_superopt.cpp_FUN_005cbe20
 // Address: 005cbe20
-void __cdecl CondCallDebugMallocUnknownString(void);
+void __cdecl FUN_005cbe20(void);
 
 // Original: shape_superopt.cpp_FUN_005cbec0
 // Address: 005cbec0

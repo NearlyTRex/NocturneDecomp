@@ -18,6 +18,6 @@ core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0
   fVar1 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
   out_damage_info->damage_amount = fVar1;
   out_damage_info->weapon_damage_modifier = this_ptr->dismember_prob;
-  out_damage_info->ammo_type = this_ptr->ammo_type;
+  out_damage_info->ammo_type = this_ptr->damage_type;
   return;
 }

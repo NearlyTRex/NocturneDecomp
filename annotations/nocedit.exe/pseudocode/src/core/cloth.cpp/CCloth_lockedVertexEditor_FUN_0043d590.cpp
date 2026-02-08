@@ -193,7 +193,7 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
         if ((int)(pSVar2[iVar7].projected_vertex.screen_x & -0x80000000) == 0) {
           iVar4 = pSVar2[iVar7].projected_vertex.screen_x;
           local_40 = pSVar2[iVar7].projected_vertex.screen_y >> 0x10;
-          sprintf(local_6c,"%d",iVar6);
+          _sprintf(local_6c,"%d",iVar6);
           engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar4 >> 0x10,local_40);
         }
         iVar6 = iVar6 + 1;

@@ -1105,12 +1105,16 @@ def load_function_data(pseudocode_src_dir):
                         data['_json_path'] = json_path
                         data['_virtual_file'] = rel_path
                         data['_func_dir'] = root
-                        # Check for source files - prefer .keep.cpp over .cpp/.c
+                        # Check for source files - prefer .keep > .mmx > .cpp/.c
                         base_path = json_path[:-5]  # Remove '.json'
                         if os.path.exists(base_path + '.keep.cpp'):
                             data['_cpp_path'] = base_path + '.keep.cpp'
                         elif os.path.exists(base_path + '.keep.c'):
                             data['_cpp_path'] = base_path + '.keep.c'
+                        elif os.path.exists(base_path + '.mmx.cpp'):
+                            data['_cpp_path'] = base_path + '.mmx.cpp'
+                        elif os.path.exists(base_path + '.mmx.c'):
+                            data['_cpp_path'] = base_path + '.mmx.c'
                         elif os.path.exists(base_path + '.cpp'):
                             data['_cpp_path'] = base_path + '.cpp'
                         elif os.path.exists(base_path + '.c'):
@@ -1877,7 +1881,7 @@ def generate_compilation_summary_report(functions, output_path):
             lines.append("  %-30s %5d" % (category, count))
         lines.append("")
 
-        # Show details for each category
+        # Show details for each category, sorted by error message
         for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
             errors = error_categories[category]
             lines.append("=" * 100)
@@ -1885,19 +1889,26 @@ def generate_compilation_summary_report(functions, output_path):
             lines.append("=" * 100)
             lines.append("")
 
-            # Show unique functions with this error type
+            # Deduplicate by function, keeping first error per function
             seen_funcs = set()
-            for error in errors[:30]:
+            unique_errors = []
+            for error in errors:
                 if error['func'] not in seen_funcs:
                     seen_funcs.add(error['func'])
-                    msg_preview = error['message'][:80] if error['message'] else ''
-                    lines.append("  %s" % error['func'])
-                    if msg_preview:
-                        lines.append("    Line %d: %s..." % (error['line'], msg_preview))
+                    unique_errors.append(error)
 
-            if len(errors) > 30:
+            # Sort by error message to group similar errors together
+            unique_errors.sort(key=lambda e: (e.get('message', ''), e.get('func', '')))
+
+            for error in unique_errors[:30]:
+                msg_preview = error['message'][:80] if error['message'] else ''
+                lines.append("  %s" % error['func'])
+                if msg_preview:
+                    lines.append("    Line %d: %s..." % (error['line'], msg_preview))
+
+            if len(unique_errors) > 30:
                 lines.append("")
-                lines.append("  ... and %d more errors" % (len(errors) - 30))
+                lines.append("  ... and %d more errors" % (len(unique_errors) - 30))
             lines.append("")
 
     # Correlation with suspect patterns
@@ -2004,7 +2015,7 @@ def generate_compilation_detailed_report(functions, output_path):
             lines.append("  %-30s %5d" % (category, count))
         lines.append("")
 
-        # Show ALL errors for each category (no truncation)
+        # Show ALL errors for each category, sorted by error message
         for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
             errors = error_categories[category]
             lines.append("=" * 100)
@@ -2012,13 +2023,21 @@ def generate_compilation_detailed_report(functions, output_path):
             lines.append("=" * 100)
             lines.append("")
 
+            # Deduplicate by function, keeping first error per function
             seen_funcs = set()
+            unique_errors = []
             for error in errors:
                 if error['func'] not in seen_funcs:
                     seen_funcs.add(error['func'])
-                    lines.append("  %s" % error['func'])
-                    if error['message']:
-                        lines.append("    Line %d: %s" % (error['line'], error['message']))
+                    unique_errors.append(error)
+
+            # Sort by error message to group similar errors together
+            unique_errors.sort(key=lambda e: (e.get('message', ''), e.get('func', '')))
+
+            for error in unique_errors:
+                lines.append("  %s" % error['func'])
+                if error['message']:
+                    lines.append("    Line %d: %s" % (error['line'], error['message']))
 
             lines.append("")
 

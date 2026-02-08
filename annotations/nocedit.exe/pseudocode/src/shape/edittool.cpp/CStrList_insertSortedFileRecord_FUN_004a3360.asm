@@ -37,12 +37,12 @@
 ;   undefined4 DAT_0067918c
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strupr_FUN_00600770
-;   crt_time.c_localtime_FUN_00600288
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_strftime_FUN_006002d4
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_splitPath_FUN_00481f20
@@ -129,8 +129,8 @@ section .text
     LEA EAX,[ESP + 0xb18]               ; 004a3441
         ;   Label: LAB_004a3441
     PUSH EAX                            ; 004a3448
-    CALL crt_time.c_localtime_FUN_00600288 ; 004a3449
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 004a3449
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 004a344e
     PUSH EAX                            ; 004a3451
     PUSH 0x6239bb                       ; 004a3452 | = "%m/%d/%y %I:%M:%S %p"
@@ -213,8 +213,8 @@ section .text
     PUSH 0x6239d0                       ; 004a3548 | = "%s\t%s\t%d\t%s\t%s"
     LEA EAX,[ESP + 0xa20]               ; 004a354d
     PUSH EAX                            ; 004a3554
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a3555
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a3555
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004a355a
     LEA EAX,[ESP + 0xa08]               ; 004a355d
     PUSH EAX                            ; 004a3564

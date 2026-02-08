@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 130,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -165,14 +165,14 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "(this_ptr + in_stack_00000008 * 0x19 + 1,this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,",
+      "text": "(this_ptr->conditions + in_stack_00000008,this_ptr->conditions + in_stack_00000008 + 1,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "(this_ptr + in_stack_00000008 * 0x19 + 1,this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,",
+      "text": "(this_ptr->conditions + in_stack_00000008,this_ptr->conditions + in_stack_00000008 + 1,",
       "type": "stack_param"
     },
     {
@@ -186,19 +186,19 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
-      "text": "(this_ptr + in_stack_00000008 * 0x19 + 0x7e,",
+      "text": "(this_ptr->events + in_stack_00000008,this_ptr->events + in_stack_00000008 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr->events + in_stack_00000008,this_ptr->events + in_stack_00000008 + 1,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_00000008",
-      "text": "this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
       "match": "in_stack_00000008",
       "text": "(this_ptr->list_size - in_stack_00000008) * 100);",
       "type": "stack_param"

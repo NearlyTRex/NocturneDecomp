@@ -2,27 +2,26 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "format_error",
+        "column": 130,
+        "line": 39,
+        "message": "format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
         "category": "incompatible_types",
         "column": 17,
         "line": 49,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 130,
-        "line": 39,
-        "message": "format specifies type 'unsigned long' but the argument has type 'int' [-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 98,
+        "column": 99,
         "line": 52,
-        "message": "format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Wformat]"
+        "message": "format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 221,
@@ -80,14 +79,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fd990",
       "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005fd990"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00481a50",

@@ -39,12 +39,12 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040e130
+;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
 ;   core_script.cpp_FUN_005644e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -131,8 +131,8 @@ section .text
     PUSH 0x64417c                       ; 00567869 | = "Script\tLn %d"
     LEA EAX,[ESP + 0x2b70]              ; 0056786e
     PUSH EAX                            ; 00567875
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00567876
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00567876
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056787b
     LEA EAX,[ESP + 0x2b68]              ; 0056787e
         ;   Label: LAB_0056787e
@@ -142,8 +142,8 @@ section .text
     PUSH 0x64418f                       ; 0056788e | = "\t%s\t%s"
     LEA EAX,[ESP + 0x28b8]              ; 00567893
     PUSH EAX                            ; 0056789a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056789b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056789b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005678a0
     LEA EAX,[ESP + 0x28ac]              ; 005678a3
     PUSH EAX                            ; 005678aa
@@ -337,8 +337,8 @@ section .text
     MOV EAX,ESP                         ; 00567abd
         ;   Label: LAB_00567abd
     PUSH EAX                            ; 00567abf
-    CALL core_actor.cpp_FUN_0040e130    ; 00567ac0
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 00567ac0
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 00567ac5
     MOV ECX,ESP                         ; 00567ac8
     MOV EAX,dword ptr [ESP + 0x2c38]    ; 00567aca
@@ -360,8 +360,8 @@ section .text
     PUSH 0x644189                       ; 00567b11 | = "%s\t%s"
     LEA EAX,[ESP + 0x2b74]              ; 00567b16
     PUSH EAX                            ; 00567b1d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00567b1e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00567b1e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00567b23
     JMP 0x0056787e                      ; 00567b26
         ;   XREF to: 0056787e (UNCONDITIONAL_JUMP)  ; LAB_0056787e

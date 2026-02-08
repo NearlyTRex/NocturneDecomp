@@ -38,7 +38,7 @@ void __cdecl core_skeledit_cpp_FUN_0058e0b0(void)
     path = (char *)(in_stack_00000004 + 200);
     do {
       splitpath(path,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
-      sprintf(local_218,in_stack_00000008,local_118);
+      _sprintf(local_218,in_stack_00000008,local_118);
       makepath(local_31c,(char *)0x0,(char *)0x0,local_218,".tga");
       iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_31c);
       path_buffer = (char *)(iVar3 * 0x48 + local_14 + local_18 + 8);

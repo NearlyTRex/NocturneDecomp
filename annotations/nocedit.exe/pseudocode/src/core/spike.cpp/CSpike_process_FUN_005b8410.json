@@ -1,0 +1,236 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 244,
+    "complexity_score": 127,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 127,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 371
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b8410",
+    "address_range": [
+      [
+        "005b8410",
+        "005b8672"
+      ],
+      [
+        "005b868f",
+        "005b8726"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spike.cpp_CSpike_process_FUN_005b8410",
+    "signature": "void __cdecl core_spike_cpp_CSpike_process_FUN_005b8410(CSpike *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408e80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004adca0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "005b8950",
+      "is_variadic": false,
+      "name": "core_spike.cpp_CSpike_FUN_005b8950"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00652e00",
+      "name": "DOUBLE_00652e00",
+      "type": "double",
+      "value": "0.0000100000000000000"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.262886597938144,
+    "instruction_count": 194,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 6,
+      "BRANCH": 6,
+      "CALL": 7,
+      "CBRANCH": 21,
+      "COPY": 373,
+      "FLOAT2FLOAT": 30,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 5,
+      "INT2FLOAT": 3,
+      "INT_ADD": 90,
+      "INT_AND": 81,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 16,
+      "INT_LESS": 11,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 27,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 48,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 58
+    },
+    "pcode_op_count": 1021
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpike *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpike",
+        "offset": 4,
+        "vtable_addr": "00663364"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

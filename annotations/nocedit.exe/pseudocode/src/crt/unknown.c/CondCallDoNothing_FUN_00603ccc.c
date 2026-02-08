@@ -1,14 +1,12 @@
 // Name: crt_unknown.c_CondCallDoNothing_FUN_00603ccc
 // Address: 00603ccc
 // Address Range: [[00603ccc, 00603d5f]]
-// Convention: unknown
-// Signature: void crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
 
 #include "nocturne.h"
 
-/* Signature: byte unk_CondCallDoNothingAgain1(uint param_1, uint param_2) */
-
-void CondCallDoNothing(void)
+void __cdecl CondCallDoNothing(void)
 
 {
   ushort in_FPUControlWord;

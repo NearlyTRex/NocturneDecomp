@@ -3,6 +3,10 @@
 // Function prototypes for cockpit/drawsurf.cpp
 // Generated from Ghidra function signatures
 
+// Original: cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486e70
+// Address: 00486e70
+CDrawSurface * __cdecl CDrawSurface::ctor(CDrawSurface *this_ptr);
+
 // Original: cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0
 // Address: 00486ea0
 CDrawSurface * __cdecl CDrawSurface::ctor(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);

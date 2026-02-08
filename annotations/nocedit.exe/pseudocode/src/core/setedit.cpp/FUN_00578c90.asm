@@ -20,7 +20,7 @@
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH 0x646bc0                       ; 00578cb7 | = "%s? [%c] "
     LEA EAX,[ESP + 0x19c]               ; 00578cbc
     PUSH EAX                            ; 00578cc3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00578cc4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00578cc4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00578cc9
     MOV ESI,dword ptr [ESP + 0x2d0]     ; 00578ccc
     PUSH ESI                            ; 00578cd3
@@ -88,8 +88,8 @@ section .text
     PUSH 0x646bd2                       ; 00578d1d | = "%s %s"
     LEA EAX,[ESP + 0xc]                 ; 00578d22
     PUSH EAX                            ; 00578d26
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00578d27
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00578d27
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00578d2c
     MOV EBP,dword ptr [ESP + 0x2d0]     ; 00578d2f
     PUSH EBP                            ; 00578d36

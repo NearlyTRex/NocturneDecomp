@@ -15,8 +15,8 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *thi
   if (g_CWaterActorVersion == 2) {
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->height_delta,"heightDelta");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->time_to_move,"timeToMove");
-    core_actor_cpp_archiveString_FUN_0040b5c0((char *)&this_ptr->move_sound,"moveSound");
-    core_actor_cpp_archiveString_FUN_0040b5c0((char *)&this_ptr->move_event,"moveEvent");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_sound,"moveSound");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_event,"moveEvent");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->param,"param");
   }
   if (2 < g_CWaterActorVersion) {
@@ -24,12 +24,10 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *thi
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->time_to_move,"timeToMoveUp");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->time_to_move_down,"timeToMoveDown")
     ;
-    core_actor_cpp_archiveString_FUN_0040b5c0((char *)&this_ptr->move_sound,"moveUpSound");
-    core_actor_cpp_archiveString_FUN_0040b5c0
-              ((char *)&this_ptr->move_down_sound,"moveDownSound");
-    core_actor_cpp_archiveString_FUN_0040b5c0((char *)&this_ptr->move_event,"moveUpEvent");
-    core_actor_cpp_archiveString_FUN_0040b5c0
-              ((char *)&this_ptr->move_down_event,"moveDownEvent");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_sound,"moveUpSound");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_down_sound,"moveDownSound");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_event,"moveUpEvent");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->move_down_event,"moveDownEvent");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->param,"param");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->state,"state");
   }

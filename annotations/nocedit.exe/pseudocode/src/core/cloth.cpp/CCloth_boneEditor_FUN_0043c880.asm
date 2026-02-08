@@ -266,8 +266,8 @@ section .text
     PUSH 0x618693                       ; 0043cb1d | = "noc%d.pcx"
     PUSH 0x83b110                       ; 0043cb22 | DAT_0083b110
     MOV dword ptr [0x0083b10c],EBX      ; 0043cb27 | DAT_0083b10c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043cb2d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043cb2d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043cb32
     PUSH 0x83b110                       ; 0043cb35 | DAT_0083b110
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0043cb3a

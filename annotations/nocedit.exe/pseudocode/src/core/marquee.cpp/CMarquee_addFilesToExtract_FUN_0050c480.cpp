@@ -11,6 +11,6 @@ core_marquee_cpp_CMarquee_addFilesToExtract_FUN_0050c480(CMarquee *this_ptr,_FIL
 
 {
   core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(&this_ptr->base,file_handle);
-  _fprintf(file_handle,"DATA\\%s\n",&this_ptr->course_name);
+  _fprintf(file_handle,"DATA\\%s\n",this_ptr->course_name);
   return;
 }

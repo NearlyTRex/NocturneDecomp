@@ -88,7 +88,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
     if (0 < g_MasterLightCount) {
       local_20 = 0;
       do {
-        sprintf
+        _sprintf
                   (local_134,"%2d. %s",iVar8,
                    *(int *)((int)g_MasterLightList + local_20) + 0x40);
         engine_2d_c_drawText_FUN_00401fd0(local_134,iVar5,iVar7);

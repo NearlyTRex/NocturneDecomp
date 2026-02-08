@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6e0d
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6e0d
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e57c2
 ;
 ; Called Functions:

@@ -37,8 +37,8 @@
 ;   core_ground.cpp_getGroundTypeName_FUN_004eed80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setedit.cpp_ImportingGroundTextures_FUN_00578420
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -109,8 +109,8 @@ section .text
     PUSH 0x646970                       ; 005786b0 | = "%s\t%s"
     LEA EAX,[ESP + 0x8f4]               ; 005786b5
     PUSH EAX                            ; 005786bc
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005786bd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005786bd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005786c2
     LEA EAX,[ESP + 0x8e8]               ; 005786c5
     PUSH EAX                            ; 005786cc
@@ -211,8 +211,8 @@ section .text
     PUSH 0x646abf                       ; 005787b7 | = "Select ground type for %s"
     LEA EAX,[ESP + 0x760]               ; 005787bc
     PUSH EAX                            ; 005787c3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005787c4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005787c4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005787c9
     XOR EAX,EAX                         ; 005787cc
     PUSH 0x0                            ; 005787ce

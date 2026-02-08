@@ -84,8 +84,8 @@
 ;   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stack.c___STK_FUN_005ff9f3
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
@@ -340,8 +340,8 @@ section .text
     PUSH 0x64d68f                       ; 0059625d | = "%g,%g,%g"
     LEA EAX,[EBP + 0xfffffd42]          ; 00596262
     PUSH EAX                            ; 00596268
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00596269
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00596269
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0059626e
     LEA EAX,[EBP + 0xfffffd42]          ; 00596271
     PUSH EAX                            ; 00596277
@@ -449,8 +449,8 @@ section .text
     PUSH 0x64d698                       ; 00596392 | = "%d, %d,%g,%g, %d,%g,%g, %d,%g,%g"
     LEA EAX,[EBP + 0xfffffd42]          ; 00596397
     PUSH EAX                            ; 0059639d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0059639e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0059639e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x48                        ; 005963a3
     LEA EAX,[EBP + 0xfffffd42]          ; 005963a6
     PUSH EAX                            ; 005963ac
@@ -592,8 +592,8 @@ section .text
     PUSH 0x64d6d9                       ; 00596527 | = "%d, %d,%g,%g, %d,%g,%g, %d,%g,%g"
     LEA EAX,[EBP + 0xfffffd42]          ; 0059652c
     PUSH EAX                            ; 00596532
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00596533
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00596533
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x48                        ; 00596538
     LEA EAX,[EBP + 0xfffffd42]          ; 0059653b
     PUSH EAX                            ; 00596541

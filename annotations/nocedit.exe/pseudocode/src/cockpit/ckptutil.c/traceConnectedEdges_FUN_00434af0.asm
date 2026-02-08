@@ -91,7 +91,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 ;
 ; *****************************************************************************
@@ -163,8 +163,8 @@ section .text
     PUSH 0x617fa1                       ; 00434bf1 | = "Reached max trace edges: edges %d, sc..."
     LEA EAX,[ESP + 0xc]                 ; 00434bf6
     PUSH EAX                            ; 00434bfa
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00434bfb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00434bfb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x617fd0                    ; 00434c00 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00434c05
     MOV [0x02f0ca48],EAX                ; 00434c08 | g_CurrentFilename
@@ -532,8 +532,8 @@ section .text
     PUSH 0x617fe6                       ; 004351a5 | = "Reached max trace edges: edges %d, sc..."
     LEA EAX,[ESP + 0xc]                 ; 004351aa
     PUSH EAX                            ; 004351ae
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004351af
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004351af
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x618015                    ; 004351b4 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 004351b9
     MOV [0x02f0ca48],EAX                ; 004351bc | g_CurrentFilename
@@ -760,8 +760,8 @@ section .text
     PUSH 0x618041                       ; 0043553d | = "Unable to allocate %u bytes for edge ..."
     LEA EAX,[ESP + 0x8]                 ; 00435542
     PUSH EAX                            ; 00435546
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00435547
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00435547
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x61806c                    ; 0043554c | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00435551
     MOV EAX,ESP                         ; 00435554

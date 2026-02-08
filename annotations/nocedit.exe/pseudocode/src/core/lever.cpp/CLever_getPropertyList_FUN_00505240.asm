@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Rule_006311ff
 ;   TerminatedCString s_Open_from_side_0063121f
 ;   TerminatedCString s_Enable_collision_0063122e
-;   void* PTR_s_Both_0067cf9c = 00631204
+;   SEnumPair[3] g_LeverOpenFromSideTypePairs
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670
@@ -62,14 +62,14 @@ section .text
     PUSH 0x63119a                       ; 00505275 | = "Lever type"
     PUSH EBX                            ; 0050527a
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 0050527b
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 00505280
     PUSH 0x505210                       ; 00505283
     PUSH 0x5051a0                       ; 00505288
     PUSH 0x6311a5                       ; 0050528d | = "Lever state"
     PUSH EBX                            ; 00505292
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 00505293
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 00505298
     LEA EAX,[ESI + 0x2e0]               ; 0050529b
     PUSH EAX                            ; 005052a1
@@ -107,7 +107,7 @@ section .text
     PUSH 0x6311e1                       ; 005052ff | = "Linked lever"
     PUSH EBX                            ; 00505304
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00505305
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 0050530a
     PUSH 0x0                            ; 0050530d
     LEA EAX,[ESI + 0x414]               ; 0050530f
@@ -115,7 +115,7 @@ section .text
     PUSH 0x6311ee                       ; 00505316 | = "End vertex index"
     PUSH EBX                            ; 0050531b
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 0050531c
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00505321
     PUSH -0x1                           ; 00505324
     LEA EAX,[ESI + 0x420]               ; 00505326
@@ -127,12 +127,12 @@ section .text
     ADD ESP,0x10                        ; 00505338
     LEA EAX,[ESI + 0x80c]               ; 0050533b
     PUSH EAX                            ; 00505341
-    PUSH 0x67cf9c                       ; 00505342 | PTR_s_Both_0067cf9c
+    PUSH 0x67cf9c                       ; 00505342 | g_LeverOpenFromSideTypePairs
     PUSH 0x3                            ; 00505347
     PUSH 0x63121f                       ; 00505349 | = "Open from side"
     PUSH EBX                            ; 0050534e
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0050534f
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 00505354
     ADD ESI,0x810                       ; 00505357
     PUSH ESI                            ; 0050535d

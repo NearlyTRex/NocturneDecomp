@@ -256,7 +256,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
         core_main_c_displayErrorAndQuit_FUN_00506f10("Internal script error checking for duplicate label.");
       }
       if (iVar6 != local_110) {
-        sprintf
+        _sprintf
                   (g_ScriptErrorBuffer,"Duplicate label %s on lines %d and %d",local_11c,local_124,
                    this_ptr->parsed_lines[iVar6].line_number);
         return -1;
@@ -383,7 +383,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
             local_e8 = -1;
             sscanf(local_11c," ( %[^,], %[^)])%n",local_ee4,local_27e4,&local_e8);
             if (local_e8 < 3) {
-              sprintf
+              _sprintf
                         (g_ScriptErrorBuffer,"Error parsing addItemToInventory command parms");
               return -1;
             }
@@ -411,20 +411,20 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
               sscanf
                         (local_11c,"( %[^,], %[^,], %f )%n",local_5d4,local_250,&local_a4,&local_e0);
               if (local_e0 < 5) {
-                sprintf
+                _sprintf
                           (g_ScriptErrorBuffer,"Error parsing addLightFilter command parms");
                 return -1;
               }
               local_11c = local_11c + local_e0;
               core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
               if (local_118 == (C3DSLight *)0x0) {
-                sprintf
+                _sprintf
                           (g_ScriptErrorBuffer,"Light \"%s\" does not exist",local_5d4);
                 return -1;
               }
               iVar6 = engine_dosio_c_getFileSize_FUN_00481880("art",local_250);
               if (iVar6 < 1) {
-                sprintf
+                _sprintf
                           (g_ScriptErrorBuffer,"Can't open filter \"%s\"",local_250);
                 return -1;
               }
@@ -502,7 +502,7 @@ LAB_0055bb9d:
                       sscanf
                                 (local_11c,"(%[^,], %[^)])%n",local_190c,local_1a9c,&local_10c);
                       if (local_10c < 2) {
-                        sprintf
+                        _sprintf
                                   (g_ScriptErrorBuffer,"Error parsing attachActorToPlatform command parms");
                         return -1;
                       }
@@ -551,7 +551,7 @@ LAB_0055bb9d:
                              ) {
                             local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 10);
                             if (g_ScriptEventsEnabled == 0) {
-                              sprintf
+                              _sprintf
                                         (local_890,"Script breakpoint reached at line %d",local_124);
                               core_game_cpp_CGame_displayMessage_FUN_004d7f20
                                         (g_CGamePtr,local_890,5.0);
@@ -707,7 +707,7 @@ LAB_0055c37e:
                                       sscanf
                                                 (local_11c,"(%[^)])%n",local_c14,&local_108);
                                       if (local_108 < 3) {
-                                        sprintf
+                                        _sprintf
                                                   (g_ScriptErrorBuffer,
                                                    "Error parsing dbSay arguments");
                                         return -1;
@@ -719,7 +719,7 @@ LAB_0055c37e:
                                       if (iVar6 < 0) {
                                         local_104 = local_226c;
                                         local_e4 = "$";
-                                        sprintf
+                                        _sprintf
                                                   (local_226c,"[Can't find %s in database]",
                                                    local_c14);
                                         shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -772,7 +772,7 @@ LAB_0055c37e:
                                         sscanf
                                                   (local_11c,"(%[^)])%n",local_1ec,&local_fc);
                                         if (local_fc < 3) {
-                                          sprintf
+                                          _sprintf
                                                     (g_ScriptErrorBuffer,
                                                      "Error parsing dbSay arguments");
                                           return -1;
@@ -784,7 +784,7 @@ LAB_0055c37e:
                                         if (iVar6 < 0) {
                                           local_f4 = local_2654;
                                           local_f8 = "$";
-                                          sprintf
+                                          _sprintf
                                                     (local_2654,"[Can't find %s in database]",
                                                      local_1ec);
                                           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -848,7 +848,7 @@ joined_r0x0055f6da:
                                                       (local_11c,"(%[^,], %[^,)]%n",local_3144,local_1844,
                                                        &local_60);
                                             if (local_60 < 5) {
-                                              sprintf
+                                              _sprintf
                                                         (g_ScriptErrorBuffer,
                                                          "Error parsing dismember command parms");
                                               return -1;
@@ -876,7 +876,7 @@ joined_r0x0055f6da:
                                                          &local_154.y,&local_154.z,&local_3f80,
                                                          &local_60);
                                               if (local_60 < 5) {
-                                                sprintf
+                                                _sprintf
                                                           (g_ScriptErrorBuffer,
                                                            "Error parsing dismember command parms");
                                                 return -1;
@@ -905,7 +905,7 @@ joined_r0x0055f6da:
                                               }
                                             }
                                             if (*local_11c != ')') {
-                                              sprintf
+                                              _sprintf
                                                         (g_ScriptErrorBuffer,
                                                          "Error parsing dismember command parms near '%s'",
                                                          local_11c);
@@ -941,7 +941,7 @@ joined_r0x0055f6da:
                                                                   (&local_11c,
                                                                    this_ptr->current_message,0x400);
                                               if (pcVar17 != (char *)0x0) {
-                                                sprintf
+                                                _sprintf
                                                           (g_ScriptErrorBuffer,
                                                            "Error parsing message text on display statament: %s",
                                                            pcVar17);
@@ -961,7 +961,7 @@ joined_r0x0055f6da:
                                                   core_script_cpp_CScript_skipCommands_FUN_005601c0
                                                             (this_ptr,this_ptr->next_cmd,1);
                                                 if (iVar6 < 0) {
-                                                  sprintf
+                                                  _sprintf
                                                             (g_ScriptErrorBuffer,
                                                              "Can't skip next command after else statement on line %d",
                                                              local_124);
@@ -984,7 +984,7 @@ joined_r0x0055f6da:
                                                             (local_11c,"(%[^,], %[^)])%n",local_307c,
                                                              local_2d5c,&local_4c);
                                                   if (local_4c < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing enableCamera parms");
                                                     return -1;
@@ -997,7 +997,7 @@ joined_r0x0055f6da:
                                                   iVar6 = core_set_cpp_CDemonSet_FUN_0056b790
                                                                     (g_CDemonSetPtr);
                                                   if (iVar6 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Camera \"%s\" does not exist.",
                                                                local_307c);
@@ -1046,7 +1046,7 @@ joined_r0x0055f6da:
                                                             (local_11c,"(%d , %[^)])%n",local_ac,
                                                              local_1dbc,&local_48);
                                                   if (local_48 < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing enableCameraGroup parms");
                                                     return -1;
@@ -1098,7 +1098,7 @@ LAB_0055cd52:
                                                             (local_11c,"(%[^,], %[^)])%n",local_32d4,
                                                              local_1f4c,&local_dc);
                                                   if (local_dc < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing enableHealthBar parms");
                                                     return -1;
@@ -1129,7 +1129,7 @@ LAB_0055cd52:
                                                                         (local_1f4c,
                                                                          "always");
                                                       if (iVar6 != 0) {
-                                                        sprintf
+                                                        _sprintf
                                                                   (g_ScriptErrorBuffer,
                                                                                                                                       
                                                   "Invalid health bar mode '%s'",local_1f4c);
@@ -1227,7 +1227,7 @@ LAB_0055cd52:
                                                             (local_11c,"(%[^,], %[^)])%n",local_23fc,
                                                              local_19d4,&local_d8);
                                                   if (local_d8 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing gesture command parms");
                                                     return -1;
@@ -1260,7 +1260,7 @@ LAB_0055cd52:
                                                   }
                                                   if (uVar15 == 0) {
                                                     iVar6 = core_bugs_cpp_FUN_00427b70();
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Gesture name %s is not valid for actor %s, model %s",
                                                                local_19d4,local_23fc,iVar6);
@@ -1282,7 +1282,7 @@ LAB_0055cd52:
                                                             (local_11c,"(%[^,], %[^,)] )%n",local_113c,
                                                              local_1e84,&local_d4);
                                                   if (local_d4 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing getIniInt command parms");
                                                     return -1;
@@ -1321,7 +1321,7 @@ LAB_0055cd52:
                                                             (local_11c,"(%[^,], %[^)])%n",local_1074,
                                                              local_1b64,&local_cc);
                                                   if (local_cc < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing getTriggerActor command parms");
                                                     return -1;
@@ -1365,7 +1365,7 @@ LAB_0055cd52:
                                                     dVar1 = (double)CONCAT44(local_124,local_11c);
                                                     pcVar17 = "Undefined label %s used in gosub statement on line %d";
 LAB_0055a97f:
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,pcVar17,
                                                                SUB84(dVar1,0),
                                                                (int)((ulonglong)dVar1 >> 0x20));
@@ -1373,7 +1373,7 @@ LAB_0055a97f:
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     if (7 < this_ptr->call_stack_count) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Call stack overflow detected on script line %d."
                                                                  ,local_124);
@@ -1453,7 +1453,7 @@ LAB_0055a97f:
                                                             (local_11c,"(%[^,)]%n",local_1524,
                                                              &local_c8);
                                                   if ((int)local_c8 < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing holsterWeapon command parms");
                                                     return -1;
@@ -1481,7 +1481,7 @@ LAB_0055a97f:
                                                     uVar15 = ~uVar15 - 2;
                                                     local_c8 = uVar15;
                                                     if ((int)uVar15 < 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing holsterWeapon command parms"
                                                                 );
@@ -1518,7 +1518,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   if (*local_11c != ')') {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Missing closing ')' in holsterWeapon command");
                                                     return -1;
@@ -1563,7 +1563,7 @@ LAB_0055a97f:
                                                   core_script_cpp_CScript_skipCommands_FUN_005601c0
                                                             (this_ptr,this_ptr->next_cmd,0);
                                                   if (iVar6 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Can't skip next command after if statement on line %d",
                                                                local_124);
@@ -1594,7 +1594,7 @@ LAB_0055a97f:
                                                   iVar6 = g_ScriptEventsEnabled;
                                                   pCVar4 = g_CGamePtr;
                                                   if (local_bc < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing finishedAct command");
                                                     return -1;
@@ -1653,7 +1653,7 @@ LAB_0055d708:
                                                     iVar18 = 2;
                                                   }
                                                   else if (iVar18 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid letterBox mode: %s",
                                                                local_b4c);
@@ -1725,7 +1725,7 @@ LAB_0055d708:
                                                             (local_11c,"(%[^,)]%n",local_1394,
                                                              &local_b8);
                                                   if (local_b8 < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing lookAt command parms");
                                                     return -1;
@@ -1752,7 +1752,7 @@ joined_r0x0055c026:
                                                               (local_11c,", %[^)]%n",local_2fb4,
                                                                &local_b8);
                                                     if (local_b8 < 3) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing lookAt command parms"
                                                                 );
@@ -1770,7 +1770,7 @@ joined_r0x0055c026:
                                                     goto joined_r0x0055c026;
                                                   }
                                                   if (*local_11c != ')') {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Missing closing ')' in lookAt command");
                                                     return -1;
@@ -1796,7 +1796,7 @@ joined_r0x0055c026:
                                                             (local_11c,"(%[^,], %f , %f )%n",local_2a3c,
                                                              &local_3f78,&local_3f74,&local_b4);
                                                   if (local_b4 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing movePlatform command parms");
                                                     return -1;
@@ -1813,7 +1813,7 @@ joined_r0x0055c026:
                                                   if (pCVar10 == (CPlatform *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if ((local_3f78 < 0.0) || (1.0 < local_3f78)) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Paramater must be in range 0.0 .. 1.0");
                                                     return -1;
@@ -1843,7 +1843,7 @@ joined_r0x0055c026:
                                                             (local_11c,"(%[^,], %[^)])%n",local_28ac,
                                                              local_2eec,&local_b0);
                                                   if (local_b0 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing openDoor command parms");
                                                     return -1;
@@ -1895,7 +1895,7 @@ joined_r0x0055c026:
                                                             (local_11c,"( %[^,], %[^)])%n",local_4a8,
                                                              local_50c,&local_a8);
                                                   if (local_a8 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing pressButton() command parms");
                                                     return -1;
@@ -1917,7 +1917,7 @@ joined_r0x0055c026:
                                                              (pCVar13[0x8d].create_event + 0x3c),
                                                              local_50c);
                                                   if (piVar11 == (int *)0x0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid button name: %s",
                                                                local_50c);
@@ -1946,7 +1946,7 @@ joined_r0x0055c026:
                                                   core_script_cpp_parseArgument_FUN_005593f0
                                                             (&local_11c,local_a20,100);
                                                   if (pcVar17 != (char *)0x0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing event expression on raise statament: %s",
                                                                pcVar17);
@@ -1992,7 +1992,7 @@ joined_r0x0055c026:
                                                             (local_11c,"( %[^,], %[^)])%n",local_700,
                                                              local_8f4,&local_a0);
                                                   if (local_a0 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing releaseButton() command parms");
                                                     return -1;
@@ -2015,7 +2015,7 @@ joined_r0x0055c026:
                                                              local_8f4);
                                                   iVar6 = g_ScriptEventsEnabled;
                                                   if (piVar11 == (int *)0x0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid button name: %s",
                                                                local_8f4);
@@ -2046,7 +2046,7 @@ joined_r0x0055c026:
                                                             (local_11c," ( %[^)])%n",local_271c,
                                                              &local_9c);
                                                   if (local_9c < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing removeAllItemsFromInventory command parms");
                                                     return -1;
@@ -2082,7 +2082,7 @@ joined_r0x0055c026:
                                                             (local_11c," ( %[^,], %[^)])%n",local_20dc,
                                                              local_2014,&local_98);
                                                   if (local_98 < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing removeItemFromInventory command parms");
                                                     return -1;
@@ -2125,14 +2125,14 @@ joined_r0x0055c026:
                                                             (local_11c," (%d )%n",local_94,
                                                              &local_90);
                                                   if (local_90 < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing removeKeys() command parms");
                                                     return -1;
                                                   }
                                                   local_11c = local_11c + local_90;
                                                   if (g_CNetGamePtr->connection_type != 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Can't use removeKeys command in multi-player");
                                                     return -1;
@@ -2154,7 +2154,7 @@ joined_r0x0055c026:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     iVar6 = this_ptr->call_stack_count;
                                                     if (iVar6 < 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Return without gosub detected on script line %d."
                                                                  ,local_124);
@@ -2181,7 +2181,7 @@ joined_r0x0055c026:
                                                   iVar6 = g_ScriptEventsEnabled;
                                                   pCVar4 = g_CGamePtr;
                                                   if (local_8c < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing rollCredits command");
                                                     return -1;
@@ -2226,7 +2226,7 @@ LAB_0055e656:
                                                             (local_3b6c,"%[^,], %[^,], %n",local_258c,
                                                              local_145c,&local_88);
                                                   if (local_88 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing speaker and wav arguments");
                                                     return -1;
@@ -2272,7 +2272,7 @@ LAB_0055e656:
                                                             (local_11c," (%[^,], %[^)])%n",local_ae8,
                                                              local_69c,&local_84);
                                                   if (local_84 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing selectWeapon parameters.");
                                                     return -1;
@@ -2343,7 +2343,7 @@ LAB_0055e656:
                                                             (local_11c,"(%[^,], %[^)])%n",local_12cc,
                                                              local_24c4,&local_78);
                                                   if (local_78 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setActorVariable command parms");
                                                     return -1;
@@ -2409,7 +2409,7 @@ LAB_0055e656:
                                                             (local_11c,"(%[^,], %d)%n",local_2b04,
                                                              &local_74,&local_70);
                                                   if (local_70 < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setCameragroup parms");
                                                     return -1;
@@ -2420,7 +2420,7 @@ LAB_0055e656:
                                                   iVar6 = core_set_cpp_CDemonSet_FUN_0056b790
                                                                     (g_CDemonSetPtr);
                                                   if (iVar6 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Camera \"%s\" does not exist.",
                                                                local_2b04);
@@ -2445,7 +2445,7 @@ LAB_0055e656:
                                                             (local_11c,"(%[^,], %f)%n",local_320c,
                                                              &local_6c,&local_68);
                                                   if (local_68 < 3) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setCharacterHealth parms");
                                                     return -1;
@@ -2522,7 +2522,7 @@ LAB_0055e656:
                                                             (local_11c," (%[^,], %[^)])%n",local_638,
                                                              local_2b4,&local_64);
                                                   if (local_64 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setHeroTask parameters.");
                                                     return -1;
@@ -2555,7 +2555,7 @@ LAB_0055e656:
                                                                          (local_2b4,
                                                                           "suspend"),
                                                       iVar6 != 0)))) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid Task: %s",local_2b4);
                                                     return -1;
@@ -2579,7 +2579,7 @@ LAB_0055e656:
                                                             (local_11c,"(%[^,], %d )%n",local_e1c,
                                                              &local_5c,&local_58);
                                                   if (local_58 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setIniInt command parms");
                                                     return -1;
@@ -2611,7 +2611,7 @@ LAB_0055e656:
                                                             (local_11c," (%n %n",&local_54,
                                                              &local_54);
                                                   if (local_54 < 1) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setSayTimeOverride parameters.");
                                                     return -1;
@@ -2627,7 +2627,7 @@ LAB_0055e656:
                                                               (local_11c,"%f )%n",&local_50,
                                                                &local_54);
                                                     if (local_54 < 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing setSayTimeOverride parameters."
                                                                 );
@@ -2673,7 +2673,7 @@ LAB_0055f0a8:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
                                                             (this_ptr,local_764);
                                                   if (iVar6 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Undefined label '%s'",
                                                                local_764);
@@ -2752,7 +2752,7 @@ LAB_0055f0a8:
                                                             (local_318,"%f",&local_3f70);
                                                   if (((double)local_3f70 <= 0.0) ||
                                                      (4 < (double)local_3f70)) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid time factor %s",
                                                                local_318);
@@ -2777,7 +2777,7 @@ LAB_0055f0a8:
                                                             (local_11c,"(%[^,)]%n",local_1cf4,
                                                              &local_44);
                                                   if (local_44 < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing setVictim command parms");
                                                     return -1;
@@ -2798,7 +2798,7 @@ LAB_0055f0a8:
                                                               (local_11c,", %[^)]%n",local_1204,
                                                                &local_44);
                                                     if (local_44 < 3) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing setVictim command parms"
                                                                 );
@@ -2820,7 +2820,7 @@ LAB_0055f0a8:
                                                   goto joined_r0x0055c026;
                                                   }
                                                   if (*local_11c != ')') {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Missing closing ')' in setVictim command");
                                                     return -1;
@@ -2845,7 +2845,7 @@ LAB_0055f0a8:
                                                             (local_11c,"(%[^,], %[^)])%n",local_2c94,
                                                              local_1c2c,&local_40);
                                                   if (local_40 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error snaping turnToFace command parms");
                                                     return -1;
@@ -2911,7 +2911,7 @@ LAB_0055f0a8:
                                                             (local_3978,"%[^,], %[^,], %n",local_15ec,
                                                              local_21a4,&local_3c);
                                                   if (local_3c < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing speaker and wav arguments");
                                                     return -1;
@@ -3016,7 +3016,7 @@ LAB_0055f760:
                                                   iVar6 = core_set_cpp_CDemonSet_FUN_0056b790
                                                                     (g_CDemonSetPtr);
                                                   if (iVar6 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Camera \"%s\" doesn't exist.",
                                                                local_7c8);
@@ -3029,7 +3029,7 @@ LAB_0055f760:
                                                                &local_3f7c);
                                                     if (((double)local_3f7c < 0.0) ||
                                                        (99999 < (double)local_3f7c)) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Invalid hold time value")
                                                       ;
@@ -3076,7 +3076,7 @@ LAB_0055f91c:
                                                             (local_352c,"%f,%n",&local_30,
                                                              &local_34);
                                                   if (local_34 < 2) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing time value");
                                                     return -1;
@@ -3118,7 +3118,7 @@ LAB_0055f91c:
                                                             (local_11c,"(%[^,], %[^)])%n",local_2974,
                                                              local_16b4,&local_2c);
                                                   if (local_2c < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing turnToFace command parms");
                                                     return -1;
@@ -3159,7 +3159,7 @@ LAB_0055f91c:
                                                             (local_11c,"(%f)%n",&local_24,
                                                              &local_28);
                                                   if (local_28 < 1) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing time value on wait statament");
                                                     return -1;
@@ -3212,7 +3212,7 @@ LAB_0055f91c:
                                                             (local_11c,"(%[^,], %[^,)] %n",local_2bcc,
                                                              local_177c,&local_120);
                                                   if (local_120 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Error parsing walkTo command parms");
                                                     return -1;
@@ -3229,7 +3229,7 @@ LAB_0055f91c:
                                                               (local_11c,",%f %n",&local_20,
                                                                &local_120);
                                                     if (local_120 < 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing walkTo command parms"
                                                                 );
@@ -3244,7 +3244,7 @@ LAB_0055f91c:
                                                               (local_11c,",%f %n",&local_1c,
                                                                &local_120);
                                                     if (local_120 < 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (g_ScriptErrorBuffer,
                                                                  "Error parsing walkTo command parms"
                                                                 );
@@ -3253,7 +3253,7 @@ LAB_0055f91c:
                                                     local_11c = local_11c + local_120;
                                                   }
                                                   if (*local_11c != ')') {
-                                                    sprintf
+                                                    _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Missing closing parenthesis on walkTo parms");
                                                     return -1;
@@ -3349,7 +3349,7 @@ LAB_0055f91c:
   }
 LAB_0055a8bb:
   if ((g_ScriptEventsEnabled != 2) && ((char)local_118->light_type != '\0')) {
-    sprintf
+    _sprintf
               (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_118,local_120);
     return -1;
   }
@@ -3359,7 +3359,7 @@ LAB_0055a8d4:
     iVar6 = g_ScriptEventsEnabled;
     this_ptr->cmd_timer = -1.0;
     if ((iVar6 == 0) && (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
-      sprintf(g_ScriptErrorBuffer,"Overrun past the end of the script.");
+      _sprintf(g_ScriptErrorBuffer,"Overrun past the end of the script.");
       return -1;
     }
   }

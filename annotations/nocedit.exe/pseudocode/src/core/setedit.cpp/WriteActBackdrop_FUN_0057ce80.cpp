@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_WriteActBackdrop(uint param_1, uint param_2,
-   uint param_3, uint param_4, uint param_5, uint param_6, uint
-   param_7, uint param_8) */
-
 void __cdecl core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
 
 {
@@ -86,7 +82,7 @@ void __cdecl core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
-  sprintf(local_f0,"%s.raw",in_stack_0000000c);
+  _sprintf(local_f0,"%s.raw",in_stack_0000000c);
   local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
   if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -120,7 +116,7 @@ void __cdecl core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
     } while (iVar5 < in_stack_00000014);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbeb);
-  sprintf(local_a0,"%s.act",in_stack_0000000c);
+  _sprintf(local_a0,"%s.act",in_stack_0000000c);
   local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_a0,"wb");
   if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";

@@ -7,5 +7,5 @@
 struct CPod;
 
 // Function Definition: CPod_load
-typedef void (*CPod_load)(struct CPod* this_ptr);
+typedef void CPod_load(struct CPod* this_ptr);
 

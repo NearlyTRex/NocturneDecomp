@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "globals.h"
 #include "constants.h"
 #include "system/misc.h"
 
@@ -432,31 +431,10 @@ const undefined4 DAT_0067cb0c = 0xBF800000;
 const undefined4 DAT_0067cb18 = 0x3F800000;
 
 // void* constants
-const void* DAT_00670308 = (void*)s_Gate_0062136d;
-const void* DAT_00670310 = (void*)s_Elevator_00621372;
-const void* DAT_00670318 = (void*)s_Coffin_Lid_vertical_0062137b;
-const void* DAT_00670328 = (void*)s_Right_006213a0;
-const void* DAT_00670338 = (void*)s_Counter_Clockwise_006213c5;
-const void* DAT_00670348 = (void*)s_Yes_006214dc;
-const void* DAT_00670350 = (void*)s_Done_006214e0;
-const void* DAT_00670360 = (void*)s_Pos_Z_only_00621509;
-const void* DAT_00670368 = (void*)s_Neg_Z_only_00621514;
-const void* DAT_00670370 = (void*)s_Neither_cannot_manual_op_0062151f;
 const void* DAT_00676B0C = (void*)0x00474747; // LAB_00474747
 const void* DAT_00676B1C = (void*)0x004B4B4B; // LAB_004b4b47+4
 const void* DAT_00676B20 = (void*)0x004C4C4C; // LAB_004c4c4c
 const void* DAT_00676B40 = (void*)0x00545454; // engine_palette.cpp_FUN_00545454
-const void* DAT_006792F4 = (void*)s_Smoke_0062418b;
-const void* DAT_006792FC = (void*)s_Fireball_00624191;
-const void* DAT_00679304 = (void*)s_Laser_0062419a;
-const void* DAT_0067930C = (void*)s_Rock_006241a0;
-const void* DAT_00679314 = (void*)s_Flame_006241a5;
-const void* DAT_0067931C = (void*)s_Popcorn_006241ab;
-const void* DAT_00679324 = (void*)s_Lightning_006241b3;
-const void* DAT_0067932C = (void*)s_Blue_Spark_006241bd;
-const void* DAT_00679334 = (void*)s_Point_to_point_lightning_006241c8;
-const void* DAT_0067933C = (void*)s_Sound_006241e1;
-const void* DAT_0067934C = (void*)s_One_Shot_006242b2;
 const void* DAT_0067938A = (void*)0x00400000; // IMAGE_DOS_HEADER_00400000
 const void* DAT_00679D14 = (void*)0x004B1A38; // caseD_1
 const void* DAT_00679D18 = (void*)0x004B1A2F; // caseD_2
@@ -472,9 +450,6 @@ const void* DAT_00679D64 = (void*)0x004B1AC2; // caseD_4
 const void* DAT_00679D68 = (void*)0x004B1AD4; // caseD_5
 const void* DAT_00679D6C = (void*)0x004B1ABA; // caseD_6
 const void* DAT_00679D70 = (void*)0x004B1AB4; // caseD_7
-const void* DAT_0067B0E8 = (void*)s_Candle_0062a1dc;
-const void* DAT_0067B0F0 = (void*)s_Blue_flame_0062a1e3;
-const void* DAT_0067B0F8 = (void*)s_No_flame_0062a1ee;
 const void* DAT_0067B65C = (void*)s_On_0062d675;
 const void* DAT_0067B758 = (void*)s_forest_msn_0062d68e;
 const void* DAT_0067B75C = (void*)s_castle1_msn_0062d699;
@@ -502,21 +477,6 @@ const void* DAT_0067B7F0 = (void*)s_grave_msn_0062d788;
 const void* DAT_0067B7F4 = (void*)s_mansion_msn_0062d792;
 const void* DAT_0067B7F8 = (void*)s_hq_act4b_msn_0062d79e;
 const void* DAT_0067B820 = (void*)s_hq_act5_msn_0062d7ab;
-const void* DAT_0067CFA4 = (void*)s_Pos_Z_only_00631209;
-const void* DAT_0067CFAC = (void*)s_Neg_Z_only_00631214;
-const void* DAT_0067D0B4 = (void*)s_Emitter_00635962;
-const void* DAT_0067D0BC = (void*)s_Gem_0063596a;
-const void* DAT_0067D0C4 = (void*)s_Reflector_0_start_0063596e;
-const void* DAT_0067D0CC = (void*)s_Reflector_0_end_00635980;
-const void* DAT_0067D144 = (void*)s_Cursive_00635a01;
-const void* DAT_0067D180 = (void*)s_Holy_00635d6f;
-const void* DAT_0067D188 = (void*)s_Wood_00635d74;
-const void* DAT_0067D190 = (void*)s_Silver_00635d79;
-const void* DAT_0067D198 = (void*)s_Gold_00635d80;
-const void* DAT_0067D1A0 = (void*)s_Flaming_00635d85;
-const void* DAT_0067D1A8 = (void*)s_Blanks_00635d8d;
-const void* DAT_0067D1B0 = (void*)s_Lithium_00635d94;
-const void* DAT_0067D1B8 = (void*)s_Mercury_00635d9c;
 const void* DAT_0067D6F8 = (void*)s_anon_00639d28;
 const void* DAT_0067D6FC = (void*)s_p_m_m_m_m_00639d2a;
 const void* DAT_0067D700 = (void*)s_anon_00639d2b;

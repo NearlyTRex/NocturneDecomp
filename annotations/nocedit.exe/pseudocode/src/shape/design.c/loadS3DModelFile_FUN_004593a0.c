@@ -60,7 +60,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   if (iVar2 == 1) {
     local_30[1] = 0x67;
     if (local_30[0] != 0x67) {
-      sprintf
+      _sprintf
                 (local_108,"Invalid .S3D version: %d, we can only handle files version of %d",local_30[0],0x67);
       goto LAB_00459491;
     }
@@ -69,17 +69,17 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
                        ,&g_PartsCount,local_24,local_20,local_1c);
     if (iVar2 == 7) {
       if (20000 < g_PolygonCount) {
-        sprintf
+        _sprintf
                   (local_108,"Too many polygons: %d, max is %d",g_PolygonCount,20000);
         goto LAB_00459491;
       }
       if (20000 < g_VertexCount) {
-        sprintf
+        _sprintf
                   (local_108,"Too many vertices: %d, max is %d",g_VertexCount,20000);
         goto LAB_00459491;
       }
       if (500 < g_PartsCount) {
-        sprintf
+        _sprintf
                   (local_108,"Too many parts: %d, max is %d",g_VertexCount,500);
         goto LAB_00459491;
       }
@@ -94,7 +94,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
         local_38 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
         if (local_38 == (void *)0x0) {
-          sprintf
+          _sprintf
                     (local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
           goto LAB_00459491;
         }
@@ -214,7 +214,7 @@ LAB_00459796:
     }
   }
 LAB_00459478:
-  sprintf(local_108,"%s is corrupt.",filename);
+  _sprintf(local_108,"%s is corrupt.",filename);
 LAB_00459491:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\shape\\design.c",0x3ae);
   engine_2d_c_drawText_FUN_00401fd0(local_108,0,0x16);

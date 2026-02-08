@@ -13,7 +13,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
   CBoundingBox3D *pCVar2;
   CVector3f local_14;
   
-  if (*(int *)(this_ptr->unk + 0xc) != 0) {
+  if (this_ptr->destination != (CDemonActor *)0x0) {
     pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        (&this_ptr->base,&local_14,
                         &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position);
@@ -24,7 +24,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&
         (pCVar1->z <= (pCVar2->max).z)))) {
       core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070
-                (g_CDemonMissionPtr,(CLocation *)(*(int *)(this_ptr->unk + 0xc) + 0x20));
+                (g_CDemonMissionPtr,&this_ptr->destination->location);
       return;
     }
   }

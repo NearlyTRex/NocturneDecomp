@@ -27,7 +27,7 @@ shape_edittool_cpp_CInputString_init_FUN_0049d3d0
     this_ptr->current_length = 0;
   }
   else {
-    strncpy(this_ptr->string_data,source_string,this_ptr->max_length);
+    _strncpy(this_ptr->string_data,source_string,this_ptr->max_length);
     uVar2 = 0xffffffff;
     pCVar3 = this_ptr;
     do {

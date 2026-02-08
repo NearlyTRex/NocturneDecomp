@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_startInteraction
-typedef int (*CDemonActor_startInteraction)(struct CDemonActor* this_ptr, struct CDemonActor* user);
+typedef int CDemonActor_startInteraction(struct CDemonActor* this_ptr, struct CDemonActor* user);
 

@@ -14,25 +14,22 @@ core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"Texture",this_ptr->curtain_texture,0x10,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-            (property_list,"Opacity",&this_ptr->opacity,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Opacity",&this_ptr->opacity,(CActorPropertyValidatorFunc *)0x0)
+  ;
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Weight",&this_ptr->weight,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Weight",&this_ptr->weight,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Dampen",&this_ptr->dampen,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Dampen",&this_ptr->dampen,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Spring",&this_ptr->spring,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Spring",&this_ptr->spring,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Friction",&this_ptr->friction,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-            (property_list,"Gravity",&this_ptr->gravity,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Gravity",&this_ptr->gravity,(CActorPropertyValidatorFunc *)0x0)
+  ;
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Simulated",&this_ptr->simulate_me);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
@@ -51,7 +48,7 @@ core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610
             (property_list,"Let go condition",this_ptr->let_go_event);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Patch size",&this_ptr->patch_size,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Block virtual director",&this_ptr->block_virtual_director_flag)
   ;

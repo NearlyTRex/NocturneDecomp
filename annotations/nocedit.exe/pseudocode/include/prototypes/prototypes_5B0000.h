@@ -2,12 +2,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
+#include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CDirectSoundDevice.h"
 #include "types/classes/CExternalRenderer.h"
 #include "types/classes/CSfxSlot.h"
@@ -21,6 +25,8 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
@@ -108,7 +114,7 @@ void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 (CSound
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr,int index);
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20 (CSound *this_ptr,char *title,int *selection_inout);
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_005b3dc0 (CSound *this_ptr,float target_volume,float fade_time);
-void __cdecl core_sound_cpp_editSoundName_FUN_005b3de0(char *prompt_text,char *output_buffer);
+int __cdecl core_sound_cpp_editSoundName_FUN_005b3de0(char *prompt_text,char *output_buffer);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_005b3e00(STrainNoise *this_ptr);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr);
 int * __cdecl core_sound_cpp_assignInt_FUN_005b3e20(int *dest_ptr,int *src_ptr);
@@ -191,16 +197,16 @@ void __cdecl core_spike_cpp_staticInit_FUN_005b81b0(void);
 CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_005b81e0(void);
 CDemonActorType * __cdecl core_spike_cpp_CSpike_getActorType_FUN_005b8210(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_005b8220(CSpike *this_ptr);
-void __cdecl core_spike_cpp_FUN_005b8360(void);
-void __cdecl core_spike_cpp_FUN_005b8410(void);
-int __cdecl core_spike_cpp_FUN_005b8730(void);
-float * __cdecl core_spike_cpp_FUN_005b87a0(void);
+void __cdecl core_spike_cpp_CSpike_setup_FUN_005b8360(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_process_FUN_005b8410(CSpike *this_ptr,float delta_time);
+int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_005b8730(CSpike *this_ptr);
+CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_005b87a0(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_005b87f0(CSpike *this_ptr);
-int __cdecl core_spike_cpp_CSpike_FUN_005b8940(CSpike *this_ptr);
-void __cdecl core_spike_cpp_FUN_005b8950(void);
-void __cdecl core_spike_cpp_FUN_005b8e90(void);
-void __cdecl core_spike_cpp_CSpike_FUN_005b9020(CSpike *this_ptr);
-void __cdecl core_spike_cpp_CSpike_FUN_005b9030(CSpike *this_ptr);
+int __cdecl core_spike_cpp_CSpike_hasCollision_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_spike_cpp_CSpike_FUN_005b8950(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90 (CSpike *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_spike_cpp_CSpike_processInEditor_FUN_005b9020(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_addFilesToExtract_FUN_005b9030(CSpike *this_ptr,_FILE *file_handle);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005b9050(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_005b90a0(void);
 float __cdecl core_spline_cpp_FUN_005b9230(void);
@@ -219,30 +225,30 @@ void __cdecl core_stairs_cpp_staticInit_FUN_005b9b00(void);
 CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_005b9b30(void);
 CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005b9b60(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005b9b70(CStairs *this_ptr);
-int __cdecl core_stairs_cpp_FUN_005b9be0(void);
-void __cdecl core_stairs_cpp_FUN_005b9c00(void);
-int __cdecl core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *param_3);
-void __cdecl core_stairs_cpp_FUN_005ba490(void);
-void __cdecl core_stairs_cpp_FUN_005ba4f0(void);
-int __cdecl core_stairs_cpp_FUN_005ba570(void);
-float __cdecl core_stairs_cpp_FUN_005ba590(void);
-void __cdecl core_stairs_cpp_FUN_005ba660(void);
-int __cdecl core_stairs_cpp_FUN_005ba6a0(void);
-int __cdecl core_stairs_cpp_FUN_005ba6f0(void);
-void __cdecl core_stairs_cpp_FUN_005ba700(void);
-void __cdecl core_stairs_cpp_FUN_005ba840(void);
-void __cdecl core_stairs_cpp_FUN_005ba900(void);
-void __cdecl core_stairs_cpp_FUN_005bab90(void);
-void __cdecl core_stairs_cpp_FUN_005babf0(void);
+void __cdecl core_stairs_cpp_CStairs_setup_FUN_005b9be0(CStairs *this_ptr);
+void __cdecl core_stairs_cpp_CStairs_process_FUN_005b9c00(CStairs *this_ptr,float delta_time);
+int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr);
+CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_005ba490(CStairs *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_stairs_cpp_CStairs_archive_FUN_005ba4f0(CStairs *this_ptr);
+int __cdecl core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info);
+float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_005ba590 (CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
+void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660 (CStairs *this_ptr,SIntersectXZCylinder *cylinder);
+int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0 (CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height);
+int __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_005ba6f0(CStairs *this_ptr);
+void __cdecl core_stairs_cpp_CStairs_FUN_005ba700(CStairs *this_ptr);
+void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840 (CStairs *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_ptr);
+void __cdecl core_stairs_cpp_CStairs_showEditorHelp_FUN_005bab90(CStairs *this_ptr,int *y_pos);
+void __cdecl core_stairs_cpp_CStairs_onActorDeleted_FUN_005babf0(CStairs *this_ptr,CDemonActor *deleted_actor);
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,uint flags);
-void __cdecl core_stairs_cpp_FUN_005bac80(void);
+CDemonTriangle * __cdecl core_stairs_cpp_freeTriangles_FUN_005bac80(CDemonTriangle *objs);
 void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void);
 CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_005bacd0(void);
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_005bad00(CTempleStone *this_ptr);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_005bad10(CTempleStone *this_ptr);
-void __cdecl core_stone_cpp_FUN_005bad40(void);
-int __cdecl core_stone_cpp_FUN_005bad70(void);
-void __cdecl core_stone_cpp_FUN_005badd0(void);
+void __cdecl core_stone_cpp_CTempleStone_archive_FUN_005bad40(CTempleStone *this_ptr);
+int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *this_ptr,CDemonActor *picker);
+void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0 (CTempleStone *this_ptr,CActorPropertyList *property_list);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags);
 void __cdecl core_stranger_cpp_staticInit_FUN_005bae80(void);
 float __cdecl core_stranger_cpp_FUN_005baee0 (int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance, CDeformableModelInstance *instance);
@@ -255,15 +261,15 @@ int __cdecl core_stranger_cpp_FUN_005bafc6(void);
 int __cdecl core_stranger_cpp_FUN_005bafcc(void);
 int __cdecl core_stranger_cpp_FUN_005bafd2(void);
 bool __cdecl core_stranger_cpp_FUN_005bafe0(void);
-float __cdecl core_stranger_cpp_FUN_005bb010(void);
+float __cdecl core_stranger_cpp_CStranger_FUN_005bb010(CStranger *this_ptr);
 CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005bb110(CStranger *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(void);
-int __cdecl core_stranger_cpp_FUN_005be430(void);
+void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_FUN_005be430(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_FUN_005be480(void);
 float * __cdecl core_stranger_cpp_CStranger_FUN_005be490(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005be520(CStranger *this_ptr);

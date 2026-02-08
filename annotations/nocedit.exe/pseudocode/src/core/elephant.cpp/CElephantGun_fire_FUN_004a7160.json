@@ -4,73 +4,73 @@
       {
         "category": "other",
         "column": 26,
-        "line": 56,
+        "line": 57,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 56,
+        "line": 57,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 108,
+        "line": 109,
         "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 110,
+        "line": 111,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 110,
+        "line": 111,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 131,
+        "line": 133,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 131,
+        "line": 133,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 165,
+        "line": 167,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 165,
+        "line": 167,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 168,
+        "line": 170,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 169,
+        "line": 171,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 200,
+        "line": 202,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -79,18 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 308,
+    "complexity_score": 310,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 213,
+    "pseudocode_lines": 215,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unknown_field"
     ],
-    "total_lines": 318
+    "total_lines": 320
   },
   "cross_references": [],
   "function": {
@@ -139,7 +139,7 @@
     {
       "addr": "005ee6e0",
       "is_variadic": false,
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee6e0"
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_005ee6e0"
     }
   ],
   "globals": [
@@ -280,56 +280,56 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 59,
       "match": "fptan",
-      "text": "fVar5 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "fcos",
-      "text": "fVar5 = (float10)fcos((float10)fStack_48);",
+      "text": "fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
+      "match": "fcos",
+      "text": "fVar4 = (float10)fcos((float10)fStack_48);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
       "match": "fsin",
-      "text": "fVar6 = (float10)fsin((float10)fStack_48);",
+      "text": "fVar5 = (float10)fsin((float10)fStack_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 152,
+      "line": 154,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 163,
       "match": "._4_4_",
       "text": "auStack_128._4_4_ = pCStack_34;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 164,
       "match": "._0_4_",
       "text": "auStack_128._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 173,
       "match": "SQRT",
       "text": "SQRT(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0);",
       "type": "decompiler_intrinsic"

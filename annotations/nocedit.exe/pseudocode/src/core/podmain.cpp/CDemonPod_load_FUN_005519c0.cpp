@@ -27,7 +27,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
       engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&CStack_168);
     }
     engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70((CFileFinder *)local_170);
-    engine_dosio_c_CFileFinder_dtor_FUN_00481c50(local_170,0);
+    engine_dosio_c_CFileFinder_dtor_FUN_00481c50((CFileFinder *)local_170,0);
     engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0((CPod *)this_ptr);
     return;
   }

@@ -7,45 +7,45 @@
 ; CActorProperty * Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined4       Stack[-0x37ec]:4  local_37ec
-; undefined1       Stack[-0x3444]:1  local_3444
-; undefined4       Stack[-0x309c]:4  local_309c
-; undefined4       Stack[-0x2cf4]:4  local_2cf4
-; undefined4       Stack[-0x294c]:4  local_294c
-; undefined1       Stack[-0x25a4]:1  local_25a4
-; undefined1       Stack[-0x21fc]:1  local_21fc
-; undefined1       Stack[-0x1e54]:1  local_1e54
-; undefined1       Stack[-0x1aac]:1  local_1aac
-; undefined1       Stack[-0x18ac]:1  local_18ac
-; undefined1       Stack[-0x16ac]:1  local_16ac
-; undefined1       Stack[-0x14ac]:1  local_14ac
-; undefined1       Stack[-0x12ac]:1  local_12ac
-; undefined1       Stack[-0x10ac]:1  local_10ac
-; undefined1       Stack[-0xeac]:1  local_eac
-; undefined1       Stack[-0xcac]:1  local_cac
-; undefined1       Stack[-0xaac]:1  local_aac
+; CPickList        Stack[-0x37ec]:936  local_37ec
+; CPickList        Stack[-0x3444]:936  local_3444
+; CPickList        Stack[-0x309c]:936  local_309c
+; CPickList        Stack[-0x2cf4]:936  local_2cf4
+; CPickList        Stack[-0x294c]:936  local_294c
+; CPickList        Stack[-0x25a4]:936  local_25a4
+; CPickList        Stack[-0x21fc]:936  local_21fc
+; CPickList        Stack[-0x1e54]:936  local_1e54
+; undefined        Stack[-0x1aac]:1  local_1aac
+; undefined        Stack[-0x18ac]:1  local_18ac
+; undefined        Stack[-0x16ac]:1  local_16ac
+; undefined        Stack[-0x14ac]:1  local_14ac
+; undefined        Stack[-0x12ac]:1  local_12ac
+; undefined        Stack[-0x10ac]:1  local_10ac
+; undefined        Stack[-0xeac]:1  local_eac
+; undefined        Stack[-0xcac]:1  local_cac
+; undefined        Stack[-0xaac]:1  local_aac
 ; undefined1       Stack[-0xaab]:1  local_aab
-; undefined1       Stack[-0x980]:1  local_980
-; undefined1       Stack[-0x854]:1  local_854
+; undefined        Stack[-0x980]:1  local_980
+; undefined        Stack[-0x854]:1  local_854
 ; undefined1       Stack[-0x853]:1  local_853
-; undefined1       Stack[-0x750]:1  local_750
+; undefined        Stack[-0x750]:1  local_750
 ; undefined1       Stack[-0x74f]:1  local_74f
-; undefined1       Stack[-0x64c]:1  local_64c
+; undefined        Stack[-0x64c]:1  local_64c
 ; undefined1       Stack[-0x64b]:1  local_64b
-; undefined1       Stack[-0x548]:1  local_548
+; undefined        Stack[-0x548]:1  local_548
 ; undefined1       Stack[-0x547]:1  local_547
-; undefined1       Stack[-0x444]:1  local_444
+; undefined        Stack[-0x444]:1  local_444
 ; undefined1       Stack[-0x443]:1  local_443
-; undefined1       Stack[-0x368]:1  local_368
-; undefined1       Stack[-0x2a0]:1  local_2a0
-; undefined1       Stack[-0x1d8]:1  local_1d8
+; undefined        Stack[-0x368]:1  local_368
+; undefined        Stack[-0x2a0]:1  local_2a0
+; undefined        Stack[-0x1d8]:1  local_1d8
 ; undefined1       Stack[-0x1d7]:1  local_1d7
 ; undefined1       Stack[-0x175]:1  local_175
-; undefined1       Stack[-0x174]:1  local_174
+; undefined        Stack[-0x174]:1  local_174
 ; undefined1       Stack[-0x173]:1  local_173
-; undefined1       Stack[-0x110]:1  local_110
+; undefined        Stack[-0x110]:1  local_110
 ; undefined1       Stack[-0x10f]:1  local_10f
-; undefined1       Stack[-0xac]:1  local_ac
+; undefined        Stack[-0xac]:1  local_ac
 ; undefined1       Stack[-0xab]:1  local_ab
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -69,7 +69,6 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040ee84 = 0040ef01
-;   undefined4 caseD_0
 ;   TerminatedCString s_Enter_s_for_s_00614560
 ;   TerminatedCString s_Select_model_for_actor_s_00614570
 ;   TerminatedCString s_kfm_006145a1
@@ -83,7 +82,8 @@
 ;   TerminatedCString s_s_s_00614601
 ;   TerminatedCString s_cth_00614607
 ;   TerminatedCString s_models_0061460d
-;   ... and 30 more
+;   TerminatedCString s_Select_s_for_actor_s_Cur_00614614
+;   ... and 29 more
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_add_FUN_0043c0f0
@@ -91,6 +91,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_event.cpp_CEventList_FUN_004add00
 ;   core_event.cpp_CEventList_FUN_004add40
+;   core_event.cpp_CRuleList_insert_FUN_004b1680
 ;   core_event.cpp_CRuleList_remove_FUN_004b17c0
 ;   core_ground.cpp_getGroundTypeName_FUN_004eed80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -100,8 +101,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053cad0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_sound.cpp_editSoundName_FUN_005b3de0
-;   crt_file.c_makepath_FUN_005febfc
-;   ... and 14 more
+;   ... and 16 more
 ;
 ; *****************************************************************************
 
@@ -127,6 +127,65 @@ section .text
     POP ESI                             ; 0040eefe
     POP EBX                             ; 0040eeff
     RET                                 ; 0040ef00
+    MOV EAX,dword ptr [EBX + 0x68]      ; 0040ef01
+        ;   Label: caseD_0
+    MOV EAX,dword ptr [EAX]             ; 0040ef04
+    MOV dword ptr [ESP + 0x37c0],EAX    ; 0040ef06
+    XOR ESI,ESI                         ; 0040ef0d
+    PUSH 0x1                            ; 0040ef0f
+        ;   Label: LAB_0040ef0f
+    MOV ECX,dword ptr [EBX + 0x64]      ; 0040ef11
+    PUSH ECX                            ; 0040ef14
+    MOV EDI,dword ptr [EBX + 0x60]      ; 0040ef15
+    PUSH EDI                            ; 0040ef18
+    MOV EAX,dword ptr [EBX + 0x5c]      ; 0040ef19
+    PUSH EAX                            ; 0040ef1c
+    LEA EAX,[ESP + 0x37d0]              ; 0040ef1d
+    PUSH EAX                            ; 0040ef24
+    LEA EAX,[ESP + 0x3560]              ; 0040ef25
+    PUSH EAX                            ; 0040ef2c
+    MOV EDX,dword ptr [0x00678a60]      ; 0040ef2d | g_CEditorToolsPtr
+    PUSH EDX                            ; 0040ef33 | g_CEditorToolsInstance
+    CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0040ef34
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
+    ADD ESP,0x1c                        ; 0040ef39
+    TEST EAX,EAX                        ; 0040ef3c
+    JZ 0x0040eef2                       ; 0040ef3e
+        ;   XREF to: 0040eef2 (CONDITIONAL_JUMP)  ; LAB_0040eef2
+    CMP ESI,dword ptr [EBX + 0xe8]      ; 0040ef40
+    JNZ 0x0040ef78                      ; 0040ef46
+        ;   XREF to: 0040ef78 (CONDITIONAL_JUMP)  ; LAB_0040ef78
+    MOV EDX,dword ptr [EBX + 0x68]      ; 0040ef48
+        ;   Label: LAB_0040ef48
+    MOV EAX,dword ptr [ESP + 0x37c0]    ; 0040ef4b
+    MOV dword ptr [EDX],EAX             ; 0040ef52
+    CMP dword ptr [EBX + 0x58],0x0      ; 0040ef54
+    JZ 0x0040ef66                       ; 0040ef58
+        ;   XREF to: 0040ef66 (CONDITIONAL_JUMP)  ; LAB_0040ef66
+    PUSH EBP                            ; 0040ef5a
+    MOV EAX,dword ptr [EBP + 0x154]     ; 0040ef5b
+    CALL dword ptr [EAX]                ; 0040ef61
+    ADD ESP,0x4                         ; 0040ef63
+    MOV ESI,0x1                         ; 0040ef66
+        ;   Label: LAB_0040ef66
+    MOV EAX,ESI                         ; 0040ef6b
+    ADD ESP,0x37dc                      ; 0040ef6d
+    POP EBP                             ; 0040ef73
+    POP EDI                             ; 0040ef74
+    POP ESI                             ; 0040ef75
+    POP EBX                             ; 0040ef76
+    RET                                 ; 0040ef77
+    MOV EDI,dword ptr [ESP + 0x37c0]    ; 0040ef78
+        ;   Label: LAB_0040ef78
+    PUSH EDI                            ; 0040ef7f
+    PUSH EBP                            ; 0040ef80
+    CALL dword ptr [EBX + 0xe8]         ; 0040ef81
+    ADD ESP,0x8                         ; 0040ef87
+    TEST EAX,EAX                        ; 0040ef8a
+    JNZ 0x0040ef48                      ; 0040ef8c
+        ;   XREF to: 0040ef48 (CONDITIONAL_JUMP)  ; LAB_0040ef48
+    JMP 0x0040ef0f                      ; 0040ef8e
+        ;   XREF to: 0040ef0f (UNCONDITIONAL_JUMP)  ; LAB_0040ef0f
     MOV EAX,dword ptr [EBX + 0x68]      ; 0040ef93
         ;   Label: caseD_1
     MOV EAX,dword ptr [EAX]             ; 0040ef96
@@ -301,7 +360,7 @@ section .text
     PUSH EAX                            ; 0040f170
     LEA EAX,[ESP + 0x3558]              ; 0040f171
     PUSH EAX                            ; 0040f178
-    MOV EDX,dword ptr [0x00678a60]      ; 0040f179 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040f179 | g_CEditorToolsPtr
     PUSH EDX                            ; 0040f17f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f180
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
@@ -417,8 +476,8 @@ section .text
     PUSH 0x614570                       ; 0040f28d | = "Select model for actor %s.  Current m..."
     LEA EAX,[ESP + 0x3558]              ; 0040f292
     PUSH EAX                            ; 0040f299
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040f29a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040f29a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040f29f
     MOV ESI,dword ptr [EBX + 0x68]      ; 0040f2a2
     LEA EDI,[ESP + 0x2f98]              ; 0040f2a5
@@ -593,8 +652,8 @@ section .text
     PUSH 0x6145b5                       ; 0040f447 | = "Select model for actor %s.  Current m..."
     LEA EAX,[ESP + 0x3558]              ; 0040f44c
     PUSH EAX                            ; 0040f453
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040f454
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040f454
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040f459
     MOV ESI,dword ptr [EBX + 0x68]      ; 0040f45c
     LEA EDI,[ESP + 0x32a4]              ; 0040f45f
@@ -767,7 +826,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x68]      ; 0040f625
     PUSH ESI                            ; 0040f628
     CALL core_sound.cpp_editSoundName_FUN_005b3de0 ; 0040f629
-        ;   XREF to: 005b3de0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_editSoundName_FUN_005b3de0(char * prompt_text, char * output_buffer)
+        ;   XREF to: 005b3de0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_editSoundName_FUN_005b3de0(char * prompt_text, char * output_buffer)
     ADD ESP,0x8                         ; 0040f62e
     MOV ESI,EAX                         ; 0040f631
     MOV EAX,ESI                         ; 0040f633
@@ -1055,7 +1114,7 @@ section .text
     PUSH EAX                            ; 0040f8ec
     LEA EAX,[ESP + 0x3558]              ; 0040f8ed
     PUSH EAX                            ; 0040f8f4
-    MOV EAX,[0x00678a60]                ; 0040f8f5 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0040f8f5 | g_CEditorToolsPtr
     PUSH EAX                            ; 0040f8fa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f8fb
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
@@ -1065,7 +1124,7 @@ section .text
         ;   XREF to: 0040eef2 (CONDITIONAL_JUMP)  ; LAB_0040eef2
     LEA EAX,[ESP + 0x3740]              ; 0040f90b
     PUSH EAX                            ; 0040f912
-    MOV EDX,dword ptr [0x006793d0]      ; 0040f913 | g_CEventListInstance | g_CEventListPtr
+    MOV EDX,dword ptr [0x006793d0]      ; 0040f913 | g_CEventListPtr
     PUSH EDX                            ; 0040f919 | g_CEventListInstance
     CALL core_event.cpp_CEventList_FUN_004add00 ; 0040f91a
         ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
@@ -1142,7 +1201,7 @@ section .text
     PUSH EAX                            ; 0040f9af
     LEA EAX,[ESP + 0x3558]              ; 0040f9b0
     PUSH EAX                            ; 0040f9b7
-    MOV EDX,dword ptr [0x00678a60]      ; 0040f9b8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040f9b8 | g_CEditorToolsPtr
     PUSH EDX                            ; 0040f9be | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f9bf
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
@@ -1152,7 +1211,7 @@ section .text
         ;   XREF to: 0040eef2 (CONDITIONAL_JUMP)  ; LAB_0040eef2
     LEA EAX,[ESP + 0x36dc]              ; 0040f9cf
     PUSH EAX                            ; 0040f9d6
-    MOV ECX,dword ptr [0x006793d0]      ; 0040f9d7 | g_CEventListInstance | g_CEventListPtr
+    MOV ECX,dword ptr [0x006793d0]      ; 0040f9d7 | g_CEventListPtr
     PUSH ECX                            ; 0040f9dd | g_CEventListInstance
     CALL core_event.cpp_CEventList_FUN_004add40 ; 0040f9de
         ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
@@ -1235,8 +1294,8 @@ section .text
     PUSH 0x614601                       ; 0040fab1 | = "%s\t%s"
     LEA EAX,[ESP + 0x2e78]              ; 0040fab6
     PUSH EAX                            ; 0040fabd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fabe
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fabe
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fac3
     LEA EAX,[ESP + 0x2e6c]              ; 0040fac6
     PUSH EAX                            ; 0040facd
@@ -1351,8 +1410,8 @@ section .text
     PUSH 0x61464b                       ; 0040fbf1 | = "Add %s for actor %s."
     LEA EAX,[ESP + 0x3558]              ; 0040fbf6
     PUSH EAX                            ; 0040fbfd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fbfe
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fbfe
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fc03
     PUSH 0x0                            ; 0040fc06
         ;   Label: LAB_0040fc06
@@ -1447,8 +1506,8 @@ section .text
     PUSH 0x614614                       ; 0040fcf5 | = "Select %s for actor %s.  Current is %s."
     LEA EAX,[ESP + 0x355c]              ; 0040fcfa
     PUSH EAX                            ; 0040fd01
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fd02
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fd02
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0040fd07
     PUSH 0x61463c                       ; 0040fd0a | = "(remove cloth)"
     LEA EAX,[ESP + 0xea4]               ; 0040fd0f
@@ -1528,8 +1587,8 @@ section .text
     PUSH 0x614673                       ; 0040fdbe | = "%s => %s"
     LEA EAX,[ESP + 0x33b4]              ; 0040fdc3
     PUSH EAX                            ; 0040fdca
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fdcb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fdcb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fdd0
     PUSH 0x1                            ; 0040fdd3
         ;   Label: LAB_0040fdd3
@@ -1755,22 +1814,125 @@ section .text
     LEA EAX,[ESP + 0x3614]              ; 0040ffce
         ;   Label: LAB_0040ffce
     PUSH EAX                            ; 0040ffd5
-    MOV EDX,dword ptr [0x006793d0]      ; 0040ffd6 | g_CEventListInstance | g_CEventListPtr
+    MOV EDX,dword ptr [0x006793d0]      ; 0040ffd6 | g_CEventListPtr
     PUSH EDX                            ; 0040ffdc | g_CEventListInstance
     CALL core_event.cpp_CEventList_FUN_004add00 ; 0040ffdd
         ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
     ADD ESP,0x8                         ; 0040ffe2
     TEST EAX,EAX                        ; 0040ffe5
     JZ 0x0040fffe                       ; 0040ffe7
-        ;   XREF to: 0040fffe (CONDITIONAL_JUMP)
+        ;   XREF to: 0040fffe (CONDITIONAL_JUMP)  ; LAB_0040fffe
     PUSH EAX                            ; 0040ffe9
-    MOV EDX,dword ptr [0x00678a60]      ; 0040ffea | g_CEditorToolsInstance | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040ffea | g_CEditorToolsPtr
     PUSH EDX                            ; 0040fff0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0040fff1
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0040fff6
     JMP 0x0040fdd3                      ; 0040fff9
         ;   XREF to: 0040fdd3 (UNCONDITIONAL_JUMP)  ; LAB_0040fdd3
+    LEA EAX,[ESP + 0x3678]              ; 0040fffe
+        ;   Label: LAB_0040fffe
+    PUSH EAX                            ; 00410005
+    MOV ECX,dword ptr [0x006793d0]      ; 00410006 | g_CEventListPtr
+    PUSH ECX                            ; 0041000c | g_CEventListInstance
+    CALL core_event.cpp_CEventList_FUN_004add40 ; 0041000d
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    ADD ESP,0x8                         ; 00410012
+    TEST EAX,EAX                        ; 00410015
+    JNZ 0x00410052                      ; 00410017
+        ;   XREF to: 00410052 (CONDITIONAL_JUMP)  ; LAB_00410052
+    MOV ESI,dword ptr [EBX + 0x68]      ; 00410019
+    MOV EAX,dword ptr [EBX + 0x5c]      ; 0041001c
+    CMP EAX,dword ptr [ESI]             ; 0041001f
+    JL 0x00410066                       ; 00410021
+        ;   XREF to: 00410066 (CONDITIONAL_JUMP)  ; LAB_00410066
+    LEA EAX,[ESP + 0x3678]              ; 00410023
+    PUSH EAX                            ; 0041002a
+    LEA EAX,[ESP + 0x3618]              ; 0041002b
+    PUSH EAX                            ; 00410032
+    MOV EBP,dword ptr [EBX + 0x5c]      ; 00410033
+    PUSH EBP                            ; 00410036
+    PUSH ESI                            ; 00410037
+    CALL core_event.cpp_CRuleList_insert_FUN_004b1680 ; 00410038
+        ;   XREF to: 004b1680 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_insert_FUN_004b1680(CRuleList * this_ptr)
+    ADD ESP,0x10                        ; 0041003d
+    MOV ESI,0x1                         ; 00410040
+    MOV EAX,ESI                         ; 00410045
+    ADD ESP,0x37dc                      ; 00410047
+    POP EBP                             ; 0041004d
+    POP EDI                             ; 0041004e
+    POP ESI                             ; 0041004f
+    POP EBX                             ; 00410050
+    RET                                 ; 00410051
+    PUSH EAX                            ; 00410052
+        ;   Label: LAB_00410052
+    MOV EAX,[0x00678a60]                ; 00410053 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00410058 | g_CEditorToolsInstance
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00410059
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
+    ADD ESP,0x8                         ; 0041005e
+    JMP 0x0040fdd3                      ; 00410061
+        ;   XREF to: 0040fdd3 (UNCONDITIONAL_JUMP)  ; LAB_0040fdd3
+    MOV EDX,EAX                         ; 00410066
+        ;   Label: LAB_00410066
+    SHL EAX,0x2                         ; 00410068
+    SUB EAX,EDX                         ; 0041006b
+    SHL EAX,0x3                         ; 0041006d
+    ADD EAX,EDX                         ; 00410070
+    ADD ESI,0x4                         ; 00410072
+    SHL EAX,0x2                         ; 00410075
+    LEA EDI,[ESI + EAX*0x1]             ; 00410078
+    LEA ESI,[ESP + 0x3614]              ; 0041007b
+    PUSH EDI                            ; 00410082
+    MOV AL,byte ptr [ESI]               ; 00410083
+        ;   Label: LAB_00410083
+    MOV byte ptr [EDI],AL               ; 00410085
+    CMP AL,0x0                          ; 00410087
+    JZ 0x0041009b                       ; 00410089
+        ;   XREF to: 0041009b (CONDITIONAL_JUMP)  ; LAB_0041009b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0041008b
+    ADD ESI,0x2                         ; 0041008e
+    MOV byte ptr [EDI + 0x1],AL         ; 00410091
+    ADD EDI,0x2                         ; 00410094
+    CMP AL,0x0                          ; 00410097
+    JNZ 0x00410083                      ; 00410099
+        ;   XREF to: 00410083 (CONDITIONAL_JUMP)  ; LAB_00410083
+    POP EDI                             ; 0041009b
+        ;   Label: LAB_0041009b
+    MOV EDX,dword ptr [EBX + 0x5c]      ; 0041009c
+    LEA EAX,[EDX*0x4 + 0x0]             ; 0041009f
+    SUB EAX,EDX                         ; 004100a6
+    SHL EAX,0x3                         ; 004100a8
+    MOV EDI,dword ptr [EBX + 0x68]      ; 004100ab
+    ADD EAX,EDX                         ; 004100ae
+    ADD EDI,0x1f8                       ; 004100b0
+    SHL EAX,0x2                         ; 004100b6
+    LEA ESI,[ESP + 0x3678]              ; 004100b9
+    ADD EDI,EAX                         ; 004100c0
+    PUSH EDI                            ; 004100c2
+    MOV AL,byte ptr [ESI]               ; 004100c3
+        ;   Label: LAB_004100c3
+    MOV byte ptr [EDI],AL               ; 004100c5
+    CMP AL,0x0                          ; 004100c7
+    JZ 0x004100db                       ; 004100c9
+        ;   XREF to: 004100db (CONDITIONAL_JUMP)  ; LAB_004100db
+    MOV AL,byte ptr [ESI + 0x1]         ; 004100cb
+    ADD ESI,0x2                         ; 004100ce
+    MOV byte ptr [EDI + 0x1],AL         ; 004100d1
+    ADD EDI,0x2                         ; 004100d4
+    CMP AL,0x0                          ; 004100d7
+    JNZ 0x004100c3                      ; 004100d9
+        ;   XREF to: 004100c3 (CONDITIONAL_JUMP)  ; LAB_004100c3
+    POP EDI                             ; 004100db
+        ;   Label: LAB_004100db
+    MOV ESI,0x1                         ; 004100dc
+    MOV EAX,ESI                         ; 004100e1
+    ADD ESP,0x37dc                      ; 004100e3
+    POP EBP                             ; 004100e9
+    POP EDI                             ; 004100ea
+    POP ESI                             ; 004100eb
+    POP EBX                             ; 004100ec
+    RET                                 ; 004100ed
     LEA EAX,[ESP + 0x1998]              ; 004100ee
         ;   Label: caseD_f
     PUSH EAX                            ; 004100f5
@@ -1875,13 +2037,13 @@ section .text
     MOV EAX,0x6146ad                    ; 004101d5 | = "enable"
     PUSH EAX                            ; 004101da | = "enable" | s_disabled_006146b4
         ;   Label: LAB_004101da
-    MOV ECX,dword ptr [EDI + 0x66e310]  ; 004101db | = "thrust" | PTR_s_thrust_0066e310 | PTR_s_swing_0066e318
+    MOV ECX,dword ptr [EDI + 0x66e310]  ; 004101db | PTR_s_thrust_0066e310 | PTR_s_swing_0066e318
     PUSH ECX                            ; 004101e1 | = "thrust" | s_swing_006146fc
     PUSH 0x6146bd                       ; 004101e2 | = "%s\t%s"
     LEA EAX,[ESP + 0x3490]              ; 004101e7
     PUSH EAX                            ; 004101ee
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004101ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004101ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004101f4
     LEA EAX,[ESP + 0x3484]              ; 004101f7
     PUSH EAX                            ; 004101fe
@@ -1998,8 +2160,8 @@ section .text
     PUSH 0x614560                       ; 00410310 | = "Enter %s for %s"
     LEA EAX,[ESP + 0x3558]              ; 00410315
     PUSH EAX                            ; 0041031c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0041031d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0041031d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,dword ptr [EBX]             ; 00410322
     ADD ESP,0x10                        ; 00410324
     CMP EAX,0x12                        ; 00410327

@@ -1,15 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 51,
+        "column": 52,
         "line": 90,
-        "message": "format specifies type 'char *' but the argument has type 'STextureLoadConfig *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'STextureLoadConfig *' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 535,
@@ -65,6 +65,11 @@
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -73,11 +78,6 @@
       "addr": "005ffacc",
       "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00481a50",

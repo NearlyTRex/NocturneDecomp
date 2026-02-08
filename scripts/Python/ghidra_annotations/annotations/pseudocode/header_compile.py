@@ -303,9 +303,17 @@ def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
             if f.endswith('.cpp'):
                 if f in skip_files:
                     continue
-                # Skip regular .cpp if a .keep.cpp exists (prefer manual override)
-                if not '.keep.' in f:
+                # Skip lower-priority files when higher-priority ones exist
+                # Priority: .keep.cpp > .mmx.cpp > .cpp
+                if not '.keep.' in f and not '.mmx.' in f:
+                    # Regular .cpp - skip if .keep.cpp or .mmx.cpp exists
                     keep_version = f.replace('.cpp', '.keep.cpp')
+                    mmx_version = f.replace('.cpp', '.mmx.cpp')
+                    if keep_version in files or mmx_version in files:
+                        continue
+                elif '.mmx.' in f:
+                    # .mmx.cpp - skip if .keep.cpp exists
+                    keep_version = f.replace('.mmx.cpp', '.keep.cpp')
                     if keep_version in files:
                         continue
                 cpp_files.append(os.path.join(root, f))

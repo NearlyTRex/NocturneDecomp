@@ -1,15 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "incompatible_types",
-        "column": 38,
+        "column": 39,
         "line": 19,
-        "message": "invalid conversion specifier '.' [-Wformat-invalid-specifier]"
+        "message": "invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 34,
@@ -54,7 +54,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     }
   ],
   "globals": [

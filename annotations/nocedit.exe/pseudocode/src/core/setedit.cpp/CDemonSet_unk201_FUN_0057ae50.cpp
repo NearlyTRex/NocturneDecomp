@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_CDemonSet_unk201(uint pSet, uint param_2) */
-
 int __cdecl core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
 
 {
@@ -124,10 +122,10 @@ LAB_0057af67:
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
   engine_2d_c_drawText_FUN_00401fd0(acStack_70,0,0xb);
-  sprintf
+  _sprintf
             (&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);
-  sprintf
+  _sprintf
             (&stack0xfffffe90,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
              ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),

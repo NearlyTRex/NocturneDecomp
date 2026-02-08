@@ -2,17 +2,14 @@
 // Address: 00578d80
 // Address Range: [[00578d80, 0057a0b4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: void core_setedit.cpp_CDemonSet_importS3D(CDemonSet* param_1, uint param_2, int*
-   param_3) */
-
-void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
 
 {
-  CEditorTools *this_ptr;
+  CEditorTools *this_ptr_00;
   uchar triangle_flags;
   int iVar1;
   int iVar2;
@@ -38,7 +35,6 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
   int *piVar20;
   CDemonFilter **ppCVar21;
   byte bVar22;
-  CDemonSet *in_stack_00000004;
   _FILE *in_stack_00000008;
   int aiStackY_3a30 [1378];
   C3DSLight local_2478;
@@ -106,12 +102,12 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
               (g_CEditorToolsPtr,"Nothing to do!");
     return;
   }
-  if (((local_68 == 0) && (in_stack_00000004->light_count < 1)) &&
+  if (((local_68 == 0) && (this_ptr->light_count < 1)) &&
      (iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"There are currently no lights currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar1 == 0)) {
     return;
   }
-  if (((local_6c == 0) && (in_stack_00000004->camera_count < 1)) &&
+  if (((local_6c == 0) && (this_ptr->camera_count < 1)) &&
      (iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"There are currently no cameras currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar1 == 0)) {
     return;
@@ -171,7 +167,7 @@ LAB_00578fc0:
   } while (iVar1 != 10);
   if (local_78 != 0) {
     local_34 = _ftell(in_stack_00000008);
-    local_28 = in_stack_00000004->geometry_filename;
+    local_28 = this_ptr->geometry_filename;
     do {
       DAT_03654368 = 0;
       engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_1a0);
@@ -269,10 +265,10 @@ LAB_0057981a:
       }
       if ((local_30 == 0) && (local_2c == 0)) goto LAB_0057904b;
       if (local_30 == 0) {
-        sprintf(local_838,"You have some textures which are currently assigned DEFAULT\nWhat do you want to do about it?");
+        _sprintf(local_838,"You have some textures which are currently assigned DEFAULT\nWhat do you want to do about it?");
       }
       else {
-        sprintf(local_838,"You have some new textures which have not been groun typed\nThey have been added to %s and assigned DEFAULT\nWhat do you want to do about it?",local_6a8);
+        _sprintf(local_838,"You have some new textures which have not been groun typed\nThey have been added to %s and assigned DEFAULT\nWhat do you want to do about it?",local_6a8);
       }
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_be0);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -346,12 +342,12 @@ LAB_0057911a:
     }
   }
   else {
-    core_set_cpp_CDemonSet_clear_FUN_005693c0(in_stack_00000004);
+    core_set_cpp_CDemonSet_clear_FUN_005693c0(this_ptr);
     core_dtrace_cpp_CDemonRaytrace_allocTris_FUN_004950b0(&g_CDemonRaytraceInstance);
-    this_ptr = g_CEditorToolsPtr;
-    in_stack_00000004->set_scale_factor = 1.0;
+    this_ptr_00 = g_CEditorToolsPtr;
+    this_ptr->set_scale_factor = 1.0;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-              (this_ptr,"Reading vertices");
+              (this_ptr_00,"Reading vertices");
     piVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                        (local_50 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
     local_38 = piVar5;
@@ -405,10 +401,10 @@ LAB_00579173:
   }
   else {
     iVar1 = 0;
-    if (0 < in_stack_00000004->light_count) {
-      dest = in_stack_00000004->lights;
-      pCVar9 = in_stack_00000004->lights + 1;
-      pCVar7 = in_stack_00000004;
+    if (0 < this_ptr->light_count) {
+      dest = this_ptr->lights;
+      pCVar9 = this_ptr->lights + 1;
+      pCVar7 = this_ptr;
       do {
         iVar2 = pCVar7->lights[0].light_type;
         iVar8 = local_70;
@@ -427,11 +423,11 @@ LAB_00579173:
           pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].unk3;
         }
         else {
-          iVar2 = in_stack_00000004->light_count + -1;
-          in_stack_00000004->light_count = iVar2;
+          iVar2 = this_ptr->light_count + -1;
+          this_ptr->light_count = iVar2;
           memmove(dest,pCVar9,(iVar2 - iVar1) * 0x1898);
         }
-      } while (iVar1 < in_stack_00000004->light_count);
+      } while (iVar1 < this_ptr->light_count);
     }
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading lights");
@@ -441,7 +437,7 @@ LAB_00579173:
     } while (iVar1 != 10);
     local_7c = 0;
     if (0 < local_44) {
-      local_1c = in_stack_00000004->lights;
+      local_1c = this_ptr->lights;
       do {
         core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2478);
         core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);
@@ -456,12 +452,12 @@ LAB_00579173:
                     ("unknown light type: %d",local_2478.light_type);
         }
         if (local_20 != 0) {
-          if (199 < in_stack_00000004->light_count) {
+          if (199 < this_ptr->light_count) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
             g_CurrentLineNumber = 0x58f;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many lights!");
           }
-          pCVar9 = local_1c + in_stack_00000004->light_count;
+          pCVar9 = local_1c + this_ptr->light_count;
           pCVar9->light_type = local_2478.light_type;
           pcVar11 = local_2478.name;
           pcVar10 = pCVar9->name;
@@ -548,7 +544,7 @@ LAB_00579173:
           }
           pCVar9->current_filter_frame = local_2478.current_filter_frame;
           pCVar9->filter_frame_elapsed = local_2478.filter_frame_elapsed;
-          in_stack_00000004->light_count = in_stack_00000004->light_count + 1;
+          this_ptr->light_count = this_ptr->light_count + 1;
         }
         local_7c = local_7c + 1;
       } while (local_7c < local_44);
@@ -580,14 +576,14 @@ LAB_0057a07e:
     } while (iVar1 != 10);
     iVar1 = 0;
     if (0 < local_40) {
-      pCVar6 = in_stack_00000004->cameras;
+      pCVar6 = this_ptr->cameras;
       do {
         core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,in_stack_00000008);
         iVar1 = iVar1 + 1;
         pCVar6 = pCVar6 + 1;
       } while (iVar1 < local_40);
     }
-    in_stack_00000004->camera_count = local_40;
+    this_ptr->camera_count = local_40;
   }
   if (local_78 != 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -625,27 +621,27 @@ LAB_0057a07e:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Saving raytrace database");
     core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040
-              (&g_CDemonRaytraceInstance,in_stack_00000004->geometry_filename);
+              (&g_CDemonRaytraceInstance,this_ptr->geometry_filename);
     core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
-              (&g_CDemonRaytraceInstance,in_stack_00000004->geometry_filename);
+              (&g_CDemonRaytraceInstance,this_ptr->geometry_filename);
   }
   if (local_64 != 0) {
-    core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(in_stack_00000004);
+    core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr);
   }
   if ((local_78 != 0) || (local_6c != 0)) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Precalcs for virtual director");
-    core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(in_stack_00000004);
+    core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Deleting possibly out-of-date fog files");
     iVar1 = 0;
-    if (0 < in_stack_00000004->camera_count) {
-      pCVar6 = in_stack_00000004->cameras;
-      pCVar7 = in_stack_00000004;
+    if (0 < this_ptr->camera_count) {
+      pCVar6 = this_ptr->cameras;
+      pCVar7 = this_ptr;
       do {
-        sprintf(local_2a0,"backdrop\\%s.fog",pCVar6);
+        _sprintf(local_2a0,"backdrop\\%s.fog",pCVar6);
         remove(local_2a0);
-        sprintf(local_2a0,"backdrop\\%s.pvs",pCVar6);
+        _sprintf(local_2a0,"backdrop\\%s.pvs",pCVar6);
         remove(local_2a0);
         piVar5 = pCVar7->cameras[0].pvs_list;
         pCVar7->cameras[0].pvs_count = 0;
@@ -656,7 +652,7 @@ LAB_0057a07e:
         pCVar7 = (CDemonSet *)&pCVar7->cameras[0].unk4;
         iVar1 = iVar1 + 1;
         pCVar6 = pCVar6 + 1;
-      } while (iVar1 < in_stack_00000004->camera_count);
+      } while (iVar1 < this_ptr->camera_count);
     }
   }
   if (local_60 != 0) {

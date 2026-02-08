@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 102,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 37,
-    "suspect_count": 6,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 120
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -41,12 +39,12 @@
     {
       "addr": "0040ee30",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ee30"
+      "name": "core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30"
     },
     {
       "addr": "0040ee50",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ee50"
+      "name": "core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50"
     },
     {
       "addr": "004018a0",
@@ -167,48 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX",
-      "text": "if (iVar2 < extraout_EAX) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX",
-      "text": "iVar2 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX_00",
-      "text": "if (local_14 < extraout_EAX_00) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EAX_00",
-      "text": "local_14 = extraout_EAX_00;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

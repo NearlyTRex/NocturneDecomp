@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte shape_design.c_triangulateDSE(uint param_1) */
-
 void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
 
 {

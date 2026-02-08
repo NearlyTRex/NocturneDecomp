@@ -18,7 +18,7 @@
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043faa2
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004443b8
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f1ff
-;   core_dracbrid.cpp_FUN_00484410 at 0048467e
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 at 0048467e
 ;   ... and 21 more
 ;
 ; Referenced Globals:

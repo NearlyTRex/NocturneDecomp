@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_ReadFileBytesMaybe(uint param_1, uint param_2, uint
-   param_3) */
-
 uint ReadFileBytesMaybe
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5
                ,char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)

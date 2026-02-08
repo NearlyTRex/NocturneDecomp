@@ -7,5 +7,5 @@
 struct CKeys;
 
 // Function Definition: CKeys_clearKeypresses
-typedef void (*CKeys_clearKeypresses)(struct CKeys* this_ptr);
+typedef void CKeys_clearKeypresses(struct CKeys* this_ptr);
 

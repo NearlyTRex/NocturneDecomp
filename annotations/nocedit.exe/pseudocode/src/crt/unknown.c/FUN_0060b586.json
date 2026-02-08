@@ -1,19 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 329,
+    "complexity_score": 391,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 49,
-    "suspect_count": 26,
+    "pseudocode_lines": 51,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
+      "extra_output",
+      "param_count_too_many",
+      "register_param",
       "special_crt_function",
       "unnamed_param"
     ],
-    "total_lines": 105
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -31,9 +33,9 @@
         "0060b5e7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_unknown.c_FUN_0060b586",
-    "signature": "void crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)"
+    "signature": "void __cdecl crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)"
   },
   "function_calls": [
     {
@@ -50,18 +52,15 @@
         "call_addr": "00605cfb",
         "call_type": "direct",
         "caller": "crt_string.c_parseFloatString_FUN_00605b9b",
-        "estimated_params": 2,
+        "estimated_params": 0,
         "instructions_analyzed": 5,
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_params": 0
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "estimated_params": 2
+    "declared_params": 2,
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.68,
@@ -91,48 +90,84 @@
     "pcode_op_count": 334
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined8 *"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
-      "text": "void FUN_0060b586(byte *param_1,ulonglong *param_2)",
+      "text": "void __cdecl FUN_0060b586(byte *param_1,ulonglong *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "void FUN_0060b586(byte *param_1,ulonglong *param_2)",
+      "text": "void __cdecl FUN_0060b586(byte *param_1,ulonglong *param_2)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "text": "for (; *param_1 != 0; param_1 = param_1 + 1) {",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "text": "byte *in_EAX;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "text": "for (; *param_1 != 0; param_1 = param_1 + 1) {",
-      "type": "unnamed_param"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "uint extraout_EAX;",
+      "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EDX",
+      "text": "uint *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 27,
-      "match": "param_1",
-      "text": "for (; *param_1 != 0; param_1 = param_1 + 1) {",
-      "type": "unnamed_param"
+      "match": "in_EAX",
+      "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -177,31 +212,31 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 41,
-      "match": "param_1",
-      "text": "uVar12 = uVar6 + (*param_1 & 0xffffff0f);",
-      "type": "unnamed_param"
+      "match": "in_EAX",
+      "text": "uVar12 = uVar6 + (*in_EAX & 0xffffff0f);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 42,
-      "match": "param_1",
-      "text": "uVar4 = (uint)CARRY4(uVar6,*param_1 & 0xffffff0f);",
-      "type": "unnamed_param"
+      "match": "in_EAX",
+      "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CARRY4",
-      "text": "uVar4 = (uint)CARRY4(uVar6,*param_1 & 0xffffff0f);",
+      "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CARRY4",
-      "text": "iVar11 = (iVar11 * 5 + (uint)(bVar14 || CARRY4(uVar5,(uint)bVar13)) * 2 +",
+      "text": "uVar11 = (uVar11 * 5 + (uint)(bVar14 || CARRY4(uVar5,(uint)bVar13)) * 2 +",
       "type": "decompiler_intrinsic"
     },
     {
@@ -247,36 +282,50 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 50,
-      "match": "param_2",
-      "text": "*param_2 = uVar16;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "in_EDX[1] = uVar11;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 51,
-      "match": "param_2",
-      "text": "*(short *)(param_2 + 1) = (short)param_1;",
-      "type": "unnamed_param"
+      "match": "extraout_EAX",
+      "text": "*in_EDX = extraout_EAX;",
+      "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 51,
-      "match": "param_1",
-      "text": "*(short *)(param_2 + 1) = (short)param_1;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "*in_EDX = extraout_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 52,
+      "match": "in_EDX",
+      "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 52,
+      "match": "in_EAX",
+      "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
+      "type": "register_param"
     },
     {
       "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 0,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:0",
+      "param_delta": -2,
+      "text": "Function declares 2 params but call sites push 0 (2 extra)",
+      "type": "param_count_too_many"
     },
     {
       "address": "0060b586",

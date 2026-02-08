@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[4]:
-;   crt_stdio.c_ostream_put_FUN_005ff2d7 at 005ff37a
+;   crt_iostream.cpp_ostream_put_FUN_005ff2d7 at 005ff37a
 ;   crt_stdio.c_prepare_stream_for_write_FUN_00606055 at 00606089
 ;   crt_stdio.c_stream_setup_FUN_00605f20 at 00605fa3
 ;   crt_stdio.c_stream_write_internal_FUN_005ffcb3 at 005ffd6b

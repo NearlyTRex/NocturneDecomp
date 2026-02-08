@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
+; __cdecl int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined1       Stack[-0x7c]:1  local_7c
 ;

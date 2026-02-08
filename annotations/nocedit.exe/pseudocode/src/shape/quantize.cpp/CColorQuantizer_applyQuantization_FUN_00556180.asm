@@ -24,7 +24,7 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
@@ -240,8 +240,8 @@ section .text
     MOV EDI,dword ptr [EBP + -0x10]     ; 00556353
     PUSH EDI                            ; 00556356
     LEA ESI,[EBX + 0x4830]              ; 00556357
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0055635d
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0055635d
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00556362
     MOV ECX,0x300                       ; 00556365
     MOV EDI,dword ptr [EDI + 0x24]      ; 0055636a

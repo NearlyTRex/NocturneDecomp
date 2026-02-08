@@ -1,0 +1,211 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 14,
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 123
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005e9c00",
+    "address_range": [
+      [
+        "005e9c00",
+        "005e9d02"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vessel.cpp_CCryptVessel_getPropertyList_FUN_005e9c00",
+    "signature": "void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00 (CCryptVessel *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350"
+    },
+    {
+      "addr": "0040e640",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640"
+    },
+    {
+      "addr": "0040e460",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460"
+    },
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160"
+    },
+    {
+      "addr": "0040e3b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006570e5",
+      "name": "s_Model_file_kfm_006570e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006570f7",
+      "name": "s_CCryptVessel_006570f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657104",
+      "name": "s_Prey_00657104",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657109",
+      "name": "s_CCryptVessel_00657109",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657116",
+      "name": "s_Neutral_00657116",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065711e",
+      "name": "s_Destroyed_event_momentar_0065711e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065713a",
+      "name": "s_CActorDestination_0065713a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065714c",
+      "name": "s_Start_loc_0065714c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657156",
+      "name": "s_CActorDestination_00657156",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657168",
+      "name": "s_End_loc_00657168",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657170",
+      "name": "s_Win_event_persistant_00657170",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657187",
+      "name": "s_Eat_distance_00657187",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006571a3",
+      "name": "s_Visual_type_006571a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006844b0",
+      "name": "g_CryptVesselVisualTypePairs",
+      "type": "SEnumPair[3]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.740740740740741,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "CALL": 10,
+      "COPY": 61,
+      "INT_ADD": 24,
+      "INT_AND": 22,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 22,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 11,
+      "INT_SUB": 57,
+      "LOAD": 5,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 57
+    },
+    "pcode_op_count": 303
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCryptVessel",
+        "offset": 212,
+        "vtable_addr": "006651b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -33,7 +33,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 004687f5
     ADD EAX,0x4                         ; 004687f8
     PUSH EAX                            ; 004687fb
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004687fc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004687fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00468801
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468804
     MOV dword ptr [EAX + 0xa4],0x4      ; 00468807 | DAT_016e99b4

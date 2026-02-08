@@ -31,7 +31,7 @@
 ;   core_gore.cpp_CGore_FUN_004edbb0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
@@ -103,8 +103,8 @@ section .text
     PUSH 0x630fdb                       ; 00503ac4 | = "l%s-die?.wav"
     LEA EAX,[ESP + 0x20]                ; 00503ac9
     PUSH EAX                            ; 00503acd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00503ace
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00503ace
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503ad3
     LEA ESI,[ESP + 0x18]                ; 00503ad6
     PUSH ESI                            ; 00503ada
@@ -187,8 +187,8 @@ section .text
     PUSH 0x630fe8                       ; 00503b9d | = "l%s-shot?.wav"
     LEA EAX,[ESP + 0x84]                ; 00503ba2
     PUSH EAX                            ; 00503ba9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00503baa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00503baa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503baf
     LEA ESI,[ESP + 0x7c]                ; 00503bb2
     PUSH ESI                            ; 00503bb6

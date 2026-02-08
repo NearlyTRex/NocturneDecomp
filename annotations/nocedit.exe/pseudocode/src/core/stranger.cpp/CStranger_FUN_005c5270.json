@@ -4,85 +4,85 @@
       {
         "category": "other",
         "column": 12,
-        "line": 172,
+        "line": 170,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 172,
+        "line": 170,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 179,
+        "line": 177,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 179,
+        "line": 177,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 194,
+        "line": 192,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 194,
+        "line": 192,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 200,
+        "line": 198,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 200,
+        "line": 198,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 206,
+        "line": 204,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 206,
+        "line": 204,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 236,
+        "line": 234,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 236,
+        "line": 234,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 272,
+        "line": 269,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 272,
+        "line": 269,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -91,11 +91,11 @@
   },
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 460,
+    "complexity_score": 457,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
-    "pseudocode_lines": 320,
+    "pseudocode_lines": 317,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param",
@@ -103,7 +103,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 1160
+    "total_lines": 1157
   },
   "cross_references": [
     {
@@ -526,42 +526,42 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 187,
+      "line": 185,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xec))();",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xec))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 193,
+      "line": 191,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x70))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 199,
+      "line": 197,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0x70))();",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x70))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 215,
+      "line": 213,
       "match": "1.12104e-44",
       "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 229,
+      "line": 227,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xf0))();",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf0))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 251,
+      "line": 249,
       "match": "1.12104e-44",
       "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {",
       "type": "suspect_float"

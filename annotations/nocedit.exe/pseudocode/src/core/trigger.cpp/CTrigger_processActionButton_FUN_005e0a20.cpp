@@ -9,12 +9,12 @@
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr)
 
 {
-  if (*(int *)(this_ptr->unk + 0x1c) != 3) {
+  if (this_ptr->hero_triggers_me != 3) {
     return 1;
   }
-  this_ptr->unk[0x198] = '\x01';
-  this_ptr->unk[0x199] = '\0';
-  this_ptr->unk[0x19a] = '\0';
-  this_ptr->unk[0x19b] = '\0';
+  this_ptr->unk2[4] = '\x01';
+  this_ptr->unk2[5] = '\0';
+  this_ptr->unk2[6] = '\0';
+  this_ptr->unk2[7] = '\0';
   return 1;
 }

@@ -15,7 +15,7 @@
 ;   core_texlist.cpp_CTextureList_renderTexture_FUN_005dca30 at 005dca76
 ;
 ; Called Functions:
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402530
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 004025a5
     LEA EAX,[ESP + 0x8]                 ; 004025a6
     PUSH EAX                            ; 004025aa
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004025ab
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004025ab
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004025b0
     MOV EBX,dword ptr [ESP + 0x1014]    ; 004025b3
     PUSH EBX                            ; 004025ba

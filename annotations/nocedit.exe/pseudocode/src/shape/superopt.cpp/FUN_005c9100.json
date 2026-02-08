@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 59,
+        "line": 56,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 155,
+    "complexity_score": 138,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 50,
-    "suspect_count": 9,
+    "pseudocode_lines": 48,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 133
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -152,64 +151,57 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "pdVar13 = (double *)(in_stack_00000008 + 0x10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 47,
       "match": "in_stack_0000000c",
       "text": "} while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 47,
       "match": "in_stack_00000008",
       "text": "} while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 49,
       "match": "SUB84",
       "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 49,
       "match": "SQRT",
       "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
       "type": "decompiler_intrinsic"

@@ -1,0 +1,284 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 30,
+        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 274,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 39,
+    "suspect_count": 22,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "stack_param"
+    ],
+    "total_lines": 109
+  },
+  "cross_references": [
+    {
+      "addr": "005c91e0",
+      "from_addr": "005c9304",
+      "name": "shape_superopt.cpp_FUN_005c91e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005cbe20",
+    "address_range": [
+      [
+        "005cbe20",
+        "005cbeb2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_FUN_005cbe20",
+    "signature": "void __cdecl shape_superopt_cpp_FUN_005cbe20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601df0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00601df0"
+    },
+    {
+      "addr": "006021da",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_malloc_FUN_006021da"
+    },
+    {
+      "addr": "005cbf20",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_FUN_005cbf20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c9304",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_FUN_005c91e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.596774193548387,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 63,
+      "INT_ADD": 34,
+      "INT_AND": 76,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 20,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 21,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 28,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 409
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "(*(void **)(in_stack_00000004 + 0xc),(*(int *)(in_stack_00000004 + 8) + 1) * 8)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "(*(void **)(in_stack_00000004 + 0xc),(*(int *)(in_stack_00000004 + 8) + 1) * 8)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "*(void **)(in_stack_00000004 + 0xc) = pvVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "piVar5 = (int *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "piVar5 = (int *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000000c",
+      "text": "puVar2 = shape_memdbg_cpp_malloc_FUN_006021da(in_stack_0000000c * 0x60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "text": "for (uVar3 = (uint)(in_stack_0000000c * 0x60) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "text": "*puVar2 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar6 * -2 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar6 * -2 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000008",
+      "text": "*(byte *)puVar2 = *(byte *)in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = (uint *)((int)in_stack_00000008 + (uint)bVar6 * -2 + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = (uint *)((int)in_stack_00000008 + (uint)bVar6 * -2 + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "in_stack_00000008 = (uint *)((int)in_stack_00000008 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_0000000c",
+      "text": "*piVar5 = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 8) = *(int *)(in_stack_00000004 + 8) + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 8) = *(int *)(in_stack_00000004 + 8) + 1;",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

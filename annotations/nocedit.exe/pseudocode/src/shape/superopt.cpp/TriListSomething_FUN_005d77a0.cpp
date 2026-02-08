@@ -38,7 +38,7 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
   }
-  sprintf(local_100,"reduce\\cube%04d.txt");
+  _sprintf(local_100,"reduce\\cube%04d.txt");
   iVar6 = 0;
   local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",0x252f);

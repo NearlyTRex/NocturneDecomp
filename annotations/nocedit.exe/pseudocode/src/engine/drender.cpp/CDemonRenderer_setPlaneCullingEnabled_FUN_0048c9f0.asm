@@ -13,7 +13,7 @@
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 004828d5
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 0050a161
 ;   core_path.cpp_FUN_00547fc0 at 005480c1
-;   core_trigger.cpp_CTrigger_FUN_005e00d0 at 005e0569
+;   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 at 005e0569
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 at 0048ca30
 ;
 ; *****************************************************************************

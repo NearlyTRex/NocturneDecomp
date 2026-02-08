@@ -1,15 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "other",
-        "column": 25,
+        "column": 26,
         "line": 30,
-        "message": "format string is not a string literal (potentially insecure) [-Wformat-security]"
+        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 40,
@@ -51,7 +51,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     }
   ],
   "globals": [

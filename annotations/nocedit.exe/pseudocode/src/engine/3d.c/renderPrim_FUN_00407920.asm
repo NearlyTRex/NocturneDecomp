@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00407944
     PUSH EAX                            ; 00407948
     MOV EBX,0x6134e4                    ; 00407949 | = "..\\engine\\3d.c"
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040794e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040794e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00407953
     LEA EAX,[ESP + 0x4]                 ; 00407956
     MOV ESI,0xc8b                       ; 0040795a

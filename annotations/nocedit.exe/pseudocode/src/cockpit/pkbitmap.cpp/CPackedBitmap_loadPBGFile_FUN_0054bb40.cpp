@@ -21,7 +21,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("art",pbg_filename,"rb");
   if (file_handle == (_FILE *)0x0) {
-    sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
+    _sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
     g_CurrentLineNumber = 0x595;
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_78);

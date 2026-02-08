@@ -35,7 +35,7 @@ void __cdecl core_script_cpp_FUN_005643d0(void)
     iVar2 = core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0
                       (&local_33c,in_stack_00000008,&local_14);
     if (iVar2 == 0) break;
-    iVar2 = sprintf
+    iVar2 = _sprintf
                       (in_stack_00000004 + iVar3,"<%s>",local_33c.default_value);
     iVar3 = iVar3 + iVar2;
   }

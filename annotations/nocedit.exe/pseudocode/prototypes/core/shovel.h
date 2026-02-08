@@ -19,17 +19,17 @@ CDemonActorType * __cdecl CShovel::getActorType(CShovel *this_ptr);
 // Address: 00588ba0
 CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_fire_FUN_00588c20
+// Original: core_shovel.cpp_CShovel_fire_FUN_00588c20
 // Address: 00588c20
-int __cdecl fire(void);
+int __cdecl CShovel::fire(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_00588c40
+// Original: core_shovel.cpp_CShovel_FUN_00588c40
 // Address: 00588c40
-float __cdecl FUN_00588c40(void);
+float __cdecl CShovel(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_00588c70
+// Original: core_shovel.cpp_CShovel_FUN_00588c70
 // Address: 00588c70
-void __cdecl FUN_00588c70(void);
+void __cdecl CShovel(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00588c80
 // Address: 00588c80

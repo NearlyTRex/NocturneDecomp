@@ -137,8 +137,8 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 005d8c5e
     MOV EAX,dword ptr [ESI + 0x4]       ; 005d8c61
     MOV dword ptr [ESI],EAX             ; 005d8c64
-    CALL core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970 ; 005d8c66
-        ;   XREF to: 005d9970 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970()
+    CALL core_svetlana.cpp_CSvetlana_FUN_005d9970 ; 005d8c66
+        ;   XREF to: 005d9970 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_CSvetlana_FUN_005d9970(CSvetlana * this_ptr)
     ADD ESP,0x8                         ; 005d8c6b
     PUSH dword ptr [EBP + 0x18]         ; 005d8c6e
     FLD float ptr [EBX + 0x23b4]        ; 005d8c71
@@ -414,8 +414,8 @@ section .text
         ;   XREF to: 005d8f5c (CONDITIONAL_JUMP)  ; LAB_005d8f5c
     PUSH dword ptr [EBP + 0x18]         ; 005d8f50
     PUSH EBX                            ; 005d8f53
-    CALL core_svetlana.cpp_FUN_005d9260 ; 005d8f54
-        ;   XREF to: 005d9260 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_FUN_005d9260()
+    CALL core_svetlana.cpp_CSvetlana_FUN_005d9260 ; 005d8f54
+        ;   XREF to: 005d9260 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_CSvetlana_FUN_005d9260(CSvetlana * this_ptr)
     ADD ESP,0x8                         ; 005d8f59
     LEA EAX,[EBX + 0x158]               ; 005d8f5c
         ;   Label: LAB_005d8f5c

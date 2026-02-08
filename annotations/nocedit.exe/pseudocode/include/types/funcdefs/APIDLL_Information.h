@@ -5,5 +5,5 @@
 #include "system/windef.h"
 
 // Function Definition: APIDLL_Information
-typedef void (*APIDLL_Information)(HMODULE dll_handle, void* info_buffer);
+typedef void APIDLL_Information(HMODULE dll_handle, void* info_buffer);
 

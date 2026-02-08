@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_0060411c (undefined4 param_1,undefined4 param_2,undefined1 *unaff_EBX,undefined4 param_4, undefined4 param_5)
+; unknown void crt_unknown_c_FUN_0060411c(undefined4 param_1,undefined4 param_2,undefined1 *unaff_EBX)
 ;
 ; Parameters:
 ; undefined2       Stack[0x0]:2   local_res0

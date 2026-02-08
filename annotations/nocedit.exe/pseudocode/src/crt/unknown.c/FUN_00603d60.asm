@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00603d60(void)
+; __cdecl void __cdecl crt_unknown_c_FUN_00603d60(void)
 ;
 ;
 ; XREF[2]:
@@ -39,7 +39,7 @@ section .text
     PUSH EDX                            ; 00603d91
     ADD EBX,0x1000                      ; 00603d92
     CALL crt_unknown.c_CondCallDoNothing_FUN_00603ccc ; 00603d98
-        ;   XREF to: 00603ccc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_CondCallDoNothing_FUN_00603ccc()
+        ;   XREF to: 00603ccc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_CondCallDoNothing_FUN_00603ccc()
         ;   Label: LAB_00603d98
     ADD ESP,0x8                         ; 00603d9d
     PUSH EBX                            ; 00603da0
@@ -47,7 +47,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x8]       ; 00603da1
     PUSH ESI                            ; 00603da4
     CALL crt_unknown.c_CondCallDoNothing_FUN_00603ccc ; 00603da5
-        ;   XREF to: 00603ccc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_CondCallDoNothing_FUN_00603ccc()
+        ;   XREF to: 00603ccc (UNCONDITIONAL_CALL)  ; void crt_unknown.c_CondCallDoNothing_FUN_00603ccc()
     ADD ESP,0x8                         ; 00603daa
     POP ESI                             ; 00603dad
     POP EBX                             ; 00603dae

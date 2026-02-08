@@ -18,7 +18,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520
                           (filename,(char *)0x0,"wb","..\\cockpit\\pkbitmap.cpp",0x46c)
   ;
   if (file_handle == (_FILE *)0x0) {
-    sprintf(local_6c,"Unable to create PBM file %s",filename);
+    _sprintf(local_6c,"Unable to create PBM file %s",filename);
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     g_CurrentLineNumber = 0x470;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);

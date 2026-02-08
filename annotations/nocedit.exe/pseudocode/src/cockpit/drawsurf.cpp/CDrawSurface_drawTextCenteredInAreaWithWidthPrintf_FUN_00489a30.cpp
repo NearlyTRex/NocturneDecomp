@@ -15,7 +15,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0048
   va_list_t local_14;
   
   local_14.value[0] = (char * [1])&stack0x0000001c;
-  vsprintf(local_1014,format,(va_list_t)&local_14);
+  _vsprintf(local_1014,format,(va_list_t)&local_14);
   local_14.value[0] = (char * [1])(char *)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0
             (this_ptr,local_1014,x,width,y,height);

@@ -11,7 +11,7 @@
 struct MathErrorContext;
 
 // Function Definition: MATH_CHECK_REPORTING_FUNC
-typedef int (*MATH_CHECK_REPORTING_FUNC)(struct MathErrorContext* param0);
+typedef int MATH_CHECK_REPORTING_FUNC(struct MathErrorContext* param0);
 
 // Structure: MathErrorContext
 typedef struct MathErrorContext {

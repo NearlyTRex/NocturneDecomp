@@ -17,7 +17,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c8c10 at 004c8c6b
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f05b3
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00506406
-;   core_shotgun.cpp_FUN_00588060 at 0058837a
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 0058837a
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0

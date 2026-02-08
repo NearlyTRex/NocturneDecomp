@@ -17,17 +17,14 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
             (&(pCVar1->base).base.model,"tentacle.dfm");
   (pCVar1->base).base.field56_0x2de4 = 50.0;
   (pCVar1->base).base.field57_0x2de8 = 100.0;
-  pCVar1->unk[8] = '\0';
-  pCVar1->unk[9] = '\0';
-  pCVar1->unk[10] = '\0';
-  pCVar1->unk[0xb] = '\0';
-  pCVar1->unk[0xc] = '\0';
-  pCVar1->unk[0xd] = '\0';
-  pCVar1->unk[0xe] = '\0';
-  pCVar1->unk[0xf] = '\0';
-  pCVar1->unk[0x10] = '\0';
-  pCVar1->unk[0x11] = '\0';
-  pCVar1->unk[0x12] = '\0';
-  pCVar1->unk[0x13] = '\0';
+  pCVar1->unk1[8] = '\0';
+  pCVar1->unk1[9] = '\0';
+  pCVar1->unk1[10] = '\0';
+  pCVar1->unk1[0xb] = '\0';
+  pCVar1->unk1[0xc] = '\0';
+  pCVar1->unk1[0xd] = '\0';
+  pCVar1->unk1[0xe] = '\0';
+  pCVar1->unk1[0xf] = '\0';
+  pCVar1->grave_actor = (CDemonActor *)0x0;
   return pCVar1;
 }

@@ -19,7 +19,7 @@ core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60
             (property_list,"Model",data_ptr,0);
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Grave actor",this_ptr->unk + 0x10,0,"CGrave",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Grave actor",&this_ptr->grave_actor,0,"CGrave",
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

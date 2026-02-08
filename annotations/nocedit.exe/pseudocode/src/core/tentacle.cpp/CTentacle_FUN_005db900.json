@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 37,
+    "suspect_count": 4,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param",
+      "warning_type_propagation"
+    ],
+    "total_lines": 124
+  },
+  "cross_references": [
+    {
+      "addr": "005db050",
+      "from_addr": "005db133",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005db050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005db900",
+    "address_range": [
+      [
+        "005db900",
+        "005db9ca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_tentacle.cpp_CTentacle_FUN_005db900",
+    "signature": "int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654e8c",
+      "name": "DOUBLE_00654e8c",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.damage_listener_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.damage_listeners",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263318",
+      "name": "DAT_03263318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.407894736842105,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 165,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 38,
+      "INT_AND": 31,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 10,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 29,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 411
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTentacle *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005db909",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)actor_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "SQRT",
+      "text": "if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (this_ptr->base).guard_distance) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

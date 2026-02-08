@@ -12,7 +12,7 @@ core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageI
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  uint uVar2;
+  CDemonActor *pCVar2;
   int iVar3;
   
   if (*(int *)this_ptr->unk2 == 0) {
@@ -33,12 +33,12 @@ core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageI
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,4,1);
-      uVar2 = DAT_00821ff4;
+      pCVar2 = PTR_00821ff4;
       this_ptr->unk4[0xc] = '\0';
       this_ptr->unk4[0xd] = '\0';
       this_ptr->unk4[0xe] = '@';
       this_ptr->unk4[0xf] = '@';
-      *(uint *)(this_ptr->unk4 + 8) = uVar2;
+      *(CDemonActor **)(this_ptr->unk4 + 8) = pCVar2;
     }
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk1);
     if (iVar3 == 0) {

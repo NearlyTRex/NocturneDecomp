@@ -34,7 +34,7 @@
 ;   core_ground.cpp_getGroundTypeCode_FUN_004eece0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574580
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     PUSH 0x6142c8                       ; 0040cb25 | = "footstep-%s-!-%s-?.wav @ %f"
     LEA EAX,[ESP + 0x14]                ; 0040cb2a
     PUSH EAX                            ; 0040cb2e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040cb2f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040cb2f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0040cb34
     PUSH ESI                            ; 0040cb37
     LEA EAX,[ESP + 0x4]                 ; 0040cb38

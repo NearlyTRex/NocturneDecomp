@@ -37,8 +37,8 @@
 ; Called Functions:
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_00431870
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_strupr_FUN_00600770
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -115,8 +115,8 @@ section .text
     PUSH 0x62a4de                       ; 004cd089 | = "Invalid font file size (%s)."
     LEA EAX,[ESP + 0x8]                 ; 004cd08e
     PUSH EAX                            ; 004cd092
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004cd093
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004cd093
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x62a4fb                    ; 004cd098 | = "..\\engine\\font.cpp"
     ADD ESP,0xc                         ; 004cd09d
     MOV [0x02f0ca48],EAX                ; 004cd0a0 | g_CurrentFilename
@@ -145,8 +145,8 @@ section .text
     PUSH 0x62a521                       ; 004cd0e5 | = "Unable to allocate memory for font bi..."
     LEA EAX,[ESP + 0x8]                 ; 004cd0ea
     PUSH EAX                            ; 004cd0ee
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004cd0ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004cd0ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0xf3                        ; 004cd0f4
     ADD ESP,0xc                         ; 004cd0f9
     MOV [0x02f0ca4c],EAX                ; 004cd0fc | g_CurrentLineNumber

@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_flushParticleList
-typedef int (*APIDLL_flushParticleList)(void);
+typedef int APIDLL_flushParticleList(void);
 

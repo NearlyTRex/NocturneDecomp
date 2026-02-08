@@ -100,9 +100,9 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *po
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 (CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 int __cdecl core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr);
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_copy_FUN_00476c20(CDemonLight *this_ptr,CDemonLight *other);
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_copy_FUN_00476c30(CDemonLight *this_ptr,CDemonLight *other);
-CDemonLight * __cdecl core_dlight_cpp_CDemonLight_copy_FUN_00476c40(CDemonLight *this_ptr,CDemonLight *other);
+float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c20(float *dst,float *src);
+float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c30(float *dst,float *src);
+float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c40(float *dst,float *src);
 void __cdecl core_dmodel_cpp_staticInit_FUN_00476c50(void);
 void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(_FILE *file_handle,int line_count);
 void __cdecl core_dmodel_cpp_clampTextureCoordinate_FUN_00476cb0(float *value);
@@ -168,9 +168,9 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemon
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr);
 int __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
-CKeyFramedModel ** __cdecl core_dmodel_cpp_copyModels_FUN_0047ef90(CKeyFramedModel **first,CKeyFramedModel **second);
-CKeyFramedModel * __cdecl core_dmodel_cpp_copyModels_FUN_0047efa0(CKeyFramedModel **first,CKeyFramedModel **second);
-CKeyFramedModel * __cdecl core_dmodel_cpp_copyModels_FUN_0047efb0(CKeyFramedModel **first,CKeyFramedModel **second);
+float * __cdecl core_dmodel_cpp_copyFloat_FUN_0047ef90(float *dst,float *src);
+float * __cdecl core_dmodel_cpp_copyFloat_FUN_0047efa0(float *dst,float *src);
+float * __cdecl core_dmodel_cpp_copyFloat_FUN_0047efb0(float *dst,float *src);
 CKeyFramedModel * __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedModel *objs);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void);

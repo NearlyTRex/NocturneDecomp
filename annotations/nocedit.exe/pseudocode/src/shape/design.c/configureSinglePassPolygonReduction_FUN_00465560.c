@@ -89,7 +89,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  sprintf
+  _sprintf
             ((char *)local_74,"Original polygons: %d    New total: %d\n\nTotal passes: %d",local_20,g_PolygonCount);
   if (0 < ui_mode) {
     pcVar3 = "\n\nHit a key...";

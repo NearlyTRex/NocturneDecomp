@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_clearStateFlags
-typedef void (*CObj_clearStateFlags)(struct CObj* this_ptr, uint mask);
+typedef void CObj_clearStateFlags(struct CObj* this_ptr, uint mask);
 

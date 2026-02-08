@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 31,
+        "line": 32,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 39,
+        "line": 40,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 39,
+        "line": 40,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 56,
+        "line": 57,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 56,
+        "line": 57,
         "message": "expected expression"
       },
       {
@@ -329,91 +329,91 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 9,
       "match": "extraout_EBX",
       "text": "int extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_fffffe10",
       "text": "uint in_stack_fffffe10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 24,
       "match": "in_stack_fffffe10",
-      "text": "dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
+      "text": "dVar4 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "SUB84",
-      "text": "local_20 = SUB84(dVar3,0);",
+      "text": "local_20 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 33,
       "match": "._4_4_",
-      "text": "local_28._4_4_ = SUB84(dVar4,0);",
+      "text": "local_28._4_4_ = SUB84(dVar5,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "SUB84",
-      "text": "local_28._4_4_ = SUB84(dVar4,0);",
+      "text": "local_28._4_4_ = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 35,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44((uint)local_28,uStack_2c);",
+      "text": "dVar4 = (double)CONCAT44((uint)local_28,uStack_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
+      "line": 38,
       "match": "extraout_EBX",
       "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 44,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar3);",
+      "text": "iVar1 = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
-      "match": "extraout_EBX",
-      "text": "uVar2 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
-      "match": "code *",
-      "text": "uVar2 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 50,
       "match": "extraout_EBX",
-      "text": "*(uint *)(extraout_EBX + 0x580) = uVar2;",
+      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_EBX",
+      "text": "*(uint *)(extraout_EBX + 0x580) = uVar3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
+      "line": 54,
       "match": "extraout_EBX",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
       "type": "extra_output"

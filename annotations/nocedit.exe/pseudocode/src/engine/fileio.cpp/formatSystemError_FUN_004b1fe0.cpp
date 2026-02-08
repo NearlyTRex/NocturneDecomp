@@ -28,6 +28,6 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
   } while (*buffer != '\0');
   buffer = (char *)0x0;
 LAB_004b201b:
-  sprintf(buffer,"\n%s",pcVar2);
+  _sprintf(buffer,"\n%s",pcVar2);
   return;
 }

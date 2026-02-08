@@ -16,7 +16,7 @@ core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400
   pCVar1 = (CLightActor *)
            core_actor_cpp_castToClassHash_FUN_0040c790
                      ((CDemonActor *)this_ptr,g_CLightActorClassInfo.name_hash);
-  sprintf
+  _sprintf
             (output_buffer,"%g mm",(double)*(float *)(pCVar1->unk + 0x38));
   return;
 }

@@ -138,23 +138,23 @@ typedef struct FormatSpec {
 } FormatSpec;
 
 // Function Definition: INVALIDATE_HANDLE_FUNC
-typedef void (*INVALIDATE_HANDLE_FUNC)(int handle_index);
+typedef void INVALIDATE_HANDLE_FUNC(int handle_index);
 
 // Function Definition: OUTPUT_CALLBACK_FUNC
-typedef int (*OUTPUT_CALLBACK_FUNC)(void* output_context, int character);
+typedef int OUTPUT_CALLBACK_FUNC(void* output_context, int character);
 
 // Typedef: OUTPUT_CALLBACK
 // pointer to OUTPUT_CALLBACK_FUNC
 typedef OUTPUT_CALLBACK_FUNC* OUTPUT_CALLBACK;
 
 // Function Definition: REGISTER_HANDLE_FUNC
-typedef int (*REGISTER_HANDLE_FUNC)(HANDLE file_handle);
+typedef int REGISTER_HANDLE_FUNC(HANDLE file_handle);
 
 // Function Definition: SCANF_GETC_FUNC
-typedef int (*SCANF_GETC_FUNC)(struct scanf_state_t* state);
+typedef int SCANF_GETC_FUNC(struct scanf_state_t* state);
 
 // Function Definition: SCANF_UNGETC_FUNC
-typedef int (*SCANF_UNGETC_FUNC)(int character, struct scanf_state_t* state);
+typedef int SCANF_UNGETC_FUNC(int character, struct scanf_state_t* state);
 
 // Structure: StringOutputContext
 typedef struct StringOutputContext {

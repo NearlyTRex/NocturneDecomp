@@ -2,76 +2,106 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 48,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 48,
-        "message": "expected expression"
-      },
-      {
         "category": "other",
         "column": 13,
-        "line": 65,
+        "line": 69,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 65,
+        "line": 69,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
+        "column": 11,
+        "line": 73,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 73,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 74,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 74,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
         "column": 14,
-        "line": 79,
+        "line": 83,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 79,
+        "line": 83,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 92,
+        "line": 96,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 100,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 101,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 104,
-        "message": "use of undeclared identifier 'stack0xfffffea8'"
+        "line": 108,
+        "message": "use of undeclared identifier 'stack0xfffffeb0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 83,
-        "line": 105,
-        "message": "use of undeclared identifier 'stack0xfffffea8'"
+        "column": 77,
+        "line": 109,
+        "message": "use of undeclared identifier 'stack0xfffffeb0'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 111,
+        "line": 114,
         "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 113,
+        "line": 116,
         "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 121,
-        "message": "use of undeclared identifier 'stack0xfffffea4'"
+        "column": 48,
+        "line": 124,
+        "message": "use of undeclared identifier 'stack0xfffffeac'"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 127,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -79,20 +109,19 @@
   },
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 260,
+    "complexity_score": 318,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 135,
-    "suspect_count": 10,
+    "pseudocode_lines": 138,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_ref",
-      "unknown_field",
-      "unresolved_funcptr"
+      "unknown_field"
     ],
-    "total_lines": 539
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -341,66 +370,108 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk3 + 0x154) + 0x14))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 62,
       "match": "._12_4_",
-      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15.0f;",
+      "text": "auStack_d0._12_4_ = (float)auStack_d0._12_4_ + -15.0f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 62,
       "match": "._12_4_",
-      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15.0f;",
+      "text": "auStack_d0._12_4_ = (float)auStack_d0._12_4_ + -15.0f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 66,
+      "match": "._0_4_",
+      "text": "local_b4._0_4_ = (float)local_b4._0_4_ + 15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "text": "local_b4._0_4_ = (float)local_b4._0_4_ + 15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._4_4_",
+      "text": "local_b4._4_4_ = (float)local_b4._4_4_ + 15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._4_4_",
+      "text": "local_b4._4_4_ = (float)local_b4._4_4_ + 15.0f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
       "match": "._12_4_",
-      "text": "if ((((iVar2 != 0) && ((float)auStack_d8._12_4_ <= (actor_ptr->location).position.x)) &&",
+      "text": "if ((((iVar3 != 0) && ((float)auStack_d0._12_4_ <= (pCVar1->location).position.x)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._0_4_",
+      "text": "(((pCVar1->location).position.y <= (float)local_b4._0_4_ &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._4_4_",
+      "text": "((pCVar1->location).position.z <= (float)local_b4._4_4_)))))) break;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xfffffea8",
-      "text": "__arrinit(&stack0xfffffea8,10,&g_CVectorTypeInfo);",
+      "line": 101,
+      "match": "&stack0xfffffeb0",
+      "text": "__arrinit(&stack0xfffffeb0,10,&g_CVectorTypeInfo);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
-      "match": "&stack0xfffffea8",
-      "text": "iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);",
+      "line": 102,
+      "match": "&stack0xfffffeb0",
+      "text": "iVar3 = (*((pCVar1->vtable)._ub)->getTargetPoints)(pCVar1,(CVector3f *)&stack0xfffffeb0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
-      "match": "&stack0xfffffea4",
-      "text": "(actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);",
+      "line": 117,
+      "match": "&stack0xfffffeac",
+      "text": "(pCVar1,&CStack_4c,(CVector3f *)&stack0xfffffeac);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._8_4_",
+      "text": "if (((pCVar2->x < (float)local_b4._8_4_) || (pCVar2->y < fStack_a8)) ||",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 128,
       "match": "SQRT",
-      "text": "(SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <",
+      "text": "(SQRT(CStack_88.z * CStack_88.z + CStack_88.x * CStack_88.x + CStack_88.y * CStack_88.y) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 129,
       "match": "SQRT",
-      "text": "SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))",
+      "text": "SQRT(CStack_40.z * CStack_40.z + CStack_40.x * CStack_40.x + CStack_40.y * CStack_40.y)))",
       "type": "decompiler_intrinsic"
     },
     {

@@ -73,11 +73,11 @@ LAB_005ac012:
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(local_20);
       if (0 < g_MaxSoundChannels) {
         do {
-          sprintf(local_94,"SfxChannel%dEnabled",iVar2);
+          _sprintf(local_94,"SfxChannel%dEnabled",iVar2);
           local_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar2);
           engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,local_94,&local_1c);
           sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2,local_1c);
-          sprintf(local_94,"SfxChannel%dVol",iVar2);
+          _sprintf(local_94,"SfxChannel%dVol",iVar2);
           local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar2);
           local_14 = local_18;
           engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(ini_file,local_94,&local_18);

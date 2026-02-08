@@ -43,7 +43,7 @@
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
 ;   core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   shape_design.c_vertexReducer_FUN_00467850
 ;
@@ -95,8 +95,8 @@ section .text
     PUSH 0x61a7ba                       ; 0045711d | = "Too many! %d, %d"
     LEA EAX,[ESP + 0xc]                 ; 00457122
     PUSH EAX                            ; 00457126
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00457127
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00457127
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x61a7cb                    ; 0045712c | = "..\\core\\dcube.cpp"
     ADD ESP,0x10                        ; 00457131
     MOV [0x02f0ca48],EAX                ; 00457134 | g_CurrentFilename

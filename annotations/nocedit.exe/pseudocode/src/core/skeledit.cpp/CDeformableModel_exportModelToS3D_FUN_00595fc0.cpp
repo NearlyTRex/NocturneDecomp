@@ -150,7 +150,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (in_stack_00000004,&local_a8,(int)output_filename,local_1c,
                        (CMatrix3x4f *)lod_level);
-            sprintf
+            _sprintf
                       (local_340,"%g,%g,%g",SUB84((double)local_a8.x,0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
@@ -167,7 +167,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
           iVar4 = iVar4 + 1) {
         puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_50) + local_2c);
         local_14 = (uint)puVar2[3];
-        sprintf
+        _sprintf
                   (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                    *(uint *)
                     (*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),
@@ -194,7 +194,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
             iVar4 = iVar4 + 1) {
           puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_54) + local_38);
           local_14 = (uint)puVar2[3];
-          sprintf
+          _sprintf
                     (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                      *(uint *)
                       (*(int *)((int)in_stack_00000004->index_data_ptr + local_54) + local_6c),

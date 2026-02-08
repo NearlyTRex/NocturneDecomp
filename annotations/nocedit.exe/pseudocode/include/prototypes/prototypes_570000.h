@@ -164,7 +164,7 @@ void __cdecl core_setedit_cpp_FUN_00578a00(void);
 void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_ImportA3DBroken_FUN_00578c60(void);
 int __cdecl core_setedit_cpp_FUN_00578c90(void);
-void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void);
+void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_FUN_0057a270(void);
 void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,char *filename);

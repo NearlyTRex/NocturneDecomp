@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053cad0 at 0053cb2c
-;   core_teleport.cpp_CTeleportDest_FUN_005da870 at 005da8bb
+;   core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870 at 005da8bb
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0

@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 12,
+        "column": 13,
         "line": 61,
-        "message": "use of undeclared identifier 'stack0xfffffd8c'"
+        "message": "use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?"
       },
       {
         "category": "undeclared_identifier",
@@ -15,7 +15,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 39,
         "line": 65,
         "message": "use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?"
       },
@@ -140,7 +140,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffcb3",
@@ -692,7 +692,7 @@
       "description": "Direct stack address reference",
       "line": 54,
       "match": "&stack0xfffffd8c",
-      "text": "sprintf(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
+      "text": "_sprintf(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
       "type": "stack_ref"
     },
     {
@@ -706,7 +706,7 @@
       "description": "Direct stack address reference",
       "line": 58,
       "match": "&stack0xfffffd8c",
-      "text": "sprintf(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
+      "text": "_sprintf(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {

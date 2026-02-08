@@ -2,8 +2,11 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBassPlayer.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
 #include "types/classes/CMatrix3x3d.h"
@@ -25,7 +28,10 @@
 #include "types/classes/CVec.h"
 #include "types/classes/CVector2d.h"
 #include "types/classes/CVector3d.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVert.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRGBColorPalette.h"
@@ -169,74 +175,74 @@ void __cdecl core_svetlana_cpp_staticInit_FUN_005d87e0(void);
 CSvetlana * __cdecl core_svetlana_cpp_factoryFunc_FUN_005d8810(void);
 CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005d8840(CSvetlana *this_ptr);
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d88e0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr,float delta_time);
-void __cdecl core_svetlana_cpp_FUN_005d9260(void);
-void __cdecl core_svetlana_cpp_MotionControllerAdvance_ParentBones_FUN_005d9970(void);
-void __cdecl core_svetlana_cpp_AttackWithParentBone_FUN_005d9a10(void);
+void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSVetlana_archive_FUN_005d9bb0(CSvetlana *this_ptr);
-int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_FUN_005d9d30(void);
-int __cdecl core_svetlana_cpp_FUN_005d9ec0(void);
-int __cdecl core_svetlana_cpp_FUN_005d9ed0(void);
-void __cdecl core_svetlana_cpp_FUN_005d9ee0(void);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ef0(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9f10(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9f30(CSvetlana *this_ptr);
+int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ec0(CSvetlana *this_ptr);
+int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ed0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ee0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_onActorDeleted_FUN_005d9ef0 (CSvetlana *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_svetlana_cpp_CSvetlana_getPropertyList_FUN_005d9f10 (CSvetlana *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_svetlana_cpp_CSvetlana_addFilesToExtract_FUN_005d9f30(CSvetlana *this_ptr,_FILE *file_handle);
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_005d9f50(CSvetlana *this_ptr,uint flags);
 void __cdecl core_tbplayer_cpp_staticInit_FUN_005d9fd0(void);
 CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da020(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_005da050(CBassPlayer *this_ptr);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer *this_ptr);
-void __cdecl core_tbplayer_cpp_CBassPlayer_FUN_005da090(CBassPlayer *this_ptr);
+void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_005da090(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_FUN_005da100(void);
-void __cdecl core_tbplayer_cpp_FUN_005da120(void);
-void __cdecl core_tbplayer_cpp_FUN_005da240(void);
+void __cdecl core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120(CBassPlayer *this_ptr);
+void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240 (CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da280(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_005da2b0(CDrummer *this_ptr);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005da2c0(CDrummer *this_ptr);
-void __cdecl core_tbplayer_cpp_CDrummer_FUN_005da2f0(CDrummer *this_ptr);
-void __cdecl core_tbplayer_cpp_FUN_005da370(void);
-void __cdecl core_tbplayer_cpp_FUN_005da510(void);
+void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005da2f0(CDrummer *this_ptr);
+void __cdecl core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370(CDrummer *this_ptr);
+void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005da510(CDrummer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_005da540(CDrummer *this_ptr,uint flags);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr);
 void __cdecl core_teleport_cpp_staticInit_FUN_005da6e0(void);
 CTeleportDest * __cdecl core_teleport_cpp_factoryFunc_FUN_005da730(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_005da760(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_005da770(CTeleportDest *this_ptr);
-void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da790(CTeleportDest *this_ptr);
-int __cdecl core_teleport_cpp_CTeleport_FUN_005da7c0(CTeleport *this_ptr);
-int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr);
-bool __cdecl core_teleport_cpp_FUN_005da850(void);
-void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da870(CTeleportDest *this_ptr);
-void __cdecl core_teleport_cpp_CTeleportDest_FUN_005da970(CTeleportDest *this_ptr);
+CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790 (CTeleportDest *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_teleport_cpp_CTeleportDest_hasCollision_FUN_005da7c0 (CTeleportDest *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_teleport_cpp_CTeleportDest_renderOpaque_FUN_005da7d0(CTeleportDest *this_ptr);
+int __cdecl core_teleport_cpp_FUN_005da850(void);
+void __cdecl core_teleport_cpp_CTeleportDest_processInEditor_FUN_005da870(CTeleportDest *this_ptr);
+void __cdecl core_teleport_cpp_CTeleportDest_showEditorHelp_FUN_005da970(CTeleportDest *this_ptr,int *y_pos);
 CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005da9a0(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005da9d0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005da9e0(CTeleport *this_ptr);
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_ptr,float delta_time);
-void __cdecl core_teleport_cpp_CTeleport_FUN_005daad0(CTeleport *this_ptr);
+CBoundingBox3D * __cdecl core_teleport_cpp_CTeleport_getBoundingBox_FUN_005daad0(CTeleport *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_teleport_cpp_CTeleport_archive_FUN_005dab30(CTeleport *this_ptr);
-void __cdecl core_teleport_cpp_CTeleport_FUN_005dab70(CTeleport *this_ptr);
-void __cdecl core_teleport_cpp_CTeleport_FUN_005daba0(CTeleport *this_ptr);
-void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr);
-void __cdecl core_teleport_cpp_CTeleport_FUN_005dadc0(CTeleport *this_ptr);
-int __cdecl core_teleport_cpp_CTeleport_FUN_005dae10(CTeleport *this_ptr);
+void __cdecl core_teleport_cpp_CTeleport_onActorDeleted_FUN_005dab70 (CTeleport *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_teleport_cpp_CTeleport_getPropertyList_FUN_005daba0 (CTeleport *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport *this_ptr);
+void __cdecl core_teleport_cpp_CTeleport_showEditorHelp_FUN_005dadc0(CTeleport *this_ptr,int *y_pos);
+int __cdecl core_teleport_cpp_CTeleport_renderOpaque_FUN_005dae10(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005dae50(CTeleport *this_ptr,uint flags);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTeleportDest *this_ptr,uint flags);
 void __cdecl core_tentacle_cpp_staticInit_FUN_005daef0(void);
 CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_005daf20(void);
 CDemonActorType * __cdecl core_tentacle_cpp_CTentacle_getActorType_FUN_005daf50(CTentacle *this_ptr);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *this_ptr);
-void __cdecl core_tentacle_cpp_CTentacle_FUN_005dafc0(CTentacle *this_ptr);
+void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_005dafc0(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_ptr,float delta_time);
-int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr);
+int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_005db840(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_005db880(CTentacle *this_ptr);
-int __cdecl core_tentacle_cpp_FUN_005db900(void);
-int __cdecl core_tentacle_cpp_FUN_005db9d0(void);
-int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr);
-void __cdecl core_tentacle_cpp_FUN_005dbb70(void);
+int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr);
+int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr);
+int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30(CTentacle *this_ptr);
+void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb70(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60 (CTentacle *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbcc0(CTentacle *this_ptr);
+void __cdecl core_tentacle_cpp_CTentacle_addFilesToExtract_FUN_005dbcc0(CTentacle *this_ptr,_FILE *file_handle);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_005dbcf0(CTentacle *this_ptr,uint flags);
 void __cdecl core_texlist_cpp_staticInit_FUN_005dbdb0(void);
 CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(CTextureList *this_ptr);
@@ -278,47 +284,47 @@ void __cdecl core_tommygun_cpp_staticInit_FUN_005dda20(void);
 CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void);
 CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_005dda80(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr);
-int __cdecl core_tommygun_cpp_FUN_005ddb30(void);
-float __cdecl core_tommygun_cpp_FUN_005de330(void);
+int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr);
+float __cdecl core_tommygun_cpp_CTommyGun_FUN_005de330(CTommyGun *this_ptr);
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time);
-void __cdecl core_tommygun_cpp_FUN_005de5a0(void);
+void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_005de5a0(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint flags);
 void __cdecl core_trap_cpp_staticInit_FUN_005de620(void);
 CTrap * __cdecl core_trap_cpp_factoryFunc_FUN_005de650(void);
 CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_005de680(CTrap *this_ptr);
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_005de690(CTrap *this_ptr);
-void __cdecl core_trap_cpp_CTrap_FUN_005de6e0(CTrap *this_ptr);
-int __cdecl core_trap_cpp_CTrap_FUN_005de710(CTrap *this_ptr);
-int __cdecl core_trap_cpp_CTrap_FUN_005de720(CTrap *this_ptr);
-void __cdecl core_trap_cpp_CTrap_FUN_005de740(CTrap *this_ptr);
-void __cdecl core_trap_cpp_CTrap_FUN_005de750(CTrap *this_ptr);
-int __cdecl core_trap_cpp_CTrap_FUN_005de760(CTrap *this_ptr);
+void __cdecl core_trap_cpp_CTrap_setup_FUN_005de6e0(CTrap *this_ptr);
+int __cdecl core_trap_cpp_CTrap_canPickup_FUN_005de710(CTrap *this_ptr,CDemonActor *picker);
+int __cdecl core_trap_cpp_CTrap_hasCollision_FUN_005de720(CTrap *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_trap_cpp_CTrap_pickup_FUN_005de740(CTrap *this_ptr,CDemonActor *carrier);
+void __cdecl core_trap_cpp_CTrap_onDropped_FUN_005de750(CTrap *this_ptr,CVector3f *drop_position);
+CDemonActor * __cdecl core_trap_cpp_CTrap_getCarrier_FUN_005de760(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delta_time);
-int __cdecl core_trap_cpp_CTrap_FUN_005de920(CTrap *this_ptr);
+int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_005de920(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_archive_FUN_005de9c0(CTrap *this_ptr);
-int * __cdecl core_trap_cpp_CTrap_FUN_005dea00(CTrap *this_ptr);
-void __cdecl core_trap_cpp_CTrap_FUN_005dea50(CTrap *this_ptr);
-void __cdecl core_trap_cpp_CTrap_FUN_005dea90(CTrap *this_ptr);
+CBoundingBox3D * __cdecl core_trap_cpp_CTrap_getBoundingBox_FUN_005dea00(CTrap *this_ptr,CBoundingBox3D *out_box);
+void __cdecl core_trap_cpp_CTrap_getPropertyList_FUN_005dea50(CTrap *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_trap_cpp_CTrap_addFilesToExtract_FUN_005dea90(CTrap *this_ptr,_FILE *file_handle);
 CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_005deab0(CTrap *this_ptr,uint flags);
 void __cdecl core_trash_cpp_staticInit_FUN_005deb00(void);
 CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void);
 CDemonActorType * __cdecl core_trash_cpp_CTrash_getActorType_FUN_005deb60(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_005deb70(CTrash *this_ptr);
-void __cdecl core_trash_cpp_CTrash_FUN_005debc0(CTrash *this_ptr);
+void __cdecl core_trash_cpp_CTrash_setup_FUN_005debc0(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_archive_FUN_005dec80(CTrash *this_ptr);
 void __cdecl core_trash_cpp_FUN_005decc0(void);
 void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time);
-int __cdecl core_trash_cpp_CTrash_FUN_005df550(CTrash *this_ptr);
-float * __cdecl core_trash_cpp_CTrash_FUN_005df610(CTrash *this_ptr);
-int __cdecl core_trash_cpp_CTrash_FUN_005df6d0(CTrash *this_ptr);
-void __cdecl core_trash_cpp_CTrash_FUN_005df6e0(CTrash *this_ptr);
-void __cdecl core_trash_cpp_CTrash_FUN_005df720(CTrash *this_ptr);
-void __cdecl core_trash_cpp_CTrash_FUN_005df750(CTrash *this_ptr);
+int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr);
+CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_005df610(CTrash *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_trash_cpp_CTrash_getPropertyList_FUN_005df6e0 (CTrash *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_trash_cpp_CTrash_addFilesToExtract_FUN_005df720(CTrash *this_ptr,_FILE *file_handle);
+void __cdecl core_trash_cpp_CTrash_processInEditor_FUN_005df750(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_005df780(CTrash *this_ptr,uint flags);
 void __cdecl core_trigger_cpp_staticInit_FUN_005df7d0(void);
 CTrigger * __cdecl core_trigger_cpp_factoryFunc_FUN_005df800(void);
 CDemonActorType * __cdecl core_trigger_cpp_CTrigger_getActorType_FUN_005df830(CTrigger *this_ptr);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_ptr);
-void __cdecl core_trigger_cpp_CTrigger_FUN_005df990(CTrigger *this_ptr);
+void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time);
 

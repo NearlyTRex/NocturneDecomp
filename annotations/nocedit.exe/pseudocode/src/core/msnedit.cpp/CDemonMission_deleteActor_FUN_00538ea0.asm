@@ -14,7 +14,7 @@
 ;   core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0 at 00538e29
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040e130
+;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0x8                         ; 00538ee7
     MOV EAX,ESP                         ; 00538eea
     PUSH EAX                            ; 00538eec
-    CALL core_actor.cpp_FUN_0040e130    ; 00538eed
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 00538eed
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 00538ef2
     MOV EAX,ESP                         ; 00538ef5
     PUSH EAX                            ; 00538ef7

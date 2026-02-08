@@ -40,8 +40,8 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
@@ -170,8 +170,8 @@ section .text
     PUSH 0x63c2bd                       ; 00538d08 | = "world\\%s"
     LEA EAX,[ESP + 0x10]                ; 00538d0d
     PUSH EAX                            ; 00538d11
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00538d12
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00538d12
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00538d17
     LEA EAX,[ESP + 0x8]                 ; 00538d1a
     PUSH EAX                            ; 00538d1e

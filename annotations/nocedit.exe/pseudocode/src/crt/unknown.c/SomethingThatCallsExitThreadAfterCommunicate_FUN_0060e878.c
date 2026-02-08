@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_SomethingThatCallsExitThreadAfterCommunicate() */
-
 void SomethingThatCallsExitThreadAfterCommunicate(void)
 
 {

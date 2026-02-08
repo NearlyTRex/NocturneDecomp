@@ -6,14 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 460,
-    "complexity_score": 248,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "pseudocode_lines": 198,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
+      "suspect_float",
       "warning_type_propagation"
     ],
     "total_lines": 658
@@ -286,24 +287,38 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 171,
       "match": "SQRT",
-      "text": "local_18 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
-      "match": "SQRT",
-      "text": "local_14 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);",
+      "text": "local_18 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 178,
       "match": "SQRT",
-      "text": "(this_ptr->eat_distance < SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5))) &&",
+      "text": "local_14 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 181,
+      "match": "SQRT",
+      "text": "(this_ptr->eat_distance < SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7))) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 194,
+      "match": "1.4013e-45",
+      "text": "this_ptr->prey[5].previous_transform_state.orientation.y = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 195,
+      "match": "1.4013e-45",
+      "text": "this_ptr->neutral[5].previous_transform_state.orientation.y = 1.4013e-45;",
+      "type": "suspect_float"
     }
   ],
   "vtable_info": {

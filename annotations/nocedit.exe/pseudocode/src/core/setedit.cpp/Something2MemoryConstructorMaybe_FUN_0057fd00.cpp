@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_Something2MemoryConstructorMaybe(uint param_1,
-   uint param_2, uint param_3) */
-
 void __cdecl core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
 
 {

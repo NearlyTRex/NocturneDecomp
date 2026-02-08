@@ -51,10 +51,11 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar1 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
-        if ((((this_ptr->emitter_type == 3) && (INT_02cf2b5c != 0)) && (this_ptr == DAT_02cf2b78))
-           && (DAT_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
+        if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
+            (this_ptr == PTR_02cf2b78)) &&
+           (PTR_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
           param5 = &DAT_02cf2b6c;
-          label_offset = &CVector3f_02cf2b60;
+          label_offset = &g_EmitterTarget;
           world_position =
                (CQuaternion4f *)
                shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330

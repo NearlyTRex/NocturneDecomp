@@ -19,21 +19,21 @@ CDemonActorType * __cdecl CTommyGun::getActorType(CTommyGun *this_ptr);
 // Address: 005dda90
 int __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_005ddb30
+// Original: core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
 // Address: 005ddb30
-int __cdecl FUN_005ddb30(void);
+int __cdecl CTommyGun::fire(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_005de330
+// Original: core_tommygun.cpp_CTommyGun_FUN_005de330
 // Address: 005de330
-float __cdecl FUN_005de330(void);
+float __cdecl CTommyGun(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_process_FUN_005de360
 // Address: 005de360
 void __cdecl CTommyGun::process(CTommyGun *this_ptr,float delta_time);
 
-// Original: core_tommygun.cpp_FUN_005de5a0
+// Original: core_tommygun.cpp_CTommyGun_setWeaponState_FUN_005de5a0
 // Address: 005de5a0
-void __cdecl FUN_005de5a0(void);
+void __cdecl CTommyGun::setWeaponState(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_dtor_FUN_005de5d0
 // Address: 005de5d0

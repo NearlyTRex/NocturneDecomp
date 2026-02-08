@@ -11,7 +11,7 @@ int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr)
 {
   int iVar1;
   
-  iVar1 = core_weapon_cpp_CWeapon_FUN_005ee6e0(&this_ptr->base);
+  iVar1 = core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(&this_ptr->base);
   if (iVar1 == 0) {
     return 0;
   }

@@ -64,12 +64,12 @@ section .text
     ADD ESP,0x10                        ; 00481349
     LEA EAX,[EBX + 0x2d8]               ; 0048134c
     PUSH EAX                            ; 00481352
-    PUSH 0x670300                       ; 00481353 | PTR_s_Normal_00670300
+    PUSH 0x670300                       ; 00481353 | g_DoorTypePairs
     PUSH 0x4                            ; 00481358
     PUSH 0x621391                       ; 0048135a | = "Door type"
     PUSH ESI                            ; 0048135f
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 00481360
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     MOV EDX,dword ptr [EBX + 0x2d8]     ; 00481365
     ADD ESP,0x14                        ; 0048136b
     CMP EDX,0x2                         ; 0048136e
@@ -81,7 +81,7 @@ section .text
     PUSH 0x6213b0                       ; 00481381 | = "Door state"
     PUSH ESI                            ; 00481386
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 00481387
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     MOV ECX,dword ptr [EBX + 0x2d8]     ; 0048138c
     ADD ESP,0x10                        ; 00481392
     TEST ECX,ECX                        ; 00481395
@@ -89,12 +89,12 @@ section .text
         ;   XREF to: 004813b5 (CONDITIONAL_JUMP)  ; LAB_004813b5
     LEA EAX,[EBX + 0x2e4]               ; 00481399
     PUSH EAX                            ; 0048139f
-    PUSH 0x670330                       ; 004813a0 | PTR_s_Clockwise_00670330
+    PUSH 0x670330                       ; 004813a0 | g_DoorSwingTypePairs
     PUSH 0x2                            ; 004813a5
     PUSH 0x6213d7                       ; 004813a7 | = "Door swing"
     PUSH ESI                            ; 004813ac
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 004813ad
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 004813b2
     LEA EAX,[EBX + 0x2e8]               ; 004813b5
         ;   Label: LAB_004813b5
@@ -139,7 +139,7 @@ section .text
     PUSH 0x621422                       ; 00481429 | = "Key mask"
     PUSH ESI                            ; 0048142e
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 0048142f
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00481434
     MOV EDI,dword ptr [EBX + 0x2d8]     ; 00481437
     LEA EAX,[EBX + 0x9b0]               ; 0048143d
@@ -152,7 +152,7 @@ section .text
     PUSH ESI                            ; 00481454
         ;   Label: LAB_00481454
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00481455
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0048145a
     PUSH 0x0                            ; 0048145d
     LEA EAX,[EBX + 0x9b4]               ; 0048145f
@@ -160,7 +160,7 @@ section .text
     PUSH 0x621459                       ; 00481466 | = "Opening speed (sec)"
     PUSH ESI                            ; 0048146b
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0048146c
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00481471
     PUSH 0x0                            ; 00481474
     LEA EAX,[EBX + 0x9b8]               ; 00481476
@@ -168,7 +168,7 @@ section .text
     PUSH 0x62146d                       ; 0048147d | = "Close speed (sec)"
     PUSH ESI                            ; 00481482
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00481483
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00481488
     LEA EAX,[EBX + 0x2d4]               ; 0048148b
     PUSH EAX                            ; 00481491
@@ -200,12 +200,12 @@ section .text
     ADD ESP,0xc                         ; 004814dc
     LEA EAX,[EBX + 0x9c8]               ; 004814df
     PUSH EAX                            ; 004814e5
-    PUSH 0x670340                       ; 004814e6 | PTR_s_No_00670340
+    PUSH 0x670340                       ; 004814e6 | g_DoorOneShotTypePairs
     PUSH 0x3                            ; 004814eb
     PUSH 0x6214e5                       ; 004814ed | = "One shot"
     PUSH ESI                            ; 004814f2
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 004814f3
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 004814f8
     LEA EAX,[EBX + 0x9d4]               ; 004814fb
     PUSH EAX                            ; 00481501
@@ -216,12 +216,12 @@ section .text
     ADD ESP,0xc                         ; 0048150d
     LEA EAX,[EBX + 0x9d8]               ; 00481510
     PUSH EAX                            ; 00481516
-    PUSH 0x670358                       ; 00481517 | PTR_s_Both_00670358
+    PUSH 0x670358                       ; 00481517 | g_DoorOpenFromSideTypePairs
     PUSH 0x4                            ; 0048151c
     PUSH 0x62153c                       ; 0048151e | = "Open from side"
     PUSH ESI                            ; 00481523
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 00481524
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 00481529
     LEA EAX,[EBX + 0x9dc]               ; 0048152c
     PUSH EAX                            ; 00481532
@@ -244,12 +244,12 @@ section .text
     LEA EAX,[EBX + 0x2dc]               ; 0048155a
         ;   Label: LAB_0048155a
     PUSH EAX                            ; 00481560
-    PUSH 0x670320                       ; 00481561 | PTR_s_Left_00670320
+    PUSH 0x670320                       ; 00481561 | g_DoorSideTypePairs
     PUSH EDX                            ; 00481566
     PUSH 0x6213a6                       ; 00481567 | = "Door side"
     PUSH ESI                            ; 0048156c
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0048156d
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 00481572
     JMP 0x00481377                      ; 00481575
         ;   XREF to: 00481377 (UNCONDITIONAL_JUMP)  ; LAB_00481377

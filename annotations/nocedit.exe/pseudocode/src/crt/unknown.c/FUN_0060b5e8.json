@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 368,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 43,
-    "suspect_count": 30,
+    "pseudocode_lines": 35,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
+      "fpu_register_input",
       "special_crt_function",
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 87
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "0060b628"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallRegister",
     "name": "crt_unknown.c_FUN_0060b5e8",
-    "signature": "undefined8 crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)"
+    "signature": "double crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)"
   },
   "function_calls": [],
   "globals": [],
@@ -54,8 +54,8 @@
         "stack_params": 0
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -100,210 +100,157 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
-      "text": "ulonglong FUN_0060b5e8(uint param_1,uint param_2)",
+      "text": "double FUN_0060b5e8(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "ulonglong FUN_0060b5e8(uint param_1,uint param_2)",
+      "text": "double FUN_0060b5e8(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 7,
       "match": "unaff_EBP",
       "text": "uint unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
+      "description": "FPU register input (calling convention issue)",
+      "line": 12,
+      "match": "in_ST0",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_EBP",
       "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "text": "uVar1 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 18,
+      "line": 16,
       "match": "unaff_EBP",
-      "text": "uVar4 = unaff_EBP;",
+      "text": "uVar3 = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 21,
+      "line": 19,
       "match": "unaff_EBP",
       "text": "uVar1 = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "text": "param_2 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "text": "param_2 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_2",
-      "text": "uVar3 = param_2;",
+      "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_2",
-      "text": "if (param_2 == 0) {",
+      "text": "param_2 = uVar1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "CARRY4",
+      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "CARRY4",
+      "text": "bVar5 = CARRY4(uVar4,uVar4);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "CARRY4",
-      "text": "for (; -1 < (int)uVar3; uVar3 = uVar3 * 2 + (uint)(bVar7 || CARRY4(uVar1,(uint)bVar6))) {",
+      "text": "bVar6 = CARRY4(uVar2,uVar2);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "CARRY4",
-      "text": "bVar6 = CARRY4(uVar5,uVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "CARRY4",
-      "text": "bVar7 = CARRY4(uVar2,uVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "text": "param_1 = uVar2 + CARRY4(uVar5,uVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "CARRY4",
-      "text": "param_1 = uVar2 + CARRY4(uVar5,uVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "CARRY4",
-      "text": "uVar1 = (uint)CARRY4(uVar2,(uint)CARRY4(uVar5,uVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "CARRY4",
-      "text": "uVar1 = (uint)CARRY4(uVar2,(uint)CARRY4(uVar5,uVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "text": "param_2 = uVar3 + uVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "CARRY4",
-      "text": "if (CARRY4(uVar3,uVar1)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "text": "param_2 = param_2 >> 1 | 0x80000000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "text": "param_2 = param_2 >> 1 | 0x80000000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "text": "return CONCAT44(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "text": "return CONCAT44(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
-      "match": "CONCAT44",
-      "text": "return CONCAT44(param_2,param_1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "FPU register input (calling convention issue)",
+      "line": 37,
+      "match": "in_ST0",
+      "text": "return (double)in_ST0;",
+      "type": "fpu_register_input"
     },
     {
       "address": "0060b5e8",

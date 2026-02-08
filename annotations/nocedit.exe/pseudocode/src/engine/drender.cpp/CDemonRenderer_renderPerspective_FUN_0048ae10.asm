@@ -18,7 +18,7 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 00504558
 ;   core_marquee.cpp_CMarquee_FUN_0050bec0 at 0050c037
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 at 0050ffc7
-;   core_trigger.cpp_CTrigger_FUN_005e00d0 at 005e050d
+;   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 at 005e050d
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

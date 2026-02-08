@@ -16,9 +16,9 @@
 ;   core_stranger.cpp_CStranger_FUN_005c1fe0 at 005c1fff
 ;   core_stranger.cpp_CStranger_FUN_005c2400 at 005c241f
 ;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c2888
-;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c318c
 ;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c55d7
 ;   core_stranger.cpp_CStranger_FUN_005c5b90 at 005c5dc6
+;   core_stranger.cpp_CStranger_FUN_005c5f10 at 005c600b
 ;   ... and 1 more
 ;
 ; *****************************************************************************

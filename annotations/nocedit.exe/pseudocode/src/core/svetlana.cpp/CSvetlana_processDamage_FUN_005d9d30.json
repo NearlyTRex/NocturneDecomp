@@ -1,0 +1,205 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 44,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 63,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 152,
+    "complexity_score": 62,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 62,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 214
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d9d30",
+    "address_range": [
+      [
+        "005d9d30",
+        "005d9eba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30",
+    "signature": "void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c3c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
+    },
+    {
+      "addr": "004ee030",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004ee030"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654b69",
+      "name": "s_svet_die_wav_00654b69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654b76",
+      "name": "s_svet_hurt_wav_00654b76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00663d58",
+      "name": "FLOAT_00663d58",
+      "type": "float",
+      "value": "3"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc8",
+      "name": "DAT_02d81cc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.840336134453781,
+    "instruction_count": 119,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 10,
+      "CALLIND": 2,
+      "CBRANCH": 9,
+      "COPY": 156,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 51,
+      "INT_AND": 51,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 8,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 46,
+      "INT_ZEXT": 8,
+      "LOAD": 29,
+      "POPCOUNT": 19,
+      "RETURN": 3,
+      "STORE": 51
+    },
+    "pcode_op_count": 576
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSvetlana *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSvetlana",
+        "offset": 284,
+        "vtable_addr": "00663d64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

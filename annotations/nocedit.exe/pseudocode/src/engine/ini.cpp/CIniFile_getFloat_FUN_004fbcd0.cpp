@@ -12,7 +12,7 @@ engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile *this_ptr,char *key,float
 {
   char *in_stack_ffffff98;
   
-  sprintf(&stack0xffffff98,"%g",(double)*output);
+  _sprintf(&stack0xffffff98,"%g",(double)*output);
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
             (this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);
   sscanf(&stack0xffffff98,"%f");

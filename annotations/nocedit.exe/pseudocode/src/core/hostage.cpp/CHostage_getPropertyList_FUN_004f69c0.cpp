@@ -14,13 +14,13 @@ core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0
   core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (property_list,"goalWayPoint",&this_ptr->goal_way_point,1,"CWayPoint",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (property_list,"sitDownWayPoint",&this_ptr->sit_down_way_point,1,
-             "CDemonActor",(CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             "CDemonActor",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"rescueDistance",&this_ptr->rescue_distance,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"rescueCondition",this_ptr->rescue_condition);
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
@@ -37,12 +37,12 @@ core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0
             (property_list,"sitDownEvent",this_ptr->sit_down_event);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"rescueEventName (persistent)",this_ptr->rescue_event,0x20,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"noShadowsWhenSaved",&this_ptr->no_shadows_when_saved);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
             (property_list,"descriptiveName",(this_ptr->base).base.descriptive_name,100,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Damage sound",this_ptr->damage_sound);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0

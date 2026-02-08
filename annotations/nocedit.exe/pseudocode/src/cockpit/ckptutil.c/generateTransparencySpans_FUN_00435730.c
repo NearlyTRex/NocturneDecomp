@@ -29,7 +29,7 @@ cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730
   int local_14;
   
   if (0xff < (uint)transparent_color_index) {
-    sprintf
+    _sprintf
               (local_130,"Invalid transparent color index: %d",transparent_color_index);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x942;
@@ -71,7 +71,7 @@ cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730
         } while (iVar2 < height);
       }
       if (0xf < local_14) {
-        sprintf
+        _sprintf
                   (local_130,"Too many spans: bitmap %s, spans %d, scanline %d",filename,local_14,local_20);
         g_CurrentFilename = "..\\cockpit\\ckptutil.c";
         g_CurrentLineNumber = 0x972;

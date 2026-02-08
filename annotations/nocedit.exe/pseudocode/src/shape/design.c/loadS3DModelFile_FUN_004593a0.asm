@@ -49,9 +49,9 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -154,8 +154,8 @@ section .text
     PUSH EAX                            ; 00459481 | = "%s is corrupt."
     LEA EAX,[EBP + 0xffffff08]          ; 00459482
     PUSH EAX                            ; 00459488
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00459489
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00459489
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045948e
     PUSH 0x3ae                          ; 00459491
         ;   Label: LAB_00459491
@@ -231,8 +231,8 @@ section .text
     PUSH EAX                            ; 00459555 | = "Invalid .S3D version: %d, we can only..."
     LEA EAX,[EBP + 0xffffff08]          ; 00459556
     PUSH EAX                            ; 0045955c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045955d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045955d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00459562
     JMP 0x00459491                      ; 00459565
         ;   XREF to: 00459491 (UNCONDITIONAL_JUMP)  ; LAB_00459491
@@ -279,8 +279,8 @@ section .text
     PUSH EAX                            ; 004595d2 | = "Too many polygons: %d, max is %d"
     LEA EAX,[EBP + 0xffffff08]          ; 004595d3
     PUSH EAX                            ; 004595d9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004595da
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004595da
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004595df
     JMP 0x00459491                      ; 004595e2
         ;   XREF to: 00459491 (UNCONDITIONAL_JUMP)  ; LAB_00459491
@@ -294,8 +294,8 @@ section .text
     PUSH EAX                            ; 00459603 | = "Too many vertices: %d, max is %d"
     LEA EAX,[EBP + 0xffffff08]          ; 00459604
     PUSH EAX                            ; 0045960a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045960b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045960b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00459610
     JMP 0x00459491                      ; 00459613
         ;   XREF to: 00459491 (UNCONDITIONAL_JUMP)  ; LAB_00459491
@@ -309,8 +309,8 @@ section .text
     PUSH EAX                            ; 00459634 | = "Too many parts: %d, max is %d"
     LEA EAX,[EBP + 0xffffff08]          ; 00459635
     PUSH EAX                            ; 0045963b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045963c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045963c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00459641
     JMP 0x00459491                      ; 00459644
         ;   XREF to: 00459491 (UNCONDITIONAL_JUMP)  ; LAB_00459491
@@ -389,8 +389,8 @@ section .text
     PUSH EAX                            ; 004596fe | = "Out of memory for texture list, numTe..."
     LEA EAX,[EBP + 0xffffff08]          ; 004596ff
     PUSH EAX                            ; 00459705
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00459706
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00459706
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045970b
     JMP 0x00459491                      ; 0045970e
         ;   XREF to: 00459491 (UNCONDITIONAL_JUMP)  ; LAB_00459491

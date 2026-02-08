@@ -42,7 +42,7 @@ void __cdecl core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630(void)
         do {
           pcVar1 = core_ground_cpp_getGroundTypeName_FUN_004eed80
                              ((uint)(byte)(&DAT_03659190)[iVar3]);
-          sprintf(local_2fc,"%s\t%s",puVar4,pcVar1);
+          _sprintf(local_2fc,"%s\t%s",puVar4,pcVar1);
           iVar3 = iVar3 + 1;
           puVar4 = puVar4 + 0x28;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,local_2fc);
@@ -119,7 +119,7 @@ LAB_00578779:
       iVar2 = iVar2 + 1;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,pcVar1);
     } while (iVar2 < 0xe);
-    sprintf(local_48c,"Select ground type for %s",local_6c);
+    _sprintf(local_48c,"Select ground type for %s",local_6c);
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_bdc,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0);
     if (-1 < iVar2) {

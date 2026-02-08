@@ -7,5 +7,5 @@
 struct SMRGLTextureBasic;
 
 // Function Definition: APIDLL_selectTextureBGRA
-typedef int (*APIDLL_selectTextureBGRA)(struct SMRGLTextureBasic* tex, int dimension, int flags);
+typedef int APIDLL_selectTextureBGRA(struct SMRGLTextureBasic* tex, int dimension, int flags);
 

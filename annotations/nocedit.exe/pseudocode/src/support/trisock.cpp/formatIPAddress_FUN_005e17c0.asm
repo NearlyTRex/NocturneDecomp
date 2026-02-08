@@ -15,7 +15,7 @@
 ;   TerminatedCString s_d_d_d_d_006564dc
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x6564dc                       ; 005e17de | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005e17e3
     PUSH EDX                            ; 005e17e7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e17e8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e17e8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 005e17ed
     RET                                 ; 005e17f0
 

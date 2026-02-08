@@ -21,7 +21,7 @@ shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20
   pSVar2 = g_ModelPolygonData + g_PolygonCount;
   g_PolygonCount = g_PolygonCount + 1;
   pSVar2->polygon_type = 2;
-  sprintf(g_ModelPolygonData[iVar1].texture_name,"rustplat.raw");
+  _sprintf(g_ModelPolygonData[iVar1].texture_name,"rustplat.raw");
   g_ModelPolygonData[iVar1].vertex_indices_count = 4;
   g_ModelPolygonData[iVar1].vertex_indices[0] = vertex_index_1;
   g_ModelPolygonData[iVar1].vertex_indices[1] = vertex_index_2;

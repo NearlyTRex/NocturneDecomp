@@ -61,14 +61,14 @@ sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                 SVar3 = _fread(&local_24,10,1,file_handle);
                 if (SVar3 != 1) goto LAB_005a4007;
                 if ((short)local_24 != 1) {
-                  sprintf
+                  _sprintf
                             (&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff);
                   sound_sndmain_cpp_logSoundError_FUN_005adba0
                             ("WAV file is invalid: %s\n",&local_88);
                   goto LAB_005a4007;
                 }
                 if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {
-                  sprintf
+                  _sprintf
                             (&local_88,"Invalid number of channels: %u  (must be 1 or 2)",(uint)local_24._2_2_);
                   sound_sndmain_cpp_logSoundError_FUN_005adba0
                             ("WAV file is invalid: %s\n",&local_88);
@@ -83,7 +83,7 @@ sound_sndmain_cpp_parseWavFile_FUN_005a3fe0
                   (sfx_sample->sample_info).bit_depth = 0x10;
                   goto LAB_005a41f8;
                 }
-                sprintf
+                _sprintf
                           (&local_88,"Invalid bytes/sec value: %u (%04Xh)",local_1c & 0xffff,
                            local_1c & 0xffff);
                 sound_sndmain_cpp_logSoundError_FUN_005adba0

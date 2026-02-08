@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_GetModuleHandleA1() */
-
 void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
 
 {

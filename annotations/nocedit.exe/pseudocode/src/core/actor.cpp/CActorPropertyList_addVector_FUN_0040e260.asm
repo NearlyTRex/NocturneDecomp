@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260 (CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260 (CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   property_name
 ; CVector3f *      Stack[0xc]:4   data_ptr
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x10]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x10]:4   callback
 ;
 ; XREF[8]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d2d3
@@ -17,7 +17,7 @@
 ;   core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130 at 00442192
 ;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8ee3
 ;   core_simbox.cpp_CSimBox_FUN_00589310 at 005893b3
-;   core_vehicle.cpp_CVehicle_FUN_005e8ba0 at 005e8c61
+;   core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 at 005e8c61
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0

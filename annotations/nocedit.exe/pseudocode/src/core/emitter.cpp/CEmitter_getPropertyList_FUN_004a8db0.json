@@ -2,34 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 15,
-        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 55,
-        "line": 16,
-        "message": "use of undeclared identifier 'PTR_s_Spark_006792ec'"
-      },
-      {
-        "category": "other",
-        "column": 42,
+        "column": 49,
         "line": 46,
-        "message": "comparison between pointer and integer ('CEmitter *' and 'undefined4' (aka 'unsigned int'))"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 73,
-        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 74,
-        "message": "use of undeclared identifier 'PTR_s_Normal_00679344'"
+        "message": "use of undeclared identifier 'PTR_02cf2b78'"
       }
     ],
     "success": false,
@@ -37,15 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 82,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 25,
     "pseudocode_lines": 67,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 268
   },
   "cross_references": [],
@@ -241,32 +215,32 @@
     },
     {
       "addr": "006792ec",
-      "name": "PTR_s_Spark_006792ec",
-      "type": "void*",
-      "value": "00624185"
+      "name": "g_EmitterTypePairs",
+      "type": "SEnumPair[11]",
+      "value": null
     },
     {
       "addr": "00679344",
-      "name": "PTR_s_Normal_00679344",
-      "type": "void*",
-      "value": "006242ab"
+      "name": "g_EmitterSoundTypePairs",
+      "type": "SEnumPair[2]",
+      "value": null
     },
     {
       "addr": "02cf2b5c",
-      "name": "INT_02cf2b5c",
+      "name": "g_SlewTargetMode",
       "type": "int",
       "value": null
     },
     {
       "addr": "02cf2b60",
-      "name": "CVector3f_02cf2b60",
+      "name": "g_EmitterTarget",
       "type": "CVector3f",
       "value": null
     },
     {
       "addr": "02cf2b78",
-      "name": "DAT_02cf2b78",
-      "type": "undefined4",
+      "name": "PTR_02cf2b78",
+      "type": "CEmitter*",
       "value": null
     }
   ],
@@ -325,15 +299,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_02cf2b78",
-      "text": "if ((INT_02cf2b5c != 0) && (this_ptr == DAT_02cf2b78)) {",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -29,7 +29,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -350,8 +350,8 @@ section .text
     PUSH 0x62dea5                       ; 004e8b5e | = "guul flinch%d"
     LEA EAX,[EBP + -0x68]               ; 004e8b63
     PUSH EAX                            ; 004e8b66
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e8b67
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e8b67
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e8b6c
     PUSH 0x1                            ; 004e8b6f
     LEA EAX,[EBP + -0x68]               ; 004e8b71

@@ -48,6 +48,7 @@ extern char* g_CurrentFilename;
 
 // int
 extern int g_CurrentLineNumber;
+extern int g_MansionPuzzleSlewType;
 extern int g_PixelAspectCorrection;
 extern int g_MatrixStackIndex;
 extern int g_ViewportStackIndex;
@@ -98,9 +99,6 @@ extern int g_CosTable[257];
 extern uint g_SavedRotationX;
 extern uint g_SavedRotationY;
 extern uint g_SavedRotationZ;
-
-// undefined4
-extern undefined4 DAT_02f0cb1c;
 
 // void*
 extern void* g_DebugContext;

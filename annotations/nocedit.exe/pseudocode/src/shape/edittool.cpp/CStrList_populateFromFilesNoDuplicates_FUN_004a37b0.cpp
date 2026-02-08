@@ -41,7 +41,7 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
     } while (cVar1 != '\0');
   }
   else {
-    sprintf(local_110,"%s\\%s",directory_path,file_pattern);
+    _sprintf(local_110,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_110,&local_844);

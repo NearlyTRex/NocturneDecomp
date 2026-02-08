@@ -229,7 +229,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       case 1:
         local_140 = local_13c * (float)0.59999999999999998;
         local_2c = 25.0;
-        sprintf(local_d0,"rail?%s.wav");
+        _sprintf(local_d0,"rail?%s.wav");
         break;
       case 2:
       case 3:
@@ -258,7 +258,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
       sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(&g_TrainVelocityVector);
-      sprintf(local_134,"%s @ %g",local_d0,(double)local_140);
+      _sprintf(local_134,"%s @ %g",local_d0,(double)local_140);
       uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
                         (g_CSoundPtr,(CDemonActor *)0x0,local_134,&local_1c->position);
       local_1c->sound_handle = uVar6;

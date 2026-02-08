@@ -4,13 +4,13 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 17,
+        "line": 14,
         "message": "unknown type name 'undefined3'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 40,
+        "line": 37,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -19,22 +19,21 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 389,
+    "complexity_score": 362,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 114,
-    "suspect_count": 24,
+    "pseudocode_lines": 112,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
-      "undefined_type",
-      "unnamed_param"
+      "undefined_type"
     ],
-    "total_lines": 314
+    "total_lines": 312
   },
   "cross_references": [
     {
@@ -370,162 +369,148 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved type",
-      "line": 10,
+      "line": 7,
       "match": "undefined3 extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "undefined_type"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 7,
       "match": "extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "void *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "memset(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 47,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 55,
       "match": "(int *)((int)",
       "text": "piVar4[(uint)bVar6 * -2 + 1] = *(int *)((int)&local_50 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 57,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "local_28 = (CBoundingBox3D *)(in_stack_00000004 + 0x60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 69,
       "match": "in_stack_00000004",
       "text": "local_24 = (CVector3i *)(in_stack_00000004 + 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "local_20 = (CVector3f *)(in_stack_00000004 + 0x41);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 72,
       "match": "in_stack_0000000c",
       "text": "if (local_14 != in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
+      "line": 91,
       "match": "extraout_var",
       "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 91,
       "match": "CONCAT31",
       "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 92,
       "match": "in_stack_00000008",
       "text": "pcVar3 = (char *)(g_WindowWidth * iVar2 + iVar5 + (int)in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 108,
       "match": "in_stack_00000004",
       "text": "} while (local_14 < *in_stack_00000004);",
       "type": "stack_param"

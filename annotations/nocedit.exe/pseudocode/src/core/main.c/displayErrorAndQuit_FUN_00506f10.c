@@ -29,7 +29,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   }
   local_14 = &stack0x00000008;
   g_RecursiveCallFlag = 1;
-  vsprintf(g_ErrorMessageBuffer_02dd3130,format,(va_list_t)&local_14);
+  _vsprintf(g_ErrorMessageBuffer_02dd3130,format,(va_list_t)&local_14);
   local_14 = (byte *)0x0;
   pcVar5 = g_CurrentFilename;
   do {
@@ -52,7 +52,7 @@ LAB_00506f71:
           time(&local_10);
           _fprintf(p_Var1,"Msg: %s\n",g_ErrorMessageBuffer_02dd3130);
           _fprintf(p_Var1,"File: %s line %d\n",g_CurrentFilename,g_CurrentLineNumber);
-          timeptr = localtime(&local_10);
+          timeptr = _localtime(&local_10);
           pcVar5 = asctime(timeptr);
           _fprintf(p_Var1,"Time: %s",pcVar5);
           piVar2 = (int *)_errno();

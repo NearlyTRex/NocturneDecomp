@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 551,
+    "complexity_score": 496,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 146,
-    "suspect_count": 39,
+    "suspect_count": 34,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 443
@@ -172,8 +171,8 @@
   "globals": [
     {
       "addr": "02f0cb1c",
-      "name": "DAT_02f0cb1c",
-      "type": "undefined4",
+      "name": "g_MansionPuzzleSlewType",
+      "type": "int",
       "value": null
     }
   ],
@@ -252,13 +251,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02f0cb1c",
-      "text": "if (DAT_02f0cb1c == 1) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 27,
       "match": "._0_4_",
@@ -320,20 +312,6 @@
       "match": "._8_4_",
       "text": "(this_ptr->emitter_pos).z = (float)auStack_3c._8_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02f0cb1c",
-      "text": "else if (DAT_02f0cb1c == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_02f0cb1c",
-      "text": "else if (DAT_02f0cb1c == 3) {",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -427,13 +405,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_02f0cb1c",
-      "text": "else if (DAT_02f0cb1c == 4) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 98,
       "match": "._0_4_",
@@ -516,13 +487,6 @@
       "match": "._20_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd28) = auStack_58._20_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 126,
-      "match": "DAT_02f0cb1c",
-      "text": "DAT_02f0cb1c = 0;",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

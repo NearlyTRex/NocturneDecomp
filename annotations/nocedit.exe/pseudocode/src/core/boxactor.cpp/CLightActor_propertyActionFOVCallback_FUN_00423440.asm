@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     FLD float ptr [EBX + 0x38]          ; 00423477
     PUSH EAX                            ; 0042347a
     FSTP float ptr [ESP + 0x138]        ; 0042347b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423482
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00423482
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00423487
     PUSH 0x1                            ; 0042348a
     PUSH 0x461c3c00                     ; 0042348c

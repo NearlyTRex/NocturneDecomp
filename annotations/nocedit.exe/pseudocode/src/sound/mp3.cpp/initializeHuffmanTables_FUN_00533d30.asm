@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     PUSH 0x63af26                       ; 00533d49 | = "%d"
     MOV ESI,dword ptr [ESP + 0xc]       ; 00533d4e
     PUSH ESI                            ; 00533d52 | g_HuffmanTables | DAT_02f68ab0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00533d53
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00533d53
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00533d58
     MOV EAX,dword ptr [ESP + 0x8]       ; 00533d5b
     MOV EAX,dword ptr [EAX + 0x680170]  ; 00533d5f | g_HuffmanTableSources

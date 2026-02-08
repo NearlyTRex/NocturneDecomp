@@ -70,7 +70,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
 ;   core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   ... and 2 more
 ;
@@ -217,8 +217,8 @@ section .text
     PUSH 0x645b76                       ; 0056a6a6 | = "Precomputing lights from camera : %d"
     LEA EAX,[ESP + 0x8]                 ; 0056a6ab
     PUSH EAX                            ; 0056a6af
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056a6b0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056a6b0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056a6b5
     PUSH 0x0                            ; 0056a6b8
     PUSH 0x0                            ; 0056a6ba
@@ -348,8 +348,8 @@ section .text
     PUSH 0x645ac5                       ; 0056a84d | = "Camera box (%7.2f, %7.2f, %7.2f) - (%..."
     LEA EAX,[ESP + 0x34]                ; 0056a852
     PUSH EAX                            ; 0056a856
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056a857
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056a857
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x38                        ; 0056a85c
     PUSH 0x16                           ; 0056a85f
     PUSH 0x0                            ; 0056a861
@@ -412,8 +412,8 @@ section .text
     PUSH 0x645b5a                       ; 0056a914 | = "Light %d, Box : %d,%d,%d,%d"
     LEA EAX,[ESP + 0x18]                ; 0056a919
     PUSH EAX                            ; 0056a91d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056a91e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056a91e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 0056a923
     MOV ESI,dword ptr [ESP + 0x158]     ; 0056a926
     PUSH ESI                            ; 0056a92d

@@ -18,28 +18,29 @@ core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
             (property_list,"weight (lbs)",&this_ptr->weight_in_pounds,0.0,1e+06,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (1 < pCVar1->frame_count) {
     core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
               (property_list,"Animation fps",&this_ptr->fps,-100.0,100.0,
-               (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+               (CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
-            (property_list,"PHB RPM",&this_ptr->rpm,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"PHB RPM",&this_ptr->rpm,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Loop WAV",this_ptr->loop_wav_name);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Collision WAV",this_ptr->collision_wav_name);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Pickup type",5,(int *)&PTR_s_Cant_0066e5dc);
+            (property_list,"Pickup type",5,g_BoxActorPickupTypePairs,&this_ptr->pickup_type
+            );
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"canBePushed",&this_ptr->can_be_pushed);
   if (this_ptr->can_be_pushed != 0) {
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-              (property_list,"Constrain to this actor's box",&this_ptr->constrain_extents_actor,
-               1,"CDemonActor",(CDemonActor_CActorPropertyValidatorFunc *)0x0);
+              (property_list,"Constrain to this actor's box",
+               (CDemonActor **)&this_ptr->constrain_extents_actor,1,"CDemonActor",
+               (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
               (property_list,"push sound",this_ptr->push_sound);
   }

@@ -12,23 +12,22 @@
         "column": 40,
         "line": 41,
         "message": "use of undeclared identifier 'stack0xfffffddc'"
-      }
-    ],
-    "success": false,
-    "warnings": [
+      },
       {
         "category": "format_error",
-        "column": 36,
+        "column": 37,
         "line": 66,
-        "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Wformat]"
+        "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 30,
+        "column": 31,
         "line": 66,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 252,
@@ -91,7 +90,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",

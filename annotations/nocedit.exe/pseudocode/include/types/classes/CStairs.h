@@ -8,6 +8,13 @@
 // Ghidra size: 0xa34 (2612 bytes)
 typedef struct CStairs {
     CDemonActor base; // 0x0
-    char unk[2268]; // 0x158
+    float rise; // 0x158
+    float run; // 0x15c
+    float width; // 0x160
+    float bevel_y; // 0x164
+    float bevel_z; // 0x168
+    int stair_count; // 0x16c
+    char unk2[2240]; // 0x170
+    int ground_type; // 0xa30
 } CStairs;
 

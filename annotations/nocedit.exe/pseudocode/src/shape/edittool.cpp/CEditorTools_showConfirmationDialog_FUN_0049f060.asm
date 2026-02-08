@@ -29,7 +29,7 @@
 ;   undefined4 DAT_02cf0130
 ;
 ; Called Functions:
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -49,8 +49,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049f071
     PUSH EDX                            ; 0049f075
     PUSH 0x2cf0130                      ; 0049f076 | DAT_02cf0130
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f07b
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049f07b
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f080
     MOV EAX,ESP                         ; 0049f083
     XOR ECX,ECX                         ; 0049f085

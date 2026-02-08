@@ -20,7 +20,7 @@
 ;   CAlphaBitmap g_LoadingScreenBitmap2
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -65,8 +65,8 @@ section .text
     PUSH 0x6355e6                       ; 00508373 | = "load%d"
     LEA EAX,[ESP + 0x8]                 ; 00508378
     PUSH EAX                            ; 0050837c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0050837d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0050837d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00508382
     PUSH 0x1e0                          ; 00508385
     PUSH 0x280                          ; 0050838a

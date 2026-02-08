@@ -19,29 +19,29 @@ CDemonActorType * __cdecl CTeleportDest::getActorType(CTeleportDest *this_ptr);
 // Address: 005da770
 CTeleportDest * __cdecl CTeleportDest::ctor(CTeleportDest *this_ptr);
 
-// Original: core_teleport.cpp_CTeleportDest_FUN_005da790
+// Original: core_teleport.cpp_CTeleportDest_getBoundingBox_FUN_005da790
 // Address: 005da790
-void __cdecl CTeleportDest(CTeleportDest *this_ptr);
+CBoundingBox3D * __cdecl CTeleportDest::getBoundingBox(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005da7c0
+// Original: core_teleport.cpp_CTeleportDest_hasCollision_FUN_005da7c0
 // Address: 005da7c0
-int __cdecl CTeleport(CTeleport *this_ptr);
+int __cdecl CTeleportDest::hasCollision(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_teleport.cpp_CTeleportDest_FUN_005da7d0
+// Original: core_teleport.cpp_CTeleportDest_renderOpaque_FUN_005da7d0
 // Address: 005da7d0
-int __cdecl CTeleportDest(CTeleportDest *this_ptr);
+int __cdecl CTeleportDest::renderOpaque(CTeleportDest *this_ptr);
 
 // Original: core_teleport.cpp_FUN_005da850
 // Address: 005da850
-bool __cdecl FUN_005da850(void);
+int __cdecl FUN_005da850(void);
 
-// Original: core_teleport.cpp_CTeleportDest_FUN_005da870
+// Original: core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870
 // Address: 005da870
-void __cdecl CTeleportDest(CTeleportDest *this_ptr);
+void __cdecl CTeleportDest::processInEditor(CTeleportDest *this_ptr);
 
-// Original: core_teleport.cpp_CTeleportDest_FUN_005da970
+// Original: core_teleport.cpp_CTeleportDest_showEditorHelp_FUN_005da970
 // Address: 005da970
-void __cdecl CTeleportDest(CTeleportDest *this_ptr);
+void __cdecl CTeleportDest::showEditorHelp(CTeleportDest *this_ptr,int *y_pos);
 
 // Original: core_teleport.cpp_factoryFunc_FUN_005da9a0
 // Address: 005da9a0
@@ -59,33 +59,33 @@ CTeleport * __cdecl CTeleport::ctor(CTeleport *this_ptr);
 // Address: 005daa20
 void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005daad0
+// Original: core_teleport.cpp_CTeleport_getBoundingBox_FUN_005daad0
 // Address: 005daad0
-void __cdecl CTeleport(CTeleport *this_ptr);
+CBoundingBox3D * __cdecl CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_teleport.cpp_CTeleport_archive_FUN_005dab30
 // Address: 005dab30
 void __cdecl CTeleport::archive(CTeleport *this_ptr);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005dab70
+// Original: core_teleport.cpp_CTeleport_onActorDeleted_FUN_005dab70
 // Address: 005dab70
-void __cdecl CTeleport(CTeleport *this_ptr);
+void __cdecl CTeleport::onActorDeleted(CTeleport *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005daba0
+// Original: core_teleport.cpp_CTeleport_getPropertyList_FUN_005daba0
 // Address: 005daba0
-void __cdecl CTeleport(CTeleport *this_ptr);
+void __cdecl CTeleport::getPropertyList(CTeleport *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005dabe0
+// Original: core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0
 // Address: 005dabe0
-void __cdecl CTeleport(CTeleport *this_ptr);
+void __cdecl CTeleport::processInEditor(CTeleport *this_ptr);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005dadc0
+// Original: core_teleport.cpp_CTeleport_showEditorHelp_FUN_005dadc0
 // Address: 005dadc0
-void __cdecl CTeleport(CTeleport *this_ptr);
+void __cdecl CTeleport::showEditorHelp(CTeleport *this_ptr,int *y_pos);
 
-// Original: core_teleport.cpp_CTeleport_FUN_005dae10
+// Original: core_teleport.cpp_CTeleport_renderOpaque_FUN_005dae10
 // Address: 005dae10
-int __cdecl CTeleport(CTeleport *this_ptr);
+int __cdecl CTeleport::renderOpaque(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_dtor_FUN_005dae50
 // Address: 005dae50

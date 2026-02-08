@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_initializeInEditor
-typedef int (*CDemonActor_initializeInEditor)(struct CDemonActor* this_ptr);
+typedef int CDemonActor_initializeInEditor(struct CDemonActor* this_ptr);
 

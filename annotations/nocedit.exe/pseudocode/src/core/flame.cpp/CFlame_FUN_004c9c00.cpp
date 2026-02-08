@@ -78,7 +78,7 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
       core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)this_ptr->unk2);
       if (extraout_EAX == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
-        sprintf
+        _sprintf
                   ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();

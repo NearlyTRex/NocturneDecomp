@@ -59,21 +59,21 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
   }
   shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_624);
   pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
-  sprintf
+  _sprintf
             (local_27c,"Change %s of type %s to new type",this_ptr->selected_actor,pcVar4);
   iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     ((CPickList *)local_624,local_27c,-1,0);
   if (-1 < iVar9) {
     pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)local_624,iVar9);
-    sprintf(local_88,"C%s",pcVar4);
+    _sprintf(local_88,"C%s",pcVar4);
     pCVar6 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     local_20 = pCVar6;
     (*((pCVar6->vtable)._ub)->setup)(pCVar6);
     iVar9 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
     if (iVar9 != 0) {
-      core_actor_cpp_FUN_0040e130();
-      core_actor_cpp_FUN_0040e130();
+      core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)auStack_2b24);
+      core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffafd8);
       (*((pCVar6->vtable)._ub)->getPropertyList)(pCVar6,(CActorPropertyList *)auStack_2b24);
       (*(((*(CDemonActor **)(param_4 + 0x28))->vtable)._ub)->getPropertyList)
                 (*(CDemonActor **)(param_4 + 0x28),(CActorPropertyList *)&stack0xffffafe0);

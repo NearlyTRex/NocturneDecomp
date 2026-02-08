@@ -31,8 +31,8 @@
 ;   TerminatedCString s_console_txt_0066e8e8
 ;
 ; Called Functions:
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   engine_console.cpp_CConsole_writeChar_FUN_00441970
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -57,8 +57,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004418bf
     PUSH EAX                            ; 004418c3
     LEA EDI,[ESP + 0xc]                 ; 004418c4
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004418c8
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004418c8
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004418cd
     XOR ECX,ECX                         ; 004418d0
     XOR EBX,EBX                         ; 004418d2

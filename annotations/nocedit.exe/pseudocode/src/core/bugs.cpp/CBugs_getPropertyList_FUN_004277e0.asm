@@ -21,7 +21,7 @@
 ;   core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
 ;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH 0x616e89                       ; 00427847 | = "Bug model %d"
     LEA EAX,[ESP + 0xc]                 ; 0042784c
     PUSH EAX                            ; 00427850
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00427851
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00427851
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00427856
     PUSH 0x1                            ; 00427859
     PUSH ESI                            ; 0042785b

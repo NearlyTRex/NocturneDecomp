@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3d.h"
 #include "types/classes/CObj.h"
@@ -14,6 +15,8 @@
 #include "types/classes/CVector2d.h"
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5C0000
@@ -29,15 +32,15 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c3710(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_005c3710(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_FUN_005c3750(void);
 CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5170(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170(CStranger *this_ptr);
 CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr);
@@ -49,10 +52,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c6650(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6660(CStranger *this_ptr,int unk);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c67c0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_isDamageable_FUN_005c67c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6850(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c68a0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850 (CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0 (CStranger *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0 (CStranger *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
 void __cdecl core_stranger_cpp_FUN_005c6930(void);
@@ -65,15 +68,15 @@ void __cdecl core_succubus_cpp_staticInit_FUN_005c6a10(void);
 CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void);
 CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_005c6a70(CSuccubus *this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *this_ptr);
-void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr,float delta_time);
 int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_archive_FUN_005c7710(CSuccubus *this_ptr);
-void __cdecl core_succubus_cpp_FUN_005c7760(void);
-int __cdecl core_succubus_cpp_CSuccubus_FUN_005c7780(CSuccubus *this_ptr);
-void __cdecl core_succubus_cpp_CSuccubus_FUN_005c7790(CSuccubus *this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_005c7760(CSuccubus *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_succubus_cpp_CSuccubus_getTargetPoints_FUN_005c7780 (CSuccubus *this_ptr,CVector3f *out_points_array);
+void __cdecl core_succubus_cpp_CSuccubus_hasCollision_FUN_005c7790 (CSuccubus *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0 (CSuccubus *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_succubus_cpp_CSuccubus_FUN_005c77f0(CSuccubus *this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_addFilesToExtract_FUN_005c77f0(CSuccubus *this_ptr,_FILE *file_handle);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...);
 void __cdecl shape_superopt_cpp_FUN_005c79a0(void);
@@ -85,7 +88,7 @@ void __cdecl shape_superopt_cpp_FUN_005c7dc0(void);
 int __cdecl shape_superopt_cpp_FUN_005c7fb0(void);
 void __cdecl shape_superopt_cpp_FUN_005c8160(void);
 int __cdecl shape_superopt_cpp_FUN_005c8280(void);
-int __cdecl shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void);
+int __cdecl shape_superopt_cpp_FUN_005c84c0(void);
 int __cdecl shape_superopt_cpp_FUN_005c8b50(void);
 int __cdecl shape_superopt_cpp_FUN_005c8e70(void);
 int __cdecl shape_superopt_cpp_FUN_005c9100(void);
@@ -93,10 +96,10 @@ uint __cdecl shape_superopt_cpp_FUN_005c91e0(void);
 void __cdecl shape_superopt_cpp_FUN_005c9340(void);
 int __cdecl shape_superopt_cpp_FUN_005c9500(void);
 void __cdecl shape_superopt_cpp_FUN_005c9aa0(void);
-int __cdecl shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void);
+int __cdecl shape_superopt_cpp_FUN_005ca590(void);
 int __cdecl shape_superopt_cpp_FUN_005cb3a0(void);
 double * __cdecl shape_superopt_cpp_FUN_005cbb40(void);
-void __cdecl shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void);
+void __cdecl shape_superopt_cpp_FUN_005cbe20(void);
 int __cdecl shape_superopt_cpp_FUN_005cbec0(void);
 int __cdecl shape_superopt_cpp_FUN_005cbee0(void);
 int __cdecl shape_superopt_cpp_FUN_005cbef0(void);

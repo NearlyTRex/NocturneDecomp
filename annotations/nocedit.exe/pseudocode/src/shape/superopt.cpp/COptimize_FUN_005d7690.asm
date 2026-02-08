@@ -10,7 +10,7 @@
 ;   TerminatedCString s_Unable_to_split_polygon__00654789
 ;
 ; Called Functions:
-;   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
+;   shape_superopt.cpp_FUN_005c84c0
 ;   shape_superopt.cpp_logToFile_FUN_005c7910
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
         ;   Label: LAB_005d76a3
     MOV EBP,dword ptr [ESI + EAX*0x1]   ; 005d76a6
     PUSH EBP                            ; 005d76a9
-    CALL shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 ; 005d76aa
-        ;   XREF to: 005c84c0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0()
+    CALL shape_superopt.cpp_FUN_005c84c0 ; 005d76aa
+        ;   XREF to: 005c84c0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005c84c0()
     ADD ESP,0x4                         ; 005d76af
     TEST EAX,EAX                        ; 005d76b2
     JZ 0x005d76cb                       ; 005d76b4

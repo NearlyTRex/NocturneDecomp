@@ -62,7 +62,7 @@ section .text
     PUSH 0x614ccb                       ; 00411b75 | = "Inventory item"
     PUSH ESI                            ; 00411b7a
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00411b7b
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00411b80
     LEA EAX,[EBX + 0x324]               ; 00411b83
     PUSH EAX                            ; 00411b89
@@ -97,14 +97,14 @@ section .text
     PUSH 0x614ca6                       ; 00411bd1 | = "Amount of ammo"
     PUSH ESI                            ; 00411bd6
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 00411bd7
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00411bdc
     PUSH 0x411ab0                       ; 00411bdf
     PUSH 0x411a30                       ; 00411be4
     PUSH 0x614cb5                       ; 00411be9 | = "Ammo type"
     PUSH ESI                            ; 00411bee
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 00411bef
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 00411bf4
     JMP 0x00411b65                      ; 00411bf7
         ;   XREF to: 00411b65 (UNCONDITIONAL_JUMP)  ; LAB_00411b65

@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_process
-typedef void (*CDemonActor_process)(struct CDemonActor* this_ptr, float delta_time);
+typedef void CDemonActor_process(struct CDemonActor* this_ptr, float delta_time);
 

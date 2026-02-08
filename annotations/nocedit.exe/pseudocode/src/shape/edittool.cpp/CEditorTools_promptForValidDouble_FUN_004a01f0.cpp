@@ -25,7 +25,7 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
   else {
     local_40 = min_value;
     local_38 = max_value;
-    sprintf
+    _sprintf
               (local_30,"%.15g",*(uint *)result_ptr,
                *(uint *)((int)result_ptr + 4));
     min_value = local_40;

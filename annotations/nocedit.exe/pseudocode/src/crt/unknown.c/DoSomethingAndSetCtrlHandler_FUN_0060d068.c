@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_DoSomethingAndSetCtrlHandler(uint param_1, uint param_2) */
-
 SIGNAL_HANDLER_TYPE DoSomethingAndSetCtrlHandler(void)
 
 {

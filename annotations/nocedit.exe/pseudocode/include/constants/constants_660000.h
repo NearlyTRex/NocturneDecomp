@@ -268,7 +268,7 @@ const undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants
 const void* DAT_006618F4 = (void*)core_mobster_cpp_CMobster_FUN_00527360;
-const void* DAT_006630E4 = (void*)core_smiley_cpp_FUN_005a3280;
+const void* DAT_006630E4 = (void*)core_smiley_cpp_CSmiley_FUN_005a3280;
 const void* DAT_00665B78 = (void*)0x00665B90; // DAT_00665b90
 const void* DAT_00665B80 = (void*)0x00665B98; // DAT_00665b98
 const void* DAT_00665B88 = (void*)0x00665BA0; // DAT_00665ba0
@@ -276,11 +276,5 @@ const void* DAT_00665CD0 = (void*)0x00665CE8; // DAT_00665ce8
 const void* DAT_00665CE0 = (void*)0x00665CF8; // DAT_00665cf8
 const void* DAT_00665D68 = (void*)0x00665D78; // DAT_00665d78
 const void* DAT_00665FA4 = (void*)0x00685038; // DAT_00685038
-const void* DAT_0066E5E4 = (void*)s_Rummage_006167f6;
-const void* DAT_0066E5EC = (void*)s_Inventory_006167fe;
-const void* DAT_0066E5F4 = (void*)s_Carry_00616808;
-const void* DAT_0066E5FC = (void*)s_Heavy_0061680e;
-const void* DAT_0066E760 = (void*)s_When_hurt_0061776e;
-const void* DAT_0066E768 = (void*)s_Always_00617778;
 const void* DAT_0066EC5C = (void*)s_z_00619453;
 

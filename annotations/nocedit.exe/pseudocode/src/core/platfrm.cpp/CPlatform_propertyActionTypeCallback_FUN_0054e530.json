@@ -1,21 +1,21 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 56,
+        "column": 57,
         "line": 24,
-        "message": "format specifies type 'char *' but the argument has type 'CPlatform *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'CPlatform *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 61,
+        "column": 62,
         "line": 34,
-        "message": "format specifies type 'char *' but the argument has type 'CPlatform *' [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'CPlatform *' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 165,
@@ -67,7 +67,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0049f270",

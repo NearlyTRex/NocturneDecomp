@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   type
 ;
 ; XREF[6]:
-;   core_actor.cpp_CActorProperty_FUN_0040ea50 at 0040ec06
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f653
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 at 0040ec06
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005799e3
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584a23
 ;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 at 005786a6

@@ -9,7 +9,7 @@
 void __cdecl core_waypoint_cpp_CWayPoint_showEditorHelp_FUN_005ec690(CWayPoint *this_ptr,int *y_pos)
 
 {
-  core_trigger_cpp_CTrigger_FUN_005e1350(&this_ptr->base);
+  core_trigger_cpp_CTrigger_showEditorHelp_FUN_005e1350(&this_ptr->base,y_pos);
   *y_pos = *y_pos + 0xb;
   core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
             (y_pos,"</>","Prev/next waypoint on trail.");

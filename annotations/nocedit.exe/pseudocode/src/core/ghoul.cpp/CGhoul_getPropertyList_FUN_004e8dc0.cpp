@@ -20,6 +20,6 @@ core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220
             (property_list,"Lives left",&this_ptr->lives_left,0,999999,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

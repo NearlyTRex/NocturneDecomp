@@ -40,9 +40,9 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
@@ -207,8 +207,8 @@ section .text
     PUSH 0x647cff                       ; 0057d08b | = "%s.raw"
     LEA EAX,[ESP + 0x2588]              ; 0057d090
     PUSH EAX                            ; 0057d097
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d098
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057d098
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d09d
     PUSH 0x647d06                       ; 0057d0a0 | = "wb"
     LEA EAX,[ESP + 0x2584]              ; 0057d0a5
@@ -285,8 +285,8 @@ section .text
     PUSH 0x647d53                       ; 0057d184 | = "%s.act"
     LEA EAX,[ESP + 0x25d8]              ; 0057d189
     PUSH EAX                            ; 0057d190
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d191
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057d191
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d196
     PUSH 0x647d5a                       ; 0057d199 | = "wb"
     LEA EAX,[ESP + 0x25d4]              ; 0057d19e

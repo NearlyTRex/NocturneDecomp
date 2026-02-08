@@ -53,9 +53,9 @@ LAB_00584f0b:
     g_CurrentLineNumber = 0x1756;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to find ext in geomName");
   }
-  sprintf(pcVar4,".zth");
+  _sprintf(pcVar4,".zth");
   _fprintf(in_stack_00000008,"data\\%s\n",local_118);
-  sprintf(pcVar4,".thm");
+  _sprintf(pcVar4,".thm");
   _fprintf(in_stack_00000008,"data\\%s\n",local_118);
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
@@ -63,7 +63,7 @@ LAB_00584f0b:
     local_18 = this_ptr;
     do {
       if (local_18->cameras[0].is_panning == 0) {
-        sprintf(local_118,"%s.raw",pCVar2);
+        _sprintf(local_118,"%s.raw",pCVar2);
         file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_118,"rb");
         if (file_ptr == (_FILE *)0x0) {
           pcVar4 = "art";

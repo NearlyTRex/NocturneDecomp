@@ -81,7 +81,7 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
     }
     iVar5 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
     if (header->child_count != 2) {
-      sprintf(&stack0xfffffea0,"Unable to read verticies in model!");
+      _sprintf(&stack0xfffffea0,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x176;
       core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);

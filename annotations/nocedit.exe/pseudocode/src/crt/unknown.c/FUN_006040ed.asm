@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX)
+; __cdecl void __cdecl crt_unknown_c_FUN_006040ed (uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   param_1
+; undefined4       Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   unaff_EBX
+; undefined4       Stack[0x10]:4   param_4
+; char *           Stack[0x14]:4   param_5
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_006040d7 at 006040e7
@@ -26,6 +32,6 @@ section .text
     PUSH EDX                            ; 006040fd
         ;   Label: LAB_006040fd
     CALL crt_unknown.c_FUN_00604104     ; 006040fe
-        ;   XREF to: 00604104 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00604104()
+        ;   XREF to: 00604104 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00604104(ushort param_1, undefined4 param_2, char * unaff_EBX)
     POP EAX                             ; 00604103
 

@@ -13,7 +13,7 @@ engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,
   char cVar1;
   
   if ((directory != (char *)0x0) && (*directory != '\0')) {
-    sprintf(dest_path,"%s\\%s",directory,filename);
+    _sprintf(dest_path,"%s\\%s",directory,filename);
     return;
   }
   do {

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040fffe at 00410038
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 00410038
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00625f5d

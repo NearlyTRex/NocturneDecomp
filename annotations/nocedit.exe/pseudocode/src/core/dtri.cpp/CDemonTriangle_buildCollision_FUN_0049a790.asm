@@ -19,7 +19,7 @@
 ;   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0 at 005715ef
 ;   core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0 at 005730eb
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 at 0059cd14
-;   core_stairs.cpp_FUN_005ba700 at 005ba811
+;   core_stairs.cpp_CStairs_FUN_005ba700 at 005ba811
 ;   ... and 1 more
 ;
 ; Called Functions:

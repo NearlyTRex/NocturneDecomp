@@ -26,7 +26,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   if (((2 < g_CDraculaBrideClassVersion) &&
-      (core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk + 0x2c,"riseEvent"),
+      (core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->rise_event,"riseEvent"),
       g_CDraculaBrideClassVersion < 4)) &&
      (core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_14,"initialState"),
      g_ActorReadingMode == 1)) {
@@ -58,26 +58,26 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
   }
   if (6 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0
-              (&this_ptr->freakyVoiceNumber,"freakyVoiceNumber");
+              (&this_ptr->freaky_voice_number,"freakyVoiceNumber");
   }
   if (7 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->exploded,"exploded");
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->partCount,"partCount");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->part_count,"partCount");
     iVar1 = 0;
-    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->fadeTimer,"fadeTimer");
-    if (0 < this_ptr->partCount) {
-      actor_ptr = (CDemonActor *)this_ptr->padding_0xbf6c;
+    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->fade_timer,"fadeTimer");
+    if (0 < this_ptr->part_count) {
+      actor_ptr = (CDemonActor *)this_ptr->unk4;
       do {
         iVar1 = iVar1 + 1;
         core_actor_cpp_archiveActor_FUN_0040b870(actor_ptr,"partList");
         actor_ptr = (CDemonActor *)(actor_ptr->actor_name + 4);
-      } while (iVar1 < this_ptr->partCount);
+      } while (iVar1 < this_ptr->part_count);
     }
   }
   if (8 < g_CDraculaBrideClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->mistState,"mistState");
-    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->vanishTimer,"vanishTimer");
-    core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->newPos,"newPos");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->mist_state,"mistState");
+    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->vanish_timer,"vanishTimer");
+    core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->new_pos,"newPos");
     return;
   }
   return;

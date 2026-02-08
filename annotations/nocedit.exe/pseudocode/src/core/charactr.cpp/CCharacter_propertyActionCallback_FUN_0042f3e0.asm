@@ -49,7 +49,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -120,8 +120,8 @@ section .text
     PUSH 0x6176c5                       ; 0042f49a | = "Hand %d\t%s\t%s\n"
     LEA EAX,[ESP + 0x760]               ; 0042f49f
     PUSH EAX                            ; 0042f4a6
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0042f4a7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0042f4a7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0042f4ac
     LEA EAX,[ESP + 0x750]               ; 0042f4af
     PUSH EAX                            ; 0042f4b6

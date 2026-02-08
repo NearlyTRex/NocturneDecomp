@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_restoreVertexPositions
-typedef void (*CPoly_restoreVertexPositions)(struct CPoly* this_ptr);
+typedef void CPoly_restoreVertexPositions(struct CPoly* this_ptr);
 

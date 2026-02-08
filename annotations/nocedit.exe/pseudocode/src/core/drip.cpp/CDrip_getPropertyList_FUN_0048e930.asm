@@ -45,7 +45,7 @@ section .text
     PUSH 0x6222d5                       ; 0048e94e | = "Type"
     PUSH EBX                            ; 0048e953
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 0048e954
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     MOV EDX,dword ptr [ESI + 0x2d4]     ; 0048e959
     ADD ESP,0x10                        ; 0048e95f
     CMP EDX,0x2                         ; 0048e962
@@ -65,7 +65,7 @@ section .text
     PUSH 0x6222f6                       ; 0048e989 | = "Auto drop min time"
     PUSH EBX                            ; 0048e98e
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0048e98f
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0048e994
     PUSH 0x0                            ; 0048e997
     LEA EAX,[ESI + 0x2e4]               ; 0048e999
@@ -73,7 +73,7 @@ section .text
     PUSH 0x622309                       ; 0048e9a0 | = "Auto drop max time"
     PUSH EBX                            ; 0048e9a5
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0048e9a6
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0048e9ab
     PUSH 0x0                            ; 0048e9ae
     LEA EAX,[ESI + 0x2e8]               ; 0048e9b0
@@ -81,7 +81,7 @@ section .text
     PUSH 0x62231c                       ; 0048e9b7 | = "Drip radius"
     PUSH EBX                            ; 0048e9bc
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0048e9bd
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0048e9c2
     PUSH 0x0                            ; 0048e9c5
     LEA EAX,[ESI + 0x310]               ; 0048e9c7
@@ -89,7 +89,7 @@ section .text
     PUSH 0x622328                       ; 0048e9ce | = "Damage"
     PUSH EBX                            ; 0048e9d3
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0048e9d4
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0048e9d9
     LEA EAX,[ESI + 0x314]               ; 0048e9dc
     PUSH EAX                            ; 0048e9e2

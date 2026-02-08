@@ -27,24 +27,24 @@ void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *th
   float fStack_14;
   
   if (this_ptr->emitter_type == 3) {
-    if (INT_02cf2b5c != 0) goto LAB_004a9009;
+    if (g_SlewTargetMode != 0) goto LAB_004a9009;
   }
   else {
-    INT_02cf2b5c = 0;
+    g_SlewTargetMode = 0;
   }
-  DAT_02cf2b78 = (CEmitter *)0x0;
+  PTR_02cf2b78 = (CEmitter *)0x0;
 LAB_004a9009:
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar3 == 0) {
-    if (INT_02cf2b5c != 0) {
-      if (this_ptr != DAT_02cf2b78) {
-        DAT_02cf2b78 = this_ptr;
+    if (g_SlewTargetMode != 0) {
+      if (this_ptr != PTR_02cf2b78) {
+        PTR_02cf2b78 = this_ptr;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&CStack_28,(CVector3f *)&stack0xffffffc0);
-        if (pCVar4 != &CVector3f_02cf2b60) {
-          CVector3f_02cf2b60.x = pCVar4->x;
-          CVector3f_02cf2b60.z = pCVar4->z;
-          CVector3f_02cf2b60.y = pCVar4->y;
+        if (pCVar4 != &g_EmitterTarget) {
+          g_EmitterTarget.x = pCVar4->x;
+          g_EmitterTarget.z = pCVar4->z;
+          g_EmitterTarget.y = pCVar4->y;
         }
         pCVar2 = &(this_ptr->base).orient;
         if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {
@@ -61,9 +61,9 @@ LAB_004a9009:
       fStack_1c = pCVar2->pitch;
       fStack_18 = (this_ptr->base).orient.bank;
       fStack_14 = (this_ptr->base).orient.heading;
-      (pCVar1->position).x = CVector3f_02cf2b60.x;
-      (this_ptr->base).location.position.y = CVector3f_02cf2b60.y;
-      (this_ptr->base).location.position.z = CVector3f_02cf2b60.z;
+      (pCVar1->position).x = g_EmitterTarget.x;
+      (this_ptr->base).location.position.y = g_EmitterTarget.y;
+      (this_ptr->base).location.position.z = g_EmitterTarget.z;
       if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {
         pCVar2->pitch = DAT_02cf2b6c;
         (this_ptr->base).orient.bank = DAT_02cf2b70;
@@ -72,10 +72,10 @@ LAB_004a9009:
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
       pCVar1 = &(this_ptr->base).location;
-      if (pCVar1 != (CLocation *)&CVector3f_02cf2b60) {
-        CVector3f_02cf2b60.x = (pCVar1->position).x;
-        CVector3f_02cf2b60.z = (this_ptr->base).location.position.z;
-        CVector3f_02cf2b60.y = (this_ptr->base).location.position.y;
+      if (pCVar1 != (CLocation *)&g_EmitterTarget) {
+        g_EmitterTarget.x = (pCVar1->position).x;
+        g_EmitterTarget.z = (this_ptr->base).location.position.z;
+        g_EmitterTarget.y = (this_ptr->base).location.position.y;
       }
       pCVar2 = &(this_ptr->base).orient;
       if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {

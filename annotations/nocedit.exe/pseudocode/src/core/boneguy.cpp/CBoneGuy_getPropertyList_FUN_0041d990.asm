@@ -55,7 +55,7 @@ section .text
     PUSH 0x616379                       ; 0041d9d4 | = "Recombine time"
     PUSH EBX                            ; 0041d9d9
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0041d9da
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0041d9df
     ADD ESI,0xbed0                      ; 0041d9e2
     PUSH ESI                            ; 0041d9e8

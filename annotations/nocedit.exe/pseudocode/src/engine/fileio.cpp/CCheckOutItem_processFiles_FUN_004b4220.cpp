@@ -150,7 +150,7 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  sprintf(local_75c,"history\\%s.%s",operation_mode,local_38);
+  _sprintf(local_75c,"history\\%s.%s",operation_mode,local_38);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_1c,local_150);
   engine_dosio_c_makePath_FUN_00481f50(local_964,local_1c,local_150,(char *)0x0,(char *)0x0);
   pcVar10 = local_75c;
@@ -196,7 +196,7 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
     iVar6 = engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770();
     if (iVar6 == 0) goto LAB_004b4768;
   }
-  sprintf(local_554,"$$$.%s.$$$",&local_e0c);
+  _sprintf(local_554,"$$$.%s.$$$",&local_e0c);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_450);
   engine_dosio_c_makePath_FUN_00481f50(local_a68,local_14,local_450,(char *)0x0,(char *)0x0);
   pcVar10 = local_554;
@@ -340,7 +340,7 @@ LAB_004b4980:
           }
           iVar6 = iVar6 + 1;
           if (iVar6 == 1) {
-            sprintf
+            _sprintf
                       (local_bf8,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_1020);
             shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                       (g_CEditorToolsPtr,local_bf8);
@@ -399,7 +399,7 @@ LAB_004b4d50:
             local_28 = p_Var2;
             if (p_Var2 != (_FILE *)0x0) {
               local_44 = time((time_t *)0x0);
-              p_Var5 = localtime(&local_44);
+              p_Var5 = _localtime(&local_44);
               _fprintf(p_Var2,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_3c + 1,
                          p_Var5->tm_year + 0x76c,p_Var5->tm_mon + 1,p_Var5->tm_mday,p_Var5->tm_hour,
                          p_Var5->tm_min,p_Var5->tm_sec,&g_VersionControlSession);

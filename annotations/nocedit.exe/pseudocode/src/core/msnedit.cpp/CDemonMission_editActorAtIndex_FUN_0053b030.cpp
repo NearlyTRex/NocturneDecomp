@@ -76,7 +76,7 @@ core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this
       }
       else {
         shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
-        sprintf(acStack_304,"Actors relevent to \"%s\"",param_2 + 4);
+        _sprintf(acStack_304,"Actors relevent to \"%s\"",param_2 + 4);
         pcVar9 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                    (&local_6ac,acStack_304,-1,0);
         if (-1 < (int)pcVar9) {
@@ -91,7 +91,7 @@ core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this
       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_40 + 8),0);
       return;
     }
-    core_actor_cpp_FUN_0040e130();
+    core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd450);
     (*((local_18->vtable)._ub)->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);
     iStack_14 = 0;
     if (0 < CStack_30.item_count) {
@@ -99,7 +99,7 @@ core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this
         pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_30,iStack_14);
         iVar4 = stricmp(pcVar9,unaff_EBP->actor_name);
         if (iVar4 == 0) {
-          sprintf(acStack_2fc,"%s\tReferenced by name");
+          _sprintf(acStack_2fc,"%s\tReferenced by name");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     ((CStrList *)&local_6ac.base.data_array,acStack_2fc);
         }
@@ -146,7 +146,7 @@ core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this
                                      ((CStrList *)auStack_40,iVar5);
                   iVar6 = stricmp(pcVar9,pcVar7);
                   if (iVar6 == 0) {
-                    sprintf
+                    _sprintf
                               (acStack_2fc,"%s\tRaises \"%s\" in \"%s\"",unaff_EBP);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
                               ((CStrList *)&local_6ac.base.data_array,acStack_2fc);

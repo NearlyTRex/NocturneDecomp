@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[17]:
-;   core_dest.cpp_FUN_0046f9b0 at 0046fafb
+;   core_dest.cpp_CActorDestination_process_FUN_0046f9b0 at 0046fafb
 ;   core_door.cpp_CDoor_process_FUN_004800c0 at 004801a0
 ;   core_door.cpp_FUN_0047fcf0 at 0047fd01
 ;   core_event.cpp_FUN_004b18e0 at 004b1917

@@ -96,7 +96,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
           g_ModelPolygonData[local_1c].uv_v[2] = 255.0;
           g_ModelPolygonData[local_1c].uv_v[3] = 255.0;
           g_ModelPolygonData[local_1c].polygon_type = 2;
-          sprintf
+          _sprintf
                     (g_ModelPolygonData[local_1c].texture_name,"%s",local_70);
         }
       }

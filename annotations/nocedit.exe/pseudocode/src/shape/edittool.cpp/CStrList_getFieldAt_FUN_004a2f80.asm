@@ -12,7 +12,7 @@
 ; undefined1       Stack[-0x134]:1  local_134
 ;
 ; XREF[9]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f5cb
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f3d6
 ;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b2ce
 ;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b7ae
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563911

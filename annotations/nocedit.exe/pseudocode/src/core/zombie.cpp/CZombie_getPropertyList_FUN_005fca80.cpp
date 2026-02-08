@@ -28,7 +28,7 @@ core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80
               (property_list,"RiseFromGraveCondition",this_ptr->rise_from_grave_condition);
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
               (property_list,"Grave actor",&this_ptr->grave_actor,0,"CGrave",
-               (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+               (CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"IsMinerZombie",&this_ptr->is_miner_zombie);

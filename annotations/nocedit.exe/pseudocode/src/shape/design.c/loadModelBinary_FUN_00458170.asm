@@ -68,9 +68,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -119,8 +119,8 @@ section .text
     PUSH EAX                            ; 004581b7 | = "loadBinary: Unable to read binary fil..."
     LEA EAX,[EBP + 0xfffffeb0]          ; 004581b8
     PUSH EAX                            ; 004581be
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004581bf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004581bf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004581c4
     PUSH 0x0                            ; 004581c7
     PUSH 0x0                            ; 004581c9
@@ -552,8 +552,8 @@ section .text
     PUSH EAX                            ; 004586a1 | = "loadBinary: type %d is not known"
     LEA EAX,[EBP + 0xfffffeb0]          ; 004586a2
     PUSH EAX                            ; 004586a8
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004586a9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004586a9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004586ae
     PUSH 0x0                            ; 004586b1
     PUSH 0x0                            ; 004586b3
@@ -751,8 +751,8 @@ section .text
     PUSH EAX                            ; 00458926 | = "X size : %f"
     LEA EAX,[EBP + 0xfffffeb0]          ; 00458927
     PUSH EAX                            ; 0045892d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045892e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045892e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00458933
     PUSH 0x0                            ; 00458936
     PUSH 0x0                            ; 00458938
@@ -772,8 +772,8 @@ section .text
     PUSH EAX                            ; 00458972 | = "Y size : %f"
     LEA EAX,[EBP + 0xfffffeb0]          ; 00458973
     PUSH EAX                            ; 00458979
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045897a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045897a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0045897f
     PUSH 0xb                            ; 00458982
     PUSH 0x0                            ; 00458984
@@ -793,8 +793,8 @@ section .text
     PUSH EAX                            ; 004589be | = "Z size : %f"
     LEA EAX,[EBP + 0xfffffeb0]          ; 004589bf
     PUSH EAX                            ; 004589c5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004589c6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004589c6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004589cb
     PUSH 0x16                           ; 004589ce
     PUSH 0x0                            ; 004589d0

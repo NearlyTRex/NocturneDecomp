@@ -28,8 +28,8 @@
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -78,8 +78,8 @@ section .text
     PUSH 0x6489e3                       ; 0058138c | = "backdrop\\%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 00581391
     PUSH EAX                            ; 00581395
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00581396
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00581396
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058139b
     MOV EAX,ESP                         ; 0058139e
     PUSH EAX                            ; 005813a0

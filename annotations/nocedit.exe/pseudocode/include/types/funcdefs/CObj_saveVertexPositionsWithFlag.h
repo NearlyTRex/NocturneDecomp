@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_saveVertexPositionsWithFlag
-typedef void (*CObj_saveVertexPositionsWithFlag)(struct CObj* this_ptr, uint flag_mask);
+typedef void CObj_saveVertexPositionsWithFlag(struct CObj* this_ptr, uint flag_mask);
 

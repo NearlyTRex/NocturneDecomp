@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 19,
+        "message": "no matching function for call to 'core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0'"
+      },
+      {
         "category": "other",
         "column": 15,
         "line": 22,
@@ -46,7 +52,7 @@
     {
       "addr": "0046fe80",
       "from_addr": "0046feaa",
-      "name": "core_dest.cpp_FUN_0046fe80",
+      "name": "core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -100,13 +106,13 @@
     {
       "addr": "005badd0",
       "from_addr": "005bae00",
-      "name": "core_stone.cpp_FUN_005badd0",
+      "name": "core_stone.cpp_CTempleStone_getPropertyList_FUN_005badd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005daba0",
       "from_addr": "005dabd0",
-      "name": "core_teleport.cpp_CTeleport_FUN_005daba0",
+      "name": "core_teleport.cpp_CTeleport_getPropertyList_FUN_005daba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,7 +136,7 @@
     {
       "addr": "005e9c00",
       "from_addr": "005e9c41",
-      "name": "core_vessel.cpp_CCryptVessel_FUN_005e9c00",
+      "name": "core_vessel.cpp_CCryptVessel_getPropertyList_FUN_005e9c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -156,7 +162,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,int default_index, char *choices,CDemonActor_CActorPropertyValidatorFunc *callback)"
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback)"
   },
   "function_calls": [
     {
@@ -241,7 +247,7 @@
         "name": "data_ptr",
         "offset": 12,
         "size": 4,
-        "type": "void *"
+        "type": "CDemonActor * *"
       },
       {
         "is_param": true,
@@ -262,7 +268,7 @@
         "name": "callback",
         "offset": 24,
         "size": 4,
-        "type": "CDemonActor_CActorPropertyValidatorFunc *"
+        "type": "CActorPropertyValidatorFunc *"
       }
     ]
   },

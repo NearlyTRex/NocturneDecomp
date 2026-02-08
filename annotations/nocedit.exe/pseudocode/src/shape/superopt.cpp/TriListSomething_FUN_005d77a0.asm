@@ -66,9 +66,9 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c___arr_op_FUN_006020c2
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_design.c_optimizePolygonMesh_FUN_004658e0
 ;   shape_design.c_removeDegeneratePolygons_FUN_00465310
@@ -114,8 +114,8 @@ section .text
     PUSH 0x6547c0                       ; 005d77d4 | = "reduce\\cube%04d.txt"
     LEA EAX,[ESP + 0x70]                ; 005d77d9
     PUSH EAX                            ; 005d77dd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005d77de
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005d77de
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005d77e3
     PUSH 0x252f                         ; 005d77e6
     PUSH 0x6547d4                       ; 005d77eb | = "..\\shape\\superopt.cpp"

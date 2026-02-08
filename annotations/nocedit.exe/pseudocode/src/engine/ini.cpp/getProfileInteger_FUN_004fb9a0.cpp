@@ -15,7 +15,7 @@ engine_ini_cpp_getProfileInteger_FUN_004fb9a0
   char local_20c [256];
   char local_10c [256];
   
-  sprintf(local_10c,"%d",default_value);
+  _sprintf(local_10c,"%d",default_value);
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004fb250
                     (&g_CIniInstance,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {

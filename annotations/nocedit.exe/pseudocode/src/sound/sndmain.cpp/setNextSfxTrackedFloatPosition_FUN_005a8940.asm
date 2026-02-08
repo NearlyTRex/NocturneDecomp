@@ -12,7 +12,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050acf7
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 at 0050adad
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b21cb
-;   core_vehicle.cpp_FUN_005e8b50 at 005e8b5f
+;   core_vehicle.cpp_CVehicle_FUN_005e8b50 at 005e8b5f
 ;   sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0 at 005a95f5
 ;
 ; Referenced Globals:

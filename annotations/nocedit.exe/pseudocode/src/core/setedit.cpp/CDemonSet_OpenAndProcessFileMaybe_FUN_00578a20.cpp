@@ -62,7 +62,7 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
         engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
         return;
       }
-      core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80();
+      core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(this_ptr);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x399);
     engine_dosio_c_makePath_FUN_00481f50
@@ -73,7 +73,7 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
     remove(local_1d8);
     return;
   }
-  sprintf(local_d8,"Can't open %s",local_3d8);
+  _sprintf(local_d8,"Can't open %s",local_3d8);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_d8,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

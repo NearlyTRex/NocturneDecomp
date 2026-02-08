@@ -29,7 +29,7 @@
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
@@ -69,8 +69,8 @@ section .text
     PUSH 0x6239e5                       ; 004a37e2 | = "%s\\%s"
     LEA EAX,[ESP + 0x740]               ; 004a37e7
     PUSH EAX                            ; 004a37ee
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a37ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a37ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a37f4
     MOV EDX,dword ptr [0x00680cdc]      ; 004a37f7 | g_CDemonPodInstance | g_CDemonPodPtr
         ;   Label: LAB_004a37f7

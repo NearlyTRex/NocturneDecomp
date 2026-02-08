@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 194,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -15,7 +15,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 78
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -143,84 +143,84 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 7,
       "match": "extraout_var",
       "text": "ushort extraout_var;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_fffffff4",
       "text": "char *in_stack_fffffff4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "str = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_fffffff4",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 18,
       "match": "extraout_var",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "CONCAT22",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 19,
       "match": "&stack0xfffffff4",
       "text": "wchar_to_bytes(wVar1,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 20,
       "match": "&stack0xfffffff4",
       "text": "iVar2 = mblen(&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 21,
       "match": "&stack0xfffffff4",
       "text": "(&stack0xfffffff4)[iVar2] = 0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 22,
       "match": "&stack0xfffffff4",
       "text": "copyMbChar(str,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004;",
       "type": "stack_param"

@@ -9,7 +9,7 @@
 void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void)
 
 {
-  core_actor_cpp_FUN_0040e130();
+  core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&DAT_02f7a024);
   shape_edittool_cpp_CEdCheck_ctor_FUN_004a6a00(&g_CEdCheckInstance);
   _atexit(&g_CEdCheckDestructorNode);
   return;

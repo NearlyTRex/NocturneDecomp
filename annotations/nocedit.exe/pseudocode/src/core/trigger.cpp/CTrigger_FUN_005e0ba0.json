@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 23,
+        "message": "use of undeclared identifier 'stack0xffffffd0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 78,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "stack_ref"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "005e0690",
+      "from_addr": "005e0917",
+      "name": "core_trigger.cpp_CTrigger_archive_FUN_005e0690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e1180",
+      "from_addr": "005e11fb",
+      "name": "core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e0ba0",
+    "address_range": [
+      [
+        "005e0ba0",
+        "005e0c29"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_FUN_005e0ba0",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_FUN_005e0ba0(CTrigger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "006001b2",
+      "is_variadic": false,
+      "name": "crt_math.c_ceil_FUN_006001b2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0b78",
+      "name": "switchdataD_005e0b78",
+      "type": "void*",
+      "value": "005e0bba"
+    },
+    {
+      "addr": "006557cc",
+      "name": "DOUBLE_006557cc",
+      "type": "double",
+      "value": "10"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.093023255813954,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 118,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 25,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "LOAD": 17,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 262
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xffffffd0",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "SQRT",
+      "text": "((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar5;",
+      "type": "extra_output"
+    }
+  ]
+}

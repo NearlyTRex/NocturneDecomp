@@ -22,7 +22,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
   float fStack_18;
   float fStack_14;
   
-  if (this_ptr->unk == 0) {
+  if (this_ptr->carrier == (CDemonActor *)0x0) {
     if (this_ptr->wolf_in_trap != 0) {
       iVar2 = (**(code **)(*(int *)(this_ptr->wolf_in_trap + 0x154) + 0x120))();
       if (iVar2 == 0) {

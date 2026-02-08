@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte shape_design.c_PointToMove() */
-
 void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
 
 {

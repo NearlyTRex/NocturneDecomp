@@ -31,7 +31,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_heap.c__heapwalk_FUN_006012c0",
-    "signature": "int __cdecl crt_heap_c__heapwalk_FUN_006012c0(void *heap_state_ptr)"
+    "signature": "int __cdecl crt_heap_c__heapwalk_FUN_006012c0(_heapinfo *heap_info)"
   },
   "function_calls": [
     {
@@ -87,10 +87,10 @@
     "variables": [
       {
         "is_param": true,
-        "name": "heap_state_ptr",
+        "name": "heap_info",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "_heapinfo *"
       }
     ]
   },

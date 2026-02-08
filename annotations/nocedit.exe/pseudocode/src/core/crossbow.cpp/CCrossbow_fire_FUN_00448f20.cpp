@@ -14,6 +14,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   CVector3f *pCVar1;
   int iVar2;
   CCharacter *this_ptr_01;
+  CTrigger *this_ptr_02;
   int extraout_EAX;
   byte auStack_100 [8];
   CDemonActor *pCStack_f8;
@@ -37,7 +38,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_70,pCVar1);
-  iVar2 = core_weapon_cpp_CWeapon_FUN_005ee6e0(&this_ptr->base);
+  iVar2 = core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(&this_ptr->base);
   if (iVar2 == 0) {
     return 0;
   }
@@ -59,7 +60,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-  actor = *(CDemonActor **)&(this_ptr->base).carried_by_actor;
+  actor = (this_ptr->base).carried_by_actor;
   if (actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,actor);
   }
@@ -81,23 +82,24 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
     local_4c.attacker =
          core_actor_cpp_castToClassHash_FUN_0040c790
                    (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
-    local_4c.ammo_type =
-         (int)core_actor_cpp_castToClassHash_FUN_0040c790
-                        (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+    this_ptr_02 = (CTrigger *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+    local_4c.ammo_type = (int)this_ptr_02;
     if (this_ptr_01 == (CCharacter *)0x0) {
       if ((CGlass *)local_4c.attacker == (CGlass *)0x0) {
-        if ((CDemonActor *)local_4c.ammo_type == (CDemonActor *)0x0) {
+        if (this_ptr_02 == (CTrigger *)0x0) {
           core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
                     (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
                      (CVector3f *)&(this_ptr->base).base.orient,&g_CDemonSetPtr->collision_normal,
                      g_CDemonSetPtr->ground_type);
           break;
         }
-        core_trigger_cpp_FUN_005e0aa0();
-        iVar2 = core_trigger_cpp_FUN_005e0ac0();
+        core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_02);
+        iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_02);
         if (iVar2 != 0) {
           local_4c.wielder = (CDemonActor *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
-          core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
+          core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_02);
         }
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                   (g_CDemonSetPtr,(CDemonActor *)local_4c.ammo_type);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_game.cpp_CGame_beginFadeOut_FUN_004e0960() */
-
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
 
 {

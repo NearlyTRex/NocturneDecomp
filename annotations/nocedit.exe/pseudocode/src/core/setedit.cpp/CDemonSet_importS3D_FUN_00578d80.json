@@ -4,66 +4,118 @@
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 224,
+        "line": 220,
         "message": "use of undeclared identifier 'DAT_03654370'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 355,
+        "line": 351,
         "message": "assigning to 'int *' from incompatible type 'void *'"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 372,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 77,
+        "line": 372,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 372,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 495,
+        "line": 491,
         "message": "member reference base type 'char[4006]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 507,
+        "line": 503,
         "message": "member reference base type 'char[8]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 508,
+        "line": 504,
         "message": "member reference base type 'char[8]' is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 46,
-        "line": 646,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 46,
-        "line": 648,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Wformat]"
+        "column": 28,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 37,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 65,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 84,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 93,
+        "line": 596,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 47,
+        "line": 642,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 47,
+        "line": 644,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 1595,
-    "complexity_score": 1455,
+    "complexity_score": 1157,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
-    "pseudocode_lines": 660,
-    "suspect_count": 77,
+    "pseudocode_lines": 657,
+    "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_data",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
-    "total_lines": 2255
+    "total_lines": 2252
   },
   "cross_references": [
     {
@@ -83,7 +135,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
-    "signature": "void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)"
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)"
   },
   "function_calls": [
     {
@@ -177,6 +229,11 @@
       "name": "core_setutil.cpp_C3DSLight_importS3D_FUN_00587710"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -210,11 +267,6 @@
       "addr": "005ff9d0",
       "is_variadic": false,
       "name": "crt_stdio.c_remove_FUN_005ff9d0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe5e0",
@@ -811,10 +863,10 @@
     "pcode_op_count": 5348
   },
   "stack_frame": {
-    "frame_size": 9340,
+    "frame_size": 9344,
     "local_size": 9340,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1404,548 +1456,352 @@
         "offset": -20,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "CDemonSet *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 31,
       "match": "in_stack_00000008",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000004",
-      "text": "if (((local_68 == 0) && (in_stack_00000004->light_count < 1)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000004",
-      "text": "if (((local_6c == 0) && (in_stack_00000004->camera_count < 1)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 115,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 118,
       "match": "in_stack_00000008",
       "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_5c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 125,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 128,
       "match": "in_stack_00000008",
       "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",&local_58,&local_54,&local_50,&local_48,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 143,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 154,
+      "line": 150,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 158,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_00000008",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 166,
-      "match": "in_stack_00000008",
       "text": "local_34 = _ftell(in_stack_00000008);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 167,
-      "match": "in_stack_00000004",
-      "text": "local_28 = in_stack_00000004->geometry_filename;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 165,
       "match": "DAT_03654368",
       "text": "DAT_03654368 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 183,
       "match": "in_stack_00000008",
       "text": "_fgets(local_5a4,0x104,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 216,
+      "line": 212,
       "match": "DAT_03654368",
       "text": "if (0 < DAT_03654368) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 213,
       "match": "DAT_03654370",
       "text": "pcVar11 = &DAT_03654370;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 222,
+      "line": 218,
       "match": "DAT_03659190",
       "text": "uVar4 = (uint)(byte)(&DAT_03659190)[iVar8];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 225,
       "match": "DAT_03654368",
       "text": "} while (iVar8 < DAT_03654368);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 229,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 233,
+      "line": 229,
       "match": "DAT_03364d18",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 239,
+      "line": 235,
       "match": "DAT_03365cb8",
       "text": "if (DAT_03365cb8 == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 242,
+      "line": 238,
       "match": "DAT_03365cb8",
       "text": "DAT_03365cb8 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 248,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 248,
       "match": "DAT_03364d18",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 274,
       "match": "in_stack_00000008",
       "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,\"..\\\\core\\\\setedit.cpp\",0x516)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 285,
+      "line": 281,
       "match": "in_stack_00000008",
       "text": "_fseek(in_stack_00000008,local_34,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 295,
+      "line": 291,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 306,
+      "line": 302,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 309,
+      "line": 305,
       "match": "in_stack_00000008",
       "text": "local_3c = _ftell(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 314,
+      "line": 310,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 326,
+      "line": 322,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 333,
+      "line": 329,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 342,
-      "match": "in_stack_00000004",
-      "text": "core_set_cpp_CDemonSet_clear_FUN_005693c0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 345,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->set_scale_factor = 1.0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 361,
+      "line": 357,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 369,
+      "line": 365,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",local_38 + iVar1 * 3,piVar20,piVar5);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 384,
+      "line": 380,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 391,
+      "line": 387,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 401,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004->light_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 402,
-      "match": "in_stack_00000004",
-      "text": "dest = in_stack_00000004->lights;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 403,
-      "match": "in_stack_00000004",
-      "text": "pCVar9 = in_stack_00000004->lights + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 404,
-      "match": "in_stack_00000004",
-      "text": "pCVar7 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 423,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = in_stack_00000004->light_count + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 424,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->light_count = iVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 427,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar1 < in_stack_00000004->light_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 432,
+      "line": 428,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 437,
-      "match": "in_stack_00000004",
-      "text": "local_1c = in_stack_00000004->lights;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 440,
+      "line": 436,
       "match": "in_stack_00000008",
       "text": "core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 452,
-      "match": "in_stack_00000004",
-      "text": "if (199 < in_stack_00000004->light_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 457,
-      "match": "in_stack_00000004",
-      "text": "pCVar9 = local_1c + in_stack_00000004->light_count;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 487,
+      "line": 483,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 488,
+      "line": 484,
       "match": "._6_4_",
       "text": "*(uint *)(pCVar9->unk1 + 6) = local_2478.unk1._6_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 490,
+      "line": 486,
       "match": "(uint *)((int)",
       "text": "puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 488,
       "match": "(uint *)((int)",
       "text": "*puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 500,
+      "line": 496,
       "match": "._0_4_",
       "text": "*(uint *)pCVar9->unk2 = local_2478.unk2._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 501,
+      "line": 497,
       "match": "._4_4_",
       "text": "*(uint *)(pCVar9->unk2 + 4) = local_2478.unk2._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 544,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 544,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 552,
+      "line": 548,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 559,
+      "line": 555,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 571,
+      "line": 567,
       "match": "in_stack_00000008",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 576,
-      "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004->cameras;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 578,
+      "line": 574,
       "match": "in_stack_00000008",
       "text": "core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 583,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->camera_count = local_40;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 588,
+      "line": 584,
       "match": "in_stack_00000008",
       "text": "_fseek(in_stack_00000008,local_3c,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 592,
+      "line": 588,
       "match": "in_stack_00000008",
       "text": "iVar2 = _fscanf(in_stack_00000008,\"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\\n\",&local_18,&local_88,",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 603,
+      "line": 599,
       "match": "DAT_03364d18",
       "text": "triangle_flags = (uchar)(&DAT_03364d18)[local_18];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 621,
-      "match": "in_stack_00000004",
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000004->geometry_filename);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 623,
-      "match": "in_stack_00000004",
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000004->geometry_filename);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 626,
-      "match": "in_stack_00000004",
-      "text": "core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 631,
-      "match": "in_stack_00000004",
-      "text": "core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 635,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004->camera_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 636,
-      "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004->cameras;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 637,
-      "match": "in_stack_00000004",
-      "text": "pCVar7 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 652,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar1 < in_stack_00000004->camera_count);",
-      "type": "stack_param"
     }
   ]
 }

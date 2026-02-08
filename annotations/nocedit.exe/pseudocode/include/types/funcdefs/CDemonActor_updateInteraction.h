@@ -9,5 +9,5 @@ struct COrientation;
 struct SInteractionState;
 
 // Function Definition: CDemonActor_updateInteraction
-typedef int (*CDemonActor_updateInteraction)(struct CDemonActor* this_ptr, struct COrientation* user_orientation, struct SInteractionState* interaction_state);
+typedef int CDemonActor_updateInteraction(struct CDemonActor* this_ptr, struct COrientation* user_orientation, struct SInteractionState* interaction_state);
 

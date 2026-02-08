@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   drop_position
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005c6850 at 005c686d
+;   core_stranger.cpp_CStranger_drop_FUN_005c6850 at 005c686d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0061715e

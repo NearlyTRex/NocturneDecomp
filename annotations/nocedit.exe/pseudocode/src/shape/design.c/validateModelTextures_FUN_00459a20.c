@@ -128,18 +128,18 @@ LAB_00459b94:
           }
           if (local_28 == 0) {
             if (local_30 == 0xffffffff) {
-              sprintf
+              _sprintf
                         (local_14c,"  %-12s  (texture not found)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
             else {
-              sprintf
+              _sprintf
                         (local_14c,"  %-12s  (invalid texture size)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
           }
           else {
-            sprintf(local_14c,"  NO TEXTURE    (object not mapped)");
+            _sprintf(local_14c,"  NO TEXTURE    (object not mapped)");
             engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
           }
         }

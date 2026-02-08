@@ -63,10 +63,10 @@ core_sound_cpp_playSfxInternal_FUN_005b1fd0
           g_CurrentLineNumber = 0x137;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
         }
-        iVar2 = sprintf(pcVar7,"?");
+        iVar2 = _sprintf(pcVar7,"?");
         pcVar6 = pcVar7 + iVar2;
         if (9 < local_2c) {
-          iVar2 = sprintf(pcVar6,"?");
+          iVar2 = _sprintf(pcVar6,"?");
           pcVar6 = pcVar6 + iVar2;
         }
         local_38 = local_38 + local_34;
@@ -199,7 +199,7 @@ LAB_005b20b2:
           _fprintf(file,"----------------------------------------------------------------\n");
           time(&local_28);
           _fprintf(file,"Missing: %s\n");
-          timeptr = localtime(&local_28);
+          timeptr = _localtime(&local_28);
           asctime(timeptr);
           _fprintf(file,"Time: %s");
           pcVar7 = getenv("USERNAME");

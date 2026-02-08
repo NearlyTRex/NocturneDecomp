@@ -118,7 +118,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
   uVar8 = 0;
-  sprintf
+  _sprintf
             (acStack_15c,"%2d:%2d:%2d.%2d\n\n",iStack_38,uStack_40,local_28,iVar3);
   do {
     uVar7 = 0xffffffff;
@@ -198,7 +198,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     pcVar10[1] = cVar2;
     pcVar10 = pcVar10 + 2;
   } while (cVar2 != '\0');
-  sprintf(acStack_15c,"%d\n\n",this_ptr->game_state_flags);
+  _sprintf(acStack_15c,"%d\n\n",this_ptr->game_state_flags);
   pcVar4 = acStack_15c;
   iVar3 = -1;
   pcVar5 = &stack0xfffffaa4;

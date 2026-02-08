@@ -41,7 +41,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   (pCVar3->base).unk2[0xe] = '\0';
   (pCVar3->base).unk2[0xf] = '\0';
   pcVar6 = ADJ(this_ptr_00)->allowed_victim_types;
-  ADJ(this_ptr_00)->unk3 = 0;
+  ADJ(this_ptr_00)->guard_zone_box_trigger = (CDemonActor *)0x0;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

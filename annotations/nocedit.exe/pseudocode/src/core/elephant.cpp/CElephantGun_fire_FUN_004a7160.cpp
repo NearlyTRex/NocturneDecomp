@@ -9,14 +9,15 @@
 int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_ptr)
 
 {
+  CDemonActor *actor;
   CVector3f *pCVar1;
   int iVar2;
   CCharacter *this_ptr_00;
-  CDemonActor *pCVar3;
-  float fVar4;
+  CTrigger *this_ptr_01;
+  float fVar3;
   int extraout_EAX;
+  float10 fVar4;
   float10 fVar5;
-  float10 fVar6;
   byte auStack_128 [8];
   float fStack_120;
   CVector3f CStack_11c;
@@ -45,7 +46,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   int iStack_40;
   float fStack_3c;
   float fStack_38;
-  CDemonActor *pCStack_34;
+  CTrigger *pCStack_34;
   CCrate *pCStack_30;
   CFlameCan *pCStack_2c;
   float fStack_28;
@@ -56,15 +57,15 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_80,pCVar1);
-  iVar2 = core_weapon_cpp_CWeapon_FUN_005ee6e0(&this_ptr->base);
+  iVar2 = core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(&this_ptr->base);
   if (iVar2 == 0) {
     core_sound_cpp_CSound_playActorSound_FUN_005b3a40
               (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_80);
     return 0;
   }
-  fVar5 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *
+  fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *
                          (float10)0.0055555555555555497);
-  fStack_44 = (float)(fVar5 * (float10)(this_ptr->base).bolt_velocity);
+  fStack_44 = (float)(fVar4 * (float10)(this_ptr->base).bolt_velocity);
   fStack_38 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
   iStack_40 = 0;
   if (0 < (int)fStack_38) {
@@ -72,10 +73,10 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
       fStack_48 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
       fStack_18 = fStack_48;
       fStack_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,fStack_44);
-      fVar5 = (float10)fcos((float10)fStack_48);
-      fVar6 = (float10)fsin((float10)fStack_48);
-      CStack_bc.x = (float)(fVar5 * (float10)fStack_18);
-      CStack_bc.y = (float)(fVar6 * (float10)fStack_18);
+      fVar4 = (float10)fcos((float10)fStack_48);
+      fVar5 = (float10)fsin((float10)fStack_48);
+      CStack_bc.x = (float)(fVar4 * (float10)fStack_18);
+      CStack_bc.y = (float)(fVar5 * (float10)fStack_18);
       CStack_bc.z = (this_ptr->base).bolt_velocity;
       pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          ((CDemonActor *)this_ptr,&CStack_b0,&CStack_bc);
@@ -97,9 +98,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-      pCVar3 = *(CDemonActor **)&(this_ptr->base).carried_by_actor;
-      if (pCVar3 != (CDemonActor *)0x0) {
-        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar3);
+      actor = (this_ptr->base).carried_by_actor;
+      if (actor != (CDemonActor *)0x0) {
+        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,actor);
       }
       iStack_24 = 0;
       do {
@@ -119,21 +120,22 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
         pCStack_20 = (CGlass *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
-        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
-        pCStack_34 = pCVar3;
+        this_ptr_01 = (CTrigger *)
+                      core_actor_cpp_castToClassHash_FUN_0040c790
+                                (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+        pCStack_34 = this_ptr_01;
         pCStack_30 = (CCrate *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CCrateClassInfo.name_hash);
         pCStack_2c = (CFlameCan *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
-        fVar4 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
+        fVar3 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
         fStack_18 = fStack_38;
-        fStack_28 = ((1.0 - fStack_120) * fVar4) / (float)(int)fStack_38;
+        fStack_28 = ((1.0 - fStack_120) * fVar3) / (float)(int)fStack_38;
         if (this_ptr_00 == (CCharacter *)0x0) {
           if (pCStack_20 == (CGlass *)0x0) {
-            if (pCVar3 == (CDemonActor *)0x0) {
+            if (this_ptr_01 == (CTrigger *)0x0) {
               if (pCStack_30 == (CCrate *)0x0) {
                 if (pCStack_2c == (CFlameCan *)0x0) {
                   core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
@@ -146,12 +148,12 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
               }
             }
             else {
-              core_trigger_cpp_FUN_005e0aa0();
-              iVar2 = core_trigger_cpp_FUN_005e0ac0();
+              core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_01);
+              iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_01);
               if (iVar2 != 0) {
-                core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
+                core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_01);
               }
-              core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCStack_34);
+              core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCStack_34->base);
             }
           }
           else {

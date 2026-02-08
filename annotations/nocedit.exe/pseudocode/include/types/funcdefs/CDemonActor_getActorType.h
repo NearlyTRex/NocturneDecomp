@@ -8,5 +8,5 @@ struct CDemonActor;
 struct CDemonActorType;
 
 // Function Definition: CDemonActor_getActorType
-typedef struct CDemonActorType* (*CDemonActor_getActorType)(struct CDemonActor* this_ptr);
+typedef struct CDemonActorType* CDemonActor_getActorType(struct CDemonActor* this_ptr);
 

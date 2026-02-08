@@ -26,7 +26,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
   if ((int)extension <= (int)base_path) {
     iVar1 = 0;
     do {
-      sprintf(local_74,filename_format,extension);
+      _sprintf(local_74,filename_format,extension);
       extension = extension + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
                 ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,start_index,

@@ -41,11 +41,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
     engine_2d_c_drawText_FUN_00401fd0("A.  Fog editor",0,0x79);
     engine_2d_c_drawText_FUN_00401fd0("C.  Rebuild thumbs",0,0x8f);
     pcVar2 = core_ground_cpp_getGroundTypeName_FUN_004eed80(this_ptr->default_ground_type);
-    sprintf(local_68,"D.  Default ground type: %s",pcVar2);
+    _sprintf(local_68,"D.  Default ground type: %s",pcVar2);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0x9a);
     engine_2d_c_drawText_FUN_00401fd0("F.  Export lights/cameras to .LC file",0,0xb0);
     engine_2d_c_drawText_FUN_00401fd0("G.  Virtual director box editor",0,0xbb);
-    sprintf
+    _sprintf
               (local_68,"H.  Weather: %s",(&PTR_s_None_006817f0)[this_ptr->weather_type]);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0xc6);
     engine_2d_c_drawText_FUN_00401fd0("I.  Edit ground types",0,0xd1);

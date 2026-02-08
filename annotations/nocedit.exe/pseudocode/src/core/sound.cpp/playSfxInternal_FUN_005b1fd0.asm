@@ -68,12 +68,12 @@
 ;   core_set.cpp_CDemonSet_FUN_0056fac0
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 ;   crt_env.c_getenv_FUN_006013f0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_stdlib.c__atexit_FUN_005ff060
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_asctime_FUN_00601768
-;   crt_time.c_localtime_FUN_00600288
 ;   crt_time.c_time_FUN_006001f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
@@ -374,8 +374,8 @@ section .text
     PUSH 0x65258d                       ; 005b22bb | = "?"
         ;   Label: LAB_005b22bb
     PUSH ESI                            ; 005b22c0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b22c1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b22c1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005b22c6
     ADD ESI,EAX                         ; 005b22c9
     CMP dword ptr [ESP + 0x154],0x9     ; 005b22cb
@@ -383,8 +383,8 @@ section .text
         ;   XREF to: 005b22e5 (CONDITIONAL_JUMP)  ; LAB_005b22e5
     PUSH 0x65258f                       ; 005b22d5 | = "?"
     PUSH ESI                            ; 005b22da
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b22db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b22db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005b22e0
     ADD ESI,EAX                         ; 005b22e3
     MOV EAX,dword ptr [ESP + 0x14c]     ; 005b22e5
@@ -576,8 +576,8 @@ section .text
     ADD ESP,0xc                         ; 005b24de
     LEA EAX,[ESP + 0x158]               ; 005b24e1
     PUSH EAX                            ; 005b24e8
-    CALL crt_time.c_localtime_FUN_00600288 ; 005b24e9
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 005b24e9
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 005b24ee
     PUSH EAX                            ; 005b24f1
     CALL crt_time.c_asctime_FUN_00601768 ; 005b24f2

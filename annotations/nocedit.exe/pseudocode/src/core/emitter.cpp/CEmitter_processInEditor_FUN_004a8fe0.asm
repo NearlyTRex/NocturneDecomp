@@ -10,14 +10,14 @@
 ;   double DOUBLE_006242ca = 4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   int INT_02cf2b5c
-;   CVector3f CVector3f_02cf2b60
-;   undefined4 CVector3f_02cf2b60.y
-;   undefined4 CVector3f_02cf2b60.z
+;   int g_SlewTargetMode
+;   CVector3f g_EmitterTarget
+;   undefined4 g_EmitterTarget.y
+;   undefined4 g_EmitterTarget.z
 ;   undefined4 DAT_02cf2b6c
 ;   undefined4 DAT_02cf2b70
 ;   undefined4 DAT_02cf2b74
-;   undefined4 DAT_02cf2b78
+;   CEmitter* PTR_02cf2b78
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeysInstance
 ;
@@ -41,12 +41,12 @@ section .text
     CMP dword ptr [EBX + 0x158],0x3     ; 004a8feb
     JNZ 0x004a9150                      ; 004a8ff2
         ;   XREF to: 004a9150 (CONDITIONAL_JUMP)  ; LAB_004a9150
-    CMP dword ptr [0x02cf2b5c],0x0      ; 004a8ff8 | INT_02cf2b5c
+    CMP dword ptr [0x02cf2b5c],0x0      ; 004a8ff8 | g_SlewTargetMode
     JNZ 0x004a9009                      ; 004a8fff
         ;   XREF to: 004a9009 (CONDITIONAL_JUMP)  ; LAB_004a9009
     XOR EDI,EDI                         ; 004a9001
         ;   Label: LAB_004a9001
-    MOV dword ptr [0x02cf2b78],EDI      ; 004a9003 | DAT_02cf2b78
+    MOV dword ptr [0x02cf2b78],EDI      ; 004a9003 | PTR_02cf2b78
     PUSH 0x1d                           ; 004a9009
         ;   Label: LAB_004a9009
     MOV EAX,[0x0067cf44]                ; 004a900b | g_CKeysPtr
@@ -170,7 +170,7 @@ section .text
     RET                                 ; 004a914f
     XOR ESI,ESI                         ; 004a9150
         ;   Label: LAB_004a9150
-    MOV dword ptr [0x02cf2b5c],ESI      ; 004a9152 | INT_02cf2b5c
+    MOV dword ptr [0x02cf2b5c],ESI      ; 004a9152 | g_SlewTargetMode
     JMP 0x004a9001                      ; 004a9158
         ;   XREF to: 004a9001 (UNCONDITIONAL_JUMP)  ; LAB_004a9001
     MOV EAX,dword ptr [ESP + 0x48]      ; 004a915d
@@ -182,11 +182,11 @@ section .text
     POP ESI                             ; 004a916c
     POP EBX                             ; 004a916d
     RET                                 ; 004a916e
-    CMP dword ptr [0x02cf2b5c],0x0      ; 004a916f | INT_02cf2b5c
+    CMP dword ptr [0x02cf2b5c],0x0      ; 004a916f | g_SlewTargetMode
         ;   Label: LAB_004a916f
     JZ 0x004a933f                       ; 004a9176
         ;   XREF to: 004a933f (CONDITIONAL_JUMP)  ; LAB_004a933f
-    CMP EBX,dword ptr [0x02cf2b78]      ; 004a917c | DAT_02cf2b78
+    CMP EBX,dword ptr [0x02cf2b78]      ; 004a917c | PTR_02cf2b78
     JNZ 0x004a92c5                      ; 004a9182
         ;   XREF to: 004a92c5 (CONDITIONAL_JUMP)  ; LAB_004a92c5
     LEA ECX,[EBX + 0x20]                ; 004a9188
@@ -208,11 +208,11 @@ section .text
     LEA EAX,[EDX + 0x8]                 ; 004a91b5
     MOV EAX,dword ptr [EAX]             ; 004a91b8
     MOV dword ptr [ESP + 0x44],EAX      ; 004a91ba
-    MOV EAX,[0x02cf2b60]                ; 004a91be | CVector3f_02cf2b60
+    MOV EAX,[0x02cf2b60]                ; 004a91be | g_EmitterTarget
     MOV dword ptr [ECX],EAX             ; 004a91c3
-    MOV EAX,[0x02cf2b64]                ; 004a91c5 | CVector3f_02cf2b60.y
+    MOV EAX,[0x02cf2b64]                ; 004a91c5 | g_EmitterTarget.y
     MOV dword ptr [ECX + 0x4],EAX       ; 004a91ca
-    MOV EAX,[0x02cf2b68]                ; 004a91cd | CVector3f_02cf2b60.z
+    MOV EAX,[0x02cf2b68]                ; 004a91cd | g_EmitterTarget.z
     MOV dword ptr [ECX + 0x8],EAX       ; 004a91d2
     CMP EDX,0x2cf2b6c                   ; 004a91d5 | DAT_02cf2b6c
     JZ 0x004a91f4                       ; 004a91db
@@ -233,15 +233,15 @@ section .text
         ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     LEA EAX,[EBX + 0x20]                ; 004a9203
     ADD ESP,0x4                         ; 004a9206
-    CMP EAX,0x2cf2b60                   ; 004a9209 | CVector3f_02cf2b60
+    CMP EAX,0x2cf2b60                   ; 004a9209 | g_EmitterTarget
     JZ 0x004a922a                       ; 004a920e
         ;   XREF to: 004a922a (CONDITIONAL_JUMP)  ; LAB_004a922a
     FLD float ptr [EAX]                 ; 004a9210
     FLD float ptr [EAX + 0x8]           ; 004a9212
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a9215
-    MOV dword ptr [0x02cf2b64],EDX      ; 004a9218 | CVector3f_02cf2b60.y
-    FSTP float ptr [0x02cf2b68]         ; 004a921e | CVector3f_02cf2b60.z
-    FSTP float ptr [0x02cf2b60]         ; 004a9224 | CVector3f_02cf2b60
+    MOV dword ptr [0x02cf2b64],EDX      ; 004a9218 | g_EmitterTarget.y
+    FSTP float ptr [0x02cf2b68]         ; 004a921e | g_EmitterTarget.z
+    FSTP float ptr [0x02cf2b60]         ; 004a9224 | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a922a
         ;   Label: LAB_004a922a
     CMP EAX,0x2cf2b6c                   ; 004a922d | DAT_02cf2b6c
@@ -261,9 +261,9 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 004a925b
     MOV EAX,dword ptr [ESP + 0x14]      ; 004a925e
     MOV dword ptr [EDX + 0x8],EAX       ; 004a9262
-    FLD float ptr [0x02cf2b60]          ; 004a9265 | CVector3f_02cf2b60
-    FLD float ptr [0x02cf2b64]          ; 004a926b | CVector3f_02cf2b60.y
-    FLD float ptr [0x02cf2b68]          ; 004a9271 | CVector3f_02cf2b60.z
+    FLD float ptr [0x02cf2b60]          ; 004a9265 | g_EmitterTarget
+    FLD float ptr [0x02cf2b64]          ; 004a926b | g_EmitterTarget.y
+    FLD float ptr [0x02cf2b68]          ; 004a9271 | g_EmitterTarget.z
     MOV EAX,ESP                         ; 004a9277
     FXCH ST2                            ; 004a9279
     FSUB float ptr [EDX]                ; 004a927b
@@ -306,7 +306,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 004a92cf
     XOR EDX,EDX                         ; 004a92d3
     PUSH EAX                            ; 004a92d5
-    MOV dword ptr [0x02cf2b78],EBX      ; 004a92d6 | DAT_02cf2b78
+    MOV dword ptr [0x02cf2b78],EBX      ; 004a92d6 | PTR_02cf2b78
     MOV dword ptr [ESP + 0x20],EDX      ; 004a92dc
     PUSH EBX                            ; 004a92e0
     MOV dword ptr [ESP + 0x28],EDX      ; 004a92e1
@@ -314,15 +314,15 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004a92e9
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004a92ee
-    CMP EAX,0x2cf2b60                   ; 004a92f1 | CVector3f_02cf2b60
+    CMP EAX,0x2cf2b60                   ; 004a92f1 | g_EmitterTarget
     JZ 0x004a9312                       ; 004a92f6
         ;   XREF to: 004a9312 (CONDITIONAL_JUMP)  ; LAB_004a9312
     FLD float ptr [EAX]                 ; 004a92f8
     FLD float ptr [EAX + 0x8]           ; 004a92fa
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a92fd
-    MOV dword ptr [0x02cf2b64],EDX      ; 004a9300 | CVector3f_02cf2b60.y
-    FSTP float ptr [0x02cf2b68]         ; 004a9306 | CVector3f_02cf2b60.z
-    FSTP float ptr [0x02cf2b60]         ; 004a930c | CVector3f_02cf2b60
+    MOV dword ptr [0x02cf2b64],EDX      ; 004a9300 | g_EmitterTarget.y
+    FSTP float ptr [0x02cf2b68]         ; 004a9306 | g_EmitterTarget.z
+    FSTP float ptr [0x02cf2b60]         ; 004a930c | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a9312
         ;   Label: LAB_004a9312
     CMP EAX,0x2cf2b6c                   ; 004a9315 | DAT_02cf2b6c

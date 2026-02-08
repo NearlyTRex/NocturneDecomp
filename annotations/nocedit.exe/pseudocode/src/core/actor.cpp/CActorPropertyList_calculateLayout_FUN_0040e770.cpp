@@ -11,9 +11,8 @@ core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770
           (CActorPropertyList *this_ptr,int x,int y,int width)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
   int iVar1;
+  CActorProperty *this_ptr_00;
   int iVar2;
   int iVar3;
   int local_14;
@@ -22,16 +21,19 @@ core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770
   iVar3 = 0;
   local_14 = 0;
   if (0 < this_ptr->count) {
+    this_ptr_00 = this_ptr->properties;
     do {
-      core_actor_cpp_FUN_0040ee30();
-      if (iVar2 < extraout_EAX) {
-        iVar2 = extraout_EAX;
+      iVar1 = core_actor_cpp_CActorProperty_getNameWidth_FUN_0040ee30(this_ptr_00);
+      if (iVar2 < iVar1) {
+        iVar2 = iVar1;
       }
-      core_actor_cpp_FUN_0040ee50();
-      if (local_14 < extraout_EAX_00) {
-        local_14 = extraout_EAX_00;
+      iVar1 = core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50
+                        (this_ptr_00,(int)this_ptr->owner);
+      if (local_14 < iVar1) {
+        local_14 = iVar1;
       }
       iVar3 = iVar3 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
     } while (iVar3 < this_ptr->count);
   }
   iVar3 = engine_2d_c_getStringWidth_FUN_004018a0(": ");

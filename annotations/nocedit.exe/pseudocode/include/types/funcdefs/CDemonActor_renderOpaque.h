@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_renderOpaque
-typedef int (*CDemonActor_renderOpaque)(struct CDemonActor* this_ptr);
+typedef int CDemonActor_renderOpaque(struct CDemonActor* this_ptr);
 

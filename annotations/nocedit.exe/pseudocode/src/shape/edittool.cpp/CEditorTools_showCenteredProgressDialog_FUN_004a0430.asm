@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; XREF[25]:
-;   core_course.cpp_OpeningCourseFile2_FUN_00442d70 at 00442e2c
-;   core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0 at 00442cba
+;   core_course.cpp_CCourse_FUN_00442bc0 at 00442cba
+;   core_course.cpp_CCourse_FUN_00442d70 at 00442e2c
 ;   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 at 0047b261
 ;   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 at 0047ae80
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450 at 00494467

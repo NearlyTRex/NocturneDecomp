@@ -30,8 +30,8 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
+;   crt_stdio.c__vsprintf_FUN_005fdba8 at 005fdbbd
 ;   crt_stdio.c_vfprintf_FUN_00604850 at 006048e0
-;   crt_stdio.c_vsprintf_FUN_005fdba8 at 005fdbbd
 ;
 ; Called Functions:
 ;   crt_stdio.c_ConvertFormatSpec_FUN_00603238

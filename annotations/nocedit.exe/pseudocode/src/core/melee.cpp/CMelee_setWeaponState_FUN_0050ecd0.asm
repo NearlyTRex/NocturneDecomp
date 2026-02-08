@@ -7,7 +7,7 @@
 ; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_weapon.cpp_CWeapon_FUN_005ee640
+;   core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH EDX                            ; 0050ecd8
     PUSH EAX                            ; 0050ecd9
     MOV dword ptr [EAX + 0x590],0x0     ; 0050ecda
-    CALL core_weapon.cpp_CWeapon_FUN_005ee640 ; 0050ece4
-        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_FUN_005ee640(CWeapon * this_ptr)
+    CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640 ; 0050ece4
+        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon * this_ptr)
     ADD ESP,0x8                         ; 0050ece9
     RET                                 ; 0050ecec
 

@@ -36,7 +36,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_dest.cpp_FUN_0046fd50
+;   core_dest.cpp_CActorDestination_FUN_0046fd50
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x334]     ; 004f3648
     PUSH EAX                            ; 004f364e
     PUSH EBX                            ; 004f364f
-    CALL core_dest.cpp_FUN_0046fd50     ; 004f3650
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_FUN_0046fd50()
+    CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 004f3650
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
     ADD ESP,0x8                         ; 004f3655
     TEST EAX,EAX                        ; 004f3658
     JZ 0x004f3619                       ; 004f365a

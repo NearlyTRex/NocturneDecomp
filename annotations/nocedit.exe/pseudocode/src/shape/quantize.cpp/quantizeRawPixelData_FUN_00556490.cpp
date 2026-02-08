@@ -36,8 +36,8 @@ shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
     local_14 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(pCVar1);
   }
   if (local_14 == (CBitmap *)0x0) {
-    sprintf(&stack0xffffff24,"Unable to allocate %d-bit bitmap for color quantization",bit_depth)
-    ;
+    _sprintf
+              (&stack0xffffff24,"Unable to allocate %d-bit bitmap for color quantization",bit_depth);
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x3f0;
     core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);
@@ -68,7 +68,7 @@ LAB_00556829:
       }
     }
   }
-  sprintf(&stack0xffffff24,"Invalid bit depth [%d] for bitmap",bit_depth);
+  _sprintf(&stack0xffffff24,"Invalid bit depth [%d] for bitmap",bit_depth);
   g_CurrentLineNumber = 0x40a;
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);
@@ -86,7 +86,7 @@ LAB_00556524:
     puVar4 = puVar4 + (uint)bVar9 * -2 + 1;
   }
   if (show_progress != 0) {
-    sprintf(&stack0xffffff24,"%d-bit color                                                                  ",bit_depth);
+    _sprintf(&stack0xffffff24,"%d-bit color                                                                  ",bit_depth);
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,line_number * 0xb);
   }
   pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
@@ -110,7 +110,7 @@ LAB_00556524:
   iVar7 = 0;
   if (extraout_EAX != 0) {
     if (show_progress != 0) {
-      sprintf
+      _sprintf
                 (&stack0xffffff24,"%d-color palette created                                                       ",pCVar3->num_colors);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,(line_number + 2) * 0xb);
       engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(line_number + 4) * 0xb);

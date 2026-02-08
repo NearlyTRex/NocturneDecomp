@@ -19,41 +19,41 @@ CDemonActorType * __cdecl CSentinel::getActorType(CSentinel *this_ptr);
 // Address: 00567db0
 CSentinel * __cdecl CSentinel::ctor(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_FUN_00567e20
+// Original: core_sentinel.cpp_CSentinel_setup_FUN_00567e20
 // Address: 00567e20
-void __cdecl FUN_00567e20(void);
+void __cdecl CSentinel::setup(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_FUN_00568030
+// Original: core_sentinel.cpp_CSentinel_process_FUN_00568030
 // Address: 00568030
-void __cdecl FUN_00568030(void);
+void __cdecl CSentinel::process(CSentinel *this_ptr,float delta_time);
 
-// Original: core_sentinel.cpp_FUN_00568b70
+// Original: core_sentinel.cpp_CSentinel_FUN_00568b70
 // Address: 00568b70
-int __cdecl FUN_00568b70(void);
+int __cdecl CSentinel(CSentinel *this_ptr);
 
 // Original: core_sentinel.cpp_CSentinel_archive_FUN_00568c70
 // Address: 00568c70
 void __cdecl CSentinel::archive(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
+// Original: core_sentinel.cpp_CSentinel_processDamage_FUN_00568cd0
 // Address: 00568cd0
-void __cdecl SentinelBehavior(void);
+void __cdecl CSentinel::processDamage(CSentinel *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_sentinel.cpp_FUN_00568dd0
+// Original: core_sentinel.cpp_CSentinel_getTargetPoints_FUN_00568dd0
 // Address: 00568dd0
-int __cdecl FUN_00568dd0(void);
+int __cdecl CSentinel::getTargetPoints(CSentinel *this_ptr,CVector3f *out_points_array);
 
-// Original: core_sentinel.cpp_FUN_00568ef0
+// Original: core_sentinel.cpp_CSentinel_hasCollision_FUN_00568ef0
 // Address: 00568ef0
-void __cdecl FUN_00568ef0(void);
+void __cdecl CSentinel::hasCollision(CSentinel *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_sentinel.cpp_CSentinel_getPropertyList_FUN_00568f10
 // Address: 00568f10
 void __cdecl CSentinel::getPropertyList(CSentinel *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_sentinel.cpp_FUN_00568f50
+// Original: core_sentinel.cpp_CSentinel_addFilesToExtract_FUN_00568f50
 // Address: 00568f50
-void __cdecl FUN_00568f50(void);
+void __cdecl CSentinel::addFilesToExtract(CSentinel *this_ptr,_FILE *file_handle);
 
 // Original: core_sentinel.cpp_CSentinel_dtor_FUN_00568f80
 // Address: 00568f80

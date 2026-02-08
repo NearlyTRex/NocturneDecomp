@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: CDemonActor_FactoryFunc
-typedef void* (*CDemonActor_FactoryFunc)(void);
+typedef void* CDemonActor_FactoryFunc(void);
 

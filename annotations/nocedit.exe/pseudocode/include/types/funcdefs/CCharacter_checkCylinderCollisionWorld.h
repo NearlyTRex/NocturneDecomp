@@ -9,5 +9,5 @@ struct CVector3f;
 struct SDamageInfo;
 
 // Function Definition: CCharacter_checkCylinderCollisionWorld
-typedef int (*CCharacter_checkCylinderCollisionWorld)(struct CCharacter* this_ptr, struct CVector3f* world_point, float tolerance, struct SDamageInfo* damage_info);
+typedef int CCharacter_checkCylinderCollisionWorld(struct CCharacter* this_ptr, struct CVector3f* world_point, float tolerance, struct SDamageInfo* damage_info);
 

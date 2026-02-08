@@ -73,7 +73,7 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
       }
     } while (local_14 <= iVar5);
   }
-  time_ptr = localtime((time_t *)&stack0x00000014);
+  time_ptr = _localtime((time_t *)&stack0x00000014);
   strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
   pcVar7 = g_FilePathBuffer;
   pcVar6 = local_704;
@@ -98,7 +98,7 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
     } while (cVar1 != '\0');
     memmove(&local_3fc,local_3fb,~uVar4 - 1);
   }
-  sprintf
+  _sprintf
             (local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
   strupr(local_fc);
   (*this_ptr->vtable->insert)(this_ptr,local_14,local_fc);

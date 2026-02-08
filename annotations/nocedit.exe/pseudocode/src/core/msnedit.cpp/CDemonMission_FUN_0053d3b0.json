@@ -50,6 +50,24 @@
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
+        "category": "format_error",
+        "column": 62,
+        "line": 78,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 69,
+        "line": 78,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 79,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
         "category": "other",
         "column": 11,
         "line": 88,
@@ -74,99 +92,32 @@
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
-        "category": "other",
-        "column": 11,
-        "line": 102,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "category": "format_error",
+        "column": 43,
+        "line": 93,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 103,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "column": 49,
+        "line": 93,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 95,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 11,
-        "line": 104,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 104,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "column": 51,
+        "line": 95,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 62,
-        "line": 78,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 69,
-        "line": 78,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 79,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 42,
-        "line": 93,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 93,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 95,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 95,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 46,
-        "line": 107,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 107,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 109,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 109,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 364,
@@ -218,7 +169,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",

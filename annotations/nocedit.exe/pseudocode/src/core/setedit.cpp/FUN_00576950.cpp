@@ -35,6 +35,6 @@ void __cdecl core_setedit_cpp_FUN_00576950(void)
     } while (0 < iVar5);
   }
   iVar3 = atoi(in_stack_00000004 + iVar5 + 1);
-  sprintf(in_stack_00000004 + iVar5 + 1,"%d",iVar3 + 1);
+  _sprintf(in_stack_00000004 + iVar5 + 1,"%d",iVar3 + 1);
   return;
 }

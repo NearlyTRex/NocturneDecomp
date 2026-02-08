@@ -2,21 +2,14 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 18,
-        "message": "no matching function for call to 'DirectSoundEnumerateA'"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
         "category": "format_error",
         "column": 59,
         "line": 30,
-        "message": "format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 56,
@@ -64,7 +57,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     }
   ],
   "globals": [

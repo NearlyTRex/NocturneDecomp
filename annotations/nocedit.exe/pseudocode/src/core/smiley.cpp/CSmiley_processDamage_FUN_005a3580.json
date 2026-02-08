@@ -1,0 +1,153 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 8,
+        "line": 43,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 43,
+        "message": "called object type 'void' is not a function or function pointer"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 154
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3580",
+    "address_range": [
+      [
+        "005a3580",
+        "005a3685"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_smiley.cpp_CSmiley_processDamage_FUN_005a3580",
+    "signature": "void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9f10",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005a32a0",
+      "is_variadic": false,
+      "name": "core_smiley.cpp_CSmiley_FUN_005a32a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064f37a",
+      "name": "s_smiley_die_wav_0064f37a",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2988505747126435,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 131,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 38,
+      "INT_AND": 38,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 14,
+      "INT_SUB": 35,
+      "INT_ZEXT": 8,
+      "LOAD": 23,
+      "POPCOUNT": 14,
+      "RETURN": 3,
+      "STORE": 35
+    },
+    "pcode_op_count": 461
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmiley *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSmiley",
+        "offset": 284,
+        "vtable_addr": "00662f84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

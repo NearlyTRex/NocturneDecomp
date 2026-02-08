@@ -100,7 +100,7 @@ LAB_0057d6df:
     g_CurrentLineNumber = 0xc3b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find .GEO");
   }
-  sprintf(pcVar11,".KFM");
+  _sprintf(pcVar11,".KFM");
   local_28 = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060(PTR_DAT_00681ab8);
   pvVar3 = PTR_DAT_00681ab8;
@@ -120,7 +120,7 @@ LAB_0057d6df:
   *(float *)((int)PTR_DAT_00681ab8 + 0x18) =
        in_stack_00000004->cameras[in_stack_00000008].projection_scale;
   pvStack_20 = (void *)0x0;
-  sprintf
+  _sprintf
             (acStack_ec,"%s.raw",in_stack_00000004->cameras + in_stack_00000008);
   p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
   p_Stack_1c = p_Var4;
@@ -131,7 +131,7 @@ LAB_0057d6df:
       _fread(pvStack_20,0x280,0x1e0,p_Var4);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_1c,"..\\core\\setedit.cpp",0xc68);
-    sprintf
+    _sprintf
               (acStack_ec,"%s.act",in_stack_00000004->cameras + in_stack_00000008);
     p_Stack_1c = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
     if (p_Stack_1c != (_FILE *)0x0) {
@@ -304,11 +304,11 @@ LAB_0057db4e:
         shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
       }
       engine_2d_c_drawText_FUN_00401fd0("Move camera with slew keys.  Press SPACE when done.  ESC to cancel",0,0);
-      sprintf(CStack_570.cancel_button.button_text + 0xbc,"%f");
+      _sprintf(CStack_570.cancel_button.button_text + 0xbc,"%f");
       engine_2d_c_drawText_FUN_00401fd0
                 (CStack_570.cancel_button.button_text + 0xbc,0,g_WindowHeight + -0xb);
       if (*(int *)((int)pvStack_18 + 0x144) == 0) {
-        sprintf
+        _sprintf
                   (CStack_570.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
                    (double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
@@ -316,7 +316,7 @@ LAB_0057db4e:
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902);
       }
       else {
-        sprintf
+        _sprintf
                   (CStack_570.cancel_button.button_text + 0xbc,"PANNING CAMERA: x: %f, y: %f, z: %f",
                    (double)*(float *)PTR_DAT_00681ab8);
       }

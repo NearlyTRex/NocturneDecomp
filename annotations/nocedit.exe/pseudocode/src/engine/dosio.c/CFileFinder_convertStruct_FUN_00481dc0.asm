@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;   crt_time.c__mktime_FUN_00600f80
 ;   FileTimeToLocalFileTime
 ;   FileTimeToSystemTime
@@ -52,8 +52,8 @@ section .text
     LEA EAX,[EDI + 0x2c]                ; 00481de6
     PUSH EAX                            ; 00481de9
     PUSH EBX                            ; 00481dea
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 00481deb
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 00481deb
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     MOV dword ptr [EBX + 0x100],0x0     ; 00481df0
     MOV AH,byte ptr [EDI]               ; 00481dfa
     ADD ESP,0xc                         ; 00481dfc

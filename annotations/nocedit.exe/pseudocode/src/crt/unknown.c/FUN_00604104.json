@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 130,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 10,
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
     "suspect_types": [
+      "register_param",
       "special_crt_function",
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 31
+    "total_lines": 32
   },
   "cross_references": [
     {
@@ -30,9 +31,9 @@
         "0060411b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_unknown.c_FUN_00604104",
-    "signature": "void crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX)"
+    "signature": "void __cdecl crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX)"
   },
   "function_calls": [],
   "globals": [],
@@ -63,76 +64,91 @@
     "pcode_op_count": 64
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 2,
+        "type": "ushort"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "unaff_EBX",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 4,
+      "line": 2,
       "match": "unaff_EBX",
-      "text": "void FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
+      "text": "void __cdecl FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
-      "text": "void FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
+      "text": "void __cdecl FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "void FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
+      "text": "void __cdecl FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_AX",
+      "text": "ushort in_AX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 10,
-      "match": "param_1",
-      "text": "bVar2 = (byte)param_1;",
-      "type": "unnamed_param"
+      "match": "in_AX",
+      "text": "bVar2 = (byte)in_AX;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 11,
-      "match": "param_1",
-      "text": "cVar1 = (char)(param_1 >> 8);",
-      "type": "unnamed_param"
+      "match": "in_AX",
+      "text": "cVar1 = (char)(in_AX >> 8);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 13,
-      "match": "param_1",
-      "text": "cVar1 = (char)(param_1 / 10);",
-      "type": "unnamed_param"
+      "match": "in_AX",
+      "text": "cVar1 = (char)(in_AX / 10);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 14,
-      "match": "param_1",
-      "text": "bVar2 = (byte)(param_1 % 10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "*unaff_EBX = cVar1 + '0';",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX[1] = bVar2 + 0x30;",
-      "type": "unaffected_reg"
+      "match": "in_AX",
+      "text": "bVar2 = (byte)(in_AX % 10);",
+      "type": "register_param"
     },
     {
       "address": "00604104",

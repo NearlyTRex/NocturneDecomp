@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(void)
+; __cdecl void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2478]:4  local_2478
 ; undefined1       Stack[-0x2474]:1  local_2474
@@ -760,8 +762,8 @@ section .text
     PUSH 0x6472b9                       ; 00579456 | = "backdrop\\%s.fog"
     LEA EAX,[ESP + 0x21e0]              ; 0057945b
     PUSH EAX                            ; 00579462
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00579463
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00579463
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00579468
     LEA EAX,[ESP + 0x21d8]              ; 0057946b
     PUSH EAX                            ; 00579472
@@ -772,8 +774,8 @@ section .text
     PUSH 0x6472c9                       ; 0057947c | = "backdrop\\%s.pvs"
     LEA EAX,[ESP + 0x21e0]              ; 00579481
     PUSH EAX                            ; 00579488
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00579489
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00579489
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057948e
     LEA EAX,[ESP + 0x21d8]              ; 00579491
     PUSH EAX                            ; 00579498
@@ -1109,8 +1111,8 @@ section .text
     PUSH 0x646f0f                       ; 0057986c | = "You have some new textures which have..."
     LEA EAX,[ESP + 0x1c48]              ; 00579871
     PUSH EAX                            ; 00579878
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00579879
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00579879
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057987e
     LEA EAX,[ESP + 0x1898]              ; 00579881
         ;   Label: LAB_00579881
@@ -1260,8 +1262,8 @@ section .text
         ;   Label: LAB_00579a2d
     LEA EAX,[ESP + 0x1c44]              ; 00579a32
     PUSH EAX                            ; 00579a39
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00579a3a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00579a3a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00579a3f
     JMP 0x00579881                      ; 00579a42
         ;   XREF to: 00579881 (UNCONDITIONAL_JUMP)  ; LAB_00579881

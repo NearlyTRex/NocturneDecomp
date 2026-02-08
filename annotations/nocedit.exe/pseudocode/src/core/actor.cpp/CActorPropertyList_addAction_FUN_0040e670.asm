@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670 (CActorPropertyList *this_ptr,char *property_name, CDemonActor_CActorPropertyDisplayFunc *display_callback, CDemonActor_CActorPropertyActionFunc *action_callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670 (CActorPropertyList *this_ptr,char *property_name, CActorPropertyDisplayFunc *display_callback,CActorPropertyActionFunc *action_callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   property_name
-; CDemonActor_CActorPropertyDisplayFunc * Stack[0xc]:4   display_callback
-; CDemonActor_CActorPropertyActionFunc * Stack[0x10]:4   action_callback
+; CActorPropertyDisplayFunc * Stack[0xc]:4   display_callback
+; CActorPropertyActionFunc * Stack[0x10]:4   action_callback
 ;
 ; XREF[11]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 004113cb

@@ -18,7 +18,7 @@
 ;   TerminatedCString s_thrustHitCharacterSound_00635db0
 ;   TerminatedCString s_swingHitCharacterSound_00635dc8
 ;   TerminatedCString s_hitOtherSound_00635ddf
-;   void* PTR_s_Generic_0067d178 = 00635d67
+;   SEnumPair[9] g_MeleeDamageTypePairs
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
@@ -56,7 +56,7 @@ section .text
     PUSH 0x635d02                       ; 0050ed22 | = "Attack strength lo"
     PUSH ESI                            ; 0050ed27
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0050ed28
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050ed2d
     PUSH 0x0                            ; 0050ed30
     LEA EAX,[EBX + 0x580]               ; 0050ed32
@@ -64,7 +64,7 @@ section .text
     PUSH 0x635d15                       ; 0050ed39 | = "Attack strength hi"
     PUSH ESI                            ; 0050ed3e
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0050ed3f
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050ed44
     LEA EAX,[EBX + 0x2f0]               ; 0050ed47
     PUSH EAX                            ; 0050ed4d
@@ -92,12 +92,12 @@ section .text
     ADD ESP,0xc                         ; 0050ed8c
     LEA EAX,[EBX + 0x59c]               ; 0050ed8f
     PUSH EAX                            ; 0050ed95
-    PUSH 0x67d178                       ; 0050ed96 | PTR_s_Generic_0067d178
+    PUSH 0x67d178                       ; 0050ed96 | g_MeleeDamageTypePairs
     PUSH 0x9                            ; 0050ed9b
     PUSH 0x635da4                       ; 0050ed9d | = "Damage type"
     PUSH ESI                            ; 0050eda2
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 0050eda3
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 0050eda8
     LEA EAX,[EBX + 0x5a0]               ; 0050edab
     PUSH EAX                            ; 0050edb1

@@ -4,103 +4,103 @@
       {
         "category": "other",
         "column": 26,
-        "line": 37,
+        "line": 38,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 37,
+        "line": 38,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 68,
+        "line": 69,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 71,
+        "line": 72,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 73,
+        "line": 74,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 73,
+        "line": 74,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 99,
+        "line": 101,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 99,
+        "line": 101,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 113,
+        "line": 115,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 113,
+        "line": 115,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 125,
+        "line": 127,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 99,
-        "line": 125,
+        "line": 127,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 128,
+        "line": 130,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 169,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 172,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 173,
+        "line": 171,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 29,
         "line": 174,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 175,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 176,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -109,11 +109,11 @@
   },
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 245,
+    "complexity_score": 247,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 23,
-    "pseudocode_lines": 175,
+    "pseudocode_lines": 177,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -121,7 +121,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 652
+    "total_lines": 654
   },
   "cross_references": [],
   "function": {
@@ -206,22 +206,22 @@
     {
       "addr": "005e0aa0",
       "is_variadic": false,
-      "name": "core_trigger.cpp_FUN_005e0aa0"
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0aa0"
     },
     {
       "addr": "005e0ac0",
       "is_variadic": false,
-      "name": "core_trigger.cpp_FUN_005e0ac0"
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0ac0"
     },
     {
       "addr": "005e0b00",
       "is_variadic": false,
-      "name": "core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00"
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0b00"
     },
     {
       "addr": "005ee6e0",
       "is_variadic": false,
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee6e0"
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_005ee6e0"
     }
   ],
   "globals": [
@@ -456,35 +456,35 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 100,
+      "line": 102,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 123,
       "match": "._4_4_",
       "text": "auStack_100._4_4_ = local_4c.weapon_damage_modifier;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 132,
       "match": "SQRT",
       "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 148,
+      "line": 150,
       "match": "1.45735e-43",
       "text": "SStack_f4.impact_direction.z = 1.45735e-43;",
       "type": "suspect_float"

@@ -11,5 +11,5 @@ struct CDemonActor;
 struct _FILE;
 
 // Function Definition: CDemonActor_addFilesToExtract
-typedef void (*CDemonActor_addFilesToExtract)(struct CDemonActor* this_ptr, struct _FILE* file_handle);
+typedef void CDemonActor_addFilesToExtract(struct CDemonActor* this_ptr, struct _FILE* file_handle);
 

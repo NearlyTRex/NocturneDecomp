@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
 ;
@@ -40,8 +40,8 @@ section .text
     PUSH 0x62fc6e                       ; 004fb9b1 | = "%d"
     LEA EAX,[ESP + 0x108]               ; 004fb9b6
     PUSH EAX                            ; 004fb9bd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fb9be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004fb9be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fb9c3
     MOV ECX,dword ptr [ESP + 0x21c]     ; 004fb9c6
     PUSH ECX                            ; 004fb9cd

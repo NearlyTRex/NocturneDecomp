@@ -58,11 +58,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       g_CameraFogGrid.scroll_vector.z == 0) {
     g_ImageBytesPerPixel = 1;
   }
-  sprintf(&stack0xfffffd8c,"%s.fog",this_ptr->camera_name);
+  _sprintf(&stack0xfffffd8c,"%s.fog",this_ptr->camera_name);
   file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",&stack0xfffffd8c,"rb")
   ;
   if (file_ptr == (_FILE *)0x0) {
-    sprintf(local_f8,"backdrop\\%s",&stack0xfffffd8c);
+    _sprintf(local_f8,"backdrop\\%s",&stack0xfffffd8c);
     crt_fstream_cpp_ofstream_constructor_FUN_005ff710
               ((ofstream *)local_174,0,(int)local_f8,0x110,(char *)g_DefaultStreamBufferSize,
                in_stack_fffffd8c);

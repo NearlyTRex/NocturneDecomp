@@ -1,0 +1,483 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 439,
+    "complexity_score": 510,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 16,
+    "pseudocode_lines": 220,
+    "suspect_count": 27,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "suspect_float",
+      "undefined_data"
+    ],
+    "total_lines": 659
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005e00d0",
+    "address_range": [
+      [
+        "005e00d0",
+        "005e0623"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0",
+    "signature": "int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040dec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0"
+    },
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ae10",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
+    },
+    {
+      "addr": "0048c9f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e00a4",
+      "name": "switchdataD_005e00a4",
+      "type": "void*",
+      "value": "005e0159"
+    },
+    {
+      "addr": "0065563c",
+      "name": "DOUBLE_0065563c",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "00655644",
+      "name": "DOUBLE_00655644",
+      "type": "double",
+      "value": "12"
+    },
+    {
+      "addr": "0065564c",
+      "name": "DOUBLE_0065564c",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00655654",
+      "name": "FLOAT_00655654",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0065565c",
+      "name": "DOUBLE_0065565c",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00655664",
+      "name": "DOUBLE_00655664",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00664a00",
+      "name": "FLOAT_00664a00",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "0068434c",
+      "name": "DAT_0068434c",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33768",
+      "name": "DAT_02f33768",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.824933687002653,
+    "instruction_count": 377,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 4,
+      "BRANCH": 12,
+      "BRANCHIND": 1,
+      "CALL": 19,
+      "CALLIND": 2,
+      "CALLOTHER": 2,
+      "CBRANCH": 14,
+      "COPY": 654,
+      "FLOAT2FLOAT": 37,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 19,
+      "INT2FLOAT": 2,
+      "INT_ADD": 170,
+      "INT_AND": 156,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 124,
+      "INT_LEFT": 6,
+      "INT_LESS": 8,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 15,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 65,
+      "INT_SUB": 83,
+      "INT_XOR": 18,
+      "INT_ZEXT": 6,
+      "LOAD": 88,
+      "POPCOUNT": 59,
+      "RETURN": 3,
+      "ROUND": 14,
+      "STORE": 119,
+      "TRUNC": 14
+    },
+    "pcode_op_count": 1819
+  },
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005e00dc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "fStack_cc = (float)(int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 97,
+      "match": "5.60519e-44",
+      "text": "fStack_cc = 5.60519e-44;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "fStack_20 = (float)(int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 112,
+      "match": "1.1754944e-38",
+      "text": "pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 113,
+      "match": "1.1754944e-38",
+      "text": "pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_0068434c",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&DAT_0068434c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "ROUND",
+      "text": "CStack_48.x = (int)ROUND(fStack_60 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "CStack_48.y = (int)ROUND(fStack_5c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "CStack_48.z = (int)ROUND(fStack_58 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 129,
+      "match": "ROUND",
+      "text": "CStack_6c.x = (int)ROUND(fStack_60 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 130,
+      "match": "ROUND",
+      "text": "CStack_6c.y = (int)ROUND(CStack_88.max.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 131,
+      "match": "ROUND",
+      "text": "CStack_6c.z = (int)ROUND(fStack_58 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 142,
+      "match": "fsin",
+      "text": "fVar10 = (float10)fsin(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 143,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 155,
+      "match": "ROUND",
+      "text": "CStack_54.x = (int)ROUND(fStack_60 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 156,
+      "match": "ROUND",
+      "text": "CStack_54.y = (int)ROUND(CStack_88.min.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 157,
+      "match": "ROUND",
+      "text": "CStack_54.z = (int)ROUND(fStack_58 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 173,
+      "match": "ROUND",
+      "text": "aCStack_3c[0].x = (int)ROUND(fStack_60 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 174,
+      "match": "ROUND",
+      "text": "aCStack_3c[0].y = (int)ROUND(CStack_88.max.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 175,
+      "match": "ROUND",
+      "text": "aCStack_3c[0].z = (int)ROUND(fStack_58 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 206,
+      "match": "1.4013e-45",
+      "text": "local_a4.min.x = 1.4013e-45;",
+      "type": "suspect_float"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 12,
+        "vtable_addr": "00664a24"
+      },
+      {
+        "class_name": "CWaypoint",
+        "offset": 12,
+        "vtable_addr": "00665484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

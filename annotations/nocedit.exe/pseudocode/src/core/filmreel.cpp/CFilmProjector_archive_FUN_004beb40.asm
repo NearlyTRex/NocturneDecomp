@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_dest.cpp_FUN_0046f9b0
+;   core_dest.cpp_CActorDestination_process_FUN_0046f9b0
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
 ;   core_event.cpp_CEventList_FUN_004aabe0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x184]     ; 004beb66
     PUSH EBX                            ; 004beb6c
     MOV dword ptr [EBX + 0x3dc],EAX     ; 004beb6d
-    CALL core_dest.cpp_FUN_0046f9b0     ; 004beb73
-        ;   XREF to: 0046f9b0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0046f9b0()
+    CALL core_dest.cpp_CActorDestination_process_FUN_0046f9b0 ; 004beb73
+        ;   XREF to: 0046f9b0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004beb78
     ADD ESP,0x10                        ; 004beb7b
     POP EBP                             ; 004beb7e

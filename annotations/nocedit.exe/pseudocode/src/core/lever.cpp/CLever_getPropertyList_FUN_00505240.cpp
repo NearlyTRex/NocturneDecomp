@@ -31,15 +31,16 @@ core_lever_cpp_CLever_getPropertyList_FUN_00505240
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Momentary event",&this_ptr->momentary_flag);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Linked lever",&this_ptr->linked_lever,1,"CLever",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Linked lever",(CDemonActor **)&this_ptr->linked_lever,1,
+             "CLever",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"End vertex index",&this_ptr->end_vertex_index,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0
-            (property_list,"Rule",(CRuleList *)&this_ptr->rules,-1);
+            (property_list,"Rule",&this_ptr->rule,-1);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Open from side",3,(int *)&PTR_s_Both_0067cf9c);
+            (property_list,"Open from side",3,g_LeverOpenFromSideTypePairs,
+             &this_ptr->allowed_sides);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Enable collision",&this_ptr->enable_collision);
   return;

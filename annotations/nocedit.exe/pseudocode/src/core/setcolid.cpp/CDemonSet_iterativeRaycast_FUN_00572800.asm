@@ -40,7 +40,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c324e
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c324e
 ;
 ; Referenced Globals:
 ;   float g_RaycastStepOffsetScale = 0.005000000

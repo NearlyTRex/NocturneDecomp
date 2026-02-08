@@ -24,7 +24,7 @@
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043be28
 ;   core_curtain.cpp_CCurtain_FUN_0044b060 at 0044b305
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 at 00477bb3
-;   core_wateract.cpp_CWaterActor_FUN_005eb280 at 005eb445
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280 at 005eb445
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

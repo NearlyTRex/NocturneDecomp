@@ -29,9 +29,9 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
+;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_actor.cpp_createActorByName_FUN_0040c430
-;   core_actor.cpp_FUN_0040e130
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
@@ -39,7 +39,7 @@
 ;   core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -132,8 +132,8 @@ section .text
     PUSH 0x63cd31                       ; 0053d978 | = "Change %s of type %s to new type"
     LEA EAX,[ESP + 0x4dbc]              ; 0053d97d
     PUSH EAX                            ; 0053d984
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d985
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d985
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053d98a
     PUSH 0x0                            ; 0053d98d
     PUSH -0x1                           ; 0053d98f
@@ -157,8 +157,8 @@ section .text
     PUSH 0x63cd52                       ; 0053d9c3 | = "C%s"
     LEA EAX,[ESP + 0x4fac]              ; 0053d9c8
     PUSH EAX                            ; 0053d9cf
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d9d0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d9d0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053d9d5
     LEA EAX,[ESP + 0x4fa4]              ; 0053d9d8
     PUSH EAX                            ; 0053d9df
@@ -182,13 +182,13 @@ section .text
         ;   XREF to: 0053db0f (CONDITIONAL_JUMP)  ; LAB_0053db0f
     LEA EAX,[ESP + 0x2504]              ; 0053da19
     PUSH EAX                            ; 0053da20
-    CALL core_actor.cpp_FUN_0040e130    ; 0053da21
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 0053da21
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 0053da26
     MOV EAX,ESP                         ; 0053da29
     PUSH EAX                            ; 0053da2b
-    CALL core_actor.cpp_FUN_0040e130    ; 0053da2c
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 0053da2c
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 0053da31
     LEA EAX,[ESP + 0x2504]              ; 0053da34
     PUSH EAX                            ; 0053da3b

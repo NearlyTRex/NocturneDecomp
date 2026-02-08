@@ -39,12 +39,12 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
           } while (iVar1 < g_ActiveLightCount * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,light,local_18);
-        sprintf(local_118,"%son",this_ptr_00->name);
+        _sprintf(local_118,"%son",this_ptr_00->name);
         iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 1;
         }
-        sprintf(local_118,"%soff",this_ptr_00->name);
+        _sprintf(local_118,"%soff",this_ptr_00->name);
         iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
         if (iVar1 != 0) {
           light->light_enabled_flag = 0;

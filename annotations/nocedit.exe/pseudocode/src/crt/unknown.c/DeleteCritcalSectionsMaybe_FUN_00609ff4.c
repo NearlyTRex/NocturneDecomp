@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_DeleteCritcalSectionsMaybe() */
-
 void DeleteCritcalSectionsMaybe(void)
 
 {

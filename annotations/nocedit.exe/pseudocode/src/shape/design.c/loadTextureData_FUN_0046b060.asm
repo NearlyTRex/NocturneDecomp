@@ -65,9 +65,9 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_memory.c_memset_FUN_005fde40
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_design.c_readPixelRowFromFile_FUN_0046abf0
 ;   shape_design.c_sampleAndFilterPixel_FUN_0046ae20
@@ -269,8 +269,8 @@ section .text
     PUSH EAX                            ; 0046b257 | = "Unable to read file (%s)."
     LEA EAX,[EBP + 0xfffffec8]          ; 0046b258
     PUSH EAX                            ; 0046b25e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046b25f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046b25f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046b264
     PUSH 0x27c2                         ; 0046b267
     MOV EAX,0x61d33d                    ; 0046b26c | = "..\\shape\\design.c"

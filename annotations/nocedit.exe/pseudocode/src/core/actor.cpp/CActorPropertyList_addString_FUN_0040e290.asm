@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   property_name
 ; char *           Stack[0xc]:4   data_ptr
 ; int              Stack[0x10]:4   max_length
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x14]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x14]:4   callback
 ;
 ; XREF[20]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d2ab
@@ -19,7 +19,7 @@
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f7ce
 ;   core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130 at 004421ab
 ;   core_curtain.cpp_CCurtain_getPropertyList_FUN_0044b610 at 0044b635
-;   core_dest.cpp_FUN_0046fe80 at 0046fed8
+;   core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80 at 0046fed8
 ;   core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 at 004aa200
 ;   ... and 10 more
 ;

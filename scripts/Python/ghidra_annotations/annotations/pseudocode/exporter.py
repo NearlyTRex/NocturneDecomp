@@ -357,6 +357,13 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Apply post-processing transforms
     decompiled_code = apply_all_transforms(decompiled_code, var_info=var_info)
 
+    # Generate MMX inline assembly version (kept separate from original pseudocode)
+    from ghidra_annotations.annotations.pseudocode.asm_transform import generate_inline_asm_cpp
+    mmx_decompiled_code = generate_inline_asm_cpp(result, decompiled_code)
+    # Only keep mmx version if the transform actually changed the code
+    if mmx_decompiled_code == decompiled_code:
+        mmx_decompiled_code = None
+
     # Load and apply custom replacements from existing JSON
     source_filename = generate_source_filename(func_name, decompiled_code)
     if source_filename.endswith('.cpp'):
@@ -475,7 +482,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
         pcode_overrides, resolved_suspects, result.is_ebp_frame, proto_overrides,
-        decompiler_fixes)
+        decompiler_fixes, mmx_decompiled_code=mmx_decompiled_code)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -992,6 +999,8 @@ def export_pseudocode(currentProgram, path, strict=False):
                 contents = processed['contents']
                 if contents:
                     pending_writes.append((contents['cpp_path'], contents['cpp_content']))
+                    if contents.get('mmx_cpp_content'):
+                        pending_writes.append((contents['mmx_cpp_path'], contents['mmx_cpp_content']))
                     if contents.get('asm_content'):
                         pending_writes.append((contents['asm_path'], contents['asm_content']))
                     if contents.get('json_content'):

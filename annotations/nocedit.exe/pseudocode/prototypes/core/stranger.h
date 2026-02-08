@@ -47,9 +47,9 @@ int __cdecl FUN_005bafd2(void);
 // Address: 005bafe0
 bool __cdecl FUN_005bafe0(void);
 
-// Original: core_stranger.cpp_FUN_005bb010
+// Original: core_stranger.cpp_CStranger_FUN_005bb010
 // Address: 005bb010
-float __cdecl FUN_005bb010(void);
+float __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_factoryFunc_FUN_005bb0e0
 // Address: 005bb0e0
@@ -77,11 +77,11 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bdd20
 // Address: 005bdd20
-void __cdecl CStranger(void);
+void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_005be430
+// Original: core_stranger.cpp_CStranger_FUN_005be430
 // Address: 005be430
-int __cdecl FUN_005be430(void);
+int __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_005be480
 // Address: 005be480
@@ -151,13 +151,13 @@ int __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c2fe0
 void __cdecl CStranger::archive(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c3150
+// Original: core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
 // Address: 005c3150
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::renderOpaque(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c3710
+// Original: core_stranger.cpp_CStranger_renderTransparent_FUN_005c3710
 // Address: 005c3710
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::renderTransparent(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_005c3750
 // Address: 005c3750
@@ -183,9 +183,9 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c4c20
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c5170
+// Original: core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170
 // Address: 005c5170
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::getCarryObjToBodyXForm(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c51c0
 // Address: 005c51c0
@@ -231,21 +231,21 @@ int __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c6750
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c67c0
+// Original: core_stranger.cpp_CStranger_isDamageable_FUN_005c67c0
 // Address: 005c67c0
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::isDamageable(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c67f0
 // Address: 005c67f0
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c6850
+// Original: core_stranger.cpp_CStranger_drop_FUN_005c6850
 // Address: 005c6850
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::drop(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c68a0
+// Original: core_stranger.cpp_CStranger_onActorDeleted_FUN_005c68a0
 // Address: 005c68a0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::onActorDeleted(CStranger *this_ptr,CDemonActor *deleted_actor);
 
 // Original: core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0
 // Address: 005c68f0

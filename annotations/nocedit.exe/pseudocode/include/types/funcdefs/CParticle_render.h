@@ -7,5 +7,5 @@
 struct CParticle;
 
 // Function Definition: CParticle_render
-typedef void (*CParticle_render)(struct CParticle* this_ptr);
+typedef void CParticle_render(struct CParticle* this_ptr);
 

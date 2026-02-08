@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_removePolygon
-typedef int (*CObj_removePolygon)(struct CObj* this_ptr, uint index);
+typedef int CObj_removePolygon(struct CObj* this_ptr, uint index);
 

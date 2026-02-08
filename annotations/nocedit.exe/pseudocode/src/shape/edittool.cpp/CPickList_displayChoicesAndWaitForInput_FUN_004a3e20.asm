@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   config_param2
 ;
 ; XREF[75]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f4e3
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f316
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b3e5
 ;   core_boxactor.cpp_FUN_00423110 at 004231cf
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f4f5

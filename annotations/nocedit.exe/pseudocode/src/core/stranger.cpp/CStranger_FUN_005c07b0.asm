@@ -196,7 +196,7 @@
 ;
 ; XREF[2]:
 ;   core_stranger.cpp_CStranger_FUN_005c06b0 at 005c0706
-;   core_stranger.cpp_CStranger_FUN_005c5170 at 005c5196
+;   core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 at 005c5196
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_0065394c
@@ -219,7 +219,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_stranger.cpp_FUN_005bb010
+;   core_stranger.cpp_CStranger_FUN_005bb010
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_buildRotationX_FUN_005f6c40
 ;   core_xform.cpp_buildRotationY_FUN_005f6cc0
@@ -1122,8 +1122,8 @@ section .text
     FXCH                                ; 005c140e
     FSTP float ptr [EBP + -0x7a]        ; 005c1410
     FSTP float ptr [EBP + -0x7e]        ; 005c1413
-    CALL core_stranger.cpp_FUN_005bb010 ; 005c1416
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
+    CALL core_stranger.cpp_CStranger_FUN_005bb010 ; 005c1416
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_CStranger_FUN_005bb010(CStranger * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c141b
     ADD ESP,0x4                         ; 005c141e
     FLD float ptr [EBP + 0x76]          ; 005c1421

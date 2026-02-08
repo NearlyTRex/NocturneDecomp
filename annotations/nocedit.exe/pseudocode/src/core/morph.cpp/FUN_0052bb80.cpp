@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_morph.cpp_FUN_0052bb80(uint param_1, uint param_2) */
-
 void __cdecl core_morph_cpp_FUN_0052bb80(void)
 
 {

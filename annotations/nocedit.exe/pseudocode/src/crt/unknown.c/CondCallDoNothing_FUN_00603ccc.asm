@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
+; __cdecl void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x20]:2  local_20
@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 00603d1b
     MOV EBX,ESI                         ; 00603d1c
     CALL crt_unknown.c_FUN_00603c74     ; 00603d1e
-        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603c74()
+        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603c74()
     ADD ESP,0x8                         ; 00603d23
     LEA EDX,[EBP + -0x18]               ; 00603d26
     MOV EAX,ESI                         ; 00603d29
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBP + -0x18]               ; 00603d36
     PUSH EAX                            ; 00603d39
     CALL crt_unknown.c_FUN_00603c74     ; 00603d3a
-        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603c74()
+        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603c74()
     MOV EBX,ESI                         ; 00603d3f
     ADD ESP,0x8                         ; 00603d41
     LEA EDX,[EBP + -0x18]               ; 00603d44

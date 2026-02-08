@@ -24,7 +24,7 @@ int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3)
   }
   sscanf((char *)(param_1 + *param_2)," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
-    sprintf(&DAT_02d0a460,"Error parsing vector location");
+    _sprintf(&DAT_02d0a460,"Error parsing vector location");
     return -1;
   }
   pCVar1 = core_event_cpp_FUN_004aa400(local_78,g_CDemonActorClassInfo.name_hash,0x821ff8);

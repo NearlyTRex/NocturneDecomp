@@ -2,14 +2,14 @@
 // Address: 0040e220
 // Address Range: [[0040e220, 0040e25e]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CActorPropertyValidatorFunc *callback)
 
 #include "nocturne.h"
 
 CActorProperty * __cdecl
 core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220
           (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value,
-          int max_value,CDemonActor_CActorPropertyValidatorFunc *callback)
+          int max_value,CActorPropertyValidatorFunc *callback)
 
 {
   CActorProperty *pCVar1;

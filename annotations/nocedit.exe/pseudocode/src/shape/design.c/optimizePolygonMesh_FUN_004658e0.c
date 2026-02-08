@@ -69,7 +69,7 @@ shape_design_c_optimizePolygonMesh_FUN_004658e0
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  sprintf
+  _sprintf
             (local_70,"Original polygons: %d    New total: %d\n\nTotal passes: %d",local_14,g_PolygonCount);
   if (0 < display_progress) {
     pcVar4 = "\n\nHit a key...";

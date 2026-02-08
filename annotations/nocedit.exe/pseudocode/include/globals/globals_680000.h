@@ -26,6 +26,7 @@
 #include "types/classes/CWeather.h"
 #include "types/structs/SAlphaEntry.h"
 #include "types/structs/SAudioFormatDescriptor.h"
+#include "types/structs/SEnumPair.h"
 #include "types/structs/SHuffmanTableSource.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -124,6 +125,25 @@ extern SAlphaEntry g_AlphaTable[256];
 
 // SAudioFormatDescriptor[12]
 extern SAudioFormatDescriptor g_WaveInFormatTable[12];
+
+// SEnumPair[10]
+extern SEnumPair g_TriggerCauseTypePairs[10];
+
+// SEnumPair[2]
+extern SEnumPair g_TriggerShapeTypePairs[2];
+
+// SEnumPair[3]
+extern SEnumPair g_SpikeTypeTypePairs[3];
+extern SEnumPair g_CryptVesselVisualTypePairs[3];
+
+// SEnumPair[4]
+extern SEnumPair g_SpikeStateTypePairs[4];
+extern SEnumPair g_TriggerEventTypePairs[4];
+extern SEnumPair g_WaterActorStateTypePairs[4];
+extern SEnumPair g_WeaponStateTypePairs[4];
+
+// SEnumPair[5]
+extern SEnumPair g_TurretStateTypePairs[5];
 
 // SHuffmanTableSource[34]
 extern SHuffmanTableSource g_HuffmanTableSources[34];

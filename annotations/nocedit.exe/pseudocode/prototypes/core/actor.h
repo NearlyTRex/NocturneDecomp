@@ -519,9 +519,9 @@ void __cdecl drawTwoColumnPropertyLine(int *y_position,char *left_text,char *rig
 // Address: 0040d240
 void __cdecl drawTextLine(int *y_position,char *text);
 
-// Original: core_actor.cpp_CDemonActor_FUN_0040d270
+// Original: core_actor.cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270
 // Address: 0040d270
-void __cdecl CDemonActor(CDemonActor *this_ptr);
+int __cdecl CDemonActor::propertyValidatorCallback(CDemonActor *this_ptr,int new_value);
 
 // Original: core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 // Address: 0040d290
@@ -543,37 +543,37 @@ void __cdecl CDemonActor::renderBoundingBox(CDemonActor *this_ptr,uint32_t color
 // Address: 0040dec0
 void __cdecl CDemonActor(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040e130
+// Original: core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 // Address: 0040e130
-void __cdecl FUN_0040e130(void);
+void __cdecl CActorPropertyList::init(CActorPropertyList *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040e150
+// Original: core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150
 // Address: 0040e150
-void __cdecl FUN_0040e150(void);
+void __cdecl CActorPropertyList::resetSelection(CActorPropertyList *this_ptr);
 
 // Original: core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
 // Address: 0040e160
-CActorProperty * __cdecl CActorPropertyList::addFloat(CActorPropertyList *this_ptr,char *property_name,float *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addFloat(CActorPropertyList *this_ptr,char *property_name,float *data_ptr, CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
 // Address: 0040e1a0
-CActorProperty * __cdecl CActorPropertyList::addFloatRange(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addFloatRange(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
 // Address: 0040e1e0
-CActorProperty * __cdecl CActorPropertyList::addInt(CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addInt(CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
 // Address: 0040e220
-CActorProperty * __cdecl CActorPropertyList::addIntRange(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addIntRange(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260
 // Address: 0040e260
-CActorProperty * __cdecl CActorPropertyList::addVector(CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addVector(CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 // Address: 0040e290
-CActorProperty * __cdecl CActorPropertyList::addString(CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addString(CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0
 // Address: 0040e2d0
@@ -589,7 +589,7 @@ CActorProperty * __cdecl CActorPropertyList::addBool(CActorPropertyList *this_pt
 
 // Original: core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
 // Address: 0040e350
-CActorProperty * __cdecl CActorPropertyList::addChoice(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,int default_index, char *choices,CDemonActor_CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl CActorPropertyList::addChoice(CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 // Address: 0040e3b0
@@ -625,11 +625,11 @@ CActorProperty * __cdecl CActorPropertyList::addRuleList(CActorPropertyList *thi
 
 // Original: core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
 // Address: 0040e640
-CActorProperty * __cdecl CActorPropertyList::addEnumPair(CActorPropertyList *this_ptr,void *pairs,int num_pairs,int *data_ptr);
+CActorProperty * __cdecl CActorPropertyList::addEnumPair(CActorPropertyList *this_ptr,char *property_name,int num_pairs,SEnumPair *pairs, int *data_ptr);
 
 // Original: core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670
 // Address: 0040e670
-CActorProperty * __cdecl CActorPropertyList::addAction(CActorPropertyList *this_ptr,char *property_name, CDemonActor_CActorPropertyDisplayFunc *display_callback, CDemonActor_CActorPropertyActionFunc *action_callback);
+CActorProperty * __cdecl CActorPropertyList::addAction(CActorPropertyList *this_ptr,char *property_name, CActorPropertyDisplayFunc *display_callback,CActorPropertyActionFunc *action_callback);
 
 // Original: core_actor.cpp_CActorPropertyList_addFlags_FUN_0040e6a0
 // Address: 0040e6a0
@@ -651,25 +651,21 @@ void __cdecl CActorPropertyList::render(CActorPropertyList *this_ptr,int selecte
 // Address: 0040e9c0
 int __cdecl CActorPropertyList::hitTest(CActorPropertyList *this_ptr,int x,int y);
 
-// Original: core_actor.cpp_CActorProperty_FUN_0040ea50
+// Original: core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
 // Address: 0040ea50
-void __cdecl CActorProperty(void);
+void __cdecl CActorProperty::renderValue(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer);
 
-// Original: core_actor.cpp_FUN_0040ee30
+// Original: core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30
 // Address: 0040ee30
-void __cdecl FUN_0040ee30(void);
+int __cdecl CActorProperty::getNameWidth(CActorProperty *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040ee50
+// Original: core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50
 // Address: 0040ee50
-void __cdecl FUN_0040ee50(void);
+int __cdecl CActorProperty::getValueWidth(CActorProperty *this_ptr,int index);
 
 // Original: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 // Address: 0040eed0
 int __cdecl CActorProperty::editInteractive(CActorProperty *this_ptr,CDemonActor *actor);
-
-// Original: core_actor.cpp_FUN_0040fffe
-// Address: 0040fffe
-int __cdecl FUN_0040fffe(void);
 
 // Original: core_actor.cpp_CVector_ctor_FUN_00410340
 // Address: 00410340
@@ -683,17 +679,17 @@ CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr);
 // Address: 00410360
 void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 
-// Original: core_actor.cpp_FUN_00410380
+// Original: core_actor.cpp_CVector3f_length_FUN_00410380
 // Address: 00410380
-float __cdecl FUN_00410380(void);
+float __cdecl CVector3f::length(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_004103b0
+// Original: core_actor.cpp_CVector3f_zero_FUN_004103b0
 // Address: 004103b0
-void __cdecl FUN_004103b0(void);
+void __cdecl CVector3f::zero(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_004103d0
+// Original: core_actor.cpp_CVector3f_toFixed8_FUN_004103d0
 // Address: 004103d0
-void __cdecl FUN_004103d0(void);
+void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3f *other);
 
 // Original: core_actor.cpp_CSlew_ctor_FUN_00410400
 // Address: 00410400
@@ -721,19 +717,19 @@ CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr);
 
 // Original: core_actor.cpp_CVector_copy_FUN_004104a0
 // Address: 004104a0
-void __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
+CVector3f * __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
 
-// Original: core_actor.cpp_FUN_004104d0
+// Original: core_actor.cpp_copyFloat_FUN_004104d0
 // Address: 004104d0
-int __cdecl FUN_004104d0(void);
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_actor.cpp_FUN_004104e0
+// Original: core_actor.cpp_copyFloat_FUN_004104e0
 // Address: 004104e0
-int __cdecl FUN_004104e0(void);
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_actor.cpp_FUN_004104f0
+// Original: core_actor.cpp_copyFloat_FUN_004104f0
 // Address: 004104f0
-int __cdecl FUN_004104f0(void);
+float * __cdecl copyFloat(float *dst,float *src);
 
 // Original: core_actor.cpp_freeVectors_FUN_00410500
 // Address: 00410500

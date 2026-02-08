@@ -112,7 +112,7 @@ LAB_00537aa5:
                 pCVar2 = (pCVar3->vtable)._ub;
                 *(float *)(pCVar3[0x8d].create_event + 0x34) = fStack_14;
                 (*pCVar2->setup)(pCVar3);
-                sprintf
+                _sprintf
                           (acStack_204,"%s\n%7.3f",pCVar3,
                            (double)*(float *)(pCVar3[0x8d].create_event + 0x34));
                 string_data = acStack_204;
@@ -124,7 +124,7 @@ LAB_00537aa5:
                         (g_CEditorToolsPtr,"No enemies matched criteria, no speeds randomized.");
             }
             else {
-              sprintf
+              _sprintf
                         (acStack_dc,"%d enemy speeds randomized",string_data);
               shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         ((CPickList *)&stack0xfffff300,acStack_dc,-1,0);

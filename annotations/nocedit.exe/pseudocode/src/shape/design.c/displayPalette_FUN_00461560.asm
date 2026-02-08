@@ -22,7 +22,7 @@
 ;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 004615dd | = "%3d"
     LEA EAX,[EBP + -0x6c]               ; 004615de
     PUSH EAX                            ; 004615e1
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004615e2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004615e2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004615e7
     MOV EAX,dword ptr [EBP + -0x8]      ; 004615ea
     ADD EAX,0x4                         ; 004615ed

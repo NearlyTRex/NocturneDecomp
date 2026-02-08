@@ -33,8 +33,8 @@
 ; Called Functions:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_004319b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -101,8 +101,8 @@ section .text
     PUSH 0x617ec2                       ; 00434711 | = "Unable to read bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 00434716
     PUSH EAX                            ; 0043471a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043471b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043471b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00434720
     PUSH 0x7d5                          ; 00434723
     PUSH 0x617ee3                       ; 00434728 | = "..\\cockpit\\ckptutil.c"
@@ -170,8 +170,8 @@ section .text
     PUSH 0x617e34                       ; 004347ce | = "Unable to allocate %u bytes for rotat..."
     LEA EAX,[ESP + 0xc]                 ; 004347d3
     PUSH EAX                            ; 004347d7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004347d8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004347d8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x7c0                       ; 004347dd
     ADD ESP,0x10                        ; 004347e2
     MOV [0x02f0ca4c],EAX                ; 004347e5 | g_CurrentLineNumber
@@ -191,8 +191,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0043480f
     PUSH EAX                            ; 00434813
     MOV EBX,0x617eac                    ; 00434814 | = "..\\cockpit\\ckptutil.c"
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00434819
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00434819
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043481e
     MOV EAX,ESP                         ; 00434821
     MOV ESI,0x7c9                       ; 00434823

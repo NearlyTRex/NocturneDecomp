@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -160,8 +160,8 @@ section .text
     PUSH 0x617a8c                       ; 00431b88 | = "Error reading %s."
     LEA EAX,[ESP + 0x58]                ; 00431b8d
     PUSH EAX                            ; 00431b91
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00431b92
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00431b92
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x617a9e                    ; 00431b97 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00431b9c
     LEA EAX,[ESP + 0x50]                ; 00431b9f

@@ -17,7 +17,7 @@ void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr)
   int iVar6;
   char *str1;
   
-  core_trigger_cpp_CTrigger_FUN_005df990(&this_ptr->base);
+  core_trigger_cpp_CTrigger_setup_FUN_005df990(&this_ptr->base);
   iVar6 = 0;
   if (0 < this_ptr->num_adjacent_waypoints) {
     pCVar5 = this_ptr;

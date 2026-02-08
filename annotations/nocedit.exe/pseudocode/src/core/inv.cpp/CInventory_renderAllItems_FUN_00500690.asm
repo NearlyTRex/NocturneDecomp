@@ -73,7 +73,7 @@
 ;   core_inv.cpp_getItemIconName_FUN_004fcf70
 ;   core_inv.cpp_loadAssets_FUN_004fd220
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -192,8 +192,8 @@ section .text
     PUSH 0x630b0e                       ; 00500809 | = "%d%%"
     LEA EAX,[ESP + 0x218]               ; 0050080e
     PUSH EAX                            ; 00500815
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00500816
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00500816
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050081b
     PUSH 0x58                           ; 0050081e
     MOV EDI,dword ptr [ESP + 0x648]     ; 00500820
@@ -259,8 +259,8 @@ section .text
     LEA EAX,[ESP + 0x51c]               ; 005008cd
         ;   Label: LAB_005008cd
     PUSH EAX                            ; 005008d4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005008d5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005008d5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005008da
     MOV EAX,dword ptr [ESP + 0x644]     ; 005008dd
         ;   Label: LAB_005008dd
@@ -371,8 +371,8 @@ section .text
     PUSH 0x630b66                       ; 00500a58 | = "%d x%3.0f%%"
     LEA EAX,[ESP + 0x320]               ; 00500a5d
     PUSH EAX                            ; 00500a64
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00500a65
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00500a65
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00500a6a
     PUSH 0x58                           ; 00500a6d
     MOV EDI,dword ptr [ESP + 0x648]     ; 00500a6f
@@ -426,8 +426,8 @@ section .text
     PUSH 0x630b72                       ; 00500b00 | = "%s"
     LEA EAX,[ESP + 0x418]               ; 00500b05
     PUSH EAX                            ; 00500b0c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00500b0d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00500b0d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00500b12
     PUSH 0x58                           ; 00500b15
     MOV EDI,dword ptr [ESP + 0x648]     ; 00500b17
@@ -482,8 +482,8 @@ section .text
     PUSH 0x630b75                       ; 00500bb0 | = "%s\n\n%s"
     LEA EAX,[ESP + 0x11c]               ; 00500bb5
     PUSH EAX                            ; 00500bbc
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00500bbd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00500bbd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00500bc2
     MOV EAX,dword ptr [ESP + 0x644]     ; 00500bc5
     MOV EDX,dword ptr [ESP + 0x62c]     ; 00500bcc
@@ -963,8 +963,8 @@ section .text
     PUSH 0x630b38                       ; 005011ad | = "%d"
     LEA EAX,[ESP + 0x18]                ; 005011b2
     PUSH EAX                            ; 005011b6
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005011b7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005011b7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005011bc
     PUSH 0x58                           ; 005011bf
         ;   Label: LAB_005011bf
@@ -1026,8 +1026,8 @@ section .text
     PUSH 0x630b3b                       ; 0050125f | = "%s %d"
     LEA EAX,[ESP + 0x1c]                ; 00501264
     PUSH EAX                            ; 00501268
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00501269
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00501269
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0050126e
     JMP 0x005011bf                      ; 00501271
         ;   XREF to: 005011bf (UNCONDITIONAL_JUMP)  ; LAB_005011bf
@@ -1079,8 +1079,8 @@ section .text
     PUSH 0x630b48                       ; 005012e4 | = "%s\n\n%s %s"
     LEA EAX,[ESP + 0x520]               ; 005012e9
     PUSH EAX                            ; 005012f0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005012f1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005012f1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005012f6
     PUSH 0x630b52                       ; 005012f9 | = " are loaded."
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 005012fe

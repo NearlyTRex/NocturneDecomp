@@ -7,5 +7,5 @@
 struct CFont;
 
 // Function Definition: CFont_getStringHeight
-typedef int (*CFont_getStringHeight)(struct CFont* this_ptr, char* text);
+typedef int CFont_getStringHeight(struct CFont* this_ptr, char* text);
 

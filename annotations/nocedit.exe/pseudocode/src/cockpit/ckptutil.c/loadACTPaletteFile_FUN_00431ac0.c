@@ -85,7 +85,7 @@ LAB_00431b33:
   }
   SVar2 = _fread(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
-    sprintf(local_5c,"Error reading %s.",local_ac);
+    _sprintf(local_5c,"Error reading %s.",local_ac);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x13d;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);

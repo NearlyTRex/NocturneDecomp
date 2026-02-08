@@ -7,5 +7,5 @@
 struct CFont;
 
 // Function Definition: CFont_getLineSpacing
-typedef int (*CFont_getLineSpacing)(struct CFont* this_ptr);
+typedef int CFont_getLineSpacing(struct CFont* this_ptr);
 

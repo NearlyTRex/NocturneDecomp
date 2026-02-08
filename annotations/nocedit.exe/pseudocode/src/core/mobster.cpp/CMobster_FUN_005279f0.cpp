@@ -31,7 +31,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
       iVar3 = *(int *)(&DAT_02f37eb4 + iVar5);
       *(int *)(&DAT_02f37eb4 + iVar5) = iVar3 + 1;
       if (((pCVar1->foul_language_flag != 0) || (in_stack_00000008 != 1)) || (iVar3 + 1 != 6)) {
-        sprintf
+        _sprintf
                   (local_80,"mobster-cheese-%c-%c-%d.wav",(uint)(byte)this_ptr->unk1[0x1c],
                    local_1c,*(uint *)(&DAT_02f37eb4 + iVar5));
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,local_80);

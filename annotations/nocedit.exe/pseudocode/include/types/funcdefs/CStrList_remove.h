@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_remove
-typedef void (*CStrList_remove)(struct CStrList* this_ptr, int start_index, int end_index);
+typedef void CStrList_remove(struct CStrList* this_ptr, int start_index, int end_index);
 

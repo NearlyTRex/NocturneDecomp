@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x657e92                       ; 005f2039 | = "Forest"
     PUSH EBX                            ; 005f203e
         ;   Label: LAB_005f203e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f203f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f203f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005f2044
     POP ESI                             ; 005f2047
     POP EBX                             ; 005f2048
@@ -59,8 +59,8 @@ section .text
     PUSH 0x657e99                       ; 005f2051 | = "Train Alpha"
         ;   Label: LAB_005f2051
     PUSH EBX                            ; 005f2056
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f2057
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f2057
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005f205c
     POP ESI                             ; 005f205f
     POP EBX                             ; 005f2060

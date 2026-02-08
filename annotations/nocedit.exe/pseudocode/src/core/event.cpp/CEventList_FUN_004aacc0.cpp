@@ -433,7 +433,8 @@ LAB_004aad41:
               sscanf((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
               ;
               if (local_c4 < 0) {
-                sprintf(&DAT_02d0a460,"Error parsing fadeAmbientSound parms");
+                _sprintf(&DAT_02d0a460,"Error parsing fadeAmbientSound parms")
+                ;
                 return (CDemonActor *)0x0;
               }
               local_ec = local_ec + local_c4;
@@ -454,7 +455,7 @@ LAB_004aad41:
                 sscanf
                           ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
-                  sprintf
+                  _sprintf
                             (&DAT_02d0a460,"Error parsing fadeSfx parms");
                   return (CDemonActor *)0x0;
                 }
@@ -679,7 +680,7 @@ LAB_004aaf38:
                             sscanf
                                       ((char *)local_ec,"( %[^ )] )%n",local_121d + 1);
                             if (local_a8 < 5) {
-                              sprintf
+                              _sprintf
                                         (&DAT_02d0a460,"Error parsing incCounter arguments");
                               return (CDemonActor *)0x0;
                             }
@@ -887,7 +888,7 @@ LAB_004aaf38:
                                   sscanf
                                             ((char *)local_ec,"(%[^,)]%n",local_efd + 1);
                                   if (local_8c < 3) {
-                                    sprintf
+                                    _sprintf
                                               (&DAT_02d0a460,"Error parsing killSfx parms");
                                     return (CDemonActor *)0x0;
                                   }
@@ -923,7 +924,7 @@ LAB_004aaf38:
                                     sscanf
                                               ((char *)local_ec,",%f%n",&local_88);
                                     if (local_8c < 3) {
-                                      sprintf
+                                      _sprintf
                                                 (&DAT_02d0a460,"Error parsing killSfx parms");
                                       return (CDemonActor *)0x0;
                                     }
@@ -936,7 +937,7 @@ LAB_004aaf38:
                                            ) != 0);
                                   if (*pbVar19 != 0x29) {
                                     local_ec = pbVar19;
-                                    sprintf
+                                    _sprintf
                                               (&DAT_02d0a460,"Can't find matching ) in killSfx command");
                                     return (CDemonActor *)0x0;
                                   }
@@ -968,7 +969,7 @@ LAB_004aaf38:
                                     local_84 = -1;
                                     sscanf((char *)local_ec,"( )%n");
                                     if (local_84 < 2) {
-                                      sprintf
+                                      _sprintf
                                                 (&DAT_02d0a460,"Error parsing lightning command");
                                       return (CDemonActor *)0x0;
                                     }
@@ -993,7 +994,7 @@ LAB_004aaf38:
                                       sscanf
                                                 ((char *)local_ec,"(%[^,)]%n",local_13ad + 1);
                                       if (local_7c < 3) {
-                                        sprintf
+                                        _sprintf
                                                   (&DAT_02d0a460,"Error parsing playSfx parms"
                                                   );
                                         return (CDemonActor *)0x0;
@@ -1038,7 +1039,7 @@ LAB_004aaf38:
                                         sscanf
                                                   ((char *)local_ec,",%[^)]%n",local_b15 + 1);
                                         if (local_7c < 3) {
-                                          sprintf
+                                          _sprintf
                                                     (&DAT_02d0a460,
                                                      "Error parsing playSfx parms");
                                           return (CDemonActor *)0x0;
@@ -1078,7 +1079,7 @@ LAB_004aaf38:
                                           pcVar10 = pcVar10 + (uint)bVar25 * -2 + 1;
                                         } while (cVar5 != '\0');
                                         if (0x13 < ~uVar15 - 1) {
-                                          sprintf
+                                          _sprintf
                                                     (&DAT_02d0a460,
                                                      "handle name %s is too long, max %d chars",
                                                      local_b15 + 1,0x13);
@@ -1092,7 +1093,7 @@ LAB_004aaf38:
                                                & 2) != 0);
                                       if (*pbVar19 != 0x29) {
                                         local_ec = pbVar19;
-                                        sprintf
+                                        _sprintf
                                                   (&DAT_02d0a460,"Can't find matching ) in playSfx command"
                                                   );
                                         return (CDemonActor *)0x0;
@@ -1142,7 +1143,7 @@ LAB_004aaf38:
                                                   ((char *)local_ec,"(%[^,], %f)%n",local_12e5 + 1,
                                                    &local_78);
                                         if (local_74 < 3) {
-                                          sprintf
+                                          _sprintf
                                                     (&DAT_02d0a460,
                                                      "Error parsing setCameraAmbient parms");
                                           return (CDemonActor *)0x0;
@@ -1175,13 +1176,13 @@ LAB_004aaf38:
                                         }
                                         iVar7 = core_set_cpp_CDemonSet_FUN_0056b790(g_CDemonSetPtr);
                                         if (iVar7 < 0) {
-                                          sprintf
+                                          _sprintf
                                                     (&DAT_02d0a460,
                                                      "Camera \"%s\" does not exist.");
                                           return (CDemonActor *)0x0;
                                         }
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
-                                          sprintf
+                                          _sprintf
                                                     (&DAT_02d0a460,
                                                      "Ambient value %g is out of range (1..100)",
                                                      (double)local_78);
@@ -1207,7 +1208,7 @@ LAB_004aaf38:
                                           sscanf
                                                     ((char *)local_ec,"( %[^,)]%n",local_ca5 + 1);
                                           if (local_6c < 5) {
-                                            sprintf
+                                            _sprintf
                                                       (&DAT_02d0a460,
                                                        "Error parsing setCounter arguments");
                                             return (CDemonActor *)0x0;
@@ -1244,7 +1245,7 @@ LAB_004aaf38:
                                             sscanf
                                                       ((char *)local_ec,",%d%n",&local_68);
                                             if (local_6c < 1) {
-                                              sprintf
+                                              _sprintf
                                                         (&DAT_02d0a460,
                                                          "Error parsing setCounter value argument");
                                               return (CDemonActor *)0x0;
@@ -1256,7 +1257,7 @@ LAB_004aaf38:
                                             }
                                           }
                                           if (*local_ec != 0x29) {
-                                            sprintf
+                                            _sprintf
                                                       (&DAT_02d0a460,
                                                        "Error parsing setCounter arguments");
                                             return (CDemonActor *)0x0;
@@ -1284,14 +1285,14 @@ LAB_004aaf38:
                                                       ((char *)local_ec,"(%d, %f)%n",local_64,
                                                        &local_60);
                                             if (local_5c < 3) {
-                                              sprintf
+                                              _sprintf
                                                         (&DAT_02d0a460,
                                                          "Error parsing setGroupAmbient parms");
                                               return (CDemonActor *)0x0;
                                             }
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
-                                              sprintf
+                                              _sprintf
                                                         (&DAT_02d0a460,
                                                          "Ambient value %g is out of range (1..100)",
                                                          (double)local_60);
@@ -1372,7 +1373,7 @@ LAB_004aaf38:
                                                           ((char *)local_ec,"(%[^,], %[^)])%n",
                                                            local_d6d + 1,local_1475 + 1);
                                                 if (local_48 < 5) {
-                                                  sprintf
+                                                  _sprintf
                                                             (&DAT_02d0a460,
                                                              "Error parsing setLeverState command parms");
                                                   return (CDemonActor *)0x0;
@@ -1475,7 +1476,7 @@ LAB_004aaf38:
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_985 + 1,local_8bd + 1);
                                                   if (local_40 < 5) {
-                                                    sprintf
+                                                    _sprintf
                                                               (&DAT_02d0a460,
                                                                "Error parsing setModelState command parms");
                                                     return (CDemonActor *)0x0;
@@ -1549,7 +1550,7 @@ LAB_004aaf38:
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                                             (pCVar12);
                                                   if (iVar7 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (&DAT_02d0a460,
                                                                "Model %s does not have state %s",
                                                                (pCVar11->base).model.model_name,
@@ -1581,7 +1582,7 @@ LAB_004aaf38:
                                                               ((char *)local_ec,"(%[^,], %f)%n",
                                                                local_a4d + 1,&local_3c);
                                                     if (local_38 < 3) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Error parsing setTimer command parms"
                                                                 );
@@ -1624,14 +1625,14 @@ LAB_004aaf38:
                                                       pcVar10 = pcVar10 + (uint)bVar25 * -2 + 1;
                                                     } while (cVar5 != '\0');
                                                     if (0x1f < ~uVar15 - 1) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
                                                                  ,local_a4d + 1,0x1f);
                                                       return (CDemonActor *)0x0;
                                                     }
                                                     if (local_3c < 0.0) {
-                                                      sprintf
+                                                      _sprintf
                                                                 (&DAT_02d0a460,
                                                                  "Invalid timer duration");
                                                       return (CDemonActor *)0x0;
@@ -1660,7 +1661,7 @@ LAB_004aaf38:
                                                                 ((char *)local_ec,"(%[^)])%n",
                                                                  local_e35 + 1);
                                                       if (local_34 < 3) {
-                                                        sprintf
+                                                        _sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing setWeather command parms");
@@ -1704,7 +1705,7 @@ LAB_004aaf38:
                                                                         (local_e35 + 1,
                                                                          "snow"),
                                                      iVar7 != 0)) {
-                                                    sprintf
+                                                    _sprintf
                                                               (&DAT_02d0a460,
                                                                "Invalid weather type: %s");
                                                     return (CDemonActor *)0x0;
@@ -1733,7 +1734,7 @@ LAB_004aaf38:
                                                                  "( %f, %f, %f, %f )%n",local_30,
                                                                  local_2c,local_80,local_28);
                                                       if (local_24 < 5) {
-                                                        sprintf
+                                                        _sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing shakeScreen command parms");
@@ -1764,7 +1765,7 @@ LAB_004aaf38:
                                                                 ((char *)local_ec,"(%[^,], %[^)])%n",
                                                                  local_72d + 1,local_40d + 1);
                                                       if (local_20 < 5) {
-                                                        sprintf
+                                                        _sprintf
                                                                   (&DAT_02d0a460,
                                                                                                                                       
                                                   "Error parsing slamModelToMotion command parms");
@@ -1839,7 +1840,7 @@ LAB_004aaf38:
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar12);
                                                   if (iVar7 < 0) {
-                                                    sprintf
+                                                    _sprintf
                                                               (&DAT_02d0a460,
                                                                "Model %s does not have motion %s",
                                                                (pCVar11->base).model.model_name,

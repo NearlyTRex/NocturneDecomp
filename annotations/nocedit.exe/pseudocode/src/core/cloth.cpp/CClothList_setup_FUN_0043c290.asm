@@ -10,7 +10,7 @@
 ; CDeformableModelInstance * Stack[0x10]:4   model_ptr
 ;
 ; XREF[1]:
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6bec
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6bec
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710

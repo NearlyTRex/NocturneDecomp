@@ -30,9 +30,8 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_34,&local_1c);
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
-  if (*(CDemonActor **)&this_ptr->carried_by_actor != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-              (g_CDemonSetPtr,*(CDemonActor **)&this_ptr->carried_by_actor);
+  if (this_ptr->carried_by_actor != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr->carried_by_actor);
   }
   core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_94);
   local_94.unk[8] = '\x01';
@@ -47,7 +46,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   local_94.unk[2] = -0x80;
   local_94.unk[3] = '?';
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                     (*(CDemonActor **)&this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
+                     (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
   local_94.unk._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);
   local_94.unk[0x1c] = '\x01';
   local_94.unk[0x1d] = '\0';

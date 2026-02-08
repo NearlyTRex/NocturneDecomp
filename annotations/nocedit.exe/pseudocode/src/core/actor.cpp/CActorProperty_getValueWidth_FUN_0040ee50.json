@@ -1,0 +1,97 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "0040e770",
+      "from_addr": "0040e79f",
+      "name": "core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040ee50",
+    "address_range": [
+      [
+        "0040ee50",
+        "0040ee82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50",
+    "signature": "int __cdecl core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty *this_ptr,int index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ea50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50"
+    },
+    {
+      "addr": "004018a0",
+      "is_variadic": false,
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 65
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorProperty *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

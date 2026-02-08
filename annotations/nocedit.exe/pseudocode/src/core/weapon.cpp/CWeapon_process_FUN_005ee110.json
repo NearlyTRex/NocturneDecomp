@@ -3,38 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 8,
-        "line": 24,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 25,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 26,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 27,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 6,
-        "line": 48,
+        "line": 44,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 48,
+        "line": 44,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -43,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 90,
+    "complexity_score": 41,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 45,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unknown_field"
-    ],
-    "total_lines": 162
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -100,7 +74,7 @@
     {
       "addr": "00587f70",
       "from_addr": "00587f91",
-      "name": "core_shotgun.cpp_FUN_00587f70",
+      "name": "core_shotgun.cpp_CShotgun_process_FUN_00587f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,34 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_1_",
-      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._1_1_",
-      "text": "iVar2._1_1_ = this_ptr->unk3[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._2_1_",
-      "text": "iVar2._2_1_ = this_ptr->unk3[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._3_1_",
-      "text": "iVar2._3_1_ = this_ptr->unk3[2];",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

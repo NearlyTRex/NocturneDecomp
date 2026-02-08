@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Largest_block_d_0061debe
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_watcom.c__memmax_FUN_00600940
 ;   crt_watcom.c_memavl_FUN_006008f0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -36,8 +36,8 @@ section .text
     PUSH EAX                            ; 0046e707 | = "Memory available: %d"
     LEA EAX,[EBP + -0x50]               ; 0046e708
     PUSH EAX                            ; 0046e70b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046e70c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046e70c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046e711
     IMUL EAX,dword ptr [EBP + 0x14],0xb ; 0046e714
     PUSH EAX                            ; 0046e718
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 0046e732 | = "Largest block: %d"
     LEA EAX,[EBP + -0x50]               ; 0046e733
     PUSH EAX                            ; 0046e736
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046e737
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046e737
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046e73c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046e73f
     INC EAX                             ; 0046e742

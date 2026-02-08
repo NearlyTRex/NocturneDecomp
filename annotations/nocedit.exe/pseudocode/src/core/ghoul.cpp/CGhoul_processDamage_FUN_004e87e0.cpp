@@ -141,7 +141,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
     }
     else {
       iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      sprintf(&stack0xffffff88,"guul flinch%d",iVar9);
+      _sprintf(&stack0xffffff88,"guul flinch%d",iVar9);
       this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->base).base.model.motion_controller);
       iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);

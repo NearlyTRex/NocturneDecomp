@@ -88,7 +88,7 @@ LAB_0046a9eb:
     }
   }
   if (0xf9 < g_TextureProcessedCount) {
-    sprintf(local_1e4,"Too many textures to cram, max is %d",0xfa);
+    _sprintf(local_1e4,"Too many textures to cram, max is %d",0xfa);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x26f8;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1e4);

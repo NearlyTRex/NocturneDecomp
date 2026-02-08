@@ -10,7 +10,7 @@ CWaterActor * __cdecl
 core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
 
 {
-  int extraout_EAX;
+  SWaterVertex *pSVar1;
   CWaterActor *ptr;
   void *ptr_00;
   
@@ -19,9 +19,9 @@ core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_wateract_cpp_FUN_005ebcf0();
+  pSVar1 = core_wateract_cpp_freeWaterVertices_FUN_005ebcf0((SWaterVertex *)(this_ptr->unk5 + 4));
   ptr = (CWaterActor *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(extraout_EAX + -0x29c),1);
+        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pSVar1[-0x15].unk + 4),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

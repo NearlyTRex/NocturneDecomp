@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_trigger.cpp_CTrigger_FUN_005df990
+;   core_trigger.cpp_CTrigger_setup_FUN_005df990
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     SUB ESP,0xc                         ; 005ebeb3
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005ebeb6
     PUSH ESI                            ; 005ebeba
-    CALL core_trigger.cpp_CTrigger_FUN_005df990 ; 005ebebb
-        ;   XREF to: 005df990 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005df990(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_setup_FUN_005df990 ; 005ebebb
+        ;   XREF to: 005df990 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_setup_FUN_005df990(CTrigger * this_ptr)
     XOR EBX,EBX                         ; 005ebec0
     MOV EDX,dword ptr [ESI + 0x370]     ; 005ebec2
     ADD ESP,0x4                         ; 005ebec8

@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_FUN_004d8910(void)
   char local_110 [256];
   
   pcVar1 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(in_stack_00000004);
-  sprintf(local_110,"%s = %s",pcVar1);
+  _sprintf(local_110,"%s = %s",pcVar1);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_ThemeFont,local_110,INT_02d831c4,INT_02d831c8,7,-1);
   INT_02d831c8 = INT_02d831c8 + INT_02d831cc;

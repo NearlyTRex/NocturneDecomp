@@ -22,11 +22,11 @@ core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
   }
   else {
     if (pCVar1->type != WEREWOLF_TYPE_TRAIN_ALPHA) {
-      sprintf(output_buffer,"Train Alpha");
+      _sprintf(output_buffer,"Train Alpha");
       return;
     }
     format = "Forest";
   }
-  sprintf(output_buffer,format);
+  _sprintf(output_buffer,format);
   return;
 }

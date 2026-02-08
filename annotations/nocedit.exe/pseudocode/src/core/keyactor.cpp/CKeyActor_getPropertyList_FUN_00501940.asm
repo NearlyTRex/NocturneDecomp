@@ -44,7 +44,7 @@ section .text
     PUSH 0x630c8f                       ; 00501974 | = "Key mask"
     PUSH ESI                            ; 00501979
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 0050197a
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0050197f
     POP ESI                             ; 00501982
     POP EBX                             ; 00501983

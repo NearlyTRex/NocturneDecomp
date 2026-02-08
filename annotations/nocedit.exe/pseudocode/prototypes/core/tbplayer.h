@@ -19,21 +19,21 @@ CDemonActorType * __cdecl CBassPlayer::getActorType(CBassPlayer *this_ptr);
 // Address: 005da060
 CBassPlayer * __cdecl CBassPlayer::ctor(CBassPlayer *this_ptr);
 
-// Original: core_tbplayer.cpp_CBassPlayer_FUN_005da090
+// Original: core_tbplayer.cpp_CBassPlayer_setup_FUN_005da090
 // Address: 005da090
-void __cdecl CBassPlayer(CBassPlayer *this_ptr);
+void __cdecl CBassPlayer::setup(CBassPlayer *this_ptr);
 
 // Original: core_tbplayer.cpp_FUN_005da100
 // Address: 005da100
 void __cdecl FUN_005da100(void);
 
-// Original: core_tbplayer.cpp_FUN_005da120
+// Original: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120
 // Address: 005da120
-void __cdecl FUN_005da120(void);
+void __cdecl CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_005da240
+// Original: core_tbplayer.cpp_CBassPlayer_processDamage_FUN_005da240
 // Address: 005da240
-void __cdecl FUN_005da240(void);
+void __cdecl CBassPlayer::processDamage(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_tbplayer.cpp_factoryFunc_FUN_005da280
 // Address: 005da280
@@ -47,17 +47,17 @@ CDemonActorType * __cdecl CDrummer::getActorType(CDrummer *this_ptr);
 // Address: 005da2c0
 CDrummer * __cdecl CDrummer::ctor(CDrummer *this_ptr);
 
-// Original: core_tbplayer.cpp_CDrummer_FUN_005da2f0
+// Original: core_tbplayer.cpp_CDrummer_setup_FUN_005da2f0
 // Address: 005da2f0
-void __cdecl CDrummer(CDrummer *this_ptr);
+void __cdecl CDrummer::setup(CDrummer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_005da370
+// Original: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
 // Address: 005da370
-void __cdecl FUN_005da370(void);
+void __cdecl CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_005da510
+// Original: core_tbplayer.cpp_CDrummer_processDamage_FUN_005da510
 // Address: 005da510
-void __cdecl FUN_005da510(void);
+void __cdecl CDrummer::processDamage(CDrummer *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_tbplayer.cpp_CDrummer_dtor_FUN_005da540
 // Address: 005da540

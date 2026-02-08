@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_addVertices
-typedef int (*CObj_addVertices)(struct CObj* this_ptr, int add_count);
+typedef int CObj_addVertices(struct CObj* this_ptr, int add_count);
 

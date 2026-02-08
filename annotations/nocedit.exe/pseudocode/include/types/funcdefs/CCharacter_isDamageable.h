@@ -7,5 +7,5 @@
 struct CCharacter;
 
 // Function Definition: CCharacter_isDamageable
-typedef int (*CCharacter_isDamageable)(struct CCharacter* this_ptr);
+typedef int CCharacter_isDamageable(struct CCharacter* this_ptr);
 

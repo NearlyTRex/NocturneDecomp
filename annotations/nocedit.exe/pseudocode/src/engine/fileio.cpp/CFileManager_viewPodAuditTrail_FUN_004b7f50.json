@@ -9,32 +9,19 @@
       },
       {
         "category": "incompatible_types",
-        "column": 18,
-        "line": 96,
-        "message": "no matching function for call to 'localtime'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 96,
-        "message": "incompatible pointer types assigning to '_tm *' from 'struct tm *'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 7,
         "line": 97,
         "message": "no matching function for call to 'strftime'"
+      },
+      {
+        "category": "format_error",
+        "column": 41,
+        "line": 110,
+        "message": "format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 40,
-        "line": 110,
-        "message": "format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 295,
@@ -77,7 +64,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
@@ -87,7 +74,7 @@
     {
       "addr": "00600288",
       "is_variadic": false,
-      "name": "crt_time.c_localtime_FUN_00600288"
+      "name": "crt_time.c__localtime_FUN_00600288"
     },
     {
       "addr": "006002d4",

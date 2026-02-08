@@ -2,45 +2,62 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 28,
+        "line": 60,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "incompatible_types",
         "column": 25,
         "line": 166,
         "message": "invalid operands to binary expression ('float' and 'int')"
       },
       {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 202,
-        "message": "incompatible pointer types assigning to '_tm *' from 'struct tm *'"
+        "category": "other",
+        "column": 36,
+        "line": 201,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
         "line": 203,
         "message": "no matching function for call to 'asctime'"
-      }
-    ],
-    "success": false,
-    "warnings": [
+      },
       {
         "category": "other",
-        "column": 28,
-        "line": 60,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "column": 33,
+        "line": 204,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 207,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 211,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 32,
         "line": 226,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 32,
         "line": 239,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 665,
@@ -129,14 +146,14 @@
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe6d0",
       "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -149,14 +166,14 @@
       "name": "crt_stdlib.c__atexit_FUN_005ff060"
     },
     {
+      "addr": "00600288",
+      "is_variadic": false,
+      "name": "crt_time.c__localtime_FUN_00600288"
+    },
+    {
       "addr": "00601768",
       "is_variadic": false,
       "name": "crt_time.c_asctime_FUN_00601768"
-    },
-    {
-      "addr": "00600288",
-      "is_variadic": false,
-      "name": "crt_time.c_localtime_FUN_00600288"
     },
     {
       "addr": "006001f0",

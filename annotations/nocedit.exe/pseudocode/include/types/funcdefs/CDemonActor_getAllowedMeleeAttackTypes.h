@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_getAllowedMeleeAttackTypes
-typedef int (*CDemonActor_getAllowedMeleeAttackTypes)(struct CDemonActor* this_ptr);
+typedef int CDemonActor_getAllowedMeleeAttackTypes(struct CDemonActor* this_ptr);
 

@@ -20,10 +20,10 @@ typedef enum EXCEPTION_DISPOSITION {
 } EXCEPTION_DISPOSITION;
 
 // Function Definition: EXCEPTION_FILTER_FUNC
-typedef int (*EXCEPTION_FILTER_FUNC)(int action, DWORD exceptionCode);
+typedef int EXCEPTION_FILTER_FUNC(int action, DWORD exceptionCode);
 
 // Function Definition: FARPROC_FUNC
-typedef int (*FARPROC_FUNC)(void);
+typedef int FARPROC_FUNC(void);
 
 // Typedef: FARPROC
 // pointer to FARPROC_FUNC
@@ -128,7 +128,7 @@ typedef _CONTEXT CONTEXT;
 typedef CONTEXT* PCONTEXT;
 
 // Function Definition: EXCEPTION_ROUTINE
-typedef EXCEPTION_DISPOSITION (*EXCEPTION_ROUTINE)(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
+typedef EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
 
 // Typedef: PEXCEPTION_ROUTINE
 // pointer to EXCEPTION_ROUTINE

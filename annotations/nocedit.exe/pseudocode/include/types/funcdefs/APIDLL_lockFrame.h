@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_lockFrame
-typedef int (*APIDLL_lockFrame)(void);
+typedef int APIDLL_lockFrame(void);
 

@@ -96,7 +96,7 @@ section .text
     PUSH EDX                            ; 005dfb2e
     PUSH ESI                            ; 005dfb2f
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfb30
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005dfb35
     TEST EAX,EAX                        ; 005dfb38
     JZ 0x005dfbbb                       ; 005dfb3a
@@ -203,7 +203,7 @@ section .text
     PUSH EBX                            ; 005dfc63
     PUSH ESI                            ; 005dfc64
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfc65
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005dfc6a
     TEST EAX,EAX                        ; 005dfc6d
     JZ 0x005dfb58                       ; 005dfc6f
@@ -416,7 +416,7 @@ section .text
         ;   Label: LAB_005dfef7
     PUSH ESI                            ; 005dfef8
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005dfef9
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005dfefe
     TEST EAX,EAX                        ; 005dff01
     JZ 0x005dfee3                       ; 005dff03
@@ -506,7 +506,7 @@ section .text
     PUSH EBX                            ; 005dffff
     PUSH ESI                            ; 005e0000
     CALL core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 ; 005e0001
-        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0()
+        ;   XREF to: 005e0cd0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005e0006
     TEST EAX,EAX                        ; 005e0009
     JZ 0x005dffbb                       ; 005e000b

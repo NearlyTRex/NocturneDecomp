@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_updateCollisionData
-typedef void (*CDemonActor_updateCollisionData)(struct CDemonActor* this_ptr);
+typedef void CDemonActor_updateCollisionData(struct CDemonActor* this_ptr);
 

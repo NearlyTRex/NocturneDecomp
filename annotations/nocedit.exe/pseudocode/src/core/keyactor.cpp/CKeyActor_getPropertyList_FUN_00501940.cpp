@@ -16,6 +16,6 @@ core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Key mask",&this_ptr->key_mask,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

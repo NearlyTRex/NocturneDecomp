@@ -66,7 +66,7 @@ int * __cdecl engine_colquant_c_FUN_004406c0(void)
   in_stack_00000004[0x1010] = 0;
   in_stack_00000004[0x1011] = in_stack_0000000c;
   engine_colquant_c_FUN_00441260();
-  sprintf(local_150,"Subdividing histogram array for %d palette entries...\n\n");
+  _sprintf(local_150,"Subdividing histogram array for %d palette entries...\n\n");
   uVar7 = 0;
   engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x16);
   do {
@@ -156,7 +156,7 @@ int * __cdecl engine_colquant_c_FUN_004406c0(void)
         } while (piVar4 != in_stack_00000004 + 0x800);
         return in_stack_00000004 + 0x2002;
       }
-      sprintf(local_150,"%6.6d",uVar7);
+      _sprintf(local_150,"%6.6d",uVar7);
       engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x21);
       if ((uVar7 & 7) == 0) {
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

@@ -16,7 +16,7 @@
 ;   core_moloch.cpp_CMoloch_addFilesToExtract_FUN_005299b0 at 005299ba
 ;   core_scat.cpp_CScat_addFilesToExtract_FUN_00559140 at 0055914a
 ;   core_stranger.cpp_CStranger_addFilesToExtract_FUN_005c6910 at 005c691a
-;   core_svetlana.cpp_CSvetlana_FUN_005d9f30 at 005d9f3a
+;   core_svetlana.cpp_CSvetlana_addFilesToExtract_FUN_005d9f30 at 005d9f3a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MODELS_s_0062edc4

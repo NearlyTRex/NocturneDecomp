@@ -21,20 +21,20 @@ cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0
   
   local_14 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
   if (local_14 == (_FILE *)0x0) {
-    sprintf(local_68,"Unable to open edge list file (%s).",filename);
+    _sprintf(local_68,"Unable to open edge list file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x4a7;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
   }
   SVar1 = _fread(&local_18,4,1,local_14);
   if (SVar1 != 1) {
-    sprintf(local_68,"Unable to read number of edge lists (%s).",filename);
+    _sprintf(local_68,"Unable to read number of edge lists (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x4b0;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
   }
   if (local_18 != expected_count) {
-    sprintf(local_68,"Invalid number of edge lists in file (%s).",filename);
+    _sprintf(local_68,"Invalid number of edge lists in file (%s).",filename);
     g_CurrentLineNumber = 0x4b7;
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
@@ -45,7 +45,7 @@ cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0
     do {
       SVar1 = _fread(buffer,4,1,local_14);
       if (SVar1 != 1) {
-        sprintf(local_68,"Unable to read number of edges (%s).",filename);
+        _sprintf(local_68,"Unable to read number of edges (%s).",filename);
         g_CurrentFilename = "..\\cockpit\\ckptutil.c";
         g_CurrentLineNumber = 0x4c2;
         core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
@@ -67,7 +67,7 @@ cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0
         }
         SVar1 = _fread(edge_lists->edge_data,SVar1,1,local_14);
         if (SVar1 != 1) {
-          sprintf(local_68,"Unable to read edge list (%s).",filename);
+          _sprintf(local_68,"Unable to read edge list (%s).",filename);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x4dd;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);

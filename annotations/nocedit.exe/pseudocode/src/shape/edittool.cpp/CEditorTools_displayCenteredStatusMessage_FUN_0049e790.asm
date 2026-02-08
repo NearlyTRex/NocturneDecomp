@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
@@ -75,8 +75,8 @@ section .text
     PUSH ESI                            ; 0049e7d3
     PUSH 0x2cef930                      ; 0049e7d4 | g_StatusMessageBuffer
     XOR EDI,EDI                         ; 0049e7d9
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e7db
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e7db
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e7e0
     MOV dword ptr [ESP],EDI             ; 0049e7e3
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0049e7e6

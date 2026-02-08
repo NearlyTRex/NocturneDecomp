@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_restoreVertexPositions
-typedef void (*CObj_restoreVertexPositions)(struct CObj* this_ptr);
+typedef void CObj_restoreVertexPositions(struct CObj* this_ptr);
 

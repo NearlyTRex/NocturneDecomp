@@ -1134,8 +1134,8 @@ section .text
     JZ 0x005bf233                       ; 005bf215
         ;   XREF to: 005bf233 (CONDITIONAL_JUMP)  ; LAB_005bf233
     PUSH ESI                            ; 005bf217
-    CALL core_stranger.cpp_FUN_005bb010 ; 005bf218
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
+    CALL core_stranger.cpp_CStranger_FUN_005bb010 ; 005bf218
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_CStranger_FUN_005bb010(CStranger * this_ptr)
     MOV dword ptr [ESP + 0x1f3c],EAX    ; 005bf21d
     MOV EAX,dword ptr [ESP + 0x1f3c]    ; 005bf224
     MOV [0x03f6bb64],EAX                ; 005bf22b | INT_03f6bb64

@@ -7,8 +7,8 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[106]:
-;   core_actor.cpp_CActorProperty_FUN_0040ea50 at 0040ec43
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fae2
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 at 0040ec43
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 004122e1
 ;   core_baron.cpp_CBaronWeapon_FUN_00413e30 at 00413e73
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00413449

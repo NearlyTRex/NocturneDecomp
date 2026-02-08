@@ -44,10 +44,10 @@
 ;   core_script.cpp_CScript_FUN_0055a370
 ;   core_script.cpp_CScript_FUN_0055a4b0
 ;   core_script.cpp_CScript_FUN_0055a540
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_ftell_FUN_00601560
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_system_FUN_00602130
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -253,8 +253,8 @@ section .text
     PUSH ECX                            ; 0055a17f
     PUSH 0x64186c                       ; 0055a180 | = "Syntax error on %s line %d:\n%s"
     PUSH EDI                            ; 0055a185 | DAT_031089e8
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055a186
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055a186
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0055a18b
     MOV EAX,ESP                         ; 0055a18e
     PUSH EAX                            ; 0055a190
@@ -313,8 +313,8 @@ section .text
     PUSH 0x6419c2                       ; 0055a227 | = "start notepad world\\%s"
     LEA EAX,[ESP + 0x6b4]               ; 0055a22c
     PUSH EAX                            ; 0055a233
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055a234
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055a234
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055a239
     LEA EAX,[ESP + 0x6ac]               ; 0055a23c
     PUSH EAX                            ; 0055a243

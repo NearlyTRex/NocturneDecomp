@@ -19,7 +19,7 @@
 ;   crt_env.c_putenv_internal_FUN_0060ee80
 ;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;   crt_stdlib.c_strtol_FUN_0060edfc
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;   crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c
 ;
 ; *****************************************************************************
@@ -72,8 +72,8 @@ section .text
     PUSH EBX                            ; 0060e3f8
     LEA EBX,[ESP + 0x8]                 ; 0060e3f9
     PUSH EBX                            ; 0060e3fd
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0060e3fe
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0060e3fe
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0060e403
     PUSH 0x10                           ; 0060e406
     PUSH 0x0                            ; 0060e408
@@ -114,8 +114,8 @@ section .text
     PUSH EBX                            ; 0060e443
     LEA EBX,[ESP + 0x8]                 ; 0060e444
     PUSH EBX                            ; 0060e448
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0060e449
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0060e449
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0060e44e
     PUSH 0x10                           ; 0060e451
     PUSH 0x0                            ; 0060e453
@@ -156,8 +156,8 @@ section .text
     PUSH EBX                            ; 0060e490
     LEA EBX,[ESP + 0x8]                 ; 0060e491
     PUSH EBX                            ; 0060e495
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0060e496
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 0060e496
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0060e49b
     PUSH 0x10                           ; 0060e49e
     XOR BL,BL                           ; 0060e4a0

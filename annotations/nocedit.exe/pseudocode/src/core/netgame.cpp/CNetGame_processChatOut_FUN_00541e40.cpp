@@ -63,7 +63,7 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
   }
   *(byte *)(in_stack_00000004->local_player_index + 8 + (int)puVar7) = 1;
   memset(&DAT_02f98ae8 + iVar1,0,0x100);
-  strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
+  _strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
   core_netgame_cpp_CNetGame_FUN_00542370(in_stack_00000004);
   return;
 }

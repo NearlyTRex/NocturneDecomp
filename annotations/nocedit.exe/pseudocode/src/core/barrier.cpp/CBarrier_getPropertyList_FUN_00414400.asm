@@ -38,7 +38,7 @@ section .text
     PUSH 0x615196                       ; 0041441d | = "size"
     PUSH ESI                            ; 00414422
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 00414423
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00414428
     PUSH 0x0                            ; 0041442b
     PUSH 0xc8                           ; 0041442d

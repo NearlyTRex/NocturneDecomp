@@ -18,7 +18,7 @@
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00584184
 ;   core_setedit.cpp_FUN_00582930 at 00582cfa
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 at 0059b734
-;   core_stairs.cpp_FUN_005b9c10 at 005b9fe4
+;   core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 at 005b9fe4
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 at 00407d55
 ;   ... and 7 more
 ;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_ReturnZero6() */
-
 uint ReturnZero6(void)
 
 {

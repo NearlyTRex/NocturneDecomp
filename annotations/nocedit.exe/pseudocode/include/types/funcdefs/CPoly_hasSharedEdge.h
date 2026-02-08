@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_hasSharedEdge
-typedef int (*CPoly_hasSharedEdge)(struct CPoly* this_ptr, struct CPoly* other);
+typedef int CPoly_hasSharedEdge(struct CPoly* this_ptr, struct CPoly* other);
 

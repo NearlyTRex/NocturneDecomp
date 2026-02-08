@@ -26,7 +26,7 @@
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -176,8 +176,8 @@ section .text
     PUSH EAX                            ; 0046980e | = "New vertex created : %d.  Press a key..."
     LEA EAX,[EBP + 0xffffff74]          ; 0046980f
     PUSH EAX                            ; 00469815
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00469816
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00469816
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046981b
     MOV EAX,dword ptr [EBP + -0x18]     ; 0046981e
     PUSH EAX                            ; 00469821

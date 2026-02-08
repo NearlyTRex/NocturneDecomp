@@ -8,7 +8,7 @@
 // =============================================================================
 
 // Function Definition: ATEXIT_FUNC
-typedef void (*ATEXIT_FUNC)(void);
+typedef void ATEXIT_FUNC(void);
 
 // Structure: Heap
 typedef struct Heap {
@@ -40,14 +40,14 @@ typedef struct HeapState {
 } HeapState;
 
 // Function Definition: QSORT_COMPARATOR_FUNC
-typedef int (*QSORT_COMPARATOR_FUNC)(void* a, void* b);
+typedef int QSORT_COMPARATOR_FUNC(void* a, void* b);
 
 // Typedef: QSORT_COMPARATOR
 // pointer to QSORT_COMPARATOR_FUNC
 typedef QSORT_COMPARATOR_FUNC* QSORT_COMPARATOR;
 
 // Function Definition: RUNTIME_HANDLER_FUNC
-typedef void (*RUNTIME_HANDLER_FUNC)(void);
+typedef void RUNTIME_HANDLER_FUNC(void);
 
 // Structure: RuntimeHandlerEntry
 typedef struct RuntimeHandlerEntry {
@@ -57,8 +57,8 @@ typedef struct RuntimeHandlerEntry {
 } RuntimeHandlerEntry;
 
 // Function Definition: STRTOD_FUNC
-typedef double (*STRTOD_FUNC)(double* result, char* str);
+typedef double STRTOD_FUNC(double* result, char* str);
 
 // Function Definition: VOID_FUNC
-typedef void (*VOID_FUNC)(void);
+typedef void VOID_FUNC(void);
 

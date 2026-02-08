@@ -1,36 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 161,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 28,
-        "line": 161,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 302,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 237,
-    "suspect_count": 5,
+    "pseudocode_lines": 234,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unresolved_funcptr"
+      "pointer_cast"
     ],
-    "total_lines": 746
+    "total_lines": 743
   },
   "cross_references": [],
   "function": {
@@ -384,38 +370,31 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(uint *)((int)",
-      "text": "uVar4 = *(uint *)((int)g_HeroActors + iVar10);",
+      "line": 47,
+      "match": "(int *)((int)",
+      "text": "iVar9 = *(int *)((int)g_HeroActors + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 100,
       "match": "ROUND",
       "text": "CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 101,
       "match": "ROUND",
       "text": "CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 102,
       "match": "ROUND",
       "text": "CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 154,
-      "match": "code *",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

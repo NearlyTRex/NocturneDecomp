@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH 0x614465                       ; 0040e545 | = "%s %d"
     LEA EAX,[ESP + 0xc]                 ; 0040e54a
     PUSH EAX                            ; 0040e54e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040e54f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040e54f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040e554
     PUSH 0x0                            ; 0040e557
     PUSH EDI                            ; 0040e559

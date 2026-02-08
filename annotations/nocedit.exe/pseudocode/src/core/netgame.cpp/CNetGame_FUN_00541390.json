@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 17,
         "line": 53,
         "message": "use of undeclared identifier 'stack0xfffffed0'"
       },
@@ -15,7 +15,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 17,
         "line": 55,
         "message": "use of undeclared identifier 'stack0xfffffed0'"
       },
@@ -51,7 +51,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
+        "column": 21,
         "line": 110,
         "message": "use of undeclared identifier 'stack0xfffffecc'"
       },
@@ -87,20 +87,20 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
+        "column": 21,
         "line": 134,
         "message": "use of undeclared identifier 'stack0xfffffed0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 135,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xfffffed0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 281,
+        "line": 282,
         "message": "use of undeclared identifier 'DAT_02f7c640'"
       }
     ],
@@ -109,18 +109,18 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 533,
+    "complexity_score": 534,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
-    "pseudocode_lines": 288,
+    "pseudocode_lines": 289,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1125
+    "total_lines": 1126
   },
   "cross_references": [
     {
@@ -218,7 +218,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005feb5c",
@@ -828,7 +828,7 @@
       "description": "Direct stack address reference",
       "line": 46,
       "match": "&stack0xfffffed0",
-      "text": "sprintf(&stack0xfffffed0,\"Mission: %s\",this_ptr->unk);",
+      "text": "_sprintf(&stack0xfffffed0,\"Mission: %s\",this_ptr->unk);",
       "type": "stack_ref"
     },
     {
@@ -842,14 +842,14 @@
       "description": "Direct stack address reference",
       "line": 48,
       "match": "&stack0xfffffed0",
-      "text": "sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
+      "text": "_sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_02f7c8c4",
-      "text": "sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
+      "text": "_sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
       "type": "undefined_data"
     },
     {
@@ -898,7 +898,7 @@
       "description": "Direct stack address reference",
       "line": 103,
       "match": "&stack0xfffffecc",
-      "text": "sprintf(&stack0xfffffecc,\"%dms\",local_1c,uVar11);",
+      "text": "_sprintf(&stack0xfffffecc,\"%dms\",local_1c,uVar11);",
       "type": "stack_ref"
     },
     {
@@ -940,47 +940,47 @@
       "description": "Direct stack address reference",
       "line": 127,
       "match": "&stack0xfffffed0",
-      "text": "sprintf(&stack0xfffffed0,\"%d\",*(int *)(local_1c + 0x34));",
+      "text": "_sprintf(&stack0xfffffed0,\"%d\",*(int *)(local_1c + 0x34))",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 129,
       "match": "&stack0xfffffed0",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,500,iVar5);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 168,
       "match": "DAT_02f7c8c4",
       "text": "this_ptr->players[this_ptr->local_player_index].player_id = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 177,
       "match": "DAT_02f7c8c4",
       "text": "if (DAT_02f7c8c4 != pCVar6->players[0].player_id) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 238,
       "match": "DAT_02f7c8c8",
       "text": "DAT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 244,
+      "line": 245,
       "match": "DAT_00680a04",
       "text": "if ((this_ptr->connection_type == 2) && (DAT_00680a04 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 274,
+      "line": 275,
       "match": "DAT_02f7c640",
       "text": "(g_CEditorToolsPtr,\"Send chat\",&DAT_02f7c640,0x100,1),",
       "type": "undefined_data"

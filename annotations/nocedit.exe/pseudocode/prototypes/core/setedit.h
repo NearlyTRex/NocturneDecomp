@@ -81,7 +81,7 @@ int __cdecl FUN_00578c90(void);
 
 // Original: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 // Address: 00578d80
-void __cdecl CDemonSet::importS3D(void);
+void __cdecl CDemonSet::importS3D(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0
 // Address: 0057a0c0

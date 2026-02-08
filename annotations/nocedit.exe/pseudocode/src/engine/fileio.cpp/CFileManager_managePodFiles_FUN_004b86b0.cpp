@@ -479,7 +479,7 @@ LAB_004b8d5b:
       pvVar10 = local_44;
       if (0 < local_48) {
         do {
-          sprintf
+          _sprintf
                     (local_2338,"%s\t%s\t%s",pvVar10,*(uint *)((int)pvVar10 + 0x36c),
                      (&PTR_s_Skip_00679da0)[*(int *)((int)pvVar10 + 0x378)]);
           if (*(char *)((int)pvVar10 + 0x308) != '\0') {
@@ -494,7 +494,7 @@ LAB_004b8d5b:
             } while (*pcVar13 != '\0');
             pcVar13 = (char *)0x0;
 LAB_004b8df1:
-            sprintf
+            _sprintf
                       (pcVar13,"\tChecked out by %s",(int)pvVar10 + 0x308);
           }
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,local_2338);
@@ -513,36 +513,36 @@ LAB_004b8df1:
       }
       if (iVar2 < local_170c.base.item_count + -1) {
         iVar9 = (int)local_44 + iVar2 * 0x39c + 0x204;
-        iVar4 = sprintf(local_2338,"Select action for %s\n",iVar9);
+        iVar4 = _sprintf(local_2338,"Select action for %s\n",iVar9);
         pcVar12 = local_2338 + iVar4;
         switch(*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x370)) {
         case 0:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"Your pod %s is newer than %s\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100,iVar9);
           break;
         case 1:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"Your pod %s is older than %s\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100,iVar9);
           break;
         case 2:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"Your pod %s is different than %s\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100,iVar9);
           break;
         case 3:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"Your pod %s is the same as %s\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100,iVar9);
           break;
         case 4:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"You don't have the pod %s\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100);
           break;
         case 5:
-          iVar9 = sprintf
+          iVar9 = _sprintf
                             (pcVar12,"%s is mounted, but %s does not exist\n",
                              (int)pvVar10 + iVar2 * 0x39c + 0x100,iVar9);
           break;
@@ -555,53 +555,54 @@ LAB_004b8df1:
         pcVar12 = pcVar12 + iVar9;
 LAB_004b9590:
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
-          iVar4 = sprintf(pcVar12,"---------------------\n");
-          iVar6 = sprintf
+          iVar4 = _sprintf(pcVar12,"---------------------\n");
+          iVar6 = _sprintf
                             (pcVar12 + iVar4,"Of the %d files in %s:\n",
                              *(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x390),
                              (int)pvVar10 + iVar2 * 0x39c + 0x204);
           iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 900);
           pcVar12 = pcVar12 + iVar4 + iVar6;
           if (0 < iVar9) {
-            iVar9 = sprintf
+            iVar9 = _sprintf
                               (pcVar12,"%d files don't exist locally\n",iVar9);
             pcVar12 = pcVar12 + iVar9;
           }
           iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x37c);
           if (0 < iVar9) {
-            iVar9 = sprintf
+            iVar9 = _sprintf
                               (pcVar12,"%d local files are newer\n",iVar9);
             pcVar12 = pcVar12 + iVar9;
           }
           iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x380);
           if (0 < iVar9) {
-            iVar9 = sprintf
+            iVar9 = _sprintf
                               (pcVar12,"%d local files are older\n",iVar9);
             pcVar12 = pcVar12 + iVar9;
           }
           iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x388);
           if (0 < iVar9) {
-            iVar9 = sprintf
+            iVar9 = _sprintf
                               (pcVar12,"%d local files are different\n",iVar9);
             pcVar12 = pcVar12 + iVar9;
           }
           iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x38c);
           if (0 < iVar9) {
-            iVar9 = sprintf
+            iVar9 = _sprintf
                               (pcVar12,"%d local files are in sync\n",iVar9);
             pcVar12 = pcVar12 + iVar9;
           }
-          iVar9 = sprintf(pcVar12,"---------------------\n");
+          iVar9 = _sprintf(pcVar12,"---------------------\n");
           pcVar12 = pcVar12 + iVar9;
           if (*(char *)((int)pvVar10 + iVar2 * 0x39c + 0x308) != '\0') {
             pcVar13 = (char *)((int)pvVar10 + iVar2 * 0x39c + 0x308);
             iVar9 = stricmp
                               (pcVar13,g_VersionControlSession.primary_username);
             if (iVar9 == 0) {
-              iVar9 = sprintf(pcVar12,"You currently have this pod checked out\n");
+              iVar9 = _sprintf(pcVar12,"You currently have this pod checked out\n")
+              ;
             }
             else {
-              iVar9 = sprintf
+              iVar9 = _sprintf
                                 (pcVar12,"%s currently has this pod checked out\n",pcVar13);
             }
             pcVar12 = pcVar12 + iVar9;
@@ -612,7 +613,7 @@ LAB_004b9590:
           else {
             pcVar13 = "Your currently have this pod mounted.\n";
           }
-          sprintf(pcVar12,pcVar13);
+          _sprintf(pcVar12,pcVar13);
         }
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1364);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_s_Skip_00679da0);
@@ -731,13 +732,13 @@ LAB_004b9590:
                                         (pcVar13,g_VersionControlSession.primary_username),
                      iVar2 != 0)) {
                     if ((local_38 & 8) != 0) goto LAB_004b9af4;
-                    sprintf
+                    _sprintf
                               ((char *)local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
                     pcVar12 = g_VersionControlSession.unk1 + 4;
                     piVar8 = local_980;
                   }
                   else {
-                    sprintf
+                    _sprintf
                               ((char *)local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
                     pcVar12 = g_VersionControlSession.unk1;
                     piVar8 = local_78c;
@@ -862,31 +863,31 @@ LAB_004b8f32:
       else {
         pcVar12 = local_598;
         if (0 < local_5c) {
-          iVar2 = sprintf(pcVar12,"%d pods copied\n",local_5c);
+          iVar2 = _sprintf(pcVar12,"%d pods copied\n",local_5c);
           pcVar12 = local_598 + iVar2;
         }
         if (0 < local_54) {
-          iVar2 = sprintf(pcVar12,"%d pods extracted\n",local_54);
+          iVar2 = _sprintf(pcVar12,"%d pods extracted\n",local_54);
           pcVar12 = pcVar12 + iVar2;
         }
         if (0 < local_58) {
-          iVar2 = sprintf(pcVar12,"%d pods mounted\n",local_58);
+          iVar2 = _sprintf(pcVar12,"%d pods mounted\n",local_58);
           pcVar12 = pcVar12 + iVar2;
         }
         if (0 < local_50) {
-          iVar2 = sprintf(pcVar12,"%d pods dismounted\n",local_50);
+          iVar2 = _sprintf(pcVar12,"%d pods dismounted\n",local_50);
           pcVar12 = pcVar12 + iVar2;
         }
         if (0 < local_4c) {
-          iVar2 = sprintf(pcVar12,"%d local pods deleted\n",local_4c)
-          ;
+          iVar2 = _sprintf
+                            (pcVar12,"%d local pods deleted\n",local_4c);
           pcVar12 = pcVar12 + iVar2;
         }
         if ((local_58 < 1) && (local_50 < 1)) {
           pcVar13 = "To apply these changes, you should restart the application.";
         }
         else {
-          iVar2 = sprintf(pcVar12,"POD.INI re-written\n");
+          iVar2 = _sprintf(pcVar12,"POD.INI re-written\n");
           pcVar12 = pcVar12 + iVar2;
           pcVar13 = "To apply these changes, you should restart the application.";
         }

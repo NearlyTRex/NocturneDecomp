@@ -33,7 +33,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 18,
+        "column": 19,
         "line": 152,
         "message": "use of undeclared identifier 'DAT_02d82570'"
       },
@@ -44,6 +44,30 @@
         "message": "use of undeclared identifier 'DAT_02d82570'"
       },
       {
+        "category": "other",
+        "column": 39,
+        "line": 176,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 177,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 247,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 251,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "incompatible_types",
         "column": 68,
         "line": 258,
@@ -56,105 +80,44 @@
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 293,
-        "message": "use of undeclared identifier 'stack0xfffff9d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 295,
-        "message": "use of undeclared identifier 'stack0xfffff9d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 297,
-        "message": "use of undeclared identifier 'stack0xfffff9d4'"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 176,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 177,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 247,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 251,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
         "category": "format_error",
         "column": 68,
         "line": 258,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 20,
         "line": 259,
-        "message": "format specifies type 'double' but the argument has type 'int' [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 52,
         "line": 259,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
         "line": 259,
-        "message": "format specifies type 'double' but the argument has type 'int' [-Wformat]"
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 80,
         "line": 257,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 37,
         "line": 261,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 264,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 271,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 285,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 1136,
@@ -317,14 +280,14 @@
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "006007a0",
       "is_variadic": false,
       "name": "crt_stdio.c_fputc_FUN_006007a0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",
@@ -1384,7 +1347,7 @@
       "description": "Undefined global data reference",
       "line": 145,
       "match": "DAT_02d82570",
-      "text": "sprintf(&DAT_02d82570,\"demon%d.pcx\");",
+      "text": "_sprintf(&DAT_02d82570,\"demon%d.pcx\");",
       "type": "undefined_data"
     },
     {

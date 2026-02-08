@@ -20,7 +20,7 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   
   bVar5 = 0;
   local_14 = &stack0x0000000c;
-  vsprintf(local_1014,format,(va_list_t)&local_14);
+  _vsprintf(local_1014,format,(va_list_t)&local_14);
   iVar3 = 0;
   local_14 = (byte *)0x0;
   uVar2 = 0xffffffff;

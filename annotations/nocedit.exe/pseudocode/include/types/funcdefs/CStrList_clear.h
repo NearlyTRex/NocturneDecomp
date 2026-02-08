@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_clear
-typedef void (*CStrList_clear)(struct CStrList* this_ptr);
+typedef void CStrList_clear(struct CStrList* this_ptr);
 

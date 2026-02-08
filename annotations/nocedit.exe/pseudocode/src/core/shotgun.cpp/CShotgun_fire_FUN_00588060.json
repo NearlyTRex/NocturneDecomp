@@ -1,0 +1,366 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 26,
+        "line": 59,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 59,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 111,
+        "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 113,
+        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 113,
+        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 135,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 75,
+        "line": 135,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 169,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 169,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 172,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 173,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 183,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 312,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 11,
+    "pseudocode_lines": 217,
+    "suspect_count": 8,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "unknown_field"
+    ],
+    "total_lines": 327
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00588060",
+    "address_range": [
+      [
+        "00588060",
+        "005880fc"
+      ],
+      [
+        "0058830a",
+        "005883ba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
+    "signature": "int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "004c7a60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7a60"
+    },
+    {
+      "addr": "00574180",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
+    },
+    {
+      "addr": "005b3a40",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40"
+    },
+    {
+      "addr": "005ee6e0",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_005ee6e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649b08",
+      "name": "s_shotgun_noammo_wav_00649b08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649b1b",
+      "name": "s_shotgun_wav_00649b1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649b27",
+      "name": "DOUBLE_00649b27",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00649b2f",
+      "name": "DOUBLE_00649b2f",
+      "type": "double",
+      "value": "0.00555555555555555"
+    },
+    {
+      "addr": "00649b37",
+      "name": "FLOAT_00649b37",
+      "type": "float",
+      "value": "-0.125"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.28125,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CALLOTHER": 1,
+      "CBRANCH": 2,
+      "COPY": 136,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 41,
+      "INT_AND": 31,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 28,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 14,
+      "INT_SUB": 36,
+      "INT_XOR": 2,
+      "LOAD": 19,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 43
+    },
+    "pcode_op_count": 411
+  },
+  "stack_frame": {
+    "frame_size": 136,
+    "local_size": 132,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShotgun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0058806c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "fptan",
+      "text": "fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "fcos",
+      "text": "fVar4 = (float10)fcos((float10)fStack_4c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "fsin",
+      "text": "fVar5 = (float10)fsin((float10)fStack_4c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 156,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX == 0) break;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._4_4_",
+      "text": "auStack_128._4_4_ = pCStack_34;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._0_4_",
+      "text": "auStack_128._0_4_ = g_CDemonSetPtr->unk1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 175,
+      "match": "SQRT",
+      "text": "SQRT(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 248,
+        "vtable_addr": "00662a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

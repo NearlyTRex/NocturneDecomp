@@ -35,7 +35,7 @@ void __cdecl core_script_cpp_CScript_FUN_00567bc0(CScript *this_ptr,CStrList *pa
           iVar3 = 0;
           do {
             if (*(int *)(local_14c + iVar3 + -0x1e00) == 0xd) {
-              sprintf
+              _sprintf
                         (local_14c,"%s\tScript line %d",
                          local_2274.params[0].parsed_value + iVar3,
                          *(uint *)((int)&this_ptr->parsed_lines->line_number + iVar1));

@@ -41,7 +41,7 @@
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
-;   core_trigger.cpp_FUN_005e0aa0
+;   core_trigger.cpp_CTrigger_FUN_005e0aa0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -361,13 +361,13 @@ section .text
     JZ 0x005e3c0c                       ; 005e3b82
         ;   XREF to: 005e3c0c (CONDITIONAL_JUMP)  ; LAB_005e3c0c
     PUSH ESI                            ; 005e3b88
-    CALL core_trigger.cpp_FUN_005e0aa0  ; 005e3b89
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_005e0aa0()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0aa0 ; 005e3b89
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0aa0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 005e3b8e
     PUSH EBX                            ; 005e3b91
     PUSH ESI                            ; 005e3b92
-    CALL core_trigger.cpp_FUN_005e0ac0  ; 005e3b93
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_FUN_005e0ac0()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 005e3b93
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 005e3b98
     TEST EAX,EAX                        ; 005e3b9b
     JZ 0x005e3bcc                       ; 005e3b9d
@@ -381,8 +381,8 @@ section .text
     SUB ESP,0x4                         ; 005e3bbd
     FSTP float ptr [ESP]                ; 005e3bc0
     PUSH ESI                            ; 005e3bc3
-    CALL core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00 ; 005e3bc4
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()
+    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 005e3bc4
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 005e3bc9
     MOV EDI,dword ptr [ESP + 0xbc]      ; 005e3bcc
         ;   Label: LAB_005e3bcc

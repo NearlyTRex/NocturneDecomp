@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_getCarrier
-typedef struct CDemonActor* (*CDemonActor_getCarrier)(struct CDemonActor* this_ptr);
+typedef struct CDemonActor* CDemonActor_getCarrier(struct CDemonActor* this_ptr);
 

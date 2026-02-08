@@ -15,12 +15,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr)
   CDynamite *this_ptr_00;
   undefined3 extraout_var;
   
-  if (*(int *)(this_ptr->unk1 + 0x54) != 0) {
-    (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 4))();
+  if (*(int *)(this_ptr->unk5 + 8) != 0) {
+    (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 4))();
     this_ptr_00 = (CDynamite *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (*(CDemonActor **)(this_ptr->unk1 + 0x54),g_CDynamiteClassInfo.name_hash
-                            );
+                            (*(CDemonActor **)(this_ptr->unk5 + 8),g_CDynamiteClassInfo.name_hash);
     if (this_ptr_00 != (CDynamite *)0x0) {
       bVar3 = core_dynamite_cpp_CDynamite_FUN_0049cf90(this_ptr_00);
       if (CONCAT31(extraout_var,bVar3) != 0) {
@@ -31,10 +30,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr)
         *(uint *)(this_ptr_00->unk + 8) = *(uint *)(this_ptr_00->unk + 0xc);
         *(uint *)(this_ptr_00->unk + 4) = *(uint *)(this_ptr_00->unk + 8);
         (*(((this_ptr_00->base).base.vtable._uc)->_uc).cfunc4)();
-        this_ptr->unk1[0x54] = '\0';
-        this_ptr->unk1[0x55] = '\0';
-        this_ptr->unk1[0x56] = '\0';
-        this_ptr->unk1[0x57] = '\0';
+        this_ptr->unk5[8] = '\0';
+        this_ptr->unk5[9] = '\0';
+        this_ptr->unk5[10] = '\0';
+        this_ptr->unk5[0xb] = '\0';
         (this_ptr->base).base.field47_0x2a8c = 0;
         fVar2 = 10.0f;
         (this_ptr->base).base.field48_0x2a90 = 0;

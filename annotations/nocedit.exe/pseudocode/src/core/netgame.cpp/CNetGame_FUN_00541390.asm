@@ -54,7 +54,7 @@
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00541c80
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   ... and 11 more
 ;
@@ -119,8 +119,8 @@ section .text
     PUSH 0x63d9ad                       ; 00541436 | = "Mission: %s"
     LEA EAX,[ESP + 0x10]                ; 0054143b
     PUSH EAX                            ; 0054143f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00541440
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00541440
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00541445
     PUSH 0xb                            ; 00541448
     PUSH 0x0                            ; 0054144a
@@ -134,8 +134,8 @@ section .text
     PUSH 0x63d9b9                       ; 00541460 | = "MyGameSettigsId: %d"
     LEA EAX,[ESP + 0x10]                ; 00541465
     PUSH EAX                            ; 00541469
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054146a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054146a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054146f
     PUSH 0xb                            ; 00541472
     PUSH 0x190                          ; 00541474
@@ -311,8 +311,8 @@ section .text
     PUSH 0x63da1f                       ; 0054164e | = "%d"
     LEA EAX,[ESP + 0x10]                ; 00541653
     PUSH EAX                            ; 00541657
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00541658
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00541658
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054165d
     PUSH EBX                            ; 00541660
     PUSH 0x190                          ; 00541661
@@ -401,8 +401,8 @@ section .text
     PUSH 0x63da08                       ; 00541748 | = "%dms"
     LEA EAX,[ESP + 0x10]                ; 0054174d
     PUSH EAX                            ; 00541751
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00541752
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00541752
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00541757
     JMP 0x005415e9                      ; 0054175a
         ;   XREF to: 005415e9 (UNCONDITIONAL_JUMP)  ; LAB_005415e9
@@ -421,8 +421,8 @@ section .text
     PUSH 0x63da22                       ; 0054177e | = "%d"
     LEA EAX,[ESP + 0x10]                ; 00541783
     PUSH EAX                            ; 00541787
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00541788
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00541788
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054178d
     PUSH EBX                            ; 00541790
     PUSH 0x1f4                          ; 00541791

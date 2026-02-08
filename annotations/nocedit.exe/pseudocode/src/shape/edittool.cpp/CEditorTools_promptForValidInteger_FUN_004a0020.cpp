@@ -20,7 +20,7 @@ shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
     local_34[0] = '\0';
   }
   else {
-    sprintf(local_34,"%d",*result_ptr);
+    _sprintf(local_34,"%d",*result_ptr);
   }
   while( true ) {
     while( true ) {

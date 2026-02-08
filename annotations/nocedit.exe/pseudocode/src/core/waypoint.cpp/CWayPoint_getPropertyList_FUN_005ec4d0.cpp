@@ -11,6 +11,6 @@ core_waypoint_cpp_CWayPoint_getPropertyList_FUN_005ec4d0
           (CWayPoint *this_ptr,CActorPropertyList *property_list)
 
 {
-  core_trigger_cpp_CTrigger_FUN_005e0f70(&this_ptr->base);
+  core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(&this_ptr->base,property_list);
   return;
 }

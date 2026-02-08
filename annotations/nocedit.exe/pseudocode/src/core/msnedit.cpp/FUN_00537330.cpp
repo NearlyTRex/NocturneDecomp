@@ -32,7 +32,7 @@ void __cdecl core_msnedit_cpp_FUN_00537330(CStrList *param_1,int param_2,int par
       iVar2 = *(int *)((int)g_ActorClassRegistrations + iVar4);
       if (param_2 == *(int *)(iVar2 + 0x28)) {
         memset(local_80,0x20,100);
-        sprintf
+        _sprintf
                   (local_1c,"%s\t%d",iVar2,*(uint *)(iVar2 + 0x34));
         if (*(int *)(iVar2 + 0x2c) == 0) {
           pcVar5 = "\t(abstract)";

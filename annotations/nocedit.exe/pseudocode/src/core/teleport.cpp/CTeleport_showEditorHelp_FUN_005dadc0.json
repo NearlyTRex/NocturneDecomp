@@ -1,0 +1,136 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005dadc0",
+    "address_range": [
+      [
+        "005dadc0",
+        "005dae0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_teleport.cpp_CTeleport_showEditorHelp_FUN_005dadc0",
+    "signature": "void __cdecl core_teleport_cpp_CTeleport_showEditorHelp_FUN_005dadc0(CTeleport *this_ptr,int *y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d150",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
+    },
+    {
+      "addr": "0040d1e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654d43",
+      "name": "s_With_CTRL_held_down_use__00654d43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654d73",
+      "name": "s_Select_my_CTeleportDest__00654d73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654d92",
+      "name": "s_T_00654d92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 24,
+      "INT_ADD": 11,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 14,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 117
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTeleport *"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 220,
+        "vtable_addr": "00664324"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

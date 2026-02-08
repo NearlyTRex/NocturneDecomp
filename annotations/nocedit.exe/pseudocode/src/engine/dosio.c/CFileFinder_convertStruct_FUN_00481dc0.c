@@ -18,7 +18,7 @@ engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
   _FILETIME local_18;
   
   memset(finder,0,0x100);
-  strncpy(finder->filename,find_data->cFileName,0xff);
+  _strncpy(finder->filename,find_data->cFileName,0xff);
   finder->file_size = 0;
   if ((find_data->dwFileAttributes & 0x20) != 0) {
     *(byte *)&finder->file_size = (byte)finder->file_size | 1;

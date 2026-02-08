@@ -16,7 +16,7 @@ core_grave_cpp_CGrave_getPropertyList_FUN_004ee9e0
             (property_list,"Grave model (.KFM)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
             (property_list,"Animation FPS",&this_ptr->fps,0.0,200.0,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Hide on first frame",&this_ptr->hide_on_first_frame);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460

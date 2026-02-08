@@ -16,7 +16,7 @@
 ;   IDirectSound3DBuffer*[31] g_DirectSound3DBufferInterfaces
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 ;   sound_sndmain.cpp_logSoundError_FUN_005adba0
 ;
@@ -71,8 +71,8 @@ section .text
     PUSH 0x651a6c                       ; 005afd39 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 005afd3e
     PUSH EAX                            ; 005afd42
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afd43
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afd43
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afd48
     MOV EAX,ESP                         ; 005afd4b
     PUSH EAX                            ; 005afd4d

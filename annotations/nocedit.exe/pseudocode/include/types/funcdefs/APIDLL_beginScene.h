@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_beginScene
-typedef int (*APIDLL_beginScene)(void);
+typedef int APIDLL_beginScene(void);
 

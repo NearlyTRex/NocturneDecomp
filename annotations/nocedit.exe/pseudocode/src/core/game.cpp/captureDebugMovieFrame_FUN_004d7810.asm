@@ -23,8 +23,8 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -91,16 +91,16 @@ section .text
     PUSH 0x62b201                       ; 004d7891 | = "noc%05d.raw"
     LEA EAX,[ESP + 0xd0]                ; 004d7896
     PUSH EAX                            ; 004d789d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d789e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d789e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d78a3
     LEA EAX,[ESP + 0xc8]                ; 004d78a6
     PUSH EAX                            ; 004d78ad
     PUSH 0x62b20d                       ; 004d78ae | = "Movie recording active: movie\\%s"
     LEA EAX,[ESP + 0x8]                 ; 004d78b3
     PUSH EAX                            ; 004d78b7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d78b8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d78b8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d78bd
     PUSH 0x62b22e                       ; 004d78c0 | = "wb"
     LEA EAX,[ESP + 0xcc]                ; 004d78c5

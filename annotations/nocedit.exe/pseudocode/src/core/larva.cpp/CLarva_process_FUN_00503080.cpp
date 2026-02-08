@@ -301,7 +301,7 @@ LAB_00503184:
       fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
       local_68 = (double)fVar14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
-      sprintf
+      _sprintf
                 (local_1f0,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
                  (double)(local_14 * (float)local_68));
       uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)

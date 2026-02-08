@@ -46,7 +46,7 @@ LAB_00556b15:
       }
     }
   }
-  sprintf
+  _sprintf
             (local_68,"Invalid bit depth [%d] for bitmap",(uint)in_stack_00000010);
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   g_CurrentLineNumber = 0x67;

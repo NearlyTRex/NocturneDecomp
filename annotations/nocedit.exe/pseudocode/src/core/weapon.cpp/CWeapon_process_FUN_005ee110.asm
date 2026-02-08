@@ -15,7 +15,7 @@
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0 at 004cb9c2
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050645e
 ;   core_melee.cpp_CMelee_process_FUN_0050ec10 at 0050ec1d
-;   core_shotgun.cpp_FUN_00587f70 at 00587f91
+;   core_shotgun.cpp_CShotgun_process_FUN_00587f70 at 00587f91
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de376
 ;
 ; Referenced Globals:

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_SomethingWithUppercaseCharacterConvert(uint param_1) */
-
 char * SomethingWithUppercaseCharacterConvert(void)
 
 {

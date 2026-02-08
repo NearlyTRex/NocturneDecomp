@@ -27,7 +27,7 @@ void __cdecl shape_design_c_displayPalette_FUN_00461560(void)
   for (local_2c = 0; local_2c < 0x100; local_2c = local_2c + 1) {
     local_24 = (local_1c + 4) * (local_2c % 0x10) + 0x16;
     local_20 = (local_18 + 4) * local_14 + 4;
-    sprintf(local_7c,"%3d",local_14 << 4);
+    _sprintf(local_7c,"%3d",local_14 << 4);
     engine_2d_c_drawTextColor_FUN_00402430(local_7c,0,(local_18 + 4) * local_14 + 4);
     engine_2d_c_fillRectColor_FUN_00403170
               (local_24,local_20,local_24 + local_1c + -1,local_20 + local_18 + -1,local_2c);

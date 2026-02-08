@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_DoNothingAgain1() */
-
 void FUN_0060445e(void)
 
 {

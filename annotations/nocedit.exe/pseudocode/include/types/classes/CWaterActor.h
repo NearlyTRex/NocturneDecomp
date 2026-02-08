@@ -14,14 +14,10 @@ typedef struct CWaterActor {
     float height_delta; // 0x168
     float time_to_move; // 0x16c
     float time_to_move_down; // 0x170
-    undefined4 move_sound; // 0x174
-    char unk1[28]; // 0x178
-    undefined4 move_down_sound; // 0x194
-    char unk2[28]; // 0x198
-    char* move_event; // 0x1b4
-    char unk3[96]; // 0x1b8
-    char* move_down_event; // 0x218
-    char unk4[96]; // 0x21c
+    char move_sound[32]; // 0x174
+    char move_down_sound[32]; // 0x194
+    char move_event[100]; // 0x1b4
+    char move_down_event[100]; // 0x218
     float param; // 0x27c
     int state; // 0x280
     float patch_size; // 0x284

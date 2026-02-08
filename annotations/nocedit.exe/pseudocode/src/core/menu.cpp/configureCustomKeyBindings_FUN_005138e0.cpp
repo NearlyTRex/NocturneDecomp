@@ -592,7 +592,7 @@ LAB_0051390e:
       do {
         pcVar2 = core_menu_cpp_getKeyDisplayName_FUN_005134e0
                            (**(int **)((int)g_CustomKeyPointers + iVar32));
-        sprintf(local_d4,"%s\t%s",pacVar28,pcVar2);
+        _sprintf(local_d4,"%s\t%s",pacVar28,pcVar2);
         iVar32 = iVar32 + 4;
         iVar30 = iVar30 + 1;
         pacVar28 = pacVar28 + 1;

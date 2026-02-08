@@ -142,6 +142,8 @@ def get_fpu_intrinsics():
         "fabs": ("fabs", 1),
         # Two-argument FPU intrinsics
         "fpatan": ("atan2", 2),  # FPATAN computes atan2(ST(1), ST(0))
+        # Two-argument FPU intrinsics (scaling)
+        "fscale": ("ldexp", 2),  # FSCALE computes ST(0) * 2^trunc(ST(1))
         # Expression-based FPU intrinsics (num_args=-1 means raw expression with x)
         "f2xm1": ("(pow(2.0, (x)) - 1.0)", -1),  # F2XM1 computes 2^x - 1
     }

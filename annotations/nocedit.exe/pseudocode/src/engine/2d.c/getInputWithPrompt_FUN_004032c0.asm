@@ -30,7 +30,7 @@
 ;   TerminatedCString s_s_s_0061322f
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -60,8 +60,8 @@ section .text
     PUSH 0x61322f                       ; 004032f2 | = "%s%s_    "
     LEA EAX,[ESP + 0xc]                 ; 004032f7
     PUSH EAX                            ; 004032fb
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004032fc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004032fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00403301
     PUSH EDI                            ; 00403304
     PUSH EBP                            ; 00403305

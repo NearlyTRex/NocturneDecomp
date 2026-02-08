@@ -1,0 +1,60 @@
+// Name: core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0
+// Address: 005e8fc0
+// Address Range: [[005e8fc0, 005e8fcd]]
+// Convention: __cdecl
+// Signature: void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_ptr)
+
+{
+  CLocation *pCVar1;
+  COrientation *pCVar2;
+  CDemonActor *pCVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fStack_28;
+  
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->unk5);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)&fStack_28);
+  pCVar3 = this_ptr->start_loc;
+  this_ptr->carrier = (CDemonActor *)0x0;
+  if (pCVar3 != (CDemonActor *)0x0) {
+    pCVar1 = &(this_ptr->base).location;
+    fVar4 = (pCVar3->location).position.x - (pCVar1->position).x;
+    fVar5 = (pCVar3->location).position.y - (this_ptr->base).location.position.y;
+    fVar6 = (pCVar3->location).position.z - (this_ptr->base).location.position.z;
+    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)0.5) {
+      pCVar3 = this_ptr->start_loc;
+      (pCVar1->position).x = (pCVar3->location).position.x;
+      (this_ptr->base).location.position.y = (pCVar3->location).position.y;
+      (this_ptr->base).location.position.z = (pCVar3->location).position.z;
+      (this_ptr->base).location.area_id = (pCVar3->location).area_id;
+      pCVar3 = this_ptr->start_loc;
+      pCVar2 = &(this_ptr->base).orient;
+      if (pCVar2 != &pCVar3->orient) {
+        pCVar2->pitch = (pCVar3->orient).pitch;
+        (this_ptr->base).orient.bank = (pCVar3->orient).bank;
+        (this_ptr->base).orient.heading = (pCVar3->orient).heading;
+      }
+    }
+  }
+  this_ptr->unk2[0] = '\x01';
+  this_ptr->unk2[1] = '\0';
+  this_ptr->unk2[2] = '\0';
+  this_ptr->unk2[3] = '\0';
+  (this_ptr->unk3).which_flame = 0;
+  (this_ptr->unk3).flame_state = 1;
+  (this_ptr->unk3).globe_scalar = 0.0;
+  (this_ptr->unk3).flame_size.x = 0.5;
+  (this_ptr->unk3).flame_size.y = 1.0;
+  (this_ptr->unk3).flame_size.z = 0.5;
+  fStack_28 = 8.68452e-39;
+  core_flame_cpp_CFlame_setup_FUN_004c9b90(&this_ptr->unk3);
+  (this_ptr->base).is_transparent = 1;
+  return;
+}

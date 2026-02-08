@@ -6,26 +6,25 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 446,
+    "complexity_score": 429,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 141,
-    "suspect_count": 28,
+    "pseudocode_lines": 139,
+    "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 473
+    "total_lines": 471
   },
   "cross_references": [
     {
       "addr": "005c84c0",
       "from_addr": "005c8554",
-      "name": "shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0",
+      "name": "shape_superopt.cpp_FUN_005c84c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,11 +43,6 @@
   },
   "function_calls": [
     {
-      "addr": "005ca590",
-      "is_variadic": false,
-      "name": "shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590"
-    },
-    {
       "addr": "005c9100",
       "is_variadic": false,
       "name": "shape_superopt.cpp_FUN_005c9100"
@@ -57,6 +51,11 @@
       "addr": "005c9aa0",
       "is_variadic": false,
       "name": "shape_superopt.cpp_FUN_005c9aa0"
+    },
+    {
+      "addr": "005ca590",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_FUN_005ca590"
     },
     {
       "addr": "005cb3a0",
@@ -363,197 +362,190 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 7,
       "match": "extraout_EDX",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 8,
       "match": "extraout_EDX_00",
       "text": "uint extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "local_14 = (double *)(in_stack_00000004 + 0x14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "iVar3 = local_24 + *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(double *)((int)",
       "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "CONCAT44",
       "text": "local_9c = (double)CONCAT44(uStack_c0,local_c4) * local_14[2] -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 76,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uStack_b8,local_bc) * local_14[1];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 77,
       "match": "CONCAT44",
       "text": "local_94 = (double)CONCAT44(uStack_b8,local_bc) * *local_14 -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 78,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uStack_c8,local_cc) * local_14[2];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 79,
       "match": "CONCAT44",
       "text": "local_8c = (double)CONCAT44(uStack_c8,local_cc) * local_14[1] -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 80,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uStack_c0,local_c4) * *local_14;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 81,
       "match": "SQRT",
       "text": "dVar1 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 118,
+      "line": 115,
       "match": "extraout_EDX_00",
       "text": "local_38 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 120,
+      "line": 117,
       "match": "extraout_EDX_00",
       "text": "uStack_50 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 121,
+      "line": 118,
       "match": "extraout_EDX_00",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 118,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 118,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 123,
+      "line": 120,
       "match": "extraout_EDX_00",
       "text": "uStack_40 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 129,
+      "line": 126,
       "match": "extraout_EDX",
       "text": "local_38 = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 131,
+      "line": 128,
       "match": "extraout_EDX",
       "text": "uStack_30 = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 132,
+      "line": 129,
       "match": "extraout_EDX",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 129,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 129,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 134,
+      "line": 131,
       "match": "extraout_EDX",
       "text": "uStack_40 = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 139,
       "match": "in_stack_00000004",
       "text": "} while (local_20 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"

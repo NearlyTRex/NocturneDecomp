@@ -73,7 +73,7 @@ section .text
     PUSH 0x62e167                       ; 004eb435 | = "Opacity"
     PUSH ESI                            ; 004eb43a
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 004eb43b
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004eb440
     LEA EAX,[EBX + 0x370]               ; 004eb443
     PUSH EAX                            ; 004eb449

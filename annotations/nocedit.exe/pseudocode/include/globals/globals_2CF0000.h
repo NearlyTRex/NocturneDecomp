@@ -29,7 +29,7 @@ extern CEdButton* g_ActiveButton;
 extern CEditorTools g_CEditorToolsInstance;
 
 // CVector3f
-extern CVector3f CVector3f_02cf2b60;
+extern CVector3f g_EmitterTarget;
 
 // HWND
 extern HWND g_DialogParentWindow;
@@ -93,7 +93,7 @@ extern int g_DragStartMouseX;
 extern int g_DragStartMouseY;
 extern int g_DragStartScrollPos;
 extern int g_DragStartThumbPos;
-extern int INT_02cf2b5c;
+extern int g_SlewTargetMode;
 extern int g_GlobalDeltaTimeInt;
 extern int g_AnimationTimerValue;
 extern int g_MouseX;
@@ -112,7 +112,6 @@ extern uint* g_ZBufferScanlineArray[1200];
 extern undefined4 DAT_02cf2b6c;
 extern undefined4 DAT_02cf2b70;
 extern undefined4 DAT_02cf2b74;
-extern undefined4 DAT_02cf2b78;
 extern undefined4 DAT_02cf2bf4;
 extern undefined4 DAT_02cf2bf8;
 extern undefined4 DAT_02cf4b30;

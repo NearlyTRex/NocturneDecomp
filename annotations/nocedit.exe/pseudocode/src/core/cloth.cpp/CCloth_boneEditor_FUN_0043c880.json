@@ -33,15 +33,21 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 17,
         "line": 165,
-        "message": "use of undeclared identifier 'DAT_0083b110'"
+        "message": "use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
         "line": 166,
         "message": "use of undeclared identifier 'DAT_0083b110'"
+      },
+      {
+        "category": "format_error",
+        "column": 57,
+        "line": 208,
+        "message": "format specifies type 'char *' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
@@ -81,6 +87,12 @@
       },
       {
         "category": "other",
+        "column": 47,
+        "line": 281,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 20,
         "line": 289,
         "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
@@ -102,35 +114,10 @@
         "column": 36,
         "line": 304,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 306,
-        "message": "C-style cast from 'SClothBone *' to 'float' is not allowed"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 208,
-        "message": "format specifies type 'char *' but the argument has type 'float' [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 281,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 207,
-        "message": "'sprintf' will always overflow; destination buffer has size 16, but format string expands to at least 31 [-Wformat-overflow]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 395,
@@ -256,7 +243,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403170",
@@ -882,7 +869,7 @@
       "description": "Undefined global data reference",
       "line": 158,
       "match": "DAT_0083b110",
-      "text": "sprintf(&DAT_0083b110,\"noc%d.pcx\");",
+      "text": "_sprintf(&DAT_0083b110,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {

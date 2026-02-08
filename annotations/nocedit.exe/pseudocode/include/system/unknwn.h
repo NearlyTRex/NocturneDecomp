@@ -13,13 +13,13 @@ typedef struct IUnknown {
 } IUnknown;
 
 // Function Definition: IUnknown_AddRef
-typedef DWORD (*IUnknown_AddRef)(struct IUnknown* this_ptr);
+typedef DWORD IUnknown_AddRef(struct IUnknown* this_ptr);
 
 // Function Definition: IUnknown_QueryInterface
-typedef HRESULT (*IUnknown_QueryInterface)(struct IUnknown* this_ptr, void* riid, void** ppv_object);
+typedef HRESULT IUnknown_QueryInterface(struct IUnknown* this_ptr, void* riid, void** ppv_object);
 
 // Function Definition: IUnknown_Release
-typedef DWORD (*IUnknown_Release)(struct IUnknown* this_ptr);
+typedef DWORD IUnknown_Release(struct IUnknown* this_ptr);
 
 // Structure: IUnknown_vtable
 typedef struct IUnknown_vtable {

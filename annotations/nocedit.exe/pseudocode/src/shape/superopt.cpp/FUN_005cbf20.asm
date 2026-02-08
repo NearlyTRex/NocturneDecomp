@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20 at 005cbe32
+;   shape_superopt.cpp_FUN_005cbe20 at 005cbe32
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006542d2 = 1.00000000000000E-7

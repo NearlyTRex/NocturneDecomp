@@ -2,6 +2,18 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 38,
+        "line": 41,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 55,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 103,
@@ -12,6 +24,12 @@
         "column": 19,
         "line": 120,
         "message": "use of undeclared identifier 'DAT_03f6bbf0'"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 152,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
@@ -57,14 +75,7 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 37,
-        "line": 41,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 511,
@@ -116,6 +127,11 @@
       "name": "crt_memory.c___arr_op_FUN_006020c2"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe6d0",
       "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
@@ -124,11 +140,6 @@
       "addr": "005ff9d0",
       "is_variadic": false,
       "name": "crt_stdio.c_remove_FUN_005ff9d0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",

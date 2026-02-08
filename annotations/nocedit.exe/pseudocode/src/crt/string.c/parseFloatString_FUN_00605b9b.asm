@@ -230,7 +230,7 @@ section .text
     MOV byte ptr [EBX + EBP*0x1 + -0x3c],AL ; 00605cf4
     LEA EAX,[EBP + -0x3c]               ; 00605cf8
     CALL crt_unknown.c_FUN_0060b586     ; 00605cfb
-        ;   XREF to: 0060b586 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060b586()
+        ;   XREF to: 0060b586 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_0060b586(byte * param_1, undefined8 * param_2)
     TEST ESI,ESI                        ; 00605d00
     JZ 0x00605d11                       ; 00605d02
         ;   XREF to: 00605d11 (CONDITIONAL_JUMP)  ; LAB_00605d11
@@ -238,7 +238,7 @@ section .text
     LEA EAX,[EBP + -0x28]               ; 00605d05
     PUSH EAX                            ; 00605d08
     CALL crt_unknown.c_FUN_00603d60     ; 00605d09
-        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603d60()
+        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603d60()
     ADD ESP,0x8                         ; 00605d0e
     TEST byte ptr [EBP + -0x10],0x1     ; 00605d11
         ;   Label: LAB_00605d11

@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -111,8 +111,8 @@ section .text
     PUSH 0x61795e                       ; 004312fc | = ".ACT"
         ;   Label: LAB_004312fc
     PUSH EDI                            ; 00431301
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00431302
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00431302
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00431307
     LEA EAX,[ESP + 0x4]                 ; 0043130a
     PUSH EAX                            ; 0043130e

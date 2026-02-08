@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_hasSeamlessEdge
-typedef int (*CPoly_hasSeamlessEdge)(struct CPoly* this_ptr, struct CPoly* other);
+typedef int CPoly_hasSeamlessEdge(struct CPoly* this_ptr, struct CPoly* other);
 

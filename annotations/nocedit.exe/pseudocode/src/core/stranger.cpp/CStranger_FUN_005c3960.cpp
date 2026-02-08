@@ -59,11 +59,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
   CDemonActor *pCStack_18;
   float fStack_14;
   
-  local_24 = this_ptr->unk1 + 0x30;
+  local_24 = this_ptr->unk3 + 4;
   if (in_stack_00000008 == 1) {
     local_24 = this_ptr->unk1 + 0x10;
   }
-  if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
+  if (*(int *)(this_ptr->unk5 + 8) == 0) {
     local_24[0xc] = '\0';
     local_24[0xd] = '\0';
     local_24[0xe] = '\0';
@@ -85,7 +85,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
     iStack_44 = 3;
   }
   else {
-    local_48 = *(float *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0);
+    local_48 = *(float *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0);
   }
   if (in_stack_00000008 == 0) {
     if (((this_ptr->base).aim_mode == 2) && (iStack_44 == 0)) {
@@ -140,8 +140,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
     CStack_7c.y = fVar8;
     CStack_7c.z = fVar8;
     fStack_70 = fVar8;
-    if ((*(int *)(this_ptr->unk1 + 0x54) != 0) &&
-       (pfVar4 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xf4))(),
+    if ((*(int *)(this_ptr->unk5 + 8) != 0) &&
+       (pfVar4 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf4))(),
        &CStack_7c.y != pfVar4)) {
       CStack_7c.y = *pfVar4;
       CStack_7c.z = pfVar4[1];

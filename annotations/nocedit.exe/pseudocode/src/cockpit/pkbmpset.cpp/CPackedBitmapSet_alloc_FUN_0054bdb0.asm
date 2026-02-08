@@ -26,7 +26,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c___vec_new_FUN_00601272
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0054be25
     PUSH EAX                            ; 0054be29
     MOV EDI,0x6c                        ; 0054be2a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054be2f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054be2f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0054be34
     LEA EAX,[ESP + 0x4]                 ; 0054be37
     MOV ECX,0x63f41b                    ; 0054be3b | = "..\\cockpit\\pkbmpset.cpp"

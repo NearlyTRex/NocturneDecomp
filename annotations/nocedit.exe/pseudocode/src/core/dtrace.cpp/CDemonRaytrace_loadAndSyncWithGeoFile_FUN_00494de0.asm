@@ -38,8 +38,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040
 ;   core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_findFile_FUN_00481760
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -94,8 +94,8 @@ section .text
     PUSH 0x622931                       ; 00494e49 | = "data\\%s"
     LEA EAX,[ESP + 0x8]                 ; 00494e4e
     PUSH EAX                            ; 00494e52
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00494e53
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00494e53
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00494e58
     MOV EAX,ESP                         ; 00494e5b
     PUSH EAX                            ; 00494e5d

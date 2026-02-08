@@ -34,7 +34,7 @@ void __cdecl core_skeledit_cpp_FUN_0058afe0(void)
       if (-1 < iVar4) {
         pcVar2 = (char *)(local_14 + iVar4 * 0x21);
       }
-      sprintf(local_dc,"%2d. %s\t%d. %s",iVar3,piVar5,iVar4,pcVar2);
+      _sprintf(local_dc,"%2d. %s\t%d. %s",iVar3,piVar5,iVar4,pcVar2);
       piVar6 = piVar6 + 0x21;
       piVar5 = piVar5 + 0x21;
       iVar3 = iVar3 + 1;
@@ -42,19 +42,19 @@ void __cdecl core_skeledit_cpp_FUN_0058afe0(void)
     } while (iVar3 < *in_stack_00000004);
   }
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_484.base,"(Dump to the clipboard)");
-  sprintf(local_dc,"Viewing bone heirarchy for %s.",in_stack_00000008);
+  _sprintf(local_dc,"Viewing bone heirarchy for %s.",in_stack_00000008);
   iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_484,local_dc,-1,0);
   if (iVar3 == local_484.base.item_count + -1) {
     iVar4 = 0;
-    iVar3 = sprintf
+    iVar3 = _sprintf
                       (&DAT_0366b650,"Heirarchy for %s\r\n\r\n",in_stack_00000008);
     pcVar2 = &DAT_0366b650 + iVar3;
     if (0 < *in_stack_00000004) {
       do {
         pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_484.base,iVar4);
         iVar4 = iVar4 + 1;
-        iVar3 = sprintf(pcVar2,"%s\r\n",pcVar1);
+        iVar3 = _sprintf(pcVar2,"%s\r\n",pcVar1);
         pcVar2 = pcVar2 + iVar3;
       } while (iVar4 < *in_stack_00000004);
     }

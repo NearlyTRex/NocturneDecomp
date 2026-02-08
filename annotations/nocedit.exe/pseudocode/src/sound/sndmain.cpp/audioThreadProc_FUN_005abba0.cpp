@@ -1,12 +1,12 @@
 // Name: sound_sndmain.cpp_audioThreadProc_FUN_005abba0
 // Address: 005abba0
 // Address Range: [[005abba0, 005abbf0]]
-// Convention: __cdecl
-// Signature: DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
+// Convention: __stdcall
+// Signature: DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
 
 #include "nocturne.h"
 
-DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
+DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
 
 {
   g_AudioThreadRunning = 1;

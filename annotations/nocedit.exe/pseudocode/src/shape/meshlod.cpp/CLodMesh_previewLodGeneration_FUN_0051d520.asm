@@ -52,7 +52,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -168,7 +168,7 @@ section .text
     CALL shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0 ; 0051d629
         ;   XREF to: 0051ecd0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 0051d62e
-    CMP dword ptr [0x02f313e8],0x0      ; 0051d631 | DAT_02f313e8
+    CMP dword ptr [0x02f313e8],0x0      ; 0051d631 | PTR_02f313e8
         ;   Label: LAB_0051d631
     JZ 0x0051d666                       ; 0051d638
         ;   XREF to: 0051d666 (CONDITIONAL_JUMP)  ; LAB_0051d666
@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051d646
     PUSH 0x4                            ; 0051d649
-    MOV ECX,dword ptr [0x02f313e8]      ; 0051d64b | DAT_02f313e8
+    MOV ECX,dword ptr [0x02f313e8]      ; 0051d64b | PTR_02f313e8
     PUSH ECX                            ; 0051d651
     MOV EBX,dword ptr [0x00678a60]      ; 0051d652 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0051d658 | g_CEditorToolsInstance
@@ -222,8 +222,8 @@ section .text
     PUSH 0x638296                       ; 0051d6b4 | = "%d faces, %d original"
     LEA EAX,[ESP + 0xc]                 ; 0051d6b9
     PUSH EAX                            ; 0051d6bd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051d6be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051d6be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0051d6c3
     PUSH 0x0                            ; 0051d6c6
     PUSH 0x0                            ; 0051d6c8
@@ -299,8 +299,8 @@ section .text
     PUSH 0x6382ac                       ; 0051d78d | = "Pixel Height: %d"
     LEA EAX,[ESP + 0x8]                 ; 0051d792
     PUSH EAX                            ; 0051d796
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051d797
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051d797
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051d79c
     PUSH 0x16                           ; 0051d79f
     PUSH 0x0                            ; 0051d7a1

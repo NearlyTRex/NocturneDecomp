@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_005134e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x62b28d                       ; 004d8933 | = "%s = %s"
     LEA EAX,[ESP + 0xc]                 ; 004d8938
     PUSH EAX                            ; 004d893c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d893d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d893d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d8942
     PUSH -0x1                           ; 004d8945
     PUSH 0x7                            ; 004d8947

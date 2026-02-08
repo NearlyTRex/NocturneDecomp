@@ -20,9 +20,9 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
   if (iVar1 == 0) {
     (this_ptr->base).base.field43_0x2620 = 0;
   }
-  if (this_ptr->mistState != 2) {
+  if (this_ptr->mist_state != 2) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if ((((iVar2 == 0) || (this_ptr->mistState == 0)) && (iVar1 == 0)) &&
+    if ((((iVar2 == 0) || (this_ptr->mist_state == 0)) && (iVar1 == 0)) &&
        ((this_ptr->base).base.field2_0x240c == 0)) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -30,7 +30,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
                                (CBoundingBox3D *)((int)register0x00000010 + -0x2c));
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
       if (iVar1 != 0) {
-        iVar2 = this_ptr->mistState;
+        iVar2 = this_ptr->mist_state;
         (this_ptr->base).base.field43_0x2620 = 1;
         if (iVar2 == 0) {
           if (this_ptr->exploded == 0) {
@@ -39,10 +39,10 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
         }
         else {
           if (iVar2 == 1) {
-            local_2c.min.y = (1.0 - this_ptr->vanishTimer) / 1.0f;
+            local_2c.min.y = (1.0 - this_ptr->vanish_timer) / 1.0f;
           }
           else {
-            local_2c.min.y = ((float)0.5 - this_ptr->vanishTimer) / 1.0f;
+            local_2c.min.y = ((float)0.5 - this_ptr->vanish_timer) / 1.0f;
             if (local_2c.min.y < 0.0) {
               local_2c.min.y = 0.0;
             }

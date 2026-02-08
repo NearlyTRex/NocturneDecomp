@@ -30,10 +30,10 @@ core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0
             (property_list,"Active sound",this_ptr->active_sound);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Travel time start->end (sec)",&this_ptr->travel_time_to_end,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Travel time end->start (sec)",&this_ptr->travel_time_to_start,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
             (property_list,"groundType",&this_ptr->ground_type);
   pCVar1 = core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
@@ -53,10 +53,10 @@ core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0
              core_platfrm_cpp_CPlatform_propertyActionStateCallback_FUN_0054e760);
   core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
             (property_list,"Paramater (0..1)",&this_ptr->param,0.0,1.0,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"One shot (0=no,1=yes,2=done)",&this_ptr->one_shot,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Block virtual director",&this_ptr->block_virtual_director_flag)
   ;
@@ -66,7 +66,7 @@ core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
     core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
               (property_list,"Camera while moving : ",this_ptr->camera_while_moving,0x3f,
-               (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+               (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
               (property_list,"Recompute fog in background : ",&this_ptr->recompute_fog);
   }

@@ -56,6 +56,24 @@
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
+        "category": "format_error",
+        "column": 89,
+        "line": 875,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 89,
+        "line": 1046,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 86,
+        "line": 1266,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
         "category": "incompatible_types",
         "column": 64,
         "line": 1370,
@@ -96,47 +114,10 @@
         "column": 98,
         "line": 1528,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 1871,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 1872,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 1878,
-        "message": "indirection not permitted on operand of type 'void *'"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 89,
-        "line": 875,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 89,
-        "line": 1046,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 86,
-        "line": 1266,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 7415,
@@ -527,7 +508,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",

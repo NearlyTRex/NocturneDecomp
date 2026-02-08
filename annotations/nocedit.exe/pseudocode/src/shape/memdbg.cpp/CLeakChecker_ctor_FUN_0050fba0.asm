@@ -15,7 +15,7 @@
 ;   TerminatedCString s_ags_006363d9
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x6363d9                       ; 0050fba3 | = "ags"
     LEA EAX,[ESP + 0x4]                 ; 0050fba8
     PUSH EAX                            ; 0050fbac
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0050fbad
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0050fbad
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050fbb2
     MOV EAX,dword ptr [ESP + 0x68]      ; 0050fbb5
     ADD ESP,0x64                        ; 0050fbb9

@@ -9,15 +9,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 14,
+        "column": 15,
         "line": 112,
-        "message": "use of undeclared identifier 'DAT_03670650'"
+        "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
+      },
+      {
+        "category": "format_error",
+        "column": 36,
+        "line": 122,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
         "line": 132,
-        "message": "use of undeclared identifier 'DAT_03670650'"
+        "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
+      },
+      {
+        "category": "format_error",
+        "column": 39,
+        "line": 137,
+        "message": "format specifies type 'char *' but the argument has type 'CDeformableModel *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
@@ -26,10 +38,28 @@
         "message": "use of undeclared identifier 'DAT_03670650'"
       },
       {
+        "category": "format_error",
+        "column": 51,
+        "line": 163,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 64,
+        "line": 163,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 77,
+        "line": 163,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
         "category": "undeclared_identifier",
-        "column": 14,
+        "column": 15,
         "line": 166,
-        "message": "use of undeclared identifier 'DAT_03670650'"
+        "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
       },
       {
         "category": "other",
@@ -84,47 +114,10 @@
         "column": 17,
         "line": 580,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 607,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 615,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 679,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 685,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 701,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 38,
-        "line": 137,
-        "message": "format specifies type 'char *' but the argument has type 'CDeformableModel *' [-Wformat]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 1765,
@@ -283,6 +276,11 @@
       "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -296,11 +294,6 @@
       "addr": "005fe7c0",
       "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ff178",
@@ -1612,14 +1605,14 @@
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_00000008",
-      "text": "sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
+      "text": "_sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 105,
       "match": "DAT_03670650",
-      "text": "sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
+      "text": "_sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
       "type": "undefined_data"
     },
     {
@@ -1682,14 +1675,14 @@
       "description": "Unresolved stack parameter",
       "line": 130,
       "match": "in_stack_00000008",
-      "text": "sprintf(local_418,\"Display %s\",in_stack_00000008);",
+      "text": "_sprintf(local_418,\"Display %s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 133,
       "match": "in_stack_00000004",
-      "text": "sprintf(local_418,\"Display %s\",in_stack_00000004->model_name)",
+      "text": "(local_418,\"Display %s\",in_stack_00000004->model_name);",
       "type": "stack_param"
     },
     {
@@ -1703,14 +1696,14 @@
       "description": "Unresolved stack parameter",
       "line": 159,
       "match": "in_stack_00000008",
-      "text": "sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
+      "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 159,
       "match": "DAT_03670650",
-      "text": "sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
+      "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
       "type": "undefined_data"
     },
     {

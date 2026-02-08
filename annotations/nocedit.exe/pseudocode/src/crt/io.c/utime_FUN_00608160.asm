@@ -22,7 +22,7 @@
 ;   CloseHandle
 ;   CreateFileA
 ;   crt_errno.c___set_errno_FUN_006083fc
-;   crt_time.c_localtime_FUN_00600288
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_time_FUN_006001f0
 ;   GetFileTime
 ;   LocalFileTimeToFileTime
@@ -92,8 +92,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 006081e0
         ;   Label: LAB_006081e0
     PUSH EAX                            ; 006081e3
-    CALL crt_time.c_localtime_FUN_00600288 ; 006081e4
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 006081e4
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     MOV EDX,EAX                         ; 006081e9
     MOV AX,word ptr [EAX + 0x14]        ; 006081eb
     ADD ESP,0x4                         ; 006081ef

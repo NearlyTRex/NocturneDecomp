@@ -496,6 +496,10 @@ extern int INT_03f6cbcc;
 extern int INT_03f6cbd0;
 extern int INT_03f6cbd4;
 extern int INT_03f6cbd8;
+extern int INT_03f6cd08;
+extern int INT_03f6cd0c;
+extern int INT_03f6cd10;
+extern int INT_03f6cd14;
 
 // int[32]
 extern int g_SfxChannelEnabled[32];
@@ -519,10 +523,6 @@ extern undefined4 DAT_03f6bb20;
 extern undefined4 DAT_03f6bb24;
 extern undefined4 DAT_03f6bbe4;
 extern undefined4 DAT_03f6bbe8;
-extern undefined4 DAT_03f6cd08;
-extern undefined4 DAT_03f6cd0c;
-extern undefined4 DAT_03f6cd10;
-extern undefined4 DAT_03f6cd14;
 
 // void*
 extern void* g_PrimaryMixBuffer;

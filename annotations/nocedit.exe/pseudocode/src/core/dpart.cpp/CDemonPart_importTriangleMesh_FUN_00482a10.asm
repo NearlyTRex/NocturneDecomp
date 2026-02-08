@@ -44,7 +44,7 @@
 ;   core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH 0x62180e                       ; 00482a5a | = "Too many! %d, %d"
     LEA EAX,[ESP + 0xc]                 ; 00482a5f
     PUSH EAX                            ; 00482a63
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00482a64
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00482a64
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x267                       ; 00482a69
     ADD ESP,0x10                        ; 00482a6e
     MOV [0x02f0ca4c],EAX                ; 00482a71 | g_CurrentLineNumber

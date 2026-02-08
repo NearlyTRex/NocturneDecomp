@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -71,8 +71,8 @@ section .text
     PUSH 0x6179e6                       ; 004318a5 | = "Unable to open bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 004318aa
     PUSH EAX                            ; 004318ae
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004318af
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004318af
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x617a07                    ; 004318b4 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 004318b9
     MOV [0x02f0ca48],EAX                ; 004318bc | g_CurrentFilename
@@ -124,8 +124,8 @@ section .text
     PUSH 0x617997                       ; 00431925 | = "Unable to allocate %u bytes for bitma..."
     LEA EAX,[ESP + 0xc]                 ; 0043192a
     PUSH EAX                            ; 0043192e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043192f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043192f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x6179c9                    ; 00431934 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00431939
     MOV EAX,ESP                         ; 0043193c
@@ -143,8 +143,8 @@ section .text
     PUSH 0x617a1d                       ; 0043195e | = "Unable to read bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 00431963
     PUSH EAX                            ; 00431967
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00431968
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00431968
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043196d
     PUSH 0xea                           ; 00431970
     PUSH 0x617a3e                       ; 00431975 | = "..\\cockpit\\ckptutil.c"

@@ -119,7 +119,7 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
     local_34 = local_28;
     local_1c = 1;
     local_3c = local_28;
-    sprintf(local_a0,"mX: %d  mY: %d",g_MouseX,g_MouseY);
+    _sprintf(local_a0,"mX: %d  mY: %d",g_MouseX,g_MouseY);
     engine_2d_c_drawTextColor_FUN_00402430(local_a0,0,g_WindowHeight + -0x37);
     local_50 = local_34;
   }

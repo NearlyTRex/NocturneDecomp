@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_hasPolyWithMaterial
-typedef int (*CObj_hasPolyWithMaterial)(struct CObj* this_ptr, int material_id);
+typedef int CObj_hasPolyWithMaterial(struct CObj* this_ptr, int material_id);
 

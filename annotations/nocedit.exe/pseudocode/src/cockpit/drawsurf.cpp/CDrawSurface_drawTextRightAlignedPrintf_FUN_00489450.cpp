@@ -15,7 +15,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
   va_list_t local_10;
   
   local_10.value[0] = (char * [1])&stack0x00000014;
-  vsprintf(local_1010,format,(va_list_t)&local_10);
+  _vsprintf(local_1010,format,(va_list_t)&local_10);
   local_10.value[0] = (char * [1])(char *)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(this_ptr,local_1010,x,y);
   return;

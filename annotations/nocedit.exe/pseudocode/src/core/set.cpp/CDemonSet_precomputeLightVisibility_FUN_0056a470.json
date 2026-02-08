@@ -5,7 +5,7 @@
         "category": "undeclared_identifier",
         "column": 21,
         "line": 87,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
+        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
@@ -15,9 +15,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 26,
+        "column": 27,
         "line": 145,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
+        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
@@ -27,9 +27,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 17,
         "line": 187,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
+        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
@@ -176,7 +176,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fef20",
@@ -592,7 +592,7 @@
       "description": "Direct stack address reference",
       "line": 138,
       "match": "&stack0xfffffe8c",
-      "text": "sprintf(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
+      "text": "_sprintf(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
       "type": "stack_ref"
     },
     {
@@ -606,7 +606,7 @@
       "description": "Direct stack address reference",
       "line": 180,
       "match": "&stack0xfffffe8c",
-      "text": "sprintf(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
+      "text": "_sprintf(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
       "type": "stack_ref"
     },
     {

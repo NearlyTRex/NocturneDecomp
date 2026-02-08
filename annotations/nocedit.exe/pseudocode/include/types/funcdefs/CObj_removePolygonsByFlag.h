@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_removePolygonsByFlag
-typedef int (*CObj_removePolygonsByFlag)(struct CObj* this_ptr, uint flag_mask);
+typedef int CObj_removePolygonsByFlag(struct CObj* this_ptr, uint flag_mask);
 

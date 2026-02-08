@@ -7,5 +7,5 @@
 struct CObj;
 
 // Function Definition: CObj_removeUnusedVertices
-typedef int (*CObj_removeUnusedVertices)(struct CObj* this_ptr);
+typedef int CObj_removeUnusedVertices(struct CObj* this_ptr);
 

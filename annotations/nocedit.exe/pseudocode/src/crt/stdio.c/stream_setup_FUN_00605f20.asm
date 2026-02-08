@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   operation_type
 ;
 ; XREF[2]:
-;   crt_stdio.c_istream_get_FUN_005ff245 at 005ff26c
+;   crt_iostream.cpp_istream_get_FUN_005ff245 at 005ff26c
 ;   crt_stdio.c_stream_valid_FUN_00608cd1 at 00608d10
 ;
 ; Called Functions:

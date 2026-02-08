@@ -13,16 +13,16 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr)
   CDemonActor *pCVar2;
   
   pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x54);
-  this_ptr->unk2[4] = '\0';
-  this_ptr->unk2[5] = '\0';
-  this_ptr->unk2[6] = -0x80;
-  this_ptr->unk2[7] = '@';
+  pCVar2 = *(CDemonActor **)(this_ptr->unk5 + 8);
+  this_ptr->unk6[4] = '\0';
+  this_ptr->unk6[5] = '\0';
+  this_ptr->unk6[6] = -0x80;
+  this_ptr->unk6[7] = '@';
   if (pCVar1 == pCVar2) {
-    this_ptr->unk1[0x54] = '\0';
-    this_ptr->unk1[0x55] = '\0';
-    this_ptr->unk1[0x56] = '\0';
-    this_ptr->unk1[0x57] = '\0';
+    this_ptr->unk5[8] = '\0';
+    this_ptr->unk5[9] = '\0';
+    this_ptr->unk5[10] = '\0';
+    this_ptr->unk5[0xb] = '\0';
   }
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

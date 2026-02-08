@@ -1,0 +1,164 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 31,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "00413e90",
+      "from_addr": "00413e9d",
+      "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ecd0",
+      "from_addr": "0050ece4",
+      "name": "core_melee.cpp_CMelee_setWeaponState_FUN_0050ecd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005de5a0",
+      "from_addr": "005de5be",
+      "name": "core_tommygun.cpp_CTommyGun_setWeaponState_FUN_005de5a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee640",
+    "address_range": [
+      [
+        "005ee640",
+        "005ee64e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640",
+    "signature": "void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0050ece4",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_CMelee_setWeaponState_FUN_0050ecd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00413e9d",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90",
+        "estimated_params": 5,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005de5be",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_CTommyGun_setWeaponState_FUN_005de5a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 3,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 12
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->weapon_state = in_stack_00000008;",
+      "type": "stack_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 240,
+        "vtable_addr": "0065d314"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 240,
+        "vtable_addr": "0065d534"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 240,
+        "vtable_addr": "00660a64"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 240,
+        "vtable_addr": "0065e284"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 240,
+        "vtable_addr": "00662a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 11
+  }
+}

@@ -49,7 +49,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *
     do {
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,iVar5);
       iVar5 = iVar5 + 1;
-      iVar6 = sprintf(buffer,"%s\n",pcVar3);
+      iVar6 = _sprintf(buffer,"%s\n",pcVar3);
       buffer = buffer + iVar6;
     } while (iVar5 < this_ptr->item_count);
   }

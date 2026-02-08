@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_computeNormal
-typedef void (*CPoly_computeNormal)(struct CPoly* this_ptr);
+typedef void CPoly_computeNormal(struct CPoly* this_ptr);
 

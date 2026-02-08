@@ -21,6 +21,6 @@ core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(CNPC *this_ptr,CActorPropertyList
             (property_list,"Shoot me",&this_ptr->shoot_me);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Hit points",&(this_ptr->base).hit_points,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

@@ -1,0 +1,1032 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 23,
+        "line": 77,
+        "message": "C-style cast from 'SMRGLTextureBasic *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 120,
+        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 126,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 154,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 167,
+        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 171,
+        "message": "use of undeclared identifier 'unique0x10001489'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 172,
+        "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 183,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 196,
+        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 200,
+        "message": "use of undeclared identifier 'unique0x100014a5'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 201,
+        "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 212,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 225,
+        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 229,
+        "message": "use of undeclared identifier 'unique0x100014c1'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 230,
+        "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 241,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 254,
+        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 258,
+        "message": "use of undeclared identifier 'unique0x100014dd'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 259,
+        "message": "use of undeclared identifier '_auStack_148'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 587,
+    "complexity_score": 1267,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 10,
+    "pseudocode_lines": 432,
+    "suspect_count": 81,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_param",
+      "suspect_float",
+      "undefined_data"
+    ],
+    "total_lines": 1019
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b9c10",
+    "address_range": [
+      [
+        "005b9c10",
+        "005ba486"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10",
+    "signature": "int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00407d70",
+      "is_variadic": false,
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407d70"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048bad0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065305a",
+      "name": "DOUBLE_0065305a",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "006634b0",
+      "name": "FLOAT_006634b0",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00684178",
+      "name": "DAT_00684178",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.4487895716946,
+    "instruction_count": 537,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 4,
+      "BRANCH": 16,
+      "CALL": 22,
+      "CALLIND": 1,
+      "CBRANCH": 26,
+      "COPY": 925,
+      "FLOAT2FLOAT": 61,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 24,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 309,
+      "INT_AND": 267,
+      "INT_CARRY": 57,
+      "INT_EQUAL": 237,
+      "INT_LEFT": 8,
+      "INT_LESS": 24,
+      "INT_MULT": 51,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 20,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 62,
+      "INT_SEXT": 3,
+      "INT_SLESS": 117,
+      "INT_SUB": 125,
+      "INT_XOR": 18,
+      "INT_ZEXT": 28,
+      "LOAD": 139,
+      "POPCOUNT": 109,
+      "RETURN": 2,
+      "ROUND": 21,
+      "STORE": 156,
+      "SUBPIECE": 2,
+      "TRUNC": 21
+    },
+    "pcode_op_count": 2926
+  },
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 328,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStairs *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 14,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005b9f36",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9f4d",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9f68",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9f77",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9f95",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9fad",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9fc8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005b9fe0",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba004",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba010",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba037",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba043",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba10f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005ba137",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000000c",
+      "text": "CDemonActor *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_00684178",
+      "text": "local_114.fog = (float)&DAT_00684178;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 73,
+      "match": "8.413193e-39",
+      "text": "local_114.light = 8.413193e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_00684178",
+      "text": "(g_CDemonRendererPtr2,&DAT_00684178);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_0000000c",
+      "text": "fStack_90 = -*(float *)(in_stack_0000000c[1].actor_name + 8) * (float)0.5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_0000000c",
+      "text": "fStack_8c = *(float *)in_stack_0000000c[1].actor_name * (float)iVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_0000000c",
+      "text": "fStack_88 = (float)iVar3 * *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "ROUND",
+      "text": "CStack_84.x = (int)ROUND(fStack_90 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ROUND",
+      "text": "CStack_84.y = (int)ROUND(fStack_8c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 87,
+      "match": "ROUND",
+      "text": "CStack_84.z = (int)ROUND(fStack_88 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_0000000c",
+      "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "ROUND",
+      "text": "CStack_78.x = (int)ROUND(fStack_90 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "CStack_78.y = (int)ROUND(fStack_8c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "CStack_78.z = (int)ROUND(fStack_88 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_0000000c",
+      "text": "fStack_88 = fStack_88 - *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_0000000c",
+      "text": "fStack_90 = fStack_90 + *(float *)(in_stack_0000000c[1].actor_name + 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "CStack_48.x = (int)ROUND(fStack_90 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "CStack_48.y = (int)ROUND(fStack_8c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "ROUND",
+      "text": "CStack_48.z = (int)ROUND(fStack_88 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 109,
+      "match": "in_stack_0000000c",
+      "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
+      "match": "ROUND",
+      "text": "CStack_60.x = (int)ROUND(fStack_90 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 111,
+      "match": "ROUND",
+      "text": "CStack_60.y = (int)ROUND(fStack_8c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 112,
+      "match": "ROUND",
+      "text": "CStack_60.z = (int)ROUND(fStack_88 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 117,
+      "match": "8.413858e-39",
+      "text": "local_114.light = 8.413858e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 125,
+      "match": "in_stack_0000000c",
+      "text": "} while (iVar3 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 129,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 152,
+      "match": "8.413128e-39",
+      "text": "vertex2.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 181,
+      "match": "8.413128e-39",
+      "text": "vertex2_00.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 210,
+      "match": "8.413128e-39",
+      "text": "vertex2_01.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 232,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 239,
+      "match": "8.413128e-39",
+      "text": "vertex2_02.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 261,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 268,
+      "match": "8.413128e-39",
+      "text": "vertex2_03.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 283,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 291,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 298,
+      "match": "8.413128e-39",
+      "text": "vertex2_04.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 318,
+      "match": "in_stack_0000000c",
+      "text": "} while (iStack_14 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 321,
+      "match": "in_stack_0000000c",
+      "text": "pSVar7 = pSVar8 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 325,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 328,
+      "match": "in_stack_0000000c",
+      "text": "pSVar8 = pSVar8 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 335,
+      "match": "8.413128e-39",
+      "text": "vertex2_05.v = 8.413128e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 357,
+      "match": "in_stack_0000000c",
+      "text": "iVar5 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4; iVar5 = iVar5 + 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 358,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 359,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 360,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xff00;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 361,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = 0x8000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 362,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->u + iVar3) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 363,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 367,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 384,
+      "match": "in_stack_0000000c",
+      "text": "} while (iVar3 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 390,
+      "match": "2.8026e-45",
+      "text": "local_bc.min.x = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 392,
+      "match": "in_stack_0000000c",
+      "text": "pcStack_30 = in_stack_0000000c[1].actor_name + 0x18;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 395,
+      "match": "in_stack_0000000c",
+      "text": "pCStack_28 = &in_stack_0000000c[1].orient;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 396,
+      "match": "in_stack_0000000c",
+      "text": "pfStack_2c = &in_stack_0000000c[1].location.position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 397,
+      "match": "in_stack_0000000c",
+      "text": "for (iStack_8 = 0; iStack_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 400,
+      "match": "ROUND",
+      "text": "CStack_6c.x = (int)ROUND(*(float *)pcVar4 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 401,
+      "match": "ROUND",
+      "text": "CStack_6c.y = (int)ROUND(*(float *)(pcVar4 + 4) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 402,
+      "match": "ROUND",
+      "text": "CStack_6c.z = (int)ROUND((((CLocation *)(pcVar4 + 8))->position).x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 405,
+      "match": "ROUND",
+      "text": "CStack_9c.x = (int)ROUND(*pfStack_2c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 406,
+      "match": "ROUND",
+      "text": "CStack_9c.y = (int)ROUND(pfStack_2c[1] * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 407,
+      "match": "ROUND",
+      "text": "CStack_9c.z = (int)ROUND(pfStack_2c[2] * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 410,
+      "match": "ROUND",
+      "text": "CStack_54.x = (int)ROUND(pCStack_28->pitch * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 411,
+      "match": "ROUND",
+      "text": "CStack_54.y = (int)ROUND(pCStack_28->bank * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 412,
+      "match": "ROUND",
+      "text": "CStack_54.z = (int)ROUND(pCStack_28->heading * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 418,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 419,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xff00;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 420,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 421,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = 0x8000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 422,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->u + iVar3) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 424,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 428,
+      "match": "(COrientation *)((int)",
+      "text": "pCStack_28 = (COrientation *)((int)(pCStack_28 + 4) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 432,
+      "match": "in_stack_0000000c",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
+      "type": "stack_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStairs",
+        "offset": 8,
+        "vtable_addr": "006634d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

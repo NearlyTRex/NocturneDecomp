@@ -30,14 +30,13 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_pt
   }
   if (3 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk1 + 0x50),"ladderToDescend");
+              ((CDemonActor *)(this_ptr->unk5 + 4),"ladderToDescend");
   }
   if (5 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->guns_drawn,"gunsDrawn");
   }
   if (6 < g_CStrangerClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk1 + 0x54),"weapon");
+    core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)(this_ptr->unk5 + 8),"weapon");
   }
   if (7 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->action_pending,"actionPending");

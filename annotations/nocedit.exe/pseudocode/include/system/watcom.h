@@ -62,13 +62,13 @@ typedef struct ThreadStartupInfo {
 } ThreadStartupInfo;
 
 // Function Definition: WATCOM_COPY_CONSTRUCTOR_FUNC
-typedef void (*WATCOM_COPY_CONSTRUCTOR_FUNC)(void* param0, void* param1);
+typedef void WATCOM_COPY_CONSTRUCTOR_FUNC(void* param0, void* param1);
 
 // Function Definition: WATCOM_DEFAULT_CONSTRUCTOR_FUNC
-typedef void (*WATCOM_DEFAULT_CONSTRUCTOR_FUNC)(void* param0);
+typedef void WATCOM_DEFAULT_CONSTRUCTOR_FUNC(void* param0);
 
 // Function Definition: WATCOM_VIRTUAL_DESTRUCTOR_FUNC
-typedef void (*WATCOM_VIRTUAL_DESTRUCTOR_FUNC)(void* object_ptr, int flags);
+typedef void WATCOM_VIRTUAL_DESTRUCTOR_FUNC(void* object_ptr, int flags);
 
 // Structure: WatcomDestructorCall
 typedef struct WatcomDestructorCall {
@@ -141,6 +141,13 @@ typedef struct WatcomVirtualBaseDescriptor {
     int offset_to_vbase;
 } WatcomVirtualBaseDescriptor;
 
+// Structure: _heapinfo
+typedef struct _heapinfo {
+    void* _pentry;
+    SIZE_T _size;
+    int _useflag;
+} _heapinfo;
+
 // =============================================================================
 // WATCOM C++ RUNTIME INLINE FUNCTIONS
 // =============================================================================
@@ -200,9 +207,10 @@ inline void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
 }
 
 // __arr_op - Generic array operation with function pointer
-inline void* __arr_op(void* dest, void* src, int count, int size, void (*func)(void*, void*)) {
+inline void* __arr_op(void* dest, void* src, int count, int size, void* copy_func) {
     char* d = (char*)dest;
     char* s = (char*)src;
+    void (*func)(void*, void*) = (void (*)(void*, void*))copy_func;
     for (int i = 0; i < count; i++, d += size, s += size)
         func(d, s);
     return dest;
@@ -221,20 +229,20 @@ inline void* __arrdtor(WatcomTypeArrayInfo* info) {
 }
 
 // __arrfini - Array destructor wrapper (packs params, calls __arrdtor)
-inline int __arrfini(void** arr, int count, WatcomTypeInfo* ti) {
+inline void* __arrfini(void* obj_array, int count, WatcomTypeInfo* ti) {
     WatcomTypeArrayInfo info;
-    info.obj_array = arr;
     info.obj_count = count;
     info.type_info = ti;
+    info.obj_array = (void**)obj_array;
     __arrdtor(&info);
-    return (int)(size_t)*arr;
+    return obj_array;
 }
 
 // __vec_delete - delete[] implementation (reads count from ptr-4)
 inline void* __vec_delete(void* ptr, WatcomTypeInfo* ti) {
     if (!ptr) return 0;
     int* base = ((int*)ptr) - 1;
-    __arrfini((void**)&ptr, *base, ti);
+    __arrfini(ptr, *base, ti);
     return base;
 }
 
@@ -312,10 +320,10 @@ inline char* _fullpath(char* buffer, const char* path, size_t maxlen) {
 // Note: _find_t struct is defined in system/dos.h (from Ghidra)
 
 #ifndef _MSC_VER
-inline long _findfirst(const char* filespec, struct _find_t* fileinfo) {
+inline long _findfirst(const char* filespec, void* fileinfo) {
     (void)filespec; (void)fileinfo; return -1;
 }
-inline int _findnext(long handle, struct _find_t* fileinfo) {
+inline int _findnext(long handle, void* fileinfo) {
     (void)handle; (void)fileinfo; return -1;
 }
 inline int _findclose(long handle) {
@@ -353,15 +361,8 @@ inline int _mkdir(const char* path) {
 #define _FREEENTRY    1
 #endif
 
-// _heapinfo structure for _heapwalk
-#ifndef _HEAPINFO_DEFINED
-#define _HEAPINFO_DEFINED
-typedef struct _heapinfo {
-    void*   _pentry;   // heap pointer
-    size_t  _size;     // heap entry size
-    int     _useflag;  // heap entry 'in-use' flag
-} _HEAPINFO;
-#endif
+// _heapinfo - forward declaration (full definition from Ghidra types)
+struct _heapinfo;
 
 // _heapchk - Check heap consistency
 inline int _heapchk(void) {

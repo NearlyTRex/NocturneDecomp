@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_archive
-typedef void (*CDemonActor_archive)(struct CDemonActor* this_ptr);
+typedef void CDemonActor_archive(struct CDemonActor* this_ptr);
 

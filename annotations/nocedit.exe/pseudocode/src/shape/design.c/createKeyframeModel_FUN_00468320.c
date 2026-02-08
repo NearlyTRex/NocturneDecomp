@@ -59,7 +59,8 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
       for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count
           ; local_18 = local_18 + 1) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
-        sprintf(local_bc,"Enter key frame of object %d : ",local_18 + 1);
+        _sprintf(local_bc,"Enter key frame of object %d : ",local_18 + 1)
+        ;
         engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_6c,0x14,0,0,local_bc);
         iVar3 = -1;
         pbVar4 = local_6c;

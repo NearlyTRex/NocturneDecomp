@@ -16,7 +16,7 @@
 ;   core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950 at 0052995c
 ;   core_scat.cpp_CScat_getPropertyList_FUN_00559120 at 0055912a
 ;   core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0 at 005c68fa
-;   core_svetlana.cpp_CSvetlana_FUN_005d9f10 at 005d9f1a
+;   core_svetlana.cpp_CSvetlana_getPropertyList_FUN_005d9f10 at 005d9f1a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_State_0062edb8

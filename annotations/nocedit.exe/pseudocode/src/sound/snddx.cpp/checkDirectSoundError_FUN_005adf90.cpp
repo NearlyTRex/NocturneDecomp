@@ -17,7 +17,7 @@ sound_snddx_cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code,char *oper
     return 1;
   }
   pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-  sprintf
+  _sprintf
             (local_190,"DirectSux: Unable to %s.  (%s)",operation_description,pcVar1);
   sound_sndmain_cpp_logSoundError_FUN_005adba0(local_190);
   return 0;

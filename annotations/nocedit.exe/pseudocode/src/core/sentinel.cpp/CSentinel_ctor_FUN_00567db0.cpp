@@ -21,10 +21,7 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
   (pCVar3->base).base.field54_0x2ddc = 0.6;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 2.0;
-  pCVar3->unk[0xc] = '\0';
-  pCVar3->unk[0xd] = '\0';
-  pCVar3->unk[0xe] = '\0';
-  pCVar3->unk[0xf] = '\0';
+  pCVar3->unk4 = 0;
   (pCVar3->base).base.field56_0x2de4 = fVar1;
   (pCVar3->base).base.field57_0x2de8 = fVar2;
   return pCVar3;

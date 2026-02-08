@@ -105,7 +105,7 @@ int __cdecl stat(char *filename,_stat *file_info)
     file_info->_st_updatedID = 0;
     file_info->_st_inheritedRightsMask = 0;
     file_info->_st_originatingNameSpace = '\0';
-    strncpy((char *)file_info->_st_name,local_368.cFileName,0xd);
+    _strncpy((char *)file_info->_st_name,local_368.cFileName,0xd);
     iVar3 = 0;
   }
   return iVar3;

@@ -83,7 +83,7 @@
 ;   core_slew.cpp_CSlew_init_FUN_005a2060
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 ;   crt_math.c_floor_FUN_005feb90
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
@@ -443,8 +443,8 @@ section .text
     PUSH 0x619402                       ; 00443f6e | = "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH:..."
     LEA EAX,[EBP + 0xffffff5a]          ; 00443f73
     PUSH EAX                            ; 00443f79
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00443f7a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00443f7a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x40                        ; 00443f7f
     PUSH 0x0                            ; 00443f82
     PUSH 0x0                            ; 00443f84

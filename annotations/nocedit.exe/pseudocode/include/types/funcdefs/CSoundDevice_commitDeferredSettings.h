@@ -7,5 +7,5 @@
 struct CSoundDevice;
 
 // Function Definition: CSoundDevice_commitDeferredSettings
-typedef void (*CSoundDevice_commitDeferredSettings)(struct CSoundDevice* this_ptr);
+typedef void CSoundDevice_commitDeferredSettings(struct CSoundDevice* this_ptr);
 

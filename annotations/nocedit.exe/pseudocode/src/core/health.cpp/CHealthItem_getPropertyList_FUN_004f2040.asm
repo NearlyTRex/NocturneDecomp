@@ -46,7 +46,7 @@ section .text
     PUSH 0x62ea4b                       ; 004f2074 | = "Number of uses"
     PUSH ESI                            ; 004f2079
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 004f207a
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004f207f
     PUSH 0x0                            ; 004f2082
     PUSH 0x42c80000                     ; 004f2084

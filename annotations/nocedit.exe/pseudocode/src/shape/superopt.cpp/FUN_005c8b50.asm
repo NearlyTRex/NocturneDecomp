@@ -41,12 +41,12 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0 at 005c8554
+;   shape_superopt.cpp_FUN_005c84c0 at 005c8554
 ;
 ; Called Functions:
-;   shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
 ;   shape_superopt.cpp_FUN_005c9100
 ;   shape_superopt.cpp_FUN_005c9aa0
+;   shape_superopt.cpp_FUN_005ca590
 ;   shape_superopt.cpp_FUN_005cb3a0
 ;
 ; *****************************************************************************
@@ -223,8 +223,8 @@ section .text
     PUSH EDX                            ; 005c8cfb
     PUSH EBX                            ; 005c8cfc
     MOV EDI,ESI                         ; 005c8cfd
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c8cff
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+    CALL shape_superopt.cpp_FUN_005ca590 ; 005c8cff
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005ca590()
     ADD ESP,0x10                        ; 005c8d04
     TEST EAX,EAX                        ; 005c8d07
     JZ 0x005c8dd9                       ; 005c8d09
@@ -236,8 +236,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x92]      ; 005c8d15
     PUSH ECX                            ; 005c8d1b
     PUSH EBX                            ; 005c8d1c
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c8d1d
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+    CALL shape_superopt.cpp_FUN_005ca590 ; 005c8d1d
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005ca590()
     ADD ESP,0x10                        ; 005c8d22
     TEST EAX,EAX                        ; 005c8d25
     JZ 0x005c8de0                       ; 005c8d27

@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 265,
+    "complexity_score": 264,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -13,7 +13,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 155
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -185,133 +185,133 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x20) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "iVar1 = is_leap_year(in_stack_00000008 + 0x76c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(in_stack_00000004 + 0x10));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "iVar2 = *(int *)((int)&INFINITY + *(int *)(in_stack_00000004 + 0x10) * 2 + 6);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(int *)((int)",
       "text": "iVar2 = *(int *)((int)&INFINITY + *(int *)(in_stack_00000004 + 0x10) * 2 + 6);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(in_stack_00000004 + 0x10));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "iVar2 = *(int *)(&DAT_00665f50 + *(int *)(in_stack_00000004 + 0x10) * 2);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 21,
       "match": "DAT_00665f50",
       "text": "iVar2 = *(int *)(&DAT_00665f50 + *(int *)(in_stack_00000004 + 0x10) * 2);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "local_34.tm_mon = *(int *)(in_stack_00000004 + 0x10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "local_34.tm_year = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "iVar4 = ((*(int *)(in_stack_00000004 + 0x18) - local_34.tm_wday) + 7) % 7;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0xc) == 5) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "iVar3 = *(int *)(in_stack_00000004 + 0xc) + -2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "iVar3 = *(int *)(in_stack_00000004 + 0xc) + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x20) != 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "return *(int *)(in_stack_00000004 + 0x1c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "return *(int *)(in_stack_00000004 + 0x1c) + -1;",
       "type": "stack_param"

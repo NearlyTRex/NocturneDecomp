@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)
+; __cdecl void __cdecl crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)
 ;
+; Parameters:
+; byte *           Stack[0x4]:4   param_1
+; undefined8 *     Stack[0x8]:4   param_2
 ;
 ; XREF[1]:
 ;   crt_string.c_parseFloatString_FUN_00605b9b at 00605cfb
@@ -59,7 +62,7 @@ section .text
         ;   Label: LAB_0060b5cb
     MOV EDI,0x405e                      ; 0060b5cd
     CALL crt_unknown.c_FUN_0060b5e8     ; 0060b5d2
-        ;   XREF to: 0060b5e8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060b5e8()
+        ;   XREF to: 0060b5e8 (UNCONDITIONAL_CALL)  ; double crt_unknown.c_FUN_0060b5e8(uint param_1, uint param_2)
     POP EBP                             ; 0060b5d7
     MOV dword ptr [EBP + 0x4],EDX       ; 0060b5d8
     MOV dword ptr [EBP],EAX             ; 0060b5db

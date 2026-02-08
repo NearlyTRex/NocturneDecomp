@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Guard_zone_box_trigger_00656847
 ;   TerminatedCString s_Allowed_victim_types_00656860
 ;   TerminatedCString s_canManualAim_00656875
-;   void* PTR_s_Inactive_00684414 = 006567b0
+;   SEnumPair[5] g_TurretStateTypePairs
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addBool_FUN_0040e330
@@ -46,12 +46,12 @@ section .text
     ADD ESP,0x8                         ; 005e3cb1
     LEA EAX,[EBX + 0x700]               ; 005e3cb4
     PUSH EAX                            ; 005e3cba
-    PUSH 0x684414                       ; 005e3cbb | PTR_s_Inactive_00684414
+    PUSH 0x684414                       ; 005e3cbb | g_TurretStateTypePairs
     PUSH 0x5                            ; 005e3cc0
     PUSH 0x6567da                       ; 005e3cc2 | = "State"
     PUSH ESI                            ; 005e3cc7
     CALL core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 ; 005e3cc8
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, void * pairs, int num_pairs, int * data_ptr)
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList * this_ptr, char * property_name, int num_pairs, SEnumPair * pairs, ...)
     ADD ESP,0x14                        ; 005e3ccd
     LEA EAX,[EBX + 0x704]               ; 005e3cd0
     PUSH EAX                            ; 005e3cd6
@@ -118,7 +118,7 @@ section .text
     PUSH 0x656847                       ; 005e3d8b | = "Guard zone box (trigger)"
     PUSH ESI                            ; 005e3d90
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005e3d91
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005e3d96
     PUSH 0x0                            ; 005e3d99
     PUSH 0xc8                           ; 005e3d9b

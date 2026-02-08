@@ -57,14 +57,14 @@ section .text
     PUSH 0x614ae3                       ; 004113ad | = "Amount of ammo"
     PUSH EBX                            ; 004113b2
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 004113b3
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 004113b8
     PUSH 0x4112b0                       ; 004113bb
     PUSH 0x411200                       ; 004113c0
     PUSH 0x614af2                       ; 004113c5 | = "Ammo type"
     PUSH EBX                            ; 004113ca
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 004113cb
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 004113d0
     POP ESI                             ; 004113d3
     POP EBX                             ; 004113d4

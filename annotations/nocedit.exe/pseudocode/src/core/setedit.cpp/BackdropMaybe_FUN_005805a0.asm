@@ -32,8 +32,8 @@
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
@@ -67,8 +67,8 @@ section .text
     PUSH 0x6485b2                       ; 005805cb | = "backdrop\\%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 005805d0
     PUSH EAX                            ; 005805d4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005805d5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005805d5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005805da
     MOV EAX,ESP                         ; 005805dd
     PUSH EAX                            ; 005805df
@@ -79,8 +79,8 @@ section .text
     PUSH 0x6485c2                       ; 005805e9 | = "backdrop\\%s.pvs"
     LEA EAX,[ESP + 0x8]                 ; 005805ee
     PUSH EAX                            ; 005805f2
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005805f3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005805f3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005805f8
     MOV EAX,ESP                         ; 005805fb
     PUSH EAX                            ; 005805fd
@@ -141,8 +141,8 @@ section .text
     PUSH 0x6485e6                       ; 0058068c | = "Computing fog/pvs %d of %d.  Press ES..."
     LEA EAX,[ESP + 0x10c]               ; 00580691
     PUSH EAX                            ; 00580698
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580699
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580699
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0058069e
     PUSH 0x1                            ; 005806a1
     PUSH 0x1                            ; 005806a3

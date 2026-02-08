@@ -14,7 +14,7 @@
 ;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860 at 004128b9
 ;   core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_004128d0 at 00412929
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c88
-;   core_barrier.cpp_CBarrier_FUN_00414240 at 0041429a
+;   core_barrier.cpp_CBarrier_renderTransparent_FUN_00414240 at 0041429a
 ;   core_bat.cpp_CBat_renderOpaque_FUN_00414bf0 at 00414c22
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 00417498
 ;   ... and 61 more

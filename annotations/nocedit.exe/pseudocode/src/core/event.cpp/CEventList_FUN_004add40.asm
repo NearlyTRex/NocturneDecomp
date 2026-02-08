@@ -6,9 +6,8 @@
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
 ;
-; XREF[4]:
+; XREF[3]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f9de
-;   core_actor.cpp_FUN_0040fffe at 0041000d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df21d
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bb91
 ;

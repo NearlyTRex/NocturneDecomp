@@ -1,0 +1,176 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 49,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 193
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3690",
+    "address_range": [
+      [
+        "005a3690",
+        "005a37ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_smiley.cpp_CSmiley_getTargetPoints_FUN_005a3690",
+    "signature": "int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f48fa0",
+      "name": "INT_03f48fa0",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f48fb4",
+      "name": "INT_03f48fb4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f48fb8",
+      "name": "INT_03f48fb8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f48fc4",
+      "name": "INT_03f48fc4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f48fcc",
+      "name": "INT_03f48fcc",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.055555555555555,
+    "instruction_count": 126,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "CALL": 5,
+      "CBRANCH": 6,
+      "COPY": 101,
+      "INT_ADD": 61,
+      "INT_AND": 106,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 66,
+      "INT_LEFT": 8,
+      "INT_LESS": 11,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 39,
+      "INT_SUB": 39,
+      "INT_XOR": 5,
+      "LOAD": 27,
+      "POPCOUNT": 31,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 637
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmiley *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSmiley",
+        "offset": 76,
+        "vtable_addr": "00662f84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

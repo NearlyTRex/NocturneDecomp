@@ -17,6 +17,8 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/EEditorActionType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SInputFace.h"
 
 // =============================================================================
@@ -98,15 +100,15 @@ void __cdecl core_sentinel_cpp_staticInit_FUN_00567d40(void);
 CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_00567d70(void);
 CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00567da0(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *this_ptr);
-void __cdecl core_sentinel_cpp_FUN_00567e20(void);
-void __cdecl core_sentinel_cpp_FUN_00568030(void);
-int __cdecl core_sentinel_cpp_FUN_00568b70(void);
+void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00567e20(CSentinel *this_ptr);
+void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_ptr,float delta_time);
+int __cdecl core_sentinel_cpp_CSentinel_FUN_00568b70(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_00568c70(CSentinel *this_ptr);
-void __cdecl core_sentinel_cpp_SentinelBehavior_FUN_00568cd0(void);
-int __cdecl core_sentinel_cpp_FUN_00568dd0(void);
-void __cdecl core_sentinel_cpp_FUN_00568ef0(void);
+void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00568cd0(CSentinel *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0 (CSentinel *this_ptr,CVector3f *out_points_array);
+void __cdecl core_sentinel_cpp_CSentinel_hasCollision_FUN_00568ef0 (CSentinel *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10 (CSentinel *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_sentinel_cpp_FUN_00568f50(void);
+void __cdecl core_sentinel_cpp_CSentinel_addFilesToExtract_FUN_00568f50(CSentinel *this_ptr,_FILE *file_handle);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00568f80(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_00569040(void);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr);

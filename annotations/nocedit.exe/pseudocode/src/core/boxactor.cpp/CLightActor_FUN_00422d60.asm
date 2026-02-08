@@ -28,7 +28,7 @@
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -226,8 +226,8 @@ section .text
     PUSH 0x61696e                       ; 00423016 | = "lantern%d.raw"
     LEA EAX,[ESP + 0x8]                 ; 0042301b
     PUSH EAX                            ; 0042301f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423020
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00423020
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00423025
     MOV EAX,ESP                         ; 00423028
     PUSH EAX                            ; 0042302a

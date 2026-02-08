@@ -13,7 +13,7 @@ core_hero_cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220
-            (property_list,"index",&this_ptr->index,0,3,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+            (property_list,"index",&this_ptr->index,0,3,(CActorPropertyValidatorFunc *)0x0)
+  ;
   return;
 }

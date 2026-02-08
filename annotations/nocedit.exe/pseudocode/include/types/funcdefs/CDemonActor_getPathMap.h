@@ -8,5 +8,5 @@ struct CDemonActor;
 struct CPathMap;
 
 // Function Definition: CDemonActor_getPathMap
-typedef struct CPathMap* (*CDemonActor_getPathMap)(struct CDemonActor* this_ptr);
+typedef struct CPathMap* CDemonActor_getPathMap(struct CDemonActor* this_ptr);
 

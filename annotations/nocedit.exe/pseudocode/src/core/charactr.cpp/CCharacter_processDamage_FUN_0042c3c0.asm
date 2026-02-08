@@ -22,7 +22,7 @@
 ;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544e01
 ;   core_scat.cpp_CScat_processDamage_FUN_00557ea0 at 00557fa2
 ;   core_stranger.cpp_CStranger_FUN_005c48b0 at 005c4afd
-;   core_svetlana.cpp_FUN_005d9d30 at 005d9e80
+;   core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30 at 005d9e80
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c

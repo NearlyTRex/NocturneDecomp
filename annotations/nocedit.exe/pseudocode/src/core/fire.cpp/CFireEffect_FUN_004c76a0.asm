@@ -15,7 +15,7 @@
 ;
 ; XREF[3]:
 ;   core_gun.cpp_CGun_FUN_004f0350 at 004f0b0a
-;   core_tommygun.cpp_FUN_005ddb30 at 005de323
+;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de323
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c5e
 ;
 ; Referenced Globals:
@@ -45,7 +45,7 @@
 ;   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 ;   core_ground.cpp_getGroundTypeCode_FUN_004eece0
 ;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -257,8 +257,8 @@ section .text
     PUSH 0x62a003                       ; 004c78b8 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 004c78bd
     PUSH EAX                            ; 004c78c1
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c78c2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c78c2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c78c7
     CMP byte ptr [ESP + 0x8],0x0        ; 004c78ca
     JNZ 0x004c79a0                      ; 004c78cf
@@ -285,8 +285,8 @@ section .text
     PUSH 0x62a010                       ; 004c78fc | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 004c7901
     PUSH EAX                            ; 004c7905
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c7906
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c7906
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c790b
     CMP byte ptr [ESP + 0x8],0x0        ; 004c790e
     JNZ 0x004c79a0                      ; 004c7913
@@ -313,8 +313,8 @@ section .text
     PUSH 0x62a01d                       ; 004c7940 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x10]                ; 004c7945
     PUSH EAX                            ; 004c7949
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c794a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c794a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c794f
     CMP byte ptr [ESP + 0x8],0x0        ; 004c7952
     JNZ 0x004c79a0                      ; 004c7957
@@ -341,8 +341,8 @@ section .text
     PUSH 0x62a02a                       ; 004c7980 | = "ric-%s.wav"
     LEA EAX,[ESP + 0x10]                ; 004c7985
     PUSH EAX                            ; 004c7989
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c798a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c798a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c798f
     CMP byte ptr [ESP + 0x8],0x0        ; 004c7992
     JNZ 0x004c79a0                      ; 004c7997

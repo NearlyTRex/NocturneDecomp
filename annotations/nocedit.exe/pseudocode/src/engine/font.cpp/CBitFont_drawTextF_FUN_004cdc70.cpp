@@ -15,7 +15,7 @@ engine_font_cpp_CBitFont_drawTextF_FUN_004cdc70
   int iVar1;
   char local_1010 [4096];
   
-  vsprintf(local_1010,format_string,args);
+  _vsprintf(local_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
                     (this_ptr,x_pos,y_pos,color_mode,color_value,local_1010);
   return iVar1;

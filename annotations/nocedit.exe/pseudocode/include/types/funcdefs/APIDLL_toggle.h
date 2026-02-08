@@ -4,5 +4,5 @@
 #include "system/basetypes.h"
 
 // Function Definition: APIDLL_toggle
-typedef void (*APIDLL_toggle)(void);
+typedef void APIDLL_toggle(void);
 

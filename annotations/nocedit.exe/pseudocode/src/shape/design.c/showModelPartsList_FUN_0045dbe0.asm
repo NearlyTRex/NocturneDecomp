@@ -16,7 +16,7 @@
 ;   int g_PartsCount
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -85,8 +85,8 @@ section .text
     PUSH EAX                            ; 0045dc78 | = "Part %d : %s"
     LEA EAX,[EBP + 0xffffff44]          ; 0045dc79
     PUSH EAX                            ; 0045dc7f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045dc80
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045dc80
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0045dc85
     MOV EAX,dword ptr [EBP + -0xc]      ; 0045dc88
     PUSH EAX                            ; 0045dc8b

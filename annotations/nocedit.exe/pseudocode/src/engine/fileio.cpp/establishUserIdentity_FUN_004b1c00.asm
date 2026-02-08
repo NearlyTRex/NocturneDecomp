@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_string.c_strncpy_FUN_00600f40
+;   crt_string.c__strncpy_FUN_00600f40
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140
@@ -148,8 +148,8 @@ section .text
         ;   Label: LAB_004b1cfa
     PUSH EAX                            ; 004b1cfc
     PUSH 0x2d12bd0                      ; 004b1cfd | g_VersionControlSession
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 004b1d02
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
+    CALL crt_string.c__strncpy_FUN_00600f40 ; 004b1d02
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     MOV EAX,0x1                         ; 004b1d07
     ADD ESP,0xc                         ; 004b1d0c
     ADD ESP,0x200                       ; 004b1d0f

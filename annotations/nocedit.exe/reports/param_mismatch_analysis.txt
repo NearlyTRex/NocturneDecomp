@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5100
+Functions with parameter estimates: 5101
 Functions with no callers: 3241
-Parameter mismatches detected: 654
-Signature accuracy rate: 64.8%
+Parameter mismatches detected: 647
+Signature accuracy rate: 65.2%
 
 Mismatches by confidence:
-  High confidence:   58 (multiple call sites agree)
+  High confidence:   54 (multiple call sites agree)
   Medium confidence: 87 (some agreement)
-  Low confidence:    509 (limited data)
+  Low confidence:    506 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -74,7 +74,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
     Sample call sites:
       core_turret.cpp_CTurret_fire_F at 005e3c5e: 0 reg [], 5 stack
-      core_tommygun.cpp_FUN_005ddb30 at 005de323: 0 reg [], 5 stack
+      core_tommygun.cpp_CTommyGun_fi at 005de323: 0 reg [], 5 stack
       core_gun.cpp_CGun_FUN_004f0350 at 004f0b0a: 0 reg [], 5 stack
 
   core_fire.cpp_CFireEffect_FUN_004c8ef0
@@ -85,7 +85,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_flamegun.cpp_CFlameThrowe at 004cb971: 0 reg [], 5 stack
       core_emitter.cpp_CEmitter_proc at 004a849e: 0 reg [], 5 stack
-      core_dracbrid.cpp_FUN_00484410 at 00484cfe: 0 reg [], 5 stack
+      core_dracbrid.cpp_CDraculaBrid at 00484cfe: 0 reg [], 5 stack
 
   core_morph.cpp_FUN_0052b580
     Declared: 0 params, Estimated: 4 params (+4)
@@ -94,8 +94,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: void __cdecl core_morph_cpp_FUN_0052b580(void)
     Sample call sites:
       core_vampboss.cpp_CVampireBoss at 005e57c2: 0 reg [], 4 stack
-      core_succubus.cpp_CSuccubus_FU at 005c6e0d: 0 reg [], 4 stack
-      core_succubus.cpp_CSuccubus_FU at 005c6def: 0 reg [], 4 stack
+      core_succubus.cpp_CSuccubus_se at 005c6e0d: 0 reg [], 4 stack
+      core_succubus.cpp_CSuccubus_se at 005c6def: 0 reg [], 4 stack
 
   engine_colquant.c_FUN_00441790
     Declared: 0 params, Estimated: 4 params (+4)
@@ -135,7 +135,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_scat.cpp_CScat_processDam at 00557f86: 0 reg [], 5 stack
       core_actor.cpp_CDemonActor_spa at 00409ea9: 0 reg [], 5 stack
-      core_svetlana.cpp_FUN_005d9d30 at 005d9e4f: 0 reg [], 5 stack
+      core_svetlana.cpp_CSvetlana_pr at 005d9e4f: 0 reg [], 5 stack
 
   core_morph.cpp_FUN_0052b430
     Declared: 0 params, Estimated: 3 params (+3)
@@ -176,46 +176,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_colquant.c_FUN_00440b40 at 00440c62: 0 reg [], 3 stack
       engine_colquant.c_FUN_00440c80 at 00440da4: 0 reg [], 3 stack
       engine_colquant.c_FUN_00440dc0 at 00440ee4: 0 reg [], 3 stack
-
-  core_actor.cpp_FUN_004103d0
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 6, Confidence: high
-    File: core/actor.cpp
-    Signature: void __cdecl core_actor_cpp_FUN_004103d0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040dc84: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040de4b: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040daed: 0 reg [], 2 stack
-
-  core_actor.cpp_FUN_004104d0
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: int __cdecl core_actor_cpp_FUN_004104d0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040dd63: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040d9f9: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db9e: 0 reg [], 2 stack
-
-  core_actor.cpp_FUN_004104e0
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: int __cdecl core_actor_cpp_FUN_004104e0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040d9e5: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db8a: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040dd4f: 0 reg [], 2 stack
-
-  core_actor.cpp_FUN_004104f0
-    Declared: 0 params, Estimated: 2 params (+2)
-    Call sites: 3, Confidence: high
-    File: core/actor.cpp
-    Signature: int __cdecl core_actor_cpp_FUN_004104f0(void)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_ren at 0040d9d1: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040db76: 0 reg [], 2 stack
-      core_actor.cpp_CDemonActor_ren at 0040dd3b: 0 reg [], 2 stack
 
   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
     Declared: 1 params, Estimated: 3 params (+2)
@@ -668,7 +628,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  509 functions with low-confidence mismatches
+  506 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -685,25 +645,26 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 88
+Functions where declaration has MORE params than estimated: 90
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 566
+Functions where declaration has FEWER params than estimated: 557
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
+  -11 params: 1 functions
   -8 params: 1 functions
   -7 params: 1 functions
   -6 params: 2 functions
   -5 params: 2 functions
   -4 params: 3 functions
   -3 params: 9 functions
-  -2 params: 15 functions
+  -2 params: 16 functions
   -1 params: 55 functions
-  +1 params: 258 functions
-  +2 params: 122 functions
-  +3 params: 64 functions
-  +4 params: 82 functions
+  +1 params: 261 functions
+  +2 params: 111 functions
+  +3 params: 65 functions
+  +4 params: 80 functions
   +5 params: 12 functions
   +6 params: 15 functions
   +7 params: 6 functions

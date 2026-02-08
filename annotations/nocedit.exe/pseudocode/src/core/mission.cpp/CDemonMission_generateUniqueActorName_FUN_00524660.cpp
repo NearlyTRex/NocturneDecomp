@@ -39,7 +39,7 @@ core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
   }
   do {
     iVar5 = iVar5 + 1;
-    sprintf(out_buf,"%s%d",base_name,iVar5);
+    _sprintf(out_buf,"%s%d",base_name,iVar5);
     pcVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,out_buf);
   } while (pcVar3 != (char *)0x0);
   return;

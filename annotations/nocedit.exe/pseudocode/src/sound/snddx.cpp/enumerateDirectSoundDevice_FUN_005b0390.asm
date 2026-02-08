@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x6522ab                       ; 005b041b | = "DirectSound: %s"
     PUSH EBX                            ; 005b0420
     MOV dword ptr [EBX + 0x110],EDX     ; 005b0421
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b0427
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b0427
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x1                         ; 005b042c
     ADD ESP,0xc                         ; 005b0431
     POP ESI                             ; 005b0434

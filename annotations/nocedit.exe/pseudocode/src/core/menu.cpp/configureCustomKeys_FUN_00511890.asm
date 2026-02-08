@@ -39,7 +39,7 @@
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0
 ;   core_moon.cpp_CMoon_update_FUN_00529d60
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;
@@ -102,8 +102,8 @@ section .text
     ADD ESP,0x4                         ; 0051192d
     PUSH EAX                            ; 00511930
     PUSH 0x2f27700                      ; 00511931 | g_ControlsMenuTextBuffers
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511936
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511936
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
         ;   Label: LAB_00511936
     ADD ESP,0x8                         ; 0051193b
     PUSH 0x636ac4                       ; 0051193e | = "Customize Keys"
@@ -118,8 +118,8 @@ section .text
     INC EBX                             ; 00511957
     PUSH EAX                            ; 00511958 | g_ControlsMenuTextBuffers[1][0]
     MOV ESI,EBX                         ; 00511959
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051195b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051195b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     SHL ESI,0x8                         ; 00511960
     MOV EAX,[0x0067b654]                ; 00511963 | g_CGamePtr
     INC EBX                             ; 00511968
@@ -136,8 +136,8 @@ section .text
     ADD ESP,0x4                         ; 0051198a
     PUSH EAX                            ; 0051198d
     PUSH ESI                            ; 0051198e | g_ControlsMenuTextBuffers[2][0]
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051198f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051198f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00511994
     MOV EAX,[0x0067b654]                ; 00511997 | g_CGamePtr
     MOV EAX,dword ptr [EAX + 0xc4]      ; 0051199c | DAT_02d81b60
@@ -156,8 +156,8 @@ section .text
     SHL EAX,0x8                         ; 005119ca
     ADD EAX,0x2f27700                   ; 005119cd | g_ControlsMenuTextBuffers
     PUSH EAX                            ; 005119d2 | g_ControlsMenuTextBuffers[3][0]
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005119d3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005119d3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
         ;   Label: LAB_005119d3
     ADD ESP,0x8                         ; 005119d8
     INC EBX                             ; 005119db
@@ -177,8 +177,8 @@ section .text
     ADD ESP,0x4                         ; 00511a05
     PUSH EAX                            ; 00511a08
     PUSH ESI                            ; 00511a09 | g_ControlsMenuTextBuffers[4][0]
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511a0a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511a0a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00511a0f
     PUSH 0x636b52                       ; 00511a12 | = "X-axis sensitivity : "
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00511a17
@@ -212,8 +212,8 @@ section .text
     PUSH 0x636b68                       ; 00511a5d | = "%5.2f"
     LEA EAX,[ESP + 0xc]                 ; 00511a62
     PUSH EAX                            ; 00511a66
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511a67
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511a67
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00511a6c
     MOV ESI,ESP                         ; 00511a6f
     PUSH EDI                            ; 00511a71 | g_ControlsMenuTextBuffers[5][0]
@@ -273,8 +273,8 @@ section .text
     PUSH EAX                            ; 00511ae9
     MOV EBP,EBX                         ; 00511aea
     LEA ESI,[ESP + 0x10]                ; 00511aec
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511af0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511af0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00511af5
     SHL EBP,0x8                         ; 00511af8
     PUSH EDI                            ; 00511afb | g_ControlsMenuTextBuffers[6][0]
@@ -316,8 +316,8 @@ section .text
     PUSH EAX                            ; 00511b54
     PUSH EBP                            ; 00511b55 | g_ControlsMenuTextBuffers[7][0]
     MOV EBX,ESI                         ; 00511b56
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511b58
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511b58
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00511b5d
     PUSH 0x636bbb                       ; 00511b60 | = "Control Options"
         ;   Label: LAB_00511b60

@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_stopInteraction
-typedef void (*CDemonActor_stopInteraction)(struct CDemonActor* this_ptr, struct CDemonActor* user);
+typedef void CDemonActor_stopInteraction(struct CDemonActor* this_ptr, struct CDemonActor* user);
 

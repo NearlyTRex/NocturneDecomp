@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
-;   core_trigger.cpp_CTrigger_FUN_005e1350
+;   core_trigger.cpp_CTrigger_showEditorHelp_FUN_005e1350
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EBX                            ; 005ec695
     MOV EDX,dword ptr [ESP + 0xc]       ; 005ec696
     PUSH EDX                            ; 005ec69a
-    CALL core_trigger.cpp_CTrigger_FUN_005e1350 ; 005ec69b
-        ;   XREF to: 005e1350 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e1350(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_showEditorHelp_FUN_005e1350 ; 005ec69b
+        ;   XREF to: 005e1350 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_showEditorHelp_FUN_005e1350(CTrigger * this_ptr, int * y_pos)
     ADD ESP,0x8                         ; 005ec6a0
     PUSH 0x65759d                       ; 005ec6a3 | = "Prev/next waypoint on trail."
     MOV ECX,dword ptr [EBX]             ; 005ec6a8

@@ -43,9 +43,9 @@ char * __cdecl strtok(char *str,char *delimiters);
 // Address: 00600770
 char * __cdecl strupr(char *string);
 
-// Original: crt_string.c_strncpy_FUN_00600f40
+// Original: crt_string.c__strncpy_FUN_00600f40
 // Address: 00600f40
-char * __cdecl strncpy(char *dest,char *src,SIZE_T count);
+char * __cdecl ::strncpy(char *dest,char *src,SIZE_T count);
 
 // Original: crt_string.c_strerror_FUN_00601470
 // Address: 00601470

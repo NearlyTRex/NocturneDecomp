@@ -1,0 +1,194 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 59,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 9,
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 185
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d9bc0",
+    "address_range": [
+      [
+        "005d9bc0",
+        "005d9d23"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0",
+    "signature": "int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "0042a2c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0"
+    },
+    {
+      "addr": "0043bae0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_render_FUN_0043bae0"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ca50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81c90",
+      "name": "DAT_02d81c90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "0326f0fc",
+      "name": "DAT_0326f0fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.306930693069307,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 7,
+      "COPY": 77,
+      "INT_ADD": 46,
+      "INT_AND": 55,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 53,
+      "INT_LESS": 5,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 26,
+      "INT_SUB": 31,
+      "INT_XOR": 2,
+      "LOAD": 15,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 35
+    },
+    "pcode_op_count": 435
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSvetlana *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSvetlana",
+        "offset": 8,
+        "vtable_addr": "00663d64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

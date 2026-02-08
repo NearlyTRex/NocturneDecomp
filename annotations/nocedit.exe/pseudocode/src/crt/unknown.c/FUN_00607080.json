@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 159,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 18,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
@@ -13,7 +13,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 55
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -108,70 +108,70 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "void *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "byte *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "memset(in_stack_00000004,0,0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "bVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)in_stack_00000004) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)in_stack_00000004) | (&DAT_00665f28)[bVar1 & 7];",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_00665f28",
       "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)in_stack_00000004) | (&DAT_00665f28)[bVar1 & 7];",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "bVar1 = *in_stack_00000008;",
       "type": "stack_param"

@@ -20,10 +20,10 @@ core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (property_list,"Our post",&this_ptr->our_post,1,"CWayPoint",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
             (property_list,"Our car",&this_ptr->vehicle,1,"CVehicle",
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Left side of car",&this_ptr->side_of_car);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330

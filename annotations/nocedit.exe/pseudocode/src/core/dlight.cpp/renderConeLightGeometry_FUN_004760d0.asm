@@ -49,7 +49,7 @@
 ;
 ; XREF[3]:
 ;   core_litecone.cpp_CLightCone_renderTransparent_FUN_00506c20 at 00506c96
-;   core_vehicle.cpp_CVehicle_FUN_005e88c0 at 005e8ac7
+;   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0 at 005e8ac7
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70 at 005fbf99
 ;
 ; Referenced Globals:

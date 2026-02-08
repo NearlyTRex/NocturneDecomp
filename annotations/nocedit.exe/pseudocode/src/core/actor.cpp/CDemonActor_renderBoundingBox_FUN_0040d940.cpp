@@ -35,12 +35,12 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
   CVector3f CStack_12c;
   CVector3f CStack_120;
   CVector3f CStack_114;
-  CVector3i CStack_108;
+  CVector3f CStack_108;
   CVector3f CStack_fc;
-  CVector3i CStack_f0;
+  CVector3f CStack_f0;
   CVector3f CStack_e4;
   CVector3f CStack_d8;
-  CVector3i CStack_cc;
+  CVector3f CStack_cc;
   CVector3f CStack_c0;
   CVector3f CStack_b4;
   CVector3f CStack_a8;
@@ -49,19 +49,12 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
   CVector3f CStack_84;
   CVector3f CStack_78;
   CVector3f CStack_6c;
-  byte auStack_60 [4];
-  byte auStack_5c [4];
-  byte auStack_58 [4];
-  CVector3i CStack_54;
-  byte auStack_48 [4];
-  byte auStack_44 [4];
-  byte auStack_40 [4];
-  CVector3i CStack_3c;
-  byte auStack_30 [4];
-  byte auStack_2c [4];
-  byte auStack_28 [4];
+  CVector3f CStack_60;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
   CVector3f CStack_24;
-  byte auStack_18 [4];
   CBoundingBox3D *local_14;
   
   bVar8 = 0;
@@ -87,18 +80,18 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
-    local_14c.min.x = (float)auStack_48;
+    local_14c.min.x = (float)&CStack_48;
     local_17c.w_recip = 5.955617e-39;
     local_14c.min.y = (float)pCVar3;
-    core_actor_cpp_FUN_004104f0();
+    core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
-    local_14c.min.x = (float)auStack_44;
+    local_14c.min.x = (float)&CStack_48.y;
     local_17c.w_recip = 5.955645e-39;
-    core_actor_cpp_FUN_004104e0();
+    core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
-    local_14c.min.x = (float)auStack_40;
+    local_14c.min.x = (float)&CStack_48.z;
     local_17c.w_recip = 5.955673e-39;
-    core_actor_cpp_FUN_004104d0();
+    core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_24;
     local_14c.min.x = 5.955695e-39;
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
@@ -116,12 +109,13 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
     local_14c.min.y = (float)&CStack_3c;
-    local_14c.min.x = (float)auStack_48;
+    local_14c.min.x = (float)&CStack_48;
     CStack_114.x = CStack_d8.x + CStack_24.x;
     CStack_114.y = CStack_d8.y + CStack_24.y;
     CStack_114.z = CStack_d8.z + CStack_24.z;
     local_17c.w_recip = 5.95595e-39;
-    core_actor_cpp_FUN_004103d0();
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
+              ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_3c;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
     local_17c.w_recip = 5.955977e-39;
@@ -131,7 +125,8 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.y = (float)&CStack_54;
     local_14c.min.x = (float)&CStack_114;
     local_17c.w_recip = 5.956015e-39;
-    core_actor_cpp_FUN_004103d0();
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
+              ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_54;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
     local_17c.w_recip = 5.956045e-39;
@@ -177,18 +172,18 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
-    local_14c.min.x = (float)auStack_60;
+    local_14c.min.x = (float)&CStack_60;
     local_17c.w_recip = 5.956207e-39;
     local_14c.min.y = (float)pCVar3;
-    core_actor_cpp_FUN_004104f0();
+    core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
-    local_14c.min.x = (float)auStack_5c;
+    local_14c.min.x = (float)&CStack_60.y;
     local_17c.w_recip = 5.956235e-39;
-    core_actor_cpp_FUN_004104e0();
+    core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
-    local_14c.min.x = (float)auStack_58;
+    local_14c.min.x = (float)&CStack_60.z;
     local_17c.w_recip = 5.956263e-39;
-    core_actor_cpp_FUN_004104d0();
+    core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_6c;
     local_14c.min.x = 5.956285e-39;
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
@@ -206,12 +201,13 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
     local_14c.min.y = (float)&CStack_108;
-    local_14c.min.x = (float)auStack_60;
+    local_14c.min.x = (float)&CStack_60;
     CStack_78.x = CStack_a8.x + CStack_6c.x;
     CStack_78.y = CStack_a8.y + CStack_6c.y;
     CStack_78.z = CStack_a8.z + CStack_6c.z;
     local_17c.w_recip = 5.956585e-39;
-    core_actor_cpp_FUN_004103d0();
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
+              ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_108;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
     local_17c.w_recip = 5.956607e-39;
@@ -221,7 +217,8 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.y = (float)&CStack_f0;
     local_14c.min.x = (float)&CStack_78;
     local_17c.w_recip = 5.956645e-39;
-    core_actor_cpp_FUN_004103d0();
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
+              ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_f0;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
     local_17c.w_recip = 5.956672e-39;
@@ -267,18 +264,18 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
-    local_14c.min.x = (float)auStack_30;
+    local_14c.min.x = (float)&CStack_30;
     local_17c.w_recip = 5.956841e-39;
     local_14c.min.y = (float)pCVar3;
-    core_actor_cpp_FUN_004104f0();
+    core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
-    local_14c.min.x = (float)auStack_2c;
+    local_14c.min.x = (float)&CStack_30.y;
     local_17c.w_recip = 5.95687e-39;
-    core_actor_cpp_FUN_004104e0();
+    core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
-    local_14c.min.x = (float)auStack_28;
+    local_14c.min.x = (float)&CStack_30.z;
     local_17c.w_recip = 5.956897e-39;
-    core_actor_cpp_FUN_004104d0();
+    core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_fc;
     local_14c.min.x = 5.956916e-39;
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
@@ -295,24 +292,25 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     local_14c.min.x = 5.957049e-39;
     core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
-    local_14c.min.x = (float)auStack_30;
+    local_14c.min.x = (float)&CStack_30;
     CStack_9c.x = CStack_12c.x + CStack_fc.x;
     CStack_9c.y = CStack_12c.y + CStack_fc.y;
     CStack_9c.z = CStack_12c.z + CStack_fc.z;
     local_17c.w_recip = 5.957158e-39;
     local_14c.min.y = (float)&CStack_cc;
-    core_actor_cpp_FUN_004103d0();
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0((CVector3f *)local_14c.min.x,&CStack_cc);
     local_14c.min.y = (float)&CStack_cc;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
     local_17c.w_recip = 5.95718e-39;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
-    local_14c.min.y = (float)auStack_18;
+    local_14c.min.y = (float)&stack0xffffffe8;
     local_14c.min.x = (float)&CStack_9c;
     local_17c.w_recip = 5.957222e-39;
-    core_actor_cpp_FUN_004103d0();
-    local_14c.min.y = (float)auStack_18;
+    core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
+              ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
+    local_14c.min.y = (float)&stack0xffffffe8;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
     local_17c.w_recip = 5.957253e-39;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

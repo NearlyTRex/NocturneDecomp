@@ -7,8 +7,8 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[33]:
-;   core_actor.cpp_CActorProperty_FUN_0040ea50 at 0040ec35
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fa5d
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 at 0040ec35
 ;   core_charactr.cpp_CCharacter_FUN_0042c920 at 0042c99c
 ;   core_charactr.cpp_CCharacter_FUN_0042d390 at 0042d3ad
 ;   core_charactr.cpp_CCharacter_FUN_0042d4d0 at 0042d4f0

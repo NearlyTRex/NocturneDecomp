@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_colquant.c_FUN_00440b40
 ;   engine_colquant.c_FUN_00440c80
@@ -137,8 +137,8 @@ section .text
     PUSH 0x618d41                       ; 004407e9 | = "Subdividing histogram array for %d pa..."
     LEA EAX,[ESP + 0x18]                ; 004407ee
     PUSH EAX                            ; 004407f2
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004407f3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004407f3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004407f8
     PUSH 0x16                           ; 004407fb
     PUSH 0x0                            ; 004407fd
@@ -160,8 +160,8 @@ section .text
     PUSH 0x618d79                       ; 00440822 | = "%6.6d"
     LEA EAX,[ESP + 0x18]                ; 00440827
     PUSH EAX                            ; 0044082b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0044082c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0044082c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00440831
     PUSH 0x21                           ; 00440834
     PUSH 0x0                            ; 00440836

@@ -13,7 +13,7 @@
 ; va_list_t        Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   engine_2d.c_drawTextCentered_FUN_00402350
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 004023e6
     LEA EAX,[ESP + 0x8]                 ; 004023e7
     PUSH EAX                            ; 004023eb
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004023ec
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004023ec
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004023f1
     MOV EBX,dword ptr [ESP + 0x101c]    ; 004023f4
     PUSH EBX                            ; 004023fb

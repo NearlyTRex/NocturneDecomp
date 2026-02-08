@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_doNothing_FUN_00401590
 ;   engine_2d.c_doNothing_FUN_00402860
@@ -130,8 +130,8 @@ section .text
     PUSH EAX                            ; 0046f3e0 | = "Demented Shape Editor    Build date: ..."
     LEA EAX,[EBP + -0x54]               ; 0046f3e1
     PUSH EAX                            ; 0046f3e4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046f3e5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046f3e5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046f3ea
     PUSH 0x0                            ; 0046f3ed
     PUSH 0x0                            ; 0046f3ef

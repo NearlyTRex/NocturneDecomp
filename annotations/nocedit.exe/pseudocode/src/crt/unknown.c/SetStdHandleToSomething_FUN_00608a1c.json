@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 252,
+    "complexity_score": 251,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 41,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
@@ -13,7 +13,7 @@
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 136
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -139,119 +139,119 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "HANDLE in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "uint in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "if ((int)in_stack_00000008 < 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "else if (in_stack_00000008 < 2) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 2) goto LAB_00608a6a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "(*g_SetStdHandleFunc)(nStdHandle,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_stack_00000008",
       "text": "if ((int)in_stack_00000008 < g_CurrentHandleCount) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000008",
       "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000008",
       "text": "g_IOControlBlock = realloc(g_IOControlBlock,in_stack_00000008 * 4 + 4)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "if (g_CurrentHandleCount < (int)in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "} while (iVar1 < (int)(in_stack_00000008 * 4));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000008",
       "text": "g_CurrentHandleCount = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000008",
       "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
       "type": "stack_param"

@@ -10,10 +10,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ea30(CDemonMission *this_ptr
 
 {
   CDemonActor *this_ptr_00;
-  uint *puVar1;
-  int iVar2;
+  CActorProperty *this_ptr_01;
+  int iVar1;
   int iStack_261c;
-  uint auStack_2618 [2367];
+  CActorProperty aCStack_2618 [40];
   int aiStack_11c [63];
   CDemonActor *local_20;
   uint uStack_1c;
@@ -22,31 +22,32 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ea30(CDemonMission *this_ptr
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {
     local_20 = this_ptr_00;
-    core_actor_cpp_FUN_0040e130();
+    core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd9d8);
     (*((this_ptr_00->vtable)._ub)->getPropertyList)
               (this_ptr_00,(CActorPropertyList *)&stack0xffffd9d8);
-    iVar2 = 0;
+    iVar1 = 0;
     if (0 < iStack_261c) {
-      puVar1 = auStack_2618;
+      this_ptr_01 = aCStack_2618;
       do {
-        core_actor_cpp_CActorProperty_FUN_0040ea50();
-        iStack_14 = iVar2;
-        switch(*puVar1) {
-        case 5:
-          if (*(int *)puVar1[0x1a] != 0) {
+        core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
+                  (this_ptr_01,this_ptr_00,(char *)aiStack_11c);
+        iStack_14 = iVar1;
+        switch(this_ptr_01->type) {
+        case PROP_CHOICE:
+          if (*(this_ptr_01->data).v_int_ptr != 0) {
             uStack_1c = 7;
             core_script_cpp_CScript_FUN_00567510(g_CScriptPtr,aiStack_11c);
           }
           break;
-        case 0xb:
+        case PROP_EVENT:
           core_script_cpp_CScript_FUN_005671a0(g_CScriptPtr,(int)aiStack_11c,aiStack_11c);
           break;
-        case 0xc:
+        case PROP_BUTTON:
           core_script_cpp_CScript_FUN_00567010(g_CScriptPtr,(char *)aiStack_11c,aiStack_11c);
         }
-        iVar2 = iVar2 + 1;
-        puVar1 = puVar1 + 0x3b;
-      } while (iVar2 < iStack_261c);
+        iVar1 = iVar1 + 1;
+        this_ptr_01 = this_ptr_01 + 1;
+      } while (iVar1 < iStack_261c);
     }
   }
   return;

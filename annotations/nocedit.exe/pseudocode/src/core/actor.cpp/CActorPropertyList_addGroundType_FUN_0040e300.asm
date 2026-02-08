@@ -15,7 +15,7 @@
 ;   core_ladder.cpp_CLadder_getPropertyList_FUN_00502ca0 at 00502cf3
 ;   core_pendulum.cpp_CPendulum_getPropertyList_FUN_0054a5f0 at 0054a762
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e8b4
-;   core_stairs.cpp_FUN_005ba840 at 005ba8eb
+;   core_stairs.cpp_CStairs_getPropertyList_FUN_005ba840 at 005ba8eb
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0

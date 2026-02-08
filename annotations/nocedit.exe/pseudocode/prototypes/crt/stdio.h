@@ -11,13 +11,13 @@ SIZE_T __cdecl fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 // Address: 005fdb90
 void __cdecl StringBufferCallback(StringOutputContext *context,char character);
 
-// Original: crt_stdio.c_vsprintf_FUN_005fdba8
+// Original: crt_stdio.c__vsprintf_FUN_005fdba8
 // Address: 005fdba8
-int __cdecl vsprintf(char *buffer,char *format,va_list_t args);
+int __cdecl ::vsprintf(char *buffer,char *format,va_list_t args);
 
-// Original: crt_stdio.c_sprintf_FUN_005fdbd0
+// Original: crt_stdio.c__sprintf_FUN_005fdbd0
 // Address: 005fdbd0
-int __cdecl sprintf(char *buffer,char *format,...);
+int __cdecl ::sprintf(char *buffer,char *format,...);
 
 // Original: crt_stdio.c_fwrite_FUN_005fdc00
 // Address: 005fdc00
@@ -66,14 +66,6 @@ char * __cdecl fgets(char *str,int num,_FILE *stream);
 // Original: crt_stdio.c_printf_FUN_005ff0d0
 // Address: 005ff0d0
 int __cdecl printf(char *format,...);
-
-// Original: crt_stdio.c_istream_get_FUN_005ff245
-// Address: 005ff245
-istream * __cdecl istream::get(istream *this_ptr,char *c);
-
-// Original: crt_stdio.c_ostream_put_FUN_005ff2d7
-// Address: 005ff2d7
-ostream * __cdecl ostream::put(ostream *this_ptr,int character);
 
 // Original: crt_stdio.c_remove_FUN_005ff9d0
 // Address: 005ff9d0
@@ -159,9 +151,9 @@ _FILE * __cdecl fopenWithFlags(char *filename,char *mode,int flags);
 // Address: 00601a7c
 _FILE * __cdecl fopen(char *filename,char *mode);
 
-// Original: crt_stdio.c_freopen_FUN_00601b14
+// Original: crt_stdio.c__freopen_FUN_00601b14
 // Address: 00601b14
-_FILE * __cdecl freopen(char *filename,char *mode,_FILE *stream);
+_FILE * __cdecl ::freopen(char *filename,char *mode,_FILE *stream);
 
 // Original: crt_stdio.c_fclose_FUN_00601ea0
 // Address: 00601ea0

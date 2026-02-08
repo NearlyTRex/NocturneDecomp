@@ -16,7 +16,7 @@
 ;   core_actor.cpp_archiveSimBox_FUN_0040bd70 at 0040bd8b
 ;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b5e0
 ;   core_conveyor.cpp_FUN_004424a0 at 004424a6
-;   core_course.cpp_CCourse_load_FUN_00442580 at 00442616
+;   core_course.cpp_CCourse_FUN_00442bc0 at 00442c22
 ;   ... and 56 more
 ;
 ; Referenced Globals:

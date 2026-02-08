@@ -37,7 +37,7 @@ int __cdecl utime(char *filename,utimbuf *timestamps)
       timestamps = &uStack_1c;
       uStack_1c.modtime = uStack_1c.actime;
     }
-    p_Var3 = localtime(&timestamps->modtime);
+    p_Var3 = _localtime(&timestamps->modtime);
     SStack_54.wYear = (short)p_Var3->tm_year + 0x76c;
     SStack_54.wMonth = (short)p_Var3->tm_mon + 1;
     SStack_54.wDay = (WORD)p_Var3->tm_mday;

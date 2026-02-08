@@ -28,7 +28,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
   float fStack_10;
   float fStack_c;
   
-  if (DAT_02f0cb1c == 1) {
+  if (g_MansionPuzzleSlewType == 1) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_58 + 0x18));
     if ((CVector3f *)auStack_3c != &this_ptr->emitter_pos) {
       auStack_3c._0_4_ = (this_ptr->emitter_pos).x;
@@ -45,7 +45,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
       (this_ptr->emitter_pos).z = (float)auStack_3c._8_4_;
     }
   }
-  else if (DAT_02f0cb1c == 2) {
+  else if (g_MansionPuzzleSlewType == 2) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_3c + 0x18));
     if ((CVector3f *)&fStack_20 != &this_ptr->gem_pos) {
       fStack_20 = (this_ptr->gem_pos).x;
@@ -69,7 +69,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
       (this_ptr->gem_orient).heading = fStack_c;
     }
   }
-  else if (DAT_02f0cb1c == 3) {
+  else if (g_MansionPuzzleSlewType == 3) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
     if (auStack_74 != this_ptr->unk3 + 0xcf8) {
       auStack_74._0_4_ = *(uint *)(this_ptr->unk3 + 0xcf8);
@@ -99,7 +99,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
     *(uint *)(this_ptr->unk3 + 0xd04) = *(uint *)(this_ptr->unk3 + 0xcf8);
     *(uint *)(this_ptr->unk3 + 0xd0c) = *(uint *)(this_ptr->unk3 + 0xd00);
   }
-  else if (DAT_02f0cb1c == 4) {
+  else if (g_MansionPuzzleSlewType == 4) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_74 + 0x18));
     if (auStack_58 != this_ptr->unk3 + 0xd04) {
       auStack_58._0_4_ = *(uint *)(this_ptr->unk3 + 0xd04);
@@ -130,7 +130,7 @@ core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzle
     *(uint *)(this_ptr->unk3 + 0xd00) = *(uint *)(this_ptr->unk3 + 0xd0c);
   }
   else {
-    DAT_02f0cb1c = 0;
+    g_MansionPuzzleSlewType = 0;
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   uVar1 = *(uint *)(this_ptr->unk3 + 0xcfc);

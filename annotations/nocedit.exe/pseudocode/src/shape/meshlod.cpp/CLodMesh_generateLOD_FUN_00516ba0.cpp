@@ -35,7 +35,7 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
     dVar5 = round((double)local_30);
     iVar1 = (int)ROUND(dVar5);
     edge_data = this_ptr->edges_ptr + iVar3;
-    sprintf
+    _sprintf
               (g_LodMeshProgressBuffer,"Mesh degredation in progress...%d:%02d elapsed",iVar1 / 0x3c,iVar1 % 0x3c
               );
     if ((5 < iVar1) && (iVar3 = this_ptr->next_lod->tri_count - iVar2, 10 < iVar3)) {
@@ -55,7 +55,7 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
         } while (*buffer != '\0');
         buffer = (char *)0x0;
 LAB_00516cb3:
-        sprintf
+        _sprintf
                   (buffer,", est %d:%02d remaining",iVar2 / 0x3c,iVar2 % 0x3c,uVar6);
       }
     }

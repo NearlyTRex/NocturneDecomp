@@ -66,7 +66,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   iVar2 = 0;
   if (0 < local_1108.file_count) {
     do {
-      sprintf(local_120,"%s\t%d");
+      _sprintf(local_120,"%s\t%d");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base,local_120);
       iVar2 = iVar2 + 1;
     } while (iVar2 < local_1108.file_count);
@@ -119,12 +119,12 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
       this_ptr_01 = (CPodFile *)0x4b78be;
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(info);
       if (iVar3 != 0) {
-        p_Var4 = localtime((time_t *)&local_534.timestamp);
+        p_Var4 = _localtime((time_t *)&local_534.timestamp);
         strftime(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
-        p_Var4 = localtime(local_1c + 2);
+        p_Var4 = _localtime(local_1c + 2);
         strftime(local_220,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
         this_ptr_00 = (CPickList *)local_534.file_size;
-        sprintf
+        _sprintf
                   (local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path);
         info = &local_cdc;
         file_offset = 0x4b7970;

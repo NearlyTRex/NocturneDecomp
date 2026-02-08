@@ -143,11 +143,11 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
         engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(this_ptr_00,iVar3,iVar7,local_6c);
       }
       if ((this_ptr->ammo_detail_timer <= 0.0) || (this_ptr->render_mode_flag != 0)) {
-        sprintf(local_67c,"%d");
+        _sprintf(local_67c,"%d");
       }
       else {
         pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
-        sprintf(local_67c,"%s %d",pcVar6);
+        _sprintf(local_67c,"%s %d",pcVar6);
       }
       iVar12 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_48,0x58);
       pCVar11 = (CBitFont *)local_48;
@@ -164,7 +164,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     dVar10 = round
                        ((double)(pCVar2[4].location.position.y * (float)100));
     local_1c = (CBitFont *)(int)ROUND(dVar10);
-    sprintf(acStack_480,"%d%%",local_1c);
+    _sprintf(acStack_480,"%d%%",local_1c);
     pCVar11 = local_4c;
     iVar7 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_4c,0x58);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(pCVar11,acStack_480);
@@ -196,7 +196,7 @@ LAB_00500870:
     pcVar4 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
     uVar14 = CONCAT44(pcVar6,pcVar4);
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-    sprintf(acStack_17c,"%s\n\n%s %s",pcVar6,uVar14);
+    _sprintf(acStack_17c,"%s\n\n%s %s",pcVar6,uVar14);
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
     iVar7 = -1;
     pcVar6 = acStack_17c;
@@ -225,7 +225,7 @@ LAB_00500870:
     uVar14 = CONCAT44(pcVar6,pcVar4);
     pcVar6 = "%s\n\n%s";
 LAB_005008cd:
-    sprintf(acStack_17c,pcVar6,uVar14);
+    _sprintf(acStack_17c,pcVar6,uVar14);
   }
   local_2c = (CBitFont *)local_48;
   iVar7 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
@@ -259,7 +259,7 @@ LAB_005009c0:
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
-      sprintf
+      _sprintf
                 (acStack_37c,"%d x%3.0f%%",pCVar2[2].location.position.y,
                  (double)pCVar2[2].location.position.z);
       iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_48,0x58);
@@ -272,7 +272,7 @@ LAB_005009c0:
                        (this_ptr->selected_item,g_CFilmReelClassInfo.name_hash);
     if (pCVar2 != (CDemonActor *)0x0) {
       core_inv_cpp_getItemDisplayName_FUN_004fcf00(pCVar2);
-      sprintf(acStack_27c,"%s");
+      _sprintf(acStack_27c,"%s");
       iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_48,0x58);
       iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_48,acStack_27c);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
@@ -282,7 +282,7 @@ LAB_005009c0:
     if (this_ptr->render_mode_flag != 0) {
       core_inv_cpp_getItemIconName_FUN_004fcf70(this_ptr->selected_item);
       pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
-      sprintf(acStack_57c,"%s\n\n%s",pcVar6);
+      _sprintf(acStack_57c,"%s\n\n%s",pcVar6);
       local_28 = (CBitFont *)local_48;
       local_44 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                            ((CBitFont *)local_48,acStack_57c,DAT_02db9670,10,0x100,iVar7 - local_60)

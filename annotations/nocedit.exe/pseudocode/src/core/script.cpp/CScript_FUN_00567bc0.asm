@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
 ;   core_script.cpp_CScript_FUN_0055a370
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     PUSH 0x6441ae                       ; 00567c69 | = "%s\tScript line %d"
     LEA EAX,[ESP + 0x2134]              ; 00567c6e
     PUSH EAX                            ; 00567c75
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00567c76
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00567c76
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00567c7b
     LEA EAX,[ESP + 0x2128]              ; 00567c7e
     PUSH EAX                            ; 00567c85

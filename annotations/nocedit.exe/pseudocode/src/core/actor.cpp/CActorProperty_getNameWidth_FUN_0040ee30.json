@@ -1,0 +1,89 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "0040e770",
+      "from_addr": "0040e78d",
+      "name": "core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e850",
+      "from_addr": "0040e8bb",
+      "name": "core_actor.cpp_CActorPropertyList_render_FUN_0040e850",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040ee30",
+    "address_range": [
+      [
+        "0040ee30",
+        "0040ee40"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30",
+    "signature": "int __cdecl core_actor_cpp_CActorProperty_getNameWidth_FUN_0040ee30(CActorProperty *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004018a0",
+      "is_variadic": false,
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 2,
+      "INT_ADD": 4,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 30
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorProperty *"
+      }
+    ]
+  },
+  "suspects": []
+}

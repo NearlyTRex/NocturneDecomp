@@ -30,8 +30,8 @@
 ;   TerminatedCString s_s_s_0061d46b
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   crt_time.c_localtime_FUN_00600288
+;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_strftime_FUN_006002d4
 ;   crt_time.c_time_FUN_006001f0
 ;   shape_design.c_quantizePaletteColors_FUN_0046b770
@@ -202,8 +202,8 @@ section .text
     ADD ESP,0x4                         ; 0046bafd
     LEA EAX,[EBP + -0x4]                ; 0046bb00
     PUSH EAX                            ; 0046bb03
-    CALL crt_time.c_localtime_FUN_00600288 ; 0046bb04
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 0046bb04
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 0046bb09
     PUSH EAX                            ; 0046bb0c
     MOV EAX,0x61d458                    ; 0046bb0d | = "%m%d%y"
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 0046bb39 | = "%s%s"
     LEA EAX,[EBP + 0xfffffb34]          ; 0046bb3a
     PUSH EAX                            ; 0046bb40
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046bb41
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046bb41
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046bb46
     LEA EAX,[EBP + 0xfffffb34]          ; 0046bb49
     PUSH EAX                            ; 0046bb4f

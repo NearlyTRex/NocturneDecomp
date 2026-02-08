@@ -141,7 +141,7 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *f
       }
     }
   }
-  sprintf
+  _sprintf
             (acStack_140,"Warning! Camera %s has unknown lens : %f",this_ptr,(double)fVar9);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(acStack_140,0,0);

@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005c67c0 at 005c67e0
+;   core_stranger.cpp_CStranger_isDamageable_FUN_005c67c0 at 005c67e0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DIE_006171a2

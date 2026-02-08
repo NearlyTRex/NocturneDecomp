@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043bf80 at 0043bf86
-;   core_stranger.cpp_CStranger_FUN_005c3150 at 005c353a
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c353a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_006185cc

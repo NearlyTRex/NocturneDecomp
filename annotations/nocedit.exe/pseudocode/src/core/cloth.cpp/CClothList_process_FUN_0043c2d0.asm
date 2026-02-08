@@ -13,8 +13,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042e03d
-;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6c11
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c7291
+;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6c11
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_process_FUN_0043ab80

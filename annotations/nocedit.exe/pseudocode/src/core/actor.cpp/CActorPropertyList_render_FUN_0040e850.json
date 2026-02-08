@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 75,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 50,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 172
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -39,14 +37,14 @@
   },
   "function_calls": [
     {
-      "addr": "0040ea50",
-      "is_variadic": false,
-      "name": "core_actor.cpp_CActorProperty_FUN_0040ea50"
-    },
-    {
       "addr": "0040ee30",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ee30"
+      "name": "core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30"
+    },
+    {
+      "addr": "0040ea50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50"
     },
     {
       "addr": "00401fd0",
@@ -187,20 +185,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EAX",
-      "text": "local_20 = this_ptr->name_column_x - extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

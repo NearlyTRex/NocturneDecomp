@@ -21,7 +21,7 @@ void __cdecl core_setedit_cpp_FUN_00581320(void)
   do {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Computing fog for camera %s");
-    sprintf
+    _sprintf
               (&stack0xfffffef0,"backdrop\\%s.fog",
                in_stack_00000004->cameras + in_stack_00000008);
     remove(&stack0xfffffef0);

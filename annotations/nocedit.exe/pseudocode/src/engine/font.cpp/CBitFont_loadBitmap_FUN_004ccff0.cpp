@@ -46,7 +46,8 @@ engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
   iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
   if (iVar2 < iVar5) {
-    sprintf(&stack0xfffffbc4,"Invalid font file size (%s).",filename);
+    _sprintf(&stack0xfffffbc4,"Invalid font file size (%s).",filename)
+    ;
     g_CurrentFilename = "..\\engine\\font.cpp";
     g_CurrentLineNumber = 0xeb;
     core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);
@@ -54,7 +55,8 @@ engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0
   pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar5,"..\\engine\\font.cpp",0xf0);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
-    sprintf(&stack0xfffffbc4,"Unable to allocate memory for font bitmap (%s).",filename);
+    _sprintf(&stack0xfffffbc4,"Unable to allocate memory for font bitmap (%s).",filename)
+    ;
     g_CurrentLineNumber = 0xf3;
     g_CurrentFilename = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);

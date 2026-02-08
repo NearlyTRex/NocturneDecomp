@@ -207,7 +207,7 @@ LAB_0051e453:
       iVar8 = 0;
     }
     else {
-      sprintf(acStack_24c,"Editing LOD %d of %d.",iVar3,local_34);
+      _sprintf(acStack_24c,"Editing LOD %d of %d.",iVar3,local_34);
       engine_2d_c_drawText_FUN_00401fd0(acStack_24c,0,0);
       engine_2d_c_drawText_FUN_00401fd0("Use LEFT/RIGHT to adjust face count.",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Press T to go to test mode.",0,0x16);
@@ -226,10 +226,10 @@ LAB_0051e453:
       local_24 = in_stack_0000000c;
       do {
         if (iVar8 < 1) {
-          sprintf(acStack_24c,"LOD%d: F=%d",iVar8,*local_24);
+          _sprintf(acStack_24c,"LOD%d: F=%d",iVar8,*local_24);
         }
         else {
-          sprintf
+          _sprintf
                     (acStack_24c,"LOD%d: P=%d F=%d",iVar8,in_stack_00000008[iVar8],*local_24);
         }
         y1 = iStack_28 - (*local_30 * iStack_3c) / 0x1e0;
@@ -278,7 +278,7 @@ LAB_0051e453:
                 ((CLodMesh *)auStack_184,0,iVar11);
     }
     iVar11 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0((CLodMesh *)auStack_184);
-    sprintf
+    _sprintf
               (acStack_24c,"Current: %d pixelHeight, %d faces",local_38,iVar11);
     engine_2d_c_drawText_FUN_00401fd0(acStack_24c,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -325,7 +325,7 @@ LAB_0051e453:
     }
     iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
     if ((iVar11 != 0) && (0 < iVar3)) {
-      sprintf(acStack_214,"Delete LOD %d?",iVar3);
+      _sprintf(acStack_214,"Delete LOD %d?",iVar3);
       iVar11 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                          (g_CEditorToolsPtr,acStack_214);
       if (iVar11 != 0) {

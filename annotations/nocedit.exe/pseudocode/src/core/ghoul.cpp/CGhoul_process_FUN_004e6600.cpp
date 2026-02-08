@@ -917,7 +917,7 @@ LAB_004e6754:
      (float)0.01 < SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3))) {
     core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(this_ptr->unk1 + 8));
     if (extraout_EAX == 0) {
-      sprintf
+      _sprintf
                 (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
       uVar15 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffc88);

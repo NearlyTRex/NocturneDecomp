@@ -103,7 +103,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
                              "rb");
     }
     if (local_850 == (_FILE *)0x0) {
-      sprintf(local_97c,"Can't open %s");
+      _sprintf(local_97c,"Can't open %s");
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 0x28fd;
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_97c);
@@ -113,7 +113,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
     local_60 = 0;
     SVar3 = _fread(&local_74,2,1,local_850);
     if (SVar3 != 1) {
-      sprintf((char *)local_154,"Unable to read file (%s).");
+      _sprintf((char *)local_154,"Unable to read file (%s).");
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_850,"..\\shape\\design.c",0x2905);
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 0x2906;
@@ -121,7 +121,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
     }
     SVar3 = _fread(&local_60,2,1,local_850);
     if (SVar3 != 1) {
-      sprintf((char *)local_154,"Unable to read file (%s).");
+      _sprintf((char *)local_154,"Unable to read file (%s).");
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_850,"..\\shape\\design.c",0x290a);
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 0x290b;
@@ -129,7 +129,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
     }
     SVar3 = _fread(local_84c,1,1,local_850);
     if (SVar3 != 1) {
-      sprintf((char *)local_154,"Unable to read file (%s).");
+      _sprintf((char *)local_154,"Unable to read file (%s).");
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_850,"..\\shape\\design.c",0x2912);
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 0x2913;
@@ -137,7 +137,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
     }
     auStack_848[local_5c] = (uint)local_84c[0];
     if ((local_84c[0] != 0x18) && (local_84c[0] != 0x20)) {
-      sprintf((char *)local_154,"ERROR: Not a 24- or 32-bit targa file: %s.");
+      _sprintf((char *)local_154,"ERROR: Not a 24- or 32-bit targa file: %s.");
       if (cram_config == (SCramConfig *)0x0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
@@ -288,7 +288,7 @@ LAB_0046c2ae:
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
   } while( true );
 LAB_0046c428:
-  sprintf(local_9d0,"Enter passed texture map width [%d] : ");
+  _sprintf(local_9d0,"Enter passed texture map width [%d] : ");
   local_5c = local_5c + 2;
   engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_154,0x4f,0,local_5c * 0xb,local_9d0);
   local_68 = g_TextureAtlasDimension;
@@ -371,7 +371,7 @@ LAB_0046c5b7:
   if (local_58 < 10) {
     if (local_58 < 1) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      sprintf((char *)local_154,"Number of maps must be a positive number (%d < 0).");
+      _sprintf((char *)local_154,"Number of maps must be a positive number (%d < 0).");
       engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -391,7 +391,7 @@ LAB_0046c5b7:
            ("CramTex II" + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8)
            [((uint)bVar12 * -2 + 1) * 2];
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      sprintf((char *)local_154,"%s in progress...");
+      _sprintf((char *)local_154,"%s in progress...");
       engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       local_3c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -433,11 +433,12 @@ LAB_0046c5b7:
         local_5c = 0;
         while( true ) {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
-          sprintf((char *)local_154,"%s done.  (%ld seconds)",local_8c);
+          _sprintf((char *)local_154,"%s done.  (%ld seconds)",local_8c)
+          ;
           engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
           engine_2d_c_drawText_FUN_00401fd0("Minimum area",0,0x16);
           for (local_34 = 1; local_34 <= local_58; local_34 = local_34 + 1) {
-            sprintf
+            _sprintf
                       ((char *)local_154,"  map %d : %d x %d",local_34,local_74);
             engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,(local_34 + 2) * 0xb);
           }
@@ -459,7 +460,7 @@ LAB_0046c5b7:
               wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
               goto LAB_0046ca24;
             }
-            sprintf
+            _sprintf
                       ((char *)local_154,"  %02d : %04d x %04d    xp: %04d  yp: %04d  r: %d  map: %d    %s",local_5c,
                        g_TextureAtlasEntries[local_5c].atlas_width,
                        g_TextureAtlasEntries[local_5c].atlas_height,
@@ -480,12 +481,12 @@ LAB_0046c5b7:
         }
 LAB_0046ca24:
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
-        sprintf((char *)local_154,"%s done.  (%ld seconds)",local_8c);
+        _sprintf((char *)local_154,"%s done.  (%ld seconds)",local_8c);
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
         local_5c = 2;
         engine_2d_c_drawText_FUN_00401fd0("Minimum area",0,0x16);
         for (local_34 = 1; local_34 <= local_58; local_34 = local_34 + 1) {
-          sprintf
+          _sprintf
                     ((char *)local_154,"  map %d : %d x %d",local_34,local_74);
           local_5c = local_5c + 1;
           engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,local_5c * 0xb);
@@ -502,7 +503,7 @@ LAB_0046ca24:
             }
           }
           local_980 = local_74 * local_60;
-          sprintf
+          _sprintf
                     ((char *)local_154,"  map %d : %4.1lf%%",local_34,
                      100 - ((double)local_a28 / (double)local_980) * 100);
           local_5c = local_5c + 1;
@@ -543,7 +544,7 @@ LAB_0046ca24:
         if ((local_154[0] != 0) &&
            (iVar4 = toupper((uint)local_154[0]), iVar4 != 0x59)) {
           local_a2c = (uint)(local_58 == 1);
-          sprintf((char *)local_a24,"Map%s not created.  Hit a key...");
+          _sprintf((char *)local_a24,"Map%s not created.  Hit a key...");
           engine_2d_c_drawText_FUN_00401fd0((char *)local_a24,0,(local_5c + 5) * 0xb);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -551,7 +552,7 @@ LAB_0046ca24:
           return 0;
         }
         local_a30 = (uint)(local_58 == 1);
-        sprintf((char *)local_a24,"Map%s created.  Hit a key...");
+        _sprintf((char *)local_a24,"Map%s created.  Hit a key...");
         engine_2d_c_drawText_FUN_00401fd0((char *)local_a24,0,(local_5c + 5) * 0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -584,7 +585,7 @@ LAB_0046cdc6:
           if (local_6c != (char *)0x0) {
             *local_6c = '\0';
           }
-          sprintf((char *)local_154,"Enter output .RAW name [%s] : ");
+          _sprintf((char *)local_154,"Enter output .RAW name [%s] : ");
           iVar4 = engine_2d_c_getInputWithPrompt_FUN_004032c0(local_258,0x4f,0,0,(char *)local_154);
           if (iVar4 == 0x1b) {
             shape_design_c_clearAllTextureNames_FUN_0046e6b0();
@@ -750,14 +751,15 @@ LAB_0046cf33:
               pcVar7 = pcVar7 + (uint)bVar12 * -2 + 1;
             } while (cVar2 != '\0');
             if (local_a34 < ~uVar6 - 1) {
-              sprintf(local_258 + local_a34,"%X.RAW");
+              _sprintf(local_258 + local_a34,"%X.RAW");
             }
             else {
-              sprintf(local_258,"%s%X.RAW",g_CurrentModelFilename);
+              _sprintf(local_258,"%s%X.RAW",g_CurrentModelFilename)
+              ;
             }
           }
           else {
-            sprintf(local_258,"%s_%X.RAW",g_CurrentModelFilename);
+            _sprintf(local_258,"%s_%X.RAW",g_CurrentModelFilename);
           }
         }
         pcVar7 = local_258;
@@ -788,9 +790,9 @@ LAB_0046cf33:
           sleep(1000);
         }
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
-        sprintf((char *)local_154,"Map %d of %d  ",local_14);
+        _sprintf((char *)local_154,"Map %d of %d  ",local_14);
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
-        sprintf((char *)local_154,"Sampling down %s...                  ");
+        _sprintf((char *)local_154,"Sampling down %s...                  ");
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0x16);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         for (local_5c = 0; local_5c < g_TextureProcessedCount; local_5c = local_5c + 1) {
@@ -922,7 +924,7 @@ LAB_0046cf33:
         }
         _fwrite(local_24,g_TextureAtlasDimension,g_TextureAtlasDimension,local_a54);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_a54,"..\\shape\\design.c",0x2b80);
-        sprintf((char *)local_154,"Saved %s                    ");
+        _sprintf((char *)local_154,"Saved %s                    ");
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0x4d);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         pcVar7 = local_258;
@@ -973,7 +975,7 @@ LAB_0046dbbf:
           _fputc((uint)local_20[local_5c * 3],local_a54);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_a54,"..\\shape\\design.c",0x2b92);
-        sprintf((char *)local_154,"Saved %s                    ");
+        _sprintf((char *)local_154,"Saved %s                    ");
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0x58);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         pcVar7 = local_258;
@@ -1015,9 +1017,9 @@ LAB_0046dd49:
         iVar4 = shape_design_c_checkNonFFBytes_FUN_0046ac70
                           (local_28,g_TextureAtlasDimension * g_TextureAtlasDimension);
         if (iVar4 == 0) {
-          sprintf(local_b58,"art\\%s");
+          _sprintf(local_b58,"art\\%s");
           remove(local_b58);
-          sprintf((char *)local_154,"All pixels completely opaque, no .OPA file generated.");
+          _sprintf((char *)local_154,"All pixels completely opaque, no .OPA file generated.");
         }
         else {
           local_a54 = engine_dosio_c_getFile_FUN_00481a50("art",local_35c,"wb");
@@ -1028,7 +1030,7 @@ LAB_0046dd49:
           }
           _fwrite(local_28,g_TextureAtlasDimension,g_TextureAtlasDimension,local_a54);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_a54,"..\\shape\\design.c",0x2ba4);
-          sprintf((char *)local_154,"Saved %s                    ");
+          _sprintf((char *)local_154,"Saved %s                    ");
         }
         engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,99);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -1057,7 +1059,7 @@ LAB_0046dd49:
   }
   else {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    sprintf((char *)local_154,"Too many maps (%d > %d).",local_58);
+    _sprintf((char *)local_154,"Too many maps (%d > %d).",local_58);
     engine_2d_c_drawText_FUN_00401fd0((char *)local_154,0,0);
     engine_2d_c_drawText_FUN_00401fd0("Naming convention not established!!  Go get Allen...",0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

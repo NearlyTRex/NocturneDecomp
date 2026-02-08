@@ -36,7 +36,7 @@ sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
   uVar3 = DirectSoundCreate(device_guid,&local_10,(LPUNKNOWN)0x0);
   if (uVar3 != 0) {
     pcVar9 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
-    sprintf
+    _sprintf
               (acStack_200,"DirectSux: Unable to %s.  (%s)","create DirectSound object",
                pcVar9);
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_200);
@@ -48,7 +48,7 @@ sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
     uVar3 = (*local_10->vtable->GetCaps)(local_10,&DStack_70);
     if (uVar3 != 0) {
       pcVar9 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
-      sprintf
+      _sprintf
                 (acStack_390,"DirectSux: Unable to %s.  (%s)","Querry DirectSound capabilities",
                  pcVar9);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);

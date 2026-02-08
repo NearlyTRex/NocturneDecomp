@@ -33,7 +33,7 @@ cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480
   }
   file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"wt");
   if (file == (_FILE *)0x0) {
-    sprintf(local_6c,"Could not create output file (%s).",filename);
+    _sprintf(local_6c,"Could not create output file (%s).",filename);
     g_CurrentLineNumber = 0x507;
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);

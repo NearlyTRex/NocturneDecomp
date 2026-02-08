@@ -32,7 +32,7 @@ engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470
     g_CurrentLineNumber = 0xf5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::FindLineNumberOfVariable: Unable to open input");
   }
-  sprintf(local_114,"[%s]\n",section);
+  _sprintf(local_114,"[%s]\n",section);
   while (((stream->_flag & 0x10) == 0 &&
          (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
     iVar4 = strcmp(local_214,local_114);

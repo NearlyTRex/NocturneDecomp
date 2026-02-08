@@ -7,5 +7,5 @@
 struct CStrList;
 
 // Function Definition: CStrList_swap
-typedef void (*CStrList_swap)(struct CStrList* this_ptr, int index1, int index2);
+typedef void CStrList_swap(struct CStrList* this_ptr, int index1, int index2);
 

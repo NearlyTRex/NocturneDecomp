@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_stdio.c_freopen_FUN_00601b14 at 00601b57
+;   crt_stdio.c__freopen_FUN_00601b14 at 00601b57
 ;
 ; Referenced Globals:
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8 = 00602434

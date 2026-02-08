@@ -55,13 +55,12 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   }
   switch(this_ptr->door_state) {
   case 0:
-    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,this_ptr->unk1)
-    ;
+    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                      (g_CEventListPtr,this_ptr->open_condition);
     if (iVar7 != 0) {
-      cVar1 = this_ptr->unk2[1000];
       this_ptr->door_state = 1;
-      if (cVar1 != '\0') {
-        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->unk2 + 1000);
+      if (this_ptr->open_sound[0] != '\0') {
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
       }
       core_setcolid_cpp_CDemonSet_FUN_005744d0(g_CDemonSetPtr);
     }
@@ -88,9 +87,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     break;
   case 2:
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (g_CEventListPtr,this_ptr->unk1 + 100);
-    if ((iVar7 != 0) && (cVar1 = this_ptr->unk2[0x44c], this_ptr->door_state = 3, cVar1 != '\0')) {
-      (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->unk2 + 0x44c);
+                      (g_CEventListPtr,this_ptr->close_condition);
+    if ((iVar7 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
+      (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
     this_ptr->param = this_ptr->max_param;
     break;
@@ -116,11 +115,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
   }
   if (this_ptr->door_state == 0) {
-    cVar1 = this_ptr->unk1[300];
+    cVar1 = this_ptr->on_close_trigger_event[0];
   }
   else {
     if (this_ptr->door_state != 2) goto LAB_004801a8;
-    cVar1 = this_ptr->unk1[200];
+    cVar1 = this_ptr->on_open_trigger_event[0];
   }
   if (cVar1 != '\0') {
     core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);

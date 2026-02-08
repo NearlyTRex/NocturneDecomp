@@ -1,21 +1,15 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 61,
+        "column": 62,
         "line": 52,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 3,
-        "line": 52,
-        "message": "'sprintf' will always overflow; destination buffer has size 4, but format string expands to at least 25 [-Wformat-overflow]"
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 108,
@@ -57,7 +51,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",

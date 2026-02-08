@@ -70,7 +70,7 @@ engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
-    sprintf(local_114,"[%s]\n",section);
+    _sprintf(local_114,"[%s]\n",section);
     bVar5 = (byte)stream->_flag;
     while (((bVar5 & 0x10) == 0 &&
            (pcVar6 = _fgets(local_314,0xff,stream), pcVar6 != (char *)0x0)))

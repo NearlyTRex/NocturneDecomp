@@ -60,7 +60,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
         iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_340);
         if (iVar2 < 1) {
           shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)(local_34 + 8),iVar3);
-          sprintf(acStack_748,"Orphaned sfx file %s");
+          _sprintf(acStack_748,"Orphaned sfx file %s");
           in_stack_fffff0e0 = (char *)aCStack_f18;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
         }
@@ -89,12 +89,12 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                   (g_CEditorToolsPtr,(float)iVar3,(float)(int)CStack_24.data_array);
         shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                   ((CStrList *)&CStack_24.data_array,iVar3);
-        sprintf(SStack_95c.found_path,"sound\\%s");
+        _sprintf(SStack_95c.found_path,"sound\\%s");
         iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_95c);
         if (iVar2 == 0) {
           shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                     ((CStrList *)&CStack_24.data_array,iVar3);
-          sprintf(acStack_748,"Can't get file info for %s");
+          _sprintf(acStack_748,"Can't get file info for %s");
           in_stack_fffff0e0 = (char *)aCStack_f18;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
         }
@@ -105,7 +105,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                     (acStack_548,(char *)0x0,(char *)0x0,acStack_13c,"wav");
           iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_548);
           if (-1 < iVar2) {
-            sprintf(acStack_748,"%s found in both wav and mp3 format");
+            _sprintf(acStack_748,"%s found in both wav and mp3 format");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
           }
           pCVar5 = aCStack_f18;
@@ -115,11 +115,11 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                     (SStack_b70.found_path,(char *)0x0,"sound",acStack_13c,"sfx");
           iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_b70);
           if (iVar2 == 0) {
-            sprintf(acStack_748,"No sfx file for %s");
+            _sprintf(acStack_748,"No sfx file for %s");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
           }
           else if (SStack_b70.timestamp < SStack_95c.timestamp) {
-            sprintf(acStack_748,"%s older than %s");
+            _sprintf(acStack_748,"%s older than %s");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
             in_stack_fffff0e0 = (char *)pCVar5;
           }

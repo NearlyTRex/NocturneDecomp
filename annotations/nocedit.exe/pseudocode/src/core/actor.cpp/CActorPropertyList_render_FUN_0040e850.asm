@@ -21,8 +21,8 @@
 ;   TerminatedCString s_anon_006144bf
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorProperty_FUN_0040ea50
-;   core_actor.cpp_FUN_0040ee30
+;   core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   engine_2d.c_getTextWrapEnabled_FUN_004027f0
@@ -65,12 +65,12 @@ section .text
     PUSH ECX                            ; 0040e8a9
     PUSH ESI                            ; 0040e8aa
     MOV dword ptr [ESP + 0xdc],ESI      ; 0040e8ab
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0040e8b2
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
+    CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0040e8b2
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0040e8b7
     PUSH ESI                            ; 0040e8ba
-    CALL core_actor.cpp_FUN_0040ee30    ; 0040e8bb
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ee30()
+    CALL core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30 ; 0040e8bb
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_getNameWidth_FUN_0040ee30(CActorProperty * this_ptr)
     MOV EDX,dword ptr [EBX + 0x24f0]    ; 0040e8c0
     ADD ESP,0x4                         ; 0040e8c6
     SUB EDX,EAX                         ; 0040e8c9

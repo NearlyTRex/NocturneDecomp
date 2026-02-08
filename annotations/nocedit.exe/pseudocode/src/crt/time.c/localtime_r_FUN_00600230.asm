@@ -8,7 +8,7 @@
 ; _tm *            Stack[0x8]:4   result
 ;
 ; XREF[1]:
-;   crt_time.c_localtime_FUN_00600288 at 00600297
+;   crt_time.c__localtime_FUN_00600288 at 00600297
 ;
 ; Referenced Globals:
 ;   int g_TimezoneOffset = 0x4650

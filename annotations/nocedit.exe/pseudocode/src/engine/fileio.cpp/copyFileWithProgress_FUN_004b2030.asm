@@ -36,9 +36,9 @@
 ;
 ; Called Functions:
 ;   crt_errno.c__errno_FUN_00601450
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_strerror_FUN_00601470
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -89,8 +89,8 @@ section .text
     PUSH EDI                            ; 004b2099
     PUSH 0x626107                       ; 004b209a | = "Error reading %s"
     PUSH 0x2d0a590                      ; 004b209f | g_FileTransferErrorMessage
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b20a4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b20a4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b20a9
     CALL crt_errno.c__errno_FUN_00601450 ; 004b20ac
         ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
@@ -128,8 +128,8 @@ section .text
         ;   Label: LAB_004b20e3
     PUSH ESI                            ; 004b20e5 | g_FileTransferErrorMessage | DAT_02d0a591 | DAT_02d0a593
         ;   Label: LAB_004b20e5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b20e6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b20e6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b20eb
     TEST EBP,EBP                        ; 004b20ee
         ;   Label: LAB_004b20ee
@@ -160,8 +160,8 @@ section .text
     PUSH 0x6260eb                       ; 004b212c | = "Copying %s -> %s (%d bytes)"
     LEA EAX,[ESP + 0x10]                ; 004b2131
     PUSH EAX                            ; 004b2135
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b2136
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b2136
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004b213b
     MOV EAX,ESP                         ; 004b213e
     PUSH EAX                            ; 004b2140
@@ -213,8 +213,8 @@ section .text
     PUSH EBX                            ; 004b21c7
     PUSH 0x626118                       ; 004b21c8 | = "Error writing %s"
     PUSH 0x2d0a590                      ; 004b21cd | g_FileTransferErrorMessage
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b21d2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b21d2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b21d7
     CALL crt_errno.c__errno_FUN_00601450 ; 004b21da
         ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()

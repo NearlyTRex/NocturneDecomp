@@ -31,9 +31,9 @@
 ;   core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770
 ;   core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850
-;   core_actor.cpp_FUN_0040e150
+;   core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150
 ;   core_msnedit.cpp_FUN_00536e20
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;   engine_2d.c_drawHLine_FUN_00402ee0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -56,8 +56,8 @@ section .text
     SUB ESP,0x130                       ; 0053c4f3
     MOV EBX,dword ptr [ESP + 0x140]     ; 0053c4f9
     PUSH 0x2f7a024                      ; 0053c500 | DAT_02f7a024
-    CALL core_actor.cpp_FUN_0040e150    ; 0053c505
-        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e150()
+    CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c505
+        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     MOV EDX,0xffffffff                  ; 0053c50a
     ADD ESP,0x4                         ; 0053c50f
     MOV ESI,dword ptr [EBX + 0x28]      ; 0053c512
@@ -224,8 +224,8 @@ section .text
     PUSH 0x63c874                       ; 0053c6e5 | = "Selected: %s"
     LEA EAX,[ESP + 0xc]                 ; 0053c6ea
     PUSH EAX                            ; 0053c6ee
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053c6ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c6ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0053c6f4 | g_WindowHeight
     ADD ESP,0xc                         ; 0053c6f9
     SUB EAX,0xb                         ; 0053c6fc

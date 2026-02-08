@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(void)
+; __cdecl void __cdecl core_shotgun_cpp_CShotgun_FUN_005887a0(CShotgun *this_ptr)
 ;
+; Parameters:
+; CShotgun *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x64]:1  local_64
 ; undefined1       Stack[-0x3c]:1  local_3c

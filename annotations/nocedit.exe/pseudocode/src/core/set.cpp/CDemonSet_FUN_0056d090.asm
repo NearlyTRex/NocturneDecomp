@@ -11,7 +11,7 @@
 ;   core_elephant.cpp_CElephantGun_process_FUN_004a7070 at 004a714b
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 005065ca
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c1df
-;   core_shotgun.cpp_FUN_00587f70 at 0058804b
+;   core_shotgun.cpp_CShotgun_process_FUN_00587f70 at 0058804b
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110 at 005ee240
 ;
 ; Referenced Globals:

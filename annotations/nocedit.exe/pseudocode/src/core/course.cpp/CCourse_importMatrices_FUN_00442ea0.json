@@ -1,7 +1,56 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 52,
+        "line": 44,
+        "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 45,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 55,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 55,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 73,
+        "line": 57,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 28,
+        "line": 58,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 58,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 60,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -22,15 +71,15 @@
   },
   "cross_references": [
     {
-      "addr": "00442d70",
-      "from_addr": "00442e45",
-      "name": "core_course.cpp_OpeningCourseFile2_FUN_00442d70",
+      "addr": "00442bc0",
+      "from_addr": "00442cd3",
+      "name": "core_course.cpp_CCourse_FUN_00442bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00442bc0",
-      "from_addr": "00442cd3",
-      "name": "core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0",
+      "addr": "00442d70",
+      "from_addr": "00442e45",
+      "name": "core_course.cpp_CCourse_FUN_00442d70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -146,7 +195,7 @@
       {
         "call_addr": "00442e45",
         "call_type": "direct",
-        "caller": "core_course.cpp_OpeningCourseFile2_FUN_00442d70",
+        "caller": "core_course.cpp_CCourse_FUN_00442d70",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -155,7 +204,7 @@
       {
         "call_addr": "00442cd3",
         "call_type": "direct",
-        "caller": "core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0",
+        "caller": "core_course.cpp_CCourse_FUN_00442bc0",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],

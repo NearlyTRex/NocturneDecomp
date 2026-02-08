@@ -149,7 +149,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           (pcVar15 = getenv("SPOOKHOUSE"), pcVar15 != (char *)0x0))
          && (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e), iVar5 != 0)) {
         DAT_02d82568 = DAT_02d82568 + 1;
-        sprintf(&DAT_02d82570,"demon%d.pcx");
+        _sprintf(&DAT_02d82570,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
@@ -173,8 +173,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         }
         if ((g_DebugRecordingParams < 1) || ((int)FLOAT_02d831bc < g_DebugRecordingParams)) {
           if (g_DebugRecording != 0) {
-            sprintf(local_114,"noc%05d.raw");
-            sprintf(local_1dc,"Movie recording active: movie\\%s");
+            _sprintf(local_114,"noc%05d.raw");
+            _sprintf(local_1dc,"Movie recording active: movie\\%s");
             local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
             ;
             if (local_34 != (_FILE *)0x0) {
@@ -244,31 +244,31 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         FLOAT_02d7c2e8 = 0.0;
       }
       else {
-        sprintf(local_3dc,"Camera: \"%s\" Group %d");
+        _sprintf(local_3dc,"Camera: \"%s\" Group %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x16);
         FLOAT_02d7c2e8 = (float)((int)FLOAT_02d7c2e8 + 1);
         DOUBLE_02d7c2e0 = DOUBLE_02d7c2e0 + (double)this_ptr->delta_time_float;
-        sprintf(local_3dc,"FR: %f, AVG: %f, PC: %d");
+        _sprintf(local_3dc,"FR: %f, AVG: %f, PC: %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0xb);
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
         dVar1 = (double)(pCVar4->base).base.location.position.z;
         dVar2 = (double)(pCVar4->base).base.location.position.y;
-        sprintf
+        _sprintf
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),
                    (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
-        sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
+        _sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
         if (this_ptr->debug_fudge_target != (CVector3f *)0x0) {
-          sprintf(local_3dc,"Fudge: %g,%g,%g");
+          _sprintf(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
                   (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
         local_14 = local_58;
         sound_sndmain_cpp_countActiveSfx_FUN_005a9ff0();
-        sprintf(local_3dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
+        _sprintf(local_3dc,"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x42);
         engine_texture_cpp_getTextureCacheStats_FUN_005dd970(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x37);
@@ -282,7 +282,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
+          _sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }

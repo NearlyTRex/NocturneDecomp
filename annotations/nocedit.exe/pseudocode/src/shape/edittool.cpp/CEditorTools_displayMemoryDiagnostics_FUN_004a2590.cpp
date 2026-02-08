@@ -17,23 +17,20 @@ shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   uint uVar4;
   char *pcVar5;
   int iVar6;
-  uint local_28;
-  ushort local_24;
-  uint local_22;
-  int local_1e;
+  byte local_28 [16];
   int local_18;
   
   iVar3 = 0;
   iVar6 = 0;
-  local_24 = 0;
-  local_28 = 0;
+  local_28._4_2_ = 0;
+  local_28._0_4_ = (void *)0x0;
   uVar4 = 0;
-  while (iVar2 = _heapwalk(&local_28), iVar2 == 0) {
-    if (local_1e == 0) {
+  while (iVar2 = _heapwalk((_heapinfo *)local_28), iVar2 == 0) {
+    if (local_28._10_4_ == 0) {
       iVar3 = iVar3 + 1;
-      iVar6 = iVar6 + local_22;
-      if (uVar4 < local_22) {
-        uVar4 = local_22;
+      iVar6 = iVar6 + local_28._6_4_;
+      if (uVar4 < (uint)local_28._6_4_) {
+        uVar4 = local_28._6_4_;
       }
     }
   }
@@ -44,7 +41,7 @@ shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   case 4:
     if (0 < iVar3) {
       local_18 = iVar6;
-      sprintf
+      _sprintf
                 (output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,
                  (double)iVar6 * 0.0009765625,
                  (double)(int)uVar4 * 0.0009765625);

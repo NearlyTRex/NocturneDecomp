@@ -375,8 +375,8 @@ section .text
     PUSH 0x63bda2                       ; 00538570 | = "Current mission: %s.msn"
     LEA EAX,[ESP + 0x5c8]               ; 00538575
     PUSH EAX                            ; 0053857c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053857d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053857d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00538582
     JMP 0x005382a4                      ; 00538585
         ;   XREF to: 005382a4 (UNCONDITIONAL_JUMP)  ; LAB_005382a4
@@ -408,8 +408,8 @@ section .text
     PUSH EAX                            ; 005385cd | = "%s.msn"
     LEA EAX,[ESP + 0x4c4]               ; 005385ce
     PUSH EAX                            ; 005385d5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005385d6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005385d6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005385db
     LEA EAX,[ESP + 0x4bc]               ; 005385de
     PUSH EAX                            ; 005385e5
@@ -613,8 +613,8 @@ section .text
     PUSH EAX                            ; 005387ed | = "%s.msn"
     LEA EAX,[ESP + 0x4c4]               ; 005387ee
     PUSH EAX                            ; 005387f5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005387f6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005387f6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005387fb
     LEA EAX,[ESP + 0x6c0]               ; 005387fe
     PUSH EAX                            ; 00538805

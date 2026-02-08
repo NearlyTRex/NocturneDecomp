@@ -40,13 +40,13 @@ CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                                      (g_CDemonMissionPtr,param_1);
       if (actor_ptr == (CHero *)0x0) {
-        sprintf(&DAT_02d0a460,"Actor \"%s\" does not exist.",param_1);
+        _sprintf(&DAT_02d0a460,"Actor \"%s\" does not exist.",param_1);
         return (CHero *)0x0;
       }
       goto LAB_004aa48f;
     }
     if (g_CNetGamePtr->connection_type != 0) {
-      sprintf(&DAT_02d0a460,"Can't use '$' actor specifier in multi-player");
+      _sprintf(&DAT_02d0a460,"Can't use '$' actor specifier in multi-player");
       return (CHero *)0x0;
     }
     actor_ptr = g_HeroActors[g_LocalHeroIndex];
@@ -63,7 +63,7 @@ LAB_004aa48f:
     return 0x0FFFFFFF;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
-  sprintf
+  _sprintf
             (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",param_1,pcVar3,param_3);
   return (CHero *)0x0;
 }

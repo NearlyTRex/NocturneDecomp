@@ -41,7 +41,7 @@ section .text
     PUSH 0x616a00                       ; 004234fe | = "light type"
     PUSH EBX                            ; 00423503
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 00423504
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     MOV EDX,dword ptr [ESI + 0x66c]     ; 00423509
     ADD ESP,0x10                        ; 0042350f
     TEST EDX,EDX                        ; 00423512
@@ -65,7 +65,7 @@ section .text
     PUSH 0x616a0b                       ; 00423536 | = "light pos"
     PUSH EBX                            ; 0042353b
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 0042353c
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00423541
     PUSH 0x0                            ; 00423544
     LEA EAX,[ESI + 0x3628]              ; 00423546
@@ -73,14 +73,14 @@ section .text
     PUSH 0x616a15                       ; 0042354d | = "light orient"
     PUSH EBX                            ; 00423552
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 00423553
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00423558
     PUSH 0x423440                       ; 0042355b
     PUSH 0x423400                       ; 00423560
     PUSH 0x616a22                       ; 00423565 | = "light FOV"
     PUSH EBX                            ; 0042356a
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 0042356b
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     ADD ESP,0x10                        ; 00423570
     PUSH 0x0                            ; 00423573
     LEA EAX,[ESI + 0x7b0]               ; 00423575
@@ -88,7 +88,7 @@ section .text
     PUSH 0x616a2c                       ; 0042357c | = "light falloff"
     PUSH EBX                            ; 00423581
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 00423582
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00423587
     JMP 0x00423516                      ; 0042358a
         ;   XREF to: 00423516 (UNCONDITIONAL_JUMP)  ; LAB_00423516

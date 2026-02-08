@@ -74,7 +74,7 @@ shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970
       pcVar13 = g_TextWrapBuffer;
       do {
         iVar11 = iVar11 + 1;
-        iVar6 = sprintf(buffer,"%s\n",pcVar13);
+        iVar6 = _sprintf(buffer,"%s\n",pcVar13);
         buffer = buffer + iVar6;
         pcVar13 = pcVar13 + 200;
       } while (iVar11 < iVar5);

@@ -30,7 +30,7 @@ core_dest_cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination *this_ptr)
   } while (cVar1 != '\0');
   pCVar2->dest_actor = (CDemonActor *)0x0;
   pCVar2->dest_class[0] = '\0';
-  pCVar2->unk = 1;
+  pCVar2->unk4 = 1;
   pCVar2->persistent_event_flag = 1;
   return pCVar2;
 }

@@ -55,14 +55,14 @@ core_script_cpp_editParameterValue_FUN_00562920
   int local_14;
   
   bVar9 = 0;
-  sprintf(local_7cc,"Enter %s");
+  _sprintf(local_7cc,"Enter %s");
   switch(param_type) {
   case 0:
     iVar6 = sscanf(value_buffer,"%d");
     iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                       (g_CEditorToolsPtr,local_7cc,&local_30,0,0,0,(uint)(iVar6 == 1));
     if (iVar6 != 0) {
-      sprintf(value_buffer,"%d");
+      _sprintf(value_buffer,"%d");
       return 1;
     }
     break;
@@ -71,7 +71,7 @@ core_script_cpp_editParameterValue_FUN_00562920
     iVar6 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                       (g_CEditorToolsPtr,local_7cc,&local_3758,0,0.0,0.0,(uint)(iVar6 == 1));
     if (iVar6 != 0) {
-      sprintf(value_buffer,"%g",(double)local_3758);
+      _sprintf(value_buffer,"%g",(double)local_3758);
       return 1;
     }
     break;
@@ -468,7 +468,7 @@ core_script_cpp_editParameterValue_FUN_00562920
         local_24 = extraout_EAX + 4;
         pcVar3 = (char *)(extraout_EAX + 0x968);
         do {
-          sprintf(local_6a0,"%s\t%s",pcVar3);
+          _sprintf(local_6a0,"%s\t%s",pcVar3);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3754.base,local_6a0);
           iVar7 = stricmp(pcVar3,value_buffer);
           if (iVar7 == 0) {
@@ -535,7 +535,7 @@ core_script_cpp_editParameterValue_FUN_00562920
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_33ac);
     for (iVar7 = 0; iVar7 < g_CScriptPtr->dialog_entry_count; iVar7 = iVar7 + 1) {
       pcVar3 = g_CScriptPtr->dialog_entries->data + iVar6;
-      sprintf(g_ScriptFormatBuffer,"%s\t%s\t%s",pcVar3,pcVar3 + 0x78);
+      _sprintf(g_ScriptFormatBuffer,"%s\t%s\t%s",pcVar3,pcVar3 + 0x78);
       iVar6 = iVar6 + 0x226;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_33ac.base,g_ScriptFormatBuffer);
     }
@@ -649,7 +649,7 @@ core_script_cpp_editParameterValue_FUN_00562920
             iVar7 = iVar7 + 1) {
           pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220
                              ((CDeformableModel *)local_20,iVar7);
-          sprintf(local_170,"%s\t%s",pSVar5);
+          _sprintf(local_170,"%s\t%s",pSVar5);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,local_170);
         }
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,"Done");

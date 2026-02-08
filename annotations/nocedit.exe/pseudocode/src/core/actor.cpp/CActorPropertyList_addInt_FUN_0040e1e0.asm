@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CDemonActor_CActorPropertyValidatorFunc *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   property_name
 ; int *            Stack[0xc]:4   data_ptr
-; CDemonActor_CActorPropertyValidatorFunc * Stack[0x10]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x10]:4   callback
 ;
 ; XREF[19]:
 ;   core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360 at 004113b3
@@ -15,7 +15,7 @@
 ;   core_chain.cpp_CChain_getPropertyList_FUN_00431120 at 00431143
 ;   core_curtain.cpp_CCurtain_getPropertyList_FUN_0044b610 at 0044b64c
 ;   core_door.cpp_CDoor_getPropertyList_FUN_00481320 at 0048142f
-;   core_dracbrid.cpp_FUN_00486c90 at 00486cef
+;   core_dracbrid.cpp_CDraculaBride_getPropertyList_FUN_00486c90 at 00486cef
 ;   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0 at 004a8e64
 ;   core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0 at 004e5b68
 ;   core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0 at 004eb43b

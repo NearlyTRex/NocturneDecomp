@@ -53,7 +53,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     } while (iVar1 < other2 * bitmap_index);
   }
   if (local_20 == this_ptr->load_flags) {
-    sprintf
+    _sprintf
               (local_16c,"No character markers found in font file (%s).",this_ptr->bitmap_files + bitmapcount);
     g_CurrentLineNumber = 0x1cd;
     g_CurrentFilename = "..\\engine\\font.cpp";
@@ -102,7 +102,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
             local_18 = 1;
             local_28 = iVar7;
             if (0xff < iVar1) {
-              sprintf
+              _sprintf
                         (local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar1);
               g_CurrentLineNumber = 0x201;
               g_CurrentFilename = "..\\engine\\font.cpp";

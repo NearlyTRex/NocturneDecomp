@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -72,8 +72,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0054b57f
     PUSH EAX                            ; 0054b583
     MOV ESI,0x63f0c1                    ; 0054b584 | = "..\\cockpit\\pkbitmap.cpp"
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054b589
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054b589
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054b58e
     LEA EAX,[ESP + 0x8]                 ; 0054b591
     MOV EDI,0x470                       ; 0054b595

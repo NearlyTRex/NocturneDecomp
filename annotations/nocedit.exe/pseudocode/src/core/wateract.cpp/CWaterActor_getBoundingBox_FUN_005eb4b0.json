@@ -1,0 +1,104 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005eb4b0",
+    "address_range": [
+      [
+        "005eb4b0",
+        "005eb503"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_wateract.cpp_CWaterActor_getBoundingBox_FUN_005eb4b0",
+    "signature": "CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0 (CWaterActor *this_ptr,CBoundingBox3D *out_box)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006572ff",
+      "name": "DOUBLE_006572ff",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00657307",
+      "name": "DOUBLE_00657307",
+      "type": "double",
+      "value": "0.100000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.863636363636363,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "COPY": 104,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NEG": 2,
+      "INT_ADD": 13,
+      "LOAD": 8,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 151
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWaterActor",
+        "offset": 20,
+        "vtable_addr": "00665334"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

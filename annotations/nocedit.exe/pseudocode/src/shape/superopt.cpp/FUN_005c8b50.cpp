@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte shape_superopt.cpp_FUN_005c8b50(uint param_1, uint param_2,
-   uint param_3) */
-
 int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
 
 {
@@ -99,8 +96,8 @@ int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
       local_a4 = local_8c;
       shape_superopt_cpp_FUN_005c9aa0();
       if ((local_2c != 0) && (local_28 != 0)) {
-        iVar2 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
-        iVar3 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
+        iVar2 = shape_superopt_cpp_FUN_005ca590();
+        iVar3 = shape_superopt_cpp_FUN_005ca590();
         if ((iVar2 == 0) && (iVar3 == 0)) {
           return 0;
         }

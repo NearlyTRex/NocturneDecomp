@@ -44,10 +44,10 @@
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_006013f0
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c_asctime_FUN_00601768
-;   crt_time.c_localtime_FUN_00600288
 ;   crt_time.c_time_FUN_006001f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -74,8 +74,8 @@ section .text
     PUSH EDX                            ; 005adbc5
     LEA EAX,[ESP + 0x8]                 ; 005adbc6
     PUSH EAX                            ; 005adbca
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 005adbcb
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 005adbcb
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005adbd0
     MOV EAX,ESP                         ; 005adbd3
     PUSH EAX                            ; 005adbd5
@@ -124,8 +124,8 @@ section .text
     ADD ESP,0xc                         ; 005adc4e
     LEA EAX,[ESP + 0x51c]               ; 005adc51
     PUSH EAX                            ; 005adc58
-    CALL crt_time.c_localtime_FUN_00600288 ; 005adc59
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
+    CALL crt_time.c__localtime_FUN_00600288 ; 005adc59
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 005adc5e
     PUSH EAX                            ; 005adc61
     CALL crt_time.c_asctime_FUN_00601768 ; 005adc62

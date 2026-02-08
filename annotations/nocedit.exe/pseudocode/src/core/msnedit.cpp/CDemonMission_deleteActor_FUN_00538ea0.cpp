@@ -21,7 +21,7 @@ core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,
       this_ptr_00 = this_ptr_00->next_actor) {
     if (this_ptr_00 != (CDemonActor *)param_2) {
       (*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);
-      core_actor_cpp_FUN_0040e130();
+      core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffdaf8);
       (*((this_ptr_00->vtable)._ub)->getPropertyList)
                 (this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);
       iVar2 = 0;

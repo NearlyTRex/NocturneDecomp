@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_FUN_00578c90(uint param_1, uint param_2,
-   uint param_3) */
-
 int __cdecl core_setedit_cpp_FUN_00578c90(void)
 
 {
@@ -27,7 +24,7 @@ int __cdecl core_setedit_cpp_FUN_00578c90(void)
   else {
     bVar1 = 0x59;
   }
-  sprintf(local_13c,"%s? [%c] ");
+  _sprintf(local_13c,"%s? [%c] ");
   engine_2d_c_drawText_FUN_00401fd0(local_13c,0,in_stack_00000004);
   while( true ) {
     uVar2 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
@@ -44,7 +41,7 @@ int __cdecl core_setedit_cpp_FUN_00578c90(void)
       pcVar3 = "N";
       iVar4 = 0;
 LAB_00578d14:
-      sprintf(local_2cc,"%s %s",local_13c,pcVar3);
+      _sprintf(local_2cc,"%s %s",local_13c,pcVar3);
       engine_2d_c_drawText_FUN_00401fd0(local_2cc,0,in_stack_00000004);
       return iVar4;
     }

@@ -20,10 +20,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
   int iVar8;
   
   iVar5 = (this_ptr->base).action_bindings.fire_key;
-  this_ptr->unk1[0x5c] = '\0';
-  this_ptr->unk1[0x5d] = '\0';
-  this_ptr->unk1[0x5e] = '\0';
-  this_ptr->unk1[0x5f] = '\0';
+  this_ptr->unk5[0x10] = '\0';
+  this_ptr->unk5[0x11] = '\0';
+  this_ptr->unk5[0x12] = '\0';
+  this_ptr->unk5[0x13] = '\0';
   if (iVar5 == 0) {
     return;
   }
@@ -36,7 +36,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
   if (this_ptr->guns_drawn == 0) {
     return;
   }
-  this_ptr_00 = *(CDemonActor **)(this_ptr->unk1 + 0x54);
+  this_ptr_00 = *(CDemonActor **)(this_ptr->unk5 + 8);
   if (this_ptr_00 == (CDemonActor *)0x0) {
     this_ptr_00 = (this_ptr->base).base.carry_hands[1].carry_actor;
 LAB_005c5f6e:
@@ -45,15 +45,15 @@ LAB_005c5f6e:
        ) {
       iVar5 = 0;
       while( true ) {
-        iVar8 = *(int *)this_ptr->unk2 + 1;
-        *(int *)this_ptr->unk2 = iVar8;
+        iVar8 = *(int *)this_ptr->unk6 + 1;
+        *(int *)this_ptr->unk6 = iVar8;
         if ((iVar8 < 0) || (1 < iVar8)) {
-          this_ptr->unk2[0] = '\0';
-          this_ptr->unk2[1] = '\0';
-          this_ptr->unk2[2] = '\0';
-          this_ptr->unk2[3] = '\0';
+          this_ptr->unk6[0] = '\0';
+          this_ptr->unk6[1] = '\0';
+          this_ptr->unk6[2] = '\0';
+          this_ptr->unk6[3] = '\0';
         }
-        uVar7 = *(int *)this_ptr->unk2 + 0xc;
+        uVar7 = *(int *)this_ptr->unk6 + 0xc;
         uVar4 = 0;
         if (0xb < uVar7) {
           if (uVar7 < 0xd) {
@@ -71,34 +71,34 @@ LAB_005c5f6e:
       }
       (this_ptr->base).base.field48_0x2a90 = 0;
       this_ptr->action_pending = 7;
-      (this_ptr->base).base.field47_0x2a8c = *(int *)this_ptr->unk2 + 0xc;
+      (this_ptr->base).base.field47_0x2a8c = *(int *)this_ptr->unk6 + 0xc;
       return;
     }
   }
   else if (this_ptr_00[2].orient.pitch == 9.80909e-45) goto LAB_005c5f6e;
-  if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
+  if (*(int *)(this_ptr->unk5 + 8) == 0) {
     return;
   }
-  iVar5 = *(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0);
+  iVar5 = *(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0);
   if (iVar5 == 3) {
     return;
   }
   if (((this_ptr->base).aim_mode == 0) && (iVar5 == 0)) {
     pcVar6 = this_ptr->unk1 + 0x10;
-    pcVar1 = this_ptr->unk1 + 0x30;
-    if (*(int *)(this_ptr->unk1 + 0x58) != 0) {
+    pcVar1 = this_ptr->unk3 + 4;
+    if (*(int *)(this_ptr->unk5 + 0xc) != 0) {
       pcVar1 = pcVar6;
-      pcVar6 = this_ptr->unk1 + 0x30;
+      pcVar6 = this_ptr->unk3 + 4;
     }
     if ((*(int *)(pcVar1 + 0x1c) == 2) && (*(int *)(pcVar6 + 0x1c) != 2)) {
-      *(uint *)(this_ptr->unk1 + 0x58) = (uint)(*(int *)(this_ptr->unk1 + 0x58) == 0);
+      *(uint *)(this_ptr->unk5 + 0xc) = (uint)(*(int *)(this_ptr->unk5 + 0xc) == 0);
     }
   }
-  if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
+  if (*(int *)(this_ptr->unk5 + 8) == 0) {
 switchD_005c5ffd_caseD_8:
   }
   else {
-    switch(*(uint *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0)) {
+    switch(*(uint *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0)) {
     case 0:
     case 5:
       break;
@@ -116,31 +116,31 @@ switchD_005c5ffd_caseD_8:
   fVar2 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
   if ((float)0.98999999999999999 <= fVar2) {
     pcVar6 = this_ptr->unk1 + 0x10;
-    if ((*(int *)(this_ptr->unk1 + 0x58) != 0) &&
-       (*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) == 0)) {
-      pcVar6 = this_ptr->unk1 + 0x30;
+    if ((*(int *)(this_ptr->unk5 + 0xc) != 0) &&
+       (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0) == 0)) {
+      pcVar6 = this_ptr->unk3 + 4;
     }
     if (((1.0 <= *(float *)(pcVar6 + 0x14)) && (*(float *)(pcVar6 + 0x10) <= 0.0)) &&
-       (iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xfc))(),
-       iVar5 != 0)) {
-      if (*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2e0) == 0) {
+       (iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xfc))(), iVar5 != 0))
+    {
+      if (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0) == 0) {
         core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
-        *(uint *)(this_ptr->unk1 + 0x58) = (uint)(*(int *)(this_ptr->unk1 + 0x58) == 0);
+        *(uint *)(this_ptr->unk5 + 0xc) = (uint)(*(int *)(this_ptr->unk5 + 0xc) == 0);
       }
-      iVar5 = *(int *)(this_ptr->unk1 + 0x54);
-      this_ptr->unk1[0x5c] = '\0';
-      this_ptr->unk1[0x5d] = '\0';
-      this_ptr->unk1[0x5e] = '\0';
-      this_ptr->unk1[0x5f] = '\0';
+      iVar5 = *(int *)(this_ptr->unk5 + 8);
+      this_ptr->unk5[0x10] = '\0';
+      this_ptr->unk5[0x11] = '\0';
+      this_ptr->unk5[0x12] = '\0';
+      this_ptr->unk5[0x13] = '\0';
       iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0xf8))();
       if (iVar5 != 0) {
-        this_ptr->unk1[0x5c] = '\x01';
-        this_ptr->unk1[0x5d] = '\0';
-        this_ptr->unk1[0x5e] = '\0';
-        this_ptr->unk1[0x5f] = '\0';
+        this_ptr->unk5[0x10] = '\x01';
+        this_ptr->unk5[0x11] = '\0';
+        this_ptr->unk5[0x12] = '\0';
+        this_ptr->unk5[0x13] = '\0';
       }
       core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
-      if (*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x2dc) == 2) {
+      if (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2dc) == 2) {
         (this_ptr->base).base.field48_0x2a90 = 0;
         (this_ptr->base).base.field47_0x2a8c = 8;
         return;

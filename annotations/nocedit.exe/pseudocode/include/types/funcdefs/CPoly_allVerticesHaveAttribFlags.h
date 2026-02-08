@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_allVerticesHaveAttribFlags
-typedef int (*CPoly_allVerticesHaveAttribFlags)(struct CPoly* this_ptr, uint flag_mask);
+typedef int CPoly_allVerticesHaveAttribFlags(struct CPoly* this_ptr, uint flag_mask);
 

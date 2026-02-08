@@ -37,7 +37,7 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
       else {
         pcVar3 = "sml";
       }
-      sprintf(local_84,"l%s-shot?.wav",pcVar3);
+      _sprintf(local_84,"l%s-shot?.wav",pcVar3);
       uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,local_84);
       *(uint *)(this_ptr->unk + 0xc) = uVar4;
@@ -68,7 +68,7 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
     else {
       pcVar3 = "sml";
     }
-    sprintf(local_e8,"l%s-die?.wav",pcVar3);
+    _sprintf(local_e8,"l%s-die?.wav",pcVar3);
     uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,local_e8);
     *(uint *)(this_ptr->unk + 0xc) = uVar4;
   }

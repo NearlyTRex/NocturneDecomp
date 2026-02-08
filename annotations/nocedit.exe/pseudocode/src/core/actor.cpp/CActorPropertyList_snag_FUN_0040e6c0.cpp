@@ -39,7 +39,7 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   pCVar3->auto_update_flag = 0;
   pCVar3->enabled_flag = 1;
   pCVar3->string2[0] = '\0';
-  pCVar3->data_ptr = data_ptr;
-  pCVar3->callback = callback;
+  (pCVar3->data).v_ptr = data_ptr;
+  (pCVar3->callback).v_action_func = callback;
   return pCVar3;
 }

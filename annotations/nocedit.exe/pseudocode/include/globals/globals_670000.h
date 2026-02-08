@@ -14,6 +14,7 @@
 #include "types/classes/CGround.h"
 #include "types/classes/CKeys.h"
 #include "types/classes/CLevelLoader.h"
+#include "types/structs/SEnumPair.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLTextureBasic.h"
 
@@ -51,6 +52,30 @@ extern CKeys* g_CKeysPtr;
 
 // CLevelLoader*
 extern CLevelLoader* g_CLevelLoaderPtr;
+
+// SEnumPair[11]
+extern SEnumPair g_EmitterTypePairs[11];
+
+// SEnumPair[2]
+extern SEnumPair g_DoorSideTypePairs[2];
+extern SEnumPair g_DoorSwingTypePairs[2];
+extern SEnumPair g_EmitterSoundTypePairs[2];
+extern SEnumPair g_MarqueeDisplayTypePairs[2];
+
+// SEnumPair[3]
+extern SEnumPair g_DoorOneShotTypePairs[3];
+extern SEnumPair g_LeverOpenFromSideTypePairs[3];
+
+// SEnumPair[4]
+extern SEnumPair g_DoorTypePairs[4];
+extern SEnumPair g_DoorOpenFromSideTypePairs[4];
+extern SEnumPair g_FlameTypePairs[4];
+
+// SEnumPair[5]
+extern SEnumPair g_MansionPuzzleSlewTypePairs[5];
+
+// SEnumPair[9]
+extern SEnumPair g_MeleeDamageTypePairs[9];
 
 // SInputFace*[2000]
 extern SInputFace* g_VisibleFacePointers[2000];

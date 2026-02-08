@@ -35,8 +35,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -75,8 +75,8 @@ section .text
     PUSH 0x655188                       ; 005dcc53 | = "CTextureCache::load - Bad texture len..."
     LEA EAX,[ESP + 0xc]                 ; 005dcc58
     PUSH EAX                            ; 005dcc5c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dcc5d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dcc5d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x101                       ; 005dcc62
     ADD ESP,0x10                        ; 005dcc67
     MOV [0x02f0ca4c],EAX                ; 005dcc6a | g_CurrentLineNumber
@@ -169,8 +169,8 @@ section .text
     PUSH 0x65528f                       ; 005dcd54 | = ".act"
         ;   Label: LAB_005dcd54
     PUSH EDI                            ; 005dcd59
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dcd5a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dcd5a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005dcd5f
     PUSH 0x655294                       ; 005dcd62 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005dcd67
@@ -317,8 +317,8 @@ section .text
     PUSH 0x65535c                       ; 005dceea | = ".raw"
         ;   Label: LAB_005dceea
     PUSH ESI                            ; 005dceef
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dcef0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dcef0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005dcef5
     PUSH 0x655361                       ; 005dcef8 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005dcefd
@@ -384,8 +384,8 @@ section .text
     PUSH 0x65537e                       ; 005dcf75 | = ".opa"
         ;   Label: LAB_005dcf75
     PUSH ESI                            ; 005dcf7a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dcf7b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dcf7b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005dcf80
     PUSH 0x655383                       ; 005dcf83 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005dcf88

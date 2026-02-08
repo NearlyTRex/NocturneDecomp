@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX)
+; __cdecl void __cdecl crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX)
 ;
+; Parameters:
+; ushort           Stack[0x4]:2   param_1
+; undefined4       Stack[0x8]:4   param_2
+; char *           Stack[0xc]:4   unaff_EBX
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_006040ed at 006040fe

@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_actor.cpp_checkNameHash_FUN_0040c700 at 0040c70c
-;   core_tentacle.cpp_CTentacle_FUN_005dbb30 at 005dbb61
+;   core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30 at 005dbb61
 ;   core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0 at 005fca05
 ;
 ; *****************************************************************************

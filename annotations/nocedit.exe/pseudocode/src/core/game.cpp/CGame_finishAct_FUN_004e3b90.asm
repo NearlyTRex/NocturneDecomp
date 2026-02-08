@@ -47,7 +47,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
@@ -283,8 +283,8 @@ section .text
     LEA EAX,[ESP + 0x418]               ; 004e3e1e
     PUSH EAX                            ; 004e3e25
     XOR ESI,ESI                         ; 004e3e26
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e3e28
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e3e28
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV DL,0x30                         ; 004e3e2d
     ADD ESP,0x18                        ; 004e3e2f
     LEA EDI,[ESP + 0x404]               ; 004e3e32
@@ -389,8 +389,8 @@ section .text
     PUSH 0x62d5a4                       ; 004e3ef4 | = "%d\n\n"
     LEA EAX,[ESP + 0x40c]               ; 004e3ef9
     PUSH EAX                            ; 004e3f00
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e3f01
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e3f01
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e3f06
     LEA ESI,[ESP + 0x404]               ; 004e3f09
     LEA EDI,[ESP + 0x4]                 ; 004e3f10

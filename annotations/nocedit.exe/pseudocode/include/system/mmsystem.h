@@ -84,45 +84,45 @@ typedef struct tagWAVEOUTCAPSA* LPWAVEOUTCAPSA;
 typedef DWORD MCIERROR;
 
 // Function Definition: MCI_GET_ERROR_STRING_A_FUNC
-typedef BOOL (*MCI_GET_ERROR_STRING_A_FUNC)(MCIERROR mcierr, LPSTR pszText, UINT cchText);
+typedef BOOL MCI_GET_ERROR_STRING_A_FUNC(MCIERROR mcierr, LPSTR pszText, UINT cchText);
 
 // Function Definition: MCI_SEND_STRING_A_FUNC
-typedef MCIERROR (*MCI_SEND_STRING_A_FUNC)(LPCSTR lpstrCommand, LPSTR lpstrReturnString, UINT uReturnLength, HWND hwndCallback);
+typedef MCIERROR MCI_SEND_STRING_A_FUNC(LPCSTR lpstrCommand, LPSTR lpstrReturnString, UINT uReturnLength, HWND hwndCallback);
 
 // Typedef: MMRESULT
 // Unsigned Integer (compiler-specific size)
 typedef UINT MMRESULT;
 
 // Function Definition: JOY_GET_POS_EX_FUNC
-typedef MMRESULT (*JOY_GET_POS_EX_FUNC)(UINT uJoyID, LPJOYINFOEX pji);
+typedef MMRESULT JOY_GET_POS_EX_FUNC(UINT uJoyID, LPJOYINFOEX pji);
 
 // Typedef: MMVERSION
 // Unsigned Integer (compiler-specific size)
 typedef UINT MMVERSION;
 
 // Function Definition: TIME_BEGIN_PERIOD_FUNC
-typedef MMRESULT (*TIME_BEGIN_PERIOD_FUNC)(UINT uPeriod);
+typedef MMRESULT TIME_BEGIN_PERIOD_FUNC(UINT uPeriod);
 
 // Function Definition: TIME_END_PERIOD_FUNC
-typedef MMRESULT (*TIME_END_PERIOD_FUNC)(UINT uPeriod);
+typedef MMRESULT TIME_END_PERIOD_FUNC(UINT uPeriod);
 
 // Function Definition: TIME_GET_TIME_FUNC
-typedef DWORD (*TIME_GET_TIME_FUNC)(void);
+typedef DWORD TIME_GET_TIME_FUNC(void);
 
 // Function Definition: WAVE_IN_CLOSE_FUNC
-typedef MMRESULT (*WAVE_IN_CLOSE_FUNC)(HWAVEIN hwi);
+typedef MMRESULT WAVE_IN_CLOSE_FUNC(HWAVEIN hwi);
 
 // Function Definition: WAVE_IN_RESET_FUNC
-typedef MMRESULT (*WAVE_IN_RESET_FUNC)(HWAVEIN hwi);
+typedef MMRESULT WAVE_IN_RESET_FUNC(HWAVEIN hwi);
 
 // Function Definition: WAVE_IN_START_FUNC
-typedef MMRESULT (*WAVE_IN_START_FUNC)(HWAVEIN hwi);
+typedef MMRESULT WAVE_IN_START_FUNC(HWAVEIN hwi);
 
 // Function Definition: WAVE_OUT_CLOSE_FUNC
-typedef MMRESULT (*WAVE_OUT_CLOSE_FUNC)(HWAVEOUT hwo);
+typedef MMRESULT WAVE_OUT_CLOSE_FUNC(HWAVEOUT hwo);
 
 // Function Definition: WAVE_OUT_RESET_FUNC
-typedef MMRESULT (*WAVE_OUT_RESET_FUNC)(HWAVEOUT hwo);
+typedef MMRESULT WAVE_OUT_RESET_FUNC(HWAVEOUT hwo);
 
 // Structure: joyinfo_tag
 typedef struct joyinfo_tag {
@@ -133,7 +133,7 @@ typedef struct joyinfo_tag {
 } joyinfo_tag;
 
 // Function Definition: JOY_GET_POS_FUNC
-typedef MMRESULT (*JOY_GET_POS_FUNC)(UINT uJoyID, LPJOYINFO pji);
+typedef MMRESULT JOY_GET_POS_FUNC(UINT uJoyID, LPJOYINFO pji);
 
 // Structure: tWAVEFORMATEX
 typedef struct tWAVEFORMATEX {
@@ -154,10 +154,10 @@ typedef tWAVEFORMATEX WAVEFORMATEX;
 typedef WAVEFORMATEX* LPCWAVEFORMATEX;
 
 // Function Definition: WAVE_IN_OPEN_FUNC
-typedef MMRESULT (*WAVE_IN_OPEN_FUNC)(LPHWAVEIN phwi, UINT uDeviceID, LPCWAVEFORMATEX pwfx, DWORD dwCallback, DWORD dwInstance, DWORD fdwOpen);
+typedef MMRESULT WAVE_IN_OPEN_FUNC(LPHWAVEIN phwi, UINT uDeviceID, LPCWAVEFORMATEX pwfx, DWORD dwCallback, DWORD dwInstance, DWORD fdwOpen);
 
 // Function Definition: WAVE_OUT_OPEN_FUNC
-typedef MMRESULT (*WAVE_OUT_OPEN_FUNC)(LPHWAVEOUT phwo, UINT uDeviceID, LPCWAVEFORMATEX pwfx, DWORD dwCallback, DWORD dwInstance, DWORD fdwOpen);
+typedef MMRESULT WAVE_OUT_OPEN_FUNC(LPHWAVEOUT phwo, UINT uDeviceID, LPCWAVEFORMATEX pwfx, DWORD dwCallback, DWORD dwInstance, DWORD fdwOpen);
 
 // Structure: tagJOYCAPSA
 typedef struct tagJOYCAPSA {
@@ -188,7 +188,7 @@ typedef struct tagJOYCAPSA {
 } tagJOYCAPSA;
 
 // Function Definition: JOY_GET_DEV_CAPS_A_FUNC
-typedef MMRESULT (*JOY_GET_DEV_CAPS_A_FUNC)(UINT uJoyID, LPJOYCAPSA pjc, UINT cbjc);
+typedef MMRESULT JOY_GET_DEV_CAPS_A_FUNC(UINT uJoyID, LPJOYCAPSA pjc, UINT cbjc);
 
 // Structure: tagWAVEINCAPSA
 typedef struct tagWAVEINCAPSA {
@@ -202,7 +202,7 @@ typedef struct tagWAVEINCAPSA {
 } tagWAVEINCAPSA;
 
 // Function Definition: WAVE_IN_GET_DEV_CAPS_A_FUNC
-typedef MMRESULT (*WAVE_IN_GET_DEV_CAPS_A_FUNC)(UINT uDeviceID, LPWAVEINCAPSA pwic, UINT cbwic);
+typedef MMRESULT WAVE_IN_GET_DEV_CAPS_A_FUNC(UINT uDeviceID, LPWAVEINCAPSA pwic, UINT cbwic);
 
 // Structure: tagWAVEOUTCAPSA
 typedef struct tagWAVEOUTCAPSA {
@@ -217,7 +217,7 @@ typedef struct tagWAVEOUTCAPSA {
 } tagWAVEOUTCAPSA;
 
 // Function Definition: WAVE_OUT_GET_DEV_CAPS_A_FUNC
-typedef MMRESULT (*WAVE_OUT_GET_DEV_CAPS_A_FUNC)(UINT uDeviceID, LPWAVEOUTCAPSA pwoc, UINT cbwoc);
+typedef MMRESULT WAVE_OUT_GET_DEV_CAPS_A_FUNC(UINT uDeviceID, LPWAVEOUTCAPSA pwoc, UINT cbwoc);
 
 // Structure: wavehdr_tag
 typedef struct wavehdr_tag {
@@ -232,20 +232,20 @@ typedef struct wavehdr_tag {
 } wavehdr_tag;
 
 // Function Definition: WAVE_IN_ADD_BUFFER_FUNC
-typedef MMRESULT (*WAVE_IN_ADD_BUFFER_FUNC)(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_IN_ADD_BUFFER_FUNC(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
 
 // Function Definition: WAVE_IN_PREPARE_HEADER_FUNC
-typedef MMRESULT (*WAVE_IN_PREPARE_HEADER_FUNC)(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_IN_PREPARE_HEADER_FUNC(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
 
 // Function Definition: WAVE_IN_UNPREPARE_HEADER_FUNC
-typedef MMRESULT (*WAVE_IN_UNPREPARE_HEADER_FUNC)(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_IN_UNPREPARE_HEADER_FUNC(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);
 
 // Function Definition: WAVE_OUT_PREPARE_HEADER_FUNC
-typedef MMRESULT (*WAVE_OUT_PREPARE_HEADER_FUNC)(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_OUT_PREPARE_HEADER_FUNC(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
 
 // Function Definition: WAVE_OUT_UNPREPARE_HEADER_FUNC
-typedef MMRESULT (*WAVE_OUT_UNPREPARE_HEADER_FUNC)(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_OUT_UNPREPARE_HEADER_FUNC(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
 
 // Function Definition: WAVE_OUT_WRITE_FUNC
-typedef MMRESULT (*WAVE_OUT_WRITE_FUNC)(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
+typedef MMRESULT WAVE_OUT_WRITE_FUNC(HWAVEOUT hwo, LPWAVEHDR pwh, UINT cbwh);
 

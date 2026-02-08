@@ -43,7 +43,7 @@
 ;   ... and 21 more
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
@@ -375,8 +375,8 @@ section .text
     PUSH EAX                            ; 00464fbd | = " - Polygon merger (tol = %4.2f degs)"
     LEA EAX,[EBP + -0x58]               ; 00464fbe
     PUSH EAX                            ; 00464fc1
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00464fc2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00464fc2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00464fc7
     JMP 0x0046507d                      ; 00464fca
         ;   XREF to: 0046507d (UNCONDITIONAL_JUMP)  ; default
@@ -388,8 +388,8 @@ section .text
     PUSH EAX                            ; 00464fdd | = " - Polygon attacher (tol = %4.2f units)"
     LEA EAX,[EBP + -0x58]               ; 00464fde
     PUSH EAX                            ; 00464fe1
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00464fe2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00464fe2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00464fe7
     JMP 0x0046507d                      ; 00464fea
         ;   XREF to: 0046507d (UNCONDITIONAL_JUMP)  ; default
@@ -398,8 +398,8 @@ section .text
     PUSH EAX                            ; 00464ff4 | = " - Polygon detacher"
     LEA EAX,[EBP + -0x58]               ; 00464ff5
     PUSH EAX                            ; 00464ff8
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00464ff9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00464ff9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00464ffe
     JMP 0x0046507d                      ; 00465001
         ;   XREF to: 0046507d (UNCONDITIONAL_JUMP)  ; default
@@ -411,8 +411,8 @@ section .text
     PUSH EAX                            ; 00465014 | = " - Polygon vertex welder (tol = %4.2f..."
     LEA EAX,[EBP + -0x58]               ; 00465015
     PUSH EAX                            ; 00465018
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00465019
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00465019
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046501e
     JMP 0x0046507d                      ; 00465021
         ;   XREF to: 0046507d (UNCONDITIONAL_JUMP)  ; default
@@ -424,8 +424,8 @@ section .text
     PUSH EAX                            ; 00465031 | = " - Vertex welder (tol = %4.2f units)"
     LEA EAX,[EBP + -0x58]               ; 00465032
     PUSH EAX                            ; 00465035
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00465036
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00465036
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046503b
     JMP 0x0046507d                      ; 0046503e
         ;   XREF to: 0046507d (UNCONDITIONAL_JUMP)  ; default
@@ -506,8 +506,8 @@ section .text
     PUSH EAX                            ; 0046511d | = "Angle between polygon normals : %8.6lf"
     LEA EAX,[EBP + 0xffffff58]          ; 0046511e
     PUSH EAX                            ; 00465124
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00465125
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00465125
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046512a
     MOV EAX,[0x00679398]                ; 0046512d | g_WindowHeight
     SUB EAX,0x58                        ; 00465132

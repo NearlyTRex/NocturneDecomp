@@ -217,7 +217,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005bbb47
     PUSH EBX                            ; 005bbb4a
     CALL core_stranger.cpp_CStranger_FUN_005bdd20 ; 005bbb4b
-        ;   XREF to: 005bdd20 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bdd20()
+        ;   XREF to: 005bdd20 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bdd20(CStranger * this_ptr)
     MOV EAX,0x1                         ; 005bbb50
     ADD ESP,0x8                         ; 005bbb55
     MOV dword ptr [ESP + 0x2d4],EAX     ; 005bbb58

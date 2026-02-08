@@ -1,34 +1,34 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": [
+    "errors": [
       {
         "category": "format_error",
-        "column": 44,
-        "line": 29,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Wformat]"
+        "column": 45,
+        "line": 27,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 44,
-        "line": 31,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Wformat]"
+        "column": 45,
+        "line": 29,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 187,
+    "complexity_score": 186,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 12,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 61,
     "suspect_count": 12,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 218
+    "total_lines": 217
   },
   "cross_references": [
     {
@@ -88,14 +88,14 @@
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50"
     },
     {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005ff9d0",
       "is_variadic": false,
       "name": "crt_stdio.c_remove_FUN_005ff9d0"
-    },
-    {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
@@ -261,84 +261,84 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CDemonSet *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->camera_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "pCVar4 = in_stack_00000004->cameras;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "pCVar2 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < in_stack_00000004->camera_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->camera_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,iVar3);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "(local_74,\"Computing fog/pvs %d of %d.  Press ESC to cancel.\",iVar3,in_stack_00000004->camera_count)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < in_stack_00000004->camera_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);",
       "type": "stack_param"

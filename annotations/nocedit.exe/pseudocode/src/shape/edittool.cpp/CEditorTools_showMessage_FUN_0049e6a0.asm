@@ -28,7 +28,7 @@
 ;   int g_WindowFontColor
 ;
 ; Called Functions:
-;   crt_stdio.c_vsprintf_FUN_005fdba8
+;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e6ae
     PUSH EDX                            ; 0049e6b2
     PUSH 0x2ceed30                      ; 0049e6b3 | g_MessageFormatBuffer
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e6b8
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e6b8
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e6bd
     MOV EBX,dword ptr [0x02cf2a8c]      ; 0049e6c0 | g_WindowFontColor
     PUSH EBX                            ; 0049e6c6

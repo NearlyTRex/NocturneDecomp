@@ -52,7 +52,7 @@ section .text
     PUSH 0x656d64                       ; 005e7689 | = "Waypoint 0"
     PUSH ESI                            ; 005e768e
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005e768f
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005e7694
     PUSH 0x0                            ; 005e7697
     PUSH 0x656d6f                       ; 005e7699 | = "CWayPoint"
@@ -62,7 +62,7 @@ section .text
     PUSH 0x656d79                       ; 005e76a7 | = "Waypoint 1"
     PUSH ESI                            ; 005e76ac
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005e76ad
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005e76b2
     PUSH 0x0                            ; 005e76b5
     PUSH 0x656d84                       ; 005e76b7 | = "CWayPoint"
@@ -72,7 +72,7 @@ section .text
     PUSH 0x656d8e                       ; 005e76c5 | = "Waypoint 2"
     PUSH ESI                            ; 005e76ca
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005e76cb
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005e76d0
     PUSH 0x0                            ; 005e76d3
     PUSH 0x656d99                       ; 005e76d5 | = "CWayPoint"
@@ -82,7 +82,7 @@ section .text
     PUSH 0x656da3                       ; 005e76e3 | = "Waypoint 3"
     PUSH ESI                            ; 005e76e8
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 005e76e9
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 005e76ee
     POP ESI                             ; 005e76f1
     POP EBX                             ; 005e76f2

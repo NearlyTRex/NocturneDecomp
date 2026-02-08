@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_ImportA3DBroken() */
-
 void __cdecl core_setedit_cpp_ImportA3DBroken_FUN_00578c60(void)
 
 {

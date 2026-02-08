@@ -31,7 +31,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053eb40(CDemonMission *this_ptr
                 (g_CEditorToolsPtr,"Failed to play \"%s\"",param_2);
     }
     else {
-      sprintf(local_144,"Playing %s",param_2);
+      _sprintf(local_144,"Playing %s",param_2);
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,local_144);
       do {

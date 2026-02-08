@@ -99,11 +99,11 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
       }
       shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     }
-    sprintf
+    _sprintf
               (acStack_134,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
                g_CubesWithVoxelsCount,g_CubesVisibleCount);
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,0x16);
-    sprintf
+    _sprintf
               (acStack_134,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*(float *)PTR_DAT_00681ab8,
                (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
@@ -111,7 +111,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10));
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,g_WindowHeight + -0x2c);
-    sprintf
+    _sprintf
               (acStack_134,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
     engine_2d_c_drawText_FUN_00401fd0(acStack_134,0,g_WindowHeight + -0xb);
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);

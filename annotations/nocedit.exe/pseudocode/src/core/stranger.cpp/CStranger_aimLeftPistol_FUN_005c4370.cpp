@@ -35,29 +35,29 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   float fStack_18;
   float fStack_14;
   
-  if (*(int *)(this_ptr->unk1 + 0x54) == 0) {
+  if (*(int *)(this_ptr->unk5 + 8) == 0) {
     g_CurrentFilename = "..\\core\\stranger.cpp";
     g_CurrentLineNumber = 0x10c0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
-  (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x54) + 0x154) + 0xf4))();
+  (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf4))();
   bone_index = INT_03f6bad8;
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (*(CDemonActor **)(this_ptr->unk1 + 0x54),&CStack_a8,&local_9c);
+            (*(CDemonActor **)(this_ptr->unk5 + 8),&CStack_a8,&local_9c);
   CStack_3c.x = 0.0;
   CStack_3c.y = 0.0;
   CStack_3c.z = 1000.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (*(CDemonActor **)(this_ptr->unk1 + 0x54),&CStack_84,&CStack_3c);
+            (*(CDemonActor **)(this_ptr->unk5 + 8),&CStack_84,&CStack_3c);
   CStack_90.x = CStack_a8.x + CStack_84.x;
   CStack_90.y = CStack_a8.y + CStack_84.y;
   CStack_90.z = CStack_a8.z + CStack_84.z;
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
             (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-            (g_CDemonSetPtr,*(CDemonActor **)(this_ptr->unk1 + 0x54));
+            (g_CDemonSetPtr,*(CDemonActor **)(this_ptr->unk5 + 8));
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_a8,&CStack_90)
   ;
@@ -130,13 +130,13 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  this_ptr->unk1[0x44] = '\0';
-  this_ptr->unk1[0x45] = '\0';
-  this_ptr->unk1[0x46] = -0x80;
-  this_ptr->unk1[0x47] = '?';
-  *(float *)(this_ptr->unk1 + 0x3c) = fStack_1c;
-  *(float *)(this_ptr->unk1 + 0x38) = fStack_20;
-  *(float *)(this_ptr->unk1 + 0x34) = fStack_1c;
-  *(float *)(this_ptr->unk1 + 0x30) = fStack_20;
+  this_ptr->unk3[0x18] = '\0';
+  this_ptr->unk3[0x19] = '\0';
+  this_ptr->unk3[0x1a] = -0x80;
+  this_ptr->unk3[0x1b] = '?';
+  *(float *)(this_ptr->unk3 + 0x10) = fStack_1c;
+  *(float *)(this_ptr->unk3 + 0xc) = fStack_20;
+  *(float *)(this_ptr->unk3 + 8) = fStack_1c;
+  *(float *)(this_ptr->unk3 + 4) = fStack_20;
   return;
 }

@@ -55,7 +55,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
           bVar1 = true;
         }
         pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_14,iVar6);
-        sprintf(local_e0,"%s\t%s",pSVar5,pcVar4);
+        _sprintf(local_e0,"%s\t%s",pSVar5,pcVar4);
         iVar3 = iVar3 + 4;
         iVar6 = iVar6 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base,local_e0);

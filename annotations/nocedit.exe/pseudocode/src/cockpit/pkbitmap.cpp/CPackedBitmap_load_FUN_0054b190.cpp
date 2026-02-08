@@ -85,7 +85,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
                                );
             this_ptr->packed_data = pcVar5;
             if (pcVar5 == (char *)0x0) {
-              sprintf
+              _sprintf
                         (local_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,local_24,local_18);
               g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
               g_CurrentLineNumber = 0x3b2;

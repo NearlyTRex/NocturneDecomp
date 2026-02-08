@@ -30,7 +30,7 @@
 ;   undefined4 DAT_030e5224
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0
 ;   engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
 ;   engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620
@@ -163,8 +163,8 @@ section .text
     LEA EAX,[ESP + 0x3b0]               ; 004bcfde
         ;   Label: LAB_004bcfde
     PUSH EAX                            ; 004bcfe5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bcfe6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bcfe6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bcfeb
     LEA EAX,[ESP + 0x3a8]               ; 004bcfee
     PUSH EAX                            ; 004bcff5

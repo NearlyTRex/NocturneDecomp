@@ -30,9 +30,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-;   core_actor.cpp_CActorProperty_FUN_0040ea50
-;   core_actor.cpp_FUN_0040e150
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+;   core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
@@ -49,8 +49,8 @@ section .text
     SUB ESP,0x538                       ; 0053c732
     MOV EBX,dword ptr [ESP + 0x544]     ; 0053c738
     PUSH 0x2f7a024                      ; 0053c73f | DAT_02f7a024
-    CALL core_actor.cpp_FUN_0040e150    ; 0053c744
-        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e150()
+    CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c744
+        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     MOV EDX,dword ptr [EBX + 0x28]      ; 0053c749
     ADD ESP,0x4                         ; 0053c74c
     TEST EDX,EDX                        ; 0053c74f
@@ -65,8 +65,8 @@ section .text
     MOV EBP,0x2f79820                   ; 0053c76c | DAT_02f79820
     PUSH 0x2f7a024                      ; 0053c771 | DAT_02f7a024
         ;   Label: LAB_0053c771
-    CALL core_actor.cpp_FUN_0040e150    ; 0053c776
-        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e150()
+    CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c776
+        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 0053c77b
     MOV EAX,dword ptr [EBX + 0x28]      ; 0053c77e
     PUSH 0x2f7a024                      ; 0053c781 | DAT_02f7a024
@@ -93,15 +93,15 @@ section .text
     IMUL EAX,ESI,0xec                   ; 0053c7bc
     ADD EAX,0x2f7a02c                   ; 0053c7c2 | DAT_02f7a118 | DAT_02f7a02c
     PUSH EAX                            ; 0053c7c7 | DAT_02f7a02c | DAT_02f7a118
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0053c7c8
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
+    CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053c7c8
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053c7cd
     PUSH EBP                            ; 0053c7d0 | DAT_02f79820
     PUSH EDI                            ; 0053c7d1 | DAT_02f7a030
     PUSH 0x63c881                       ; 0053c7d2 | = "%s\t%s"
     PUSH 0x2f79c20                      ; 0053c7d7 | DAT_02f79c20
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053c7dc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c7dc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053c7e1
     PUSH 0x2f79c20                      ; 0053c7e4 | DAT_02f79c20
     LEA EAX,[ESP + 0xc]                 ; 0053c7e9
@@ -121,8 +121,8 @@ section .text
     PUSH 0x63c887                       ; 0053c80b | = "Edit %s properties"
     LEA EAX,[ESP + 0x3b8]               ; 0053c810
     PUSH EAX                            ; 0053c817
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053c818
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c818
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053c81d
     PUSH 0x0                            ; 0053c820
     LEA EAX,[ESP + 0x4e0]               ; 0053c822

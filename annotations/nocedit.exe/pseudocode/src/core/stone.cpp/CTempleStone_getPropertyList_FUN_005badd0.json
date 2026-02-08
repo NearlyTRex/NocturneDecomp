@@ -1,0 +1,119 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 33
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005badd0",
+    "address_range": [
+      [
+        "005badd0",
+        "005bae09"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stone.cpp_CTempleStone_getPropertyList_FUN_005badd0",
+    "signature": "void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0 (CTempleStone *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e350",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350"
+    },
+    {
+      "addr": "004226e0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_getPropertyList_FUN_004226e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065316a",
+      "name": "s_CActorDestination_0065316a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065317c",
+      "name": "s_Our_destination_0065317c",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.95,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 15,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTempleStone *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 212,
+        "vtable_addr": "00663604"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

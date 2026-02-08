@@ -401,7 +401,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      param_estimates=None, vtable_info=None, pcode_data=None,
                                      existing_pcode_overrides=None, resolved_suspects=None,
                                      is_ebp_frame=False, existing_proto_overrides=None,
-                                     existing_decompiler_fixes=None, compilation_status=None):
+                                     existing_decompiler_fixes=None, compilation_status=None,
+                                     mmx_decompiled_code=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -431,10 +432,14 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         existing_proto_overrides: Optional list of proto overrides to preserve in JSON
         existing_decompiler_fixes: Optional list of decompiler fixes to preserve in JSON
         compilation_status: Optional compilation verification status dict
+        mmx_decompiled_code: Optional MMX inline asm version of the decompiled code.
+            When provided, generates an additional .mmx.cpp/.mmx.c file alongside
+            the regular .cpp (which keeps the original pseudocode).
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
-                                            json_path, json_content, pcode_path, pcode_content}
+                                            json_path, json_content, pcode_path, pcode_content,
+                                            mmx_cpp_path, mmx_cpp_content}
     """
     # Determine base path without extension
     if source_filename.endswith('.cpp'):
@@ -449,6 +454,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     asm_path = os.path.join(output_base_path, base_name + '.asm')
     json_path = os.path.join(output_base_path, base_name + '.json')
     pcode_path = os.path.join(output_base_path, base_name + '.pcode')
+    # Determine .mmx path if MMX content is provided
+    mmx_ext = '.mmx.cpp' if source_filename.endswith('.cpp') else '.mmx.c'
+    mmx_cpp_path = os.path.join(output_base_path, base_name + mmx_ext) if mmx_decompiled_code else None
     result = {
         'cpp_path': cpp_path,
         'cpp_content': None,
@@ -457,7 +465,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         'json_path': json_path,
         'json_content': None,
         'pcode_path': pcode_path,
-        'pcode_content': None
+        'pcode_content': None,
+        'mmx_cpp_path': mmx_cpp_path,
+        'mmx_cpp_content': None
     }
 
     # Generate lean .cpp content
@@ -469,6 +479,16 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     except Exception as e:
         log_info("Failed to generate .cpp content for %s: %s" % (source_filename, str(e)))
         return None
+
+    # Generate .mmx.cpp content if MMX inline asm version is provided
+    if mmx_decompiled_code:
+        try:
+            mmx_cpp_content = create_lean_cpp_content(
+                func_name, func_addr, func_addr_range, func_convention,
+                func_signature, mmx_decompiled_code)
+            result['mmx_cpp_content'] = mmx_cpp_content + "\n"
+        except Exception as e:
+            log_info("Failed to generate .mmx.cpp content for %s: %s" % (source_filename, str(e)))
 
     # Generate .asm content
     try:

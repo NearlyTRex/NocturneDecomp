@@ -24,7 +24,7 @@ LAB_0043f37e:
       uVar1 = 0xffffffff;
     }
     else {
-      istream_get((istream *)input_file,(char *)local_14);
+      crt_iostream_cpp_istream_get_FUN_005ff245((istream *)input_file,(char *)local_14);
       if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)
       goto LAB_0043f37e;
       *(int *)byte_count = *(int *)byte_count + -1;

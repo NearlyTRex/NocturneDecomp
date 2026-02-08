@@ -26,7 +26,7 @@ engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
   g_FileTransferErrorMessage[0] = '\0';
   bVar1 = 0xc800 < file_size_bytes;
   if (bVar1) {
-    sprintf
+    _sprintf
               (local_208,"Copying %s -> %s (%d bytes)",source_filename,dest_filename,
                file_size_bytes);
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -41,7 +41,7 @@ engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
       }
       SVar2 = _fread(g_FileTransferBuffer,1,count,source_file);
       if (SVar2 != count) {
-        sprintf
+        _sprintf
                   (g_FileTransferErrorMessage,"Error reading %s",source_filename);
         piVar3 = (int *)_errno();
         iVar5 = *piVar3;
@@ -55,7 +55,7 @@ LAB_004b20b4:
       }
       SVar2 = _fwrite(g_FileTransferBuffer,1,count,dest_file);
       if (SVar2 != count) {
-        sprintf
+        _sprintf
                   (g_FileTransferErrorMessage,"Error writing %s",dest_filename);
         piVar3 = (int *)_errno();
         iVar5 = *piVar3;
@@ -82,7 +82,7 @@ LAB_004b20cd:
   }
   buffer = (char *)0x0;
 LAB_004b20e5:
-  sprintf(buffer,"\n%s",pcVar4);
+  _sprintf(buffer,"\n%s",pcVar4);
 LAB_004b20ee:
   if (bVar1) {
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

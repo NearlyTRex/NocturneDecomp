@@ -50,14 +50,14 @@ section .text
     PUSH 0x649c8a                       ; 00589344 | = "Weight (lbs)"
     PUSH ESI                            ; 00589349
     CALL core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160 ; 0058934a
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList * this_ptr, char * property_name, float * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 0058934f
     PUSH 0x5892d0                       ; 00589352
     PUSH 0x589270                       ; 00589357
     PUSH 0x649c97                       ; 0058935c | = "Type"
     PUSH ESI                            ; 00589361
     CALL core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 ; 00589362
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CDemonActor_CActorPropertyDisplayFunc * display_callback, CDemonActor_CActorPropertyActionFunc * action_callback)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList * this_ptr, char * property_name, CActorPropertyDisplayFunc * display_callback, CActorPropertyActionFunc * action_callback)
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 00589367
     ADD ESP,0x10                        ; 0058936d
     CMP EDX,0x1                         ; 00589370
@@ -80,7 +80,7 @@ section .text
     PUSH 0x649caf                       ; 00589396 | = "Initial velocity"
     PUSH ESI                            ; 0058939b
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 0058939c
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005893a1
     PUSH 0x0                            ; 005893a4
     ADD EBX,0x34c                       ; 005893a6
@@ -88,7 +88,7 @@ section .text
     PUSH 0x649cc0                       ; 005893ad | = "Initial rotation velocity"
     PUSH ESI                            ; 005893b2
     CALL core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 ; 005893b3
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList * this_ptr, char * property_name, CVector3f * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 005893b8
     POP ESI                             ; 005893bb
     POP EBX                             ; 005893bc

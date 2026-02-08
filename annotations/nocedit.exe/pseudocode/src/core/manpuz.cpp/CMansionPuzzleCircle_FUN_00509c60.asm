@@ -23,7 +23,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_02f0cb1c
+;   int g_MansionPuzzleSlewType
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     MOV EBX,0xfb                        ; 00509cda
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00509cdf
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
-    MOV ECX,dword ptr [0x02f0cb1c]      ; 00509ce4 | DAT_02f0cb1c
+    MOV ECX,dword ptr [0x02f0cb1c]      ; 00509ce4 | g_MansionPuzzleSlewType
     ADD ESP,0xc                         ; 00509cea
     CMP ECX,0x1                         ; 00509ced
     JZ 0x00509d3a                       ; 00509cf0

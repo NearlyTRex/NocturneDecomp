@@ -247,7 +247,7 @@ LAB_00458b67:
         local_24 = 1;
       }
       else {
-        sprintf
+        _sprintf
                   (local_11c,"ERROR: Too many polygons! (npoly:%d > MAX_POLYS:%d)",g_PolygonCount,20000);
         engine_2d_c_drawText_FUN_00401fd0(local_11c,0,0x16);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -272,7 +272,7 @@ LAB_00458b67:
       }
     }
     else {
-      sprintf
+      _sprintf
                 (local_cc,"ERROR: Too many vertices! (npoints:%d > MAX_POINTS:%d)",g_VertexCount,20000);
       engine_2d_c_drawText_FUN_00401fd0(local_cc,0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

@@ -332,7 +332,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           local_2ac._0_4_ = SUB84(dVar6,0);
           uVar8 = (uint)local_2ac;
           local_2ac = dVar6;
-          sprintf(&stack0xfffffba8,"FPS: %3.2lf",uVar8,uVar7);
+          _sprintf(&stack0xfffffba8,"FPS: %3.2lf",uVar8,uVar7);
           core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffba8,5.0);
         }
       }
@@ -1404,9 +1404,9 @@ LAB_004df408:
         g_InputHistory[1] = (byte)iStack_178 ^ (byte)iStack_17c;
         pCVar4 = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (pCVar4 != (CWeapon *)0x0) {
-          if (*(int *)(pCVar4->unk3 + 0x25b + 0xc) == 5) {
+          if (*(int *)(pCVar4->unk3 + 600 + 0xc) == 5) {
             fVar23 = 5.0;
-            *(int *)(pCVar4->unk3 + 0x25b + 0xc) = 0;
+            *(int *)(pCVar4->unk3 + 600 + 0xc) = 0;
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Flaming ammo disabled");
           }
@@ -1419,7 +1419,7 @@ LAB_004df408:
             }
             else {
               fVar23 = 5.0;
-              *(int *)(pCVar4->unk3 + 0x25b + 0xc) = 5;
+              *(int *)(pCVar4->unk3 + 600 + 0xc) = 5;
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Flaming ammo enabled.");
             }

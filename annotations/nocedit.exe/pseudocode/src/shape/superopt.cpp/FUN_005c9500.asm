@@ -81,10 +81,10 @@
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_memdbg.cpp_malloc_FUN_006021da
-;   shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
 ;   shape_superopt.cpp_FUN_005c79a0
 ;   shape_superopt.cpp_FUN_005c79f0
 ;   shape_superopt.cpp_FUN_005c9aa0
+;   shape_superopt.cpp_FUN_005ca590
 ;
 ; *****************************************************************************
 
@@ -576,8 +576,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x6e]      ; 005c9a13
     PUSH ESI                            ; 005c9a16
     PUSH EBX                            ; 005c9a17
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c9a18
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+    CALL shape_superopt.cpp_FUN_005ca590 ; 005c9a18
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9a1d
     TEST EAX,EAX                        ; 005c9a20
     JZ 0x005c9a5e                       ; 005c9a22
@@ -588,8 +588,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x76]      ; 005c9a2a
     PUSH EDX                            ; 005c9a2d
     PUSH EBX                            ; 005c9a2e
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c9a2f
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
+    CALL shape_superopt.cpp_FUN_005ca590 ; 005c9a2f
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9a34
     TEST EAX,EAX                        ; 005c9a37
     JNZ 0x005c97ef                      ; 005c9a39

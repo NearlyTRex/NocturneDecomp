@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[72]:
-;   core_barrier.cpp_CBarrier_FUN_00414240 at 00414263
+;   core_barrier.cpp_CBarrier_renderTransparent_FUN_00414240 at 00414263
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 0041746e
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418a76
 ;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 004193c1

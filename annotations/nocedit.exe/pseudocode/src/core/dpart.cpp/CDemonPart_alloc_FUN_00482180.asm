@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_free_FUN_004822b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugCalloc_FUN_0050f350
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     PUSH 0x621668                       ; 004821d5 | = "CDemonPart::alloc - Out of vertex %d ..."
     LEA EAX,[ESP + 0x8]                 ; 004821da
     PUSH EAX                            ; 004821de
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004821df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004821df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x8b                        ; 004821e4
     ADD ESP,0xc                         ; 004821e9
     MOV [0x02f0ca4c],EAX                ; 004821ec | g_CurrentLineNumber

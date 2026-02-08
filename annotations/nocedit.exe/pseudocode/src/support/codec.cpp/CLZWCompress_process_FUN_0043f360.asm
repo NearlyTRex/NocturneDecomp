@@ -16,7 +16,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e108c
 ;
 ; Called Functions:
-;   crt_stdio.c_istream_get_FUN_005ff245
+;   crt_iostream.cpp_istream_get_FUN_005ff245
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90
 ;   support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50
 ;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 0043f3ab
     MOV ECX,dword ptr [ESP + 0x24]      ; 0043f3ac
     PUSH ECX                            ; 0043f3b0
-    CALL crt_stdio.c_istream_get_FUN_005ff245 ; 0043f3b1
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; istream * crt_stdio.c_istream_get_FUN_005ff245(istream * this_ptr, char * c)
+    CALL crt_iostream.cpp_istream_get_FUN_005ff245 ; 0043f3b1
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; istream * crt_iostream.cpp_istream_get_FUN_005ff245(istream * this_ptr, char * c)
     ADD ESP,0x8                         ; 0043f3b6
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043f3b9
     MOV EAX,dword ptr [EAX]             ; 0043f3bd

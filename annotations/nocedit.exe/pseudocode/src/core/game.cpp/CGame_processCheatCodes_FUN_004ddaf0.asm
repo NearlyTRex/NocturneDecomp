@@ -2227,8 +2227,8 @@ section .text
     PUSH 0x62bac4                       ; 004df32b | = "FPS: %3.2lf"
     LEA EAX,[ESP + 0xc]                 ; 004df330
     PUSH EAX                            ; 004df334
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004df335
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004df335
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004df33a
     MOV EAX,ESP                         ; 004df33d
     PUSH 0x40a00000                     ; 004df33f

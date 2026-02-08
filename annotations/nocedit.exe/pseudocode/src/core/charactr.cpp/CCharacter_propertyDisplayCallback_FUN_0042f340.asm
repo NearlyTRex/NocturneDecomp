@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
         ;   XREF to: 0042f3b2 (CONDITIONAL_JUMP)  ; LAB_0042f3b2
     PUSH 0x6176b5                       ; 0042f3a2 | = ", "
     PUSH EBX                            ; 0042f3a7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0042f3a8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0042f3a8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0042f3ad
     ADD EBX,EAX                         ; 0042f3b0
     MOV EDX,dword ptr [ESI + 0x24b4]    ; 0042f3b2
@@ -91,8 +91,8 @@ section .text
     PUSH EDX                            ; 0042f3b8
     PUSH 0x6176b8                       ; 0042f3b9 | = "%s"
     PUSH EBX                            ; 0042f3be
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0042f3bf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0042f3bf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0042f3c4
     ADD EBX,EAX                         ; 0042f3c7
     ADD ESI,0x44                        ; 0042f3c9

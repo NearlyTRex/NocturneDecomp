@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_FUN_005801b0(uint param_1, uint param_2,
-   uint param_3) */
-
 bool __cdecl core_setedit_cpp_FUN_005801b0(void)
 
 {

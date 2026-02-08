@@ -55,7 +55,7 @@ section .text
     PUSH 0x63892d                       ; 00520d57 | = "attackMode"
     PUSH ESI                            ; 00520d5c
     CALL core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0 ; 00520d5d
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CDemonActor_CActorPropertyValidatorFunc * callback)
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList * this_ptr, char * property_name, int * data_ptr, CActorPropertyValidatorFunc * callback)
     ADD ESP,0x10                        ; 00520d62
     PUSH 0x0                            ; 00520d65
     PUSH 0x0                            ; 00520d67
@@ -65,7 +65,7 @@ section .text
     PUSH 0x638938                       ; 00520d72 | = "mirrorPlaneActor"
     PUSH ESI                            ; 00520d77
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00520d78
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00520d7d
     PUSH 0x0                            ; 00520d80
     PUSH 0x28                           ; 00520d82

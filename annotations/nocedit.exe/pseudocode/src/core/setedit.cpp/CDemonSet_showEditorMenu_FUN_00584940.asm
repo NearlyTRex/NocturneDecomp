@@ -50,7 +50,7 @@
 ;   core_setedit.cpp_DementedFogEditor_FUN_00580730
 ;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630
 ;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strupr_FUN_00600770
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   ... and 14 more
@@ -139,8 +139,8 @@ section .text
     PUSH 0x648f00                       ; 00584a2c | = "D.  Default ground type: %s"
     LEA EAX,[ESP + 0x6b4]               ; 00584a31
     PUSH EAX                            ; 00584a38
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00584a39
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00584a39
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00584a3e
     PUSH 0x9a                           ; 00584a41
     PUSH 0x0                            ; 00584a46
@@ -167,8 +167,8 @@ section .text
     PUSH 0x648f62                       ; 00584a8e | = "H.  Weather: %s"
     LEA EAX,[ESP + 0x6b4]               ; 00584a93
     PUSH EAX                            ; 00584a9a
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00584a9b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00584a9b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00584aa0
     PUSH 0xc6                           ; 00584aa3
     PUSH 0x0                            ; 00584aa8

@@ -103,8 +103,8 @@ section .text
     ADD ESP,0x4                         ; 00512db2
     PUSH EAX                            ; 00512db5
     PUSH 0x2f28a50                      ; 00512db6 | g_OptionsMenuTextBuffers
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00512dbb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512dbb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512dc0
     PUSH 0x636d8f                       ; 00512dc3 | = "Sound options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00512dc8
@@ -112,8 +112,8 @@ section .text
     ADD ESP,0x4                         ; 00512dcd
     PUSH EAX                            ; 00512dd0
     PUSH 0x2f28b50                      ; 00512dd1 | DAT_02f28b50
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00512dd6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512dd6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512ddb
     PUSH 0x636d9d                       ; 00512dde | = "Control options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00512de3
@@ -121,8 +121,8 @@ section .text
     ADD ESP,0x4                         ; 00512de8
     PUSH EAX                            ; 00512deb
     PUSH 0x2f28c50                      ; 00512dec | DAT_02f28c50
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00512df1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512df1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512df6
     PUSH 0x636dad                       ; 00512df9 | = "Credits"
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00512dfe
@@ -130,8 +130,8 @@ section .text
     ADD ESP,0x4                         ; 00512e03
     PUSH EAX                            ; 00512e06
     PUSH 0x2f28d50                      ; 00512e07 | DAT_02f28d50
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00512e0c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512e0c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512e11
     MOV EAX,[0x0067b654]                ; 00512e14 | g_CGameInstance | g_CGamePtr
     PUSH 0x636db5                       ; 00512e19 | = "Option Menu"

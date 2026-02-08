@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte core_setedit.cpp_BackdropMaybe(uint param_1) */
-
 void __cdecl core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
 
 {
@@ -26,9 +24,9 @@ void __cdecl core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
     pCVar4 = in_stack_00000004->cameras;
     pCVar2 = in_stack_00000004;
     do {
-      sprintf(local_174,"backdrop\\%s.fog",pCVar4);
+      _sprintf(local_174,"backdrop\\%s.fog",pCVar4);
       remove(local_174);
-      sprintf(local_174,"backdrop\\%s.pvs",pCVar4);
+      _sprintf(local_174,"backdrop\\%s.pvs",pCVar4);
       remove(local_174);
       ptr = pCVar2->cameras[0].pvs_list;
       pCVar2->cameras[0].pvs_count = 0;
@@ -49,7 +47,7 @@ void __cdecl core_setedit_cpp_BackdropMaybe_FUN_005805a0(void)
     do {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,iVar3);
       core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);
-      sprintf
+      _sprintf
                 (local_74,"Computing fog/pvs %d of %d.  Press ESC to cancel.",iVar3,in_stack_00000004->camera_count)
       ;
       engine_2d_c_drawText_FUN_00401fd0(local_74,1,1);

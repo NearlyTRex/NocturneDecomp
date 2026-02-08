@@ -1,0 +1,98 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005df750",
+    "address_range": [
+      [
+        "005df750",
+        "005df77e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trash.cpp_CTrash_processInEditor_FUN_005df750",
+    "signature": "void __cdecl core_trash_cpp_CTrash_processInEditor_FUN_005df750(CTrash *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.526315789473684,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 12,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 67
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrash *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrash",
+        "offset": 208,
+        "vtable_addr": "006648f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

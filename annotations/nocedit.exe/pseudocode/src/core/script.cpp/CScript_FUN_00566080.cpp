@@ -56,7 +56,7 @@ void __cdecl core_script_cpp_CScript_FUN_00566080(CScript *this_ptr)
     return;
   }
   iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&g_ScriptPickList.base);
-  sprintf(&DAT_0310fdc0,"%d sound files missing.",iVar3);
+  _sprintf(&DAT_0310fdc0,"%d sound files missing.",iVar3);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
             (&g_ScriptPickList,"The following sound files are missing.",-1,0);
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);

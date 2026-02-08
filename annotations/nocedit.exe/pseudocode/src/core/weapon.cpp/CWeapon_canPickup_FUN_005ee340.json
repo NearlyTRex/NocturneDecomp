@@ -1,71 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 8,
-        "line": 15,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 16,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 17,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 18,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 24,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 24,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 25,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 25,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 129,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 29,
-    "suspect_count": 9,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 105
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -193,67 +143,11 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._0_1_",
-      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 9,
-      "match": "._1_1_",
-      "text": "iVar2._1_1_ = this_ptr->unk3[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 10,
-      "match": "._2_1_",
-      "text": "iVar2._2_1_ = this_ptr->unk3[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 11,
-      "match": "._3_1_",
-      "text": "iVar2._3_1_ = this_ptr->unk3[2];",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 10,
       "match": "SQRT",
-      "text": "SQRT(*(float *)(this_ptr->unk3 + 0x57) * *(float *)(this_ptr->unk3 + 0x57) +",
+      "text": "SQRT(*(float *)(this_ptr->unk3 + 0x54) * *(float *)(this_ptr->unk3 + 0x54) +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_1_",
-      "text": "(iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->unk3[0],",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._1_1_",
-      "text": "(iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->unk3[0],",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._2_1_",
-      "text": "iVar1._2_1_ = this_ptr->unk3[1], iVar1._3_1_ = this_ptr->unk3[2], iVar1 != 0)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._3_1_",
-      "text": "iVar1._2_1_ = this_ptr->unk3[1], iVar1._3_1_ = this_ptr->unk3[2], iVar1 != 0)) {",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

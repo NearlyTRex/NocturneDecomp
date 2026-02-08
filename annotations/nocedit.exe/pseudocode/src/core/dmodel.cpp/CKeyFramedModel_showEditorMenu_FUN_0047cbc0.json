@@ -8,8 +8,26 @@
         "message": "cannot cast from type 'float' to pointer type 'CKeyFramedModelInstance *'"
       },
       {
+        "category": "other",
+        "column": 45,
+        "line": 205,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 46,
+        "line": 221,
+        "message": "format specifies type 'int' but the argument has type 'CKeyFramedModelInstance *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 221,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+      },
+      {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 17,
         "line": 423,
         "message": "use of undeclared identifier 'DAT_02c14c88'"
       },
@@ -36,47 +54,28 @@
         "column": 73,
         "line": 548,
         "message": "use of undeclared identifier 'stack0xfffff150'"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 44,
-        "line": 205,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 45,
-        "line": 221,
-        "message": "format specifies type 'int' but the argument has type 'CKeyFramedModelInstance *' [-Wformat]"
       },
       {
         "category": "other",
-        "column": 60,
-        "line": 221,
-        "message": "data argument not used by format string [-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 61,
+        "column": 62,
         "line": 726,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 64,
         "line": 858,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 44,
         "line": 868,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
-    ]
+    ],
+    "success": false,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 2429,
@@ -309,7 +308,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -2201,7 +2200,7 @@
       "description": "Undefined global data reference",
       "line": 416,
       "match": "DAT_02c14c88",
-      "text": "sprintf(&DAT_02c14c88,\"noc%d.pcx\");",
+      "text": "_sprintf(&DAT_02c14c88,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {

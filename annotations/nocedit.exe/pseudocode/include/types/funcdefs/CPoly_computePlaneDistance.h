@@ -7,5 +7,5 @@
 struct CPoly;
 
 // Function Definition: CPoly_computePlaneDistance
-typedef double (*CPoly_computePlaneDistance)(struct CPoly* this_ptr);
+typedef double CPoly_computePlaneDistance(struct CPoly* this_ptr);
 

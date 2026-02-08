@@ -20,6 +20,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   CDemonActor *pCVar5;
   int extraout_EAX_00;
   int iVar6;
+  CActorProperty *this_ptr_01;
   int iVar7;
   uint *puVar8;
   CMatrix3x3i *pCVar9;
@@ -112,7 +113,8 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   bVar14 = 0;
   remove("$$UNDO$$.TMP");
   this_ptr->is_in_editor = 1;
-  core_actor_cpp_FUN_0040e150();
+  core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)
+  ;
   this_ptr_00 = g_CGamePtr;
   this_ptr->selected_actor = (CDemonActor *)0x0;
   this_ptr->hovered_actor = (CDemonActor *)0x0;
@@ -198,7 +200,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                     (g_CDemonSetPtr,this_ptr->selected_actor,0);
         }
-        sprintf(local_2b0,"Static cam: %s");
+        _sprintf(local_2b0,"Static cam: %s");
         local_10c = g_CDemonCameraInstance.base.position.x;
         local_108 = (float)*local_54;
         local_104 = (float)*local_58;
@@ -230,7 +232,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         local_158 = g_CDemonCameraInstance.base.projection_scale;
         break;
       case 1:
-        sprintf(local_2b0,"Custom cam (camera fixed, slew the actor)");
+        _sprintf(local_2b0,"Custom cam (camera fixed, slew the actor)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
           g_CDemonCameraInstance.base.position.x = local_170._0_4_;
           g_CDemonCameraInstance.base.position.y = local_170._4_4_;
@@ -242,7 +244,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 2:
-        sprintf(local_2b0,"Slew cam (actor fixed, slew the camera)");
+        _sprintf(local_2b0,"Slew cam (actor fixed, slew the camera)");
         if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {
           g_CDemonCameraInstance.base.position.x = local_170._0_4_;
           g_CDemonCameraInstance.base.position.y = local_170._4_4_;
@@ -254,7 +256,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 3:
-        sprintf(local_2b0,"1st person cam");
+        _sprintf(local_2b0,"1st person cam");
         pCVar5 = this_ptr->selected_actor;
         if (pCVar5 != (CDemonActor *)0x0) {
           pCVar3 = (*((pCVar5->vtable)._ub)->getBoundingBox)(pCVar5,&local_13c);
@@ -292,7 +294,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         g_CDemonCameraInstance.base.projection_scale = local_158;
         break;
       case 4:
-        sprintf(local_2b0,"Chase/spot cam");
+        _sprintf(local_2b0,"Chase/spot cam");
         if (this_ptr->selected_actor != (CDemonActor *)0x0) {
           if ((float *)(local_170 + 0xc) != &local_7c) {
             local_170._12_4_ = local_7c;
@@ -707,7 +709,7 @@ LAB_00539d68:
                   (g_CEditorToolsPtr,"No mission name!");
       }
       else {
-        sprintf(local_3b4,"%s.msn");
+        _sprintf(local_3b4,"%s.msn");
         iVar11 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Save mission to %s.msn");
         if (iVar11 != 0) {
@@ -996,6 +998,7 @@ LAB_0053aea7:
       }
       else {
         iVar6 = DAT_02f7c528 * 0xec;
+        this_ptr_01 = (CActorProperty *)(&DAT_02f7a02c + iVar6);
         in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;
         iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         if (iVar11 == 0) {
@@ -1005,13 +1008,14 @@ LAB_0053aea7:
             if (iVar11 == 0) {
               if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
-                        ((CActorProperty *)(&DAT_02f7a02c + iVar6),this_ptr->selected_actor);
+                        (this_ptr_01,this_ptr->selected_actor);
               engine_2d_c_clearInputAndWait_FUN_00403260();
               local_30 = 0;
               DAT_00680818 = 1e+10;
             }
             else {
-              core_actor_cpp_CActorProperty_FUN_0040ea50();
+              core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
+                        (this_ptr_01,this_ptr->selected_actor,local_4e0);
               shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                         (g_CEditorToolsPtr,local_4e0);
               DAT_00680818 = 1e+10;
@@ -1019,14 +1023,15 @@ LAB_0053aea7:
           }
           else {
             if (DAT_02f7c634 == 0) goto LAB_0053ad72;
-            core_actor_cpp_CActorProperty_FUN_0040ea50();
+            core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
+                      (this_ptr_01,this_ptr->selected_actor,local_60c);
             core_script_cpp_CScript_FUN_00565f70(g_CScriptPtr,local_60c);
             DAT_00680818 = 1e+10;
           }
         }
         else {
           core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50
-                    (this_ptr,(char *)(&DAT_02f7a02c + iVar6));
+                    (this_ptr,(char *)this_ptr_01);
 LAB_0053ad72:
           DAT_00680818 = 1e+10;
         }

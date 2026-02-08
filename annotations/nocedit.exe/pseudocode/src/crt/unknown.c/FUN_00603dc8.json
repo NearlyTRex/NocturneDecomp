@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 1036,
+    "complexity_score": 1227,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 246,
-    "suspect_count": 77,
+    "pseudocode_lines": 242,
+    "suspect_count": 96,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function",
       "stack_param",
+      "stack_ref",
       "unknown_type"
     ],
-    "total_lines": 492
+    "total_lines": 488
   },
   "cross_references": [
     {
@@ -43,10 +44,10 @@
         "0060403e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "crt_unknown.c_FUN_00603dc8",
-    "signature": "void crt_unknown_c_FUN_00603dc8(void)"
+    "signature": "void __cdecl crt_unknown_c_FUN_00603dc8(void)"
   },
   "function_calls": [
     {
@@ -215,532 +216,665 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "uint *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "byte *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 19,
+      "match": "in_stack_ffffff68",
+      "text": "uint in_stack_ffffff68;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff6c",
+      "text": "uint in_stack_ffffff6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffff70",
+      "text": "char *in_stack_ffffff70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffff74",
+      "text": "uint in_stack_ffffff74;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffff78",
+      "text": "char *in_stack_ffffff78;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffff7c",
+      "text": "uint in_stack_ffffff7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_ffffff80",
+      "text": "uint in_stack_ffffff80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffff84",
+      "text": "char *in_stack_ffffff84;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffff68",
+      "text": "uVar11 = (ushort)((uint)in_stack_ffffff68 >> 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[5] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "uVar1 = (ushort)in_stack_00000004[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "uStack_48 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "local_4c = *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 53,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[5] = -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 56,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[7] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 57,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[8] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 58,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[9] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 59,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[10] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 61,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[6] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 66,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[5] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 70,
       "match": "CONCAT11",
-      "text": "iVar10 = (CONCAT11(bStack_43,uStack_44) - 0x3ffe) * 0x7597;",
+      "text": "local_24 = (int)((CONCAT11(bStack_43,uStack_44) - 0x3ffe) * 0x7597) / 100000 - 4;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "CONCAT11",
+      "text": "else if ((CONCAT11(bStack_43,uStack_44) < 0x4019) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11(bStack_43,uStack_44);",
+      "text": "((CONCAT11(bStack_43,uStack_44) == 0x4019 && (uStack_48 < 3200000000)))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
-      "match": "CONCAT22",
-      "text": "iVar4 = CONCAT22(uStack_42,uVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 82,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11(bStack_43,uStack_44);",
+      "text": "if ((0x4033 < CONCAT11(bStack_43,uStack_44)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "CONCAT22",
-      "text": "((uVar6 = CONCAT22(uStack_42,uVar1), uVar1 != 0x4034 ||",
+      "line": 83,
+      "match": "CONCAT11",
+      "text": "((CONCAT11(bStack_43,uStack_44) != 0x4034 ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 88,
       "match": "CONCAT28",
       "text": "_local_40 = (float10)CONCAT28(0x4019,0xbebc200000000000);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 94,
+      "line": 89,
       "match": "unkuint10",
       "text": "_local_40 = (float10)((unkuint10)stack0xffffffc4 << 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 90,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
+      "text": "iVar9 = (int)ROUND((float10)CONCAT19(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "CONCAT19",
+      "text": "iVar9 = (int)ROUND((float10)CONCAT19(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "CONCAT18",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "CONCAT44",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 95,
       "match": "CONCAT19",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
+      "text": "fVar10 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "CONCAT18",
-      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
+      "text": "fVar10 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "CONCAT44",
-      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
+      "text": "fVar10 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "CONCAT19",
-      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "CONCAT18",
-      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "CONCAT44",
-      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 97,
       "match": "SUB104",
-      "text": "local_4c = SUB104(fVar12,0);",
+      "text": "local_4c = SUB104(fVar10,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 103,
+      "line": 98,
       "match": "unkuint10",
-      "text": "uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);",
+      "text": "uStack_48 = (uint)((unkuint10)fVar10 >> 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 104,
+      "line": 99,
       "match": "unkuint10",
-      "text": "uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);",
+      "text": "uStack_44 = (byte)((unkuint10)fVar10 >> 0x40);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 105,
+      "line": 100,
       "match": "unkuint10",
-      "text": "bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);",
+      "text": "bStack_43 = (byte)((unkuint10)fVar10 >> 0x48);",
       "type": "unknown_type"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 106,
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = 0x6e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 107,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[1] = 0x61;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 114,
+      "line": 108,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[2] = 0x6e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 111,
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = 0x69;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 112,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[1] = 0x6e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 113,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[2] = 0x66;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 115,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[3] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 116,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[7] = 3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 119,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 2) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 120,
       "match": "in_stack_00000008",
       "text": "local_1c = (byte *)(*in_stack_00000008 + 7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 123,
       "match": "in_stack_00000008",
       "text": "local_1c = (byte *)(*in_stack_00000008 + local_24 + 10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 124,
       "match": "in_stack_00000008",
       "text": "if (0 < in_stack_00000008[1]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 125,
       "match": "in_stack_00000008",
       "text": "local_1c = local_1c + in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 130,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 0x20) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 133,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 0x40) != 0) {",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 141,
+      "match": "&stack0xffffff69",
+      "text": "local_20 = &stack0xffffff69;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 147,
+      "match": "in_stack_ffffff6c",
+      "text": "((uint)puVar6,puVar5,(char *)CONCAT22(uVar11,0x30),in_stack_ffffff6c,",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 147,
+      "match": "CONCAT22",
+      "text": "((uint)puVar6,puVar5,(char *)CONCAT22(uVar11,0x30),in_stack_ffffff6c,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70,in_stack_ffffff74,in_stack_ffffff78,in_stack_ffffff7c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_ffffff74",
+      "text": "in_stack_ffffff70,in_stack_ffffff74,in_stack_ffffff78,in_stack_ffffff7c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_ffffff78",
+      "text": "in_stack_ffffff70,in_stack_ffffff74,in_stack_ffffff78,in_stack_ffffff7c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_ffffff7c",
+      "text": "in_stack_ffffff70,in_stack_ffffff74,in_stack_ffffff78,in_stack_ffffff7c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 149,
+      "match": "in_stack_ffffff80",
+      "text": "in_stack_ffffff80,in_stack_ffffff84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 149,
+      "match": "in_stack_ffffff84",
+      "text": "in_stack_ffffff80,in_stack_ffffff84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 153,
       "match": "CONCAT11",
       "text": "if ((CONCAT11(bStack_43,uStack_44) & 0x7fff) != 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
-      "match": "ROUND",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
-      "match": "CONCAT19",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
-      "match": "CONCAT18",
-      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
-      "match": "CONCAT44",
-      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 163,
+      "line": 157,
       "match": "CONCAT28",
       "text": "_auStack_58 = (float10)CONCAT28(0x4019,0xbebc200000000000);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 165,
+      "line": 159,
       "match": "unkuint10",
       "text": "_auStack_58 = (float10)((unkuint10)stack0xffffffac << 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
+      "line": 161,
       "match": "CONCAT19",
       "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
+      "line": 161,
       "match": "CONCAT18",
       "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
+      "line": 161,
       "match": "CONCAT44",
       "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 162,
+      "match": "ROUND",
+      "text": "(float10)(int)ROUND((float10)CONCAT19(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 162,
+      "match": "CONCAT19",
+      "text": "(float10)(int)ROUND((float10)CONCAT19(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 163,
+      "match": "CONCAT18",
+      "text": "CONCAT18(uStack_44,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 164,
+      "match": "CONCAT44",
+      "text": "CONCAT44(uStack_48,local_4c)))));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 165,
       "match": "SUB104",
-      "text": "local_4c = SUB104(fVar12,0);",
+      "text": "local_4c = SUB104(fVar10,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 170,
+      "line": 166,
       "match": "unkuint10",
-      "text": "uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);",
+      "text": "uStack_48 = (uint)((unkuint10)fVar10 >> 0x20);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 171,
+      "line": 167,
       "match": "unkuint10",
-      "text": "uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);",
+      "text": "uStack_44 = (byte)((unkuint10)fVar10 >> 0x40);",
       "type": "unknown_type"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 172,
+      "line": 168,
       "match": "unkuint10",
-      "text": "bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);",
+      "text": "bStack_43 = (byte)((unkuint10)fVar10 >> 0x48);",
       "type": "unknown_type"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 175,
+      "match": "&stack0xffffff69",
+      "text": "for (pcVar4 = &stack0xffffff69; local_24 = uVar7, *pcVar4 == '0'; pcVar4 = pcVar4 + 1) {",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 183,
+      "line": 179,
       "match": "in_stack_00000008",
-      "text": "iVar4 = *in_stack_00000008;",
+      "text": "iVar3 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 180,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 2) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
+      "line": 181,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 1) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 186,
+      "line": 182,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008[1] < 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 183,
       "match": "in_stack_00000008",
-      "text": "iVar4 = iVar4 + in_stack_00000008[1];",
+      "text": "iVar3 = iVar3 + in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 188,
+      "match": "in_stack_00000008",
+      "text": "local_24 = (uVar7 + 1) - in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 192,
       "match": "in_stack_00000008",
-      "text": "local_24 = (uVar9 + 1) - in_stack_00000008[1];",
+      "text": "local_24 = uVar7 + in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 193,
       "match": "in_stack_00000008",
-      "text": "local_24 = uVar9 + in_stack_00000008[1];",
+      "text": "iVar3 = iVar3 + uVar7 + in_stack_00000008[1] + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 197,
-      "match": "in_stack_00000008",
-      "text": "iVar4 = iVar4 + uVar9 + in_stack_00000008[1] + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 204,
+      "line": 200,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 0x20) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 203,
       "match": "in_stack_00000008",
       "text": "if ((*(byte *)(in_stack_00000008 + 2) & 0x40) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 235,
+      "line": 231,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[5] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 237,
+      "line": 233,
       "match": "in_stack_00000008",
       "text": "if (((*(byte *)(in_stack_00000008 + 2) & 2) == 0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 238,
+      "line": 234,
       "match": "in_stack_00000008",
       "text": "(((*(byte *)(in_stack_00000008 + 2) & 4) == 0 ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 235,
       "match": "in_stack_00000008",
       "text": "((((int)local_24 < -4 || (*in_stack_00000008 <= (int)local_24)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 240,
+      "line": 236,
       "match": "in_stack_00000008",
       "text": "((*(byte *)(in_stack_00000008 + 2) & 8) == 0)))))) {",
       "type": "stack_param"

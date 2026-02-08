@@ -24,7 +24,7 @@
 ;   core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;
 ; *****************************************************************************
@@ -102,8 +102,8 @@ section .text
     PUSH EAX                            ; 005597d0
     PUSH 0x6416a4                       ; 005597d1 | = "Character %s model %s does not have a..."
     PUSH 0x310eca0                      ; 005597d6 | g_ScriptErrorBuffer
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005597db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005597db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005597e0
     XOR EAX,EAX                         ; 005597e3
     ADD ESP,0x68                        ; 005597e5

@@ -37,7 +37,7 @@ int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
   }
   pcVar2 = getenv("USERNAME");
   if (pcVar2 != (char *)0x0) {
-    strncpy(g_VersionControlSession.primary_username,pcVar2,0x1f);
+    _strncpy(g_VersionControlSession.primary_username,pcVar2,0x1f);
     return 1;
   }
   do {

@@ -38,7 +38,7 @@
 ;   undefined4 s__00681b64
 ;
 ; Called Functions:
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
@@ -254,8 +254,8 @@ section .text
     PUSH 0x650f89                       ; 005ac147 | = "SfxChannel%dEnabled"
     LEA EAX,[ESP + 0x328]               ; 005ac14c
     PUSH EAX                            ; 005ac153
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ac154
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ac154
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005ac159
     PUSH EBX                            ; 005ac15c
     CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0 ; 005ac15d
@@ -280,8 +280,8 @@ section .text
     PUSH 0x650f9d                       ; 005ac197 | = "SfxChannel%dVol"
     LEA EAX,[ESP + 0x328]               ; 005ac19c
     PUSH EAX                            ; 005ac1a3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ac1a4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ac1a4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005ac1a9
     PUSH EBX                            ; 005ac1ac
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90 ; 005ac1ad

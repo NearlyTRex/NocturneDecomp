@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990 at 0041d9c3
 ;   core_cow.cpp_CZombieCow_getPropertyList_FUN_00444c50 at 00444c82
 ;   core_dog.cpp_CZombieDog_getPropertyList_FUN_0047f920 at 0047f952
-;   core_dracbrid.cpp_FUN_00486c90 at 00486cd8
+;   core_dracbrid.cpp_CDraculaBride_getPropertyList_FUN_00486c90 at 00486cd8
 ;   core_drone.cpp_CDrone_getPropertyList_FUN_0048f520 at 0048f552
 ;   ... and 15 more
 ;

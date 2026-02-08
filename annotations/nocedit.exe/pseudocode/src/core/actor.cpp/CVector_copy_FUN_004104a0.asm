@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CVector_copy_FUN_004104a0(CVector3f *this_ptr,CVector3f *other)
+; __cdecl CVector3f * __cdecl core_actor_cpp_CVector_copy_FUN_004104a0(CVector3f *this_ptr,CVector3f *other)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   this_ptr

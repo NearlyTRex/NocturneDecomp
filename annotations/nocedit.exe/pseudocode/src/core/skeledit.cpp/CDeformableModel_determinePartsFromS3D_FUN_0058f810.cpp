@@ -286,7 +286,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
     } while ((iVar6 != 10) || (iVar16 = iVar16 + -1, 0 < iVar16));
     _fscanf(local_ec,"%d\n");
     if ((local_e8 < 0x65) || (0x67 < local_e8)) {
-      sprintf
+      _sprintf
                 (&DAT_03670650,"%s has incorrect S3D version %d",
                  this_ptr->texture_sets[0].textures[4].texture_variants[1].texture_name);
       goto LAB_0058f8e7;
@@ -384,10 +384,10 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           }
           if (in_stack_00000004[0x2f] <= iVar16) {
             if (0x4f < in_stack_00000004[0x2f]) {
-              sprintf(&DAT_03670650,"Texture list full determining parts");
+              _sprintf(&DAT_03670650,"Texture list full determining parts");
               goto LAB_0058f8e7;
             }
-            sprintf
+            _sprintf
                       ((char *)(in_stack_00000004 + in_stack_00000004[0x2f] * 0x12 + 0x32),
                        "%s.raw");
             in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
@@ -971,7 +971,7 @@ LAB_005902c8:
           if (local_154 != in_stack_00000004[0x15]) {
             local_d8 = in_stack_00000004 + 0x1c51;
             do {
-              sprintf(local_540,"There are %d triangles I couldn't match.");
+              _sprintf(local_540,"There are %d triangles I couldn't match.");
               if (*(int *)this_ptr->texture_sets[0].textures[8].texture_variants[0].texture_name ==
                   0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bec);
@@ -1253,7 +1253,7 @@ LAB_00591f48:
                           core_main_c_displayErrorAndQuit_FUN_00506f10
                                     ("Too many model textures!");
                         }
-                        sprintf
+                        _sprintf
                                   ((char *)(local_a4 + in_stack_00000004[0x2f] * 0x12 + 2),
                                    "%s.raw");
                         in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
@@ -1293,7 +1293,7 @@ LAB_00591f48:
                         } while (iVar16 < in_stack_00000004[0xb]);
                       }
                       if ((float)0.20000000000000001 < local_a1f0) {
-                        sprintf
+                        _sprintf
                                   (&DAT_03670650,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
                       }
@@ -1362,7 +1362,7 @@ LAB_00591f48:
                       } while (local_24 < (int)local_16c);
                     }
                     if (local_ac < 0) {
-                      sprintf
+                      _sprintf
                                 (&DAT_03670650,"Can't find opposing part for capped face!");
                       goto LAB_0058f8e7;
                     }
@@ -1411,7 +1411,7 @@ LAB_00591835:
                     (g_CEditorToolsPtr,"Determined parts using %s OK!");
           return 1;
         }
-        sprintf(&DAT_03670650,"Deformable model has more faces than segmented model!");
+        _sprintf(&DAT_03670650,"Deformable model has more faces than segmented model!");
         goto LAB_0058f8e7;
       }
       pcVar17 = "Too many parts in %s";
@@ -1422,7 +1422,7 @@ LAB_00590a70:
     }
   }
 LAB_0058f8da:
-  sprintf(&DAT_03670650,pcVar17);
+  _sprintf(&DAT_03670650,pcVar17);
 LAB_0058f8e7:
   if (local_ec != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xbe2);

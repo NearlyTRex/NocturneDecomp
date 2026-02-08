@@ -63,7 +63,7 @@ section .text
     PUSH 0x639a30                       ; 00527bbb | = "Our post"
     PUSH EBX                            ; 00527bc0
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00527bc1
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00527bc6
     PUSH 0x0                            ; 00527bc9
     PUSH 0x639a39                       ; 00527bcb | = "CVehicle"
@@ -73,7 +73,7 @@ section .text
     PUSH 0x639a42                       ; 00527bd9 | = "Our car"
     PUSH EBX                            ; 00527bde
     CALL core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 ; 00527bdf
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, void * data_ptr, int default_index, ...)
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList * this_ptr, char * property_name, CDemonActor * * data_ptr, int default_index, ...)
     ADD ESP,0x18                        ; 00527be4
     LEA EDI,[ESI + 0xbee4]              ; 00527be7
     PUSH EDI                            ; 00527bed

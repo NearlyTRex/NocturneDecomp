@@ -8,5 +8,5 @@ struct CObj;
 struct CPoly;
 
 // Function Definition: CObj_containsPolygon
-typedef int (*CObj_containsPolygon)(struct CObj* this_ptr, struct CPoly* poly_ptr);
+typedef int CObj_containsPolygon(struct CObj* this_ptr, struct CPoly* poly_ptr);
 

@@ -1,0 +1,16 @@
+// Name: core_vehicle.cpp_freeTires_FUN_005e8dd0
+// Address: 005e8dd0
+// Address Range: [[005e8dd0, 005e8de4]]
+// Convention: __cdecl
+// Signature: CTire * __cdecl core_vehicle_cpp_freeTires_FUN_005e8dd0(CTire *objs)
+
+#include "nocturne.h"
+
+CTire * __cdecl core_vehicle_cpp_freeTires_FUN_005e8dd0(CTire *objs)
+
+{
+  CTire *pCVar1;
+  
+  pCVar1 = __arrfini(objs,4,&g_CTireTypeInfo);
+  return pCVar1;
+}

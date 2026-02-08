@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CRuleList.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CDoor
@@ -16,9 +17,14 @@ typedef struct CDoor {
     int door_side; // 0x2dc
     int door_state; // 0x2e0
     int door_swing; // 0x2e4
-    char unk1[400]; // 0x2e8
-    int open_rules; // 0x478
-    char unk2[1300]; // 0x47c
+    char open_condition[100]; // 0x2e8
+    char close_condition[100]; // 0x34c
+    char on_open_trigger_event[100]; // 0x3b0
+    char on_close_trigger_event[100]; // 0x414
+    CRuleList open_rule; // 0x478
+    char open_sound[100]; // 0x864
+    char close_sound[100]; // 0x8c8
+    char locked_sound[100]; // 0x92c
     int key_mask; // 0x990
     CVector3f orig_pos; // 0x994
     CVector3f orig_orient; // 0x9a0

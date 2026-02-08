@@ -22,7 +22,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   (pCVar2->base).unk1[9] = '\0';
   (pCVar2->base).unk1[10] = '\0';
   (pCVar2->base).unk1[0xb] = '\0';
-  pCVar2->ammo_type = -1;
+  pCVar2->damage_type = -1;
   (pCVar2->base).ammo_count = 0;
   (pCVar2->base).unk1[0] = '\0';
   (pCVar2->base).unk1[1] = '\0';
@@ -54,7 +54,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   pCVar2->unk1[10] = '\0';
   pCVar2->unk1[0xb] = '\0';
   ppcVar4 = &pCVar2->thrust_hit_character_sound;
-  pCVar2->ammo_type = 0;
+  pCVar2->damage_type = 0;
   do {
     cVar1 = *pcVar3;
     *(char *)ppcVar4 = cVar1;

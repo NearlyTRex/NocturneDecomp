@@ -10,7 +10,7 @@
 ;   CEdCheck g_CEdCheckInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040e130
+;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;   shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00
 ;
@@ -20,8 +20,8 @@ section .text
 
     PUSH 0x2f7a024                      ; 00535c30 | DAT_02f7a024
         ;   Label: core_msnedit.cpp_staticInit_FUN_00535c30
-    CALL core_actor.cpp_FUN_0040e130    ; 00535c35
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 00535c35
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 00535c3a
     PUSH 0x2f7c544                      ; 00535c3d | g_CEdCheckInstance
     CALL shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00 ; 00535c42

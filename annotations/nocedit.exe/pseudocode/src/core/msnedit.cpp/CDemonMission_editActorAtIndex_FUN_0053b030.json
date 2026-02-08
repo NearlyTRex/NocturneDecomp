@@ -2,6 +2,18 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "format_error",
+        "column": 58,
+        "line": 79,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 80,
+        "line": 94,
+        "message": "use of undeclared identifier 'stack0xffffd450'"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 82,
         "line": 95,
@@ -9,9 +21,27 @@
       },
       {
         "category": "other",
+        "column": 34,
+        "line": 102,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 38,
         "line": 143,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "format_error",
+        "column": 74,
+        "line": 150,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 150,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
@@ -21,47 +51,16 @@
       }
     ],
     "success": false,
-    "warnings": [
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 79,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 102,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 74,
-        "line": 150,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 150,
-        "message": "more '%' conversions than data arguments [-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 79,
-        "message": "'sprintf' will always overflow; destination buffer has size 8, but format string expands to at least 22 [-Wformat-overflow]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 300,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
     "pseudocode_lines": 160,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_ref",
       "unaffected_reg",
@@ -94,7 +93,7 @@
     {
       "addr": "0040e130",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040e130"
+      "name": "core_actor.cpp_CActorPropertyList_init_FUN_0040e130"
     },
     {
       "addr": "00523cc0",
@@ -114,7 +113,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
@@ -369,8 +368,15 @@
       "description": "Unnamed function parameter",
       "line": 72,
       "match": "param_2",
-      "text": "sprintf(acStack_304,\"Actors relevent to \\\"%s\\\"\",param_2 + 4);",
+      "text": "_sprintf(acStack_304,\"Actors relevent to \\\"%s\\\"\",param_2 + 4);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 87,
+      "match": "&stack0xffffd450",
+      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd450);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",

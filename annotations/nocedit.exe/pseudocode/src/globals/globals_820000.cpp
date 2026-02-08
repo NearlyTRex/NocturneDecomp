@@ -165,7 +165,6 @@ undefined1 DAT_00823a82 = {};
 undefined1 DAT_00823a83 = {};
 
 // undefined4
-undefined4 DAT_00821ff4 = {};
 undefined4 DAT_00822754 = {};
 undefined4 DAT_00822944 = {};
 undefined4 DAT_00822948 = {};

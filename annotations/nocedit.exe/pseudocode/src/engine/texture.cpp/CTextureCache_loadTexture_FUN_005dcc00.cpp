@@ -62,7 +62,7 @@ engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,c
       }
     }
   }
-  sprintf
+  _sprintf
             (local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,local_14);
   g_CurrentLineNumber = 0x101;
   g_CurrentFilename = "..\\engine\\texture.cpp";
@@ -106,7 +106,7 @@ LAB_005dcd2c:
     g_CurrentLineNumber = 0x111;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Can't find extension");
   }
-  sprintf(pcVar6,".act");
+  _sprintf(pcVar6,".act");
   p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     pbVar2 = (byte *)g_SourcePaletteData;
@@ -183,7 +183,7 @@ LAB_005dcd2c:
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_005dceea:
-  sprintf(pcVar6,".raw");
+  _sprintf(pcVar6,".raw");
   p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     memset
@@ -215,7 +215,7 @@ LAB_005dceea:
   } while (*pcVar8 != '\0');
   pcVar8 = (char *)0x0;
 LAB_005dcf75:
-  sprintf(pcVar8,".opa");
+  _sprintf(pcVar8,".opa");
   p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {

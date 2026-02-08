@@ -1,0 +1,101 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005babf0",
+    "address_range": [
+      [
+        "005babf0",
+        "005bac02"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stairs.cpp_CStairs_onActorDeleted_FUN_005babf0",
+    "signature": "void __cdecl core_stairs_cpp_CStairs_onActorDeleted_FUN_005babf0(CStairs *this_ptr,CDemonActor *deleted_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d000",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStairs *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStairs",
+        "offset": 204,
+        "vtable_addr": "006634d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

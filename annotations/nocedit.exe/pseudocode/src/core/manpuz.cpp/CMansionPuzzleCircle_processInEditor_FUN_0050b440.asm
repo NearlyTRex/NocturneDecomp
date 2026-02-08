@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02f0cb1c
+;   int g_MansionPuzzleSlewType
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
@@ -28,7 +28,7 @@ section .text
     PUSH EBP                            ; 0050b441
     SUB ESP,0x70                        ; 0050b442
     MOV EBX,dword ptr [ESP + 0x7c]      ; 0050b445
-    MOV EDX,dword ptr [0x02f0cb1c]      ; 0050b449 | DAT_02f0cb1c
+    MOV EDX,dword ptr [0x02f0cb1c]      ; 0050b449 | g_MansionPuzzleSlewType
     CMP EDX,0x1                         ; 0050b44f
     JZ 0x0050b5c9                       ; 0050b452
         ;   XREF to: 0050b5c9 (CONDITIONAL_JUMP)  ; LAB_0050b5c9
@@ -314,7 +314,7 @@ section .text
     XOR EBP,EBP                         ; 0050b7ac
         ;   Label: LAB_0050b7ac
     PUSH EBX                            ; 0050b7ae
-    MOV dword ptr [0x02f0cb1c],EBP      ; 0050b7af | DAT_02f0cb1c
+    MOV dword ptr [0x02f0cb1c],EBP      ; 0050b7af | g_MansionPuzzleSlewType
     CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 0050b7b5
         ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0050b7ba

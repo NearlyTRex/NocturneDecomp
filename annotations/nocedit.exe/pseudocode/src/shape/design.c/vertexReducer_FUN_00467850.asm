@@ -50,7 +50,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c_sprintf_FUN_005fdbd0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_qsort_FUN_005fdf38
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -638,8 +638,8 @@ section .text
     PUSH EAX                            ; 00467df2 | = "Original vertices: %d    New total: %..."
     LEA EAX,[EBP + 0xfffffedc]          ; 00467df3
     PUSH EAX                            ; 00467df9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00467dfa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00467dfa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 00467dff
     CMP dword ptr [EBP + 0x1c],0x0      ; 00467e02
     JLE 0x00467e35                      ; 00467e06

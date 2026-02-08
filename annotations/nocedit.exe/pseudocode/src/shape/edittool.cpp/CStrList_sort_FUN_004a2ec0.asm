@@ -7,7 +7,7 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[15]:
-;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f749
+;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f2ee
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c210 at 0053c28f
 ;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053d951
 ;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053dda4

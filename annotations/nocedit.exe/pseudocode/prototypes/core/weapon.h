@@ -23,9 +23,9 @@ void __cdecl CWeapon::setup(CWeapon *this_ptr);
 // Address: 005ee030
 int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee0c0
+// Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_005ee0c0
 // Address: 005ee0c0
-int * __cdecl CWeapon(CWeapon *this_ptr);
+CBoundingBox3D * __cdecl CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_005ee110
 // Address: 005ee110
@@ -35,45 +35,45 @@ void __cdecl CWeapon::process(CWeapon *this_ptr,float delta_time);
 // Address: 005ee250
 void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee330
+// Original: core_weapon.cpp_CWeapon_hasCollision_FUN_005ee330
 // Address: 005ee330
-int __cdecl CWeapon(CWeapon *this_ptr);
+int __cdecl CWeapon::hasCollision(CWeapon *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_weapon.cpp_CWeapon_canPickup_FUN_005ee340
 // Address: 005ee340
 int __cdecl CWeapon::canPickup(CWeapon *this_ptr,CDemonActor *picker);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee3e0
+// Original: core_weapon.cpp_CWeapon_pickup_FUN_005ee3e0
 // Address: 005ee3e0
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::pickup(CWeapon *this_ptr,CDemonActor *carrier);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee3f0
+// Original: core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0
 // Address: 005ee3f0
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::onDropped(CWeapon *this_ptr,CVector3f *drop_position);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee490
+// Original: core_weapon.cpp_CWeapon_getCarrier_FUN_005ee490
 // Address: 005ee490
-int __cdecl CWeapon(CWeapon *this_ptr);
+CDemonActor * __cdecl CWeapon::getCarrier(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee4a0
 // Address: 005ee4a0
 void __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee640
+// Original: core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640
 // Address: 005ee640
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee650
+// Original: core_weapon.cpp_CWeapon_onPickup_FUN_005ee650
 // Address: 005ee650
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::onPickup(CWeapon *this_ptr,CDemonActor *owner);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee670
 // Address: 005ee670
 int * __cdecl CWeapon(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee6e0
+// Original: core_weapon.cpp_CWeapon_fire_FUN_005ee6e0
 // Address: 005ee6e0
-int __cdecl CWeapon(CWeapon *this_ptr);
+int __cdecl CWeapon::fire(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_FUN_005ee710
 // Address: 005ee710
@@ -99,9 +99,9 @@ void __cdecl CWeapon(CWeapon *this_ptr);
 // Address: 005ee9f0
 void __cdecl CWeapon::getPropertyList(CWeapon *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005eea60
+// Original: core_weapon.cpp_CWeapon_addFilesToExtract_FUN_005eea60
 // Address: 005eea60
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::addFilesToExtract(CWeapon *this_ptr,_FILE *file_handle);
 
 // Original: core_weapon.cpp_CDemonGlobe_ctor_FUN_005eea80
 // Address: 005eea80

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 270,
+    "complexity_score": 385,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 25,
-    "suspect_count": 22,
+    "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
       "nonstandard_int",
+      "register_param",
       "special_crt_function",
       "unaffected_reg",
       "unnamed_param"
@@ -32,9 +33,9 @@
         "006040ec"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_unknown.c_FUN_006040d7",
-    "signature": "void crt_unknown_c_FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX)"
+    "signature": "void __cdecl crt_unknown_c_FUN_006040d7 (uint param_1,undefined4 param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6, char *param_7,uint param_8,undefined4 param_9,char *param_10)"
   },
   "function_calls": [
     {
@@ -71,160 +72,308 @@
     "pcode_op_count": 46
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 44,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 40,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "unaff_EBX",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_6",
+        "offset": 24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_7",
+        "offset": 28,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "param_8",
+        "offset": 32,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "param_9",
+        "offset": 36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_10",
+        "offset": 40,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unaffected register variable",
       "line": 4,
       "match": "unaff_EBX",
-      "text": "void FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_1",
-      "text": "void FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_2",
-      "text": "void FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "text": "if (9999 < param_1) {",
+      "line": 4,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "text": "uVar2 = param_1 / 10000;",
+      "line": 4,
+      "match": "param_5",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_7",
+      "text": "char *param_7,uint param_8,uint param_9,char *param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_8",
+      "text": "char *param_7,uint param_8,uint param_9,char *param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_9",
+      "text": "char *param_7,uint param_8,uint param_9,char *param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_10",
+      "text": "char *param_7,uint param_8,uint param_9,char *param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 13,
+      "match": "in_EAX",
+      "text": "if (9999 < in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "text": "in_EAX = in_EAX % 10000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "text": "in_EAX = in_EAX % 10000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "text": "FUN_006040ed(in_EAX,unaff_retaddr,(char *)param_1,param_2,unaff_EBX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "FUN_006040ed(in_EAX,unaff_retaddr,(char *)param_1,param_2,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
       "match": "param_1",
-      "text": "param_1 = param_1 % 10000;",
+      "text": "FUN_006040ed(in_EAX,unaff_retaddr,(char *)param_1,param_2,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "text": "param_1 = param_1 % 10000;",
+      "line": 16,
+      "match": "param_2",
+      "text": "FUN_006040ed(in_EAX,unaff_retaddr,(char *)param_1,param_2,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
-      "match": "param_1",
-      "text": "if (99 < param_1) {",
+      "match": "param_4",
+      "text": "if (99 < param_4) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
-      "match": "param_1",
-      "text": "uVar2 = (param_1 & 0xffff) / 100;",
+      "match": "param_4",
+      "text": "param_4 = (param_4 & 0xffff) % 100;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "text": "param_1 = (param_1 & 0xffff) % 100;",
+      "line": 18,
+      "match": "param_4",
+      "text": "param_4 = (param_4 & 0xffff) % 100;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "text": "param_1 = (param_1 & 0xffff) % 100;",
+      "line": 20,
+      "match": "param_4",
+      "text": "FUN_00604104((ushort)param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
+      "line": 20,
+      "match": "param_5",
+      "text": "FUN_00604104((ushort)param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
+      "line": 20,
+      "match": "param_6",
+      "text": "FUN_00604104((ushort)param_4,param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_4,(char)(param_4 >> 8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_4,(char)(param_4 >> 8));",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "CONCAT31",
-      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_4,(char)(param_4 >> 8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 22,
+      "line": 21,
       "match": "int3",
-      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_4,(char)(param_4 >> 8));",
       "type": "nonstandard_int"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_4",
+      "text": "if (9 < (byte)param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 23,
-      "match": "param_1",
-      "text": "if (9 < (byte)param_1) {",
+      "match": "param_4",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_4 % 10),(char)((ushort)param_4 / 10));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
+      "line": 23,
+      "match": "param_4",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_4 % 10),(char)((ushort)param_4 / 10));",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_4 % 10),(char)((ushort)param_4 / 10));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBX",
-      "text": "*unaff_EBX = (char)uVar1 + '0';",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';",
-      "type": "unaffected_reg"
     },
     {
       "address": "006040d7",

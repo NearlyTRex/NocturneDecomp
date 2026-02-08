@@ -49,7 +49,7 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
     local_f8 = (float)(this_ptr->motion_controller).current_frame_number;
     pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
                        (&this_ptr->motion_controller);
-    sprintf(local_f4,"%s (%s)",motion_name,pcVar2);
+    _sprintf(local_f4,"%s (%s)",motion_name,pcVar2);
     iVar1 = core_msnedit_cpp_FUN_00536cd0(local_f4,local_24,local_20,1,0);
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -60,7 +60,7 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
     if (iVar1 != 0) {
       INT_02f7c52c = -1;
     }
-    sprintf
+    _sprintf
               (local_f4,"%6.2f",SUB84((double)local_f8,0),
                (int)((ulonglong)(double)local_f8 >> 0x20));
     iVar1 = core_msnedit_cpp_FUN_00536cd0(local_f4,local_24,local_20 + 0x10,1,0);

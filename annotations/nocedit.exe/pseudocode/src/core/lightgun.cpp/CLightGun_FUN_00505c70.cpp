@@ -16,6 +16,7 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505c70(CLightGun *this_ptr)
   CVector3f *input_local_point;
   CBoundingBox3D *pCVar2;
   CDemonActor *actor;
+  CTrigger *this_ptr_02;
   int iVar3;
   CVector3f *unaff_ESI;
   int iVar4;
@@ -38,7 +39,7 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505c70(CLightGun *this_ptr)
   byte auStack_3c [8];
   float fStack_34;
   float fStack_30;
-  CDemonActor *pCStack_2c;
+  CTrigger *pCStack_2c;
   int iStack_24;
   int iStack_20;
   CCharacter *pCStack_1c;
@@ -76,13 +77,9 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505c70(CLightGun *this_ptr)
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_FUN_00574170(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-  iVar4._0_1_ = (this_ptr->base).carried_by_actor;
-  iVar4._1_1_ = (this_ptr->base).unk3[0];
-  iVar4._2_1_ = (this_ptr->base).unk3[1];
-  iVar4._3_1_ = (this_ptr->base).unk3[2];
-  if (iVar4 != 0) {
+  if ((this_ptr->base).carried_by_actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-              (g_CDemonSetPtr,*(CDemonActor **)&(this_ptr->base).carried_by_actor);
+              (g_CDemonSetPtr,(this_ptr->base).carried_by_actor);
   }
   iVar4 = 0;
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
@@ -100,8 +97,10 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505c70(CLightGun *this_ptr)
     }
     actor = core_actor_cpp_castToClassHash_FUN_0040c790
                       (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
-    pCStack_2c = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+    this_ptr_02 = (CTrigger *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
+    pCStack_2c = this_ptr_02;
     if (pCStack_1c != (CCharacter *)0x0) {
       iVar3 = (*(((pCStack_1c->base).vtable._uc)->_uc).cfunc3)();
       this_ptr_01 = g_CDemonSetPtr;
@@ -114,14 +113,14 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505c70(CLightGun *this_ptr)
       break;
     }
     if (actor == (CDemonActor *)0x0) {
-      if (pCStack_2c != (CDemonActor *)0x0) {
-        core_trigger_cpp_FUN_005e0aa0();
-        iVar4 = core_trigger_cpp_FUN_005e0ac0();
+      if (this_ptr_02 != (CTrigger *)0x0) {
+        core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_02);
+        iVar4 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_02);
         if (iVar4 != 0) {
           fStack_14 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc6)();
-          core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
+          core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_02);
         }
-        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCStack_2c);
+        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCStack_2c->base);
         break;
       }
     }

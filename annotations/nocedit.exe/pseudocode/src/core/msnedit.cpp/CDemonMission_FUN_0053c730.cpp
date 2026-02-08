@@ -24,7 +24,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
   char acStack_64 [92];
   
   bVar8 = 0;
-  core_actor_cpp_FUN_0040e150();
+  core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)
+  ;
   if (this_ptr->selected_actor != (CDemonActor *)0x0) {
     puVar3 = &DAT_00680908;
     puVar5 = local_6c;
@@ -34,7 +35,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
       puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
     }
     while( true ) {
-      core_actor_cpp_FUN_0040e150();
+      core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150
+                ((CActorPropertyList *)&DAT_02f7a024);
       (*((this_ptr->selected_actor->vtable)._ub)->getPropertyList)
                 (this_ptr->selected_actor,(CActorPropertyList *)&DAT_02f7a024);
       iVar2 = 0;
@@ -42,14 +44,16 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr
       if (0 < INT_02f7a028) {
         puVar6 = &DAT_02f7a030;
         do {
-          core_actor_cpp_CActorProperty_FUN_0040ea50();
-          sprintf(&DAT_02f79c20,"%s\t%s",puVar6,&DAT_02f79820);
+          core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
+                    ((CActorProperty *)(&DAT_02f7a02c + iVar2 * 0xec),this_ptr->selected_actor,
+                     &DAT_02f79820);
+          _sprintf(&DAT_02f79c20,"%s\t%s",puVar6,&DAT_02f79820);
           iVar2 = iVar2 + 1;
           puVar6 = puVar6 + 0xec;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_538.base,&DAT_02f79c20);
         } while (iVar2 < INT_02f7a028);
       }
-      sprintf
+      _sprintf
                 (acStack_190,"Edit %s properties",this_ptr->selected_actor);
       config_param2 = 0;
       iVar2 = shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(&CStack_538.base,acStack_64)

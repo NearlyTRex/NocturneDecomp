@@ -19,7 +19,7 @@ core_vessel_cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel *this_ptr,uint flags
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(this_ptr->unk3 + 4),1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&(this_ptr->unk3).base,1);
   ptr = (CCryptVessel *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);

@@ -17,8 +17,8 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_CActorProperty_FUN_0040ea50
-;   core_actor.cpp_FUN_0040e130
+;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_script.cpp_CScript_FUN_00567010
 ;   core_script.cpp_CScript_FUN_005671a0
 ;   core_script.cpp_CScript_FUN_00567510
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_0053ea4f
     PUSH EAX                            ; 0053ea51
     MOV dword ptr [ESP + 0x260c],EDI    ; 0053ea52
-    CALL core_actor.cpp_FUN_0040e130    ; 0053ea59
-        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e130()
+    CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 0053ea59
+        ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 0053ea5e
     MOV EAX,ESP                         ; 0053ea61
     PUSH EAX                            ; 0053ea63
@@ -62,8 +62,8 @@ section .text
     PUSH EAX                            ; 0053ea89
     PUSH EDI                            ; 0053ea8a
     PUSH EBX                            ; 0053ea8b
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0053ea8c
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_FUN_0040ea50()
+    CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053ea8c
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053ea91
     MOV dword ptr [ESP + 0x260c],ESI    ; 0053ea94
     MOV EAX,dword ptr [EBX]             ; 0053ea9b

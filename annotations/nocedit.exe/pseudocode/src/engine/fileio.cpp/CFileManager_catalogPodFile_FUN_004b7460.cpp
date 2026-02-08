@@ -61,7 +61,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
   if (0 < local_d00.file_count) {
     iVar4 = 0;
     do {
-      time_ptr = localtime
+      time_ptr = _localtime
                            ((time_t *)((int)&(local_d00.directory_entries)->timestamp + iVar4));
       strftime(local_2c,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       engine_dosio_c_splitPath_FUN_00481f20
@@ -78,7 +78,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
         } while (cVar1 != '\0');
         memmove(&local_32c,local_32b,~uVar3 - 1);
       }
-      sprintf
+      _sprintf
                 (local_52c,"%s\t%s\t%s\t%d\t%s",local_22c,local_12c,&local_32c,
                  *(uint *)((int)&(local_d00.directory_entries)->size + iVar4),local_2c);
       strupr(local_52c);
@@ -87,7 +87,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
       iVar4 = iVar4 + 0x14;
     } while (iVar2 < local_d00.file_count);
   }
-  sprintf(local_52c,"Contents of pod file:\n%s",local_d00.filename);
+  _sprintf(local_52c,"Contents of pod file:\n%s",local_d00.filename);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8d4,local_52c,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8d4,0);

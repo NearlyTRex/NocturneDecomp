@@ -107,7 +107,7 @@ section .text
     MOV dword ptr [EBP + -0x4c],ESI     ; 0060b009
     MOV dword ptr [EBP + -0x3c],EDX     ; 0060b00c
     CALL crt_unknown.c_FUN_00603dc8     ; 0060b00f
-        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603dc8()
+        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603dc8()
     MOV EAX,dword ptr [EBP + -0x30]     ; 0060b014
     MOV dword ptr [EBX + 0x28],EAX      ; 0060b017
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0060b01a

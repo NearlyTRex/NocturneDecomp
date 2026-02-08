@@ -16,7 +16,7 @@ core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Time to explode",&this_ptr->time_to_explode,
-             (CDemonActor_CActorPropertyValidatorFunc *)0x0);
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"On fire",&this_ptr->on_fire);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460

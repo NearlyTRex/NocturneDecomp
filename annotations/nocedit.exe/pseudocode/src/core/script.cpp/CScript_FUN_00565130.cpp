@@ -182,11 +182,11 @@ LAB_00565363:
                          iVar10);
       if (iVar5 == 0) {
         in_stack_0000007c = (char *)0x56581f;
-        sprintf(&DAT_0310fdc0,"Can't find %s");
+        _sprintf(&DAT_0310fdc0,"Can't find %s");
       }
       else {
         in_stack_0000007c = (char *)0x56551e;
-        sprintf(&DAT_0310fdc0,"Found %s");
+        _sprintf(&DAT_0310fdc0,"Found %s");
         g_CurrentEditingLine = (int)in_stack_0000008c;
         g_CurrentEditingColumn = (int)in_stack_00000098;
         bVar3 = false;
@@ -224,13 +224,13 @@ LAB_00565363:
         in_stack_00000098 = &DAT_0310fd58;
         in_stack_00000090 = &DAT_0310fdc0;
         in_stack_0000008c = (char *)0x56583b;
-        sprintf(&DAT_0310fdc0,"Can't find %s");
+        _sprintf(&DAT_0310fdc0,"Can't find %s");
       }
       else {
         in_stack_00000098 = &DAT_0310fd58;
         in_stack_00000090 = &DAT_0310fdc0;
         in_stack_0000008c = (char *)0x5655fb;
-        sprintf(&DAT_0310fdc0,"Found %s");
+        _sprintf(&DAT_0310fdc0,"Found %s");
         g_CurrentEditingLine = (int)in_stack_000000b0;
         g_CurrentEditingColumn = (int)in_stack_000000ac;
         bVar3 = false;

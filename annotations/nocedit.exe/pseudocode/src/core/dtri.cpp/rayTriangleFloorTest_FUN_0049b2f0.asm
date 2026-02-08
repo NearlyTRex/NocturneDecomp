@@ -39,7 +39,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740 at 004787e3
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 00571f20
 ;   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0 at 0057160a
-;   core_stairs.cpp_FUN_005ba6a0 at 005ba6d4
+;   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0 at 005ba6d4
 ;
 ; Referenced Globals:
 ;   double g_MinFloorNormal = -0.340000000000000
